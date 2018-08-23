@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.manage-secrets-with-azure-key-vault.2-what-is-key-vault
+title: Cos'è l'insieme di credenziali chiave di Azure?
+metadata:
+  title: Cos'è l'insieme di credenziali chiave di Azure?
+  description: Cos'è l'insieme di credenziali chiave di Azure?
+  ms.openlocfilehash: 4a41f4b8dcf7ae343424039ff34ee8bddaa911f8
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40445674"
+durationInMinutes: 5
+content: '[!include[](includes/2-what-is-key-vault.md)]'
