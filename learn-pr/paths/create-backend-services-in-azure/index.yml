@@ -1,0 +1,26 @@
+### YamlMime:LearningPath
+uid: learn.create-backend-services-in-azure
+title: Creare servizi back-end in Azure
+summary: Le funzioni di Azure consentono la creazione di sistemi di calcolo on demand basati su eventi che possono essere attivati da vari eventi esterni. Scopri come sfruttare le funzioni per eseguire la logica lato server e la compilazione di architetture senza server.
+cardDescription: Le funzioni di Azure consentono la creazione di sistemi di calcolo on demand basati su eventi che possono essere attivati da vari eventi esterni. Scopri come sfruttare le funzioni per eseguire la logica lato server e la compilazione di architetture senza server.
+iconUrl: http://via.placeholder.com/120x120
+prerequisites: Nessuna
+metadata:
+  title: Creare servizi back-end in Azure
+  description: Le funzioni di Azure consentono la creazione di sistemi di calcolo on demand basati su eventi che possono essere attivati da vari eventi esterni. Scopri come sfruttare le funzioni per eseguire la logica lato server e la compilazione di architetture senza server.
+  ms.openlocfilehash: ae2db007519a6568ff3ea644debc68e359790c42
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40438812"
+levels:
+- beginner
+roles:
+- developer
+products:
+- Azure
+modules:
+- learn.create-serverless-logic-with-functions
+- execute-azure-function-with-triggers
+achievement: learn.create-backend-services-in-azure.trophy
