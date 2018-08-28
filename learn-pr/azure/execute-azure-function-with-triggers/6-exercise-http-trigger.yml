@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: execute-azure-function-with-triggers.6-exercise-http-trigger
+title: 'Esercizio: eseguire una funzione di Azure con una richiesta HTTP'
+metadata:
+  title: 'Esercizio: eseguire una funzione di Azure con una richiesta HTTP'
+  description: 'Esercizio: eseguire una funzione di Azure con una richiesta HTTP'
+  ms.openlocfilehash: e0b8d9eaacdaef5dec4374cf86e853756d53f2d9
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40440424"
+durationInMinutes: 15
+content: '[!include[](includes/6-exercise-http-trigger.md)]'
