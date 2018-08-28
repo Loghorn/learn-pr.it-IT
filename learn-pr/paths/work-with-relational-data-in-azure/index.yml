@@ -1,0 +1,25 @@
+### YamlMime:LearningPath
+uid: learn.work-with-relational-data-in-azure
+title: Operare con dati relazionali in Azure
+summary: Azure supporta diverse soluzioni comuni di database basato su SQL tra cui SQL Server, PostgreSQL e MySQL. Scopri altre informazioni sulle modalità di utilizzo di tali soluzioni di dati aziendali in Azure per archiviare e recuperare i dati dell'app nel cloud.
+cardDescription: Azure supporta diverse soluzioni comuni di database basato su SQL tra cui SQL Server, PostgreSQL e MySQL. Scopri altre informazioni sulle modalità di utilizzo di tali soluzioni di dati aziendali in Azure per archiviare e recuperare i dati dell'app nel cloud.
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- intermediate
+roles:
+- developer
+products:
+- Azure
+prerequisites: Nessuna
+metadata:
+  title: Operare con dati relazionali in Azure
+  description: Azure supporta diverse soluzioni comuni di database basato su SQL tra cui SQL Server, PostgreSQL e MySQL. Scopri altre informazioni sulle modalità di utilizzo di tali soluzioni di dati aziendali in Azure per archiviare e recuperare i dati dell'app nel cloud.
+  ms.openlocfilehash: 6141b4692e32f9a7adc606b8d5ca6ddf39900628
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40438611"
+modules:
+- learn.sample-module-cloudshell
+achievement: learn.work-with-relational-data-in-azure.trophy
