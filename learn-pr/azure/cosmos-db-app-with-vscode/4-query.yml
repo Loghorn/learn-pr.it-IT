@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.cosmos-db-app-with-vscode.4-query
+metadata:
+  title: Eseguire query in Azure Cosmos DB con .NET Core
+  description: Informazioni su come eseguire query sui dati di Azure Cosmos DB con .NET Core SDK.
+  displayType: one-column
+  ms.openlocfilehash: df16d9af01fd5f1442def898727ce97c654daab7
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40440057"
+title: Eseguire query con .NET Core SDK
+durationInMinutes: 10
+content: '[!include[](includes/4-query.md)]'

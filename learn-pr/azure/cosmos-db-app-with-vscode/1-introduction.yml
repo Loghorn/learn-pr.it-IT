@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.cosmos-db-app-with-vscode.1-introduction
+metadata:
+  title: Introduzione
+  description: Informazioni su come creare un'app per archiviare ed eseguire query sui dati in Azure Cosmos DB usando Visual Studio Code.
+  displayType: one-column
+  ms.openlocfilehash: f3c7bfe2022d045297679ef3cffd59638553dda2
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40443478"
+title: Introduzione
+durationInMinutes: 10
+content: '[!include[](includes/1-introduction.md)]'
