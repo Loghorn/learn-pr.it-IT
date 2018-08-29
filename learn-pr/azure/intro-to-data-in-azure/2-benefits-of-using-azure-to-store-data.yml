@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.intro-to-data-in-azure.2-benefits-of-using-azure-to-store-data
+title: Vantaggi dell'uso di Azure per archiviare i dati
+metadata:
+  title: Vantaggi dell'uso di Azure per archiviare i dati
+  description: Vantaggi dell'uso di Azure per archiviare i dati
+  ms.openlocfilehash: c6382e94a5620dcd3f4185bf382ebd8e849251af
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40441898"
+durationInMinutes: 15
+content: '[!include[](includes/2-benefits-of-using-azure-to-store-data.md)]'

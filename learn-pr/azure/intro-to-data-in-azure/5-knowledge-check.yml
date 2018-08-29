@@ -1,0 +1,51 @@
+### YamlMime:ModuleUnit
+uid: learn.intro-to-data-in-azure.5-knowledge-check
+metadata:
+  title: Verifica delle conoscenze
+  description: Verifica delle conoscenze.
+  displayType: one-column
+  ms.openlocfilehash: 8e63c9e7886d767824571f78eda178b9bdfd65f3
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40439000"
+title: Verifica delle conoscenze
+durationInMinutes: 11
+content: Verifica delle conoscenze
+quiz:
+  title: Verifica delle conoscenze
+  questions:
+  - content: Il portale di formazione online deve mantenere traccia dell'indirizzo fisico di ogni utente e dell'indirizzo di posta elettronica. Quali funzionalità di Azure consentiranno di gestire anche queste informazioni?
+    choices:
+    - content: Archiviazione di Azure
+      isCorrect: false
+      incorrectExplanation: Archiviazione di Azure è ideale per archiviare le versioni precedenti dei dati in modo tale da recuperarli quando necessario per il controllo o per altre attività occasionali.
+    - content: SQL di Azure
+      isCorrect: true
+      correctExplanation: Corretto. SQL di Azure consente di archiviare dati relazionali e recuperare rapidamente i dati con query avanzate.
+    - content: File di Azure
+      isCorrect: false
+      incorrectExplanation: File di Azure viene usata per le condivisioni file nel cloud. Queste possono essere montate simultaneamente da distribuzioni cloud o locali di Windows, macOS e Linux.
+  - content: I file di simulazione usati dai portali di formazione per le vendite possono raggiungere dimensioni significative. Azure è in grado di supportare tali file?
+    choices:
+    - content: Archiviazione di blob di Azure può supportare file con dimensioni massime di 8 TB
+      isCorrect: true
+      correctExplanation: Corretto. Archiviazione di blob di Azure offre la possibilità di archiviare e trasmettere video o file audio di grandi dimensioni direttamente al browser da qualsiasi luogo nel mondo.
+    - content: File di Azure può supportare l'archiviazione e lo streaming di file di grandi dimensioni
+      isCorrect: false
+      incorrectExplanation: File di Azure viene usata per le condivisioni file nel cloud. Queste possono essere montate simultaneamente da distribuzioni cloud o locali di Windows, macOS e Linux.
+    - content: Azure non supporta l'archiviazione e lo streaming di file di grandi dimensioni
+      isCorrect: false
+      incorrectExplanation: Archiviazione non offre la possibilità di archiviare e trasmettere video e file audio di grandi dimensioni direttamente al browser da qualsiasi luogo nel mondo.
+  - content: In che modo Azure supporta la durabilità e l'affidabilità dei dati?
+    choices:
+    - content: Grazie alle funzionalità di replica in Azure.
+      isCorrect: true
+      correctExplanation: Corretto. Azure offre funzionalità di replica per proteggere i dati da calamità naturali e supporta la crittografia per proteggere i dati dagli attacchi dannosi.
+    - content: È necessario un supporto premium aggiuntivo per crittografare e decrittografare i dati; l'affidabilità è supportata da funzionalità di backup di terze parti
+      isCorrect: false
+      incorrectExplanation: Non è necessario alcun supporto aggiuntivo; Azure offre le funzionalità di protezione dei dati da eventuali rischi e minacce imprevisti.
+    - content: Azure non ha funzionalità di ridondanza e crittografia predefinite.
+      isCorrect: false
+      incorrectExplanation: Azure include funzionalità predefinite per proteggere i dati da rischi e minacce.
