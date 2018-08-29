@@ -1,0 +1,61 @@
+## <a name="motivation"></a><span data-ttu-id="5a19c-101">Motivazione</span><span class="sxs-lookup"><span data-stu-id="5a19c-101">Motivation</span></span>
+<span data-ttu-id="5a19c-102">L'interfaccia della riga di comando di Azure consente di scrivere i comandi ed eseguirli immediatamente.</span><span class="sxs-lookup"><span data-stu-id="5a19c-102">The Azure CLI lets you write commands and execute them immediately.</span></span> <span data-ttu-id="5a19c-103">Ricordare che l'obiettivo complessivo dell'esempio di sviluppo software è distribuire nuove build di un'app Web per i test.</span><span class="sxs-lookup"><span data-stu-id="5a19c-103">Recall that the overall goal in the software development example is to deploy new builds of a web app for testing.</span></span> <span data-ttu-id="5a19c-104">Il primo passaggio consiste nel creare un gruppo di risorse.</span><span class="sxs-lookup"><span data-stu-id="5a19c-104">The first step is to create a resource group.</span></span> <span data-ttu-id="5a19c-105">Tenere presente che l'obiettivo è creare queste risorse tramite un'installazione locale dell'interfaccia della riga di comando di Azure.</span><span class="sxs-lookup"><span data-stu-id="5a19c-105">Remember that the goal here is to create these resources using a local installation of the Azure CLI.</span></span> 
+
+<span data-ttu-id="5a19c-106">Questa unità mostra come usare l'interfaccia della riga di comando di Azure per accedere alla sottoscrizione di Azure e creare una nuova risorsa.</span><span class="sxs-lookup"><span data-stu-id="5a19c-106">This unit shows you how to use the Azure CLI to sign in to your Azure subscription and create a new resource.</span></span>
+
+## <a name="what-azure-resources-can-be-managed-using-the-azure-cli"></a><span data-ttu-id="5a19c-107">Quali risorse di Azure possono essere gestite tramite l'interfaccia della riga di comando di Azure?</span><span class="sxs-lookup"><span data-stu-id="5a19c-107">What Azure resources can be managed using the Azure CLI?</span></span>
+<span data-ttu-id="5a19c-108">L'interfaccia della riga di comando di Azure consente di controllare quasi tutti gli aspetti di ogni risorsa di Azure.</span><span class="sxs-lookup"><span data-stu-id="5a19c-108">The Azure CLI lets you control nearly every aspect of every Azure resource.</span></span> <span data-ttu-id="5a19c-109">È possibile lavorare con i gruppi di risorse, l'archiviazione, le macchine virtuali, Azure Active Directory (Azure AD), i contenitori, Machine Learning e così via.</span><span class="sxs-lookup"><span data-stu-id="5a19c-109">You can work with resource groups, storage, virtual machines, Azure Active Directory (Azure AD), containers, machine learning, and so on.</span></span>
+
+<span data-ttu-id="5a19c-110">I comandi nell'interfaccia della riga di comando sono strutturati in gruppi e sottogruppi.</span><span class="sxs-lookup"><span data-stu-id="5a19c-110">Commands in the CLI are structured in groups and subgroups.</span></span> <span data-ttu-id="5a19c-111">Ogni gruppo rappresenta un servizio offerto da Azure e i sottogruppi dividono i comandi per tali servizi in raggruppamenti logici.</span><span class="sxs-lookup"><span data-stu-id="5a19c-111">Each group represents a service provided by Azure, and the subgroups divide commands for these services into logical groupings.</span></span> <span data-ttu-id="5a19c-112">Ad esempio, il gruppo **storage** include sottogruppi, tra i quali **account**, **blob**, **storage** e **queue**.</span><span class="sxs-lookup"><span data-stu-id="5a19c-112">For example, the **storage** group contains subgroups including **account**, **blob**, **storage**, and **queue**.</span></span>
+
+<span data-ttu-id="5a19c-113">Quindi, come si possono trovare i comandi specifici necessari?</span><span class="sxs-lookup"><span data-stu-id="5a19c-113">So, how do you find the particular commands you need?</span></span> <span data-ttu-id="5a19c-114">Un modo consiste nell'usare **az find**.</span><span class="sxs-lookup"><span data-stu-id="5a19c-114">One way is to use **az find**.</span></span> <span data-ttu-id="5a19c-115">Ad esempio, se si vogliono trovare i comandi utili per gestire un **BLOB** di archiviazione, si potrebbe usare il comando find seguente:</span><span class="sxs-lookup"><span data-stu-id="5a19c-115">For example, if you want to find commands that might help you manage a storage **blob**, you'd use the following find command:</span></span>
+
+```bash
+az find -q blob
+```
+
+<span data-ttu-id="5a19c-116">Se si conosce già il nome del comando desiderato, l'argomento **--help** per il comando può essere più utile.</span><span class="sxs-lookup"><span data-stu-id="5a19c-116">If you already know the name of the command you want, the **--help** argument for that command may be more useful.</span></span> <span data-ttu-id="5a19c-117">Si ottengono informazioni dettagliate sul comando e, per un gruppo di comandi, un elenco dei sottocomandi disponibili.</span><span class="sxs-lookup"><span data-stu-id="5a19c-117">You get detailed information on the command, and for a command group, a list of the available subcommands.</span></span> <span data-ttu-id="5a19c-118">Ritornando all'esempio di archiviazione, ecco come è possibile ottenere un elenco dei sottogruppi e dei comandi per la gestione dell'archiviazione BLOB:</span><span class="sxs-lookup"><span data-stu-id="5a19c-118">So, with our storage example, here's how you can get a list of the subgroups and commands for managing blob storage:</span></span>
+
+```bash
+az storage blob --help
+```
+
+## <a name="how-to-create-an-azure-resource"></a><span data-ttu-id="5a19c-119">Come creare una risorsa di Azure</span><span class="sxs-lookup"><span data-stu-id="5a19c-119">How to create an Azure resource</span></span>
+<span data-ttu-id="5a19c-120">Quando si crea una nuova risorsa di Azure, in genere esistono tre passaggi: connettersi alla sottoscrizione di Azure, creare la risorsa e verificare che la creazione sia stata completata (vedere sotto).</span><span class="sxs-lookup"><span data-stu-id="5a19c-120">When creating a new Azure resource, there are typically three steps: connect to your Azure subscription, create the resource, and verify that creation was successful (see below).</span></span>
+
+![Procedura per creare una risorsa con l'interfaccia della riga di comando di Azure](../media-drafts/4-create-resources-overview.png)
+
+<span data-ttu-id="5a19c-122">Ogni passaggio corrisponde a un comando diverso dell'interfaccia della riga di comando di Azure.</span><span class="sxs-lookup"><span data-stu-id="5a19c-122">Each step corresponds to a different Azure CLI command.</span></span>
+
+### <a name="connect"></a><span data-ttu-id="5a19c-123">Connettere</span><span class="sxs-lookup"><span data-stu-id="5a19c-123">Connect</span></span>
+<span data-ttu-id="5a19c-124">Dato che si sta lavorando con un'installazione locale dell'interfaccia della riga di comando di Azure, è necessario eseguire l'autenticazione prima di poter eseguire i comandi di Azure, tramite il comando **login** dell'interfaccia della riga di comando di Azure.</span><span class="sxs-lookup"><span data-stu-id="5a19c-124">Since you're working with a local install of the Azure CLI, you'll need to authenticate before you can execute Azure commands, by using the Azure CLI **login** command.</span></span> 
+
+```bash
+az login
+```
+
+<span data-ttu-id="5a19c-125">L'interfaccia della riga di comando di Azure in genere avvierà il browser predefinito per aprire la pagina di accesso di Azure.</span><span class="sxs-lookup"><span data-stu-id="5a19c-125">The Azure CLI will typically launch your default browser to open the Azure sign-in page.</span></span> <span data-ttu-id="5a19c-126">Se ciò non accade, seguire le istruzioni della riga di comando e immettere un codice di autorizzazione all'indirizzo [https://aka.ms/devicelogin](https://aka.ms/devicelogin).</span><span class="sxs-lookup"><span data-stu-id="5a19c-126">If this doesn't work, follow the command-line instructions and enter an authorization code at [https://aka.ms/devicelogin](https://aka.ms/devicelogin).</span></span>
+
+<span data-ttu-id="5a19c-127">Quando l'accesso riesce, si verrà connessi alla sottoscrizione di Azure.</span><span class="sxs-lookup"><span data-stu-id="5a19c-127">After a successful sign in, you'll be connected to your Azure subscription.</span></span> 
+
+### <a name="create"></a><span data-ttu-id="5a19c-128">Create</span><span class="sxs-lookup"><span data-stu-id="5a19c-128">Create</span></span>
+<span data-ttu-id="5a19c-129">È spesso necessario creare un nuovo gruppo di risorse prima di creare un nuovo servizio di Azure, quindi i gruppi di risorse verranno usati come esempio per mostrare come creare le risorse di Azure dall'interfaccia della riga di comando.</span><span class="sxs-lookup"><span data-stu-id="5a19c-129">You'll often need to create a new resource group before you create a new Azure service, so we'll use resource groups as an example to show how to create Azure resources from the CLI.</span></span>
+
+<span data-ttu-id="5a19c-130">Il comando **group create** dell'interfaccia della riga di comando di Azure crea un gruppo di risorse.</span><span class="sxs-lookup"><span data-stu-id="5a19c-130">The Azure CLI **group create** command creates a resource group.</span></span> <span data-ttu-id="5a19c-131">È necessario specificare un nome e una posizione.</span><span class="sxs-lookup"><span data-stu-id="5a19c-131">You must specify a name and location.</span></span> <span data-ttu-id="5a19c-132">Il nome deve essere univoco all'interno della sottoscrizione.</span><span class="sxs-lookup"><span data-stu-id="5a19c-132">The name must be unique within your subscription.</span></span> <span data-ttu-id="5a19c-133">La posizione determina dove vengono archiviati i metadati per il gruppo di risorse.</span><span class="sxs-lookup"><span data-stu-id="5a19c-133">The location determines where the metadata for your resource group will be stored.</span></span> <span data-ttu-id="5a19c-134">Per specificare la posizione si usano stringhe come "West US", "North Europe" o "West India". In alternativa, è possibile usare gli equivalenti composti da una parola singola, ad esempio westus, northeurope o westindia.</span><span class="sxs-lookup"><span data-stu-id="5a19c-134">You use strings like "West US", "North Europe", or "West India" to specify the location; alternatively, you can use single word equivalents, such as westus, northeurope, or westindia.</span></span> <span data-ttu-id="5a19c-135">La sintassi di base è:</span><span class="sxs-lookup"><span data-stu-id="5a19c-135">The core syntax is:</span></span>
+
+```bash
+az group create --name <name> --location <location>
+```
+
+### <a name="verify"></a><span data-ttu-id="5a19c-136">Verificare</span><span class="sxs-lookup"><span data-stu-id="5a19c-136">Verify</span></span>
+<span data-ttu-id="5a19c-137">Per molte risorse di Azure, l'interfaccia della riga di comando di Azure include un sottocomando **list** per visualizzare i dettagli della risorsa.</span><span class="sxs-lookup"><span data-stu-id="5a19c-137">For many Azure resources, the Azure CLI provides a **list** subcommand to view resource details.</span></span> <span data-ttu-id="5a19c-138">Ad esempio, il comando **group list** dell'interfaccia della riga di comando di Azure elenca i gruppi di risorse di Azure.</span><span class="sxs-lookup"><span data-stu-id="5a19c-138">For example, the Azure CLI **group list** command lists your Azure resource groups.</span></span> <span data-ttu-id="5a19c-139">Questo comando è utile in questo contesto per verificare se è stata completata la creazione del gruppo di risorse:</span><span class="sxs-lookup"><span data-stu-id="5a19c-139">This is useful here to verify whether creation of the resource group was successful:</span></span>
+
+```bash
+az group list
+```
+
+<span data-ttu-id="5a19c-140">Per ottenere una visualizzazione più concisa, è possibile formattare l'output come una tabella semplice:</span><span class="sxs-lookup"><span data-stu-id="5a19c-140">To get a more concise view, you can format the output as a simple table:</span></span>
+
+```bash
+az group list --output table
+```
