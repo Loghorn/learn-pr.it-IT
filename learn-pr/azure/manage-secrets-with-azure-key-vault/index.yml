@@ -3,7 +3,7 @@ uid: learn.manage-secrets-with-azure-key-vault
 title: Gestire segreti nelle app Web con Azure Key Vault
 summary: Per poter funzionare, un'applicazione richiede password di servizio, stringhe di connessione e altri valori di configurazione dei segreti. L'archiviazione e la gestione dei valori dei segreti è rischiosa e ogni utilizzo introduce la possibilità di perdita. Azure Key Vault, in combinazione con la funzionalità di Identità dei servizi gestiti del Servizio app di Azure, consente all'app Web di Azure di accedere con semplicità e in tutta sicurezza ai valori di configurazione dei segreti senza la necessità di archiviare tutti i segreti nel controllo del codice sorgente o nella configurazione.
 cardDescription: Archiviare in modo sicuro i valori di configurazione dei segreti in Azure Key Vault e accedervi sempre in modo sicuro dall'app Web di Azure con l'Identità dei servizi gestiti.
-iconUrl: /learn/modules/manage-secrets-with-azure-key-vault/achievement/manage-secrets-with-azure-key-vault.svg
+iconUrl: /learn/achievements/manage-secrets-with-azure-key-vault.svg
 achievement: learn.manage-secrets-with-azure-key-vault.badge
 levels:
 - beginner
@@ -14,12 +14,12 @@ products:
 metadata:
   title: Gestire segreti nelle app Web con Azure Key Vault
   description: In questo modulo, si apprenderà come creare un insieme di credenziali delle chiavi e come archiviarvi un segreto. Verrà illustrato come configurare un'applicazione Web per usare Identità dei servizi gestiti per abilitare l'accesso sicuro all'insieme di credenziali senza alcuna configurazione e infine verrà implementata un'applicazione Web ASP.NET Core che consente di recuperare i segreti dall'insieme di credenziali.
-  ms.openlocfilehash: ba109c56ec8d43e40ac534c1b28317542dd5e938
-  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.openlocfilehash: 0780a6a23836c53ea0f01379ce712c7916075b6d
+  ms.sourcegitcommit: d51dceaa3772e8083b3f0b6460f8a616b3139d25
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 08/22/2018
-  ms.locfileid: "40440471"
+  ms.lasthandoff: 08/27/2018
+  ms.locfileid: "43053950"
 abstract: >
   * Creare un Azure Key Vault e usarlo per archiviare i valori di configurazione dei segreti.
 

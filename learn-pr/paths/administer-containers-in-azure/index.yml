@@ -2,24 +2,23 @@
 uid: learn.administer-containers-in-azure
 title: Amministrare i contenitori in Azure
 summary: Istanze di contenitore di Azure è il modo più rapido e semplice per eseguire i contenitori in Azure. Questo percorso di apprendimento ti spiegherà come creare e gestire i contenitori e usare ACI per offrire scalabilità elastica per Kubernetes.
-cardDescription: Istanze di contenitore di Azure è il modo più rapido e semplice per eseguire i contenitori in Azure. Questo percorso di apprendimento ti spiegherà come creare e gestire i contenitori e usare ACI per offrire scalabilità elastica per Kubernetes.
+prerequisites: Nessuna
 iconUrl: http://via.placeholder.com/120x120
 levels:
 - beginner
 roles:
-- developer
+- administrator
 products:
-- Azure
-prerequisites: Nessuna
+- azure
 metadata:
   title: Amministrare i contenitori in Azure
   description: Istanze di contenitore di Azure è il modo più rapido e semplice per eseguire i contenitori in Azure. Questo percorso di apprendimento ti spiegherà come creare e gestire i contenitori e usare ACI per offrire scalabilità elastica per Kubernetes.
-  ms.openlocfilehash: 753fe61e57393a51f6a7e0031ce251390c6ceef7
-  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.openlocfilehash: 3d42c9c2dab00f374ac5effe60fb9af525ebd6ee
+  ms.sourcegitcommit: cac22638c8487b2a9e567262aee73616ff0035e9
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 08/22/2018
-  ms.locfileid: "40440899"
+  ms.lasthandoff: 08/24/2018
+  ms.locfileid: "42910611"
 modules:
 - learn.sample-module-cloudshell
 achievement: learn.administer-containers-in-azure.trophy

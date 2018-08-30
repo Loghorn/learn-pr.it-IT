@@ -1,30 +1,28 @@
 ### YamlMime:ModuleUnit
 uid: learn.cosmos-db-app-with-vscode.3-crud-operations
 metadata:
-  title: <span data-ttu-id="36487-101">Creare, leggere, aggiornare ed eliminare documenti di Azure Cosmos DB</span><span class="sxs-lookup"><span data-stu-id="36487-101">Create, read, update, and delete Azure Cosmos DB documents</span></span>
-  description: <span data-ttu-id="36487-102">Informazioni su come creare, leggere, aggiornare ed eliminare elementi da Azure Cosmos DB usando .NET Core.</span><span class="sxs-lookup"><span data-stu-id="36487-102">Learn how to create, read, update, and delete items from Azure Cosmos DB by using .NET Core.</span></span>
+  title: <span data-ttu-id="e1ffd-101">Creare, leggere, aggiornare ed eliminare documenti di Azure Cosmos DB</span><span class="sxs-lookup"><span data-stu-id="e1ffd-101">Create, read, update, and delete Azure Cosmos DB documents</span></span>
+  description: <span data-ttu-id="e1ffd-102">Informazioni su come creare, leggere, aggiornare ed eliminare elementi da Azure Cosmos DB usando .NET Core.</span><span class="sxs-lookup"><span data-stu-id="e1ffd-102">Learn how to create, read, update, and delete items from Azure Cosmos DB by using .NET Core.</span></span>
   displayType: one-column
-  ms.openlocfilehash: 7cbd3d5c258594627c7bddad922c3543d7deba40
-  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.openlocfilehash: 5b659d23668a130ec24c885ffb1edadb6259da3b
+  ms.sourcegitcommit: 92580185df76595daa4cf68a5311019c85fe7bf3
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 08/22/2018
-  ms.locfileid: "40440054"
-title: <span data-ttu-id="36487-103">Creare, leggere, aggiornare ed eliminare documenti a livello di codice</span><span class="sxs-lookup"><span data-stu-id="36487-103">Create, read, update, and delete documents programmatically</span></span>
+  ms.lasthandoff: 08/24/2018
+  ms.locfileid: "42873502"
+title: <span data-ttu-id="e1ffd-103">Creare, leggere, aggiornare ed eliminare documenti a livello di codice</span><span class="sxs-lookup"><span data-stu-id="e1ffd-103">Create, read, update, and delete documents programmatically</span></span>
 durationInMinutes: 10
 content: >
   [!include[](includes/3-crud-operations.md)]
 tasks:
 - action: exists
   environment: azure
-  hint: <span data-ttu-id="36487-104">Assicurarsi che ci sia un documento con un valore di ID 2</span><span class="sxs-lookup"><span data-stu-id="36487-104">Ensure there is a document with an id value of 2</span></span>
+  hint: <span data-ttu-id="e1ffd-104">Assicurarsi che ci sia un documento con un valore di ID 2</span><span class="sxs-lookup"><span data-stu-id="e1ffd-104">Ensure there is a document with an id value of 2</span></span>
   azure:
-    resourceGroup: myResourceGroup
     location: eastus
 - action: exists
   environment: azure
   azure:
-    resourceGroup: groupA
     resource:
       type: Microsoft.Storage/storageAccounts
       name: docsproxyppea427
