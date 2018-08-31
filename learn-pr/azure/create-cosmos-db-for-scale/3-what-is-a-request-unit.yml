@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.create-cosmos-db-for-scale.3-what-is-a-request-unit
+metadata:
+  title: <span data-ttu-id="59c53-101">Cos'è un'unità richiesta di Azure Cosmos DB?</span><span class="sxs-lookup"><span data-stu-id="59c53-101">What is an Azure Cosmos DB request unit?</span></span>
+  description: <span data-ttu-id="59c53-102">Informazioni sulle modalità di allocazione della velocità effettiva in Azure Cosmos DB tramite le unità richiesta.</span><span class="sxs-lookup"><span data-stu-id="59c53-102">Learn how throughput is allocated in Azure Cosmos DB by using request units.</span></span>
+  displayType: one-column
+  ms.openlocfilehash: 59395acde91a8986089a5480efc51f8a02dbd518
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40448642"
+title: <span data-ttu-id="59c53-103">Cos'è un'unità richiesta?</span><span class="sxs-lookup"><span data-stu-id="59c53-103">What is a request unit?</span></span>
+durationInMinutes: 8
+content: '[!include[](includes/3-what-is-a-request-unit.md)]'
