@@ -22,15 +22,15 @@ Quando il carico di lavoro cambia a causa di un calo o di un picco della domanda
 
 Si supponga, ad esempio, che il sito Web sia presente in un articolo di giornale, generando un picco di traffico durante la notte. Poiché il cloud è elastico, può automaticamente allocare più risorse di calcolo per gestire l'aumento del traffico. Quando il traffico inizia quindi a stabilizzarsi e le comunicazioni cloud hanno un numero eccessivo di risorse allocate, inizierà a rimuoverle in modo da non perdere denaro.
 
-### <a name="cloud-computing-is-current"></a>Il cloud computing è corrente
+### <a name="cloud-computing-is-current"></a>Il cloud computing è aggiornato
 
-Quando si usa il cloud ci si concentra su ciò che conta: la compilazione e la distribuzione di applicazioni. Non è necessario occuparsi della manutenzione delle patch software, dell'installazione hardware, degli aggiornamenti e delle altre attività di gestione IT. Tutto ciò è nascosto e viene eseguito automaticamente per assicurarsi che venga usato lo strumento più recente e migliore per gestire la propria attività.
+Quando si usa il cloud ci si concentra su ciò che conta: lo sviluppo e la distribuzione di applicazioni. Non è necessario occuparsi della manutenzione delle patch software, dell'installazione e configurazione di hardware, degli aggiornamenti e delle altre attività di gestione IT. Tutto ciò è nascosto e viene eseguito automaticamente per assicurarsi che venga usato lo strumento più recente e migliore per gestire la propria attività.
 
 ### <a name="cloud-computing-is-reliable"></a>Il cloud computing è affidabile
 
 Quando si gestisce un'azienda, si desidera avere la certezza che i dati saranno sempre presenti. I provider di cloud computing offrono il backup dei dati, il ripristino di emergenza e i servizi di replica dei dati per assicurarsi che i dati siano al sicuro.
 
-## <a name="summary"></a>Riepilogo
+## <a name="summary"></a>Summary
 
 Il cloud computing tenta di rendere più semplice la gestione di un'azienda. Il cloud computing è una soluzione conveniente, scalabile, elastica, corrente e affidabile. Ciò significa che si può dedicare più tempo a ciò che interessa di più e meno tempo nella gestione dei dettagli sottostanti.
 

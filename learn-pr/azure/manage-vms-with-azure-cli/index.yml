@@ -1,14 +1,14 @@
 ### YamlMime:Module
 uid: learn.manage-vms-with-azure-cli
 metadata:
-  title: Gestire macchine virtuali con lo strumento di interfaccia della riga di comando di Azure
-  description: Informazioni su come usare l'interfaccia della riga di comando multi-piattaforma di Azure per creare, avviare, arrestare ed eseguire altre attività di gestione correlate a macchine virtuali in Azure.
-  ms.openlocfilehash: c4c651aca73f36e32f2c849ed968f3eb8bdfb393
-  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  title: Gestire macchine virtuali con l'interfaccia della riga di comando di Azure
+  description: Informazioni su come usare l'interfaccia della riga di comando di Azure multipiattaforma per creare, avviare, arrestare ed eseguire altre attività di gestione correlate a macchine virtuali in Azure.
+  ms.openlocfilehash: 1564240b36b2fa28dd95f871553db0a7d9c137f9
+  ms.sourcegitcommit: a873d63b19d04cd5b6faa6380e562888dc4a6166
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 08/22/2018
-  ms.locfileid: "40443425"
+  ms.lasthandoff: 08/27/2018
+  ms.locfileid: "43055404"
 iconUrl: http://via.placeholder.com/120x120
 levels:
 - beginner
@@ -16,11 +16,15 @@ roles:
 - developer
 - administrator
 products:
-- Azure
-title: Gestire macchine virtuali con lo strumento di interfaccia della riga di comando di Azure
-summary: Informazioni su come usare l'interfaccia della riga di comando multi-piattaforma di Azure per creare, avviare, arrestare ed eseguire altre attività di gestione correlate a macchine virtuali in Azure.
-cardDescription: Informazioni su come usare l'interfaccia della riga di comando multi-piattaforma di Azure per creare, avviare, arrestare ed eseguire altre attività di gestione correlate a macchine virtuali in Azure.
+- azure
+- azure cli 2.0
+- azure virtual machines
+title: Gestire macchine virtuali con l'interfaccia della riga di comando di Azure
+summary: Informazioni su come usare l'interfaccia della riga di comando di Azure multipiattaforma per creare, avviare, arrestare ed eseguire altre attività di gestione correlate a macchine virtuali in Azure.
+cardDescription: Informazioni su come usare l'interfaccia della riga di comando di Azure multipiattaforma per creare, avviare, arrestare ed eseguire altre attività di gestione correlate a macchine virtuali in Azure.
 abstract: >
+  In questo modulo verrà descritto come:
+
   * Creare una macchina virtuale con l'interfaccia della riga di comando di Azure
 
   * Eseguire attività di gestione di base tramite l'interfaccia della riga di comando di Azure

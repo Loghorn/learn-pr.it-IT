@@ -7,11 +7,11 @@ Sono state eseguite più sessioni di test in una singola macchina virtuale, ma s
 Di seguito verrà illustrato come gestire le risorse di Azure tramite Azure PowerShell. Azure PowerShell sarà usato in modalità interattiva per le attività occasionali e verranno scritti script per automatizzare le attività ripetitive. 
 
 ## <a name="learning-objectives"></a>Obiettivi di apprendimento
-> [!div class="checklist"]
-> * Decidere se Azure PowerShell è lo strumento appropriato per le attività di amministrazione di Azure
-> * Installare Azure PowerShell in Linux, macOS e Windows
-> * Connettersi a una sottoscrizione di Azure tramite Azure PowerShell
-> * Creare risorse di Azure con Azure PowerShell
+In questo modulo verrà descritto come:
+- Decidere se Azure PowerShell è lo strumento appropriato per le attività di amministrazione di Azure.
+- Installare Azure PowerShell in Linux, macOS e/o Windows.
+- Connettersi a una sottoscrizione di Azure tramite Azure PowerShell.
+- Creare risorse di Azure con Azure PowerShell.
 
 ## <a name="prerequisites"></a>Prerequisiti
 - Esperienza con un'interfaccia della riga di comando, ad esempio PowerShell o Bash

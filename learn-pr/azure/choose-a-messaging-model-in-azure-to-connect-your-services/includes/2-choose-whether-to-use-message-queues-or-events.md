@@ -2,10 +2,9 @@ Si supponga di dover pianificare l'architettura di un'applicazione distribuita p
 
 Prima di poter scegliere la tecnologia di Azure corretta, è necessario conoscere ogni singola comunicazione che si scambiano i componenti dell'applicazione. Per ogni tipo di comunicazione è possibile scegliere una diversa tecnologia di Azure.
 
-La prima cosa da capire per una comunicazione è se invia messaggi o eventi. Alcune tecnologie di Azure sono progettate per gli eventi e altre per i messaggi, quindi questa è una scelta fondamentale.
+La prima cosa da capire per una comunicazione è se invia **messaggi** o **eventi**. Questa è una scelta fondamentale che aiuta a scegliere il servizio di Azure appropriato da usare.
 
 ## <a name="what-is-a-message"></a>Che cos'è un messaggio?
-
 Nella terminologia delle applicazioni distribuite, i **messaggi** hanno le caratteristiche seguenti:
 
 - Un messaggio contiene dati non elaborati, generati da un componente, che verranno utilizzati da un altro componente.
@@ -18,7 +17,7 @@ Ad esempio, si supponga che un utente carichi un nuovo brano con l'app per dispo
 
 Gli **eventi** sono più leggeri rispetto ai messaggi e vengono spesso usati per le comunicazioni broadcast. I componenti che inviano l'evento sono detti **componenti di pubblicazione** e i destinatari sono noti come **sottoscrittori**.
 
-Con gli eventi, i componenti di ricezione decideranno in genere a quali comunicazioni sono interessati e le "sottoscriveranno". La sottoscrizione viene in genere gestita da un intermediario, ad esempio Griglia di eventi di Azure o l'hub eventi di Azure. Quando i componenti di pubblicazione inviano un evento, l'intermediario indirizzerà tale evento ai sottoscrittori interessati. Questa è nota come "architettura di pubblicazione-sottoscrizione" ed è il modo più comune per gestire gli eventi, anche se non è l'unico.
+Con gli eventi, i componenti di ricezione decideranno in genere a quali comunicazioni sono interessati e le "sottoscriveranno". La sottoscrizione viene in genere gestita da un intermediario, ad esempio Griglia di eventi di Azure o Hub eventi di Azure. Quando i componenti di pubblicazione inviano un evento, l'intermediario indirizzerà tale evento ai sottoscrittori interessati. Questi meccanismi sono noti come "architettura di pubblicazione-sottoscrizione". Non è l'unico modo per gestire gli eventi, ma è il più comune.
 
 Gli eventi hanno le caratteristiche seguenti:
 
@@ -39,12 +38,8 @@ Questo è un esempio di evento discreto.
 
 Gli eventi vengono più probabilmente usati per le trasmissioni e sono spesso temporanei, vale a dire che una comunicazione potrebbe non essere gestita da alcun destinatario se non ci sono sottoscrizioni. È più probabile che i messaggi vengano usati quando l'applicazione distribuita richiede una garanzia di elaborazione della comunicazione.
 
-Per tutte le comunicazioni prendere in considerazione la domanda: il componente di invio si aspetta che la comunicazione venga elaborata in un modo specifico dal componente di destinazione?
+Per tutte le comunicazioni prendere in considerazione la domanda seguente: **Il componente di invio si aspetta che la comunicazione venga elaborata in un modo specifico dal componente di destinazione?**
 
-Se la risposta è sì, scegliere di usare un messaggio. Se la risposta è no, si potrebbe riuscire a usare gli eventi.
+Se la risposta è _sì_, scegliere di usare un messaggio. Se la risposta è _no_, si potrebbe riuscire a usare gli eventi.
 
-## <a name="summary"></a>Summary
-
-I componenti di un'applicazione distribuita comunicano tra loro per numerosi scopi differenti. Per ognuno di questi scopi, è necessario scegliere se usare eventi o messaggi in modo che sia possibile scegliere una tecnologia di Azure progettata per tale scopo. 
-
-Dopo aver compreso il motivo per cui i componenti comunicano e se usano eventi o messaggi, è possibile procedere con la scelta tra code di archiviazione di Azure, hub eventi, griglie di eventi o bus di servizio per gestire gli scambi di informazioni.
+Capire come devono comunicare i componenti sarà utile per scegliere le modalità. Iniziamo con i messaggi.

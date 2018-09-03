@@ -38,10 +38,10 @@ PowerShell Core verrà installato in Ubuntu Linux tramite Advanced Packaging Too
     ```
 
 ### <a name="macos"></a>macOS
-Installare quindi **PowerShell Core** su macOS tramite la gestione pacchetti HomeBrew.
+Installare quindi **PowerShell Core** su macOS tramite la gestione pacchetti Homebrew.
 
 > [!IMPORTANT]
-> Se il comando **brew** non è disponibile, potrebbe essere necessario installare la gestione pacchetti HomeBrew. Per informazioni dettagliate, vedere il [sito Web di Homebrew](https://brew.sh/).
+> Se il comando **brew** non è disponibile, potrebbe essere necessario installare la gestione pacchetti Homebrew. Per informazioni dettagliate, vedere il [sito Web di Homebrew](https://brew.sh/).
 
 1. Installare Homebrew-Cask per ottenere altri pacchetti, incluso il pacchetto di PowerShell Core:
 
@@ -51,7 +51,7 @@ Installare quindi **PowerShell Core** su macOS tramite la gestione pacchetti Hom
 1. Installare PowerShell Core:
 
     ```bash
-    brew cask install powershell
+    brew cask installs powershell
     ```
 
 1. Avviare PowerShell Core per verificare che sia installato correttamente:
@@ -108,4 +108,4 @@ Per installare Azure PowerShell in Linux o macOS, viene usato lo stesso processo
 1. Se viene richiesto se considerare attendibili i moduli di **PSGallery**, rispondere **Sì** oppure **Sì a tutti**.
 
 ## <a name="summary"></a>Riepilogo
-Configurare il computer locale per amministrare le risorse di Azure con Azure PowerShell. Ora è possibile usare Azure PowerShell in locale per immettere comandi o eseguire script. Azure PowerShell inoltrerà i comandi ai data center di Azure, in cui verranno eseguiti all'interno della sottoscrizione di Azure.
+È stato configurato il computer locale per amministrare le risorse di Azure con Azure PowerShell. Ora è possibile usare Azure PowerShell in locale per immettere comandi o eseguire script. Azure PowerShell inoltrerà i comandi ai data center di Azure, in cui verranno eseguiti all'interno della sottoscrizione di Azure.
