@@ -1,0 +1,34 @@
+### YamlMime:ModuleUnit
+uid: learn.predict-costs-and-optimize-spending.5-save-on-licensing-costs
+title: Risparmiare sui costi di licenza
+metadata:
+  title: Risparmiare sui costi di licenza
+  description: In questa unità, verrà illustrato come risparmiare sui costi di licenza
+  ms.openlocfilehash: f4b343fb7d70a85cae060a26ec6ad93e3539b872
+  ms.sourcegitcommit: d40bff88f60d5ddb3d875f788cafdd0c40069f23
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "42615718"
+durationInMinutes: 10
+content: >
+  [!include[](includes/5-save-on-licensing-costs.md)]
+quiz:
+  title: Risparmiare sui costi di licenza
+  questions:
+  - content: Se si dispone già di licenze di Windows Server, è necessario effettuare nuovamente il pagamento in Azure.
+    choices:
+    - content: "True"
+      incorrectExplanation: In determinate circostanze, è possibile usare il vantaggio Hybrid per Windows Server e pagare solo la tariffa Linux.
+      isCorrect: false
+    - content: "False"
+      correctExplanation: In determinate circostanze, è possibile usare il vantaggio Hybrid per Windows Server e pagare solo la tariffa Linux.
+      isCorrect: true
+  - content: Azure offre opzioni di risparmio per i server di sviluppo e test.
+    choices:
+    - content: "True"
+      correctExplanation: Sì, i vantaggi Sviluppo/test Enterprise di Azure e Sviluppo/test con pagamento in base al consumo di Azure offrono molti sconti, in particolare per i carichi di lavoro di Windows, eliminando i costi di licenza e fatturando solo la tariffa Linux per le macchine virtuali. Questo vale anche per SQL Server e qualsiasi altro software Microsoft che è coperto da una sottoscrizione di Visual Studio.
+      isCorrect: true
+    - content: "False"
+      incorrectExplanation: I vantaggi Sviluppo/test Enterprise e Sviluppo/test con pagamento in base al consumo offrono molti sconti, in particolare per i carichi di lavoro di Windows, eliminando i costi di licenza e fatturando solo la tariffa Linux per le macchine virtuali. Questo vale anche per SQL Server e qualsiasi altro software Microsoft che è coperto da una sottoscrizione di Visual Studio.
+      isCorrect: false

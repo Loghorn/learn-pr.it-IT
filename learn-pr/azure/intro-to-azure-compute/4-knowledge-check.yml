@@ -1,0 +1,40 @@
+### YamlMime:ModuleUnit
+uid: learn.intro-to-compute.4-knowledge-check
+title: Verifica delle conoscenze
+metadata:
+  title: Verifica delle conoscenze
+  description: Verifica delle conoscenze per il modulo di "Introduzione al calcolo di Azure".
+  ms.openlocfilehash: d7c3f166bab42dfd3ab34e11ce5f399e0375e6f7
+  ms.sourcegitcommit: 0e0cc41b7669e7149541f34f3f24ba0e864ed07d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 08/23/2018
+  ms.locfileid: "42702647"
+durationInMinutes: 7
+content: >
+  [!include[](includes/4-knowledge-check.md)]
+quiz:
+  title: Verifica delle conoscenze di introduzione al calcolo di Azure
+  questions:
+  - content: Supponiamo che il team di astronomia sia piccolo e che, sebbene i suoi membri siano astronomi molto importanti, i programmatori di computer abbiano solo una conoscenza rudimentale della gestione del server e del Web. Quale delle opzioni seguenti scegliere?
+    choices:
+    - content: Azure Kubernetes Service (AKS)
+      isCorrect: false
+      incorrectExplanation: Kubernetes richiede una conoscenza avanzata dell'orchestrazione dei contenitori.
+    - content: Service Fabric
+      isCorrect: false
+      incorrectExplanation: Le operazioni degli astronomi non devono essere distribuite su larga scala o a livello globale.
+    - content: Servizio app
+      isCorrect: true
+      correctExplanation: Poiché il team è interamente gestito e poiché in grado di scalare le applicazioni, può concentrarsi sui software specializzati.
+  - content: Immaginiamo che il team di astronomia abbia eseguito calcoli astronomici che richiedono molte ore o giorni per essere completati. L'esecuzione in parallelo non sembrerebbe essere molto d'aiuto. Quale delle opzioni seguenti scegliere?
+    choices:
+    - content: Servizi cloud
+      isCorrect: false
+      incorrectExplanation: Non tutti i calcoli astronomici sono eseguibili in parallelo, pertanto la distribuzione di macchine virtuali aggiuntive può migliorare solo in minima parte le prestazioni.
+    - content: Azure Batch
+      isCorrect: true
+      correctExplanation: Alcuni calcoli astronomici richiedono funzionalità da supercomputer.
+    - content: Istanze di contenitore
+      isCorrect: false
+      incorrectExplanation: È possibile che non tutti i calcoli astronomici possano essere eseguiti in parallelo, pertanto la distribuzione di altri contenitori può migliorare solo in minima parte le prestazioni.
