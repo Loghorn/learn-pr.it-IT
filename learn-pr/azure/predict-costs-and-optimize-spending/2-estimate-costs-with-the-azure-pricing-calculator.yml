@@ -1,0 +1,34 @@
+### YamlMime:ModuleUnit
+uid: learn.predict-costs-and-optimize-spending.2-estimate-costs-with-the-azure-pricing-calculator
+title: Stimare i costi con il Calcolatore prezzi di Azure
+metadata:
+  title: Stimare i costi con il Calcolatore prezzi di Azure
+  description: In questa unità verrà illustrato come stimare i costi con il Calcolatore prezzi di Azure
+  ms.openlocfilehash: 8667c62411c9155d1bb116dd36da0014f038e15b
+  ms.sourcegitcommit: d40bff88f60d5ddb3d875f788cafdd0c40069f23
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "42614516"
+durationInMinutes: 15
+content: >
+  [!include[](includes/2-estimate-costs-with-the-azure-pricing-calculator.md)]
+quiz:
+  title: Stimare i costi con il Calcolatore prezzi di Azure
+  questions:
+  - content: In quale scheda del Calcolatore prezzi di Azure verrà formulata la stima?
+    choices:
+    - content: Estimate
+      isCorrect: false
+      incorrectExplanation: Questa scheda include tutte le stime salvate in precedenza.
+    - content: Prodotti
+      isCorrect: true
+      correctExplanation: Questa scheda contiene l'elenco di tutti i servizi di Azure ed è qui che si aggiungono o si rimuovono i servizi per formulare la stima.
+  - content: È possibile condividere la stima mediante un foglio di calcolo di Excel o mediante un URL.
+    choices:
+    - content: 'True '
+      isCorrect: true
+      correctExplanation: Facendo clic su <b>Esporta</b> in fondo alla stima verrà esportato un foglio di calcolo Excel da condividere, in alternativa è possibile fare clic su <b>Condividi</b> per ottenere un collegamento URL da condividere con il team.
+    - content: "False"
+      isCorrect: false
+      incorrectExplanation: Facendo clic su <b>Esporta</b> in fondo alla stima verrà esportato un foglio di calcolo Excel da condividere, in alternativa è possibile fare clic su <b>Condividi</b> per ottenere un collegamento URL da condividere con il team.

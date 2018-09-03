@@ -1,0 +1,33 @@
+### YamlMime:Module
+uid: learn.send-location-over-sms-from-mobile-using-azure-functions-twilio
+title: Invio di informazioni sulla posizione con SMS dal telefono usando Funzioni di Azure e Twilio
+summary: Informazioni su come usare la verifica della posizione sul telefono e Funzioni di Azure per inviare la posizione ad altri utenti.
+abstract: Questo modulo illustra come usare Funzioni di Azure per creare un API HTTPM, richiamare le funzioni con un'app per dispositivi mobili creata con Xamarin e associarle a servizi di terze parti. Inizia con la creazione di un'app Xamarin.Forms in esecuzione su iOS, Android e Windows e che usa Xamarin.Essentials per ottenere la posizione dell'utente. Si dispone anche di un'interfaccia utente di base per accettare alcuni numeri di telefono. Quindi viene descritto come creare un back-end di Funzioni di Azure per fornire un'API richiamabile dall'app, trasferendo la posizione e i numeri di telefono nella richiesta dell'API. Questa funzione usa quindi un'associazione Twilio per inviare messaggi SMS ai numeri inseriti nell'API, con un collegamento a una mappa che il destinatario può seguire per visualizzare la posizione del mittente.
+cardDescription: Informazioni su come usare la verifica della posizione sul telefono e Funzioni di Azure per inviare la posizione ad altri utenti.
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- intermediate
+roles:
+- developer
+products:
+- Azure
+metadata:
+  title: Invio di informazioni sulla posizione con SMS dal telefono usando Funzioni di Azure e Twilio
+  description: Informazioni su come usare la verifica della posizione sul telefono e Funzioni di Azure per inviare la posizione ad altri utenti
+  ms.openlocfilehash: 8864e921bd22fdf49e1fe905bf8c57f4f615037d
+  ms.sourcegitcommit: d40bff88f60d5ddb3d875f788cafdd0c40069f23
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "42615208"
+units:
+- learn.send-location-over-sms-from-mobile-using-azure-functions-twilio.1.create-twilio-account-launch-vs
+- learn.send-location-over-sms-from-mobile-using-azure-functions-twilio.2-create-your-xamarin-forms-app-with-xamarin-essentials
+- learn.send-location-over-sms-from-mobile-using-azure-functions-twilio.3-build-your-xamarin-app
+- learn.send-location-over-sms-from-mobile-using-azure-functions-twilio.4-detect-the-users-location
+- learn.send-location-over-sms-from-mobile-using-azure-functions-twilio.5-create-an-azure-functions-mobile-backend
+- learn.send-location-over-sms-from-mobile-using-azure-functions-twilio.6-call-the-mobile-backend
+- learn.send-location-over-sms-from-mobile-using-azure-functions-twilio.7-bind-the-azure-function-to-twilio
+- learn.send-location-over-sms-from-mobile-using-azure-functions-twilio.8-publish-to-azure
+- learn.send-location-over-sms-from-mobile-using-azure-functions-twilio.9-summary-and-cleanup
+achievement: learn.send-location-over-sms-from-mobile-using-azure-functions-twilio.badge
