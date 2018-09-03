@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: execute-azure-function-with-triggers.2-determine-best-trigger
+title: Determinare il trigger ideale per una funzione di Azure
+metadata:
+  title: Determinare il trigger ideale per una funzione di Azure
+  description: Determinare il trigger ideale per una funzione di Azure
+  ms.openlocfilehash: 080841e540d1e7d74a2626f57b655391c114a537
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40448859"
+durationInMinutes: 4
+content: '[!include[](includes/2-determine-best-trigger.md)]'
