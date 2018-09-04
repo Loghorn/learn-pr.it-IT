@@ -1,14 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.intro-to-compute.1-introduction
-title: <span data-ttu-id="bb5d2-101">Perché usare il calcolo di Azure?</span><span class="sxs-lookup"><span data-stu-id="bb5d2-101">Why use Azure compute?</span></span>
+title: <span data-ttu-id="5e95a-101">Perché usare il calcolo di Azure?</span><span class="sxs-lookup"><span data-stu-id="5e95a-101">Why use Azure compute?</span></span>
 metadata:
-  title: <span data-ttu-id="bb5d2-102">Perché usare il calcolo di Azure?</span><span class="sxs-lookup"><span data-stu-id="bb5d2-102">Why use Azure compute?</span></span>
-  description: <span data-ttu-id="bb5d2-103">Perché usare il calcolo di Azure?</span><span class="sxs-lookup"><span data-stu-id="bb5d2-103">Why use Azure compute?</span></span>
-  ms.openlocfilehash: d1c83f97ddd1863d37de1d4792c562070ea1bb98
-  ms.sourcegitcommit: 0e0cc41b7669e7149541f34f3f24ba0e864ed07d
+  title: <span data-ttu-id="5e95a-102">Perché usare il calcolo di Azure?</span><span class="sxs-lookup"><span data-stu-id="5e95a-102">Why use Azure compute?</span></span>
+  description: <span data-ttu-id="5e95a-103">Perché usare il calcolo di Azure?</span><span class="sxs-lookup"><span data-stu-id="5e95a-103">Why use Azure compute?</span></span>
+  ms.openlocfilehash: bda822e80658bb6abb0e3833a28de99c1888ef2c
+  ms.sourcegitcommit: bcd9fd78122da4fc1545c7923a5fc0cd0a8abe96
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 08/23/2018
-  ms.locfileid: "42702745"
-durationInMinutes: 5
+  ms.lasthandoff: 08/29/2018
+  ms.locfileid: "43152163"
+durationInMinutes: 2
 content: '[!include[](includes/1-introduction.md)]'

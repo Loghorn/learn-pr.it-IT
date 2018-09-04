@@ -1,14 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.intro-to-compute.5-summary
-title: <span data-ttu-id="13110-101">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="13110-101">Summary</span></span>
+title: <span data-ttu-id="9fce2-101">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="9fce2-101">Summary</span></span>
 metadata:
-  title: <span data-ttu-id="13110-102">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="13110-102">Summary</span></span>
-  description: <span data-ttu-id="13110-103">Riepilogo per il modulo di "Introduzione al calcolo di Azure".</span><span class="sxs-lookup"><span data-stu-id="13110-103">Summary for the 'Introduction to Azure compute' module.</span></span>
-  ms.openlocfilehash: c547ff8b4a6318d1f20a1822637f1f2fbeaa0ae5
-  ms.sourcegitcommit: 0e0cc41b7669e7149541f34f3f24ba0e864ed07d
+  title: <span data-ttu-id="9fce2-102">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="9fce2-102">Summary</span></span>
+  description: <span data-ttu-id="9fce2-103">Riepilogo per il modulo di "Introduzione al calcolo di Azure".</span><span class="sxs-lookup"><span data-stu-id="9fce2-103">Summary for the 'Introduction to Azure compute' module.</span></span>
+  ms.openlocfilehash: a6861ecffafd194b4bfe450988341eecba09982a
+  ms.sourcegitcommit: bcd9fd78122da4fc1545c7923a5fc0cd0a8abe96
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 08/23/2018
-  ms.locfileid: "42702547"
-durationInMinutes: 5
+  ms.lasthandoff: 08/29/2018
+  ms.locfileid: "43152112"
+durationInMinutes: 2
 content: '[!include[](includes/5-summary.md)]'
