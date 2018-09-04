@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.choose-messaging-model.5-choose-event-grid
+title: Scegliere Griglia di eventi di Azure
+metadata:
+  title: Scegliere Griglia di eventi di Azure
+  description: Scegliere Griglia di eventi di Azure
+  ms.openlocfilehash: 1dc4d14c7f2a775260561d79659ff62fec9caf0e
+  ms.sourcegitcommit: 7b28a1a9a27c714147d15a002099f774a59e07f3
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 08/27/2018
+  ms.locfileid: "43113671"
+durationInMinutes: 10
+content: '[!include[](includes/5-choose-event-grid.md)]'
