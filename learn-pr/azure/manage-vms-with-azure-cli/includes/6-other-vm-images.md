@@ -11,5 +11,5 @@ Alcune immagini sono disponibili solo in determinate aree. Provare ad aggiungere
 az vm image list --location eastus --output table
 ```
 
-> [!NOTE]
+> [!TIP]
 > Queste sono le immagini standard fornite da Azure. Tenere presente che è anche possibile [creare e caricare immagini personalizzate](https://docs.microsoft.com/azure/virtual-machines/linux/tutorial-custom-images) per creare macchine virtuali in base a configurazioni univoche oppure versioni o distribuzioni meno comuni di un sistema operativo.

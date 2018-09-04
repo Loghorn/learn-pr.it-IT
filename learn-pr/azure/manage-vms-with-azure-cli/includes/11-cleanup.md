@@ -17,5 +17,5 @@ Questo comando elimina tutte le risorse associate al gruppo e le dealloca nell'o
 
 ## <a name="further-reading"></a>Altre informazioni
 
-* [Panoramica dell'interfaccia della riga di comando di Azure](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest)
-* [Riferimento ai comandi dell'interfaccia della riga di comando di Azure](https://docs.microsoft.com/cli/azure/reference-index?view=azure-cli-latest)
+- [Panoramica dell'interfaccia della riga di comando di Azure](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest)
+- [Riferimento ai comandi dell'interfaccia della riga di comando di Azure](https://docs.microsoft.com/cli/azure/reference-index?view=azure-cli-latest)
