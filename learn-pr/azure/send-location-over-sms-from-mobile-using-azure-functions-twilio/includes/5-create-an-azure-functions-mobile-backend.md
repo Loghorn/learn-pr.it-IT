@@ -4,13 +4,13 @@ A questo punto, l'app sta cercando di ottenere la posizione dell'utente ed è pr
 
 1. Aggiungere un nuovo progetto nella soluzione `ImHere` facendo clic con il tasto destr sulla soluzione e selezionando *Aggiungi -> Nuovo progetto...*.
 
-2. Dall'albero sul lato sinistro selezionare *Visual C#->Cloud* e quindi *Funzioni di Azure* dal pannello al centro.
+1. Dall'albero sul lato sinistro selezionare *Visual C#->Cloud* e quindi *Funzioni di Azure* dal pannello al centro.
 
-3. Denominare il progetto "ImHere.Functions" e quindi fare clic su **OK**.
+1. Denominare il progetto "ImHere.Functions" e quindi fare clic su **OK**.
 
     ![Finestra di dialogo Aggiungi nuovo progetto](../media-drafts/5-add-new-functions-project.png)
 
-4. Nella finestra di configurazione **Nuovo progetto**, lasciare Versione Funzioni impostata su *Funzioni di Azure v1 (.NET Framework)*. Selezionare *Trigger HTTP*, lasciare l'account di archiviazione impostato su *Emulatore di archiviazione*e impostare i diritti di accesso su *Anonimo*. Fare quindi clic su **OK**.
+1. Nella finestra di configurazione **Nuovo progetto**, lasciare Versione Funzioni impostata su *Funzioni di Azure v1 (.NET Framework)*. Selezionare *Trigger HTTP*, lasciare l'account di archiviazione impostato su *Emulatore di archiviazione*e impostare i diritti di accesso su *Anonimo*. Fare quindi clic su **OK**.
 
     ![Finestra di dialogo di configurazione del progetto Funzioni di Azure](../media-drafts/5-configure-trigger.png)
 
@@ -24,13 +24,13 @@ Il progetto di Funzioni di Azure viene creato con una singola funzione di trigge
 
 1. Rinominare il file in Esplora soluzioni da "Function1.cs" a "SendLocation.cs". Quando viene richiesto di rinominare tutti i riferimenti all'elemento di codice `Function1`, fare clic su **Sì**.
 
-2. Rinominare il nome della funzione nell'attributo in "SendLocation".
+1. Rinominare il nome della funzione nell'attributo in "SendLocation".
 
     ```cs
     [FunctionName("SendLocation")]
     ```
 
-3. Eliminare il contenuto della funzione, eccetto la prima riga che scrive un messaggio informativo nel logger.
+1. Eliminare il contenuto della funzione, eccetto la prima riga che scrive un messaggio informativo nel logger.
 
     ```cs
     public static async Task<HttpResponseMessage> Run([HttpTrigger(AuthorizationLevel.Anonymous,
@@ -48,17 +48,17 @@ Quando vengono inviati a una funzione di Azure, i dati sono in formato JSON. L'a
 
 1. Creare un nuovo progetto nella soluzione `ImHere` facendo clic con il tasto destr sulla soluzione e selezionando *Aggiungi -> Nuovo progetto...*.
 
-2. Dall'albero sul lato sinistro selezionare *Visual C#->.NET Standard* e quindi *Libreria di classi (.NET Standard)* dal pannello al centro.
+1. Dall'albero sul lato sinistro selezionare *Visual C#->.NET Standard* e quindi *Libreria di classi (.NET Standard)* dal pannello al centro.
 
-3. Denominare il progetto "ImHere.Data" e quindi fare clic su **OK**.
+1. Denominare il progetto "ImHere.Data" e quindi fare clic su **OK**.
 
     ![Finestra di dialogo Aggiungi nuovo progetto](../media-drafts/5-add-new-net-standard-project.png)
 
-4. Eliminare il file "Class1.cs" generato automaticamente.
+1. Eliminare il file "Class1.cs" generato automaticamente.
 
-5. Creare una nuova classe nel progetto `ImHere.Data` denominata `PostData` facendo clic con il pulsante destro del mouse sul progetto e quindi selezionando *Aggiungi -> Classe...*. Assegnare il nome "PostData" alla nuova classe e fare clic su **OK**.
+1. Creare una nuova classe nel progetto `ImHere.Data` denominata `PostData` facendo clic con il pulsante destro del mouse sul progetto e quindi selezionando *Aggiungi -> Classe...*. Assegnare il nome "PostData" alla nuova classe e fare clic su **OK**.
 
-6. Aggiungere le proprietà `double` per la latitudine e la longitudine e una proprietà `string[]`per indicare i numeri di telefono a cui inviare le informazioni.
+1. Aggiungere le proprietà `double` per la latitudine e la longitudine e una proprietà `string[]`per indicare i numeri di telefono a cui inviare le informazioni.
 
     ```cs
     public class PostData
@@ -69,7 +69,7 @@ Quando vengono inviati a una funzione di Azure, i dati sono in formato JSON. L'a
     }
     ```
 
-7. Aggiungere un riferimento a questo progetto in entrambi i progetti `ImHere.Functions` e `ImHere` facendo clic sul progetto e selezionando *Aggiungi -> Riferimento...*. Selezionare *Progetti* nell'albero a sinistra, quindi selezionare la casella accanto a *ImHere.Data*.
+1. Aggiungere un riferimento a questo progetto in entrambi i progetti `ImHere.Functions` e `ImHere` facendo clic sul progetto e selezionando *Aggiungi -> Riferimento...*. Selezionare *Progetti* nell'albero a sinistra, quindi selezionare la casella accanto a *ImHere.Data*.
 
     ![Configurazione dei riferimenti del progetto](../media-drafts/5-configure-project-references.png)
 
@@ -79,25 +79,25 @@ Nella funzione di Azure, il parametro `req` contiene la richiesta HTTP eseguita.
 
 1. Aprire la classe `SendLocation` nel progetto `ImHere.Functions`.
 
-2. Leggere il contenuto della richiesta HTTP in un oggetto `PostData`, aggiungendo una direttiva d'uso per lo spazio dei nomi `ImHere.Data`.
+1. Leggere il contenuto della richiesta HTTP in un oggetto `PostData`, aggiungendo una direttiva d'uso per lo spazio dei nomi `ImHere.Data`.
 
     ```cs
     PostData data = await req.Content.ReadAsAsync<PostData>();
     ```
 
-3. Costruire un URL di Google Maps usando la latitudine e la longitudine da `PostData`.
+1. Costruire un URL di Google Maps usando la latitudine e la longitudine da `PostData`.
 
    ```cs
    string url = $"https://www.google.com/maps/search/?api=1&query={data.Latitude},{data.Longitude}";
    ```
 
-4. Registrare l'URL.
+1. Registrare l'URL.
 
     ```cs
     log.Info($"URL created - {url}");
     ```
 
-5. Viene restituito un codice di stato 200 per mostrare il completamento della funzione senza errori.
+1. Viene restituito un codice di stato 200 per mostrare il completamento della funzione senza errori.
 
     ```cs
     return req.CreateResponse(HttpStatusCode.OK);
@@ -125,17 +125,17 @@ public static async Task<HttpResponseMessage> Run([HttpTrigger(AuthorizationLeve
 
 1. Fare clic con il pulsante destro del mouse sul progetto `ImHere.Functions` in Esplora soluzioni, quindi scegliere *Imposta come progetto di avvio*.
 
-2. Dal menu *Debug*, selezionare *Avvia senza eseguire debug*. Il runtime di Funzioni di Azure locale verrà avviato all'interno di una finestra della console e avvierà la funzione, in ascolto su una porta disponibile in `localhost`.
+1. Dal menu *Debug*, selezionare *Avvia senza eseguire debug*. Il runtime di Funzioni di Azure locale verrà avviato all'interno di una finestra della console e avvierà la funzione, in ascolto su una porta disponibile in `localhost`.
 
     ![Funzione di Azure eseguita localmente](../media-drafts/5-function-running-locally.png)
 
-3. Prendere nota della porta su cui è in ascolto la funzione. Sarà necessaria nell'unità successiva per testare l'app per dispositivi mobili. Nell'immagine precedente, la funzione è in ascolto sulla porta **7071**.
+1. Prendere nota della porta su cui è in ascolto la funzione. Sarà necessaria nell'unità successiva per testare l'app per dispositivi mobili. Nell'immagine precedente, la funzione è in ascolto sulla porta **7071**.
 
     ```sh
     Listening on http://localhost:7071/
     ```
 
-4. Lasciare la funzione in esecuzione in modo da poter testare l'app per dispositivi mobili nell'unità successiva.
+1. Lasciare la funzione in esecuzione in modo da poter testare l'app per dispositivi mobili nell'unità successiva.
 
 ## <a name="summary"></a>Summary
 

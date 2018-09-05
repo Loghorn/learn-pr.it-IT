@@ -4,27 +4,27 @@ L'applicazione in fase di compilazione è un'app per dispositivi mobili multipia
 
 1. In Visual Studio selezionare *File->Nuovo->Progetto...*.
 
-2. Dall'albero sul lato sinistro selezionare *Visual C#->Multipiattaforma* e quindi *App per dispositivi mobili (Xamarin.Forms)* dal pannello al centro.
+1. Dall'albero sul lato sinistro selezionare *Visual C#->Multipiattaforma* e quindi *App per dispositivi mobili (Xamarin.Forms)* dal pannello al centro.
 
-3. Denominare la soluzione "ImHere".
+1. Denominare la soluzione "ImHere".
 
-4. Scegliere un percorso appropriato per la soluzione.
+1. Scegliere un percorso appropriato per la soluzione.
 
     > Se si esegue questo modulo in locale in Windows e si prevede di eseguire la compilazione per Android, verificare che il percorso sia il più breve possibile. Sussistono limitazioni di lunghezza per i percorsi con Android SDK, quindi il percorso radice deve essere il più breve possibile.
 
-5. Fare clic su **OK**.
+1. Fare clic su **OK**.
 
     ![Finestra di dialogo Nuova soluzione](../media-drafts/2-new-solution-dialog.png)
 
-6. Nella finestra di dialogo **Nuova app multipiattaforma** selezionare il modello *App vuota*.
+1. Nella finestra di dialogo **Nuova app multipiattaforma** selezionare il modello *App vuota*.
 
-7. Per questo modulo verrà compilata un'app UWP: deselezionare iOS e Android e lasciare UWP selezionato.
+1. Per questo modulo verrà compilata un'app UWP: deselezionare iOS e Android e lasciare UWP selezionato.
 
     > In caso di esecuzione in locale, mantenere Android selezionato, poiché Android SDK viene installato nell'ambito del carico di lavoro *Sviluppo di applicazioni per dispositivi mobili con .NET* in Visual Studio. Per eseguire la compilazione anche per iOS, è necessario effettuare l'associazione a un agente di compilazione macOS. Altre informazioni sono disponibili nella [documentazione di Xamarin per iOS](https://docs.microsoft.com/xamarin/ios/get-started/installation/windows/connecting-to-mac/).
 
-8. Per *Strategia di condivisione codice* selezionare **.NET Standard**.
+1. Per *Strategia di condivisione codice* selezionare **.NET Standard**.
 
-9. Fare clic su **OK**.
+1. Fare clic su **OK**.
 
     ![Finestra di dialogo Configura la nuova soluzione](../media-drafts/2-configure-solution-dialog.png)
 
@@ -36,13 +36,13 @@ Le piattaforme iOS, Android e UWP forniscono numerose funzionalità simili che s
 
 1. In Esplora soluzioni di Visual Studio fare clic con il pulsante destro del mouse sulla soluzione `ImHere` e scegliere *Gestisci pacchetti NuGet per la soluzione*.
 
-2. Selezionare la scheda **Sfoglia** e cercare "Xamarin.Essentials". Questo pacchetto è attualmente disponibile come versione preliminare del pacchetto NuGet, quindi selezionare la casella *Includi versione preliminare*.
+1. Selezionare la scheda **Sfoglia** e cercare "Xamarin.Essentials". Questo pacchetto è attualmente disponibile come versione preliminare del pacchetto NuGet, quindi selezionare la casella *Includi versione preliminare*.
 
-3. Selezionare il pacchetto NuGet **Xamarin.Essentials**.
+1. Selezionare il pacchetto NuGet **Xamarin.Essentials**.
 
-4. Selezionare tutti i progetti nell'elenco sul lato destro.
+1. Selezionare tutti i progetti nell'elenco sul lato destro.
 
-5. Fare clic sul pulsante **Installa** per installare il pacchetto NuGet. È necessario accettare le condizioni di licenza per continuare.
+1. Fare clic sul pulsante **Installa** per installare il pacchetto NuGet. È necessario accettare le condizioni di licenza per continuare.
 
     ![Aggiunta del pacchetto NuGet Xamarin.Essentials a tutti i progetti nella soluzione](../media-drafts/2-add-essentials-nuget.png)
 
@@ -52,11 +52,11 @@ Le piattaforme iOS, Android e UWP forniscono numerose funzionalità simili che s
 
 1. Fare clic con il pulsante destro del mouse sul progetto `ImHere.UWP` in Esplora soluzioni, quindi scegliere *Imposta come progetto di avvio*.
 
-2. Impostare la configurazione della compilazione su **Debug**, la piattaforma su **x86**e il dispositivo di esecuzione su **Computer locale**.
+1. Impostare la configurazione della compilazione su **Debug**, la piattaforma su **x86**e il dispositivo di esecuzione su **Computer locale**.
 
     ![Impostazione della configurazione di Debug x86 per l'esecuzione nel dispositivo locale](../media-drafts/2-debug-configuration.png)
 
-3. Avviare il debug dell'app.
+1. Avviare il debug dell'app.
 
     ![L'app in esecuzione](../media-drafts/2-debuging-app.png)
 
