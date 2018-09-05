@@ -1,8 +1,8 @@
 Il monitoraggio è l'azione di raccolta e analisi dei dati per determinare le prestazioni, l'integrità e la disponibilità dell'applicazione aziendale e delle risorse da cui dipende. Cosa accadrebbe se si gestisse un team operativo responsabile delle risorse in esecuzione in Azure? Cosa fare per assicurarsi di avere visibilità sull'integrità dei sistemi? Se succede qualcosa, chi se ne accorge per primo, il team o gli utenti finali? Un'efficace strategia di monitoraggio permette di concentrarsi sull'integrità dell'applicazione. Contribuisce anche ad aumentare il tempo di attività tramite notifiche proattive sugli aspetti critici, per poterli risolvere prima che diventino effettivi problemi. 
 
-Quando si tratta di monitoraggio e analisi in Azure, è possibile aggregare i servizi in tre aree di interesse specifiche: monitoraggio avanzato delle applicazioni, monitoraggio avanzato dell'infrastruttura e monitoraggio di base. In questa unità verrà esaminata ognuna di queste aggregazioni e verrà illustrato come i servizi di Azure abilitano queste funzionalità per l'architettura. Anche se questi servizi sono stati raggruppati, esistono diversi punti di integrazione tra di essi, che consentono la condivisione di importanti punti dati di monitoraggio.
+Quando si tratta di monitoraggio e analisi in Azure, è possibile aggregare i servizi in tre aree di interesse specifiche: monitoraggio avanzato delle applicazioni, monitoraggio avanzato dell'infrastruttura e monitoraggio di base. In questa unità verrà esaminata ognuna di queste aggregazioni e verrà illustrato come i servizi di Azure abilitano queste funzionalità per l'architettura. Anche se questi servizi sono stati raggruppati, esistono diversi punti di integrazione tra di essi, che consentono la condivisione di importanti punti dati di monitoraggio. La figura seguente visualizza i servizi di monitoraggio disponibili assemblati in gruppi logici.
 
-![Panoramica del monitoraggio](../media-draft/monitoring-products-overview.png)
+![Illustrazione che visualizza i servizi di monitoraggio e analisi di Azure.](../media/monitoring-products-overview.png)
 
 ## <a name="core-monitoring"></a>Monitoraggio di base
 
@@ -39,11 +39,11 @@ Quando si pensa al monitoraggio, generalmente si pensa all'integrità corrente d
 
 I componenti di monitoraggio illustrati finora sono ideali per fornire informazioni approfondite, ma offrono visibilità solo sull'infrastruttura di Azure. Per carichi di lavoro IaaS tipici, sono disponibili più metriche e informazioni di diagnostica che è possibile raccogliere dalla rete o dai sistemi operativi effettivi. Il pull delle informazioni dettagliate da SQL Server per verificare che sia configurato correttamente, l'analisi dello spazio disponibile su disco in tutti i server dell'ambiente o la visualizzazione delle dipendenze di rete tra i sistemi e i servizi sono esempi in cui Log Analytics può offrire informazioni approfondite.
 
-Quando si progetta una strategia di monitoraggio, è importante includere ogni componente nella catena di applicazioni, per poter correlare gli eventi nei servizi e nelle risorse. I servizi che supportano Monitoraggio di Azure sono facilmente configurabili per l'invio dei dati a un'area di lavoro di Log Analytics. Le macchine virtuali (sia nel cloud che locali) possono avere un agente installato per inviare i dati a Log Analytics. È possibile inviare dati personalizzati a Log Analytics tramite l'API Log Analytics.  
+Quando si progetta una strategia di monitoraggio, è importante includere ogni componente nella catena di applicazioni, per poter correlare gli eventi nei servizi e nelle risorse. I servizi che supportano Monitoraggio di Azure sono facilmente configurabili per l'invio dei dati a un'area di lavoro di Log Analytics. Le macchine virtuali (sia nel cloud che locali) possono avere un agente installato per inviare i dati a Log Analytics. È possibile inviare dati personalizzati a Log Analytics tramite l'API Log Analytics. La figura seguente visualizza il ruolo di Log Analytics come hub centrale per il monitoraggio dei dati. Log Analytics riceve i dati di monitoraggio dalle risorse di Azure e li rende disponibile ai consumer per l'analisi o la visualizzazione.
 
-![Raccolta dei dati](../media-draft/collecting-data.png)
+![Illustrazione che visualizza il ruolo di Log Analytics nel monitoraggio delle risorse.](../media/collecting-data.png)
 
-Con questi dati in Log Analytics, è possibile eseguire una query sui dati non elaborati a fini di risoluzione dei problemi, identificazione della causa radice e controllo. Per diversi servizi noti (SQL Server, Azure Active Directory), sono disponibili soluzioni di gestione che visualizzano i dati di monitoraggio e individuano la conformità alle procedure consigliate.
+Con questi dati in Log Analytics, è possibile eseguire query sui dati non elaborati con scopi di risoluzione dei problemi, identificazione della causa radice e controllo. Per diversi servizi noti (SQL Server, Azure Active Directory), sono disponibili soluzioni di gestione che visualizzano i dati di monitoraggio e individuano la conformità alle procedure consigliate.
 
 Log Analytics consente di creare query e di interagire con altri sistemi in base a tali query. L'esempio più comune sono gli avvisi. Può essere opportuno ricevere un messaggio di posta elettronica quando un sistema esaurisce lo spazio su disco o una procedura consigliata in SQL Server non viene più seguita. Log Analytics può inviare avvisi, avviare l'automazione e anche connettersi alle API personalizzate, ad esempio per l'integrazione con Gestione dei servizi IT.
 
@@ -53,11 +53,11 @@ Log Analytics consente di creare query e di interagire con altri sistemi in base
 
 Azure Application Insights è lo strumento ideale. Application Insights offre funzionalità di visualizzazione, query e raccolta di dati di telemetria. Sono necessarie solo pochissime modifiche al codice. È sufficiente installare un pacchetto di strumentazione di piccole dimensioni nell'applicazione. Application Insights è multipiattaforma e supporta .NET, Node.js o Java.
 
-Può essere complesso risolvere i problemi anche di una funzionalità semplice come il tempo di risposta dell'applicazione. Il server Web è sovraccarico? Si tratta di una query SQL specifica non ottimizzata? Le prestazioni dell'API chiamata sono più lente del solito? Le soluzioni di monitoraggio delle prestazioni dell'applicazione sono utili per rilevare i problemi effettivi che il semplice monitoraggio delle metriche non riesce a esporre.
+Può essere complesso risolvere i problemi anche di una funzionalità semplice come il tempo di risposta dell'applicazione. Il server Web è sovraccarico? Si tratta di una query SQL specifica non ottimizzata? Le prestazioni dell'API chiamata sono più lente del solito? Le soluzioni di monitoraggio delle prestazioni dell'applicazione sono utili per rilevare i problemi effettivi che il semplice monitoraggio delle metriche non riesce a evidenziare. Lo screenshot seguente include una rappresentazione grafica dei dettagli delle prestazioni di un'applicazione resi disponibili da Azure Application Insights.
 
-![Prestazioni di Application Insights](../media-draft/perfmetrics.png)
+![Screenshot dell'interfaccia utente di Azure Application Insights.](../media/perfmetrics.png)
 
-Qualsiasi strategia di monitoraggio dovrebbe includere una soluzione di monitoraggio delle prestazioni dell'applicazione, che, potendo monitorare utilizzo, prestazioni e disponibilità, consente di rispondere agli errori molto più velocemente.
+Qualsiasi strategia di monitoraggio dovrebbe includere una soluzione di monitoraggio delle prestazioni dell'applicazione, che potendo monitorare uso, prestazioni e disponibilità consente di rispondere agli errori molto più velocemente.
 
 ## <a name="monitoring-at-lamna-healthcare"></a>Monitoraggio in Lamna Healthcare
 
