@@ -30,7 +30,8 @@ Dato che sono disponibili varie partizioni e che ogni motore invia tutti i relat
 ## <a name="which-service-should-i-choose"></a>Qual è il servizio da scegliere?
 Esattamente come la scelta della coda, la selezione tra questi due servizi di recapito di eventi può sembrare complicata all'inizio. Entrambi supportano la semantica *At-Least-Once*.
 
-#### <a name="choose-event-hubs-if"></a>Scegliere Hub eventi se:
+#### <a name="choose-event-hubs-if"></a>Scegliere Hub eventi se:  
+
 - È necessario supportare l'autenticazione di un numero elevato di origini di pubblicazione.
 - È necessario salvare un flusso di eventi in Data Lake o in Archiviazione BLOB.
 - È necessario eseguire operazioni di aggregazione o analisi sul flusso di eventi.

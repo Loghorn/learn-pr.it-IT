@@ -6,13 +6,13 @@ Se prevedi di continuare a usare i moduli di questo percorso di apprendimento, i
 
 1. Nel portale di Azure seleziona **Gruppi di risorse** all'estrema sinistra e quindi seleziona il gruppo di risorse creato.  
 
-    Se il menu a sinistra è compresso, fare clic sul ![pulsante Espandi](../media/5-create-a-database-and-collection/expand.png) per espanderlo.
+    Se il menu a sinistra è compresso, fare clic sul ![pulsante Espandi](../media-draft/6-expand.png) per espanderlo.
 
-   ![Metriche nel portale di Azure](../media/5-create-a-database-and-collection/delete-resources-select.png)
+   ![Metriche nel portale di Azure](../media-draft/6-resources-select.png)
 
-2. Nella nuova finestra seleziona il gruppo di risorse e quindi fai clic su **Elimina gruppo di risorse**.
+1. Nella nuova finestra seleziona il gruppo di risorse e quindi fai clic su **Elimina gruppo di risorse**.
 
-   ![Metriche nel portale di Azure](../media/5-create-a-database-and-collection/delete-resources.png)
+   ![Metriche nel portale di Azure](../media-draft/6-delete-resources.png)
 
-3. Nella nuova finestra digita il nome del gruppo di risorse da eliminare e quindi fai clic su **Elimina**.
+1. Nella nuova finestra digita il nome del gruppo di risorse da eliminare e quindi fai clic su **Elimina**.
 

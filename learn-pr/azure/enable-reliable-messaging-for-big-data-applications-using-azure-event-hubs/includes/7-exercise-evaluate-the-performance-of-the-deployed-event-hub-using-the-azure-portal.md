@@ -3,6 +3,7 @@ In questo esercizio si userà il portale di Azure per verificare che l'hub event
 ## <a name="view-event-hub-activity"></a>Visualizzare l'attività dell'hub eventi
 
 1. Accedere al [portale di Azure](https://portal.azure.com?azure-portal=true).
+
 1. Trovare l'hub eventi usando la barra di ricerca e aprirlo.
 
 1. Nella pagina Panoramica visualizzare i conteggi dei messaggi.
@@ -27,6 +28,7 @@ Usare la procedura seguente per vedere cosa accade quando un'applicazione invia 
 1. Quando viene visualizzato il messaggio **Invio completato...** premere INVIO.
 
 1. Nel portale di Azure fare clic su **Istanza di hub eventi** > **Impostazioni** > **Proprietà**.
+
 1. In Stato hub eventi fare clic su **Disabilitato**.
 
     ![Disabilitare l'hub eventi](../media-draft/7-disable-event-hub.png)
@@ -34,6 +36,7 @@ Usare la procedura seguente per vedere cosa accade quando un'applicazione invia 
 Attendere almeno cinque minuti.
 
 1. Fare clic su **Attivo** in Stato hub eventi per abilitare di nuovo l'hub eventi e salvare le modifiche.
+
 1. Eseguire di nuovo l'applicazione EventProcessorSample per ricevere messaggi. Usare il comando seguente.
 
     ```azurecli
@@ -52,8 +55,11 @@ Attendere almeno cinque minuti.
     ![Usare le metriche dell'hub eventi](../media-draft/7-event-hub-metrics.png)
 
 1. Nell'elenco **Metrica** selezionare **Messaggi in arrivo** e fare clic su **Aggiungi metrica**.
+
 1. Nell'elenco **Metrica** selezionare **Messaggi in uscita** e fare clic su **Aggiungi metrica**.
+
 1. Nella parte superiore del grafico fare clic su **Ultime 24 ore (automatico)** per modificare il periodo di tempo in **Ultimi 30 minuti**.
+
 1. Fare clic su **Applica**.
 
 Si noterà che, anche se i messaggi sono stati inviati prima che l'hub eventi fosse portato offline per un periodo di tempo, tutti i 100 messaggi sono stati trasmessi correttamente.

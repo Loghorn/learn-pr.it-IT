@@ -5,9 +5,9 @@ Si vuole una soluzione che sia facile da apprendere per gli amministratori, ma s
 ## <a name="what-tools-are-available"></a>Quali strumenti sono disponibili?
 Azure offre tre strumenti di amministrazione tra cui scegliere: 
 
-1. Portale di Azure 
-2. Interfaccia della riga di comando di Azure
-3. Azure PowerShell
+- Portale di Azure 
+- Interfaccia della riga di comando di Azure
+- Azure PowerShell
 
 Tutti offrono approssimativamente lo stesso livello di controllo: qualsiasi attività che è possibile eseguire con uno degli strumenti, in genere può essere eseguita anche con gli altri due. Tutte e tre sono multipiattaforma, poiché possono essere eseguiti in Windows, macOS e Linux. Si differenziano a livello di sintassi, requisiti di installazione e supporto per l'automazione.
 

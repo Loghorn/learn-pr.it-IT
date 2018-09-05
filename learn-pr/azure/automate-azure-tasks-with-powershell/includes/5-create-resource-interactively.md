@@ -29,7 +29,7 @@ Sono necessari quattro passaggi:
 1. Creare il gruppo di risorse.
 1. Verificare che la creazione sia stata eseguita (vedere di seguito).
 
-![Procedura per creare una risorsa in Azure usando Azure PowerShell](../media-drafts/5-create-resource-overview.png)
+![Procedura per creare una risorsa in Azure usando Azure PowerShell](../media/5-create-resource-overview.png)
 
 Ogni passaggio corrisponde a un diverso cmdlet.
 
