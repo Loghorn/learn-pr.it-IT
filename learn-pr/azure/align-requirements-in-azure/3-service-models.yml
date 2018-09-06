@@ -1,14 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.align-requirements-in-azure.3-service-models
-title: <span data-ttu-id="f687c-101">Modelli di servizio cloud</span><span class="sxs-lookup"><span data-stu-id="f687c-101">Cloud service models</span></span>
+title: <span data-ttu-id="b413d-101">Modelli di servizio cloud</span><span class="sxs-lookup"><span data-stu-id="b413d-101">Cloud service models</span></span>
 metadata:
-  title: <span data-ttu-id="f687c-102">Modelli di servizio cloud</span><span class="sxs-lookup"><span data-stu-id="f687c-102">Cloud service models</span></span>
-  description: <span data-ttu-id="f687c-103">Modelli di servizio cloud</span><span class="sxs-lookup"><span data-stu-id="f687c-103">Cloud service models</span></span>
-  ms.openlocfilehash: 4cfd2d12b1985194bbdf8dc76daf8a523f378745
-  ms.sourcegitcommit: a8497a897faccb27bfeaf5812a5887ac15f97625
+  title: <span data-ttu-id="b413d-102">Modelli di servizio cloud</span><span class="sxs-lookup"><span data-stu-id="b413d-102">Cloud service models</span></span>
+  description: <span data-ttu-id="b413d-103">Modelli di servizio cloud</span><span class="sxs-lookup"><span data-stu-id="b413d-103">Cloud service models</span></span>
+  ms.openlocfilehash: 4efdb0d5a03f7c0f1054feeffaae19cf579657fc
+  ms.sourcegitcommit: 2df436853854bfcb39bc82ee461d7011bf8531ca
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 08/24/2018
-  ms.locfileid: "42820592"
-durationInMinutes: 5
+  ms.lasthandoff: 09/04/2018
+  ms.locfileid: "43675645"
+durationInMinutes: 2
 content: '[!include[](includes/3-service-models.md)]'

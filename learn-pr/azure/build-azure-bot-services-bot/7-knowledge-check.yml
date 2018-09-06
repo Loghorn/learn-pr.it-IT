@@ -1,0 +1,115 @@
+### YamlMime:ModuleUnit
+uid: learn.build-azure-bot-services-bot.7-knowledge-check
+title: <span data-ttu-id="7a82a-101">Verificare le proprie conoscenze</span><span class="sxs-lookup"><span data-stu-id="7a82a-101">Check your knowledge</span></span>
+metadata:
+  title: <span data-ttu-id="7a82a-102">Verificare le proprie conoscenze</span><span class="sxs-lookup"><span data-stu-id="7a82a-102">Check your knowledge</span></span>
+  description: <span data-ttu-id="7a82a-103">Verificare di aver compreso i passaggi necessari per compilare un chatbot con il servizio Azure Bot.</span><span class="sxs-lookup"><span data-stu-id="7a82a-103">Confirm that you understood the steps required to build a chat bot with the Azure Bot Service.</span></span>
+  ms.openlocfilehash: 4bf7f48733b1924441f70154354479c5f7f2257f
+  ms.sourcegitcommit: 107578417899e44b5611917dec7bcc21d4c1582e
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 08/29/2018
+  ms.locfileid: "43228987"
+durationInMinutes: 10
+content: <span data-ttu-id="7a82a-104">Obbligatorio</span><span class="sxs-lookup"><span data-stu-id="7a82a-104">required</span></span>
+quiz:
+  title: <span data-ttu-id="7a82a-105">Building Neural Networks with TensorFlow and the Azure Data Science Virtual Machine (Creazione di reti neurali con TensorFlow e la Data Science Virtual Machine di Azure)</span><span class="sxs-lookup"><span data-stu-id="7a82a-105">Building Neural Networks with TensorFlow and the Azure Data Science Virtual Machine</span></span>
+  questions:
+  - content: <span data-ttu-id="7a82a-106">Cosa è stato creato quando è stato distribuito il bot app Web di Azure?</span><span class="sxs-lookup"><span data-stu-id="7a82a-106">When the Azure Web App Bot was deployed what all was created?</span></span>
+    choices:
+    - content: <span data-ttu-id="7a82a-107">Un servizio bot</span><span class="sxs-lookup"><span data-stu-id="7a82a-107">A bot service</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="7a82a-108">È stato creato un servizio bot, ma anche qualcos'altro.</span><span class="sxs-lookup"><span data-stu-id="7a82a-108">A bot service was created, but something else was, too.</span></span>
+    - content: <span data-ttu-id="7a82a-109">Un'app Web</span><span class="sxs-lookup"><span data-stu-id="7a82a-109">A web app</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="7a82a-110">È stata creata un'app Web, ma anche qualcos'altro.</span><span class="sxs-lookup"><span data-stu-id="7a82a-110">A web app was created, but something else was, too.</span></span>
+    - content: <span data-ttu-id="7a82a-111">Un servizio bot e un'app Web</span><span class="sxs-lookup"><span data-stu-id="7a82a-111">A bot service and web app</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="7a82a-112">Corretto.</span><span class="sxs-lookup"><span data-stu-id="7a82a-112">Great!</span></span> <span data-ttu-id="7a82a-113">Passare alla parte successiva del lab.</span><span class="sxs-lookup"><span data-stu-id="7a82a-113">Proceed to the next part of the lab.</span></span>
+    - content: <span data-ttu-id="7a82a-114">Non è stato ancora distribuito nulla</span><span class="sxs-lookup"><span data-stu-id="7a82a-114">Nothing got deployed yet</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="7a82a-115">In questo passaggio è stata eseguita una distribuzione.</span><span class="sxs-lookup"><span data-stu-id="7a82a-115">A deployment happened by this step.</span></span>
+  - content: <span data-ttu-id="7a82a-116">Per cosa viene usato QnA Maker?</span><span class="sxs-lookup"><span data-stu-id="7a82a-116">What is QnA Maker used to create?</span></span>
+    choices:
+    - content: <span data-ttu-id="7a82a-117">Per creare un servizio che accetta un set di domande e risposte</span><span class="sxs-lookup"><span data-stu-id="7a82a-117">A service that takes in a set of questions and answers</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="7a82a-118">Corretto.</span><span class="sxs-lookup"><span data-stu-id="7a82a-118">Great!</span></span> <span data-ttu-id="7a82a-119">Passare alla parte successiva del lab.</span><span class="sxs-lookup"><span data-stu-id="7a82a-119">Proceed to the next part of the lab.</span></span>
+    - content: <span data-ttu-id="7a82a-120">Per creare un servizio per rispondere alle domande</span><span class="sxs-lookup"><span data-stu-id="7a82a-120">A service to answer questions</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="7a82a-121">Aiuta a rispondere alle domande, ma QnA Maker può fare anche altro</span><span class="sxs-lookup"><span data-stu-id="7a82a-121">It helps answer questions, but that's not all QnA Maker can do</span></span>
+    - content: <span data-ttu-id="7a82a-122">Per creare un servizio che genera nuove risposte a domande</span><span class="sxs-lookup"><span data-stu-id="7a82a-122">A service that generates new answers to questions</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="7a82a-123">QnA Maker non genera nuove risposte, ma fornisce le risposte che conosce.</span><span class="sxs-lookup"><span data-stu-id="7a82a-123">QnA Maker doesn't generate new answers, but it does give answers it knows about.</span></span>
+    - content: <span data-ttu-id="7a82a-124">Per creare un bot</span><span class="sxs-lookup"><span data-stu-id="7a82a-124">A bot</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="7a82a-125">QnA Maker può essere associato a un bot, ma non ne crea uno.</span><span class="sxs-lookup"><span data-stu-id="7a82a-125">QnA Maker can be associated with a bot, but it doesn't create one.</span></span>
+  - content: <span data-ttu-id="7a82a-126">In che modo è possibile popolare la knowledge base in QnA Maker?</span><span class="sxs-lookup"><span data-stu-id="7a82a-126">What ways can you populate your knowledge base in QnA Maker?</span></span>
+    choices:
+    - content: <span data-ttu-id="7a82a-127">Si può popolare la knowledge base solo manualmente</span><span class="sxs-lookup"><span data-stu-id="7a82a-127">Can only manually populate your knowledge base</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="7a82a-128">È possibile popolare manualmente la knowledge base, ma esistono altri modi.</span><span class="sxs-lookup"><span data-stu-id="7a82a-128">You could manually populate the knowledge base, but there are other ways.</span></span>
+    - content: <span data-ttu-id="7a82a-129">Con un file di testo</span><span class="sxs-lookup"><span data-stu-id="7a82a-129">With a text file</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="7a82a-130">Un file di testo non è l'unico modo per popolare la knowledge base.</span><span class="sxs-lookup"><span data-stu-id="7a82a-130">A text file isn't the only way to populate the knowledge base.</span></span>
+    - content: <span data-ttu-id="7a82a-131">Con un URL</span><span class="sxs-lookup"><span data-stu-id="7a82a-131">With a URL</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="7a82a-132">Un URL non è l'unico modo per popolare la knowledge base.</span><span class="sxs-lookup"><span data-stu-id="7a82a-132">A URL isn't the only way to populate the knowledge base.</span></span>
+    - content: <span data-ttu-id="7a82a-133">Con un file di testo o un URL</span><span class="sxs-lookup"><span data-stu-id="7a82a-133">With a text file or URL</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="7a82a-134">Corretto.</span><span class="sxs-lookup"><span data-stu-id="7a82a-134">Great!</span></span> <span data-ttu-id="7a82a-135">Passare alla parte successiva del lab.</span><span class="sxs-lookup"><span data-stu-id="7a82a-135">Proceed to the next part of the lab.</span></span>
+  - content: <span data-ttu-id="7a82a-136">Quali sono i passaggi necessari per usare QnA Maker nelle applicazioni?</span><span class="sxs-lookup"><span data-stu-id="7a82a-136">What step(s) are needed to use QnA Maker in your applications?</span></span>
+    choices:
+    - content: <span data-ttu-id="7a82a-137">Salvare</span><span class="sxs-lookup"><span data-stu-id="7a82a-137">Save</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="7a82a-138">È necessario salvare, ma sono necessari altri passaggi.</span><span class="sxs-lookup"><span data-stu-id="7a82a-138">You do need to save, but other steps are needed.</span></span>
+    - content: <span data-ttu-id="7a82a-139">Salvare ed eseguire il training</span><span class="sxs-lookup"><span data-stu-id="7a82a-139">Save and train</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="7a82a-140">Eseguire il training è importante, ma cos'altro occorre per utilizzare il servizio?</span><span class="sxs-lookup"><span data-stu-id="7a82a-140">Training is important, but what else do you need to consume the service?.</span></span>
+    - content: <span data-ttu-id="7a82a-141">Salvare, eseguire il training e pubblicare</span><span class="sxs-lookup"><span data-stu-id="7a82a-141">Save, train, and publish</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="7a82a-142">Corretto.</span><span class="sxs-lookup"><span data-stu-id="7a82a-142">Great!</span></span> <span data-ttu-id="7a82a-143">Passare alla parte successiva del lab.</span><span class="sxs-lookup"><span data-stu-id="7a82a-143">Proceed to the next part of the lab.</span></span>
+    - content: <span data-ttu-id="7a82a-144">Pubblicare</span><span class="sxs-lookup"><span data-stu-id="7a82a-144">Publish</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="7a82a-145">Non è possibile passare direttamente alla pubblicazione.</span><span class="sxs-lookup"><span data-stu-id="7a82a-145">Unfortunately, you can't just go straight to publishing.</span></span>
+  - content: <span data-ttu-id="7a82a-146">Oltre ai pacchetti Bot Framework, quali altri pacchetti sono necessari per creare e utilizzare servizi RESTful?</span><span class="sxs-lookup"><span data-stu-id="7a82a-146">Other than the bot framework packages, what other package is needed to build and consume RESTful services?</span></span>
+    choices:
+    - content: <span data-ttu-id="7a82a-147">Restify</span><span class="sxs-lookup"><span data-stu-id="7a82a-147">restify</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="7a82a-148">Corretto.</span><span class="sxs-lookup"><span data-stu-id="7a82a-148">Great!</span></span> <span data-ttu-id="7a82a-149">Passare alla parte successiva del lab.</span><span class="sxs-lookup"><span data-stu-id="7a82a-149">Proceed to the next part of the lab.</span></span>
+    - content: <span data-ttu-id="7a82a-150">Express</span><span class="sxs-lookup"><span data-stu-id="7a82a-150">express</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="7a82a-151">Express viene usato per fungere da framework Web completo, non solo per creare servizi RESTful.</span><span class="sxs-lookup"><span data-stu-id="7a82a-151">Express is used to as a full web framework, not to just create RESTful services.</span></span>
+    - content: <span data-ttu-id="7a82a-152">Swagger</span><span class="sxs-lookup"><span data-stu-id="7a82a-152">swagger</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="7a82a-153">Swagger viene usato per specificare, compilare e testare le API, non solo per creare servizi RESTful.</span><span class="sxs-lookup"><span data-stu-id="7a82a-153">Swagger is used to specify, build, and test your APIs, not just to create RESTful services.</span></span>
+    - content: <span data-ttu-id="7a82a-154">Babel</span><span class="sxs-lookup"><span data-stu-id="7a82a-154">babel</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="7a82a-155">Babel viene usato per compilare nuove versioni di JavaScript per i browser che non supportano la nuova sintassi.</span><span class="sxs-lookup"><span data-stu-id="7a82a-155">Babel is used to compile new versions of JavaScript for browsers that may not support the new syntax.</span></span>
+  - content: <span data-ttu-id="7a82a-156">In quale sezione del portale di Azure per il bot app Web si aggiungono le impostazioni di QnA Maker?</span><span class="sxs-lookup"><span data-stu-id="7a82a-156">In the Azure Portal for the Web App Bot, what section do you go to add the QnA Maker settings?</span></span>
+    choices:
+    - content: <span data-ttu-id="7a82a-157">All App service settings (Tutte le impostazioni del servizio app)</span><span class="sxs-lookup"><span data-stu-id="7a82a-157">All app service settings</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="7a82a-158">Questa impostazione consente di modificare le impostazioni nel servizio app associato all'app Web.</span><span class="sxs-lookup"><span data-stu-id="7a82a-158">This setting allows you to change settings on the app service associated with the web app.</span></span>
+    - content: <span data-ttu-id="7a82a-159">Impostazioni applicazione</span><span class="sxs-lookup"><span data-stu-id="7a82a-159">Application settings</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="7a82a-160">Corretto.</span><span class="sxs-lookup"><span data-stu-id="7a82a-160">Great!</span></span> <span data-ttu-id="7a82a-161">Passare alla parte successiva del lab.</span><span class="sxs-lookup"><span data-stu-id="7a82a-161">Proceed to the next part of the lab.</span></span>
+    - content: <span data-ttu-id="7a82a-162">Compilazione</span><span class="sxs-lookup"><span data-stu-id="7a82a-162">Build</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="7a82a-163">Questa sezione consente di visualizzare e ottenere il codice per il bot.</span><span class="sxs-lookup"><span data-stu-id="7a82a-163">This section allows you to view and get the code for the bot.</span></span>
+    - content: <span data-ttu-id="7a82a-164">Canali</span><span class="sxs-lookup"><span data-stu-id="7a82a-164">Channels</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="7a82a-165">Questa sezione consente di collegare il bot a diversi servizi perché interagisca con essi.</span><span class="sxs-lookup"><span data-stu-id="7a82a-165">This section allows you to hook the bot up to different services to interact with the bot.</span></span>
+  - content: <span data-ttu-id="7a82a-166">Se si vuole aggiungere il bot a Microsoft Teams, a quale sezione del portale di Azure occorre passare?</span><span class="sxs-lookup"><span data-stu-id="7a82a-166">If you wanted to add your bot to Microsoft Teams, what section in the Azure Portal do you go to?</span></span>
+    choices:
+    - content: <span data-ttu-id="7a82a-167">All App service settings (Tutte le impostazioni del servizio app)</span><span class="sxs-lookup"><span data-stu-id="7a82a-167">All app service settings</span></span>
+      isCorrect: false
+      incorrectExplanation: '<span data-ttu-id="7a82a-168">Questa impostazione consente la modifica</span><span class="sxs-lookup"><span data-stu-id="7a82a-168">This setting allows you to change</span></span> '
+    - content: <span data-ttu-id="7a82a-169">Impostazioni applicazione</span><span class="sxs-lookup"><span data-stu-id="7a82a-169">Application settings</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="7a82a-170">Questa impostazione consente di specificare impostazioni specifiche per l'applicazione Web.</span><span class="sxs-lookup"><span data-stu-id="7a82a-170">This setting allows you to specify specific settings for the web application.</span></span>
+    - content: <span data-ttu-id="7a82a-171">Compilazione</span><span class="sxs-lookup"><span data-stu-id="7a82a-171">Build</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="7a82a-172">Questa sezione consente di visualizzare e ottenere il codice per il bot.</span><span class="sxs-lookup"><span data-stu-id="7a82a-172">This section allows you to view and get the code for the bot.</span></span>
+    - content: <span data-ttu-id="7a82a-173">Canali</span><span class="sxs-lookup"><span data-stu-id="7a82a-173">Channels</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="7a82a-174">Corretto.</span><span class="sxs-lookup"><span data-stu-id="7a82a-174">Great!</span></span> <span data-ttu-id="7a82a-175">Passare alla parte successiva del lab.</span><span class="sxs-lookup"><span data-stu-id="7a82a-175">Proceed to the next part of the lab.</span></span>
