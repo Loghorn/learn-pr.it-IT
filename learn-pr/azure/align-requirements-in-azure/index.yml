@@ -1,30 +1,42 @@
 ### YamlMime:Module
 uid: learn.align-requirements-in-azure
+title: Allineare i requisiti ai tipi di cloud e ai modelli di servizio in Azure
+summary: >
+  Azure supporta tre approcci alla distribuzione delle risorse cloud: cloud pubblico, privato e ibrido. La selezione tra questi cambia vari fattori dei servizi trasferiti in Azure, tra cui costi, requisiti di manutenzione e protezione. In questo modulo verranno illustrati i tre tipi per prendere una decisione consapevole sul tipo da usare per i propri servizi. Verranno anche illustrati i modelli di servizio supportati da Azure che consentono di determinare con quali servizi iniziare quando si pianifica una distribuzione di Azure.
+cardDescription: Informazioni sui possibili modi di usare Azure per scegliere il giusto approccio in base ai servizi di cui si vuole eseguire il push nel cloud.
 metadata:
   title: Allineare i requisiti ai tipi di cloud e ai modelli di servizio in Azure
   description: In questo modulo verrà descritto come allineare i requisiti ai tipi di cloud e ai modelli di servizio in Azure.
-  ms.openlocfilehash: d0ecbb485b5354f763f86a57636ffef8518a65fb
-  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.date: 09/24/2018
+  ms.openlocfilehash: dc0dc7b55c69668845fdbb033079557ba08d0b72
+  ms.sourcegitcommit: e364b61d89b547c49e271e6d168801011f7f4733
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 08/22/2018
-  ms.locfileid: "40446440"
-title: Allineare i requisiti ai tipi di cloud e ai modelli di servizio in Azure
-summary: In questo modulo verrà descritto come allineare i requisiti ai tipi di cloud e ai modelli di servizio in Azure. (verrà visualizzato nella scheda del modulo)
-abstract: In questo modulo verrà descritto come allineare i requisiti ai tipi di cloud e ai modelli di servizio in Azure.
-cardDescription: Questa è la descrizione della scheda del modulo di esempio (verrà visualizzata nel badge per l'obiettivo raggiunto)
+  ms.lasthandoff: 08/26/2018
+  ms.locfileid: "42936791"
+abstract: >
+  In questo modulo verrà descritto come:
+
+  - Confrontare i modelli di distribuzione di cloud computing (pubblico, privato e ibrido).
+
+  - Comprendere i vantaggi di ciascun modello di servizio di cloud computing.
+
+  - Decidere quale distribuzione e quale modello di servizio usare per i propri servizi.
+prerequisites: Nessuno
 iconUrl: http://via.placeholder.com/120x120
 levels:
 - beginner
 roles:
 - solutions-architect
-achievement: learn.placeholder.badge
 products:
 - Azure
+achievement: learn.placeholder.badge
 units:
 - learn.align-requirements-in-azure.1-introduction
 - learn.align-requirements-in-azure.2-public-private-hybrid
-- learn.align-requirements-in-azure.3-public-private-hybrid-quiz
-- learn.align-requirements-in-azure.4-iaas-paas-saas
-- learn.align-requirements-in-azure.5-iaas-paas-saas-quiz
-- learn.align-requirements-in-azure.6-summary
+- learn.align-requirements-in-azure.3-service-models
+- learn.align-requirements-in-azure.4-iaas
+- learn.align-requirements-in-azure.5-paas
+- learn.align-requirements-in-azure.6-saas
+- learn.align-requirements-in-azure.7-quiz
+- learn.align-requirements-in-azure.8-summary

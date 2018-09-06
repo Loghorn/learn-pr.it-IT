@@ -1,14 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: principles-cloud-computing.7-summary
-title: <span data-ttu-id="6c844-101">Summary</span><span class="sxs-lookup"><span data-stu-id="6c844-101">Summary</span></span>
+title: <span data-ttu-id="bd30c-101">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="bd30c-101">Summary</span></span>
 metadata:
-  title: <span data-ttu-id="6c844-102">Summary</span><span class="sxs-lookup"><span data-stu-id="6c844-102">Summary</span></span>
-  description: <span data-ttu-id="6c844-103">Summary</span><span class="sxs-lookup"><span data-stu-id="6c844-103">Summary</span></span>
-  ms.openlocfilehash: 763ecfaaddf67720d89393af44b5aa1d904ad820
-  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  title: <span data-ttu-id="bd30c-102">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="bd30c-102">Summary</span></span>
+  description: <span data-ttu-id="bd30c-103">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="bd30c-103">Summary</span></span>
+  ms.openlocfilehash: 6d5ebd3a079b8609250e23efb329935a0a6a5fe9
+  ms.sourcegitcommit: c8d798ed14ad798f83559db0641c7cbc9728a7bf
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 08/22/2018
-  ms.locfileid: "40447398"
-durationInMinutes: 5
+  ms.lasthandoff: 09/05/2018
+  ms.locfileid: "43730676"
+durationInMinutes: 3
 content: '[!include[](includes/7-summary.md)]'

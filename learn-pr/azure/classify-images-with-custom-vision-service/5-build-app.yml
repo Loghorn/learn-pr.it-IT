@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.classify-images-with-custom-vision-services.5-build-app
+title: <span data-ttu-id="3fbf9-101">Creare un'app Node.js che usa il modello</span><span class="sxs-lookup"><span data-stu-id="3fbf9-101">Create a Node.js app that uses the model</span></span>
+metadata:
+  title: <span data-ttu-id="3fbf9-102">Creare un'app Node.js che usa il modello</span><span class="sxs-lookup"><span data-stu-id="3fbf9-102">Create a Node.js app that uses the model</span></span>
+  description: <span data-ttu-id="3fbf9-103">Creare un'app Node.js che usa il modello</span><span class="sxs-lookup"><span data-stu-id="3fbf9-103">Create a Node.js app that uses the model</span></span>
+  ms.openlocfilehash: 7ad007c92b05ad89575fe2d2874e3bb7123cf617
+  ms.sourcegitcommit: 107578417899e44b5611917dec7bcc21d4c1582e
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 08/29/2018
+  ms.locfileid: "43230052"
+durationInMinutes: 10
+content: '[!include[](includes/5-build-app.md)]'

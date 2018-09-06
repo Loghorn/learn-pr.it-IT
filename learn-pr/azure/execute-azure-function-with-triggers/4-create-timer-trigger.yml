@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: execute-azure-function-with-triggers.4-create-timer-trigger
+title: <span data-ttu-id="50afc-101">Creare un trigger timer</span><span class="sxs-lookup"><span data-stu-id="50afc-101">Create a Timer Trigger</span></span>
+metadata:
+  title: <span data-ttu-id="50afc-102">Creare un trigger timer ed eseguire una funzione di Azure</span><span class="sxs-lookup"><span data-stu-id="50afc-102">Create a Timer Trigger and run an Azure Function</span></span>
+  description: <span data-ttu-id="50afc-103">Creare un trigger timer</span><span class="sxs-lookup"><span data-stu-id="50afc-103">Create a Timer Trigger</span></span>
+  ms.openlocfilehash: 952b3bd3dde33d460e32c65ea3ca72b6f4f41f4b
+  ms.sourcegitcommit: 5b967802ae01d5e5985a3e6bcbdba1163ec2f6c9
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 08/27/2018
+  ms.locfileid: "42987206"
+durationInMinutes: 15
+content: '[!include[](includes/4-create-timer-trigger.md)]'

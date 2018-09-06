@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.connect-app-to-azure-storage.9-exercise-connect-with-your-azure-storage-configuration
+title: <span data-ttu-id="28fad-101">Esercizio - Connettersi con la configurazione dell'Archiviazione di Azure</span><span class="sxs-lookup"><span data-stu-id="28fad-101">Exercise - Connect with your Azure Storage configuration</span></span>
+metadata:
+  title: <span data-ttu-id="28fad-102">Esercizio - Connettersi con la configurazione dell'Archiviazione di Azure</span><span class="sxs-lookup"><span data-stu-id="28fad-102">Exercise - Connect with your Azure Storage configuration</span></span>
+  description: <span data-ttu-id="28fad-103">Esercizio - Connettersi con la configurazione dell'Archiviazione di Azure</span><span class="sxs-lookup"><span data-stu-id="28fad-103">Exercise - Connect with your Azure Storage configuration</span></span>
+  ms.openlocfilehash: d712e34b220d3ebb9847cb907fb512fb4de7da0b
+  ms.sourcegitcommit: 107578417899e44b5611917dec7bcc21d4c1582e
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 08/29/2018
+  ms.locfileid: "43230376"
+durationInMinutes: 10
+content: '[!include[](includes/9-exercise-connect-with-your-azure-storage-configuration.md)]'

@@ -2,16 +2,16 @@
 uid: learn.azure-services-features
 metadata:
   title: Esplorare i servizi e le funzionalità di Azure
-  description: "Il primo passo per usare Azure è creare un account. L'account contiene i servizi di Azure di cui si effettua il provisioning e gestisce le impostazioni personali, come identità, fatturazione e preferenze. Dopo aver creato un account, è possibile usare il portale di Azure per esplorare i servizi disponibili e creare quelli necessari per l'applicazione. Questo modulo illustra questo processo di onboarding: si creerà l'account Azure, si accederà al portale e si sperimenterà la creazione di alcune risorse comuni."
-  ms.openlocfilehash: a394343c38acc09385e562e58d2cef66b268a1a5
-  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  description: "Il primo passo per usare Azure è creare un account. L'account contiene i servizi di Azure di cui si esegue il provisioning e gestisce le impostazioni personali, come identità, fatturazione e preferenze. Dopo aver creato un account, è possibile usare il portale di Azure per esplorare i servizi disponibili e creare quelli necessari per l'applicazione. Questo modulo illustra questo processo di onboarding: si creerà l'account Azure, si accederà al portale e si sperimenterà la creazione di alcune risorse comuni."
+  ms.openlocfilehash: 6c8bb65f42bfe7bf9b63ef23b3cddf113ebb573b
+  ms.sourcegitcommit: 246b615873952db4c4efa0000b64a7bfceff7c75
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 08/22/2018
-  ms.locfileid: "40446503"
+  ms.lasthandoff: 08/29/2018
+  ms.locfileid: "43156358"
 title: Esplorare i servizi e le funzionalità di Azure
 summary: Creare un account Azure, esplorare i servizi disponibili e personalizzare il portale.
-abstract: "Il primo passo per usare Azure è creare un account. L'account contiene i servizi di Azure di cui si effettua il provisioning e gestisce le impostazioni personali, come identità, fatturazione e preferenze. Dopo aver creato un account, è possibile usare il portale di Azure per esplorare i servizi disponibili e creare quelli necessari per l'applicazione. Questo modulo illustra questo processo di onboarding: si creerà l'account Azure, si accederà al portale e si sperimenterà la creazione di alcune risorse comuni."
+abstract: "Il primo passo per usare Azure è creare un account. L'account contiene i servizi di Azure di cui si esegue il provisioning e gestisce le impostazioni personali, come identità, fatturazione e preferenze. Dopo aver creato un account, è possibile usare il portale di Azure per esplorare i servizi disponibili e creare quelli necessari per l'applicazione. Questo modulo illustra questo processo di onboarding: si creerà l'account Azure, si accederà al portale e si sperimenterà la creazione di alcune risorse comuni."
 cardDescription: Creare un account Azure, esplorare i servizi disponibili e personalizzare il portale.
 iconUrl: http://via.placeholder.com/120x120
 levels:

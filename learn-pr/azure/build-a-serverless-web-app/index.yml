@@ -1,8 +1,8 @@
 ### YamlMime:Module
 uid: learn.build-a-serverless-web-app
 title: Creare un'app Web serverless
-summary: Distribuire una semplice applicazione Web che consente agli utenti di caricare le immagini tramite un'interfaccia utente basata su HTML e usa un back-end serverless per contrassegnare e archiviare automaticamente le didascalie che le descrivono.
-cardDescription: Distribuire una semplice applicazione Web che consente agli utenti di caricare le immagini tramite un'interfaccia utente basata su HTML e usa un back-end serverless per contrassegnare e archiviare automaticamente le didascalie che le descrivono.
+summary: Distribuire un'applicazione Web semplice che consente agli utenti di caricare immagini tramite un'interfaccia utente basata su HTML. L'app Web usa un back-end serverless per assegnare tag automaticamente e archiviare le didascalie che descrivono le immagini.
+cardDescription: Distribuire un'applicazione Web semplice che consente agli utenti di caricare immagini tramite un'interfaccia utente basata su HTML. L'app Web usa un back-end serverless per assegnare tag automaticamente e archiviare le didascalie che descrivono le immagini.
 iconUrl: /learn/achievements/build-a-serverless-web-app.svg
 levels:
 - intermediate
@@ -18,15 +18,15 @@ products:
 - storageBlob
 metadata:
   title: Creare un'app Web serverless
-  description: Distribuire una semplice applicazione Web che consente agli utenti di caricare le immagini tramite un'interfaccia utente basata su HTML e usa un back-end serverless per contrassegnare e archiviare automaticamente le didascalie che le descrivono.
+  description: Distribuire un'applicazione Web semplice che consente agli utenti di caricare immagini tramite un'interfaccia utente basata su HTML. L'app Web usa un back-end serverless per assegnare tag automaticamente e archiviare le didascalie che descrivono le immagini.
   ms.date: 09/24/2018
-  ms.openlocfilehash: 995eaec0ef3669f7c5a31d25afbeed84fe0f1353
-  ms.sourcegitcommit: 0e0cc41b7669e7149541f34f3f24ba0e864ed07d
+  ms.openlocfilehash: 5f47b534140d53c0734be359955b95d84e87d2c1
+  ms.sourcegitcommit: bf091e3a389138b59573865ca54775e38a4ffa1f
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 08/23/2018
-  ms.locfileid: "42702707"
-abstract: "In questo modulo verrà descritto come:\n- Configurare l'archiviazione BLOB di Azure per ospitare un sito Web statico e le immagini caricate.\n- Caricare le immagini nell'archiviazione BLOB di Azure con Funzioni di Azure.\n- Ridimensionare le immagini con Funzioni di Azure.\n- Archiviare i metadati delle immagini in Azure Cosmos DB. \n- Usare l'API Visione artificiale di Servizi cognitivi per generare automaticamente le didascalie delle immagini.\n- Usare Azure Active Directory per proteggere l'app Web tramite l'autenticazione degli utenti.\n"
+  ms.lasthandoff: 08/29/2018
+  ms.locfileid: "43154961"
+abstract: "In questo modulo verrà descritto come:\n> [!div class=\"checklist\"]\n> * Configurare l'archiviazione BLOB di Azure per ospitare un sito Web statico e le immagini caricate.\n> * Caricare le immagini nell'archiviazione BLOB di Azure con Funzioni di Azure.\n> * Ridimensionare le immagini con Funzioni di Azure.\n> * Archiviare i metadati delle immagini in Azure Cosmos DB. \n> * Usare l'API Visione artificiale di Servizi cognitivi per generare automaticamente le didascalie delle immagini.\n> * Usare Azure Active Directory per proteggere l'app Web tramite l'autenticazione degli utenti.\n"
 prerequisites: Nessuna
 units:
 - learn.build-a-serverless-web-app.1-create-web-app-in-blob-storage

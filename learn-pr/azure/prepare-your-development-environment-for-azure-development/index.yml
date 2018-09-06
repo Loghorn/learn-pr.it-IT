@@ -1,0 +1,32 @@
+### YamlMime:Module
+uid: learn.prepare-azure-dev-environment
+metadata:
+  title: Preparare l'ambiente di sviluppo per lo sviluppo in Azure
+  description: In questo modulo verrà descritto come installare l'ambiente di sviluppo preferito nel computer di sviluppo locale.
+  ms.openlocfilehash: cf5d63a79e2fb1763d1815ab5935e73c6ed5b33c
+  ms.sourcegitcommit: e364b61d89b547c49e271e6d168801011f7f4733
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 08/26/2018
+  ms.locfileid: "42938147"
+title: Preparare l'ambiente di sviluppo per lo sviluppo in Azure
+summary: In questo modulo verrà descritto come installare l'ambiente di sviluppo preferito nel computer di sviluppo locale.
+abstract: In questo modulo verrà descritto come installare l'ambiente di sviluppo preferito nel computer di sviluppo locale.
+cardDescription: In questo modulo verrà descritto come installare l'ambiente di sviluppo preferito nel computer di sviluppo locale.
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- beginner
+roles:
+- developer
+products:
+- Azure
+units:
+- learn.prepare-azure-dev-environment.1-introduction
+- learn.prepare-azure-dev-environment.2-set-up-visual-studio-code
+- learn.prepare-azure-dev-environment.3-exercise-set-up-visual-studio-code
+- learn.prepare-azure-dev-environment.4-set-up-visual-studio
+- learn.prepare-azure-dev-environment.5-exercise-set-up-visual-studio
+- learn.prepare-azure-dev-environment.6-set-up-eclipse-ide-for-java-developers
+- learn.prepare-azure-dev-environment.7-exercise-set-up-eclipse
+- learn.prepare-azure-dev-environment.8-summary
+achievement: learn.prepare-azure-dev-environment.badge

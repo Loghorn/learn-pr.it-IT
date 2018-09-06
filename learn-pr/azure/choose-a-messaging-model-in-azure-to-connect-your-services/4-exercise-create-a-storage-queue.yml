@@ -1,14 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.choose-messaging-model.4-exercise-create-a-storage-queue
-title: <span data-ttu-id="16f89-101">Creare una coda di archiviazione</span><span class="sxs-lookup"><span data-stu-id="16f89-101">Create a storage queue</span></span>
+title: <span data-ttu-id="00835-101">Creare una coda di archiviazione</span><span class="sxs-lookup"><span data-stu-id="00835-101">Create a storage queue</span></span>
 metadata:
-  title: <span data-ttu-id="16f89-102">Creare una coda di archiviazione</span><span class="sxs-lookup"><span data-stu-id="16f89-102">Create a storage queue</span></span>
-  description: <span data-ttu-id="16f89-103">Creare una coda di archiviazione</span><span class="sxs-lookup"><span data-stu-id="16f89-103">Create a storage queue</span></span>
-  ms.openlocfilehash: 2aec64d85f8262e756ab96d35274a819dcd7e066
-  ms.sourcegitcommit: a29274a7a22a1b88016cd49c067921557992c945
+  title: <span data-ttu-id="00835-102">Creare una coda di archiviazione</span><span class="sxs-lookup"><span data-stu-id="00835-102">Create a storage queue</span></span>
+  description: <span data-ttu-id="00835-103">Creare una coda di archiviazione</span><span class="sxs-lookup"><span data-stu-id="00835-103">Create a storage queue</span></span>
+  ms.openlocfilehash: c9469ec5cb6d6799987cb952178ea8f749b4c077
+  ms.sourcegitcommit: b97ed72bd7e3fb77b49de71e8ef35d3f70dfd636
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 08/30/2018
-  ms.locfileid: "43315280"
+  ms.lasthandoff: 09/05/2018
+  ms.locfileid: "43789554"
 durationInMinutes: 10
 content: '[!include[](includes/4-exercise-create-a-storage-queue.md)]'

@@ -1,14 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-azure-storage-account.7-summary
-title: <span data-ttu-id="2fd76-101">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="2fd76-101">Summary</span></span>
+title: <span data-ttu-id="334cb-101">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="334cb-101">Summary</span></span>
 metadata:
-  title: <span data-ttu-id="2fd76-102">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="2fd76-102">Summary</span></span>
-  description: <span data-ttu-id="2fd76-103">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="2fd76-103">Summary</span></span>
-  ms.openlocfilehash: 1711f3ee46f75d5eb7c9c83e21c14fab3ee0d878
-  ms.sourcegitcommit: c07e11980180ae35cb3485548f81e16152d77781
+  title: <span data-ttu-id="334cb-102">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="334cb-102">Summary</span></span>
+  description: <span data-ttu-id="334cb-103">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="334cb-103">Summary</span></span>
+  ms.openlocfilehash: 21cdae7241a9aedeb0e0c4d6343a593b4b825565
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/02/2018
-  ms.locfileid: "43471735"
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43827896"
 durationInMinutes: 1
 content: '[!include[](includes/7-summary.md)]'
