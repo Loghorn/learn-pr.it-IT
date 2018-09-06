@@ -24,12 +24,18 @@ Get-Help <cmdlet-name> -detailed
 A questo punto, verrà creato un gruppo di risorse usando un'installazione locale di Azure PowerShell. 
 
 Sono necessari quattro passaggi: 
+
 1. Importare i cmdlet di Azure.
+
 1. Connettersi alla sottoscrizione di Azure.
+
 1. Creare il gruppo di risorse.
+
 1. Verificare che la creazione sia stata eseguita (vedere di seguito).
 
-![Procedura per creare una risorsa in Azure usando Azure PowerShell](../media/5-create-resource-overview.png)
+La figura seguente mostra una panoramica di questi passaggi.
+
+![Illustrazione che mostra i passaggi per creare un gruppo di risorse.](../media/5-create-resource-overview.png)
 
 Ogni passaggio corrisponde a un diverso cmdlet.
 

@@ -17,7 +17,7 @@ az webapp create --name <your-unique-app-name> --plan keyvault-exercise-plan --r
 
 ### <a name="add-configuration-to-the-app"></a>Aggiungere una configurazione per l'app
 
-Per la distribuzione in Azure, si seguirà la procedura consigliata di inserimento di configurazione nelle impostazioni dell'applicazione, anziché di un file di configurazione.
+Per la distribuzione in Azure, si seguirà la procedura consigliata del servizio app per inserire la configurazione VaultName nelle impostazioni dell'applicazione, anziché in un file di configurazione.
 
 ```azurecli
 az webapp config appsettings set --name <your-unique-app-name> --resource-group keyvault-exercise-group --settings VaultName=<your-unique-vault-name>
@@ -48,7 +48,7 @@ Tutte le configurazioni sono impostate e i può avviare la distribuzione. I coma
 > [!NOTE]
 > Sarà necessario `cd` indietro alla directory di KeyVaultDemoApp, se non è già stato fatto.
 
-```console
+```azurecli
 dotnet publish -o pub
 zip -j site.zip pub/*
 az webapp deployment source config-zip --src site.zip --name <your-unique-app-name> --resource-group keyvault-exercise-group

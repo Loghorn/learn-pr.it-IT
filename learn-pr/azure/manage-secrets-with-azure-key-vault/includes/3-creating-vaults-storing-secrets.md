@@ -1,9 +1,9 @@
 ## <a name="creating-key-vaults-for-your-applications"></a>Creazione di insiemi di credenziali delle chiavi per le applicazioni
 
-È consigliabile assegnare a ogni applicazione un insieme di credenziali separato per ogni ambiente di distribuzione usato, ad esempio di sviluppo, di test e di produzione. Per quanto la condivisione dei segreti tra le app possa essere pratica, se un utente malintenzionato ottiene l'accesso in lettura a un insieme di credenziali, l'impatto è proporzionale al numero di segreti nell'insieme di credenziali.
+È consigliabile creare un insieme di credenziali separato per ogni ambiente di distribuzione, ad esempio sviluppo, test e produzione, in ogni applicazione. È possibile usare gli insiemi di credenziali per condividere segreti tra le app. Tuttavia, se un utente malintenzionato ottiene l'accesso in lettura a un insieme di credenziali, l'impatto è proporzionale al numero di segreti nell'insieme di credenziali.
 
 > [!TIP]
-> Se si usano gli stessi nomi per i segreti nei diversi ambienti, l'unica configurazione specifica dell'ambiente da modificare nell'app è l'URL dell'insieme di credenziali.
+> Se si usano gli stessi nomi per i segreti nei diversi ambienti di un'applicazione, l'unica configurazione specifica dell'ambiente da modificare nell'app è l'URL dell'insieme di credenziali.
 
 Per creare un insieme di credenziali non è necessaria alcuna configurazione iniziale. All'identità utente viene automaticamente concesso il set completo di autorizzazioni per la gestione dei segreti e si può iniziare ad aggiungere segreti immediatamente. Quando si ha un insieme di credenziali, l'aggiunta e la gestione dei segreti possono essere eseguite da qualsiasi interfaccia amministrativa di Azure, come il portale di Azure, l'interfaccia della riga di comando di Azure e Azure PowerShell. Quando si configura l'applicazione per l'uso dell'insieme di credenziali, è necessario assegnare le autorizzazioni corrette. Questo verrà illustrato nell'unità successiva.
 
@@ -51,7 +51,7 @@ Al termine verrà visualizzato l'output JSON che descrive il nuovo insieme di cr
 Aggiungere quindi un segreto denominato **SecretPassword** con il valore **reindeer_flotilla**.
 
 ```azurecli
-az keyvault secret set --name SecretPassword --value open_sesame --vault-name <your-unique-vault-name>
+az keyvault secret set --name SecretPassword --value reindeer_flotilla --vault-name <your-unique-vault-name>
 ```
 
 Prendere nota del nome dell'insieme di credenziali, perché sarà presto nuovamente necessario.

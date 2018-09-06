@@ -1,0 +1,13 @@
+Le risorse di calcolo del cloud vengono distribuite con tre modelli di servizio diverso.
+
+- **IaaS (Infrastructure-as-a-service)** offre un'infrastruttura di calcolo di accesso immediato di cui è possibile effettuare il provisioning e che può essere gestita tramite Internet.
+- **PaaS (Platform-as-a-service)** offre ambienti di sviluppo e distribuzione pronti che è possibile usare per fornire servizi cloud personalizzati.
+- **SaaS (Software-as-a-service)** offre applicazioni tramite Internet come servizio basato sul Web.
+
+!!! Video TC-007 placeholder !!!
+
+> [!VIDEO https://channel9.msdn.com/Series/History/The-History-of-Microsoft-1995/player]
+
+Per la scelta di un modello di servizio, valutare quale parte deve essere responsabile per la risorsa di calcolo. In base allo scenario, è possibile decidere quante responsabilità di gestione condivise si vogliono assumere.
+
+![Modello di responsabilità condivisa](../media-draft/3-shared-responsibility.png)

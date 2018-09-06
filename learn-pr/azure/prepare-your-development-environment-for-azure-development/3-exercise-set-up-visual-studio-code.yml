@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.prepare-azure-dev-environment.3-exercise-set-up-visual-studio-code
+title: Esercizio - Configurare Visual Studio Code
+metadata:
+  title: Esercizio - Configurare Visual Studio Code
+  description: Esercizio - Configurare Visual Studio Code
+  ms.openlocfilehash: 3a63fd2e99c850f2affcd41d6a6c867355f8549d
+  ms.sourcegitcommit: e364b61d89b547c49e271e6d168801011f7f4733
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 08/26/2018
+  ms.locfileid: "42938699"
+durationInMinutes: 15
+content: '[!include[](includes/3-exercise-set-up-visual-studio-code.md)]'

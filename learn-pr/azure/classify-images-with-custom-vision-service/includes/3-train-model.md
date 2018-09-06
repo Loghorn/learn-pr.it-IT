@@ -1,0 +1,17 @@
+### <a name="exercise-3-train-the-model"></a>Esercizio 3: Eseguire il training del modello
+
+In questo esercizio si eseguirà il training del modello usando le immagini caricate e contrassegnate con tag nell'esercizio precedente. Il training può essere eseguito con un semplice clic su un pulsante nel portale oppure chiamando il metodo [TrainProject](https://southcentralus.dev.cognitive.microsoft.com/docs/services/d9a10a4a5f8549599f1ecafc435119fa/operations/58d5835bc8cb231380095bed) nell'[API di training del Servizio visione artificiale personalizzato](https://southcentralus.dev.cognitive.microsoft.com/docs/services/d9a10a4a5f8549599f1ecafc435119fa/operations/58d5835bc8cb231380095be3). Al termine del training, un modello può essere perfezionato caricando altre immagini con tag e ripetendone il training.
+ 
+1. Fare clic sul pulsante **Train** (Esegui training) nella parte superiore della pagina per eseguire il training del modello. Ogni volta che si esegue il training del modello, viene creata una nuova iterazione. Il Servizio visione artificiale personalizzato mantiene diverse iterazioni, permettendo di confrontare i progressi nel tempo.
+
+    ![Training del modello](../images/portal-click-train.png)
+
+    _Training del modello_
+
+1. Attendere il completamento del processo di training. Dovrebbero essere necessari solo pochi secondi. Esaminare quindi le statistiche di training presentate per l'iterazione 1. La **precisione** e il **richiamo** sono misure separate ma correlate dell'accuratezza del modello. Si supponga che al modello siano stati presentati tre Picasso e tre Van Gogh e che sia stato in grado di identificare correttamente due dei Picasso come immagini "Picasso", ma che abbia identificato erroneamente due dei Van Gogh come Picasso. In questo caso, la precisione è del 50% (due delle quattro immagini classificate come Picasso sono effettivamente di Picasso), mentre il richiamo è del 67% (due delle tre immagini di Picasso sono state identificate correttamente come Picasso). Per altre informazioni sulla precisione e il richiamo, vedere https://en.wikipedia.org/wiki/Precision_and_recall.
+
+    ![Risultati del training del modello](../images/portal-train-complete.png)
+
+    _Risultati del training del modello_ 
+
+Si testerà ora il modello usando la funzionalità Quick Test (Test rapido) del portale, che permette di inviare immagini al modello e determinare in che modo vengono classificate usando le informazioni ottenute dalle immagini di training.

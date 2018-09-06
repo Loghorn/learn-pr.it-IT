@@ -12,9 +12,9 @@ Per le app che si basano su un set noto di contenitori con nomi hard-coded o pre
 
 ## <a name="exercise"></a>Esercizio
 
-Eseguire un'app ASP.NET Core incompleta aggiungendo il codice per usare l'archiviazione BLOB di Azure. Questo esercizio riguarda più l'esplorazione dell'API dell'archiviazione BLOB che la progettazione di un'organizzazione e lo schema di denominazione, ma ecco una breve panoramica dell'applicazione e delle modalità di archiviazione dei dati:
+Eseguire un'app ASP.NET Core incompleta aggiungendo il codice per usare l'archiviazione BLOB di Azure. Questo esercizio riguarda più l'esplorazione dell'API dell'archiviazione BLOB che la progettazione di un'organizzazione e dello schema di denominazione, ma di seguito viene presentata una breve panoramica dell'applicazione e delle modalità di archiviazione dei dati.
 
-**Schermata TODO dell'app, dal momento che non lo vedranno in esecuzione fino alla fine**
+![Screenshot dell'app Web FileUploader](../media-drafts/fileuploader-with-files.PNG)
 
 L'app funziona come una cartella condivisa che accetta i caricamenti di file e li rende disponibili per il download. Non usa un database per organizzare i blob &mdash; ma corregge i nomi dei file caricati e li usa come nomi di blob direttamente. Tutti i file caricati vengono archiviati in un singolo contenitore.
 
@@ -23,6 +23,7 @@ Il codice con cui si inizierà viene compilato ed eseguito, ma le parti responsa
 Configurare l'infrastruttura di archiviazione per l'app.
 
 ### <a name="resource-group-and-storage-account"></a>Gruppo di risorse e account di archiviazione
+
 In primo luogo, verrà creato un gruppo di risorse per contenere tutte le risorse di questo esercizio. Verranno eliminate alla fine per eseguire la pulizia di tutto ciò che è stato creato. Verrà inoltre creato l'account di archiviazione, che l'app userà per archiviare i blob.
 
 Usare il terminale Azure Cloud Shell per creare il gruppo di risorse e account di archiviazione eseguendo i seguenti comandi dell'interfaccia della riga di comando di Azure. È necessario specificare un nome univoco per l'account di archiviazione &mdash; prendere nota per un uso successivo. La scelta di `eastus` per il percorso è arbitraria.
@@ -32,10 +33,9 @@ az group create --name blob-exercise-group --location eastus
 az storage account create --name <your-unique-storage-account-name> --resource-group blob-exercise-group --location eastus --kind StorageV2
 ```
 
-**Il TODO riportato di seguito deve andare nel modulo di Archiviazione di Azure**
-
 > [!NOTE]
-> Perché `--kind StorageV2`? Esistono diversi tipi di account di archiviazione. Per la maggior parte degli scenari, è consigliabile usare account di archiviazione per utilizzo generico v2 (identificato con `StorageV2`). L'unico motivo per cui gli account di archiviazione v2 devono essere specificati qui è che sono ancora relativamente nuovi e non è ancora stata applicata l'impostazione predefinita nel portale di Azure o nell'interfaccia della riga di comando di Azure.
+> Perché `--kind StorageV2`? Esistono diversi tipi di account di archiviazione. Per la maggior parte degli scenari, è consigliabile usare un account di archiviazione generico v2. L'unico motivo per cui è necessario specificare esplicitamente `--kind StorageV2` è che gli account di archiviazione generici v2 sono ancora relativamente nuovi e non sono ancora l'impostazione predefinita nel portale di Azure o nell'interfaccia della riga di comando di Azure.
 
 ### <a name="container"></a>Contenitore
+
 L'applicazione con cui lavoreremo in questo modulo usa un singolo contenitore. È necessario seguire le procedure consigliate per lasciare che l'app crei il contenitore all'avvio. Tuttavia, la creazione del contenitore può essere eseguita dal comando di Azure: eseguire `az storage container create -h` nel terminale Cloud Shell se si desidera vedere la documentazione.

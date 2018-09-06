@@ -16,22 +16,22 @@ Dopo aver aggiunto i servizi, occorre determinarne i prezzi. Scorrendo la pagina
 
 ## <a name="estimate-a-solution"></a>Stimare una soluzione
 
-Partendo da questo scenario originale immaginiamo che il sistema sia destinato a essere eseguito in due macchine virtuali di Azure e a connettersi a un'istanza di database SQL di Azure. Si intende includere anche un firewall di livello 7 in modo da garantire le funzionalità avanzate di bilanciamento del carico seguenti:
+Partendo da questo scenario originale immaginiamo che il sistema sia destinato a essere eseguito in due macchine virtuali di Azure e a connettersi a un'istanza di database SQL di Azure. Si intende includere anche un firewall di livello 7 in modo da garantire le funzionalità avanzate di bilanciamento del carico riportate di seguito. La figura seguente illustra un gateway applicazione connesso a due macchine virtuali connesse a una singola istanza del database SQL di Azure.
 
-![Diagramma dell'architettura di sistema](../images/estimate-costs-architecture.png)
+![Si tratta di un'architettura che verrà usata come esempio per spiegare la stima dei costi.](../media-drafts/2-estimate-costs-architecture.png)
 
 È possibile usare il calcolatore prezzi di Azure per determinare il costo della soluzione ed esportare la stima per condividerla con il team.
 
 > [!NOTE]
-> Assicurarsi che nel calcolatore non siano presenti elementi elencati nella stima. Se nella stima sono presenti elementi, fare clic sull'icona del cestino per ogni elemento per reimpostare la stima.
+> Assicurarsi che nel calcolatore non siano presenti elementi elencati nella stima. Se nella stima sono presenti elementi, fare clic sull'icona del cestino di ogni elemento per reimpostare la stima.
 
-Nel calcolatore prezzi di Azure, nella scheda **Prodotti** selezionare i servizi seguenti per aggiungerli alla stima:
+Nella scheda **Prodotti** del calcolatore prezzi di Azure selezionare i servizi seguenti per aggiungerli alla stima:
 
-- Macchine virtuali
-- database SQL di Azure
-- Gateway applicazione
+- Macchine virtuali nella categoria Calcolo
+- Database SQL di Azure nella categoria Database
+- Gateway applicazione nella categoria Rete
 
-È possibile configurare i dettagli di ognuno, nella scheda **Stime** o ottenere una stima generale dei costi. Usare la regione **Stati Uniti occidentali** per tutte le risorse.
+È possibile configurare i dettagli di ogni servizio nella scheda **Stime** oppure ottenere una stima generale dei costi. Usare la regione **Stati Uniti occidentali** per tutte le risorse.
 
 * **Macchine virtuali.** Si tratta di un'applicazione ASP.NET, quindi sarà necessario usare una macchina virtuale con **sistema operativo Windows**. Questa applicazione non richiede una potenza di calcolo eccessiva, quindi selezionare la dimensione di istanza **D2v3**. Saranno necessarie due macchine virtuali che verranno eseguite continuamente (730 ore al mese). Verrà usata l'archiviazione Premium in unità SSD per queste macchine virtuali e occorrerà un solo disco per macchina virtuale di dimensioni **E10**, per un totale di due dischi. 
 
@@ -51,6 +51,6 @@ Per esportare la stima, fare clic su `Export` nella parte inferiore della stima.
 
 Se si è connessi con l'account di Azure, è possibile salvare la stima, per poterci tornare in un secondo momento. Proseguire e fare clic sul pulsante **Salva**. Se si è connessi, verrà visualizzata una notifica che indica che la stima è stata salvata. Se non si è connessi, verrà visualizzato un messaggio per accedere e salvare la stima. Dopo avere salvato la stima, tornare all'inizio della pagina e selezionare la scheda **Stime**. La stima sarà visibile in questa scheda. È quindi possibile selezionarla per riaprirla o eliminarla se non serve più.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Riepilogo
 
 È stata eseguita una stima dei costi per un set di servizi di Azure senza alcuna spesa aggiuntiva. Non è stato creato nulla e si dispone di una stima completa condivisibile su cui si possono effettuare ulteriori analisi o modifiche in futuro. È possibile usare la stima non solo per creare stime per sistemi in cui si conoscono i servizi specifici che si prevede di usare, ma anche per confrontare i servizi e l'impatto che hanno sui costi complessivi. Un esempio è Microsoft SQL Server in una macchina virtuale rispetto a Database SQL di Azure. Vediamo a questo punto come ottenere informazioni dettagliate sui costi di servizi che sono già stati distribuiti.

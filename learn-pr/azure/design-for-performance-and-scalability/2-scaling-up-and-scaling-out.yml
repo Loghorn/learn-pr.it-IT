@@ -1,0 +1,48 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-performance-and-scalability.2-scaling-up-and-scaling-out
+title: Aumento delle prestazioni e aumento del numero di istanze
+metadata:
+  title: Aumento delle prestazioni e aumento del numero di istanze
+  description: In questa unità viene illustrato come sfruttare l'aumento delle prestazioni e l'aumento del numero di istanze nell'architettura
+  ms.openlocfilehash: 4ed99e6cb8b57d6c60577a34af8595da73b8d41c
+  ms.sourcegitcommit: 926510a198d738c5726081f6d7994fe9b6fc6edb
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 08/29/2018
+  ms.locfileid: "43181071"
+durationInMinutes: 5
+content: >
+  [!include[](includes/2-scaling-up-and-scaling-out.md)]
+quiz:
+  title: Verifica delle conoscenze - Aumento delle prestazioni e aumento del numero di istanze
+  questions:
+  - content: Qual è la descrizione più accurata di aumento del numero di istanze?
+    choices:
+    - content: Aumento della quantità di risorse di un'istanza
+      isCorrect: false
+    - content: Aumento del numero di istanze che servono le richieste
+      isCorrect: true
+    - content: Aggiunta di spazio di archiviazione aggiuntivo a una macchina virtuale
+      isCorrect: false
+    - content: Raggiungimento del massimo livello di scalabilità per l'applicazione
+      isCorrect: false
+  - content: Qual è la descrizione più accurata di riduzione delle prestazioni?
+    choices:
+    - content: Riduzione del numero di istanze che servono le richieste
+      isCorrect: false
+    - content: Acquisizione della proprietà delle modalità di scalabilità dell'applicazione
+      isCorrect: false
+    - content: Riduzione della quantità di risorse di un'istanza
+      isCorrect: true
+    - content: Massimo livello di scalabilità per l'applicazione non ancora raggiunto
+      isCorrect: false
+  - content: Quale dei seguenti NON è un aspetto da prendere in considerazione quando si integra una strategia di scalabilità in un'applicazione?
+    choices:
+    - content: Criteri di conservazione del backup per le istanze
+      isCorrect: true
+    - content: Gestione dello stato dell'applicazione
+      isCorrect: false
+    - content: Tempi di avvio delle istanze
+      isCorrect: false
+    - content: Automatizzazione della scalabilità delle istanze in base a una metrica o a una pianificazione
+      isCorrect: false

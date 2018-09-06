@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.control-azure-services-with-cli.2-what-is-the-azure-cli
+title: Che cos'è l'interfaccia della riga di comando di Azure?
+metadata:
+  title: Che cos'è l'interfaccia della riga di comando di Azure?
+  description: Informazioni sull'interfaccia della riga di comando di Azure e sulle nozioni di base per installarla in ciascuna piattaforma.
+  ms.openlocfilehash: 6cfd97ec92c19fc2a87734677aa07b2519779268
+  ms.sourcegitcommit: 526b39347ae023619cc4c4add68eff971510e523
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 08/27/2018
+  ms.locfileid: "42939539"
+durationInMinutes: 3
+content: '[!include[](includes/2-what-is-the-azure-cli.md)]'

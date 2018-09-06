@@ -1,14 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: execute-azure-function-with-triggers.3-timer-trigger
-title: Eseguire una funzione di Azure con i timer
+title: Eseguire una funzione di Azure a intervalli periodici
 metadata:
-  title: Eseguire una funzione di Azure con i timer
-  description: Eseguire una funzione di Azure con i timer
-  ms.openlocfilehash: 95524d7436e3b01adfcbb72dbca7a5c569994e80
-  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  title: Eseguire una funzione di Azure a intervalli periodici
+  description: Eseguire una funzione di Azure a intervalli periodici
+  ms.openlocfilehash: 4ac80a45a54fb237bef6e35080c7b494ceabfb72
+  ms.sourcegitcommit: 5b967802ae01d5e5985a3e6bcbdba1163ec2f6c9
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 08/22/2018
-  ms.locfileid: "40445042"
+  ms.lasthandoff: 08/27/2018
+  ms.locfileid: "42980448"
 durationInMinutes: 10
 content: '[!include[](includes/3-timer-trigger.md)]'

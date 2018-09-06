@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.manage-vms-with-azure-cli-data.8-querying-vms
+title: Eseguire query sulle informazioni di sistema e di runtime relative alla macchina virtuale
+metadata:
+  title: Eseguire query sulle informazioni di sistema e di runtime relative alla macchina virtuale
+  description: Informazioni su come usare l'Interfaccia della riga di comando di Azure per eseguire query sulle informazioni relative alla macchina virtuale
+  ms.openlocfilehash: 4e20b6540bdd898415dfe0a862bdecaca913e00d
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43834863"
+interactive: bash
+durationInMinutes: 10
+content: '[!include[](includes/8-querying-vms.md)]'

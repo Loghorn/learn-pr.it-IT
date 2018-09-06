@@ -20,9 +20,9 @@ Un livello di autorizzazione del trigger HTTP è un flag che indica se una richi
 
 Esistono tre livelli di autorizzazione:
 
-- Funzione
-- Anonimo
-- Admin
+1. Funzione
+2. Anonimo
+3. Admin
 
 I livelli **Funzione** e **Admin** sono basati sulla "chiave". Per inviare una richiesta HTTP, è necessario fornire una chiave per l'autenticazione. Esistono due tipi di chiavi: *funzione* e *host*. Le differenze tra le due chiavi sono a livello di ambito. Le chiavi *funzione* sono specifiche di una funzione. Le chiavi *host* si applicano a tutte le funzioni all'interno dell'intera applicazione di funzioni di Azure. Se il livello di autorizzazione è impostato su **Funzione**, è possibile usare una chiave *funzione* o *host*. Se il livello di autorizzazione è impostato su **Admin**, è necessario fornire una chiave *host*.
 
@@ -38,7 +38,7 @@ Un'impostazione importante da comprendere è **Richiedi nome parametro**. Questa
 
 Per richiamare un trigger HTTP, inviare una richiesta HTTP all'URL per la funzione. Per ottenere questo URL, passare alla tabella codici per la funzione e selezionare il collegamento **Ottieni URL della funzione**.
 
-![Individuare l'URL per la funzione](../media/5-function-url.png)
+![Individuare l'URL per la funzione](../media-drafts/5-function-url.png)
 
 Dopo aver ottenuto l'URL per la funzione, è possibile inviare richieste HTTP. Se la funzione riceve i dati, tenere presente che è possibile usare i parametri della stringa di query o fornire i dati tramite il corpo della richiesta.
 

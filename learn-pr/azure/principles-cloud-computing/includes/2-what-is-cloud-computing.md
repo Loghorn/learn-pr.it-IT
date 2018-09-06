@@ -1,4 +1,4 @@
-Il cloud computing è la distribuzione di servizi di calcolo su internet tramite un modello di prezzi con pagamento in base al consumo. In genere, i servizi di calcolo offerti variano in base al provider di servizi cloud. Tuttavia, in genere includono:
+Il cloud computing è la distribuzione di servizi di calcolo su Internet tramite un modello di prezzi con pagamento in base al consumo. In genere, i servizi di calcolo offerti variano in base al provider di servizi cloud. Tuttavia, in genere includono:
 
 - Potenza di calcolo
 - Archiviazione

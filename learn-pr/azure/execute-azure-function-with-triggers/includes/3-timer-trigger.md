@@ -1,16 +1,17 @@
-È frequente l'esecuzione di alcune logiche a un intervallo impostato. Si supponga di essere un proprietario di un blog e di notare che i sottoscrittori non leggono i post più recenti. Si decide che l'azione più efficace consiste nell'inviare un messaggio di posta elettronica una volta a settimana per ricordare ai componenti di controllare il blog. La logica viene implementata usando una funzione di Azure con un trigger timer per richiamare la funzione ogni settimana.
-
-Verrà qui illustrato come creare un trigger timer e istruire il trigger a funzionare a intervalli costanti.
+È frequente l'esecuzione di alcune logiche a un intervallo impostato. Si supponga di essere un proprietario di un blog e di notare che i sottoscrittori non leggono i post più recenti. Si decide che l'azione più efficace consiste nell'inviare un messaggio di posta elettronica una volta a settimana per ricordare ai componenti di controllare il blog. La logica viene implementata usando una funzione di Azure con un _trigger timer_ per richiamare la funzione ogni settimana.
 
 ## <a name="what-is-a-timer-trigger"></a>Cos è un trigger timer?
 
-Un trigger timer è un trigger che esegue una funzione a un intervallo costante. Per creare un trigger timer, è necessario specificare due tipi di informazioni. Il primo requisito è un *Nome del parametro timestamp*, che è semplicemente un identificatore per il trigger nel codice di accesso. Il secondo requisito riguarda una *Pianificazione*, ovvero un'*espressione CRON* che imposta l'intervallo del timer.
+Un trigger timer è un trigger che esegue una funzione a un intervallo costante. Per creare un trigger timer, è necessario specificare due tipi di informazioni. 
+
+1. Un *nome del parametro timestamp*, che è semplicemente un identificatore per accedere al trigger nel codice. 
+2. Una *Pianificazione*, ovvero un'*espressione CRON* che imposta l'intervallo del timer.
 
 ## <a name="what-is-a-cron-expression"></a>Cos'è un espressione CRON?
 
 Un'*espressione CRON* è una stringa costituita da sei campi che rappresentano un insieme di tempi.
 
-L'ordine dei sei campi in Azure è: {secondo} {minuto} {ora} {giorno} {mese} {giorno della settimana}.
+L'ordine dei sei campi in Azure è: `{second} {minute} {hour} {day} {month} {day of the week}`.
 
 Ad esempio, un'*espressione CRON* per creare un trigger che viene eseguita ogni cinque minuti potrebbe essere:
 
@@ -37,7 +38,7 @@ Ora torniamo all'esempio dell'espressione CRON originale. Proviamo a capirla meg
 
 Il **primo campo** rappresenta i secondi. Questo campo supporta i valori tra 0 e 59. Poiché il campo contiene il valore zero, viene selezionato il primo valore possibile, ovvero un secondo.
 
-Il **secondo campo** rappresenta i minuti. Il valore "*/5" contiene due caratteri speciali. Per prima cosa, l'asterisco (*) significa "seleziona ogni valore nel campo." Poiché questo campo rappresenta i minuti, i valori possibili sono da 0 a 59. Il secondo carattere speciale è la barra (/), che rappresenta un incremento. Quando si combinano insieme questi caratteri, significa che per tutti i valori tra 0 e 59 è necessario selezionare ogni quinto valore. Un modo più semplice per segnalare che è semplicemente "ogni cinque minuti."
+Il **secondo campo** rappresenta i minuti. Il valore "*/5" contiene due caratteri speciali. Per prima cosa, l'asterisco (\*) significa "seleziona ogni valore nel campo." Poiché questo campo rappresenta i minuti, i valori possibili sono da 0 a 59. Il secondo carattere speciale è la barra (/), che rappresenta un incremento. Quando si combinano insieme questi caratteri, ovvero per tutti i valori tra 0 e 59 è necessario selezionare ogni quinto valore. Un modo più semplice per segnalare che è semplicemente "ogni cinque minuti."
 
 I **rimanenti quattro campi** rappresentano l'ora, il giorno, il mese e il giorno della settimana. Un asterisco per questi campi indica di selezionare ogni possibile valore. In questo esempio, selezioniamo "ogni ora di ogni giorno del mese."
 

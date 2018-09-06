@@ -4,15 +4,14 @@ metadata:
   title: Verificare le proprie conoscenze
   description: Verificare le proprie conoscenze
   displayType: one-column
-  ms.openlocfilehash: d578a28cd23b3be60038cabb5fb899c0344219ad
-  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.openlocfilehash: 4e9c2a54209bec5caf81ac2d41ad00b58146244c
+  ms.sourcegitcommit: 926510a198d738c5726081f6d7994fe9b6fc6edb
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 08/22/2018
-  ms.locfileid: "40441684"
+  ms.lasthandoff: 08/29/2018
+  ms.locfileid: "43179846"
 title: Verificare le proprie conoscenze
-durationInMinutes: 10
-content: Il contenuto è obbligatorio
+durationInMinutes: 2
 quiz:
   title: Verifica delle conoscenze
   questions:
@@ -49,7 +48,7 @@ quiz:
       incorrectExplanation: Con l'infrastruttura distribuita come servizio, si è responsabili della gestione di hardware e software. Ciò include attività quali l'esecuzione degli aggiornamenti di sistema nelle macchine virtuali.
       isCorrect: false
     - content: 'Platform as a Service: piattaforma distribuita come servizio'
-      correctExplanation: L'obiettivo della piattaforma distribuita come servizio consiste nell'assistere alla creazione di un'applicazione nel minor tempo possibile. Le attività di gestione IT vengono eseguite automaticamente, in modo che sia possibile concentrarsi sulla scrittura di codice.
+      correctExplanation: L'obiettivo della piattaforma distribuita come servizio consiste nell'assistere alla creazione di un'applicazione nel minor tempo possibile. Le attività di gestione IT vengono eseguite automaticamente, in modo che sia possibile concentrarsi sulla scrittura del codice.
       isCorrect: true
     - content: 'Software as a Service: software come servizio'
       incorrectExplanation: Con il software come servizio, si usa un'applicazione esistente tramite un web browser o applicazioni software.

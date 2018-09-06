@@ -1,0 +1,30 @@
+### YamlMime:ModuleUnit
+uid: learn.choose-storage-approach-in-azure.3-operations-and-latency
+metadata:
+  title: Operazioni e latenza
+  description: Operazioni e latenza
+  displayType: one-column
+  ms.openlocfilehash: 3d67e7dd28258dc8accc73c36ae7573e143b7c02
+  ms.sourcegitcommit: 91b4553dbbbf6d8b6b359142332d0654aae326e8
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 08/30/2018
+  ms.locfileid: "43252369"
+title: Operazioni e latenza
+durationInMinutes: 10
+content: >
+  [!include[](includes/3-operations-and-latency.md)]
+quiz:
+  title: Operazioni e latenza
+  questions:
+  - content: Classificazione delle esigenze operative di un database in cui sono archiviati i dati utente per l'applicazione di vendita online. Il set di dati contiene le preferenze di spedizione, gli ordini precedenti e le informazioni del profilo da visualizzare nelle recensioni dei prodotti.
+    choices:
+    - content: L'applicazione richiede tempi di recupero rapidi, un numero elevato di operazioni di lettura e scrittura e la possibilità di eseguire query su tutte le proprietà
+      isCorrect: true
+      correctExplanation: Gli utenti creeranno e aggiorneranno spesso i propri dati e l'applicazione aggiornerà le informazioni sugli ordini nei dati utente. Sebbene i clienti in un sito di vendita online non si aspettino di eseguire spesso query sui propri dati, ad esempio una query per verificare se hanno un indirizzo di spedizione con un determinato codice postale, l'azienda dovrà poter eseguire una query per determinare quanti utenti hanno un codice postale specifico. Quando si tratta di delineare i requisiti, prendere in considerazione tutti gli utenti dei dati, non solo il cliente finale.
+    - content: L'applicazione richiede tempi di recupero rapidi, un numero elevato di operazioni di lettura e scrittura e la possibilità di eseguire query su un set limitato di proprietà
+      isCorrect: false
+      correctExplanation: Sebbene i clienti in un sito di vendita online non si aspettino di eseguire spesso query sui propri dati, ad esempio una query per verificare se hanno un indirizzo di spedizione con un determinato codice postale, l'azienda dovrà poter eseguire una query per determinare quanti utenti hanno un codice postale specifico, quindi tutte le proprietà devono essere indicizzate e sottoponibili a query
+    - content: L'applicazione può supportare tempi di recupero lenti e operazioni di sola lettura
+      isCorrect: false
+      incorrectExplanation: I clienti creeranno e aggiorneranno le proprie informazioni del profilo, quindi i dati utente devono essere di lettura e scrittura.

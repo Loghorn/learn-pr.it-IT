@@ -1,14 +1,18 @@
 Si supponga di lavorare in un'azienda che opera nel settore sanitario. Sono disponibili sistemi legacy, sistemi line-of-business e piani futuri per nuovi sistemi. Si è sentito parlare dei vantaggi del cloud computing. Come si può scegliere il modello di distribuzione migliore per soluzioni diverse di cloud pubblico, privato o ibrido?
 
-## <a name="what-is-cloud-computing"></a>Che cos'è il cloud computing?
+## <a name="what-is-cloud-computing"></a>Cos'è il cloud computing?
 
 Il cloud computing è il provisioning di servizi e applicazioni su richiesta tramite Internet. I server, le applicazioni, i dati e altre risorse vengono forniti come servizio. 
 
-I dettagli dei servizi sono nascosti all'utente. È possibile effettuare rapidamente il provisioning delle risorse di calcolo e usare il servizio con interventi minimi di gestione. Non è corretto pensare al cloud computing come a un data center disponibile tramite Internet. Il cloud computing usa la virtualizzazione, hardware commerciale e processi automatizzati per offrire un'esperienza utente self-service ai clienti, in modo analogo a un servizio di pubblica utilità. 
+I dettagli dei servizi sono nascosti all'utente. È possibile effettuare rapidamente il provisioning delle risorse di calcolo e usare il servizio con interventi minimi di gestione. Non è corretto pensare al cloud computing come a un data center disponibile tramite Internet. Il cloud computing usa la virtualizzazione, hardware commerciale e processi automatizzati per offrire un'esperienza utente self-service ai clienti, in modo analogo a un servizio di pubblica utilità.
 
-Esistono tre modelli di distribuzione per il cloud computing: cloud pubblico, cloud privato e cloud ibrido.
+Esistono tre modelli di distribuzione per il cloud computing: cloud pubblico, cloud privato e cloud ibrido. La figura seguente mostra una panoramica di questi modelli di distribuzione.
 
-![Modelli di distribuzione del cloud](../media/2-cloud-deployment.png)
+![Figura che mostra una panoramica generale dei modelli di distribuzione del cloud.](../media/2-cloud-deployment.png)
+
+!!! Video TC-008 placeholder !!! 
+
+> [!VIDEO https://channel9.msdn.com/Series/History/The-History-of-Microsoft-1995/player]
 
 ## <a name="public-cloud"></a>Cloud pubblico
 
@@ -27,7 +31,7 @@ Esempi dei motivi per usare il cloud pubblico:
 - **Utilizzo del servizio su richiesta, in base alle esigenze o con una sottoscrizione:** Il modello su richiesta o con sottoscrizione consente di pagare per la parte di CPU, archiviazione e altre risorse usate o prenotate.
 - **Nessun investimento anticipato per l'hardware:** non occorre acquistare, gestire e mantenere aggiornato l'hardware e l'infrastruttura applicativa in locale. Il provider di servizi cloud è interamente responsabile per la gestione e la manutenzione del sistema. 
 - **Automazione:** è possibile effettuare velocemente il provisioning delle risorse di infrastruttura tramite un portale Web, script, o automaticamente. 
-- **Distribuzione geografica:** non occorre posizionare i dati vicini e neanche disporre di molti data center di proprietà.
+- **Distribuzione geografica:** è possibile individuare i dati vicino a dove servono senza disporre di molti data center di proprietà.
 - **Manutenzione dell'hardware ridotta:** la manutenzione dell'hardware è una responsabilità del provider di servizi.
 
 ## <a name="private-cloud"></a>Cloud privato
@@ -51,7 +55,7 @@ Esempi dei motivi per usare il cloud privato:
 
 Un cloud ibrido è un ambiente di elaborazione che combina un cloud pubblico e un cloud privato, consentendo la condivisione tra i cloud di dati e applicazioni. Quando la domanda di elaborazione e calcolo è fluttuante, il cloud computing ibrido offre alle aziende la possibilità di ridimensionare facilmente la propria infrastruttura locale fino al cloud pubblico per gestire eventuali overflow, senza concedere ai data center di terze parti l'accesso a tutti i dati proprietari. Le organizzazioni possono usufruire della flessibilità e della potenza di calcolo del cloud pubblico per attività di calcolo semplici e non sensibili, mantenendo le applicazioni e i dati business critical in locale, ben protetti da un firewall aziendale.
 
-L'uso di un cloud ibrido consente di evitare investimenti per gestire picchi di breve durata della domanda. Offre anche la flessibilità di decidere quali risorse mantenere in locale e quali usare nel cloud. Le aziende pagano solo le risorse che usano temporaneamente invece di dover acquistare, programmare e gestire ulteriori risorse e apparecchiature, che potrebbero rimanere inattive per lunghi periodi di tempo. L'integrazione avviene in genere tramite una VPN sicura tra il provider di servizi cloud, come Azure, e il data center locale.
+L'uso di un cloud ibrido consente di evitare investimenti per gestire picchi di breve durata della domanda. Offre anche la flessibilità di decidere quali risorse mantenere in locale e quali usare nel cloud. Le aziende pagano solo le risorse che usano temporaneamente invece di dover acquistare, programmare e gestire ulteriori risorse e apparecchiature, che potrebbero rimanere inattive per lunghi periodi di tempo. L'integrazione avviene in genere tramite una VPN sicura tra il provider di servizi cloud, come Azure, e i data center locali.
 
 Si supponga di lavorare in un'azienda del settore sanitario e di avere un'applicazione con la quale i clienti possono accedere alle loro informazioni sanitarie. Una normativa richiede che i dati rimangano in una posizione fisica. Il sito Web del cliente deve essere efficiente nel rispondere a molti utenti globali.  Come soluzione, il database può essere ospitato in un data center locale e il sito Web può essere ospitato nel cloud pubblico. Viene usata una VPN tra il data center locale e il cloud pubblico. Questo scenario viene considerato un cloud ibrido.
 

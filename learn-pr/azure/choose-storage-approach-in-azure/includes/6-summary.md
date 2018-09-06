@@ -1,0 +1,2 @@
+In questo modulo si è appreso come classificare i dati, determinare il modo in cui i dati verranno usati e i requisiti di prestazioni e stabilire se i dati richiedono transazioni. Dopo avere appreso queste informazioni per i set di dati specifici dello scenario di vendita online, è stato analizzato il motivo per cui alcuni servizi di Azure sono più adatti allo scopo rispetto ad altri. È ora possibile applicare queste conoscenze ai progetti futuri, per scegliere il servizio da usare per archiviare i dati.
+

@@ -11,8 +11,9 @@ Steve aveva dimenticato che più istanze dell'app funzionavano su server diversi
 La perdita di una stringa di connessione al database, di una chiave API o di una password di servizio può essere catastrofica. Il furto o la cancellazione di dati, danni finanziari, tempi di inattività delle applicazioni e danni irreparabili ai beni aziendali e alla reputazione sono tutti potenziali risultati. Sfortunatamente, i valori segreti spesso devono essere implementati simultaneamente in più luoghi e modificati in momenti non opportuni. Ed è necessario archiviarli *in una posizione*! Vediamo come possiamo rendere tutto ciò sicuro con Azure KeyVault.
 
 ## <a name="learning-objectives"></a>Obiettivi di apprendimento
-> [!div class="checklist"]
-> * Comprendere i tipi di informazioni che possono essere archiviati in Azure KeyVault
-> * Creare un archivio di Azure Key Vault
-> * Eseguire l'autenticazione con Azure KeyVault
-> * Segreti di accesso in un Azure KeyVault
+In questo modulo verrà descritto come:
+
+- Comprendere i tipi di informazioni che si possono archiviare in Azure Key Vault.
+- Creare un archivio di Azure Key Vault.
+- Eseguire l'autenticazione con Azure Key Vault.
+- Accedere ai segreti in un'istanza di Azure Key Vault.

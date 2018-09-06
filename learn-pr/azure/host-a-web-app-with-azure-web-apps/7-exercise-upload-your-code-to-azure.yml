@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.host-a-web-application-with-azure-web-apps.7-exercise-upload-your-code-to-azure
+title: "Esercizio: Caricare l'applicazione ASP.NET Core in Azure"
+metadata:
+  title: "Esercizio: Caricare l'applicazione ASP.NET Core in Azure"
+  description: "Esercizio: Caricare l'applicazione ASP.NET Core in Azure"
+  ms.openlocfilehash: 4cd82fbc244f34dd943731e9b712f89797b1ee90
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43835538"
+durationInMinutes: 20
+content: '[!include[](includes/7-exercise-upload-your-code-to-azure.md)]'

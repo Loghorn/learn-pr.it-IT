@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.provision-azure-sql-db.2-plan-your-database
+title: Pianificare il database SQL di Azure
+metadata:
+  title: Pianificare il database SQL di Azure
+  description: Pianificare il database SQL di Azure
+  ms.openlocfilehash: 4407f212c69632c7dba02c7f2c4204886a5e630a
+  ms.sourcegitcommit: 107578417899e44b5611917dec7bcc21d4c1582e
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 08/29/2018
+  ms.locfileid: "43228685"
+durationInMinutes: 7
+content: '[!include[](includes/2-plan-your-database.md)]'

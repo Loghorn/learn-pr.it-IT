@@ -4,11 +4,11 @@ title: Esplorare il portale
 metadata:
   title: Esplorare il portale
   description: Esplorare il portale
-  ms.openlocfilehash: f8a3c971051ca220d98a1260e5e23769e5620d97
-  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.openlocfilehash: cb68ab7c1d570d26ddd59ad13f11ae9a01a0f20c
+  ms.sourcegitcommit: b97ed72bd7e3fb77b49de71e8ef35d3f70dfd636
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 08/22/2018
-  ms.locfileid: "40442144"
+  ms.lasthandoff: 09/05/2018
+  ms.locfileid: "43792563"
 durationInMinutes: 10
 content: '[!include[](includes/5-navigate-the-portal.md)]'

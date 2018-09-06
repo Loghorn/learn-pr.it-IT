@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.create-neural-network-with-dsvm.4-create-client-app
+title: Creare un'app NotHotDog
+metadata:
+  title: Creare un'app NotHotDog
+  description: Creare un'app NotHotDog
+  ms.openlocfilehash: 24b253ba8a737949b5e209843daf65e0cc32722c
+  ms.sourcegitcommit: 107578417899e44b5611917dec7bcc21d4c1582e
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 08/29/2018
+  ms.locfileid: "43230000"
+durationInMinutes: 10
+content: '[!include[](includes/4-create-client-app.md)]'

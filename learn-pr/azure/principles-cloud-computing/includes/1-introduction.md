@@ -5,7 +5,8 @@ Il processo di accensione di una luce è nascosto dietro il semplice gesto di pr
 Come professionista IT, sarebbe opportuno avere questi vantaggi durante lo sviluppo e la distribuzione di applicazioni. L'archiviazione dei dati, lo streaming di video o persino l'hosting di un sito Web richiedono tutti la gestione di hardware e software. Questa gestione è un ostacolo superfluo durante la distribuzione dell'applicazione agli utenti. Fortunatamente esiste una soluzione a questo problema: il **cloud computing**.
 
 ## <a name="learning-objectives"></a>Obiettivi di apprendimento
-> [!div class="checklist"]
-> * Esplorare comuni servizi di cloud computing
-> * Esplorare i vantaggi del cloud computing
-> * Decidere il modello di distribuzione cloud migliore per le proprie esigenze
+In questo modulo verrà descritto come:
+
+- Esplorare comuni servizi di cloud computing
+- Esplorare i vantaggi del cloud computing
+- Decidere il modello di distribuzione cloud migliore per le proprie esigenze

@@ -1,0 +1,31 @@
+### YamlMime:Module
+uid: learn.run-docker-containers-aci
+title: Eseguire i contenitori Docker con istanze di contenitore di Azure (ACI)
+summary: Informazioni su come eseguire app in contenitori con i contenitori Docker tramite istanze di contenitore di Azure (ACI)
+abstract: Eseguire i contenitori Docker con istanze di contenitore di Azure (ACI)
+cardDescription: Informazioni su come eseguire app in contenitori con i contenitori Docker tramite istanze di contenitore di Azure (ACI)
+iconUrl: ./images/bot.svg
+levels:
+- intermediate
+roles:
+- administrator
+products:
+- Docker
+- Azure Container Instances
+metadata:
+  title: Eseguire i contenitori Docker con istanze di contenitore di Azure (ACI)
+  ms.openlocfilehash: 2d16a96a9f9d2d4ff5a4c4bf467a77295695dffe
+  ms.sourcegitcommit: 926510a198d738c5726081f6d7994fe9b6fc6edb
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 08/29/2018
+  ms.locfileid: "43180822"
+units:
+- learn.run-docker-containers-aci.1-introduction
+- learn.run-docker-containers-aci.2-run-aci
+- learn.run-docker-containers-aci.3-restart-policy
+- learn.run-docker-containers-aci.4-use-environment-variables
+- learn.run-docker-containers-aci.5-use-data-volumes
+- learn.run-docker-containers-aci.6-troubleshoot-aci
+- learn.run-docker-containers-aci.7-knowledge-check
+achievement: learn.sample-module-cloudshell.badge

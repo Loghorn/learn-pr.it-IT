@@ -1,0 +1,25 @@
+<!DOCTYPE html />
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Artworks</title>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" onload="window.$ = window.jQuery = module.exports;"></script>
+    <script src="predict.js"></script>
+</head>
+
+<body>
+    <form><img src="assets/images/header.png"/><h1>Benvenuti in <strong>Artworks</strong></h1>
+        <div>Usare l'<a target="_new" href="https://southcentralus.dev.cognitive.microsoft.com/docs/services/eb68250e4e954d9bae0c2650db79c653/operations/58acd3c1ef062f0344a42814">API per le stime del Servizio visione artificiale personalizzato Microsoft</a> per analizzare e identificare l'artista originale di celebri dipinti.</div>
+
+        <div class="stepLabel">Passaggio uno</div>
+        <div><strong>Sfoglia</strong> per trovare un'immagine nel file system locale.</div><input type="button" id="select_button" value="..." /><div id="previewImage"></div>
+        <div id="analysisResults"></div>
+        <div class="stepLabel">Passaggio due</div>
+        <div>Fare clic su<strong>Predict</strong> (Stima) per visualizzare le stime relative all'artista.</div><input disabled=true type="button" id="analyze_button" value="Predict" /> (Stima)</form>
+</body>
+
+</html>
