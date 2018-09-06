@@ -8,14 +8,14 @@ Per iniziare, creare un gruppo di risorse di Azure in cui inserire l'account di 
 
 1. In Cloud Shell a destra selezionare Bash se è possibile scegliere un'opzione.
 
-2. Usare il comando `az group create` dell'interfaccia della riga di comando di Azure per creare un nuovo gruppo di risorse. Assegnare al gruppo il nome **ExerciseResources** e posizionarlo in una località vicina. 
+1. Usare il comando `az group create` dell'interfaccia della riga di comando di Azure per creare un nuovo gruppo di risorse. Assegnare al gruppo il nome **ExerciseResources** e posizionarlo in una località vicina. 
     - L'esempio seguente usa "eastus" come località.
 
     ```azurecli
     az group create -n ExerciseResources --location eastus
     ```
         
-2. Ora usare il comando `az storage account create` per creare l'account di archiviazione effettivo. È necessario specificare alcuni parametri:
+1. Ora usare il comando `az storage account create` per creare l'account di archiviazione effettivo. È necessario specificare alcuni parametri:
 
 | Parametro | Valore |
 |-----------|-------|

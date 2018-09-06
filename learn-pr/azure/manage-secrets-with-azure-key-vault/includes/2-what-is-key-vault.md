@@ -2,10 +2,10 @@ Azure Key Vault è un *archivio segreti*, ossia un servizio cloud centralizzato 
 
 I vantaggi principali dell'uso di Key Vault sono:
 
-* Rischio ridotto di divulgazione accidentale di segreti mediante l'archiviazione sicura, fuori dalla configurazione e dal controllo del codice sorgente, e l'eliminazione di scenari in cui i segreti vengono copiati in file o incollati in messaggi di posta elettronica o chat
-* Accesso ai segreti limitato con criteri di accesso su misura per applicazioni e utenti che hanno necessità di usarle
-* Archiviazione dei segreti centralizzata, in modo che più utenti e istanze di applicazioni possano accedere ai valori dei segreti che possono essere aggiornati in un unico posto
-* Accesso a registrazione e monitoraggio per comprendere meglio come e quando i segreti sono accessibili
+- Rischio ridotto di divulgazione accidentale di segreti mediante l'archiviazione sicura, fuori dalla configurazione e dal controllo del codice sorgente, e l'eliminazione di scenari in cui i segreti vengono copiati in file o incollati in messaggi di posta elettronica o chat
+- Accesso ai segreti limitato con criteri di accesso su misura per applicazioni e utenti che hanno necessità di usarle
+- Archiviazione dei segreti centralizzata, in modo che più utenti e istanze di applicazioni possano accedere ai valori dei segreti che possono essere aggiornati in un unico posto
+- Accesso a registrazione e monitoraggio per comprendere meglio come e quando i segreti sono accessibili
 
 I segreti vengono archiviati in *insiemi di credenziali*, che sono risorse di Azure con configurazione e criteri di sicurezza propri che possono essere creati con qualsiasi strumento di gestione di Azure come il portale di Azure o l'interfaccia della riga di comando di Azure. L'accesso ai segreti e la gestione degli insiemi di credenziali avvengono tramite l'API REST, supportata anche da tutti gli strumenti di gestione di Azure nonché da librerie client disponibili per i linguaggi più diffusi. Ogni insieme di credenziali ha un URL univoco in cui è ospitata l'API relativa.
 

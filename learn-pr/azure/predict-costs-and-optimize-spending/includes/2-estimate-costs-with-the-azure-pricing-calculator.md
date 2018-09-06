@@ -22,7 +22,7 @@ Partendo da questo scenario originale immaginiamo che il sistema sia destinato a
 
 È possibile usare il calcolatore prezzi di Azure per determinare il costo della soluzione ed esportare la stima per condividerla con il team.
 
-> [!NOTE]
+> [!TIP]
 > Assicurarsi che nel calcolatore non siano presenti elementi elencati nella stima. Se nella stima sono presenti elementi, fare clic sull'icona del cestino di ogni elemento per reimpostare la stima.
 
 Nella scheda **Prodotti** del calcolatore prezzi di Azure selezionare i servizi seguenti per aggiungerli alla stima:

@@ -7,13 +7,16 @@ Come parte del test, si vogliono confrontare le prestazioni delle app per origin
 In questo modulo, verrà illustrato come gestire le risorse di Azure tramite l'interfaccia della riga di comando di Azure. 
 
 ## <a name="learning-objectives"></a>Obiettivi di apprendimento
+
 In questo modulo verrà descritto come:
 
 - Installare l'interfaccia della riga di comando di Azure in Linux, macOS e/o Windows.
 - Connettersi a una sottoscrizione di Azure tramite l'interfaccia della riga di comando di Azure.
 - Creare risorse di Azure tramite l'interfaccia della riga di comando di Azure.
 
-## <a name="prerequisites"></a>Prerequisiti
+## <a name="prerequisites"></a>Prerequisiti  
+
 - Esperienza con un'interfaccia della riga di comando, ad esempio PowerShell o Bash
 - Conoscenza dei concetti di base di Azure, ad esempio i gruppi di risorse
 - Esperienza di amministrazione delle risorse di Azure tramite il portale di Azure
+- 

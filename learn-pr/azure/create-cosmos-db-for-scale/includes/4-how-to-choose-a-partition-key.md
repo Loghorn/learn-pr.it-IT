@@ -22,8 +22,6 @@ Ogni chiave di partizione ha uno spazio di archiviazione massimo di 10 GB, ovver
 
 Quando si tenta di determinare la chiave di partizione corretta e la soluzione non è ovvia, ecco alcuni suggerimenti da tenere presenti.
 
-* Non si temi di disporre di un numero eccessivo di chiavi di partizione. Più sono le chiavi di partizione di cui si dispone, maggiore è la scalabilità.
-
-* Per determinare la migliore chiave di partizione per un carico di lavoro con intensa attività di lettura, esaminare le migliori 3-5 query che si intende usare. Il valore incluso più di frequente nella clausola WHERE è un buon candidato per la chiave di partizione.
-
-* Per carichi di lavoro con intensa attività di scrittura, è necessario capire le esigenze di un carico di lavoro transazionale, poiché la chiave di partizione è l'ambito delle transazioni in più documenti.
+- Non si temi di disporre di un numero eccessivo di chiavi di partizione. Più sono le chiavi di partizione di cui si dispone, maggiore è la scalabilità.
+- Per determinare la migliore chiave di partizione per un carico di lavoro con intensa attività di lettura, esaminare le migliori 3-5 query che si intende usare. Il valore incluso più di frequente nella clausola WHERE è un buon candidato per la chiave di partizione.
+- Per carichi di lavoro con intensa attività di scrittura, è necessario capire le esigenze di un carico di lavoro transazionale, poiché la chiave di partizione è l'ambito delle transazioni in più documenti.

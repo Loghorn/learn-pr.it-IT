@@ -81,14 +81,14 @@ namespace KeyVaultDemoApp
 }
 ```
 
-> [!NOTE]
+> [!TIP]
 > Verificare di aver salvato i file con `Ctrl+S` dopo aver apportato le modifiche.
 
 L'unica modifica rispetto al codice di avvio è l'aggiunta di `ConfigureAppConfiguration`. È qui che viene caricato il nome dell'insieme di credenziali dalla configurazione e chiamato il metodo `AddAzureKeyVault`.
 
 Avviare il controller: creare un nuovo file nella cartella `Controllers` denominato `SecretTestController.cs` e incollarvi il codice seguente.
 
-> [!NOTE]
+> [!TIP]
 > Per creare un nuovo file, usare il comando `touch` nella shell. In questo caso, usare `touch Controllers/SecretTestController.cs`. Fare clic sul pulsante di aggiornamento nel riquadro File dell'editor per visualizzarlo.
 
 ```csharp

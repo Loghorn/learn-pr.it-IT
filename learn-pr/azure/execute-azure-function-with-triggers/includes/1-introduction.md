@@ -3,8 +3,9 @@ Immaginiamo uno scenario in cui un salone di parrucchieri molto attivo riscontri
 Lo sviluppatore Azure decide di risolvere questo problema usando una funzione di Azure. Si conosce già il modo di implementare la logica per inviare un messaggio di testo. A questo punto è necessario avere informazioni su come inviare il messaggio in un momento specifico. Per fortuna, le funzioni di Azure supportano una funzionalità denominata _trigger_. I trigger vengono usati per determinare la modalità di esecuzione di una funzione di Azure.
 
 ## <a name="learning-objectives"></a>Obiettivi di apprendimento
-> [!div class="checklist"]
-> * Determinare quali trigger risultano più adatti alle esigenze aziendali.
-> * Creare un trigger timer per richiamare una funzione in una pianificazione coerente.
-> * Creare un trigger HTTP per richiamare una funzione quando viene ricevuta una richiesta HTTP.
-> * Creare un trigger del blob per richiamare una funzione quando viene creato o aggiornato un blob nell'archivio di Azure.
+In questo modulo verrà descritto come:
+
+- Determinare quale trigger risulta più adatto alle esigenze aziendali.
+- Creare un trigger timer per richiamare una funzione in una pianificazione coerente.
+- Creare un trigger HTTP per richiamare una funzione quando viene ricevuta una richiesta HTTP.
+- Creare un trigger del BLOB per richiamare una funzione quando viene creato o aggiornato un BLOB nell'archivio di Azure.

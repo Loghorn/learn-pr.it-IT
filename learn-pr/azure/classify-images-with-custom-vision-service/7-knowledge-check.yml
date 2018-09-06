@@ -1,0 +1,109 @@
+### YamlMime:ModuleUnit
+uid: learn.classify-images-with-custom-vision-services.7-knowledge-check
+title: Verificare le proprie conoscenze
+metadata:
+  title: Verificare le proprie conoscenze
+  description: Verificare di aver compreso i passaggi necessari per classificare immagini con il Servizio visione artificiale personalizzato Microsoft.
+  ms.openlocfilehash: 3db5e215d180bf5350d2ca8a45b265f5c76d8b30
+  ms.sourcegitcommit: 107578417899e44b5611917dec7bcc21d4c1582e
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 08/29/2018
+  ms.locfileid: "43228771"
+durationInMinutes: 10
+content: Obbligatorio
+quiz:
+  title: Uso del Servizio visione artificiale personalizzato Microsoft per eseguire la classificazione delle immagini
+  questions:
+  - content: Quando si crea un nuovo progetto del Servizio visione artificiale personalizzato, per che cosa viene usato un dominio?
+    choices:
+    - content: Aiuta a decidere che nome assegnare al progetto
+      isCorrect: false
+      incorrectExplanation: È possibile assegnare al progetto qualsiasi nome desiderato. Il dominio non interferisce con questo aspetto.
+    - content: Aiuta a decidere come strutturare il progetto
+      isCorrect: false
+      incorrectExplanation: I progetti hanno la stessa struttura per quanto riguarda immagini di training e stime. Il dominio non interferisce con questo aspetto.
+    - content: Ottimizza un modello per tipi specifici di immagini
+      isCorrect: true
+      correctExplanation: Corretto. Passare alla parte successiva del lab.
+    - content: Ottimizza le immagini di training per l'organizzazione
+      isCorrect: false
+      incorrectExplanation: Le immagini di training sono organizzate tramite tag. Il dominio non interferisce con questo aspetto.
+  - content: Perché è consigliabile aggiungere un tag dopo il caricamento di immagini?
+    choices:
+    - content: Per semplificare l'organizzazione delle immagini nel progetto per l'uso successivo
+      isCorrect: false
+      incorrectExplanation: Anche se i tag aiutano a organizzare le immagini, questo non è lo scopo principale dei tag.
+    - content: Per inserire le immagini in una categoria per il training
+      isCorrect: true
+      correctExplanation: Corretto. Passare alla parte successiva del lab.
+    - content: Per generare un word cloud dopo il training
+      isCorrect: false
+      incorrectExplanation: Il Servizio visione artificiale personalizzato non gestisce in alcun modo i word cloud.
+    - content: Non è necessario aggiungere un tag a questo scopo
+      isCorrect: false
+      incorrectExplanation: Per il corretto funzionamento della classificazione delle immagini, è necessario aggiungere almeno un tag.
+  - content: La precisione e il richiamo sono correlati nella misurazione delle prestazioni del modello?
+    choices:
+    - content: No
+      isCorrect: false
+      incorrectExplanation: La precisione e il richiamo sono correlati. Se la precisione è elevata e il richiamo è ridotto, il modello non avrà prestazioni soddisfacenti.
+    - content: Sì
+      isCorrect: true
+      correctExplanation: Corretto. Passare alla parte successiva del lab.
+  - content: In che modi è possibile eseguire un rapido test sul modello dopo il training?
+    choices:
+    - content: File di immagine
+      isCorrect: false
+      incorrectExplanation: Il servizio può eseguire un rapido test sui file di immagine, ma può eseguirne anche di altro tipo.
+    - content: URL immagine
+      isCorrect: false
+      incorrectExplanation: Il servizio può eseguire un rapido test sugli URL immagine, ma può eseguirne anche di altro tipo.
+    - content: Pagina Web di immagini
+      isCorrect: true
+      incorrectExplanation: Il servizio non può eseguire un rapido test solo su una pagina Web contenente immagini.
+    - content: File di immagine e URL immagine
+      isCorrect: true
+      correctExplanation: Corretto. Passare alla parte successiva del lab.
+  - content: Che operazione viene eseguita tramite l'opzione "Predefinito" nella scheda Prestazioni?
+    choices:
+    - content: L'interazione più recente viene contrassegnata come iterazione predefinita
+      isCorrect: true
+      correctExplanation: Corretto. Passare alla parte successiva del lab.
+    - content: L'endpoint URL dell'immagine viene contrassegnato come endpoint predefinito
+      isCorrect: false
+      incorrectExplanation: Gli endpoint sono costanti indipendentemente dal numero di iterazioni nel modello.
+    - content: L'endpoint del file di immagine viene contrassegnato come endpoint predefinito
+      isCorrect: false
+      incorrectExplanation: Gli endpoint sono costanti indipendentemente dal numero di iterazioni nel modello.
+    - content: Il progetto corrente viene contrassegnato come progetto predefinito da usare
+      isCorrect: false
+      incorrectExplanation: Il progetto deve essere specificato in modo che gli endpoint riconoscano quale usare. L'ID progetto è incluso nell'URL nella scheda Prediction URL (URL stime).
+  - content: Come si chiama l'intestazione per la chiave per le stime da inviare con l'endpoint per le stime?
+    choices:
+    - content: Chiave di sottoscrizione
+      isCorrect: false
+      incorrectExplanation: Per il Servizio visione artificiale personalizzato non viene usata alcuna chiave di sottoscrizione.
+    - content: Chiave per le stime
+      isCorrect: true
+      correctExplanation: Corretto. Passare alla parte successiva del lab.
+    - content: Chiave di training
+      isCorrect: false
+      incorrectExplanation: La chiave di training viene usata per il training di nuove iterazioni nel modello, ma non per eseguire stime.
+    - content: Chiave API
+      isCorrect: false
+      incorrectExplanation: Per il Servizio visione artificiale personalizzato non viene usata alcuna chiave API.
+  - content: Quando si usa l'API per le stime che cosa altro accade nel portale del Servizio visione artificiale personalizzato?
+    choices:
+    - content: Vengono aggiunti tag alle immagini se queste vengono restituite come sconosciute
+      isCorrect: false
+      incorrectExplanation: I tag vengono aggiunti alle immagini solo manualmente nel portale, non automaticamente.
+    - content: Le immagini vengono caricate come prive di tag nel set di training
+      isCorrect: false
+      incorrectExplanation: Le immagini devono essere caricate in modo esplicito per fare parte del set di training.
+    - content: Le immagini vengono mostrate nella scheda Predictions (Stime)
+      isCorrect: true
+      correctExplanation: Corretto. Passare alla parte successiva del lab.
+    - content: Non accade altro
+      isCorrect: false
+      incorrectExplanation: Le immagini vengono inserite in una parte specifica del portale.

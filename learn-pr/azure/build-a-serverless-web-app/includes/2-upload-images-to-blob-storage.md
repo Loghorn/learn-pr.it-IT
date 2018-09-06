@@ -1,12 +1,3 @@
----
-zone_pivot_groups: dev-lang-csharp-javascript
-ms.openlocfilehash: 69bc512c02a30bc74ae82a3a43a083af635d89ba
-ms.sourcegitcommit: bf091e3a389138b59573865ca54775e38a4ffa1f
-ms.translationtype: HT
-ms.contentlocale: it-IT
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "43154576"
----
 L'applicazione che si sta creando è una raccolta di foto che usa JavaScript lato client per chiamare API per caricare e visualizzare immagini. In questo modulo si creerà un'API usando una funzione serverless che genera un URL temporaneo per caricare un'immagine. L'applicazione Web usa l'URL generato per caricare un'immagine nell'archiviazione BLOB usando l'[API REST dell'archiviazione BLOB](https://docs.microsoft.com/rest/api/storageservices/blob-service-rest-api).
 
 ## <a name="create-a-blob-storage-container-for-images"></a>Creare un contenitore di archiviazione BLOB per le immagini

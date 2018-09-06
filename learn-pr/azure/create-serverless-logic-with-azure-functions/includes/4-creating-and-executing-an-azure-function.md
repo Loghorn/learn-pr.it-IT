@@ -125,4 +125,3 @@ Si può eseguire la stessa operazione in C# usando il metodo `log.Info`. In ques
 ### <a name="errors-and-warnings-window"></a>Finestra degli errori e degli avvisi
 
 La scheda della finestra degli errori e degli avvisi si trova nello stesso menu a comparsa della finestra registro. In questa finestra vengono visualizzati gli errori e gli avvisi di compilazione all'interno del codice.
-

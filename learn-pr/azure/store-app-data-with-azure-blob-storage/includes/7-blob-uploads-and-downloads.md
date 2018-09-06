@@ -81,7 +81,7 @@ az webapp deployment source config-zip --src ../site.zip --name <your-unique-app
 
 Aprire `https://<your-unique-app-name>.azurewebsites.net` in un browser per visualizzare l'app in esecuzione. L'aspetto dovrebbe essere simile a quanto riportato di seguito.
 
-![Screenshot dell'app Web FileUploader](../media-drafts/fileuploader-empty.PNG)
+![Screenshot dell'app Web FileUploader](../media/7-fileuploader-empty.PNG)
 
 Provare a caricare e scaricare alcuni file per testare l'app. Dopo aver caricato dei file, eseguire il comando seguente nella shell per visualizzare i BLOB che sono stati caricati nel contenitore:
 

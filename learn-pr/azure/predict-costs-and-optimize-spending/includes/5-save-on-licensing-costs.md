@@ -60,7 +60,7 @@ A molte persone non è chiaro che SQL Server Developer Edition è un prodotto gr
 
 Cercare le immagini di SQL Server Developer Edition su Azure Marketplace e usarle a scopi di sviluppo o test, eliminando così i costi aggiuntivi per SQL Server. 
 
-> [!NOTE]
+> [!TIP]
 > Per informazioni complete sulle licenze, vedere la [Guida ai prezzi documentati](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-pricing-guidance).
 
 ## <a name="use-constrained-instance-sizes-for-database-workloads"></a>Usare dimensioni di istanze vincolate per i carichi di lavoro del database 

@@ -2,7 +2,7 @@ Viene quindi valutata la velocità effettiva dei dati per il database in questio
 
 ## <a name="what-is-database-throughput"></a>Che cos'è la velocità effettiva del database? 
 
-La velocità effettiva del database è il numero di operazioni di lettura e scrittura che il database può eseguire in un secondo. 
+La velocità effettiva del database è il numero di operazioni di lettura e scrittura che il database può eseguire in un secondo.
 
 Per ridimensionare la velocità effettiva in modo strategico, è necessario stimare la velocità effettiva necessaria valutando il numero di operazioni di lettura e scrittura da supportare in momenti diversi e per documenti con diverse dimensioni. Una stima corretta contribuisce a non deludere gli utenti nei momenti di picco della domanda. Una stima non accurata può invece limitare la velocità delle richieste, causando operazioni in attesa e tentativi ripetuti e conseguenti latenze elevate e clienti insoddisfatti.
 
