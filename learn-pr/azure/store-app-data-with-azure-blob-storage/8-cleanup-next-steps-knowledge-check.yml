@@ -1,15 +1,61 @@
 ### YamlMime:ModuleUnit
 uid: learn.store-app-data-with-azure-blob-storage.8-cleanup-next-steps-knowledge-check
-title: <span data-ttu-id="bef5b-101">Pulizia, passaggi successivi e verifica delle conoscenze</span><span class="sxs-lookup"><span data-stu-id="bef5b-101">Cleanup, next steps, and knowledge check</span></span>
+title: <span data-ttu-id="1c8cf-101">Pulizia, passaggi successivi e verifica delle conoscenze</span><span class="sxs-lookup"><span data-stu-id="1c8cf-101">Cleanup, next steps, and knowledge check</span></span>
 metadata:
-  title: <span data-ttu-id="bef5b-102">Pulizia, passaggi successivi e verifica delle conoscenze</span><span class="sxs-lookup"><span data-stu-id="bef5b-102">Cleanup, next steps, and knowledge check</span></span>
-  description: <span data-ttu-id="bef5b-103">Pulizia, passaggi successivi e verifica delle conoscenze</span><span class="sxs-lookup"><span data-stu-id="bef5b-103">Cleanup, next steps, and knowledge check</span></span>
-  ms.openlocfilehash: e5d80bbc2d4cb335828dea6b82e0fc24d6287002
-  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  title: <span data-ttu-id="1c8cf-102">Pulizia, passaggi successivi e verifica delle conoscenze</span><span class="sxs-lookup"><span data-stu-id="1c8cf-102">Cleanup, next steps, and knowledge check</span></span>
+  description: <span data-ttu-id="1c8cf-103">Pulizia, passaggi successivi e verifica delle conoscenze</span><span class="sxs-lookup"><span data-stu-id="1c8cf-103">Cleanup, next steps, and knowledge check</span></span>
+  ms.openlocfilehash: 7c554c0f755764aa9231c4d783b81697c2502c68
+  ms.sourcegitcommit: 107578417899e44b5611917dec7bcc21d4c1582e
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 08/22/2018
-  ms.locfileid: "40440875"
+  ms.lasthandoff: 08/29/2018
+  ms.locfileid: "43225677"
 durationInMinutes: 2
 interactive: bash
-content: '[!include[](includes/8-cleanup-next-steps-knowledge-check.md)]'
+content: >
+  [!include[](includes/8-cleanup-next-steps-knowledge-check.md)]
+quiz:
+  title: '<span data-ttu-id="1c8cf-104">Verifica delle conoscenze: archiviazione BLOB</span><span class="sxs-lookup"><span data-stu-id="1c8cf-104">Knowledge check: Blob Storage</span></span>'
+  questions:
+  - content: <span data-ttu-id="1c8cf-105">Quale delle seguenti affermazioni meglio descrive una buona strategia per la creazione di account di archiviazione e contenitori BLOB per l'app?</span><span class="sxs-lookup"><span data-stu-id="1c8cf-105">Which of the following best describes a good strategy for creating storage accounts and blob containers for your app?</span></span>
+    choices:
+    - content: <span data-ttu-id="1c8cf-106">I contenitori e gli account di archiviazione devono essere creati manualmente nel portale di Azure o con gli script prima di distribuire l'app.</span><span class="sxs-lookup"><span data-stu-id="1c8cf-106">Storage accounts and containers must be created manually in the Azure portal or with scripts before your app is deployed.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="1c8cf-107">Gli account di archiviazione devono essere creati anticipatamente, prima della distribuzione dell'app, invece i contenitori vengono in genere creati dalle applicazioni in tempo reale.</span><span class="sxs-lookup"><span data-stu-id="1c8cf-107">Storage accounts should be created up front, prior to app deployment, but container creation is commonly performed by applications on the fly.</span></span>
+    - content: <span data-ttu-id="1c8cf-108">L'app ha bisogno degli account di archiviazione, ma il processo di distribuzione deve creare anticipatamente tutti i contenitori necessari all'app.</span><span class="sxs-lookup"><span data-stu-id="1c8cf-108">Your app should create storage accounts as it needs them, but your deployment process should create all the containers your app needs up front.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="1c8cf-109">La creazione degli account di archiviazione è un'attività di gestione che, in genere, non deve essere eseguita dalle applicazioni.</span><span class="sxs-lookup"><span data-stu-id="1c8cf-109">Storage account creation is a management activity that generally should not be performed by applications.</span></span>
+    - content: <span data-ttu-id="1c8cf-110">È necessario creare anticipatamente gli account di archiviazione dell'app, prima di distribuirla, e consentire all'app di creare i contenitori di cui ha bisogno.</span><span class="sxs-lookup"><span data-stu-id="1c8cf-110">You should create your app's storage accounts up front, before deploying your app, and let your app create the containers it needs.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="1c8cf-111">La creazione dei contenitori è una attività comune per l'app.</span><span class="sxs-lookup"><span data-stu-id="1c8cf-111">Container creation is a common app activity.</span></span> <span data-ttu-id="1c8cf-112">Le applicazioni possono creare i contenitori di cui hanno bisogno in tempo reale.</span><span class="sxs-lookup"><span data-stu-id="1c8cf-112">Applications can create containers they need on the fly.</span></span>
+    - content: <span data-ttu-id="1c8cf-113">Un'app configurata correttamente deve creare autonomamente tutti gli account e i contenitori di archiviazione di cui ha bisogno.</span><span class="sxs-lookup"><span data-stu-id="1c8cf-113">A properly configured app should create all of the storage accounts and containers it needs on its own.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="1c8cf-114">La creazione degli account di archiviazione è un'attività di gestione che, in genere, non deve essere eseguita dalle applicazioni.</span><span class="sxs-lookup"><span data-stu-id="1c8cf-114">Storage account creation is a management activity that generally should not be performed by applications.</span></span>
+  - content: <span data-ttu-id="1c8cf-115">Quale tipo di configurazione viene in genere utilizzato per inizializzare la libreria client dell'archiviazione BLOB all'interno di un'app?</span><span class="sxs-lookup"><span data-stu-id="1c8cf-115">What kind of configuration is typically used to initialize the Blob storage client library within an app?</span></span>
+    choices:
+    - content: <span data-ttu-id="1c8cf-116">Un nome utente e una password di Azure.</span><span class="sxs-lookup"><span data-stu-id="1c8cf-116">An Azure username and password.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="1c8cf-117">I nomi utente e le password non sono un meccanismo di autenticazione per l'archiviazione di Azure.</span><span class="sxs-lookup"><span data-stu-id="1c8cf-117">Usernames and passwords are not an authentication mechanism for Azure storage.</span></span>
+    - content: <span data-ttu-id="1c8cf-118">La stringa di connessione dell'account di archiviazione.</span><span class="sxs-lookup"><span data-stu-id="1c8cf-118">The storage account connection string.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="1c8cf-119">Una stringa di connessione dell'account di archiviazione contiene tutte le informazioni necessarie a un'applicazione per connettersi all'archiviazione BLOB, in particolar modo il nome e la chiave dell'account.</span><span class="sxs-lookup"><span data-stu-id="1c8cf-119">A storage account connection string contains all the information needed by an application to connect to Blob storage, most importantly the account name and the account key.</span></span>
+    - content: <span data-ttu-id="1c8cf-120">Un identificatore univoco globale (GUID) che rappresenta l'applicazione.</span><span class="sxs-lookup"><span data-stu-id="1c8cf-120">A globally-unique identifier (GUID) that represents the application.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="1c8cf-121">I GUID non sono un meccanismo di autenticazione per l'archiviazione di Azure.</span><span class="sxs-lookup"><span data-stu-id="1c8cf-121">GUIDS are not an authentication mechanism for Azure storage.</span></span>
+    - content: <span data-ttu-id="1c8cf-122">Il data center dell'account di archiviazione e gli identificatori di posizione.</span><span class="sxs-lookup"><span data-stu-id="1c8cf-122">The storage account datacenter and location identifiers.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="1c8cf-123">L'applicazione non ha bisogno di conoscere le informazioni sul data center e sulla posizione di un account di archiviazione per accedervi.</span><span class="sxs-lookup"><span data-stu-id="1c8cf-123">Your application does not need to know information about the datacenter and location of a storage account to access it.</span></span>
+  - content: <span data-ttu-id="1c8cf-124">Cosa accade quando si chiama `GetBlockBlobReference` con il nome di un BLOB?</span><span class="sxs-lookup"><span data-stu-id="1c8cf-124">What happens when you call `GetBlockBlobReference` with the name of a blob?</span></span>
+    choices:
+    - content: <span data-ttu-id="1c8cf-125">Viene creato un nuovo BLOB in blocchi nell'archiviazione.</span><span class="sxs-lookup"><span data-stu-id="1c8cf-125">A new block blob is created in storage.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="1c8cf-126">Ottenere un riferimento al BLOB non comporta di per sé la creazione di un BLOB, ma solo se si usa il riferimento per caricare i dati e il BLOB di destinazione non esiste già.</span><span class="sxs-lookup"><span data-stu-id="1c8cf-126">Getting a blob reference does not create a blob on its own, but it will create a blob if you use the reference to upload data and the targeted blob doesn't already exist.</span></span>
+    - content: <span data-ttu-id="1c8cf-127">Viene creato un oggetto `CloudBlockBlob` in locale.</span><span class="sxs-lookup"><span data-stu-id="1c8cf-127">A `CloudBlockBlob` object is created locally.</span></span> <span data-ttu-id="1c8cf-128">Non vengono effettuate chiamate di rete.</span><span class="sxs-lookup"><span data-stu-id="1c8cf-128">No network calls are made.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="1c8cf-129">Ottenere un riferimento al BLOB non comporta alcuna chiamata all'archiviazione di Azure; viene semplicemente creato un oggetto locale che può essere usato per lavorare con un BLOB archiviato.</span><span class="sxs-lookup"><span data-stu-id="1c8cf-129">Getting a blob reference does not make any calls to Azure Storage, it simply creates an object locally that can then be used to work with a stored blob.</span></span>
+    - content: <span data-ttu-id="1c8cf-130">Se il BLOB non esiste nell'archiviazione, viene generata un'eccezione.</span><span class="sxs-lookup"><span data-stu-id="1c8cf-130">An exception is thrown if the blob does not exist in storage.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="1c8cf-131">Ottenere un riferimento al BLOB non comporta la verifica dell'effettiva esistenza del BLOB nell'archiviazione.</span><span class="sxs-lookup"><span data-stu-id="1c8cf-131">Getting a blob reference does not check whether the blob already exists in storage.</span></span>
+    - content: <span data-ttu-id="1c8cf-132">Il contenuto del BLOB denominato viene scaricato.</span><span class="sxs-lookup"><span data-stu-id="1c8cf-132">The contents of the named blob are downloaded.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="1c8cf-133">Ottenere un riferimento al BLOB non comporta di per sé il download dei dati.</span><span class="sxs-lookup"><span data-stu-id="1c8cf-133">Getting a blob reference does not download any data on its own.</span></span> <span data-ttu-id="1c8cf-134">Tuttavia, dopo aver ottenuto un riferimento, può essere usato per scaricare i dati dal blob di destinazione.</span><span class="sxs-lookup"><span data-stu-id="1c8cf-134">However, once you have a reference, it can be used to download data from the targeted blob.</span></span>
