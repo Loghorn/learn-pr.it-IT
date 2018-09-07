@@ -1,0 +1,5 @@
+Cache Redis può migliorare le prestazioni e la scalabilità dei sistemi che si affidano ai database. Le prestazioni vengono aumentate copiando temporaneamente i dati usati di frequente all'interno di una risorsa di archiviazione rapida vicina all'applicazione. Con Cache Redis, questa risorsa di archiviazione rapida è situata all'interno della memoria invece di essere caricata dal disco da un database.
+
+# <a name="cleanup"></a>Pulizia
+
+L'esecuzione della cache Redis comporta l'addebito di costi per la sottoscrizione. È consigliabile rimuoverla per evitare eventuali addebiti. Il modo più semplice per rimuoverla consiste nell'eliminare il gruppo di risorse in cui è stata creata. Tenere presente che, quando si elimina un gruppo di risorse, verranno eliminati tutti gli elementi al suo interno. In caso contrario, sarà necessario eliminare la cache stessa.

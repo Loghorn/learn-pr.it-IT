@@ -16,7 +16,9 @@ I file di script di PowerShell hanno un'estensione **ps1**. È possibile creare 
 > [!TIP]
 > Se si scrivono script di PowerShell in Windows, è possibile usare l'ambiente Windows PowerShell Integrated Scripting Environment (ISE). Questo editor offre funzionalità come la colorazione della sintassi e un elenco dei cmdlet disponibili.
 >
->![Windows PowerShell ISE](../media-drafts/7-windows-powershell-ise-screenshot.png)
+Lo screenshot seguente mostra il Windows PowerShell Integrated Scripting Environment (ISE) con uno script di esempio per connettersi ad Azure e creare una macchina virtuale in Azure.
+
+>![Screenshot di Windows PowerShell ISE con uno script per creare una macchina virtuale aperto nella finestra di modifica.](../media/7-windows-powershell-ise-screenshot.png)
 
 Dopo avere scritto lo script, eseguirlo dalla riga di comando di PowerShell passando il nome del file preceduto da un punto e una barra rovesciata:
 

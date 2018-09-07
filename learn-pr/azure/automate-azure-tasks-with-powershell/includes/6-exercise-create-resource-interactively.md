@@ -31,7 +31,9 @@ Per mantenere queste macchine virtuali separate dalle macchine virtuali usate ne
     ```
 Un altro modo per verificare se il gruppo di risorse è stato creato correttamente è usare il portale di Azure. A tale scopo, accedere al portale e passare alla sezione **Gruppi di risorse** (vedere di seguito). Il nuovo gruppo di risorse dovrebbe essere visualizzato nell'elenco.
 
-![Uso del portale per elencare i gruppi di risorse](../media-drafts/6-listing-resource-groups.png)
+Lo screenshot seguente mostra la posizione della categoria Gruppi di risorse nel portale di Azure.
+
+![Screenshot del pannello Preferiti del portale di Azure con la categoria Gruppo di risorse evidenziata.](../media/6-listing-resource-groups.png)
 
 ## <a name="summary"></a>Riepilogo
 In questo esercizio viene illustrato un modello comune per una sessione di PowerShell interattiva. Sono stati usati un cmdlet standard per importare il modulo AzureRM, quindi i cmdlet di Azure PowerShell per eseguire un'attività specifica. A questo punto, è disponibile un gruppo di risorse nella sottoscrizione e si è pronti per creare le macchine virtuali.

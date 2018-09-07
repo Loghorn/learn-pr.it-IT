@@ -1,0 +1,34 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-performance-and-scalability.5-identify-performance-bottlenecks-in-your-application
+title: Identificare i colli di bottiglia relativi alle prestazioni nell'applicazione
+metadata:
+  title: Identificare i colli di bottiglia relativi alle prestazioni nell'applicazione
+  description: In questa unità viene spiegato come identificare i colli di bottiglia relativi alle prestazioni nell'applicazione
+  ms.openlocfilehash: 0b5ab3a983a4b3dfc3a76c914b6a565f3ee7ed2c
+  ms.sourcegitcommit: 926510a198d738c5726081f6d7994fe9b6fc6edb
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 08/29/2018
+  ms.locfileid: "43181186"
+durationInMinutes: 5
+content: >
+  [!include[](includes/5-identify-performance-bottlenecks-in-your-application.md)]
+quiz:
+  title: "Verifica delle conoscenze: identificare i colli di bottiglia relativi alle prestazioni nell'applicazione"
+  questions:
+  - content: Quale delle seguenti affermazioni meglio descrive Application Insights?
+    choices:
+    - content: Un'unica console per le esigenze di monitoraggio in Azure
+      isCorrect: false
+    - content: Un'implementazione del modello di monitoraggio dell'integrità dell'endpoint
+      isCorrect: false
+    - content: Un'area di lavoro per abilitare la raccolta dei log tra applicazioni e infrastruttura
+      isCorrect: false
+    - content: Un servizio per monitorare la disponibilità, le prestazioni e l'uso delle applicazioni Web
+      isCorrect: true
+  - content: È possibile usare Log Analytics per tenere traccia delle metriche e dei log personalizzati.
+    choices:
+    - content: Vero
+      isCorrect: true
+    - content: Falso
+      isCorrect: false
