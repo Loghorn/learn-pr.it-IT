@@ -2,7 +2,7 @@ Il successo di una società di servizi spesso dipende direttamente dai contratti
 
 L'amministrazione di una VM di Azure non si limita alla gestione del sistema operativo o del software in esecuzione nella VM. Consente di sapere quali sono i servizi forniti da Azure, assicurando la disponibilità dei servizi e supportando l'automazione. Questi servizi consentono di pianificare la strategia di continuità aziendale e ripristino di emergenza dell'organizzazione.
 
-Verrà qui illustrato il servizio di Azure che consente di migliorare la disponibilità della VM, semplifica le attività di gestione della VM e conserva i dati della VM di cui è stato eseguire un backup, tenendoli al sicuro. Si inizierà definendo la disponibilità.
+Verrà qui illustrato un servizio di Azure che consente di migliorare la disponibilità della VM, semplifica le attività di gestione della VM e conserva i dati della VM di cui è stato eseguire un backup, tenendoli al sicuro. Si inizierà definendo la disponibilità.
 
 ## <a name="what-is-availability"></a>Che cos'è la disponibilità?
 
@@ -12,7 +12,7 @@ Si supponga di avere un sito Web e di voler fare in modo che i clienti possano a
 
 ### <a name="why-do-i-need-to-think-about-availability-when-using-azure"></a>Perché preoccuparsi della disponibilità quando si usa Azure?
 
-Le VM di Azure vengono eseguite su server fisici ospitati nei data center di Microsoft. Come per la maggior parte dei dispositivi fisici, potrebbe verificarsi un guasto. Se si verifica un guasto nel server fisico, si verifica un errore anche nelle macchine virtuali ospitate in tale server. In questo caso Azure sposterà automaticamente la VM in un server host integro. Questa migrazione automatica potrebbe tuttavia richiedere alcuni minuti, durante i quali le applicazioni ospitate in tale VM non saranno disponibili.
+Le VM di Azure vengono eseguite in server fisici ospitati nei data center di Microsoft. Come per la maggior parte dei dispositivi fisici, potrebbe verificarsi un guasto. Se si verifica un guasto nel server fisico, si verifica un errore anche nelle macchine virtuali ospitate in tale server. In questo caso Azure sposterà automaticamente la VM in un server host integro. Questa migrazione automatica potrebbe tuttavia richiedere alcuni minuti, durante i quali le applicazioni ospitate in tale VM non saranno disponibili.
 
 Le VM potrebbero anche essere interessate da aggiornamenti periodici avviati da Azure. Questi eventi di manutenzione comprendono aggiornamenti software e hardware e sono necessari per migliorare l'affidabilità e le prestazioni della piattaforma. Questi eventi vengono in genere eseguiti senza conseguenze per le VM guest, ma in alcuni casi le macchine virtuali verranno riavviate per completare un aggiornamento.
 
@@ -28,7 +28,7 @@ Un **set di disponibilità** è una funzionalità logica usata per assicurarsi c
 > [!TIP]
 > Microsoft offre un contratto di servizio di connettività esterna al 99,95% per le VM a più istanze distribuite in un set di disponibilità. Perché il contratto di servizio sia valido, devono quindi essere distribuite almeno due istanze della VM in un set di disponibilità. 
 
-È possibile creare i set di disponibilità nella sezione del ripristino di emergenza del portale di Azure. È anche possibile crearli usando i modelli di Resource Manager oppure uno strumento di scripting o API. Quando si inseriscono le VM in un set di disponibilità, Azure garantisce che vengano distribuite tra **domini di errore** e **domini di aggiornamento**.
+È possibile creare i set di disponibilità nella sezione del portale di Azure relativa al ripristino di emergenza. È anche possibile crearli usando i modelli di Resource Manager oppure uno strumento di scripting o API. Quando si inseriscono le VM in un set di disponibilità, Azure garantisce che vengano distribuite tra **domini di errore** e **domini di aggiornamento**.
 
 #### <a name="what-is-a-fault-domain"></a>Che cos'è un dominio di errore?
 
@@ -44,14 +44,14 @@ I set di disponibilità sono una funzionalità avanzata che assicura che i servi
 
 ## <a name="failover-across-locations"></a>Failover in diverse località
 
-È anche possibile replicare l'infrastruttura tra siti per gestire il failover a livello di area. **Azure Site Recovery** (ASR) replica i carichi di lavoro da un sito primario a una località secondaria. Se si verifica un'interruzione nel sito primario, è possibile effettuare il failover in una località secondaria. Questo failover consente agli utenti di continuare ad accedere alle applicazioni senza interruzioni. Sarà quindi possibile effettuare il failback nella località primaria quando sarà di nuovo operativa. Azure Site Recovery consente la replica delle macchine virtuali o dei computer fisici e mantiene disponibili i carichi di lavoro in caso di interruzione.
+È anche possibile replicare l'infrastruttura tra siti per gestire il failover a livello di area. **Azure Site Recovery** replica i carichi di lavoro da un sito primario a una località secondaria. Se si verifica un'interruzione nel sito primario, è possibile effettuare il failover in una località secondaria. Questo failover consente agli utenti di continuare ad accedere alle applicazioni senza interruzioni. Sarà quindi possibile effettuare il failback nella località primaria quando sarà di nuovo operativa. Azure Site Recovery consente la replica delle macchine virtuali o dei computer fisici, garantendo la disponibilità dei carichi di lavoro in caso di interruzione.
 
-Oltre alle numerose utili funzionalità di ASR, sono almeno due i vantaggi importanti per le aziende:
+Oltre alle numerose utili funzionalità di Site Recovery, sono almeno due i vantaggi importanti per le aziende:
 
-1. ASR consente l'uso di Azure come destinazione per il ripristino, eliminando i costi e la complessità derivanti dalla gestione di un data center fisico secondario.
+1. Site Recovery consente l'uso di Azure come destinazione per il ripristino, eliminando i costi e la complessità derivanti dalla gestione di un data center fisico secondario.
 
-2. ASR semplifica considerevolmente il test dei failover con esercitazioni sul ripristino senza alcun impatto sugli ambienti di produzione. In questo modo è più facile testare i failover pianificati o non pianificati. Non si può infatti considerare valido un piano di ripristino di emergenza se non si è mai provato a effettuare il failover.
+2. Site Recovery semplifica considerevolmente il test dei failover con esercitazioni sul ripristino senza alcun impatto sugli ambienti di produzione. In questo modo risulta più facile testare i failover pianificati o non pianificati. Non si può infatti considerare valido un piano di ripristino di emergenza se non si è mai provato a effettuare il failover.
 
-I piani di ripristino creati con ASR possono essere semplici o complessi a seconda dello scenario. Possono includere script di PowerShell personalizzati, runbook di Automazione di Azure o procedure di intervento manuale. È possibile sfruttare i piani di ripristino per replicare i carichi di lavoro in Azure, creando facilmente nuove opportunità per migrazione, burst temporanei durante i periodi di sovratensione o sviluppo e test di nuove applicazioni.
+I piani di ripristino creati con Site Recovery possono essere semplici o complessi a seconda dello scenario. Possono includere script di PowerShell personalizzati, runbook di Automazione di Azure o procedure di intervento manuale. È possibile sfruttare i piani di ripristino per replicare i carichi di lavoro in Azure, creando facilmente nuove opportunità per migrazione, burst temporanei durante i periodi di sovratensione o sviluppo e test di nuove applicazioni.
 
 Azure Site Recovery usa le risorse di Azure o i server Hyper-V, VMware e fisici nell'infrastruttura locale e può diventare un elemento chiave della strategia di continuità aziendale e ripristino di emergenza (BCDR) dell'organizzazione orchestrando la replica, il failover e il ripristino di carichi di lavoro e applicazioni se si verifica un guasto nella località primaria.
