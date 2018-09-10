@@ -1,0 +1,51 @@
+### YamlMime:ModuleUnit
+uid: learn.pillars-of-a-great-azure-architecture.3-design-for-security
+title: <span data-ttu-id="79393-101">Progettare per la sicurezza</span><span class="sxs-lookup"><span data-stu-id="79393-101">Design for security</span></span>
+metadata:
+  title: <span data-ttu-id="79393-102">Progettare per la sicurezza</span><span class="sxs-lookup"><span data-stu-id="79393-102">Design for security</span></span>
+  description: <span data-ttu-id="79393-103">Progettare per la sicurezza</span><span class="sxs-lookup"><span data-stu-id="79393-103">Design for security</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: b1f1fd5afaa153340eee740bd0071fc8295c63e6
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44245716"
+durationInMinutes: 10
+content: >
+  [!include[](includes/3-design-for-security.md)]
+quiz:
+  title: '<span data-ttu-id="79393-104">Verifica delle conoscenze: Progettare per la sicurezza</span><span class="sxs-lookup"><span data-stu-id="79393-104">Knowledge check - Design for security</span></span>'
+  questions:
+  - content: <span data-ttu-id="79393-105">A quali dei tipi seguenti di dati può essere necessario applicare misure di protezione per la sicurezza?</span><span class="sxs-lookup"><span data-stu-id="79393-105">Which of the following types of data may need to have security protections?</span></span>
+    choices:
+    - content: <span data-ttu-id="79393-106">Dati dei clienti che contengono informazioni personali</span><span class="sxs-lookup"><span data-stu-id="79393-106">Customer data that contains personal information</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="79393-107">Benché sia importante applicare misure di protezione per la sicurezza appropriate a questi dati, questa non è l'unica scelta corretta.</span><span class="sxs-lookup"><span data-stu-id="79393-107">It is important to provide proper security protections for this data, but this is not the only correct choice.</span></span>
+    - content: <span data-ttu-id="79393-108">Dati finanziari a supporto delle operazioni aziendali</span><span class="sxs-lookup"><span data-stu-id="79393-108">Financial data supporting business operations</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="79393-109">Benché sia importante applicare misure di protezione per la sicurezza appropriate a questi dati, questa non è l'unica scelta corretta.</span><span class="sxs-lookup"><span data-stu-id="79393-109">It is important to provide proper security protections for this data, but this is not the only correct choice.</span></span>
+    - content: <span data-ttu-id="79393-110">Dati contenenti proprietà intellettuale</span><span class="sxs-lookup"><span data-stu-id="79393-110">Data containing intellectual property</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="79393-111">Benché sia importante applicare misure di protezione per la sicurezza appropriate a questi dati, questa non è l'unica scelta corretta.</span><span class="sxs-lookup"><span data-stu-id="79393-111">It is important to provide proper security protections for this data, but this is not the only correct choice.</span></span>
+    - content: <span data-ttu-id="79393-112">A tutti i tipi di dati indicati sopra può essere necessario applicare misure di protezione per la sicurezza</span><span class="sxs-lookup"><span data-stu-id="79393-112">All of the above may need security protections</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="79393-113">Tutti i tipi di dati indicati sopra possono meritare misure di protezione per la sicurezza aggiuntive.</span><span class="sxs-lookup"><span data-stu-id="79393-113">All of the above may merit additional security protections.</span></span>
+  - content: <span data-ttu-id="79393-114">Quale tra i seguenti è un esempio di attacco che è possibile riscontrare nel livello perimetrale?</span><span class="sxs-lookup"><span data-stu-id="79393-114">Which of the following is an example of an attack you might see at the perimeter layer?</span></span>
+    choices:
+    - content: <span data-ttu-id="79393-115">Credenziali esposte pubblicate online</span><span class="sxs-lookup"><span data-stu-id="79393-115">Exposed credentials posted online</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="79393-116">Le credenziali esposte pongono un rischio elevato per un'organizzazione, ma non costituiscono un attacco del livello perimetrale.</span><span class="sxs-lookup"><span data-stu-id="79393-116">Exposed credentials are a huge risk to an organization, but are not a permiter attack.</span></span>
+    - content: <span data-ttu-id="79393-117">Attacco flood SYN</span><span class="sxs-lookup"><span data-stu-id="79393-117">A SYN flood attack</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="79393-118">Gli attacchi flood SYN sono un tipo di attacco Denial of Service osservato comunemente nella rete perimetrale.</span><span class="sxs-lookup"><span data-stu-id="79393-118">SYN flood attacks are a type of denial-of-service attack that are commonly seen on the network perimeter.</span></span>
+    - content: <span data-ttu-id="79393-119">Progettazione di ingressi per penetrare nel data center</span><span class="sxs-lookup"><span data-stu-id="79393-119">Door drafting to get into a datacenter</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="79393-120">La progettazione di ingressi è un attacco del livello fisico.</span><span class="sxs-lookup"><span data-stu-id="79393-120">Door drafting is a physical layer attack.</span></span>
+    - content: <span data-ttu-id="79393-121">Ransomware per la crittografia dei dischi di una macchina virtuale</span><span class="sxs-lookup"><span data-stu-id="79393-121">Ransomware that encrypts the disks of a virtual machine</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="79393-122">Gli attacchi tramite ransomware sono attacchi del livello di calcolo/della macchina virtuale.</span><span class="sxs-lookup"><span data-stu-id="79393-122">Ransomware attacks are a VM/compute layer attack.</span></span>

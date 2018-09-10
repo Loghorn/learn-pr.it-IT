@@ -1,14 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.send-location-over-sms-from-mobile-using-azure-functions-twilio.7-bind-the-azure-function-to-twilio
-title: <span data-ttu-id="839cf-101">Associare la funzione di Azure a Twilio per inviare messaggi SMS</span><span class="sxs-lookup"><span data-stu-id="839cf-101">Bind the function to Twilio to send SMS messages</span></span>
+title: <span data-ttu-id="cb2b1-101">Associare la funzione di Azure a Twilio per inviare messaggi SMS</span><span class="sxs-lookup"><span data-stu-id="cb2b1-101">Bind the function to Twilio to send SMS messages</span></span>
 metadata:
-  title: <span data-ttu-id="839cf-102">Associare la funzione di Azure a Twilio per inviare messaggi SMS</span><span class="sxs-lookup"><span data-stu-id="839cf-102">Bind the function to Twilio to send SMS messages</span></span>
-  description: <span data-ttu-id="839cf-103">Associare la funzione di Azure a Twilio per inviare messaggi SMS</span><span class="sxs-lookup"><span data-stu-id="839cf-103">Bind the function to Twilio to send SMS messages</span></span>
-  ms.openlocfilehash: 61e3c6a9ac8fa147046c73bf0cb59037c256f487
-  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  title: <span data-ttu-id="cb2b1-102">Associare la funzione di Azure a Twilio per inviare messaggi SMS</span><span class="sxs-lookup"><span data-stu-id="cb2b1-102">Bind the function to Twilio to send SMS messages</span></span>
+  description: <span data-ttu-id="cb2b1-103">Associare la funzione di Azure a Twilio per inviare messaggi SMS</span><span class="sxs-lookup"><span data-stu-id="cb2b1-103">Bind the function to Twilio to send SMS messages</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: aa589b9724173b2a190181fc1fc08b49fea47551
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43836224"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44229838"
 durationInMinutes: 11
 content: '[!include[](includes/7-bind-the-azure-function-to-twilio.md)]'

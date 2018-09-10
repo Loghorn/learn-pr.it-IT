@@ -1,14 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.predict-costs-and-optimize-spending.6-summary
-title: <span data-ttu-id="f59de-101">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="f59de-101">Summary</span></span>
+title: <span data-ttu-id="8f6fd-101">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="8f6fd-101">Summary</span></span>
 metadata:
-  title: <span data-ttu-id="f59de-102">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="f59de-102">Summary</span></span>
-  description: <span data-ttu-id="f59de-103">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="f59de-103">Summary</span></span>
-  ms.openlocfilehash: e821f83206c9a9b2083d432de0331593e8a5befe
-  ms.sourcegitcommit: 56db32ad6f98b7d769f2b1201825d4f6d9b7362d
+  title: <span data-ttu-id="8f6fd-102">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="8f6fd-102">Summary</span></span>
+  description: <span data-ttu-id="8f6fd-103">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="8f6fd-103">Summary</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: e5fa7ceddfca14c0b8efb380db7f44cba7b378db
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/05/2018
-  ms.locfileid: "43728482"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44244441"
 durationInMinutes: 2
 content: '[!include[](includes/6-summary.md)]'

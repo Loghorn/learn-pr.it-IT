@@ -1,46 +1,51 @@
 ### YamlMime:ModuleUnit
 uid: learn.store-app-data-with-azure-blob-storage.3-design-organization-strategy
-title: <span data-ttu-id="5c4fe-101">Progettare una strategia di archiviazione dell'organizzazione</span><span class="sxs-lookup"><span data-stu-id="5c4fe-101">Design a storage organization strategy</span></span>
+title: <span data-ttu-id="234fb-101">Progettare una strategia di archiviazione dell'organizzazione</span><span class="sxs-lookup"><span data-stu-id="234fb-101">Design a storage organization strategy</span></span>
 metadata:
-  title: <span data-ttu-id="5c4fe-102">Progettare una strategia di archiviazione dell'organizzazione</span><span class="sxs-lookup"><span data-stu-id="5c4fe-102">Design a storage organization strategy</span></span>
-  description: <span data-ttu-id="5c4fe-103">Progettare una strategia di archiviazione dell'organizzazione</span><span class="sxs-lookup"><span data-stu-id="5c4fe-103">Design a storage organization strategy</span></span>
-  ms.openlocfilehash: 966865b137aaedc45906682cc58fc8a67e68a30c
-  ms.sourcegitcommit: 107578417899e44b5611917dec7bcc21d4c1582e
+  title: <span data-ttu-id="234fb-102">Progettare una strategia di archiviazione dell'organizzazione</span><span class="sxs-lookup"><span data-stu-id="234fb-102">Design a storage organization strategy</span></span>
+  description: <span data-ttu-id="234fb-103">Progettare una strategia di archiviazione dell'organizzazione</span><span class="sxs-lookup"><span data-stu-id="234fb-103">Design a storage organization strategy</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 2f38fea8367aeac95b8bd0593b2132f96989700f
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 08/29/2018
-  ms.locfileid: "43225711"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44234105"
 durationInMinutes: 7
 content: >
   [!include[](includes/3-design-organization-strategy.md)]
 quiz:
-  title: '<span data-ttu-id="5c4fe-104">Verifica delle conoscenze: Archiviazione BLOB</span><span class="sxs-lookup"><span data-stu-id="5c4fe-104">Knowledge check: Blob Storage</span></span>'
+  title: '<span data-ttu-id="234fb-104">Verifica delle conoscenze: Archiviazione BLOB</span><span class="sxs-lookup"><span data-stu-id="234fb-104">Knowledge check: Blob Storage</span></span>'
   questions:
-  - content: <span data-ttu-id="5c4fe-105">Quale tipo di BLOB è la soluzione ottimale per la maggior parte degli scenari di archiviazione?</span><span class="sxs-lookup"><span data-stu-id="5c4fe-105">Which kind of blob is the best fit for most storage scenarios?</span></span>
+  - content: <span data-ttu-id="234fb-105">Quale tipo di BLOB è la soluzione ottimale per la maggior parte degli scenari di archiviazione?</span><span class="sxs-lookup"><span data-stu-id="234fb-105">Which kind of blob is the best fit for most storage scenarios?</span></span>
     choices:
-    - content: <span data-ttu-id="5c4fe-106">BLOB di byte</span><span class="sxs-lookup"><span data-stu-id="5c4fe-106">Byte blobs</span></span>
+    - content: <span data-ttu-id="234fb-106">BLOB di byte</span><span class="sxs-lookup"><span data-stu-id="234fb-106">Byte blobs</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="5c4fe-107">Il "BLOB di byte" non è un tipo di BLOB.</span><span class="sxs-lookup"><span data-stu-id="5c4fe-107">"Byte blobs" are not a type of blob.</span></span>
-    - content: <span data-ttu-id="5c4fe-108">BLOB di pagine</span><span class="sxs-lookup"><span data-stu-id="5c4fe-108">Page blobs</span></span>
+      incorrectExplanation: <span data-ttu-id="234fb-107">Il "BLOB di byte" non è un tipo di BLOB.</span><span class="sxs-lookup"><span data-stu-id="234fb-107">"Byte blobs" are not a type of blob.</span></span>
+    - content: <span data-ttu-id="234fb-108">BLOB di pagine</span><span class="sxs-lookup"><span data-stu-id="234fb-108">Page blobs</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="5c4fe-109">I BLOB di pagine sono progettati per volumi elevati di letture e scritture ad accesso casuale, ad esempio quando una macchina virtuale di Azure viene usata per l'archiviazione in un disco rigido virtuale.</span><span class="sxs-lookup"><span data-stu-id="5c4fe-109">Page blobs are designed for high volumes of random-access reads and writes, such as when used by an Azure Virtual Machine to store a virtual hard disk.</span></span>
-    - content: <span data-ttu-id="5c4fe-110">BLOB in blocchi</span><span class="sxs-lookup"><span data-stu-id="5c4fe-110">Block blobs</span></span>
+      incorrectExplanation: <span data-ttu-id="234fb-109">I BLOB di pagine sono progettati per volumi elevati di letture e scritture ad accesso casuale, ad esempio quando una macchina virtuale di Azure viene usata per l'archiviazione in un disco rigido virtuale.</span><span class="sxs-lookup"><span data-stu-id="234fb-109">Page blobs are designed for high volumes of random-access reads and writes, such as when used by an Azure Virtual Machine to store a virtual hard disk.</span></span>
+    - content: <span data-ttu-id="234fb-110">BLOB in blocchi</span><span class="sxs-lookup"><span data-stu-id="234fb-110">Block blobs</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="5c4fe-111">I BLOB in blocchi sono in genere la scelta ottimale per le esigenze di archiviazione comuni.</span><span class="sxs-lookup"><span data-stu-id="5c4fe-111">Block blobs are usually the best choice for general-purpose storage needs.</span></span>
-    - content: <span data-ttu-id="5c4fe-112">BLOB di accodamento</span><span class="sxs-lookup"><span data-stu-id="5c4fe-112">Append blobs</span></span>
+      correctExplanation: <span data-ttu-id="234fb-111">I BLOB in blocchi sono in genere la scelta ottimale per le esigenze di archiviazione comuni.</span><span class="sxs-lookup"><span data-stu-id="234fb-111">Block blobs are usually the best choice for general-purpose storage needs.</span></span>
+    - content: <span data-ttu-id="234fb-112">BLOB di accodamento</span><span class="sxs-lookup"><span data-stu-id="234fb-112">Append blobs</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="5c4fe-113">I BLOB di accodamento supportano solo l'aggiunta di nuovi dati, non l'aggiornamento o l'eliminazione di dati esistenti.</span><span class="sxs-lookup"><span data-stu-id="5c4fe-113">Append blobs only support appending new data, not updating or deleting existing data.</span></span>
-  - content: <span data-ttu-id="5c4fe-114">I BLOB offrono l'archiviazione di dati *non strutturati*.</span><span class="sxs-lookup"><span data-stu-id="5c4fe-114">Blobs provide *unstructured* data storage.</span></span> <span data-ttu-id="5c4fe-115">Che cosa significa *non strutturati*?</span><span class="sxs-lookup"><span data-stu-id="5c4fe-115">What does *unstructured* mean?</span></span>
+      incorrectExplanation: <span data-ttu-id="234fb-113">I BLOB di accodamento supportano solo l'aggiunta di nuovi dati, non l'aggiornamento o l'eliminazione di dati esistenti.</span><span class="sxs-lookup"><span data-stu-id="234fb-113">Append blobs only support appending new data, not updating or deleting existing data.</span></span>
+  - content: <span data-ttu-id="234fb-114">I BLOB offrono l'archiviazione di dati *non strutturati*.</span><span class="sxs-lookup"><span data-stu-id="234fb-114">Blobs provide *unstructured* data storage.</span></span> <span data-ttu-id="234fb-115">Che cosa significa *non strutturati*?</span><span class="sxs-lookup"><span data-stu-id="234fb-115">What does *unstructured* mean?</span></span>
     choices:
-    - content: <span data-ttu-id="5c4fe-116">I BLOB non possono essere organizzati o denominati, sono semplici raccolte di byte.</span><span class="sxs-lookup"><span data-stu-id="5c4fe-116">Blobs can't be organized or named, they are only collections of bytes.</span></span>
+    - content: <span data-ttu-id="234fb-116">I BLOB non possono essere organizzati o denominati, sono semplici raccolte di byte.</span><span class="sxs-lookup"><span data-stu-id="234fb-116">Blobs can't be organized or named, they are only collections of bytes.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="5c4fe-117">"Non strutturati" si riferisce alla natura dei dati *nei* BLOB e non all'organizzazione dei BLOB in un account di archiviazione.</span><span class="sxs-lookup"><span data-stu-id="5c4fe-117">"Unstructured" refers to the nature of the data *in* blobs, not organization of the blobs within a storage account.</span></span>
-    - content: <span data-ttu-id="5c4fe-118">Non esistono restrizioni per i tipi di dati che è possibile archiviare nei BLOB.</span><span class="sxs-lookup"><span data-stu-id="5c4fe-118">There are no restrictions on the kinds of data you can store in blobs.</span></span>
+      incorrectExplanation: <span data-ttu-id="234fb-117">"Non strutturati" si riferisce alla natura dei dati *nei* BLOB e non all'organizzazione dei BLOB in un account di archiviazione.</span><span class="sxs-lookup"><span data-stu-id="234fb-117">"Unstructured" refers to the nature of the data *in* blobs, not organization of the blobs within a storage account.</span></span>
+    - content: <span data-ttu-id="234fb-118">Non esistono restrizioni per i tipi di dati che è possibile archiviare nei BLOB.</span><span class="sxs-lookup"><span data-stu-id="234fb-118">There are no restrictions on the kinds of data you can store in blobs.</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="5c4fe-119">I BLOB non impongono nessun tipo di struttura per i dati. Ciò significa che le app possono archiviare qualsiasi tipo di dati nei BLOB.</span><span class="sxs-lookup"><span data-stu-id="5c4fe-119">Blobs do not impose any kind of structure on your data, meaning your apps can store any kind of data in blobs.</span></span>
-    - content: <span data-ttu-id="5c4fe-120">I BLOB non possono contenere dati strutturati come dati JSON o XML.</span><span class="sxs-lookup"><span data-stu-id="5c4fe-120">Blobs can't contain structured data, like JSON or XML.</span></span>
+      correctExplanation: <span data-ttu-id="234fb-119">I BLOB non impongono nessun tipo di struttura per i dati. Ciò significa che le app possono archiviare qualsiasi tipo di dati nei BLOB.</span><span class="sxs-lookup"><span data-stu-id="234fb-119">Blobs do not impose any kind of structure on your data, meaning your apps can store any kind of data in blobs.</span></span>
+    - content: <span data-ttu-id="234fb-120">I BLOB non possono contenere dati strutturati come dati JSON o XML.</span><span class="sxs-lookup"><span data-stu-id="234fb-120">Blobs can't contain structured data, like JSON or XML.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="5c4fe-121">I BLOB *possono* contenere dati strutturati, ma la risorsa di archiviazione BLOB non interagisce in alcun modo con tali dati.</span><span class="sxs-lookup"><span data-stu-id="5c4fe-121">Blobs *can* contain structured data, but Blob storage does not interact with it in any way.</span></span> <span data-ttu-id="5c4fe-122">Spetta all'app riconoscere la struttura del contenuto del BLOB e gestirlo correttamente.</span><span class="sxs-lookup"><span data-stu-id="5c4fe-122">It is your app's responsibility to recognize the structure of blob contents and handle them appropriately.</span></span>
-    - content: <span data-ttu-id="5c4fe-123">I dati scaricati dai BLOB sono organizzati in modo casuale e la loro definizione richiede una libreria client specifica.</span><span class="sxs-lookup"><span data-stu-id="5c4fe-123">Data downloaded from blobs in is organized randomly and requires a special client library to make sense of it.</span></span>
+      incorrectExplanation: <span data-ttu-id="234fb-121">I BLOB *possono* contenere dati strutturati, ma la risorsa di archiviazione BLOB non interagisce in alcun modo con tali dati.</span><span class="sxs-lookup"><span data-stu-id="234fb-121">Blobs *can* contain structured data, but Blob storage does not interact with it in any way.</span></span> <span data-ttu-id="234fb-122">Spetta all'app riconoscere la struttura del contenuto del BLOB e gestirlo correttamente.</span><span class="sxs-lookup"><span data-stu-id="234fb-122">It is your app's responsibility to recognize the structure of blob contents and handle them appropriately.</span></span>
+    - content: <span data-ttu-id="234fb-123">I dati scaricati dai BLOB sono organizzati in modo casuale e la loro definizione richiede una libreria client specifica.</span><span class="sxs-lookup"><span data-stu-id="234fb-123">Data downloaded from blobs in is organized randomly and requires a special client library to make sense of it.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="5c4fe-124">L'intera gestione dei BLOB, incluso il download di contenuti BLOB, può essere eseguita usando direttamente l'API REST, senza l'intervento di librerie client.</span><span class="sxs-lookup"><span data-stu-id="5c4fe-124">All blob manipulation, including downloading blob contents, can be accomplished by directly using the REST API without any client library.</span></span> <span data-ttu-id="5c4fe-125">I dati scaricati dai BLOB non sono organizzati in modo casuale.</span><span class="sxs-lookup"><span data-stu-id="5c4fe-125">Data downloaded from blobs is not organized randomly.</span></span>
+      incorrectExplanation: <span data-ttu-id="234fb-124">L'intera gestione dei BLOB, incluso il download di contenuti BLOB, può essere eseguita usando direttamente l'API REST, senza l'intervento di librerie client.</span><span class="sxs-lookup"><span data-stu-id="234fb-124">All blob manipulation, including downloading blob contents, can be accomplished by directly using the REST API without any client library.</span></span> <span data-ttu-id="234fb-125">I dati scaricati dai BLOB non sono organizzati in modo casuale.</span><span class="sxs-lookup"><span data-stu-id="234fb-125">Data downloaded from blobs is not organized randomly.</span></span>
