@@ -29,6 +29,7 @@ Per mantenere queste macchine virtuali separate dalle macchine virtuali usate ne
     ```powershell
     Get-AzureRmResource | Format-Table
     ```
+
 Un altro modo per verificare se il gruppo di risorse è stato creato correttamente è usare il portale di Azure. A tale scopo, accedere al portale e passare alla sezione **Gruppi di risorse** (vedere di seguito). Il nuovo gruppo di risorse dovrebbe essere visualizzato nell'elenco.
 
 Lo screenshot seguente mostra la posizione della categoria Gruppi di risorse nel portale di Azure.
