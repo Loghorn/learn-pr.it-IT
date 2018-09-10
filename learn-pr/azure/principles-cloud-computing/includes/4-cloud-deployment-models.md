@@ -1,44 +1,50 @@
-Una volta stabilito che il cloud computing è la soluzione adatta, è necessario decidere come distribuire i servizi di cloud computing. Si supponga ad esempio di essere proprietari di uno studio legale e di essere preoccupati in merito all'affidamento dell'archiviazione dei dati a una terza parte a causa della sensibilità del contenuto. Per fortuna, il cloud computing è flessibile e offre una vasta gamma di opzioni di distribuzione.
+Esistono tre modelli di distribuzione cloud diversi. Un modello di distribuzione cloud definisce dove vengono archiviati i dati e come i clienti interagiscono con i dati, ovvero come vi accedono e dove vengono eseguite le applicazioni. Il modello dipende anche dalle parti dell'infrastruttura che si vuole o è necessario gestire.
 
 In questo caso, si esamineranno i diversi tipi di metodi di distribuzione per le risorse di cloud computing. 
 
 ## <a name="public-cloud"></a>Cloud pubblico
 
-Nel cloud computing, il modello di distribuzione più comune è il cloud pubblico. Il cloud pubblico è di proprietà ed è gestito da un provider di servizi cloud di terze parti e i dispositivi hardware, di archiviazione e di rete vengono noleggiati. Una delle caratteristiche principali di un cloud pubblico è la condivisione delle risorse di calcolo con altri utenti cloud.
+Si tratta del modello di distribuzione più comune. In questo caso, non è necessario gestire o mantenere aggiornato un hardware locale: tutto viene eseguito nell'hardware del provider cloud. In alcuni casi, è possibile evitare costi aggiuntivi condividendo le risorse di elaborazione con altri utenti cloud. 
 
-### <a name="advantages-of-public-clouds"></a>Vantaggi dei cloud pubblici
-- Scalabilità elevata
-- Prezzi con pagamento in base al consumo
-- Noleggio dell'hardware
+### <a name="advantages"></a>Vantaggi
 
-### <a name="disadvantages-of-public-clouds"></a>Svantaggi dei cloud pubblici
-- Maggiore minaccia alla sicurezza
+- Scalabilità elevata: non è necessario acquistare un nuovo server per eseguire il ridimensionamento
+- Prezzi con pagamento in base al consumo: si paga solo per ciò che si usa
+- Non si è responsabili della manutenzione o degli aggiornamenti dell'hardware
+
+### <a name="disadvantages"></a>Svantaggi
+
+- Minaccia alla sicurezza più elevata
 - Hardware condiviso
 
 ## <a name="private-cloud"></a>Cloud privato
 
-Un cloud privato è simile a un cloud pubblico con un'importante differenza. Un cloud privato contiene servizi e un'infrastruttura che si trovano in una rete privata e non sono condivisi. L'infrastruttura per un cloud privato può essere situata e gestita internamente o tramite una terza parte.
+Questo termine indica in genere un data center locale supportato dalla società. Non è connesso ad alcun servizio in esecuzione nel cloud. Si pensi, ad esempio, a una società che non ha eseguito migrazioni al cloud e non ha intenzione di farlo.
 
-### <a name="advantages-of-private-clouds"></a>Vantaggi dei cloud privati
-- Maggiore sicurezza
-- Hardware non condiviso
+### <a name="advantages"></a>Vantaggi
 
-### <a name="disadvantages-of-private-clouds"></a>Svantaggi dei cloud privati
-- Costi iniziali
-- Spese di aggiornamento e manutenzione
+- Maggiore sicurezza perché è tutto nella rete aziendale
+- Hardware e risorse non condivisi
+
+### <a name="disadvantages"></a>Svantaggi
+
+- È necessario acquistare l'hardware iniziale ed eseguire la manutenzione
 - Richiede competenze IT
 
 ## <a name="hybrid-cloud"></a>Cloud ibrido
 
-Un cloud ibrido è una combinazione di cloud privati e pubblici che offre i vantaggi di entrambi. Ad esempio, con un cloud ibrido è possibile spostare un traffico elevato di servizi a basso livello di protezione nel cloud pubblico e spostare i servizi critici e sensibili nel cloud privato. 
+Si tratta di una combinazione del data center locale supportato dalla società e del cloud pubblico. I due cloud sono connessi e possono scambiarsi i dati. Ciò è utile quando si hanno dati che non possono essere inseriti nel cloud, magari per motivi legali. È il caso, ad esempio, di dati che non possono essere esposti pubblicamente (come i dati sanitari). Un altro esempio è quello di una o più applicazioni in esecuzione su hardware obsoleto che non può essere aggiornato. In questo caso, è possibile mantenere il vecchio sistema in esecuzione in locale e connetterlo al cloud pubblico per l'autorizzazione o l'archiviazione.
 
-### <a name="advantages-of-hybrid-clouds"></a>Vantaggi dei cloud ibridi
-- Flessibilità 
+### <a name="advantages"></a>Vantaggi
 
-### <a name="disadvantages-of-hybrid-clouds"></a>Svantaggi dei cloud ibridi
-- Spesso più costosi dei cloud pubblici o privati
+- È possibile mantenere in esecuzione e accessibili tutti i sistemi che usano hardware obsoleto o un sistema operativo non aggiornato
+- Flessibilità con ciò che si esegue in locale rispetto a ciò che si esegue nel cloud
 
-## <a name="summary"></a>Summary
+### <a name="disadvantages"></a>Svantaggi
+
+- Può essere più costoso di un modello di distribuzione
+- Più complicato da configurare e gestire
+
+## <a name="summary"></a>Riepilogo
 
 Il cloud computing è flessibile e offre la possibilità di scegliere la modalità di distribuzione. In genere, la modalità di distribuzione dipende dal budget e dalle esigenze di sicurezza, scalabilità e manutenzione.
-
