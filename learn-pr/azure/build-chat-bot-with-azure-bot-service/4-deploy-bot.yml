@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.build-azure-bot-services-bot.4-deploy-bot
+title: Distribuire un bot con Visual Studio Code
+metadata:
+  title: Distribuire un bot con Visual Studio Code
+  description: Distribuire un bot con Visual Studio Code
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: a5816e1d351f7270e7fa60990dc12dab6c1326e5
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44244237"
+durationInMinutes: 5
+content: '[!include[](includes/4-deploy-bot.md)'

@@ -4,11 +4,16 @@ title: Cosa sono i blob?
 metadata:
   title: Cosa sono i blob?
   description: Cosa sono i blob?
-  ms.openlocfilehash: 71f04a8da95d71d0ac04b787673685414a5bd75a
-  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 28183808098e290830b46ad7715cd43a440ea087
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 08/22/2018
-  ms.locfileid: "40441645"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44231844"
 durationInMinutes: 3
 content: '[!include[](includes/2-what-are-blobs.md)]'

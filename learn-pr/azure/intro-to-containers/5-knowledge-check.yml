@@ -4,14 +4,17 @@ title: Verifica delle conoscenze
 metadata:
   title: Verifica delle conoscenze
   description: Introduzione alla verifica delle conoscenze sui contenitori.
-  ms.openlocfilehash: b09e40be4406e10ce02d1b1151f7f735eb060cb4
-  ms.sourcegitcommit: 59aa01bac69a5745b4a28e9fdc8c8b97fe7260d7
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: d4fc7700e80f8716294a84f91da41e80c76f1be1
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 08/27/2018
-  ms.locfileid: "43003747"
-content: >
-  #[!include[](includes/5-knowledge-check.md)]
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44247280"
 durationInMinutes: 5
 quiz:
   title: Introduzione ai contenitori

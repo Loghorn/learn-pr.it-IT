@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.azure-services-features.9-exercise-customize-the-dashboard
+title: Personalizzare la dashboard
+metadata:
+  title: Personalizzare la dashboard
+  description: Personalizzare la dashboard
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 2842c37b019d7a6727c2de40438668accef6dfbe
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44239307"
+durationInMinutes: 10
+content: '[!include[](includes/9-exercise-customize-the-dashboard.md)]'
