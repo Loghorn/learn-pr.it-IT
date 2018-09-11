@@ -51,4 +51,3 @@ Quando si inseriscono tutti i campi contemporaneamente, l'espressione viene lett
 ## <a name="summary"></a>Riepilogo
 
 Creare un trigger timer per richiamare una funzione in una pianificazione coerente. Per definire la pianificazione di un trigger timer, creiamo un'*espressione CRON*, ovvero una stringa che rappresenta un insieme di tempi.
-

@@ -1,32 +1,32 @@
-One of the main tasks you'll want to do while running virtual machines is to start and stop them.
+Avvio e arresto sono tra le attività principali da eseguire con le macchine virtuali.
 
-## Stopping a VM
+## <a name="stopping-a-vm"></a>Arresto di una macchina virtuale
 
-We can stop a running VM with the `vm stop` command. You must pass the name and resource group, or the unique ID for the VM:
+È possibile arrestare una macchina virtuale in esecuzione con il comando `vm stop`. È necessario passare il nome e il gruppo di risorse oppure l'ID univoco della macchina virtuale:
 
 ```azurecli
 az vm stop -n SampleVM -g ExerciseResources
 ```
 
-We can verify it has stopped by attempting to ping the public IP address, using `ssh`, or through the `vm get-instance-view` command. This final approach returns the same basic data as `vm show` but includes details about the instance itself. Try typing the following command into Azure Cloud Shell to see the current running state of your VM:
+Per verificare che la macchina sia stata arrestata, è possibile eseguire il ping dell'indirizzo IP pubblico, usare `ssh` oppure il comando `vm get-instance-view`. Quest'ultimo approccio restituisce sostanzialmente gli stessi dati del comando `vm show` ma include informazioni sull'istanza. Per visualizzare lo stato di esecuzione corrente della macchina virtuale inserire il comando seguente in Azure Cloud Shell:
 
 ```azurecli
 az vm get-instance-view -n SampleVM -g ExerciseResources --query "instanceView.statuses[?starts_with(code, 'PowerState/')].displayStatus" -o tsv
 ```
 
-This command should return `VM stopped` as the result.
+Il comando dovrebbe restituire come risultato `VM stopped`.
 
-## Starting a VM
+## <a name="starting-a-vm"></a>Avvio di una macchina virtuale
 
-We can do the reverse through the `vm start` command.
+È possibile eseguire l'operazione inversa con il comando `vm start`.
 
 ```azurecli
 az vm start -n SampleVM -g ExerciseResources
 ```
 
-This command will start a stopped VM. We can verify it through the `vm get-instance-view` query, which should now return `VM running`.
+Questo comando avvia una macchina virtuale arrestata. Per verificare l'esecuzione, inviare la query `vm get-instance-view`, che dovrebbe restituire `VM running`.
 
-## Restarting a VM
+## <a name="restarting-a-vm"></a>Riavvio di una macchina virtuale
 
-Finally, we can restart a VM if we have made changes that require a reboot using the `vm restart` command. You can add the `--no-wait` flag if you want the Azure CLI to return immediately without waiting for the VM to reboot.
+Infine, se sono state apportate modifiche che richiedono un riavvio, è possibile riavviare una macchina virtuale usando il comando `vm restart`. È possibile aggiungere il flag `--no-wait` per tornare immediatamente all'interfaccia della riga di comando di Azure senza attendere il riavvio della macchina virtuale.
 

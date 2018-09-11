@@ -1,36 +1,36 @@
-At this point, the app is working to get the user's location and is ready to be sent to an Azure function. In this unit, you build the Azure function.
+A questo punto, l'app sta cercando di ottenere la posizione dell'utente ed è pronta per essere inviata a una funzione di Azure. In questa unità, si compila la funzione di Azure.
 
-## Create an Azure Functions project
+## <a name="create-an-azure-functions-project"></a>Creare un progetto di Funzioni di Azure
 
-1. Add a new project to the `ImHere` solution by right-clicking on the solution and selecting *Add->New Project...*.
+1. Aggiungere un nuovo progetto nella soluzione `ImHere` facendo clic con il tasto destr sulla soluzione e selezionando *Aggiungi -> Nuovo progetto...*.
 
-1. From the tree on the left-hand side, select *Visual C#->Cloud*, and then select *Azure Functions* from the panel in the center.
+1. Dall'albero sul lato sinistro selezionare *Visual C#->Cloud* e quindi *Funzioni di Azure* dal pannello al centro.
 
-1. Name the project "ImHere.Functions", and then click **OK**.
+1. Denominare il progetto "ImHere.Functions" e quindi fare clic su **OK**.
 
-    ![The Add New Project dialog](../media-drafts/5-add-new-functions-project.png)
+    ![Finestra di dialogo Aggiungi nuovo progetto](../media-drafts/5-add-new-functions-project.png)
 
-1. In the **New Project** configuration dialog, leave the Functions version set to *Azure Functions v1 (.NET Framework)*. Select *Http Trigger*, leave the storage account set to *Storage Emulator*, and set the access rights to *Anonymous*. Then click **OK**.
+1. Nella finestra di configurazione **Nuovo progetto**, lasciare Versione Funzioni impostata su *Funzioni di Azure v1 (.NET Framework)*. Selezionare *Trigger HTTP*, lasciare l'account di archiviazione impostato su *Emulatore di archiviazione*e impostare i diritti di accesso su *Anonimo*. Fare quindi clic su **OK**.
 
-    ![The Azure Function project configuration dialog](../media-drafts/5-configure-trigger.png)
+    ![Finestra di dialogo di configurazione del progetto Funzioni di Azure](../media-drafts/5-configure-trigger.png)
 
-The new project will be created and have a default function called `Function1`.
+Il nuovo progetto verrà creato e includerà una funzione predefinita denominata `Function1`.
 
-> This function was created with anonymous access. Once published to Azure, anybody who knows the URL will be able to call this function. In a real-world scenario, you would protect this with some form of authentication, such as [Azure App Service authentication](https://docs.microsoft.com/azure/app-service/app-service-authentication-overview) or [Azure Active Directory B2C](https://docs.microsoft.com/azure/active-directory-b2c).
+> Questa funzione è stata creata con l'accesso anonimo. Dopo la pubblicazione in Azure, qualsiasi persona che disponga dell'URL potrà chiamare la funzione. In uno scenario reale, disporrebbe di protezione tramite un qualche tipo di autenticazione, ad esempio il [servizio app di Azure](https://docs.microsoft.com/azure/app-service/app-service-authentication-overview) o [Active Directory B2C](https://docs.microsoft.com/azure/active-directory-b2c).
 
-## Create the function
+## <a name="create-the-function"></a>Creare la funzione
 
-The Azure Functions project is created with a single HTTP trigger function called `Function1`. The function itself is implemented as a static `Run` method in the `Function1` class.
+Il progetto di Funzioni di Azure viene creato con una singola funzione di trigger HTTP denominata `Function1`. La funzione stessa viene implementata come un metodo statico `Run` nella classe `Function1`.
 
-1. Rename the file in Solution Explorer from "Function1.cs" to "SendLocation.cs". When prompted to rename all references to the code element `Function1`, click **Yes**.
+1. Rinominare il file in Esplora soluzioni da "Function1.cs" a "SendLocation.cs". Quando viene richiesto di rinominare tutti i riferimenti all'elemento di codice `Function1`, fare clic su **Sì**.
 
-1. Rename the function name in the attribute to "SendLocation".
+1. Rinominare il nome della funzione nell'attributo in "SendLocation".
 
     ```cs
     [FunctionName("SendLocation")]
     ```
 
-1. Delete the contents of the function, except the first line that writes an information message to the logger.
+1. Eliminare il contenuto della funzione, eccetto la prima riga che scrive un messaggio informativo nel logger.
 
     ```cs
     public static async Task<HttpResponseMessage> Run([HttpTrigger(AuthorizationLevel.Anonymous,
@@ -42,23 +42,23 @@ The Azure Functions project is created with a single HTTP trigger function calle
     }
     ```
 
-## Create a class to share data between the mobile app and function
+## <a name="create-a-class-to-share-data-between-the-mobile-app-and-function"></a>Creare una classe per condividere dati tra le app per dispositivi mobili e la funzione
 
-When data is sent to the Azure function, it will be sent as JSON. The mobile app will serialize data into JSON and the function will deserialize from JSON. To keep this data consistent between the mobile app and the function, create a new project that contains a class to hold the location and phone number data. This project will then be referenced by the app and function.
+Quando vengono inviati a una funzione di Azure, i dati sono in formato JSON. L'app per dispositivi mobili serializzerà i dati in JSON, mentre la funzione li deserializzerà. Per mantenere la coerenza dei dati tra l'app per dispositivi mobili e la funzione, creare un nuovo progetto che contenga una classe per mantenere i dati della posizione e del numero di telefono. L'app e la funzione faranno quindi riferimento a questo progetto.
 
-1. Create a new project under the `ImHere` solution by right-clicking on the solution and selecting *Add->New Project...*.
+1. Creare un nuovo progetto nella soluzione `ImHere` facendo clic con il tasto destr sulla soluzione e selezionando *Aggiungi -> Nuovo progetto...*.
 
-1. From the tree on the left-hand side, select *Visual C#->.NET Standard*, and then select *Class Library (.NET Standard)* from the panel in the center.
+1. Dall'albero sul lato sinistro selezionare *Visual C#->.NET Standard* e quindi *Libreria di classi (.NET Standard)* dal pannello al centro.
 
-1. Name the project "ImHere.Data", and then click **OK**.
+1. Denominare il progetto "ImHere.Data" e quindi fare clic su **OK**.
 
-    ![The Add New Project dialog](../media-drafts/5-add-new-net-standard-project.png)
+    ![Finestra di dialogo Aggiungi nuovo progetto](../media-drafts/5-add-new-net-standard-project.png)
 
-1. Delete the auto-generated "Class1.cs" file.
+1. Eliminare il file "Class1.cs" generato automaticamente.
 
-1. Create a new class in the `ImHere.Data` project called `PostData` by right-clicking on the project and then selecting *Add->Class...*. Name the new class "PostData" and click **OK**.
+1. Creare una nuova classe nel progetto `ImHere.Data` denominata `PostData` facendo clic con il pulsante destro del mouse sul progetto e quindi selezionando *Aggiungi -> Classe...*. Assegnare il nome "PostData" alla nuova classe e fare clic su **OK**.
 
-1. Add `double` properties for the latitude and longitude, as well as a `string[]` property for the phone numbers to send to.
+1. Aggiungere le proprietà `double` per la latitudine e la longitudine e una proprietà `string[]`per indicare i numeri di telefono a cui inviare le informazioni.
 
     ```cs
     public class PostData
@@ -69,41 +69,41 @@ When data is sent to the Azure function, it will be sent as JSON. The mobile app
     }
     ```
 
-1. Add a reference to this project to both the `ImHere.Functions` and `ImHere` projects by right-clicking on the project and then selecting *Add->Reference...*. Select *Projects* from the tree on the left-hand side, and then check the box next to *ImHere.Data*.
+1. Aggiungere un riferimento a questo progetto in entrambi i progetti `ImHere.Functions` e `ImHere` facendo clic sul progetto e selezionando *Aggiungi -> Riferimento...*. Selezionare *Progetti* nell'albero a sinistra, quindi selezionare la casella accanto a *ImHere.Data*.
 
-    ![Configuring project references](../media-drafts/5-configure-project-references.png)
+    ![Configurazione dei riferimenti del progetto](../media-drafts/5-configure-project-references.png)
 
-## Read the data sent to the function
+## <a name="read-the-data-sent-to-the-function"></a>Leggere i dati inviati alla funzione
 
-In the Azure function, the `req` parameter contains the HTTP request that was made and the data inside this request will be a JSON serialized `PostData` object.
+Nella funzione di Azure, il parametro `req` contiene la richiesta HTTP eseguita. I dati all'interno della richiesta saranno un oggetto `PostData` JSON serializzato.
 
-1. Open the `SendLocation` class in the `ImHere.Functions` project.
+1. Aprire la classe `SendLocation` nel progetto `ImHere.Functions`.
 
-1. Read the contents of the HTTP request into a `PostData` object, adding a using directive for the `ImHere.Data` namespace.
+1. Leggere il contenuto della richiesta HTTP in un oggetto `PostData`, aggiungendo una direttiva d'uso per lo spazio dei nomi `ImHere.Data`.
 
     ```cs
     PostData data = await req.Content.ReadAsAsync<PostData>();
     ```
 
-1. Construct a Google Maps URL using the latitude and longitude from the `PostData`.
+1. Costruire un URL di Google Maps usando la latitudine e la longitudine da `PostData`.
 
    ```cs
    string url = $"https://www.google.com/maps/search/?api=1&query={data.Latitude},{data.Longitude}";
    ```
 
-1. Log the URL.
+1. Registrare l'URL.
 
     ```cs
     log.Info($"URL created - {url}");
     ```
 
-1. Return a 200 status code to show the function completed without error.
+1. Viene restituito un codice di stato 200 per mostrare il completamento della funzione senza errori.
 
     ```cs
     return req.CreateResponse(HttpStatusCode.OK);
     ```
 
-The complete function is shown below.
+La funzione completa viene mostrata di seguito.
 
 ```cs
 public static async Task<HttpResponseMessage> Run([HttpTrigger(AuthorizationLevel.Anonymous,
@@ -119,24 +119,24 @@ public static async Task<HttpResponseMessage> Run([HttpTrigger(AuthorizationLeve
 }
 ```
 
-## Run the Azure function locally
+## <a name="run-the-azure-function-locally"></a>Eseguire localmente la funzione di Azure
 
-Functions can be run locally using a local storage account and local Azure Functions runtime. This local runtime allows you to test out your function before deploying it to Azure.
+È possibile eseguire in locale le funzioni con un account di archiviazione locale e un runtime Funzioni di Azure locale. Questo runtime locale consente di testare la funzione prima di distribuirla in Azure.
 
-1. Right-click on the `ImHere.Functions` project in the solution explorer, and then select *Set as StartUp project*.
+1. Fare clic con il pulsante destro del mouse sul progetto `ImHere.Functions` in Esplora soluzioni, quindi scegliere *Imposta come progetto di avvio*.
 
-1. From the *Debug* menu, select *Start Without Debugging*. The local Azure Functions runtime will launch inside a console window and start your function, listening on an available port on `localhost`.
+1. Dal menu *Debug*, selezionare *Avvia senza eseguire debug*. Il runtime di Funzioni di Azure locale verrà avviato all'interno di una finestra della console e avvierà la funzione, in ascolto su una porta disponibile in `localhost`.
 
-    ![The Azure function running locally](../media-drafts/5-function-running-locally.png)
+    ![Funzione di Azure eseguita localmente](../media-drafts/5-function-running-locally.png)
 
-1. Take a note of the port that the function is listening on. You'll need this in the next unit to test out the mobile app. In the image above, the function is listening on port **7071**.
+1. Prendere nota della porta su cui è in ascolto la funzione. Sarà necessaria nell'unità successiva per testare l'app per dispositivi mobili. Nell'immagine precedente, la funzione è in ascolto sulla porta **7071**.
 
     ```sh
     Listening on http://localhost:7071/
     ```
 
-1. Leave the function running so that you can test the mobile app in the next unit.
+1. Lasciare la funzione in esecuzione in modo da poter testare l'app per dispositivi mobili nell'unità successiva.
 
-## Summary
+## <a name="summary"></a>Summary
 
-In this unit, you learned how to create an Azure Functions project in Visual Studio, added a shared project with a data object to be shared between the mobile app and the function, and learned how to create a basic implementation of the function to deserialize the data passed in. You also learned how to run an Azure function locally. In the next unit, you'll call the Azure function from the mobile app.
+In questa unità si è visto come creare un progetto Funzioni di Azure in Visual Studio, si è aggiunto un progetto condiviso con un oggetto dati da condividere tra l'app per dispositivi mobili e la funzione e si è appreso come creare un'implementazione di base della funzione per deserializzare i dati al suo interno. Si è anche appreso come eseguire in locale una funzione di Azure. Nell'unità successiva si chiamerà la funzione di Azure dall'app per dispositivi mobili.

@@ -65,11 +65,13 @@ La procedura per pubblicare l'app in Azure da Visual Studio è breve.
 ### <a name="select-the-project"></a>Selezionare il progetto
 
 1. In Esplora soluzioni fare clic con il pulsante destro del mouse sul progetto.
+
 1. Selezionare **Pubblica > Pubblica in Azure**.
 
 ### <a name="configure-the-app-service-plan-in-windows"></a>Configurare il piano di servizio app in Windows
 
 1. Configurare il piano di servizio app
+
     - Hosting: in questa scheda si configura il piano di servizio app. Specifica la località, le dimensioni e le funzionalità del server Web che ospita l'app. È possibile selezionare un piano di hosting esistente o crearne uno nuovo. Windows genererà automaticamente nomi univoci a livello globale che possono essere modificati durante la configurazione.
     - Servizi: qui è possibile configurare un database SQL per il sito.
 
@@ -81,7 +83,9 @@ La procedura per pubblicare l'app in Azure da Visual Studio è breve.
 ### <a name="configure-the-app-service-plan-for-mac"></a>Configurare il piano di servizio app per Mac
 
 1. È possibile selezionare un piano di servizio app esistente, se in Azure se ne è già configurato uno, oppure crearne uno nuovo.
+
 1. Configurare il piano di servizio app in questa scheda. Specifica la località, le dimensioni e le funzionalità del server Web che ospita l'app. È possibile selezionare un piano di hosting esistente o crearne uno nuovo. Tenere presente che Azure richiede che il nome del sito Web e di tutte le risorse siano globalmente univoci.
+
 1. Fare clic su **Crea** per distribuire l'app. Al termine, Visual Studio avvierà la pagina Web in cui è ospitato il sito.
 
 ## <a name="summary"></a>Riepilogo

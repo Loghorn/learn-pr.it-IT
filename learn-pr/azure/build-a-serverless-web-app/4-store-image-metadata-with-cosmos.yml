@@ -4,12 +4,12 @@ title: Archiviare i metadati delle immagini con Azure Cosmos DB
 metadata:
   title: Archiviare i metadati delle immagini con Azure Cosmos DB
   description: Archiviare i metadati delle immagini con Azure Cosmos DB.
-  ms.openlocfilehash: 46528197a33d53436870a85469d1763e75acfa6f
-  ms.sourcegitcommit: bf091e3a389138b59573865ca54775e38a4ffa1f
+  ms.openlocfilehash: c69988d3b56f260a65ad89ffa498fa0b64b574f2
+  ms.sourcegitcommit: b97ed72bd7e3fb77b49de71e8ef35d3f70dfd636
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 08/29/2018
-  ms.locfileid: "43155409"
+  ms.lasthandoff: 09/05/2018
+  ms.locfileid: "43790982"
 durationInMinutes: 11
 interactive: bash-editor
 content: '[!include[](includes/4-store-image-metadata-with-cosmos.md)]'

@@ -1,67 +1,69 @@
-In this unit, you'll use the Azure portal to verify your event hub is working and performing according to the desired expectations. You'll also test how event hub messaging works when it's temporarily unavailable and use Event Hubs metrics to check the performance of your event hub.
+In questa unità si userà il portale di Azure per verificare che l'hub eventi funzioni con prestazioni corrispondenti alle aspettative. Verrà inoltre testato il funzionamento della messaggistica dell'hub eventi quando è temporaneamente non disponibile e si useranno le metriche dell'hub eventi per controllare le prestazioni dell'hub eventi.
 
-## View event hub activity
+## <a name="view-event-hub-activity"></a>Visualizzare l'attività dell'hub eventi
 
-1. Sign in to the [Azure portal](https://portal.azure.com?azure-portal=true).
+1. Accedere al [portale di Azure](https://portal.azure.com?azure-portal=true).
 
-1. Find your event hub, using the Search bar, and open it.
+1. Trovare l'hub eventi usando la barra di ricerca e aprirlo.
 
-1. On the Overview page, view the message counts.
+1. Nella pagina Panoramica visualizzare i conteggi dei messaggi.
 
-    ![View Event Hub messages](../media-draft/6-view-messages.png)
+    ![Visualizzare i messaggi dell'hub eventi](../media-draft/6-view-messages.png)
 
-1. The SimpleSend and EventProcessorSample applications are configured to send/receive 100 messages. You'll see that the event hub has processed 100 messages from the SimpleSend application and has transmitted 100 messages to the EventProcessorSample application.
+1. Le applicazioni SimpleSend ed EventProcessorSample sono configurate per l'invio e la ricezione di 100 messaggi. Si noterà che l'hub eventi ha elaborato 100 messaggi dall'applicazione SimpleSend e ha trasmesso 100 messaggi all'applicazione EventProcessorSample.
 
-## Test event hub resilience
+## <a name="test-event-hub-resilience"></a>Testare la resilienza dell'hub eventi
 
-Use the following steps to see what happens when an application sends messages to an event hub while it's temporarily unavailable.
+Usare la procedura seguente per vedere cosa accade quando un'applicazione invia messaggi a un hub eventi, mentre è temporaneamente non disponibile.
 
-1. Resend messages to the event hub using the SimpleSend application. Use the following command:
+1. Inviare di nuovo i messaggi all'hub eventi usando l'applicazione SimpleSend. Usare il comando seguente:
 
     ```azurecli
     cd ~
     cd azure-event-hubs/samples/Java/Basic/SimpleSend
     java -jar ./target/simplesend-1.0.0-jar-with-dependencies.jar
+    ENTER
     ```
 
-1. When you see **Send Complete...**, press ENTER.
+1. Quando viene visualizzato il messaggio **Invio completato...** premere INVIO.
 
-1. In the Azure portal, click **Event Hubs Instance** > **SETTINGS** > **Properties**.
+1. Nel portale di Azure fare clic su **Istanza di hub eventi** > **Impostazioni** > **Proprietà**.
 
-1. Under Event Hub state, click **Disabled**.
+1. In Stato hub eventi fare clic su **Disabilitato**.
 
-    ![Disable Event Hub](../media-draft/7-disable-event-hub.png)
+    ![Disabilitare l'hub eventi](../media-draft/7-disable-event-hub.png)
 
-Wait for a minimum of five minutes.
+Attendere almeno cinque minuti.
 
-1. Click **Active** under Event Hub state to re-enable your event hub and save your changes.
+1. Fare clic su **Attivo** in Stato hub eventi per abilitare di nuovo l'hub eventi e salvare le modifiche.
 
-1. Rerun the EventProcessorSample application to receive messages. Use the following command.
+1. Eseguire di nuovo l'applicazione EventProcessorSample per ricevere messaggi. Usare il comando seguente.
 
     ```azurecli
     cd ~
     cd azure-event-hubs/samples/Java/Basic/EventProcessorSample
     java -jar ./target/eventprocessorsample-1.0.0-jar-with-dependencies.jar
+    ENTER
     ```
 
-1. When messages stop being displayed to the console, press ENTER.
+1. Quando non vengono più visualizzati messaggi nella console, premere INVIO.
 
-1. In the Azure portal, find your event hub **_namespace_** and open it. 
+1. Nel portale di Azure individuare lo **_spazio dei nomi_** dell'hub eventi e aprirlo. 
 
-1. Click **Event Hubs Namespace** > **MONITORING** > **Metrics (preview)**.
+1. Fare clic su **Spazio dei nomi hub eventi** > **Monitoraggio** > **Metriche (anteprima)**.
 
-    ![Use Event Hub Metrics](../media-draft/7-event-hub-metrics.png)
+    ![Usare le metriche dell'hub eventi](../media-draft/7-event-hub-metrics.png)
 
-1. From the **Metric** list, select **Incoming Messages** and click **Add Metric**.
+1. Nell'elenco **Metrica** selezionare **Messaggi in arrivo** e fare clic su **Aggiungi metrica**.
 
-1. From the **Metric** list, select **Outgoing Messages** and click **Add Metric**.
+1. Nell'elenco **Metrica** selezionare **Messaggi in uscita** e fare clic su **Aggiungi metrica**.
 
-1. At the top of the chart, click **Last 24 hours (Automatic)** to change the time period to **Last 30 minutes**.
+1. Nella parte superiore del grafico fare clic su **Ultime 24 ore (automatico)** per modificare il periodo di tempo in **Ultimi 30 minuti**.
 
-1. Click **Apply**.
+1. Fare clic su **Applica**.
 
-You'll see that though the messages were sent before the event hub was taken offline for a period, all 100 messages were successfully transmitted.
+Si noterà che, anche se i messaggi sono stati inviati prima che l'hub eventi fosse portato offline per un periodo di tempo, tutti i 100 messaggi sono stati trasmessi correttamente.
 
-## Summary
+## <a name="summary"></a>Riepilogo
 
-In this unit, you used the Event Hubs metrics to test that your event hub is successfully processing the sending and receiving messages.
+In questa unità sono state usate le metriche di hub eventi per verificare che l'hub eventi abbia completato correttamente l'elaborazione dell'invio e della ricezione di messaggi.

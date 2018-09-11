@@ -18,21 +18,22 @@ La **scalabilità orizzontale** è il processo di aggiunta di altri server che f
 
 ### <a name="cloud-computing-is-elastic"></a>Il cloud computing è elastico
 
-Quando il carico di lavoro cambia a causa di un calo o di un picco della domanda, un sistema di cloud computing può aggiungere o rimuovere automaticamente le risorse per compensare.
+Quando il carico di lavoro cambia a causa di un calo o di un aumento del traffico, un sistema di cloud computing può aggiungere o rimuovere automaticamente le risorse per compensare.
 
-Si supponga, ad esempio, che il sito Web sia presente in un articolo di giornale, generando un picco di traffico durante la notte. Poiché il cloud è elastico, può automaticamente allocare più risorse di calcolo per gestire l'aumento del traffico. Quando il traffico inizia quindi a stabilizzarsi e le comunicazioni cloud hanno un numero eccessivo di risorse allocate, inizierà a rimuoverle in modo da non perdere denaro.
+Si supponga, ad esempio, che il sito Web sia presente in un articolo di giornale, generando un picco di traffico durante la notte. Poiché il cloud è elastico, può automaticamente allocare più risorse di calcolo per gestire l'aumento del traffico. Quando il traffico inizia a tornare alla normalità, il cloud può rimuovere automaticamente le risorse in eccesso aggiunte, evitando così uno spreco in termini di denaro.
+
+Un altro esempio è l'esecuzione di un'applicazione usata dai dipendenti. In questo caso il cloud può aggiungere automaticamente le risorse alle ore core in cui la maggior parte delle persone esegue l'accesso all'applicazione e può rimuovere le risorse alla consueta fine della giornata.  
 
 ### <a name="cloud-computing-is-current"></a>Il cloud computing è aggiornato
 
 Quando si usa il cloud ci si concentra su ciò che conta: lo sviluppo e la distribuzione di applicazioni. Non è necessario occuparsi della manutenzione delle patch software, dell'installazione e configurazione di hardware, degli aggiornamenti e delle altre attività di gestione IT. Tutto ciò è nascosto e viene eseguito automaticamente per assicurarsi che venga usato lo strumento più recente e migliore per gestire la propria attività.
 
+In più, l'hardware del computer viene gestito e aggiornato dal provider di servizi cloud. Ad esempio, se un disco diventa obsoleto, viene sostituito. Se esce un nuovo hardware, non è necessario occuparsi del processo di sostituzione. Non è neppure necessario sostenere il costo di hardware sempre aggiornato.
+
 ### <a name="cloud-computing-is-reliable"></a>Il cloud computing è affidabile
 
 Quando si gestisce un'azienda, si desidera avere la certezza che i dati saranno sempre presenti. I provider di cloud computing offrono il backup dei dati, il ripristino di emergenza e i servizi di replica dei dati per assicurarsi che i dati siano al sicuro.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Riepilogo
 
-Il cloud computing tenta di rendere più semplice la gestione di un'azienda. Il cloud computing è una soluzione conveniente, scalabile, elastica, corrente e affidabile. Ciò significa che si può dedicare più tempo a ciò che interessa di più e meno tempo nella gestione dei dettagli sottostanti.
-
-
-
+Il cloud computing semplifica la gestione di un'azienda. È una soluzione conveniente, scalabile, elastica, attuale e affidabile. La gestione dei dettagli dell'infrastruttura di calcolo richiede meno tempo ed è pertanto possibile dedicarsi di più all'azienda.

@@ -1,28 +1,35 @@
 ### YamlMime:Module
 uid: learn.publish-azure-web-app-with-visual-studio
 metadata:
-  title: Publish an Azure web app with Visual Studio for Windows or Mac
-  description: Azure App Service makes it quick for you to publish and update web apps directly from Visual Studio. Here, you'll learn how to install the necessary tools, create a new ASP.NET-based web application, and publish it to Azure. Finally, you'll learn how to make changes to the app, and you'll see how simple it is to republish those changes to Azure.
+  title: Pubblicare un'app Web di Azure con Visual Studio per Windows o Mac
+  description: Servizio app di Azure rende più rapido pubblicare e aggiornare le app Web direttamente da Visual Studio. In questo modulo si apprenderà come installare gli strumenti necessari, creare una nuova applicazione Web basata su ASP.NET e pubblicarla in Azure. Infine, si apprenderà come apportare modifiche all'app e si vedrà quanto sia semplice ripubblicare queste modifiche in Azure.
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
-title: Publish an Azure Web App with Visual Studio for Windows or Mac
-summary: Use the publishing features of Visual Studio 2017 for either PC or Mac to deploy and manage an ASP.NET-based web application hosted on Azure.
-abstract: | 
-  In this module, you will:
-  - Create an ASP.NET web app in Visual Studio 2017 for PC or Mac
-  - Publish an ASP.NET web app to Azure with Visual Studio 2017
-  - Update an ASP.NET application in Azure using Visual Studio for PC or Mac
-prerequisites: |
-  - Knowledge of the Azure cloud environment
-  - Familiarity with the Visual Studio user interface
-  - Familiarity with web app concepts
-  - Basic programming knowledge
-  - Basic HTML knowledge
-#TODO: Update icon URL with real image 
+  ms.openlocfilehash: 1995d2b4e21237e7c76e11fd242fba6f1f127983
+  ms.sourcegitcommit: 09425147d998035edf9d2d36006a54d85e3cf75d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43846909"
+title: Pubblicare un'app Web di Azure con Visual Studio per Windows o Mac
+summary: Usare le funzionalità di pubblicazione di Visual Studio 2017 per PC o Mac per distribuire e gestire un'applicazione Web basata su ASP.NET ospitata in Azure.
+abstract: >
+  Contenuto del modulo:
+
+  - Creare un'app Web ASP.NET Core in Visual Studio 2017 per PC o Mac.
+
+  - Pubblicare un'app Web ASP.NET in Azure con Visual Studio 2017.
+
+  - Aggiornare un'applicazione ASP.NET in Azure usando Visual Studio per PC o Mac.
+prerequisites: >
+  - Conoscenza dell'ambiente cloud di Azure.
+
+  - Familiarità con l'interfaccia utente di Visual Studio.
+
+  - Familiarità con i concetti relativi alle app Web.
+
+  - Conoscenza di base della programmazione.
+
+  - Conoscenza di base di HTML.
 iconUrl: http://via.placeholder.com/120x120
 levels:
 - beginner
@@ -31,7 +38,6 @@ roles:
 products:
 - azure
 units:
-#TODO: None of these units have a knowledge task or task validation component (need to add somewhere so users don't get marked complete solely by viewing the pages).
 - learn.publish-azure-web-app-with-visual-studio.1-introduction
 - learn.publish-azure-web-app-with-visual-studio.2-install-the-necessary-workloads
 - learn.publish-azure-web-app-with-visual-studio.3-exercise-create-a-new-aspnet-app

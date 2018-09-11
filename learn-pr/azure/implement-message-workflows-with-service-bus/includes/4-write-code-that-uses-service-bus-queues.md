@@ -1,69 +1,69 @@
-Distributed applications use queues, such as Service Bus queues, as temporary storage locations for messages that are awaiting delivery to a destination component. To send and receive messages through a queue, you must write code in the source and destination components.
+Le applicazioni distribuite usano le code, ad esempio le code dei bus di servizio, come posizioni di archiviazione temporanea per i messaggi in attesa di essere recapitati a un componente di destinazione. Per inviare e ricevere messaggi tramite una coda, è necessario scrivere codice nei componenti di origine e di destinazione.
 
-Consider the Contoso Slices application. The customer places the order through a website or mobile app. Because websites and mobile apps run on customer devices, there is really no limit to how many orders could come in at once. By having the mobile app and website deposit the orders in a queue, we can allow the back-end component (a web app) to process orders from that queue at its own pace.
+Si consideri l'applicazione Contoso Slices. Il cliente effettua l'ordine tramite un sito Web o un'app per dispositivi mobili. Dal momento che vengono effettuati su dispositivi del cliente, non esiste alcun limite al numero di ordini che è possibile inviare contemporaneamente. Se l'app per dispositivi mobili e il sito Web depositano gli ordini in una coda, il componente di back-end (un'app Web) può elaborare gli ordini da tale coda in base ai propri tempi.
 
-The Contoso Slices application actually has several steps to handle a new order. But all of them are dependent on first authorizing payment, so we decide to use a queue. Our receiving component's first job will be processing the payment.
+L'applicazione Contoso Slices prevede diversi passaggi per gestire un nuovo ordine. Ma per tutti i passaggi è prima richiesta l'autorizzazione del pagamento, di conseguenza decidiamo di usare una coda. Il primo processo del componente di ricezione consiste nell'elaborazione del pagamento.
 
-In the mobile app and website, Contoso needs to write code that adds a message to the queue. In the back-end web app, they'll write code that picks up messages from the queue.
+Sia per l'app per dispositivi mobili che per il sito Web, Contoso deve scrivere il codice per aggiungere un messaggio alla coda. Nell'app Web di back-end è invece necessario scrivere il codice che preleva i messaggi dalla coda.
 
-Here, you will learn how to write that code.
+In questa esercitazione verrà spiegato come scrivere tale codice.
 
-## The Microsoft.Azure.ServiceBus NuGet package
+## <a name="the-microsoftazureservicebus-nuget-package"></a>Pacchetto NuGet Microsoft.Azure.ServiceBus
 
-To make it easy to write code that sends and receives messages through Service Bus, Microsoft provides a library of .NET classes, which you can use in any .NET Framework language to interact with a Service Bus queue, topic, or relay. You can include this library in your application by adding the **Microsoft.Azure.ServiceBus** NuGet package.
+Per semplificare la scrittura di codice che invia e riceve i messaggi tramite il bus di servizio, Microsoft offre una libreria di classi .NET, che è possibile usare in qualsiasi linguaggio .NET Framework per interagire con una coda, argomento o inoltro del bus di servizio. È possibile includere questa libreria nell'applicazione aggiungendo il pacchetto NuGet **Microsoft.Azure.ServiceBus**.
 
-The most important class in this library for queues is the `QueueClient` class. You must start by instantiating this class both in sending and receiving components.
+La classe più importante di questa libreria è la classe `QueueClient`. Per iniziare, è necessario creare un'istanza di questa classe nei componenti di invio e ricezione.
 
-## Connection strings and keys
+## <a name="connection-strings-and-keys"></a>Stringhe di connessione e chiavi
 
-Source components and destination components both need two pieces of information to connect to a queue in a Service Bus namespace:
+I componenti di origine e di destinazione hanno entrambi bisogno di due elementi per connettersi a una coda in uno spazio dei nomi del bus di servizio:
 
-- The location of the Service Bus namespace, also known as an **endpoint**. The location is specified as a fully qualified domain name within the **servicebus.windows.net** domain. For example: **pizzaService.servicebus.windows.net**.
-- An access key. Service Bus restricts access to queues, topics, and relays by requiring an access key.
+- La posizione dello spazio dei nomi del bus di servizio, nota anche come **endpoint**. La posizione viene specificata come nome di dominio completo all'interno del dominio **servicebus.windows.net**, ad esempio **pizzaService.servicebus.windows.net**.
+- Una chiave di accesso. Il bus di servizio limita l'accesso a code, argomenti e inoltri richiedendo una chiave di accesso.
 
-Both of these pieces of information are provided to the `QueueClient` object in the form of a connection string. You can obtain the correct connection string for your namespace from the Azure portal.
+Entrambi questi elementi vengono forniti all'oggetto `QueueClient` sotto forma di stringa di connessione. È possibile ottenere la stringa di connessione corretta per lo spazio dei nomi dal portale di Azure.
 
-## Calling methods asynchronously
+## <a name="calling-methods-asynchronously"></a>Chiamata dei metodi in modalità asincrona
 
-The queue in Azure may be located thousands of miles away from sending and receiving components. Even if it is physically close, slow connections and bandwidth contention may cause delays when a component calls a method on the queue. For this reason, the Service Bus client library makes `async` methods available for interacting with the queues. We'll use these methods to avoid blocking a thread while waiting for calls to complete.
+La coda di Azure può trovarsi a migliaia di chilometri dai componenti di invio e ricezione. Anche se è fisicamente vicina, connessioni lente e la contesa della larghezza di banda possono causare ritardi quando un componente chiama un metodo sulla coda. Per questo motivo la libreria client del bus di servizio fa in modo che i metodi `async` siano disponibili per l'interazione con le code. Useremo questi metodi per evitare di bloccare un thread in attesa del completamento delle chiamate.
 
-When sending a message to a queue, for example, use the `QueueClient.SendAsync()` method with the `await` keyword.
+Quando si invia un messaggio a una coda, ad esempio, usare il metodo `QueueClient.SendAsync()` con la parola chiave `await`.
 
-## Write code that sends to queues 
+## <a name="write-code-that-sends-to-queues"></a>Scrivere il codice che invia messaggi alle code 
 
-In any sending or receiving component, you should add the following `using` statements to any code file that calls a Service Bus queue:
+In un componente di invio o di ricezione è necessario aggiungere quanto segue usando le istruzioni in qualsiasi file di codice che chiama una coda del bus di servizio:
 
-```C#
-using System.Threading;
-using System.Threading.Tasks;
-using Microsoft.Azure.ServiceBus;
-```
+    ```C#
+    using System.Threading;
+    using System.Threading.Tasks;
+    using Microsoft.Azure.ServiceBus;
+    ```
 
-Next, create a new `QueueClient` object and pass it the connection string and the name of the queue:
+Creare quindi un nuovo oggetto `QueueClient` e passarvi la stringa di connessione e il nome della coda:
 
-```C#
-queueClient = new QueueClient(TextAppConnectionString, "PrivateMessageQueue");
-```
+    ```C#
+    queueClient = new QueueClient(TextAppConnectionString, "PrivateMessageQueue");
+    ```
 
-You can send a message to the queue by calling the `QueueClient.SendAsync()` method and passing the message in the form of a UTF-8 encoded string:
+Per inviare un messaggio alla coda, è possibile chiamare il metodo `QueueClient.SendAsync()` e passare il messaggio sotto forma di stringa con codifica UTF8:
 
-```C#
-string message = "Sure would like a large pepperoni!";
-var encodedMessage = new Message(Encoding.UTF8.GetBytes(message));
-await queueClient.SendAsync(encodedMessage);
-```
+    ```C#
+    string message = "Sure would like a large pepperoni!";
+    var encodedMessage = new Message(Encoding.UTF8.GetBytes(message));
+    await queueClient.SendAsync(encodedMessage);
+    ```
 
-## Receive messages from queue
+## <a name="receive-messages-from-queue"></a>Ricevere messaggi dalla coda
 
-To receive messages, you must first register a message handler - this is the method in your code that will be invoked when a message is available on the queue.
+Per ricevere i messaggi, è prima necessario registrare un gestore di messaggi. Si tratta del metodo nel codice che verrà richiamato quando nella coda è presente un messaggio.
 
-```C#
-queueClient.RegisterMessageHandler(MessageHandler, messageHandlerOptions);
-```
+    ```C#
+    queueClient.RegisterMessageHandler(MessageHandler, messageHandlerOptions);
+    ```
 
-Do your processing work. Then, within the message handler, call the `QueueClient.CompleteAsync()` method to remove the message from the queue:
+Eseguire l'elaborazione. Nel gestore di messaggi chiamare il metodo `QueueClient.CompleteAsync()` per rimuovere il messaggio dalla coda:
 
-```C#
-await queueClient.CompleteAsync(message.SystemProperties.LockToken);
-```
+    ```C#
+    await queueClient.CompleteAsync(message.SystemProperties.LockToken);
+    ```
     

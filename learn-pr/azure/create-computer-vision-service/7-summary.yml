@@ -1,0 +1,48 @@
+### YamlMime:ModuleUnit
+uid: learn.create-computer-vision-service.7-summary
+title: Riepilogo e verifica delle conoscenze
+metadata:
+  title: Riepilogo e verifica delle conoscenze
+  description: Riepilogo e verifica delle conoscenze
+  ms.openlocfilehash: b5b474cbfc1f501965805e36d035caf0c5ffbfeb
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43836070"
+durationInMinutes: 10
+content: >
+  [!include[](includes/7-summary.md)]
+quiz:
+  title: Test relativo Visione artificiale
+  questions:
+  - content: Quali tipi di immagini famose non verranno identificate da Visione artificiale?
+    choices:
+    - content: 'Punti di riferimento '
+      isCorrect: false
+    - content: Celebrità
+      isCorrect: false
+    - content: Film
+      isCorrect: true
+  - content: Quali elementi visivi è possibile scegliere di ricevere durante l'analisi delle immagini?
+    choices:
+    - content: Forme
+      isCorrect: true
+    - content: Classificazione delle immagini
+      isCorrect: false
+    - content: Tag
+      isCorrect: false
+    - content: Descrizione testuale
+      isCorrect: false
+    - content: Visi
+      isCorrect: false
+    - content: Colori
+      isCorrect: false
+    - content: Contenuto per adulti e allusivo
+      isCorrect: false
+  - content: Qual è il risultato del ritaglio intelligente?
+    choices:
+    - content: Ritaglio di immagini a partire dalla parte superiore a sinistra
+      isCorrect: false
+    - content: Ritaglio di immagini in base alle aree di interesse (visi, oggetti in primo piano, altro)
+      isCorrect: true

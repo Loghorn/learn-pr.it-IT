@@ -75,6 +75,7 @@ Per eseguire il rendering dell'output di un'istruzione di codice, si usa `@` dav
 Dopo aver apportato le modifiche al sito Web, è possibile pubblicarle in Azure. Questo processo è simile a quello di pubblicazione iniziale.
 
 1. In Esplora soluzioni fare clic con il pulsante destro del mouse sul progetto.
+
 1. Dovrebbe essere visualizzato il nome del sito Web seguito da Distribuzione Web. Ad esempio, se si è assegnato al sito Web il nome AlpineSkiHouse42, si dovrebbe vedere **AlpineSkiHouse42 - Distribuzione Web** nelle opzioni disponibili. Selezionare questo nome per aggiornare il sito in Azure.
 
 ## <a name="summary"></a>Riepilogo

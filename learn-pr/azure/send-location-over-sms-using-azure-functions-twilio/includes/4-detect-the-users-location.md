@@ -1,30 +1,30 @@
-The app has a UI and a ViewModel. In this unit, you add location lookup to the ViewModel using Xamarin.Essentials.
+L'app include un'interfaccia utente e un ViewModel. In questa unità si aggiunge la ricerca della posizione al ViewModel usando Xamarin.Essentials.
 
-## Enable location permissions
+## <a name="enable-location-permissions"></a>Abilitare le autorizzazioni sulla posizione
 
-All mobile platforms have security around user information and certain hardware, such as the camera, photo library, and the user's location. Before an app can access the user's location, the user has to grant permission - either by implicitly granting these permissions at install time or by choosing to grant a permission at runtime. When you view a UWP app on the store, the listing will show the permissions that the app needs. By installing the app, you implicitly grant permission. These permissions are configured in an app manifest file.
+Tutte le piattaforme mobili dispongono di funzionalità di sicurezza per proteggere le informazioni sull'utente e alcuni componenti hardware, ad esempio la fotocamera, la raccolta foto e la posizione dell'utente. Prima che un'app possa accedere alla posizione dell'utente, l'utente deve concedere l'autorizzazione apposita, concedendo le autorizzazioni implicitamente durante l'installazione o scegliendo un'autorizzazione in fase di esecuzione. Quando si visualizza un'app UWP nello Store, un elenco visualizza le autorizzazioni necessarie all'app. Quando si installa l'app, si concede implicitamente l'autorizzazione. Queste autorizzazioni vengono configurate in un file manifesto dell'app.
 
-1. In the `ImHere.UWP` app project, open the `Package.appxmanifest` file.
+1. Nel progetto dell'app `ImHere.UWP` aprire il file `Package.appxmanifest`.
 
-1. Head to the **Capabilities** tab and check the *Location* capability.
+1. Accedere alla scheda **Funzionalità** e selezionare la funzionalità *Posizione*.
 
-    ![The UWP capabilities tab](../media-drafts/4-uwp-location-capability.png)
+    ![Scheda delle funzionalità della piattaforma UWP](../media-drafts/4-uwp-location-capability.png)
 
-> If you want to support Android or iOS, the permissions need to be configured differently. This is detailed in the [Xamarin.Essentials Geolocation docs](https://docs.microsoft.com/xamarin/essentials/geolocation?tabs=android#getting-started).
+> Se si vuole supportare Android o iOS, le autorizzazioni devono essere configurate in modo diverso. Queste informazioni sono descritte dettagliatamente nella [documentazione sulla geolocalizzazione di Xamarin.Essentials](https://docs.microsoft.com/xamarin/essentials/geolocation?tabs=android#getting-started).
 
-## Query for the user's location
+## <a name="query-for-the-users-location"></a>Eseguire query sulla posizione dell'utente
 
-There are two ways to get the user's location - the last known or the current. The current location can take some time to get because the device may need to establish a GPS link and wait for the accurate location to be retrieved. The fastest way is to get the last known location detected by the device. The last known location is potentially less accurate but is a much faster call. Locations come as the latitude and longitude in [decimal degrees](https://en.wikipedia.org/wiki/Decimal_degrees) and the altitude of the device in meters above sea level.
+Si possono rilevare due tipi di posizioni dell'utente, l'ultima posizione nota o quella corrente. Il rilevamento della posizione corrente può richiedere tempo perché il dispositivo potrebbe aver bisogno di stabilire un collegamento GPS e attendere che venga recuperata la posizione precisa. Il modo più rapido è ottenere l'ultima posizione nota rilevata dal dispositivo. L'ultima posizione nota è potenzialmente meno precisa, ma molto più veloce da rilevare. Le posizioni vengono visualizzate come latitudine e longitudine in [gradi decimali](https://en.wikipedia.org/wiki/Decimal_degrees) e altitudine del dispositivo in metri sul livello del mare.
 
-1. Open the `MainViewModel` class in the `ImHere` .NET standard project.
+1. Aprire la classe `MainViewModel` nel progetto standard .NET `ImHere`.
 
-1. In the `SendLocation` method, make a call to the `GetLastKnownLocationAsync` static method on the `Geolocation` class in the `Xamarin.Essentials` namespace.
+1. Nel metodo `SendLocation` effettuare una chiamata al metodo statico `GetLastKnownLocationAsync` sulla classe `Geolocation` nello spazio dei nomi `Xamarin.Essentials`.
 
     ```cs
     Location location = await Geolocation.GetLastKnownLocationAsync();
     ```
 
-1. Update the `Message` property with the user's location if one is found.
+1. Aggiornare la proprietà `Message` con la posizione dell'utente eventualmente rilevata.
 
     ```cs
     if (location != null)
@@ -33,7 +33,7 @@ There are two ways to get the user's location - the last known or the current. T
     }
     ```
 
-The full code for this method is below.
+Di seguito viene riportato l'intero codice del metodo.
 
 ```cs
 async Task SendLocation()
@@ -47,13 +47,12 @@ async Task SendLocation()
 }
 ```
 
-Run the app and click the **Send Location** button to see the location on the UI.
+Eseguire l'app e fare clic sul pulsante **Invia posizione** per vedere la posizione nell'interfaccia utente.
 
-![The running app showing the user's location](../media-drafts/4-running-app-showing-location.png)
+![App in esecuzione che mostra la posizione dell'utente](../media-drafts/4-running-app-showing-location.png)
 
-> This app uses the last known location. In a production-quality app, you would want to get the current accurate location with a time-out, and if one is not found in time, fall back to the last known. You can read more on how to do this in the [Xamarin.Essentials Geolocation docs](https://docs.microsoft.com/xamarin/essentials/geolocation?tabs=uwp#using-geolocation).
-> This app does not have error handling. In a production-quality app, you should handle any exceptions that occur, such as if the location was not available.
+> Questa app usa l'ultima posizione nota. In un'app per ambienti di produzione può essere utile ottenere la posizione precisa corrente con un periodo di scadenza per cui se una posizione non viene trovata entro il tempo specificato, viene restituita l'ultima posizione nota. Per altre informazioni su questa operazione, vedere la [documentazione sulla geolocalizzazione di Xamarin.Essentials](https://docs.microsoft.com/xamarin/essentials/geolocation?tabs=uwp#using-geolocation). Questa app non include funzionalità per la gestione degli errori. In un'app per ambienti di produzione è consigliabile gestire tutte le eccezioni che si verificano, ad esempio in caso di posizione non disponibile.
 
-## Summary
+## <a name="summary"></a>Riepilogo
 
-In this unit, you learned how to use Xamarin.Essentials to get the user's location. In the next unit, you'll create an Azure function to act as a back end for the mobile app.
+In questa unità è stato descritto come usare Xamarin.Essentials per ottenere la posizione dell'utente. Nella prossima unità si creerà una funzione di Azure che agisca come back-end per l'app per dispositivi mobili.

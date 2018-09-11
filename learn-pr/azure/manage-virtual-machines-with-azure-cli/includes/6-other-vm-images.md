@@ -1,15 +1,15 @@
-We used `Debian` for the image to create the virtual machine. Azure has several standard VM images you can use to create a virtual machine. 
+Per definire l'immagine in base alla quale creare la macchina virtuale si è usato `Debian`. Azure offre diverse immagini di macchina virtuale standard che è possibile usare per creare una macchina virtuale. 
 
-You can get a list of the available images using the `az vm image list --output table` command. This will output the most popular images that are part of an offline list built into the Azure CLI. However, there are _hundreds_ of image options available in the Azure Marketplace. 
+È possibile ottenere un elenco delle immagini disponibili tramite il comando `az vm image list --output table`. L'output del comando include le immagini più diffuse che fanno parte di un elenco offline integrato nell'interfaccia della riga di comando di Azure. In Azure Marketplace sono tuttavia disponibili _centinaia_ di opzioni di immagine. 
 
 > [!TIP]
-> You can get a full list by adding the `--all` flag to the command. Since the list of images in the Marketplace is very large, it is helpful to filter the list with the `--publisher` or `–-offer` options.
+> È possibile ottenere un elenco completo aggiungendo il flag `--all` al comando. Poiché l'elenco delle immagini in Marketplace è molto ampio, è utile filtrare l'elenco con le opzioni `--publisher` o `–-offer`.
 
-Some images are only available in certain locations. Try adding the `--location [location]` flag to the command to scope the results to ones available in the region where you want to create the virtual machine. For example, type the following into Azure Cloud Shell to get a list of images available in the `eastus` region.
+Alcune immagini sono disponibili solo in determinate aree. Provare ad aggiungere il flag `--location [location]` al comando per limitare l'ambito dei risultati alle immagini disponibili nell'area in cui si vuole creare la macchina virtuale. Ad esempio, digitare quanto segue in Azure Cloud Shell per ottenere l'elenco delle immagini disponibili nell'area `eastus`.
 
 ```azurecli
 az vm image list --location eastus --output table
 ```
 
 > [!TIP]
-> These are the standard images that are provided by Azure. Keep in mind that you can also [create and upload your own custom images](https://docs.microsoft.com/azure/virtual-machines/linux/tutorial-custom-images) to create VMs based on unique configurations or less common versions or distributions of an operating system.
+> Queste sono le immagini standard fornite da Azure. Tenere presente che è anche possibile [creare e caricare immagini personalizzate](https://docs.microsoft.com/azure/virtual-machines/linux/tutorial-custom-images) per creare macchine virtuali in base a configurazioni univoche oppure versioni o distribuzioni meno comuni di un sistema operativo.

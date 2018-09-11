@@ -1,29 +1,29 @@
-When using Event Hubs, it's crucial for you to monitor your hub to ensure that it's working and performing as expected.
+Quando si usa Hub eventi, è fondamentale monitorare l'hub per assicurarsi che funzioni come previsto.
 
-Continuing with the banking example, suppose that you've deployed Azure Event Hubs and configured sender and receiver applications. Your applications are ready for testing the payment processing solution. The sender application collects customer's credit card data and the receiver application verifies that the credit card is valid. Due to the sensitive nature of your employer's business, it's essential that your payment processing is robust and reliable, even when it's temporarily unavailable.
+Continuando con l'esempio relativo al settore bancario, si supponga di aver distribuito Hub eventi di Azure e di aver configurato le applicazioni mittente e ricevitore. Le applicazioni sono pronte per il test della soluzione di elaborazione dei pagamenti. L'applicazione mittente raccoglie i dati relativi alla carta di credito del cliente, mentre l'applicazione ricevitore verifica la validità della carta di credito. A causa della natura riservata dell'attività aziendale, è essenziale che l'elaborazione dei pagamenti sia efficace e affidabile, anche quando risulta temporaneamente non disponibile.
 
-You must evaluate your event hub by testing that your event hub is processing data as expected. The metrics available in the Event Hubs allow you to ensure that it's working fine.
+È necessario valutare l'hub eventi verificando che l'elaborazione dei dati avvenga nel modo previsto. Grazie alle metriche disponibili in Hub eventi è possibile assicurarsi che il sistema funzioni correttamente.
 
-## How do you use the Azure portal to view your event hub activity?
+## <a name="how-do-you-use-the-azure-portal-to-view-your-event-hub-activity"></a>Come usare il portale di Azure per visualizzare l'attività dell'hub eventi
 
-The Azure portal > Overview page for your event hub shows message counts. These message counts represent the data (events) received and sent by the event hub. You can choose the timescale for viewing these events.
+Nella pagina Panoramica del portale di Azure per l'hub eventi sono visualizzati i conteggi dei messaggi. Questi conteggi dei messaggi rappresentano i dati (eventi) ricevuti e inviati dall'hub eventi. È possibile scegliere la scala cronologica per la visualizzazione di questi eventi.
 
-![View Event Hub messages](../media-draft/6-view-messages.png)
+![Visualizzare i messaggi dell'hub eventi](../media-draft/6-view-messages.png)
 
-## How can you test Event Hub resilience?
+## <a name="how-can-you-test-event-hub-resilience"></a>Come testare la resilienza dell'hub eventi
 
-Azure Event Hubs keeps receiving messages from the sender application even when it's unavailable. The messages received during this period are transmitted successfully as soon as the hub becomes available.
+Hub eventi di Azure continua a ricevere messaggi dall'applicazione mittente anche quando non è disponibile. I messaggi ricevuti durante questo periodo vengono trasmessi non appena l'hub diventa disponibile.
 
-To test this functionality, you can use the Azure portal to disable your event hub.
+Per testare questa funzionalità, è possibile usare il portale di Azure per disabilitare l'hub eventi.
 
-When you re-enable your event hub, you can rerun your receiver application and use Event Hubs metrics for your namespace to check whether all sender messages have been successfully transmitted and received.
+Quando si abilita nuovamente l'hub eventi, è possibile eseguire nuovamente l'applicazione ricevitore e usare le metriche di Hub eventi per lo spazio dei nomi per controllare se tutti i messaggi del mittente sono stati trasmessi e ricevuti correttamente.
 
-Other useful metrics available in the Event Hubs include:
+Altre metriche utili disponibili in Hub eventi includono:
 
-- Throttled Requests: The number of requests that were throttled because the throughput unit usage was exceeded.
-- ActiveConnections: The number of active connections on a namespace or event hub.
-- Incoming/Outgoing Bytes: The number of bytes sent to/received from the Event Hubs service over a specified period.
+- Richieste limitate: numero di richieste che sono state limitate perché è stato superato il limite per l'uso delle unità elaborate.
+- Connessioni attive: numero di connessioni attive in uno spazio dei nomi o un hub eventi.
+- Byte in ingresso/in uscita: numero di byte inviati al/ricevuti dal servizio Hub eventi di Azure in un periodo specificato.
 
-## Summary
+## <a name="summary"></a>Riepilogo
 
-The Azure portal provides message counts and other metrics that you can use as a health check for your Event Hubs.
+Il portale di Azure fornisce conteggi dei messaggi e altre metriche che è possibile usare come controllo di integrità per gli hub eventi.

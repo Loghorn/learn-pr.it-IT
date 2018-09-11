@@ -1,84 +1,84 @@
-In this unit, you will use the Azure portal to create an Azure web app.
+In questa unità si userà il portale di Azure per creare un'app Web di Azure.
 
-## Sign in to the Azure portal
+## <a name="sign-in-to-the-azure-portal"></a>Accedere al portale di Azure
 
-The first step is to sign in to the Azure portal:
+Il primo passaggio è l'accesso al portale di Azure:
 
-Open a browser and navigate to the [Azure portal](https://portal.azure.com/?azure-portal=true).
+Aprire un browser e passare al [portale di Azure](https://portal.azure.com/?azure-portal=true).
 
-## Create an Azure web app
+## <a name="create-an-azure-web-app"></a>Creare un'app Web di Azure
 
-Now that we're logged into the Azure portal, let's create an Azure web app using the template.
+Dopo aver effettuato l'accesso al portale di Azure, è possibile creare un'app Web di Azure usando il modello.
 
-1. Click the **Create a resource** link at the top of the left-hand navigation. Everything you create on Azure is a resource.
+1. Fare clic sul collegamento **Crea una risorsa** nella parte superiore del riquadro di spostamento a sinistra. Tutti gli oggetti creati in Azure sono risorse.
 
-1. The portal navigates you to the **Marketplace** blade. From here, you can search for the resource you want to create or select one of the popular resources that people create in the Azure portal.
+1. Nel portale viene visualizzato il pannello **Marketplace**. Da qui è possibile cercare la risorsa da creare oppure selezionare una delle risorse più comuni create da altri utenti nel portale di Azure.
 
-1. Click the **Web** > **Web App** resource. The portal redirects you to the **Create New Web App** blade.
+1. Fare clic sulla risorsa **Web** > **App Web**. Il portale reindirizza al pannello **Crea una nuova app Web**.
 
-1. When you create a new web app, the Azure portal requests some information to create the app for you. In this section, you need to provide the following basic information:
+1. Quando si crea una nuova app Web, il portale di Azure richiede alcune informazioni per creare l'app. In questa sezione è necessario specificare le seguenti informazioni di base:
 
-    1. **App name**: Your client wants to name the application `BestBike`. Type the name in this field. This value must be globally unique among all other web apps hosted on Azure, and the portal will make sure no one else has used the app name. To ensure your name is unique, add some numbers to your app's name until you find a unique variant.
+    1. **Nome dell'app**: il cliente vuole assegnare all'applicazione il nome `BestBike`. Digitare il nome in questo campo. Questo valore deve essere globalmente univoco tra tutte le altre app web ospitate in Azure e il portale si assicurerà che nessun altro utente abbia usato il nome dell'app. Per assicurarsi che il nome sia univoco, aggiungere alcuni numeri al nome dell'app finché non si trova una variante univoca.
 
-    2. **Subscription**: In this field, you need to select an active Azure subscription from the drop-down list.
+    2. **Sottoscrizione**: in questo campo è necessario selezionare una sottoscrizione di Azure attiva dall'elenco a discesa.
 
-    3. **OS**: In this field, you need to decide whether to use **Windows** or **Linux** to host your new web app. This setting directly affects the App Service plan that you are going to select or create below. If you remember, an App Service plan resembles a virtual machine that is an operating system with all the resource (CPU, RAM, etc.) needed on that machine to run your application. In this case, your client prefers to host the web app over a Windows machine. Therefore, make the selection **Windows**.
+    3. **Sistema operativo**: in questo campo è necessario decidere se usare **Windows** o **Linux** per ospitare la nuova app Web. Questa impostazione influisce direttamente sul piano di servizio app che verrà selezionato o creato di seguito. Come già visto, un piano di servizio app è simile a una macchina virtuale ovvero un sistema operativo con tutte le risorse (CPU, RAM e così via) necessarie per eseguire l'applicazione su quel computer. In questo caso, il cliente preferisce usare l'app Web in un computer Windows. Quindi, selezionare **Windows**.
 
-    4. **Application Insights**: Azure Application Insights helps you detect and diagnose quality issues in your web apps and web services, and helps you understand what your users actually do with it. One of the requirements of your client is the ability to view some insight reports about the traffic coming over their website and to study some trends of when the traffic goes high and when it goes low. In this case, select the **On** option to turn on Application Insights for this web app. Once you select the **On** option, you are also required to select the location or region that will store the Application Insights data. Note that Application Insights are available in only a limited number of regions. For this demo, select the **East US** region in the **Application Insights Location** field.
+    4. **Application Insights**: Azure Application Insights consente di rilevare e diagnosticare i problemi relativi alla qualità nelle app Web e nei servizi Web nonché di capire quali sono le operazioni effettivamente eseguite dagli utenti. Uno dei requisiti del cliente è la possibilità di visualizzare alcuni report con informazioni dettagliate sul traffico in ingresso nel sito Web e di studiare alcune tendenze riguardo all'aumento e alla diminuzione del traffico. In questo caso, selezionare l'opzione **Attivato** per attivare Application Insights per questa app Web. Quando si seleziona l'opzione **Attivato** viene anche richiesto di selezionare la località o l'area in cui verranno archiviati i dati di Application Insights. Si noti che Application Insights è disponibile solo in un numero limitato di aree. Per questa demo selezionare l'area **Stati Uniti orientali** nel campo **Località di Application Insights**.
 
-## Create a new resource group
+## <a name="create-a-new-resource-group"></a>Creare un nuovo gruppo di risorse
 
-An Azure web app must be part of a resource group. Let's create one, to group together any related resources.
+Un'app Web di Azure deve far parte di un gruppo di risorse. Ora ne verrà creato uno per raggruppare le risorse correlate.
 
-Select the **Create new** option (selected by default). Azure will generate a unique resource group name for you based on the app name you have chosen. You are free to change the resource group name or keep the one that Azure has generated. In this case, keep the name generated by Azure.
+Selezionare l'opzione **Crea nuovo**, selezionata per impostazione predefinita. Azure genererà automaticamente un nome univoco per il gruppo di risorse in base al nome dell'app scelto. È possibile modificare il nome del gruppo di risorse o mantenere quello generato da Azure. In questo caso, mantenere il nome generato da Azure.
 
-## Create an App Service plan
+## <a name="create-an-app-service-plan"></a>Creare un piano di servizio app
 
-In this field, you need to select an App Service plan to run your application. By default, the portal selects the last App Service plan that you previously  created. Click on the **App Service plan/Location** field to navigate to the **App Service plan** blade.
+In questo campo è necessario selezionare un piano di servizio app per eseguire l'applicazione. Per impostazione predefinita, il portale seleziona l'ultimo piano di servizio app creato in precedenza. Fare clic sul campo **Piano di servizio app/Località** per passare al pannello **Piano di servizio app**.
 
-Click on the **Create new** link to navigate to the **New App Service Plan** blade. The portal requests some information from you in order to create the new App Service plan.
+Fare clic sul collegamento **Crea nuovo** per passare al pannello **Nuovo piano di servizio app**. Il portale richiede all'utente di immettere alcune informazioni per creare il nuovo piano di servizio app.
 
-1. **App Service plan**: In this field, you provide a globally unique name for the new App Service plan. For this app, type the same web app name you chose above and append a suffix of `-app-service-plan` to easily distinguish this resource from others.
+1. **Piano di servizio app**: specificare in questo campo un nome globalmente univoco per il nuovo piano di servizio app. Per questa app digitare lo stesso nome dell'app Web scelto in precedenza e aggiungere il suffisso `-app-service-plan` per distinguere facilmente questa risorsa dalle altre.
 
-2. **Location**: In this field, you need to select the region where this App Service plan resides. In other words, select the geographical location where the App Service plan will set up the virtual machine(s) that are required to run your application. In this case, you can select any of the options in the list. Your client prefers the hosting servers somewhere close to the East Coast, where the majority of their clients come from. Therefore, you will select **East US** as a value.
+2. **Località**: in questo campo è necessario selezionare l'area in cui si trova questo piano di servizio app. In altre parole, selezionare la località geografica in cui il piano di servizio app configurerà le macchine virtuali necessarie per eseguire l'applicazione. In questo caso è possibile selezionare una delle opzioni dell'elenco. Il cliente preferisce avere i server di hosting in una località vicina alla costa orientale, dove risiede la maggior parte dei propri clienti. Di conseguenza, si selezionerà il valore **Stati Uniti orientali**.
 
-3. **Pricing tier**: In this field, you need to select the size of the virtual machine that is going to host your application. Click on the **>** sign to navigate to the **Pricing tier blade**.
+3. **Piano tariffario**: in questo campo è necessario selezionare le dimensioni della macchina virtuale che ospiterà l'applicazione. Fare clic su **>** per passare al pannello **Piano tariffario**.
 
-    Here you have many options to choose from. The portal groups those options by the level of workload needed. The three workload categories available are Dev/Test, Production, and Isolated. Depending on the requirements of the application you want to host on Azure, you will select the relevant workload category. As the **BestBike** application is building and shaping up, you will start with the minimal workload category that works for you. Remember, one of the client's requirements was the ability to test live any new changes coming over the application. In the coming units, you will see that to achieve this requirement, you will need to add **deployment slots**. Deployment slots are available starting at a minimum pricing tier of **S1**. Therefore, select the **S1** pricing tier under the **Production Workload** category. Then, click on **Apply** to confirm the pricing tier you have selected above.
-
-    > [!NOTE]
-    > You will notice throughout this module that only **Production** and **Isolated** workload categories allow you to add **deployment slots** to your web app.
-
-    Now, you are back to the **New App Service plan** blade.
-
-    ![Screenshot showing the New App Service Plan blade with example values for this exercise in the settings](../media/3-new-app-service-plan.PNG)
-
-4. Click the **OK** button to use your new App Service Plan.
-
-    The portal navigates you back to the main **Create Web App** blade.
-
-    ![Screenshot showing the new resource blade in Azure with the progression to find the Web App resource highlighted.](../media/3-new-web-app.png)
-
-5. Click the **Create** button to start the process of creating the web app.
+    È possibile scegliere tra diverse opzioni. Il portale raggruppa tali opzioni in base al livello del carico di lavoro necessario. Le tre categorie di carico di lavoro disponibili sono Sviluppo/test, Produzione e Isolato. A seconda dei requisiti dell'applicazione da ospitare in Azure, si selezionerà la categoria di carico di lavoro pertinente. Poiché l'applicazione **BestBike** è in fase di compilazione e perfezionamento, si inizia con la categoria minima di carico di lavoro più adatta. Tenere presente che uno dei requisiti del cliente è la possibilità di testare in tempo reale ogni nuova modifica apportata all'applicazione. Nelle unità successive si noterà che per soddisfare questo requisito è necessario aggiungere **slot di distribuzione**. Gli slot di distribuzione sono disponibili a partire da un piano tariffario minimo di **S1**. Selezionare quindi il piano tariffario **S1** nella categoria **Carico di lavoro di produzione**. Fare clic su **Applica** per confermare il piano tariffario selezionato in precedenza.
 
     > [!NOTE]
-    > It can take a few seconds to get your web app created and ready for your use.
+    > Si noterà in tutto il modulo che solo le categorie di carico di lavoro **Produzione** e **Isolato** consentono di aggiungere **slot di distribuzione** all'app Web.
 
-The portal redirects you to the dashboard page and notifies you once it creates the web app.
+    A questo punto, si torna al pannello **Nuovo piano di servizio app**.
 
-Once the app is ready, navigate to the new app in the Azure portal.
+    ![Screenshot che mostra il pannello Nuovo piano servizio app con i valori di esempio per questo esercizio nelle impostazioni](../media/3-new-app-service-plan.PNG)
 
-1. Click the **All resources** menu on the left side navigation. The **All resources** blade lists all the resources that you have created in the Azure portal.
+4. Fare clic sul pulsante **OK** per usare il nuovo piano di servizio app.
 
-2. Click through the BestBike App Service just created for you.
+    Nel portale viene di nuovo visualizzato il pannello principale **Crea app Web**.
+
+    ![Screenshot che mostra il pannello della nuova risorsa in Azure con l'avanzamento per trovare la risorsa app Web evidenziata.](../media/3-new-web-app.png)
+
+5. Fare clic sul pulsante **Crea** per avviare il processo di creazione dell'app Web.
 
     > [!NOTE]
-    > If you search for your app by the name "BestBike", you may also find the Application Insights and App Service Plan resources created for your new web app. Make sure you are clicking through the resource with the type of **App Service**.
+    > La creazione dell'app Web e la relativa preparazione all'uso possono richiedere alcuni secondi.
 
-    ![Screenshot showing an example search result within the all resources blade with a newly created BestBike123 App Service highlighted.](../media/3-web-app.PNG)
+Il portale reindirizza alla pagina Dashboard e invia una notifica quando la creazione dell'app Web è completata.
 
-The portal opens the web app service home page with the **Overview** section selected.
+Quando l'app è pronta, passare alla nuova app nel portale di Azure.
 
-![Screenshot showing the BestBike App Service blade with the URL link of the overview section highlighted.](../media/3-web-app-home.PNG)
+1. Fare clic sul menu **Tutte le risorse** nel riquadro di spostamento a sinistra. Nel pannello **Tutte le risorse** sono elencate tutte le risorse create dall'utente nel portale di Azure.
 
-To preview your new web app's default content, click on the **URL** in the top right of the Azure portal. If you see a placeholder web page, it means you have successfully created the web app.
+2. Esplorare il servizio app BestBike appena creato.
+
+    > [!NOTE]
+    > Se si esegue una ricerca dell'app in base al nome "BestBike", è possibile trovare anche le risorse di Application Insights e del piano di servizio app create per la nuova app Web. Assicurarsi di esplorare la risorsa con il tipo di **servizio app**.
+
+    ![Screenshot che mostra un risultato di ricerca di esempio all'interno del pannello Tutte le risorse con il servizio app BestBike123 appena creato evidenziato.](../media/3-web-app.PNG)
+
+Il portale apre la home page del servizio app Web con la sezione **Panoramica** selezionata.
+
+![Screenshot che mostra il pannello del servizio app BestBike con il collegamento all'URL della sezione Panoramica evidenziata.](../media/3-web-app-home.PNG)
+
+Per visualizzare in anteprima il contenuto predefinito della nuova app Web, fare clic sull'**URL** in alto a destra nel portale di Azure. Se viene visualizzata una pagina Web segnaposto, significa che l'app Web è stata creata correttamente.

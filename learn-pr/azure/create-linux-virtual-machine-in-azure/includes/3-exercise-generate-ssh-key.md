@@ -1,52 +1,52 @@
-Before we can create a Linux virtual machine in Azure, we will need to think about remote access. We want to be able to sign in to our Linux web server to configure the software and perform maintenance. The default approach to administering Linux VMs hosted in Azure is SSH.
+Prima di poter creare una macchina virtuale Linux in Azure, è necessario riflettere sull'accesso remoto. Occorre essere in grado di accedere al server Web Linux per configurare il software ed eseguire la manutenzione. L'approccio predefinito per amministrare le macchine virtuali Linux ospitate in Azure è SSH.
 
-## What is SSH?
+## <a name="what-is-ssh"></a>Che cos'è SSH?
 
-Secure Shell (SSH) is an encrypted connection protocol that allows secure sign-ins over unsecured connections. SSH allows you to connect to a terminal shell from a remote location using a network connection.
+SSH (Secure Shell) è un protocollo per connessioni crittografate che consente accessi protetti su connessioni non sicure. SSH consente di connettersi a una shell del terminale da una posizione remota tramite una connessione di rete.
 
-There are two approaches we can use to authenticate an SSH connection: ** username/password**, or a **SSH key pair**. 
+Esistono due approcci che è possibile usare per autenticare una connessione SSH: **nome utente/password** o una **coppia di chiavi SSH**. 
 
 > [!TIP]
-> Although SSH provides an encrypted connection, using passwords with SSH connections leaves the VM vulnerable to brute-force attacks or guessing of passwords. A more secure and preferred method of connecting to a Linux VM with SSH is with a public-private key pair, also known as SSH keys.
+> Sebbene SSH fornisca una connessione crittografata, se si usano password con le connessioni SSH la macchina virtuale rimane vulnerabile agli attacchi di forza bruta o di individuazione delle password. Un metodo più sicuro e preferito per la connessione a una macchina virtuale Linux tramite SSH è con una coppia di chiavi pubblica e privata, dette anche chiavi SSH.
 
-With an SSH key pair, you can sign in to Linux-based Azure virtual machines without a password. This is a more secure approach if you only plan to sign in to the VM from a few computers. If you need to be able to access the Linux VM from a variety of locations, a username and password combination might be a better approach. There are two parts to an SSH key pair: a public key and a private key.
+Con una coppia di chiavi SSH, è possibile accedere a macchine virtuali di Azure basate su Linux senza una password. Si tratta di un approccio più sicuro, se si intende accedere solo da pochi computer. Se è necessario essere in grado di accedere alla macchina virtuale Linux da svariate posizioni, una combinazione di nome utente e password potrebbe essere un approccio migliore. Esistono due parti di una coppia di chiavi SSH: una chiave pubblica e una chiave privata.
 
-* The public key is placed on your Linux VM or any other service that you wish to use with public-key cryptography. This can be shared with anyone.
+- La **chiave pubblica** viene posizionata nella macchina virtuale Linux o in qualsiasi altro servizio che si vuole usare con la crittografia a chiave pubblica. Questa chiave può essere condivisa con chiunque.
 
-- The **private key** is what you present to your Linux VM when you make an SSH connection, to verify your identity. Consider this confidential information and protect this like you would a password or any other private data.
+- La **chiave privata** è quella che si presenta alla macchina virtuale Linux quando ci si connette a SSH, per verificare la propria identità. Considerare questa chiave un'informazione riservata e proteggerla come nel caso di una password o altri dati privati.
 
-You can use the same single public-private key pair to access multiple Azure VMs and services.
+È possibile usare la stessa singola coppia di chiavi pubblica e privata per accedere a più macchine virtuali e servizi di Azure.
 
-## Create the SSH key pair
+## <a name="create-the-ssh-key-pair"></a>Creare la coppia di chiavi SSH
 
-On Linux, Windows 10, and MacOS, you can use the built-in `ssh-keygen` command to generate the SSH public and private key files. 
+In Linux, Windows 10 e MacOS è possibile usare il comando `ssh-keygen` predefinito per generare i file di chiave pubblica e privata SSH. 
 
-> [!TIP]  
-> Windows 10 includes an SSH client with the **Fall Creators Update**. Earlier versions of Windows require additional software to use SSH; [check the documentation for full details](https://docs.microsoft.com/azure/virtual-machines/linux/ssh-from-windows). Alternatively, you can install the Linux subsystem for Windows and get the same functionality.
+> [!TIP]
+> Windows 10 include un client SSH con **Fall Creators Update**. Le versioni precedenti di Windows richiedono software aggiuntivo per usare SSH. [Vedere la documentazione per i dettagli completi](https://docs.microsoft.com/azure/virtual-machines/linux/ssh-from-windows). In alternativa, è possibile installare il sottosistema Linux per Windows e ottenere la stessa funzionalità.
 
-> [!NOTE]  
-> We will use Azure Cloud Shell, which will store the generated keys in Azure in your private storage account. You can also type these commands directly into your local shell if you prefer. You will need to adjust the instructions throughout this module to reflect a local session if you take this approach.
+> [!NOTE]
+> Si userà Azure Cloud Shell che archivierà le chiavi generate in Azure nell'account di archiviazione privato. È anche possibile digitare questi comandi direttamente nella shell locale se si preferisce. Sarà necessario adattare le istruzioni in tutto il modulo a una sessione locale, se si adotta questo approccio.
 
-Here is the minimum command necessary to generate the key pair for an Azure VM. This will create an SSH protocol 2 (SSH-2) RSA public-private key pair with a 2048-bit length (the minimum length). 
+Ecco il comando minimo necessario per generare la coppia di chiavi per una macchina virtuale di Azure. Verrà creata una coppia di chiavi pubblica-privata RSA SSH-2 con una lunghezza di 2048 bit (la lunghezza minima). 
 
-Type this command into Cloud Shell:
+Digitare questo comando in Cloud Shell.
 
 ```bash
 ssh-keygen -t rsa -b 2048
 ```
 
-The tool will prompt for filenames and an optional passphrase. Just take the defaults. It will create two files: `id_rsa` and `id_rsa.pub` in the `~/.ssh` directory. The files are overwritten if they exist. There are various options you can use to provide the filename or a passphrase to avoid the prompt.
+Lo strumento richiederà i nomi per i file e una passphrase facoltativa. Accettare i valori predefiniti. Verranno creati due file, `id_rsa` e `id_rsa.pub`, nella directory `~/.ssh`. I file vengono sovrascritti se esistono. Sono disponibili diverse opzioni che è possibile usare per specificare il nome del file o una passphrase per evitare la richiesta.
 
-### Private key passphrase
+### <a name="private-key-passphrase"></a>Passphrase per la chiave privata
 
-You can optionally provide a passphrase while generating your private key. This is a password you must enter when you use the key. This passphrase is used to access the private SSH key file and is not the user account password. 
+È anche possibile specificare una passphrase facoltativamente durante la generazione della chiave privata. Si tratta di una password che è necessario immettere quando si usa la chiave. Questa passphrase viene usata per accedere al file della chiave SSH privata e non è la password dell'account utente. 
 
-When you add a passphrase to your SSH key, it encrypts the private key using 128-bit AES, so that the private key is useless without the passphrase to decrypt it. 
+Quando si aggiunge una passphrase alla chiave SSH, la chiave privata viene crittografata con AES a 128 bit, in modo che sia inutilizzabile senza la passphrase per decrittografarla. 
 
-> [!IMPORTANT]  
-> It is **strongly** recommended that you add a passphrase. If an attacker stole your private key, and that key did not have a passphrase, they would be able to use that private key to log in to any servers that have the corresponding public key. If a passphrase protects a private key, it cannot be used by that attacker, providing an additional layer of security for your infrastructure on Azure.
+> [!IMPORTANT]
+> È **vivamente** consigliabile aggiungere una passphrase. Se un utente malintenzionato ruba una chiave privata priva di passphrase, può usarla per accedere ai server che hanno la chiave pubblica corrispondente. Se una chiave privata è protetta da una passphrase, non può essere usata da utenti malintenzionati e rappresenta un livello di sicurezza aggiuntivo per l'infrastruttura in Azure.
 
-Here is an example showing how to set the passphrase. You don't need to execute this command (although you can if you want to):
+Ecco un esempio che mostra come impostare la passphrase. Non è necessario eseguire questo comando (sebbene sia possibile).
 
 ```bash
 ssh-keygen -t rsa -b 4096 \
@@ -55,44 +55,44 @@ ssh-keygen -t rsa -b 4096 \
     -N someReallySecurePhraseYouWillRemember
 ```
 
-| Parameter | What it does |
+| Parametro | Risultato |
 |-----------|--------------|
-| `-t` | Type of key to create. Must be **rsa**. |
-| `-b` | Number of bits in the key. Minimum length is 2048; maximum is 4096. |
-| `-C` | An optional comment to append to the public key that can be used to identify it. Normally this is an email address, but it's simple text, and you can use whatever identification method you prefer. |
-| `-f` | The location and filename of the private key file. A corresponding public key file appended with **.pub** is generated in the same directory. The directory must exist. |
-| `-N` | The passphrase used to encrypt the private key. |
+| `-t` | Tipo di chiave da creare. Deve essere **rsa**. |
+| `-b` | Numero di bit nella chiave. La lunghezza minima è 2048, quella massima 4096. |
+| `-C` | Commento facoltativo da aggiungere alla chiave pubblica che può essere usato per facilitarne l'identificazione. Si tratta in genere di un indirizzo di posta elettronica, ma è testo semplice ed è possibile usare il metodo di identificazione preferito. |
+| `-f` | Percorso e nome del file della chiave privata. Un file di chiave pubblica corrispondente con estensione **pub** viene generato nella stessa directory. La directory deve esistere. |
+| `-N` | Passphrase usata per crittografare la chiave privata. |
 
-## Use the SSH key pair with an Azure Linux VM
+## <a name="use-the-ssh-key-pair-with-an-azure-linux-vm"></a>Usare la coppia di chiavi SSH con una macchina virtuale Linux di Azure
 
-Once you have the key pair generated, you can use it with a Linux VM in Azure. You can supply the public key during the VM creation or add it after the VM has been created. 
+Dopo aver generato la coppia di chiavi, è possibile usarla con una macchina virtuale Linux in Azure. È possibile fornire la chiave pubblica durante la creazione della macchina virtuale o aggiungerla dopo aver creato la macchina virtuale. 
 
-You can view the contents of the file in Azure Cloud Shell with the following command: 
+È possibile visualizzare i contenuti del file in Azure Cloud Shell con il comando seguente.
 
 ```bash
 cat ~/.ssh/id_rsa.pub
 ```
 
-It will be a single line and look something like:
+Sarà una singola riga simile a:
 
 ```output
 ssh-rsa XXXXXXXXXXc2EAAAADAXABAAABAXC5Am7+fGZ+5zXBGgXS6GUvmsXCLGc7tX7/rViXk3+eShZzaXnt75gUmT1I2f75zFn2hlAIDGKWf4g12KWcZxy81TniUOTjUsVlwPymXUXxESL/UfJKfbdstBhTOdy5EG9rYWA0K43SJmwPhH28BpoLfXXXXXGX/ilsXXXXXKgRLiJ2W19MzXHp8z3Lxw7r9wx3HaVlP4XiFv9U4hGcp8RMI1MP1nNesFlOBpG4pV2bJRBTXNXeY4l6F8WZ3C4kuf8XxOo08mXaTpvZ3T1841altmNTZCcPkXuMrBjYSJbA8npoXAXNwiivyoe3X2KMXXXXXdXXXXXXXXXXCXXXXX/ azureuser@myserver
 ```
 
-Copy this value, so you can use it in the next exercise.
+Copiare questo valore in modo da poterlo usare nel prossimo esercizio.
 
-### Use the SSH key when creating a Linux VM
+### <a name="use-the-ssh-key-when-creating-a-linux-vm"></a>Usare la chiave SSH durante la creazione di una macchina virtuale Linux
 
-To apply the SSH key while creating a new Linux VM, you will need to copy the contents of the public key and supply it to the Azure portal, _or_ supply the public key file to the Azure CLI or Azure PowerShell command. We'll use this approach when we create our Linux VM.
+Per applicare la chiave SSH durante la creazione di una nuova macchina virtuale Linux, sarà necessario copiare il contenuto della chiave pubblica e specificarlo nel portale di Azure _oppure_ specificare il file di chiave pubblica per il comando dell'interfaccia della riga di comando di Azure o di Azure PowerShell. Si userà questo approccio durante la creazione della macchina virtuale Linux.
 
-### Add the SSH key to an existing Linux VM
+### <a name="add-the-ssh-key-to-an-existing-linux-vm"></a>Aggiungere la chiave SSH a una macchina virtuale Linux esistente
 
-If you have already created a VM, you can install the public key onto your Linux VM with the `ssh-copy-id` command. Once the key has been authorized for SSH, it grants access to the server without a password.
+Se è già stata creata una macchina virtuale, è possibile installare la chiave pubblica nella macchina virtuale Linux con il comando `ssh-copy-id`. Una volta autorizzata per SSH, la chiave concede l'accesso al server senza una password.
 
-Pass it the public key file and the username to associate with the key:
+Passare il file di chiave pubblica e il nome utente da associare alla chiave.
 
 ```bash
 ssh-copy-id -i ~/.ssh/id_rsa.pub azureuser@myserver
 ```
 
-Now that we have our public key, let's switch to the Azure portal and create a Linux VM.
+Ora che è disponibile la chiave pubblica è possibile passare al portale di Azure e creare una macchina virtuale Linux.

@@ -1,100 +1,100 @@
-We have our Windows VM deployed and running, but it's not configured to do any work.
+A questo punto la macchina virtuale Windows è stata distribuita ed è in esecuzione, ma non è configurata per eseguire alcuna operazione.
 
-Recall our scenario is a video processing system. Our platform receives files through FTP. The traffic cameras upload video clips to a known URL which is mapped to a folder on the server. The custom software on each Windows VM runs as a service and watches the folder and processes each uploaded clip. It then passes the normalized video to our algorithms running on other Azure services.
+È importante ricordare che questo scenario è un sistema di elaborazione video. La piattaforma riceve i file tramite FTP. Le telecamere del traffico caricano i clip video in un URL noto di cui è stato eseguito il mapping a una cartella nel server. Il software personalizzato in ogni macchina virtuale Windows viene eseguito come servizio, controlla la cartella ed elabora ogni clip caricato. Passa quindi il video normalizzato agli algoritmi in esecuzione in altri servizi di Azure.
 
-There are a few things we would need to configure to support this scenario:
+Sono necessarie alcune configurazioni per supportare questo scenario:
 
-- Install FTP and open the ports it needs to communicate.
-- Install the proprietary video codec unique to the city's camera system.
-- Install our transcoding service that processes uploaded videos.
+- Installare FTP e aprire le porte necessarie per comunicare.
+- Installare il codec video proprietario univoco per il sistema di telecamere della città.
+- Installare il servizio di transcodifica che elabora i video caricati.
 
-Many of these are typical administrative tasks we won't actually cover here, and we don't have software to install. Instead, we will walk through the steps and show you how you _could_ install custom or 3rd party software using Remote Desktop. Let's start by getting the connection information.
+Molte di queste sono tipiche attività amministrative che di fatto non verranno illustrate di seguito e quindi non richiedono software da installare. Verrà invece illustrato come è _possibile_ installare software personalizzato o di terze parti usando Desktop remoto e verranno esaminati i passaggi necessari. Si inizierà ottenendo le informazioni di connessione.
 
-## Connect to the VM with Remote Desktop Protocol
+## <a name="connect-to-the-vm-with-remote-desktop-protocol"></a>Connettersi alla macchina virtuale con Remote Desktop Protocol
 
-To connect to an Azure VM with an RDP client, you will need:
+Per connettersi a una macchina virtuale di Azure con un client RDP, sono necessari:
 
-- The public IP address of the VM (or private if the VM is configured to connect to your network).
-- The port number.
+- L'indirizzo IP pubblico della macchina virtuale (o privato se la macchina virtuale è configurata per connettersi alla rete).
+- Il numero della porta.
 
-You can enter this information into the RDP client, or download a pre-configured **RDP** file.
+È possibile immettere queste informazioni nel client RDP o scaricare un file **RDP** preconfigurato.
 
-### Download the RDP file
+### <a name="download-the-rdp-file"></a>Scaricare il file RDP
 
-1. In the [Azure portal](https://portal.azure.com?azure-portal=true), ensure the **Overview** panel for the virtual machine that you created earlier is open. You can find the VM under **All Resources** if you need to open it. The overview panel has a lot of information about the VM.
+1. Nel [portale di Azure](https://portal.azure.com?azure-portal=true) verificare che il pannello **Panoramica** per la macchina virtuale creata in precedenza sia aperto. La macchina virtuale è disponibile in **Tutte le risorse** se è necessario aprirla. Il pannello di panoramica presenta numerose informazioni sulla macchina virtuale.
 
-    - You can see whether the VM is running.
-    - Stop or restart it.
-    - Get the public IP address to connect to the VM.
-    - See the activity of the CPU, disk, and network.
+    - È possibile vedere se la macchina virtuale è in esecuzione.
+    - Arrestarla o riavviarla.
+    - Ottenere l'indirizzo IP pubblico per connettersi alla macchina virtuale.
+    - Visualizzare l'attività di CPU, disco e rete.
 
-1. Click the **Connect** button at the top of the pane.
+1. Fare clic sul pulsante **Connetti** nella parte superiore del riquadro.
 
-1. In the **Connect to virtual machine** blade, note the **IP address** and **Port number** settings, then click **Download RDP File** and save it to your computer.
+1. Nel pannello **Connetti a macchina virtuale** prendere nota delle impostazioni **Indirizzo IP** e **Numero di porta**, quindi fare clic su **Scarica file RDP** e salvarlo nel computer.
 
-1. Before we connect, let's adjust a few settings. On Windows, find the file using Explorer, right-click and select **Edit**. On MacOS you will need to open the file first with the RDP client and then right-click on the item in the displayed list and select **Edit**.
+1. Prima di connettersi, verranno modificate alcune impostazioni. In Windows trovare il file usando Esplora risorse, fare clic con il pulsante destro del mouse e scegliere **Modifica**. In MacOS sarà necessario aprire prima il file con il client RDP e quindi fare clic con il pulsante destro del mouse sull'elemento nell'elenco visualizzato e scegliere **Modifica**.
 
-1. You can adjust a variety of settings to control the experience in connecting to the Azure VM. The settings you will want to examine are:
+1. È possibile modificare diverse impostazioni per controllare l'esperienza di connessione alla macchina virtuale di Azure. Le impostazioni che è possibile esaminare sono:
 
-    - **Display**: By default, it will be full screen. You can change this to a lower resolution, or use all your monitors if you have more than one.
-    - **Local Resources**: You can share local drives with the VM - allowing you to copy files from your PC to the VM. Click the **More** button under **Local devices and resources** to select what is shared.
-    - **Experience**: Adjust the visual experience based on your network quality.
+    - **Visualizzazione**: Per impostazione predefinita sarà a schermo intero. È possibile sostituirla con una risoluzione inferiore o usare tutti i monitor se ne è disponibile più di uno.
+    - **Risorse locali**: è possibile condividere le unità locali con la macchina virtuale per poter copiare i file dal PC alla macchina virtuale. Fare clic sul pulsante **Altro** in **Dispositivi e risorse locali** per selezionare gli elementi da condividere.
+    - **Esperienza**: regolare l'esperienza visiva in base alla qualità della rete.
 
-1. Share your Local C: drive so it will be visible to the VM.
+1. Condividere l'unità C: locale in modo che sia visibile alla macchina virtuale.
 
-1. Switch back to the **General** tab and click **Save** to save the changes. You can always come back and edit this file later to try other settings.
+1. Tornare alla scheda **Generale** e fare clic su **Salva** per salvare le modifiche. È sempre possibile tornare indietro e modificare questo file in un secondo momento per provare altre impostazioni.
 
-### Connect to the Windows VM
+### <a name="connect-to-the-windows-vm"></a>Connettersi alla macchina virtuale Windows
 
-1. Click the **Connect** button to start the connection to the VM.
+1. Fare clic sul pulsante **Connetti** per avviare la connessione alla macchina virtuale.
 
-1. In the **Remote Desktop Connection** dialog box, note the security warning and the remote computer IP address, then click **Connect**.
+1. Nella finestra di dialogo **Connessione Desktop remoto** prendere nota dell'avviso di sicurezza e dell'indirizzo IP del computer remoto, quindi fare clic su **Connetti**.
 
-1. In the **Windows Security** dialog box, enter your username and password that you used in steps 6 and 7.
+1. Nella finestra di dialogo **Sicurezza di Windows** immettere il nome utente e la password usati nei passaggi 6 e 7.
     
     > [!NOTE]
-    > If you are using a Windows client to connect to the VM, it will default to known identities on your machine. You can click the **More choices** option and select "Use a different account" to let you enter a different username/password combination.
+    > Se si usa un client Windows per connettersi alla macchina virtuale, per impostazione predefinita verranno usate le identità note nel computer. È possibile fare clic sull'opzione **Altre opzioni** e selezionare "Usa un account diverso" per poter immettere una combinazione diversa di nome utente/password.
     
-1. In the second **Remote Desktop Connection** dialog box, note the certificate errors, then click **Yes**.
+1. Nella seconda finestra di dialogo **Connessione Desktop remoto** prendere nota degli errori di certificato e fare clic su **Sì**.
 
-### Install worker roles
+### <a name="install-worker-roles"></a>Installare i ruoli di lavoro
 
-The first time you connect to a Windows server VM, it will launch Server Manager. This allows you to assign a worker role for common web or data tasks. You can also launch the Server Manager through the Start Menu.
+La prima volta che ci si connette a una macchina virtuale Windows Server, verrà avviato Server Manager. In questo modo è possibile assegnare un ruolo di lavoro per le attività di dati o Web comuni. È anche possibile avviare Server Manager tramite il menu Start.
 
-This is where we would add the Web Server role to the server. This will install IIS and as part of the configuration you would turn off HTTP requests and enable the FTP server. Or, we could ignore IIS and install a 3rd party FTP server. We'd then configure the FTP server to allow access to a folder on our big data drive we added to the VM.
+È a questo punto che si aggiungerebbe il ruolo del server Web al server. In questo modo verrebbe installato IIS e durante la configurazione si disattiverebbero le richieste HTTP e si abiliterebbe il server FTP. È anche possibile ignorare IIS e installare un server FTP di terze parti. Si configurerebbe quindi il server FTP per consentire l'accesso a una cartella nell'unità dei Big Data aggiunta alla macchina virtuale.
 
-Since we aren't going to actually configure that here, just close Server Manager.
+Poiché questo server non verrà effettivamente configurato qui, chiudere Server Manager.
 
-## Install custom software
+## <a name="install-custom-software"></a>Installare software personalizzato
 
-We have two approaches we can use to install software. First, this VM is connected to the Internet. If the software you need has a downloadable installer, you can open a web browser in the RDP session, download the software, and install it. Second, if your software is custom - like our custom service, you can copy it from your local machine over to the VM to install it. Let's look at this latter approach.
+Esistono due approcci che è possibile usare per installare il software. In primo luogo, questa macchina virtuale viene connessa a Internet. Se il software necessario include un programma di installazione scaricabile, è possibile aprire un Web browser nella sessione RDP, scaricare il software e installarlo. In secondo luogo, se il software è personalizzato, come il servizio usato, è possibile copiarlo dal computer locale nella macchina virtuale per installarlo. Ora verrà esaminato questo secondo approccio.
 
-1. Open File Explorer. Click on **This PC** in the sidebar. You should see several drives:
+1. Aprire Esplora file. Fare clic su **Questo PC** nella barra laterale. Verranno visualizzate più unità:
 
-    - Windows (C:) drive representing the OS.
-    - Temporary Storage (D:) drive.
-    - Your local C: drive (it will have a different name than shown below).
+    - Unità Windows (C:) che rappresenta il sistema operativo.
+    - Unità di archiviazione temporanea (D:).
+    - L'unità C: locale, che avrà un nome diverso da quello visualizzato sotto.
 
-    ![Local drive shared with Azure](../media-drafts/6-drive-list.png)
+    ![Unità locale condivisa con Azure](../media-drafts/6-drive-list.png)
 
-With access to your local drive, you can copy the files for the custom software onto the VM and install the software. We won't actually do that since it's just a simulated scenario, but you can imagine how it would work.
+Con l'accesso all'unità locale, è possibile copiare i file per il software personalizzato nella macchina virtuale e installare il software. Questa operazione non verrà effettivamente eseguita perché si tratta solo di uno scenario simulato, ma si può immaginare come funzionerebbe.
 
-The more interesting thing to observe in the list of drives is what is _missing_. Notice that our **Data** drive is not present. Azure added a VHD but didn't initialize it.
+L'aspetto più interessante da osservare nell'elenco delle unità è cosa _manca_. Si noti che l'unità **dati** non è presente. Azure ha aggiunto un disco rigido virtuale, ma non l'ha inizializzato.
 
-## Initialize data disks
+## <a name="initialize-data-disks"></a>Inizializzare i dischi dati
 
-Any additional drives you create from scratch will need to be initialized and formatted. The process for doing this is identical to a physical drive.
+Tutte le unità aggiuntive create da zero dovranno essere inizializzate e formattate. Il processo per eseguire questa operazione è identico a quello valido per un'unità fisica.
 
-1. Launch the **Disk Management** tool from the Start Menu.
+1. Avviare lo strumento **Gestione disco** dal menu Start.
 
-1. It will display a warning that it has detected an uninitialized disk.
+1. Verrà visualizzato un avviso che informa che è stato rilevato un disco non inizializzato.
 
-    ![Initialize the data disk in the VM](../media-drafts/6-disk-management.png)
+    ![Inizializzare il disco dati nella macchina virtuale](../media-drafts/6-disk-management.png)
 
-1. Click **OK** to initialize the disk. It will then show up in the list of volumes where you can format it and assign a drive letter.
+1. Fare clic su **OK** per inizializzare il disco. Verrà quindi visualizzato nell'elenco di volumi in cui è possibile formattarlo e assegnare una lettera di unità.
 
-1. Open File Explorer and you should now see your data drive.
+1. Aprire Esplora File. Ora l'unità dati è visualizzata.
 
-1. Go ahead and close the RDP client to sign out of the VM. The server will continue to run.
+1. Proseguire e chiudere il client RDP per uscire dalla macchina virtuale. Il server continuerà a venire eseguito.
 
-RDP allows you to work with the Azure VM just like a local computer. With Desktop UI access, you can administer this VM as you would any Windows computer: installing software, configuring roles, adjusting features and other common tasks. However, it's a manual process - if we always need to install some software, you might consider automating the process using scripting.
+RDP consente di lavorare con la macchina virtuale di Azure come con un computer locale. Con l'accesso all'interfaccia utente del desktop, è possibile amministrare questa macchina virtuale come qualsiasi computer Windows: installare software, configurare ruoli, mettere a punto le funzionalità ed eseguire altre attività comuni. Si tratta tuttavia di processi manuali. Se è necessario installare sempre alcuni software, è possibile valutare la possibilità di automatizzare il processo tramite scripting.

@@ -8,25 +8,25 @@ Per scrivere lo script, seguire questa procedura:
 
 1. Creare un nuovo file di testo denominato **ConferenceDailyReset.ps1**.
 
-2. Acquisire il parametro in una variabile:
+1. Acquisire il parametro in una variabile:
 
     ```powershell
     param([string]$resourceGroup)
     ```
 
-3. Eseguire l'autenticazione in Azure con le proprie credenziali:
+1. Eseguire l'autenticazione in Azure con le proprie credenziali:
 
     ```powershell
     Connect-AzureRmAccount
     ```
 
-4. Richiedere il nome utente e la password per l'account di amministratore della macchina virtuale e acquisire il risultato in una variabile:
+1. Richiedere il nome utente e la password per l'account di amministratore della macchina virtuale e acquisire il risultato in una variabile:
 
     ```powershell
     $adminCredential = Get-Credential -Message "Enter a username and password for the VM administrator."
     ```
 
-5. Creare un ciclo da eseguire tre volte:
+1. Creare un ciclo da eseguire tre volte:
 
     ```powershell
     For ($i = 1; $i -le 3; $i++) 
@@ -35,19 +35,19 @@ Per scrivere lo script, seguire questa procedura:
     }
     ```
 
-6. Nel corpo del ciclo, creare un nome per ogni macchina virtuale e archiviarlo in una variabile:
+1. Nel corpo del ciclo, creare un nome per ogni macchina virtuale e archiviarlo in una variabile:
 
     ```powershell
     $vmName = "ConferenceDemo" + $i
     ```
 
-7. Creare quindi una macchina virtuale usando la variabile `$vmName`:
+1. Creare quindi una macchina virtuale usando la variabile `$vmName`:
 
    ```powershell
    New-AzureRmVm -ResourceGroupName $resourceGroup -Name $vmName -Credential $adminCredential -Location "East US" -Image UbuntuLTS
    ```
 
-8. Salvare il file.
+1. Salvare il file.
 
 Lo script completato avrà l'aspetto seguente:
 
@@ -77,8 +77,10 @@ Avviare PowerShell e passare alla directory in cui è stato salvato il file di s
 Per il completamento dello script possono essere necessari alcuni minuti. Al termine, verificare che sia stato eseguito correttamente:
 
 1. Da un browser accedere al portale di Azure.
-2. Nel riquadro di spostamento a sinistra fare clic su **Gruppi di risorse**.
-3. Nell'elenco dei gruppi di risorse fare clic su **TrialsResourceGroup**. Nell'elenco delle risorse dovrebbero essere visibili le macchine virtuali appena create e le risorse associate.
+
+1. Nel riquadro di spostamento a sinistra fare clic su **Gruppi di risorse**.
+
+1. Nell'elenco dei gruppi di risorse fare clic su **TrialsResourceGroup**. Nell'elenco delle risorse dovrebbero essere visibili le macchine virtuali appena create e le risorse associate.
 
 ## <a name="summary"></a>Riepilogo
 È stato scritto uno script per automatizzare la creazione di tre macchine virtuali nel gruppo di risorse indicato da un parametro dello script. Lo script è breve e semplice ma consente di automatizzare un processo il cui completamento manuale tramite il portale richiederebbe molto tempo.

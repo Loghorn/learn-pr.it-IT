@@ -1,16 +1,16 @@
-Now that you've learned about what kinds of queries you can create, let's use the Data Explorer in the Azure portal to retrieve and filter your product data.
+Ora che si è appreso quali tipi di query è possibile creare, si userà Esplora dati nel portale di Azure per recuperare e filtrare i dati dei prodotti.
 
-In your Data Explorer window, note that by default, the query on the **Document** tab is set to `SELECT * FROM c`. This default query retrieves and displays all documents in the collection.
+Si noti che per impostazione predefinita nella finestra di Esplora dati la query nella scheda **Documento** è impostata su `SELECT * FROM c`. La query predefinita recupera e visualizza tutti i documenti nella raccolta.
 
-![Default query in Data Explorer is SELECT * FROM c](../media/5-azure-cosmosdb-data-explorer-query.png)
+![La query predefinita in Esplora dati è SELECT * FROM c](../media-draft/5-azure-cosmosdb-data-explorer-query.png)
 
-## Create a new query
+## <a name="create-a-new-query"></a>Creare una nuova query
 
-1. In Data Explorer, click the **New SQL Query** tab. Note that the default query on the new  **Query 1** tab is `SELECT * from c`, and then click **Execute Query**. This query returns all results in the database.
+1. In Esplora dati fare clic sulla scheda **Nuova query SQL**. Si noti che la query predefinita nella nuova scheda **Query 1** è `SELECT * from c` e quindi fare clic su **Esegui query**. Questa query restituisce tutti i risultati nel database.
 
-    ![Change the default query by adding ORDER BY c._ts DESC and clicking Apply Filter](../media/5-azure-cosmosdb-data-explorer-edit-query.png)
+    ![Modificare la query predefinita aggiungendo ORDER BY c._ts DESC e facendo clic su Applica filtro](../media-draft/5-azure-cosmosdb-data-explorer-edit-query.png)
 
-2. Now, let's run some of the queries discussed in the previous unit. On the query tab, delete `SELECT * from c`, copy and paste the following query, and then click **Execute Query**:
+2. A questo punto è possibile eseguire alcune query illustrate nell'unità precedente. Nella scheda della query eliminare `SELECT * from c`, copiare e incollare la query seguente e quindi fare clic su **Esegui query**:
 
     ```
     SELECT *
@@ -18,11 +18,11 @@ In your Data Explorer window, note that by default, the query on the **Document*
     WHERE p.id ="1"
     ```
 
-    The results return the product whose `productId` is 1.
+    I risultati restituiscono il prodotto dove `productId` è 1.
 
-    ![Change the default query by adding ORDER BY c._ts DESC and clicking Apply Filter](../media/5-azure-cosmosdb-data-explorer-query-by-id.png)
+    ![Modificare la query predefinita aggiungendo ORDER BY c._ts DESC e facendo clic su Applica filtro](../media-draft/5-azure-cosmosdb-data-explorer-query-by-id.png)
 
-3. Delete the previous query, copy and paste the following query, and click **Execute Query**. This query returns the price, description, and product ID for all products, ordered by price, in ascending order.
+3. Eliminare la query precedente, copiare e incollare la query seguente e fare clic su **Esegui query**. Questa query restituisce il prezzo, la descrizione e l'ID prodotto per tutti i prodotti, ordinati in base al prezzo, in ordine crescente.
  
     ```
     SELECT p.price, p.description, p.productId
@@ -30,6 +30,6 @@ In your Data Explorer window, note that by default, the query on the **Document*
     ORDER BY p.price ASC
     ```
 
-## Summary
+## <a name="summary"></a>Riepilogo
 
-You have now completed some basic queries on your data in Azure Cosmos DB. 
+Sono state ora completate alcune query di base sui dati in Azure Cosmos DB. 

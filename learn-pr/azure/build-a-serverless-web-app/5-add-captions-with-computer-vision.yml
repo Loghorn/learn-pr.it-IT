@@ -4,12 +4,12 @@ title: Aggiungere didascalie alle immagini con Visione artificiale di Servizi co
 metadata:
   title: Aggiungere didascalie alle immagini con Visione artificiale di Servizi cognitivi
   description: Aggiungere didascalie alle immagini con Visione artificiale di Servizi cognitivi.
-  ms.openlocfilehash: c871e1aa05440b3f61c78eddbbc5a48ebddcf26a
-  ms.sourcegitcommit: bf091e3a389138b59573865ca54775e38a4ffa1f
+  ms.openlocfilehash: 72663b32a0a7e8730b0ebbf3407806b859b91785
+  ms.sourcegitcommit: b97ed72bd7e3fb77b49de71e8ef35d3f70dfd636
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 08/29/2018
-  ms.locfileid: "43154049"
+  ms.lasthandoff: 09/05/2018
+  ms.locfileid: "43791101"
 durationInMinutes: 9
 interactive: bash-editor
 content: '[!include[](includes/5-add-captions-with-computer-vision.md)]'

@@ -4,9 +4,9 @@ Sono state esaminate anche le opzioni per creare e gestire le macchine virtuali 
 
 Sono stati infine esaminati i servizi e le estensioni disponibili per amministrare più facilmente le VM.
 
-## <a name="cleanup-your-resources"></a>Pulire le risorse
+## <a name="clean-up-your-resources"></a>Pulire le risorse
 
-Si ricordi che le macchine virtuali continuano a comportare una tariffa mensile finché si ha hardware riservato (anche se il sistema operativo viene arrestato) e si usa spazio per i dischi. È possibile arrestare la VM nel portale per interrompere la fatturazione per i servizi di calcolo, ma lo spazio di archiviazione continuerà a essere fatturato. Se si creano risorse a scopo di test, è possibile rimuoverle tutte facilmente eliminando il **gruppo di risorse** di cui fanno parte.
+Tenere presente che le macchine virtuali continuano a comportare un addebito mensile finché si ha hardware riservato (anche se il sistema operativo viene arrestato) e si usa spazio per i dischi. È possibile arrestare la VM nel portale per interrompere la fatturazione per i servizi di calcolo, ma lo spazio di archiviazione continuerà a essere fatturato. Se si creano risorse a scopo di test, è possibile rimuoverle tutte facilmente eliminando il **gruppo di risorse** di cui fanno parte.
 
 > [!TIP]
 > Assicurarsi di inserire tutte le risorse di test nello stesso gruppo di risorse per poterle gestire facilmente.

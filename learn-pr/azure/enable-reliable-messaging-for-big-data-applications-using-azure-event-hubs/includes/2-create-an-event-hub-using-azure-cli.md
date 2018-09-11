@@ -24,7 +24,8 @@ Per gli autori che inviano dati di frequente, AMQP offre le migliori prestazioni
 
 Per una pubblicazione più intermittente, è preferibile HTTPS. Anche se HTTPS richiede un sovraccarico SSL aggiuntivo per ogni richiesta, non presenta il sovraccarico di inizializzazione della sessione.
 
-[!NOTE] Anche le applicazioni esistenti basate su Kafka, che usano client Apache Kafka 1.0 e versioni successive, possono operare come autori per Hub eventi.
+> [!NOTE] 
+> Anche le applicazioni esistenti basate su Kafka, che usano client Apache Kafka 1.0 e versioni successive, possono operare come autori per Hub eventi.
 
 I sottoscrittori di eventi sono applicazioni che usano uno dei due metodi supportati a livello di programmazione per ricevere ed elaborare gli eventi da un hub eventi.
 
@@ -52,8 +53,11 @@ La creazione di uno spazio dei nomi di Hub eventi in genere comporta quanto segu
 1. Definizione delle impostazioni a livello di spazio dei nomi. Alcune impostazioni, come la capacità dello spazio dei nomi (configurata tramite le **unità elaborate**), il piano tariffario e le metriche delle prestazioni, sono definite a livello di spazio dei nomi. Queste sono applicabili per tutti gli hub eventi nello spazio dei nomi. Se non si definiscono queste impostazioni, viene usato un valore predefinito: *1* per la capacità e *Standard* per il piano tariffario.
 
     Una volta impostate le unità elaborate, non è possibile modificarle. È necessario bilanciare la configurazione rispetto alle aspettative per il budget di Azure. È possibile valutare la configurazione di diversi hub eventi per differenti requisiti di velocità effettiva. Ad esempio, se si dispone di un'applicazione per i dati di vendita e si prevede di usare due hub eventi (uno per la raccolta con una velocità effettiva elevata di informazioni di telemetria in tempo reale sui dati di vendita e uno per la raccolta dei log eventi con una minore frequenza), potrebbe essere utile usare uno spazio dei nomi distinto per ogni hub. In questo modo, è sufficiente configurare (ed effettuare il pagamento per) la capacità con velocità effettiva elevata nell'hub di telemetria.
+
 1. Selezione di un nome univoco per lo spazio dei nomi. Lo spazio dei nomi è accessibile all'URL: *_spazio dei nomi_.servicebus.windows.net*
+
 1. Definizione delle proprietà facoltative seguenti:
+
     - Abilita Kafka. Questa opzione consente alle applicazioni Kafka di pubblicare eventi nell'hub eventi.
     - Imposta la ridondanza della zona per questo spazio dei nomi. La ridondanza della zona replica i dati tra data center distinti con infrastrutture di alimentazione, rete e raffreddamento indipendenti.
     - Abilita aumento automatico e Numero massimo di unità elaborate per l'aumento automatico. L'aumento automatico offre un'opzione per la scalabilità, aumentando il numero di unità elaborate fino a un valore massimo. Questo è utile per evitare la limitazione delle richieste nelle situazioni in cui le velocità dei dati in ingresso o in uscita superano il numero di unità elaborate attualmente impostato.
@@ -68,13 +72,13 @@ Per creare un nuovo spazio dei nomi di Hub eventi, usare i comandi seguenti:
     az group create --name <resource group name> --location <location>
     ```
 
-2. Creare lo spazio dei nomi di Hub eventi con lo stesso gruppo di risorse e la stessa posizione del passaggio precedente.
+1. Creare lo spazio dei nomi di Hub eventi con lo stesso gruppo di risorse e la stessa posizione del passaggio precedente.
 
     ```azurecli
     az eventhubs namespace create --name <Event Hubs namespace name> --resource-group <resource group name> -l <location>
     ```
 
-3. Tutti gli hub eventi nello stesso spazio dei nomi di Hub eventi condividono credenziali di connessione comuni. Queste credenziali saranno necessarie per configurare le applicazioni per inviare e ricevere messaggi tramite l'hub eventi. Usare il comando seguente per restituire la stringa di connessione per lo spazio dei nomi di Hub eventi, con il gruppo di risorse e il nome dello spazio dei nomi di Hub eventi usati in precedenza.
+1. Tutti gli hub eventi nello stesso spazio dei nomi di Hub eventi condividono credenziali di connessione comuni. Queste credenziali saranno necessarie per configurare le applicazioni per inviare e ricevere messaggi tramite l'hub eventi. Usare il comando seguente per restituire la stringa di connessione per lo spazio dei nomi di Hub eventi, con il gruppo di risorse e il nome dello spazio dei nomi di Hub eventi usati in precedenza.
 
     ```azurecli
     az eventhubs namespace authorization-rule keys list --resource-group <resource group name> --namespace-name <EventHub namespace name> --name RootManageSharedAccessKey
@@ -105,7 +109,7 @@ Per creare un nuovo hub eventi, usare i comandi seguenti:
     az eventhubs eventhub create --name <event hub name> --resource-group <Resource Group name> --namespace-name <Event Hubs namespace name>
     ```
 
-2. Visualizzare i dettagli dell'hub eventi nello spazio dei nomi, con il gruppo di risorse, il nome dell'hub eventi e il nome dello spazio dei nomi usati in precedenza.
+1. Visualizzare i dettagli dell'hub eventi nello spazio dei nomi, con il gruppo di risorse, il nome dell'hub eventi e il nome dello spazio dei nomi usati in precedenza.
 
     ```azurecli
     az eventhubs eventhub show --resource-group <Resource Group name> --namespace-name <Event Hubs namespace name> --name <event hub name>

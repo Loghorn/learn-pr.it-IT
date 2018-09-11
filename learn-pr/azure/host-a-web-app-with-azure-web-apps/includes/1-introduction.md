@@ -1,13 +1,13 @@
-﻿Imagine you're building a website for a new business, or you're running an existing web app on an aging on-premises server. Setting up a new server can be challenging. You need appropriate hardware, likely a server-level operating system, and a web hosting stack.
+Si supponga di creare un sito Web per una nuova attività o di eseguire un'app Web esistente in un server locale obsoleto. La configurazione di un nuovo server può risultare complessa. È necessario l'hardware appropriato, ad esempio un sistema operativo di livello server, e uno stack di hosting Web.
 
-And once it's running, you need to maintain the server. And what happens if your website traffic increases? You may need to invest in additional hardware.
+Quando poi il server è in esecuzione, è necessario gestirlo. Che cosa accade se il traffico dei siti Web aumenta? Potrebbe essere necessario investire in hardware aggiuntivo.
 
-Hosting your web application using the Web Apps feature of Azure App Service makes deploying and managing a web app much easier when compared to managing a physical server. In this module, we'll deploy a .NET Core web app to Web Apps in Azure.
+L'hosting dell'applicazione Web mediante la funzionalità App Web del servizio app di Azure rende la distribuzione e la gestione di un'app Web molto più semplici della gestione di un server fisico. Questo modulo illustra come distribuire un'app Web .NET Core in App Web in Azure.
 
-## Learning objectives
+## <a name="learning-objectives"></a>Obiettivi di apprendimento
 
-In this module, you will:
+Contenuto del modulo:
 
-- Use the Azure portal to create your Web App
-- Create an ASP.NET Core web app using Linux
-- Upload your code to Azure App Service using Git
+- Usare il portale di Azure per creare l'app Web
+- Creare un'app Web ASP.NET Core usando Linux
+- Caricare il codice nel servizio app di Azure tramite Git

@@ -1,17 +1,17 @@
-Imagine you're managing storage for an online retailer. You need tools to create, update, and delete your user and product data. Azure Cosmos DB provides SDKs for .NET, .NET Core, Java, Node.js, and Python.
+Si immagini di essere responsabile della gestione del magazzino per un rivenditore online. Servono strumenti per creare, aggiornare ed eliminare i dati sugli utenti e sui prodotti. Azure Cosmos DB offre SDK per .NET, .NET Core, Java, Node.js e Python.
 
-In this module, you will build a .NET Core console application in Visual Studio Code to create, update, and delete user records, query your data, and perform stored procedures using C#.
+In questo modulo verrà creata un'applicazione console .NET Core in Visual Studio Code per creare, aggiornare ed eliminare i record utente, eseguire query sui dati ed eseguire stored procedure con C#.
 
-Visual Studio has a convenient extension for Azure Cosmos DB so you can easily see the database, collection, and documents you created in the previous modules, plus you can create new resources using the extension, and copy your connection string without having to open the Azure portal.
+Visual Studio include una pratica estensione per Azure Cosmos DB in modo da poter visualizzare con facilità il database, la raccolta e i documenti creati nei moduli precedenti, oltre a poter creare nuove risorse usando l'estensione e copiare la stringa di connessione senza dover aprire il portale di Azure.
 
-## Learning objectives
+## <a name="learning-objectives"></a>Obiettivi di apprendimento
 
-In this module, you will:  
+In questo modulo verrà descritto come:  
 
-- Create an application to store and query data in Azure Cosmos DB
-- Use the Integrated Terminal in Visual Studio Code to quickly create a console application
-- Add Azure Cosmos DB functionality with the help of the Azure Cosmos DB extension for Visual Studio Code
+- Creare un'applicazione per archiviare i dati ed eseguire query in Azure Cosmos DB.
+- Usare il terminale integrato in Visual Studio Code per creare rapidamente un'applicazione console.
+- Aggiungere la funzionalità Azure Cosmos DB con l'aiuto dell'estensione di Azure Cosmos DB per Visual Studio Code.
 
-## Prerequisites
+## <a name="prerequisites"></a>Prerequisiti
 
-- Must have [Visual Studio Code](https://code.visualstudio.com/) installed
+- È necessario aver installato [Visual Studio Code](https://code.visualstudio.com/).

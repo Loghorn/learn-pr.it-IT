@@ -13,6 +13,3 @@ Di seguito sono riportati alcuni collegamenti in cui reperire altre informazioni
 - [Documentazione sulla fatturazione di Azure](https://docs.microsoft.com/azure/billing/)
 - [Centro architetture Azure](https://docs.microsoft.com/azure/architecture/)
 - [Budget di Azure](https://docs.microsoft.com/azure/billing/billing-cost-management-budget-scenario)
-
-
-

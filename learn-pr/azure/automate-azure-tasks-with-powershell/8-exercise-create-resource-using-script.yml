@@ -1,18 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.automate-azure-tasks-with-powershell.8-exercise-create-resource-using-script
-title: Exercise - Create and save scripts in Azure PowerShell
+title: Esercizio - Creare e salvare script in Azure PowerShell
 metadata:
-  title: Exercise - Create and save scripts in Azure PowerShell
-  description: Exercise - Create and save scripts in Azure PowerShell
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
-# TODO: Consider Azure Portal Interactivity.
-# interactive: azure-portal
-azureSandbox: true
+  title: Esercizio - Creare e salvare script in Azure PowerShell
+  description: Esercizio - Creare e salvare script in Azure PowerShell
+  ms.openlocfilehash: 9909183d327aa5c154cf3fde30f9cfeca5577080
+  ms.sourcegitcommit: b97ed72bd7e3fb77b49de71e8ef35d3f70dfd636
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/05/2018
+  ms.locfileid: "43795360"
 durationInMinutes: 10
-content: |
-  [!include[](includes/8-exercise-create-resource-using-script.md)]
+content: '[!include[](includes/8-exercise-create-resource-using-script.md)]'

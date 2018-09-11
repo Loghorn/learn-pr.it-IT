@@ -1,17 +1,15 @@
 ### YamlMime:ModuleUnit
 uid: learn.manage-vms-with-azure-cli-data.10-installing-software
-title: Install software on your VM
+title: Installare software nella macchina virtuale
 metadata:
-  title: Install software on your VM
-  description: Install software to run a web server on your Linux VM
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
+  title: Installare software nella macchina virtuale
+  description: Installare il software per l'esecuzione di un server Web nella macchina virtuale di Linux
+  ms.openlocfilehash: f3668d6b98df9ed15577bbcee26058f269b1a31a
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43835675"
 interactive: bash
-azureSandbox: true
 durationInMinutes: 5
-content: |
-  [!include[](includes/10-installing-software.md)]
+content: '[!include[](includes/10-installing-software.md)]'

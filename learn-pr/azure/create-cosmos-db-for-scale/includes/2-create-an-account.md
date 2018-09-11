@@ -16,8 +16,7 @@ Facoltativamente, è possibile configurare le reti virtuali e la ridondanza geog
 
 ## <a name="creating-an-azure-cosmos-db-account-in-the-portal"></a>Creare un account Azure Cosmos DB nel portale
 
-<!--TODO: Update portal link with one that routes to free Learning acct-->
-1. Accedere al [portale di Azure](https://portal.azure.com/).
+1. Accedere al [portale di Azure](https://portal.azure.com?azure-portal=true).
 2. Fare clic su **Crea una risorsa** > **Database** > **Azure Cosmos DB**.
    
    ![Riquadro Database nel portale di Azure](../media/1-introduction/create-nosql-db-databases-json-tutorial-1.png)
@@ -32,7 +31,7 @@ Facoltativamente, è possibile configurare le reti virtuali e la ridondanza geog
     Gruppo di risorse|Crea nuovo<br><br>*Immettere lo stesso nome univoco specificato sopra in ID*|Selezionare **Crea nuovo** e quindi immettere il nome di un nuovo gruppo di risorse per l'account. Per semplicità, lo stesso nome può essere usato come ID. 
     Località|*Selezionare l'area più vicina agli utenti*|Selezionare la località geografica in cui ospitare l'account Azure Cosmos DB. Usare la località più vicina agli utenti per offrire loro la massima velocità di accesso ai dati.
     Abilita ridondanza geografica| Lasciare vuoto | Questa impostazione crea una versione replicata del database in una seconda area associata. Lasciare vuoto per il momento, perché il database può essere replicato in seguito. 
-    Reti virtuali|Disabilitate|Per il momento lasciare le reti virtuali disabilitate. Possono essere abilitate in seguito. 
+    Reti virtuali|Disabilitate|Per il momento, non abilitare le reti virtuali. Possono essere abilitate in seguito. 
 
 4. Fare clic su **Crea**.
 

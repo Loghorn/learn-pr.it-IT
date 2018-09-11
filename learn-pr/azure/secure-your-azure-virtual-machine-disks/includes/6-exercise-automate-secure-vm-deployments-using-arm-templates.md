@@ -1,35 +1,34 @@
-Your banking company handles highly sensitive customer information and wants you to ensure your disks are encrypted at all times, including VM disk deployment. You've been tasked to automate a secure VM deployment to safeguard your company's data.
+La società bancaria gestisce i dati sensibili dei clienti e richiede che i dischi siano sempre crittografati, anche durante la distribuzione dei dischi delle macchine virtuali. Il compito assegnato è quindi quello di automatizzare una distribuzione sicura delle macchine virtuali per salvaguardare i dati aziendali.
 
-In this unit, you'll use an Azure Resource Manager template to automatically enable encryption for new Windows VMs.
+In questa unità si userà un modello di Azure Resource Manager (ARM) per abilitare automaticamente la crittografia per le nuove macchine virtuali Windows.
 
-## Configure and deploy a new VM using an Azure Resource Manager template
+## <a name="configure-and-deploy-a-new-vm-using-an-arm-template"></a>Configurare e distribuire una nuova macchina virtuale con un modello ARM
 
-1. Go to the [Resource Manager template on GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/201-encrypt-create-new-vm-gallery-image), and then click **Deploy to Azure**.
-1. In the Azure portal, on the **Azure quickstart template** blade, under **Resource Group**, select **Use existing**. In the list, select **moneyapprg**.
-1. In the **SETTINGS** section, enter the following information:
+1. Passare al [modello di Resource Manager in GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/201-encrypt-create-new-vm-gallery-image) e quindi fare clic su **Distribuisci in Azure**.
+1. Nel pannello **Modello di avvio rapido di Azure** del portale di Azure selezionare **Usa esistente** in **Gruppo di risorse** e nell'elenco selezionare **moneyapprg**.
+1. Nella sezione **IMPOSTAZIONI** immettere le informazioni seguenti:
 
-   - Vm Name: **moneyappsvr02**
-   - **Admin Username**: Same as you used in the previous exercise.
-   - **Admin Password**: Same as you used in the previous exercise.
-   - **New Storage Account Name**: Enter a unique name.
-   - **Vm Size**: Replace with the same size that you used in the previous exercise, such as **Standard_B1s** (as you are using the same Azure region, ensuring that size is available in your current region).
-   - **Virtual Network Name**: **moneyapprg-vnet**
-   - **Subnet Name**: **default**
-   - **AAD Client ID**: Copy from the information you pasted to Notepad.
-   - **AAD Client Secret**: Copy from the information you pasted to Notepad.
-   - **Key Vault Name**: **moneyappkv**
-   - **Key Vault Resource Group**: **moneyapprg**
-   - **Key Encryption Key URL**: Copy from the information you pasted to Notepad.
-1. Select the **I agree to the terms and conditions** check box, and then click **Purchase**.
+   - Nome macchina virtuale: **moneyappsvr02**
+   - **Nome utente amministratore**: uguale a quello usato nell'esercizio precedente
+   - **Password amministratore**: uguale a quella usata nell'esercizio precedente
+   - **Nuovo nome account di archiviazione**: immettere un nome univoco
+   - **Dimensioni macchina virtuale**: sostituire con le stesse dimensioni usate nell'esercizio precedente, ad esempio **Standard_B1s** (dal momento che si usa la stessa area di Azure, assicurarsi che tali dimensioni siano disponibili nell'area corrente)
+   - **Nome rete virtuale**: **moneyapprg-vnet**
+   - **Nome subnet**: **predefinito**
+   - **AAD Client Id** (ID client AAD): copiarlo dalle informazioni incollate negli Appunti
+   - **AAD Client Secret** (Segreto client AAD): copiarlo dalle informazioni incollate negli Appunti
+   - **Nome insieme di credenziali delle chiavi**: **moneyappkv**
+   - **Gruppo di risorse dell'insieme di credenziali delle chiavi**: **moneyapprg**
+   - **Key Encryption Key URL** (URL della chiave di crittografia chiavi): copiarlo dalle informazioni incollate negli Appunti
+   - Selezionare la casella di controllo **Accetto le condizioni riportate sopra** e quindi fare clic su **Acquista**.
+1. Il completamento della distribuzione richiede 5-10 minuti.
 
-The deployment may take 5-10 minutes to complete.
+## <a name="verify-encryption-status-of-new-vm"></a>Verificare lo stato della crittografia della nuova macchina virtuale
 
-## Verify encryption status of new VM
+1. Nella barra laterale del portale di Azure fare clic su **Macchine virtuali**.
 
-1. In the sidebar of the Azure portal, click **Virtual machines**.
+1. Nel pannello **Macchine virtuali** fare clic su **moneyappsvr02**.
 
-1. On the **Virtual machines** blade, click **moneyappsvr02**.
+1. Nel pannello **Macchina virtuale** fare clic su **Dischi** in **IMPOSTAZIONI**.
 
-1. On the **Virtual machine** blade, under **SETTINGS**, click **Disks**.
-
-1. On the **Disks** blade, notice the OS disk encryption status is **Enabled**.
+1. Nel pannello **Dischi** notare che lo stato di crittografia dei dischi del sistema operativo è **Abilitato**.

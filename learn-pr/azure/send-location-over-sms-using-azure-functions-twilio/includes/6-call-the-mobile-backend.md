@@ -1,22 +1,22 @@
-The mobile app runs and the initial version of the Azure function has been created. In this unit, you call the Azure function from the mobile app, passing in the user's location and the list of phone numbers the user wants to send SMS messages to.
+L'app per dispositivi mobili è in esecuzione ed è stata creata la versione iniziale della funzione di Azure. In questa unità si chiama la funzione di Azure all'app per dispositivi mobili, passando la posizione dell'utente e l'elenco dei numeri di telefono a cui l'utente intende inviare i messaggi SMS.
 
-## Calling the Azure function from the mobile app
+## <a name="calling-the-azure-function-from-the-mobile-app"></a>Chiamata della funzione di Azure dall'app per dispositivi mobili
 
-1. Open the `MainViewModel`.
+1. Aprire il file `MainViewModel`.
 
-1. In this class, add a private `HttpClient` field called `client`. You'll need to add a reference to the `System.Net.Http` namespace.
+1. In questa classe aggiungere un campo `HttpClient` privato denominato `client`. Occorrerà aggiungere un riferimento allo spazio dei nomi `System.Net.Http`.
 
     ```cs
     HttpClient client = new HttpClient();
     ```
 
-1. Add a constant field for the base URL for the function. Set this to the address that the local Azure Functions runtime is listening on. Once the function is deployed to Azure, this constant can be changed to be the Azure URL.
+1. Aggiungere un campo costante per l'URL di base per la funzione. Impostare il campo sull'indirizzo su cui è in ascolto il runtime locale di Funzioni di Azure. Dopo che la funzione è stata distribuita in Azure, questa costante può essere modificata nell'URL di Azure.
 
     ```cs
     const string baseUrl = "http://localhost:7071";
     ```
 
-1. Inside the `SendLocation` method, after the location has been found, create a new instance of `PostData` using the location and the list of phone numbers entered by the user. You'll need to add a using directive for the `ImHere.Data` namespace.
+1. Nel metodo `SendLocation`, dopo che la posizione è stata rilevata, creare una nuova istanza di `PostData` usando la posizione e l'elenco dei numero di telefono immessi dall'utente. È necessario aggiungere una direttiva using per lo spazio dei nomi `ImHere.Data`.
 
     ```cs
     PostData postData = new PostData
@@ -27,27 +27,27 @@ The mobile app runs and the initial version of the Azure function has been creat
     };
     ```
 
-    > This assumes that the phone numbers have been entered in the correct format, one per line in the `Editor` control. In a production-quality app, there would be validation around this to ensure one or more phone numbers were entered and were in the correct format.
+    > Si presuppone che i numeri di telefono siano stati inseriti nel formato corretto, uno per riga nel controllo `Editor`. In un'app per ambienti di produzione si dovrebbe prevedere una fase di convalida per assicurarsi che sia stato immesso almeno un numero di telefono e che abbia il formato corretto.
 
-1. To serialize the `PostData` as JSON, the easiest way is to use the Newtonsoft.JSON NuGet package. Add this NuGet package to the `ImHere` project in the same way that you added Xamarin.Essentials in an earlier unit.
+1. Per serializzare `PostData` come JSON, il modo più facile consiste nell'usare il pacchetto NuGet Newtonsoft.JSON. Aggiungere il pacchetto NuGet al progetto `ImHere` nello stesso modo in cui si è aggiunto Xamarin.Essentials in un'unità precedente.
 
-1. Serialize the `PostData` to a `string` using the `JsonConvert` static class. You'll need to add a using directive for the `Newtonsoft.Json` namespace. Encode this string into a `StringContent` class so that it can be passed to the Azure function as JSON.
+1. Serializzare `PostData` in una `string` usando la classe statica `JsonConvert`. È necessario aggiungere una direttiva using per lo spazio dei nomi `Newtonsoft.Json`. Codificare questa stringa in una classe `StringContent` in modo che possa essere passata alla funzione di Azure come JSON.
 
     ```cs
     string data = JsonConvert.SerializeObject(postData);
     StringContent content = new StringContent(data, Encoding.UTF8, "application/json");
     ```
 
-1. Post this data to the function and get the result back.
+1. Pubblicare questi dati alla funzione e ottenere il risultato.
 
    ```cs
     HttpResponseMessage result = await client.PostAsync($"{baseUrl}/api/SendLocation",
                                                         content);
    ```
 
-   Azure functions are accessed using `/api/<function name>`, so assuming the port chosen by the local Functions runtime is 7071, the `SendLocation` function will be accessible at `http://localhost:7071/api/SendLocation`.
+   È possibile accedere alle funzioni di Azure usando `/api/<function name>`, quindi supponendo che la porta scelta dal runtime locale di Funzioni di Azure sia la porta 7071, sarà possibile accedere alla funzione `SendLocation` all'indirizzo `http://localhost:7071/api/SendLocation`.
 
-1. Depending on the result, show a message on the UI.
+1. A seconda del risultato visualizzare un messaggio nell'interfaccia utente.
 
     ```cs
     if (result.IsSuccessStatusCode)
@@ -56,7 +56,7 @@ The mobile app runs and the initial version of the Azure function has been creat
         Message = $"Error - {result.ReasonPhrase}";
     ```
 
-The full code for the new fields and the `SendLocation` method is below.
+Di seguito sono riportati il codice completo per i nuovi campi e il metodo `SendLocation`.
 
 ```cs
 HttpClient client = new HttpClient();
@@ -90,16 +90,16 @@ async Task SendLocation()
 }
 ```
 
-## Testing it out
+## <a name="testing-it-out"></a>Esecuzione dei test
 
-1. Make sure the Azure function is still running locally and the port matches the `SendLocation` method.
+1. Assicurarsi che la funzione di Azure sia ancora in esecuzione in locale e che la porta corrisponda a quella indicata nel metodo `SendLocation`.
 
-1. Set the UWP app as the startup app and run it. Click the **Send Location** button. You'll see output in the Functions runtime console window showing the function being called, and the logging showing the generated URL.
+1. Impostare l'app UWP come app di avvio ed eseguirla. Fare clic sul pulsante **Invia posizione**. L'output verrà visualizzato nella finestra della console del runtime di Funzioni di Azure con la funzione chiamata e la registrazione che mostra l'URL generato.
 
-    ![Output of the function being called](../media-drafts/6-function-called.png)
+    ![Output della funzione chiamata](../media-drafts/6-function-called.png)
 
-1. To test the URL generation, paste it from the console into a browser. It should show your current location.
+1. Per testare la generazione dell'URL, incollarlo dalla console in un browser. Dovrebbe mostrare la posizione corrente.
 
-## Summary
+## <a name="summary"></a>Riepilogo
 
-In this unit, you learned how to call an Azure function from the mobile app. This call passed the user's location and the phone numbers they entered as JSON. In the next unit, you'll bind the Azure function to Twilio to send this location as an SMS message.
+In questa unità è stato descritto come chiamare una funzione di Azure dall'app per dispositivi mobili. Questa chiamata ha passato la posizione dell'utente e i numeri di telefono immessi come JSON. Nella prossima unità si eseguirà l'associazione tra la funzione di Azure e Twilio per inviare la posizione in un messaggio SMS.

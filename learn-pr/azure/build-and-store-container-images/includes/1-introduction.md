@@ -1,14 +1,14 @@
-Azure Container Registry is a managed Docker registry service based on the open-source Docker Registry 2.0. Container Registry is a private, hosted in Azure, and allows you to build, store, and manage images for all types of container deployments.
+Registro contenitori di Azure è un servizio gestito di registri Docker basato sull'applicazione open source Docker Registry 2.0. Registro contenitori è un servizio privato ospitato in Azure che consente di creare, archiviare e gestire immagini per qualsiasi tipo di distribuzione di contenitori.
 
-Container images can be pushed and pulled with Container Registry using the Docker CLI or the Azure CLI. Azure portal integration allows you to visually inspect the container images in your container registry. In distributed environments, the Container Registry geo-replication feature can be used to distribute container images to multiple Azure datacenters for localized distribution.
+Registro contenitori consente di eseguire il push e il pull di immagini del contenitore tramite l'interfaccia della riga di comando di Docker o l'interfaccia della riga di comando di Azure. L'integrazione del portale di Azure consente di esaminare visivamente le immagini del contenitore nel registro contenitori. Negli ambienti distribuiti è possibile usare la funzionalità di replica geografica di Container Registry per distribuire le immagini del contenitore in più data center di Azure per la distribuzione localizzata.
 
-In addition to storing container images, Azure Container Registry Build can build container images in Azure. Build uses a standard Dockerfile to create and store a container image in Azure Container Registry without the need for local Docker tooling. With Azure Container Registry Build, you can build on demand or fully automate container image builds using DevOps processes and tooling.
+Oltre ad archiviare le immagini dei contenitori, Azure Container Registry Build consente di compilare immagini dei contenitori in Azure. Con Azure Container Registry Build è possibile usare un Dockerfile standard per creare e archiviare un'immagine del contenitore in Registro contenitori di Azure senza bisogno di strumenti Docker locali. Con Azure Container Registry Build è possibile eseguire su richiesta o automatizzare completamente la compilazione di immagini dei contenitori usando i processi e gli strumenti DevOps.
 
-## Learning objectives
+## <a name="learning-objectives"></a>Obiettivi di apprendimento
 
-In this module, you will:
+In questo modulo verrà descritto come:
 
-- Deploy an Azure container registry
-- Build a container image using Azure Container Registry Build
-- Deploy this container to an Azure container instance
-- Replicate the container image to multiple Azure datacenters
+- Distribuire un registro contenitori di Azure
+- Compilare un'immagine dei contenitori con Azure Container Registry Build
+- Distribuire il contenitore in un'istanza di contenitore di Azure
+- Replicare l'immagine del contenitore in più data center di Azure

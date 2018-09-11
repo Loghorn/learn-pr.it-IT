@@ -1,111 +1,111 @@
-Our server is ready to process video data; the last thing we need to do is open the ports that the traffic cameras will use to upload video files to our server. 
+Il server è pronto per l'elaborazione dei dati video. Resta solo da aprire le porte che verranno usate dalle telecamere del traffico per caricare i file video nel server. 
 
-## Create a network security group
+## <a name="create-a-network-security-group"></a>Creare un gruppo di sicurezza di rete
 
-Azure should have created a security group for us because we indicated we wanted Remote Desktop access. But let's create a new security group so you can walk through the entire process. This is particularly important if you decide to create your virtual network _before_ your VMs. As mentioned earlier, security groups are _optional_ and not necessarily created with the network.
-
-> [!NOTE]
-> Since this is _supposed_ to be the second VM, we would already have a security group to apply to our network, but let's pretend for a moment that we don't, or that the rules are different for this VM.
-
-1. In the [Azure portal](https://portal.azure.com?azure-portal=true), click the **Create a resource** button in the left corner sidebar to start a new resource creation.
-
-1. Type "Network security group" into the filter box and select the matching item in the list.
-
-1. Make sure the **Resource Manager** deployment model is selected and click **Create**.
-
-1. Provide a **Name** for your security group. Again, naming conventions are a good idea here, let's use "test-vp-nsg2" for "Test Video Processor Network Security Group #2".
-
-1. Select the proper **Subscription** and use your existing **Resource group**.
-
-1. Finally, put it into the same **Location** as the VM / Virtual Network. This is important - you won't be able to apply this resource if it's in a different location.
-
-1. Click **Create** to create the group.
-
-## Add a new inbound rule to our Network Security Group
-
-Deployment should complete quickly.
-
-1. Find the new security group resource and select it in the Azure portal.
-
-1. On the overview page, you'll find that it has some default rules created to lock down the network.
-
-    On the inbound side:
-
-    - All inbound traffic from one VNet to another is allowed. This lets resources on the VNet talk to each other.
-    - Azure Load balancer "probe" requests to ensure the VM is alive
-    - All other inbound traffic is denied.
-    On the outbound side:
-    - All in-network traffic on the VNet is allowed.
-    - All outbound traffic to the Internet is allowed.
-    - All other outbound traffic is denied.
+Azure dovrebbe aver creato un gruppo di sicurezza perché si era indicato di volere l'accesso Desktop remoto. Verrà tuttavia creato un nuovo gruppo di sicurezza per poter eseguire l'intero processo. Questo è particolarmente importante se si decide di creare la rete virtuale _prima_ delle macchine virtuali. Come indicato in precedenza, i gruppi di sicurezza sono _facoltativi_ e non vengono necessariamente creati con la rete.
 
 > [!NOTE]
-> These default rules are set with high priority values, which means that they get evaluated _last_. They cannot be changed or deleted, but you can _override_ them by creating more specific rules to match your traffic with a lower priority value.
+> Poiché si _presume_ che questa sia la seconda macchina virtuale, sarà già disponibile un gruppo di sicurezza da applicare alla rete, ma si supponga per un momento che non sia così o che le regole per questa macchina virtuale siano diverse.
 
-1. Click the **Inbound security rules** section in the **Settings** panel for the security group.
+1. Nel [portale di Azure](https://portal.azure.com?azure-portal=true) fare clic sul pulsante **Crea una risorsa** nella barra laterale nell'angolo a sinistra per avviare la creazione di una nuova risorsa.
 
-1. Click **+ Add** to add a new security rule.
+1. Digitare "Gruppo di sicurezza di rete" nella casella del filtro e selezionare l'elemento corrispondente nell'elenco.
 
-    ![Add a security rule](../media-drafts/8-add-rule.png)
+1. Verificare che sia selezionato il modello di distribuzione **Resource Manager** e fare clic su **Crea**.
 
-    There are two ways to enter the information necessary for a security rule: basic and advanced. You can switch between them by clicking the button at the top of the "add" panel.
+1. Fornire un **nome** per il gruppo di sicurezza. Anche in questo caso, sono utili le convenzioni di denominazione. Si userà "test-vp-nsg2" per "Test Video Processor Network Security Group #2".
 
-    ![Basic vs. Advanced rule input](../media-drafts/8-advanced-create-rule.png)
+1. Selezionare la **sottoscrizione** appropriata e usare il **gruppo di risorse** esistente.
 
-    The advanced mode provides the ability to completely customize the rule, however, if you just need to configure a known protocol, the basic mode is a bit easier to work with.
+1. Inserirlo infine nella stessa **località** della macchina virtuale/rete virtuale. Questa operazione è importante perché non sarà possibile applicare questa risorsa se si trova in una località diversa.
 
-1. Switch to the Basic mode.
+1. Fare clic su **Crea** per creare il gruppo.
 
-1. Add the information for our FTP rule.
+## <a name="add-a-new-inbound-rule-to-our-network-security-group"></a>Aggiungere una nuova regola in ingresso al gruppo di sicurezza di rete
 
-    - Set the **Service** to be FTP. This will set your port range up for you.
-    - Set the **Priority** to "1000". It has to be a lower number than the default **Deny** rule. You can start the range at any value, but it's recommended you give yourself some space in case an exception needs to be created later.
-    - Give the rule a name, we'll use "traffic-cam-ftp-upload-2".
-    - Give the rule a description.
+La distribuzione verrà completata rapidamente.
 
-1. Switch back to the **Advanced** mode. Notice that our settings are still present. We can use this panel to create more fine-grained settings. In particular, we would likely restrict the **Source** to be a specific IP address or range of IP addresses specific to the cameras. If you know the current IP address of your local computer, you can try that. Otherwise, leave the setting as "Any" so you can test the rule.
+1. Trovare la nuova risorsa gruppo di sicurezza e selezionarla nel portale di Azure.
 
-1. Click **Add** to create the rule. This will update the list of inbound rules - notice they are in priority order, which is how they will be examined.
+1. Nella pagina Panoramica si noterà che sono state create alcune regole predefinite create per bloccare la rete.
+
+    Sul lato in ingresso:
+
+    - Tutto il traffico in ingresso da una rete virtuale a un'altra è consentito. In questo modo le risorse nella rete virtuale possono comunicare tra di esse.
+    - Il "probe" di Azure Load Balancer richiede di verificare che la macchina virtuale sia attiva
+    - Tutto il traffico in ingresso viene rifiutato.
+    Sul lato in uscita:
+    - Tutto il traffico nella rete virtuale è consentito.
+    - Tutto il traffico in uscita verso Internet è consentito.
+    - Tutto il traffico in uscita di altro tipo viene rifiutato.
+
+> [!NOTE]
+> Queste regole predefinite vengono impostate con valori di priorità elevata e quindi vengono valutate per _ultime_. Non possono essere modificate o eliminate, ma è possibile eseguirne l'_override_ creando regole più specifiche per il traffico con un valore di priorità più basso.
+
+1. Fare clic sulla sezione **Regole di sicurezza in ingresso** nel pannello **Impostazioni** del gruppo di sicurezza.
+
+1. Fare clic su **+ Aggiungi** per aggiungere una nuova regola di sicurezza.
+
+    ![Aggiungere una regola di sicurezza](../media-drafts/8-add-rule.png)
+
+    Esistono due modi per immettere le informazioni necessarie per una regola di sicurezza: di base e avanzato. È possibile passare da uno all'altro facendo clic sul pulsante nella parte superiore del pannello "Aggiungi".
+
+    ![Input della regola di base e avanzato](../media-drafts/8-advanced-create-rule.png)
+
+    La modalità avanzata offre la possibilità di personalizzare completamente la regola. Se tuttavia è sufficiente configurare un protocollo noto, è più semplice usare la modalità di base.
+
+1. Passare alla modalità di base.
+
+1. Aggiungere le informazioni per la regola FTP.
+
+    - Impostare il **servizio** su FTP. Verrà automaticamente configurato l'intervallo di porte.
+    - Impostare la **priorità** su "1000". Deve essere un numero più basso di quello della regola predefinita **Nega**. È possibile far iniziare l'intervallo con qualsiasi valore, ma è consigliabile fare in modo di poter creare un'eccezione in un secondo momento, se necessario.
+    - Assegnare un nome alla regola, ad esempio "traffic-cam-ftp-upload-2".
+    - Assegnare alla regola una descrizione.
+
+1. Tornare alla modalità **avanzata**. Si noti che le impostazioni sono ancora presenti. È possibile usare questo pannello per creare impostazioni con granularità più fine. In particolare, l'**origine** deve essere un indirizzo IP specifico o un intervallo di indirizzi IP specifici delle telecamere. Se si conosce l'indirizzo IP corrente del computer locale, è possibile provare a usarlo. In caso contrario, lasciare l'impostazione "Qualsiasi" in modo che sia possibile testare la regola.
+
+1. Fare clic su **Aggiungi** per creare la regola. L'elenco di regole in ingresso verrà aggiornato. Si noti che sono in ordine di priorità, ovvero l'ordine in cui verranno esaminate.
     
-## Apply the security group
+## <a name="apply-the-security-group"></a>Applicare il gruppo di sicurezza
 
-Recall that we can apply the security group to a network interface to guard a single VM, or to a subnet where it would apply to any resources on that subnet. The latter approach tends to be the most common so let's do that. We could get to this resource in Azure through either the virtual network resource or indirectly through the VM which is using the virtual network.
+Si ricordi che è possibile applicare il gruppo di sicurezza a un'interfaccia di rete per proteggere una singola macchina virtuale o a una subnet per applicarlo a tutte le risorse in tale subnet. Si userà il secondo approccio, che è il più comune. È possibile accedere a questa risorsa in Azure tramite la risorsa di rete virtuale o indirettamente tramite la macchina virtuale che usa la rete virtuale.
 
-1. Switch to the **Overview** panel for the virtual machine. You can find the VM under **All Resources**.
+1. Passare al pannello **Panoramica** per la macchina virtuale. È possibile trovare la macchina virtuale in **Tutte le risorse**.
 
-1. Select the **Networking** item in the **Settings** section.
+1. Selezionare l'elemento **Rete** nella sezione **Impostazioni**.
 
-    ![Networking item in the VM settings](../media-drafts/8-network-settings.png)
+    ![Elemento Rete nelle impostazioni della macchina virtuale](../media-drafts/8-network-settings.png)
 
-1. In the networking properties, you will find information about the networking applied to the VM including the **Virtual network/subnet**. This is a clickable link to get to the resource. Click it to open the virtual network. This link is _also_ available on the **Overview** panel of the VM. Either of these will open the **Overview** of the virtual network.
+1. Nelle proprietà della rete sono disponibili informazioni sulla rete applicata alla macchina virtuale, tra cui la **rete virtuale/subnet**. Questo è un collegamento su cui è possibile fare clic per ottenere la risorsa. Fare clic per aprire la rete virtuale. Questo collegamento è disponibile _anche_ nel pannello **Panoramica** della macchina virtuale. Entrambi i collegamenti apriranno la **panoramica** della rete virtuale.
 
-1. In the **Settings** section, select the **Subnets** item.
+1. Nella sezione **Impostazioni** selezionare l'elemento **Subnet**.
 
-1. We should have a single subnet defined (default) from when we created the VM + network earlier. Click the item in the list to open the details.
+1. Dovrebbe essere presente una sola subnet definita (predefinita) da quando prima sono state create la macchina virtuale e la rete. Fare clic sull'elemento nell'elenco per aprire i dettagli.
 
-1. Click the **Network security group** entry.
+1. Fare clic sulla voce **Gruppo di sicurezza di rete**.
 
-1. Select your new security group: **test-vp-nsg2**.
+1. Selezionare il nuovo gruppo di sicurezza: **test-vp-nsg2**.
 
-1. Click **Save** to save the change. It will take a minute to apply to the network.
+1. Fare clic su **Salva** per salvare la modifica. L'applicazione alla rete richiederà un minuto.
 
-## Verify the rules
+## <a name="verify-the-rules"></a>Verificare le regole
 
-Let's validate the change.
+La modifica verrà ora convalidata.
 
-1. Switch back to the **Overview** panel for the virtual machine. You can find the VM under **All Resources**.
+1. Tornare al pannello **Panoramica** per la macchina virtuale. È possibile trovare la macchina virtuale in **Tutte le risorse**.
 
-1. Select the **Networking** item in the **Settings** section.
+1. Selezionare l'elemento **Rete** nella sezione **Impostazioni**.
 
-1. In the **Overview** panel for the network, there is a link for **Effective security rules that will quickly show you how rules are going to be evaluated. Click the link to open the analysis and make sure you see your FTP rule.
+1. Nel pannello **Panoramica** della rete è presente un collegamento **Regole di sicurezza effettive che consente di visualizzare rapidamente come verranno valutate le regole. Fare clic sul collegamento per aprire l'analisi e assicurarsi che venga visualizzata la regola FTP.
 
-    ![Effective security rules for our network](../media-drafts/8-effective-rules.png)
+    ![Regole di sicurezza effettive per la rete](../media-drafts/8-effective-rules.png)
 
-1. If you installed the FTP server role, you should be able to connect to the FTP endpoint now. Try it out.
+1. Se è stato installato il ruolo del server FTP, ora sarà possibile connettersi all'endpoint FTP. Provare.
 
-## One more thing
+## <a name="one-more-thing"></a>Ultimo passaggio
 
-Security rules are tricky to get right. We actually made a mistake when we applied this new security group - we lost our Remote Desktop access! To fix this, you can add another rule to the security group to support RDP access. Make sure to restrict the inbound TCP/IP addresses for the rule to be the ones you own.
+Le regole di sicurezza sono difficili da configurare correttamente. In realtà è stato commesso un errore quando si è applicato questo nuovo gruppo di sicurezza perché si è perso l'accesso Desktop remoto. Per risolvere questo problema, è possibile aggiungere un'altra regola al gruppo di sicurezza per supportare l'accesso RDP. Assicurarsi di limitare gli indirizzi TCP/IP in ingresso per la regola a quelli di cui si è proprietari.
 
 > [!WARNING]
-> Always make sure to lock down ports used for administrative access. An even better approach is to create a VPN to link the virtual network to your private network and only allow RDP or SSH requests from that address range. You can also change the port used by RDP to be something other than the default 3389. Keep in mind that changing ports is not sufficient to stop attacks, it simply makes it a little harder to discover.
+> Assicurarsi sempre di bloccare le porte usate per l'accesso amministrativo. Un approccio ancora migliore consiste nel creare una VPN per collegare la rete virtuale alla rete privata e consentire solo le richieste RDP o SSH da tale intervallo di indirizzi. È anche possibile sostituire la porta usata da RDP con una diversa da quella predefinita 3389. Tenere presente che cambiare le porte non è sufficiente per arrestare gli attacchi, ma semplicemente diventa un po' più difficile individuarle.

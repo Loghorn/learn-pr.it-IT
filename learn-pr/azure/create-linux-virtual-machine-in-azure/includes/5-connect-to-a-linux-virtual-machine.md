@@ -1,26 +1,26 @@
-Now that we have a Linux VM in Azure, the next thing you’ll want to do is configure it for the tasks we want to move to Azure.
+Dopo aver creato una macchina virtuale Linux in Azure, il passaggio successivo consiste nel configurarla per le attività da spostare in Azure.
 
-Unless you’ve set up a site-to-site VPN to Azure, your Azure VMs won’t be accessible from your local network. If you’re just getting started with Azure, it’s unlikely that you have a working site-to-site VPN. So how can you connect to the virtual machine?
+Se non è stata configurata una VPN da sito a sito in Azure, le macchine virtuali di Azure non saranno accessibili dalla rete locale. Se si sta iniziando a usare Azure, è improbabile che sia presente una VPN da sito a sito funzionante. Come è possibile quindi connettersi alla macchina virtuale?
 
-## Azure VM IP addresses
+## <a name="azure-virtual-machines-ip-addresses"></a>Indirizzi IP delle macchine virtuali di Azure
 
-As we saw a moment ago, Azure VMs communicate on a virtual network. They can also have an optional public IP address assigned to them. With a public IP, we can interact with the VM over the Internet. Alternatively, we can set up a virtual private network (VPN) that connects our on-premises network to Azure - letting us securely connect to the VM without exposing a public IP. This approach is covered in another module and is fully documented if you are interested in exploring that option.
+Come si è visto poco fa, le macchine virtuali di Azure comunicano in una rete virtuale. Possono anche avere un indirizzo IP pubblico facoltativo assegnato. Con un IP pubblico è possibile interagire con la macchina virtuale tramite Internet. In alternativa, è possibile configurare una rete privata virtuale (VPN) che connette la rete locale ad Azure, permettendo di connettersi in modo sicuro alla macchina virtuale senza esporre un indirizzo IP pubblico. Questo approccio è descritto in un altro modulo ed è completamente documentato, se si è interessati a esplorare tale opzione.
 
-One thing to be aware of with public IP addresses in Azure is they are often dynamically allocated. That means the IP address can change over time - for VMs, this happens when the VM is restarted. You can pay more to assign static addresses if you want to connect directly to an IP address instead of a name and need to ensure that the IP address will not change.
+Un aspetto da tenere presente con gli indirizzi IP pubblici in Azure è che vengono spesso allocati in modo dinamico. Ciò significa che l'indirizzo IP può cambiare nel corso del tempo, ad esempio quando la macchina virtuale viene riavviata. È possibile pagare una tariffa aggiuntiva per assegnare indirizzi statici, se ci si vuole connettere direttamente a un indirizzo IP invece che a un nome ed è necessario fare in modo che l'indirizzo IP non cambi.
 
-## Connect to an Azure Linux VM with SSH
+## <a name="connect-to-an-azure-linux-virtual-machines-with-ssh"></a>Connettersi alle macchine virtuali Linux di Azure con SSH
 
-Connecting to a VM in Azure using SSH is straightforward. In the Azure portal, open the properties of your VM, and at the top, click **Connect**. This will show you the IP addresses assigned to the VM along with all the login details for SSH. 
+La connessione a una macchina virtuale in Azure con SSH è molto semplice. Nel portale di Azure aprire le proprietà della macchina virtuale e nella parte superiore fare clic su **Connetti**. Verranno visualizzati gli indirizzi IP assegnati alla macchina virtuale insieme a tutti i dettagli di accesso per SSH. 
 
-![Screenshot of the Azure portal showing the Connect to a virtual machine blade configured to connect via SSH to the newly created Linux VM.](../media/5-connect-ssh.png)
+![Dettagli della connessione SSH per una macchina virtuale Linux](../media-drafts/5-connect-ssh.png)
 
-With these details, we can use the following command to get into our Linux VM:
+Con questi dettagli è possibile usare il comando seguente per accedere alla macchina virtuale Linux:
 
 ```bash
 ssh jim@137.117.101.249
 ```
 
-The first time we connect, SSH will ask us about authenticating against an unknown host. SSH is telling you that you've never connected to this server before. If that's true, then it's perfectly normal, and you can respond with **yes** to save the fingerprint of the server in the known host file:
+La prima volta che ci si connette, SSH richiederà l'autenticazione con un host sconosciuto. SSH informa che non è stata mai stabilita una connessione a questo server. Se è true, è perfettamente normale, ed è possibile rispondere "sì" per salvare l'impronta digitale del server disattivato nel file host noto.
 
 ```output
 The authenticity of host '137.117.101.249 (137.117.101.249)' can't be established.
@@ -29,19 +29,19 @@ Are you sure you want to continue connecting (yes/no)? yes
 Warning: Permanently added '137.117.101.249' (ECDSA) to the list of known hosts.
 ```
 
-## Transferring files to the VM
+## <a name="transferring-files-to-the-vm"></a>Trasferimento di file nella macchina virtuale
 
-Another common task is to copy local files or data from one server to another. In our case, we'll eventually want to copy our website data up to our Azure VM. With Linux VMs and SSH, we can use the `scp` command. The command is similar to copying local files with `cp`, except you'll have to specify the remote user and host in your command.
+Un'altra attività comune consiste nel copiare i dati o i file locali da un server a un altro. In questo caso, verranno copiati i dati del sito Web in una macchina virtuale di Azure. Con macchine virtuali Linux e SSH è possibile usare il comando `scp`. Il comando è simile alla copia dei file locali con `cp`, ma sarà necessario specificare l'utente remoto e l'host nel comando. 
 
-For example, to copy `somefile.txt` from our current directory to `~/folder` on a Linux machine with the IP address `192.168.1.25`, you can type:
+Ad esempio, per copiare `somefile.txt` dalla directory corrente in `~/folder` in un computer Linux con l'indirizzo IP `192.168.1.25`, è possibile digitare:
 
 ```bash
 scp somefile.txt someuser@192.168.1.25:~/folder/
 ```
 
-This will authenticate as `someuser` on the remote system, prompting for a password, or using your SSH private key. That user will need to have write permissions to `~/folder/` on the destination server.
+Verrà eseguita l'autenticazione come `someuser` nel sistema remoto richiedendo una password o usando la chiave privata SSH. Tale utente dovrà avere le autorizzazioni di scrittura per `~/folder/` nel server di destinazione.
 
 > [!WARNING]
-> `scp` will do local file copies if you don't get the command line quite right. The most common missing piece is the destination folder.
+> `scp` eseguirà le copie dei file locali se la riga di comando non è corretta. Il componente mancante più comune è la cartella di destinazione.
 
-Let's try using SSH to connect to our running Linux VM.
+Provare a usare SSH per connettersi a una macchina virtuale Linux in esecuzione.

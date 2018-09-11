@@ -1,41 +1,41 @@
-Visual Studio Code is a popular choice for developing applications for Azure. The integrated development environment (IDE) is lightweight, taking up only megabytes of storage space, versus gigabytes for some IDEs. VS Code is cross platform; it works on Windows, Linux, and macOS. And it's flexible. You can use Visual Studio Code to deploy your apps through the Azure CLI or Azure App Service, or by using a Docker container image. You can even deploy your apps by using Azure Functions with the serverless approach. 
+Visual Studio Code è una scelta diffusa per lo sviluppo di applicazioni per Azure. L'ambiente di sviluppo integrato (IDE) è leggero perché occupa solo alcuni megabyte di spazio di archiviazione, contrariamente ai gigabyte occupati da alcuni ambienti di sviluppo integrato. Visual Studio Code è multipiattaforma: funziona in Windows, Linux e macOS. Inoltre, è flessibile. È possibile usare Visual Studio Code per distribuire le app tramite l'interfaccia della riga di comando di Azure, il servizio App di Azure oppure usando un'immagine del contenitore Docker. È inoltre possibile distribuire le app con Funzioni di Azure e la modalità senza server. 
 
-## Visual Studio Code
+## <a name="visual-studio-code"></a>Visual Studio Code
 
-Visual Studio Code, or just VS Code, is a powerful, yet lightweight editor. It supports most programming languages, hundreds in fact, and it is designed to connect to cloud services.
+Visual Studio Code, o semplicemente VS Code, è un editor semplice e potente. Supporta la maggior parte dei linguaggi di programmazione, addirittura centinaia, ed è progettato per connettersi ai servizi cloud.
 
-With a focus on cross-platform support (runs on Windows, Linux, and macOS) and providing a portable agile experience, the base installation of VS Code contains an editor that recognizes an ever-growing coverage of programming language syntax highlighting. However, there is no compiler. Compilation is meant to take place in the cloud, or via an extension.
+Con particolare attenzione al supporto multipiattaforma, può essere infatti eseguito in Windows, Linux e macOS, all'agilità e alla portabilità dell'esperienza, l'installazione di base di Visual Studio Code include un editor che riconosce una gamma di sintassi dei linguaggi di programmazione in continua crescita. Tuttavia, non è presente alcun compilatore. La compilazione avviene nel cloud o tramite un'estensione.
 
-You get great built-in support for source control using a Git source control manager (SCM), which does mean you need to install the Git framework first.
+Si otterrà un notevole supporto incorporato per il controllo del codice sorgente tramite Gestione controllo del codice sorgente di Git. Ciò significa che è necessario installare innanzitutto il framework di Git.
 
-## Extension model
+## <a name="extension-model"></a>Modello di estensione
 
-One of the most powerful features of VS Code is the extension model. It allows third-party functionality to run as an integrated part of the VS Code IDE, and extend the capabilities of the IDE in almost any way imaginable.
+Una delle funzionalità più potenti di Visual Studio Code è il modello di estensione. Consente l'esecuzione di funzionalità di terze parti come parte integrante dell'IDE di Visual Studio Code e di estendere le funzionalità dell'IDE in qualunque modo immaginabile.
 
-An extension is written in either TypeScript or JavaScript, and can even be developed in VS Code itself. You can use Yeoman to scaffold an extension. All of these support IntelliSense, code navigation, and a full debugging experience.
+Un'estensione viene scritta in JavaScript o TypeScript e può anche essere sviluppata in Visual Studio Code stesso. È possibile usare Yeoman per eseguire lo scaffolding di un'estensione. Tutti questi strumenti supportano IntelliSense, l'esplorazione del codice e un'esperienza di debug completa.
 
-There are three general categories of extensions for VS Code: Extensions, Language Servers, and Debugger. The latter two have additional protocols that allow them to provide specialized functionality, either across languages in the editor, or to hook into the debug experience.
+Esistono tre categorie generali di estensioni per Visual Studio Code: le estensioni, i server di linguaggio e il debugger. Gli ultimi due hanno protocolli aggiuntivi che consentono di fornire funzionalità specializzate: multilinguaggio per l'editor oppure per arricchire l'esperienza di debug.
 
-The extensions available in the Extension Marketplace include language support for Python, Go, C++, and many others. The extensions also include code formatting tools, such as linters, tools for cloud connectivity such as Azure, new themes, code formatters, and snippet libraries. All of these extensions are available on the [VS Code Marketplace](https://marketplace.visualstudio.com/).
+Le estensioni disponibili nel marketplace delle estensioni includono il supporto di linguaggio per Python, Go, C++ e molti altri. Le estensioni includono anche strumenti di formattazione del codice, ad esempio linter, strumenti per la connettività cloud, ad esempio Azure, nuovi temi, formattatori di codice e librerie di frammenti di codice. Tutte queste estensioni sono disponibili nel [marketplace di Visual Studio Code](https://marketplace.visualstudio.com/).
 
-## Azure extensions
+## <a name="azure-extensions"></a>Estensioni di Azure
 
-Many of the extensions target Azure features and products, with more being added all the time. They target areas such as Docker support, subscription management, tooling for the Azure CLI, database access, Azure Storage API integration, and general Azure extension.
+Molte estensioni sono rivolte alle funzionalità e ai prodotti di Azure e molte altre vengono aggiunte continuamente. Riguardano ambiti quali il supporto per docker, la gestione delle sottoscrizioni, gli strumenti per l'interfaccia della riga di comando di Azure, l'accesso al database, l'integrazione di API in Archiviazione di Azure e Azure in generale.
 
-Each Azure extension adds a set of VS Code features that makes your development with Azure integration points easier and more efficient.
+Ogni estensione Azure aggiunge un set di funzionalità di Visual Studio Code che rende più semplice ed efficace lo sviluppo con i punti di integrazione di Azure.
 
-## Getting VS Code and preparing for Azure development
+## <a name="getting-vs-code-and-preparing-for-azure-development"></a>Ottenere Visual Studio Code e prepararsi per lo sviluppo per Azure
 
-There are three different platforms on which VS Code is supported: Windows, macOS, and Linux. While they all are installed from a downloadable file, they do differ in the setup.
+Esistono tre diverse piattaforme che supportano Visual Studio Code: Windows, macOS e Linux. Nonostante vengano tutte installate da un file scaricabile, la loro configurazione è diversa.
 
-To get VS Code running on Windows, download the file for your version of Windows (32-bit or 64-bit), and install like any other Windows application.
+Per eseguire Visual Studio Code in Windows, scaricare il file per la propria versione di Windows, 32 bit o 64 bit, e installarlo come qualsiasi altra applicazione di Windows.
 
-For macOS, you also download the file and expand the contents. It is recommended to add VS Code to the LaunchPad and the Dock.
+Per macOS, scaricare il file ed espandere il contenuto. È consigliabile aggiungere Visual Studio Code a LaunchPad e Dock.
 
-Linux is a bit more complex, depending on your distribution of choice. Either you need to download and install VS Code on Debian and Ubuntu, or you need to use the Yum repository on RHEL, Fedora, CentOS, openSUSE, or SLE. For other distributions, there may be less supported community editions available as well.
+Per Linux la procedura è un po' più complessa e dipende dalla distribuzione scelta. Si dovrà scaricare e installare Visual Studio Code in Debian e Ubuntu oppure usare il repository Yum in RHEL, Fedora, CentOS, openSUSE e SLE. Per altre distribuzioni, potrebbero esserci meno Community Edition supportate e disponibili.
 
-To get VS Code ready for Azure development on any platform, use the Extension Marketplace to install the necessary Azure extensions. If you are working with App Service, use the App Service extension. If you work with Node.js, then you need the Node Pack for Azure.
+Per preparare Visual Studio Code per lo sviluppo per Azure su qualsiasi piattaforma, usare il marketplace delle estensioni per installare le estensioni di Azure necessarie. Se si lavora con il servizio app, usare l'estensione del servizio app. Se si lavora con Node.js, procurarsi il pacchetto Node per Azure.
 
-## Summary
+## <a name="summary"></a>Riepilogo
 
-VS Code is a perfect companion for developing and creating applications for Azure. The lightweight, cross-platform IDE, paired with an extensive range of extensions to improve both efficiency and robustness of apps, makes VS Code ideal for Azure development.
+Visual Studio Code è un complemento perfetto per lo sviluppo e la creazione di applicazioni per Azure. Questo ambiente di sviluppo integrato semplice e multipiattaforma, associato a un'ampia gamma di estensioni per migliorare l'efficienza e l'affidabilità delle app, rende Visual Studio Code ideale per lo sviluppo per Azure.

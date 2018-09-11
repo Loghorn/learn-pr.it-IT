@@ -1,75 +1,75 @@
-﻿Here, you'll learn how to create an Azure web app using the Azure portal.
+In questo modulo si apprenderà come creare un'app Web di Azure usando il portale di Azure.
 
-## Why use the Azure portal?
+## <a name="why-use-the-azure-portal"></a>Perché usare il portale di Azure?
 
-The first step in hosting your web application is to create a **web app** inside your Azure subscription.
+Il primo passaggio per ospitare un'applicazione Web consiste nel creare un'**app Web** all'interno della sottoscrizione di Azure.
 
-There are several ways you can create an Azure web app. You can use the Azure portal, the Azure CLI, a script, or an IDE.
+Ci sono diversi modi per creare un'app Web di Azure. È possibile usare il portale di Azure, l'interfaccia della riga di comando di Azure, uno script o un ambiente di sviluppo integrato (IDE).
 
-Here, we are going to use the portal because it's a graphical experience, which makes it a great learning tool. The portal helps you discover available features, add additional resources, and customize existing resources.
+In questo caso verrà usato il portale, che offre un'esperienza grafica ideale per l'apprendimento. Il portale consente di individuare le funzionalità disponibili, aggiungere altre risorse e personalizzare le risorse esistenti.
 
-## What is Web Apps in Azure?
+## <a name="what-is-web-apps-in-azure"></a>Che cos'è App Web di Azure?
 
-Web Apps is a fully managed computing platform within the Azure environment that is optimized for hosting web apps, REST APIs, and mobile back ends.
+App Web è una piattaforma di calcolo completamente gestita all'interno dell'ambiente Azure, ottimizzata per l'hosting di app Web, API REST e back-end per dispositivi mobili.
 
-This platform as a service (PaaS) offered by Microsoft Azure allows you to focus on the build side of things while Azure takes care of the infrastructure to run and scale your applications.
+Questa piattaforma distribuita come servizio (PaaS, Platform as a Service), offerta da Microsoft Azure, consente di concentrarsi sulle attività di compilazione, mentre Azure gestisce l'infrastruttura per l'esecuzione e il ridimensionamento delle applicazioni.
 
-## How to create an Azure web app
+## <a name="how-to-create-an-azure-web-app"></a>Come creare un'app Web di Azure
 
-When it's time to host your own app, you visit the Azure portal and create a new **resource** of the type **Web App**. By creating such a resource in the Azure portal, you are actually creating a **container** or a blueprint that you can use to host any web-based application that is supported by Azure, whether it be ASP.NET Core, Node.js, PHP, etc. The figure below shows how easy it is to configure the framework/language used by the app.
+Quando è il momento di ospitare l'app, visitare il portale di Azure e creare una nuova **risorsa** di tipo **App Web**. Creando tale risorsa nel portale di Azure, in realtà si crea un **contenitore** o un progetto che è possibile usare per ospitare qualsiasi applicazione basata su Web supportata da Azure, ad esempio ASP.NET Core, Node.js, PHP e così via. La figura seguente dimostra quanto sia facile configurare il linguaggio o il framework usato dall'app.
 
-![Web app settings](../media/2-web-app-settings.png)
+![Impostazioni dell'app Web](../media/2-web-app-settings.png)
 
-The Azure portal provides a template to create a new web app. This template requires the following fields:
+Il portale di Azure offre un modello per creare una nuova app Web. Il modello richiede i campi seguenti:
 
-- **App name**: The name of the web app.
-- **Subscription**: A valid and active subscription.
-- **Resource group**: A valid resource group. The sections below explain in detail what a resource group is.
-- **OS**: The operating system. The options are: Windows, Linux, and Docker containers. On Windows, you can host any type of application from a variety of technologies. The same applies for Linux hosting, except the fact that you can only create ASP.NET Core web apps that use the .NET Core framework over Linux. For other ASP.NET apps using the full .NET Framework, you will have to host over Windows OS. The final option is Docker containers, where you can deploy your own local Docker containers directly over containers hosted and maintained by Azure. So basically, any web app that makes use of an open-source technology (PHP, ASP.NET Core, etc.) can be hosted on a Linux OS.
-- **App Service plan/location**: A valid Azure App Service plan. The sections below explain in detail what an App Service plan is.
-- **Applications Insights**: You can turn on the Azure Application Insights option and benefit from the monitoring and metric tools that the Azure portal offers to help you keep an eye on the performance of your apps.
+- **Nome app**: il nome dell'app Web.
+- **Sottoscrizione**: una sottoscrizione valida e attiva.
+- **Gruppo di risorse**: un gruppo di risorse valido. Le sezioni seguenti spiegano in dettaglio che cos'è un gruppo di risorse.
+- **Sistema operativo**: il sistema operativo. Le opzioni sono: Windows, Linux e contenitori Docker. In Windows è possibile ospitare qualsiasi tipo di applicazione con un'ampia gamma di tecnologie. Lo stesso vale per l'hosting in Linux, ad eccezione del fatto che è possibile creare solo app Web ASP.NET Core che usano il framework .NET Core in Linux. Per altre app ASP.NET che usano la versione completa di .NET Framework, l'hosting deve essere eseguito in un sistema operativo Windows. L'opzione finale è costituita dai contenitori Docker e consente di distribuire i contenitori Docker locali direttamente in contenitori ospitati e gestiti da Azure. Quindi, in pratica, qualsiasi app Web che usa una tecnologia open source (PHP, ASP.NET Core e così via) può essere ospitata in un sistema operativo Linux.
+- **Piano di servizio app/Località**: un piano di servizio app di Azure valido. Le sezioni seguenti spiegano in dettaglio che cos'è un piano di servizio app.
+- **Application Insights**: è possibile attivare l'opzione Azure Application Insights e usufruire degli strumenti per il monitoraggio e le metriche offerti dal portale di Azure per tenere sotto controllo le prestazioni delle app.
 
-The Azure portal gives you the upper hand in managing, monitoring, and controlling your web app through the many available tools.
+Il portale di Azure offre un supporto ottimale in termini di gestione, monitoraggio e controllo dell'app Web attraverso i numerosi strumenti disponibili.
 
-### Deployment slots
+### <a name="deployment-slots"></a>Slot di distribuzione
 
-Using the Azure portal, you can easily add **deployment slots** to a web app. For instance, you can create a **staging** deployment slot where you can push your code to test on Azure. Once you are happy with your code, you can easily **swap** the staging deployment slot with the production slot. You do all this with a few simple mouse clicks in the Azure portal.
+Nel portale di Azure è possibile aggiungere facilmente **slot di distribuzione** a un'app Web. È ad esempio possibile creare uno slot di distribuzione di **staging** in cui inserire il codice da testare in Azure. Quando si è soddisfatti del codice, è possibile **scambiare** facilmente lo slot di distribuzione di staging con quello di produzione. Tutte queste operazioni si eseguono con pochi clic del mouse nel portale di Azure.
 
-![Deployment slots](../media/2-deployment-slots.png)
+![Slot di distribuzione](../media/2-deployment-slots.png)
 
-### Continuous integration/deployment support
+### <a name="continuous-integrationdeployment-support"></a>Supporto di integrazione e distribuzione continue
 
-The Azure portal provides out-of-the-box continuous integration and deployment with Visual Studio Team Services, GitHub, Bitbucket, Dropbox, OneDrive, or a local Git repository that Azure fully manages. You connect your web app with any of the above sources and Azure will do the rest for you by auto-syncing code and any future changes on the code into the web app. Furthermore, with Visual Studio Team Services, you can define your own build and release process that ends up compiling your source code, running the tests, building a release, and finally pushing the release into a web app every time your commit the code. All that happens implicitly without any need to intervene.
+Il portale di Azure offre opzioni predefinite di integrazione e distribuzione continue con Visual Studio Team Services, GitHub, Bitbucket, Dropbox, OneDrive o un repository Git locale gestito completamente da Azure. Se si connette l'app Web a una qualsiasi delle origini precedenti, Azure eseguirà le altre operazioni per l'utente, sincronizzando automaticamente il codice ed eventuali modifiche apportate in futuro al codice nell'app Web. Inoltre, con Visual Studio Team Services, è possibile definire un processo personalizzato di compilazione e rilascio che consente di compilare il codice sorgente, eseguire i test, creare una versione e infine eseguire il push della versione in un'app Web ogni volta che si esegue il commit del codice. Tutto ciò che avviene in modo implicito senza alcun intervento da parte dell'utente.
 
-![Configure continuous integration](../media/2-continuous-integration.PNG)
+![Configurare l'integrazione continua](../media/2-continuous-integration.PNG)
 
-### Integrated Visual Studio publishing and FTP publishing
+### <a name="integrated-visual-studio-publishing-and-ftp-publishing"></a>Pubblicazione di Visual Studio e pubblicazione FTP integrate
 
-In addition to being able to set up continuous integration/deployment for your web app, you can always benefit from the tight integration with Visual Studio to publish your web app to Azure via Web Deploy technology. Also, Azure supports FTP, although you are better off not using FTP for publishing because it lacks some capability in Web Deploy to pick and choose only those files that were changed or added, and not just publish everything to Azure!
+Oltre a configurare l'integrazione e la distribuzione continue per l'app Web, è sempre possibile usufruire della stretta integrazione con Visual Studio per pubblicare l'app Web in Azure usando la tecnologia Distribuzione Web. Azure supporta inoltre il protocollo FTP, anche se è preferibile non usare FTP per la pubblicazione perché mancano alcune funzionalità in Distribuzione Web per l'individuazione e la scelta solo dei file che sono stati modificati o aggiunti, invece di pubblicare tutto in Azure.
 
-### Built-in auto scale support (automatically scale up/down based on real-world load)
+### <a name="built-in-auto-scale-support-automatically-scale-updown-based-on-real-world-load"></a>Supporto integrato per la scalabilità automatica (aumento e riduzione automatici delle prestazioni in base al carico di lavoro reale)
 
-Baked into the web app is the ability to scale up/down or scale out. Depending on the usage of the web app, you can scale your app up/down by increasing/decreasing the resources of the underlying machine that is hosting your web app. Resources can be number of cores or the amount of RAM available.
+L'app Web offre capacità di scalabilità verticale e orizzontale. In base all'uso dell'app Web, è possibile aumentare o diminuire le prestazioni dell'app aumentando o diminuendo le risorse del computer sottostante che ospita l'app Web. Le risorse possono essere rappresentate dal numero di core o dalla quantità di RAM disponibile.
 
-Scaling out, on the other hand, is the ability to increase the number of machine instances that are running your web app.
+La scalabilità orizzontale è invece la possibilità di aumentare il numero di istanze di computer che eseguono l'app Web.
 
-## What is a resource group?
+## <a name="what-is-a-resource-group"></a>Che cos'è un gruppo di risorse?
 
-A resource group is a method of grouping interdependent resources and services such as virtual machines, web apps, databases, and more for a given application and environment. Think of it as a **folder**, a place to group elements of your app.
+Un gruppo di risorse è un metodo di raggruppamento di risorse e servizi interdipendenti, ad esempio macchine virtuali, app Web, database e altro ancora, per un'applicazione e un ambiente specifici. Può essere considerato come una **cartella** o una posizione in cui raggruppare gli elementi dell'app.
 
-Resource groups allow you to easily manage and delete resources. They also provide a way to monitor, control access, provision, and manage billing for collections of resources that are required to run an application or are used by a client.
+I gruppi di risorse consentono di gestire ed eliminare le risorse con facilità. Consentono inoltre il monitoraggio, il controllo dell'accesso, il provisioning e la gestione della fatturazione per le raccolte di risorse necessarie per eseguire un'applicazione o usate da un client.
 
-## What is an App Service plan?
+## <a name="what-is-an-app-service-plan"></a>Che cos'è un piano di servizio app?
 
-An App Service plan is a set of physical resources and capacity available to deploy your App Service apps into.
+Un piano di servizio app è un set di risorse fisiche e capacità per la distribuzione delle app del servizio app.
 
-The Azure portal provides a template to create a new App Service plan. This template requires the following basic information:
+Il portale di Azure offre un modello per creare un nuovo piano di servizio app. Il modello richiede le seguenti informazioni di base:
 
-- Region (West US, Central US, North Europe, etc.)
-- Scale count (one, two, three instances, etc.)
-- Instance size (Small, Medium, or Large)
-- Stock Keeping Unit - SKU (Free, Shared, Basic, Standard, Premium, and more recently, Premium v2)
+- Area (Stati Uniti occidentali, Stati Uniti centrali, Europa settentrionale e così via)
+- Numero di scala (una, due, tre istanze e così via)
+- Dimensione dell'istanza (Small, Medium o Large)
+- Codice di riferimento del prodotto - SKU (Gratuito, Condiviso, Basic, Standard, Premium e, più di recente, Premium v2)
 
-The Web Apps, Mobile Apps, and API Apps features of Azure App Service, and Azure Functions all run in an App Service plan. While you can deploy an unlimited number of applications into an App Service plan, the number you use greatly depends on the types of applications deployed and their required resources in CPU utilization.
+Le funzionalità App Web, App per dispositivi mobili e App per le API di Servizio app di Azure e Funzioni di Azure vengono tutte eseguite in un piano di servizio app. Sebbene sia possibile distribuire un numero illimitato di applicazioni in un piano di servizio app, il numero varia notevolmente in base ai tipi di applicazioni distribuiti e alle relative risorse necessarie in termini di utilizzo della CPU.
 
-You can always use your App Service plan in the Azure portal to visualize your CPU and memory utilization to help determine your needs for scaling or moving applications into another App Service plan.
+È sempre possibile usare il piano di servizio app nel portale di Azure per visualizzare l'utilizzo della CPU e della memoria e determinare se è necessario ridimensionare o spostare le applicazioni in un altro piano di servizio app.

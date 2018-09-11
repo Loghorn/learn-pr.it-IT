@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.monitor-manage-device-with-iotcentral.3-connect-your-application-to-simulator
+title: Connettere l'applicazione al simulatore della macchina per il caffè
+metadata:
+  title: Connettere l'applicazione al simulatore della macchina per il caffè
+  description: Connettere l'applicazione al simulatore della macchina per il caffè
+  ms.openlocfilehash: d7dbbf8226940d5a61ee707edd7600b0bfd0bf2e
+  ms.sourcegitcommit: b97ed72bd7e3fb77b49de71e8ef35d3f70dfd636
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/05/2018
+  ms.locfileid: "43795033"
+durationInMinutes: 12
+content: '[!include[](includes/3-connect-your-application-to-simulator.md)]'

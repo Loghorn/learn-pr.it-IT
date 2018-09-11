@@ -1,76 +1,76 @@
-Suppose you have an application for the sales team in your global company. Each team member has a mobile phone where your app will be installed. A web service hosted in Azure implements the business logic for your application and stores information in Azure SQL Database. There is one instance of the web service for each geographical region. You have identified the following purposes for sending messages between the mobile app and the web service:
+Si supponga di avere un'applicazione per il team di vendita di un'azienda globale. Ogni membro del team ha un telefono cellulare in cui verrà installata l'app. Un servizio Web ospitato in Azure implementa la logica di business per l'applicazione e archivia le informazioni nel database SQL di Azure. C'è un'istanza del servizio Web per ogni area geografica. Sono stati identificati gli scopi seguenti per l'invio di messaggi tra l'app per dispositivi mobili e il servizio Web:
 
-- Messages that relate to individual sales must be sent only to the web service instance in the user's region.
-- Messages that relate to sales performance must be sent to all instances of the web service.
+- I messaggi relativi a singole vendite devono essere inviati solo all'istanza del servizio Web nell'area dell'utente.
+- I messaggi relativi alle prestazioni di vendita devono essere inviati a tutte le istanze del servizio Web.
 
-You have decided to implement a Service Bus queue for the first use case and the Service Bus topic for the second use case.
+Si è deciso di implementare una coda del bus di servizio per il primo caso d'uso e l'argomento del bus di servizio per il secondo caso d'uso.
 
-In this exercise, you will create a Service Bus namespace, which will contain both a queue and a topic with subscriptions.
+In questo esercizio si creerà uno spazio dei nomi del bus di servizio, che conterrà sia una coda che un argomento con sottoscrizioni.
 
-## Create a Service Bus namespace
+## <a name="create-a-service-bus-namespace"></a>Creare uno spazio dei nomi del bus di servizio
 
-In Azure Service Bus, a namespace is a container, with a unique fully qualified domain name, for queues, topics, and relays. You must start by creating the namespace.
+Nel bus di servizio di Azure uno spazio dei nomi è un contenitore, con un nome di dominio completo univoco, per code, argomenti e inoltri. È necessario iniziare creando lo spazio dei nomi.
 
-Each namespace also has primary and secondary shared access signature encryption keys. A sending or receiving component must provide these keys when it connects to gain access to the objects within the namespace.
+Ogni spazio dei nomi include anche le chiavi di crittografia di firma di accesso condiviso (SAS, Shared Access Signature) primaria e secondaria. Un componente mittente o destinatario deve fornire queste chiavi quando si connette per ottenere l'accesso agli oggetti nello spazio dei nomi.
 
-To create a Service Bus namespace by using the Azure portal, follow these steps:
+Per creare uno spazio dei nomi del bus di servizio usando il portale di Azure, eseguire questa procedura:
 
-1. In a browser, navigate to the [Azure portal](https://portal.azure.com/) and log in with your usual Azure account credentials.
+1. In un browser passare al [portale di Azure](https://portal.azure.com/) e accedere con le proprie credenziali dell'account di Azure.
 
-1. In the navigation on the left, click **All services**.
+1. Nel riquadro di spostamento a sinistra fare clic su **Tutti i servizi**.
 
-1. In the **All Services** blade, scroll down to the **INTEGRATION** section, and then click **Service Bus**.
+1. Nel pannello **Tutti i servizi** scorrere verso il basso fino alla sezione **INTEGRAZIONE** e quindi fare clic su **Bus di servizio**.
 
-    ![Create a Service Bus namespace](../media-draft/3-create-namespace-1.png)
+    ![Creare uno spazio dei nomi del bus di servizio](../media-draft/3-create-namespace-1.png)
 
-1. In the top left of the **Service Bus** blade, click **Add**.
+1. In alto a sinistra nel pannello **Bus di servizio** fare clic su **Aggiungi**.
 
-1. In the **Name** text box, type a unique name for the namespace. For example "salesteamapp" + *your initials* + *current date*.
+1. Nella casella di testo **Nome** digitare un nome univoco per lo spazio dei nomi. Ad esempio "salesteamapp" + *iniziali del nome* + *data corrente*
 
-1. In the **Pricing tier** drop-down list, select **Standard**.
+1. Nell'elenco a discesa **Piano tariffario** selezionare **Standard**.
 
-1. In the **Subscription** drop-down list, select your subscription.
+1. Nell'elenco a discesa **Sottoscrizione** selezionare la sottoscrizione in uso.
 
-1. Under **Resource group**, select **Create new**, and then type **SalesTeamAppRG**.
+1. In **Gruppo di risorse** selezionare **Crea nuovo** e quindi digitare **SalesTeamAppRG**.
 
-1. In the **Location** drop-down list, select a location near you, and then click **Create**. Azure creates the new Service Bus namespace.
+1. Nell'elenco a discesa **Località** selezionare una località nelle vicinanze e quindi fare clic su **Crea**. Azure creerà il nuovo spazio dei nomi del bus di servizio.
 
-    ![Create a Service Bus namespace](../media-draft/3-create-namespace-2.png)
+    ![Creare uno spazio dei nomi del bus di servizio](../media-draft/3-create-namespace-2.png)
 
-## Create a Service Bus queue
+## <a name="create-a-service-bus-queue"></a>Creare una coda del bus di servizio
 
-Now that you have a namespace, you can create a queue for messages about individual sales. To do this, follow these steps:
+Dopo aver creato uno spazio dei nomi, è possibile creare una coda per i messaggi relativi alle singole vendite. A questo scopo, seguire questa procedura:
 
-1. In the **Service Bus** blade, click **Refresh**. The namespace you just created is displayed.
+1. Nel pannello **Bus di servizio** fare clic su **Aggiorna**. Verrà visualizzato lo spazio dei nomi appena creato.
 
-1. Click the namespace you just created.
+1. Fare clic sullo spazio dei nomi appena creato.
 
-1. In the top left of the namespace blade, click **+ Queue**.
+1. In alto a sinistra nel pannello dello spazio dei nomi fare clic su **Coda**.
 
-1. In the **Create queue** blade, in the **Name** text box, type **salesmessages**, and then click **Create**. Azure creates the queue in your namespace.
+1. Nel pannello **Crea coda**, nella casella di testo **Nome** digitare **salesmessages** e quindi fare clic su **Crea**. Azure creerà la coda nello spazio dei nomi.
 
-    ![Creating a queue](../media-draft/3-create-queue.png)
+    ![Creazione di una coda](../media-draft/3-create-queue.png)
 
-## Create a Service Bus topic and subscriptions
+## <a name="create-a-service-bus-topic-and-subscriptions"></a>Creare un argomento del bus di servizio e le sottoscrizioni
 
-You also want to create a topic that will be used for messages that relate to sales performance. Multiple instances of the business logic web service will subscribe to this topic from different countries. Each message will be delivered to multiple instances.
+Si vuole creare anche un argomento che verrà usato per i messaggi relativi alle prestazioni di vendita. Più istanze del servizio Web per la logica di business eseguiranno la sottoscrizione di questo argomento da paesi diversi. Ogni messaggio verrà recapitato a più istanze.
 
-Follow these steps:
+Seguire questa procedura:
 
-1. In the **Service Bus Namespace** blade, click **+ Topic**.
+1. Nel pannello **Spazio dei nomi del bus di servizio** fare clic su **+ Argomento**.
 
-1. In the **Create topic** blade, in the **Name** text box, type **salesperformancemessages**, and then click **Create**. Azure creates the topic in your namespace.
+1. Nel pannello **Crea argomento**, nella casella di testo **Nome** digitare **salesperformancemessages** e quindi fare clic su **Crea**. Azure creerà l'argomento nello spazio dei nomi.
 
-    ![Creating a topic](../media-draft/3-create-topic.png)
+    ![Creazione di un argomento](../media-draft/3-create-topic.png)
 
-1. When the topic has been created, in the **Service Bus Namespace** blade, under **Entities**, click **Topics**.
+1. Quando l'argomento è stato creato, nel pannello **Spazio dei nomi del bus di servizio** fare clic su **Argomenti** in **Entità**.
 
-1. In the list of topics, click **salesperformancemessages**, and then click **+ Subscription**.
+1. Nell'elenco di argomenti fare clic su **salesperformancemessages** e quindi fare clic su **+ Sottoscrizione**.
 
-1. In the **Name** text box, type **Americas**, and then click **Create**.
+1. Nella casella di testo **Nome** digitare **Americas** e quindi fare clic su **Crea**.
 
-1. Click **+ Subscription**.
+1. Fare clic su **+ Sottoscrizione**.
 
-1. In the **Name** text box, type **EuropeAndAfrica**, and then click **Create**.
+1. Nella casella di testo **Nome** digitare **EuropeAndAfrica** e quindi fare clic su **Crea**.
 
-You have built the infrastructure required to use Service Bus to increase the resilience of your sales force distributed application. You have created a queue for messages about individual sales and a topic for messages about sales performance. The topic includes multiple subscriptions because messages sent to that topic can be delivered to multiple recipient web services around the world.
+È stata creata l'infrastruttura necessaria per usare il bus di servizio per aumentare la resilienza dell'applicazione distribuita per la forza vendita. Sono stati creati una coda per i messaggi relativi alle singole vendite e un argomento per i messaggi relativi alle prestazioni di vendita. L'argomento include più sottoscrizioni perché i messaggi inviati all'argomento possono essere recapitati a più servizi Web di destinazione in tutto il mondo.

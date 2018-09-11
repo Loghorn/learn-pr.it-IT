@@ -1,42 +1,42 @@
-Data backup and recovery is a necessary piece of the planning for any good infrastructure. Perhaps it's a bug that erases some data, or maybe you need to retrieve some archived data for auditing purposes. Maintaining a good backup strategy will ensure you aren't scrambling when data or software needs to be restored.
+Il backup e ripristino dei dati è una parte necessaria della pianificazione di qualsiasi valida infrastruttura. Potrebbe trattarsi di un bug che cancella i dati o potrebbe essere necessario recuperare alcuni dati archiviati a fini di controllo. Adottando una valida strategia di backup, non si avranno problemi quando sarà necessario ripristinare dati o software.
 
-**Azure Backup** is a _backup as a service_ offering that protects physical or virtual machines no matter where they reside: on-premises or in the cloud.
+**Backup di Azure** è un'offerta di _backup come servizio_ che protegge i computer fisici o le macchine virtuali indipendentemente da dove si trovano: in locale o nel cloud.
 
-Azure Backup can be used for a wide range of data backup scenarios, such as the following:
+Backup di Azure può essere usato per svariati scenari di backup dei dati, ad esempio i seguenti:
 
-- Files and folders on Windows OS machines (physical or virtual, local or cloud)
-- Application-aware snapshots (Volume Shadow Copy Service)
-- Popular Microsoft server workloads such as Microsoft SQL Server, Microsoft SharePoint, and Microsoft Exchange
-- Native support for Azure Virtual Machines, both Windows, and Linux
-- Linux and Windows 10 client machines
+- File e cartelle in computer con sistema operativo Windows (fisici o virtuali, locali o cloud)
+- Snapshot con riconoscimento dell'applicazione (Servizio Copia Shadow del volume)
+- Carichi di lavoro dei server Microsoft più diffusi, ad esempio Microsoft SQL Server, Microsoft SharePoint e Microsoft Exchange
+- Supporto nativo per Macchine virtuali di Azure, sia Windows che Linux
+- Computer client Linux e Windows 10
 
-![Azure Backup](../media/6-backup-server.png)
+![Backup di Azure](../media/6-backup-server.png)
 
-## Advantages of using Azure Backup
+## <a name="advantages-of-using-azure-backup"></a>Vantaggi dell'uso di Backup di Azure
 
-Traditional backup solutions don't always take full advantage of the underlying Azure platform. The result is a solution that tends to be expensive or inefficient. The solution either offers too much or too little storage, does not offer the correct types of storage, or has cumbersome and long-winded administrative tasks. Azure Backup was designed to work in tandem with other Azure services and provides several distinct benefits.
+Le tradizionali soluzioni di backup non sempre sfruttano pienamente la piattaforma Azure sottostante. La soluzione tende quindi a essere costosa o inefficiente. La soluzione offre troppo spazio di archiviazione oppure troppo poco, non offre i tipi corretti di archiviazione o comporta attività amministrative lunghe e complesse. Backup di Azure è stato progettato per operare in parallelo con altri servizi di Azure e offre numerosi vantaggi specifici.
 
-- **Automatic storage management**. Azure Backup automatically allocates and manages backup storage and uses a pay-as-you-use model. You only pay for what you use.
+- **Gestione automatica dell'archiviazione**. Backup di Azure alloca e gestisce automaticamente l'archivio di backup e usa un modello di pagamento in base al consumo. Si paga solo per le risorse usate.
 
-- **Unlimited scaling**. Azure Backup uses the power and scalability of Azure to deliver high availability.
+- **Scalabilità illimitata**. Backup di Azure usa le potenti funzionalità e la scalabilità di Azure per garantire una disponibilità elevata.
 
-- **Multiple storage options**. Azure Backup offers locally redundant storage where all copies of the data exist within the same region and geo-redundant storage where your data is replicated to a secondary region.
+- **Più opzioni di archiviazione**. Backup di Azure offre l'archiviazione con ridondanza locale, in cui tutte le copie dei dati esistono nella stessa area, e l'archiviazione con ridondanza geografica, in cui i dati vengono replicati in un'area secondaria.
 
-- **Unlimited data transfer**. Azure Backup does not limit the amount of inbound or outbound data you transfer. Azure Backup also does not charge for the data that is transferred.
+- **Trasferimento dei dati senza limiti**. Backup di Azure non limita la quantità di dati trasferiti in ingresso o in uscita. Backup di Azure non addebita costi per i dati trasferiti.
 
-- **Data encryption**. Data encryption allows for secure transmission and storage of your data in Azure.
+- **Crittografia dei dati**. La crittografia dei dati consente la trasmissione e l'archiviazione sicure dei dati in Azure.
 
-- **Application-consistent backup**. An application-consistent backup means that a recovery point has all required data to restore the backup copy. Azure Backup provides application-consistent backups.
+- **Backup coerente con l'applicazione**. Un backup coerente con l'applicazione indica che un punto di ripristino ha tutti i dati necessari per ripristinare la copia di backup. Backup di Azure fornisce backup coerenti con le applicazioni.
 
-- **Long-term retention**. Azure doesn't limit the length of time you keep the backup data.
+- **Conservazione a lungo termine**. Azure non limita il periodo di conservazione dei dati di backup.
 
-## Using Azure Backup
+## <a name="using-azure-backup"></a>Uso di Backup di Azure
 
-Azure Backup utilizes several components that you download and deploy to each computer you want to back up. The component that you deploy depends on what you want to protect.
+Backup di Azure utilizza diversi componenti che vengono scaricati e distribuiti in ogni computer di cui si vuole eseguire il backup. Il componente distribuito dipende dall'elemento che si intende proteggere.
 
-- Azure Backup agent
+- Agente di Backup di Azure
 - System Center Data Protection Manager
-- Azure Backup Server
-- Azure Backup VM extension
+- Server di Backup di Azure
+- Estensione macchina virtuale di Backup di Azure
 
-Azure Backup uses a Recovery Services vault for storing the backup data. A vault is backed by Azure Storage blobs, making it a very efficient and economical long-term storage medium. With the vault in place, you can select the machines to back up and define a backup policy (when snapshots are taken and for how long they’re stored).
+Backup di Azure usa l'insieme di credenziali di Servizi di ripristino per archiviare i dati di backup. Un insieme di credenziali è supportato dai BLOB di Archiviazione di Azure, che ne fanno un supporto di archiviazione a lungo termine molto efficiente ed economico. Con l'insieme di credenziali è possibile selezionare i computer di cui eseguire un backup e definire un criterio di backup (quando acquisire gli snapshot e per quanto tempo archiviarli).

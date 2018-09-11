@@ -5,6 +5,7 @@ La società riceve i dati dei sensori da diverse località e da diversi modelli 
 Quando si progetta un servizio di questo tipo con strategie di architettura aziendale tradizionali, è necessario prendere in considerazione l'infrastruttura server e la manutenzione fin dall'inizio: predisporre l'hardware necessario, pianificarne l'installazione, coordinare il personale IT per la gestione e così via. Un'alternativa a questo scenario è l'**elaborazione serverless**. Con l'elaborazione serverless il provider di servizi cloud gestisce il provisioning e la manutenzione dell'infrastruttura, consentendo agli sviluppatori di concentrarsi completamente sulla creazione del codice dell'app. Funzioni di Azure è un componente fondamentale dell'offerta di elaborazione serverless di Azure e consente di eseguire nel cloud frammenti di codice o *funzioni* scritte nel linguaggio di programmazione preferito.
 
 ## <a name="learning-objectives"></a>Obiettivi di apprendimento
+
 In questo modulo verrà descritto come:
 
 - Decidere se l'elaborazione serverless è adatta alle esigenze aziendali.

@@ -1,18 +1,18 @@
-Multiple documents in your database frequently need to be updated at the same time. This unit discusses how to create, register, and run stored procedures from your .NET console application.
+Capita di frequente che più documenti nel database debbano essere aggiornati contemporaneamente. Questa unità illustra come creare, registrare ed eseguire stored procedure dall'applicazione console .NET.
 
-## Create a stored procedure in your app
+## <a name="create-a-stored-procedure-in-your-app"></a>Creare una stored procedure nell'app
 
-In this stored procedure, the OrderId, which contains a list of all the items in the order, is used to calculate an order total. The order total is calculated from the sum of the items in the order, less any dividends (credits) the customer has, and takes any coupon codes into account.
+In questa stored procedure, OrderId, che contiene un elenco di tutti gli articoli nell'ordine, viene usato per calcolare il totale di un ordine. Il totale degli ordini viene calcolato dalla somma degli articoli nell'ordine, meno eventuali bonus (crediti) del cliente e tenendo conto di eventuali codici di coupon.
 
-1. In Visual Studio Code, in the Azure tab, expand the **learning-module (SQL)** > **Users** > **WebCustomers** and then right-click **Stored Procedures** and then click **Create Stored Procedure**.
+1. In Visual Studio Code, nella scheda Azure, espandere **modulo di apprendimento (SQL)** > **Utenti** > **WebCustomers**, fare clic con il pulsante destro del mouse su **Stored procedure** e quindi fare clic su **Crea Stored Procedure**.
 
-1. In the text box at the top of the screen, type *UpdateOrderTotal* and click Enter to give the stored procedure a name.
+1. Nella casella di testo nella parte superiore della schermata, digitare *UpdateOrderTotal* e premere Invio per assegnare un nome alla stored procedure.
 
-1. Expand **Stored Procedures** and click **UpdateOrderTotal**.
+1. Espandere **Stored procedure** e fare clic su **UpdateOrderTotal**.
 
-1. By default, a stored procedure that retrieves the first item is provided.
+1. Per impostazione predefinita, viene fornita una stored procedure che recupera il primo elemento.
 
-1. To run this stored procedure from your application, add the following code to the Program.cs file.
+1. Per eseguire questa stored procedure dall'applicazione, aggiungere il codice seguente al file Program.cs.
 
     ```csharp
     public async Task RunStoredProcedure(string databaseName, string collectionName, User user)
@@ -30,36 +30,35 @@ In this stored procedure, the OrderId, which contains a list of all the items in
     ```
     <!--TODO: Update sproc to take order total and check for available dividend, and use of summer coupon code, and provide updated total-->
 
-1. Now copy the following code and paste it into the end of the **BasicOperations** method.
+1. Copiare ora il codice seguente e incollarlo alla fine del metodo **BasicOperations**.
 
     ```
     await this.RunStoredProcedure("Users", "WebCustomers", yanhe);
     ```
 
-1. In the integrated terminal, run the following command to run the sample with the stored procedure.
+1. Eseguire il comando seguente nel terminale integrato per eseguire l'esempio con la stored procedure.
 
     ```
     dotnet run
     ```
-    The console displays output indicating that the stored procedure was completed.
+    La console mostra l'output che indica il completamento della stored procedure.
 
-## Clean up
-<!---TODO: Update for sandbox?--->
+## <a name="clean-up"></a>Eseguire la pulizia
 
-If you plan to continue working on the modules in this learning path, skip the clean-up process, or else use the following steps to delete your resources to avoid incurring charges for use of the service.
+Se si prevede di continuare a utilizzare i moduli in questo percorso di apprendimento, ignorare il processo di pulizia, altrimenti usare la procedura seguente per eliminare le risorse per evitare di incorrere in addebiti per l'uso del servizio.
 
-1. In the Azure portal, select **Resource groups** on the far left, and then select the resource group you created.  
+1. Nel portale di Azure selezionare **Gruppi di risorse** all'estrema sinistra e quindi selezionare il gruppo di risorse creato.  
 
-    If the left menu is collapsed, click ![Expand button](../media/5-javascript-programming/expand.png) to expand it.
+    Se il menu a sinistra è compresso, fare clic sul ![pulsante Espandi](../media/5-javascript-programming/expand.png) per espanderlo.
 
-   ![Metrics in the Azure portal](../media/5-javascript-programming/delete-resources-select.png)
+   ![Metriche nel portale di Azure](../media/5-javascript-programming/delete-resources-select.png)
 
-1. In the new window select the resource group, and then click **Delete resource group**.
+1. Nella nuova finestra selezionare il gruppo di risorse e quindi fare clic su **Elimina gruppo di risorse**.
 
-   ![Metrics in the Azure portal](../media/5-javascript-programming/delete-resources.png)
+   ![Metriche nel portale di Azure](../media/5-javascript-programming/delete-resources.png)
 
-1. In the new window, type the name of the resource group to delete, and then click **Delete**.
+1. Nella nuova finestra digitare il nome del gruppo di risorse da eliminare e quindi fare clic su **Elimina**.
 
-## Summary
+## <a name="summary"></a>Riepilogo
 
-In this module you've created a .NET Core console application that creates, updates, and deletes user records, queries the users by using SQL and LINQ, and runs a stored procedure to query items in the database.
+In questo modulo è stata creata un'applicazione console .NET Core che crea, aggiorna ed elimina i record utente, esegue query per gli utenti con SQL e LINQ ed esegue una stored procedure per eseguire query per gli elementi nel database.

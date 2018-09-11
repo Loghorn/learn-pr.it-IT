@@ -1,15 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.choose-messaging-model.5-choose-event-grid
-title: Choose Azure Event Grid
+title: Scegliere Griglia di eventi di Azure
 metadata:
-  title: Choose Azure Event Grid
-  description: Choose Azure Event Grid
+  title: Scegliere Griglia di eventi di Azure
+  description: Scegliere Griglia di eventi di Azure
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
+  ms.openlocfilehash: 13922e048e963ab683a63fa506a6fe4c1222b86f
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44233374"
 durationInMinutes: 10
-content: |
-  [!include[](includes/5-choose-event-grid.md)]
+content: '[!include[](includes/5-choose-event-grid.md)]'

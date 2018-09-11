@@ -1,115 +1,115 @@
-Your team has decided to leverage the capabilities of the Azure Event Hubs to manage and process the increasing transaction volumes coming through your system.
+Il team ha deciso di sfruttare le funzionalità di Hub eventi di Azure per gestire ed elaborare i crescenti volumi di transazioni gestiti dal sistema.
 
-An event hub is an Azure resource, so your first step is to create a new hub in Azure and configure it to meet the specific requirements of your applications.
+Un hub eventi è una risorsa di Azure, quindi il primo passaggio consiste nel creare un nuovo hub in Azure e configurarlo per soddisfare gli specifici requisiti delle applicazioni.
 
-## What is an Azure event hub?
+## <a name="what-is-an-azure-event-hub"></a>Che cos'è un hub eventi di Azure?
 
-Azure Event Hubs is a cloud-based, event-processing service that's capable of receiving and processing millions of events per second. Event Hubs acts as a front door for an event pipeline, where it receives incoming data and stores it until processing resources are available.
+Hub eventi di Azure è un servizio di elaborazione di eventi basato sul cloud, in grado di ricevere ed elaborare milioni di eventi al secondo. Hub eventi opera come una porta principale per una pipeline di eventi, poiché riceve i dati in ingresso e li archivia finché non sono disponibili le risorse di elaborazione.
 
-An entity that sends data to the Event Hubs is called a *publisher* and an entity that reads data from the Event Hubs is called a *consumer* or a *subscriber*. Azure Event Hubs sits between these two entities to divide the production (from publisher) and consumption (to subscriber) of an event stream. This decoupling helps to manage scenarios where the rate of event production is much higher than the consumption. The following illustration shows the role of an event hub.
+Un'entità che invia dati a Hub eventi è denominata *autore*, mentre un'entità che legge i dati da Hub eventi è denominata *consumer* o *sottoscrittore*. Hub eventi di Azure è posizionato tra queste due entità per suddividere la produzione (dall'autore) e l'uso (verso il sottoscrittore) di un flusso di eventi. Questa separazione consente di gestire scenari in cui il tasso di produzione di eventi è notevolmente superiore all'uso.
 
-![An illustration showing an Azure Event Hub placed between four publishers and two subscribers. The Event hub receives multiple events from the publishers, serializes the events into data streams, and makes the data streams available to subscribers.](../media-draft/2-event-hub-overview.png)
+![Gli autori inviano più eventi a un singolo hub eventi e rendono disponibili i dati ai sottoscrittori](../media-draft/2-event-hub-overview.png "Panoramica di Hub eventi")
 
-### Events
+### <a name="events"></a>Eventi
 
-An **event** is a small packet that contains a notification of a change and not the details of what exactly has changed. You can't configure a consumer application to initiate some form of query to find out the details, but this isn't a requirement and Event Hubs doesn't handle this. Events can be published individually, or in batches, but a single publication (individual or batch) can't exceed 256 KB.
+Un **evento** è un pacchetto di piccole dimensioni che contiene una notifica di una modifica, senza tutti i dettagli sull'elemento che è stato modificato. È possibile configurare un'applicazione consumer per avviare una query allo scopo di ottenere i dettagli, ma questo non è un requisito e Hub eventi non gestisce questa operazione. Gli eventi possono essere pubblicati singolarmente o in batch, ma una pubblicazione (singola o in batch) non può superare i 256 KB.
 
-On the contrary, in message queuing (in Azure Service Bus), the **message** contains data and the event, and the publisher of the message expects the consumer to process the message in a particular way.
+Al contrario, nell'accodamento dei messaggi (nel bus di servizio di Azure) il **messaggio** contiene sia i dati che l'evento e l'autore del messaggio si aspetta che il consumer elabori il messaggio in un modo specifico.
 
-### Publishers and subscribers
+### <a name="publishers-and-subscribers"></a>Autori e sottoscrittori
 
-Event publishers are any application or device that can send out event data using either HTTPS or Advanced Message Queuing Protocol (AQMP) 1.0. 
+Un autore di eventi è qualsiasi applicazione o dispositivo che può inviare dati di eventi tramite HTTPS o Advance Message Queueing Protocol (AQMP) 1.0. 
 
-For publishers that send data frequently, AMQP has the better performance. However, it has a higher initial session overhead, because a persistent bidirectional socket and transport level security (TLS) or SSL/TLS has to be set up first. 
+Per gli autori che inviano dati di frequente, AMQP offre le migliori prestazioni. Tuttavia, presenta un maggiore sovraccarico iniziale per le sessioni, perché è prima necessario configurare un socket bidirezionale persistente e TLS (Transport Layer Security) o SSL/TLS. 
 
-For more intermittent publishing, HTTPS is the better option. Though HTTPS requires additional SSL overhead for every request, there isn’t the session initialization overhead.
+Per una pubblicazione più intermittente, è preferibile HTTPS. Anche se HTTPS richiede un sovraccarico SSL aggiuntivo per ogni richiesta, non presenta il sovraccarico di inizializzazione della sessione.
 
 > [!NOTE] 
-> Existing Kafka-based applications, using Apache Kafka 1.0 and newer client versions, can also act as Event Hubs publishers.
+> Anche le applicazioni esistenti basate su Kafka, che usano client Apache Kafka 1.0 e versioni successive, possono operare come autori per Hub eventi.
 
-Event subscribers are applications that use one of two supported programmatic methods to receive and process events from an event hub.
+I sottoscrittori di eventi sono applicazioni che usano uno dei due metodi supportati a livello di programmazione per ricevere ed elaborare gli eventi da un hub eventi.
 
-- **EventHubReceiver** - A simple method that provides limited management options.
-- **EventProcessorHost** - An efficient method that we’ll use later in this module.
+- **EventHubReceiver**: un metodo semplice che include opzioni di gestione limitate.
+- **EventProcessorHost**: un metodo efficiente che verrà usato più avanti in questo modulo.
 
-### Consumer groups
+### <a name="consumer-groups"></a>Gruppi di consumer
 
-An event hub **consumer group** represents a specific view of an event hub data stream. By using separate consumer groups, multiple subscriber applications can process an event stream independently, and without affecting other applications. However, the use of multiple consumer groups is not a requirement, and for many applications, the single default consumer group is sufficient.
+Un **gruppo di consumer** di un hub eventi rappresenta una visualizzazione specifica di un flusso di dati dell'hub eventi. Usando gruppi di consumer distinti, più applicazioni sottoscrittore possono elaborare un flusso di eventi in modo indipendente e senza influire sulle altre applicazioni. Tuttavia, l'uso di più gruppi di consumer non è un requisito e per molte applicazioni il gruppo di consumer predefinito è sufficiente.
 
-### Pricing
+### <a name="pricing"></a>Prezzi
 
-There are three pricing tiers for Azure Event Hubs: Basic, Standard, and Dedicated. The tiers differ in terms of supported connections, number of available Consumer groups, and throughput. When using Azure CLI to create an Event Hubs Namespace, if you don't specify a pricing tier, the default of **Standard** (20 Consumer groups, 1000 Brokered connections) is assigned.
+Sono disponibili tre piani tariffari per Hub eventi di Azure: Basic, Standard e Dedicato. I livelli presentano differenze in termini di connessioni supportate, numero di gruppi di consumer disponibili e velocità effettiva. Quando si usa l'interfaccia della riga di comando di Azure per creare uno spazio dei nomi di Hub eventi, se non si specifica un piano tariffario, viene assegnato il valore predefinito **Standard** (20 gruppi di consumer, 1000 connessioni negoziate).
 
-## Creating and configuring a new Azure Event Hubs
+## <a name="creating-and-configuring-a-new-azure-event-hubs"></a>Creazione e configurazione di un nuovo hub eventi di Azure
 
-There are two main steps when creating and configuring a new Azure Event Hubs. The first step is to define an Event Hubs **namespace**. The second step is to create an event hub in that namespace.
+La creazione e la configurazione di un nuovo hub eventi di Azure comprende due passaggi principali. Il primo passaggio consiste nel definire lo **spazio dei nomi** di Hub eventi. Il secondo passaggio consiste nel creare un hub eventi nello spazio dei nomi.
 
-### Defining an Event Hubs namespace
+### <a name="defining-an-event-hubs-namespace"></a>Definizione di uno spazio dei nomi di Hub eventi
 
-An Event Hubs namespace is a containing entity for managing one or more Event Hubs. 
+Uno spazio dei nomi di Hub eventi è un'entità contenitore per la gestione di uno o più hub eventi. 
 
-Creating an Event Hubs namespace typically involves the following:
+La creazione di uno spazio dei nomi di Hub eventi in genere comporta quanto segue:
 
-1. Defining namespace-level settings. Certain settings such as namespace capacity (configured using **throughput units**), pricing tier, and performance metrics are defined at the namespace level. These are applicable for all the event hubs within that namespace. If you don't define these settings, a default value is used: *1* for capacity and *Standard* for pricing tier.
+1. Definizione delle impostazioni a livello di spazio dei nomi. Alcune impostazioni, come la capacità dello spazio dei nomi (configurata tramite le **unità elaborate**), il piano tariffario e le metriche delle prestazioni, sono definite a livello di spazio dei nomi. Queste sono applicabili per tutti gli hub eventi nello spazio dei nomi. Se non si definiscono queste impostazioni, viene usato un valore predefinito: *1* per la capacità e *Standard* per il piano tariffario.
 
-    You cannot change the throughput unit once you set it. You must balance your configuration against your Azure budget expectations. You might consider configuring different event hubs for different throughput requirements. For example, if you have a sales data application and you are planning for two Event Hubs, one for high throughput collection of real-time sales data telemetry and one for infrequent event log collection, it would make sense to use a separate namespace for each hub. This way you only need to configure (and pay for) high throughput capacity on the telemetry hub.
+    Una volta impostate le unità elaborate, non è possibile modificarle. È necessario bilanciare la configurazione rispetto alle aspettative per il budget di Azure. È possibile valutare la configurazione di diversi hub eventi per differenti requisiti di velocità effettiva. Ad esempio, se si dispone di un'applicazione per i dati di vendita e si prevede di usare due hub eventi (uno per la raccolta con una velocità effettiva elevata di informazioni di telemetria in tempo reale sui dati di vendita e uno per la raccolta dei log eventi con una minore frequenza), potrebbe essere utile usare uno spazio dei nomi distinto per ogni hub. In questo modo, è sufficiente configurare (ed effettuare il pagamento per) la capacità con velocità effettiva elevata nell'hub di telemetria.
 
-1. Selecting a unique name for the namespace. The namespace is accessible through this url: *_namespace_.servicebus.windows.net*
+1. Selezione di un nome univoco per lo spazio dei nomi. Lo spazio dei nomi è accessibile all'URL: *_spazio dei nomi_.servicebus.windows.net*
 
-1. Defining the following optional properties:
+1. Definizione delle proprietà facoltative seguenti:
 
-    - Enable Kafka. This option enables Kafka applications to publish events to the event hub.
-    - Make this namespace zone redundant. Zone-redundancy replicates data across separate data centers with their own independent power, networking, and cooling infrastructures.
-    - Enable Auto-Inflate, and Auto-Inflate Maximum Throughput Units. Auto-Inflate provides an automatic scale-up option, by increasing the number of throughput units up to a maximum value. This is useful to avoid throttling in situations when incoming or outgoing data rates exceed the currently set number of throughput units.
+    - Abilita Kafka. Questa opzione consente alle applicazioni Kafka di pubblicare eventi nell'hub eventi.
+    - Imposta la ridondanza della zona per questo spazio dei nomi. La ridondanza della zona replica i dati tra data center distinti con infrastrutture di alimentazione, rete e raffreddamento indipendenti.
+    - Abilita aumento automatico e Numero massimo di unità elaborate per l'aumento automatico. L'aumento automatico offre un'opzione per la scalabilità, aumentando il numero di unità elaborate fino a un valore massimo. Questo è utile per evitare la limitazione delle richieste nelle situazioni in cui le velocità dei dati in ingresso o in uscita superano il numero di unità elaborate attualmente impostato.
 
-### Azure CLI commands for creating an Event Hubs namespace
+### <a name="azure-cli-commands-for-creating-an-event-hubs-namespace"></a>Comandi dell'interfaccia della riga di comando di Azure per la creazione di uno spazio dei nomi di Hub eventi
 
-To create a new Event Hubs namespace, you use the following commands:
+Per creare un nuovo spazio dei nomi di Hub eventi, usare i comandi seguenti:
 
-1. In Azure, a resource group is a container that holds related Azure resources for ease of management. If required, create a new resource group for your event hub.
+1. Un gruppo di risorse di Azure è un contenitore con risorse di Azure correlate per facilitare la gestione. Se necessario, creare un nuovo gruppo di risorse per l'hub eventi.
 
     ```azurecli
     az group create --name <resource group name> --location <location>
     ```
 
-1. Create the Event Hubs Namespace, using the same resource group and location as in the previous step.
+1. Creare lo spazio dei nomi di Hub eventi con lo stesso gruppo di risorse e la stessa posizione del passaggio precedente.
 
     ```azurecli
     az eventhubs namespace create --name <Event Hubs namespace name> --resource-group <resource group name> -l <location>
     ```
 
-1. All Event Hubs within the same Event Hubs namespace share common connection credentials. You will need these credentials when you configure applications to send and receive messages using the event hub. Use the following command to return the connection string for your Event Hubs namespace, using the same resource group and Event Hubs namespace name as before.
+1. Tutti gli hub eventi nello stesso spazio dei nomi di Hub eventi condividono credenziali di connessione comuni. Queste credenziali saranno necessarie per configurare le applicazioni per inviare e ricevere messaggi tramite l'hub eventi. Usare il comando seguente per restituire la stringa di connessione per lo spazio dei nomi di Hub eventi, con il gruppo di risorse e il nome dello spazio dei nomi di Hub eventi usati in precedenza.
 
     ```azurecli
     az eventhubs namespace authorization-rule keys list --resource-group <resource group name> --namespace-name <EventHub namespace name> --name RootManageSharedAccessKey
     ```
 
-### Configuring a new event hub
+### <a name="configuring-a-new-event-hub"></a>Configurazione di un nuovo hub eventi
 
-After the Event Hubs namespace has been created, you can create an event hub. When creating a new event hub, there are several mandatory parameters.
+Dopo aver creato lo spazio dei nomi di Hub eventi, è possibile creare un hub eventi. Quando si crea un nuovo hub eventi, esistono alcuni parametri obbligatori.
 
-The following parameters are required to create an event hub:
+Per creare un hub eventi, sono necessari i parametri seguenti:
 
-- **Event hub name** - Event hub name that is unique within your subscription and:
-  - Is between 1 and 50 characters long
-  - Contains only letters, numbers, periods, hyphens, and underscores
-  - Starts and ends with a letter or number
-- **Partition Count** -  The number of partitions required in an event hub (between 2 and 32). This should be directly related to the expected number of concurrent consumers. This cannot be changed after the hub has been created. The partition separates the message stream, so that consumer or receiver applications only need to read a specific subset of the data stream. If not defined, this defaults to *4*.
-- **Message Retention** - The number of days (between 1 and 7) that messages will remain available, if the data stream needs to be replayed for any reason. If not defined, this defaults to *7*.
+- **Nome hub eventi**: nome dell'hub eventi. Deve essere univoco all'interno della sottoscrizione e:
+  - Compreso tra 1 e 50 caratteri.
+  - Deve contenere solo lettere, numeri, punti, trattini e caratteri di sottolineatura.
+  - Deve iniziare e terminare con una lettera o un numero.
+- **Numero di partizioni**: numero di partizioni necessarie in un hub eventi (compreso tra 2 e 32). Deve essere direttamente correlato al numero di consumer concorrenti previsto. Questa opzione non può essere modificata dopo la creazione dell'hub. La partizione separa il flusso dei messaggi, in modo che per le applicazioni consumer o ricevitore sia sufficiente leggere uno specifico subset del flusso di dati. Se non è definito, il valore predefinito è *4*.
+- **Conservazione messaggi**: numero di giorni (compreso tra 1 e 7) per cui rimarranno disponibili i messaggi, se dovesse essere necessario riprodurre il flusso dei dati per qualsiasi motivo. Se non è definito, il valore predefinito è *7*.
 
-You can also optionally configure an event hub to stream data to an Azure Blob storage or Azure Data Lake Store account.
+È anche possibile configurare un hub eventi per trasmettere i dati a un account di Archiviazione BLOB di Azure o Azure Data Lake Store.
 
-### Azure CLI commands for creating an event hub
+### <a name="azure-cli-commands-for-creating-an-event-hub"></a>Comandi dell'interfaccia della riga di comando di Azure per la creazione di un hub eventi
 
-To create a new event hub, you use the following commands:
+Per creare un nuovo hub eventi, usare i comandi seguenti:
 
-1. Create the event hub, using the same resource group and location as you used when creating the namespace.
+1. Creare l'hub eventi con lo stesso gruppo di risorse e la stessa posizione usati per la creazione dello spazio dei nomi.
 
     ```azurecli
     az eventhubs eventhub create --name <event hub name> --resource-group <Resource Group name> --namespace-name <Event Hubs namespace name>
     ```
 
-1. View the details of your event hub in the namespace, using the same resource group and event hub name and namespace name as before.
+1. Visualizzare i dettagli dell'hub eventi nello spazio dei nomi, con il gruppo di risorse, il nome dell'hub eventi e il nome dello spazio dei nomi usati in precedenza.
 
     ```azurecli
     az eventhubs eventhub show --resource-group <Resource Group name> --namespace-name <Event Hubs namespace name> --name <event hub name>

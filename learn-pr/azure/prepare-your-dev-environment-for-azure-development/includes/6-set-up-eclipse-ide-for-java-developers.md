@@ -1,31 +1,31 @@
-The Eclipse integrated development environment (IDE) is used for Java development by a lot of developers. It is a great choice for connecting your Java application to your Azure subscription, as there are many tools readily available. The Azure Toolkit for Eclipse provides templates and features to simplify using Azure in your Java applications.
+L'ambiente di sviluppo integrato (IDE) di Eclipse viene usato per lo sviluppo Java da molti sviluppatori. Si tratta di una scelta ottimale per la connessione dell'applicazione Java alla sottoscrizione di Azure, perché sono disponibili molti strumenti pronti per l'uso. Azure Toolkit for Eclipse fornisce modelli e funzionalità per semplificare l'uso di Azure nelle applicazioni Java.
 
-## Eclipse
+## <a name="eclipse"></a>Eclipse
 
-The most widely used IDE by Java developers is Eclipse. It is a very versatile development environment, which has an extensible plugin architecture that can be used to support other languages apart from Java. While the majority of Eclipse users are Java developers, a lot of other disciplines are also using Eclipse, including C++, Python, C, and Ruby. It receives regular annual updates to keep the IDE modern and up-to-date.
+L'IDE più usato dagli sviluppatori Java è Eclipse. Si tratta di un ambiente di sviluppo versatile, che include un'architettura di plug-in estensibile che può essere usata per supportare altri linguaggi, oltre a Java. Benché la maggior parte degli utenti di Eclipse sia costituita da sviluppatori Java, molte altre discipline usano Eclipse, ad esempio C++, Python, C e Ruby. Riceve aggiornamenti annuali regolari, per assicurare un ambiente di sviluppo integrato moderno e aggiornato.
 
-Eclipse is used for large enterprise apps, and many of these are likely to require connections to Microsoft Azure services and products.
+Eclipse viene usato per app aziendali di grandi dimensioni ed è probabile che molte di tali app richiedano connessioni ai servizi e ai prodotti di Microsoft Azure.
 
-## Azure Toolkit for Eclipse
+## <a name="azure-toolkit-for-eclipse"></a>Azure Toolkit for Eclipse
 
-The Azure Toolkit for Eclipse provides templates and functionality that you can use to easily create, develop, test, and deploy cloud applications to Azure from inside the Eclipse IDE.
+Azure Toolkit for Eclipse offre modelli e funzionalità per creare, sviluppare, testare e distribuire con facilità applicazioni cloud in Azure dall'IDE di Eclipse.
 
-The toolkit includes integration templates for Docker containers, HDInsights, Azure documentation, Azure Redis Cache, storage account operations, and virtual machine management.
+Il toolkit include modelli di integrazione per contenitori Docker, HDInsights, documentazione di Azure, Cache Redis di Azure, operazioni dell'account di archiviazione e gestione delle macchine virtuali.
 
-## Installation of Eclipse with Azure tooling
+## <a name="installation-of-eclipse-with-azure-tooling"></a>Installazione di Eclipse con gli strumenti di Azure
 
-Eclipse is supported on Windows, macOS, and Linux. The installation process uses the Eclipse installer on all platforms, varying only in the general installation procedure between the platforms.
+Eclipse è supportato in Windows, macOS e Linux. Il processo di installazione usa il programma di installazione di Eclipse in tutte le piattaforme, con alcune differenze solo a livello di procedura di installazione generale nelle piattaforme.
 
-Installing Eclipse for Java or Java EE on any platform is straight-forward, and looks like any other installation on the chosen platform. The installer also prompts the user to choose the packages to install depending on the target language and frameworks.
+L'installazione di Eclipse per Java o Java EE in qualsiasi piattaforma è abbastanza semplice ed è analoga a qualsiasi altra installazione nella piattaforma scelta. Il programma di installazione richiede inoltre all'utente di scegliere i pacchetti da installare in base alla lingua e ai framework di destinazione.
 
-## The Azure Toolkit for Eclipse
+## <a name="the-azure-toolkit-for-eclipse"></a>Azure Toolkit for Eclipse
 
-Because the Azure Toolkit is installed through the Eclipse IDE itself, it is the same procedure on all the supported operating systems. The toolkit itself is available from the Eclipse Marketplace.
+Poiché Azure Toolkit viene installato tramite l'IDE stesso di Eclipse, la procedura è uguale per tutti i sistemi operativi supportati. Il toolkit è disponibile da Eclipse Marketplace.
 
-The entire toolkit is open source and hosted in GitHub. It is frequently updated to consistently work with new features and updates on the Azure cloud platform.
+L'intero toolkit è open source ed è ospitato in GitHub. Viene aggiornato di frequente per assicurarne il funzionamento coerente con nuove funzionalità e aggiornamenti nella piattaforma cloud di Azure.
 
-## Summary
+## <a name="summary"></a>Riepilogo
 
-In this section, you have learned how simple and easy it is to get started creating Java applications by using Eclipse and the Azure Toolkit. Once installed, the toolkit provides a multitude of easy-to-use templates and features that makes Azure integration simpler and more efficient.
+In questa sezione è stato illustrata la facile procedura per iniziare a creare applicazioni Java con Eclipse e Azure Toolkit. Dopo l'installazione, il toolkit offre molti modelli e funzionalità facili da usare che semplificano e rendono più efficiente l'integrazione con Azure.
 
-Both Eclipse and the Azure Toolkit are frequently updated, and provide a stable and efficient way to write Java applications with cloud integration.
+Eclipse e Azure Toolkit vengono aggiornati di frequente e offrono un approccio stabile ed efficiente per scrivere applicazioni Java con integrazione per il cloud.

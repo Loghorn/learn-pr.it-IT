@@ -1,120 +1,119 @@
-There are many communications platforms that can help improve the reliability of a distributed application, including several within Azure. Each of these tools serves a different purpose; let's review each tool in Azure to help choose the right one.
+Ci sono molte piattaforme di comunicazione che consentono di migliorare l'affidabilità di un'applicazione distribuita, tra cui diverse in Azure. Ognuno di questi strumenti svolge una funzione diversa. Verranno ora analizzati i singoli strumenti di Azure per aiutare a scegliere quello più appropriato.
 
-The architecture of our pizza ordering and tracking application requires several components: a website, data storage, back-end service, etc. We can bind the components of our application together in many different ways, and a single application can take advantage of multiple techniques. 
+L'architettura dell'applicazione per l'ordinazione di una pizza e il monitoraggio dell'ordine richiede diversi componenti: un sito Web, spazio di archiviazione dei dati, servizio back-end e così via. È possibile associare i componenti dell'applicazione tra loro in molti modi diversi e una singola applicazione può sfruttare i vantaggi di più tecniche. 
 
-We need to decide which techniques to use in the Contoso Slices application. The first step is to evaluate each place where there is communication between multiple parts. Some components _must_ run in a timely manner for our application to be doing its job at all. Some may be important, but not time-critical. Finally, other components, like our mobile app notifications, are a bit more optional.
+È necessario stabilire quali tecniche usare nell'applicazione Contoso Slices. Il primo passaggio consiste nel valutare ogni posizione in cui avviene una comunicazione tra più parti. Alcuni componenti _devono_ venire eseguiti in modo tempestivo per il corretto funzionamento dell'applicazione. Altri componenti sono importanti ma non hanno requisiti di tempo critici. Infine, altri componenti, ad esempio le notifiche dell'app per dispositivi mobili, possono essere facoltativi.
 
-Here, you will learn about the communications platforms available in Azure, so that you can choose the right one for each requirement in your application.
+In questo modulo si apprenderanno informazioni sulle piattaforme di comunicazione disponibili in Azure, in modo da poter scegliere quella più adatta per ogni requisito dell'applicazione.
 
-## Decide between messages and events
+## <a name="decide-between-messages-and-events"></a>Scegliere tra messaggi ed eventi
 
-Messages and events are both **datagrams**: packages of data sent from one component to another. They are different in ways that at first seem subtle, but can make significant differences in how you architect your application. 
+Messaggi ed eventi sono entrambi **datagrammi**: pacchetti di dati inviati da un componente a un altro. Le differenze tra di essi a prima vista possono sembrare minime, ma possono determinare differenze significative nella progettazione dell'applicazione. 
 
-### Messages
+### <a name="messages"></a>Messaggi
 
-In the terminology of distributed applications, the defining characteristic of a message is that the overall integrity of the application may rely on messages being received. You can think of sending a message as one component passing the baton of a workflow to a different component. The entire workflow may be a vital business process, and the message is the mortar that holds the components together.
+Nella terminologia delle applicazioni distribuite, la caratteristica distintiva di un messaggio è il fatto che l'integrità complessiva dell'applicazione può basarsi sulla ricezione dei messaggi. È possibile pensare all'invio di un messaggio come un componente che passa il testimone di un flusso di lavoro a un altro componente. L'intero flusso di lavoro può essere un processo di business fondamentale e il messaggio è il cemento che tiene uniti i componenti.
 
-A message generally contains the data itself, not just a reference (like an ID or URL) to data. Sending the data as part of the datagram is less brittle than sending a reference. The messaging architecture guarantees delivery of the message, and because no additional lookups are required, the message is reliably handled. However, the sending application needs to know exactly what data to include, to avoid sending too much data, which requires the receiving component to do unnecessary work. In this sense, the sender and receiver of a message are often coupled by a strict data contract.
+Un messaggio contiene in genere i dati stessi e non solo un riferimento (come un ID o un URL) ai dati. L'invio dei dati come parte del datagramma è meno fragile rispetto all'invio di un riferimento. L'architettura di messaggistica garantisce il recapito del messaggio e poiché non sono richieste ricerche aggiuntive, il messaggio viene gestito in modo affidabile. Tuttavia, l'applicazione mittente deve sapere esattamente quali dati includere, per evitare l'invio di troppi dati che comporterebbero un lavoro non necessario da parte del componente destinatario. Da questo punto di vista, il mittente e il destinatario di un messaggio sono spesso collegati da un rigoroso contratto di dati.
 
-In Contoso Slices new architecture, when a pizza order is entered, they would likely use messages. The web front end or mobile app would send a message to the back-end processing components. In the back end, steps like routing to the store near the customer and charging the credit card would take place.
+Nella nuova architettura di Contoso Slice, quando viene immesso un ordine per una pizza, vengono probabilmente usati messaggi. Il front-end Web o l'app per dispositivi mobili invia un messaggio ai componenti di elaborazione back-end. Nel back-end vengono eseguiti passaggi come l'instradamento al negozio vicino al cliente e l'addebito sulla carta di credito.
 
-### Events
+### <a name="events"></a>Eventi
 
-An event triggers notification that something has occurred. Events are "lighter" than messages and are most often used for broadcast communications.
+Un evento notifica che si è verificato qualcosa. Gli eventi sono più "leggeri" rispetto ai messaggi e vengono più spesso usati per le comunicazioni broadcast.
+Gli eventi hanno le caratteristiche seguenti:
+* L'evento può essere inviato a più destinatari o a nessuno
+* Gli eventi sono spesso destinati a una distribuzione estesa, ovvero hanno un numero elevato di sottoscrittori per ogni origine di pubblicazione
+* Il componente di pubblicazione dell'evento non ha aspettative sull'azione eseguita da un componente destinatario
 
-Events have the following characteristics:
-* The event may be sent to multiple receivers, or to none at all
-* Events are often intended to "fan out," or have a large number of subscribers for each publisher
-* The publisher of the event has no expectation about the action a receiving component takes
+La catena di pizzerie userebbe probabilmente gli eventi per inviare notifiche agli utenti relative alle modifiche di stato. Un evento di modifica dello stato può essere inviato a Griglia di eventi di Azure, quindi a una funzione di Azure e all'hub di notifica, per una soluzione completamente _serverless_.
 
-Our pizza chain would likely use events for notifications to users about status changes. Status change events could be sent to Azure Event Grid, then on to Azure Functions, and to Azure Notification Hubs for a completely _serverless_ solution.
+Questa differenza tra eventi e messaggi è fondamentale perché le piattaforme di comunicazione sono in genere progettate per gestire uno o l'altro elemento. Il bus di servizio è progettato per gestire i messaggi. Se si vuole inviare eventi, scegliere Griglia di eventi. 
 
-This difference between events and messages is fundamental because communications platforms are generally designed to handle one or the other. Service Bus is designed to handle messages. If you want to send events, you would likely choose Event Grid. 
+Azure offre anche un hub eventi di Azure, che tuttavia viene usato più spesso per un tipo specifico di streaming con flusso elevato di comunicazioni in ambito di analisi. Se, ad esempio, i forni delle pizze avessero sensori connessi in rete, si potrebbe usare l'hub eventi con Analisi di flusso di Azure per esaminare i modelli di variazione della temperatura che potrebbero indicare un incendio indesiderato o l'usura di un componente.
 
-Azure also has Azure Event Hubs, but it is most often used for a specific type of high-flow stream of communications used for analytics. For example, if we had networked sensors on our pizza ovens, we could use Event Hubs coupled with Azure Stream Analytics to watch for patterns in the temperature changes that might indicate an unwanted fire or component wear.
+## <a name="service-bus-topics-queues-and-relays"></a>Argomenti, code e inoltri del bus di servizio
 
-## Service Bus topics, queues, and relays
+Il bus di servizio di Azure è in grado di scambiare messaggi in tre modi diversi, tramite code, argomenti e inoltri.
 
-Azure Service Bus can exchange messages in three different ways: queues, topics, and relays.
+### <a name="what-is-a-queue"></a>Che cos'è una coda?
 
-### What is a queue?
+Una **coda** è una semplice posizione di archiviazione temporanea per i messaggi. Un componente mittente aggiunge un messaggio alla coda. Un componente di destinazione preleva il messaggio all'inizio della coda. In circostanze normali, ogni messaggio viene ricevuto da un solo destinatario.
 
-A **queue** is a simple temporary storage location for messages. A sending component adds a message to the queue. A destination component picks up the message at the front of the queue. Under ordinary circumstances, each message is received by only one receiver.
+![Coda del bus di servizio di Azure](../media-draft/2-service-bus-queue.png)
 
-![Azure Service Bus queue](../media-draft/2-service-bus-queue.png)
+Le code disaccoppiano i componenti di origine e di destinazione per isolare i componenti di destinazione in caso di domanda elevata. 
 
-Queues decouple the source and destination components to insulate destination components from high demand. 
+Durante i periodi di picco, i messaggi possono venire inviati a una velocità maggiore di quella con cui il componente di destinazione può gestirli. Poiché i componenti di origine non hanno alcuna connessione diretta con la destinazione, ciò non ha alcun effetto sull'origine e la lunghezza della coda aumenta. I componenti di destinazione rimuoveranno i messaggi dalla coda man mano che sono in grado di gestirli. Quando la domanda diminuisce, i componenti di destinazione possono recuperare e la lunghezza della coda si riduce. 
 
-During peak times, messages may come in faster than destination components can handle them. Because source components have no direct connection to the destination, the source is unaffected and the queue will grow. Destination components will remove messages from the queue as they are able to handle them. When demand drops, destination components can catch up and the queue shortens. 
+Una coda risponde a una situazione di domanda elevata di questo tipo senza che sia necessario aggiungere risorse al sistema. Tuttavia, per i messaggi che devono essere gestiti in modo relativamente rapido, l'aggiunta di altre istanze del componente di destinazione può consentire la condivisione del carico. Ogni messaggio viene gestito da una sola istanza. Si tratta di un metodo efficace per ridimensionare l'intera applicazione aggiungendo solo le risorse per i componenti che ne hanno effettivamente bisogno.
 
-A queue responds to high demand like this without needing to add resources to the system. However, for messages that need to be handled relatively quickly, adding additional instances of your destination component can allow them to share the load. Each message would be handled by only one instance. This is an effective way to scale your entire application while only adding resources to the components that actually need it.
+### <a name="what-is-a-topic"></a>Che cos'è un argomento?
 
-### What is a topic?
+Un **argomento** è simile a una coda ma può avere più sottoscrizioni. Ciò significa che più componenti di destinazione possono sottoscrivere un singolo argomento, quindi ogni messaggio viene recapitato a più destinatari. Le sottoscrizioni consentono anche di filtrare i messaggi nell'argomento per ricevere solo i messaggi rilevanti. Le sottoscrizioni offrono le stesse comunicazioni disaccoppiate delle code e rispondono nello stesso modo in caso di domanda elevata. Usare un argomento se si vuole che ogni messaggio venga recapitato a più di un componente di destinazione.
 
-A **topic** is similar to a queue but can have multiple subscriptions. This means that multiple destination components can subscribe to a single topic, so each message is delivered to multiple receivers. Subscriptions can also filter the messages in the topic to receive only messages that are relevant. Subscriptions provide the same decoupled communications as queues and respond to high demand in the same way. Use a topic if you want each message to be delivered to more than one destination component.
+Gli argomenti non sono supportati nel piano tariffario Basic.
 
-Topics are not supported in the Basic pricing tier.
+![Argomento del bus di servizio di Azure](../media-draft/2-service-bus-topic.png)
 
-![Azure Service Bus topic](../media-draft/2-service-bus-topic.png)
+### <a name="what-is-a-relay"></a>Che cos'è un inoltro?
 
-### What is a relay?
-
-A **relay** is an object that performs synchronous, two-way communication between applications. It is not a temporary storage location for messages like queues and topics. Instead, it provides bidirectional, unbuffered connections across network boundaries such as firewalls. Use a relay when you want direct communications between components as if they were located on the same network segment but separated by network security devices.
+Un **inoltro** è un oggetto che esegue una comunicazione sincrona bidirezionale tra applicazioni. Non si tratta di una posizione di archiviazione temporanea per i messaggi come nel caso di code e argomenti. Fornisce invece connessioni bidirezionali senza memorizzazione nel buffer attraverso i limiti di rete, ad esempio i firewall. Usare un inoltro per ottenere comunicazioni dirette tra i componenti, come se si trovassero nello stesso segmento di rete ma separati da dispositivi di sicurezza di rete.
 
 > [!NOTE]
-> Although relays are part of Azure Service Bus, they do not implement loosely coupled messaging workflows and are not considered further in this module.
+> Anche se gli inoltri fanno parte del bus di servizio di Azure, non implementano flussi di lavoro di messaggistica con accoppiamento debole e non vengono ulteriormente esaminati in questo modulo.
 
-## Service Bus queues and storage queues
+## <a name="service-bus-queues-and-storage-queues"></a>Code di archiviazione e code del bus di servizio
 
-There are two Azure features that include message queues: Service Bus and Azure Storage accounts. As a general guide, storage queues are simpler to use but are less sophisticated and flexible than Service Bus queues.
+Ci sono due funzionalità di Azure che includono le code di messaggi: il bus di servizio e gli account di archiviazione. In generale, le code di archiviazione sono più semplici da usare ma meno sofisticate e flessibili rispetto alle code del bus di servizio.
 
-Key advantages of Service Bus queues include:
+I principali vantaggi delle code del bus di servizio includono:
 
-* Supports larger messages size (256 KB per message versus 64 KB)
-* Supports both at-least-once and at-most-once delivery - choose between a very small chance that a message is lost or a very small chance it is handled twice
-* Guarantees **first-in-first-out (FIFO)** order - messages are handled in the same order they are added (although FIFO is the normal operation of a queue, it is not guaranteed for every message)
-* Can group multiple messages into a transaction - if one message in the transaction fails to be delivered, all messages in the transaction will not be delivered
-* Supports role-based security
-* Does not require destination components to continuously poll the queue
+* Sono supportati messaggi di dimensioni maggiori (256 KB per ogni messaggio rispetto a 64 KB)
+* Sono supportati sia il recapito di tipo At-Least-Once che quello di tipo At-Most-Once: è possibile scegliere tra una probabilità molto piccola che un messaggio vada perso o una probabilità molto piccola che venga gestito due volte
+* Viene garantito l'ordine **FIFO (First-In-First-Out)**: i messaggi vengono gestiti nello stesso ordine con cui vengono aggiunti (anche se l'ordine FIFO rappresenta il normale funzionamento di una coda, non è garantito per ogni messaggio)
+* È possibile raggruppare più messaggi in una transazione: se un messaggio nella transazione non viene recapitato, non vengono recapitati nemmeno gli altri messaggi nella transazione
+* È supportata la sicurezza basata sui ruoli
+* Non è necessario che i componenti di destinazione eseguano continuamente il polling della coda
 
-Advantages of storage queues:
+Vantaggi delle code di archiviazione:
 
-* Supports unlimited queue size (versus 80-GB limit for Service Bus queues)
-* Maintains a log of all messages
+* Non ci sono limiti per le dimensioni delle code (rispetto al limite di 80 GB per le code del bus di servizio)
+* Viene conservato un log di tutti i messaggi
 
-## How to choose a communications technology
+## <a name="how-to-choose-a-communications-technology"></a>Come scegliere una tecnologia di comunicazione
 
-We've seen the different concepts and the implementations Azure provides. Let's discuss what our decision process should look like for each of our communications.
+Sono stati analizzati i diversi concetti e le implementazioni offerte da Azure. Verrà ora esaminato il processo decisionale per ognuna delle comunicazioni.
 
-#### Consider the following questions:
+#### <a name="consider-the-following-questions"></a>Prendere in considerazione le domande seguenti:
 
-1. Is the communication an event? If so, consider using Event Grid or Event Hubs.
+1. La comunicazione è un evento? In tal caso, usare Griglia di eventi o l'hub eventi.
 
-1. Should a single message be delivered to more than one destination? If so, use a Service Bus topic. Otherwise, use a queue.
+1. Un singolo messaggio deve essere recapitato a più di una destinazione? In tal caso, usare un argomento del bus di servizio. In caso contrario, usare una coda.
 
-If you decide that you need a queue:
+Se si decide che è necessaria una coda:
 
-#### Choose Service Bus queues if:
+#### <a name="choose-service-bus-queues-if"></a>Scegliere le code del bus di servizio se:
 
-- You need an at-most-once delivery guarantee
-- You need a FIFO guarantee
-- You need to group messages into transactions
-- You want to receive messages without polling the queue
-- You need to provide role-based access to the queues
-- You need to handle messages larger than 64 KB but smaller than 256 KB
-- Your queue size will not grow larger than 80 GB
-- You would like to be able to publish and consume batches of messages
+- È necessaria una garanzia di recapito At-Most-Once
+- È necessaria una garanzia FIFO
+- È necessario raggruppare i messaggi in transazioni
+- Si vuole ricevere i messaggi senza eseguire il polling della coda
+- È necessario fornire accesso basato sui ruoli alle code
+- È necessario gestire messaggi di dimensioni superiori a 64 KB, ma inferiori a 256 KB
+- Le dimensioni della coda non supereranno gli 80 GB
+- Si vuole poter pubblicare e usare batch di messaggi
 
-#### Choose queue storage if:
-- You need a simple queue with no particular additional requirements
-- You need an audit trail of all messages that pass through the queue
-- You expect the queue to exceed 80 GB in size
-- You want to track progress for processing a message inside of the queue
+#### <a name="choose-queue-storage-if"></a>Scegliere l'archiviazione code se:
+- È necessaria una coda semplice senza particolari requisiti aggiuntivi
+- È necessario un audit trail di tutti i messaggi che passano attraverso la coda
+- Si prevede che le dimensioni della coda possano superare gli 80 GB
+- Si vuole tenere traccia dello stato di elaborazione di un messaggio all'interno della coda
 
-Although the components of a distributed application can communicate directly, you can often increase the reliability of that communication by using an intermediate communication platform such as Azure Service Bus or Azure Event Grid.
+Anche se i componenti di un'applicazione distribuita possono comunicare direttamente, è spesso possibile migliorare l'affidabilità delle comunicazioni usando una piattaforma di comunicazione intermedia come Griglia di eventi o il bus di servizio di Azure.
 
-Event Grid is designed for events, which notify recipients only of an event and do not contain the raw data associated with that event. Azure Event Hubs is designed for high-flow analytics types of events. Azure Service Bus and storage queues are for messages, which can be used for binding the core pieces of any application workflow.
+Griglia di eventi è una soluzione progettata per gli eventi, che invia solo una notifica ai destinatari per un evento e non contiene i dati non elaborati associati all'evento. L'hub eventi è progettato per eventi di analisi con un flusso elevato. Le code di archiviazione e del bus di servizio di Azure sono destinate ai messaggi e possono essere usate per associare le parti principali del flusso di lavoro di un'applicazione.
 
-If your requirements are simple, if you want to send each message to only one destination, or if you want to write code as quickly as possible, a storage queue may be the best option. Otherwise, Service Bus queues provide many more options and flexibility.
+Se i requisiti sono semplici, se si vuole inviare ogni messaggio solo a una destinazione o se si vuole scrivere codice il più rapidamente possibile, una coda di archiviazione può rappresentare la scelta migliore. In caso contrario, le code del bus di servizio offrono molte più opzioni e flessibilità.
 
-If you want to send messages to multiple subscribers, use a Service Bus topic.
+Se si vuole inviare messaggi a più sottoscrittori, usare un argomento del bus di servizio.

@@ -1,22 +1,21 @@
-In this module, you learned how to create a Linux VM using the Azure portal. You then connected to the public IP address of the VM and managed it with an SSH connection. 
+In questo modulo si è appreso come creare una macchina virtuale Linux usando il portale di Azure. Ci si è quindi connessi all'indirizzo IP pubblico della macchina virtuale e questa è stata gestita tramite una connessione SSH. 
 
-You learned that while SSH allows us to interact with the operating system and software of the virtual machine, the portal will enable us to configure the virtual hardware and connectivity. We also could have used PowerShell or the Azure CLI, if a command-line or scriptable environment were preferred.
+Si è inoltre appreso che mentre SSH consente di interagire con il sistema operativo e con il software della macchina virtuale, il portale permette di configurare l'hardware virtuale e la connettività. È anche possibile usare PowerShell o l'interfaccia della riga di comando di Azure, se si preferisce un ambiente gestibile tramite script o riga di comando.
 
-## Clean up
-<!---TODO: Update for sandbox?--->
+## <a name="clean-up-the-resources"></a>Pulire le risorse
 
-You are charged for VMs while they run and for the storage based on how much you use. Always stop and deallocate VMs when you aren't using them, and when you no longer need the resources, it's a good idea to delete them. To remove all the resources that you created, you can delete them one by one or delete the resource group:
+Sono previsti addebiti per le macchine virtuali in esecuzione e per l'archiviazione in base alla quantità di spazio usato. Arrestare e deallocare sempre le macchine virtuali quando non sono in uso. Quando le risorse non sono più necessarie, è una buona idea eliminarle. Per rimuovere tutte le risorse create, è possibile eliminarle una per una oppure eliminare il gruppo di risorse.
 
-1. Sign in to the Azure portal.
+1. Accedere al portale di Azure.
 
-1. On the left menu, select **All Services**.
+1. Nel menu a sinistra selezionare **Tutti i servizi**.
 
-1. Select **Resource Groups**.
+1. Selezionare **Gruppi di risorse**.
 
-1. Find the resource group that you created in the first exercise. Click the ellipsis (...) on the right side of the list view.
+1. Trovare il gruppo di risorse creato nel primo esercizio. Fare clic sui puntini di sospensione (...) sul lato destro della visualizzazione elenco.
 
-1. Select **Delete resource group**.
+1. Selezionare **Elimina gruppo di risorse**.
 
-1. On the next screen, enter the resource group name to confirm the deletion.
+1. Nella schermata successiva immettere il nome del gruppo di risorse per confermare l'eliminazione.
 
-1. Click **Delete**.
+1. Fare clic su **Elimina**.

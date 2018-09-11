@@ -1,14 +1,14 @@
-In this module, we wrote a script to automate the creation of multiple VMs. Even though the script was relatively short, you can see the potential power when you combine loops, variables, and functions from PowerShell with cmdlets from Azure PowerShell.
+In questo modulo, è stato scritto uno script per automatizzare la creazione di più macchine virtuali. Anche se lo script è relativamente breve, è possibile avere un'idea delle avanzate funzionalità disponibili combinando i cicli, le variabili e le funzioni di PowerShell con i cmdlet di Azure PowerShell.
 
-Azure PowerShell is a good automation choice for admins with PowerShell experience. The combination of clean syntax and a powerful scripting language also makes it worth considering even if you are new to PowerShell. This level of automation for time-consuming and error-prone tasks should help you reduce administrative time and increase quality.
+Azure PowerShell è una scelta ottimale di automazione per gli amministratori che hanno esperienza nell'uso di PowerShell. La combinazione di una sintassi pulita e un potente linguaggio di scripting rende questa soluzione adatta anche per chi non ha familiarità con PowerShell. Questo livello di automazione per attività soggette a errori e che richiedono molto tempo consente di ridurre i tempi di amministrazione e migliorare la qualità.
 
-## Clean up
-<!---TODO: Update for sandbox?--->
+## <a name="clean-up-your-resources"></a>Pulire le risorse
+<!---TODO: Do we need to include cleanup for the free education tier?--->
 
-Provisioned and running VMs incur costs against your subscription. You should remove unneeded VMs to avoid unnecessary charges. The easiest way to cleanup your Azure subscription is to remove the associated resource group; this will also delete all the VMs in the group. And you can do this from PowerShell! When you are finished, please run the following Azure PowerShell cmdlet:
+Le macchine virtuali di cui è stato effettuato il provisioning e in esecuzione comportano l'addebito di costi per la sottoscrizione. È consigliabile rimuovere le macchine virtuali non necessarie per evitare addebiti non necessari. Il modo più semplice per pulire la sottoscrizione di Azure consiste nel rimuovere il gruppo di risorse associato. Verranno così eliminate anche tutte le macchine virtuali nel gruppo. È possibile eseguire questa operazione con PowerShell. Al termine, eseguire il cmdlet seguente di Azure PowerShell:
 
 ```powershell
 Remove-AzureRmResourceGroup -Name TrialsResourceGroup
 ```
 
-When you are asked to confirm the delete, answer **Yes**. The command may take several minutes to complete.
+Quando viene richiesto di confermare l'eliminazione, rispondere **Sì**. Il completamento del comando può richiedere alcuni minuti.

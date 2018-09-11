@@ -1,38 +1,38 @@
-In this unit, you will install Node.js - the **N** in the MEAN acronym - on an Azure-hosted Ubuntu Linux virtual machine. Node.js will serve as our runtime for handling our HTTP traffic and hosting our web application.
+In questa unità si installerà Node.js, che rappresenta la lettera **N** nell'acronimo MEAN, in una macchina virtuale Ubuntu Linux ospitata in Azure. Node.js fungerà da runtime per la gestione del traffico HTTP e l'hosting dell'applicazione Web.
 
-## Connect to the VM
+## <a name="connect-to-the-vm"></a>Connettersi alla macchina virtuale
 
-In order to install Node.js, you have to connect to the VM using **ssh**. If you aren't still connected to your VM, run the following command. Substitute your admin username and your VM's public IP address from above for the `<vm-admin-username>` and `<vm-public-ip>` placeholders.
+Per installare Node.js, è necessario connettersi alla macchina virtuale mediante **ssh**. Se non ci si è ancora connessi alla macchina virtuale, eseguire il comando seguente. Sostituire i segnaposto `<vm-admin-username>` e `<vm-public-ip>` con il nome utente amministratore e l'indirizzo IP pubblico della macchina virtuale precedenti.
 
 ```bash
 ssh <vm-admin-username>@<vm-public-ip>
 ```
 
-## Install Node.js
+## <a name="install-nodejs"></a>Installare Node.js
 
 > [!Important]
-> Ubuntu provides an unofficial package called **Node.js-legacy**. This package is not maintained by Node.js and is outdated.
+> Ubuntu fornisce un pacchetto non ufficiale denominato **Node.js-legacy**. Questo pacchetto non è gestito da Node.js e non è aggiornato.
 
-1. Register the Node.js package repository, so **apt-get** can find the right package to install on your virtual machine.
+1. Registrare il repository di pacchetti Node.js per consentire ad **apt-get** di trovare il pacchetto corretto da installare nella macchina virtuale.
 
     ```bash
     curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
     ```
 
-1. Install the Node.js package on your Linux system.
+1. Installare il pacchetto Node.js nel sistema Linux.
 
     ```bash
     sudo apt-get install -y Node.js
     ```
 
-1. Verify the Node.js installation succeeded by running the following simple Node.js command.
+1. Verificare che l'installazione di Node.js sia riuscita eseguendo il semplice comando Node.js seguente.
 
     ```bash
     node -v
     ```
 
-    The output should be something like `v8.11.4`, with the version reflecting the latest Node.js version that's available when you install the package.
+    L'output dovrebbe essere simile a `v8.11.4`, con la versione corrispondente alla versione di Node.js più recente al momento dell'installazione del pacchetto.
 
-## Summary
+## <a name="summary"></a>Riepilogo
 
-With Node.js installed on your virtual machine, we can start building a web application that it will be responsible for running.
+Con Node.js installato nella macchina virtuale, è possibile iniziare a compilare un'applicazione Web della cui esecuzione sarà responsabile.

@@ -219,8 +219,8 @@ Di seguito è riportato il codice completo per questa pagina.
 
 Eseguire l'app per visualizzare la nuova interfaccia utente. Se, a questo punto, si intende convalidare l'associazione, è possibile farlo mediante l'aggiunta di punti di interruzione alle proprietà o al metodo `SendLocation`.
 
-![La nuova interfaccia utente dell'app](../media/3-new-ui.png)
+![La nuova interfaccia utente dell'app](../media-drafts/3-new-ui.png)
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Riepilogo
 
 In questa unità è stato descritto come creare l'interfaccia utente per le tramite XAML, insieme a un ViewModel per gestire la logica delle applicazioni. Inoltre si è appreso come associare un ViewModel all'interfaccia utente. Nell'unità successiva verrà descritto come aggiungere la ricerca posizioni al ViewModel.

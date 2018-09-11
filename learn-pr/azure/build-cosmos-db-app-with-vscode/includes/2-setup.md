@@ -1,61 +1,60 @@
-In this module you will create a simple console app using the integrated terminal, install NuGet packages, and use the Azure Cosmos DB extension to see databases and collections created in the previous module. You'll retrieve your Azure Cosmos DB connection string from the extension, and then start configuring the connection to Azure Cosmos DB to create your User database.
+In questo modulo verrà creata una semplice un'app console tramite il terminale integrato, verranno installati i pacchetti NuGet e si userà l'estensione Azure Cosmos DB per visualizzare i database e le raccolte creati nel modulo precedente. Si recupererà la stringa di connessione di Azure Cosmos DB dall'estensione e quindi si inizierà a configurare la connessione ad Azure Cosmos DB per creare il database utente.
 
-## Create a console app
+## <a name="create-a-console-app"></a>Creare un'app console
 
-1. Create a folder where you will be working.
+1. Creare una cartella di lavoro.
 
-1. Open a command prompt and navigate into the folder.
+1. Aprire un prompt dei comandi e passare a tale cartella.
 
-1. Create a new .NET Core console application
+1. Creare una nuova applicazione console .NET Core
 
 ```bash
 dotnet new console 
 ```
 
-1. Open Visual Studio Code, and then select **File** > **Open Folder**.
+1. Aprire Visual Studio Code e quindi selezionare **File** > **Apri cartella**.
 
-1. Create a new folder where you want your new C# project to be, and then click **Select Folder**.
+1. Creare una nuova cartella denominata in cui inserire il nuovo progetto C# e quindi fare clic su **Seleziona cartella**.
 
-1. Ensure that file auto save is enabled by clicking on the File menu and checking Auto Save if it is blank.
+1. Assicurarsi che il salvataggio automatico dei file sia abilitato. Fare clic sul menu File e selezionare l'opzione per il salvataggio automatico se è deselezionata.
 
-1. Open the integrated terminal from Visual Studio Code by selecting **View** > **Integrated Terminal** from the main menu.
+1. Aprire il terminale integrato da Visual Studio Code selezionando **Visualizza** > **Terminale integrato** nel menu principale.
 
-1. In the terminal window, type **dotnet new console**.
+1. Nella finestra del terminale digitare **dotnet new console**.
 
-    This command creates a **Program.cs** file in your folder with a simple "Hello World" program already written, along with a C# project file named **learning-module.csproj**.
+    Questo comando crea un file **Program.cs** nella cartella con un semplice programma "Hello World" già scritto, oltre a un file di progetto C# denominato **learning-module.csproj**.
 
-1. In the terminal window, type the following command to run the "Hello World" program. 
+1. Nella finestra del terminale digitare il comando seguente per eseguire il programma "Hello World". 
 
     ```
     dotnet run
     ```
 
-    The terminal window displays "Hello world!" as output.
+    La finestra del terminale visualizza "Hello world!" come output.
 
-## Connect the app to Azure Cosmos DB
+## <a name="connect-the-app-to-azure-cosmos-db"></a>Connettere l'app ad Azure Cosmos DB
 
-1. Sign in to Azure by clicking **View** > **Command Palette** and typing **Azure: Sign In**.
+1. Accedere ad Azure facendo clic su **Visualizza** > **Riquadro comandi** e digitando **Azure: Accedi**.
 
-    Follow the prompts to copy and paste the code provided in the web browser, which authenticates your Visual Studio Code session.
+    Seguire le istruzioni per copiare e incollare il codice fornito nel Web browser, che autentica la sessione di Visual Studio Code.
 
-1. Click the ![Explorer icon](../media/2-setup/visual-studio-code-explorer-icon.png) **Explorer** icon on the left menu, and then expand **Azure Cosmos DB**.
+1. Fare clic sull'![icona di Esplora risorse](../media/2-setup/visual-studio-code-explorer-icon.png) **Esplora risorse** nel menu a sinistra e quindi espandere **Azure Cosmos DB**.
 
-1. Expand your Azure subscription > Azure Cosmos DB account. If you created the **Products** database and **Clothing** collection in the previous modules, the extension displays them.
+1. Espandere la sottoscrizione di Azure > account Azure Cosmos DB. Se nei moduli precedenti sono stati creati il database **Products** e la raccolta **Clothing**, l'estensione li visualizza.
 
-   ![Azure Cosmos DB Visual Studio Code extension](../media/2-setup/azure-cosmos-db-vs-code-extension.png) 
+   ![Estensione di Visual Studio Code per Azure Cosmos DB](../media/2-setup/azure-cosmos-db-vs-code-extension.png) 
 
-1. Now let's create a new database and collection for your customers.
+1. Verranno ora creati un nuovo database e una raccolta per i clienti.
 
-    In the Explorer window, right-click your account, and then click **Create Database**. 
+    Nella finestra Esplora risorse fare clic con il pulsante destro del mouse sul proprio account e quindi fare clic su **Crea database**. 
     
-    In the text box at the top of the screen, type **Users** for the database name > **Enter** > **WebCustomers** for the collection name > **Enter** > **userId** for the partition key > **Enter** > **1000** for the initial throughput capacity > **Enter**.
+    Nella casella di testo nella parte superiore della schermata, digitare **Users** per il nome del database > **INVIO** > **WebCustomers** per il nome della raccolta >  **INVIO** > **userId** per la chiave di partizione > **INVIO** > **1000** per la capacità di unità elaborate iniziale > **INVIO**.
 
-    ![Azure Cosmos DB Visual Studio Code extension](../media/2-setup/vs-code-azure-cosmos-db-extension.gif) 
-    <!--Retake on fresh machine without the other subscriptions showing-->
+    ![Estensione di Visual Studio Code per Azure Cosmos DB](../media/2-setup/vs-code-azure-cosmos-db-extension.gif) <!--Retake on fresh machine without the other subscriptions showing-->
 
-    The new Users database and WebCustomers collection are displayed in the Explorer window.
+    Il nuovo database Users e la raccolta WebCustomers vengono visualizzati nella finestra Esplora risorse.
 
-1. In the integrated terminal, run each of the following commands at a new prompt to install the required NuGet packages.
+1. Nel terminale integrato eseguire ognuno dei comandi seguenti da un nuovo prompt dei comandi per installare i pacchetti NuGet necessari.
 
     ```
     dotnet add package System.Net.Http
@@ -69,9 +68,9 @@ dotnet new console
     dotnet restore
     ```
 
-1. At the top of the Explorer pane, click **Program.cs** to open the file.
+1. Nella parte superiore del riquadro Esplora risorse fare clic su **Program.cs** per aprire il file.
 
-1. Add the following using statements after `using System;`.
+1. Aggiungere le istruzioni using seguenti dopo `using System;`.
 
     ```csharp
     using System.Configuration;
@@ -83,7 +82,7 @@ dotnet new console
     using Newtonsoft.Json;
     ```
 
-1. Create a new file named App.config in the learning-module folder, and add the following code.
+1. Creare un nuovo file denominato App.config nella cartella del modulo di apprendimento e aggiungere il codice seguente.
   
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -95,27 +94,27 @@ dotnet new console
     </configuration>
     ```
 
-1. Copy your connection string from the Azure Cosmos DB extension by right-clicking the learning-module account, and clicking **Copy Connection String**.
+1. Copiare la stringa di connessione dall'estensione Azure Cosmos DB facendo clic con il pulsante destro del mouse sull'account del modulo di apprendimento e scegliendo **Copy Connection String** (Copia stringa di connessione).
 
-    ![Azure Cosmos DB Visual Studio Code extension](../media/2-setup/vs-code-copy-connection-string.gif) 
+    ![Estensione di Visual Studio Code per Azure Cosmos DB](../media/2-setup/vs-code-copy-connection-string.gif) 
 
-1. Paste the connection string into a text file, and then copy the **AccountEndpoint** portion from the text file into the **accountEndpoint** in App.config.
+1. Incollare la stringa di connessione in un file di testo e quindi copiare la parte **AccountEndpoint** dal file di testo in **accountEndpoint** nel file App.config.
 
-    The accountEndpoint should look like the following code:
+    AccountEndpoint dovrebbe avere un aspetto analogo al codice seguente:
 
     ```xml
     <add key="accountEndpoint" value="https://<account-name>.documents.azure.com:443/" />
     ```
 
-1. Now copy the **AccountKey** value from the text value into the **accountKey** value in App.config.
+1. A questo punto copiare il valore **AccountKey** dal valore di testo nel valore **accountKey** in App.config.
 
-1. In the integrated terminal, type the following command to run the program to ensure it runs.
+1. Nel terminale integrato digitare il comando seguente per eseguire il programma per assicurarsi che funzioni.
 
     ```csharp
     dotnet run
     ```
 
-1. Add a new asynchronous task to create a new client, and check whether the Users database exists by adding the following method after the main method.
+1. Aggiungere una nuova attività asincrona per creare un nuovo client e verificare se il database Users esiste aggiungendo il metodo seguente dopo il metodo principale.
     
     ```csharp
     private async Task BasicOperations()
@@ -128,13 +127,13 @@ dotnet new console
     }
     ```
 
-1. In the integrated terminal, again, type the following command to run the program to ensure it runs.
+1. Di nuovo nel terminale integrato, digitare il comando seguente per eseguire il programma per assicurarsi che funzioni.
 
     ```csharp
     dotnet run
     ```
 
-1. Copy and paste the following code into the **Main** method, overwriting the current `Console.WriteLine("Hello World!");` line.
+1. Copiare e incollare il codice seguente nel metodo **Main**, sovrascrivendo la riga `Console.WriteLine("Hello World!");` corrente.
 
     ```csharp
     try
@@ -159,19 +158,19 @@ dotnet new console
             }
     ```
 
-1. In the integrated terminal, again, type the following command to run the program to ensure it runs.
+1. Di nuovo nel terminale integrato, digitare il comando seguente per eseguire il programma per assicurarsi che funzioni.
 
     ```csharp
     dotnet run
     ```
 
-    The console displays the following output.
+    La console visualizza l'output seguente.
     
     ```
     Database and collection validation complete
     End of demo, press any key to exit.
     ```
 
-## Summary
+## <a name="summary"></a>Riepilogo
 
-In this unit, you set up the groundwork for your Azure Cosmos DB application. You set up your development environment in Visual Studio Code, created a simple HelloWorld project, connected the project to the Azure Cosmos DB endpoint, and ensured your database and collection exist.
+In questa unità sono state poste le basi per creare l'applicazione di Azure Cosmos DB. Dopo aver configurato l'ambiente di sviluppo in Visual Studio Code, è stato creato un semplice progetto HelloWorld, è stato connesso il progetto all'endpoint di Azure Cosmos DB ed è stata verificata l'esistenza di raccolta e database.

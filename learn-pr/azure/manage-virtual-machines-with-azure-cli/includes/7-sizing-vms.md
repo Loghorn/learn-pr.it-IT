@@ -1,25 +1,25 @@
-Virtual machines must be sized appropriately for the expected work. A VM without the correct amount of memory or CPU will fail under load or run too slowly to be effective. 
+È necessario ridimensionare le macchine virtuali in base al carico di lavoro previsto. Una macchina virtuale senza la corretta quantità di memoria o CPU non riesce a funzionare in condizioni di carico o può risultare troppo lenta e quindi poco efficiente. 
 
-When you create a virtual machine, you can supply a _VM size_ value that will determine the amount of compute resources that will be devoted to the VM. This includes CPU, GPU, and memory that are made available to the virtual machine from Azure.
+Quando si crea una macchina virtuale, è possibile specificare un valore per le _dimensioni_ in base al quale verrà determinata la quantità di risorse di calcolo da dedicare alla macchina virtuale. In queste sono incluse la CPU, la GPU e la memoria che vengono rese disponibili da Azure per la macchina virtuale.
 
-Azure defines a set of [pre-defined VM sizes](https://docs.microsoft.com/azure/virtual-machines/linux/sizes) for Linux and Windows to choose from based on the expected usage. 
+Azure definisce un set di [dimensioni di macchina virtuale predefinite](https://docs.microsoft.com/azure/virtual-machines/linux/sizes) per Linux e Windows che è possibile scegliere in base all'utilizzo previsto. 
 
-| Type | Sizes | Description |
+| Tipo | Dimensioni | Descrizione |
 |------|-------|-------------|
-| General purpose   | Dsv3, Dv3, DSv2, Dv2, DS, D, Av2, A0-7 | Balanced CPU-to-memory. Ideal for dev/test and small to medium applications and data solutions. |
-| Compute optimized | Fs, F | High CPU-to-memory. Good for medium-traffic applications, network appliances, and batch processes. |
-| Memory optimized  | Esv3, Ev3, M, GS, G, DSv2, DS, Dv2, D   | High memory-to-core. Great for relational databases, medium to large caches, and in-memory analytics. |
-| Storage optimized | Ls | High disk throughput and IO. Ideal for big data, SQL, and NoSQL databases. |
-| GPU optimized | NV, NC | Specialized VMs targeted for heavy graphic rendering and video editing. |
-| High performance | H, A8-11 | Our most powerful CPU VMs with optional high-throughput network interfaces (RDMA). | 
+| Utilizzo generico   | Dsv3, Dv3, DSv2, Dv2, DS, D, Av2, A0-7 | Rapporto equilibrato tra CPU e memoria. Soluzione ideale per sviluppo/test e soluzioni di dati e applicazioni medio-piccole. |
+| Ottimizzate per il calcolo | Fs, F | Rapporto elevato tra CPU e memoria. Soluzione idonea per applicazioni con livelli medi di traffico, appliance di rete e processi batch. |
+| Ottimizzate per la memoria  | Esv3, Ev3, M, GS, G, DSv2, DS, Dv2, D   | Rapporto elevato tra memoria e core. Soluzione ideale per database relazionali, cache medio-grandi e analisi in memoria. |
+| Ottimizzate per l'archiviazione | Ls | I/O e velocità effettiva del disco elevati. Soluzione ideale per Big Data, database SQL e NoSQL. |
+| Ottimizzate per la GPU | NV, NC | Macchine virtuali specializzate ottimizzate per livelli intensivi di rendering della grafica ed editing di video. |
+| Prestazioni elevate | H, A8-11 | Le macchine virtuali con CPU più potenti, con interfacce di rete ad alta velocità effettiva opzionali (RDMA). | 
 
-The available sizes change based on the region you're creating the VM in. You can get a list of the available sizes using the `vm list-sizes` command. Try typing this into Azure Cloud Shell:
+Le dimensioni disponibili variano in base all'area in cui si crea la macchina virtuale. È possibile ottenere un elenco delle dimensioni disponibili tramite il comando `vm list-sizes`. Provare a digitare quanto segue in Azure Cloud Shell:
 
 ```azurecli
 az vm list-sizes --location eastus --output table
 ```
 
-Here's an abbreviated response for `eastus`:
+Ecco una risposta abbreviata per `eastus`:
 
 ```
   MaxDataDiskCount    MemoryInMb  Name                      NumberOfCores    OsDiskSizeInMb    ResourceDiskSizeInMb
@@ -46,7 +46,7 @@ Here's an abbreviated response for `eastus`:
                 64       3891200  Standard_M128m                      128           1047552                16384000
 ```
 
-We didn't specify a size when we created our VM - so Azure selected a default general-purpose size for us of `Standard_DS1_v2`. However, we can specify the size as part of the `vm create` command using the `--size` parameter. For example, you could use the following command to create a 16-core virtual machine:
+Al momento della creazione della macchina virtuale non è stata specificata una dimensione. Azure ha pertanto selezionato automaticamente una dimensione predefinita per utilizzo generico, ovvero `Standard_DS1_v2`. È tuttavia possibile specificare la dimensione come parte del comando `vm create` usando il parametro `--size`. Per creare una macchina virtuale con 16 core, ad esempio, è possibile usare il comando seguente:
 
 ```azurecli
 az vm create --resource-group ExerciseResources --name SampleVM \
@@ -55,21 +55,21 @@ az vm create --resource-group ExerciseResources --name SampleVM \
 ```
 
 > [!WARNING]
-> Your subscription tier [enforces limits](https://docs.microsoft.com/azure/azure-subscription-service-limits) on how many resources you can create, as well as the total size of those resources. For example, you are capped to **20 virtual CPUs** with the pay-as-you-go subscription, and only **4 vCPUs** for a free tier. The Azure CLI will let you know when you exceed this with a **Quota Exceeded** error. If you hit this error when creating your architecture, you can request to raise the limits associated with your paid subscription (up to 10,000 vCPUs!) through a [free online request](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-quota-errors). 
+> Il livello di sottoscrizione [applica i limiti](https://docs.microsoft.com/azure/azure-subscription-service-limits) al numero di risorse che è possibile creare e alle dimensioni totali di queste risorse. Ad esempio, il limite massimo è di **20 CPU virtuali** per la sottoscrizione con pagamento in base al consumo e di solo **4 vCPU** per il livello gratuito. Quando il limite viene superato, l'interfaccia della riga di comando di Azure visualizzerà l'errore **Quota superata**. Se viene visualizzato questo errore durante la creazione dell'architettura, è possibile richiedere l'aumento dei limiti associati alla sottoscrizione a pagamento (fino a 10.000 vCPU) inviando una [richiesta online gratuita](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-quota-errors). 
 
-## Resizing an existing VM
-We can also resize an existing VM if the workload changes, or if it was incorrectly sized at creation. Before a resize is requested, we must check to see if the desired size is available in the cluster our VM is part of. We can do this with the `vm list-vm-resize-options` command:
+## <a name="resizing-an-existing-vm"></a>Ridimensionamento di una macchina virtuale esistente
+È anche possibile ridimensionare una macchina virtuale esistente se si verifica una variazione del carico di lavoro o se non è stata definita la dimensione corretta in fase di creazione. Prima di richiedere un ridimensionamento, è necessario verificare se la dimensione desiderata è disponibile nel cluster di cui fa parte la macchina virtuale. A questo scopo, usare il comando `vm list-vm-resize-options`:
 
 ```azurecli
 az vm list-vm-resize-options --resource-group ExerciseResources --name SampleVM --output table
 ```
 
-This will return a list of all the possible size configurations available in the resource group. If the size we want isn't available in our cluster, but _is_ available in the region, we can [deallocate the VM](https://docs.microsoft.com/cli/azure/vm?view=azure-cli-latest#az-vm-deallocate). This command will stop the running VM and remove it from the current cluster without losing any resources. Then we can resize it, which will re-create the VM in a new cluster where the size configuration is available.
+Verrà restituito l'elenco di tutte le possibili configurazioni di dimensione che sono disponibili nel gruppo di risorse. Se la dimensione desiderata non è disponibile nel cluster, ma _è_ disponibile nell'area, è possibile [deallocare la macchina virtuale](https://docs.microsoft.com/cli/azure/vm?view=azure-cli-latest#az-vm-deallocate). Questo comando arresta la macchina virtuale in esecuzione e la rimuove dal cluster corrente senza che si verifichi alcuna perdita di risorse. È quindi possibile ridimensionarla, creando nuovamente la macchina virtuale in un altro cluster in cui è disponibile la configurazione di dimensione desiderata.
 
-To resize a VM, we use the `vm resize` command. For example, let's reduce our current VM resources to the bare minimum: 2G of memory, 1 CPU core, and 4G of disk space. Type this command in Cloud Shell:
+Per ridimensionare una macchina virtuale, usare il comando `vm resize`. Si supponga ad esempio di voler ridurre al minimo le risorse correnti della macchina virtuale: 2 GB di memoria, 1 core CPU e 4 GB di spazio su disco. Digitare questo comando in Cloud Shell:
 
 ```azurecli
 az vm resize --resource-group ExerciseResources --name SampleVM --size "Standard_B1ms"
 ```
 
-This command will take a few minutes to reduce the resources of the VM, and once it's done, it will return a new JSON configuration.
+Il comando impiegherà alcuni minuti per ridurre le risorse della macchina virtuale e al termine dell'esecuzione restituirà una nuova configurazione JSON.

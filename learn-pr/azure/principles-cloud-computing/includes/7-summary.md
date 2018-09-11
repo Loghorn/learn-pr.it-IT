@@ -1,20 +1,19 @@
-In this module, we learned what cloud computing is and how it can help every business, from start-up to large enterprise. At this point, we should know what cloud computing is, however, we haven't talked about a specific cloud provider.
+In questo modulo è stato descritto che cos'è il cloud computing e sono stati illustrati i vantaggi che offre tutti i tipi di aziende, dalle startup alle aziende di grandi dimensioni. A questo punto, sono stati appresi i concetti del cloud computing, ma non si è discusso di un provider di servizi cloud specifico.
 
-### Microsoft Azure
+### <a name="microsoft-azure"></a>Microsoft Azure
 
-Azure is Microsoft's cloud computing platform. Azure provides over 100 services that enable you to do everything from running your existing applications on virtual machines to exploring new software paradigms such as intelligent bots and mixed reality.
+Azure è una piattaforma di cloud computing di Microsoft. Azure offre più di 100 servizi che consentono di eseguire tutte le operazioni, dall'esecuzione di applicazioni esistenti su macchine virtuali all'esplorazione di nuovi paradigmi di software, come bot intelligenti e realtà mista.
 
-Here are just a few kinds of services you'll find on Azure:
+Ecco alcuni tipi di servizi disponibili in Azure:
 
-- **Compute** services such as VMs and containers that can run your applications
-- **Database** services that provide both relational and NoSQL choices
-- **Identity** services that help you authenticate and protect your users
-- **Networking** services that connect your data center to the cloud, provide high availability, or host your DNS domain
-- **Storage** solutions that can accommodate massive amounts of both structured and unstructured data
-- **AI and machine-learning** services that can naturally communicate with your users through vision, hearing, and speech
-- And many more!
+- **Calcolo**, servizi quali macchine virtuali e contenitori che possono eseguire le applicazioni
+- **Database**, servizi che forniscono opzioni relazionali e NoSQL
+- **Identità**, servizi che consentono di autenticare e proteggere gli utenti
+- **Rete**, servizi che connettono il data center al cloud, garantiscono un'elevata disponibilità o ospitano il dominio DNS
+- **Archiviazione**, soluzioni che possono ospitare enormi quantità di dati strutturati e non strutturati
+- **Machine Learning e intelligenza artificiale**, servizi in grado di comunicare in modo naturale con gli utenti tramite visione artificiale, udito e riconoscimento vocale
+- E molti altri ancora.
 
-### Get started with Microsoft Azure
+### <a name="get-started-with-microsoft-azure"></a>Introduzione a Microsoft Azure
 
-You can jump into Azure today with a free trial account! Head to
-[azure.microsoft.com](https://azure.microsoft.com).
+È possibile iniziare a usare Azure oggi stesso con un account di valutazione gratuita. Passare ad [azure.microsoft.com](https://azure.microsoft.com).

@@ -1,0 +1,25 @@
+Gli specialisti dell'organizzazione hanno poca tolleranza per i tempi di inattività. Le applicazioni devono essere in grado di gestire gli errori con un impatto minimo per gli utenti. Come si garantisce che le applicazioni rimangano operative, sia per eventi imprevisti locali che per emergenze su larga scala? 
+
+In questo caso verranno fornite istruzioni su come includere la disponibilità e la possibilità di ripristino nella progettazione dell'architettura.
+
+## <a name="availability-and-recoverability"></a>Disponibilità e possibilità di ripristino
+
+In un'applicazione complessa possono verificarsi numerosi imprevisti di qualsiasi portata. Possono verificarsi errori di singoli server e dischi rigidi. Un problema di distribuzione può provocare l'involontaria eliminazione di tutte le tabelle di un database. Interi data center possono diventare irraggiungibili. Un ransomware può crittografare in modo malevolo tutti i dati.
+
+La progettazione per la *disponibilità* è finalizzata al mantenimento del tempo di attività in caso di eventi imprevisti su piccola scala e condizioni temporanee come interruzioni parziali della rete. È possibile garantire che l'applicazione sia in grado di gestire errori localizzati integrando la disponibilità elevata in ogni componente di un'applicazione ed eliminando i singoli punti di guasto. Un progetto di questo tipo riduce anche al minimo l'impatto della manutenzione dell'infrastruttura. I progetti a disponibilità elevata mirano tipicamente a risolvere i problemi in modo rapido e automatico.
+
+La progettazione per la *possibilità di ripristino* sono finalizzati al ripristino dei dati e di emergenze su larga scala. Il ripristino per questi eventi imprevisti non è automatico e può provocare tempi di inattività o la perdita permanente di dati. Per il ripristino di emergenza sono necessarie tanto una pianificazione accurata quanto una corretta esecuzione.
+
+Includendo la disponibilità elevata e la possibilità di ripristino nella progettazione dell'architettura si protegge l'azienda dalle perdite finanziarie derivanti da tempi di inattività e perdita di dati. La reputazione dell'azienda non verrà compromessa dalla perdita di fiducia da parte dei clienti.
+
+## <a name="architecting-for-availability-and-recoverability"></a>Progettare l'architettura per la disponibilità e la possibilità di ripristino
+
+La progettazione dell'architettura per la disponibilità e la possibilità di ripristino assicura che l'applicazione possa mantenere gli impegni presi con i clienti.
+
+Per la disponibilità, identificare il contratto di servizio da offrire ai clienti. Esaminare le potenziali capacità di disponibilità elevata dell'applicazione rispetto al contratto di servizio e identificare le aree in cui si ha una copertura adeguata e quelle in cui è necessario apportare miglioramenti. L'obiettivo è aggiungere ridondanza ai componenti dell'architettura per ridurre le probabilità che si verifichi un'interruzione. Esempi di componenti di progettazione a disponibilità elevata sono il clustering e il bilanciamento del carico. Il clustering sostituisce una singola macchina virtuale con una serie di macchine virtuali coordinate. In caso di errore o irraggiungibilità di una macchina virtuale, verrà eseguito il failover dei servizi a un'altra macchina virtuale in grado di soddisfare le richieste. Il bilanciamento del carico distribuisce le richieste su molte istanze di un servizio, rilevando le istanze con errori e impedendo che le richieste vengano indirizzate a tali istanze.
+
+Per la possibilità di ripristino, eseguire un'analisi per esaminare i possibili scenari di perdita di dati e i principali scenari di tempi di inattività. L'analisi deve comprendere l'esame delle strategie di ripristino e del compromesso costi-benefici per ciascuna di esse. Questo esercizio offrirà una visione approfondita delle priorità dell'organizzazione e contribuirà a chiarire il ruolo dell'applicazione. I risultati includeranno l'obiettivo del punto di recupero dell'applicazione (RPO) e l'obiettivo del tempo di ripristino (RTO) oppure i livelli massimi di perdita di dati e tempi di inattività ritenuti accettabili in considerazione dell'investimento effettuato nel ripristino di emergenza. Definendo RPO e RTO è possibile progettare funzionalità di backup e ripristino nell'architettura per gestire la perdita di dati e la replica per ridurre i tempi di inattività.
+
+Ogni provider di servizi cloud offre una suite di servizi e funzionalità che può essere usata per migliorare la disponibilità e la possibilità di ripristino delle applicazioni. Quando possibile, usare i servizi e le procedure consigliate esistenti ed evitare di crearne altri.
+
+I dischi rigidi possono danneggiarsi, i data center possono diventare irraggiungibili e gli hacker possono sferrare attacchi. È importante mantenere una buona reputazione presso i clienti grazie alla disponibilità e alla possibilità di ripristino. La disponibilità si concentra sul mantenimento dei tempi di attività in situazioni come le interruzioni di rete, mentre la possibilità di ripristino è finalizzata al recupero dei dati dopo un evento imprevisto grave.

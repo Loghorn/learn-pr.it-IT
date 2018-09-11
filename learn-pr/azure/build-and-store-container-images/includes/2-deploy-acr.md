@@ -1,24 +1,24 @@
-In this unit, you will create an Azure container registry using the Azure CLI.
+In questa unità si creerà un registro contenitori di Azure usando l'interfaccia della riga di comando di Azure.
 
-## Create an Azure container registry
+## <a name="create-an-azure-container-registry"></a>Creare un registro contenitori di Azure
 
-Before you create your Azure container registry, you need a *resource group* to deploy it to. A resource group is a logical collection into which all Azure resources are deployed and managed.
+Prima di creare il registro contenitori di Azure, è necessario un *gruppo di risorse* in cui eseguirne la distribuzione. Un gruppo di risorse è una raccolta logica in cui vengono distribuite e gestite tutte le risorse di Azure.
 
-Create a resource group with the `az group create` command. In the following example, a resource group named *myResourceGroup* is created in the *eastus* region:
+Creare un gruppo di risorse con il comando `az group create`. Nell'esempio seguente viene creato un gruppo di risorse denominato *myResourceGroup* nell'area *eastus*:
 
 ```azurecli
 az group create --name myResourceGroup --location eastus
 ```
 
-Once you've created the resource group, create an Azure container registry with the `az acr create` command. The container registry name must be unique within Azure, and contain between 5 and 50 alphanumeric characters. Replace `<acrName>` with a unique name for your registry.
+Dopo aver creato il gruppo di risorse, creare un registro contenitori di Azure con il comando `az acr create`. Il nome del registro contenitori deve essere univoco in Azure e contenere da tra 5 e 50 caratteri alfanumerici. Sostituire `<acrName>` con un nome univoco per il registro.
 
-For this example, a premium registry SKU is deployed. The premium SKU is required for geo-replication. For more information on Container Registry SKUs, see, [Azure Container Registry SKUs](https://docs.microsoft.com/azure/container-registry/container-registry-skus)
+Per questo esempio viene distribuito uno SKU del registro Premium. Lo SKU Premium è obbligatorio per la replica geografica. Per altre informazioni sugli SKU del Registro contenitori di Azure, vedere [SKU del Registro contenitori di Azure](https://docs.microsoft.com/azure/container-registry/container-registry-skus)
 
 ```azurecli
 az acr create --resource-group myResourceGroup --name <acrName> --sku Premium
 ```
 
-Here's example output for a new Azure container registry:
+Di seguito è riportato l'output di esempio per un nuovo registro contenitori di Azure:
 
 ```console
 {
@@ -41,8 +41,8 @@ Here's example output for a new Azure container registry:
 }
 ```
 
-The rest of this module refers to `<acrName>` as a placeholder for the container registry name that you chose in this step.
+Nel resto del modulo viene usato `<acrName>` come segnaposto per il nome del registro contenitori scelto in questo passaggio.
 
-## Summary
+## <a name="summary"></a>Riepilogo
 
-In this unit, you created an Azure container registry using the Azure CLI.
+In questa unità è stato creato un registro contenitori di Azure usando l'interfaccia della riga di comando di Azure.

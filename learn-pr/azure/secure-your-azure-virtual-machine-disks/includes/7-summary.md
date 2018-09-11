@@ -1,13 +1,14 @@
-Azure provides Storage Service Encryption (SSE) and Azure Disk Encryption (ADE) to secure Azure VM disks. These technologies work together to provide strong 256-bit encryption, as part of a defense-in-depth approach for the protection of Azure VM disks. It's required that you complete the Azure Disk Encryption prerequisites to enable disk encryption. The Azure Disk Encryption prerequisites configuration script can automate this process. When enabling encryption on new VMs, you can use an Azure Resource Manager template. This ensures that your data is encrypted at the point of deployment, leaving no vulnerabilities.
+Per proteggere i dischi delle macchine virtuali di Azure, è possibile usare la crittografia del servizio di archiviazione e Crittografia dischi di Azure incluse in Azure. L'uso combinato di queste tecnologie consente di accedere alla crittografia a 256 bit, nell'ambito di un approccio di difesa più approfondito per la protezione dei dischi delle macchine virtuali di Azure. Per abilitare la crittografia dei dischi, è necessario soddisfare i prerequisiti di Crittografia dischi di Azure. Lo script di configurazione dei prerequisiti di Crittografia dischi di Azure consente di automatizzare questo processo. Quando si abilita la crittografia in nuove macchine virtuali, è possibile usare un modello ARM per garantire che i dati vengano crittografati al momento della distribuzione, senza lasciare vulnerabilità.
 
-## Clean up
-<!---TODO: Update for sandbox?--->
-Running Azure VMs, and the associated storage, incurs costs against your subscription. You'll want to remove unneeded resources to avoid unnecessary charges. The easiest way to clean up your Azure subscription is to remove the resource group; this will also delete all the resources in the group. When you are finished with this module, run the following Azure PowerShell cmdlet:
+## <a name="cleanup"></a>Eseguire la pulizia
+<!---TODO: Do we need to include cleanup for the free education tier?--->
+
+L'esecuzione di macchine virtuali di Azure comporta l'addebito di costi per la sottoscrizione. È quindi consigliabile rimuovere le risorse non necessarie per evitare addebiti non necessari. Il modo più semplice per pulire la sottoscrizione di Azure consiste nel rimuovere il gruppo di risorse. Verranno così eliminate anche tutte le risorse nel gruppo. Dopo aver completato questo modulo, eseguire il cmdlet seguente di Azure PowerShell:
 
    ```powershell
    Remove-AzureRmResourceGroup -Name moneyapprg
    ```
 
-When you are asked to confirm the deletion, answer **Yes**. The command may take several minutes to complete as resources are deleted. 
+Quando viene richiesto di confermare l'eliminazione, rispondere **Sì**. Il completamento di questo comando può richiedere alcuni minuti mentre vengono eliminate le risorse. 
 
-If you get a deletion failed message, you may need to remove locks on the key vault before you can delete the resource group.
+Se viene visualizzato un messaggio di eliminazione non riuscita, può essere necessario rimuovere i blocchi nel Key Vault prima di poter eliminare il gruppo di risorse.

@@ -5,6 +5,7 @@ L'uso di Azure significa usare l'IDE preferito, scegliere in un'ampia gamma di l
 In questo modulo viene illustrato come configurare l'ambiente di sviluppo con gli IDE più comuni.
 
 ## <a name="learning-objectives"></a>Obiettivi di apprendimento
+
 In questo modulo verrà descritto come:
 
 - Configurare Visual Studio Code

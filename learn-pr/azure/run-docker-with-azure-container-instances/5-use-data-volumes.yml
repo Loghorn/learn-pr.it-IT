@@ -1,17 +1,15 @@
 ### YamlMime:ModuleUnit
 uid: learn.run-docker-containers-aci.5-use-data-volumes
-metadata:
-  title: Use data volumes
-  description: Use data volumes with Azure Container Instances (ACI).
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
-title: Use data volumes
 interactive: bash
-azureSandbox: true
+metadata:
+  title: Usare volumi di dati
+  description: Usare volumi di dati con istanze di contenitore di Azure (ACI).
+  ms.openlocfilehash: 02f930599ffb7d45e92df23282bfd9b4ef637851
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43833867"
+title: Usare volumi di dati
 durationInMinutes: 10
-content: |
-  [!include[](includes/5-use-data-volumes.md)]
+content: '[!include[](includes/5-use-data-volumes.md)]'

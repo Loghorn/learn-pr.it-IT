@@ -9,6 +9,7 @@ Quando si pianifica una soluzione nel cloud, è sempre presente la sfida del bil
 In questo modulo, verranno esaminati gli strumenti che è possibile usare per rispondere a queste domande e altro ancora.
 
 ## <a name="learning-objectives"></a>Obiettivi di apprendimento
+
 In questo modulo verrà descritto come:
 
 - Stimare i costi con il calcolatore dei prezzi di Azure.
@@ -17,4 +18,5 @@ In questo modulo verrà descritto come:
 - Procedure consigliate per risparmiare sui costi di licenza.
 
 ## <a name="prerequisite"></a>Prerequisito 
+
 - Comprendere le opzioni all'interno dei componenti dell'infrastruttura di Azure. 

@@ -1,31 +1,31 @@
-Now that a virtual machine has been created, we can get information about it through other commands.
+Ora che è stata creata una macchina virtuale, si possono recuperare informazioni su di essa tramite altri comandi.
 
-Let's start with `vm list`.
+Iniziare con `vm list`.
 
 ```azurecli
 az vm list
 ```
 
-This command will return _all_ virtual machines defined in this subscription. The output can be filtered to a specific resource group through the `--resource-group` parameter. 
+Questo comando restituirà _tutte_ le macchine virtuali definite nella sottoscrizione. È possibile filtrare l'output in base a un gruppo di risorse specifico tramite il parametro `--resource-group`. 
 
-## Output types
-Notice that the default response type for all the commands we've done so far is JSON. This is great for scripting - but most people find it harder to read. You can change the output style for any response through the `--output` flag. For example, try the following command in Azure Cloud Shell to see the different output style.
+## <a name="output-types"></a>Tipi di output
+Si noti che il tipo di risposta predefinito per tutti i comandi finora eseguiti è JSON. È ottimale per gli script, ma per la maggior parte delle persone è più difficile da leggere. È possibile modificare lo stile dell'output per qualsiasi risposta tramite il flag `--output`. Provare ad esempio il comando seguente in Azure Cloud Shell per visualizzare un diverso stile dell'output.
 
 ```azurecli
 az vm list --output table
 ```
 
-Along with `table`, you can specify `json` (the default), `jsonc` (colorized JSON), or `tsv` (Table-Separated Values). Try a few variations with the above command to see the difference.
+Oltre a `table`, è possibile specificare `json` (impostazione predefinita), `jsonc` (codice JSON colorato) o `tsv` (valori delimitati da tabulazioni). Provare alcune varianti con il comando precedente per verificare la differenza.
 
-## Getting the IP address
+## <a name="getting-the-ip-address"></a>Recupero dell'indirizzo IP
 
-Another useful command is `vm list-ip-addresses`, which will list the public and private IP addresses for a VM. If they change, or you didn't capture them during creation, you can retrieve them at any time.
+Un altro comando utile è `vm list-ip-addresses`, che elencherà gli indirizzi IP pubblico e privato di una VM. Se vengono modificati o non si sono acquisiti durante la creazione, è possibile recuperarli in qualsiasi momento.
 
 ```azurecli
 az vm list-ip-addresses -n SampleVM -o table
 ```
 
-This returns:
+Il comando restituisce:
 
 ```
 VirtualMachine    PublicIPAddresses    PrivateIPAddresses
@@ -34,23 +34,23 @@ SampleVM          168.61.54.62         10.0.0.4
 ```
 
 > [!TIP]
-> Notice that we are using a shorthand syntax for the `--output` flag as `-o`. Most parameters to Azure CLI commands can be shortened to a single dash and letter. For example, `--name` can be shortened to `-n` and `--resource-group` to `-g`. This is handy for typing, but we recommend using the full option name in scripts for clarity. Check the documentation for details on each command.
+> Si noti che per il flag `--output` si sta usando la sintassi abbreviata `-o`. La maggior parte dei parametri per i comandi dell'interfaccia della riga di comando di Azure può essere abbreviata in un singolo trattino e una lettera. Ad esempio, è possibile abbreviare `--name` in `-n` e `--resource-group` in `-g`. L'abbreviazione è comoda per la digitazione, ma negli script è consigliabile usare il nome completo dell'opzione per maggiore chiarezza. Per informazioni dettagliate su ogni comando, vedere la documentazione.
 
-## Getting VM details
+## <a name="getting-vm-details"></a>Recupero dei dettagli della VM
 
-We can get more detailed information about a specific virtual machine by name or ID using the `vm show` command.
+È possibile ottenere informazioni più dettagliate su una macchina virtuale specifica in base al nome o all'ID usando il comando `vm show`.
 
 ```azurecli
 az vm show --resource-group ExerciseResources --name SampleVM
 ```
 
-This will return a fairly large JSON block with all sorts of information about the VM, including attached storage devices, network interfaces, and all of the object IDs for resources that the VM is connected to. Again, we could change to a table format, but that omits almost all of the interesting data. Instead, we can turn to a built-in query language for JSON called [JMESPath](http://jmespath.org/).
+Questo comando restituirà un blocco JSON piuttosto esteso con tutti i tipi di informazioni sulla VM, tra cui i dispositivi di archiviazione collegati, le interfacce di rete e tutti gli ID oggetto per le risorse a cui la VM è connessa. Anche in questo caso si può passare a un formato di tabella, ma in tale formato vengono omessi quasi tutti i dati interessanti. Si può invece usare un linguaggio di query predefinito per JSON denominato [JMESPath](http://jmespath.org/).
 
-## Adding filters to queries with JMESPath
+## <a name="adding-filters-to-queries-with-jmespath"></a>Aggiunta di filtri alle query con JMESPath
 
-JMESPath is an industry-standard query language built around JSON objects. The simplest query is to specify an _identifier_ that selects a key in the JSON object.
+JMESPath è un linguaggio di query standard del settore basato su oggetti JSON. La query più semplice consiste nello specificare un _identificatore_ che seleziona una chiave nell'oggetto JSON.
 
-For example, given the object:
+Ad esempio, nel caso dell'oggetto seguente:
 
 ```json
 {
@@ -71,7 +71,7 @@ For example, given the object:
 }
 ```
 
-We can use the query `people` to return the array of values for the `people` array. If we just want _one_ of the people, we can use an indexer. For example, `people[1]` would return:
+È possibile usare la query `people` per restituire la matrice di valori per la matrice `people`. Se si vuole restituire _una_ sola persona, si può usare un indicizzatore. `people[1]`, ad esempio, restituirà:
 
 ```json
 {
@@ -80,7 +80,7 @@ We can use the query `people` to return the array of values for the `people` arr
 }
 ```
 
-We can also add specific qualifiers that would return a subset of the objects based on some criteria. For example, adding the qualifier `people[?age > '25']` would return:
+È anche possibile aggiungere qualificatori specifici che restituiscano un subset degli oggetti in base ad alcuni criteri specificati. Ad esempio, l'aggiunta del qualificatore `people[?age > '25']` restituirebbe:
 
 ```json
 [
@@ -95,7 +95,7 @@ We can also add specific qualifiers that would return a subset of the objects ba
 ]
 ```
 
-Finally, we can constrain the results by adding a select: `people[?age > '25'].[name]` that returns just the names:
+È infine possibile limitare i risultati aggiungendo una selezione come `people[?age > '25'].[name]`, che restituisce solo i nomi:
 
 ```json
 [
@@ -108,34 +108,34 @@ Finally, we can constrain the results by adding a select: `people[?age > '25'].[
 ]
 ```
 
-JMESQuery has several other interesting query features. When you have time, check out the [online tutorial](http://jmespath.org/tutorial.html) available on the [JMESPath.org](http://jmespath.org/) site.
+JMESPath offre diverse altre interessanti funzionalità di query. Quando si ha tempo, vedere l'[esercitazione online](http://jmespath.org/tutorial.html) disponibile nel sito [JMESPath.org](http://jmespath.org/).
 
-## Filtering our Azure CLI queries
+## <a name="filtering-our-azure-cli-queries"></a>Applicazione di filtri alle query dell'interfaccia della riga di comando di Azure
 
-With a basic understanding of JMES queries, we can add filers to the data being returned by queries like the `vm show` command. For example, we can retrieve the admin user name:
+Con una conoscenza di base delle query JMES, è possibile aggiungere filtri ai dati restituiti da query come il comando `vm show`. Ad esempio, si può recuperare il nome utente amministratore:
 
 ```azurecli
 az vm show --resource-group ExerciseResources --name SampleVM --query "osProfile.adminUsername"
 ```
 
-We can get the size assigned to our VM:
+È possibile ottenere la dimensione assegnata alla VM:
 
 ```azurecli
 az vm show --resource-group ExerciseResources --name SampleVM --query hardwareProfile.vmSize
 ```
 
-Or to retrieve all the IDs for your network interfaces, you can use the query:
+Per recuperare tutti gli ID delle interfacce di rete, invece, si può usare la query seguente:
 
 ```azurecli
 az vm show --resource-group ExerciseResources --name SampleVM --query "networkProfile.networkInterfaces[].id"
 ```
 
-This query technique will work with any Azure CLI command and can be used to pull specific bits of data out on the command line. It is useful for scripting as well - for example, you can pull a value out of your Azure account and store it in an environment or script variable. If you decide to use it this way, a useful flag to add is the `--output tsv` parameter (which can be shortened to `-o tsv`). This will return the results in tab-separated values that only include the actual data values with tab separators.
+Questa tecnica di query funziona con qualsiasi comando dell'interfaccia della riga di comando di Azure e può essere usata per estrarre dati specifici nella riga di comando. È utile anche per gli script. È ad esempio possibile estrarre un valore dall'account Azure e archiviarlo in una variabile di ambiente o di script. Se si decide di usarla in questo modo, un flag utile da aggiungere è il parametro `--output tsv`, abbreviabile in `-o tsv`. In questo modo, i risultati vengono restituiti in valori delimitati da tabulazioni e includono solo i valori di dati effettivi con tabulazioni come separatori.
 
-As an example,
+Ad esempio:
 
 ```azurecli
 az vm show --resource-group ExerciseResources --name SampleVM --query "networkProfile.networkInterfaces[].id" -o tsv
 ```
 
-returns the text: `/subscriptions/abc13b0c-d2c4-64b2-9ac5-2f4cb819b752/resourceGroups/ExerciseResources/providers/Microsoft.Network/networkInterfaces/SampleVMVMNic`
+Restituisce il testo: `/subscriptions/abc13b0c-d2c4-64b2-9ac5-2f4cb819b752/resourceGroups/ExerciseResources/providers/Microsoft.Network/networkInterfaces/SampleVMVMNic`

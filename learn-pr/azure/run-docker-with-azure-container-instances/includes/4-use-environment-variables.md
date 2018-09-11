@@ -1,26 +1,26 @@
-Setting environment variables in your container instances allows you to provide dynamic configuration of the application or script run by the container. Environment variables are set using the Azure CLI, PowerShell, or the Azure portal at container creation time. Secured environment variables are used to prevent sensitive information from being displayed in container operations output.
+L'impostazione delle variabili di ambiente nelle istanze di contenitore consente di offrire la configurazione dinamica dell'applicazione o dello script eseguiti dal contenitore. Le variabili di ambiente vengono impostate tramite l'interfaccia della riga di comando di Azure, PowerShell o il portale di Azure al momento della creazione dei contenitori. Le variabili di ambiente protetto vengono usate per impedire che le informazioni riservate vengano visualizzate nell'output delle operazioni del contenitore.
 
-In this unit, an Azure Cosmos DB instance is created, and then an Azure container instance runs with the connection information of the Azure Cosmos DB instance stored as environment variables. An application in the container uses the variables to write and read data from Azure Cosmos DB. In this unit, you will create both an environment variable and a secured environment variable.
+In questa unità viene creata un'istanza di Azure Cosmos DB, quindi viene eseguita un'istanza di contenitore di Azure con le informazioni di connessione dell'istanza di Azure Cosmos DB archiviate come variabili di ambiente. Un'applicazione nel contenitore usa le variabili per scrivere e leggere i dati da Azure Cosmos DB. In questa unità, si creerà sia una variabile di ambiente che una variabile di ambiente protetto.
 
-## Deploy Azure Cosmos DB
+## <a name="deploy-azure-cosmos-db"></a>Distribuire Azure Cosmos DB
 
-Create the Azure Cosmos DB instance with the `az Azure Cosmos DB create` command. This example will also place the Azure Cosmos DB endpoint address in a variable named *COSMOS_DB_ENDPOINT*.
+Creare l'istanza di Azure Cosmos DB con il comando `az Azure Cosmos DB create`. In questo esempio, l'indirizzo dell'endpoint di Azure Cosmos DB viene inoltre inserito in una variabile denominata *COSMOS_DB_ENDPOINT*.
 
-This command can take a few minutes to complete:
+Il comando potrebbe richiedere alcuni minuti:
 
 ```azurecli
 COSMOS_DB_ENDPOINT=$(az cosmosdb create --resource-group myResourceGroup --name aci-cosmos --query documentEndpoint -o tsv)
 ```
 
-Next, get the Azure Cosmos DB connection key with the `az cosmosdb list-keys` command and store it in a variable named *COSMOS_DB_MASTERKEY*:
+Successivamente, ottenere la chiave di connessione di Azure Cosmos DB con il comando `az cosmosdb list-keys` e archiviarla in una variabile denominata *COSMOS_DB_MASTERKEY*:
 
 ```azurecli
 COSMOS_DB_MASTERKEY=$(az cosmosdb list-keys --resource-group myResourceGroup --name aci-cosmos --query primaryMasterKey -o tsv)
 ```
 
-## Deploy a container instance
+## <a name="deploy-a-container-instance"></a>Distribuire un'istanza di contenitore
 
-Create an Azure container instance using the `az container create` command. Take note that two environment variables are created, `COSMOS_DB_ENDPOINT` and `COSMOS_DB_ENDPOINT`. These variables hold the values needed to connect to the Azure Cosmos DB instance:
+Creare un'istanza di contenitore di Azure usando il comando `az container create`. Si noti che vengono create due variabili di ambiente, `COSMOS_DB_ENDPOINT` e `COSMOS_DB_ENDPOINT`. Queste variabili contengono i valori necessari per connettersi all'istanza di Azure Cosmos DB:
 
 ```azurecli
 az container create \
@@ -32,27 +32,27 @@ az container create \
     COSMOS_DB_MASTERKEY=$COSMOS_DB_MASTERKEY
 ```
 
-Once the container has been created, get the IP address with the `az container show` command:
+Dopo aver creato il contenitore, ottenere l'indirizzo IP usando il comando `az container show`:
 
 ```azurecli
 az container show --resource-group myResourceGroup --name aci-demo --query ipAddress.ip --output tsv
 ```
 
-Open up a browser and navigate to the IP address of the container. You should see the following application. When casing a vote, the vote is stored in the Azure Cosmos DB instance.
+Aprire un browser e passare all'indirizzo IP del contenitore. Dovrebbe venire visualizzata l'applicazione seguente. Quando si inserisce un voto in un contenitore, il voto viene archiviato nell'istanza di Azure Cosmos DB.
 
-![Azure voting application with two choices, cats or dogs.](../media-draft/azure-vote.png)
+![Applicazione di votazione di Azure con due opzioni, gatti o cani.](../media-draft/azure-vote.png)
 
-## Secured environment variables
+## <a name="secured-environment-variables"></a>Variabili di ambiente protetto
 
-In the previous exercise, a container was created with connection information for Azure Cosmos DB stored in two environment variables. By default, environment variables are displayed in the Azure portal and command-line tools in plain text.
+Nell'esercizio precedente è stato creato un contenitore con le informazioni di connessione ad Azure Cosmos DB archiviate in due variabili di ambiente. Per impostazione predefinita, le variabili di ambiente vengono visualizzate nel portale di Azure e negli strumenti da riga di comando in formato testo normale.
 
-For example, if you get information about the container created in the previous exercise with the `az container show` command, the environment variables are accessible in plain text:
+Ad esempio, se si ottengono informazioni sul contenitore creato nell'esercizio precedente con il comando `az container show`, le variabili di ambiente sono accessibili in formato testo normale:
 
 ```azurecli
 az container show --resource-group myResourceGroup --name aci-demo --query containers[0].environmentVariables
 ```
 
-Example output:
+Output di esempio:
 
 ```bash
 [
@@ -69,9 +69,9 @@ Example output:
 ]
 ```
 
-Secure environment variables prevent clear text output. To use secure environment variables, replace the `--environment-variables` argument with the `--secure-environment-variables` argument.
+Le variabili di ambiente protetto impediscono l'output di testo non crittografato. Per usare le variabili di ambiente protetto, sostituire l'argomento `--environment-variables` con l'argomento `--secure-environment-variables`.
 
-Run the following example to create a container named *aci-demo-secure* that utilizes secured environment variables:
+Eseguire l'esempio seguente per creare un contenitore denominato *aci-demo-secure* che usa le variabili di ambiente protetto:
 
 ```azurecli
 az container create \
@@ -83,13 +83,13 @@ az container create \
     COSMOS_DB_MASTERKEY=$COSMOS_KEY
 ```
 
-Now, when the container is returned with the `az container show` command, the environment variables are not displayed:
+A questo punto, quando il contenitore viene restituito con il comando `az container show`, non vengono visualizzate le variabili di ambiente:
 
 ```azurecli
 az container show --resource-group myResourceGroup --name aci-demo-secure --query containers[0].environmentVariables
 ```
 
-Example output:
+Output di esempio:
 
 ```bash
 [
@@ -106,8 +106,8 @@ Example output:
 ]
 ```
 
-## Summary
+## <a name="summary"></a>Riepilogo
 
-In this unit, you created an Azure Cosmos DB instance and an Azure container instance. Environment variables were set in the container instance such that the application running inside of the container was able to connect to the Azure Cosmos DB instance.
+In questa unità è stata creata un'istanza di Azure Cosmos DB e un'istanza di contenitore di Azure. Le variabili di ambiente sono state impostate nell'istanza di contenitore in modo che l'applicazione in esecuzione all'interno del contenitore sia in grado di connettersi all'istanza di Azure Cosmos DB.
 
-In the next unit, you will mount data volumes to an Azure container instance for data persistence.
+Nell'unità successiva si monteranno i volumi di dati in un'istanza di contenitore di Azure per la persistenza dei dati.

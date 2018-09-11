@@ -6,9 +6,9 @@ Molti clienti hanno investito in licenze per Windows Server e ora vorrebbero tra
 
 Per essere idonee a questo vantaggio, le licenze di Windows devono avere la copertura di Software Assurance. Vengono considerate anche le indicazioni seguenti:
 
-- Ogni licenza a due processori o ogni set di licenze a 16 core ha diritto a due istanze fino a 8 core o a un'istanza fino a 16 core. 
+- Ogni licenza a due processori o ogni set di licenze a 16 core ha diritto a due istanze fino a 8 core o a un'istanza fino a 16 core.
 - Le licenze per la Standard Edition possono essere usate solo una volta in locale o in Azure. Non è quindi possibile usare la stessa licenza per una macchina virtuale di Azure e un computer locale.
-- I vantaggi della Datacenter Edition permettono l'utilizzo simultaneo in locale e in Azure, pertanto la licenza copre due computer Windows in esecuzione. 
+- I vantaggi della Datacenter Edition permettono l'utilizzo simultaneo in locale e in Azure, pertanto la licenza copre due computer Windows in esecuzione.
 
 > [!NOTE]
 > La maggior parte dei clienti possiede licenze basate sul numero di core, pertanto si userà tale modello per il calcolo. Per informazioni sul tipo di licenza di cui si dispone, contattare il rivenditore della licenza o il team dell'account Microsoft.
@@ -23,13 +23,15 @@ Il Vantaggio Azure Hybrid per SQL Server consente di massimizzare il valore degl
 
 ### <a name="azure-sql-database-vcore-based-options"></a>Opzioni basate su vCore per il database SQL di Azure
 
-![Permuta della licenza di SQL Server](../images/sql-tradein-value.jpg)
-
 Per il database SQL di Azure il Vantaggio Azure Hybrid funziona nel modo seguente:
 
 - Se si dispone di licenze basate su core per la Standard Edition con Software Assurance attivo, è possibile ottenere un vCore a livello di servizio Utilizzo generico per ogni core di licenza che si possiede in locale.
 - Se si dispone di licenze basate su core per l'Enterprise Edition con Software Assurance attivo, è possibile ottenere un vCore a livello di servizio Business Critical per ogni core di licenza che si possiede in locale. Il Vantaggio Azure Hybrid per SQL Server per il livello di servizio Business Critical è disponibile solo per i clienti che dispongono di licenze Enterprise Edition.
 - Se si dispone di licenze basate su core per l'Enterprise Edition altamente virtualizzata con Software Assurance attivo, è possibile ottenere quattro vCore a livello di servizio Utilizzo generico per ogni core di licenza che si possiede in locale. Si tratta di un vantaggio della virtualizzazione esclusivo disponibile solo per il database SQL di Azure.
+
+La figura seguente mostra le opzioni basate su vCore disponibili in ogni livello di servizio con licenze Vantaggio Azure Hybrid per SQL Server.
+
+![Illustrazione che mostra un esempio di come ottimizzare la licenza SQL Server esistente usando Vantaggio Azure Hybrid.](../media-drafts/5-sql-tradein-value.png)
 
 Per SQL Server in Macchine virtuali di Azure, il Vantaggio Azure Hybrid funziona nel modo seguente:
 
@@ -47,7 +49,7 @@ Di seguito sono riportati i dettagli completi per ciascuna offerta. Un cliente c
 
 Se si dispone di un contratto Enterprise e si è già investito in licenze di SQL Server, che sono state liberate con lo spostamento delle risorse in Azure, è possibile eseguire il provisioning delle immagini **Bring Your Own License** (BYOL) da Azure Marketplace, ottenendo così la possibilità di usufruire di queste licenze inutilizzate e ridurre il costo della VM di Azure. Questa operazione è sempre stata possibile eseguendo il provisioning di una VM Windows e installando SQL Server manualmente, ma questo approccio semplifica il processo di creazione grazie all'uso delle immagini certificate Microsoft. Per trovare queste immagini, cercare **BYOL** nel Marketplace.
 
-![BYOL per SQL Server in Azure](../images/byol-sql-server.png)
+![BYOL per SQL Server in Azure](../media-drafts/5-byol-sql-server.png)
 
 > [!IMPORTANT]
 > Per usare queste immagini BYOL certificate è necessaria una sottoscrizione Contratto Enterprise.

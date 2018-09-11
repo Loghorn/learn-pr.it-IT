@@ -1,32 +1,32 @@
-At this point, the mobile app is a simple "Hello World" app. In this unit, you add the UI and some basic application logic.
+A questo punto, l'app per dispositivi mobili è una semplice app "Hello World". In questa unità si aggiungerà l'interfaccia utente e una logica dell'applicazione di base.
 
-The UI for the app will consist of:
+L'interfaccia utente per l'app sarà costituita da:
 
-- A text-entry control to enter some phone numbers.
-- A button to send your location to those numbers using an Azure function.
-- A label that will show a message to the user of the current status, such as the location being sent and location sent successfully.
+- Un controllo voce di testo per immettere alcuni numeri di telefono.
+- Un pulsante per inviare la posizione a questi numeri usando una funzione di Azure.
+- Un'etichetta che visualizzerà un messaggio all'utente indicante lo stato corrente, ad esempio, il percorso inviato e l'invio corretto del percorso.
 
-Xamarin.Forms supports a design pattern called Model-View-ViewModel (MVVM). You can read more about MVVM in the [Xamarin MVVM docs](https://docs.microsoft.com/xamarin/xamarin-forms/enterprise-application-patterns/mvvm), but the essence of it is, each page (View) has a ViewModel that exposes properties and behavior.
+Xamarin.Forms supporta uno schema progettuale denominato MVVM (Model-View-ViewModel). Altre informazioni su MVVM vedere la [documentazione di Xamarin MVVM](https://docs.microsoft.com/xamarin/xamarin-forms/enterprise-application-patterns/mvvm), ma la logica essenziale è che ogni pagina (visualizzazione) contiene un elemento ViewModel che espone le proprietà e il comportamento.
 
-ViewModel properties are 'bound' to components on the UI by name, and this binding synchronizes data between the View and ViewModel. For example, a `string` property on a ViewModel called `Name` could be bound to the `Text` property of a text-entry control on the UI. The text-entry control shows the value in the `Name` property and, when the user changes the text in the UI, the `Name` property is updated. If the value of the `Name` property is changed in the ViewModel, an event is raised to tell the UI to update.
+Le proprietà ViewModel sono associate a componenti nell'interfaccia utente in base al nome e questa associazione consente di sincronizzare dati tra View e ViewModel. Ad esempio, una proprietà `string` in un ViewModel denominato `Name` può essere associata alla proprietà `Text` di un controllo voce di testo nell'interfaccia utente. Il controllo voce di testo Mostra il valore di `Name` proprietà e, quando l'utente modifica il testo nell'interfaccia utente, il `Name` proprietà viene aggiornata. Se il valore della proprietà `Name` viene modificato in ViewModel, viene generato un evento per indicare all'interfaccia utente da aggiornare.
 
-ViewModel behavior is exposed as command properties, a command being an object that wraps an action that is executed when the command is invoked. These commands are bound by name to controls like buttons, and tapping a button will invoke the command.
+Il comportamento di ViewModel viene esposto come proprietà dei comandi, dove un comando è un oggetto che esegue il wrapping di un'azione che viene eseguita quando il comando viene richiamato. Questi comandi sono associati in base al nome a controlli quali pulsanti e toccando un pulsante viene richiamato il comando.
 
-## Create a base ViewModel
+## <a name="create-a-base-viewmodel"></a>Creare un'immagine di ViewModel
 
-ViewModels all implement the `INotifyPropertyChanged` interface. This interface has a single event, `PropertyChanged`, which is used to notify the UI of any updates. This event has event args that contain the name of the property that has changed. It's common practice to create a base ViewModel class implementing this interface and providing some helper methods.
+Tutti i ViewModel implementano l'interfaccia `INotifyPropertyChanged`. Questa interfaccia dispone di un singolo evento, `PropertyChanged`, che viene usato per notificare all'interfaccia utente eventuali aggiornamenti. Questo evento ha argomenti dell'evento che contengono il nome della proprietà che è stata modificata. È pratica comune creare una classe ViewModel di base che implementa questa interfaccia e fornisce alcuni metodi di supporto.
 
-1. Create a new class in the `ImHere` .NET standard project called `BaseViewModel` by right-clicking on the project, and then selecting *Add->Class...*. Name the new class "BaseViewModel" and click **Add**.
+1. Creare una nuova classe nel progetto :NET `ImHere` standard denominato `BaseViewModel` facendo clic con il pulsante destro del mouse sul progetto e quindi selezionando *Aggiungi -> Classe...* . Assegnare un nome alla nuova classe "BaseViewModel" e fare clic su **Aggiungi**.
 
-1. Make the class `public` and derive from `INotifyPropertyChanged`. You'll need to add a using directive for `System.ComponentModel`.
+1. Rendere la classe `public` e derivarla da `INotifyPropertyChanged`. È necessario aggiungere una direttiva utilizzo per `System.ComponentModel`.
 
-1. Implement the `INotifyPropertyChanged` interface by adding the `PropertyChanged` event:
+1. Implementare l'interfaccia `INotifyPropertyChanged` aggiungendo l'evento `PropertyChanged`:
 
     ```cs
     public event PropertyChangedEventHandler PropertyChanged;
     ```
 
-1. The common pattern for ViewModel properties is to have a public property with a private backing field. In the property setter, the backing field is checked against the new value. If the new value is different to the backing field, the backing field is updated and the `PropertyChanged` event is raised. This logic is easy to factor out into a method, so add the `Set` method. You'll need to add a using directive for the `System.Runtime.CompilerServices` namespace.
+1. Il modello comune per le proprietà ViewModel è disporre di una proprietà pubblica con un campo sottostante privato. Nel setter proprietà, il campo sottostante viene confrontato con il nuovo valore. Se il nuovo valore è diverso dal campo sottostante, il campo sottostante viene aggiornato e viene generato l'evento `PropertyChanged`. Questa logica è facile da prendere in considerazione in un metodo, quindi aggiungere il metodo `Set`. È necessario aggiungere una direttiva utilizzo per lo spazio dei nomi `System.Runtime.CompilerServices`.
 
     ```cs
     protected void Set<T>(ref T field, T value, [CallerMemberName] string propertyName = null)
@@ -37,9 +37,9 @@ ViewModels all implement the `INotifyPropertyChanged` interface. This interface 
     }
     ```
 
-    This method takes a reference to the backing field, the new value, and the property name. If the field hasn't changed, the method returns, otherwise, the field is updated and the `PropertyChanged` event is raised. The `propertyName` parameter on the `Set` method is a default parameter and is marked with the `CallerMemberName` attribute. When this method is called from a property setter, this parameter is normally left as the default value. The compiler will then automatically set the parameter value to be the name of the calling property.
+    Questo metodo fa riferimento al campo sottostante, a nuovo valore e al nome della proprietà. Se il campo non è stato modificato, il metodo restituisce, in caso contrario, il campo viene aggiornato e viene generato l'evento `PropertyChanged`. Il parametro `propertyName` nel metodo `Set` è un parametro predefinito ed è contrassegnato con l'attributo `CallerMemberName`. Quando questo metodo viene chiamato da un setter proprietà, in genere questo parametro viene lasciato come valore predefinito. Il compilatore quindi imposterà automaticamente il valore del parametro sul nome della proprietà chiamata.
 
-The full code for this class is below.
+Di seguito è riportato il codice completo per questa classe.
 
 ```cs
 using System.ComponentModel;
@@ -61,15 +61,15 @@ namespace ImHere
 }
 ```
 
-## Create a ViewModel for the page
+## <a name="create-a-viewmodel-for-the-page"></a>Creare un ViewModel per la pagina
 
-The `MainPage` will have a text-entry control for phone numbers and a label to display a message. These controls will be bound to properties on a ViewModel.
+Il `MainPage` disporrà di un controllo di immissione del testo per i numeri di telefono e di un'etichetta per visualizzare un messaggio. Questi controlli verranno associati alle proprietà in un ViewModel.
 
-1. Create a class called `MainViewModel` in the `ImHere` .NET standard project.
+1. Creare una classe denominata `MainViewModel` nel progetto standard .NET `ImHere`.
 
-1. Make this class public and derive from `BaseViewModel`.
+1. Rendere pubblica la classe e derivarla da `BaseViewModel`.
 
-1. Add two `string` properties, `PhoneNumbers` and `Message`, each with a backing field. In the property setter, use the base class `Set` method to update the value and raise the `PropertyChanged` event.
+1. Aggiungere due proprietà `string`, `PhoneNumbers` e `Message`, ciascuna con un campo sottostante. Nel setter proprietà, usare il metodo `Set` della classe di base per aggiornare il valore e generare l'evento `PropertyChanged`.
 
    ```cs
     string message = "";
@@ -87,13 +87,13 @@ The `MainPage` will have a text-entry control for phone numbers and a label to d
     }
    ```
 
-1. Add a read-only command property called `SendLocationCommand`. This command will have a type of `ICommand` from the `System.Windows.Input` namespace.
+1. Aggiungere una proprietà comando di sola lettura denominata `SendLocationCommand`. Questo comando avrà un tipo di `ICommand` dallo spazio dei nomi `System.Windows.Input`.
 
     ```cs
     public ICommand SendLocationCommand { get; }
     ```
 
-1. Add a constructor to the class, and in this constructor, initialize the `SendLocationCommand` as a new `Command` from the `Xamarin.Forms` namespace. The constructor for this command takes an `Action` to run when the command is invoked, so create an `async` method called `SendLocation` and pass a lambda function that `await`s this call to the constructor. The body of the `SendLocation` method will be implemented in later units in this module. You'll need to add a using directive for the `System.Threading.Tasks` namespace to be able to return a `Task`.
+1. Aggiungere un costruttore alla classe e in questo costruttore inizializzare `SendLocationCommand` come nuovo `Command` dallo spazio dei nomi `Xamarin.Forms`. Il costruttore per questo comando impiega `Action` per l'esecuzione quando il comando viene richiamato, quindi creare un metodo `async` denominato `SendLocation` e passare una funzione lambda che `await` questa chiamata al costruttore. Il corpo del metodo `SendLocation` verrà implementato nelle unità successive in questo modulo. È necessario aggiungere una direttiva utilizzo per lo spazio dei nomi `System.Threading.Tasks` perché venga restituito un `Task`.
 
     ```cs
     public MainViewModel()
@@ -106,7 +106,7 @@ The `MainPage` will have a text-entry control for phone numbers and a label to d
     }
     ```
 
-The code for this class is shown below.
+Di seguito è riportato il codice per questa classe.
 
 ```cs
 using System.Threading.Tasks;
@@ -145,15 +145,15 @@ namespace ImHere
 }
 ```
 
-## Create the user interface
+## <a name="create-the-user-interface"></a>Creare l'interfaccia utente
 
-Xamarin.Forms UIs can be built using XAML.
+Le interfacce utente Xamarin.Forms possono essere create tramite XAML.
 
-1. Open the `MainPage.xaml` file from the `ImHere` project. The page will open in the XAML editor.
+1. Aprire il file `MainPage.xaml` dal progetto `ImHere`. La pagina verrà aperta nell'editor XAML.
 
-    NOTE - The `ImHere.UWP` project also contains a file called `MainPage.xaml`. Make sure you're editing the one in the .NET standard library.
+    NOTA: il progetto `ImHere.UWP` contiene anche un file denominato `MainPage.xaml`. Assicurarsi di stare modificando quello nella libreria standard .NET.
 
-1. Before you can bind controls to properties on a ViewModel, you have to set an instance of the ViewModel as the binding context of the page. Add the following XAML inside the top-level `ContentPage`.
+1. Prima di poter associare controlli alle proprietà di un ViewModel, è necessario impostare un'istanza del ViewModel come contesto di associazione della pagina. Aggiungere il codice XAML seguente all'interno del `ContentPage` di primo livello.
 
     ```xml
     <ContentPage.BindingContext>
@@ -161,14 +161,14 @@ Xamarin.Forms UIs can be built using XAML.
     </ContentPage.BindingContext>
     ```
 
-1. Delete the contents of the `StackLayout` and add some padding inside it to help make the UI look better.
+1. Eliminare il contenuto del `StackLayout` e aggiungere una spaziatura interna per migliorare l'aspetto dell'interfaccia utente.
 
     ```xml
     <StackLayout Padding="20">
     </StackLayout>
     ```
 
-1. Add an `Editor` control that the user can use to add phone numbers to the `StackLayout`, with a `Label` above to describe what the entry control is for. `StackLayout`'s stack child controls either horizontally or vertically in the order in which the controls are added, so adding the `Label` first will put it above the `Editor`. `Editor` controls are multi-line entry controls, allowing the user to enter multiple phone numbers, one per line.
+1. Aggiungere un controllo `Editor` che l'utente può usare per aggiungere i numeri di telefono al `StackLayout`, con un `Label` precedente per descrivere la funzione del controllo di immissione. `StackLayout` distribuisce i controlli figlio in senso orizzontale o verticale nell'ordine in cui vengono aggiunti i controlli, pertanto aggiungendo prima `Label`, questo verrà inserito prima di `Editor`. I controlli `Editor` sono controlli voce su più righe che consentono all'utente di immettere più numeri di telefono, uno per riga.
 
     ```xml
     <StackLayout Padding="20">
@@ -177,25 +177,25 @@ Xamarin.Forms UIs can be built using XAML.
     </StackLayout>
     ```
 
-    The `Text` property on the `Editor` is bound to the `PhoneNumbers` property on the `MainViewModel`. The syntax for binding is to set the property value to `"{Binding <property name>}"`. The curly braces will tell the XAML compiler that this value is special and should be treated differently from a simple `string`.
+    La proprietà `Text` su `Editor` è associata alla proprietà `PhoneNumbers` su `MainViewModel`. La sintassi per l'associazione consiste nell'impostare il valore della proprietà su `"{Binding <property name>}"`. Le parentesi graffe indicheranno al compilatore XAML che questo valore è speciale e deve essere trattato in modo diverso da un semplice `string`.
 
-1. Add a `Button` to send the user's location below the `Editor`.
+1. Aggiungere un `Button` per inviare la posizione dell'utente sotto `Editor`.
 
     ```xml
     <Button Text="Send Location" BackgroundColor="Blue" TextColor="White"
             Command="{Binding SendLocationCommand}" />
     ```
 
-    The `Command` property is bound to the `SendLocationCommand` command on the ViewModel. When the button is tapped, the command will be executed.
+    La proprietà `Command` è associata al comando `SendLocationCommand` nel ViewModel. Quando viene toccato il pulsante, verrà eseguito il comando.
 
-1. Add a `Label` to show the status message below the `Button`.
+1. Aggiungere un `Label` per visualizzare il messaggio di stato sotto il `Button`.
 
     ```xml
     <Label Text="{Binding Message}"
            HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
     ```
 
-The full code for this page is below.
+Di seguito è riportato il codice completo per questa pagina.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -217,10 +217,10 @@ The full code for this page is below.
 </ContentPage>
 ```
 
-Run the app to see the new UI. If you want to validate the bindings at this point, you can do so by adding breakpoints to the properties or the `SendLocation` method.
+Eseguire l'app per visualizzare la nuova interfaccia utente. Se, a questo punto, si intende convalidare l'associazione, è possibile farlo mediante l'aggiunta di punti di interruzione alle proprietà o al metodo `SendLocation`.
 
-![The new app UI](../media-drafts/3-new-ui.png)
+![La nuova interfaccia utente dell'app](../media-drafts/3-new-ui.png)
 
-## Summary
+## <a name="summary"></a>Riepilogo
 
-In this unit, you learned how to create the UI for the app using XAML, along with a ViewModel to handle the applications logic. You also learned how to bind the ViewModel to the UI. In the next unit, you add location lookup to the ViewModel.
+In questa unità è stato descritto come creare l'interfaccia utente per le tramite XAML, insieme a un ViewModel per gestire la logica delle applicazioni. Inoltre si è appreso come associare un ViewModel all'interfaccia utente. Nell'unità successiva verrà descritto come aggiungere la ricerca posizioni al ViewModel.

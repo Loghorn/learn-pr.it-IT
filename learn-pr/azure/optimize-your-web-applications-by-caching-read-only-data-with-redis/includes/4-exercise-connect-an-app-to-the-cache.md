@@ -11,10 +11,15 @@ In questo esercizio si creerà un'istanza di Cache Redis di Azure per archiviare
 ## <a name="configure-your-cache"></a>Configurare la cache
 
 1. **Nome DNS:** creare un nome globalmente univoco, ad esempio **ContosoSportsApp1028**.
+
 1. **Sottoscrizione:** selezionare la sottoscrizione.
+
 1. **Gruppo di risorse:** creare un nuovo gruppo di risorse e assegnare al gruppo un nome.
+
 1. **Area:** dato che la maggior parte dei clienti si trova nell'area di New York, è necessario selezionare **Stati Uniti orientali**.
+
 1. **Piano tariffario:** selezionare **Basic C0**.
+
 1. Fare clic su **Crea**.
 
     Lo screenshot seguente mostra una configurazione rappresentativa usata per creare una nuova risorsa di Cache Redis.
@@ -31,6 +36,7 @@ In questo esercizio si creerà un'istanza di Cache Redis di Azure per archiviare
     Questa chiave include la chiave primaria e il nome host in una stringa di connessione completa per l'uso all'interno delle impostazioni dell'applicazione per il pacchetto StackExchange.Redis usato.
 
 1. Avviare il Blocco note o un altro editor di testo nel computer.
+
 1. Aggiungere il contenuto seguente:
 
     Sostituire `<connection-string>` con la stringa di connessione primaria della cache di cui si è preso nota in precedenza.
@@ -46,7 +52,9 @@ In questo esercizio si creerà un'istanza di Cache Redis di Azure per archiviare
 ## <a name="create-a-console-app"></a>Creare un'app console
 
 1. Avviare Visual Studio e fare clic sulla voce di menu **File** > **Nuovo** > **Progetto**.
+
 1. Selezionare il modello **Visual C#** > **Windows Desktop** > **App console**.
+
 1. Assegnare un nome all'app e fare clic su **OK** per creare una nuova applicazione console.
 
 ## <a name="configure-the-cache-client"></a>Configurare il client della cache

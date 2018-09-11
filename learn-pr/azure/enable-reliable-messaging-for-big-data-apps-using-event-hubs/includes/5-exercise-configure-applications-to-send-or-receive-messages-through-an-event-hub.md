@@ -1,99 +1,99 @@
-You're now ready to configure your publisher and consumer applications for your event hub.
+È ora possibile configurare le applicazioni di pubblicazione e consumer per l'hub eventi.
 
-In this unit, you'll configure these applications to send or receive messages through your event hub. These applications are stored in a GitHub repository.
+In questa unità si configureranno queste applicazioni per l'invio e la ricezione di messaggi tramite l'hub eventi. Queste applicazioni sono archiviate in un repository GitHub.
 
-You'll configure two separate applications; one acts as the message sender (**SimpleSend**), the other as the message receiver (**EventProcessorSample**). These are Java applications, which enable you to do everything within the browser. However, the same configuration is needed for any platform, such as .NET.
+Verranno configurate due applicazioni distinte: una come mittente del messaggio (**SimpleSend**), l'altra come ricevitore del messaggio (**EventProcessorSample**). Si tratta di applicazioni Java, che consentono di eseguire tutte le operazioni all'interno del browser. La stessa configurazione è comunque necessaria per qualsiasi piattaforma, ad esempio .NET.
 
-## Create a general-purpose, standard storage account
+## <a name="create-a-general-purpose-standard-storage-account"></a>Creare un account di archiviazione standard per utilizzo generico
 
-The Java receiver application, that you'll configure in this unit, stores messages in Azure Blob Storage. Blob Storage requires a storage account.
+L'applicazione ricevitore Java, che verrà configurata in questa unità, archivia i messaggi in Archiviazione BLOB di Azure. L'archiviazione BLOB richiede un account di archiviazione.
 
-1. Create a storage account (general-purpose V2) in the resource group using the following command:
+1. Creare un account di archiviazione (utilizzo generico V2) nel gruppo di risorse tramite il comando seguente:
 
     ```azurecli
     az storage account create --name <storage account name> --resource-group <resource group name>  --location <location> --sku Standard_RAGRS --encryption blob
     ```
 
-    |Parameter      |Description|
+    |Parametro      |Descrizione|
     |---------------|-----------|
-    |--name (required)  |Enter a name for your storage account.|
-    |--resource-group (required)  |Enter the resource group you created in the previous unit.|
-    |--location (optional)    |Enter the location you used to create your resource group in the previous unit.|
+    |--name (obbligatorio)  |Immettere un nome per l'account di archiviazione.|
+    |--resource-group (obbligatorio)  |Immettere il gruppo di risorse creato nell'unità precedente.|
+    |--location (facoltativo)    |Immettere la posizione usata per creare il gruppo di risorse nell'unità precedente.|
 
-1. List all the access keys associated with your storage account using the following command:
+1. Elencare tutte le chiavi di accesso associate all'account di archiviazione tramite il comando seguente:
 
     ```azurecli
     az storage account keys list --account-name <storage account name> --resource-group <resource group name>
     ```
 
-    |Parameter      |Description|
+    |Parametro      |Descrizione|
     |---------------|-----------|
-    |--account-name (required)  |Enter the name for your storage account.|
-    |--resource-group (required)  |Enter the resource group you created in the previous unit.|
+    |--account-name (obbligatorio)  |Immettere il nome per l'account di archiviazione.|
+    |--resource-group (obbligatorio)  |Immettere il gruppo di risorse creato nell'unità precedente.|
 
-     Access keys associated with your storage account are listed. Copy and save the value of **key** for future use. You'll need this key to access your storage account.
+     Sono elencate le chiavi di accesso associate all'account di archiviazione. Copiare e salvare il valore della **chiave** per l'uso futuro. Questa chiave sarà necessaria per accedere all'account di archiviazione.
 
-1. View the connections string for your storage account using the following command:
+1. Visualizzare la stringa di connessione per l'account di archiviazione tramite il comando seguente:
 
     ```azurecli
     az storage account show-connection-string -n <storage account name> -g <resource group name>
     ```
 
-    |Parameter      |Description|
+    |Parametro      |Descrizione|
     |---------------|-----------|
-    |-n (required)  |Enter the name for your storage account.|
-    |-g (required)  |Enter the name of your resource group.|
+    |-n (obbligatorio)  |Immettere il nome per l'account di archiviazione.|
+    |-g (obbligatorio)  |Immettere il nome del gruppo di risorse.|
 
-    This command returns the connection details for the storage account. Copy and save the value of **connectionString**.
+    Questo comando restituisce i dettagli della connessione per l'account di archiviazione. Copiare e salvare il valore di **connectionString**.
 
-1. Create a container called **messages** in your storage account using the following command. Use the **connectionString** you copied in the previous step:
+1. Creare un contenitore denominato **messages** nell'account di archiviazione tramite il comando seguente. Usare il valore di **connectionString** copiato nel passaggio precedente:
 
     ```azurecli
     az storage container create -n messages --connection-string "<connection string>"
     ```
 
-## Clone the Event Hubs GitHub repository
+## <a name="clone-the-event-hubs-github-repository"></a>Clonare il repository GitHub di Hub eventi
 
-Use the following steps to clone the Event Hubs GitHub repository.
+Per clonare il repository GitHub di Hub eventi, eseguire la procedura seguente.
 
-1. Sign in to Azure Cloud Shell (Bash).
+1. Accedere ad Azure Cloud Shell (Bash).
 
-1. The source files for the applications that you'll build In this unit are located in a [GitHub repository](https://github.com/Azure/azure-event-hubs). Use the following commands to make sure that you are in your home directory in Cloud Shell, and then to clone this repository:
+1. I file di origine per le applicazioni compilate in questa unità si trovano in un [repository GitHub](https://github.com/Azure/azure-event-hubs). Usare i comandi seguenti per assicurarsi di trovarsi all'interno della home directory in Cloud Shell e quindi per clonare questo repository:
 
     ```azurecli
     cd ~
     git clone https://github.com/Azure/azure-event-hubs.git
     ```
-    The repository is cloned to `/home/<username>/azure-event-hubs`.
+    Il repository viene clonato in `/home/<username>/azure-event-hubs`.
 
-## Use nano to edit SimpleSend.java
+## <a name="use-nano-to-edit-simplesendjava"></a>Usare nano per modificare SimpleSend.java
 
-Use the **nano** editor to edit the SimpleSend application and add your Event Hubs namespace, event hub name, shared access policy name, and primary key. The main commands are displayed at the bottom of the editor window; in this unit, you'll need to write out your edits using CTRL +O, and then ENTER to confirm the output file name, and exit the editor using CTRL +X.
+Usare l'editor **nano** per modificare l'applicazione SimpleSend e aggiungere lo spazio dei nomi di Hub eventi, il nome dell'hub eventi, il nome dei criteri di accesso condiviso e la chiave primaria. I comandi principali sono visualizzati nella parte inferiore della finestra dell'editor. In questa unità, sarà necessario premere CTRL+O per scrivere le modifiche, INVIO per confermare il nome del file di output e CTRL+X per chiudere l'editor.
 
-1. Change to the **SimpleSend** folder using the following command:
+1. Passare alla cartella **SimpleSend** usando il comando seguente:
 
     ```azurecli
     cd azure-event-hubs/samples/Java/Basic/SimpleSend/src/main/java/com/microsoft/azure/eventhubs/samples/SimpleSend
     ```
 
-1. Open the **SimpleSend.java** file in the **nano** editor using the following command:
+1. Aprire il file **SimpleSend.java** nell'editor **nano** usando il comando seguente:
 
     ```azurecli
     nano SimpleSend.java
     ```
 
-1. In the nano editor, locate and replace the following strings:
+1. Nell'editor nano individuare e sostituire le stringhe seguenti:
 
-    - `"Your Event Hubs namespace name"` with the name of your event hub namespace.
-    - `"Your event hub"` with the name of your event hub.
-    - `"Your primary SAS key"` with the value of the **primaryKey** key for your event hub namespace that you saved earlier.
-    - `"Your policy name"` with **RootManageSharedAccessKey**.
+    - `"Your Event Hubs namespace name"` con il nome dello spazio dei nomi di Hub eventi.
+    - `"Your event hub"` con il nome dell'hub eventi.
+    - `"Your primary SAS key"` con il valore della chiave **primaryKey** per lo spazio dei nomi di Hub eventi che è stata salvata in precedenza.
+    - `"Your policy name"` con **RootManageSharedAccessKey**.
  
-        When you create an Event Hubs namespace, a 256-bit SAS key called **RootManageSharedAccessKey** is created that has an associated pair of primary and secondary keys that grant send, listen, and manage rights to the namespace. In the previous unit, you displayed the key using an Azure CLI command, and you can also find this key by opening the **Shared access policies** page for your Event Hubs namespace in the Azure portal.
+        Quando si crea uno spazio dei nomi di Hub eventi, viene creata una chiave di firma di accesso condiviso a 256 bit denominata **RootManageSharedAccessKey**, a cui è associata una coppia di chiavi primaria e secondaria che concedono i diritti di invio, ascolto e gestione per lo spazio dei nomi. Nell'unità precedente è stata visualizzata la chiave usando un comando dell'interfaccia della riga di comando di Azure. È anche possibile trovare la chiave aprendo la pagina **Criteri di accesso condiviso** per lo spazio dei nomi di Hub eventi nel portale di Azure.
 
-    ![Configuration details for sender application](../media-draft/5-sender-configure.png)
+    ![Dettagli di configurazione per l'applicazione mittente](../media-draft/5-sender-configure.png)
 
-1. Save **SimpleSend.java** using the following command, and exit nano:
+1. Salvare **SimpleSend.java** con il comando seguente e uscire da nano:
 
     ```azurecli
     CTRL +O
@@ -101,60 +101,60 @@ Use the **nano** editor to edit the SimpleSend application and add your Event Hu
     CTRL +X
     ```
 
-## Use Maven to build SimpleSend.java
+## <a name="use-maven-to-build-simplesendjava"></a>Usare Maven per compilare SimpleSend.java
 
-You'll now build the Java application using **mvn** commands.
+A questo punto, è possibile compilare l'applicazione Java usando i comandi **mvn**.
 
-1. Change to the main **SimpleSend** folder using the following command:
+1. Passare alla cartella **SimpleSend** principale usando il comando seguente:
 
     ```azurecli
     cd ~
     cd azure-event-hubs/samples/Java/Basic/SimpleSend
     ```
 
-1. Build the Java SimpleSend application using the following command. This ensures that your application  uses the connection details for your event hub:
+1. Compilare l'applicazione Java SimpleSend usando il comando seguente. Questo garantisce che l'applicazione usi i dettagli di connessione per l'hub eventi:
 
     ```azurecli
     mvn clean package -DskipTests
     ```
 
-    The build process may take several minutes to complete. Ensure that you see the **[INFO] BUILD SUCCESS** message before continuing.
+    Il completamento del processo di compilazione può richiedere alcuni minuti. Assicurarsi che venga visualizzato il messaggio **[INFO] BUILD SUCCESS** ([INFORMAZIONI] COMPILAZIONE COMPLETATA) prima di continuare.
 
-    ![Build results for sender application](../media-draft/5-sender-build.png)
+    ![Risultati della compilazione per l'applicazione mittente](../media-draft/5-sender-build.png)
 
-## Use nano to edit EventProcessorSample.java
+## <a name="use-nano-to-edit-eventprocessorsamplejava"></a>Usare nano per modificare EventProcessorSample.java
 
-You'll now configure a **receiver** (also known as **subscribers** or **consumers**) application to ingest data from your event hub.
+Ora si configurerà un'applicazione **ricevitore** (nota anche come **sottoscrittore** o **consumer**) per inserire i dati dall'hub eventi.
 
-For the receiver application, two methods are available; **EventHubReceiver** and **EventProcessorHost**. EventProcessorHost is built on top of EventHubReceiver, but provides simpler programmatic interface than EventHubReceiver. EventProcessorHost can automatically distribute message partitions across multiple instances of EventProcessorHost using the same storage account.
+Per l'applicazione ricevitore, sono disponibili due metodi: **EventHubReceiver** e **EventProcessorHost**. EventProcessorHost è basato su EventHubReceiver, ma fornisce un'interfaccia di programmazione più semplice rispetto a EventHubReceiver. EventProcessorHost può distribuire automaticamente le partizioni dei messaggi tra più istanze di EventProcessorHost usando lo stesso account di archiviazione.
 
-In this unit, you’ll use the EventProcessorHost method. You'll again use nano, and edit the EventProcessorSample application to add your Event Hubs namespace, event hub name, shared access policy name and primary key, storage account name, connection string, and container name.
+In questa unità verrà usato il metodo EventProcessorHost. Verrà inoltre usato nuovamente nano per modificare l'applicazione EventProcessorSample in modo da aggiungere lo spazio dei nomi di Hub eventi, il nome dell'hub eventi, il nome dei criteri di accesso condiviso e la chiave primaria, il nome dell'account di archiviazione, la stringa di connessione e il nome del contenitore.
 
-1. Change to the **EventProcessorSample** folder using the following command:
+1. Passare alla cartella **EventProcessorSample** usando il comando seguente:
 
     ```azurecli
     cd ~
     cd azure-event-hubs/samples/Java/Basic/EventProcessorSample/src/main/java/com/microsoft/azure/eventhubs/samples/eventprocessorsample
     ```
 
-1. Open the **EventProcessorSample.java** file in the **nano** editor using the following command:
+1. Aprire il file **EventProcessorSample.java** nell'editor **nano** usando il comando seguente:
 
     ```azurecli
     nano EventProcessorSample.java
     ```
-1. Locate and replace the following strings in the nano editor:
+1. Nell'editor nano individuare e sostituire le stringhe seguenti:
 
-    - `----ServiceBusNamespaceName----` with the name of your Event Hubs namespace.
-    - `----EventHubName----` with the name of your event hub.
-    - `----SharedAccessSignatureKeyName----` with **RootManageSharedAccessKey**.
-    - `----SharedAccessSignatureKey----` with the value of the **primaryKey** key for your Event Hubs namespace that you saved earlier.
-    - `----AzureStorageConnectionString----` with your storage account connection string that you saved earlier.
-    - `----StorageContainerName----` with **messages**.
-    - `----HostNamePrefix----` with the name of your storage account.
+    - `----ServiceBusNamespaceName----` con il nome dello spazio dei nomi di Hub eventi.
+    - `----EventHubName----` con il nome dell'hub eventi.
+    - `----SharedAccessSignatureKeyName----` con **RootManageSharedAccessKey**.
+    - `----SharedAccessSignatureKey----` con il valore della chiave **primaryKey** per lo spazio dei nomi di Hub eventi che è stata salvata in precedenza.
+    - `----AzureStorageConnectionString----` con la stringa di connessione dell'account di archiviazione salvata in precedenza.
+    - `----StorageContainerName----` con **messages**.
+    - `----HostNamePrefix----` con il nome dell'account di archiviazione.
 
-    ![Configuration details for receiver application](../media-draft/5-receiver-configure.png)
+    ![Dettagli di configurazione per l'applicazione ricevitore](../media-draft/5-receiver-configure.png)
 
-1. Save **EventProcessorSample.java** using the following command and exit nano:
+1. Salvare **EventProcessorSample.java** con il comando seguente e uscire da nano:
 
     ```azurecli
     CTRL +O
@@ -162,28 +162,28 @@ In this unit, you’ll use the EventProcessorHost method. You'll again use nano,
     CTRL +X
     ```
 
-## Use Maven to build EventProcessorSample.java
+## <a name="use-maven-to-build-eventprocessorsamplejava"></a>Usare Maven per compilare EventProcessorSample.java
 
-1. Change to the main **EventProcessorSample** folder using the following command:
+1. Passare alla cartella **EventProcessorSample** principale usando il comando seguente:
 
     ```azurecli
     cd ~
     cd azure-event-hubs/samples/Java/Basic/EventProcessorSample
     ```
 
-1. Build the Java SimpleSend application using the following command. This ensures that your application uses the connection details for your event hub:
+1. Compilare l'applicazione Java SimpleSend usando il comando seguente. Questo garantisce che l'applicazione usi i dettagli di connessione per l'hub eventi:
 
     ```azurecli
     mvn clean package -DskipTests
     ```
 
-    The build process may take several minutes to complete. Ensure that you see a **[INFO] BUILD SUCCESS** message before continuing.
+    Il completamento del processo di compilazione può richiedere alcuni minuti. Assicurarsi che venga visualizzato il messaggio **[INFO] BUILD SUCCESS** ([INFORMAZIONI] COMPILAZIONE COMPLETATA) prima di continuare.
 
-    ![Build results for receiver application](../media-draft/5-receiver-build.png)
+    ![Risultati della compilazione per l'applicazione ricevitore](../media-draft/5-receiver-build.png)
 
-## Start the sender and receiver apps
+## <a name="start-the-sender-and-receiver-apps"></a>Avviare le app mittente e ricevitore
 
-1. Run Java application from the command line by using the **java** command, and specifying a .jar package. Use the following commands to start the SimpleSend application:
+1. Eseguire l'applicazione Java dalla riga di comando usando il comando **java** e specificando un pacchetto con estensione jar. Usare i comandi seguenti per avviare l'applicazione SimpleSend:
 
     ```azurecli
     cd ~
@@ -192,11 +192,11 @@ In this unit, you’ll use the EventProcessorHost method. You'll again use nano,
     ENTER
     ```
 
-1. When you see **Send Complete...**, press ENTER.
+1. Quando viene visualizzato il messaggio **Invio completato...** premere INVIO.
 
-    ![Run results for sender application](../media-draft/5-sender-run.png)
+    ![Risultati dell'esecuzione per l'applicazione mittente](../media-draft/5-sender-run.png)
 
-1. Start the EventProcessorSample application using the following command.
+1. Avviare l'applicazione EventProcessorSample usando il comando seguente.
 
     ```azurecli
     cd ~
@@ -205,10 +205,10 @@ In this unit, you’ll use the EventProcessorHost method. You'll again use nano,
     ENTER
     ```
 
-1. When messages stop being displayed to the console, press ENTER.
+1. Quando non vengono più visualizzati messaggi nella console, premere INVIO.
 
-    ![Run results for receiver application](../media-draft/5-receiver-run.png)
+    ![Risultati dell'esecuzione per l'applicazione ricevitore](../media-draft/5-receiver-run.png)
 
-## Summary
+## <a name="summary"></a>Riepilogo
 
-You've now configured a sender application ready to send messages to your event hub. You've also configured a receiver application ready to receive messages from your event hub.
+A questo punto, è stata configurata un'applicazione mittente per l'invio dei messaggi all'hub eventi. È stata inoltre configurata un'applicazione ricevitore per la ricezione dei messaggi dall'hub eventi.

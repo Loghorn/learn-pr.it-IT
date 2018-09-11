@@ -1,29 +1,29 @@
-Suppose your company is deploying several servers as part of their cloud transition. VM disks must be encrypted during the deployment, so there's no time when the disks are vulnerable. You want to automate this process, and have to modify the Azure Resource Manager templates to automatically enable encryption.
+Si supponga che l'azienda voglia distribuire numerosi server come parte della transizione al cloud. I dischi delle macchine virtuali devono essere crittografati durante la distribuzione, per evitare periodi di vulnerabilità dei dischi. Per automatizzare questo processo, è necessario modificare i modelli di Azure Resource Manager per abilitare automaticamente la crittografia.
 
-Here, we'll look at how to use an Azure Resource Manager template to automatically enable encryption for new Windows VMs.
+In questo caso, verrà illustrato come usare un modello di Azure Resource Manager per abilitare automaticamente la crittografia per le nuove macchine virtuali Windows.
 
-## What are Azure Resource Manager templates?
+## <a name="what-are-arm-templates"></a>Che cosa sono i modelli di Azure Resource Manager?
 
-These templates are JSON files used to define a resource to deploy to Azure, such as a virtual machine. You can write them from scratch, and for some Azure resources, including VMs, you can use the Azure portal to generate them. You'll need to complete the required information for a manual VM deployment, but instead of deploying the VM to Azure, you save the template.
+I modelli di Azure Resource Manager sono file JSON usati per definire una risorsa da distribuire in Azure, ad esempio una macchina virtuale. È possibile scriverli da zero e, per alcune risorse di Azure, incluse le macchine virtuali, è possibile usare il portale di Azure per generarli. Sarà necessario immettere le informazioni necessarie per una distribuzione di macchina virtuale manuale, ma anziché distribuire la macchina virtuale in Azure, si salverà il modello.
 
-There are example templates available in GitHub.
+In GitHub sono disponibili modelli di esempio.
 
-## Using GitHub templates
+## <a name="using-github-templates"></a>Utilizzo di modelli di GitHub
 
-GitHub has a template for enabling encryption called the **Enable encryption on a running Windows VM ARM**. You can find it in the [Azure Quickstart Templates](https://github.com/Azure/azure-quickstart-templates) repository. The readme page for the template provides a **Deploy to Azure** button that then opens the template in the Azure portal.
+In GitHub è disponibile un modello denominato **Enable encryption on a running Windows VM ARM** (Abilitare la crittografia in una macchina virtuale che esegue Windows tramite Azure Resource Manager). È anche disponibile nel repository dei [Modelli di avvio rapido di Azure](https://github.com/Azure/azure-quickstart-templates). La pagina Leggimi per il modello offre un pulsante Distribuisci in Azure che apre il modello nel portale di Azure.
 
-The template enables you to deploy a Windows Server VM, with encryption pre-enabled. Before using the template, you must make sure that all of the encryption prerequisites are in place. You'll also need the configuration information that is provided by the prerequisites script, such as Azure Active Directory Client ID and Azure Active Directory Client Secret.
+Il modello consente di distribuire una macchina virtuale Windows Server con la crittografia già abilitata. Prima di usare il modello, assicurarsi che tutti i prerequisiti di crittografia siano soddisfatti. Saranno anche necessarie le informazioni di configurazione fornite dallo script dei prerequisiti, ad esempio l'ID client AAD e il segreto client AAD.
 
-You create a new VM by entering the required information on the template. You then initiate deployment by clicking **Purchase** (the cost is typically the normal Azure compute charge).
+Per creare una nuova macchina virtuale, immettere le informazioni necessarie nel modello. Avviare quindi la distribuzione facendo clic su **Acquista** (i costi sono in genere i normali addebiti di calcolo di Azure).
 
-## Deploy an encrypted VM by using a template
+## <a name="deploy-an-encrypted-vm-by-using-a-template"></a>Distribuire una macchina virtuale crittografata tramite un modello
 
-The main steps involved in deploying an encrypted VM using a template are:
+I passaggi principali per la distribuzione di una macchina virtuale crittografata tramite un modello sono:
 
-1. Access and run the **Enable encryption on a running Windows VM ARM** template from GitHub.
+1. Accedere ed eseguire il modello **Enable encryption on a running Windows VM ARM** (Abilitare la crittografia in una macchina virtuale che esegue Windows tramite Azure Resource Manager) in GitHub.
 
-1. Add the required details in the script configuration page.
+1. Aggiungere i dettagli necessari nella pagina di configurazione dello script.
 
-1. Deploy a new VM using the script by clicking **Purchase**.
+1. Distribuire una nuova macchina virtuale tramite lo script facendo clic su **Acquista**.
 
-1. Use the Azure portal to verify disk encryption status.
+1. Usare il portale di Azure per verificare lo stato di crittografia del disco.

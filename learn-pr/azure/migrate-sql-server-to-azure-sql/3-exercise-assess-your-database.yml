@@ -1,15 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.migrate-sql-server-relational-data.3-exercise-assess-your-database
-title: Assessing your database
+title: Valutazione del database
 metadata:
-  title: Assessing your database
-  description: Assessing your database
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
+  title: Valutazione del database
+  description: Valutazione del database
+  ms.openlocfilehash: 0fe2707404e69d91504f877ca7ed281da0100752
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43833018"
 durationInMinutes: 10
-content: |
-  [!include[](includes/3-exercise-assess-your-database.md)]
+content: '[!include[](includes/3-exercise-assess-your-database.md)]'

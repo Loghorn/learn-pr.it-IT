@@ -1,53 +1,53 @@
-We've installed our custom software, set up an FTP server, and configured the VM to receive our video files. However, if we try to connect to our public IP address with FTP, we'll find that it's blocked. 
+È stato installato software personalizzato, configurato un server FTP e configurato la macchina virtuale per la ricezione di file video. Se tuttavia si prova a connettersi all'indirizzo IP pubblico con il protocollo FTP, si scoprirà che è bloccato. 
 
-Making adjustments to server configuration is commonly performed with equipment in your on-premises environment. In this sense, you can consider Azure VMs to be an extension of that environment. You can make configuration changes, manage networks, open or block traffic, and more through the Azure portal, Azure CLI, or Azure PowerShell tools.
+Apportare modifiche alla configurazione del server è un'operazione eseguita comunemente con dispositivi nell'ambiente locale. In questo senso, è possibile considerare le macchine virtuali di Azure un'estensione di tale ambiente. È possibile modificare la configurazione, gestire le reti, aprire o bloccare il traffico e così via tramite il portale di Azure, l'interfaccia della riga di comando di Azure o gli strumenti di Azure PowerShell.
 
-You've already seen some of the basic information and management options in the **Overview** panel for the virtual machine. Let's explore network configuration a bit more.
+Sono già state esaminate alcune delle informazioni base e opzioni di gestione nel pannello **Panoramica** della macchina virtuale. Ora si approfondirà la configurazione di rete.
 
-## Opening ports in Azure VMs
+## <a name="opening-ports-in-azure-vms"></a>Apertura delle porte nelle macchine virtuali di Azure
 
 <!-- TODO: Azure portal is inconsistent here in applying the NSG.
 By default, new VMs are locked down. 
 
 Apps can make outgoing requests, but the only inbound traffic allowed is from the virtual network (e.g. other resources on the same local network), and from Azure's Load Balancer (probe checks). -->
 
-There are two steps to adjusting the configuration to support FTP. When you create a new VM you have an opportunity to open a few common ports (RDP, HTTP, HTTPS, and SSH). However, if you require other changes to the firewall, you will need to do them yourself.
+Esistono due passaggi per modificare la configurazione e supportare FTP. Quando si crea una nuova macchina virtuale, è possibile aprire alcune porte comuni (RDP, HTTP, HTTPS e SSH). Se sono tuttavia necessarie altre modifiche al firewall, sarà necessario intervenire personalmente.
 
-The process for this involves two steps:
+La procedura prevede due passaggi:
 
-1. Create a Network Security Group.
-2. Create an inbound rule allowing traffic on port 20 and 21 for active FTP support.
+1. Creare un gruppo di sicurezza di rete.
+2. Creare una regola in ingresso che consenta il transito del traffico sulle porte 20 e 21 per il supporto FTP attivo.
 
-### What is a Network Security Group?
+### <a name="what-is-a-network-security-group"></a>Che cos'è un gruppo di sicurezza di rete?
 
-Virtual networks (VNets) are the foundation of the Azure networking model and provide isolation and protection. Network Security Groups (NSGs) are the main tool you use to enforce and control network traffic rules at the networking level. NSGs are an optional security layer that provides a software firewall by filtering inbound and outbound traffic on the VNet. 
+Le reti virtuali sono alla base del modello di rete di Azure e offrono isolamento e protezione. I gruppi di sicurezza di rete (NSG) sono lo strumento principale che consente di applicare e controllare le regole del traffico di rete a livello di rete. I gruppi di sicurezza di rete sono un livello di sicurezza facoltativo che fornisce un firewall software mediante il filtraggio del traffico in ingresso e in uscita sulla rete virtuale. 
 
-Security groups can be associated to a network interface (for per-host rules), a subnet in the virtual network (to apply to multiple resources), or both levels. 
+I gruppi di sicurezza possono essere associati a un'interfaccia di rete (per le regole per ogni host), a una subnet nella rete virtuale (per l'applicazione a più risorse) o a entrambi i livelli. 
 
-#### Security group rules
+#### <a name="security-group-rules"></a>Regole dei gruppi di sicurezza
 
-NGSs use _rules_ to allow or deny traffic moving through the network. Each rule identifies the source and destination address (or range), protocol, port (or range), direction (inbound or outbound), a numeric priority, and whether to allow or deny the traffic that matches the rule. The following illustration shows NSG rules applied at the subnet and network interface levels.
+I gruppi di sicurezza di rete usano _regole_ per consentire o negare il transito del traffico nella rete. Ogni regola identifica l'indirizzo di origine e destinazione (o intervallo), il protocollo, la porta (o intervallo), la direzione (in ingresso o in uscita), una priorità numerica e se consentire o negare il traffico che corrisponde alla regola. La figura seguente mostra le regole dei gruppi di sicurezza di rete applicate ai livelli di subnet e interfaccia di rete.
 
-![An illustration showing the architecture of network security groups in two different subnets. In one subnet, there are two virtual machines, each with their own network interface rules.  The subnet itself has a set of rules that applies to both the virtual machines.](../media/7-nsg-rules.png)
+![Illustrazione che mostra l'architettura dei gruppi di sicurezza di rete in due diverse subnet. In una subnet sono presenti due macchine virtuali, ognuna con le proprie regole di interfaccia di rete.  La subnet stessa include un set di regole applicabile a entrambe le macchine virtuali.](../media/7-nsg-rules.png)
 
-Each security group has a set of default security rules to apply the default network rules described above. These default rules cannot be modified, but _can_ be overridden.
+Ogni gruppo di sicurezza ha un set di regole di sicurezza predefinite per applicare le regole di rete predefinite descritte in precedenza. Queste regole predefinite non possono essere modificate, ma _possono_ essere sostituite.
 
-#### How Azure uses network rules
+#### <a name="how-azure-uses-network-rules"></a>Uso delle regole di rete in Azure
 
-For inbound traffic, Azure processes the security group associated to the subnet, then the security group applied to the network interface. Outbound traffic is processed in the opposite order (the network interface first, followed by the subnet).
+Per il traffico in ingresso, Azure elabora il gruppo di sicurezza associato alla subnet e quindi il gruppo di sicurezza applicato all'interfaccia di rete. Il traffico in uscita viene elaborato nell'ordine inverso, vale a dire prima l'interfaccia di rete seguita dalla subnet.
 
 > [!WARNING]
-> Keep in mind that security groups are optional at both levels. If no security group is applied then **all traffic is allowed** by Azure. If the VM has a public IP, this could be a serious risk particularly if the OS doesn't provide some sort of firewall.
+> Tenere presente che i gruppi di sicurezza sono facoltativi a entrambi i livelli. Se non viene applicato alcun gruppo di sicurezza, **tutto il traffico è consentito** da Azure. Se la macchina virtuale ha un indirizzo IP pubblico, questo potrebbe essere un grave rischio, in particolare se il sistema operativo non include un qualche tipo di firewall.
 
-The rules are evaluated in _priority-order_, starting with the **lowest priority** rule. Deny rules always **stop** the evaluation. For example, if an outbound request is blocked by a network interface rule, any rules applied to the subnet will not be checked. In order for traffic to be allowed through the security group, it must pass through _all_ applied groups.
+Le regole vengono valutate nell'_ordine di priorità_, a partire dalla regola con la **priorità più bassa**. Le regole di negazione **arrestano** sempre la valutazione. Ad esempio, se una richiesta in uscita viene bloccata da una regola di interfaccia di rete, tutte le regole applicate alla subnet non verranno controllate. Affinché possa attraversare il gruppo di sicurezza, il traffico deve passare attraverso _tutti_ i gruppi applicati.
 
-The last rule is always a **Deny All** rule. This is a default rule added to every security group for both inbound and outbound traffic with a priority of 65500. That means to have traffic pass through the security group _you must have an allow rule_ or it will be blocked by the default final rule.
+L'ultima regola è sempre una regola **Nega tutto**. Si tratta di una regola predefinita aggiunta a ogni gruppo di sicurezza per il traffico in ingresso e in uscita con una priorità di 65500. Questo significa che affinché il traffico possa passare attraverso il gruppo di sicurezza _è necessario avere una regola per consentirlo_, in assenza della quale verrà bloccato dalla regola finale predefinita.
 
 > [!NOTE]
-> SMTP (port 25) is a special case, depending on your subscription level and when your account was created, outbound SMTP traffic may be blocked. You can make a request to remove this restriction with business justification.
+> SMTP (porta 25) è un caso speciale. A seconda del livello di sottoscrizione e di quando è stato creato l'account, il traffico SMTP in uscita potrebbe essere bloccato. È possibile richiedere di rimuovere questa restrizione con una giustificazione aziendale.
 
-Since we didn't create a security group for this VM, let's do that and apply it.
+Dato che non è stato creato un gruppo di sicurezza per questa macchina virtuale, è possibile farlo e applicarlo.
 
-## Creating Network Security Groups
+## <a name="creating-network-security-groups"></a>Creazione di gruppi di sicurezza di rete
 
-Security groups are managed resources like most everything in Azure, you can create them in the Azure portal or through command-line scripting tools. The challenge is in defining the rules. Let's look at defining a new rule to allow FTP access.
+I gruppi di sicurezza sono risorse gestite, come la maggior parte degli elementi in Azure. È possibile crearli nel portale di Azure o tramite gli strumenti di scripting da riga di comando. L'aspetto più complicato è la definizione delle regole. Si esaminerà ora come definire una nuova regola per consentire l'accesso FTP.

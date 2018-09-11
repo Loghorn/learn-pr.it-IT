@@ -1,54 +1,54 @@
-In this unit, you will install Eclipse on your local machine and then install the Azure Toolkit, preparing you for developing Java applications with Azure integration. The installation is quick and simple. At the end of the exercise, you will have everything set up that you need to start your first Java application, taking advantage of the features and services of Azure.
+In questa unità verrà installato Eclipse nel computer locale e quindi si installerà Azure Toolkit, in preparazione dello sviluppo di applicazioni Java con l'integrazione di Azure. L'installazione è rapida e semplice. Al termine dell'esercizio, sarà pronto tutto quello che serve per avviare la prima applicazione Java, sfruttando le funzionalità e i servizi di Azure.
 
-## Install Eclipse IDE
+## <a name="install-eclipse-ide"></a>Installare l'IDE di Eclipse
 
-1. Download the Eclipse version that suits your operating system from http://www.eclipse.org/downloads/packages/installer.
+1. Scaricare la versione di Eclipse appropriata per il sistema operativo da http://www.eclipse.org/downloads/packages/installer.
 
-1. Start the Eclipse installer once downloaded.
+1. Avviare il programma di installazione di Eclipse dopo averlo scaricato.
 
-    1. On Windows, double-click the downloaded file.
+    1. In Windows, fare doppio clic sul file scaricato.
 
-    1. On macOS and Linux, unzip the installer from the downloaded file. Then start the installer once unzipped.
+    1. In macOS e Linux, decomprimere il programma di installazione dal file scaricato. Avviare quindi il programma di installazione dopo averlo decompresso.
 
         > [!NOTE]
-        > The installer may prompt you to install the Java Development Kit, if it is missing.
+        > Il programma di installazione potrebbe richiedere di installare Java Development Kit, se risulta mancante.
 
-1. Select the packages to install. For Java developers, choose either the Java or Java EE Eclipse IDE option.
+1. Selezionare i pacchetti da installare. Per gli sviluppatori Java, scegliere l'opzione per l'IDE di Eclipse Java o Jave EE.
 
-1. Select the installation destination on your machine.
+1. Selezionare la destinazione di installazione nel computer.
 
-1. Launch Eclipse to validate that it installed correctly.
+1. Avviare Eclipse per verificare che sia stato installato correttamente.
 
-## Install Azure Toolkit for Eclipse
+## <a name="install-azure-toolkit-for-eclipse"></a>Installare Azure Toolkit for Eclipse
 
-Installing the Azure Toolkit is the same across Windows, macOS, and Linux.
+La procedura per l'installazione di Azure Toolkit è identica in Windows, macOS e Linux.
 
-1. Start Eclipse.
+1. Avviare Eclipse.
 
-1. Go to **Help** > **Install New Software...**.
+1. Passare a **Help** > **Install New Software** (Guida, Installa nuovo software).
 
-    The following screenshot shows the menu location of the **Install New Software...** item.
+    Lo screenshot seguente mostra la posizione nel menu della voce **Install New Software** (Installa nuovo software).
 
-    ![Screenshot of the Install New Software option highlighted within the Help menu of Eclipse.](../media/7-eclipse-install-new-software.png)
+    ![Screenshot dell'opzione Install New Software (Installa nuovo software) evidenziata all'interno del menu Help (Guida) di Eclipse.](../media/7-eclipse-install-new-software.png)
 
-1. The **Available Software** dialog will open. In the **Work with:** text box, type `http://dl.microsoft.com/eclipse/` and press Enter.
+1. Verrà aperta la finestra di dialogo **Available Software** (Software disponibile). Nella casella di testo **Work with** (Usa) immettere `http://dl.microsoft.com/eclipse/` e premere INVIO.
 
-1. In the results, check the **Azure Toolkit for Java** option. Make sure you uncheck the **Contact all update sites during install to find required software** option, if it isn't already.
+1. Nei risultati selezionare l'opzione **Azure Toolkit for Java**. Assicurarsi di deselezionare l'opzione **Contact all update sites during install to find required software** (Contattare tutti i siti di aggiornamento durante l'installazione per trovare il software richiesto).
 
-    The following screenshot shows the **Available Software** install configuration as described above.
+    La schermata seguente mostra la configurazione di installazione **Available Software** (Software disponibile) sopra descritta.
 
-    ![Screenshot of the Available Software window in Eclipse, with boxes highlighting the configuration necessary to find and install the Azure Toolkit for Java.](../media/7-eclipse-download-azure-toolkit-for-java.png)
+    ![Screenshot della finestra Available Software (Software disponibile) in Eclipse, con riquadri che evidenziano la configurazione necessaria per trovare e installare Azure Toolkit for Java.](../media/7-eclipse-download-azure-toolkit-for-java.png)
 
-1. Click **Next**.
+1. Fare clic su **Avanti**.
 
-1. Review and accept the license agreements when prompted, and click **Finish**.
+1. Rivedere e accettare i contratti di licenza quando richiesto e fare clic su **Fine**.
 
-1. Eclipse will download and install the Azure Toolkit.
+1. Eclipse scarica e installa Azure Toolkit.
 
-1. Restart Eclipse if required.
+1. Se richiesto, riavviare Eclipse.
 
-1. Validate installation of Azure Toolkit by verifying that you can find a **Tools** > **Azure** menu option in Eclipse.
+1. Convalidare l'installazione di Azure Toolkit verificando che sia disponibile la voce di menu **Tools** > **Azure** (Strumenti, Azure) in Eclipse.
 
-## Summary
+## <a name="summary"></a>Riepilogo
 
-In this unit, you installed Eclipse for Java, and prepared it to take advantage of the integration with Azure services and products. The installation is quick and straightforward, making Eclipse ideal for the task of Java development with cloud services integration.
+In questa unità è stato installato Eclipse per Java e il programma è stato preparato per sfruttare i vantaggi dell'integrazione con i prodotti e i servizi Azure. L'installazione è rapida e semplice e ciò rende Eclipse uno strumento ideale per l'attività di sviluppo Java con l'integrazione di servizi cloud.

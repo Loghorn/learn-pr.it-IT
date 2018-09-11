@@ -10,17 +10,17 @@ Dopo avere usato questa applicazione di Funzioni di Azure, è possibile eliminar
 
 3. Espandere la sottoscrizione usata per creare il gruppo di risorse. Fare clic con il pulsante destro del mouse sul gruppo di risorse "ImHere" e selezionare *Apri nel portale*.
 
-    ![Aprire il gruppo di risorse nel portale dalla finestra di Cloud Explorer](../media/9-open-resource-group-in-portal.png)
+    ![Aprire il gruppo di risorse nel portale dalla finestra di Cloud Explorer](../media-drafts/9-open-resource-group-in-portal.png)
 
 4. Accedere al portale di Azure nel browser, se necessario.
 
 5. Nel portale verrà aperto il gruppo di risorse "ImHere". Fare clic sul pulsante **Elimina gruppo di risorse**.
 
-    ![Eliminare il gruppo di risorse](../media/9-delete-resource-group.png)
+    ![Eliminare il gruppo di risorse](../media-drafts/9-delete-resource-group.png)
 
 6. Immettere il nome del gruppo di risorse di cui confermare l'eliminazione e fare clic su **Elimina**.
 
-    ![Immettere il nome del gruppo di risorse di cui confermare l'eliminazione](../media/9-confirm-delete-resource-group.png)
+    ![Immettere il nome del gruppo di risorse di cui confermare l'eliminazione](../media-drafts/9-confirm-delete-resource-group.png)
 
 ## <a name="summary"></a>Riepilogo
 

@@ -1,13 +1,13 @@
-Migrating an on-premises SQL server to the cloud has many benefits. You no longer need to manage server hardware, this includes both hardware upgrades and hardware failure, you can scale in response to demand on your server, and Azure provides security tools to keep your business and customer data safe.
+La migrazione di un server SQL locale al cloud offre numerosi vantaggi. Non è più necessario gestire l'hardware del server, ad esempio gestire gli aggiornamenti e risolvere gli errori dell'hardware, è possibile aumentare o ridurre le risorse in base alla domanda nel server e usufruire degli strumenti di sicurezza di Azure per proteggere i dati aziendali e dei clienti.
 
-Imagine you're a national online bicycle retailer. You're currently using an on-premises server to host your SQL database and have decided to move your system to the cloud by migrating your database to the Azure SQL database. Because your customer base is limited to one geographical area, you can afford to take your database offline for migration purposes during the off-peak business hours, such as overnight.
+Si supponga di essere un rivenditore di biciclette online a livello nazionale. Il database SQL è attualmente ospitato in un server locale e si è deciso di spostare il sistema nel cloud tramite la migrazione del database al database SQL di Azure. Poiché la base clienti è limitata a un'area geografica, è possibile portare offline il database ai fini della migrazione nelle ore non di punta, ad esempio durante la notte.
 
-In this module, you'll learn how to migrate your SQL database to Azure. Before migration starts, you need to assess your current deployment and perform any required fixes to support an Azure migration.
+In questo modulo verrà illustrato come eseguire la migrazione di un database SQL ad Azure. Prima dell'inizio della migrazione è necessario valutare la distribuzione corrente ed eseguire eventuali correzioni necessarie per supportare una migrazione ad Azure.
 
-## Learning objectives
+## <a name="learning-objectives"></a>Obiettivi di apprendimento
 
-In this module, you will:
+Contenuto del modulo:
 
-- Assess your SQL Server database for migration.
-- Analyze and fix your database before migration.
-- Migrate your database using the Microsoft Data Migration Assistant.
+- Valutare il database SQL Server per la migrazione.
+- Analizzare e correggere il database prima della migrazione.
+- Eseguire la migrazione del database usando Microsoft Data Migration Assistant.

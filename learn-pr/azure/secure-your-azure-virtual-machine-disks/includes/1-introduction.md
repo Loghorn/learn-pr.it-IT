@@ -1,17 +1,17 @@
-Suppose you work for a warehouse company that's transitioning to the cloud. Currently, you use a hybrid environment consisting of on-premises Windows servers, Azure Virtual Machines (VMs), and Azure Active Directory. Your company has developed a custom in-house business-to-business (B2B) infrastructure, supporting secure order management with your suppliers. Some of your suppliers use Linux servers, and you run several Linux servers in Azure to support these suppliers.
+Si supponga di lavorare per un'azienda di vendita all'ingrosso che sta eseguendo il passaggio al cloud. Attualmente si sta usando un ambiente ibrido, costituito da server Windows locali, macchine virtuali di Azure (VM) e Azure Active Directory (AD). L'azienda ha sviluppato un'infrastruttura business-to-business (B2B) interna personalizzata che supporta la gestione sicura degli ordini ai fornitori. Alcuni fornitori usano i server Linux e l'azienda esegue alcuni server Linux in Azure per supportare questi fornitori.
 
-Your security policies mandate that data must be encrypted using your own encryption keys, and that your company is responsible for managing these keys.
+I criteri di sicurezza richiedono la crittografia dei dati tramite chiavi di crittografia che l'azienda è responsabile di gestire.
 
-Your admin team already uses PowerShell for on-premises server management. You'll deploy and test many Azure VMs, and intend to use Azure Resource Manager templates to automate this process.
+Il team di amministrazione usa già PowerShell per la gestione dei server in locale. Si distribuiscono e si testano numerose macchine virtuali di Azure e si vuole usare modelli ARM per automatizzare questo processo.
 
-Here, we'll look at the types of protection available for VM disks, so you can decide if Azure Disk Encryption (ADE) is the best choice for a given scenario. We'll then enable ADE on existing VM disks, and use templates to enable ADE for new VM deployments.
+In questo modulo verranno esaminati i tipi di protezione disponibili per i dischi delle macchine virtuali, in modo che sia possibile stabilire se Crittografia dischi di Azure (ADE) rappresenta la scelta migliore per un determinato scenario. Si abiliterà quindi Crittografia dischi di Azure nei dischi delle macchine virtuali esistenti per abilitare questo servizio nelle nuove distribuzioni di macchine virtuali.
 
 
-## Learning objectives
+## <a name="learning-objectives"></a>Obiettivi di apprendimento
 
-In this module, you will:
+Contenuto del modulo:
 
-- Determine which encryption method is best for your VM
-- Encrypt existing VM disks using the Azure portal
-- Encrypt existing VM disks using PowerShell
-- Modify Azure Resource Manager templates to automate disk encryption on new VMs
+- Determinare il metodo di crittografia più adatto per la macchina virtuale
+- Crittografare i dischi delle macchine virtuali esistenti usando il portale di Azure
+- Crittografare i dischi delle macchine virtuali esistenti usando PowerShell
+- Modificare i modelli ARM per automatizzare la crittografia dei dischi nelle nuove macchine virtuali

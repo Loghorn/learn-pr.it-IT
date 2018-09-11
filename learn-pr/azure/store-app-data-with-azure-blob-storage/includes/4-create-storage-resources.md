@@ -14,7 +14,7 @@ Per le app che si basano su un set noto di contenitori con nomi hard-coded o pre
 
 Eseguire un'app ASP.NET Core incompleta aggiungendo il codice per usare l'archiviazione BLOB di Azure. Questo esercizio riguarda più l'esplorazione dell'API dell'archiviazione BLOB che la progettazione di un'organizzazione e dello schema di denominazione, ma di seguito viene presentata una breve panoramica dell'applicazione e delle modalità di archiviazione dei dati.
 
-![Screenshot dell'app Web FileUploader](../media-drafts/fileuploader-with-files.PNG)
+![Screenshot dell'app Web FileUploader](../media/4-fileuploader-with-files.PNG)
 
 L'app funziona come una cartella condivisa che accetta i caricamenti di file e li rende disponibili per il download. Non usa un database per organizzare i blob &mdash; ma corregge i nomi dei file caricati e li usa come nomi di blob direttamente. Tutti i file caricati vengono archiviati in un singolo contenitore.
 
@@ -24,7 +24,7 @@ Configurare l'infrastruttura di archiviazione per l'app.
 
 ### <a name="resource-group-and-storage-account"></a>Gruppo di risorse e account di archiviazione
 
-In primo luogo, verrà creato un gruppo di risorse per contenere tutte le risorse di questo esercizio. Verranno eliminate alla fine per eseguire la pulizia di tutto ciò che è stato creato. Verrà inoltre creato l'account di archiviazione, che l'app userà per archiviare i blob.
+In primo luogo, verrà creato un gruppo di risorse per contenere tutte le risorse di questa unità. Il gruppo di risorse verrà eliminato alla fine per eseguire la pulizia di tutto ciò che è stato creato. Verrà inoltre creato l'account di archiviazione che verrà usato dall'app per archiviare i BLOB.
 
 Usare il terminale Azure Cloud Shell per creare il gruppo di risorse e account di archiviazione eseguendo i seguenti comandi dell'interfaccia della riga di comando di Azure. È necessario specificare un nome univoco per l'account di archiviazione &mdash; prendere nota per un uso successivo. La scelta di `eastus` per il percorso è arbitraria.
 
@@ -38,4 +38,4 @@ az storage account create --name <your-unique-storage-account-name> --resource-g
 
 ### <a name="container"></a>Contenitore
 
-L'applicazione con cui lavoreremo in questo modulo usa un singolo contenitore. È necessario seguire le procedure consigliate per lasciare che l'app crei il contenitore all'avvio. Tuttavia, la creazione del contenitore può essere eseguita dal comando di Azure: eseguire `az storage container create -h` nel terminale Cloud Shell se si desidera vedere la documentazione.
+L'applicazione con cui lavoreremo in questo modulo usa un singolo contenitore. È necessario seguire le procedure consigliate per lasciare che l'app crei il contenitore all'avvio. Tuttavia, la creazione del contenitore può essere eseguita dall'interfaccia della riga di comando di Azure: eseguire `az storage container create -h` nel terminale Cloud Shell se si desidera vedere la documentazione.

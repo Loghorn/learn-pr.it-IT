@@ -1,18 +1,18 @@
-## Introduction to Jupyter for more interactive deep learning 
+## <a name="introduction-to-jupyter-for-more-interactive-deep-learning"></a>Introduzione a Jupyter per l'apprendimento profondo più interattivo 
 
-Jupyter Notebook is an open-source web application that allows you to create and share documents that contain live code, equations, visualizations, and narrative text. Uses include: data cleaning and transformation, numerical simulation, statistical modeling, data visualization, machine learning, and much more.
+Jupyter Notebook è un'applicazione Web open source che consente di creare e condividere documenti contenenti codice in tempo reale, equazioni, visualizzazioni e testo narrativo. Gli usi possibili includono: pulizia e trasformazione dei dati, simulazione numerica, modellazione statistica, visualizzazione dei dati, apprendimento automatico e molto altro ancora.
 
-## Serving Jupyter Notebooks with Nvidia Docker on an Azure DSVM
+## <a name="serving-jupyter-notebooks-with-nvidia-docker-on-an-azure-dsvm"></a>Uso di notebook Jupyter con Nvidia Docker in una DSVM di Azure
 
-### Step 1 Create a Linux DSVM
+### <a name="step-1-create-a-linux-dsvm"></a>Passaggio 1: Creare una DSVM Linux
 
-Use call code from the Azure CLI
+Usare il codice di chiamata dall'interfaccia della riga di comando di Azure
 
 ```
 code .
 ```
 
-Fill in the following deployment schema and save it as parameter_file.json
+Compilare lo schema di distribuzione seguente e salvarlo come parameter_file.json
 
 ``` 
 { 
@@ -27,40 +27,40 @@ Fill in the following deployment schema and save it as parameter_file.json
 }
 ```
 
-A list of available vm sizes can be found here [Ubuntu DSVM ARM template](https://azure.microsoft.com/en-us/global-infrastructure/services/?WT.mc_id=blog-learning-abornst).
+È possibile visualizzare un elenco delle dimensioni delle macchine virtuali disponibili in [Ubuntu DSVM ARM template](https://azure.microsoft.com/en-us/global-infrastructure/services/?WT.mc_id=blog-learning-abornst) (Modello ARM di DSVM Ubuntu).
 
 
-### Create a resource group for your DSVM in a region of your choice:
+### <a name="create-a-resource-group-for-your-dsvm-in-a-region-of-your-choice"></a>Creare un gruppo di risorse per la DSVM in un'area a propria scelta:
 ```
 az group create --name [[NAME OF RESOURCE GROUP]] --location [[ Data center. For eg: "West US 2"]]
 ```
 
-A list of available regions can be found here [Azure Regions](https://github.com/Azure/DataScienceVM/blob/master/Scripts/CreateDSVM/Ubuntu/azuredeploy.json).
+È possibile visualizzare un elenco delle aree disponibili in [Aree di Azure](https://github.com/Azure/DataScienceVM/blob/master/Scripts/CreateDSVM/Ubuntu/azuredeploy.json).
 
-### Deploy your DSVM to your new resource group
+### <a name="deploy-your-dsvm-to-your-new-resource-group"></a>Distribuire la DSVM nel nuovo gruppo di risorse
 
 ```
 az group deployment create --resource-group  [[NAME OF RESOURCE GROUP ABOVE]]  --template-uri https://raw.githubusercontent.com/Azure/DataScienceVM/master/Scripts/CreateDSVM/Ubuntu/azuredeploy.json --parameters parameter_file.json
 ```
 
-## Step 2 Open the Port 8888, 22 on the DSVM 
+## <a name="step-2-open-the-port-8888-22-on-the-dsvm"></a>Passaggio 2: Aprire la porta 8888, 22 nella DSVM 
 
 ```
 $ az vm open-port -g [[NAME OF RESOURCE GROUP]] -n [[HOSTNAME OF DSVM]] --port 22 --priority 900
 $ az vm open-port -g [[NAME OF RESOURCE GROUP]] -n [[HOSTNAME OF DSVM]] --port 8888 --priority 901
 ```
 
-Port 8888 is the default port for Jupyter Notebooks For detailed steps on opening a port [click here](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/nsg-quickstart-portal?WT.mc_id=blog-medium-abornst)
+La porta 8888 è la porta predefinita per i notebook Jupyter. Per informazioni dettagliate su come aprire una porta, [fare clic qui](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/nsg-quickstart-portal?WT.mc_id=blog-medium-abornst)
  
-## Step 3 Connect to the DSVM with the Azure Shell 
+## <a name="step-3-connect-to-the-dsvm-with-the-azure-shell"></a>Passaggio 3: Connettersi alla DSVM con la shell di Azure 
  
 ``` 
 ssh myuser@[[HOSTNAME OF DSVM]].westus2.cloudapp.azure.com 
 ``` 
 
-## Step 4 Run Jupyter in Docker Container & link 8888 port to the VM Host 
+## <a name="step-4-run-jupyter-in-docker-container--link-8888-port-to-the-vm-host"></a>Passaggio 4: Eseguire Jupyter nel contenitore Docker e collegare la porta 8888 all'host della macchina virtuale 
 
-Link port 8888 between the VM and the docker container, install jupyter and pull pytorch tutorials.  
+Collegare la porta 8888 tra la macchina virtuale e il contenitore Docker, installare jupyter e seguire le esercitazioni su PyTorch.  
 
 ```  
 sudo docker run --rm -it --entrypoint '/bin/sh' -p 8888:8888 pytorch/pytorch -c \
@@ -69,11 +69,11 @@ sudo docker run --rm -it --entrypoint '/bin/sh' -p 8888:8888 pytorch/pytorch -c 
   jupyter notebook --ip=0.0.0.0 --no-browser --allow-root'
 ``` 
 
-## Step 5 Navigate to the Jupyter Notebook in the Browser 
+## <a name="step-5-navigate-to-the-jupyter-notebook-in-the-browser"></a>Passaggio 5: Passare a Jupyter Notebook nel browser 
 
-Once the Jupyter notebook is running you will see a message as follows : 
+Quando Jupyter Notebook è in esecuzione, verrà visualizzato un messaggio che indica quanto segue: 
 
-> Copy/paste this URL into your browser when you connect for the first time, to login with a token: http://(5b8783e7911d or 127.0.0.1):8888/?token={sometoken}
+> Copiare/incollare l'URL nel browser quando si esegue la connessione per la prima volta per accedere con un token: http://(5b8783e7911d or 127.0.0.1):8888/?token={sometoken}
 
-Replace the **http://(5b8783e7911d or 127.0.0.1)** part of the url with **[[HOSTNAME OF DSVM]].westus2.cloudapp.azure.com** and navigate to the address  in a new a tab in your browser:
-- [[HOSTNAME OF DSVM]].westus2.cloudapp.azure.com:8888/?token={sometoken}
+Sostituire la parte **http://(5b8783e7911d or 127.0.0.1)** dell'URL con **[[NOME HOST DSVM]].westus2.cloudapp.azure.com** e passare all'indirizzo in una nuova scheda del browser:
+- [[NOME HOST DSVM]].westus2.cloudapp.azure.com:8888/?token={sometoken}

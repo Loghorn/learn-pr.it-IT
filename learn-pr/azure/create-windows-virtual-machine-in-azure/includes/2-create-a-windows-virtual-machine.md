@@ -1,106 +1,106 @@
-Your company has decided to manage the video data from their traffic cameras in Azure using VMs. In order to run the multiple codecs, we first need to create the VMs. We also need to connect and interact with the VMs. In this unit, you will learn how to create a VM using the Azure portal. You will configure the VM for remote access, select a VM image, and choose the proper storage option.
+L'azienda ha deciso di gestire i dati video dalle fotocamere del traffico in Azure mediante VM. Per eseguire più codec, è necessario innanzitutto creare le VM, nonché connetterle e interagirvi. In questa unità si apprenderà come creare una macchina virtuale usando il portale di Azure. Verrà illustrato come configurare la macchina virtuale per l'accesso remoto, selezionare un'immagine di macchina virtuale e scegliere l'opzione di archiviazione appropriata.
 
-## Introduction to Windows virtual machines in Azure
+## <a name="introduction-to-windows-virtual-machines-in-azure"></a>Introduzione alle macchine virtuali Windows in Azure
 
-Azure VMs are an on-demand scalable cloud computing resource. They're similar to virtual machines that are hosted in Windows Hyper-V. They include processor, memory, storage, and networking resources. You can start and stop virtual machines at will, just like with Hyper-V, and manage them from the Azure portal or with the Azure CLI. You can also use a Remote Desktop Protocol (RDP) client to connect directly to the Windows desktop user interface (UI) and use the VM as if you were signed in to a local Windows computer.
+Le macchine virtuali di Azure sono risorse di cloud computing scalabili su richiesta. Sono simili alle macchine virtuali ospitate in Windows Hyper-V. Includono processore, memoria, spazio di archiviazione e risorse di rete. È possibile avviare e arrestare le macchine virtuali in base alle esigenze, come con Hyper-V, e gestirle dal portale di Azure o con l'interfaccia della riga di comando di Azure. È anche possibile usare un client RDP (Remote Desktop Protocol) per connettersi direttamente all'interfaccia utente del desktop di Windows e usare la macchina virtuale come dopo aver eseguito l'accesso a un computer Windows locale.
 
-## Creating an Azure VM
+## <a name="creating-an-azure-vm"></a>Creazione di una macchina virtuale di Azure
 
-VMs can be defined and deployed on Azure in several ways: The Azure portal, a script (using the Azure CLI or Azure PowerShell), or through an Azure Resource Manager template. In all cases, you will need to supply several pieces of information which we'll cover shortly.
+Le macchine virtuali possono essere definite e distribuite in Azure in diversi modi: il portale di Azure, uno script (tramite l'interfaccia della riga di comando di Azure o Azure PowerShell) oppure tramite un modello di Azure Resource Manager. In tutti i casi, sarà necessario specificare varie informazioni, che verranno trattate a breve.
 
-The Azure Marketplace also provides pre-configured images that include both an OS and popular software tools installed for specific scenarios.
+Azure Marketplace offre anche immagini preconfigurate che includono sia un sistema operativo che gli strumenti software più diffusi installati per scenari specifici.
 
-![Azure Marketplace Virtual Machines](../media-drafts/2-marketplace-vm-choices.png)
+![Macchine virtuali di Azure Marketplace](../media-drafts/2-marketplace-vm-choices.png)
 
-## Resources used in a Windows VM
+## <a name="resources-used-in-a-windows-vm"></a>Risorse usate in una macchina virtuale Windows
 
-When creating a Windows VM in Azure, you also create resources to host the VM. These resources work together to virtualize a computer and run the Windows operating system. These must either exist (and be selected during VM creation), or they will be created with the VM.
+Quando si crea una macchina virtuale Windows in Azure, è necessario creare anche le risorse per ospitarla. Queste risorse interagiscono per virtualizzare un computer ed eseguire il sistema operativo Windows. Le risorse devono essere già esistenti (e quindi selezionate durante la creazione della macchina virtuale) oppure verranno create con la macchina virtuale.
 
-- A Virtual machine that provides CPU and memory resources.
-- An Azure Storage account to hold the virtual hard disks.
-- Virtual disks to hold the OS, applications, and data.
-- Virtual network (VNet) to connect the VM to other Azure services or your own on-premise hardware.
-- A network interface to communicate with the VNet.
-- A public IP address so you can access the VM. This is optional.
+- Una macchina virtuale che fornisce le risorse CPU e memoria.
+- Un account di Archiviazione di Azure per contenere i dischi rigidi virtuali.
+- Dischi virtuali per contenere il sistema operativo, le applicazioni e i dati.
+- Rete virtuale (VNet) per connettere la macchina virtuale ad altri servizi di Azure o all'hardware in locale.
+- Un'interfaccia di rete per comunicare con la rete virtuale.
+- Un indirizzo IP facoltativo in modo da poter accedere alla macchina virtuale. Questo indirizzo è facoltativo.
 
-Like other Azure services, you'll need a **Resource Group** to contain the VM (and optionally group these resources together for administration). When you create a new VM, you can either use an existing resource group or create a new one.
+Come per altri servizi di Azure, sarà necessario un **gruppo di risorse** per contenere la macchina virtuale (e, facoltativamente, raggruppare queste risorse per l'amministrazione). Quando si crea una nuova macchina virtuale, è possibile usare un gruppo di risorse esistente o crearne uno nuovo.
 
-## Choose the VM image
+## <a name="choose-the-vm-image"></a>Scegliere l'immagine della VM
 
-Selecting an image is one of the first and most important decisions you'll make when creating a VM. An image is a template that's used to create a VM. These templates include an OS and often other software, such as development tools or web hosting environments.
+La scelta di un'immagine è una delle decisioni principali e più importanti da prendere in fase di creazione di una VM. Un'immagine è un modello usato per creare una VM. Questi modelli includono un sistema operativo e, spesso, anche altro software, ad esempio strumenti di sviluppo o ambienti di hosting Web.
 
-Anything that a computer can have installed can be included in an image. You can create a VM from an image that's pre-configured to exactly the tasks you need, such as hosting an ASP.Net Core app.
+Tutto ciò che può essere installato in un computer può essere incluso in un'immagine. È possibile creare una macchina virtuale da un'immagine preconfigurata esattamente per le attività necessarie, ad esempio l'hosting di un'app ASP.Net Core.
 
 > [!TIP]
-> You can also create and upload your own images, check the documentation for more information.
+> È anche possibile creare e caricare le proprie immagini. Per altre informazioni, vedere la documentazione.
 
-## Sizing your VM
-Just as a physical machine has a certain amount of memory and CPU power, so does a virtual machine. Azure offers a range of VMs of differing sizes at different price points. The size that you choose will determine the VMs processing power, memory, and max storage capacity.
+## <a name="sizing-your-vm"></a>Dimensionamento di una macchina virtuale
+Proprio come un computer fisico dispone di una determinata quantità di memoria e potenza della CPU, lo stesso vale per una macchina virtuale. Azure offre una serie di macchine virtuali con dimensioni e prezzi diversi. Le dimensioni scelte determineranno la potenza di elaborazione, la memoria e la capacità di archiviazione massima delle macchine virtuali.
 
 > [!WARNING]
-> There are quota limits on each subscription that can impact VM creation. By default, you cannot have more than 20 virtual _cores_ across all VMs within a region. You can either split up VMs across regions or file an [online request](https://docs.microsoft.com/azure/azure-supportability/resource-manager-core-quotas-request) to increase your limits.
+> Sono previsti limiti di quota per ogni sottoscrizione, che possono influire sulla creazione della macchina virtuale. Per impostazione predefinita, non è possibile avere più di 20 _core_ virtuali per tutte le macchine virtuali all'interno di un'area. È possibile dividere le macchine virtuali tra aree o inviare una [richiesta online](https://docs.microsoft.com/azure/azure-supportability/resource-manager-core-quotas-request) per aumentare i limiti.
 
-VM sizes are grouped into categories, starting with the B-series for basic testing and running up to the H-series for massive computing tasks. You should select the size of the VM based on the workload you want to perform. It is possible to change the size of a VM after it's been created, but the VM must be stopped first so it's best to size it appropriately from the start if possible.
+Le dimensioni delle macchine virtuali vengono raggruppate in categorie, a partire dalla serie B per attività di testing di base fino alla serie H per estese attività di elaborazione. È consigliabile selezionare le dimensioni della macchina virtuale in base al carico di lavoro da eseguire. È possibile modificare le dimensioni di una macchina virtuale dopo averla creata, ma è prima necessario arrestarla, quindi è consigliabile selezionare le dimensioni appropriate sin dall'inizio se possibile.
 
-#### Here are some guidelines based on the scenario you are targeting.
+#### <a name="here-are-some-guidelines-based-on-the-scenario-you-are-targeting"></a>Di seguito sono riportate alcune linee guida in base allo scenario di destinazione.
 
-| What are you doing? | Consider these sizes
+| Scenario | Dimensioni da considerare
 |-------|------------------|
-| **General use computing / web** Testing and development, small to medium databases, or low to medium traffic web servers. | B, Dsv3, Dv3, DSv2, Dv2 |
-| **Heavy computational tasks** Medium traffic web servers, network appliances, batch processes, and application servers. | Fsv2, Fs, F |
-| **Large memory usage** Relational database servers, medium to large caches, and in-memory analytics. | Esv3, Ev3, M, GS, G, DSv2, Dv2 |
-| **Data storage and processing** Big Data, SQL, and NoSQL databases which need high disk throughput and IO. | Ls |
-| **Heavy graphics rendering** or video editing, as well as model training and inferencing (ND) with deep learning. | NV, NC, NCv2, NCv3, ND |
-| **High-performance computing (HPC)** If you need the fastest and most powerful CPU virtual machines with optional high-throughput network interfaces. | H |
+| **Attività di elaborazione/Web per utilizzo generico** Test e sviluppo, database medio-piccoli e server Web con traffico da medio a ridotto. | B, Dsv3, Dv3, DSv2, Dv2 |
+| **Attività di calcolo intensive** Server Web con livelli medi di traffico, appliance di rete, processi batch e server applicazioni. | Fsv2, Fs, F |
+| **Utilizzo elevato della memoria** Server di database relazionali, cache medio-grandi e analisi in memoria. | Esv3, Ev3, M, GS, G, DSv2, Dv2 |
+| **Elaborazione ed archiviazione dati** Big Data, SQL e database NoSQL con esigenze elevate per velocità effettiva del disco e I/O. | Ls |
+| **Livelli intensivi di rendering della grafica** o modifica di video, nonché training e inferenza dei modelli (ND) con deep learning. | NV, NC, NCv2, NCv3, ND |
+| **HPC (High-Performance Computing)** Se servono le macchine virtuali con le CPU più veloci e potenti, con interfacce di rete ad alta velocità effettiva facoltative. | H |
 
-## Choosing storage options
+## <a name="choosing-storage-options"></a>Scelta delle opzioni di archiviazione
 
-The next set of decisions revolve around storage. First, you can choose the disk technology. Options include a traditional platter-based hard disk drive (HDD) or a more modern solid-state drive (SSD). Just like the hardware you purchase, SSD storage costs more but provides better performance.
+Il set successivo di decisioni riguarda l'archiviazione. Prima di tutto è possibile scegliere la tecnologia dei dischi. Le opzioni includono un'unità disco rigido tradizionale basata su platter o un'unità SSD più moderna. Proprio come per l'hardware acquistato, l'archiviazione SSD ha un costo maggiore, ma offre prestazioni migliori.
 
 > [!TIP]
-> There are two levels of SSD storage available: standard and premium. Choose Standard SSD disks if you have normal workloads but want better performance. Choose Premium SSD disks if you have I/O intensive workloads or mission-critical systems that need to process data very quickly.
+> Sono disponibili due livelli di archiviazione su unità SSD: Standard e Premium. Per carichi di lavoro normali, ma se si vogliono prestazioni migliori, scegliere dischi SSD Standard. Scegliere dischi SSD Premium per carichi di lavoro con I/O intensivo oppure sistemi strategici che devono elaborare i dati molto rapidamente.
 
-### Mapping storage to disks
+### <a name="mapping-storage-to-disks"></a>Mapping di archiviazione e dischi
 
-Azure uses Virtual hard disks (VHDs) to represent physical disks for the VM. VHDs replicate the logical format and data of a disk drive but are stored as page blobs in an Azure Storage account. You can choose on a per-disk basis what type of storage it should use (SSD or HDD). This allows you to control the performance of each disk, likely based on the I/O you plan to perform on it.
+Azure usa dischi rigidi virtuali (VHD) per rappresentare i dischi fisici per la macchina virtuale. I dischi rigidi virtuali replicano il formato logico e i dati di un'unità disco, ma vengono archiviati come BLOB di pagine in un account di Archiviazione di Azure. È possibile scegliere per ogni disco il tipo di archiviazione da usare (SSD o HDD). Ciò consente di controllare le prestazioni di ogni disco, probabilmente in base alle attività di I/O che si prevede di eseguire.
 
-By default, two virtual hard disks (VHDs) will be created for your Windows VM:
+Per impostazione predefinita, per la macchina virtuale Windows verranno creati due dischi rigidi virtuali (VHD):
 
-1. The **Operating System disk**. This is your primary or C: drive and has a maximum capacity of 2048 GB.
+1. Il **disco del sistema operativo**. Questa è l'unità principale o C: e ha una capacità massima di 2048 GB.
 
-1. A **Temporary disk**. This provides temporary storage for the OS or any apps. It is configured as the D: drive by default and is sized based on the VM size, making it an ideal location for the Windows paging file.
+1. Un **disco temporaneo**. Questo fornisce l'archiviazione temporanea per il sistema operativo o eventuali app. È configurato come unità D: per impostazione predefinita e le dimensioni si basano su quelle della macchina virtuale, facendone la posizione ideale per il file di paging di Windows.
 
 > [!WARNING]
-> The temporary disk is not persistent. You should only write data to this disk that you are willing to lose at any time.
+> Il disco temporaneo non è persistente. È consigliabile scrivere su questo disco solo i dati la cui perdita non costituirebbe un problema.
 
-#### What about data?
+#### <a name="what-about-data"></a>Come gestire i dati
 
-You can store data on the C: drive along with the OS, but a better approach is to create dedicated _data disks_. You can create and attach additional disks to the VM. Each disk can hold up to 4095 GB of data, with the maximum amount of storage determined by the VM size you select.
+È possibile archiviare i dati nell'unità C: insieme al sistema operativo, ma un approccio migliore consiste nel creare _dischi dati_ dedicati. È possibile creare e collegare dischi aggiuntivi alla macchina virtuale. Ogni disco può contenere fino a 4095 GB di dati e la quantità massima di spazio di archiviazione viene determinata dalla dimensione della macchina virtuale selezionata.
 
 > [!NOTE]
-> An interesting capability is to create a VHD image from a real disk. This allows you to easily migrate _existing_ information from an on-premise computer to the cloud.
+> La caratteristica interessante è la possibilità di creare un'immagine di disco rigido virtuale da un disco reale. Ciò consente di eseguire facilmente la migrazione di informazioni _esistenti_ da un computer locale al cloud.
 
-### Unmanaged vs. Managed disks
+### <a name="unmanaged-vs-managed-disks"></a>Dischi non gestiti e dischi gestiti
 
-The final storage choice you'll make is whether to use **unmanaged** or **managed** disks.
+La scelta finale per l'archiviazione consiste nel decidere se usare dischi **non gestiti** oppure **gestiti**.
 
-With unmanaged disks, you are responsible for the storage accounts that are used to hold the VHDs that correspond to your VM disks. You pay the storage account rates for the amount of space you use. A single storage account has a fixed rate limit of 20,000 I/O operations/sec. This means that a single storage account is capable of supporting 40 standard virtual hard disks at full throttle. If you need to scale out, then you need more than one storage account, which can get complicated.
+Con i dischi non gestiti si è responsabili degli account di archiviazione usati per archiviare i dischi rigidi virtuali corrispondenti ai dischi delle macchine virtuali. Si pagano le tariffe dell'account di archiviazione per la quantità di spazio usato. Un singolo account di archiviazione prevede un limite fisso di velocità di 20.000 operazioni di I/O al secondo e questo significa che un singolo account di archiviazione è in grado di supportare 40 dischi rigidi virtuali standard a pieno ritmo. Se è necessario aumentare, servirà più di un account di archiviazione e ciò può risultare complicato.
 
-Managed disks are the newer and recommended disk storage model. They elegantly solve this complexity by putting the burden of managing the storage accounts onto Azure. You specify the disk type (Premium or Standard) and the size of the disk and Azure creates and manages both the disk _and_ the storage it uses. You don't have to worry about storage account limits, which makes them easier to scale out. They also offer several other benefits:
+I dischi gestiti rappresentano il modello di archiviazione su disco consigliato più recente. Risolvono in modo elegante queste complicazioni delegando ad Azure il carico di gestione degli account di archiviazione. È necessario specificare il tipo di disco, Premium o Standard, e le dimensioni del disco ed Azure crea e gestisce sia il disco _che_ lo spazio di archiviazione usati. Non è necessario preoccuparsi dei limiti per l'account di archiviazione e aumentare la disponibilità diventa quindi più semplice. I dischi gestiti offrono anche diversi altri vantaggi:
 
-- **Increased reliability**: Azure ensures that VHDs associated with high-reliability VMs will be placed in different parts of Azure storage to provide similar levels of resilience.
-- **Better security**: Managed disks are truly managed resources in the resource group. This means they can use role-based access control to restrict who can work with the VHD data.
-- **Snapshot support**: Snapshots can be used to create a read-only copy of a VHD. You have to shut down the owning VM but creating the snapshot only takes a few seconds. Once it's done you can power on the VM and use the snapshot to create a duplicate VM to troubleshoot a production issue or rollback the VM to the point in time that the snapshot was taken.
-- **Backup support**: Managed disks can be automatically backed up to different regions for disaster recovery with Azure Backup all without affecting the service of the VM.
+- **Maggiore affidabilità**: Azure garantisce che i dischi rigidi virtuali associati a macchine virtuali a elevata affidabilità verranno posizionati in parti diverse dell'archiviazione di Azure per fornire livelli simili di resilienza.
+- **Migliore sicurezza**: i dischi gestiti sono risorse realmente gestite nel gruppo di risorse. Questo significa che possono sfruttare il controllo degli accessi in base al ruolo per limitare chi può usare i dati dei dischi rigidi virtuali.
+- **Supporto degli snapshot**: è possibile usare gli snapshot per creare una copia di sola lettura di un disco rigido virtuale. È necessario arrestare la macchina virtuale proprietaria, ma la creazione dello snapshot richiede solo pochi secondi. Al termine, è possibile accendere la macchina virtuale e usare lo snapshot per creare una macchina virtuale duplicata per risolvere un problema di produzione o ripristinare la macchina virtuale al punto in cui è stato creato lo snapshot.
+- **Supporto del backup**: è possibile eseguire automaticamente il backup dei dischi gestiti in aree diverse per il ripristino di emergenza con Backup di Azure senza effetti sul servizio della macchina virtuale.
 
-## Network communication
+## <a name="network-communication"></a>Comunicazione di rete
 
-Virtual machines communicate with external resources using a virtual network (VNet). The VNet represents a private network in a single region that your resources communicate on. A virtual network is just like the networks you manage on-premises. You can divide them up with subnets to isolate resources, connect them to other networks (including your on-premises networks), and apply traffic rules to govern inbound and outbound connections.
+Le macchine virtuali comunicano con le risorse esterne tramite una rete virtuale (VNet). La rete virtuale rappresenta una rete privata in un'unica area, usata dalle risorse per le comunicazioni. Una rete virtuale è esattamente come le reti gestite in locale. È possibile suddividerla tramite subnet per isolare le risorse, connetterla ad altre (incluse le reti locali) e applicare le regole del traffico per regolare le connessioni in ingresso e in uscita.
 
-### Planning your network
+### <a name="planning-your-network"></a>Pianificazione della rete
 
-When you create a new VM, you will have the option of creating a new virtual network, or using an existing VNet in your region.
+Quando si crea una nuova macchina virtuale, si avrà la possibilità di creare una nuova rete virtuale o di usare una rete virtuale esistente nella propria area.
 
-Having Azure create the network together with the VM is simple but it's likely not ideal for most scenarios. It's better to plan your network requirements _up-front_ for all the components in your architecture and create the VNet structure you will need separately. Then create the VMs and place them into the already-created VNets.
+Scegliere di delegare ad Azure la creazione della rete insieme alla macchina virtuale è semplice, ma è probabile che non sia la soluzione ideale per la maggior parte degli scenari. È consigliabile pianificare _anticipatamente_ i requisiti di rete per tutti i componenti nell'architettura e creare separatamente la struttura della rete virtuale che sarà necessaria, quindi creare le macchine virtuali e inserirle in reti virtuali create in precedenza.
 
-We'll look more at virtual networks a bit later in this module. Let's apply some of this knowledge and create a VM in Azure.
+Il tema delle reti virtuali verrà approfondito poco più avanti in questo modulo. Alcuni di questi concetti verranno ora messi in pratica creando una macchina virtuale in Azure.

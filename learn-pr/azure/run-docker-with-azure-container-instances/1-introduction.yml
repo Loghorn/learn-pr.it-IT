@@ -1,15 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.run-docker-containers-aci.1-introduction
 metadata:
-  title: Introduction to Azure Container Instances
-  description: Introduction to Azure Container Instances.
+  title: Introduzione a Istanze di contenitore di Azure
+  description: Introduzione a Istanze di contenitore di Azure.
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Introduction to Azure Container Instances
+  ms.openlocfilehash: 2de1794e9a4fd3ebe75fee54c811779374fb03b2
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44230824"
+title: Introduzione a Istanze di contenitore di Azure
 durationInMinutes: 2
-content: |
-  [!include[](includes/1-introduction.md)]
+content: '[!include[](includes/1-introduction.md)]'

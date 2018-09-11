@@ -89,6 +89,7 @@ param([int]$size, [string]$location)
 
 ## <a name="how-to-create-a-linux-virtual-machine"></a>Come creare una macchina virtuale Linux
 Azure PowerShell fornisce il cmdlet **New-AzureRmVm** per creare una macchina virtuale. Il cmdlet dispone di diversi parametri che consentono di gestire le numerose impostazioni di configurazione della macchina virtuale. La maggior parte dei parametri ha valori predefiniti accettabili, pertanto è necessario specificare solo cinque elementi:
+
 - **ResourceGroupName**: il gruppo di risorse in cui verrà inserita la nuova macchina virtuale.
 - **Name**: il nome della macchina virtuale in Azure.
 - **Location**: la posizione geografica in cui verrà eseguito il provisioning della macchina virtuale.

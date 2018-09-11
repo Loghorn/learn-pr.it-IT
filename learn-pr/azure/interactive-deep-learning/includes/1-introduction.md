@@ -1,13 +1,13 @@
-## Introduction 
+## <a name="introduction"></a>Introduzione 
 
-This module will walk through the basics of deep learning by the end of the module you will:
+In questo modulo verranno illustrati i concetti fondamentali dell'apprendimento avanzato. Alla fine del modulo, l'utente avrà appreso:
 
-- Learn the Basics of Deep Learning
-- Spin up your first Deep Learning Virtual Machine (DVSM)
-- Learn how to use Docker to set up a Custom Deep learning environment
-- Connect to Interactive Jupyter Notebooks through docker on the DSVM
-- Run your first deep learning experiment with Jupyter.
+- Informazioni sulle nozioni di base dell'apprendimento avanzato
+- Trucchi per velocizzare la DVSM (Deep Learning Virtual Machine)
+- Informazioni su come usare Docker per configurare un ambiente di apprendimento avanzato personalizzato
+- Procedure per connettersi ai notebook Interactive Jupyter tramite il docker nella DSVM
+- Informazioni su come eseguire il primo esperimento di apprendimento avanzato con Jupyter.
 
-## Prerequisites
+## <a name="prerequisites"></a>Prerequisiti
 
-- Azure subscription with access to D series VMs 
+- Sottoscrizione ad Azure con accesso alle macchine virtuali serie D 

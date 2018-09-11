@@ -1,8 +1,9 @@
-In questo modulo, è stata protetta la configurazione segreta di un'applicazione in Azure Key Vault. Il codice dell'app esegue l'autenticazione nell'insieme di credenziali con Identità dei servizi gestiti e carica automaticamente i segreti dall'insieme di credenziali nel sistema di configurazione di ASP.NET Core all'avvio.
+In questo modulo, è stata protetta la configurazione segreta di un'applicazione in Azure Key Vault. Il codice dell'app esegue l'autenticazione nell'insieme di credenziali con l'identità del servizio gestita e carica automaticamente all'avvio i segreti dall'insieme di credenziali nel sistema di configurazione di ASP.NET Core.
 
-## <a name="cleanup"></a>Pulizia
+## <a name="clean-up"></a>Eseguire la pulizia
+<!---TODO: Do we need to include cleanup for the free education tier?--->
 
-Per eseguire la pulizia della sottoscrizione di Azure, eseguire il comando seguente in Azure Cloud Shell per eliminare il gruppo di risorse contenente tutte le risorse create in questo modulo.
+Per eseguire la pulizia della sottoscrizione di Azure, eseguire in Azure Cloud Shell il comando seguente che consente di eliminare il gruppo di risorse contenente tutte le risorse create in questo modulo.
 
 ```console
 az group delete --name keyvault-exercise-group
@@ -16,7 +17,7 @@ Se si trattasse di una vera app, che cosa succederebbe dopo?
 
 - Verrebbero inseriti tutti i segreti delle app negli insiemi di credenziali! Non vi è più alcun motivo per disporne nei file di configurazione.
 - L'applicazione continuerebbe a essere usata. L'ambiente di produzione è completamente configurato, quindi per le future implementazioni non è necessario ripetere tutte le impostazioni.
-- Per supportare lo sviluppo, creare un ambiente di sviluppo che contenga segreti con lo stesso nome, ma con valori diversi. Concedere le autorizzazioni per il team di sviluppo e configurare il nome dell'insieme di credenziali nel file di configurazione dell'ambiente di sviluppo dell'app. Quando gli sviluppatori eseguiranno l'app in locale, `AddAzureKeyVault` rileverà automaticamente le installazioni locali di Visual Studio e l'Interfaccia della riga di comando di Azure e userà le credenziali di Azure configurate in tali applicazioni per l'iscrizione e l'insieme di credenziali di accesso.
+- Per supportare lo sviluppo, creare un ambiente di sviluppo che contenga segreti con lo stesso nome, ma con valori diversi. Concedere le autorizzazioni per il team di sviluppo e configurare il nome dell'insieme di credenziali nel file di configurazione dell'ambiente di sviluppo dell'app. Quando gli sviluppatori eseguiranno l'app in locale, `AddAzureKeyVault` rileverà automaticamente le installazioni locali di Visual Studio e l'interfaccia della riga di comando di Azure e userà le credenziali di Azure configurate in tali applicazioni per l'iscrizione e l'insieme di credenziali di accesso.
 - Creare altri ambienti per scopi quali, ad esempio, test di autorizzazione utente.
 - Insiemi di credenziali separati tra sottoscrizioni diverse e/o gruppi di risorse per isolarli.
 - Concedere l'accesso ad altri insiemi di credenziali dell'ambiente alle persone appropriate.

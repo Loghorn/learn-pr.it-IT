@@ -1,27 +1,27 @@
-Jim manages a set of Azure virtual machines running on our corporate web infrastructure, which includes several websites and database servers running on various platforms. 
+Si supponga di dover gestire un set di macchine virtuali di Azure in esecuzione nell'infrastruttura Web aziendale, che include più siti Web e server di database eseguiti su diverse piattaforme. 
 
-While the Azure portal is easy to use, Jim has found that navigating through the various blades adds time to some of the tasks. 
+Il portale di Azure è facile da usare, ma i vari spostamenti da un pannello all'altro aumentano il tempo necessario per eseguire alcune attività. 
 
-While exploring alternatives, he discovers the Azure CLI tool.
+Tra le possibili alternative è disponibile lo strumento di interfaccia della riga di comando di Azure.
 
-Working with the Azure CLI, Jim can write scripts to check the status of his servers, deploy a new configuration, open a port, or connect to a virtual machine to change a setting.
+Tramite l'interfaccia della riga di comando di Azure, è possibile scrivere script per controllare lo stato dei server, distribuire una nuova configurazione, aprire una porta o connettersi a una macchina virtuale per modificare un'impostazione.
 
-Perhaps you are like Jim and are looking for a tool to help automate tasks in your cloud environment. We're going to show you how to use the Azure CLI to create and manage virtual machines hosted in Azure. 
+È lo strumento ideale per automatizzare le attività in un ambiente cloud. Di seguito si vedrà come usare l'interfaccia della riga di comando di Azure per creare e gestire macchine virtuali ospitate in Azure. 
 
-## Azure CLI
+## <a name="azure-cli"></a>Interfaccia della riga di comando di Azure
 
-The Azure CLI is Microsoft's cross-platform command-line tool for managing Azure resources. It's available for macOS, Linux, and Windows, or in the browser using [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview).
+L'interfaccia della riga di comando di Azure è lo strumento da riga di comando multipiattaforma di Microsoft per la gestione delle risorse di Azure. È disponibile per macOS, Linux e Windows oppure nel browser, tramite [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview).
 
 > [!IMPORTANT]
-> There are two versions of the Azure CLI tool available today: Azure CLI 1.0 and Azure CLI 2.0. We'll be using Azure CLI 2.0, which is the latest version and is recommended unless you're running legacy scripts. Azure CLI 1.0 is started with the `azure` command, and Azure CLI 2.0 is started with the `az` command. 
+> Attualmente sono disponibili due versioni dello strumento di interfaccia della riga di comando di Azure: 1.0 e 2.0. In questa unità si userà l'interfaccia della riga di comando di Azure 2.0, ovvero la versione più recente e consigliata, a meno che non si debbano eseguire script legacy. La versione 1.0 dell'interfaccia della riga di comando di Azure viene avviata con il comando `azure`, mentre la versione 2.0 viene avviata con il comando `az`. 
 
-The Azure CLI can help you manage Azure resources such as virtual machines and disks from the command line or in scripts. Let's get started and see what it can do.
+L'interfaccia della riga di comando di Azure può essere utile per gestire le risorse di Azure, ad esempio macchine virtuali e dischi, dalla riga di comando o tramite script. Per iniziare, si analizzerà cosa è possibile fare.
 
-## Learning objectives
+## <a name="learning-objectives"></a>Obiettivi di apprendimento
 
-In this module, you will:
+Contenuto del modulo:
 
-- Create a virtual machine with the Azure CLI
-- Resize virtual machines with the Azure CLI.
-- Perform basic management tasks using the Azure CLI.
-- Connect to a running VM with SSH and the Azure CLI.
+- Creare una macchina virtuale con l'interfaccia della riga di comando di Azure
+- Ridimensionare macchine virtuali con l'interfaccia della riga di comando di Azure.
+- Eseguire attività di gestione di base tramite l'interfaccia della riga di comando di Azure.
+- Connettersi a una macchina virtuale in esecuzione con SSH e l'interfaccia della riga di comando di Azure.

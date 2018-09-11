@@ -1,23 +1,22 @@
 ### YamlMime:Module
 uid: learn.host-a-web-application-with-azure-web-apps
 metadata:
-  title: Host a web application with Azure App service
-  description: Create a website through the hosted web app platform in Azure.
+  title: Ospitare un'applicazione Web con le app Web di Azure
+  description: Informazioni su come creare un sito Web tramite la piattaforma per app Web ospitate in Azure.
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
-title: Host a web application with Azure App service
-summary: Create a website through the hosted web app platform in Azure.
-abstract:  |
-  In this module, you will:
-  - Use the Azure portal to create your web app
-  - Create an ASP.NET Core web app using Linux
-  - Upload your code to Azure App Service using Git
-prerequisites: None
-#TODO: Update icon URL with real image 
+  ms.openlocfilehash: 84674d57c8970615ed62068bf46ae57ba0ba71d1
+  ms.sourcegitcommit: f6df5a988f64643099a0ffa283a522f8864c0070
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43854269"
+title: Ospitare un'applicazione Web con le app Web di Azure
+summary: Informazioni su come creare un sito Web tramite la piattaforma per app Web ospitate in Azure.
+abstract: >
+  Contenuto del modulo:
+    - Usare il portale di Azure per creare l'app Web
+    - Creare un'app Web ASP.NET Core usando Linux
+    - Caricare il codice nel servizio app di Azure tramite Git
 iconUrl: http://via.placeholder.com/120x120
 levels:
 - beginner
@@ -26,7 +25,6 @@ roles:
 products:
 - azure
 units:
-#TODO: None of these units have a knowledge task or task validation component (need to add somewhere so users don't get marked complete solely by viewing the pages).
 - learn.host-a-web-application-with-azure-web-apps.1-introduction
 - learn.host-a-web-application-with-azure-web-apps.2-create-a-web-app-in-the-azure-portal
 - learn.host-a-web-application-with-azure-web-apps.3-exercise-create-a-web-app-in-the-azure-portal

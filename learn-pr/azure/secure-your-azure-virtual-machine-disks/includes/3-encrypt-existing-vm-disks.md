@@ -1,60 +1,60 @@
-Suppose your company has decided to implement Azure Disk Encryption (ADE) across all VMs. You need to evaluate how to roll out encryption to existing VM volumes.
+Si supponga che l'azienda abbia deciso di implementare Crittografia dischi di Azure in tutte le macchine virtuali. È necessario valutare come implementare la crittografia nei volumi delle macchine virtuali esistenti.
 
-Here, we'll look at the requirements for ADE, and the steps involved in encrypting disks on existing Windows VMs.
+In questo modulo si esamineranno i requisiti per Crittografia dischi di Azure e i passaggi necessari per la crittografia dei dischi nelle macchine virtuali Windows esistenti.
 
-## Azure Disk Encryption prerequisites
+## <a name="azure-disk-encryption-prerequisites"></a>Prerequisiti di Crittografia dischi di Azure
 
-Before you can encrypt your first VM disk, you need to:
+Per poter crittografare il primo disco di una macchina virtuale, è necessario
 
-1. Create a key vault.
-1. Set up an Azure Active Directory (Azure AD) application and service principal.
-1. Set the key vault access policy for the Azure AD app.
-1. Set key vault advanced access policies.
+1. Creare un insieme di credenziali delle chiavi
+1. Configurare un'applicazione Azure AD e un'entità servizio
+1. Impostare i criteri di accesso per l'insieme di credenziali delle chiavi per l'app Azure AD
+1. Impostare i criteri di accesso avanzati per l'insieme di credenziali delle chiavi
 
-### Azure Key Vault
+### <a name="azure-key-vault"></a>Azure Key Vault
 
-The encryption keys used by ADE can be stored in Azure Key Vault. Azure Key Vault is a tool for securely storing and accessing secrets. A secret is anything that you want to tightly control access to, such as API keys, passwords, or certificates. This provides highly available and scalable secure storage, in Federal Information Processing Standards (FIPS) 140-2 Level 2 validated Hardware Security Modules (HSMs). Using Key Vault, you keep full control of the keys used to encrypt your data, and you can manage and audit your key usage. You can configure and manage your key vault using the Azure portal, Azure PowerShell, and the Azure CLI.
+Le chiavi di crittografia usate da Crittografia dischi di Azure possono essere archiviate in Azure Key Vault. Azure Key Vault è uno strumento che consente di archiviare i segreti e accedervi in modo sicuro. Un segreto è qualsiasi elemento per cui si vuole controllare rigorosamente l'accesso, ad esempio chiavi API, password o certificati. Questa soluzione fornisce archiviazione sicura, scalabile e a disponibilità elevata in moduli di protezione hardware conformi a FIPS (Federal Information Processing Standards) 140-2, livello 2. Tramite Key Vault, è possibile avere il controllo completo delle chiavi usate per crittografare i dati ed è possibile gestire e controllare l'utilizzo delle chiavi. È possibile configurare e gestire un insieme di credenziali delle chiavi usando il portale di Azure, Azure PowerShell e l'interfaccia della riga di comando di Azure.
 
 >[!NOTE]
-> Azure Disk Encryption requires that your key vault and your VMs are in the same Azure region; this ensures that encryption secrets do not cross regional boundaries.
+> Crittografia dischi di Azure richiede che l'istanza di Key Vault e le macchine virtuali si trovino nella stessa area di Azure, in modo che i segreti di crittografia non debbano attraversare limiti a livello di area.
 
-### Azure AD application and service principal
+### <a name="azure-ad-application-and-service-principal"></a>Applicazione Azure AD ed entità servizio
 
-To access or modify resources, such as the encryption configuration for a VM with scripts or code, you must first set up an **Azure Active Directory (AD) application**. Azure AD is a multi-tenant, cloud-based directory, and identity management service. It combines core directory services, application access management, and identity protection into a single solution.
+Per accedere alle risorse o modificarle, ad esempio per la configurazione della crittografia per una macchina virtuale con script o codice, è prima necessario configurare un'**applicazione Azure Active Directory (AD)**. Azure Active Directory (Azure AD) è un servizio di gestione delle identità e directory basato sul cloud multi-tenant, che combina i principali servizi directory, la gestione dell'accesso alle applicazioni e la protezione delle identità in un'unica soluzione.
 
-You'll also need an Azure **service principal**. Service principals are the service accounts you use to run the script or code. They allow you to assign the specific permissions and scope that are needed to run the task against a particular Azure resource.
+È necessaria anche un'**entità servizio** di Azure. Le entità servizio sono gli account del servizio usati per eseguire lo script o il codice e consentono di assegnare le autorizzazioni specifiche e l'ambito necessari per eseguire l'attività su una risorsa di Azure specifica.
 
-There are two elements in Azure AD: the application object is the **_definition_** of the application (what it does), and the service principal is the **_specific instance_** of the application.
+Ci sono due elementi in Azure AD: l'oggetto applicazione è la **_definizione_** dell'applicazione (la sua funzione) e l'entità servizio è l'**_istanza specifica_** dell'applicazione.
 
-This approach aligns with the principle of **least privilege**, where the permissions assigned to the app are restricted to the bare minimum required to enable the app to perform its tasks.
+Questo approccio è in linea con il principio dei **privilegi minimi**, in base a cui le autorizzazioni assegnate all'app sono limitate al minimo richiesto per consentire all'app di svolgere le attività previste.
 
-You can configure and manage Azure AD applications and service principals using the Azure portal, Azure PowerShell, and the Azure CLI.
+È possibile configurare e gestire entità servizio e applicazioni Azure AD usando il portale di Azure, Azure PowerShell e l'interfaccia della riga di comando di Azure.
 
-### Key vault access policies
+### <a name="key-vault-access-policies"></a>Criteri di accesso per gli insiemi di credenziali delle chiavi
 
-Before you can store encryption keys in a key vault, ADE requires details on the **Client ID** and the **Client Secret** of the Azure AD application that is permitted to write to the key vault.
+Per poter archiviare le chiavi di crittografia in un'istanza di Key Vault, Crittografia dischi di Azure richiede le informazioni relative a **ID client** e **Segreto client** dell'applicazione Azure Active Directory che ha le autorizzazioni per scrivere in Key Vault.
 
-You'll also need to provide Azure access to the encryption keys in your key vault, so they are made available to the VM for booting and decrypting the volumes.
+È anche necessario fornire ad Azure l'accesso alle chiavi di crittografia nell'insieme di credenziali delle chiavi, in modo che vengano rese disponibili alla macchina virtuale per l'avvio e la decrittografia dei volumi.
 
-## Set key vault advanced access policies
+## <a name="set-key-vault-advanced-access-policies"></a>Impostare i criteri di accesso avanzati per l'insieme di credenziali delle chiavi
 
-**Advanced access policies** enable disk encryption on the key vault, and without them, encryption deployments will fail. 
+I **criteri di accesso avanzati** consentono la crittografia dei dischi nell'insieme di credenziali delle chiavi e in loro assenza le distribuzioni della crittografia hanno esito negativo. 
 
-There are three policies that need to be enabled:
+Ci sono tre criteri che devono essere abilitati:
 
-- **Key Vault for disk encryption**. Required for Azure Disk Encryption.
-- **Key Vault for deployment**. Enables the Microsoft.Compute resource provider to retrieve secrets from the key vault. This policy is needed when you are creating a VM.
-- **Key Vault for template deployment, if needed**. Enables Azure Resource Manager to get secrets from the key vault. This policy is required when you are using Azure Resource Manager templates for VM deployment.
+- **Key Vault per la crittografia dei dischi** Obbligatorio per Crittografia dischi di Azure.
+- **Key Vault per la distribuzione** Per consentire al provider di risorse Microsoft.Compute di recuperare i segreti dall'insieme di credenziali delle chiavi. Questo criterio è necessario quando si crea una macchina virtuale.
+- **Key Vault per la distribuzione di modelli, se necessario** Per consentire ad Azure Resource Manager di recuperare i segreti dall'insieme di credenziali delle chiavi. Questo criterio è necessario quando si usano modelli ARM per la distribuzione delle macchine virtuali.
 
-Key vault access policies can be configured and managed using the Azure portal, Azure PowerShell, or the Azure CLI.
+I criteri di accesso dell'insieme di credenziali delle chiavi possono essere configurati e gestiti usando il portale di Azure, Azure PowerShell o l'interfaccia della riga di comando di Azure.
 
-### What is the Azure Disk Encryption prerequisites configuration script
+### <a name="what-is-the-azure-disk-encryption-prerequisites-configuration-script"></a>Informazioni sullo script di configurazione dei prerequisiti di Crittografia dischi di Azure
 
-The **Azure Disk Encryption prerequisites configuration script** sets up all (or as many as you want) of the encryption prerequisites. The script also ensures that your key vault is in the same region as the VM you are going to encrypt. It will create a resource group and key vault, and set the key vault access policy. The script also creates a resource lock on the key vault to help protect it from accidental deletion.
+Lo **script di configurazione dei prerequisiti di Crittografia dischi di Azure** consente di configurare tutti i prerequisiti di crittografia (o quelli desiderati). Lo script assicura anche che Key Vault si trovi nella stessa area della macchina virtuale da crittografare. Lo script crea un gruppo di risorse e un insieme di credenziali delle chiavi e imposta i criteri di accesso dell'insieme di credenziali delle chiavi. Lo script crea anche un blocco delle risorse nell'insieme di credenziali delle chiavi per la protezione da eliminazioni accidentali.
 
-## Encrypting an existing VM disk
+## <a name="encrypting-an-existing-vm-disk"></a>Crittografia di un disco di una macchina virtuale esistente
 
-There are two steps for encrypting an existing VM disk, when you are using the Azure Disk Encryption prerequisites configuration script:
+Per la crittografia di un disco di una macchina virtuale esistente usando lo **script di configurazione dei prerequisiti di Crittografia dischi di Azure** sono necessari due passaggi:
 
-1. Run the Azure Disk Encryption prerequisites configuration script.
-1. Encrypt the Azure virtual machine in PowerShell.
+1. Eseguire lo script di configurazione dei prerequisiti di Crittografia dischi di Azure.
+1. Crittografare la macchina virtuale di Azure in PowerShell

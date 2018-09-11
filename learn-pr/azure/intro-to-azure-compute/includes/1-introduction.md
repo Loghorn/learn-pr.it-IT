@@ -7,6 +7,7 @@ L'ideale sarebbe poter effettuare il provisioning delle risorse necessarie allo 
 Questo è esattamente ciò che consente Azure. È possibile creare risorse di calcolo, configurarle per svolgere le operazioni necessarie e pagare solo per ciò che si usa.
 
 ## <a name="learning-objectives"></a>Obiettivi di apprendimento
+
 In questo modulo verrà descritto come:
 
 - Identificare le opzioni di calcolo in Azure.

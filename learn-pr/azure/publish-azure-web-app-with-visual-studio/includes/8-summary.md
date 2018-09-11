@@ -1,3 +1,3 @@
-In this module, you created a new ASP.NET web app from scratch and then published it to Azure directly from Visual Studio. We created the app service, updated our app, and published changes, without ever leaving Visual Studio.
+In questo modulo viene creata una nuova app Web ASP.NET da zero, che viene poi pubblicata in Azure direttamente da Visual Studio. È stato creato il servizio app, l'app è stata aggiornata e sono state pubblicate le modifiche, senza mai uscire da Visual Studio.
 
-Visual Studio and Azure App Service provide a powerful mechanism for creating, publishing, and maintaining web apps in Azure. With this combination of simplicity and manageability, keeping web apps up-to-date in Azure becomes a simple process.
+Visual Studio e Servizio app di Azure offrono un meccanismo potente per la creazione, pubblicazione e gestione delle app Web in Azure. Con questa combinazione di semplicità e gestibilità, mantenere aggiornate le app Web in Azure diventa un processo semplice.

@@ -1,52 +1,52 @@
-Now that we have a Windows VM in Azure, the next thing you’ll do is put your applications and data on those VMs to process our traffic videos. 
+Ora che è disponibile una macchina virtuale Windows in Azure, il passaggio successivo consiste nell'inserire le applicazioni e i dati in tali macchine virtuali per elaborare i video del traffico. 
 
-However, unless you’ve set up a site-to-site VPN to Azure, your Azure VMs won’t be accessible from your local network. If you’re just getting started with Azure, it’s unlikely that you have a working site-to-site VPN. So how can you transfer files to Azure VMs? One easy way is to use Azure’s Remote Desktop Connections feature to share your local drives with your new Azure VMs.
+Se tuttavia non è stata configurata una VPN da sito a sito in Azure, le macchine virtuali di Azure non saranno accessibili dalla rete locale. Se sta iniziando a usare Azure, è improbabile che sia presente una VPN da sito a sito funzionante. Per trasferire quindi i file nelle macchine virtuali di Azure, un modo semplice consiste nell'usare la funzionalità Connessione Desktop remoto di Azure per condividere le unità locali con le nuove macchine virtuali di Azure.
 
-Now that we have a new Windows virtual machine, we need to install our custom software on to it. There are two ways we can use:
+Ora che è disponibile una nuova macchina virtuale Windows, è necessario installarvi il software personalizzato. È possibile eseguire questa operazione in due modi:
 
 - Remote Desktop Protocol (RDP)
-- Custom scripts
-- Custom VM images (with the software preinstalled)
+- Script personalizzati
+- Immagini di macchina virtuale personalizzate (con il software preinstallato)
 
-Let's look at the simplest approach for Windows VMs: Remote Desktop.
+Verrà ora esaminato l'approccio più semplice per le macchine virtuali Windows: Desktop remoto.
 
-## What is the Remote Desktop Protocol?
+## <a name="what-is-the-remote-desktop-protocol"></a>Cos'è Remote Desktop Protocol?
 
-Remote Desktop (RDP) provides remote connectivity to the UI of Windows-based computers. RDP enables you to sign in to a remote physical or virtual Windows computer and control that computer as if you were seated at the console. An RDP connection enables you to carry out the vast majority of operations that you can do from the console of a physical computer, with the exception of some power and hardware-related functions.
+Desktop remoto (RDP) fornisce la connettività remota all'interfaccia utente dei computer basati su Windows. Il protocollo RDP consente di accedere a un computer Windows remoto fisico o virtuale e di controllare il computer come dalla console. Una connessione RDP consente di svolgere la maggior parte delle operazioni che è possibile eseguire dalla console di un computer fisico, a eccezione di alcune funzioni di alimentazione e relative all'hardware.
 
-An RDP connection requires an RDP client. Microsoft provides RDP clients for the following operating systems:
+Una connessione RDP richiede un client RDP. Microsoft fornisce client RDP per i sistemi operativi seguenti:
 
-- Windows (built-in)
+- Windows (predefinito)
 - MacOS
 - iOS
 - Android
 
-The following screenshot displays the Remote Desktop Protocol client in Windows 10.
+Lo screenshot seguente illustra il client Remote Desktop Protocol in Windows 10.
 
-![Screenshot of the user interface of the Remote Desktop Protocol client.](../media/4-rdp-client.png)
+![Screenshot dell'interfaccia utente del client Remote Desktop Protocol.](../media/4-rdp-client.png)
 
-There are also open source Linux clients, such as Remmina that enable you to connect to a Windows PC from an Ubuntu distribution.
+Sono disponibili anche client Linux open source, ad esempio Remmina, che consentono di connettersi a un PC Windows da una distribuzione Ubuntu.
 
-## Connecting to an Azure VM
+## <a name="connecting-to-an-azure-vm"></a>Connessione a una macchina virtuale di Azure
 
-As we saw a moment ago, Azure VMs communicate on a virtual network. They can also have an optional public IP address assigned to them. With a public IP, we can communicate with the VM over the Internet. Alternatively, we can setup a virtual private network (VPN) that connects our on-premises network to Azure - letting us securely connect to the VM without exposing a public IP. This approach is covered in another module and is fully documented if you are interested in exploring that option.
+Come si è visto poco fa, le macchine virtuali di Azure comunicano in una rete virtuale. Possono anche avere un indirizzo IP pubblico facoltativo assegnato. Con un IP pubblico, è possibile comunicare con la macchina virtuale tramite Internet. In alternativa, è possibile configurare una rete privata virtuale (VPN) che connette la rete locale ad Azure, permettendo di connettersi in modo sicuro alla macchina virtuale senza esporre un indirizzo IP pubblico. Questo approccio è descritto in un altro modulo ed è completamente documentato, se si è interessati a esplorare tale opzione.
 
-One thing to be aware of with public IP addresses in Azure is they are often dynamically allocated. That means the IP address can change over time - for VMs this happens when the VM is restarted. You can pay more to assign static addresses if you want to connect directly to an IP address instead of a name and need to ensure that the IP address will not change.
+Un aspetto da tenere presente con gli indirizzi IP pubblici in Azure è che vengono spesso allocati in modo dinamico. Ciò significa che l'indirizzo IP può cambiare nel corso del tempo, ad esempio quando la macchina virtuale viene riavviata. È possibile pagare una tariffa aggiuntiva per assegnare indirizzi statici, se ci si vuole connettere direttamente a un indirizzo IP invece che a un nome ed è necessario fare in modo che l'indirizzo IP non cambi.
 
-### How do you connect to a VM in Azure using RDP?
+### <a name="how-do-you-connect-to-a-vm-in-azure-using-rdp"></a>In che modo è possibile connettersi a una macchina virtuale in Azure tramite RDP?
 
-Connecting to a VM in Azure using RDP is a simple process. In the Azure portal, you go to the properties of your VM, and at the top, click **Connect**. This will show you the IP addresses assigned to the VM and give you the option to download a preconfigured **.rdp** file that Windows then opens in the RDP client. You can choose to connect over the public IP address of the VM in the RDP file. Alternatively, if you're connecting over VPN or ExpressRoute, you can select the internal IP address. You can also select the port number for the connection.
+La connessione a una macchina virtuale in Azure tramite RDP è un processo semplice. Nel portale di Azure accedere alle proprietà della macchina virtuale e nella parte superiore fare clic su **Connetti**. Verranno visualizzati gli indirizzi IP assegnati alla macchina virtuale e sarà possibile scaricare un file **RDP** preconfigurato che Windows aprirà nel client RDP. È possibile scegliere di connettersi tramite l'indirizzo IP pubblico della macchina virtuale nel file RDP. In alternativa, se ci si connette tramite VPN o ExpressRoute, è possibile selezionare l'indirizzo IP interno. È anche possibile selezionare il numero di porta per la connessione.
 
-If you're using a static public IP address for the VM, you can save the **.rdp** file to your desktop. If you're using dynamic IP addressing, the **.rdp** file only remains valid while the VM is running. If you stop and restart the VM, you must download another **.rdp** file.
+Se si usa un indirizzo IP pubblico statico per la macchina virtuale, è possibile salvare il file **RDP** sul desktop. Se si usano indirizzi IP dinamici, il file **RDP** rimane valido solo mentre la macchina virtuale è in esecuzione. Se si arresta e si riavvia la macchina virtuale, è necessario scaricare un altro file **RDP**.
 
 > [!TIP]
-> You can also enter the public IP address of the VM into the Windows RDP client and click **Connect**.
+> È anche possibile immettere l'indirizzo IP pubblico della macchina virtuale nel client RDP di Windows e fare clic su **Connetti**.
 
-When you connect, you will typically receive two warnings. These are:
+Quando ci si connette, in genere verranno visualizzati due avvisi. Si tratta di:
 
--**Publisher warning** - caused by the **.rdp** file not being publicly signed.
-- **Certificate warning** - caused by the machine certificate not being trusted.
+-**Avviso editore**: generato dal file **RDP** non firmato pubblicamente.
+- **Avviso certificato**: generato dal certificato del computer non considerato attendibile.
 
-In test environments, these warnings can be ignored. In production environments, the **.rdp** file can be signed using **RDPSIGN.EXE** and the machine certificate placed in the client's **Trusted Root Certification Authorities** store.
+Negli ambienti di test è possibile ignorare questi avvisi. Negli ambienti di produzione il file **RDP** può essere firmato usando **RDPSIGN.EXE** e il certificato del computer inserito nell'archivio del client **Autorità di certificazione radice attendibili**.
 
-Let's try using RDP to connect to our VM.
+Si proverà ora a usare RDP per connettersi alla macchina virtuale.

@@ -1,24 +1,23 @@
-<!--TODO: Explain how to do ExecuteNext (pages closer to SDK imp) vs ToList (continuation token)-->
-Now that you've created documents in your application, let's query them from your application. Azure Cosmos DB uses SQL queries and LINQ queries. This unit focuses on running SQL queries and LINQ queries from your application, as opposed to the portal.
+<!--TODO: Explain how to do ExecuteNext (pages closer to SDK imp) vs ToList (continuation token)--> Dopo aver creato documenti nell'applicazione, è possibile eseguire query per recuperarli dall'applicazione. Azure Cosmos DB usa query SQL e query LINQ. Questa unità è incentrata sull'esecuzione di query SQL e di query LINQ dall'applicazione, anziché dal portale.
 
-We'll use the user documents you've created for your online retailer application to test these queries.
+Per testare queste query verranno usati i documenti utente creati per l'applicazione del rivenditore online.
 
-## LINQ query basics
+## <a name="linq-query-basics"></a>Nozioni di base sulle query LINQ
 
-LINQ is a .NET programming model that expresses computations as queries on streams of objects. You can create an **IQueryable** object that directly queries Azure Cosmos DB, which translates the LINQ query into a Cosmos DB query. The query is then passed to the Azure Cosmos DB server to retrieve a set of results in JSON format. The returned results are deserialized into a stream of .NET objects on the client side. Many developers prefer LINQ queries, as they provide a single consistent programming model across how they work with objects in application code and how they express query logic running in the database.
+LINQ è un modello di programmazione .NET che esprime i calcoli come query su flussi di oggetti. È possibile creare un oggetto **IQueryable** che esegue query direttamente su Azure Cosmos DB, il quale a sua volta traduce la query LINQ in una query di Cosmos DB. La query viene quindi passata al server di Azure Cosmos DB per recuperare un set di risultati in formato JSON. I risultati restituiti vengono deserializzati in un flusso di oggetti .NET sul lato client. Molti sviluppatori preferiscono le query LINQ, in quanto offrono un singolo modello di programmazione coerente per l'utilizzo degli oggetti nel codice dell'applicazione e per esprimere la logica di query in esecuzione nel database.
 
-The following table shows how LINQ queries are translated into SQL.
+La tabella seguente mostra come le query LINQ vengono convertite in SQL.
 
-| LINQ expression | SQL translation |
+| Espressione LINQ | Conversione SQL |
 |---|---|
 | `input.Select(family => family.parents[0].familyName);`| `SELECT VALUE f.parents[0].familyName FROM Families f` |
 |`input.Select(family => family.children[0].grade + c); // c is an int variable` | `SELECT VALUE f.children[0].grade + c FROM Families f` |
 |`input.Select(family => new { name = family.children[0].familyName, grade = family.children[0].grade + 3});`| `SELECT VALUE {"name":f.children[0].familyName, "grade": f.children[0].grade + 3 } FROM Families f`|
 |`input.Where(family=> family.parents[0].familyName == "Smith");`|`SELECT * FROM Families f WHERE f.parents[0].familyName = "Smith"`|
 
-## Run SQL and LINQ queries
+## <a name="run-sql-and-linq-queries"></a>Eseguire query SQL e LINQ
 
-1. The following sample shows how a query could be performed in SQL, LINQ, or LINQ lambda from your .NET code. Copy the code and add it to the end of the Program.cs file.
+1. L'esempio seguente mostra come si potrebbe eseguire una query in SQL, LINQ o LINQ lambda dal codice .NET. Copiare il codice e aggiungerlo alla fine del file Program.cs.
 
     ```csharp
     private void ExecuteSimpleQuery(string databaseName, string collectionName)
@@ -54,20 +53,20 @@ The following table shows how LINQ queries are translated into SQL.
     }
     ```
 
-1. Copy and paste the following code to your **BasicOperations** method, before the `await this.DeleteUserDocument("Users", "WebCustomers", "1");` line.
+1. Copiare e incollare il codice seguente nel metodo **BasicOperations**, prima della riga `await this.DeleteUserDocument("Users", "WebCustomers", "1");`.
 
     ```csharp
     this.ExecuteSimpleQuery("Users", "WebCustomers");
     ```
 
-1. Save the Program.cs file and then, in the integrated terminal, run the following command.
+1. Salvare il file Program.cs e quindi eseguire il comando seguente nel terminale integrato.
     
     ```
     dotnet run
     ```
 
-    The console displays the output of the LINQ and SQL queries.
+    La console visualizza l'output delle query LINQ e SQL.
 
-## Summary
+## <a name="summary"></a>Riepilogo
 
-In this unit you learned about LINQ queries, and then added a LINQ and SQL query to your application to retrieve user records.
+In questa unità sono state presentate informazioni generali sulle query LINQ e quindi è stata aggiunta una query LINQ e SQL all'applicazione per recuperare i record utente.

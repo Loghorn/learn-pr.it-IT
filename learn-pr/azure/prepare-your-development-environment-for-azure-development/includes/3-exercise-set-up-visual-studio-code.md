@@ -7,15 +7,20 @@ Prima di tutto identificare il sistema operativo in uso e seguire i passaggi nel
 ### <a name="windows"></a>Windows
 
 1. Scaricare il programma di installazione di Visual Studio Code per Windows.
-2. Eseguire il programma di installazione. L'operazione non richiederà molto tempo.
-3. Aprire Visual Studio Code passando alla cartella di installazione (il percorso predefinito è C:\Programmi\Microsoft VS Code per un computer a 64 bit).
+
+1. Eseguire il programma di installazione. L'operazione non richiederà molto tempo.
+
+1. Aprire Visual Studio Code passando alla cartella di installazione (il percorso predefinito è C:\Programmi\Microsoft VS Code per un computer a 64 bit).
 
 ### <a name="macos"></a>macOS
 
 1. Scaricare Visual Studio Code per macOS.
-2. Fare doppio clic sull'archivio scaricato per espandere il contenuto.
-3. Trascinare Visual Studio Code.app nella cartella Applicazioni, rendendolo disponibile in Launchpad.
-4. Aggiungere Visual Studio Code a Dock facendo clic con il pulsante destro del mouse sull'icona e scegliendo Opzioni > Mantieni nel Dock.
+
+1. Fare doppio clic sull'archivio scaricato per espandere il contenuto.
+
+1. Trascinare Visual Studio Code.app nella cartella Applicazioni, rendendolo disponibile in Launchpad.
+
+1. Aggiungere Visual Studio Code a Dock facendo clic con il pulsante destro del mouse sull'icona e scegliendo Opzioni > Mantieni nel Dock.
 
 ### <a name="linux--debian-and-ubuntu"></a>Linux - Debian e Ubuntu
 
@@ -66,8 +71,10 @@ Prima di tutto identificare il sistema operativo in uso e seguire i passaggi nel
 Dopo aver installato Visual Studio Code, aprirlo.
 
 1. Passare alla scheda Estensioni.
-2. Cercare Servizio app di Azure.
-3. Fare clic su Installa.
+
+1. Cercare Servizio app di Azure.
+
+1. Fare clic su Installa.
 
     Lo screenshot seguente illustra l'estensione di Servizio app di Azure selezionata nei risultati di ricerca delle estensioni in Visual Studio Code.
 

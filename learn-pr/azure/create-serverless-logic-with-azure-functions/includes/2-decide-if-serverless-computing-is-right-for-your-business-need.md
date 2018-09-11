@@ -41,5 +41,3 @@ Per impostazione predefinita, le funzioni hanno un timeout di 5 minuti, configur
 Il secondo aspetto da valutare è la frequenza di esecuzione. Se si prevede che la funzione venga eseguita in modo continuo da più client, è opportuno stimarne l'utilizzo e calcolare il costo che deriva dall'uso delle funzioni. Ospitare il servizio in una macchina virtuale potrebbe essere più conveniente.
 
 Durante il ridimensionamento è possibile creare solo un'istanza dell'app per le funzioni ogni 10 secondi, per un massimo di 200 istanze totali. Tenere presente che ogni istanza può prevedere più esecuzioni simultanee, pertanto non esiste alcun limite per quanto riguarda il traffico che una singola istanza può gestire. Tipi di trigger diversi presentano requisiti di ridimensionamento diversi; è consigliabile quindi valutare la gamma di trigger disponibili e analizzarne i limiti.
-
-

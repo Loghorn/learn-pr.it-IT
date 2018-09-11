@@ -1,26 +1,27 @@
-Our goal is to create a new Azure virtual machine. We'll need to supply several pieces of information to identify the resource location, OS to use, and the hardware configuration needed for the VM. Let's start with the **resource group**.
+Il nostro obiettivo consiste nel creare una nuova macchina virtuale di Azure. È necessario fornire diversi tipi di informazioni per identificare il percorso della risorsa, il sistema operativo da usare e la configurazione hardware necessaria per la macchina virtuale. Iniziare con un **gruppo di risorse**.
 
-## Create a resource group
+## <a name="create-a-resource-group"></a>Creare un gruppo di risorse
 
-Azure uses _resource groups_ to group related resources such as virtual machines and databases together. The resource group also identifies a specific location (called a "region") which will decide what data center the resource is placed into.
+Azure usa _gruppi di risorse_ per raggruppare le risorse correlate, ad esempio macchine virtuali e database. Il gruppo di risorse identifica anche un percorso specifico (denominato "area") che deciderà quale data center di risorsa è inserito.
 
-> [!NOTE]
-> The Azure sandbox provides a pre-created resource group named <rgn>[Sandbox resource group name]</rgn>. You do not need to execute these steps. However, when you are creating your _own_ resources for real projects, these will be the commands you will need to perform. The Azure sandbox does not allow you to create resource groups directly.
+Dal momento che si tratta di un esperimento, per iniziare creare un nuovo gruppo di risorse denominato `ExerciseResources` e posizionarlo nell'area `eastus`.
 
-As an example, you could type the following Azure CLI command in Azure Cloud Shell to create a resource group in the **East US** region. You would replace **[resource-group]** with a valid name that is unique within the active subscription.
+<!-- TODO: replace with free ed-tier -->
+
+Digitare il comando dell'interfaccia della riga di comando di Azure seguente in Azure Cloud Shell per creare il gruppo di risorse nella sottoscrizione.
 
 ```azurecli
-az group create --name [resource-group] --location eastus
+az group create --name ExerciseResources --location eastus
 ```
 
-This would return a JSON block indicating the resource group has been created.
+Verrà restituito un blocco JSON che indica che il gruppo di risorse è stato creato. Dovrebbe essere simile a:
 
 ```json
 {
-  "id": "/subscriptions/abc13b0c-d2c4-64b2-9ac5-2f4cb819b752/resourceGroups/<resourcegroup>",
+  "id": "/subscriptions/abc13b0c-d2c4-64b2-9ac5-2f4cb819b752/resourceGroups/ExerciseResources",
   "location": "eastus",
   "managedBy": null,
-  "name": "<resourcegroup>",
+  "name": "ExerciseResources",
   "properties": {
     "provisioningState": "Succeeded"
   },
@@ -28,6 +29,6 @@ This would return a JSON block indicating the resource group has been created.
 }
 ```
 
-Notice that it returns the subscription unique identifier, location, and name as part of the response. You can use these to verify it got created in the proper subscription and location.
+Si noti che viene restituito l'identificatore univoco, il percorso e il nome della sottoscrizione come parte della risposta. È possibile usare questi elementi per verificare che il gruppo sia stato creato nella sottoscrizione e posizione appropriate.
 
-Now that we know how to create a resource group, let's create a new virtual machine.
+Con un gruppo di risorse disponibile, creare una nuova macchina virtuale contenuta in esso.

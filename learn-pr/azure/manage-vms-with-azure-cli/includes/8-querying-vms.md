@@ -80,7 +80,7 @@ Ad esempio, nel caso dell'oggetto seguente:
 }
 ```
 
-È anche possibile aggiungere qualificatori specifici che restituiranno solo gli oggetti `Fred` e `Wilma`. 
+È anche possibile aggiungere qualificatori specifici che restituiscano un subset degli oggetti in base ad alcuni criteri specificati. Ad esempio, l'aggiunta del qualificatore `people[?age > '25']` restituirebbe:
 
 ```json
 [

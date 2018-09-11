@@ -1,22 +1,22 @@
-Containers are becoming the preferred way to package, deploy, and manage cloud applications. Azure Container Instances offers the fastest and simplest way to run a container in Azure, without having to manage any virtual machines and without having to adopt a higher-level service.
+I contenitori si stanno affermando come soluzione preferita per la creazione di pacchetti, la distribuzione e la gestione di applicazioni cloud. Istanze di contenitore di Azure rappresenta il modo più semplice e rapido per eseguire un contenitore in Azure, senza dover gestire macchine virtuali né dover adottare un servizio di livello superiore.
 
-Azure Container Instances is a great solution for any scenario that can operate in isolated containers, including simple applications, task automation, and build jobs. For scenarios where you need full container orchestration, including service discovery across multiple containers, automatic scaling, and coordinated application upgrades, we recommend Azure Kubernetes Service (AKS).
+Istanze di contenitore di Azure è un'ottima soluzione per gli scenari che possono funzionare in contenitori isolati, inclusi i processi di compilazione, l'automazione di attività e le applicazioni semplici. Per gli scenari in cui è necessaria l'orchestrazione completa dei contenitori, ad esempio l'individuazione dei servizi tra più contenitori, la scalabilità automatica e gli aggiornamenti coordinati delle applicazioni, è consigliabile usare il servizio Kubernetes di Azure (AKS).
 
-Azure Container Instances offers the following benefits:
+La soluzione Istanze di contenitore di Azure offre i vantaggi seguenti:
 
-- **Fast startup**: Azure Container Instances can start containers in Azure in seconds.
-- **Per second billing**: You are only charged while the container is running.
-- **Hypervisor-level security**: Azure Container Instances guarantees your application is as isolated in a container as it would be in a VM.
-- **Custom sizes**: Azure Container Instances provides optimum utilization by allowing exact specifications of CPU cores and memory.
-- **Persistent storage**: To retrieve and persist state with Azure Container Instances, we offer direct mounting of Azure Files shares.
-- **Linux and Windows**: Azure Container Instances can schedule both Windows and Linux containers with the same API.
+- **Avvio rapido**: Istanze di contenitore di Azure può avviare i contenitori in Azure in pochi secondi.
+- **Fatturazione al secondo**: viene addebitato solo il tempo in cui il contenitore è in esecuzione.
+- **Sicurezza di livello hypervisor**: Istanze di contenitore di Azure garantisce all'applicazione in un contenitore lo stesso livello di isolamento di cui usufruirebbe in una macchina virtuale.
+- **Dimensioni personalizzate**: Istanze di contenitore di Azure garantisce un utilizzo ottimale grazie alla possibilità di specificare esattamente la quantità di memoria e di core della CPU.
+- **Archiviazione permanente**: per recuperare e salvare lo stato in modo permanente con Istanze di contenitore di Azure, è disponibile il montaggio diretto di condivisioni di File di Azure.
+- **Linux e Windows**: Istanze di contenitore di Azure consente di pianificare contenitori Windows e Linux con la stessa API.
 
-## Learning objectives  
+## <a name="learning-objectives"></a>Obiettivi di apprendimento  
 
-In this module, you will:
+Contenuto del modulo:
 
-- Run a container in Azure Container Instances.
-- Control container restart behavior.
-- Use environment variables in your containers.
-- Attach data volumes to Azure Container Instances.
-- Learn about troubleshooting Azure Container Instances.
+- Eseguire un contenitore in Istanze di contenitore di Azure.
+- Gestire il comportamento di riavvio dei contenitori.
+- Usare variabili di ambiente nei contenitori.
+- Collegare volumi di dati a Istanze di contenitore di Azure.
+- Acquisire informazioni sulla risoluzione dei problemi per Istanze di contenitore di Azure.

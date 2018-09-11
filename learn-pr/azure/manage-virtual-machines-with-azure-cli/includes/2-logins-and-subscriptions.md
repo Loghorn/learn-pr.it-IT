@@ -1,26 +1,29 @@
-Before we start, let's review the syntax for the Azure CLI tool. If you've taken the **Control Azure services with the Azure CLI** module, then you know that Azure CLI commands take the form of:
+Prima di iniziare, è consigliabile ripassare la sintassi dello strumento dell'interfaccia della riga di comando di Azure. Se è stato seguito il modulo **Controllare i servizi di Azure con l'interfaccia della riga di comando di Azure**, si sa che i comandi dell'interfaccia hanno la forma di:
 
 ```azurecli
 az [command] [subcommand] [--parameter --parameter]
 ```
 
-The `[command]` identifies the specific area of Azure you want to control. For example, you can manage subscription information with the `account` command, or SQL databases with the `sql` command. The `[subcommand]` and `[--parameters]` are then dependent upon the command you're working with. 
+`[command]` identifica l'area specifica di Azure che si desidera controllare. Ad esempio, è possibile gestire le informazioni della sottoscrizione con il comando `account` oppure i database SQL con il comando `sql`. `[subcommand]` e `[--parameters]` dipendono quindi dal comando con cui si sta lavorando. 
 
-You can view a list of commands, subcommands, and parameters by typing in a partial command. For example, typing `az` at the command line will give you the top-level help screen, and typing `az vm` will give you all the subcommands for virtual machines. This approach can be a great way to explore the Azure CLI tool.
+È possibile visualizzare un elenco di comandi, sottocomandi e parametri digitando un comando parziale. Ad esempio, se si digita `az` dalla riga di comando verrà visualizzata la schermata di aiuto principale; digitando `az vm` si otterranno invece tutti i sottocomandi per le macchine virtuali. Questo approccio può essere un ottimo modo per esplorare lo strumento dell'interfaccia della riga di comando di Azure.
 
 > [!NOTE]
-> We will be using browser-hosted Azure Cloud Shell to work with the Azure CLI. If you prefer to work from your local machine, all of the commands we cover can also be executed from the command line by [installing the Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). We covered this task in the **Control Azure services with the Azure CLI** module.
+> Si userà Azure Cloud Shell ospitata nel browser per lavorare con l'interfaccia della riga di comando di Azure. Se si preferisce lavorare dalla macchina locale, è possibile eseguire tutti i comandi menzionati anche dalla riga di comando [installando l'interfaccia della riga di comando di Azure](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
 
-## Login to Azure
+## <a name="log-in-to-azure"></a>Accedere ad Azure
 
-Normally, the first thing you'll do when working with the Azure CLI is to sign in to your Azure account. This is done with the `az login` command. This command will launch a browser window and allow you to select the Microsoft account you want to use. Since we are using the Azure Sandbox, this step is unnecessary, instead you will need to activate the Azure Sandbox.
+La prima cosa da fare quando si lavora con l'interfaccia della riga di comando di Azure è accedere al proprio account di Azure. Questa operazione viene eseguita con il comando `login`. Se si usa Cloud Shell, sarà presente un pulsante per accedere ad Azure.
 
-<!-- Activate the sandbox -->
-[!include[](../../../includes/azure-sandbox-activate.md)]
+```azurecli
+az login
+```
 
-## Working with subscriptions
+Questo comando avvia una finestra del browser e consente di selezionare l'account Microsoft da usare.
 
-In this module, we will work in a temporary subscription, but you will normally use a subscription from your own account. If you have more than one subscription, you can get a clearly formatted list of subscriptions using the `az account list --output table` statement.
+## <a name="working-with-subscriptions"></a>Uso di più sottoscrizioni
+
+In questo modulo si lavorerà in una sottoscrizione temporanea creata come ambiente di prova. Solitamente, invece, l'utente userà una sottoscrizione presente nel proprio account. Se si dispone di più sottoscrizioni, è possibile ottenere un relativo elenco formattato in modo chiaro usando l'istruzione `az account list --output table`.
 
 ```
 Name                                  CloudName    SubscriptionId                        State    IsDefault
@@ -29,7 +32,7 @@ Contoso Legacy Resources              AzureCloud   abc13b0c-d2c4-64b2-9ac5-2f4cb
 Visual Studio Enterprise              AzureCloud   233aebce-23c2-4572-c056-c029449e93ed  Enabled  False
 ```
 
-Notice that the command also identifies the _default_ subscription where all your commands will apply. If you would prefer to work in a different subscription, you can use the `az account set --subscription "[name]"` command. For example, we could set our current subscription to be `Visual Studio Enterprise` from the above list through the following command:
+Si noti che il comando identifica anche la sottoscrizione _predefinita_ in cui verranno applicati tutti i comandi. Se si preferisce lavorare in una sottoscrizione diversa, è possibile usare il comando `az account set --subscription "[name]"`. Ad esempio, è possibile impostare la sottoscrizione corrente come `Visual Studio Enterprise` dall'elenco precedente tramite il comando seguente:
 
 ```azurecli
 az account set --subscription "Visual Studio Enterprise"
