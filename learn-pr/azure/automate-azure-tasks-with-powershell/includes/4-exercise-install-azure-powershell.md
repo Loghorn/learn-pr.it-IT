@@ -1,4 +1,4 @@
-In questo esercizio si installerà **Azure PowerShell** nel computer locale. Scegliere la sezione appropriata per il sistema operativo.
+In questa unità si installerà **Azure PowerShell** nel computer locale. Scegliere la sezione appropriata per il sistema operativo.
 
 ## <a name="linux-and-mac"></a>Linux e Mac
 In Linux e macOS, il primo passaggio consiste nell'installare **PowerShell Core**.
