@@ -2,9 +2,9 @@ A questo punto, l'app per dispositivi mobili è una semplice app "Hello World". 
 
 L'interfaccia utente per l'app sarà costituita da:
 
-* Un controllo voce di testo per immettere alcuni numeri di telefono.
-* Un pulsante per inviare la posizione a questi numeri usando una funzione di Azure.
-* Un'etichetta che visualizzerà un messaggio all'utente indicante lo stato corrente, ad esempio, il percorso inviato e l'invio corretto del percorso.
+- Un controllo voce di testo per immettere alcuni numeri di telefono.
+- Un pulsante per inviare la posizione a questi numeri usando una funzione di Azure.
+- Un'etichetta che visualizzerà un messaggio all'utente indicante lo stato corrente, ad esempio, il percorso inviato e l'invio corretto del percorso.
 
 Xamarin.Forms supporta uno schema progettuale denominato MVVM (Model-View-ViewModel). Altre informazioni su MVVM vedere la [documentazione di Xamarin MVVM](https://docs.microsoft.com/xamarin/xamarin-forms/enterprise-application-patterns/mvvm), ma la logica essenziale è che ogni pagina (visualizzazione) contiene un elemento ViewModel che espone le proprietà e il comportamento.
 
@@ -18,15 +18,15 @@ Tutti i ViewModel implementano l'interfaccia `INotifyPropertyChanged`. Questa in
 
 1. Creare una nuova classe nel progetto :NET `ImHere` standard denominato `BaseViewModel` facendo clic con il pulsante destro del mouse sul progetto e quindi selezionando *Aggiungi -> Classe...* . Assegnare un nome alla nuova classe "BaseViewModel" e fare clic su **Aggiungi**.
 
-2. Rendere la classe `public` e derivarla da `INotifyPropertyChanged`. È necessario aggiungere una direttiva utilizzo per `System.ComponentModel`.
+1. Rendere la classe `public` e derivarla da `INotifyPropertyChanged`. È necessario aggiungere una direttiva utilizzo per `System.ComponentModel`.
 
-3. Implementare l'interfaccia `INotifyPropertyChanged` aggiungendo l'evento `PropertyChanged`:
+1. Implementare l'interfaccia `INotifyPropertyChanged` aggiungendo l'evento `PropertyChanged`:
 
     ```cs
     public event PropertyChangedEventHandler PropertyChanged;
     ```
 
-4. Il modello comune per le proprietà ViewModel è disporre di una proprietà pubblica con un campo sottostante privato. Nel setter proprietà, il campo sottostante viene confrontato con il nuovo valore. Se il nuovo valore è diverso dal campo sottostante, il campo sottostante viene aggiornato e viene generato l'evento `PropertyChanged`. Questa logica è facile da prendere in considerazione in un metodo, quindi aggiungere il metodo `Set`. È necessario aggiungere una direttiva utilizzo per lo spazio dei nomi `System.Runtime.CompilerServices`.
+1. Il modello comune per le proprietà ViewModel è disporre di una proprietà pubblica con un campo sottostante privato. Nel setter proprietà, il campo sottostante viene confrontato con il nuovo valore. Se il nuovo valore è diverso dal campo sottostante, il campo sottostante viene aggiornato e viene generato l'evento `PropertyChanged`. Questa logica è facile da prendere in considerazione in un metodo, quindi aggiungere il metodo `Set`. È necessario aggiungere una direttiva utilizzo per lo spazio dei nomi `System.Runtime.CompilerServices`.
 
     ```cs
     protected void Set<T>(ref T field, T value, [CallerMemberName] string propertyName = null)
@@ -67,9 +67,9 @@ Il `MainPage` disporrà di un controllo di immissione del testo per i numeri di 
 
 1. Creare una classe denominata `MainViewModel` nel progetto standard .NET `ImHere`.
 
-2. Rendere pubblica la classe e derivarla da `BaseViewModel`.
+1. Rendere pubblica la classe e derivarla da `BaseViewModel`.
 
-3. Aggiungere due proprietà `string`, `PhoneNumbers` e `Message`, ciascuna con un campo sottostante. Nel setter proprietà, usare il metodo `Set` della classe di base per aggiornare il valore e generare l'evento `PropertyChanged`.
+1. Aggiungere due proprietà `string`, `PhoneNumbers` e `Message`, ciascuna con un campo sottostante. Nel setter proprietà, usare il metodo `Set` della classe di base per aggiornare il valore e generare l'evento `PropertyChanged`.
 
    ```cs
     string message = "";
@@ -87,13 +87,13 @@ Il `MainPage` disporrà di un controllo di immissione del testo per i numeri di 
     }
    ```
 
-4. Aggiungere una proprietà comando di sola lettura denominata `SendLocationCommand`. Questo comando avrà un tipo di `ICommand` dallo spazio dei nomi `System.Windows.Input`.
+1. Aggiungere una proprietà comando di sola lettura denominata `SendLocationCommand`. Questo comando avrà un tipo di `ICommand` dallo spazio dei nomi `System.Windows.Input`.
 
     ```cs
     public ICommand SendLocationCommand { get; }
     ```
 
-5. Aggiungere un costruttore alla classe e in questo costruttore inizializzare `SendLocationCommand` come nuovo `Command` dallo spazio dei nomi `Xamarin.Forms`. Il costruttore per questo comando impiega `Action` per l'esecuzione quando il comando viene richiamato, quindi creare un metodo `async` denominato `SendLocation` e passare una funzione lambda che `await` questa chiamata al costruttore. Il corpo del metodo `SendLocation` verrà implementato nelle unità successive in questo modulo. È necessario aggiungere una direttiva utilizzo per lo spazio dei nomi `System.Threading.Tasks` perché venga restituito un `Task`.
+1. Aggiungere un costruttore alla classe e in questo costruttore inizializzare `SendLocationCommand` come nuovo `Command` dallo spazio dei nomi `Xamarin.Forms`. Il costruttore per questo comando impiega `Action` per l'esecuzione quando il comando viene richiamato, quindi creare un metodo `async` denominato `SendLocation` e passare una funzione lambda che `await` questa chiamata al costruttore. Il corpo del metodo `SendLocation` verrà implementato nelle unità successive in questo modulo. È necessario aggiungere una direttiva utilizzo per lo spazio dei nomi `System.Threading.Tasks` perché venga restituito un `Task`.
 
     ```cs
     public MainViewModel()
@@ -153,7 +153,7 @@ Le interfacce utente Xamarin.Forms possono essere create tramite XAML.
 
     NOTA: il progetto `ImHere.UWP` contiene anche un file denominato `MainPage.xaml`. Assicurarsi di stare modificando quello nella libreria standard .NET.
 
-2. Prima di poter associare controlli alle proprietà di un ViewModel, è necessario impostare un'istanza del ViewModel come contesto di associazione della pagina. Aggiungere il codice XAML seguente all'interno del `ContentPage` di primo livello.
+1. Prima di poter associare controlli alle proprietà di un ViewModel, è necessario impostare un'istanza del ViewModel come contesto di associazione della pagina. Aggiungere il codice XAML seguente all'interno del `ContentPage` di primo livello.
 
     ```xml
     <ContentPage.BindingContext>
@@ -161,14 +161,14 @@ Le interfacce utente Xamarin.Forms possono essere create tramite XAML.
     </ContentPage.BindingContext>
     ```
 
-3. Eliminare il contenuto del `StackLayout` e aggiungere una spaziatura interna per migliorare l'aspetto dell'interfaccia utente.
+1. Eliminare il contenuto del `StackLayout` e aggiungere una spaziatura interna per migliorare l'aspetto dell'interfaccia utente.
 
     ```xml
     <StackLayout Padding="20">
     </StackLayout>
     ```
 
-4. Aggiungere un controllo `Editor` che l'utente può usare per aggiungere i numeri di telefono al `StackLayout`, con un `Label` precedente per descrivere la funzione del controllo di immissione. `StackLayout` distribuisce i controlli figlio in senso orizzontale o verticale nell'ordine in cui vengono aggiunti i controlli, pertanto aggiungendo prima `Label`, questo verrà inserito prima di `Editor`. I controlli `Editor` sono controlli voce su più righe che consentono all'utente di immettere più numeri di telefono, uno per riga.
+1. Aggiungere un controllo `Editor` che l'utente può usare per aggiungere i numeri di telefono al `StackLayout`, con un `Label` precedente per descrivere la funzione del controllo di immissione. `StackLayout` distribuisce i controlli figlio in senso orizzontale o verticale nell'ordine in cui vengono aggiunti i controlli, pertanto aggiungendo prima `Label`, questo verrà inserito prima di `Editor`. I controlli `Editor` sono controlli voce su più righe che consentono all'utente di immettere più numeri di telefono, uno per riga.
 
     ```xml
     <StackLayout Padding="20">
@@ -179,7 +179,7 @@ Le interfacce utente Xamarin.Forms possono essere create tramite XAML.
 
     La proprietà `Text` su `Editor` è associata alla proprietà `PhoneNumbers` su `MainViewModel`. La sintassi per l'associazione consiste nell'impostare il valore della proprietà su `"{Binding <property name>}"`. Le parentesi graffe indicheranno al compilatore XAML che questo valore è speciale e deve essere trattato in modo diverso da un semplice `string`.
 
-5. Aggiungere un `Button` per inviare la posizione dell'utente sotto `Editor`.
+1. Aggiungere un `Button` per inviare la posizione dell'utente sotto `Editor`.
 
     ```xml
     <Button Text="Send Location" BackgroundColor="Blue" TextColor="White"
@@ -188,7 +188,7 @@ Le interfacce utente Xamarin.Forms possono essere create tramite XAML.
 
     La proprietà `Command` è associata al comando `SendLocationCommand` nel ViewModel. Quando viene toccato il pulsante, verrà eseguito il comando.
 
-6. Aggiungere un `Label` per visualizzare il messaggio di stato sotto il `Button`.
+1. Aggiungere un `Label` per visualizzare il messaggio di stato sotto il `Button`.
 
     ```xml
     <Label Text="{Binding Message}"

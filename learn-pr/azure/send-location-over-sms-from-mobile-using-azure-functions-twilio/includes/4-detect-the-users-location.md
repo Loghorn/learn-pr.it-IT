@@ -6,7 +6,7 @@ Tutte le piattaforme mobili dispongono di funzionalità di sicurezza per protegg
 
 1. Nel progetto dell'app `ImHere.UWP` aprire il file `Package.appxmanifest`.
 
-2. Accedere alla scheda **Funzionalità** e selezionare la funzionalità *Posizione*.
+1. Accedere alla scheda **Funzionalità** e selezionare la funzionalità *Posizione*.
 
     ![Scheda delle funzionalità della piattaforma UWP](../media-drafts/4-uwp-location-capability.png)
 
@@ -18,13 +18,13 @@ Si possono rilevare due tipi di posizioni dell'utente, l'ultima posizione nota o
 
 1. Aprire la classe `MainViewModel` nel progetto standard .NET `ImHere`.
 
-2. Nel metodo `SendLocation` effettuare una chiamata al metodo statico `GetLastKnownLocationAsync` sulla classe `Geolocation` nello spazio dei nomi `Xamarin.Essentials`.
+1. Nel metodo `SendLocation` effettuare una chiamata al metodo statico `GetLastKnownLocationAsync` sulla classe `Geolocation` nello spazio dei nomi `Xamarin.Essentials`.
 
     ```cs
     Location location = await Geolocation.GetLastKnownLocationAsync();
     ```
 
-3. Aggiornare la proprietà `Message` con la posizione dell'utente eventualmente rilevata.
+1. Aggiornare la proprietà `Message` con la posizione dell'utente eventualmente rilevata.
 
     ```cs
     if (location != null)
@@ -51,7 +51,7 @@ Eseguire l'app e fare clic sul pulsante **Invia posizione** per vedere la posizi
 
 ![App in esecuzione che mostra la posizione dell'utente](../media-drafts/4-running-app-showing-location.png)
 
-> Questa app usa l'ultima posizione nota. In un'app per ambienti di produzione può essere utile ottenere la posizione precisa corrente con un periodo di scadenza per cui se una posizione non viene trovata entro il tempo specificato, viene restituita l'ultima posizione nota. Per altre informazioni su questa operazione, vedere la [documentazione sulla geolocalizzazione di Xamarin.Essentials](https://docs.microsoft.com/xamarin/essentials/geolocation?tabs=uwp#using-geolocation). Questa app non include funzionalità per la gestione degli errori. In un'app per ambienti di produzione è consigliabile gestire tutte le eccezioni che si verificano, ad esempio se la posizione non era disponibile e si è verificata un'eccezione.
+> Questa app usa l'ultima posizione nota. In un'app per ambienti di produzione può essere utile ottenere la posizione precisa corrente con un periodo di scadenza per cui se una posizione non viene trovata entro il tempo specificato, viene restituita l'ultima posizione nota. Per altre informazioni su questa operazione, vedere la [documentazione sulla geolocalizzazione di Xamarin.Essentials](https://docs.microsoft.com/xamarin/essentials/geolocation?tabs=uwp#using-geolocation). Questa app non include funzionalità per la gestione degli errori. In un'app per ambienti di produzione è consigliabile gestire tutte le eccezioni che si verificano, ad esempio in caso di posizione non disponibile.
 
 ## <a name="summary"></a>Riepilogo
 

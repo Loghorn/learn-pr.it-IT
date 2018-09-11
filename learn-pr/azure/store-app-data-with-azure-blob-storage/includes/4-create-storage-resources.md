@@ -23,6 +23,7 @@ Il codice con cui si inizierà viene compilato ed eseguito, ma le parti responsa
 Configurare l'infrastruttura di archiviazione per l'app.
 
 ### <a name="resource-group-and-storage-account"></a>Gruppo di risorse e account di archiviazione
+<!---TODO: Update for sandbox?--->
 
 In primo luogo, verrà creato un gruppo di risorse per contenere tutte le risorse di questa unità. Il gruppo di risorse verrà eliminato alla fine per eseguire la pulizia di tutto ciò che è stato creato. Verrà inoltre creato l'account di archiviazione che verrà usato dall'app per archiviare i BLOB.
 

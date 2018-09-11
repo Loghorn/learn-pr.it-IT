@@ -4,19 +4,19 @@ L'app per dispositivi mobili è in esecuzione ed è stata creata la versione ini
 
 1. Aprire il file `MainViewModel`.
 
-2. In questa classe aggiungere un campo `HttpClient` privato denominato `client`. Occorrerà aggiungere un riferimento allo spazio dei nomi `System.Net.Http`.
+1. In questa classe aggiungere un campo `HttpClient` privato denominato `client`. Occorrerà aggiungere un riferimento allo spazio dei nomi `System.Net.Http`.
 
     ```cs
     HttpClient client = new HttpClient();
     ```
 
-3. Aggiungere un campo costante per l'URL di base per la funzione. Impostare il campo sull'indirizzo su cui è in ascolto il runtime locale di Funzioni di Azure. Dopo che la funzione è stata distribuita in Azure, questa costante può essere modificata nell'URL di Azure.
+1. Aggiungere un campo costante per l'URL di base per la funzione. Impostare il campo sull'indirizzo su cui è in ascolto il runtime locale di Funzioni di Azure. Dopo che la funzione è stata distribuita in Azure, questa costante può essere modificata nell'URL di Azure.
 
     ```cs
     const string baseUrl = "http://localhost:7071";
     ```
 
-4. Nel metodo `SendLocation`, dopo che la posizione è stata rilevata, creare una nuova istanza di `PostData` usando la posizione e l'elenco dei numero di telefono immessi dall'utente. È necessario aggiungere una direttiva using per lo spazio dei nomi `ImHere.Data`.
+1. Nel metodo `SendLocation`, dopo che la posizione è stata rilevata, creare una nuova istanza di `PostData` usando la posizione e l'elenco dei numero di telefono immessi dall'utente. È necessario aggiungere una direttiva using per lo spazio dei nomi `ImHere.Data`.
 
     ```cs
     PostData postData = new PostData
@@ -29,16 +29,16 @@ L'app per dispositivi mobili è in esecuzione ed è stata creata la versione ini
 
     > Si presuppone che i numeri di telefono siano stati inseriti nel formato corretto, uno per riga nel controllo `Editor`. In un'app per ambienti di produzione si dovrebbe prevedere una fase di convalida per assicurarsi che sia stato immesso almeno un numero di telefono e che abbia il formato corretto.
 
-5. Per serializzare `PostData` come JSON, il modo più facile consiste nell'usare il pacchetto NuGet Newtonsoft.JSON. Aggiungere il pacchetto NuGet al progetto `ImHere` nello stesso modo in cui si è aggiunto Xamarin.Essentials in un'unità precedente.
+1. Per serializzare `PostData` come JSON, il modo più facile consiste nell'usare il pacchetto NuGet Newtonsoft.JSON. Aggiungere il pacchetto NuGet al progetto `ImHere` nello stesso modo in cui si è aggiunto Xamarin.Essentials in un'unità precedente.
 
-6. Serializzare `PostData` in una `string` usando la classe statica `JsonConvert`. È necessario aggiungere una direttiva using per lo spazio dei nomi `Newtonsoft.Json`. Codificare questa stringa in una classe `StringContent` in modo che possa essere passata alla funzione di Azure come JSON.
+1. Serializzare `PostData` in una `string` usando la classe statica `JsonConvert`. È necessario aggiungere una direttiva using per lo spazio dei nomi `Newtonsoft.Json`. Codificare questa stringa in una classe `StringContent` in modo che possa essere passata alla funzione di Azure come JSON.
 
     ```cs
     string data = JsonConvert.SerializeObject(postData);
     StringContent content = new StringContent(data, Encoding.UTF8, "application/json");
     ```
 
-7. Pubblicare questi dati alla funzione e ottenere il risultato.
+1. Pubblicare questi dati alla funzione e ottenere il risultato.
 
    ```cs
     HttpResponseMessage result = await client.PostAsync($"{baseUrl}/api/SendLocation",
@@ -47,7 +47,7 @@ L'app per dispositivi mobili è in esecuzione ed è stata creata la versione ini
 
    È possibile accedere alle funzioni di Azure usando `/api/<function name>`, quindi supponendo che la porta scelta dal runtime locale di Funzioni di Azure sia la porta 7071, sarà possibile accedere alla funzione `SendLocation` all'indirizzo `http://localhost:7071/api/SendLocation`.
 
-8. A seconda del risultato visualizzare un messaggio nell'interfaccia utente.
+1. A seconda del risultato visualizzare un messaggio nell'interfaccia utente.
 
     ```cs
     if (result.IsSuccessStatusCode)
@@ -94,11 +94,11 @@ async Task SendLocation()
 
 1. Assicurarsi che la funzione di Azure sia ancora in esecuzione in locale e che la porta corrisponda a quella indicata nel metodo `SendLocation`.
 
-2. Impostare l'app UWP come app di avvio ed eseguirla. Fare clic sul pulsante **Invia posizione**. L'output verrà visualizzato nella finestra della console del runtime di Funzioni di Azure con la funzione chiamata e la registrazione che mostra l'URL generato.
+1. Impostare l'app UWP come app di avvio ed eseguirla. Fare clic sul pulsante **Invia posizione**. L'output verrà visualizzato nella finestra della console del runtime di Funzioni di Azure con la funzione chiamata e la registrazione che mostra l'URL generato.
 
     ![Output della funzione chiamata](../media-drafts/6-function-called.png)
 
-3. Per testare la generazione dell'URL, incollarlo dalla console in un browser. Dovrebbe mostrare la posizione corrente.
+1. Per testare la generazione dell'URL, incollarlo dalla console in un browser. Dovrebbe mostrare la posizione corrente.
 
 ## <a name="summary"></a>Riepilogo
 

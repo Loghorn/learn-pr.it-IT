@@ -33,7 +33,7 @@ VirtualMachine    PublicIPAddresses    PrivateIPAddresses
 SampleVM          168.61.54.62         10.0.0.4
 ```
 
-> [!NOTE]
+> [!TIP]
 > Si noti che per il flag `--output` si sta usando la sintassi abbreviata `-o`. La maggior parte dei parametri per i comandi dell'interfaccia della riga di comando di Azure può essere abbreviata in un singolo trattino e una lettera. Ad esempio, è possibile abbreviare `--name` in `-n` e `--resource-group` in `-g`. L'abbreviazione è comoda per la digitazione, ma negli script è consigliabile usare il nome completo dell'opzione per maggiore chiarezza. Per informazioni dettagliate su ogni comando, vedere la documentazione.
 
 ## <a name="getting-vm-details"></a>Recupero dei dettagli della VM
