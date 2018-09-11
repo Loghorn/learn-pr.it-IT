@@ -1,0 +1,16 @@
+### YamlMime:ModuleUnit
+uid: learn.secure-azure-resources-with-rbac.6-grant-access-powershell
+metadata:
+  title: Garantire l'accesso tramite il controllo degli accessi in base al ruolo e Azure PowerShell
+  description: Qui sono riportate informazioni su come concedere a un utente le autorizzazioni di accesso per creare e gestire macchine virtuali in un gruppo di risorse con Azure PowerShell.
+  displayType: one-column
+  ms.openlocfilehash: 5675e822091ab1bc73be393997b2963436edafae
+  ms.sourcegitcommit: bb4b1f9e2a7399769ff84199f018abd14a3e73aa
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/01/2018
+  ms.locfileid: "43454359"
+title: Garantire l'accesso tramite il controllo degli accessi in base al ruolo e Azure PowerShell
+labOnDemandUrl: https://labondemand.com/Launch/00000000
+durationInMinutes: 10
+content: '[!include[](includes/6-grant-access-powershell.md)]'
