@@ -1,53 +1,54 @@
-It's common to execute a piece of logic at a set interval. Imagine you're a blog owner and you notice that your subscribers aren't reading your most recent posts. You decide that the best action is to send an email once a week to remind them to check your blog. You implement this logic using an Azure function with a _timer trigger_ to invoke your function weekly.
+È frequente l'esecuzione di alcune logiche a un intervallo impostato. Si supponga di essere un proprietario di un blog e di notare che i sottoscrittori non leggono i post più recenti. Si decide che l'azione più efficace consiste nell'inviare un messaggio di posta elettronica una volta a settimana per ricordare ai componenti di controllare il blog. La logica viene implementata usando una funzione di Azure con un _trigger timer_ per richiamare la funzione ogni settimana.
 
-## What is a timer trigger?
+## <a name="what-is-a-timer-trigger"></a>Cos è un trigger timer?
 
-A timer trigger is a trigger that executes a function at a consistent interval. To create a timer trigger, you need to supply two pieces of information.
+Un trigger timer è un trigger che esegue una funzione a un intervallo costante. Per creare un trigger timer, è necessario specificare due tipi di informazioni. 
 
-1. A *Timestamp parameter name*, which is simply an identifier to access the trigger in code.
-2. A *Schedule*, which is a *CRON expression* that sets the interval for the timer.
+1. Un *nome del parametro timestamp*, che è semplicemente un identificatore per accedere al trigger nel codice. 
+2. Una *Pianificazione*, ovvero un'*espressione CRON* che imposta l'intervallo del timer.
 
-## What is a CRON expression?
+## <a name="what-is-a-cron-expression"></a>Cos'è un espressione CRON?
 
-A *CRON expression* is a string that consists of six fields that represent a set of times.
+Un'*espressione CRON* è una stringa costituita da sei campi che rappresentano un insieme di tempi.
 
-The order of the six fields in Azure is: `{second} {minute} {hour} {day} {month} {day of the week}`.
+L'ordine dei sei campi in Azure è: `{second} {minute} {hour} {day} {month} {day of the week}`.
 
-For example, a *CRON expression* to create a trigger that executes every five minutes looks like:
+Ad esempio, un'*espressione CRON* per creare un trigger che viene eseguita ogni cinque minuti potrebbe essere:
 
-```log
+```
 0 */5 * * * *
 ```
 
-At first, this string may look confusing. We'll come back and break down these concepts when we have a deeper look at *CRON expressions*.
+Inizialmente, questa stringa può generare confusione. Torneremo indietro ad analizzare questi concetti quando avremo approfondito le *espressioni CRON*.
 
-To build a *CRON expression*, you need to have a basic understanding of some of the special characters.
+Per creare un'*espressione CRON*, è necessario avere una conoscenza di base di alcuni caratteri speciali.
 
-| Special character | Meaning | Example |
+| Carattere speciale | Significato | Esempio |
 | ------------- | ------------- | ------------- |
-| *      | Selects every value in a field | An asterisk "*" in the day of the week field means *every* day. |
-| ,      | Separates items in a list | A comma "1,3" in the day of the week field means just Mondays (day 1) and Wednesdays (day 3). |
-| -      | Specifies a range | A hyphen "10-12" in the hour field means a range that includes the hours 10, 11, and 12. |
-| /      | Specifies an increment | A slash "*/10" in the minutes field means an increment of every 10 minutes. |
+| *      | Consente di selezionare ogni valore in un campo | Un asterisco "*" nel campo del giorno della settimana campo significa *ogni* giorno. |
+| ,      | Separa gli elementi in un elenco | Una virgola "1,3" nel campo del giorno della settimana significa semplicemente lunedì (giorno 1) e mercoledì (giorno 3). |
+| -      | Specifica un intervallo | Un trattino "10-12" nel campo dell'ora indica un intervallo che include le ore 10, 11 e 12. |
+| /      | Specifica un incremento | Una barra "*/10" nel campo minuti indica un incremento ogni 10 minuti. |
 
-Now we'll go back to the original CRON expression example. Let’s try to understand it better by breaking it down field by field.
+Ora torniamo all'esempio dell'espressione CRON originale. Proviamo a capirla meglio suddividendola campo per campo.
 
-```log
+```
 0 */5 * * * *
 ```
 
-The **first field** represents seconds. This field supports the values 0-59. Because the field contains a zero, it selects the first possible value, which is one second.
+Il **primo campo** rappresenta i secondi. Questo campo supporta i valori tra 0 e 59. Poiché il campo contiene il valore zero, viene selezionato il primo valore possibile, ovvero un secondo.
 
-The **second field** represents minutes. The value "*/5" contains two special characters. First, the asterisk (\*) means "select every value within the field." Because this field represents minutes, the possible values are 0-59. The second special character is the slash (/), which represents an increment. When you combine these characters together, it means for all values 0-59, select every fifth value. An easier way to say that is simply "every five minutes."
+Il **secondo campo** rappresenta i minuti. Il valore "*/5" contiene due caratteri speciali. Per prima cosa, l'asterisco (\*) significa "seleziona ogni valore nel campo." Poiché questo campo rappresenta i minuti, i valori possibili sono da 0 a 59. Il secondo carattere speciale è la barra (/), che rappresenta un incremento. Quando si combinano insieme questi caratteri, ovvero per tutti i valori tra 0 e 59 è necessario selezionare ogni quinto valore. Un modo più semplice per segnalare che è semplicemente "ogni cinque minuti."
 
-The **remaining four fields** represent the hour, day, month, and weekday of the week. An asterisk for these fields means to select every possible value. In this example, we select "every hour of every day of every month."
+I **rimanenti quattro campi** rappresentano l'ora, il giorno, il mese e il giorno della settimana. Un asterisco per questi campi indica di selezionare ogni possibile valore. In questo esempio, selezioniamo "ogni ora di ogni giorno del mese."
 
-When you put all the fields together, the expression is read as "on the first second, of every fifth minute of every hour, of every day, of every month".
+Quando si inseriscono tutti i campi contemporaneamente, l'espressione viene letta come "al primo secondo, di ogni cinque minuti di ogni ora, di ogni giorno, di ogni mese".
 
-## How to create a timer trigger
+## <a name="how-to-create-a-timer-trigger"></a>Come creare un trigger timer
 
-A timer trigger can be created completely within the Azure portal. In your Azure function, select **timer trigger** from the list of predefined trigger types. Enter the logic that you want to execute. Supply a **Timestamp parameter name** and the **CRON expression**.
+È possibile creare un trigger timer interamente all'interno del portale di Azure. All'interno della funzione di Azure, selezionare **trigger timer** dall'elenco dei tipi di trigger predefiniti. Immettere la logica che si desidera eseguire. Specificare un **Nome del parametro Timestamp** e l'**espressione CRON**.
 
-## Summary
+## <a name="summary"></a>Riepilogo
 
-A timer trigger invokes an Azure function on a consistent schedule. To define the schedule for a timer trigger, we build a *CRON expression*, which is a string that represents a set of times.
+Creare un trigger timer per richiamare una funzione in una pianificazione coerente. Per definire la pianificazione di un trigger timer, creiamo un'*espressione CRON*, ovvero una stringa che rappresenta un insieme di tempi.
+

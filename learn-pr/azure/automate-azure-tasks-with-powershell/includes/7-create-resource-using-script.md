@@ -1,59 +1,59 @@
-Complex or repetitive tasks often take a great deal of administrative time. Organizations prefer to automate these tasks to reduce costs and avoid errors.
+Le attività complesse o ripetitive spesso richiedono una notevole quantità di tempo di amministrazione. Le organizzazioni preferiscono automatizzare queste attività per ridurre i costi ed evitare gli errori.
 
-This is important in the Customer Relationship Management (CRM) company example. There, you test your software on multiple Linux Virtual Machines (VMs) that you need to continuously delete and recreate. You want to use a PowerShell script to automate the creation of the VMs.
+Questo aspetto è importante nell'esempio relativo all'azienda CRM (Customer Relationship Management). In questo caso, il software viene testato su più macchine virtuali Linux, che è necessario eliminare e ricreare continuamente. Si vuole usare uno script di PowerShell per automatizzare la creazione delle macchine virtuali.
 
-Beyond the core operation of creating a VM you have a few additional requirements for your script. 
-- You will create multiple VMs, so you want to put the creation inside a loop
-- You need to create VMs in three different resource groups, so the name of the resource group should be passed to the script as a parameter
+Oltre al funzionamento di base per la creazione di una macchina virtuale, sono previsti alcuni requisiti aggiuntivi per lo script. 
+- Poiché verranno create più macchine virtuali, si vuole inserire la creazione all'interno di un ciclo
+- È necessario creare le macchine virtuali in tre diversi gruppi di risorse, pertanto il nome del gruppo di risorse deve essere passato allo script come parametro
 
-In this section, you will see how to write and execute an Azure PowerShell script that meets these requirements.
+In questa sezione verrà descritto come scrivere ed eseguire uno script di Azure PowerShell che soddisfi questi requisiti.
 
-## What is a PowerShell script?
-A PowerShell script is a text file containing commands and control constructs. The commands are invocations of cmdlets. The control constructs are programming features like loops, variables, parameters, comments, etc. supplied by PowerShell.
+## <a name="what-is-a-powershell-script"></a>Che cos'è uno script di PowerShell?
+Uno script di PowerShell è un file di testo contenente comandi e costrutti di controllo. I comandi sono chiamate di cmdlet. I costrutti di controllo sono funzionalità di programmazione fornite da PowerShell, quali cicli, variabili, parametri, commenti e così via.
 
-PowerShell script files have a **.ps1** file extension. You can create and save these files with any text editor. 
+I file di script di PowerShell hanno un'estensione **ps1**. È possibile creare e salvare questi file con qualsiasi editor di testo. 
 
 > [!TIP]
-> If you’re writing PowerShell scripts under Windows, you can use the Windows PowerShell Integrated Scripting Environment (ISE). This editor provides features such as syntax coloring and a list of available cmdlets.
+> Se si scrivono script di PowerShell in Windows, è possibile usare l'ambiente Windows PowerShell Integrated Scripting Environment (ISE). Questo editor offre funzionalità come la colorazione della sintassi e un elenco dei cmdlet disponibili.
 >
-The following screenshot shows the Windows PowerShell Integrated Scripting Environment (ISE) with a sample script to connect to Azure and create a virtual machine in Azure.
+Lo screenshot seguente mostra il Windows PowerShell Integrated Scripting Environment (ISE) con uno script di esempio per connettersi ad Azure e creare una macchina virtuale in Azure.
 
->![Screenshot of the Windows PowerShell Integrated Scripting Environment with a script to create a virtual machine open in the editing window.](../media/7-windows-powershell-ise-screenshot.png)
+>![Screenshot di Windows PowerShell ISE con uno script per creare una macchina virtuale aperto nella finestra di modifica.](../media/7-windows-powershell-ise-screenshot.png)
 
-Once you have written the script, execute it from the PowerShell command line by passing the name of the file preceded by a dot and a backslash:
+Dopo avere scritto lo script, eseguirlo dalla riga di comando di PowerShell passando il nome del file preceduto da un punto e una barra rovesciata:
 
 ```powershell
 .\myScript.ps1
 ```
 
-## PowerShell techniques
-PowerShell has many features found in typical programming languages. You can define variables, use branches and loops, capture command-line parameters, write functions, add comments, and so on. We will need three features for our script: variables, loops, and parameters.
+## <a name="powershell-techniques"></a>Tecniche di PowerShell
+PowerShell offre numerose funzionalità disponibili nei tipici linguaggi di programmazione. È possibile definire variabili, usare rami e cicli, acquisire parametri della riga di comando, scrivere funzioni, aggiungere commenti e così via. Saranno necessarie tre funzionalità per il nostro script: variabili, cicli e parametri.
 
-### Variables
-PowerShell supports variables. Use **$** to declare a variable and **=** to assign a value. For example:
+### <a name="variables"></a>Variabili
+PowerShell supporta le variabili. Usare **$** per dichiarare una variabile e **=** per assegnare un valore. Ad esempio:
 
 ```powershell
 $loc = "East US"
 $iterations = 3
 ```
 
-Variables can hold objects. For example, the following definition sets the **adminCredential** variable to the object returned by the **Get-Credential** cmdlet.
+Le variabili possono contenere oggetti. Ad esempio, la definizione seguente imposta la variabile **adminCredential** sull'oggetto restituito dal cmdlet **Get-Credential**.
 
 ```powershell
 $adminCredential = Get-Credential
 ```
 
-To obtain the value stored in a variable, use the **$** prefix and its name as shown below: 
+Per ottenere il valore archiviato in una variabile, usare il prefisso **$** e il relativo nome, come mostrato di seguito: 
 
 ```powershell
 $loc = "East US"
 New-AzureRmResourceGroup -Name "MyResourceGroup" -Location $loc
 ```
 
-### Loops
-PowerShell has several loops: **For**, **Do...While**, **For...Each**, and so on. The **For** loop is the best match for our needs because we will execute a cmdlet a fixed number of times.
+### <a name="loops"></a>Loop
+PowerShell dispone di diversi cicli: **For**, **Do...While**, **For...Each** e così via. Il ciclo **For** è quello più adatto alle nostre esigenze, perché eseguirà un cmdlet per un numero fisso di volte.
 
-The core syntax is shown below; the example runs for two iterations and prints the value of **i** each time. The comparison operators are written **-lt** for "less than", **-le** for "less than or equal", **eq** for "equal", **ne** for "not equal", etc.
+La sintassi di base è illustrata di seguito. L'esempio viene eseguito per due iterazioni e ogni volta visualizza il valore di **i**. Gli operatori di confronto sono **-lt** per "minore di", **-le** per "minore o uguale a", **eq** per "uguale a", **ne** per "diverso da" e così via.
 
 ```powershell
 For ($i = 1; $i -lt 3; $i++)
@@ -62,41 +62,40 @@ For ($i = 1; $i -lt 3; $i++)
 }
 ```
 
-### Parameters
-When you execute a script, you can pass arguments on the command line. You can provide names for each parameter to help the script extract the values. For example:
+### <a name="parameters"></a>Parametri
+Quando si esegue uno script, è possibile passare argomenti dalla riga di comando. È possibile specificare nomi per ogni parametro in modo da consentire allo script di estrarre i valori. Ad esempio:
 
 ```powershell
 .\setupEnvironment.ps1 -size 5 -location "East US"
 ```
 
-Inside the script, you capture the values into variables. In this example, the parameters are matched by name:
+Nello script, i valori vengono acquisiti nelle variabili. In questo esempio, viene stabilita la corrispondenza dei parametri in base al nome:
 
 ```powershell
 param([string]$location, [int]$size)
 ```
 
-You can omit the names from the command line. For example:
+È possibile omettere i nomi dalla riga di comando. Ad esempio:
 
 ```powershell
 .\setupEnvironment.ps1 5 "East US"
 ```
 
-Inside the script, you rely on position for matching when the parameters are unnamed:
+Nello script è possibile basarsi sulla posizione per la corrispondenza quando i parametri non sono denominati:
 
 ```powershell
 param([int]$size, [string]$location)
 ```
 
-## How to create a Linux Virtual Machine
-Azure PowerShell provides the **New-AzureRmVm** cmdlet to create a Virtual Machine. The cmdlet has many parameters to let it handle the large number of VM configuration settings. Most of the parameters have reasonable default values so we only need to specify five things:
+## <a name="how-to-create-a-linux-virtual-machine"></a>Come creare una macchina virtuale Linux
+Azure PowerShell fornisce il cmdlet **New-AzureRmVm** per creare una macchina virtuale. Il cmdlet dispone di diversi parametri che consentono di gestire le numerose impostazioni di configurazione della macchina virtuale. La maggior parte dei parametri ha valori predefiniti accettabili, pertanto è necessario specificare solo cinque elementi:
+- **ResourceGroupName**: il gruppo di risorse in cui verrà inserita la nuova macchina virtuale.
+- **Name**: il nome della macchina virtuale in Azure.
+- **Location**: la posizione geografica in cui verrà eseguito il provisioning della macchina virtuale.
+- **Credential**: un oggetto contenente il nome utente e la password per l'account di amministratore della macchina virtuale. Useremo il cmdlet **Get-Credential** per la richiesta del nome utente e della password. **Get-Credential** inserisce il nome utente e la password in un oggetto credenziali, che viene restituito come risultato.
+- **Image**: identità del sistema operativo da usare per la macchina virtuale. In questo caso, verrà usato "UbuntuLTS".
 
-- **ResourceGroupName**: The resource group into which the new VM will be placed.
-- **Name**: The name of the VM in Azure.
-- **Location**: Geographic location where the VM will be provisioned.
-- **Credential**: An object containing the username and password for the VM admin account. We will use the **Get-Credential** The cmdlet to prompt for a username and password. **Get-Credential** packages the username and password into a credential object, which it returns as its result.
-- **Image**: Identity of the operating system to use for the VM. We will use "UbuntuLTS".
-
-The syntax for the cmdlet is shown below:
+La sintassi per il cmdlet è illustrata di seguito:
 
 ```powershell
    New-AzureRmVm 
@@ -107,5 +106,5 @@ The syntax for the cmdlet is shown below:
        -Image <image name>
 ```
 
-## Summary
-The combination of PowerShell and Azure PowerShell gives you all the tools you need to automate Azure. In our CRM example, we will be able to create multiple Linux VMs using a parameter to keep the script generic and a loop to avoid repeated code. This means that a formerly complex operation can now be executed in a single step.
+## <a name="summary"></a>Riepilogo
+La combinazione di PowerShell e Azure PowerShell offre tutti gli strumenti necessari per l'automazione di Azure. Nell'esempio relativo a CRM, sarà possibile creare più macchine virtuali Linux usando un parametro per mantenere lo script generico e un ciclo per evitare la ripetizione del codice. Questo significa che un'operazione precedentemente complessa ora può essere eseguita in un unico passaggio.

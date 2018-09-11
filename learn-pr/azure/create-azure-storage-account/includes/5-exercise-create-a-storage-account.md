@@ -1,102 +1,107 @@
-In this unit, you will use the Azure portal to create a storage account that is appropriate for a fictitious southern California surf report web app.
+In questo esercizio si userà il portale di Azure per creare un account di archiviazione appropriato per un'app Web fittizia di previsioni per il surf nella California del sud.
 
-The surf report site lets users upload photos and videos of their local beach conditions. Viewers will use the content to help them choose the beach with the best surfing conditions. Your list of design and feature goals is:
+## <a name="design-goals"></a>Obiettivi di progettazione
 
-- Video content must load quickly
-- The site must handle unexpected spikes in upload volume
-- Outdated content will be removed as surf conditions change so the site always shows current conditions
+Il sito di previsioni per il surf consente agli utenti di caricare foto e video delle condizioni delle spiagge locali. I visualizzatori useranno il contenuto per scegliere la spiaggia con le condizioni migliori per il surf. Ecco l'elenco degli obiettivi di progettazione e funzionalità:
 
-You decide on an implementation that buffers uploaded content in an Azure Queue for processing and then moves it into an Azure Blob for storage. You need a storage account that can hold both queues and blobs while delivering low-latency access to your content.
+- Il contenuto video deve caricarsi rapidamente
+- Il sito deve essere in grado di gestire i picchi imprevisti nei volumi di caricamento
+- Il contenuto non aggiornato deve essere rimosso man mano che cambiano le condizioni per il surf, in modo che il sito mostri sempre le condizioni attuali
 
-## Use the Azure portal to create a storage account
+Si opta per un'implementazione che memorizza nel buffer il contenuto caricato in una coda di Azure per l'elaborazione e quindi lo sposta in un BLOB di Azure per l'archiviazione. A questo scopo è necessario un account di archiviazione in grado di contenere sia le code che i BLOB fornendo al contempo un accesso con bassa latenza al contenuto.
 
-1. Sign in to the [Azure Portal](https://portal.azure.com/?azure-portal=true).
+## <a name="exercise-steps"></a>Passaggi dell'esercizio
 
-1. In the top left of the Azure Portal, select **Create a resource**.
+### <a name="launch-the-blade"></a>Avviare il pannello
 
-1. In the selection panel that appears, select **Storage**.
+1. Nel Web browser passare al [portale di Azure](https://portal.azure.com?azure-portal=true) e accedere al proprio account.
 
-1. On the right side of that pane, select **Storage account - blob, file, table, queue**.
+1. Nella barra laterale sinistra selezionare **Crea una risorsa**.
 
-    ![Screenshot of the Azure portal showing the Create a resource blade with the Storage category and Storage account option highlighted.](..\media\5-portal-storage-select.png)
+1. Selezionare il titolo **Archiviazione** in Azure Marketplace.
 
-### Configure the basic options
+1. Selezionare **Account di archiviazione**. Nel portale viene visualizzato il pannello **Crea account di archiviazione**.
 
-Under **PROJECT DETAILS**:
+### <a name="configure-the-basic-options"></a>Configurare le opzioni di base
 
-1. Select the appropriate **Subscription**.
+1. Selezionare la scheda **Informazioni di base** nella parte superiore del pannello.
 
-1. Select the existing Resource Group <rgn>[Sandbox resource group name]</rgn> from the drop-down list.
+1. **Sottoscrizione:** selezionare una delle proprie sottoscrizioni.
 
-    > [!NOTE]
-    > This free Resource Group has been provided by Microsoft as part of the learning experience. When you create an account for a real application, you will want to create a new Resource Group in your subscription to hold all the resources for the app.
+1. **Gruppo di risorse**: creare un nuovo gruppo di risorse denominato **SurfReportResourceGroup**.
 
-Under **INSTANCE DETAILS**:
+1. **Nome account di archiviazione**: immettere un valore univoco globale come `surfreport` + le proprie iniziali + un numero.
 
-1. Enter a **Storage account name**. The name will be used to generate the public URL used to access the data in the account. It must be unique across all existing storage account names in Azure. It must be 3 to 24 characters long and can contain only lowercase letters and numbers.
+ 1. **Posizione**: selezionare **Stati Uniti occidentali**.
 
-1. Select a **Location** near to you. 
+    Motivazione logica: l'applicazione è destinata agli utenti residenti nella California del sud. Per ridurre al minimo la latenza durante il caricamento dei video, I BLOB devono essere ospitati nelle vicinanze di questi utenti, pertanto **Stati Uniti occidentali** è una buona scelta.
 
-1. Leave the **Deployment model** as _Resource manager_. This is the preferred model for all resource deployments in Azure and allows you to group all the related resources for your app into a _resource group_ for easier management.
+1. **Modello di distribuzione**: selezionare **Gestione risorse**.
+    
+    Motivazione logica: **Gestione risorse** è appropriato perché consente di usare un gruppo di risorse per gestire l'app Web, l'account di archiviazione e altri elementi per l'applicazione.
 
-1. Select _Standard_ for the **Performance** option. This decides the type of disk storage used to hold the data in the Storage account. Standard uses traditional hard disks, and Premium uses solid-state drives (SSD) for faster access. However, remember that Premium only supports _page blobs_ and you will need block blobs for your videos, and a queue for buffering - both of which are only available with the _Standard_ option.
+1. **Prestazioni**: selezionare **Standard**.
 
-1. Select _StorageV2 (general purpose v2)_ for the **Account kind**. This provides access to the latest features and pricing. In particular, Blob storage accounts have more options available with this account type. You need a mix of blobs and a queue, so the _Blob storage_ option will not work. For this application, there would be no benefit to choosing a _Storage (general purpose v1)_ account, since that would limit the features you could access and would be unlikely to reduce the cost of your expected workload.
+    Motivazione logica: non è possibile usare l'opzione **Premium** in quanto limiterebbe l'account di archiviazione ai BLOB di pagine. Sono necessari BLOB in blocchi per i video e una coda per la memorizzazione nel buffer ed entrambi sono disponibili solo nell'opzione **Standard**.
 
-1. Leave the **Replication** as _Locally-redundant storage (LRS)_. Data in Azure storage accounts are always replicated to ensure high availability - this option lets you choose how far away the replication occurs to match your durability requirements. In our case, the images and videos quickly become out-of-date and are removed from the site. This means there is little value to paying extra for global redundancy. If a catastrophic event results in data loss, you can restart the site with fresh content from your users.
+1. **Tipologia account**: selezionare **Archiviazione v2 (utilizzo generico v2)**.
 
-1. Set the **Access tier** to _Hot_. This setting is only used for Blob storage. The **Hot Access Tier** is ideal for frequently accessed data, and the **Cool Access Tier** is better for infrequently accessed data. Note that this only sets the _default_ value - when you create a Blob, you can set a different value for the data. In our case, we want the videos to load quickly, so you will use the high-performance option for your blobs.
+    Motivazione logica: **Archiviazione v2 (utilizzo generico v2)** è la scelta giusta in questo scenario. Sono infatti necessari sia BLOB che una coda, quindi l'opzione **Archiviazione BLOB** non è adatta. La scelta di un account di tipo **Archiviazione (utilizzo generico v1)** non porterebbe alcun vantaggio a questa applicazione, poiché limiterebbe le funzionalità accessibili senza presumibilmente ridurre il costo del carico di lavoro previsto.
+
+1. **Replica**: selezionare **Archiviazione con ridondanza locale**.
+
+    Motivazione logica: le immagini e i video diventano rapidamente obsoleti e vengono rimossi dal sito. Non vale quindi la pena di pagare di più per la ridondanza globale. Nel caso in cui un evento catastrofico causi la perdita di dati, è possibile riavviare il sito con contenuti aggiornati caricati dagli utenti.
+
+1. **Livello di accesso (predefinito)**: selezionare **Frequente**.
    
-The following screenshot shows the completed settings for the **Basics** tab. Note that the resource group, subscription, and name will have different values.
+    Motivazione logica: si vuole che i video vengano caricati rapidamente, quindi si userà l'opzione con prestazioni elevate per i BLOB.
+   
+Lo screenshot seguente mostra le impostazioni compilate per la scheda **Informazioni di base**.
 
-![Screenshot of a Create a storage account blade with the **Basics** tab selected.](../media-drafts/5-create-storage-account-basics.png)
+![Screenshot di un pannello Crea account di archiviazione con la scheda **Informazioni di base** selezionata.](../media-drafts/5-create-storage-account-basics.png)
 
-### Configure the advanced options
+### <a name="configure-the-advanced-options"></a>Configurare le opzioni avanzate
 
-1. Click the **Next: Advanced >** button to move to the **Advanced** tab, or select the **Advanced** tab at the top of the screen.
+1. Selezionare la scheda **Avanzate** nella parte superiore del pannello.
 
-1. The **Secure transfer required** setting controls whether **HTTP** can be used for the REST APIs used to access data in the Storage account. Setting this option to _Enabled_ will force all clients to use SSL (**HTTPS**). Most of the time you will want to set this to _Enabled_ as using HTTPS over the network is considered a best practice.
+1. **Trasferimento sicuro obbligatorio**: selezionare **Abilitato**.
 
-    > [!WARNING]
-    > If this option is enabled, it will enforce some additional restrictions. Azure files service connections without encryption will fail, including scenarios using SMB 2.1 or 3.0 on Linux. Because Azure storage doesn’t support SSL for custom domain names, this option cannot be used with a custom domain name.
+    Motivazione logica: Https via cavo è generalmente considerato come la procedura consigliata.
 
-1. Set the **Virtual networks** option to _None_. This option allows you to isolate the storage account on an Azure virtual network. We want to use public Internet access. Our content is public facing and you need to allow access from public clients.
+1. **Reti virtuali**: selezionare **Disabilitato**.
 
-1. Leave the **Data Lake Storage Gen2** option as _Disabled_. This is for big-data applications that aren't relevant to this module.
+    Motivazione logica: il contenuto è esposto al pubblico ed è necessario consentire l'accesso da client pubblici.
 
-The following screenshot shows the completed settings for the **Advanced** tab.
+Lo screenshot seguente mostra le impostazioni compilate per la scheda **Avanzate**.
 
-![Screenshot of an Create a storage account blade with the **Advanced** tab selected.](../media-drafts/5-create-storage-account-advanced.png)
+![Screenshot di un pannello Crea account di archiviazione con la scheda **Avanzate** selezionata.](../media-drafts/5-create-storage-account-advanced.png)
 
-### Create
+### <a name="create"></a>Creare
 
-1. You can explore the **Tags** settings if you like. This lets you associate key/value pairs to the account for your categorization and is a feature available to any Azure resource.
+1. Fare clic sul pulsante **Rivedi e crea** nella parte inferiore del pannello.
 
-1. Click **Review + create** to review the settings. This will do a quick validation of your options to make sure all the required fields are selected. If there are issues, they'll be reported here. Once you've reviewed the settings, click **Create** to provision the storage account.
+1. Nella schermata successiva fare clic sul pulsante **Crea** nella parte inferiore del pannello.
 
-It will take a few minutes to deploy the account. While Azure is working on that, let's explore the APIs we'll use with this account.
+1. Attendere che la risorsa venga creata.
 
-### Verify
+### <a name="verify"></a>Verificare
 
-1. Select the **Storage accounts** link in the left sidebar.
+1. Selezionare il collegamento **Account di archiviazione** nella barra laterale sinistra.
 
-1. Locate the new storage account in the list to verify that creation succeeded.
+1. Individuare il nuovo account di archiviazione nell'elenco per verificare che la creazione sia riuscita.
 
-<!-- Cleanup sandbox -->
-[!include[](../../../includes/azure-sandbox-cleanup.md)]
+### <a name="clean-up"></a>Eseguire la pulizia
 
-When you are working in your own subscription, you can the following steps in the Azure portal to delete the resource group and all associated resources.
+1. Selezionare il collegamento **Gruppo di risorse** nella barra laterale sinistra.
 
-1. Select the **Resource groups** link in the left sidebar.
+1. Individuare **SurfReportResourceGroup** nell'elenco.
 
-1. Locate the resource group you created in the list.
+1. Fare clic con il pulsante destro del mouse sulla voce **SurfReportResourceGroup** e scegliere **Elimina gruppo di risorse** dal menu di scelta rapida.
 
-1. Right-click on the resource group entry and select **Delete resource group** from the context menu. You can also click the "..." menu element on the right side of the entry to get to the same context menu.
+1. Digitare il nome del gruppo di risorse nel campo di conferma.
 
-1. Type the resource group name into the confirmation field.
+1. Fare clic sul pulsante **Elimina**.
 
-1. Click the **Delete** button.
+## <a name="summary"></a>Riepilogo
 
-## Summary
-
-You created a storage account with settings driven by your business requirements. For example, you might have selected a West US datacenter because your customers were primarily located in southern California. This is a typical flow: first analyze your data and goals, and then configure the storage account options to match.
+È stato creato un account di archiviazione con le impostazioni più appropriate per i propri requisiti aziendali. Ad esempio, è stato selezionato il data center Stati Uniti occidentali perché i clienti risiedevano principalmente nella California del sud. Il flusso descritto è un flusso tipico: prima si analizzano i dati e gli obiettivi e poi si configurano le opzioni dell'account di archiviazione più appropriate.

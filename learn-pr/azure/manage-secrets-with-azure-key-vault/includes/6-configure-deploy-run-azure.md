@@ -1,50 +1,52 @@
-Now it's time to run our app in Azure. We need to create an Azure App Service app, set it up with a managed identity and our vault configuration, and deploy our code.
+A questo punto è possibile eseguire l'app in Azure. È necessario creare un'app di Servizio app di Azure, configurarla con identità del servizio gestita e la configurazione d'insieme e quindi distribuire il codice.
 
-## Create the App Service plan and app
+## <a name="exercise"></a>Esercizio
 
-Creating an App Service app is a two-step process: First create the *plan*, then the *app*.
+### <a name="create-the-app-service-plan-and-app"></a>Creare il piano e l'app di Servizio app
 
-The *plan* name only needs to be unique within your subscription, so you can use the same name we've used: **keyvault-exercise-plan**. The app name needs to be globally unique, though, so you'll need to pick your own.
+La creazione di un'app di Servizio app è un processo che si svolge in due passaggi: per prima cosa, creare il *piano* e poi l'*app*.
 
-In Azure Cloud Shell, run the following:
+Il nome del *piano* deve solamente essere univoco all'interno della sottoscrizione, quindi è possibile usare lo stesso nome usato da noi: **insieme di credenziali delle chiavi-esercizio-piano**. Il nome dell'app deve essere globalmente univoco, ma è necessario sceglierne uno proprio.
+
+In Azure Cloud Shell, eseguire il comando seguente:
 
 ```azurecli
 az appservice plan create --name keyvault-exercise-plan --resource-group keyvault-exercise-group
 az webapp create --name <your-unique-app-name> --plan keyvault-exercise-plan --resource-group keyvault-exercise-group
 ```
 
-## Add configuration to the app
+### <a name="add-configuration-to-the-app"></a>Aggiungere una configurazione per l'app
 
-For deploying to Azure, we'll follow the App Service best practice of putting the VaultName configuration in an application setting instead of a configuration file.
+Per la distribuzione in Azure, si seguirà la procedura consigliata del servizio app per inserire la configurazione VaultName nelle impostazioni dell'applicazione, anziché in un file di configurazione.
 
 ```azurecli
 az webapp config appsettings set --name <your-unique-app-name> --resource-group keyvault-exercise-group --settings VaultName=<your-unique-vault-name>
 ```
 
-## Enable managed identity
+### <a name="enable-msi"></a>Abilitare l'identità del servizio gestita
 
-Enabling managed identity on an app is a one-liner:
+Abilitazione dell'identità del servizio gestita in un'app è una singola riga di codice:
 
 ```azurecli
 az webapp identity assign --name <your-unique-app-name> --resource-group keyvault-exercise-group
 ```
 
-From the JSON output that results, copy the **principalId** value. PrincipalId is the unique ID of the app's new identity in Azure Active Directory, and we're going to use it in the next step.
+Nell'output JSON risultante, copiare il valore **principalId**. Proprietà PrincipalId è l'ID univoco della nuova identità dell'app in Azure Active Directory e dobbiamo usarlo nel passaggio successivo.
 
-## Grant access to the vault
+### <a name="grant-access-to-the-vault"></a>Concedere l'accesso all'insieme di credenziali
 
-Now you need to give your app identity permissions to get and list secrets from your production-environment vault. Use the **principalId** value you copied from the previous step as the value for **object-id** in the command below.
+A questo punto è necessario concedere all'app le autorizzazioni di identità per ottenere ed elencare i segreti dall'insieme di credenziali di ambiente di produzione. Usare la **principalId** copiata nel passaggio precedente come valore per **id dell'oggetto** nel comando seguente.
 
 ```azurecli
-az keyvault set-policy --name <your-unique-vault-name> --object-id <your-managed-identity-principleid> --secret-permissions get list
+az keyvault set-policy --name <your-unique-vault-name> --object-id <your-msi-principleid> --secret-permissions get list
 ```
 
-## Deploy the app and try it out
+### <a name="deploy-the-app-and-try-it-out"></a>Distribuire l'app e provarla
 
-All your configuration is set and you're ready to deploy! The below commands will publish the site to the `pub` folder, zip it up into `site.zip`, and deploy the zip to App Service.
+Tutte le configurazioni sono impostate e i può avviare la distribuzione. I comandi seguenti pubblicheranno il sito nella cartella `pub`, la comprimeranno in `site.zip` e quindi distribuiranno il file zip nel Servizio app.
 
 > [!NOTE]
-> You'll need to `cd` back to the KeyVaultDemoApp directory if you haven't already.
+> Sarà necessario `cd` indietro alla directory di KeyVaultDemoApp, se non è già stato fatto.
 
 ```azurecli
 dotnet publish -o pub
@@ -52,6 +54,6 @@ zip -j site.zip pub/*
 az webapp deployment source config-zip --src site.zip --name <your-unique-app-name> --resource-group keyvault-exercise-group
 ```
 
-Once you get a result that indicates the site has deployed, open `https://<your-unique-app-name>.azurewebsites.net/api/SecretTest` in a browser. You should see the secret value, **reindeer_flotilla**.
+Dopo aver ottenuto un risultato che indica che il sito è stato distribuito, aprire `https://<your-unique-app-name>.azurewebsites.net/api/SecretTest` in un browser. Il valore del segreto, **reindeer_flotilla** dovrebbe essere visualizzato.
 
-Your app is finished and deployed!
+L'app è stata completata e distribuita.

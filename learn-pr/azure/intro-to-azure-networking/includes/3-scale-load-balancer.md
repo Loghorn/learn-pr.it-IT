@@ -1,76 +1,76 @@
-You now have your site up and running on Azure. How can you help ensure your site is running 24/7?
+Ora il sito è operativo in Azure. Come fare in modo che il sito rimanga in esecuzione ininterrottamente?
 
-For example, what happens when you need to do weekly maintenance? Your service will still be unavailable during your maintenance window. And because your site reaches users all over the world, there's no good time to take down your systems for maintenance. You may also run into performance issues if too many users connect at the same time.
+Cosa accade, ad esempio, quando è necessario eseguire la manutenzione settimanale? Il servizio continuerà a essere non disponibile durante il periodo di manutenzione. E poiché il sito raggiunge gli utenti in tutto il mondo, non esiste un buon momento per arrestare i sistemi per la manutenzione. È anche possibile riscontrare problemi di prestazioni se troppi utenti si connettono allo stesso tempo.
 
-## What are availability and high availability?
+## <a name="what-are-availability-and-high-availability"></a>Che cosa sono la durabilità e la disponibilità elevata?
 
-_Availability_ refers to how long your service is up and running without interruption. _High availability_, or _highly available_, refers to a service that's up and running for a long period of time.
+Il termine _disponibilità_ indica il periodo di tempo in cui il servizio rimane operativo senza interruzioni. Il termine _disponibilità elevata___ indica che un servizio rimane operativo per un lungo periodo di tempo.
 
-Think of a social media or news site that you visit daily. Can you always access the site, or do you often see error messages like "503 Service Unavailable"? You know how frustrating it is when you can't access the information you need.
+Si pensi a un sito di social media o di notizie che si visita ogni giorno. È sempre possibile accedere al sito o spesso vengono visualizzati messaggi di errore, ad esempio "503 - Servizio non disponibile"? Tutti sanno quanto sia frustrante non poter accedere alle informazioni necessarie.
 
-You may have heard terms like "five nines availability." Five nines availability means that the service is guaranteed to be running 99.999 percent of the time. Although it's difficult to achieve 100 percent availability, many teams strive for at least five nines.
+È possibile aver già sentito termini come "disponibilità cinque nove". Disponibilità cinque nove significa che l'esecuzione del servizio è garantita per il 99,999% del tempo. Nonostante sia difficile ottenere una disponibilità pari al 100%, molti team si impegnano per ottenere almeno quella cinque nove.
 
-## What is resiliency?
+## <a name="what-is-resiliency"></a>Cos'è la resilienza?
 
-_Resiliency_ refers to a system's ability to stay operational during abnormal conditions.
+Il termine _resilienza_ indica la capacità di un sistema di rimanere operativo in condizioni anomale.
 
-These conditions include:
+Queste condizioni includono:
 
-- Natural disasters.
-- System maintenance, both planned and unplanned, including software updates and security patches.
-- Spikes in traffic to your site.
-- Threats made by malicious parties, such as distributed denial of service, or DDoS, attacks.
+- Calamità naturali
+- Manutenzione del sistema, sia pianificata che non pianificata, che include aggiornamenti software e patch di sicurezza
+- Picchi di traffico verso il sito
+- Minacce attuate da parti dannose, ad esempio attacchi Distributed Denial of Service, o DDoS
 
-Imagine your marketing team wants to have a flash sale to promote a line of new products. You might expect a huge spike in traffic during this time. This spike could overwhelm your processing system, causing it to slow down or halt, disappointing your users. You may have experienced this disappointment for yourself. Have you ever wanted tickets for an event only to find the website wasn't responding?
+Si immagini che il team di marketing voglia realizzare una vendita lampo per promuovere una linea di nuovi prodotti. È previsto un notevole picco di traffico durante questo periodo. Questo picco potrebbe sovraccaricare il sistema di elaborazione, fino a rallentarlo o interromperlo, creando disappunto tra gli utenti. Forse si è già provata questa delusione in prima persona. È mai capitato di voler acquistare i biglietti per un evento e di scoprire che il sito Web non risponde?
 
-## What is a load balancer?
+## <a name="what-is-a-load-balancer"></a>Che cos'è un servizio di bilanciamento del carico?
 
-A _load balancer_ distributes traffic evenly among each system in a pool. A load balancer can help you achieve both high availability and resiliency.
+Un _servizio di bilanciamento del carico_ distribuisce uniformemente il traffico tra ogni sistema di un pool. Un servizio di bilanciamento del carico può consentire di ottenere la disponibilità elevata e la resilienza.
 
-Say you start by adding additional VMs, each configured identically, to each tier. The idea is to have additional systems ready, in case one goes down or is serving too many users at the same time.
+Si immagini di iniziare aggiungendo altre VM, ognuna configurata in modo identico, a ogni livello. L'idea è quella di avere altri sistemi pronti, nel caso in cui uno diventi inattivo o gestisca troppi utenti nello stesso momento.
 
-The problem here is that each VM would have its own IP address. Plus, you don't have a way to distribute traffic in case one system goes down or is busy. How do you connect your VMs so that they appear to the user as one system?
+Il problema è che ogni VM avrà il proprio indirizzo IP. Non è inoltre possibile distribuire il traffico, nel caso in cui un sistema diventi inattivo o sia occupato. Come connettere le VM in modo che per l'utente siano un unico sistema?
 
-The answer is to use a load balancer to distribute traffic. The load balancer becomes the entry point to the user. The user doesn't know (or need to know) which system the load balancer chooses to receive the request.
+La risposta consiste nell'usare un servizio di bilanciamento del carico per distribuire il traffico. Il servizio di bilanciamento del carico diventa il punto di ingresso per l'utente. L'utente non sa (o non deve necessariamente sapere) quale sistema venga scelto dal servizio di bilanciamento del carico per ricevere la richiesta.
 
-The following illustration shows the role of a load balancer.
+Ecco un diagramma.
 
-![An illustration showing the web tier of a three-tier architecture. The web tier has multiple virtual machines to service user requests. There is a load balancer that distributes user requests among the virtual machines.](../media/3-load-balancer.png)
+![Bilanciamento del carico del traffico tra le macchine virtuali](../media-draft/load-balancer.png)
 
-You see that the load balancer receives the user's request. The load balancer directs the request to one of the VMs in the web tier. If a VM is unavailable or stops responding, the load balancer stops sending traffic to it. The load balancer then directs traffic to one of the responsive servers.
+Si noterà che il servizio di bilanciamento del carico riceve la richiesta dell'utente. Il servizio di bilanciamento del carico indirizza la richiesta a una delle VM nel livello Web. Se una VM non è disponibile o smette di rispondere, il servizio di bilanciamento del carico smette di inviarle il traffico. Il servizio di bilanciamento del carico indirizza quindi il traffico a uno dei server reattivi.
 
-Load balancing enables you to run maintenance tasks without interrupting service. For example, you can stagger the maintenance window for each VM. During the maintenance window, the load balancer detects that the VM is unresponsive, and directs traffic to other VMs in the pool.
+Il bilanciamento del carico consente di eseguire le attività di manutenzione senza interrompere il servizio. È ad esempio possibile distribuire la finestra di manutenzione per ogni VM. Durante la finestra di manutenzione, il servizio di bilanciamento del carico rileva che la VM non risponde e indirizza il traffico ad altre VM nel pool.
 
-For your e-commerce site, the app and data tiers can also have a load balancer. It all depends on what your service requires.
+Per il sito di e-commerce, anche i livelli app e dati possono avere un servizio di bilanciamento del carico. Tutto dipende dai requisiti del servizio.
 
-## What is Azure Load Balancer?
+## <a name="what-is-azure-load-balancer"></a>Che cos'è Azure Load Balancer?
 
-Azure Load Balancer is a load balancer service that Microsoft provides.
+Azure Load Balancer è un servizio di bilanciamento del carico fornito da Microsoft.
 
-You can manually configure load balancer software on a virtual machine. The downside is that you now have an additional system that you need to maintain. If your load balancer goes down or needs routine maintenance, you're back to your original problem.
+È possibile configurare manualmente il software del servizio di bilanciamento carico in una macchina virtuale. Lo svantaggio è che ora si ha un altro sistema che richiede manutenzione. Se il servizio di bilanciamento del carico si arresta o richiede la manutenzione di routine, si ripresenta il problema originale.
 
-Instead, you can use Azure Load Balancer because there's no infrastructure or software for you to maintain. Azure takes care of maintenance for you.
+In alternativa, è possibile usare Azure Load Balancer perché non ci sono infrastrutture o software di cui eseguire la manutenzione. È Azure a eseguire automaticamente la manutenzione.
 
-The following illustration shows  the role of Azure load balancers in a multi-tier architecture.
+Ecco un diagramma che mostra diverse VM in ogni livello. Ogni livello include un'istanza di Azure Load Balancer che distribuisce il traffico tra le VM nel pool.
 
-![An illustration showing the web tier of a three-tier architecture. The web tier has multiple virtual machines to service user requests. There is a load balancer that distributes user requests among the virtual machines.](../media/3-azure-load-balancer.png)
+![Bilanciamento del carico del traffico tra le macchine virtuali con Azure Load Balancer](../media-draft/azure-load-balancer.png)
 
-## What about DNS?
+## <a name="what-about-dns"></a>E DNS?
 
-DNS, or Domain Name System, is a way to map user-friendly names to their IP addresses. You can think of DNS as the phonebook of the internet.
+DNS (Domain Name System) è un modo per eseguire il mapping dei nomi descrittivi agli indirizzi IP. È possibile pensare a DNS come alla rubrica di Internet.
 
-For example, your domain name, contoso.com, might map to the IP address of the load balancer at the web tier, 40.65.106.192.
+È ad esempio possibile eseguire il mapping del nome di dominio contoso.com all'indirizzo IP del servizio di bilanciamento del carico nel livello Web, 40.65.106.192.
 
-You can bring your own DNS server or use Azure DNS, a hosting service for DNS domains that runs on Azure infrastructure.
+È possibile usare il proprio server DNS oppure DNS di Azure, un servizio di hosting per i domini DNS che viene eseguito nell'infrastruttura di Azure.
 
-The following illustration shows Azure DNS. When the user navigates to contoso.com, Azure DNS routes traffic to the load balancer.
+Ecco un diagramma che mostra DNS di Azure. Quando l'utente passa a contoso.com, DNS di Azure instrada il traffico al servizio di bilanciamento del carico.
 
-![An illustration showing the Azure domain name system positioned in front of the load balancer.](../media/3-dns.png)
+![Uso di DNS di Azure per assegnare un nome DNS](../media-draft/dns.png)
 
-## Summary
+## <a name="summary"></a>Riepilogo
 
-With load balancing in place, your e-commerce site is now more highly available and resilient. When you perform maintenance or receive an uptick in traffic, your load balancer can distribute traffic to another available system.
+Con il bilanciamento del carico il sito di e-commerce è ora a disponibilità più elevata e più resiliente. Quando si esegue la manutenzione o si verifica un aumento del traffico, il servizio di bilanciamento del carico può distribuire il traffico a un altro sistema disponibile.
 
-Although you can configure your own load balancer on a VM, Azure Load Balancer reduces upkeep because there's no infrastructure or software to maintain.
+Anche se è possibile configurare il proprio servizio di bilanciamento del carico in una VM, **Azure Load Balancer** riduce le attività di manutenzione perché non ci sono infrastrutture o software che la richiedono.
 
-DNS maps user-friendly names to their IP addresses, much like how a phonebook maps names of people or businesses to phone numbers. You can bring your own DNS server, or use Azure DNS.
+DNS esegue il mapping dei nomi descrittivi agli indirizzi IP, in modo simile a una rubrica che esegue il mapping dei nomi di persone o aziende ai numeri di telefono. È possibile usare il proprio server DNS o DNS di Azure.

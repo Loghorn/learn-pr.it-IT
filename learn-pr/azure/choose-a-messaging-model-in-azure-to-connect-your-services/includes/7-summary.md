@@ -1,14 +1,13 @@
-In this module, you have explored four different Azure services that allow you to create reliable and resilient distributed applications. Choosing between them is a matter of deciding the type of data that needs to be passed between components (messages or events), and then what features you need to deliver and process the data.
+In questo modulo sono stati esaminati quattro diversi servizi di Azure che consentono di creare applicazioni distribuite affidabili e resilienti. Per sceglierne uno, è necessario decidere il tipo di dati che devono essere passati tra i componenti (messaggi o eventi) e quindi le funzionalità necessarie per recapitare ed elaborare i dati.
 
-## Clean up
-<!---TODO: Update for sandbox?--->
+## <a name="clean-up"></a>Eseguire la pulizia
 
-While a Storage Account contains data, it incurs a cost against your Azure subscription, although these are likely to be low for small queue with few messages. When you have finished with the queue, remember to remove it in order to avoid unnecessary charges. Because you created all the resources in the same resource group, the easiest way to cleanup your Azure subscription is to remove the resource group which will remove all its contents:
+Quando un account di archiviazione contiene dati, nella sottoscrizione di Azure vengono addebitati i costi corrispondenti, anche se probabilmente sono ridotti per le code di piccole dimensioni con pochi messaggi. Quando la coda non è più necessaria, ricordarsi di rimuoverla per evitare addebiti inutili. Poiché tutte le risorse sono state create nello stesso gruppo di risorse, il modo più semplice per pulire la sottoscrizione di Azure consiste nel rimuovere il gruppo di risorse. Verranno così eliminati tutti i contenuti:
 
 ```powershell
 Remove-AzureRmResourceGroup -Name "MusicSharingResourceGroup" -Force
 ```
 
-When you are asked to confirm the delete, answer **Yes**.
+Quando viene richiesto di confermare l'eliminazione, rispondere **Sì**.
 
-The command may take several minutes to complete as resources are deleted.
+Il completamento di questo comando può richiedere alcuni minuti mentre vengono eliminate le risorse.

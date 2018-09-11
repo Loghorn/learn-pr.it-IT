@@ -1,51 +1,51 @@
-We learned how to estimate your costs before you deploy services on Azure, but what if you already have resources deployed? How do you get visibility into the costs you're already accruing? If we had deployed our previous solution to Azure and now want to make sure that we've sized the virtual machines properly and predict how much our bill will be, how can we do this? Let's look at a few tools on Azure that you can use to help you solve this problem.
+È stato spiegato come stimare i costi prima di distribuire servizi in Azure, ma cosa accade se sono già state distribuite alcune risorse? Come ottenere visibilità sui costi già maturati? Se è stata distribuita la soluzione precedente in Azure e si intende verificare di aver dimensionato correttamente le macchine virtuali e prevederne i costi, come possiamo procedere? Ecco alcuni strumenti di Azure che è possibile usare per risolvere questo problema.
 
-## What is Azure Advisor?
+## <a name="what-is-azure-advisor"></a>Cos'è Azure Advisor? 
 
-**Azure Advisor** is a free service built into Azure that provides recommendations on high availability, security, performance, and cost. Advisor analyzes your deployed services and looks for ways to improve your environment across those four areas. We'll focus on the cost recommendations, but you'll want to take some time to review the other recommendations as well.
+**Azure Advisor** è un servizio gratuito integrato in Azure che fornisce indicazioni sulla disponibilità elevata, sicurezza, prestazioni e costi. Advisor analizza i servizi distribuiti e cerca di migliorare l'ambiente in queste quattro aree. Questo documento è incentrato sui consigli sui costi, ma è opportuno esaminare anche le altre indicazioni.
 
-Advisor makes cost recommendations in the following areas:
+Advisor fornisce consigli sui costi nelle aree seguenti: 
 
-1. **Reduce costs by eliminating unprovisioned Azure ExpressRoute circuits.**
-    This identifies ExpressRoute circuits that have been in the provider status of *Not Provisioned* for more than one month and recommends deleting the circuit if you aren't planning to provision the circuit with your connectivity provider.
+1. **Ridurre i costi eliminando i circuiti ExpressRoute il cui provisioning è stato annullato.** 
+    Identifica i circuiti ExpressRoute che sono rimasti nello stato provider *Senza provisioning* per più di un mese e consiglia di eliminare il circuito se non si intende effettuarne il provisioning con il provider di connettività.
 
-1. **Buy reserved instances to save money over pay-as-you-go.**
-    This will review your virtual machine usage over the last 30 days and determine if you could save money in the future by purchasing reserved instances. Advisor will show you the regions and sizes where you potentially have the most savings and will show you the estimated savings you might achieve from purchasing reserved instances.
+2. **Acquistare istanze riservate per risparmiare denaro rispetto ai costi dei piani con pagamento in base al consumo.** 
+    Esamina l'utilizzo della macchina virtuale negli ultimi 30 giorni e determina se sarà possibile risparmiare denaro acquistando istanze riservate. Advisor mostra le aree e le dimensioni con le massime potenzialità di risparmio e indica il risparmio stimato conseguibile con l'acquisto di istanze riservate.
+    
+3. **Ridimensionare o arrestare le macchine virtuali sottoutilizzate.** 
+    Monitora l'utilizzo delle macchine virtuali per 14 giorni, in modo da identificare quelle sottoutilizzate. Le macchine virtuali con un utilizzo medio della CPU del 5% o inferiore e un utilizzo di rete di 7 MB o inferiore per quattro o più giorni sono considerate macchine virtuali sottoutilizzate. La soglia di uso medio della CPU è regolabile fino al 20%. Identificando queste macchine virtuali, è possibile decidere di ridimensionarle in un tipo di istanza ridotto, diminuendo i costi.
 
-1. **Right-size or shutdown underutilized virtual machines.**
-    This monitors your virtual machine usage for 14 days and then identifies underutilized virtual machines. Virtual machines whose average CPU utilization is 5 percent or less and network usage is 7 MB or less for four or more days are considered underutilized virtual machines. The average CPU utilization threshold is adjustable up to 20 percent. By identifying these virtual machines, you can decide to resize them to a smaller instance type, reducing your costs.
+Di seguito è indicato dove è possibile trovare Azure Advisor nel portale. Accedere prima di tutto al portale di Azure all'indirizzo [https://portal.azure.com](https://portal.azure.com?azure-portal=true). Fare clic su **Tutti i servizi** e, nella categoria **Strumenti di gestione**, è disponibile **Advisor**. È anche possibile digitare **Advisor** nella casella del filtro per visualizzare solo questo servizio. 
 
-Let's take a look at where you can find Azure Advisor in the portal. First, sign in to the [Azure portal](https://portal.azure.com?azure-portal=true). Click on **All Services**, and in the **Management Tools** category, you will see **Advisor**. You can also type `Advisor` in the filter box to filter on just that service.
-
-Click on Advisor, and you'll be taken to the Advisor recommendations dashboard where you can see all the recommendations for your subscription. You'll see a box for each category of recommendations.
+Fare clic su Advisor per visualizzare il dashboard dei consigli associati alla sottoscrizione. Verrà visualizzata una casella per ogni categoria di consigli. 
 
 > [!NOTE]
-> You might not have any recommendations on cost in Advisor. This could be because assessments have not yet completed or simply because Advisor has no recommendations.
+> Potrebbero non essere presenti consigli sui costi in Advisor. È possibile che le valutazioni non siano ancora state completate o semplicemente che Advisor non abbia consigli da fornire.
 
-![Screenshot of the Azure portal showing the Advisor blade with four category boxes for Advisor recommendations: high availability, security, performance, and cost.](../media/3-advisor-recommendations.png)
+![Consigli di Advisor](../media-drafts/3-advisor-recommendations.png)
 
-Clicking on the **Cost** box will take you to detailed recommendations where you can see the recommendations that Advisor has.
+Facendo clic sulla casella **Costo** verranno visualizzati consigli dettagliati in cui è possibile vedere quelli offerti da Advisor.
 
-![Screenshot of the Azure portal showing the cost recommendations portion of the Advisor blade.](../media/3-advisor-cost-recommendations.png)
+![Consigli di Advisor sui costi](../media-drafts/3-advisor-cost-recommendations.png)
 
-Clicking on any recommendation will take you to the details for that specific recommendation. Then you'll be able to take a specific action, such as resizing virtual machines to reduce spending.
+Facendo clic su un consiglio, verranno visualizzati i relativi dettagli. Sarà quindi possibile eseguire un'azione specifica, ad esempio il ridimensionamento delle macchine virtuali per ridurre la spesa.
 
-![Screenshot of the Azure portal showing recommendation details on the Shut down or resize your virtual machine recommendation.](../media/3-advisor-resize-vm.png)
+![Consiglio di Advisor per il ridimensionamento di macchine virtuali](../media-drafts/3-advisor-resize-vm.png)
 
-These recommendations are all places where you might be inefficiently spending money. They're a great place to start and continue to revisit when looking for places to reduce costs. In our example, there's an opportunity for us to save around $700 per month if we take these recommendations. This savings adds up, so be sure to review this periodically for recommendations across all four areas.
+Questi consigli rappresentano posizioni in cui il denaro potrebbe essere speso in modo inefficiente. Si tratta di una posizione ideale in cui iniziare e continuare a controllare per ridurre i costi. In questo esempio viene fornita l'opportunità di risparmiare circa 700 dollari al mese seguendo questi consigli. Questi risparmi si accumulano, pertanto verificare di controllare periodicamente la presenza di consigli su tutte le quattro aree.
 
-## Azure Cost Management
+## <a name="azure-cost-management"></a>Gestione costi di Azure
 
-Azure Cost Management is another free, built-in Azure tool that can be used to gain greater insights into where your cloud money is going. You can see historical breakdowns of what services you are spending your money on and how it is tracking against budgets that you have set. You can set budgets, schedule reports, and analyze your cost areas.
+Gestione costi di Azure è un altro strumento gratuito incorporato di Azure che può essere usato per ottenere maggiori informazioni dettagliate in merito ai servizi soggetti alla spesa per il cloud. È possibile visualizzare suddivisioni cronologiche dei servizi soggetti a spese e il relativo monitoraggio a fronte dei budget impostati. È possibile impostare budget, pianificare report e analizzare le aree di costo.
 
-![Screenshot of the Azure portal showing the Cost analysis section of the Cost Management + Billing blade.](../media/3-cost-management.png)
+![Gestione costi](../media-drafts/3-cost-management.png)
 
-## Cloudyn
+## <a name="cloudyn"></a>Cloudyn 
 
-Cloudyn, a Microsoft subsidiary, allows you to track cloud usage and expenditures for your Azure resources and other cloud providers including Amazon Web Services and Google. Easy-to-understand dashboard reports help with cost allocation and chargebacks. Cost Management helps optimize your cloud spending by identifying underutilized resources that you can then manage and adjust. Usage for Azure is free, and there are paid options for premium support and to view data from other clouds.
+Cloudyn, un'affiliata Microsoft, consente di tenere traccia dell'uso del cloud e delle spese per le risorse di Azure e altri provider cloud, tra cui Amazon Web Services e Google. I report del dashboard di facile comprensione agevolano l'allocazione dei costi e i chargeback. Gestione costi aiuta a ottimizzare la spesa per il cloud identificando le risorse sottoutilizzate che potranno quindi essere gestite e adattate. L'uso di Azure è gratuito e sono disponibili opzioni a pagamento per il supporto premium e per visualizzare i dati da altri cloud. 
 
-![Screenshot of the Azure portal showing the Cloudyn management dashboard.](../media/3-cloudyn-mgt-dash.png)
+![Dashboard di gestione Cloudyn](../media-drafts/3-cloudyn-mgt-dash.png)
 
-## Summary
+## <a name="summary"></a>Riepilogo
 
-As you can see, there are several tools available for no cost on Azure that you can use to track and predict your cloud spend and identify where your environment may be inefficient from a cost perspective. You'll want to make sure you make it a regular practice to review the reports and recommendations that these tools make available, so you can unlock savings across your cloud footprint. Now let's take a look at some best practices to reduce your infrastructure costs.
+Come risulta evidente, esistono diversi strumenti disponibili gratuitamente in Azure che è possibile usare per tenere traccia e stimare la spesa associata al cloud e identificare eventuali inefficienze nell'ambiente in termini di costi. È opportuno consultare periodicamente i report e i consigli resi disponibili con questi strumenti, per realizzare risparmi nel footprint del cloud. Verranno ora illustrate alcune procedure consigliate per ridurre i costi dell'infrastruttura.

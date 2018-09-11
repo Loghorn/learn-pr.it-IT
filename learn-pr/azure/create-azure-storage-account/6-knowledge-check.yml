@@ -1,41 +1,41 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-azure-storage-account.6-knowledge-check
-title: "Knowledge check: Create a storage account"
+title: 'Verifica delle conoscenze: creare un account di archiviazione'
 durationInMinutes: 3
 metadata:
-  title: "Knowledge check: Create a storage account"
-  description: Questions about storage account properties and creation.
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
+  title: 'Verifica delle conoscenze: creare un account di archiviazione'
+  description: Domande sulle proprietà e sulla creazione dell'account di archiviazione.
+  ms.openlocfilehash: ab689dd2ef9802ce036ec683909b291c3b342370
+  ms.sourcegitcommit: c07e11980180ae35cb3485548f81e16152d77781
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/02/2018
+  ms.locfileid: "43471845"
 quiz:
-  title: "Knowledge check: Create a storage account"
+  title: 'Verifica delle conoscenze: creare un account di archiviazione'
   questions:
-  - content: "Suppose you have two video files stored as blobs. One of the videos is business-critical and requires a replication policy that creates multiple copies across geographically diverse datacenters. The other video is non-critical, and a local replication policy is sufficient. True or false: To satisfy these constraints, the two blobs will need to be in separate storage accounts."
+  - content: "Si supponga di avere due file video archiviati come BLOB. Uno dei video è business critical e richiede un criterio di replica che crei più copie tra data center in aree geografiche diverse. L'altro video è non-critico e pertanto è sufficiente un criterio di replica locale. Vero o falso: per soddisfare questi vincoli, i due BLOB dovranno essere in account di archiviazione distinti."
     choices:
-    - content: "True"
+    - content: Vero
       isCorrect: true
-      correctExplanation: "Replication policy is a characteristic of a storage account. Every member in the storage account must use the same policy. If you need some data to use the geo-replication strategy and other data to use the local replication strategy, then you will need two storage accounts."
-    - content: "False"
+      correctExplanation: Il criterio di replica è una caratteristica dell'account di archiviazione. Tutti i membri dell'account di archiviazione devono usare lo stesso criterio. Se sono necessari alcuni dati per usare la strategia di replica geografica e altri dati per usare la strategia di replica locale, saranno necessari due account di archiviazione.
+    - content: Falso
       isCorrect: false
-  - content: "The name of a storage account must be:"
+  - content: "Il nome dell'account di archiviazione deve essere:"
     choices:
-    - content: "Unique within the containing resource group."
+    - content: Univoco all'interno del gruppo di risorse che lo contiene.
       isCorrect: false
-    - content: "Unique within your Azure subscription."
+    - content: Univoco all'interno della sottoscrizione di Azure.
       isCorrect: false
-    - content: "Globally unique."
+    - content: Univoco a livello globale
       isCorrect: true
-      correctExplanation: "The storage account name is used as part of the URI for API access, so it must be globally unique."
-  - content: "In a typical project, when would you create your storage account(s)?"
+      correctExplanation: Il nome dell'account di archiviazione viene usato come parte dell'URI usato per l'accesso all'API, quindi deve essere univoco a livello globale.
+  - content: In un progetto tipico, quando vengono creati gli account di archiviazione?
     choices:
-    - content: "At the beginning, during project setup."
+    - content: All'inizio, durante la configurazione del progetto.
       isCorrect: true
-      correctExplanation: "Storage accounts are usually stable for the lifetime of a project. It is common to create them at the start of a project."
-    - content: "After deployment, when the project is running."
+      correctExplanation: In genere, gli account di archiviazione sono stabili per la durata di un progetto. È pratica comune crearli all'inizio di un progetto.
+    - content: Dopo la distribuzione, quando il progetto è in esecuzione.
       isCorrect: false
-    - content: "At the end, during resource cleanup."
+    - content: Alla fine, durante la pulizia delle risorse.
       isCorrect: false

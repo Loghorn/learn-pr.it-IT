@@ -1,55 +1,55 @@
-Your company has chosen Azure Cosmos DB to meet the demands of their expanding customer and product base. You have been tasked with creating the database.
+L'azienda ha scelto Azure Cosmos DB per soddisfare le esigenze della crescente base di prodotti e clienti. Si è ricevuto l'incarico di creare il database.
 
-The first step is to create an Azure Cosmos DB account.
+Il primo passaggio consiste nel creare un account Azure Cosmos DB. 
 
-## What is an Azure Cosmos DB account?
+## <a name="what-is-an-azure-cosmos-db-account"></a>Informazioni sugli account Azure Cosmos DB
 
-Azure Cosmos DB account is an Azure resource that acts as an organizational entity for your databases. It connects your usage to your Azure subscription for billing purposes.
+Un account Azure Cosmos DB è una risorsa di Azure che funge da entità organizzativa per i database. Connette l'utilizzo alla sottoscrizione di Azure ai fini della fatturazione.
 
-Each Azure Cosmos DB account is associated with one of the several data models Azure Cosmos DB supports, and you can create as many accounts as you need. 
+Ogni account Azure Cosmos DB è associato a uno o più dei diversi modelli di dati supportati da Azure Cosmos DB ed è possibile creare il numero di account desiderato. 
 
-SQL API is the preferred data model if you are creating a new application. If you're working with graphs or tables, or migrating your MongoDB or Cassandra data to Azure, create additional accounts and select relevant data models.
+Se si crea una nuova applicazione, il modello di dati preferito è l'API SQL. Se si usano grafi o tabelle oppure si esegue la migrazione di dati MongoDB o Cassandra ad Azure, creare account aggiuntivi e selezionare i modelli di dati pertinenti.
 
-When creating an account, choose an ID that is meaningful to you; it is how you identify your account. Further, create the account in the Azure region that's closest to your users to minimize latency between the datacenter and your users.
+Quanto si crea un account, scegliere un ID significativo con cui verrà identificato l'account. Creare inoltre l'account nell'area di Azure più vicina agli utenti per ridurre al minimo la latenza tra il data center e gli utenti.
 
-You can optionally set up virtual networks and geo-redundancy during account creation, but this can also be done later. In this module we will not enable those settings.
+Facoltativamente, è possibile configurare le reti virtuali e la ridondanza geografica durante la creazione dell'account, ma queste impostazioni possono essere definite anche in seguito. In questo modulo non verranno abilitate.
 
-## Creating an Azure Cosmos DB account in the portal
+## <a name="creating-an-azure-cosmos-db-account-in-the-portal"></a>Creare un account Azure Cosmos DB nel portale
 
-1. Sign in to the [Azure portal](https://portal.azure.com?azure-portal=true).
-
-1. Click **Create a resource** > **Databases** > **Cosmos DB**.
+<!--TODO: Update portal link with one that routes to free Learning acct-->
+1. Accedere al [portale di Azure](https://portal.azure.com/).
+2. Fare clic su **Crea una risorsa** > **Database** > **Azure Cosmos DB**.
    
-   ![The Azure portal Databases pane](../media-draft/2-create-nosql-db-databases-json-tutorial.png)
+   ![Riquadro Database nel portale di Azure](../media/1-introduction/create-nosql-db-databases-json-tutorial-1.png)
 
-1. On the **New account** page, enter the settings for the new Azure Cosmos DB account.
+3. Nella pagina **Nuovo account** immettere le impostazioni per il nuovo account Azure Cosmos DB.
  
-    Setting|Value|Description
+    Impostazione|Valore|Descrizione
     ---|---|---
-    ID|*Enter a unique name*|Enter a unique name to identify this Azure Cosmos DB account. Because *documents.azure.com* is appended to the ID that you provide to create your URI, use a unique but identifiable ID.<br><br>The ID can contain only lowercase letters, numbers, and the hyphen (-) character, and it must contain 3 to 50 characters.
-    API|SQL|The API determines the type of account to create. Azure Cosmos DB provides five APIs to suit the needs of your application: SQL (document database), Gremlin (graph database), MongoDB (document database), Azure Table, and Cassandra, each of which currently requires a separate account. <br><br>Select **SQL** because in this module you are creating a document database that is queryable using SQL syntax and accessible with the SQL API.|
-    Subscription|*Your subscription*|Select the Azure subscription that you want to use for this Azure Cosmos DB account.
-    Resource Group|Create new<br><br>*Then enter the same unique name as provided above in ID*|Select **Create New**, and then enter a new resource-group name for your account. For simplicity, the same name can be used as your ID. 
-    Location|*Select the region closest to your users*|Select the geographic location in which to host your Azure Cosmos DB account. Use the location that's closest to your users to give them the fastest access to the data.
-    Enable geo-redundancy| Leave blank | This setting creates a replicated version of your database in a second (paired) region. Leave this blank for now, as the database can be replicated later.
-    Virtual networks|Disabled|Leave virtual networks disabled for now. This can be enabled later.
+    ID|*Immettere un nome univoco*|Immettere un nome univoco per identificare l'account Azure Cosmos DB. Dato che all'ID specificato viene aggiunto *documents.azure.com* per creare l'URI, usare un ID univoco ma identificabile.<br><br>L'ID può contenere solo lettere minuscole, numeri e il segno meno (-) e deve avere una lunghezza compresa tra 3 e 50 caratteri.
+    API|SQL|L'API determina il tipo di account da creare. Azure Cosmos DB offre cinque API per soddisfare le esigenze dell'applicazione: SQL (database di documenti), Gremlin (database a grafo), MongoDB (database di documenti), Tabella di Azure e Cassandra. Per ogni API è attualmente necessario un account separato. <br><br>Selezionare **SQL** perché in questo modulo si crea un database di documenti disponibile per query con sintassi SQL e accessibile con l'API SQL.|
+    Sottoscrizione|*Sottoscrizione in uso*|Selezionare la sottoscrizione di Azure da usare per l'account Azure Cosmos DB. 
+    Gruppo di risorse|Crea nuovo<br><br>*Immettere lo stesso nome univoco specificato sopra in ID*|Selezionare **Crea nuovo** e quindi immettere il nome di un nuovo gruppo di risorse per l'account. Per semplicità, lo stesso nome può essere usato come ID. 
+    Località|*Selezionare l'area più vicina agli utenti*|Selezionare la località geografica in cui ospitare l'account Azure Cosmos DB. Usare la località più vicina agli utenti per offrire loro la massima velocità di accesso ai dati.
+    Abilita ridondanza geografica| Lasciare vuoto | Questa impostazione crea una versione replicata del database in una seconda area associata. Lasciare vuoto per il momento, perché il database può essere replicato in seguito. 
+    Reti virtuali|Disabilitate|Per il momento lasciare le reti virtuali disabilitate. Possono essere abilitate in seguito. 
 
-1. Click **Create**.
+4. Fare clic su **Crea**.
 
-    ![The new account page for Azure Cosmos DB](../media-draft/2-azure-cosmos-db-create-new-account.png)
+    ![Pagina del nuovo account per Azure Cosmos DB](../media/1-introduction/azure-cosmos-db-create-new-account.png)
 
-1. The account creation takes a few minutes. Wait for the portal to display the notification that the deployment succeeded and click the notification. 
+5. La creazione dell'account richiede alcuni minuti. Attendere che nel portale venga visualizzata la notifica del completamento della distribuzione e fare clic sulla notifica. 
 
-    ![Notification alert](../media-draft/2-azure-cosmos-db-notification.png)
+    ![Avviso di notifica](../media/1-introduction/azure-cosmos-db-notification.png)
 
-1. In the notification window, click **Go to resource**.
+6. Nella finestra della notifica fare clic su **Vai alla risorsa**.
 
-    ![Go to resource](../media-draft/2-azure-cosmos-db-go-to-resource.png)
+    ![Vai alla risorsa](../media/1-introduction/azure-cosmos-db-go-to-resource.png)
 
-    The portal displays the **Congratulations! Your Azure Cosmos DB account was created** page.
+    Nel portale verrà visualizzata la pagina **L'account Azure Cosmos DB è stato creato**.
 
-    ![The Azure portal Notifications pane](../media-draft/2-azure-cosmos-db-account-created.png)
+    ![Riquadro delle notifiche nel portale di Azure](../media/1-introduction/azure-cosmos-db-account-created.png)
 
-## Summary
+## <a name="summary"></a>Riepilogo
 
-You have created an Azure Cosmos DB account, which is the first step in creating an Azure Cosmos DB database. You selected appropriate settings for your data types and set the account location to minimize latency for your users.
+È stata completata la creazione di un account Azure Cosmos DB, che è il primo passaggio per creare un database Azure Cosmos DB. Sono state selezionate le impostazioni appropriate per i tipi di dati e si è impostata la località dell'account in modo da ridurre al minimo la latenza per gli utenti.

@@ -1,44 +1,44 @@
-There are many times when you need to group a series of data updates together, because a change to one piece of data needs to result in a change to another piece of data. Transactions enable you to group these updates so that if one event in a series of updates fails, the entire series can be rolled back, or undone. For example, as an online retailer you could use a transaction for the placement of an order and payment verification. The grouping of the related events ensures that you don't reduce your inventory levels until an approved form of payment is received.
+Spesso è necessario raggruppare una serie di aggiornamenti ai dati perché una modifica a un tipo di dati comporta una modifica a un altro tipo di dati. Le transazioni consentono di raggruppare questi aggiornamenti in modo che, se un evento in una serie di aggiornamenti ha esito negativo, è possibile eseguire il rollback dell'intera serie o annullarla. Un rivenditore online potrebbe ad esempio usare una transazione per l'invio di un ordine e la verifica del pagamento. Raggruppando gli eventi correlati, è possibile evitare di ridurre i livelli di inventario fino a quando non si riceve un metodo di pagamento approvato.
 
-Here, you'll learn what a transaction is, and whether they're required for your data.
+In questo modulo si apprenderà che cos'è una transazione e quando è necessario usarla per i dati.
 
-## What is a transaction?
+## <a name="what-is-a-transaction"></a>Che cos'è una transazione?
 
-A transaction is a logical unit that is independently executed for data retrieval or updates.
+Una transazione è un'unità logica che viene eseguita in modo indipendente per il recupero o gli aggiornamenti dei dati.
 
-Here's the question to ask yourself regarding whether you need a transactional database: Will a change to one piece of data in your dataset impact another? If the answer is yes, then you'll need transaction support in your database service.
+Ecco la domanda da porsi per determinare se è necessario un database transazionale: una modifica a un tipo di dati nel set di dati influirà su un altro tipo di dati? Se la risposta è affermativa, nel servizio di database sarà necessario il supporto per le transazioni.
 
-Transactions are often defined by a set of four requirements, referred to as ACID guarantees. ACID stands for Atomicity, Consistency, Isolation, and Durability:
+Le transazioni vengono spesso definite da un set di quattro requisiti, detti anche garanzie ACID. ACID è l'acronimo di Atomicità, Coerenza, Isolamento e Durabilità:
 
-- Atomicity means all the data is updated, or all the data is rolled back to its original state.
-- Consistency ensures that if something happens partway through the transaction, that part of the data is isn't left without the updates. Across the board, the data is consistent in applying the transaction or not.
-- Isolation ensures that one transaction is not impacted by another transaction.
-- Durability means that the changes made due to the transaction are permanently saved in the system. Committed data is saved by the system such that, even in the event of a failure and system restart, the data is available in its correct state.
+* L'atomicità indica che tutti i dati vengono aggiornati oppure viene eseguito il rollback di tutti i dati allo stato originale.
+* La coerenza garantisce che se accade qualcosa nel corso della transazione, non venga aggiornata solo una parte dei dati, mentre l'altra no. La transazione viene applicata in modo coerente a tutti i dati oppure non viene applicata.
+* L'isolamento garantisce che una transazione non influisca su un'altra transazione.
+* La durabilità significa che le modifiche apportate nell'ambito della transazione vengono salvate in modo permanente nel sistema. I dati di cui viene eseguito il commit vengono salvati dal sistema in modo che, anche in caso di un errore con conseguente riavvio del sistema, i dati saranno disponibili nello stato corretto.
 
-When a database has ACID guarantees, it applies these principles to its transactions, and you can be assured that your transactions will be applied in a consistent manner.
+Quando un database ha le garanzie ACID, questi principi vengono applicati alle transazioni e si può avere la certezza che le transazioni verranno applicate in modo coerente.
 
-## OLTP vs OLAP
+## <a name="oltp-vs-olap"></a>OLTP e OLAP
 
-Transactional databases are often called OLTP (Online Transaction Processing) systems. OLTP systems commonly support lots of users, have quick response times, and handle large volumes of data. They are also highly available (meaning they have very minimal downtime), and typically handle small or relatively simple transactions.
+I database transazionali vengono spesso denominati sistemi OLTP (Online Transaction Processing, elaborazione di transazioni online). I sistemi OLTP supportano in genere numerosi utenti, hanno tempi di risposta rapidi, gestiscono volumi elevati di dati, offrono disponibilità elevata, ovvero hanno tempi di inattività minimi, e in genere gestiscono le transazioni di piccole dimensioni o relativamente semplici.
 
-On the contrary, OLAP (Online Analytical Processing) systems commonly support fewer users, have longer response times, can be less available, and typically handle large and complex transactions.
+Al contrario, i sistemi OLAP (Online Analytical Processing, elaborazione analitica online) supportano in genere un numero inferiore di utenti, hanno tempi di risposta più lunghi, possono offrire una minore disponibilità e in genere gestiscono le transazioni di grandi dimensioni e complesse.
 
-The terms OLTP and OLAP aren't used as frequently as they used to be, but the comparison does make it easier to categorize the needs of your application, so it's an important concept to be aware of. 
+I sistemi OLTP e OLAP non vengono usati tanto frequentemente quanto in passato, ma il confronto semplifica la classificazione delle esigenze dell'applicazione, pertanto si tratta di concetti importanti da conoscere. 
 
-Now that we're familiar with transactions, OLTP, and OLAP, let's walk through each of the data sets in the online retail scenario, and determine the need for transactions.
+Ora che è stata acquisita familiarità con le transazioni e con i concetti di OLTP e OLAP, verranno esaminati i set di dati dello scenario di vendita online per determinare la necessità di transazioni.
 
-## Product catalog data
+### <a name="product-catalog-data"></a>Dati del catalogo prodotti
 
-Product catalog data should be stored in a transactional database. When users place an order and the payment is verified, the inventory for the item should be updated. Likewise, if the customer's credit card is declined, the order should be rolled back, and the inventory should not be updated. These relationships all require transactions.
+I dati del catalogo prodotti devono essere archiviati in un database transazionale. Quando gli utenti effettuano un ordine e il pagamento viene verificato, l'inventario per l'articolo deve venire aggiornato. Analogamente, se la carta di credito del cliente viene rifiutata, deve essere eseguito il rollback dell'ordine e l'inventario non deve venire aggiornato. Queste relazioni richiedono tutte le transazioni.
 
-## Photos and videos
+### <a name="photos-and-videos"></a>Foto e video
 
-Photos and videos in a product catalog don't require transaction support. The only reason a change would be made to a photo or video is if an update was made, or new files were added. Even though there is a relationship between the image and the actual product data, it's not transactional in nature.
+Le foto e i video in un catalogo prodotti non richiedono il supporto delle transazioni. L'unico motivo per cui può venire apportata una modifica a una foto o a un video è la presenza di un aggiornamento o l'aggiunta di nuovi file. Anche se c'è una relazione tra l'immagine e i dati effettivi del prodotto, la natura non è transazionale.
 
-## Business data
+### <a name="business-data"></a>Dati di business
 
-For the business data, because all of the data is historical and unchanging, transaction support is not required. The business analysts working with the data also have unique needs in that they often require working with aggregates in their queries, so that they can work with the totals of other smaller data points.
+Per i dati di business, poiché tutti i dati sono cronologici e non cambiano, il supporto delle transazioni non è richiesto. I business analyst che usano i dati hanno esigenze specifiche, in quanto spesso richiedono l'uso delle aggregazioni nelle query, in modo da poter lavorare con i totali di gruppi di dati più piccoli.
 
-## Summary
+## <a name="summary"></a>Riepilogo
 
-Ensuring that your data is in the correct state is not always an easy task. Transactions can help by enforcing data integrity requirements on your data. If your data would benefit from the principles of ACID, you should choose a storage solution that supports transactions.
+Garantire che i dati siano nello stato corretto non è sempre facile. Le transazioni possono risultare utili in quanto permettono di applicare requisiti di integrità dei dati. Se i principi ACID possono essere utili per i dati, è consigliabile scegliere una soluzione di archiviazione che supporti le transazioni.

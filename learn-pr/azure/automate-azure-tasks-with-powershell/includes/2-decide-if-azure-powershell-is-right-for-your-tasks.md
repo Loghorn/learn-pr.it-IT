@@ -1,25 +1,25 @@
-Suppose you need to choose a tool to administer the Azure resources used to test your Customer Relationship Management (CRM) system. The key operations you need to do are: create resource groups and provision Virtual Machines (VMs).
+Si supponga che sia necessario scegliere uno strumento per amministrare le risorse di Azure usate per testare il sistema CRM (Customer Relationship Management). Le principali operazioni da eseguire sono: creare i gruppi di risorse ed eseguire il provisioning delle macchine virtuali.
 
-You want something that is easy for administrators to learn, but powerful enough to automate the installation and setup of multiple virtual machines (VMs) or script a full application environment. There are multiple tools available; you need to find the best one for your people and your tasks.
+Si vuole una soluzione che sia facile da apprendere per gli amministratori, ma sufficientemente potente da consentire di automatizzare l'installazione e la configurazione di più macchine virtuali o creare script per un intero ambiente applicativo. Sono disponibili diversi strumenti. È necessario trovare quello più adatto per le specifiche persone e attività.
 
-## What tools are available?
-Azure provides three administration tools to choose from: 
+## <a name="what-tools-are-available"></a>Quali strumenti sono disponibili?
+Azure offre tre strumenti di amministrazione tra cui scegliere: 
 
-- The Azure portal 
-- The Azure CLI
+- Portale di Azure 
+- Interfaccia della riga di comando di Azure
 - Azure PowerShell
 
-They all offer approximately the same amount of control; any task that you can do with one of tools, you can likely do with the other two. All three are cross-platform, running on Windows, macOS, and Linux. They differ in syntax, setup requirements, and whether they support automation.
+Tutti offrono approssimativamente lo stesso livello di controllo: qualsiasi attività che è possibile eseguire con uno degli strumenti, in genere può essere eseguita anche con gli altri due. Tutte e tre sono multipiattaforma, poiché possono essere eseguiti in Windows, macOS e Linux. Si differenziano a livello di sintassi, requisiti di installazione e supporto per l'automazione.
 
-Here, we will describe each of the three options and give some guidance on how to decide among them. 
+Di seguito verrà descritta ognuna di queste tre opzioni e saranno fornite alcune indicazioni per la scelta di quella più appropriata. 
 
-## What is the Azure portal?
-The Azure portal is a website that lets you create, configure, and alter the resources in your Azure subscription. The portal is a Graphical User Interface (GUI) that makes it convenient to locate the resource you need and execute any required changes. It also guides you through complex administrative tasks by providing wizards and tooltips.
+## <a name="what-is-the-azure-portal"></a>Che cos'è il portale di Azure?
+Il portale di Azure è un sito Web che consente di creare, configurare e modificare le risorse nella sottoscrizione di Azure. Il portale è un'interfaccia utente grafica che rende più semplice individuare le risorse necessarie e apportare le modifiche richieste. Fornisce inoltre assistenza per le attività amministrative complesse, attraverso procedure guidate e descrizioni comandi.
 
-The portal does not provide any way to automate repetitive tasks. For example, to set up 15 VMs, you would need to create them one-by-one by completing the wizard for each VM. This can be time-consuming and error-prone for complex tasks. 
+Il portale non fornisce alcun sistema per automatizzare le attività ripetitive. Ad esempio, per configurare 15 macchine virtuali, è necessario crearle una alla volta completando la procedura guidata per ogni macchina virtuale. Può trattarsi di un processo che richiede molto tempo e soggetto a errori, in caso di attività complesse. 
 
-## What is the Azure CLI?
-The Azure CLI is a cross-platform command-line program to connect to Azure and execute administrative commands on Azure resources. For example, to create a VM, you would use a command like the following:
+## <a name="what-is-the-azure-cli"></a>Che cos'è l'interfaccia della riga di comando di Azure?
+L'interfaccia della riga di comando di Azure è un programma della riga di comando multipiattaforma per connettersi ad Azure ed eseguire comandi amministrativi sulle risorse di Azure. Per creare una macchina virtuale, ad esempio, si userebbe un comando simile al seguente:
 
 ```bash
 az vm create \
@@ -29,12 +29,12 @@ az vm create \
   ...
 ```
 
-The Azure CLI is available two ways: inside a browser via the Azure Cloud Shell or with a local install on Linux, Mac, or Windows. In both cases, it can be used interactively or scripted. For interactive use, you first launch a shell such as `cmd.exe` on Windows or Bash on Linux or macOS and then issue the command at the shell prompt. To automate repetitive tasks, you assemble the commands into a shell script using the script syntax of your chosen shell and then execute the script.
+L'interfaccia della riga di comando di Azure è disponibile in due modalità: all'interno di un browser tramite Azure Cloud Shell o con un'installazione locale in Windows, Mac o Linux. In entrambi i casi, può essere usata in modo interattivo o tramite script. Per l'uso interattivo, si avvia prima di tutto una shell, ad esempio `cmd.exe` in Windows o Bash in Linux o macOS, quindi si esegue il comando al prompt della shell. Per automatizzare attività ripetitive, i comandi vengono assemblati in uno script della shell tramite la sintassi per gli script della shell prescelta, quindi si esegue lo script.
 
-## What is Azure PowerShell?
-Azure PowerShell is a module that you add to Windows PowerShell or PowerShell Core to let you connect to your Azure subscription and manage resources. Azure PowerShell requires PowerShell to function. PowerShell provides services like the shell window, command parsing, and so on. Azure PowerShell adds the Azure-specific commands.
+## <a name="what-is-azure-powershell"></a>Informazioni su Azure PowerShell.
+Azure PowerShell è un modulo che viene aggiunto a Windows PowerShell o PowerShell Core per consentire di connettersi alla sottoscrizione di Azure e gestire le risorse. Per il funzionamento di Azure PowerShell è necessario PowerShell. PowerShell fornisce servizi come la finestra della shell, l'analisi dei comandi e così via. Azure PowerShell aggiunge i comandi specifici di Azure.
 
-For example, Azure PowerShell provides the **New-AzureRmVM** command that creates a Virtual Machine for you inside your Azure subscription. To use it, you would launch the PowerShell application and then issue a command like the following:
+Ad esempio, Azure PowerShell fornisce il comando **New-AzureRmVM**, che crea una macchina virtuale all'interno della sottoscrizione di Azure. Per usarlo, è necessario avviare l'applicazione PowerShell e quindi eseguire un comando simile al seguente:
 
 ```powershell
 New-AzureRmVm `
@@ -44,30 +44,30 @@ New-AzureRmVm `
     ...
 ```
 
-Azure PowerShell is also available two ways: inside a browser via the Azure Cloud Shell or with a local install on Linux, Mac, or Windows. In both cases, you have two modes to choose from. You can use it in interactive mode, in which you manually issue one command at a time, or in scripting mode, where you execute a script that consists of multiple commands.
+Anche Azure PowerShell è disponibile in due modalità: all'interno di un browser tramite Azure Cloud Shell o con un'installazione locale in Windows, Mac o Linux. In entrambi i casi, è possibile scegliere tra due modalità. È possibile usarlo in modalità interattiva, in cui si esegue manualmente un comando alla volta, o in modalità di scripting, in cui si esegue uno script costituito da più comandi.
 
-## How to Choose an administrative tool
-There is approximate parity between the portal, the Azure CLI, and Azure PowerShell with respect to the Azure objects they can administer and the configurations they can create. They are also all cross-platform. This means you will typically consider several other factors when making your choice:
+## <a name="how-to-choose-an-administrative-tool"></a>Come scegliere uno strumento di amministrazione
+Il portale, l'interfaccia della riga di comando di Azure e Azure PowerShell sono sostanzialmente equivalenti per quanto riguarda gli oggetti di Azure che possono amministrare e le configurazioni che possono creare. Sono anche tutti multipiattaforma. Questo significa che in genere sarà necessario prendere in considerazione altri fattori per decidere quali usare:
 
-- **Automation**: Do you need to automate a set of complex or repetitive tasks? Azure PowerShell and the Azure CLI support this while the portal does not.
+- **Automazione**: è necessario automatizzare una serie di attività complesse o ripetitive? Azure PowerShell e l'interfaccia della riga di comando di Azure supportano questa operazione, a differenza del portale.
 
-- **Learning curve**: Do you need to complete a task quickly without learning new commands or syntax? The Azure portal does not require you to learn syntax or memorize commands. In Azure PowerShell and the Azure CLI, you must know the detailed syntax for each command you use.
+- **Curva di apprendimento**: è necessario completare un'attività rapidamente senza dover apprendere nuovi comandi o una nuova sintassi? Il portale di Azure non richiede di apprendere una sintassi o di memorizzare comandi. In Azure PowerShell e nell'interfaccia della riga di comando di Azure è necessario conoscere la sintassi dettagliata per ogni comando usato.
 
-- **Team skillset**: Does your team have existing expertise? For example, your team may have used PowerShell to administer Windows. If so, they will quickly become comfortable using Azure PowerShell.
+- **Set di competenze del team**: il team dispone di competenze esistenti? Il team potrebbe ad esempio avere usato PowerShell per amministrare Windows. In questo caso, potrà acquisire rapidamente familiarità con l'uso di Azure PowerShell.
 
-## Example
-Recall that you are choosing an administrative tool to create the test environments for your CRM application. Your administrators have two specific Azure tasks they will need to do:
+## <a name="example"></a>Esempio
+È importante ricordare che è necessario scegliere uno strumento di amministrazione per creare gli ambienti di test per l'applicazione CRM. Gli amministratori dovranno eseguire due specifiche attività di Azure:
 
-1. Create one resource group for each category of testing (unit, integration, and acceptance).
-2. Create multiple VMs in each resource group before every round of testing.
+1. Creare un gruppo di risorse per ogni categoria di test (unit test, integrazione e accettazione).
+2. Creare più macchine virtuali in ogni gruppo di risorse prima di ogni ciclo di test.
 
-To create the resource groups, the Azure portal is a reasonable choice. These are one-off tasks, so you don't need scripts to do them.
+Per creare i gruppi di risorse, il portale di Azure è una scelta ragionevole. Si tratta di attività da effettuare una sola volta, pertanto non sono necessari gli script per eseguirle.
 
-Finding the best tool to create the VMs is a more challenging decision. You need to create several of them and you need to do it repeatedly, likely several times each week. This means you will want automation, so the Azure portal is not a good choice. In this case, either Azure PowerShell or the Azure CLI will meet your needs. If your team members have some existing PowerShell knowledge, Azure PowerShell will likely be the best match. Azure PowerShell is available on the operating systems your admin team uses, it supports automation, and should be quick for your team to learn.
+Individuare lo strumento migliore per creare le macchine virtuali è una decisione più complessa. È necessario crearne diverse e questa operazione deve essere eseguita ripetutamente, presumibilmente più volte alla settimana. Sarà pertanto necessaria l'automazione, quindi il portale di Azure non è una scelta valida. In questo caso, è possibile usare Azure PowerShell o l'interfaccia della riga di comando di Azure per soddisfare le esigenze. Se i membri del team hanno già una certa conoscenza di PowerShell, Azure PowerShell è probabilmente la soluzione più adatta. Azure PowerShell è disponibile nei sistemi operativi usati dal team di amministrazione, supporta l'automazione e dovrebbe essere molto rapido da apprendere per il team.
 
-## Summary
-Most administrators' first experience with Azure is in the Portal. It's a great place to start as it provides a clean, well-structured graphical interface but provided limited options for automation. When you need automation, Azure gives you two options: Azure PowerShell for admins with PowerShell experience and the Azure CLI for everyone else.
+## <a name="summary"></a>Riepilogo
+Per la maggior parte degli amministratori, la prima esperienza con Azure avviene nel portale. È un ottimo punto di partenza perché offre un'interfaccia grafica pulita e ben strutturata, ma fornisce opzioni limitate per l'automazione. Quando è necessaria l'automazione, Azure offre due opzioni: Azure PowerShell per gli amministratori che hanno esperienza con PowerShell e l'interfaccia della riga di comando di Azure per tutti gli altri utenti.
 
-In practice, businesses typically have a mix of one-off and repetitive tasks. This means it is common to use both the Portal and a scripting solution. In our CRM example, it's appropriate to create the resource groups via the Portal and automate the VM creation with PowerShell.
+Nella pratica, generalmente le aziende devono eseguire una combinazione di attività occasionali e ripetitive. Per questo motivo, è piuttosto comune usare sia il portale che una soluzione di scripting. Nell'esempio relativo a CRM, è possibile creare i gruppi di risorse tramite il portale e automatizzare la creazione delle macchine virtuali con PowerShell.
 
-The rest of this module focuses on installing and using Azure PowerShell.
+Il resto di questo modulo è dedicato all'installazione e all'uso di Azure PowerShell.

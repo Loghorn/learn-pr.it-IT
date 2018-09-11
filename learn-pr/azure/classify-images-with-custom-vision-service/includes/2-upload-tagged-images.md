@@ -1,45 +1,61 @@
-In this unit, you will add images of famous paintings by Picasso, Pollock, and Rembrandt to the Artworks project, and tag the images so the Custom Vision Service can learn to differentiate one artist from another.
+### <a name="exercise-2-upload-tagged-images"></a>Esercizio 2: Caricare immagini con tag
 
-1. Click **Add images** to add images to the project.
+In questo esercizio si aggiungeranno immagini di celebri dipinti di Picasso, Pollock e Rembrandt al progetto Artworks, assegnando tag alle immagini in modo che il Servizio visione artificiale personalizzato apprenda a differenziare un artista dall'altro.
+  
+1. Fare clic su **Add images** (Aggiungi immagini) per aggiungere immagini al progetto.
 
-    ![Adding images to the Artworks project](../media/2-portal-click-add-images.png)
+    ![Aggiunta di immagini al progetto Artworks](../images/portal-click-add-images.png)
 
-1. Click **Browse local files**.
+    _Aggiunta di immagini al progetto Artworks_ 
+ 
+1. Fare clic su **Esplora file locali**.
 
-    ![Browsing for local images](../media/2-portal-click-browse-local-files.png)
+    ![Esplorazione di immagini locali](../images/portal-click-browse-local-files.png)
 
-    _Browsing for local images_
+    _Esplorazione di immagini locali_ 
+ 
+1. Passare alla cartella "Artists\Picasso" nelle [risorse fornite con questo lab](https://a4r.blob.core.windows.net/public/cvs-resources.zip), selezionare tutti i file nella cartella e quindi fare clic su **Apri**.
 
-1. Browse to the "Artists\Picasso" folder in the [resources that accompany this module](https://a4r.blob.core.windows.net/public/cvs-resources.zip), select all of the files in the folder, and click **Open**.
+    ![Selezione di un'immagine](../images/fe-browse-picasso-01.png)
 
-    ![Selecting an image](../media/2-fe-browse-picasso-01.png)
+    _Selezione di un'immagine_ 
+ 
+1. Digitare "painting" (senza virgolette) nella casella **Add some tags** (Aggiungi alcuni tag). Fare clic su **+** per assegnare il tag alle immagini.
 
-1. Type "painting" (without quotation marks) into the **Add some tags...** box. Then click **+** to assign the tag to the images.
+    ![Aggiunta di un tag "painting" alle immagini](../images/portal-add-tags-01.png)
 
-    ![Adding a "painting" tag to the images](../media/2-portal-add-tags-01.png)
+    _Aggiunta di un tag "painting" alle immagini_ 
 
-1. Repeat Step 4 to add a "Picasso" tag to the images.
+1. Ripetere il passaggio 4 per aggiungere un tag "Picasso" alle immagini.
 
-1. Click **Upload 7 files** to upload the images. Once the upload has finished, click **Done**.
+1. Fare clic su **Carica 7 file** per caricare le immagini. Al termine del caricamento, fare clic su **Fine**.
 
-    ![Uploading tagged images](../media/2-upload-picasso-images.png)
+    ![Caricamento di immagini con tag](../images/upload-picasso-images.png)
 
-1. Confirm that the images you uploaded appear in the portal, along with the tags assigned to them.
+    _Caricamento di immagini con tag_ 
 
-    ![The uploaded images](../media/2-portal-tagged-01.png)
+1. Verificare che le immagini caricate siano visualizzate nel portale, insieme ai tag assegnati.
 
-1. With seven Picasso images, the Custom Vision Service can do a decent job of identifying paintings by Picasso. But if you trained the model right now, it would only understand what a Picasso looks like, and it would not be able to identify paintings by other artists.
+    ![Immagini caricate](../images/portal-tagged-01.png)
 
-	The next step is to upload some paintings by another artist. Click **Add images** and select all of the images in the "Artists\Rembrandt" folder in the module resources. Tag them with the labels "painting" and "Rembrandt" (not "Picasso"), and upload them to the project.
+    _Immagini caricate_ 
 
-    > When you add the tag "painting," you don't have to type it in again. You can select it from the drop-down list attached to the **Add some tags...** box, as shown below. You **will** have to type "Rembrandt" and click **+** to add a "Rembrandt" tag.
+1. Con sette immagini di Picasso, il Servizio visione artificiale personalizzato è in grado di identificare piuttosto correttamente i dipinti di Picasso. Tuttavia, se si esegue il training del modello a questo punto, il modello sarà in grado di riconoscere solo a cosa assomiglia un Picasso, ma non di identificare i dipinti di altri artisti.
 
-    ![Selecting an existing tag](../media/2-select-painting-tag.png)
+    Il passaggio successivo consiste nel caricare alcuni dipinti di altri artisti. Fare clic su **Add images** (Aggiungi immagini) e selezionare tutte le immagini contenute nella cartella "Artists\Rembrandt" nelle risorse del lab. Assegnare alle immagini i tag "painting" e "Rembrandt" (non "Picasso") e caricarle nel progetto.
 
-1. Confirm that the Rembrandt images appear alongside the Picasso images in the project, and that "Rembrandt" appears in the list of tags.
+    > Per aggiungere il tag "painting," non è necessario digitarlo di nuovo. È possibile selezionarlo nell'elenco a discesa in corrispondenza della casella **Add some tags** (Aggiungi alcuni tag), come mostrato di seguito. Sarà **invece** necessario digitare "Rembrandt" e fare clic su **+** per aggiungere un tag "Rembrandt".
 
-    ![Picasso and Rembrandt images](../media/2-portal-tagged-02.png)
+    ![Selezione di un tag esistente](../images/select-painting-tag.png)
 
-1. Now add paintings by the enigmatic artist Jackson Pollock to enable the Custom Vision Service to recognize Pollock paintings, too. Select all of the images in the "Artists\Pollock" folder in the module resources, tag them with the terms "painting" and "Pollock", and upload them to the project.
+    _Selezione di un tag esistente_ 
 
-With the tagged images uploaded, the next step is to train the model with these images so it can distinguish between paintings by Picasso, Rembrandt, and Pollock, as well as determine whether a painting is a work by one of these famous artists.
+1. Verificare che le immagini di Rembrandt siano visualizzate accanto a quelle di Picasso nel progetto e che "Rembrandt" sia incluso nell'elenco di tag.
+
+    ![Immagini di Picasso e Rembrandt](../images/portal-tagged-02.png)
+
+    _Immagini di Picasso e Rembrandt_ 
+
+1. Si aggiungeranno ora i dipinti dell'enigmatico artista Jackson Pollock per permettere al Servizio visione artificiale personalizzato di riconoscere anche i suoi dipinti. Selezionare tutte le immagini contenute nella cartella "Artists\Pollock" nelle risorse del lab, aggiungere alle immagini i tag con i termini "painting" e "Pollock" e quindi caricare le immagini nel progetto.
+
+Dopo aver caricato le immagini con tag, il passaggio successivo consiste nell'eseguire il training del modello con queste immagini in modo che sia in grado di distinguere tra i dipinti di Picasso, Rembrandt e Pollock e di determinare se un dipinto è opera di uno di questi celebri artisti.

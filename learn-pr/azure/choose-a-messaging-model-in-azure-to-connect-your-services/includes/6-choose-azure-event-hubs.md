@@ -1,43 +1,43 @@
-There are certain applications that produce a massive number of events from almost as many sources. We often hear the term "Big Data" applied to these situations, and they require unique infrastructure to handle them.
+Esistono alcune applicazioni che generano un enorme numero di eventi da quasi altrettante origini. Spesso viene usato il termine "Big Data" per fare riferimento a queste situazioni, che richiedono un'infrastruttura speciale per gestirle.
 
-Imagine you work for Contoso Aircraft Engines. The engines your employer manufactures have hundreds of sensors. Before an aircraft can be flown each morning, its engines are connected to a test harness and put through their paces. Additionally, cached in-flight data is streamed when the aircraft is connected to ground equipment.
+Si supponga di lavorare per Contoso Aircraft Engines. I motori prodotti dall'azienda includono centinaia di sensori. Prima che un aereo possa essere operativo ogni giorno, i motori vengono connessi a un test harness e collaudati. Inoltre, i dati di volo memorizzati nella cache vengono trasmessi quando l'aereo viene connesso alla strumentazione di terra.
 
-You want to use historic sensor data to find patterns in the sensor readings that indicate engine failure is likely to happen soon. You want the real-time sensor readings to be compared against these failure patterns. You can then warn users in near real time if an engine is showing worrisome readings.
+È necessario usare i dati cronologici dei sensori per individuare modelli nelle letture dei sensori che indichino un potenziale malfunzionamento del motore a breve termine. Si vuole che le letture dei sensori in tempo reale vengano confrontate con questi modelli di errore. È quindi possibile avvisare gli utenti quasi in tempo reale se un motore presenta letture preoccupanti.
 
-## What is Azure Event Hubs?
-Event Hubs is an intermediary for the publish-subscribe communication pattern. Unlike Event Grid, however, it is optimized for extremely high throughput, a large number of publishers, security, and resiliency.
+## <a name="what-is-azure-event-hubs"></a>Che cos'è Hub eventi di Azure?
+Hub eventi è un intermediario per il modello di comunicazione pubblicazione-sottoscrizione. A differenza di Griglia di eventi, tuttavia, è ottimizzato per una velocità effettiva molto elevata, un numero considerevole di origini di pubblicazione, sicurezza e resilienza.
 
-Whereas Event Grid fits perfectly into the publish-subscribe pattern in that it simply manages subscriptions and routes communications to those subscribers, Event Hubs performs quite a few additional services. These additional services make it look more like a service bus or message queue, than a simple event broadcaster.
+Mentre Griglia di eventi si integra perfettamente nel modello di pubblicazione-sottoscrizione semplicemente perché gestisce le sottoscrizioni e indirizza le comunicazioni ai sottoscrittori, Hub eventi consente di eseguire alcuni servizi aggiuntivi. Questi servizi aggiuntivi lo rendono più simile a un bus di servizio o a una coda di messaggi, piuttosto che a un semplice strumento di trasmissione di eventi.
 
-#### Partitions
-As Event Hubs receives communications, it divides them into partitions. Partitions are buffers into which the communications are saved. Because of the event buffers, events are not completely ephemeral, and an event isn't missed just because a subscriber is busy or even offline. The subscriber can always use the buffer to "catch up." By default, events stay in the buffer for 24 hours before they automatically expire.
+#### <a name="partitions"></a>Partizioni
+Quando Hub eventi riceve le comunicazioni, le divide in partizioni. Le partizioni sono buffer in cui vengono salvate le comunicazioni. Considerati i buffer, gli eventi non sono completamente temporanei e un evento non viene perso solo perché un sottoscrittore è occupato o anche offline. Il sottoscrittore può sempre usare il buffer per mettersi al passo. Per impostazione predefinita gli eventi rimangono nel buffer 24 ore prima di scadere automaticamente.
 
-The buffers are called partitions because the data is divided amongst them. Every event hub has at least two partitions, and each partition has a separate set of subscribers.
+I buffer sono chiamati partizioni perché i dati vengono divisi tra di loro. Ogni hub eventi ha almeno due partizioni e ogni partizione ha un set separato di sottoscrittori.
 
-#### Capture
-Event Hubs can send all your events immediately to Azure Data Lake or Azure Blob storage for inexpensive, permanent persistence.
+#### <a name="capture"></a>Acquisizione
+Hub eventi può inviare tutti gli eventi immediatamente ad Azure Data Lake o all'archivio BLOB di Azure, come soluzioni economiche di archiviazione permanente.
 
-#### Authentication
-All publishers are authenticated and issued a token. This means Event Hubs can accept events from external devices and mobile apps, without worrying that fraudulent data from pranksters could ruin our analysis. 
+#### <a name="authentication"></a>Autenticazione
+Tutte le origini di pubblicazione vengono autenticate e ricevono un token. Questo significa che Hub eventi può accettare eventi da dispositivi esterni e app per dispositivi mobili, senza preoccuparsi che dati illeciti possano compromettere l'analisi. 
 
-## Using Event Hubs
-Event Hubs has support for pipelining event streams to other Azure services. Using it with Azure Stream Analytics, for instance, allows complex analysis of data in near real time, with the ability to correlate multiple events and look for patterns. In this case, Stream Analytics would be considered a subscriber.
+## <a name="using-event-hubs"></a>Uso di Hub eventi
+Hub eventi include il supporto per l'invio di pipeline di flussi di eventi ad altri servizi di Azure. È possibile usarlo con Analisi di flusso di Azure, ad esempio, per eseguire analisi complesse dei dati quasi in tempo reale con la possibilità di correlare più eventi e di individuare modelli. In questo scenario, Analisi di flusso sarebbe considerato un sottoscrittore.
 
-For our aircraft engines, we'll set up our architecture so that Event Hubs will authenticate the communications from our engines. We will then have it use capture to save all the data to Data Lake. Later, we can use all that data to retrain and improve our machine learning models. Finally, our event streams will be picked up by Stream Analytics subscribers. Stream Analytics will use our machine learning model to look for patterns in the sensor data that might indicate problems.
+Per l'esempio dei motori degli aerei, l'architettura verrà configurata in modo che l'hub eventi esegua l'autenticazione delle comunicazioni dai motori. Verrà quindi impostato l'uso dell'acquisizione per salvare tutti i dati in Data Lake. In un secondo momento sarà possibile usare tutti i dati per ripetere il training e migliorare i modelli di Machine Learning. Infine, i flussi di eventi verranno prelevati da sottoscrittori di Analisi di flusso. Analisi di flusso userà il modello di Machine Learning per individuare modelli nei dati dei sensori che potrebbero indicare un problema.
 
-Because we have several partitions, and each engine sends all its data to only one partition, each instance of our Stream Analytics subscriber only need deal with a subset of our overall data. It does not have to filter and correlate over all of it.
+Dato che sono disponibili varie partizioni e che ogni motore invia tutti i relativi dati a una sola partizione, ogni istanza del sottoscrittore di Analisi di flusso deve gestire solo un subset dei dati complessivi. Non deve eseguire operazioni di filtro e correlazione su tutti.
 
-## Which service should I choose?
-Just like our queue choice, selecting between these two event delivery services can seem tricky at first. Both support *At Least Once* semantics.
+## <a name="which-service-should-i-choose"></a>Qual è il servizio da scegliere?
+Esattamente come la scelta della coda, la selezione tra questi due servizi di recapito di eventi può sembrare complicata all'inizio. Entrambi supportano la semantica *At-Least-Once*.
 
-#### Choose Event Hubs if:  
+#### <a name="choose-event-hubs-if"></a>Scegliere Hub eventi se:  
 
-- You need to support authenticating a large number of publishers.
-- You need to save a stream of events to Data Lake or Blob storage.
-- You need aggregation or analytics on your event stream.
-- You need reliable messaging or resiliency.  
+- È necessario supportare l'autenticazione di un numero elevato di origini di pubblicazione.
+- È necessario salvare un flusso di eventi in Data Lake o in Archiviazione BLOB.
+- È necessario eseguire operazioni di aggregazione o analisi sul flusso di eventi.
+- Sono necessarie funzionalità di messaggistica affidabili o resilienza.  
 
-Otherwise, if you need a simple event publish-subscribe infrastructure, with trusted publishers (for instance, your own web server), you should choose Event Grid.
+Se invece è necessaria una semplice infrastruttura di pubblicazione-sottoscrizione degli eventi, con origini di pubblicazione attendibili (ad esempio il proprio server Web), è consigliabile scegliere Griglia di eventi.
 
-## Summary
-Event Hubs lets you build a big data pipeline capable of processing millions of events per second with low latency. It can handle data from concurrent sources and route it to a variety of stream-processing infrastructures and analytics services. It enables real-time processing and supports repeated replay of stored raw data. 
+## <a name="summary"></a>Riepilogo
+Hub eventi consente di compilare una pipeline di Big Data che riesce a elaborare milioni di eventi al secondo con bassa latenza. Può gestire i dati da origini simultanee e instradarli a svariati servizi di analisi e infrastrutture di elaborazione di flussi. Consente l'elaborazione in tempo reale e supporta la riproduzione ripetuta dei dati non elaborati archiviati. 

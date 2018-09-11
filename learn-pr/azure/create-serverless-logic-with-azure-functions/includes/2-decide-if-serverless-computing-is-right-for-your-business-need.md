@@ -1,43 +1,45 @@
-To help decide whether serverless computing is right for you, let's first learn what serverless is all about.
+Per stabilire se l'informatica serverless è adatta alle proprie esigenze, considerare innanzitutto in che cosa consiste l'elaborazione serverless.
 
-## What is serverless compute?
+## <a name="what-is-serverless-compute"></a>Che cos'è l'elaborazione serverless?
 
-Serverless compute can be thought of as a function as a service (FaaS), or a microservice that is hosted on a cloud platform. Your business logic runs as functions and you don't have to manually provision or scale infrastructure. The cloud provider manages infrastructure. Your app is automatically scaled out or down depending on load. Azure has several ways to build this sort of architecture. The two most common approaches are Azure Logic Apps and Azure Functions, which we focus on in this module.
+L'elaborazione serverless usa le funzioni come servizio (FaaS). Le funzioni possono essere considerate come dei microservizi ospitati in una piattaforma cloud. La logica di business viene eseguita come funzioni e non è necessario eseguire manualmente il provisioning o ridimensionare l'infrastruttura. Il provider del cloud gestisce l'infrastruttura. L'app viene automaticamente ridimensionata o ridotta a seconda del carico. Azure offre diversi modi per compilare questo tipo di architettura. I due approcci più comuni sono le App per la logica di Azure e le Funzioni di Azure, che vengono trattate in questo modulo.
 
-## What is Azure Functions?
+## <a name="what-is-azure-functions"></a>Che cos'è Funzioni di Azure?
 
-Azure Functions is a serverless application platform. It allows developers to host business logic that can be executed without provisioning infrastructure. Functions provides intrinsic scalability and you are charged only for the resources used. You can write your function code in the language of your choice, including C#, F#, and JavaScript. Support for NuGet and NPM is also included, so you can use popular libraries in your business logic.
+Funzioni di Azure è una piattaforma applicativa senza server, che consente agli sviluppatori di ospitare la logica di business che potrà essere eseguita senza occuparsi del provisioning dell'infrastruttura. Funzioni offre scalabilità intrinseca e all'utente vengono fatturate solo le risorse usate. È possibile scrivere il codice della funzione nel linguaggio preferito, inclusi C#, F# e JavaScript. È incluso anche il supporto per NuGet e NPM, in modo che sia possibile usare librerie comuni nella logica di business.
 
-## Benefits of a serverless compute solution
+## <a name="benefits-of-a-serverless-compute-solution"></a>Vantaggi di una soluzione di calcolo serverless
 
-Serverless compute is a great option for hosting business logic code in the cloud. With serverless offerings such as Azure Functions, you can write your business logic in the language of your choice. You get automatic scaling, you have no servers to manage, and you are charged based on what is used — not on reserved time. Here are some additional characteristics of a serverless solution for you to consider.
+L'elaborazione serverless è una valida opzione per ospitare nel cloud il codice per la logica di business. Con le offerte serverless, come Funzioni di Azure, è possibile scrivere la logica di business nel linguaggio di propria scelta. Si ottiene un ridimensionamento automatico, non ci sono server da gestire e la fatturazione è basata su ciò che viene utilizzato, non sul tempo riservato. Di seguito sono riportate alcune caratteristiche aggiuntive di una soluzione serverless da valutare.
 
-### Avoids over-allocation of infrastructure
+### <a name="avoids-over-allocation-of-infrastructure"></a>Evita la sovrassegnazione dell'infrastruttura
 
-Suppose you've provisioned VM servers and configured them with enough resources to handle your peak load times. When the load is light, you are potentially paying for infrastructure you're not using. Serverless computing helps solve the allocation problem by scaling up or down automatically, and you're only billed when your function is processing work.
+Si supponga di aver eseguito il provisioning di server delle macchine virtuali e di averli configurati con risorse sufficienti a gestire i picchi del carico. Quando il carico diminuisce, l'utente paga potenzialmente per un'infrastruttura che non usa. Grazie al ridimensionamento automatico, l'elaborazione serverless contribuisce a risolvere il problema dell'assegnazione. Vengono così addebitate solo le funzioni in esecuzione.
 
-### Stateless logic
+### <a name="stateless-logic"></a>Logica senza stato
 
-Stateless functions are great candidates for serverless compute; function instances are created and destroyed on demand. If state is required, it can be stored in an associated storage service.
+Le funzioni senza stato sono particolarmente adatte all'elaborazione senza server, in quanto le istanze della funzione vengono create ed eliminate su richiesta. Se lo stato è necessario, può essere archiviato in un servizio di archiviazione associato.
 
-### Event driven
+### <a name="event-driven"></a>Basate su eventi
 
-Functions are _event driven_. This means they run only in response to an event (called a "trigger"), such as receiving an HTTP request, or a message being added to a queue. You configure a trigger as part of the function definition. This approach simplifies your code by allowing you to declare where the data comes from (trigger/input binding) and where it goes (output binding). You don't need to write code to watch queues, blobs, hubs, etc. You can focus purely on the business logic.
+Le funzioni sono _basate su eventi_. Ciò significa che vengono eseguite solo in risposta a un evento (detto "trigger"), ad esempio la ricezione di una richiesta HTTP o un messaggio da aggiungere a una coda. Il trigger viene configurato come parte della definizione di funzione. Questo approccio semplifica notevolmente il codice consentendo di dichiarare la provenienza dei dati (associazione di trigger/input) e la loro destinazione (associazione di output). Non è necessario scrivere codice per osservare code, BLOB, hub e così via e l'utente può concentrarsi esclusivamente sulla logica di business.
 
-### Functions can be used in traditional compute environments
+### <a name="functions-can-be-used-in-traditional-compute-environments"></a>Le funzioni possono essere usate negli ambienti di calcolo tradizionale
 
-Functions are a key component of serverless computing, but they are also a general compute platform for executing any type of code. Should the needs of your app change, you can take your project and deploy it in a non-serverless environment, which gives you the flexibility to manage scaling, run on virtual networks, and even completely isolate your functions.
+Le funzioni sono un componente fondamentale dell'elaborazione serverless, ma sono anche una piattaforma di calcolo generale per l'esecuzione di qualsiasi tipo di codice. Qualora le esigenze della vostra applicazione dovessero cambiare, sarà possibile prendere il proprio progetto e distribuirlo in un ambiente non serverless, che offra la flessibilità di gestirne il ridimensionamento, eseguirlo su reti virtuali e persino isolare completamente le proprie funzioni.
 
-## Drawbacks of a serverless compute solution
+## <a name="drawbacks-of-a-serverless-compute-solution"></a>Svantaggi di una soluzione di calcolo serverless
 
-Serverless compute will not always be the appropriate solution to hosting your business logic. Here are a few characteristics of functions that may affect your decision to host your services in serverless compute.
+L'elaborazione serverless non è sempre la soluzione appropriata per l'hosting della logica di business. Di seguito vengono illustrate alcune caratteristiche di funzioni che possono influenzare la decisione di ospitare i servizi usando l'elaborazione serverless. 
 
-### Execution time
+### <a name="execution-time"></a>Tempo di esecuzione
 
-By default, functions have a timeout of 5 minutes. This timeout is configurable to a maximum of 10 minutes. If your function requires more than 10 minutes to execute, you can host it on a VM. Additionally, if your service is initiated through an HTTP request and you expect that value as an HTTP response, the timeout is further restricted to 2.5 minutes. Finally, there's also an option called **Durable Functions** that allows you to orchestrate the executions of multiple functions without any timeout.
+Per impostazione predefinita, le funzioni hanno un timeout di 5 minuti, configurabile fino a un massimo di 10 minuti. Se l'esecuzione della funzione richiede più di 10 minuti, è possibile ospitarla su una macchina virtuale. Se, inoltre, il servizio viene avviato da una richiesta HTTP e si prevede tale valore come risposta HTTP, il timeout viene ulteriormente ridotto a 2,5 minuti. Infine, è inoltre disponibile un'opzione denominata **Durable Functions** che consente di orchestrare le esecuzioni di più funzioni senza alcun timeout.
 
-### Execution frequency
+### <a name="execution-frequency"></a>Frequenza di esecuzione
 
-The second characteristic is execution frequency. If you expect your function to be executed continuously by multiple clients, it would be prudent to estimate the usage and calculate the cost of using functions accordingly. It might be cheaper to host your service on a VM.
+Il secondo aspetto da valutare è la frequenza di esecuzione. Se si prevede che la funzione venga eseguita in modo continuo da più client, è opportuno stimarne l'utilizzo e calcolare il costo che deriva dall'uso delle funzioni. Ospitare il servizio in una macchina virtuale potrebbe essere più conveniente.
 
-While scaling, only one function app instance can be created every 10 seconds, for up to 200 total instances. Keep in mind, each instance can service multiple concurrent executions, so there is no set limit on how much traffic a single instance can handle. Different types of triggers have different scaling requirements, so research your choice of trigger and investigate its limits.
+Durante il ridimensionamento è possibile creare solo un'istanza dell'app per le funzioni ogni 10 secondi, per un massimo di 200 istanze totali. Tenere presente che ogni istanza può prevedere più esecuzioni simultanee, pertanto non esiste alcun limite per quanto riguarda il traffico che una singola istanza può gestire. Tipi di trigger diversi presentano requisiti di ridimensionamento diversi; è consigliabile quindi valutare la gamma di trigger disponibili e analizzarne i limiti.
+
+

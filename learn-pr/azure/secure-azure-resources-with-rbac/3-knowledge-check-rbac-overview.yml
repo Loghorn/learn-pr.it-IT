@@ -1,52 +1,54 @@
 ### YamlMime:ModuleUnit
 uid: learn.secure-azure-resources-with-rbac.3-knowledge-check-rbac-overview
 metadata:
-  title: Knowledge check - What is RBAC?
-  description: Knowledge check - What is RBAC?
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
-title: Knowledge check - What is RBAC?
+  title: Verifica delle conoscenze - cosa si intende per controllo degli accessi in base al ruolo?
+  description: Verifica delle conoscenze - cosa si intende per controllo degli accessi in base al ruolo?
+  displayType: one-column
+  ms.openlocfilehash: 973a839a37cfc03f3078519642d2216d4983ef15
+  ms.sourcegitcommit: 850ce909966600e7a8d6f89d8bdebbb621416838
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/03/2018
+  ms.locfileid: "43478878"
+title: Verifica delle conoscenze - cosa si intende per controllo degli accessi in base al ruolo?
 durationInMinutes: 3
+content: Verifica delle conoscenze - cosa si intende per controllo degli accessi in base al ruolo?
 quiz:
-  title: Knowledge check - What is RBAC?
+  title: Verifica delle conoscenze - cosa si intende per controllo degli accessi in base al ruolo?
   questions:
-  - content: 'A role in Azure is a collection of permissions.'
+  - content: In Azure un ruolo è una raccolta di autorizzazioni.
     choices:
-    - content: 'True'
+    - content: Vero
       isCorrect: true
-      correctExplanation: Correct! A role in Azure is a collection of permissions with a name that you can assign to a user, group, or application.
-    - content: 'False'
+      correctExplanation: Corretto! In Azure un ruolo è una raccolta di autorizzazioni con un nome che è possibile assegnare a un utente, a un gruppo o a un'applicazione.
+    - content: Falso
       isCorrect: false
-      incorrectExplanation: A role in Azure is a collection of permissions with a name that you can assign to a user, group, or application.
-  - content: 'What are the three elements that make up a role assignment?'
+      incorrectExplanation: In Azure un ruolo è una raccolta di autorizzazioni con un nome che è possibile assegnare a un utente, a un gruppo o a un'applicazione.
+  - content: Quali sono i tre elementi che costituiscono un'assegnazione di ruolo?
     choices:
-    - content: User, group, and application
+    - content: Utente, gruppo e applicazione
       isCorrect: false
-      correctExplanation: User, group, and application are security principals.
-    - content: Security principal, role, and scope
+      correctExplanation: Utente, gruppo e applicazione sono entità di sicurezza.
+    - content: Entità di sicurezza, ruolo e ambito
       isCorrect: true
-      incorrectExplanation: Correct! A role assignment is the process of binding a role to a security principal at a particular scope for the purpose of granting access.
-    - content: Management group, subscription, and resource group
+      incorrectExplanation: Corretto! Un'assegnazione di ruolo è il processo di associazione di un ruolo a un'entità di sicurezza in un particolare ambito ai fini della concessione dell'accesso.
+    - content: Gruppo di gestione, sottoscrizione e gruppo di risorse
       isCorrect: false
-      correctExplanation: Management group, subscription, and resource group are ways to organize your Azure resources and represent scopes.
-    - content: Owner, Contributor, and Reader
+      correctExplanation: Gruppo di gestione, sottoscrizione e gruppo di risorse costituiscono le modalità con cui organizzare le risorse di Azure e rappresentano gli ambiti.
+    - content: Proprietario, collaboratore e lettore
       isCorrect: false
-      correctExplanation: Owner, Contributor, and Reader are built-in roles in Azure.
-  - content: 'What is the inheritance order for scope in Azure?'
+      correctExplanation: Proprietario, collaboratore e lettore sono ruoli predefiniti in Azure.
+  - content: Qual è l'ordine di ereditarietà per l'ambito in Azure?
     choices:
-    - content: Management group, resource group, subscription, resource
+    - content: Gruppo di gestione, gruppo di risorse, sottoscrizione, risorsa
       isCorrect: false
-      correctExplanation: This is not the correct order.
-    - content: Management group, subscription, resource group, resource
+      correctExplanation: L'ordine non è corretto.
+    - content: Gruppo di gestione, sottoscrizione, gruppo di risorse, risorsa
       isCorrect: true
-      incorrectExplanation: Correct!
-    - content: Subscription, management group, resource group, resource
+      incorrectExplanation: Corretto!
+    - content: Sottoscrizione, gruppo di gestione, gruppo di risorse, risorsa
       isCorrect: false
-      correctExplanation: This is not the correct order.
-    - content: Subscription, resource group, management group, resource
+      correctExplanation: L'ordine non è corretto.
+    - content: Sottoscrizione, gruppo di risorse, gruppo di risorse, risorsa
       isCorrect: false
-      correctExplanation: This is not the correct order.
+      correctExplanation: L'ordine non è corretto.

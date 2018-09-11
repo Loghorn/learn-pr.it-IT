@@ -1,38 +1,35 @@
-Now that your Azure SQL database is up and running, you can connect it to your favorite SQL Server management tool to populate it with real data.
+Ora che il database SQL di Azure è operativo, è possibile connetterlo al proprio strumento di gestione di SQL Server preferito per popolarlo con dati reali.
 
-You initially considered whether to run your database on-premises or in the cloud. With Azure SQL Database, you configure a few basic options and you have a fully functional SQL database that you can connect to your apps.
+Inizialmente è stato valutato se eseguire il database in locale o nel cloud. Con il database SQL di Azure è possibile configurare alcune opzioni di base per disporre di un database SQL completamente funzionale da connettere alle app.
 
-There's no infrastructure or software patches to maintain. You're now free to focus more on getting your transportation logistics app prototype up and running and less on database administration. Your prototype won't be a throw-away demo, either. Azure SQL Database provides production-level security and performance features.
+Non vi sono infrastrutture o patch software da gestire. È quindi possibile concentrarsi sul prototipo di app di logistica per i trasporti, invece di preoccuparsi dell'amministrazione del database. Il prototipo non verrà usato solo a scopo dimostrativo. Il database SQL di Azure fornisce funzionalità di sicurezza e prestazioni a livello di produzione.
 
-Remember that each Azure SQL logical server contains one or more databases. Azure SQL Database provides two pricing models, DTU and vCore, to help you balance cost versus performance across all your databases.
+Tenere presente che ogni server logico SQL di Azure contiene uno o più database. Il database SQL di Azure offre due modelli di prezzi, DTU e vCore, che consentono di bilanciare costi e prestazioni tra tutti i database.
 
-Choose DTU if you're just getting started or want a simple, preconfigured buying option. Choose vCore when you want greater control over what compute and storage resources you create and pay for.
+Se si sta iniziando o si vuole un'opzione di acquisto semplice e preconfigurata, scegliere il modello DTU. Se si vuole maggiore controllo sulle risorse di calcolo e archiviazione create e per cui vengono effettuati pagamenti, scegliere il modello vCore.
 
-Azure Cloud Shell makes it easy to start working with your databases. From Cloud Shell, you have access to the Azure CLI, which enables you to get information about your Azure resources. Cloud Shell also provides many other common utilities, such as `sqlcmd`, to help you start working right away with your new database.
+Cloud Shell rende più semplice iniziare a lavorare con i database. Da Cloud Shell è possibile accedere all'interfaccia della riga di comando di Azure, che consente di ottenere informazioni sulle risorse di Azure. Cloud Shell fornisce anche molte altre utilità comuni, come `sqlcmd`, che consentono di iniziare subito a lavorare con il nuovo database.
 
-## Clean up
+## <a name="cleanup"></a>Pulizia
 
-<!---TODO: Update for sandbox?--->
+È possibile sperimentare le varie funzionalità con l'installazione del database SQL di Azure. Al termine, il modo più semplice per eliminare il database consiste nell'eliminare il gruppo di risorse padre.
 
-Feel free to experiment more with your Azure SQL Database installation. When you're done, the easiest way to delete your database is to delete its parent resource group.
+1. Nel portale fare clic su **Gruppi di risorse**.
+1. Selezionare **logistics-db-rg**.
+1. Fare clic su **Elimina gruppo di risorse**.
 
-1. From the portal, click **Resource groups**.
+    ![Eliminazione del gruppo di risorse](../media-draft/delete-rg.png)
+1. Al prompt, digitare "logistics-db-rg" e fare clic su **Elimina**.
 
-1. Select **logistics-db-rg**.
+## <a name="additional-resources"></a>Risorse aggiuntive
 
-1. Click **Delete resource group**.
+La documentazione fornisce molte altre informazioni, inclusi esercitazioni ed esempi. Ecco alcuni collegamenti relativi agli argomenti descritti in questo documento:
 
-1. At the prompt, type "logistics-db-rg" and click **Delete**.
+* [Documentazione sul database SQL di Azure](https://docs.microsoft.com/en-us/azure/sql-database/)
+* [Modelli di acquisto e risorse del database SQL di Azure](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-service-tiers)
+* [Server logici del database SQL di Azure e loro gestione](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-logical-servers)
+* [Regole firewall per il database SQL di Azure e SQL Data Warehouse](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-firewall-configure)
 
-## Additional resources
+Per altre informazioni su Cloud Shell, vedere [Panoramica di Azure Cloud Shell](https://docs.microsoft.com/en-us/azure/cloud-shell/overview).
 
-The documentation provides lots more information, including tutorials and samples. Here are a few links to what we covered here:
-
-- [Azure SQL Database documentation](https://docs.microsoft.com/azure/sql-database/)
-- [Azure SQL Database purchasing models and resources](https://docs.microsoft.com/azure/sql-database/sql-database-service-tiers)
-- [Azure SQL Database logical servers and their management](https://docs.microsoft.com/azure/sql-database/sql-database-logical-servers)
-- [Azure SQL Database and SQL Data Warehouse firewall rules](https://docs.microsoft.com/azure/sql-database/sql-database-firewall-configure)
-
-To learn more about Cloud Shell, see [Overview of Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview).
-
-If you're interested in learning more about the `sqlcmd` utility, see [sqlcmd Utility](https://docs.microsoft.com/sql/tools/sqlcmd-utility?view=sql-server-2017).
+Per altre informazioni sull'utilità `sqlcmd`, vedere [Utilità sqlcmd](https://docs.microsoft.com/en-us/sql/tools/sqlcmd-utility?view=sql-server-2017).

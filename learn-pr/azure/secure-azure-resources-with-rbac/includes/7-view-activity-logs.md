@@ -1,44 +1,44 @@
-First Up Consultants reviews role-based access control (RBAC) changes quarterly for auditing and troubleshooting purposes. You know that changes get logged in [Azure Activity Log](/azure/monitoring-and-diagnostics/monitoring-overview-activity-logs). Your manager has asked if you can generate a report of the role assignment and custom role changes for the last month.
+First Up Consultants esamina le modifiche trimestrali al controllo degli accessi in base al ruolo (RBAC) per scopi di controllo e risoluzione dei problemi. È noto che le modifiche vengono registrate nel [Log attività di Azure](/azure/monitoring-and-diagnostics/monitoring-overview-activity-logs). Il gestore ha chiesto se è possibile generare un report delle assegnazione di ruolo e delle modifiche di ruolo personalizzate per il mese scorso.
 
-## View activity logs
+## <a name="view-activity-logs"></a>Visualizzare i log attività
 
-The easiest way to get started is to view the activity logs with the Azure portal.
+Il modo più semplice per iniziare è visualizzare i log attività con il portale di Azure.
 
-1. Click **All services** and then find **Activity log**.
+1. Fare clic su **Tutti i servizi** e quindi trovare **Log attività**.
 
-    ![Activity logs using the portal](../media-draft/7-all-services-activity-log.png)
+    ![Log attività tramite il portale](../media-draft/7-all-services-activity-log.png)
 
-1. Click **Activity log**.
+1. Fare clic su **Log attività**.
 
-    ![Activity logs using the portal](../media-draft/7-activity-log-portal.png)
+    ![Log attività tramite il portale](../media-draft/7-activity-log-portal.png)
 
-1. Set the **Timespan** filter to **Last month**.
+1. Impostare il **Timespan** e filtrare in base a **Mese scorso**.
 
-1. Set the **Event category** filter to **Administrative**.
+1. Impostare la **Categoria di eventi** e filtrare in base a **Amministrativo**.
 
-1. In the **Operation** filter, type **role** to filter the list.
+1. Nel filtro **Operazione**, digitare **Ruolo** per filtrare l'elenco.
 
-1. Select the following RBAC operations:
+1. Selezionare le operazioni di RBAC seguenti:
 
-    - Create role assignment (roleAssignments)
-    - Delete role assignment (roleAssignments)
-    - Create or update custom role definition (roleDefinitions)
-    - Delete custom role definition (roleDefinitions)
+    - Creare assegnazione del ruolo (roleAssignments)
+    - Eliminare assegnazione del ruolo (roleAssignments)
+    - Creare o aggiornare la definizione del ruolo personalizzata (roleDefinitions)
+    - Eliminare la definizione del ruolo personalizzata (roleDefinitions)
 
-    ![Operation filter](../media-draft/7-operation-filter.png)
+    ![Filtro di operazione](../media-draft/7-operation-filter.png)
 
-1. Click **Apply** to apply your filters.
+1. Fare clic su **Applica** per applicare i filtri.
 
-    You'll see all the role assignment and role definition operations for the last month. It also includes a link to download the activity log as a CSV file.
+    Verranno visualizzate tutte le operazioni di definizione e assegnazione del ruolo nell'ultimo mese. Include un collegamento per scaricare i log attività in un file in formato CSV.
 
-    ![RBAC activity logs](../media-draft/7-activity-log-portal-filter.png)
+    ![Log attività di controllo degli accessi in base al ruolo](../media-draft/7-activity-log-portal-filter.png)
 
-## End lab
+## <a name="end-lab"></a>Fine del laboratorio
 
-1. To end the lab, click the hamburger menu in the upper-right corner of this window and then click **End**.
+1. Per terminare il laboratorio, fare clic sul menu Hamburger nell'angolo superiore destro di questa finestra e quindi fare clic su **Fine**.
 
-1. Click **Yes, end my lab**.
+1. Fare clic su **Sì, terminare il laboratorio**.
 
-## Summary
+## <a name="summary"></a>Riepilogo
 
-In this unit, you learned how to use Azure Activity Log to list RBAC changes in the portal and generate a simple report.
+In questa unità è stato illustrato come usare il log attività di Azure per elencare le modifiche apportate al controllo degli accessi in base al ruolo nel portale e come generare un report semplice.

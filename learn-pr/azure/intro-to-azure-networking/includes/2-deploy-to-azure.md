@@ -1,77 +1,64 @@
-Your first step will likely be to re-create your on-premises configuration in the cloud.
+La prima operazione sarà probabilmente ricreare la configurazione locale nel cloud.
 
-This basic configuration will give you a sense of how networks are configured, and how network traffic moves in and out of Azure.
+Questa configurazione di base offre un'idea di come vengono configurate le reti e come il traffico di rete entra ed esce da Azure.
 
-## Your e-commerce site at a glance
+## <a name="your-e-commerce-site-at-a-glance"></a>Riepilogo del sito di e-commerce
 
-Larger enterprise systems are often composed of multiple inter-connected applications and services that work together. You might have a front-end web system that takes displays inventory and allows customers to create an order. That might talk to a variety of web services to provide the inventory data, manage user profiles, process credit cards, and request fulfillment of processed orders.
+Un'[architettura a più livelli](https://docs.microsoft.com/en-us/azure/architecture/guide/architecture-styles/n-tier) consente di dividere un'applicazione in due o più livelli logici. Dal punto di vista dell'architettura, il livello superiore può accedere ai servizi da un livello inferiore, ma un livello inferiore non deve mai accedere a un livello superiore.
 
-There are several strategies and patterns employed by software architects and designers to make these complex systems easier to design, build, manage, and maintain. Let's look at a few of them, starting with _loosely coupled architectures_.
+I livelli consentono di separare le problematiche e idealmente sono progettati in modo da poter essere usati più volte. L'uso di un'architettura a più livelli semplifica anche la manutenzione, i livelli possono essere aggiornati o sostituiti in modo indipendente e, se necessario, si possono inserire nuovi livelli.
 
-### Benefits of a loosely coupled architecture
+_A tre livelli_ si riferisce a un'applicazione a più livelli che include tre livelli. L'applicazione Web di e-commerce segue questa architettura a tre livelli:
 
-<!-- TOOD: verify video -->
-> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE2yHrc]
+* Il **livello Web** rende disponibile agli utenti l'interfaccia Web in un browser
+* Il **livello applicazione** esegue la logica di business
+* Il **livello dati** include i database e altre risorse di archiviazione che contengono le informazioni sui prodotti e gli ordini dei clienti
 
-### Using an N-tier architecture
+Ecco un diagramma. Tracciare il flusso dall'utente al livello dati.
 
-An architectural pattern that can be used to build loosely coupled systems is _N-Tier_.
+![Un'app Web di base a tre livelli](../media-draft/three-tier.png)
 
-An [N-tier architecture](https://docs.microsoft.com/azure/architecture/guide/architecture-styles/n-tier) divides an application into two or more logical tiers. Architecturally, a higher tier can access services from a lower tier, but a lower tier should never access a higher tier.
+Quando l'utente fa clic sul pulsante per effettuare l'ordine, la richiesta viene inviata al livello Web, insieme all'indirizzo dell'utente e alle informazioni di pagamento. Il livello Web passa queste informazioni al livello applicazione per la convalida delle informazioni di pagamento e il controllo dell'inventario. Il livello applicazione può quindi archiviare l'ordine nel livello dati in modo da selezionarlo in un secondo tempo per evadere l'ordine.
 
-Tiers help separate concerns, and are ideally designed to be reusable. Using a tiered architecture also simplifies maintenance. Tiers can be updated or replaced independently, and new tiers can be inserted if needed.
+## <a name="your-e-commerce-site-running-on-azure"></a>Il sito di e-commerce in esecuzione in Azure
 
-_Three-tier_ refers to an n-tier application that has three tiers. Your e-commerce web application follows this three-tier architecture:
+Azure offre diversi modi per ospitare le applicazioni Web, da ambienti completamente preconfigurati che ospitano il codice per le macchine virtuali configurate, personalizzate e gestite dall'utente.
 
-* The **web tier** provides the web interface to your users through a browser.
-* The **application tier** runs business logic.
-* The **data tier** includes databases and other storage that hold product information and customer orders.
+Si supponga di scegliere di eseguire il sito di e-commerce in macchine virtuali. Di seguito è riportato un esempio di ciò che potrebbe apparire nell'ambiente di test in esecuzione in Azure.
 
-The following illustration shows the flow of request from the user to the data tier.
+![Un'app Web di base a tre livelli in esecuzione in Azure](../media-draft/test-deployment.png)
 
-![An illustration showing a three-tier architecture where each tier is hosted in a dedicated virtual machine.](../media/2-three-tier.png)
+L'app si può scomporre come segue.
 
-When the user clicks the button to place the order, the request is sent to the web tier, along with the user's address and payment information. The web tier passes this information to the application tier, which would validate payment information and check inventory. The application tier might then store the order in the data tier, to be picked up later for fulfillment.
+## <a name="what-is-an-azure-region"></a>Informazioni sull'area di Azure
 
-## Your e-commerce site running on Azure
+Un'_area_ è un data center di Azure in un'area geografica specifica. Stati Uniti orientali, Stati Uniti occidentali ed Europa settentrionale sono esempi di aree. Come si può notare, l'applicazione viene eseguita nell'area Stati Uniti orientali.
 
-Azure provides many different ways to host your web applications, from fully pre-configured environments that host your code, to virtual machines that you configure, customize, and manage.
+## <a name="what-is-a-virtual-network"></a>Informazioni sulla rete virtuale
 
-Let's say you choose to run your e-commerce site on virtual machines. Here's what that might look like in your test environment running on Azure. The following illustration shows a three-tier architecture running on virtual machines with security features enabled to restrict inbound requests. 
+Una _rete virtuale_ è una rete isolata logicamente in Azure. L'utente avrà dimestichezza con le reti virtuali di Azure se ha configurato le reti in Hyper-V, VMware o anche in altri cloud pubblici.
 
-![An illustration showing a three-tier architecture where each tier is running on a separate virtual machine. Each virtual machine is labelled with its IP address and is inside its own virtual network. Each virtual network has a network security group that lists the open ports.](../media/2-test-deployment.png)
+Ogni livello Web, applicazione e dati ha un'unica macchina virtuale. Ogni macchina virtuale appartiene a una rete virtuale.
 
-Let's break this down.
+Gli utenti interagiscono con il livello Web direttamente, quindi la macchina virtuale ha un indirizzo IP pubblico. Gli utenti non interagiscono con i livelli dati o applicazione. Quindi queste macchine virtuali hanno un indirizzo IP privato.
 
-### What is an Azure region?
+I data center di Azure gestiscono l'hardware fisico per l'utente. Le reti virtuali si configurano usando il software, che consente di gestire una rete virtuale esattamente come la propria rete. Ad esempio, è possibile suddividere una rete virtuale in subnet per controllare meglio il modo in cui la rete assegna gli indirizzi IP. È anche possibile scegliere quali altre reti può raggiungere la rete virtuale, se la rete Internet pubblica o altre reti nello spazio indirizzi IP privato.
 
-A _region_ is an Azure data center within a specific geographic location. East US, West US, and North Europe are examples of regions. You see that the application is running in the East US region.
+### <a name="whats-a-network-security-group"></a>Informazioni sul gruppo di sicurezza di rete
 
-### What is a virtual network?
+Un _gruppo di sicurezza di rete_, o NSG, consente o nega il traffico di rete in ingresso alle risorse di Azure. Un gruppo di sicurezza di rete può essere paragonato a un firewall a livello cloud per la rete.
 
-A _virtual network_ is a logically isolated network on Azure. Azure virtual networks will be familiar to you if you’ve set up networks on Hyper-V, VMware, or even on other public clouds.
-
-The web, application, and data tiers each have a single VM. Each VM belongs to a virtual network.
-
-Users interact with the web tier directly, so that VM has a public IP address. Users don't interact with the application or data tiers. So these VMs each have a private IP address.
-
-Azure data centers manage the physical hardware for you. You configure virtual networks through software, which enables you to treat a virtual network just like your own network. For example, you can divide a virtual network into subnets to better control how the network assigns IP addresses. You also choose which other networks your virtual network can reach, whether that’s the public internet or other networks in the private IP address space.
-
-### What's a network security group?
-
-A _network security group_, or NSG, allows or denies inbound network traffic to your Azure resources. Think of a network security group as a cloud-level firewall for your network.
-
-For example, notice that the VM in the web tier allows inbound traffic on ports 22 (SSH) and 80 (HTTP). Each network security group here allows traffic from all sources. You can configure a network security group to accept traffic only from known sources, such as IP addresses that you trust.
+Si può notare ad esempio che la macchina virtuale nel livello Web consente il traffico in ingresso sulle porte 22 (SSH) e 80 (HTTP). Ogni gruppo di sicurezza di rete qui consente il traffico da tutte le origini. È possibile configurare un gruppo di sicurezza di rete per accettare il traffico solo da origini note, ad esempio gli indirizzi IP considerati attendibili.
 
 > [!NOTE]
-> Port 22 enables you to connect directly to Linux systems over SSH. Here we show port 22 open for learning purposes. In practice, you might configure VPN access to your virtual network to increase security.
+> La porta 22 consente di connettersi direttamente ai sistemi Linux con SSH. Di seguito è illustrata la porta 22 aperta ai fini dell'apprendimento. In pratica, è possibile configurare l'accesso VPN alla rete virtuale per avere una maggiore protezione.
 
-## Summary
+## <a name="summary"></a>Riepilogo
 
-Your three-tier application is now running on Azure in the East US region. A _region_ is an Azure data center within a specific geographic location.
+L'applicazione a tre livelli è ora in esecuzione in Azure nell'area Stati Uniti orientali. Un'_area_ è un data center di Azure in un'area geografica specifica.
 
-Each tier can access services only from a lower tier. The VM running in the web tier has a public IP address because it receives traffic from the internet. The VMs in the lower tiers, the application and data tiers, each have private IP addresses because they don't communicate directly over the internet.
+Ogni livello può accedere ai servizi solo da un livello inferiore. La macchina virtuale in esecuzione nel livello Web ha un indirizzo IP pubblico poiché riceve il traffico da Internet. Le macchine virtuali nei livelli inferiori sono i livelli applicazione e dati e hanno tutte indirizzi IP privati perché non comunicano direttamente su Internet.
 
-_Virtual networks_ enable you to group and isolate related systems. You define _network security groups_ to control what traffic can flow through a virtual network.
+Le _reti virtuali_ consentono di raggruppare e isolare i sistemi correlati. Si definiscono i _gruppi di sicurezza di rete_ per stabilire quale traffico può passare attraverso una rete virtuale.
 
-The configuration you saw here is a good start. But when you deploy your e-commerce site to production in the cloud, you'll likely run into the same problems as you did in your on-premises deployment.
+La configurazione illustrata qui è un buon punto di partenza. Ma quando si distribuisce il sito di e-commerce nell'ambiente di produzione nel cloud, è probabile che si incontrino gli stessi problemi incontrati nella distribuzione a livello locale.

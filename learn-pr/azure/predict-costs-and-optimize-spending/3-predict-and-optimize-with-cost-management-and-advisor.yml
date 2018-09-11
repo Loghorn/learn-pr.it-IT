@@ -1,37 +1,34 @@
 ### YamlMime:ModuleUnit
 uid: learn.predict-costs-and-optimize-spending.3-predict-and-optimize-with-cost-management-and-advisor
-title: Predict and optimize with Cost Management and Azure Advisor
+title: Stimare e ottimizzare con Gestione costi e Azure Advisor
 metadata:
-  title: Predict and optimize with Cost Management and Azure Advisor 
-  description: In this unit, we'll discuss how to predict and optimize with Cost Management and Azure Advisor
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
+  title: Stimare e ottimizzare con Gestione costi e Azure Advisor
+  description: In questa unità verrà illustrato come stimare e ottimizzare con Gestione costi e Azure Advisor
+  ms.openlocfilehash: b49ee199391539f75bcea8cc1044d6df92e20f50
+  ms.sourcegitcommit: 81cb0c300be030565fb0b7c5b57413c4a2aa5410
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 08/28/2018
+  ms.locfileid: "43141569"
 durationInMinutes: 15
-# TODO: Consider Azure Portal Interactivity, but quiz will have to be removed
-# interactive: azure-portal
-azureSandbox: true
-content: |
+content: >
   [!include[](includes/3-predict-and-optimize-with-cost-management-and-advisor.md)]
 quiz:
-    title: Predict and optimize with Cost Management and Azure Advisor 
-    questions:
-    - content: "Azure Advisor provides recommendations on cost only."
-      choices:
-      - content: "True"
-        incorrectExplanation: "Azure Advisor provides recommendations on high availability, security, performance, and cost."
-        isCorrect: false
-      - content: "False"
-        correctExplanation: "Azure Advisor provides recommendations on high availability, security, performance, and cost."
-        isCorrect: true
-    - content: "Azure Cost Management allows you to _________."
-      choices:
-      - content: "See historical breakdowns of what services you are spending your money on."
-        correctExplanation: "Cost Management analyzes where you are historically spending your money and can track it against budgets you have set."
-        isCorrect: true
-      - content: "See estimates of what your services might cost if you make a change."
-        incorrectExplanation: "To see cost estimates, you use the Azure pricing calculator. Cost Management analyzes where you are historically spending your money and can track it against budgets you have set."
-        isCorrect: false
+  title: Stimare e ottimizzare con Gestione costi e Azure Advisor
+  questions:
+  - content: Azure Advisor fornisce consigli solamente sui costi.
+    choices:
+    - content: Vero
+      incorrectExplanation: Azure Advisor offre indicazioni sulla disponibilità elevata, sicurezza, prestazioni e costi.
+      isCorrect: false
+    - content: Falso
+      correctExplanation: Azure Advisor offre indicazioni sulla disponibilità elevata, sicurezza, prestazioni e costi.
+      isCorrect: true
+  - content: Gestione costi di Azure consente di _________.
+    choices:
+    - content: Vedere i dettagli cronologici dei servizi per i quali si sta spendendo denaro.
+      correctExplanation: Gestione costi analizza le tendenze di spesa ed è in grado di confrontarle con i budget impostati.
+      isCorrect: true
+    - content: Vedere le stime dei costi dei servizi in caso vengano apportate modifiche.
+      incorrectExplanation: Usare il Calcolatore prezzi di Azure per stimare i costi. Gestione costi analizza le tendenze di spesa ed è in grado di confrontarle con i budget impostati.
+      isCorrect: false

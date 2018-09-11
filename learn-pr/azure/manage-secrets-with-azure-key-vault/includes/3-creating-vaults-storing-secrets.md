@@ -1,60 +1,59 @@
-## Creating Key Vaults for your applications
+## <a name="creating-key-vaults-for-your-applications"></a>Creazione di insiemi di credenziali delle chiavi per le applicazioni
 
-Good practice is to create a separate vault for each deployment environment of each of your applications, such as development, test, and production. It's possible to use vaults to share secrets across multiple apps, but the impact of an attacker gaining read access to a vault increases with the number of secrets in the vault.
-
-> [!TIP]
-> If you use the same names for secrets across different environments for an application, the only environment-specific configuration that has to change in your app is the vault URL.
-
-Creating a vault requires no initial configuration. Your user identity is automatically granted the full set of secret management permissions and you can start adding secrets immediately. Once you have a vault, adding and managing secrets can be done from any Azure administrative interface, including the Azure portal, the Azure CLI, and Azure PowerShell. When you set up your application to use the vault, you'll need to assign the correct permissions to it; we'll see that in the next unit.
-
-## Vault authentication and permissions
-
-Azure Key Vault's API uses Azure Active Directory to authenticate users and applications. Vault access policies are based on *actions*, and are applied across an entire vault. For example, an application with **Get** (read secret values), **List** (list names of all secrets), and **Set** (create or update secret values) permissions to a vault is able to create secrets, list all secret names, and get and set all secret values in that vault.
-
-*All* actions performed on a vault require authentication and authorization &mdash; there is no way to grant any kind of anonymous access.
+È consigliabile creare un insieme di credenziali separato per ogni ambiente di distribuzione, ad esempio sviluppo, test e produzione, in ogni applicazione. È possibile usare gli insiemi di credenziali per condividere segreti tra le app. Tuttavia, se un utente malintenzionato ottiene l'accesso in lettura a un insieme di credenziali, l'impatto è proporzionale al numero di segreti nell'insieme di credenziali.
 
 > [!TIP]
-> When granting vault access to developers and apps, grant only the minimum set of permissions needed. Permissions restrictions help avoid accidents caused by code bugs and reduce the impact of stolen credentials or malicious code injected into your app.
+> Se si usano gli stessi nomi per i segreti nei diversi ambienti di un'applicazione, l'unica configurazione specifica dell'ambiente da modificare nell'app è l'URL dell'insieme di credenziali.
 
-Developers will usually only need **Get** and **List** permissions to a development-environment vault. A lead or senior developer will need full permissions to the vault to change and add secrets when necessary. Full permissions to production-environment vaults are typically reserved for senior operations staff.
+Per creare un insieme di credenziali non è necessaria alcuna configurazione iniziale. All'identità utente viene automaticamente concesso il set completo di autorizzazioni per la gestione dei segreti e si può iniziare ad aggiungere segreti immediatamente. Quando si ha un insieme di credenziali, l'aggiunta e la gestione dei segreti possono essere eseguite da qualsiasi interfaccia amministrativa di Azure, come il portale di Azure, l'interfaccia della riga di comando di Azure e Azure PowerShell. Quando si configura l'applicazione per l'uso dell'insieme di credenziali, è necessario assegnare le autorizzazioni corrette. Questo verrà illustrato nell'unità successiva.
 
-For apps, typically only **Get** permissions are required. Some apps may require **List** depending on the way the app is implemented. The app we'll implement in this module's exercise requires the **List** permission because of the technique it uses to read secrets from the vault.
+## <a name="vault-authentication-and-permissions"></a>Autenticazione e autorizzazioni per gli insiemi di credenziali
 
-## Exercise
+Per l'autenticazione degli utenti e delle applicazioni, l'API di Azure Key Vault usa Azure Active Directory. I criteri di accesso agli insiemi di credenziali sono basati su *azioni* e vengono applicati in un intero insieme di credenziali. Ad esempio, un'applicazione con autorizzazioni **Get** (per leggere i valori dei segreti), **List** (per elencare i nomi di tutti i segreti) e **Set** (per creare o aggiornare i valori dei segreti) per un insieme di credenziali può creare segreti, elencare i nomi di tutti i segreti e recuperarne e impostarne i valori in tale insieme di credenziali.
 
-Given all the trouble the company's been having with application secrets, management has asked you to create a small starter app to set the other developers on the right path. The app needs to demonstrate best practices for managing secrets as simply and securely as possible.
+Per *tutte* le azioni eseguite su un insieme di credenziali sono necessarie l'autenticazione e l'autorizzazione. Non è possibile concedere alcun tipo di accesso anonimo.
 
-To start, you'll create a vault and store one secret.
+> [!TIP]
+> Quando si concede l'accesso all'insieme di credenziali a sviluppatori e app, concedere solo il set di autorizzazioni minimo necessario. Le limitazioni delle autorizzazioni consentono di evitare gli incidenti causati da bug nel codice e di ridurre l'impatto del furto di credenziali o dell'inserimento di codice dannoso nell'app.
 
-### Create a resource group
-<!---TODO: Update for sandbox?--->
+Per un insieme di credenziali dell'ambiente di sviluppo, per gli sviluppatori sono in genere sufficienti le autorizzazioni **Get** e **List**. Un responsabile o uno sviluppatore senior dovrà avere autorizzazioni complete per l'insieme di credenziali per modificare e aggiungere i segreti quando necessario. Le autorizzazioni complete per gli insiemi di credenziali dell'ambiente di produzione sono in genere riservate al personale operativo senior.
 
-Create a resource group called `keyvault-exercise-group` for all of the resources In this unit. At the end of this module, we'll be deleting this resource group to cleanup everything at once. We'll use `eastus` as the location for everything In this unit.
+Per le app sono in genere sufficienti autorizzazioni **Get**. A seconda delle modalità di implementazioni delle app, per alcune potrebbero essere necessarie autorizzazioni **List**. A causa della tecnica usata per leggere i segreti dall'insieme di credenziali, l'app che verrà implementata nell'esercizio di questo modulo richiede l'autorizzazione **List**.
 
-Use the Azure Cloud Shell terminal on the right to run the following Azure CLI command. This will create the resource group in your subscription.
+## <a name="exercise"></a>Esercizio
+
+A causa di tutti i problemi verificatisi in azienda con i segreti delle applicazioni, i dirigenti hanno chiesto di creare una piccola app di base per indicare agli altri sviluppatori il percorso corretto. L'app deve illustrare le procedure consigliate per gestire i segreti nel modo più semplice e sicuro possibile.
+
+Per iniziare, si creerà un insieme di credenziali e si archivierà un segreto.
+
+### <a name="create-a-resource-group"></a>Creare un gruppo di risorse
+
+Creare un gruppo di risorse denominato `keyvault-exercise-group` per tutte le risorse di questo esercizio. Alla fine di questo modulo si eliminerà questo gruppo di risorse per eseguire la pulizia di tutte le risorse contemporaneamente. Come località si userà `eastus` per tutti gli elementi dell'esercizio.
+
+Usare il terminale Azure Cloud Shell a destra per eseguire questo comando dell'interfaccia della riga di comando di Azure. Verrà così creato il gruppo di risorse nella sottoscrizione.
 
 ```azurecli
 az group create --name keyvault-exercise-group --location eastus
 ```
 
-### Create the vault and store the secret in it
+### <a name="create-the-vault-and-store-the-secret-in-it"></a>Creare l'insieme di credenziali e archiviare il segreto
 
-Next, we'll create the vault and store our secret in it.
+Si creerà quindi l'insieme di credenziali e vi si archivierà il segreto.
 
-**Key Vault names must be globally unique, so you'll need to pick a unique name**. Vault names must be 3-24 characters long and contain only alphanumeric characters and dashes.
+**I nomi degli insiemi di credenziali delle chiavi devono essere univoci a livello globale. Sarà quindi necessario scegliere un nome univoco**. I nomi degli insiemi di credenziali devono avere una lunghezza compresa tra 3 e 24 caratteri e contenere solo caratteri alfanumerici e trattini.
 
 ```azurecli
 az keyvault create --name <your-unique-vault-name> --resource-group keyvault-exercise-group --location eastus
 ```
 
-When it finishes, you'll see JSON output describing the new vault.
+Al termine verrà visualizzato l'output JSON che descrive il nuovo insieme di credenziali.
 
-Now add the secret: our secret will be named **SecretPassword** with a value of **reindeer_flotilla**.
+Aggiungere quindi un segreto denominato **SecretPassword** con il valore **reindeer_flotilla**.
 
 ```azurecli
 az keyvault secret set --name SecretPassword --value reindeer_flotilla --vault-name <your-unique-vault-name>
 ```
 
-Make a note of the vault name &mdash; you'll be needing it again soon.
+Prendere nota del nome dell'insieme di credenziali, perché sarà presto nuovamente necessario.
 
-We'll write the code for our application shortly, but first we need to learn a little bit about how our app is going to authenticate to a vault.
+A breve si scriverà il codice per l'applicazione, ma è prima necessario apprendere come l'app eseguirà l'autenticazione a un insieme di credenziali.

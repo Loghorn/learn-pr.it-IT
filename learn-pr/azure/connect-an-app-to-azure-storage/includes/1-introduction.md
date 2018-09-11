@@ -1,10 +1,10 @@
-Imagine you're building a photo-sharing application. Every day, thousands of users take pictures and rely on your application to keep them safe and make them accessible across all their devices. Storing these photos is critical to your business, and you would like to ensure that the system used in your application is fast, reliable and secure. Ideally without you having to build all these aspects into the app.
+Si supponga di creare un'applicazione di condivisione foto. Ogni giorno migliaia di utenti scattano foto e usano l'applicazione per renderle accessibili e tenerle al sicuro. Le foto sono importanti e si vuole avere la certezza che il sistema di archiviazione usato sia rapido, affidabile e solido. Inoltre, il sistema deve essere anche del tutto sicuro e deve esserne stato eseguito un backup completo, senza dover conoscere o integrare tutti questi aspetti nel sistema di archiviazione. Il sistema deve semplicemente funzionare.
 
-Azure Storage provides such power, resiliency, and performance in the cloud. This module will provide you with the knowledge to be able to utilize the power of Azure Storage to achieve the reliability and performance in your app that you require. This knowledge can then be applied to any application.
+Archiviazione di Azure offre potenza, resilienza e prestazioni nel cloud. Questo modulo fornisce informazioni utili per poter sfruttare tutta la potenza di Archiviazione di Azure per ottenere l'affidabilità e le prestazioni necessarie per la propria app. Queste informazioni potranno quindi essere applicate a qualsiasi applicazione.
 
-## Learning objectives
-In this module, you will:
+## <a name="learning-objectives"></a>Obiettivi di apprendimento
+In questo modulo verrà descritto come:
 
-- Explore the data types and services supported by an Azure storage account
-- Create a new Azure storage account using the Azure portal
-- Create a new application and connect the app to an Azure Storage account.
+- Determinare se Archiviazione di Azure sia la scelta migliore per l'app
+- Valutare alcune considerazioni sulla progettazione quando si usa Archiviazione di Azure nell'app
+- Creare una nuova applicazione e connettere l'app a un account di archiviazione di Azure.

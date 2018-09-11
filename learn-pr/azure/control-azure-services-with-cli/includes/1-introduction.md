@@ -1,22 +1,19 @@
-The Azure portal is great for performing single tasks, and to see a quick overview of the state of your resources. But for tasks that need to be repeated daily, or even hourly, using the command line and a set of tested commands or scripts can help get your work done more quickly and avoid errors. 
+Il portale di Azure è ideale per l'esecuzione di singole attività e per avere una rapida panoramica dello stato delle risorse. Per le attività che devono essere ripetute ogni giorno, o anche ogni ora, l'uso della riga di comando e di un set di script o comandi testati può essere però utile per svolgere il proprio lavoro più rapidamente ed evitare errori. 
 
-Suppose you work at a company that develops Azure Web Apps. These are applications hosted in Azure, with all the benefits of automatically configured security, load balancing, management, and so on. You're currently testing a web app that generates sales forecasts, based on a range of inputs from different databases and other data sources. Your developers use Windows, Linux, and Mac computers, and use a GitHub repository for daily builds of the applications. 
+Si supponga di lavorare presso una società che sviluppa app Web di Azure. Queste sono applicazioni ospitate in Azure, con tutti i vantaggi della configurazione automatica di sicurezza, bilanciamento del carico, gestione e così via. Attualmente si sta testando un'app Web che genera previsioni di vendita, in base a vari input da diversi database e altre origini dati. Gli sviluppatori usano computer Windows, Linux e Mac e un repository di GitHub per le compilazioni giornaliere delle applicazioni. 
 
-As part of the testing, you want to compare app performance for different data sources, and for different types of data connections. You've noticed that when your development team uses the Azure portal to create a new test instance of the app, they don't always use exactly the same parameters. You plan to solve this problem by using a set of standard deployment commands for each app test, which can be automated if required, and which will work in the same way across all the computers used by your software team.
+Come parte del test, si vogliono confrontare le prestazioni delle app per origini dati diverse e per tipi diversi connessioni dati. Si è notato che quando il team di sviluppo usa il portale di Azure per creare una nuova istanza di test dell'app, non sempre vengono usati esattamente gli stessi parametri. Si intende risolvere questo problema usando un set di comandi di distribuzione standard per ogni test di app, che possono essere automatizzati, se necessario, e che funzioneranno nello stesso modo in tutti i computer usati dal team del software.
 
-In this module, you'll see how to manage Azure resources using the Azure CLI. 
+In questo modulo, verrà illustrato come gestire le risorse di Azure tramite l'interfaccia della riga di comando di Azure. 
 
-## Learning objectives
+## <a name="learning-objectives"></a>Obiettivi di apprendimento
+In questo modulo verrà descritto come:
 
-In this module, you will:
+- Installare l'interfaccia della riga di comando di Azure in Linux, macOS e/o Windows.
+- Connettersi a una sottoscrizione di Azure tramite l'interfaccia della riga di comando di Azure.
+- Creare risorse di Azure tramite l'interfaccia della riga di comando di Azure.
 
-- Install the Azure CLI on Linux, macOS, and/or Windows.
-- Connect to an Azure subscription using the Azure CLI.
-- Create Azure resources using the Azure CLI.
-
-## Prerequisites  
-
-- Experience with a command-line interface, such as PowerShell or Bash
-- Knowledge of basic Azure concepts, such as resource groups
-- Experience administering Azure resources using the Azure portal
-- 
+## <a name="prerequisites"></a>Prerequisiti
+- Esperienza con un'interfaccia della riga di comando, ad esempio PowerShell o Bash
+- Conoscenza dei concetti di base di Azure, ad esempio i gruppi di risorse
+- Esperienza di amministrazione delle risorse di Azure tramite il portale di Azure

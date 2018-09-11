@@ -1,0 +1,34 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-security.6-network-security
+title: Sicurezza di rete
+metadata:
+  title: Sicurezza di rete
+  description: In questa unità viene spiegato come proteggere l'infrastruttura di rete
+  ms.openlocfilehash: f98e9f24b46119fda8be58fb4a06f8f15d60ed66
+  ms.sourcegitcommit: 1663afb13d55c1fce5f2dc4c0f78ef2d74902c33
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 08/31/2018
+  ms.locfileid: "43366612"
+durationInMinutes: 5
+content: >
+  [!include[](includes/6-network-security.md)]
+quiz:
+  title: 'Verifica delle conoscenze: Sicurezza della rete'
+  questions:
+  - content: Durante l'esecuzione di applicazioni Web in servizio app di Azure, l'applicazione è completamente al sicuro e non è necessario predisporre protezioni di sicurezza aggiuntive.
+    choices:
+    - content: Vero
+      isCorrect: false
+    - content: Falso
+      isCorrect: true
+  - content: Quali dei seguenti non è un metodo di protezione da attacchi di rete per i servizi con connessione a Internet?
+    choices:
+    - content: Azure DDoS
+      isCorrect: false
+    - content: Azure Application Gateway WAF
+      isCorrect: false
+    - content: Crittografia dischi di Azure
+      isCorrect: true
+    - content: Un'appliance virtuale di rete
+      isCorrect: false

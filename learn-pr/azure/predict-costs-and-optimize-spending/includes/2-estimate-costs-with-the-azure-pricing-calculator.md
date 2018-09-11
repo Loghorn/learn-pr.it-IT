@@ -1,56 +1,56 @@
-Imagine that you've been asked to build a system on Azure, and you've been asked for an estimate of what it might cost to run over the next 12 months. You already know that Azure pricing is fully transparent and that you're billed monthly for only the services that you use. How would you get that estimate without deploying and running those services or without manually pricing out each service from the Azure service pricing pages?
+Supponiamo che sia stato chiesto di creare un sistema in Azure e di fare una stima dei costi che il sistema avrebbe nei 12 mesi successivi. Si sa già che i prezzi di Azure sono pienamente trasparenti e che ogni mese vengono fatturati solo i servizi usati. Come si può ricavare tale stima senza distribuire ed eseguire i servizi o senza determinare manualmente i prezzi di ogni servizio dalle pagine sui prezzi dei servizi di Azure? 
 
-## Introducing the Azure pricing calculator
+## <a name="introducing-the-azure-pricing-calculator"></a>Introduzione al calcolo dei prezzi di Azure
 
-To make estimates easy for customers to create, Microsoft developed the **Azure pricing calculator**. The Azure pricing calculator is a free web-based tool that allows you to input Azure services and modify properties and options of the services. It outputs the costs per service and total cost for the full estimate.
+Per agevolare i clienti nella stima dei costi, Microsoft ha sviluppato il **calcolatore prezzi di Azure**. Questo calcolatore è uno strumento gratuito basato sul Web in cui si inseriscono i servizi di Azure e si modificano le proprietà e le opzioni dei servizi e il calcolatore restituisce i costi per ciascun servizio e il costo totale per la stima completa.
 
-In another browser window or tab, go to the [Azure pricing calculator](https://azure.microsoft.com/pricing/calculator/). On the pricing calculator page, you'll see three tabs:
+In un'altra finestra o scheda del browser passare al [calcolatore prezzi di Azure](https://azure.microsoft.com/pricing/calculator/). Nella pagina del calcolatore prezzi sono presenti tre schede:
 
-1. **Products.** This tab is where you'll do most of your activity. This tab has all the Azure services listed and is where you'll add or remove services to formulate your estimate.
-2. **Estimates.** This tab has all of your previously saved estimates. We'll go through this process in a moment.
-3. **FAQ.** Just as it says, this tab has answers to some frequently asked questions.
+1. **Prodotti.** In questa scheda si esegue la maggior parte delle attività. Questa scheda contiene l'elenco di tutti i servizi di Azure ed è qui che si aggiungono o si rimuovono i servizi per formulare la stima.
+2. **Stime.** Questa scheda include tutte le stime salvate in precedenza. Questo processo verrà esaminato più avanti.
+3. **DOMANDE FREQUENTI.** Questa scheda contiene le risposte ad alcune domande frequenti.
 
-Let's start with the **Products** tab. You'll see the full listing of service categories down the left-hand side. Clicking on any of the categories will display the services in that category. There's also a search box where you can search through all services for the service you're looking for. Clicking on the service will add that service to your estimate. You can add just one service, or you can add as many as you need, including multiples of the same service (for example, multiple virtual machines).
+Iniziamo con la scheda **Prodotti**. A sinistra è presente l'elenco completo delle categorie dei servizi. Se si fa clic su una qualsiasi di queste categorie, vengono visualizzati i servizi corrispondenti. È disponibile anche una casella di ricerca che consente di cercare il servizio desiderato tra tutti i servizi. Se si fa clic sul servizio, questo viene aggiunto alla stima. È possibile aggiungere un solo servizio o tanti servizi in base alle esigenze, inclusi i multipli dello stesso servizio (ad esempio più macchine virtuali). 
 
-After you've added the services, you'll want to price them. Scrolling down on the page will show you customizable details for that service that apply to pricing. For example, on virtual machines, you can select details such as the region, operating system, and instance size, all of which will impact the pricing for the VM. You'll see a subtotal for the service. And scrolling further down, you'll see a full total for all services included in the estimate. Along with the total, you'll see buttons where you can export, save, and share the estimate.
+Dopo aver aggiunto i servizi, occorre determinarne i prezzi. Scorrendo la pagina verso il basso vengono visualizzati dettagli personalizzabili sul servizio che riguardano la determinazione del prezzo. Nelle macchine virtuali ad esempio è possibile selezionare dettagli come la regione, il sistema operativo e la dimensione di istanza. Tutte informazioni che influiranno sul piano tariffario per la macchina virtuale. Verrà visualizzato un subtotale per il servizio. Se si continua a scorrere la pagina verso il basso, si vedrà il totale completo per tutti i servizi inclusi nella stima. Insieme al totale saranno visualizzati i pulsanti per esportare, salvare e condividere la stima.
 
-## Estimate a solution
+## <a name="estimate-a-solution"></a>Stimare una soluzione
 
-From our original scenario, let's imagine that this system will run on two Azure VMs and will connect to an Azure SQL Database instance. We also want to have a layer 7 firewall in place to ensure we have the following enhanced load-balancing capabilities. The following illustration shows an application gateway connected to two virtual machines that are connected to a single Azure SQL Database instance.
+Partendo da questo scenario originale immaginiamo che il sistema sia destinato a essere eseguito in due macchine virtuali di Azure e a connettersi a un'istanza di database SQL di Azure. Si intende includere anche un firewall di livello 7 in modo da garantire le funzionalità avanzate di bilanciamento del carico seguenti:
 
-![An illustration of a sample architecture that will be used as an example to demonstrate estimating costs.](../media/2-estimate-costs-architecture.png)
+![Diagramma dell'architettura di sistema](../images/estimate-costs-architecture.png)
 
-We can use the Azure pricing calculator to figure out what the solution will cost and export our estimate to share with the team.
+È possibile usare il calcolatore prezzi di Azure per determinare il costo della soluzione ed esportare la stima per condividerla con il team.
 
-> [!TIP]
-> Make sure you have a clean calculator with nothing listed in the estimate. If you have anything present in your estimate, click the trashcan icon on each item to reset the estimate.
+> [!NOTE]
+> Assicurarsi che nel calcolatore non siano presenti elementi elencati nella stima. Se nella stima sono presenti elementi, fare clic sull'icona del cestino per ogni elemento per reimpostare la stima.
 
-In the Azure pricing calculator, on the **Products** tab, add the following services to the estimate by clicking on them:
+Nel calcolatore prezzi di Azure, nella scheda **Prodotti** selezionare i servizi seguenti per aggiungerli alla stima:
 
-* Virtual Machines in the Compute category
-* Azure SQL Database in the Database category
-* Application Gateway in the Network category
+- Macchine virtuali
+- database SQL di Azure
+- Gateway applicazione
 
-We can configure the details of each, on the **Estimates** tab, to get a solid estimate of our costs. Use the **West US** region for all resources.
+È possibile configurare i dettagli di ognuno, nella scheda **Stime** o ottenere una stima generale dei costi. Usare la regione **Stati Uniti occidentali** per tutte le risorse.
 
-* **Virtual Machines.** This is an ASP.NET application, so we'll need to use a **Windows OS** VM. This application doesn't require a massive amount of computing power, so select the **D2v3** instance size. We'll need two virtual machines, and they will run all the time (730 hours/month). We're going to use premium SSD storage for these VMs and will require just one disk per VM of size **E10**, for a total of two disks.
+* **Macchine virtuali.** Si tratta di un'applicazione ASP.NET, quindi sarà necessario usare una macchina virtuale con **sistema operativo Windows**. Questa applicazione non richiede una potenza di calcolo eccessiva, quindi selezionare la dimensione di istanza **D2v3**. Saranno necessarie due macchine virtuali che verranno eseguite continuamente (730 ore al mese). Verrà usata l'archiviazione Premium in unità SSD per queste macchine virtuali e occorrerà un solo disco per macchina virtuale di dimensioni **E10**, per un totale di due dischi. 
 
-* **SQL Database.** For the database, we're going to provision a **single database type** using the **vCore model**. We want a General Purpose, Gen 4 database with 4 vCores. We'll need 32 GB of storage and will be retaining an average of 16 GB of storage. Our retention policy will be 8 weeks, 12 months, and 5 years.
+* **Database SQL.** Per il database si eseguirà il provisioning di un **singolo tipo di database** usando il **modello basato su vCore**. Si vuole usare un database di quarta generazione per Utilizzo generico con 4 vCore. Saranno necessari 32 GB di spazio di archiviazione e sarà possibile mantenere una media di 16 GB di spazio di archiviazione. I criteri di conservazione saranno otto settimane, 12 mesi e cinque anni. 
 
-* **Application Gateway.** For Application Gateway, we're going to use the Web Application Firewall tier, so we have some protection for our environment. And we're going to go with just two instances and medium size, as our load isn't going to be high. We expect to process 1 TB of data per month.
+* **Gateway applicazione.** Per il gateway applicazione si userà il livello Web application firewall, per garantire un livello di protezione per l'ambiente. Verranno usate solo due istanze e le dimensioni medie, poiché il carico non sarà elevato. Si prevede di elaborare 1 TB di dati al mese.
 
-Looking through your estimate, you should see a summary cost for each service you've added and a full total for the entire estimate. In this case, your estimate should be in the neighborhood of **$1,400.00 per month**. You can try playing with some of the options to see the estimate go up and down.
+Esaminando la stima, si noterà un costo riepilogativo per ogni servizio che è stato aggiunto e un totale completo per l'intera stima. In questo caso la stima deve essere di circa **$1.400,00 al mese**. È possibile provare a impostare alcune opzioni per vedere la stima aumentare o diminuire.
 
-## Share and save your estimate
+## <a name="share-and-save-your-estimate"></a>Condividere e salvare la stima
 
-We now have an estimate for our solution. We can save this estimate, so we can come back to it at a later time and make adjustments if necessary, export it to Excel for further analysis, and share the estimate via a URL.
+La stima per la soluzione è a questo punto pronta. È possibile salvarla, per poterci tornare in un secondo momento e apportare eventuali modifiche, esportarla in Excel per un'ulteriore analisi e condividerla tramite un URL. 
 
-To export the estimate, click `Export` at the bottom of the estimate. This will download your estimate in Excel (**.xlsx**) format and will include all the services you added to your estimate.
+Per esportare la stima, fare clic su `Export` nella parte inferiore della stima. La stima verrà scaricata in formato Excel (con estensione **xlsx**) e includerà tutti i servizi aggiunti.
 
-We can either share the Excel spreadsheet, or we can click on the `Share` button in the calculator. This gives you a URL that you can use to share this estimate. Anyone with this link will be able to access it, making it easy to share with your team.
+È possibile condividere il foglio di calcolo di Excel o fare clic sul pulsante `Share` del calcolatore. Verrà proposto un URL che potrà essere usato per condividere la stima. Tutti gli utenti con questo collegamento saranno in grado di accedere alla stima, rendendo così più semplice la condivisione con il team.
 
-If you are logged in with your Azure account, you can save the estimate, so you can come back to it later. Go ahead and click the **Save** button. If you are signed in, you should see a notification that your estimate was saved. If you aren't signed in, you'll see a message to sign in to save your estimate. After you've saved the estimate, scroll back up to the top of the page and select the **Estimates** tab. You will see your estimate there. You can then select it to pull it back up or delete it if you no longer need it.
+Se si è connessi con l'account di Azure, è possibile salvare la stima, per poterci tornare in un secondo momento. Proseguire e fare clic sul pulsante **Salva**. Se si è connessi, verrà visualizzata una notifica che indica che la stima è stata salvata. Se non si è connessi, verrà visualizzato un messaggio per accedere e salvare la stima. Dopo avere salvato la stima, tornare all'inizio della pagina e selezionare la scheda **Stime**. La stima sarà visibile in questa scheda. È quindi possibile selezionarla per riaprirla o eliminarla se non serve più.
 
-## Summary
+## <a name="summary"></a>Summary
 
-We have arrived at a cost estimate for a set of Azure services without spending any money. We didn't create anything, and we have a fully sharable estimate that we can do further analysis or modifications on in the future. You can use this not only to create estimates for systems where you know the specific services you plan to use but also to compare how different services might impact your overall costs. An example is Microsoft SQL Server on a VM vs. Azure SQL Database. Now let's take a look at how we can get insight into costs for services we've already deployed.
+È stata eseguita una stima dei costi per un set di servizi di Azure senza alcuna spesa aggiuntiva. Non è stato creato nulla e si dispone di una stima completa condivisibile su cui si possono effettuare ulteriori analisi o modifiche in futuro. È possibile usare la stima non solo per creare stime per sistemi in cui si conoscono i servizi specifici che si prevede di usare, ma anche per confrontare i servizi e l'impatto che hanno sui costi complessivi. Un esempio è Microsoft SQL Server in una macchina virtuale rispetto a Database SQL di Azure. Vediamo a questo punto come ottenere informazioni dettagliate sui costi di servizi che sono già stati distribuiti.

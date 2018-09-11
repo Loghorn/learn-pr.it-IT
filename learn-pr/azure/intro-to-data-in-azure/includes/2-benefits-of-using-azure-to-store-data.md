@@ -1,18 +1,20 @@
-To address the storage problem for your online learning portal, you're thinking of storing your data in the cloud. However, your biggest concern with cloud storage is security, backup, and disaster recovery. You're also concerned that it could be difficult to manage cloud-hosted data.
+Per risolvere il problema dell'archiviazione per il portale di formazione online, si sta valutando la possibilità di archiviare i dati nel cloud. Una soluzione di archiviazione nel cloud può però presentare problemi di sicurezza, backup e ripristino di emergenza. Un'altra preoccupazione può essere legata alla difficoltà di gestire dati ospitati nel cloud.
 
-## What is Azure Storage?
+## <a name="what-is-azure-storage"></a>Che cos'è Archiviazione di Azure?
 
-Azure Storage is a cloud-based solution that provides highly secure and scalable storage for modern business needs. Its features address the key challenges of cloud storage and provide you with a reliable and durable storage solution.
+Archiviazione di Azure è una soluzione di archiviazione basata sul cloud che offre livelli elevati di sicurezza e scalabilità in grado di soddisfare le attuali esigenze aziendali. Le funzionalità avanzate disponibili rispondono a tutte le sfide che presenta l'archiviazione cloud, offrendo una soluzione di archiviazione affidabile e durevole.
 
-## Benefits of using Azure to store data
+## <a name="benefits-of-using-azure-to-store-data"></a>Vantaggi dell'uso di Azure per archiviare i dati
 
-The following are some of the benefits of Azure storage:
+![Vantaggi](../media-draft/Benefits.png)
 
-- **Automated backup and recovery** - This feature mitigates the risk of losing your data if there is any unforeseen failure or interruption.
-- **Replication across the globe** - Azure Storage replicates the copies of your data to protect it against any planned or unplanned events, such as scheduled maintenance or hardware failures. You can choose to replicate your data at multiple locations across the globe.
-- **Support for data analytics** – Azure storage supports performing analytics on your data consumption.
-- **Encryption capabilities** – Azure Storage encrypts all the data to make it highly secure. It also has tight control over who can access the data.
-- **Multiple data type support** – Azure can store almost any type of data you need. It can handle video files, text files, and even large binary files like virtual hard disks. It also has many options for your relational and NoSQL data.
-- **Support for structured/unstructured data** - Azure Cosmos DB and Azure Blob storage features provide the option to store both structured and unstructured data.
-- **Data storage in virtual disks** - Azure also has the capability of storing up to 8 TB of data in its virtual disks. This is a significant capability when you're storing heavy data such as videos and simulations.
-- **Storage tiers** - Azure Storage offers storage tiers to prioritize access to data based on frequently used versus rarely used information.
+Di seguito sono riportati alcuni dei vantaggi di Archiviazione di Azure:
+
+- **Backup e ripristino automatici**: questa funzionalità riduce il rischio di perdita dei dati in caso di interruzione o errore imprevisto.
+- **Replica a livello globale**: Archiviazione di Azure replica le copie dei dati per proteggerli da eventi pianificati e non, ad esempio errori hardware o attività di manutenzione pianificate. È possibile scegliere di replicare i dati in più località in tutto il mondo.
+- **Supporto per l'analisi dei dati**: Archiviazione di Azure supporta funzionalità per l'analisi dell'utilizzo dei dati.
+- **Funzionalità di crittografia**: Archiviazione di Azure esegue la crittografia di tutti i dati per garantire un alto livello di sicurezza. Applica inoltre un rigoroso controllo sugli utenti autorizzati ad accedere ai dati.
+- **Supporto per più tipi di dati**: Azure può archiviare quasi tutti i tipi di dati richiesti dagli utenti. Può gestire file video, file di testo e persino file binari di grandi dimensioni, ad esempio dischi rigidi virtuali. Sono inoltre disponibili molte opzioni per i dati relazionali e NoSQL.
+- **Supporto per i dati strutturati/non strutturati**: le funzionalità Archiviazione BLOB di Azure e Azure Cosmos DB offrono la possibilità di archiviare dati strutturati e non.
+- **Archiviazione dei dati in dischi virtuali**: Azure offre anche la possibilità di archiviare fino a 8 TB di dati nei dischi virtuali. Questa è una funzionalità importante quando si archiviano quantità di dati elevate, ad esempio video e simulazioni.
+- **Livelli di archiviazione**: Archiviazione di Azure offre livelli di archiviazione per stabilire la priorità di accesso ai dati in base alla frequenza d'uso delle informazioni. Questa caratteristica ha l'effetto di migliorare in modo significativo l'esperienza utente.

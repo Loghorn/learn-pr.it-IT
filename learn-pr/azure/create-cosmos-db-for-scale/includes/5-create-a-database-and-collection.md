@@ -1,29 +1,29 @@
-Now that you understand how request units are used to determine database throughput and how the partition key creates the scale-out strategy for your database, you're ready to create your database and collection.
+Dopo avere appreso il modo in cui le unità richiesta vengono usate per determinare la velocità effettiva del database e come la chiave di partizione crea la strategia di scalabilità orizzontale per il database, si è pronti per creare il database e la raccolta.
 
-## Creating your database and collection
+## <a name="creating-your-database-and-collection"></a>Creare il database e la raccolta
 
-1. In the Azure Portal, select **Data Explorer** from your Cosmos DB resource and then click the **New Collection** button in the toolbar.
+1. Nel portale di Azure selezionare **Esplora dati** dalla risorsa Cosmos DB e fare clic sul pulsante **Nuova raccolta** sulla barra degli strumenti.
     
-    The **Add Collection** area is displayed on the far right. You may need to scroll right to see it.
+    L'area **Aggiungi raccolta** viene visualizzata all'estrema destra. Potrebbe essere necessario scorrere verso destra per visualizzarlo.
 
-    ![The Azure portal Data Explorer, Add Collection blade](../media-draft/5-azure-cosmosdb-data-explorer.png)
+    ![Esplora dati nel portale di Azure: pannello Aggiungi raccolta](../media/5-create-a-database-and-collection/azure-cosmosdb-data-explorer.png)
 
-1. In the **Add collection** page, enter the settings for the new collection.
+2. Nella pagina **Aggiungi raccolta** immettere le impostazioni per la nuova raccolta.
 
-    Setting | Suggested value | Description
+    Impostazione | Valore consigliato | DESCRIZIONE
     --------|-----------------|-------------
-    Database id      | Products         | Enter *Products* as the name for the new database. Database names must contain from 1 through 255 characters, and they cannot contain /, \\, #, ?, or a trailing space.
-    Collection id    | Clothing  | Enter *Clothing* as the name for your new collection. Collection ids have the same character requirements as database names.
-    Storage capacity | Unlimited     | Use the default value of **Unlimited**. This value is the storage capacity of the database, and it enables your database to scale out as needed.
-    Partition key    | productId        | productId is a good partition key for an online retail scenario, as so many queries are based around the product ID.
-    Throughput       |1000 RU        | Change the throughput to 1000 request units per second (RU/s). 1000 is the minimum RU/s value you can set to enable automatic scaling.
+    ID database      | Utenti         | Immettere *Utenti* come nome del nuovo database. I nomi dei database devono avere una lunghezza compresa tra 1 e 255 caratteri e non possono contenere /, \\, #, ? o spazi finali.
+    ID raccolta    | WebCustomers  | Immettere *WebCustomers* come nome della nuova raccolta. Gli ID delle raccolte prevedono gli stessi requisiti relativi ai caratteri dei nomi di database.
+    Capacità di archiviazione | Illimitato     | Usare il valore predefinito **Illimitato**. Questo valore è la capacità di archiviazione del database e consente al database di ridimensionarsi in base alle esigenze.
+    Chiave di partizione    | UserId        | UserID è una buona chiave di partizione per uno scenario di vendita online in quanto tante domande si basano sull'ID cliente.
+    Velocità effettiva       |1000 UR        | Modificare la velocità effettiva in 1000 unità richiesta al secondo (UR/sec). 1000 è il valore di UR/s minimo che è possibile impostare per abilitare la scalabilità automatica.
     
-    For now, don't check the **Provision database throughput** option, and don't add any unique keys to the collection.
+    Per il momento, non selezionare l'opzione **Provision database throughput** (Velocità effettiva di provisioning del database) e non aggiungere chiavi univoche alla raccolta. 
     
-1. Click **OK**. The Data Explorer will display the new database and collection.
+3. Fare clic su **OK**. In Esplora dati verranno visualizzati il nuovo database e la nuova raccolta.
 
-    ![The Azure portal Data Explorer, showing the new database and collection](../media-draft/5-azure-cosmos-db-new-collection.png)
+    ![Esplora dati nel portale di Azure, con il nuovo database e la nuova raccolta](../media/5-create-a-database-and-collection/azure-cosmos-db-new-collection.png)
 
-## Summary
+## <a name="summary"></a>Riepilogo
 
-In this unit, you used your knowledge of partition keys and request units to create a database and collection with throughput and scaling settings appropriate for your business needs.
+In questa unità, è stata usata la conoscenza delle chiavi di partizione e delle unità richiesta per creare un database e una raccolta con impostazioni di velocità effettiva e ridimensionamento adeguate alle esigenze aziendali.

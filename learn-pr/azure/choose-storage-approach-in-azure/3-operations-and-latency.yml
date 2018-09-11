@@ -1,29 +1,30 @@
 ### YamlMime:ModuleUnit
 uid: learn.choose-storage-approach-in-azure.3-operations-and-latency
 metadata:
-  title: Determine operational needs
-  description: Determine operational needs
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
-title: Determine operational needs
+  title: Operazioni e latenza
+  description: Operazioni e latenza
+  displayType: one-column
+  ms.openlocfilehash: 3d67e7dd28258dc8accc73c36ae7573e143b7c02
+  ms.sourcegitcommit: 91b4553dbbbf6d8b6b359142332d0654aae326e8
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 08/30/2018
+  ms.locfileid: "43252369"
+title: Operazioni e latenza
 durationInMinutes: 10
-content: |
+content: >
   [!include[](includes/3-operations-and-latency.md)]
 quiz:
-  title: 'Knowledge check'
+  title: Operazioni e latenza
   questions:
-  - content: "How would you classify the operational needs of a database that stored user data for your online retail application. The data set would contain shipping preferences, previous orders, and profile information to display on product reviews."
+  - content: Classificazione delle esigenze operative di un database in cui sono archiviati i dati utente per l'applicazione di vendita online. Il set di dati contiene le preferenze di spedizione, gli ordini precedenti e le informazioni del profilo da visualizzare nelle recensioni dei prodotti.
     choices:
-    - content: "The application requires fast retrieval times, lots of reads and writes, and needs to be able to query on every property."
+    - content: L'applicazione richiede tempi di recupero rapidi, un numero elevato di operazioni di lettura e scrittura e la possibilità di eseguire query su tutte le proprietà
       isCorrect: true
-      correctExplanation: "Users will create and update their user data frequently, and the application will update their order information in their user data. Although customers in an online retail site don't expect to be able to query their data in a robust manner, such as querying to see if they have a shipping address in a certain zip code, the company will want to be able to query to see how many users are in a certain zip code. So be sure to remember all the users of your data, not just your end customer, when it comes to listing requirements."
-    - content: "The application requires fast retrieval times, lots of reads and writes, and needs to be able to query on a limited set of properties."
+      correctExplanation: Gli utenti creeranno e aggiorneranno spesso i propri dati e l'applicazione aggiornerà le informazioni sugli ordini nei dati utente. Sebbene i clienti in un sito di vendita online non si aspettino di eseguire spesso query sui propri dati, ad esempio una query per verificare se hanno un indirizzo di spedizione con un determinato codice postale, l'azienda dovrà poter eseguire una query per determinare quanti utenti hanno un codice postale specifico. Quando si tratta di delineare i requisiti, prendere in considerazione tutti gli utenti dei dati, non solo il cliente finale.
+    - content: L'applicazione richiede tempi di recupero rapidi, un numero elevato di operazioni di lettura e scrittura e la possibilità di eseguire query su un set limitato di proprietà
       isCorrect: false
-      correctExplanation: "Although customers in an online retail site don't expect to be able to query their data in a robust manner, such as querying to see if they have a shipping address in a certain zip code, the company will want to be able to query to see how many users are in a certain zip code, so all properties should be indexed an queryable."
-    - content: "The application can support slow retrieval times and read-only operations."
+      correctExplanation: Sebbene i clienti in un sito di vendita online non si aspettino di eseguire spesso query sui propri dati, ad esempio una query per verificare se hanno un indirizzo di spedizione con un determinato codice postale, l'azienda dovrà poter eseguire una query per determinare quanti utenti hanno un codice postale specifico, quindi tutte le proprietà devono essere indicizzate e sottoponibili a query
+    - content: L'applicazione può supportare tempi di recupero lenti e operazioni di sola lettura
       isCorrect: false
-      incorrectExplanation: "Customers will be creating and updating their own profile information, so the user data needs to be read-write."
+      incorrectExplanation: I clienti creeranno e aggiorneranno le proprie informazioni del profilo, quindi i dati utente devono essere di lettura e scrittura.

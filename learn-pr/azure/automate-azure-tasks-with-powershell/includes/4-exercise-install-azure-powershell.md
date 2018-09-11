@@ -1,117 +1,111 @@
-In this unit, you will install **Azure PowerShell** on your local machine. Choose the appropriate section for your operating system.
+In questo esercizio si installerà **Azure PowerShell** nel computer locale. Scegliere la sezione appropriata per il sistema operativo.
 
-## Linux and Mac
-On Linux and macOS, the first step is to install **PowerShell Core**.
+## <a name="linux-and-mac"></a>Linux e Mac
+In Linux e macOS, il primo passaggio consiste nell'installare **PowerShell Core**.
 
-### Linux
-As mentioned in the last unit, installing PowerShell for Linux will involve using a package manager. We will use **Ubuntu 18.04** for our example here, but we have [detailed instructions for other versions and distributions in our documentation](https://docs.microsoft.com/powershell/scripting/setup/installing-powershell-core-on-linux).
+### <a name="linux"></a>Linux
+Come indicato nell'ultima unità, l'installazione di PowerShell per Linux comporterà l'uso di uno strumento di gestione pacchetti. In questo esempio verrà usato **Ubuntu 18.04**, ma sono disponibili [istruzioni dettagliate per le altre versioni e distribuzioni nella documentazione](https://docs.microsoft.com/powershell/scripting/setup/installing-powershell-core-on-linux).
 
-You will install PowerShell Core on Ubuntu Linux using the Advanced Packaging Tool (**apt**) and the Bash command line. 
+PowerShell Core verrà installato in Ubuntu Linux tramite Advanced Packaging Tool (**apt**) e la riga di comando di Bash. 
 
-1. Import the encryption key for the Microsoft Ubuntu repository. This will allow the package manager to verify that the PowerShell Core package you install comes from Microsoft.
+1. Importare la chiave di crittografia per il repository Ubuntu di Microsoft. Questo consente allo strumento di gestione pacchetti di verificare che il pacchetto di PowerShell Core da installare sia fornito da Microsoft.
 
     ```bash
     curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
     ```
-
-1. Register the **Microsoft Ubuntu repository** so the package manager can locate the PowerShell Core package.
+1. Registrare il **repository Ubuntu di Microsoft**, in modo da consentire allo strumento di gestione pacchetti di individuare il pacchetto di PowerShell Core.
 
     ```bash
     sudo curl -o /etc/apt/sources.list.d/microsoft.list https://packages.microsoft.com/config/ubuntu/18.04/prod.list
     ```
 
-1. Update the list of packages.
+1. Aggiornare l'elenco dei pacchetti.
 
     ```bash
     sudo apt-get update
     ```
 
-1. Install PowerShell Core.
+1. Installare PowerShell Core.
 
     ```bash
     sudo apt-get install -y powershell
     ```
 
-1. Start PowerShell to verify that it installed successfully.
+1. Avviare PowerShell per verificare che sia installato correttamente.
 
     ```bash
     pwsh
     ```
 
-### macOS
-Next, install **PowerShell Core** on macOS using the Homebrew package manager.
+### <a name="macos"></a>macOS
+Installare quindi **PowerShell Core** su macOS tramite la gestione pacchetti HomeBrew.
 
 > [!IMPORTANT]
-> If the **brew** command is unavailable, you may need to install the Homebrew package manager. For details see the [Homebrew website](https://brew.sh/).
+> Se il comando **brew** non è disponibile, potrebbe essere necessario installare la gestione pacchetti HomeBrew. Per informazioni dettagliate, vedere il [sito Web di Homebrew](https://brew.sh/).
 
-1. Install Homebrew-Cask to obtain more packages, including the PowerShell Core package:
+1. Installare Homebrew-Cask per ottenere altri pacchetti, incluso il pacchetto di PowerShell Core:
 
     ```bash
     brew tap caskroom/cask
     ```
-
-1. Install PowerShell Core:
+1. Installare PowerShell Core:
 
     ```bash
-    brew cask installs powershell
+    brew cask install powershell
     ```
 
-1. Start PowerShell Core to verify that it installed successfully:
+1. Avviare PowerShell Core per verificare che sia installato correttamente:
 
     ```bash
     pwsh
     ```
 
-## Install Azure PowerShell
-After installing the base **PowerShell** product, install **Azure PowerShell** to add the Azure-specific commands.
+## <a name="install-azure-powershell"></a>Installare Azure PowerShell
+Dopo l'installazione del prodotto **PowerShell** di base, installare **Azure PowerShell** per aggiungere i comandi specifici di Azure.
 
-### Windows
-Install Azure PowerShell on Windows using the `Install-Module` PowerShell command.
+### <a name="windows"></a>Windows
+Installare Azure PowerShell in Windows usando il comando `Install-Module` PowerShell.
 
 > [!IMPORTANT]
-> You must have PowerShell version 5.0 or higher to install Azure PowerShell. To check your version of PowerShell, use the following command: 
+> Per installare Azure PowerShell, è necessario PowerShell versione 5.0 o superiore. Per controllare la versione di PowerShell, usare il comando seguente: 
 >
 > `$PSVersionTable.PSVersion` 
 >
->If the version number is lower than 5.0, follow the instructions for [upgrading existing Windows PowerShell](https://docs.microsoft.com/powershell/scripting/setup/installing-windows-powershell?view=powershell-6#upgrading-existing-windows-powershell).
+>Se il numero di versione è inferiore alla versione 5.0, seguire le istruzioni per l'[aggiornamento di Windows PowerShell esistente](https://docs.microsoft.com/powershell/scripting/setup/installing-windows-powershell?view=powershell-6#upgrading-existing-windows-powershell).
 
-1. Open the **Start** menu and type **Windows PowerShell**.
-
-1. Right-click the **Windows PowerShell** icon and select **Run as administrator**.
-
-1. In the **User Account Control** dialog, select **Yes**.
-
-1. Type the following command, and then press Enter:
+1. Aprire il menu **Start** e digitare **Windows PowerShell**.
+2. Fare clic con il pulsante destro del mouse sull'icona di **Windows PowerShell** e scegliere **Esegui come amministratore**.
+3. Nella finestra di dialogo **Controllo account utente** selezionare **Sì**.
+4. Digitare il comando seguente e quindi premere INVIO:
 
     ```powershell
     Install-Module -Name AzureRM
     ```
+5. Se viene richiesto se considerare attendibili i moduli di PSGallery, rispondere **Sì** oppure **Sì a tutti**.
 
-1. If you are asked whether you trust modules from PSGallery, answer **Yes** or **Yes to All**.
-
-> [!TIP]
-> If you get an error message indicating that a version of the Azure PowerShell module is already installed, you can update to the _latest_ version by issuing the command:
+> [!NOTE]
+> Se viene visualizzato un messaggio di errore che indica che è già installata una versione del modulo Azure PowerShell, è possibile eseguire l'aggiornamento alla versione _più recente_ eseguendo il comando:
 > 
 > `Update-Module -Name AzureRM`
 > 
-> As with the `Install-Module` command, answer **Yes** or **Yes to All** when prompted to trust the module.
+> Come nel caso del comando `Install-Module`, rispondere **Sì** o **Sì a tutti** quando viene richiesto se considerare attendibile il modulo.
 
-### Linux or macOS
-We use the same basic process to install the Azure PowerShell on either Linux or macOS. The procedure is the same for both operating systems. The difference is in getting an elevated PowerShell Core session.
+### <a name="linux-or-macos"></a>Linux o macOS
+Per installare Azure PowerShell in Linux o macOS, viene usato lo stesso processo di base. La procedura è la stessa per entrambi i sistemi operativi. La differenza consiste nel metodo per l'avvio di una sessione di PowerShell Core con privilegi elevati.
 
-1. In a terminal, type the following command to launch PowerShell Core with elevated privileges.
+1. In un terminale, digitare il comando seguente per avviare PowerShell Core con privilegi elevati.
 
     ```bash
     sudo pwsh
     ```
 
-1. Run the following command at the PowerShell Core prompt to install Azure PowerShell.
+1. Per installare Azure PowerShell, eseguire il comando seguente nel prompt di PowerShell Core.
 
     ```powershell
     Install-Module AzureRM.NetCore
     ```
 
-1. If you are asked whether you trust modules from **PSGallery**, answer **Yes** or **Yes to All**.
+1. Se viene richiesto se considerare attendibili i moduli di **PSGallery**, rispondere **Sì** oppure **Sì a tutti**.
 
-## Summary
-You have setup your local machine(s) to administer Azure resources with Azure PowerShell. You can now use Azure PowerShell locally to enter commands or execute scripts. Azure PowerShell will forward your commands to the Azure datacenters where they will run inside your Azure subscription.
+## <a name="summary"></a>Riepilogo
+Configurare il computer locale per amministrare le risorse di Azure con Azure PowerShell. Ora è possibile usare Azure PowerShell in locale per immettere comandi o eseguire script. Azure PowerShell inoltrerà i comandi ai data center di Azure, in cui verranno eseguiti all'interno della sottoscrizione di Azure.

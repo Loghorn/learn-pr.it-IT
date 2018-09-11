@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.create-linux-vm-in-azure.3-exercise-generate-ssh-key
+title: 'Esercizio: scegliere un metodo di autenticazione per SSH'
+metadata:
+  title: 'Esercizio: scegliere un metodo di autenticazione per SSH'
+  description: 'Esercizio: scegliere un metodo di autenticazione per SSH'
+  ms.openlocfilehash: 7247c27fe0ea1f2077fb42210aaee13d544bfacd
+  ms.sourcegitcommit: 1aec476e479e92851bc3b5b7795f1200740bc1e5
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/03/2018
+  ms.locfileid: "43498208"
+durationInMinutes: 10
+interactive: bash
+content: '[!include[](includes/3-exercise-generate-ssh-key.md)]'

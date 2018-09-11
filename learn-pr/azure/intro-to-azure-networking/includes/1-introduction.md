@@ -1,15 +1,15 @@
-You manage IT infrastructure for a growing e-commerce site. Business ia strong and your datacenter is starting to struggle to keep up with demand from your users. Your service fails when too many users connect at the same time. Plus, you face more scheduled and unscheduled maintenance windows than you'd like. 
+Si supponga di gestire l'infrastruttura IT di un sito di e-commerce in crescita. L'attività è florida e il data center inizia ad avere qualche difficoltà a soddisfare la domanda degli utenti. Quando troppi utenti si connettono contemporaneamente, il servizio non funziona. Le finestre di manutenzione pianificate e non pianificate sono inoltre sempre più numerose. 
 
-Because your site is based in northern California, you also find that network delay is especially bad for users located in other regions, such as Europe and Asia.
+Dal momento che la sede del sito è nella California settentrionale, si noterà anche che il ritardo di rete penalizza in modo particolare gli utenti che si trovano in altre aree geografiche, ad esempio Europa e Asia.
 
-You decide to move your e-commerce site to the cloud to help save costs. But how can Azure help make your site run better?
+Si decide allora di spostare il sito di e-commerce nel cloud per ridurre i costi. Ma in che modo Azure può contribuire a una migliore esecuzione del sito?
 
-Managing networks on Azure isn't entirely different from managing on-premises networks. 
+La gestione delle reti in Azure non è totalmente diversa dalla gestione di reti locali. 
 
-## Learning objectives
+## <a name="learing-objectives"></a>Obiettivi di apprendimento
 
-In this module, you will:
+In questo modulo si apprenderà:
 
-- Learn how an Azure virtual network provides secure network communication among resources such as virtual machines and other networks
-- Learn what high availability and resiliency mean and how Azure Load Balancer can increase resiliency within a single geographic region
-- Learn what latency is and how Traffic Manager helps reduce network latency and provides resiliency across geographic locations
+- Come una rete virtuale di Azure offra una comunicazione di rete sicura tra le risorse, ad esempio macchine virtuali e altre reti
+- Il significato di disponibilità elevata e resilienza e come Azure Load Balancer possa aumentare la resilienza all'interno di una singola area geografica
+- Cos'è la latenza e come Gestione traffico possa contribuire a ridurre la latenza di rete e offra resilienza nelle diverse posizioni geografiche

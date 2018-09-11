@@ -1,63 +1,63 @@
-Suppose you are planning the architecture for your music-sharing application. You want to ensure that music files are uploaded to the web API reliably from the mobile app - we then want to deliver the details about new songs directly to the app when an artist adds new music to their collection. This is a perfect use of a message-based system and Azure offers two solutions to this problem:
+Si supponga di dover pianificare l'architettura di un'applicazione per la condivisione di musica. Si vuole essere certi che i file musicali vengano caricati in modo affidabile nell'API Web dall'app per dispositivi mobili. È quindi necessario che i dettagli sui nuovi brani aggiunti da un artista alla propria raccolta vengano distribuiti direttamente nell'app. Si tratta di un uso ideale di un sistema basato su messaggi e Azure offre due soluzioni a questo problema:
 
-- Azure Queue Storage
-- Azure Service Bus
+- Archiviazione code di Azure
+- Bus di servizio di Azure
 
-## What is Azure Queue Storage?
-Queue storage is a service that uses Azure Storage to store large numbers of messages that can be securely accessed from anywhere in the world using a simple REST-based interface. Queues can contain millions of messages, limited only by the capacity of the storage account that owns it.
+## <a name="what-is-azure-queue-storage"></a>Che cos'è Archiviazione code di Azure?
+Archiviazione code è un servizio che usa Archiviazione di Azure per archiviare grandi quantità di messaggi accessibili in modo sicuro ovunque nel mondo usando una semplice interfaccia basata su REST. Le code possono contenere milioni di messaggi, limitati solo dalla capacità dell'account di archiviazione che ne è proprietario.
 
-## What is Azure Service Bus?
-Service Bus is a message broker system intended for enterprise applications. These apps often utilize multiple communication protocols, have different data contracts, higher security requirements, and can include both cloud and on-premises services. Service Bus is built on top of a dedicated messaging infrastructure designed for exactly these scenarios.
+## <a name="what-is-azure-service-bus"></a>Che cos'è il bus di servizio di Azure?
+Il bus di servizio è un sistema broker di messaggi destinato alle applicazioni aziendali. Queste app spesso utilizzano più protocolli di comunicazione, hanno contratti di dati diversi, requisiti di sicurezza più elevati e possono includere servizi sia cloud che locali. Il bus di servizio si basa su un'infrastruttura di messaggistica dedicata, progettata specificamente per questi scenari.
 
-Both of these services are based on the idea of a "queue" which holds sent messages until the target is ready to receive them. If you've never worked with a message queue system before, they have several convenient benefits.
+Questi servizi si basano entrambi sul concetto di una "coda" che contiene i messaggi inviato fino a quando la destinazione è pronta a riceverli. Se non si è mai lavorato prima con un sistema di accodamento di messaggi, i vantaggi pratici sono diversi.
 
-## Increased reliability
-Queues are used by distributed applications as a temporary storage location for messages pending delivery to a destination component. The source component can add a message to the queue and destination components can retrieve the message at the front of the queue for processing. Queues increase the reliability of the message exchange because, at times of high demand, messages can simply wait until a destination component is ready to process them.
+## <a name="increased-reliability"></a>Maggiore affidabilità
+Le code vengono usate dalle applicazioni distribuite come posizioni di archiviazione temporanee per i messaggi in attesa di recapito a un componente di destinazione. Il componente di origine può aggiungere un messaggio alla coda e i componenti di destinazione possono recuperare il messaggio all'inizio della coda per elaborarlo. Le code migliorano l'affidabilità dello scambio di messaggi perché, nei momenti di picco, i messaggi possono attendere semplicemente fino a quando un componente di destinazione è pronto per elaborarli.
 
-## Message delivery guarantees
-Queuing systems usually guarantee delivery of each message in the queue to a destination component. However, these guarantees can take different approaches:
+## <a name="message-delivery-guarantees"></a>Garanzie di recapito dei messaggi
+I sistemi di accodamento in genere garantiscono il recapito di ogni messaggio nella coda a un componente di destinazione. Per queste garanzie si possono adottare tuttavia approcci diversi:
 
-- **At-Least-Once Delivery.** In this approach, each message is guaranteed to be delivered to at least one of the components that retrieve messages from the queue. Note, however, that in certain circumstances, it is possible that the same message may be delivered more than once. For example, if there are two instances of a web app retrieving messages from a queue, ordinarily each message goes to only one of those instances. However, if one instance takes a long time to process the message, and a time-out expires, the message may be sent to the other instance as well. Your web app code should be designed with this possibility in mind.
+- **Recapito At-Least-Once.** Con questo approccio, è garantito il recapito di ogni messaggio ad almeno uno dei componenti che recuperano i messaggi dalla coda. Si noti, tuttavia, che in determinate circostanze, è possibile che lo stesso messaggio venga recapitato più di una volta. Ad esempio, se sono presenti due istanze di un'app Web che recuperano i messaggi da una coda, in genere ogni messaggio viene recapitato a una sola di tali istanze. Tuttavia, se un'istanza richiede molto tempo per elaborare il messaggio e scade un timeout, il messaggio potrebbe essere inviato anche all'altra istanza. Il codice dell'app Web deve essere progettato tenendo in considerazione questa eventualità.
 
-- **At-Most-Once Delivery.** In this approach, each message is not guaranteed to be delivered, and there is a very small chance that it may not arrive. However, unlike At-Least-Once delivery, there is no chance that the message will be delivered twice. This is sometimes referred to as "automatic duplicate detection".
+- **Recapito At-Most-Once.** Con questo approccio, il recapito di ogni messaggio non è garantito ed esiste una probabilità molto piccola che possa non arrivare. Tuttavia, diversamente dal recapito At-Least-Once, non vi è alcuna possibilità che il messaggio venga recapitato due volte. Questo viene a volte definito "rilevamento duplicati automatico".
 
-- **First-In-First-Out (FIFO).** In most messaging systems, messages usually leave the queue in the same order in which they were added, but you should consider whether this order is guaranteed. If your distributed application requires that messages are processed in precisely the correct order, you must choose a queue system that includes a FIFO guarantee.
+- **First-In-First-Out (FIFO).** Nella maggior parte dei sistemi di messaggistica, i messaggi in genere lasciano la coda nello stesso ordine in cui sono stati aggiunti, ma è necessario considerare se quest'ordine è garantito. Se l'applicazione distribuita richiede che i messaggi vengano elaborati con precisione nell'ordine corretto, è necessario scegliere un sistema di accodamento che include una garanzia FIFO.
 
-## Transactional support
-Some closely related groups of messages may cause problems when delivery fails for one message in the group.
+## <a name="transactional-support"></a>Supporto transazionale
+Alcuni gruppi di messaggi strettamente correlati possono causare problemi quando si verifica un errore di recapito per un messaggio nel gruppo.
 
-For example, consider an e-commerce application. When the user clicks the **Buy** button, a series of messages might be generated and sent off to various processing destinations:
+Si consideri, ad esempio, un'applicazione di e-commerce. Quando un utente fa clic sul pulsante **Acquista**, una serie di messaggi potrebbe essere generata e inviata a diverse destinazioni di elaborazione:
 
-- A message with the order details is sent to a fulfillment center
-- A message with the total and payment details is sent to a credit card processor. 
-- A message with the receipt information is sent to a database to generate an invoice for the customer
+- Un messaggio con i dettagli dell'ordine viene inviato a un centro di evasione degli ordini
+- Un messaggio con i dettagli di pagamento e il totale viene inviato a un sistema di elaborazione di carte di credito. 
+- Un messaggio con le informazioni sulla ricevuta viene inviato a un database per generare una fattura per il cliente
 
-In this case, we want to make sure _all_ messages get processed, or none of them are processed. We won't be in business long if the credit card message is not delivered, and all our orders are fulfilled without payment! You can avoid these kinds of problems by grouping the two messages into a transaction. Message transactions succeed or fail as a single unit - just like in the database world. If the credit card details message delivery fails, then so will the order details message.
+In questo caso si vuole essere certi che vengano elaborati _tutti_ i messaggi oppure nessuno. Non si resterà in affari a lungo se il messaggio relativo alla carta di credito non viene recapitato e tutti gli ordini vengono evasi senza pagamento. È possibile evitare questi tipi di problemi raggruppando i due messaggi in una transazione. Le transazioni contenenti i messaggi hanno esito positivo o negativo come singola unità, esattamente come nei database. Se il recapito del messaggio dei dettagli della carta di credito non riesce, anche il messaggio dei dettagli dell'ordine non verrà recapitato.
 
-## Which service should I choose?
-Having understood that the communication strategy for this architecture should be a message, you must choose whether to use Azure Storage queues or Azure Service Bus, both of which can be used to store and deliver messages between your components. Each has a slightly different feature set, which means you can choose one or the other, or use both, depending on the problem you are solving.
+## <a name="which-service-should-i-choose"></a>Qual è il servizio da scegliere?
+Dopo aver stabilito che la strategia di comunicazione per questa architettura deve essere un messaggio, è necessario scegliere se usare le code di archiviazione di Azure o il bus di servizio di Azure, entrambi servizi che possono essere usati per archiviare e recapitare messaggi tra i componenti. Ogni tecnologia presenta un set di funzionalità leggermente diverso, quindi è possibile scegliere l'una o l'altra, o entrambe, a seconda del problema da risolvere.
 
-#### Choose Service Bus queues if:
+#### <a name="choose-service-bus-queues-if"></a>Scegliere le code del bus di servizio se:
 
-- You need an At-Most-Once delivery guarantee.
-- You need a FIFO guarantee.
-- You need to group messages into transactions.
-- You want to receive messages without polling the queue.
-- You need to provide a role-based access model to the queues.
-- You need to handle messages larger than 64 KB but less than 256 KB.
-- Your queue size will not grow larger than 80 GB.
-- You would like to be able to publish and consume batches of messages.
+- È necessaria una garanzia di recapito At-Most-Once.
+- È necessaria una garanzia FIFO.
+- È necessario raggruppare i messaggi in transazioni.
+- Si vuole ricevere messaggi senza polling della coda.
+- È necessario fornire alle code un modello di accesso basato sui ruoli.
+- È necessario gestire messaggi di dimensioni superiori a 64 KB, ma inferiori a 256 KB.
+- Le dimensioni della coda non supereranno gli 80 GB.
+- Si vuole poter pubblicare e utilizzare batch di messaggi.
 
-Queue storage isn't quite as feature-rich, but if you don't need any of those features, it can be a simpler choice. In addition, it's the best solution if your app has any of the following requirements.
+Archiviazione code non ha altrettante funzionalità, ma se tali funzionalità non sono necessarie, può essere una scelta più semplice. È inoltre la soluzione migliore se l'app presenta uno qualsiasi dei requisiti seguenti.
 
-#### Choose Queue storage if:
+#### <a name="choose-queue-storage-if"></a>Scegliere Archiviazione code se:
 
-- You need an audit trail of all messages that pass through the queue.
-- You expect the queue to exceed 80 GB in size.
-- You want to track progress for processing a message inside of the queue.
+- È necessario un audit trail di tutti i messaggi che passano attraverso la coda.
+- Si prevede che le dimensioni della coda possano superare gli 80 GB.
+- Si vuole tenere traccia dello stato dell'elaborazione di un messaggio all'interno della coda.
 
-## Summary
+## <a name="summary"></a>Riepilogo
 
-A queue is a simple, temporary storage location for messages sent between the components of a distributed application. Use a queue to organize messages and gracefully handle unpredictable surges in demand.
+Una coda è una semplice posizione di archiviazione temporanea per i messaggi inviati tra i componenti di un'applicazione distribuita. Usare una coda per organizzare i messaggi e gestire correttamente i picchi nella domanda non prevedibili.
 
-Use Storage queues when you want a simple and easy-to-code queue system. For more advanced needs, use Service Bus queues.
+Usare le code di archiviazione quando si vuole un sistema di accodamento semplice e facile da programmare. Per esigenze più avanzate, usare le code del bus di servizio.

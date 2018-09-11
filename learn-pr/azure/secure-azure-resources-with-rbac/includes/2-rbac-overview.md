@@ -1,78 +1,78 @@
-Suppose you need to manage access to resources in Azure for the developer, engineering, and marketing teams. You’ve started to receive access requests, and you need to quickly come up to speed on how access management for resources works in Azure.
+Supponiamo di dover gestire l'accesso alle risorse di Azure per i team di sviluppo, progettazione e marketing. Si sono già ricevute le prime richieste di accesso, quindi è importante apprendere velocemente il funzionamento della gestione dell'accesso per le risorse in Azure.
 
-## What is RBAC?
+## <a name="what-is-rbac"></a>Che cos'è il controllo degli accessi in base al ruolo?
 
-Role-based access control (RBAC) is an authorization system built on [Azure Resource Manager](/azure/azure-resource-manager/resource-group-overview) that provides fine-grained access management of resources in Azure. Azure has lots of resources, but a few examples include virtual machines, websites, networks, and storage.
+Il controllo degli accessi in base al ruolo è un sistema di autorizzazione basato su [Azure Resource Manager](/azure/azure-resource-manager/resource-group-overview) che garantisce una gestione degli accessi con granularità fine delle risorse in Azure. Azure dispone di numerose risorse, di cui le macchine virtuali, i siti Web, le reti e le risorse di archiviazione sono solo alcuni esempi.
 
-## What can I do with RBAC?
+## <a name="what-can-i-do-with-rbac"></a>Quali operazioni si possono eseguire con il controllo degli accessi in base al ruolo?
 
-RBAC allows you grant access to single users or user groups to Azure resources that you control.
+Con il controllo degli accessi in base al ruolo si può concedere a singoli utenti o a gruppi di utenti l'accesso alle risorse di Azure di cui si ha il controllo.
 
-Here are some examples:
-- Allow one user to manage virtual machines in a subscription and another user to manage virtual networks
-- Allow a database administrator group to manage SQL databases in a subscription
-- Allow a user to manage all resources in a resource group, such as virtual machines, websites, and subnets
-- Allow an application to access all resources in a resource group
+Ecco alcuni esempi:
+- Consentire a un utente di gestire le macchine virtuali in una sottoscrizione e a un altro utente di gestire le reti virtuali
+- Consentire a un gruppo di amministratori di database di gestire database SQL all'interno di una sottoscrizione
+- Consentire a un utente di gestire tutte le risorse in un gruppo di risorse, ad esempio le macchine virtuali, i siti Web e le subnet
+- Consentire a un'applicazione di accedere a tutte le risorse in un gruppo di risorse
 
-## RBAC in the Azure portal
+## <a name="rbac-in-the-azure-portal"></a>Controllo degli accessi in base al ruolo nel portale di Azure
 
-In several areas in the Azure portal, you'll see a blade named **Access control (IAM)**, also known as identity and access management. On this blade, you can see who has access to that area and their role. Using this same blade, you can grant or remove access.
+In diverse aree del portale di Azure è presente un pannello denominato **Controllo di accesso (IAM)**, noto anche come gestione delle identità e degli accessi. Questo pannello mostra chi ha accesso alle varie aree e con quale ruolo. Può essere usato anche per concedere o rimuovere l'accesso.
 
-The following shows an example of the Access control (IAM) blade for a resource group. In this example, Alain Charon has been assigned the Backup Operator role on this resource group.
+Di seguito è illustrato un esempio del pannello Controllo di accesso (IAM) per un gruppo di risorse. In questo esempio ad Alain Charon è stato assegnato il ruolo Operatore di backup su questo gruppo di risorse.
 
-![Access control (IAM) in the Azure portal](../media-draft/2-resource-group-access-control.png)
+![Controllo di accesso (IAM) nel portale di Azure](../media-draft/2-resource-group-access-control.png)
 
-## How does RBAC work?
+## <a name="how-does-rbac-work"></a>Come funziona il controllo degli accessi in base al ruolo?
 
-You control access to resources using RBAC by creating role assignments, which control how permissions are enforced. To create a role assignment, you need three elements: a security principal, a role definition, and a scope. You can think of these elements as "who," "what," and "where."
+Per controllare l'accesso alle risorse mediante il controllo degli accessi in base al ruolo, occorre creare assegnazioni di ruolo, che definiscono la modalità di applicazione delle autorizzazioni. Per creare un'assegnazione di ruolo sono necessari tre elementi: un'entità di sicurezza, una definizione del ruolo e un ambito. Possiamo riferirci a questi elementi come "chi", "cosa" e "dove".
 
-### 1. Security principal (who)
+### <a name="1-security-principal-who"></a>1. Entità di sicurezza (chi)
 
-A *security principal* is just a fancy name for a user, group, or application that you want to grant access to.
+Per *entità di sicurezza* si intende un utente, un gruppo o un'applicazione a cui si vuole concedere l'accesso.
 
-![Security principal](../media-draft/2-rbac-security-principal.png)
+![Entità di sicurezza](../media-draft/2-rbac-security-principal.png)
 
-### 2. Role definition (what you can do)
+### <a name="2-role-definition-what-you-can-do"></a>2. Definizione del ruolo (cosa si può fare)
 
-A *role definition* is a collection of permissions. It's sometimes just called a role. A role definition lists the permissions that can be performed, such as read, write, and delete. Roles can be high-level, like Owner, or specific, like Virtual Machine Contributor.
+Una *definizione del ruolo* è una raccolta di autorizzazioni, talvolta semplicemente chiamata ruolo. Una definizione del ruolo elenca le autorizzazioni che definiscono le operazioni che è possibile eseguire, ad esempio lettura, scrittura ed eliminazione. I ruoli possono essere di livello superiore, come Proprietario, o specifici, come Collaboratore Macchina virtuale.
 
-![Role definition](../media-draft/2-rbac-role-definition.png)
+![Definizione del ruolo](../media-draft/2-rbac-role-definition.png)
 
-Azure includes several [built-in roles](/azure/role-based-access-control/built-in-roles) that you can use. The following lists four fundamental built-in roles:
+Azure include diversi [ruoli predefiniti](/azure/role-based-access-control/built-in-roles) che è possibile usare. I quattro ruoli predefiniti fondamentali sono i seguenti:
 
-- Owner - Has full access to all resources, including the right to delegate access to others.
-- Contributor - Can create and manage all types of Azure resources, but can’t grant access to others.
-- Reader - Can view existing Azure resources.
-- User Access Administrator - Lets you manage user access to Azure resources.
+- Proprietario: ha accesso completo a tutte le risorse, oltre al diritto di delegare l'accesso ad altri utenti.
+- Collaboratore: può creare e gestire tutti i tipi di risorse di Azure, ma non può concedere l'accesso ad altri.
+- Lettore: può visualizzare le risorse di Azure esistenti.
+- Amministratore Accesso utenti: consente di gestire l'accesso degli utenti alle risorse di Azure.
 
-If the built-in roles don't meet the specific needs of your organization, you can create your own [custom roles](/azure/role-based-access-control/custom-roles).
+Se i ruoli predefiniti non soddisfano le esigenze specifiche dell'organizzazione, è possibile creare [ruoli personalizzati](/azure/role-based-access-control/custom-roles).
 
-### 3. Scope (where)
+### <a name="3-scope-where"></a>3. Ambito (dove)
 
-*Scope* is where the access applies to. This is helpful if you want to make someone a Website Contributor, but only for one resource group.
+L'*ambito* definisce dove viene applicato l'accesso. È utile se si vuole assegnare a qualcuno il ruolo Collaboratore Sito Web, ma solo per un gruppo di risorse.
 
-In Azure, you can specify a scope at multiple levels: management group, subscription, resource group, or resource. Scopes are structured in a parent-child relationship. When you grant access at a parent scope, those permissions are inherited by the child scopes. For example, if you assign the Contributor role to a group at the subscription scope, that role is inherited by all resource groups and resources in the subscription.
+In Azure è possibile specificare un ambito su più livelli: gruppo di gestione, sottoscrizione, gruppo di risorse o risorsa. Gli ambiti sono strutturati in una relazione padre-figlio. Quando si concede l'accesso in un ambito padre, le stesse autorizzazioni vengono ereditate dagli ambiti figlio. Ad esempio, se si assegna il ruolo Collaboratore a un gruppo nell'ambito di una sottoscrizione, tale ruolo viene ereditato da tutti i gruppi di risorse e le risorse della sottoscrizione.
 
-![Scope](../media-draft/2-rbac-scope.png)
+![Ambito](../media-draft/2-rbac-scope.png)
 
-### Role assignment
+### <a name="role-assignment"></a>Assegnazione di ruolo
 
-Once you have determined the who, what, and where, you can combine those elements to grant access. A *role assignment* is the process of binding a role to a security principal at a particular scope, for the purpose of granting access. To grant access, you create a role assignment. To revoke access, you remove a role assignment.
+Una volta determinato il chi, il cosa e il dove, è possibile unire questi elementi per concedere l'accesso. Un'*assegnazione di ruolo* è il processo di associazione di un ruolo a un'entità di sicurezza in un particolare ambito ai fini della concessione dell'accesso. Per concedere l'accesso, si crea un'assegnazione di ruolo. Per revocare l'accesso, si rimuove l'assegnazione di ruolo.
 
-The following example shows how the Marketing group has been assigned the Contributor role at the sales resource group scope.
+Nell'esempio seguente, al gruppo Marketing è stato assegnato il ruolo Collaboratore nell'ambito del gruppo di risorse Sales.
 
-![Role assignment](../media-draft/2-rbac-overview.png)
+![Assegnazione di ruolo](../media-draft/2-rbac-overview.png)
 
-## RBAC is allow-only with no deny
+## <a name="rbac-is-allow-only-with-no-deny"></a>Applicazione del controllo degli accessi in base al ruolo
 
-Currently, RBAC is an allow-only model with no deny. What this means is that when you are assigned a role, RBAC allows you to perform certain actions, such as read, write, or delete. RBAC does not explicitly deny access. So, if one role assignment grants you read permissions to a resource group and different role assignment grants you write permissions to the same resource group, you will have write permissions on that resource group.
+Attualmente il controllo degli accessi in base al ruolo può essere usato solo per concedere l'accesso e non per negarlo. Questo significa che quando a un utente viene assegnato un ruolo, il controllo degli accessi in base al ruolo gli consente di eseguire determinate azioni, come la lettura, la scrittura o l'eliminazione, ma non può negare esplicitamente l'accesso. Pertanto, se un'assegnazione di ruolo concede le autorizzazioni di lettura su un gruppo di risorse e un'altra assegnazione di ruolo concede le autorizzazioni di scrittura sullo stesso gruppo di risorse, si avranno le autorizzazioni di scrittura su tale gruppo.
 
-RBAC has something called `NotActions` permissions. `NotActions` is not a deny rule – it is simply a convenient way to create a set of allowed permissions when specific permissions need to be excluded.
+Le autorizzazioni del controllo degli accessi in base al ruolo sono di tipo `NotActions`. `NotActions` non è una regola di negazione. È semplicemente un modo comodo per creare un set di autorizzazioni consentite quando è necessario escludere autorizzazioni specifiche.
 
-## Other roles in Azure
+## <a name="other-roles-in-azure"></a>Altri ruoli in Azure
 
-As you work with Azure, you might encounter other roles, such as Global Administrator, Account Administrator, and several others. Many of these other roles are used for Azure Active Directory administration, such as creating users, resetting passwords, managing user licenses, and managing domains. There's more information that you can read if you want to learn the details, but the important thing to remember is that RBAC roles are used to manage access to Azure resources.
+In Azure sono disponibili anche altri ruoli, come Amministratore globale, Amministratore dell'account e molti altri. Molti di questi altri ruoli vengono usati per l'amministrazione di Azure Active Directory, ad esempio per la creazione di utenti, la reimpostazione di password e la gestione delle licenze utente e dei domini. Sono disponibili diversi articoli con informazioni dettagliate su questi ruoli, ma la cosa importante da ricordare è che i ruoli del controllo degli accessi in base al ruolo vengono usati per gestire l'accesso alle risorse di Azure.
 
-## Summary
+## <a name="summary"></a>Riepilogo
 
-In this unit, you learned the basics of how RBAC works. Now that you have the RBAC fundamentals out of the way, you can get your hands dirty by starting to use RBAC. The easiest way to get started is to use the Azure portal. The rest of this module has you perform hands-on exercises related to RBAC.
+In questa unità si sono apprese le nozioni di base sul funzionamento del controllo degli accessi in base al ruolo. A questo punto è possibile iniziare a usare concretamente questa funzionalità. Il modo più semplice per iniziare è tramite il portale di Azure. Il resto di questo modulo contiene esercizi pratici correlati al controllo degli accessi in base al ruolo.

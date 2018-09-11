@@ -1,26 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.choose-messaging-model.2-choose-whether-to-use-message-queues-or-events
-title: Choose whether to use messages or events
+title: Scegliere se usare i messaggi o gli eventi
 metadata:
-  title: Choose whether to use messages or events
-  description: Choose whether to use messages or events
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
+  title: Scegliere se usare i messaggi o gli eventi
+  description: Scegliere se usare i messaggi o gli eventi
+  ms.openlocfilehash: 2b9296a8ace31b881fd937a37b832061c1050666
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40440891"
 durationInMinutes: 10
-content: |
-  [!include[](includes/2-choose-whether-to-use-message-queues-or-events.md)]
-quiz:
-  title: "Messaging models"
-  questions:
-  - content: "In your distributed application you have a web service that authenticates users. When a user logs on, the web service must communicate with a desktop application that runs on all users' computers to display the status of that user as \"Online\". True or false: This is an example of a message in a distributed application."
-    choices:
-    - content: "True"
-      incorrectExplanation: "Sorry, this is an example of an event in a distributed application. The communication is routed to all subscribers and the publisher has no knowledge or preference on how the communication is handled by a subscriber, nor even any knowledge of how many subscribers there are, if any."
-      isCorrect: false
-    - content: "False"
-      correctExplanation: "Correct! This would be an event notification which would trigger an action. This is a perfect case of using an event."
-      isCorrect: true
+content: '[!include[](includes/2-choose-whether-to-use-message-queues-or-events.md)]'

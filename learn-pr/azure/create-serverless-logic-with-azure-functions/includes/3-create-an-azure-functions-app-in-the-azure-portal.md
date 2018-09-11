@@ -1,58 +1,54 @@
-You are now ready to start implementing the temperature service. In the previous unit, you determined that a serverless solution would best fit your needs. Let's start by creating a function app to hold our Azure Function.
+A questo punto è possibile iniziare a implementare il servizio relativo alla temperatura. Nell'unità precedente si è stabilito che una soluzione senza server sarebbe la più adatta alle specifiche esigenze. Ora verrà creata un'app per le funzioni per contenere la funzione di Azure.
 
-## What is a function app?
+## <a name="what-is-a-function-app"></a>Informazioni sulle app per le funzioni
+Le funzioni sono ospitate in un contesto di esecuzione chiamato **app per le funzioni**. Le app per le funzioni vengono definite per raggruppare e strutturare in modo logico le funzioni e una risorsa di calcolo in Azure. Nell'esempio dell'ascensore, si crea un'app per le funzioni per ospitare il servizio relativo alla temperatura dell'ingranaggio di trasmissione dell'ascensore. Per creare l'app per le funzioni è necessario prendere alcune decisioni. In particolare, scegliere un piano di servizio e selezionare un account di archiviazione compatibile.
 
-Functions are hosted in an execution context called a **function app**. You define function apps to logically group and structure your functions and a compute resource in Azure. In our elevator example, you would create a function app to host the escalator drive gear temperature service. There are a few decisions that need to be made to create the function app; you need to choose a service plan and select a compatible storage account.
+### <a name="choosing-a-service-plan"></a>Scelta di un piano di servizio
+Le app per le funzioni possono usare uno dei due tipi di piani di servizio disponibili. Il primo è il **piano di servizio a consumo**. Questo è il piano più adatto quando si usa la piattaforma applicativa serverless di Azure. Consente la scalabilità automatica e applica un addebito quando le funzioni sono in esecuzione. Il piano di servizio a consumo prevede un periodo di timeout configurabile per l'esecuzione di una funzione. Per impostazione predefinita il timeout è di 5 minuti, ma può essere configurato per una durata massima di 10 minuti. 
 
-### Choosing a service plan
+Il secondo piano è detto **piano di servizio app di Azure**. Questo piano consente di evitare periodi di timeout consentendo l'esecuzione della funzione in modalità continua in una macchina virtuale definita dall'utente. Quando si usa un piano di servizio app, si è responsabili della gestione di risorse dell'app per cui viene eseguita la funzione, quindi tecnicamente non è un piano serverless. Può tuttavia essere la scelta migliore se le funzioni vengono eseguite in modalità continua o richiedono una potenza di elaborazione o un tempo di esecuzione più elevati rispetto a quelli che può offrire il piano a consumo. 
 
-Function apps may use one of two types of service plans. The first service plan is the **Consumption service plan**. This is the plan that you choose when using the Azure serverless application platform. The Consumption service plan provides automatic scaling and bills you when your functions are running. The Consumption plan comes with a configurable timeout period for the execution of a function. By default, it is 5 minutes, but may be configured to have a timeout as long as 10 minutes.
+### <a name="storage-account-requirements"></a>Requisiti dell'account di archiviazione
+Quando si crea un'app per le funzioni, è necessario collegarla a un account di archiviazione. È possibile selezionare un account esistente o crearne uno nuovo. L'app per le funzioni usa questo account di archiviazione per le operazioni interne, ad esempio la registrazione dei dati di esecuzione delle funzioni e la gestione dei trigger di esecuzione. Nell'ambito del piano di servizio a consumo è anche la posizione in cui vengono archiviati il codice e il file di configurazione della funzione.
 
-The second plan is called the **Azure App Service plan**. This plan allows you to avoid timeout periods by having your function run continuously on a VM that you define. When using an App Service plan, you are responsible for managing the app resources the function runs on, so this is technically not a serverless plan. However, it may be a better choice if your functions are used continuously or if your functions require more processing power or execution time than the Consumption plan can provide.
+## <a name="create-a-function-app"></a>Creare un'app per le funzioni
+Ora verrà creata un'app per le funzioni nel portale di Azure.
 
-### Storage account requirements
+1. Accedere al [portale di Azure](https://portal.azure.com?azure-portal=true) con il proprio account Azure.
 
-When you create a function app, it must be linked to a storage account. You can select an existing account or create a new one. The function app uses this storage account for internal operations such as logging function executions and managing execution triggers. On the Consumption service plan, this is also where the function code and configuration file are stored.
+2. Selezionare il pulsante **Crea una risorsa** visualizzato nell'angolo superiore sinistro del portale di Azure, quindi selezionare **Inizia > Serverless Function App (App per le funzioni serverless)** per aprire il pannello *Crea* di App per le funzioni. In alternativa, è possibile usare l'opzione **Calcolo > App per le funzioni** opzione che apre lo stesso pannello.
+  
+  ![Portale di Azure in cui è evidenziata la selezione *Crea una risorsa* seguita da Calcolo e App per le funzioni](../media-draft/3-create-function-app-blade.png)
 
-## Create a function app
+3. Scegliere un nome app globalmente univoco. Questo nome sarà l'URL di base del servizio. Ad esempio, è possibile assegnare all'app il nome **escalator-functions-xxxxxxx**, sostituendo la x con le iniziali e l'anno di nascita dell'utente. Se il nome non risulta globalmente univoco, è possibile provare un'altra combinazione. I caratteri validi sono a-z, 0-9 e -.
 
-Let's create a function app in the Azure portal.
+4. Selezionare la sottoscrizione di Azure in cui ospitare l'app per le funzioni.
 
-1. Sign in to the [Azure portal](https://portal.azure.com?azure-portal=true) using your Azure account.
+5. Creare un nuovo gruppo di risorse denominato **escalator-functions-group**. L'impiego di un gruppo per contenere tutte le risorse usate in questo modulo semplificherà le successive operazioni di pulizia.
 
-1. Select the **Create a resource** button found on the upper left-hand corner of the Azure portal, and then select **Get started > Serverless Function App** to open the Function App *Create* blade. Alternatively, you can use the **Compute > Function App** option, which will open the same blade.
+6. Selezionare **Windows** come sistema operativo.
 
-  ![Screenshot of the Azure portal showing the Create a resource blade with the Compute section and Function App highlighted.](../media/3-create-function-app-blade.png)
+7. Per **Piano di hosting** selezionare il **piano a consumo**, ovvero l'opzione di hosting senza server.
 
-1. Choose a globally unique app name. This will serve as the base URL of your service. For example, you can name it **escalator-functions-xxxxxxx**, where the x's can be replaced with your initials and your birth year. If this isn't globally unique, you can try any other combination. Valid characters are a-z, 0-9 and -.
+8. Selezionare la località geografica più vicina all'utente (o ai clienti).
 
-1. Select the Azure subscription where you would like the function app hosted.
+9. Creare un nuovo account di archiviazione. Azure assegna un nome all'account in base al nome dell'app. È possibile modificarlo, se necessario, ma deve anche essere univoco.
 
-1. Create a new resource group called **escalator-functions-group**. Using a resource group to hold all resources used in this module will help with clean-up later.
+10. Verificare che Azure Application Insights sia **attivato** e selezionare l'area più vicina all'utente (o ai clienti).
+Al termine, la configurazione sarà simile a quella rappresentata nello screenshot seguente.
 
-1. Select **Windows** for OS.
+  ![Schermata di configurazione *Crea* di App per le funzioni, con tutti i campi configurati in base alle istruzioni precedenti.](../media-draft/3-create-function-app-settings.png)
 
-1. For **Hosting Plan**, select the **Consumption Plan**, which is the serverless hosting option.
+11. Selezionare **Crea**; il processo di distribuzione richiederà alcuni minuti. L'utente riceverà una notifica al completamento dell'operazione.
 
-1. Select the geographical location closest to you (or your customers).
+## <a name="verify-your-azure-function-app"></a>Verificare l'app per le funzioni di Azure
 
-1. Create a new storage account. Azure will give it a name based on the app name. You can change it if you like, but it must also be unique.
+1. Nel menu a sinistra del portale di Azure selezionare **Gruppi di risorse**. Viene visualizzato **escalator-functions-group** nell'elenco dei gruppi disponibili.
 
-1. Make sure that Azure Application Insights is **On** and select the region closest to you (or your customers).
-  When you're finished, your configuration should look like the config in the following screenshot.
+  ![Schermata Gruppi di risorse nel portale di Azure con il gruppo di risorse escalator-functions-group visualizzato.](../media-draft/3-resource-group.png)
 
-  ![Screenshot of the Azure portal showing the Function App Create blade with all fields configured as per the preceding instructions.](../media/3-create-function-app-settings.png)
+2. Selezionare **escalator-functions-group**. Viene visualizzato un elenco di risorse simile al seguente.
+  
+  ![Tutte le risorse contenute nel gruppo escalator-functions-group, comprese le voci relative a piano di servizio app, account di archiviazione, Application Insights e servizio app](../media-draft/3-resource-list.png)
 
-1. Select **Create**; deployment will take a few minutes. You'll receive a notification once it's complete.
-
-## Verify your Azure function app
-
-1. From the Azure portal left-hand menu, select **Resource groups**. You should then see the **escalator-functions-group** in the list of available groups.
-
-  ![Screenshot of the Azure portal showing the Resource groups blade with the Resource groups menu item and escalator-functions-group list item highlighted.](../media/3-resource-group.png)
-
-1. Select the **escalator-functions-group**. You should then see a resource list like the following list.
-
-  ![Screenshot of the Azure portal showing all resources within the escalator-functions-group group, including entries for an App Service plan, a Storage account, Application Insights resource, and an App Service.](../media/3-resource-list.png)
-
-The item with the lightning bolt Function icon, listed as an App Service, is your new function app. You can click on it to open the details about the new function - it has a public URL assigned to it, if you open that in a browser, you should get a default web page that indicates your Function App is running.
+L'elemento con l'icona a forma di fulmine, elencato come servizio app, è la nuova app per le funzioni. Fare clic sull'elemento per aprire i dettagli sulla nuova funzione, a cui è stato assegnato un URL pubblico. Aprendo l'URL in un browser, viene visualizzata una pagina Web predefinita che indica che l'app per le funzioni è in esecuzione.

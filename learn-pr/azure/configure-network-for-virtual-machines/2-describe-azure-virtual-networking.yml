@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.configure-the-network-for-your-virtual-machines.2-describe-azure-virtual-networking
+title: Descrivere Rete virtuale di Azure
+metadata:
+  title: Descrivere Rete virtuale di Azure
+  description: Descrivere Rete virtuale di Azure
+  ms.openlocfilehash: 3b70e0b60ad19a4f2096b7d87ad26dbcdb28919b
+  ms.sourcegitcommit: 8d5c75ba3026e29b302d962ace4a29fa1b47a6d2
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/04/2018
+  ms.locfileid: "43544411"
+durationInMinutes: 10
+content: '[!include[](includes/2-describe-azure-virtual-networking.md)]'

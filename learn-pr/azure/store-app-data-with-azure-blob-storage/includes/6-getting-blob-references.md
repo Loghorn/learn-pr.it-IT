@@ -1,20 +1,20 @@
-Working with an individual blob in the Azure Storage SDK for .NET Core requires a *blob reference* &mdash; an instance of an `ICloudBlob` object.
+Per usare un singolo BLOB in Azure Storage SDK per .NET Core è necessario un *riferimento a BLOB*, ossia un'istanza di un oggetto `ICloudBlob`.
 
-You can get an `ICloudBlob` by requesting it with the blob's name or selecting it from a list of blobs in the container. Both require a `CloudBlobContainer`, which we saw how to get in the last unit.
+È possibile ottenere un `ICloudBlob` richiedendolo con il nome del BLOB oppure selezionandolo in un elenco dei BLOB nel contenitore. In entrambi i casi è necessario un oggetto `CloudBlobContainer`, il cui recupero è stato illustrato nell'unità precedente.
 
-## Getting blobs by name
+## <a name="getting-blobs-by-name"></a>Recupero di BLOB in base al nome
 
-Call one of the `GetXXXReference` methods on a `CloudBlobContainer` to get an `ICloudBlob` by name. If you know the type of the blob you are retrieving, use one of the specific methods (`GetBlockBlobReference`, `GetAppendBlobReference`, or `GetPageBlobReference`) to get an object that includes methods and properties tailored for that blob type.
+Chiamare uno dei metodi `GetXXXReference` in un `CloudBlobContainer` per ottenere un `ICloudBlob` in base al nome. Se si conosce il tipo di BLOB da recuperare, è preferibile usare un metodo più specifico, ossia `GetBlockBlobReference`, `GetAppendBlobReference` o `GetPageBlobReference`.
 
-None of these methods make network calls, nor do they confirm whether or not the targeted blob actually exists. They only create a blob reference object locally, which can then be used to call methods that *do* operate over the network and interact with blobs in storage. A separate method, `GetBlobReferenceFromServerAsync`, does call the Blob storage API and will throw an exception if the blob doesn't already exist.
+Nessuno di questi metodi effettua una chiamata di rete o verifica se il BLOB effettivamente esista. Un metodo separato, `GetBlobReferenceFromServerAsync`, chiama l'API di archiviazione BLOB e genera un'eccezione se il BLOB non esiste.
 
-## Listing blobs in a container
+## <a name="listing-blobs-in-a-container"></a>Elenco dei BLOB in un contenitore
 
-You can get a list of the blobs in a container using `CloudBlobContainer`'s `ListBlobsSegmentedAsync` method. *Segmented* refers to the separate pages of results returned &mdash; a single call to `ListBlobsSegmentedAsync` is never guaranteed to return all the results in a single page. We may need to call it repeatedly using the `ContinuationToken` it returns to work our way through the pages. This makes the code for listing blobs a little more complex than the code for uploading or downloading, but there's a standard pattern you can use to get every blob in a container:
+È possibile ottenere un elenco dei BLOB in un contenitore usando il metodo `ListBlobsSegmentedAsync` di `CloudBlobContainer`. *Segmented* fa riferimento alle pagine di risultati separate restituite. Non è mai garantito che una singola chiamata a `ListBlobsSegmentedAsync` restituisca tutti i risultati in una singola pagina. Per scorrere le pagine potrebbe essere necessario ripetere la chiamata con il valore di `ContinuationToken` restituito. Il codice per elencare i BLOB diventa così un po' più complesso rispetto al codice per il caricamento o il download, ma è disponibile un modello standard che può essere usato per ottenere ogni BLOB in un contenitore:
 
 ```csharp
 BlobContinuationToken continuationToken = null;
-BlobResultSegment resultSegment = null;
+BlobResultSegment resultSegment = null; 
 
 do
 {
@@ -26,16 +26,13 @@ do
 } while (continuationToken != null);
 ```
 
-This will call `ListBlobsSegmentedAsync` repeatedly until `continuationToken` is `null`, which signals the end of the results.
+In questo modo, `ListBlobsSegmentedAsync` verrà chiamato ripetutamente finché il valore di `continuationToken` non è `null`, che indica la fine dei risultati.
 
-> [!IMPORTANT]
-> Never assume that `ListBlobsSegmentedAsync` results will arrive in a single page. Always check for a continuation token and use it if it's present.
+### <a name="processing-list-results"></a>Elaborazione dei risultati elencati
 
-### Processing list results
+L'oggetto ottenuto da `ListBlobsSegmentedAsync` contiene una proprietà `Results` di tipo `IEnumerable<IListBlobItem>`. Gli oggetti `IListBlobItem` contengono alcune proprietà relative al contenitore e all'URL del BLOB, ma nessun metodo di caricamento o download. Ciò è dovuto al fatto che alcuni oggetti dei risultati potrebbero essere `CloudBlobDirectory` che rappresentano directory virtuali anziché singoli BLOB.
 
-The object you'll get back from `ListBlobsSegmentedAsync` contains a `Results` property of type `IEnumerable<IListBlobItem>`. The `IListBlobItem` interface includes only a handful of properties about the blob's container and URL, and isn't very useful by itself.
-
-To get useful blob objects out of `Results`, you can use the `OfType<>` method to filter and cast the results to more specific blob object types. Here are a few examples:
+Se si è interessati solo ai singoli BLOB, si può usare il metodo `OfType<>` per filtrare i risultati. Di seguito sono disponibili alcuni esempi:
 
 ```csharp
 // Get all blobs
@@ -45,14 +42,13 @@ var allBlobs = resultSegment.Results.OfType<ICloudBlob>();
 var blockBlobs = resultSegment.Results.OfType<CloudBlockBlob();
 ```
 
-> [!TIP]
-> Using `OfType<>` requires a reference to the `System.Linq` namespace (`using System.Linq;`).
+L'uso di `OfType<>` richiederà un riferimento allo spazio dei nomi `System.Linq` (`using System.Linq;`).
 
-## Exercise
+## <a name="exercise"></a>Esercizio
 
-One of the features in our app requires getting a list of blobs from the API. We'll use the pattern shown above to list all the blobs in our container. As we process the list, we get the name of each blob.
+Una delle funzionalità dell'app richiede il recupero di un elenco di BLOB dall'API. Si userà il modello illustrato sopra per elencare tutti i BLOB nel contenitore. Elaborando l'elenco, si ottiene il nome di ogni BLOB.
 
-Using the editor, replace `GetNames` in `BlobStorage.cs` with the following code and save your changes.
+Aprire `BlobStorage.cs` nell'editor e inserire il codice seguente in `GetNames`:
 
 ```csharp
 public async Task<IEnumerable<string>> GetNames()
@@ -80,7 +76,4 @@ public async Task<IEnumerable<string>> GetNames()
 }
 ```
 
-> [!TIP]
-> Note that the method signature now needs to specify `async`.
-
-The names returned by this method are processed by `FilesController` to turn them into URLs. When they are returned to the client, they are rendered as hyperlinks on the page.
+I nomi restituiti da questo metodo vengono elaborati da `FilesController` per la trasformazione in URL. Quando vengono restituiti al client, ne viene eseguito il rendering come collegamenti ipertestuali nella pagina.

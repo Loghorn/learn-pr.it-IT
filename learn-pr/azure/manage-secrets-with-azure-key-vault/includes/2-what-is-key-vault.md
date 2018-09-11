@@ -1,25 +1,25 @@
-Azure Key Vault is a *secret store*: a centralized cloud service for storing application secrets. Key Vault helps prevent the above scenarios by keeping application secrets in a single central location and providing secure access, permissions control, and access logging.
+Azure Key Vault è un *archivio segreti*, ossia un servizio cloud centralizzato per l'archiviazione dei segreti delle applicazioni. Key Vault consente di evitare gli scenari descritti mantenendo i segreti delle applicazioni in un'unica posizione centrale e offrendo accesso sicuro, controllo delle autorizzazioni e registrazione degli accessi.
 
-The main benefits of using Key Vault are:
+I vantaggi principali dell'uso di Key Vault sono:
 
-- Reduced risk of accidental secret leaks by storing secrets securely, outside of configuration and source control, and eliminating scenarios where secrets are copied around in files or pasted into emails or chats
-- Restricted secret access with access policies tailored to the applications and individuals that need them
-- Centralized secret storage, so that multiple users and instances of applications can access secret values that only need to be updated in one place
-- Access logging and monitoring to help you understand how and when secrets are accessed
+- Rischio ridotto di divulgazione accidentale di segreti mediante l'archiviazione sicura, fuori dalla configurazione e dal controllo del codice sorgente, e l'eliminazione di scenari in cui i segreti vengono copiati in file o incollati in messaggi di posta elettronica o chat
+- Accesso ai segreti limitato con criteri di accesso su misura per applicazioni e utenti che hanno necessità di usarle
+- Archiviazione dei segreti centralizzata, in modo che più utenti e istanze di applicazioni possano accedere ai valori dei segreti che possono essere aggiornati in un unico posto
+- Accesso a registrazione e monitoraggio per comprendere meglio come e quando i segreti sono accessibili
 
-Secrets are stored in individual *vaults*, which are Azure resources with their own configuration and security policies that you can create with any of the standard Azure management tools like the Azure portal or the Azure CLI. Secret access and vault management is accomplished via a REST API, which is also supported by all of the Azure management tools as well as client libraries available for many popular languages. Every vault has a unique URL where its API is hosted.
+I segreti vengono archiviati in *insiemi di credenziali*, che sono risorse di Azure con configurazione e criteri di sicurezza propri che possono essere creati con qualsiasi strumento di gestione di Azure come il portale di Azure o l'interfaccia della riga di comando di Azure. L'accesso ai segreti e la gestione degli insiemi di credenziali avvengono tramite l'API REST, supportata anche da tutti gli strumenti di gestione di Azure nonché da librerie client disponibili per i linguaggi più diffusi. Ogni insieme di credenziali ha un URL univoco in cui è ospitata l'API relativa.
 
 > [!IMPORTANT]
-> **Key Vault is designed to store configuration secrets for server applications.** It's not intended for storing data belonging to your app's users, and it shouldn't be used in the client-side part of an app. This is reflected in its performance characteristics, API, and cost model.
+> **Key Vault è progettato per archiviare i segreti della configurazione delle applicazioni server.** Non è destinato ad archiviare i dati appartenenti agli utenti dell'app e non dovrebbe essere usato sul lato client di un'app. Ciò si riflette nelle caratteristiche di prestazioni, nell'API e nel modello di costi.
 >
-> User data should be stored elsewhere, such as in an Azure SQL database with Transparent Data Encryption, or a storage account with Storage Service Encryption. Secrets used by your application to access those data stores can be kept in Key Vault.
+> I dati utente dovranno essere archiviati altrove, ad esempio in un database SQL di Azure con Transparent Data Encryption o in un account di archiviazione con la crittografia del servizio di archiviazione. I segreti usati dall'applicazione per accedere a tali archivi dati possono essere conservati in Key Vault.
 
-## What is a secret in Key Vault?
+## <a name="what-is-a-secret-in-key-vault"></a>Informazioni sui segreti in Key Vault
 
-In Key Vault, a secret is a name-value pair of strings. Secret names must be 1-127 characters long, contain only alphanumeric characters and dashes, and must be unique within a vault. A secret value can be any UTF-8 string up to 25 KB in size.
+In Key Vault, un segreto è una coppia di stringhe nome-valore. I nomi dei segreti devono avere una lunghezza compresa tra 1 e 127 caratteri, contenere solo caratteri alfanumerici e trattini ed essere univoci all'interno di un insieme di credenziali. Il valore di un segreto può essere qualsiasi stringa UTF-8 di dimensioni fino a 25 KB.
 
 > [!TIP]
-> Secret names don't need to be considered especially secret themselves. You can store them in your app's configuration if your implementation calls for it. The same is true of vault names and URLs.
+> I nomi dei segreti non devono necessariamente essere considerati a propria volta segreti. Possono essere archiviati nella configurazione dell'app, se necessario per l'implementazione. Lo stesso vale per gli URL e i nomi degli insiemi di credenziali.
 
 > [!NOTE]
-> Key Vault supports two additional kinds of secrets beyond strings &mdash; *keys* and *certificates* &mdash; and provides useful functionality specific to their use cases. This module does not cover these features and concentrates on secret strings like passwords and connection strings.
+> Oltre alle stringhe, Key Vault supporta altri due tipi di segreti, ossia *chiavi* e *certificati*, e offre funzionalità utili specifiche per i relativi casi d'uso. Questo modulo non illustra tali funzionalità e si concentra sui segreti stringa, come le password e le stringhe di connessione.

@@ -1,32 +1,32 @@
-In this unit, you will continue with the example of a company that makes Linux admin tools. Recall that you plan to use Linux VMs to let potential customers test your software. You have a resource group ready and now it is time to create the VMs.
+In questo esercizio, si continuerà con l'esempio di un'azienda che sviluppa strumenti di amministrazione per Linux. È importante ricordare che si prevede di usare macchine virtuali Linux per consentire ai potenziali clienti di testare il software. È stato predisposto un gruppo di risorse e a questo punto è possibile creare le macchine virtuali.
 
-Your company has paid for a booth at a big Linux trade show. You plan a demo area containing three terminals each connected to a separate Linux VM. At the end of each day, you want to delete the VMs and recreate them, so they start fresh every morning. Creating the VMs manually after work when you are tired would be error prone. You want to write a PowerShell script to automate the VM creation process.
+L'azienda presso cui si lavora prevede di organizzare uno stand nel corso una grande fiera dedicata a Linux. È stata pianificata un'area demo con tre terminali, ognuno connesso a una macchina virtuale Linux distinta. Alla fine di ogni giornata, si vuole eliminare e ricreare le macchine virtuali, in modo che ogni mattina siano nuove. Ricreare manualmente le macchine virtuali dopo una giornata di lavoro potrebbe dare luogo a errori. Si vuole scrivere uno script di PowerShell per automatizzare il processo di creazione delle macchine virtuali.
 
-## Write a script that creates Virtual Machines
+## <a name="write-a-script-that-creates-virtual-machines"></a>Scrivere uno script per la creazione delle macchine virtuali
 
-Follow these steps to write the script:
+Per scrivere lo script, seguire questa procedura:
 
-1. Create a new text file named **ConferenceDailyReset.ps1**.
+1. Creare un nuovo file di testo denominato **ConferenceDailyReset.ps1**.
 
-1. Capture the parameter in a variable:
+2. Acquisire il parametro in una variabile:
 
     ```powershell
     param([string]$resourceGroup)
     ```
 
-1. Authenticate with Azure using your credentials:
+3. Eseguire l'autenticazione in Azure con le proprie credenziali:
 
     ```powershell
     Connect-AzureRmAccount
     ```
 
-1. Prompt for a username and password for the VM's admin account and capture the result in a variable:
+4. Richiedere il nome utente e la password per l'account di amministratore della macchina virtuale e acquisire il risultato in una variabile:
 
     ```powershell
     $adminCredential = Get-Credential -Message "Enter a username and password for the VM administrator."
     ```
 
-1. Create a loop that executes three times:
+5. Creare un ciclo da eseguire tre volte:
 
     ```powershell
     For ($i = 1; $i -le 3; $i++) 
@@ -35,21 +35,21 @@ Follow these steps to write the script:
     }
     ```
 
-1. In the loop body, create a name for each VM and store it in a variable:
+6. Nel corpo del ciclo, creare un nome per ogni macchina virtuale e archiviarlo in una variabile:
 
     ```powershell
     $vmName = "ConferenceDemo" + $i
     ```
 
-1. Next, create a VM using the `$vmName` variable:
+7. Creare quindi una macchina virtuale usando la variabile `$vmName`:
 
    ```powershell
    New-AzureRmVm -ResourceGroupName $resourceGroup -Name $vmName -Credential $adminCredential -Location "East US" -Image UbuntuLTS
    ```
 
-1. Save the file.
+8. Salvare il file.
 
-The completed script should look like this:
+Lo script completato avrà l'aspetto seguente:
 
 ```powershell
 param([string]$resourceGroup)
@@ -66,22 +66,19 @@ For ($i = 1; $i -le 3; $i++)
 }
 ```
 
-## Execute the script
+## <a name="execute-the-script"></a>Eseguire lo script
 
-Launch PowerShell and change to the directory where you saved the script file. To run the script, execute the following command:
+Avviare PowerShell e passare alla directory in cui è stato salvato il file di script. Per eseguire lo script, eseguire il comando seguente:
 
 ```powershell
 .\ConferenceDailyReset.ps1 TrialsResourceGroup
 ```
 
-The script may take a few minutes to complete. When it is finished, verify that it ran successfully:
+Per il completamento dello script possono essere necessari alcuni minuti. Al termine, verificare che sia stato eseguito correttamente:
 
-<!---TODO: Update for sandbox?--->
-1. In a browser, sign into the [Azure portal](https://portal.azure.com/?azure-portal=true).
+1. Da un browser accedere al portale di Azure.
+2. Nel riquadro di spostamento a sinistra fare clic su **Gruppi di risorse**.
+3. Nell'elenco dei gruppi di risorse fare clic su **TrialsResourceGroup**. Nell'elenco delle risorse dovrebbero essere visibili le macchine virtuali appena create e le risorse associate.
 
-1. In the navigation on the left, click **Resource Groups**.
-
-1. In the list of resource groups, click **TrialsResourceGroup**. In the list of resources, you should see the newly created VMs and their associated resources.
-
-## Summary
-You wrote a script that automated the creation of three VMs in the resource group indicated by a script parameter. The script is short and simple but automates a process that would take a long time to complete manually with the portal.
+## <a name="summary"></a>Riepilogo
+È stato scritto uno script per automatizzare la creazione di tre macchine virtuali nel gruppo di risorse indicato da un parametro dello script. Lo script è breve e semplice ma consente di automatizzare un processo il cui completamento manuale tramite il portale richiederebbe molto tempo.

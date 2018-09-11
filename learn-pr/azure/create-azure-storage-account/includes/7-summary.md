@@ -1,5 +1,5 @@
-Storage accounts let you create a group of data management rules and apply them all at once to a group of Azure Blobs, Azure Files, Azure Queues, and Azure Tables. 
+Gli account di archiviazione consentono di creare un gruppo di regole di gestione dei dati e di applicarle tutte contemporaneamente a un gruppo di BLOB, file, code e tabelle di Azure. 
 
-If you tried to achieve the same thing without storage accounts, it would be tedious and error-prone. For example, what are the chances that you could successfully apply the exact same ruleset to thousands of blobs?
+L'uso degli account di archiviazione per ottenere questo risultato rende il processo meno noioso ed evita gli errori. Sarebbe infatti quasi impossibile applicare correttamente lo stesso esatto set di regole a migliaia di BLOB senza usare un account di archiviazione.
 
-Instead, you capture the rules in the settings for a storage account, and those rules are automatically applied to every data service in the account.
+Basta invece acquisire le regole nelle impostazioni relative a un account di archiviazione e queste regole vengono applicate automaticamente a ogni servizio dati nell'account.

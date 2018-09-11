@@ -1,0 +1,32 @@
+### YamlMime:ModuleUnit
+uid: learn.migrate-sql-server-relational-data.6-knowledge-check-deploy-fixes-and-migrate-the-database
+metadata:
+  title: 'Verifica delle conoscenze: distribuire le correzioni ed eseguire la migrazione del database'
+  description: 'Verifica delle conoscenze: distribuire le correzioni ed eseguire la migrazione del database'
+  displayType: one-column
+  ms.openlocfilehash: a4e9347a50eb3bf219f5cdcbddbf190a7f09c4c9
+  ms.sourcegitcommit: d6a4ffb95924e4af3bd445aaf263f34253735861
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/02/2018
+  ms.locfileid: "43460514"
+title: 'Verifica delle conoscenze: distribuire le correzioni ed eseguire la migrazione del database'
+durationInMinutes: 5
+content: 'Verifica delle conoscenze: distribuire le correzioni ed eseguire la migrazione del database'
+quiz:
+  title: 'Verifica delle conoscenze: distribuire le correzioni ed eseguire la migrazione del database'
+  questions:
+  - content: Se è necessario usare il database durante il processo di migrazione, quale dei seguenti metodi di migrazione è il più adatto?
+    choices:
+    - content: Eseguire il backup del database locale e ripristinarlo in Azure.
+      isCorrect: false
+      incorrectExplanation: Questo metodo non consente di eseguire la migrazione delle modifiche più recenti apportate dopo il backup del database locale.
+    - content: Usare Data Migration Assistant.
+      isCorrect: false
+      incorrectExplanation: Data Migration Assistant richiede di portare offline il database, operazione che non è possibile in questo scenario.
+    - content: Usare la replica.
+      isCorrect: true
+      correctExplanation: Corretto! Se è necessario che il database sia operativo durante la migrazione, è necessario usare il metodo di replica transazionale.
+    - content: Creare uno script per il database in Transact SQL ed eseguirlo sul database SQL di Azure.
+      isCorrect: false
+      incorrectExplanation: Errato! Riprovare.

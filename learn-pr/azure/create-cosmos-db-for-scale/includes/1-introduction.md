@@ -1,14 +1,13 @@
-Databases need to scale to meet both the data velocity and volume demands created by global audiences.
+La funzione di scalabilità dei database è fondamentale per soddisfare i requisiti di volume e velocità dei dati del pubblico globale.
 
-Suppose you work for an online retailer and your database needs to scale to accommodate an expanding product catalog. You also have a growing global customer base, and your customers expect quick responses to their queries and immediate updates to product availability.
+Si supponga di lavorare per un rivenditore online e che il database debba essere ridimensionato per gestire un catalogo di prodotti in continua espansione. Anche la clientela globale è in crescita e i clienti si aspettano risposte rapide alle query, nonché aggiornamenti immediati in merito alla disponibilità del prodotto.
 
-Your database should scale automatically to account for new products, and it should have high throughput and low latency to keep pace with your customers' expectations.
+Il database deve aumentare automaticamente per poter ospitare nuovi prodotti e utenti, inoltre deve avere una velocità effettiva elevata e una bassa latenza per rimanere al passo con le aspettative dei clienti.
 
-## Learning objectives
+## <a name="learning-objectives"></a>Obiettivi di apprendimento
+In questo modulo verrà descritto come:
 
-In this module, you will:
-
-- Create a NoSQL database with Azure Cosmos DB
-- Set the initial throughput volume for your database using request units
-- Choose a partition key
-- Create a database and collection in Azure Cosmos DB
+- Creare un database NoSQL con Azure Cosmos DB.
+- Impostare il volume di velocità effettiva iniziale per il database usando le unità richiesta.
+- Scegliere una chiave di partizione.
+- Creare un database e una raccolta in Azure Cosmos DB.

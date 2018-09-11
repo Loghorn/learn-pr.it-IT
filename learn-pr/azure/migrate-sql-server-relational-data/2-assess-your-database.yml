@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.migrate-sql-server-relational-data.2-assess-your-database
+title: Valutazione del database
+metadata:
+  title: Valutazione del database
+  description: Valutazione del database
+  ms.openlocfilehash: a88b2a7b56ee2459d844d192444db4aa8431e0d0
+  ms.sourcegitcommit: d6a4ffb95924e4af3bd445aaf263f34253735861
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/02/2018
+  ms.locfileid: "43460682"
+durationInMinutes: 5
+content: '[!include[](includes/2-assess-your-database.md)]'

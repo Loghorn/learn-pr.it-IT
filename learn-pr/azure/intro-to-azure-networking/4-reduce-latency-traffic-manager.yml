@@ -1,37 +1,37 @@
 ### YamlMime:ModuleUnit
 uid: learn.intro-to-azure-networking.4-reduce-latency-traffic-manager
-title: Reduce latency with Azure Traffic Manager
+title: Ridurre la latenza con Gestione traffico
 metadata:
-  title: Reduce latency with Azure Traffic Manager
-  description: Learn how Traffic Manager can reduce latency and create resiliency across geographic regions.
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
+  title: Ridurre la latenza con Gestione traffico
+  description: Informazioni su come Gestione traffico consente di ridurre la latenza e creare resilienza in più aree geografiche.
+  ms.openlocfilehash: fa64f6d6e7bfe0f991bf15002f24690a2c02f0fd
+  ms.sourcegitcommit: 40481ae733648a8b13402bf276d7acfd4da440f6
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/03/2018
+  ms.locfileid: "43477557"
 durationInMinutes: 7
-content: |
+content: >
   [!include[](includes/4-reduce-latency-traffic-manager.md)]
 quiz:
-  title: 'Knowledge Check: Reduce latency with Traffic Manager'
+  title: 'Verifica delle conoscenze: Ridurre la latenza con Gestione traffico'
   questions:
-  - content: 'How does Traffic Manager reduce latency?'
+  - content: In che modo Gestione traffico riduce la latenza?
     choices:
-    - content: 'It chooses only the fastest networks between endpoints.'
+    - content: Sceglie solo le reti più veloci tra endpoint.
       isCorrect: false
-      incorrectExplanation: 'Traffic Manager does not take specific network speeds into account.'
-    - content: "It chooses the endpoint that's closest to the user's DNS server."
+      incorrectExplanation: Gestione traffico non tiene conto delle specifiche velocità di rete.
+    - content: Sceglie l'endpoint più vicino al server DNS dell'utente.
       isCorrect: true
-      correctExplanation: "Choosing the server that's closest to the user is a good way to reduce latency."
-    - content: 'It caches content, similar to how content delivery networks work.'
+      correctExplanation: Scegliere il server che si trova più vicino all'utente è un buon modo per ridurre la latenza.
+    - content: I contenuti vengono memorizzati nella cache, in modo simile a quanto avviene nelle reti per la distribuzione di contenuti.
       isCorrect: false
-      incorrectExplanation: "Traffic Manager doesn't see the traffic that's passed between the client and server, nor does it cache content."
-  - content: 'You live in England, but your DNS server is in Italy. How does Traffic Manager direct traffic?'
+      incorrectExplanation: Gestione traffico non vede il traffico tra il client e il server e non inserisce il contenuto nella cache.
+  - content: Si supponga che l'utente viva Inghilterra, ma che il server DNS sia in Italia. In che modo Gestione traffico indirizza il traffico?
     choices:
-    - content: "It chooses the service that's closest to England."
+    - content: Sceglie il servizio più vicino all'Inghilterra.
       isCorrect: false
-      incorrectExplanation: "Traffic Manager uses the _DNS server_ that's closest to the user, not the user's location, to direct traffic."
-    - content: "It chooses the service that's closest to Italy."
+      incorrectExplanation: Per indirizzare il traffico, Gestione traffico usa il _server DNS_ più vicino all'utente e non alla posizione in cui l'utente si trova.
+    - content: Sceglie quindi il servizio più vicino all'Italia.
       isCorrect: true
-      correctExplanation: "Traffic Manager uses the _DNS server_ that's closest to the user, not the user's location, to direct traffic."
+      correctExplanation: Per indirizzare il traffico, Gestione traffico usa il _server DNS_ più vicino all'utente e non alla posizione in cui l'utente si trova.

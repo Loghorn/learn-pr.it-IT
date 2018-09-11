@@ -1,64 +1,50 @@
-There are three different cloud deployment models. A cloud deployment model defines where your data is stored and how your customers interact with it – how do they get to it, and where do the applications run? It also depends on how much of your own infrastructure you want or need to manage.
+Esistono tre modelli di distribuzione cloud diversi. Un modello di distribuzione cloud definisce dove vengono archiviati i dati e come i clienti interagiscono con i dati, ovvero come vi accedono e dove vengono eseguite le applicazioni. Il modello dipende anche dalle parti dell'infrastruttura che si vuole o è necessario gestire.
 
-Here, you'll explore the different types of deployment methods for your cloud computing resources
+In questo caso, si esamineranno i diversi tipi di metodi di distribuzione per le risorse di cloud computing. 
 
-<!-- TODO: Verify video -->
-> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE2yEv7]
+## <a name="public-cloud"></a>Cloud pubblico
 
-:::row:::
-    :::column:::
-        ![Public Cloud Icon](../media/4-public-cloud.png)
-    :::column-end:::
-	:::column span="3":::
-        **Public cloud**
+Si tratta del modello di distribuzione più comune. In questo caso, non è necessario gestire o mantenere aggiornato un hardware locale: tutto viene eseguito nell'hardware del provider cloud. In alcuni casi, è possibile evitare costi aggiuntivi condividendo le risorse di elaborazione con altri utenti cloud. 
 
-This is the most common deployment model. In this case, you have no local hardware to manage or keep up-to-date – everything runs on your cloud provider’s hardware. In some cases, you can save additional costs by sharing computing resources with other cloud users.
+### <a name="advantages"></a>Vantaggi
 
-Some advantages of the public cloud are:
+- Scalabilità elevata: non è necessario acquistare un nuovo server per eseguire il ridimensionamento
+- Prezzi con pagamento in base al consumo: si paga solo per ciò che si usa
+- Non si è responsabili della manutenzione o degli aggiornamenti dell'hardware
 
-- High scalability – you don’t have to buy a new server in order to scale
-- Pay-as-you-go pricing – you pay only for what you use
-- You’re not responsible for maintenance or updates of the hardware
-        :::column-end:::
-:::row-end:::
- :::row:::
-    :::column:::
-        ![Private Cloud Icon](../media/4-private-cloud.png)
-    :::column-end:::
-	:::column span="3":::
-        **Private cloud**
+### <a name="disadvantages"></a>Svantaggi
 
-In a private cloud, you create a cloud environment in your own data center and provide self-service access to compute resources to users in your organization. This offers a simulation of a public cloud to your users, but you remain completely responsible for the purchase and maintenance of the hardware and software services you provide.
+- Minaccia alla sicurezza più elevata
+- Hardware condiviso
 
-Some reasons teams move away from the private cloud are:
+## <a name="private-cloud"></a>Cloud privato
 
-- You have to purchase the hardware for startup and maintenance
-- Private clouds require IT skills and expertise that's hard to come by
-:::column-end:::
-:::row-end:::
- :::row:::
-    :::column:::
-        ![Hybrid Cloud Icon](../media/4-hybrid-cloud.png)
-    :::column-end:::
-	:::column span="3":::
-        **Hybrid cloud**
+Questo termine indica in genere un data center locale supportato dalla società. Non è connesso ad alcun servizio in esecuzione nel cloud. Si pensi, ad esempio, a una società che non ha eseguito migrazioni al cloud e non ha intenzione di farlo.
 
-A hybrid cloud combines public and private clouds, allowing you to run your applications in the most appropriate location. For example, you could host a web site in the public cloud and link it to a highly secure database hosted in your private cloud (or on-premises data center).
+### <a name="advantages"></a>Vantaggi
 
-This is helpful when you have some things that cannot be put in the cloud, maybe for legal reasons. For example, you may have data that cannot be exposed publicly (such as medical data). Another example is one or more applications that run on old hardware that can’t be updated. In this case, you can keep the old system running locally, and connect it to the public cloud for authorization or storage.
+- Maggiore sicurezza perché è tutto nella rete aziendale
+- Hardware e risorse non condivisi
 
-Some advantages of a hybrid cloud versus a private cloud are:
+### <a name="disadvantages"></a>Svantaggi
 
-- You can keep any systems running and accessible that use out-of-date hardware or an out-of-date operating system
-- You have flexibility with what you run locally versus in the cloud
+- È necessario acquistare l'hardware iniziale ed eseguire la manutenzione
+- Richiede competenze IT
 
-Some concerns you'll need to watch out for are:
+## <a name="hybrid-cloud"></a>Cloud ibrido
 
-- It can be more expensive than selecting one deployment model
-- It can be more complicated to set up and manage
-    :::column-end:::
-:::row-end:::
+Si tratta di una combinazione del data center locale supportato dalla società e del cloud pubblico. I due cloud sono connessi e possono scambiarsi i dati. Ciò è utile quando si hanno dati che non possono essere inseriti nel cloud, magari per motivi legali. È il caso, ad esempio, di dati che non possono essere esposti pubblicamente (come i dati sanitari). Un altro esempio è quello di una o più applicazioni in esecuzione su hardware obsoleto che non può essere aggiornato. In questo caso, è possibile mantenere il vecchio sistema in esecuzione in locale e connetterlo al cloud pubblico per l'autorizzazione o l'archiviazione.
 
-## Summary
+### <a name="advantages"></a>Vantaggi
 
-Cloud computing is flexible and gives you the ability to choose how you want to deploy it. The cloud deployment model you choose depends on your budget, and on your security, scalability, and maintenance needs.
+- È possibile mantenere in esecuzione e accessibili tutti i sistemi che usano hardware obsoleto o un sistema operativo non aggiornato
+- Flessibilità con ciò che si esegue in locale rispetto a ciò che si esegue nel cloud
+
+### <a name="disadvantages"></a>Svantaggi
+
+- Può essere più costoso di un modello di distribuzione
+- Più complicato da configurare e gestire
+
+## <a name="summary"></a>Riepilogo
+
+Il cloud computing è flessibile e offre la possibilità di scegliere la modalità di distribuzione. In genere, la modalità di distribuzione dipende dal budget e dalle esigenze di sicurezza, scalabilità e manutenzione.

@@ -1,18 +1,18 @@
-This module has shown you how to create an Azure Cosmos DB account that you can use for real-world scenarios like online retail apps. By creating a database with a smart partition key, you'll be able to scale horizontally as your need for data storage grows. You've also learned about request unit needs for your application, and how to set them during account creation so that you can scale up your throughput later, when user demand increases.
+Questo modulo ha illustrato come creare un account Cosmos DB di Azure da utilizzare potenzialmente in scenari reali, quali, ad esempio, le app per la vendita al dettaglio online. Mediante la creazione di un database con una chiave di partizione intelligente, sarai in grado di scalare orizzontalmente man mano che aumenta la necessità di archiviazione dei dati. Hai anche ricevuto nozioni in merito alle esigenze dell'unità richiesta rispetto all'applicazione e come impostarla durante la creazione degli account in modo da aumentare la velocità effettiva in un secondo momento, quando aumentano le richieste degli utenti.
 
-## Clean up
-<!---TODO: Update for sandbox?--->
+## <a name="cleanup"></a>Pulizia
 
-If you plan to continue working on the modules in this learning path, skip the cleanup process. Otherwise, use the following steps to delete your resources to avoid incurring charges for use of the service:
+Se prevedi di continuare a usare i moduli di questo percorso di apprendimento, ignora il processo di pulizia. In caso contrario, usa la procedura seguente per eliminare le risorse al fine di evitare di incorrere in addebiti per l'uso del servizio:
 
-1. In the Azure portal, select **Resource groups** on the far left, and then select the resource group you created.  
+1. Nel portale di Azure seleziona **Gruppi di risorse** all'estrema sinistra e quindi seleziona il gruppo di risorse creato.  
 
-    If the left menu is collapsed, click ![Expand button](../media-draft/6-expand.png) to expand it.
+    Se il menu a sinistra è compresso, fare clic sul ![pulsante Espandi](../media/5-create-a-database-and-collection/expand.png) per espanderlo.
 
-   ![Metrics in the Azure portal](../media-draft/6-delete-resources-select.png)
+   ![Metriche nel portale di Azure](../media/5-create-a-database-and-collection/delete-resources-select.png)
 
-1. In the new window, select the resource group, and then click **Delete resource group**.
+2. Nella nuova finestra seleziona il gruppo di risorse e quindi fai clic su **Elimina gruppo di risorse**.
 
-   ![Metrics in the Azure portal](../media-draft/6-delete-resources.png)
+   ![Metriche nel portale di Azure](../media/5-create-a-database-and-collection/delete-resources.png)
 
-1. In the new window, type the name of the resource group to delete, and then click **Delete**.
+3. Nella nuova finestra digita il nome del gruppo di risorse da eliminare e quindi fai clic su **Elimina**.
+

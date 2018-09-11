@@ -1,81 +1,81 @@
-### Train a TensorFlow model
+### <a name="exercise-3-train-a-tensorflow-model"></a>Esercizio 3: Eseguire il training di un modello TensorFlow
 
-In this unit, you will train an image-classification model built with [TensorFlow](https://www.tensorflow.org/) to recognize images that contain hot dogs. Rather than create the model from scratch, which would require vast amounts of computing power and tens or hundreds of thousands of images, you will customize a preexisting model, a practice known as [transfer learning](https://en.wikipedia.org/wiki/Transfer_learning). Transfer learning allows you to achieve high levels of accuracy with as little as a few minutes of training time on a typical laptop or PC and as few as several dozen images.
+In questo esercizio, si eseguirà il training di un modello di classificazione delle immagini compilato con [TensorFlow](https://www.tensorflow.org/) per riconoscere le immagini che contengono hot dog. Invece di creare il modello da zero, operazione che richiederebbe una quantità elevata di potenza di calcolo e decine o centinaia di migliaia di immagini, si personalizzerà un modello preesistente, una pratica nota come [transfer learning](https://en.wikipedia.org/wiki/Transfer_learning). La tecnica del transfer learning consente di raggiungere livelli elevati di precisione con un training di pochi minuti su un laptop o PC standard con poche decine di immagini.
 
-In the context of deep learning, transfer learning involves starting with a deep neural network that is pretrained to perform image classification and adding a layer that customizes the network for your problem domain — for example, to classify images into two groups: those that contain hot dogs, and those that do not. More than 20 pretrained TensorFlow image-classification models are available at <https://github.com/tensorflow/models/tree/master/research/slim#pre-trained-models.> The [Inception](https://arxiv.org/abs/1512.00567) and [ResNet](https://towardsdatascience.com/an-overview-of-resnet-and-its-variants-5281e2f56035) models are characterized by higher accuracy and commensurately higher resource requirements, while the MobileNet models trade accuracy for compactness and power efficiency and were developed with mobile devices in mind. All of these models are well known in the deep-learning community and have been used in a number of competitions as well as in real-world applications. You will use one of the MobileNet models as the basis for your neural network in order to strike a reasonable balance between accuracy and training time.
+Nel contesto del deep learning, il transfer learning richiede di iniziare con una rete neurale profonda già sottoposta a training per eseguire la classificazione di immagini, per poi aggiungere un livello che personalizza la rete per il dominio specifico del problema, ad esempio, per classificare le immagini in due gruppi : quelle contenenti hot dog e quelle che non li contengono. Sono disponibili in più di 20 modelli di classificazione delle immagini di TensorFlow già sottoposti a training all'indirizzo <https://github.com/tensorflow/models/tree/master/research/slim#pre-trained-models.>. I modelli [Inception](https://arxiv.org/abs/1512.00567) e [ResNet](https://towardsdatascience.com/an-overview-of-resnet-and-its-variants-5281e2f56035) sono caratterizzati da una maggiore precisione e requisiti a livello di risorse proporzionalmente più alti, mentre i modelli MobileNet sono stati sviluppati per i dispositivi motivi per offrire compattezza ed efficienza a discapito della precisione. Tutti questi modelli sono ben noti alla community del deep learning e sono stati usati in numerose competizioni, così come in applicazioni reali. Si userà uno dei modelli MobileNet come base per la rete neurale, in modo da ottenere un equilibrio ragionevole tra precisione e tempi di training.
 
-Training the model involves little more than running a Python script that downloads the base model and adds a layer trained with domain-specific images and labels. The script you need is available on GitHub, and the images you will use were assembled from thousands of public-domain food images available from [Kaggle](https://www.kaggle.com).
+Il training del modello prevede poco di più che eseguire uno script Python che scarica il modello di base e aggiunge un livello sottoposto a training con le immagini e le etichette specifiche del dominio. Lo script necessario è disponibile in GitHub e le immagini che verranno usate sono state raccolte da migliaia di immagini di cibo di dominio pubblico disponibili da [Kaggle](https://www.kaggle.com).
 
-1. In the Data Science VM, click the Terminal icon at the bottom of the screen to open a terminal window.
+1. Nella Data Science VM fare clic sull'icona del Terminale nella parte inferiore della schermata per aprire una finestra del terminale.
 
-    ![Launching a terminal window](../media-draft/3-launch-terminal.png)
+    ![Avvio di una finestra del terminale](../images/launch-terminal.png)
 
-    _Launching a terminal window_
+    _Avvio di una finestra del terminale_
 
-1. Execute the following command in the terminal window to navigate to the "notebooks" folder:
+1. Eseguire il comando seguente nella finestra del terminale per passare alla cartella "notebooks":
 
     ```bash
     cd notebooks
     ```
-    This folder is prepopulated with sample Jupyter notebooks curated for the DSVM.
+    Questa cartella viene prepopolata con i blocchi appunti di Jupyter di esempio preparati per la DSVM.
 
-1. Now use the following command to clone the "TensorFlow for Poets" repository from GitHub:
+1. A questo punto è possibile usare il comando seguente per clonare il repository "TensorFlow for Poets" da GitHub:
 
     ```bash
     git clone https://github.com/googlecodelabs/tensorflow-for-poets-2
     ```
-    > **Tip**: You can copy this line to the clipboard, and then use **Shift+Ins** to paste it into the terminal window.
+    > **Suggerimento**: è possibile copiare questa riga negli Appunti e quindi usare **MAIUSC+INS** per incollarla nella finestra del terminale.
 
-    This repo contains scripts for creating transfer-learning models, invoking a trained model in order to classify an image, and more. It is part of [Google Codelabs](https://codelabs.developers.google.com/), which contains a variety of resources and hands-on labs for software developers interested in learning about TensorFlow and other Google tools and APIs.
+    Questo repository contiene script per la creazione di modelli di transfer learning, richiamando un modello sottoposto a training per classificare un'immagine, e altro ancora. Fa parte di [Google Codelabs](https://codelabs.developers.google.com/), che contiene un'ampia gamma di risorse e lab pratici per gli sviluppatori di software interessati ad approfondire TensorFlow e altri strumenti e API di Google.
 
-1. Once cloning is complete, navigate to the folder containing the cloned model:
+1. Una volta completata la clonazione, passare alla cartella contenente il modello clonato:
 
     ```bash
     cd tensorflow-for-poets-2
     ```
 
-1. Use the following command to download the images that will be used to train the model:
+1. Usare il comando seguente per scaricare le immagini che verranno usate per il training del modello:
 
     ```bash
     wget https://topcs.blob.core.windows.net/public/tensorflow-resources.zip -O temp.zip; unzip temp.zip -d tf_files; rm temp.zip
     ```
 
-    This command downloads a zip file containing hundreds of food images — half containing hot dogs, and half that do not — and copies them into the subdirectory named "tf_files."
+    Questo comando scarica un file ZIP contenente centinaia di immagini di cibo (metà che includono hot dog e metà senza) e le copia nella sottodirectory denominata "tf_files."
 
-1. Click the File Manager icon at the bottom of the screen to open a File Manager window.
+1. Fare clic sull'icona di File Manager nella parte inferiore della schermata per aprire una finestra di File Manager.
 
-    ![Launching File Manager](../media-draft/3-launch-file-manager.png)
+    ![Avvio di File Manager](../images/launch-file-manager.png)
 
-    _Launching File Manager_
+    _Avvio di File Manager_
 
-1. In File Manager, navigate to the "notebooks/tensorflow-for-poets-2/tf_files" folder. Confirm that the folder contains a pair of subdirectories named "hot_dog" and "not_hot_dog." The former contains several hundred images containing hot dogs, while the latter contains an equal number of images that do **not** contain hot dogs. Browse the images in the "hot_dog" folder to get a feel for what they look like. Check out the images in the "not_hot_dog" folder as well.
+1. In File Manager passare alla cartella "notebooks/tensorflow-for-poets-2/tf_files". Verificare che la cartella contenga una coppia di sottodirectory denominate "hot_dog" e "not_hot_dog." La prima contiene numerose centinaia di immagini che includono hot dog, mentre la seconda contiene un numero uguale di immagini che **non** includono hot dog. Esplorare le immagini nella cartella "hot_dog" per farsi un'idea dell'aspetto di queste immagini. Dare un'occhiata anche alle immagini nella cartella "not_hot_dog".
 
-    > In order to train a neural network to determine whether an image contains a hot dog, you will train it with images that contain hot dogs as well as images that do not contain hot dogs.
+    > Per eseguire il training di una rete neurale per determinare se un'immagine include un hot dog, si eseguirà il training sia con immagini che includono hot dog che con immagini che non li includono.
 
-    ![Images in the "hot_dog" folder](../media-draft/3-hot-dog-images.png)
+    ![Immagini nella cartella "hot_dog"](../images/hot-dog-images.png)
 
-    *Images in the "hot_dog" folder*
+    *Immagini nella cartella "hot_dog"*
 
-    Also, confirm that the folder contains a text file named **retrained_labels_hotdog.txt**. This file identifies the subdirectories containing the training images. It is used by the Python script that trains the model. The script enumerates the files in each subdirectory identified in the text file (the text file's name is a parameter passed to the script) and uses those files to train the network.
+    Verificare anche che la cartella contenga un file di testo denominato **retrained_labels_hotdog.txt**. Questo file identifica le sottodirectory contenenti le immagini di training e viene usato dallo script di Python che esegue il training del modello. Lo script enumera i file in ogni sottodirectory identificati nel file di testo (il nome del file di testo è un parametro passato allo script) e usa questi file per il training della rete.
 
-1. Open a second terminal window and navigate to the "notebooks/tensorflow-for-poets-2" folder — the same one that is open in the first terminal window. Then, use the following command to launch [TensorBoard](https://www.tensorflow.org/programmers_guide/summaries_and_tensorboard), which is a set of tools used to visualize TensorFlow models and gain insight into the transfer-learning process:
+1. Aprire una seconda finestra del terminale e passare alla cartella "notebooks/tensorflow-for-poets-2", ovvero la stessa aperta nella prima finestra del terminale. Usare quindi il comando seguente per avviare [TensorBoard](https://www.tensorflow.org/programmers_guide/summaries_and_tensorboard), ovvero un set di strumenti usati per visualizzare i modelli di TensorFlow e ottenere informazioni dettagliate per il processo di transfer learning:
 
      ```bash
      tensorboard --logdir tf_files/training_summaries
      ```
 
-     > This command will fail if there is already an instance of TensorBoard running. If you are notified that port 6006 is already in use, use a ```pkill -f "tensorboard"``` command to kill the existing process. Then, execute the ```tensorboard``` command again.
+     > Questo comando avrà esito negativo se è già presente un'istanza di TensorBoard in esecuzione. Se si riceve una notifica che la porta 6006 è già in uso, usare un comando ```pkill -f "tensorboard"``` per terminare il processo esistente. Eseguire quindi di nuovo il comando ```tensorboard```.
 
-1. Switch back to the original terminal window and execute the following commands:
+1. Tornare alla finestra del terminale originale ed eseguire i comandi seguenti:
 
     ```bash
     IMAGE_SIZE=224;
     ARCHITECTURE="mobilenet_0.50_${IMAGE_SIZE}";
     ```
 
-    These commands initialize environment variables specifying the resolution of the training images and the base model that your neural network will build upon. Valid values for IMAGE_SIZE are 128, 160, 192, and 224. Higher values increase the training time, but also increase the accuracy of the classifier.
+    Questi comandi inizializzano le variabili di ambiente specificando la risoluzione delle immagini di training e il modello di base su cui verrà creata la rete neurale. I valori validi per IMAGE_SIZE sono 128, 160, 192 e 224. Valori più alti aumentano il tempo di training, ma anche l'accuratezza del classificatore.
 
-1. Now execute the following command to start the transfer-learning process — that is, to train the model with the images you downloaded:
+1. A questo punto eseguire il comando seguente per avviare il processo di transfer learning, vale a dire, per eseguire il training del modello con le immagini scaricate:
 
     ```bash
     python scripts/retrain.py \
@@ -91,24 +91,32 @@ Training the model involves little more than running a Python script that downlo
     --validation_percentage=15
     ```
 
-    **retrain.py** is one of the scripts in the repo that you downloaded. It is complex, comprising more than 1,000 lines of code and comments. Its job is to download the model specified with the ```--architecture``` switch and add to it a new layer trained with the images found in subdirectories of the directory specified with the ```--image_dir``` switch. Each image is labeled with the name of the subdirectory in which it is located — in this case, either "hot_dog" or "not_hot_dog" — enabling the modified neural network to classify images input to it as hot-dog images ("hot_dog") or not-hot-dog images ("not_hot_dog"). The output from the training session is a TensorFlow model file named **retrained_graph_hotdog.pb**. The name and location are specified in the ```--output_graph``` switch.
+    **retrain.py** è uno degli script nel repository scaricato. È complesso e composto da più di 1.000 righe di codice e commenti. Il processo dello script prevede il download del modello specificato con l'opzione ```--architecture``` e l'aggiunta a tale modello di un nuovo livello sottoposto a training con le immagini disponibili nelle sottodirectory della directory specificata con l'opzione ```--image_dir```. Ogni immagine viene etichettata con il nome della sottodirectory in cui si trova, in questo caso, "hot_dog" o "not_hot_dog" e in questo modo la rete neurale modificata può classificare le immagini di input come immagini con hot-dog ("hot_dog") o immagini senza hot dog ("not_hot_dog"). L'output della sessione di training è un file di modello TensorFlow denominato **retrained_graph_hotdog.pb**. Il nome e il percorso vengono specificati nell'opzione ```--output_graph```.
 
-1. Wait for training to complete; it should take less than five minutes. Then, check the output to determine the accuracy of the model. Your result may vary slightly from the one below because the training process involves a small amount of random estimation.
+1. Attendere il completamento del training, che dovrebbe richiedere meno di 5 minuti. Controllare quindi l'output per determinare la precisione del modello. I risultati possono variare leggermente rispetto a quello riportato di seguito, perché il processo di training include una quantità ridotta di stima casuale.
 
-      ![Gauging the model's accuracy](../media-draft/3-running-transfer-learning.png)
+      ![Valutazione della precisione del modello](../images/running-transfer-learning.png)
 
-1. Click the browser icon at the bottom of the desktop to open the browser installed in the Data Science VM. Then, navigate to <http://0.0.0.0:6006> to connect to Tensorboard.
+      _Valutazione della precisione del modello_
 
-    ![Launching Firefox](../media-draft/3-launch-firefox.png)
+1. Fare clic sull'icona del browser nella parte inferiore del desktop per aprire il browser installato nella Data Science VM. Passare quindi a <http://0.0.0.0:6006> per connettersi a TensorBoard.
 
-1. Inspect the graph labeled "accuracy_1." The blue line depicts the accuracy achieved over time as the 500 training steps specified with the ```how_many_training_steps``` switch are executed. This metric is important, because it shows how the accuracy of the model evolves as training progresses. Equally important is the distance between the blue and orange lines, which quantifies the amount of overfitting that occurred and should always be minimized. [Overfitting](https://en.wikipedia.org/wiki/Overfitting) means the model is adept at classifying the images it was trained with, but not as adept at classifying other images presented to it. The results here are acceptable, because there is a difference of less than 10% between the orange line (the "training" accuracy achieved with the training images) and the blue line (the "validation" accuracy achieved when tested with images outside the training set).
+    ![Avvio di Firefox](../images/launch-firefox.png)
 
-    ![The TensorBoard Scalars display](../media-draft/3-tensorboard-scalars.png)
+    _Avvio di Firefox_
 
-1. Click **GRAPHS** in the TensorBoard menu and inspect the graph shown there. The primary purpose of this graph is to depict the neural network and the layers that comprise it. In this example, "input_1" is the layer that was trained with food images and added to the network. "MobilenetV1" is the base neural network that you started with. It contains many layers which aren't shown. Had you built a deep neural network from scratch, all of the layers would have been diagrammed here. (If you would like to see the layers that comprise the MobileNet, double-click the "MobilenetV1" block in the diagram.) For more information on the Graphs display and the information surfaced there, refer to [TensorBoard: Graph Visualization](https://www.tensorflow.org/programmers_guide/graph_viz).
+1. Esaminare il grafico con l'etichetta "accuracy_1." La linea blu rappresenta la precisione ottenuta nel tempo durante l'esecuzione dei 500 passaggi di training specificati con l'opzione ```how_many_training_steps```. Questa metrica è importante, perché mostra come la precisione del modello si evolva man mano che procede il training. Altrettanto importante è la distanza tra le linee blu e arancione che quantifica la quantità di overfitting che si è verificato e che dovrebbe essere sempre ridotto al minimo. [Overfitting](https://en.wikipedia.org/wiki/Overfitting) significa che il modello è ideale per la classificazione delle immagini con il quale è stato sottoposto a training, ma non per la classificazione di altre immagini presentate. In questo caso i risultati sono accettabili, perché esiste una differenza minore del 10% tra la linea arancione (la precisione di "training" ottenuta con le immagini di training) e la linea blu (la precisione di "convalida" ottenuta con il test con immagini all'esterno del set di training).
 
-    ![The TensorBoard Graphs display](../media-draft/3-tensorboard-graphs.png)
+    ![Visualizzazione dei valori scalari di TensorBoard](../images/tensorboard-scalars.png)
 
-1. Switch back to File Manager and navigate to the "notebooks/tensorflow-for-poets-2/tf_files" folder. Confirm that it contains a file named **retrained_graph_hotdog.pb**. *This file was created during the training process and contains the trained TensorFlow model*. You will use it in the next exercise to invoke the model from the NotHotDog app.
+    _Visualizzazione dei valori scalari di TensorBoard_
 
-The script that you executed in Step 10 specified 500 training steps, which strikes a balance between accuracy and the time required for training. If you would like, try training the model again with a higher ```how_many_training_steps``` value such as 1000 or 2000. A higher step count generally results in higher accuracy, but at the expense of increased training time. Watch out for overfitting, which, as a reminder, is represented by the difference between the orange and blue lines in TensorBoard's Scalars display.
+1. Fare clic su **GRAPHS** (Grafici) nel menu di TensorBoard ed esaminare il grafico visualizzato. Lo scopo principale di questo grafico è rappresentare la rete neurale e i livelli che la compongono. In questo esempio, "input_1" è il livello che è stato sottoposto a training con le immagini di cibo e aggiunto alla rete. "MobilenetV1" è la rete neurale di base di partenza. Contiene molti livelli che non sono visualizzati. Se si fosse creata una rete neurale dettagliata da zero, tutti i livelli sarebbero rappresentati in questo grafico. (Se si desidera vedere i livelli che costituiscono MobileNet, fare doppio clic sul blocco "MobilenetV1" nel diagramma.) Per altre informazioni sulla visualizzazione Graphs (Grafici) e le informazioni presentate, vedere [TensorBoard: Graph Visualization](https://www.tensorflow.org/programmers_guide/graph_viz) (TensorBoard: visualizzazione dei grafici).
+
+    ![Visualizzazione Graphs (Grafici) di TensorBoard](../images/tensorboard-graphs.png)
+
+    _Visualizzazione Graphs (Grafici) di TensorBoard_
+
+1. Tornare a File Manager e passare alla cartella "notebooks/tensorflow-for-poets-2/tf_files". Verificare che contenga un file denominato **retrained_graph_hotdog.pb**. *Questo file è stato creato durante il processo di training e contiene il modello TensorFlow sottoposto a training*. Verrà usato nel prossimo esercizio per richiamare il modello dall'app NotHotDog.
+
+Lo script eseguito nel passaggio 10 specifica 500 passaggi di training, che rappresentano un buon compromesso tra precisione e tempo necessario per il training. Se si preferisce, provare a eseguire di nuovo il training del modello con un valore ```how_many_training_steps``` più elevato, ad esempio 1000 o 2000. Un numero di passaggi più alto corrisponde in genere a una maggiore precisione, ma a discapito di tempi di training maggiori. Prestare attenzione all'overfitting, che, come promemoria, è rappresentato dalla differenza tra le linee blu e arancione nella visualizzazione dei valori scalari di TensorBoard.

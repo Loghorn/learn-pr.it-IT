@@ -1,3 +1,3 @@
-In this module, you created a directory and enabled Azure Multi-Factor Authentication using a conditional access rule. You can now create additional conditional access policies for this or other Azure resources.
+In questo modulo è stata creata una directory ed è stato abilitato il servizio Azure Multi-Factor Authentication usando una regola di accesso condizionale. È ora possibile creare altri criteri di accesso condizionale per questa o per altre risorse di Azure.
 
-For more information, check out our documentation at [https://aka.ms/AzureADDocs](https://aka.ms/AzureADDocs).
+Per altre informazioni, vedere la documentazione all'indirizzo https://aka.ms/AzureADDocs.

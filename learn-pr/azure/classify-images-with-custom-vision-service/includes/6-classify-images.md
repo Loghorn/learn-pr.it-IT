@@ -1,29 +1,43 @@
-In this unit, you will use the Artworks app to submit images to the Custom Vision Service for classification. The app uses the JSON information returned from calls to the Custom Vision Prediction API's [PredictImage](https://southcentralus.dev.cognitive.microsoft.com/docs/services/eb68250e4e954d9bae0c2650db79c653/operations/58acd3c1ef062f0344a42814) method to tell you whether an image represents a painting by Picasso, Rembrandt, Pollock, or none of the above. It also shows the probability that the classification assigned to the image is correct.
+### <a name="exercise-6-use-the-app-to-classify-images"></a>Esercizio 6: Usare l'app per classificare immagini
 
-1. Click the **Browse (...)** button in the Artworks app.
+In questo esercizio si userà l'app Artworks per inviare immagini al Servizio visione artificiale personalizzato per la classificazione. L'app usa le informazioni JSON restituite da chiamate al metodo [PredictImage](https://southcentralus.dev.cognitive.microsoft.com/docs/services/eb68250e4e954d9bae0c2650db79c653/operations/58acd3c1ef062f0344a42814) dell'API per le stime del Servizio visione artificiale personalizzato per indicare quando un'immagine rappresenta un dipinto di Picasso, Rembrandt, Pollock o di nessuno di questi artisti. L'app indica anche la probabilità che la classificazione assegnata all'immagine sia corretta.
 
-    ![Browsing for local images in the Artworks app](../media/6-app-click-browse.png)
+1. Fare clic sul pulsante **Browse** (Sfoglia) nell'app Artworks. 
 
-1. Browse to the "Quick Tests" folder in the module resources. Select the file named **PicassoTest_02.jpg**, and then click **Open**.
+    ![Esplorazione di immagini locali nell'app Artworks](../images/app-click-browse.png)
 
-1. Click the **Predict** button to submit the image to the Custom Vision Service.
+    _Esplorazione di immagini locali nell'app Artworks_ 
 
-    ![Submitting the image to the Custom Vision Service](../media/6-app-click-predict.png)
+1. Passare alla cartella "Quick Tests" nelle risorse del lab. Selezionare il file denominato **PicassoTest_02.jpg** e quindi fare clic su **Apri**.
 
-1. Confirm that the app identifies the painting as a Picasso.
+1. Fare clic sul pulsante **Predict** (Stima) per inviare l'immagine al Servizio visione artificiale personalizzato.
 
-    ![Classifying an image as a Picasso](../media/6-app-prediction-01.png)
+    ![Invio dell'immagine al Servizio visione artificiale personalizzato](../images/app-click-predict.png)
 
-1. Repeat steps 1 through 3 for **RembrandtTest_01.jpg** and **PollockTest_01.jpg**, and confirm that the app can identify paintings by Rembrandt and Pollock.
+    _Invio dell'immagine al Servizio visione artificiale personalizzato_ 
 
-    ![Classifying an image as a Rembrandt](../media/6-app-prediction-02.png)
+1. Verificare che l'app identifichi il dipinto come opera di Picasso.
 
-1. Repeat steps 1 through 3 for **VanGoghTest_01.png** and **VanGoghTest_02.png**, and confirm that the app does not identify these Van Gogh masterworks as paintings by Picasso, Rembrandt, or Pollock.
+    ![Classificazione di un'immagine come opera di Picasso](../images/app-prediction-01.png)
 
-    ![Not a Picasso, Rembrandt, or Pollock](../media/6-app-prediction-03.png)
+    _Classificazione di un'immagine come opera di Picasso_ 
 
-1. As you can see, using the Prediction API from an app is as reliable as it is through the Custom Vision Service portal — and way more fun! What's more, if you go to the Predictions page in the portal, you'll find each of the images uploaded via the app shown there as well.
+1. Ripetere i passaggi da 1 a 3 per **RembrandtTest_01.jpg** e **PollockTest_01.jpg** e verificare che l'app sia in grado di identificare i dipinti come opere di Rembrandt e Pollock.
 
-    ![Image submitted to the Custom Vision Service](../media/6-portal-all-predictions.png)
+    ![Classificazione di un'immagine come opera di Rembrandt](../images/app-prediction-02.png)
 
-Feel free to test with images of your own and gauge the model's adeptness at identifying artists or determining that an image is not a Picasso, Rembrandt, or Pollock. If you'd like to train it to recognize Van Goghs too, upload some Van Gogh paintings, tag them with "Van Gogh," and retrain the model. There is no limit to the intelligence you can add if you're willing to do the training. And remember that in general, the more images you train with, the smarter the model will be.
+    _Classificazione di un'immagine come opera di Rembrandt_ 
+
+1. Ripetere i passaggi da 1 a 3 per **VanGoghTest_01.png** e **VanGoghTest_02.png** e verificare che l'app non identifichi questi capolavori di Van Gogh come opere di Picasso, Rembrandt o Pollock.
+
+    ![Opera identificata come non di Picasso, Rembrandt o Pollock](../images/app-prediction-03.png)
+
+    _Opera identificata come non di Picasso, Rembrandt o Pollock_ 
+
+1. Come si può osservare, l'uso dell'API per le stime da un'app è altrettanto affidabile quanto tramite il portale del Servizio visione artificiale personalizzato e anche molto più divertente. Inoltre, se si passa alla pagina Predictions (Stime) nel portale, anche qui verrà visualizzata ognuna delle immagini caricate tramite l'app.
+ 
+    ![Immagine inviata al Servizio visione artificiale personalizzato](../images/portal-all-predictions.png)
+
+    _Immagine inviata al Servizio visione artificiale personalizzato_ 
+
+È possibile testare liberamente immagini personali e valutare la capacità del modello di identificare gli artisti o di determinare un'immagine come non di Picasso, Rembrandt o Pollock. Se si vuole eseguire il training del modello perché riconosca anche le opere di Van Gogh, caricare alcuni dipinti di Van Gogh, corredarli del tag "Van Gogh" ed eseguire di nuovo il training del modello. Non vi sono limiti all'intelligenza che è possibile aggiungere se si è disposti a eseguire nuovi training. Ricordare inoltre che in generale più sono le immagini di cui si esegue il training, più intelligente sarà il modello.

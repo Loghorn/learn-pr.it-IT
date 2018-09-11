@@ -1,17 +1,17 @@
-Securing your Azure resources, such as virtual machines, websites, networks, and storage, is a critical function for any organization using the cloud. You want to ensure that your data and assets are protected, but still grant your employees and partners the access they need to perform their jobs. Role-based access control (RBAC) is an authorization system in Azure that helps you manage who has access to Azure resources, what they can do with those resources, and where they have access.
+La protezione delle risorse di Azure, ad esempio macchine virtuali, siti Web, reti e risorse di archiviazione, è una funzione critica per qualsiasi organizzazione che usi il cloud. È necessario assicurarsi che dati e risorse siano protetti concedendo allo stesso tempo a dipendenti e partner l'accesso necessario per svolgere il proprio lavoro. Il controllo degli accessi in base al ruolo è un sistema di autorizzazioni in Azure che consente di gestire gli utenti autorizzati ad accedere alle risorse di Azure, le operazioni che possono eseguire sulle risorse e le posizioni a cui hanno accesso.
 
-As an example, suppose you work for First Up Consultants, which is an engineering firm that specializes in circuit and electrical design. They've moved their workloads and assets to Azure to make collaboration easier across several offices and other companies. You work in the IT department at First Up Consultants, where you are responsible for keeping the company's assets secure, but still allowing users to access the resources they need. You've heard that RBAC can help you manage resources in Azure.
+Si supponga ad esempio di lavorare per First Up Consultants, un'azienda ingegneristica specializzata nella progettazione elettrica e di circuiti. L'azienda ha spostato i carichi di lavoro e le risorse in Azure per semplificare la collaborazione tra i vari uffici e con altre aziende. Nel reparto IT di First Up Consultants si occupa la posizione di responsabile della sicurezza delle risorse aziendali e dell'accesso degli utenti alle risorse necessarie. Il controllo degli accessi in base al ruolo può aiutare a gestire le risorse in Azure.
 
-In this module, you will learn how to use role-based access control (RBAC) to manage access to resources in Azure.
+In questo modulo si apprenderà l'uso del controllo degli accessi in base al ruolo per gestire l'accesso alle risorse in Azure.
 
-## Learning objectives
+## <a name="learning-objectives"></a>Obiettivi di apprendimento
 
-In this module, you will:
+In questo modulo verrà descritto come:
 
-- Verify access to resources for yourself and others
-- Grant access to resources
-- View activity logs of RBAC changes
+- Verificare l'accesso alle risorse per se stessi e altri utenti
+- Concedere l'accesso alle risorse
+- Visualizzare i log attività delle modifiche apportate al controllo degli accessi in base al ruolo
 
-## Prerequisites
+## <a name="prerequisites"></a>Prerequisiti
 
-- Knowledge of basic Azure concepts, such as the Azure portal and resource groups
+- Conoscenza dei concetti di base di Azure, ad esempio il portale di Azure e i gruppi di risorse

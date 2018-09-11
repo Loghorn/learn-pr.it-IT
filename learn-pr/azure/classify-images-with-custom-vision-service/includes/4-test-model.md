@@ -1,25 +1,35 @@
-Later in this module, you will create a Node.js app that uses the model to identify the artist of paintings presented to it. But you don't have to write an app to test the model; you can do your testing in the portal, and you can further refine the model using the images that you test with. In this unit, you will test the model's ability to identify the artist of a painting using test images provided for you.
+### <a name="exercise-4-test-the-model"></a>Esercizio 4: Testare il modello
 
-1. Click **Quick Test** at the top of the page.
+In [Esercizio 5](../5-build-app.yml) si creerà un'app Node.js che usa il modello per identificare l'artista dei dipinti presentati. Tuttavia, non è necessario scrivere un'app per testare il modello, ma è possibile eseguire i test nel portale e perfezionare ulteriormente il modello tramite le immagini usate per i test. In questo esercizio si testerà la capacità del modello di identificare l'artista di un dipinto usando immagini di test fornite.
 
-    ![Testing the model](../media/4-portal-click-quick-test.png)
+1. Fare clic su **Quick Test** (Test rapido) nella parte superiore della pagina.
+ 
+    ![Test del modello](../images/portal-click-quick-test.png)
 
-1. Click **Browse local files**, and then browse to the "Quick Tests" folder in the module resources. Select **PicassoTest_01.jpg**, and click **Open**.
+    _Test del modello_ 
 
-    ![Selecting a Picasso test image](../media/4-portal-select-test-01.png)
+1. Fare clic su **Esplora file locali** e quindi passare alla cartella "Quick Tests" nelle risorse del lab. Selezionare **PicassoTest_01.jpg** e quindi fare clic su **Apri**.
 
-1. Examine the results of the test in the "Quick Test" dialog. What is the probability that the painting is a Picasso? What is the probability that it is a Rembrandt or Pollock?
+    ![Selezione di un'immagine di test di Picasso](../images/portal-select-test-01.png)
 
-1. Close the "Quick Test" dialog. Then click **Predictions** at the top of the page.
+    _Selezione di un'immagine di test di Picasso_ 
 
-    ![Viewing the tests that have been performed](../media/4-portal-select-predictions.png)
+1. Esaminare i risultati del test nella finestra di dialogo "Quick Test" (Test rapido). Qual è la probabilità che il dipinto sia un Picasso? Qual è la probabilità che sia un Rembrandt o un Pollock?
 
-1. Click the test image that you uploaded to show a detail of it. Then tag the image as a "Picasso" by selecting **Picasso** from the drop-down list and clicking **Save and close**.
+1. Chiudere la finestra di dialogo "Quick Test" (Test rapido). Nella parte superiore della pagina fare quindi clic su **Predictions** (Stime).
+ 
+    ![Visualizzazione dei test eseguiti](../images/portal-select-predictions.png)
 
-    > By tagging test images this way, you can refine the model without uploading additional training images.
+    _Visualizzazione dei test eseguiti_ 
 
-    ![Tagging the test image](../media/4-tag-test-image.png)
+1. Fare clic sull'immagine di test caricata per mostrarne un dettaglio. Aggiungere all'immagine un tag "Picasso" selezionando **Picasso** nell'elenco a discesa e quindi fare clic su **Salva e chiudi**.
 
-1. Perform another quick test using the file named **FlowersTest.jpg** in the "Quick Test" folder. Confirm that this image is assigned a low probability of being a Picasso, a Rembrandt, or a Pollock.
+    > Aggiungendo tag alle immagini di test in questo modo, è possibile perfezionare il modello senza caricare altre immagini di training.
+ 
+    ![Aggiunta di tag all'immagine di test](../images/tag-test-image.png)
 
-The model is trained and ready to go and appears to be adept at identifying paintings by certain artists. Now let's go a step further and incorporate the model's intelligence into an app.
+    _Aggiunta di tag all'immagine di test_ 
+
+1. Eseguire un altro test rapido usando il file denominato **FlowersTest.jpg** nella cartella "Quick Tests". Verificare che a questa immagine venga assegnata una bassa probabilità che si tratti di un Picasso, un Rembrandt o un Pollock.
+
+Il modello è stato sottoposto a training ed è pronto per l'uso e sembra in grado di identificare i dipinti di determinati artisti. A questo punto, si compirà un ulteriore passo avanti, integrando l'intelligenza del modello in un'app.

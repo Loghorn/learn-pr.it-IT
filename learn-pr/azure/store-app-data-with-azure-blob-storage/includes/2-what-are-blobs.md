@@ -1,27 +1,27 @@
-Blobs are "files for the cloud". Apps work with blobs in much the same way as they would work with files on a disk, like reading and writing data. However, unlike a local file, blobs can be reached from anywhere with an internet connection.
+I BLOB sono "file per il cloud". Le app usano i BLOB in modo molto simile a come userebbero i file su disco, quindi per leggere e scrivere dati. A differenza però di un file locale i BLOB possono essere raggiunti da qualsiasi punto con una connessione Internet.
 
-Azure Blob storage is *unstructured*, meaning that there are no restrictions on the kinds of data it can hold. For example, a blob can hold a PDF document, a JPG image, a JSON file, video content, etc. Blobs aren't limited to common file formats &mdash; a blob could contain gigabytes of binary data streamed from a scientific instrument, an encrypted message for another application, or data in a custom format for an app you're developing.
+L'archivio BLOB di Azure *non è strutturato*. Questo significa che non esistono restrizioni ai tipi di dati che un BLOB può contenere. Un BLOB può ad esempio contenere un documento PDF, un'immagine JPG, un file JSON, contenuto video e così via. I BLOB non sono limitati ai formati di file comuni. Un BLOB può contenere gigabyte di dati binari trasmessi da uno strumento scientifico, un messaggio crittografato per un'altra applicazione o può contenere dati in un formato personalizzato per un'app in via di sviluppo.
 
-Blobs are usually not appropriate for structured data that needs to be queried frequently. They have higher latency than memory and local disk and don't have the indexing features that make databases efficient at running queries. However, blobs are frequently used in *combination* with databases to store non-queryable data. For example, an app with a database of user profiles could store profile pictures in blobs. Each user record in the database would include the name or URL of the blob containing the user's picture.
+I BLOB in genere non sono adatti a contenere dati strutturati che sono spesso sottoposti a query. Hanno una latenza maggiore rispetto alla memoria e al disco locale e non hanno le funzionalità di indicizzazione che rendono i database efficienti nell'esecuzione di query. I BLOB vengono comunque usati spesso in *combinazione* con i database per archiviare dati non disponibili per le query. Un'app con un database di profili utente ad esempio può archiviare nei BLOB le immagini dei profili. Ogni record di utente nel database includerà il nome o l'URL del BLOB contenente l'immagine dell'utente.
 
-Blobs are used for data storage in many ways across all kinds of applications and architectures:
+I BLOB vengono usati per archiviare i dati in molti modi diversi tra tutti i tipi di applicazioni e architetture:
 
-- Apps that need to communicate large amounts of data over a messaging system that supports only small messages can store data in blobs and send the blob URLs in messages.
-- Blob storage can be used like a file system for storing and sharing documents and other personal data.
-- Static web assets like images can be stored in blobs and made available for public download as if they were files on a web server.
-- Many Azure components use blobs behind the scenes. For example, Azure Cloud Shell stores your files and configuration in blobs, and Azure Virtual Machines uses blobs for hard-disk storage.
+* Le app che devono comunicare grandi quantità di dati attraverso un sistema di messaggistica che supporta solo messaggi di piccole dimensioni possono archiviare i dati nei BLOB e inviare nei messaggi l'URL dei BLOB.
+* L'archivio BLOB viene usato come un file system per l'archiviazione e la condivisione di documenti e altri dati personali.
+* Gli asset Web statici come le immagini possono essere archiviati in BLOB ed essere resi disponibili per il download pubblico come se fossero file in un server Web.
+* Molti componenti di Azure usano i BLOB dietro le quinte. Azure Cloud Shell ad esempio archivia i file e la configurazione in BLOB e Macchine virtuali di Azure usa i BLOB per l'archiviazione del disco rigido.
 
-Some apps will constantly create, update, and delete blobs as part of their work. Others will use a small set of blobs and rarely change them.
+Alcune app creano, aggiornano ed eliminano BLOB costantemente come parte del proprio lavoro. Altre usano un piccolo set di BLOB che modificano raramente.
 
-## Storage accounts, containers, and metadata
+## <a name="storage-accounts-containers-and-metadata"></a>Account di archiviazione, contenitori e metadati
 
-In Blob storage, every blob lives inside a *blob container*. You can store an unlimited number of blobs in a container and an unlimited number of containers in a storage account. Containers are "flat" &mdash; they can only store blobs, not other containers.
+Nell'archivio BLOB ogni BLOB risiede in un *contenitore BLOB*. È possibile archiviare un numero illimitato di BLOB in un contenitore e un numero illimitato di contenitori in un account di archiviazione. I contenitori sono "flat", possono quindi archiviare solo BLOB e non altri contenitori.
 
-Blobs and containers support metadata in the form of name-value string pairs. Your apps can use metadata for anything you like: a human-readable description of a blob's contents to be displayed by the application, a string that your app uses to determine how to process the blob's data, etc.
+I BLOB e i contenitori supportano i metadati nel formato di coppia nome-valore. Le app possono usare i metadati per qualsiasi cosa: una descrizione leggibile del contenuto di un BLOB da visualizzare nell'applicazione, una stringa che l'app usa per determinare per elaborare i dati del BLOB e così via.
 
 > [!TIP]
-> Blob storage does not provide any mechanism for searching or sorting blobs by metadata. See the Further Reading section at the end of this module for information about using Azure Search to achieve this.
+> L'archiviazione BLOB non include funzionalità per la ricerca e l'ordinamento dei BLOB in base ai metadati. Per informazioni sull'utilizzo di Ricerca di Azure, vedere la sezione Altre informazioni alla fine di questo modulo.
 
-## The Blob storage API and client libraries
+## <a name="the-blob-storage-api-and-client-libraries"></a>API di archiviazione BLOB e librerie client
 
-The Blob storage API is REST-based and supported by client libraries in many popular languages. It lets you write apps that create and delete blobs and containers, upload and download blob data, and list the blobs in a container.
+L'API di archiviazione BLOB è basata su REST e supportata da librerie client in molti linguaggi diffusi. Questa API consente di scrivere app che creano ed eliminano BLOB e contenitori, caricano e scaricano dati di BLOB ed elencano i BLOB in un contenitore.

@@ -1,40 +1,40 @@
 ### YamlMime:ModuleUnit
 uid: learn.intro-to-azure-networking.2-deploy-to-azure
-title: Deploy your site to Azure
+title: Distribuire il sito in Azure
 metadata:
-  title: Deploy your site to Azure
-  description: See what a basic three-tier application might look like on Azure.
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
+  title: Distribuire il sito in Azure
+  description: Vedere quale può essere l'aspetto di un'applicazione di base a tre livelli in Azure.
+  ms.openlocfilehash: 3bbacd16929ffb05448a2d3e60cd37c637275229
+  ms.sourcegitcommit: 40481ae733648a8b13402bf276d7acfd4da440f6
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/03/2018
+  ms.locfileid: "43477866"
 durationInMinutes: 7
-content: |
+content: >
   [!include[](includes/2-deploy-to-azure.md)]
 quiz:
-  title: 'Knowledge Check: Deploy your site to Azure'
+  title: 'Verifica delle conoscenze: distribuire il sito in Azure'
   questions:
-  - content: 'What is an Azure _region_?'
+  - content: Che cos'è un'_area_ di Azure?
     choices:
-    - content: 'An Azure data center within a specific geographic location.'
+    - content: Un data center di Azure in un'area geografica specifica.
       isCorrect: true
-      correctExplanation: 'Azure regions help you deliver your apps and services closest to your users. West US and North Europe are examples.'
-    - content: 'A way of breaking networks into smaller networks.'
+      correctExplanation: Le aree di Azure consentono di distribuire app e servizi nelle zone più vicine agli utenti. Stati Uniti occidentali ed Europa settentrionale sono esempi.
+    - content: Modalità di suddivisione delle reti in reti più piccole.
       isCorrect: false
-      incorrectExplanation: 'Azure networks are broken into _subnets_.'
-    - content: 'Firewall rules which define what traffic can flow in and out of Azure.'
+      incorrectExplanation: Le reti di Azure sono suddivise in _subnet_.
+    - content: Regole del firewall che definiscono il traffico consentito da e verso Azure.
       isCorrect: false
-      incorrectExplanation: 'You use _network security groups_ to define firewall rules.'
-  - content: 'Which of the following is true about virtual networks?'
+      incorrectExplanation: Si usano _gruppi di sicurezza di rete_ per definire le regole del firewall.
+  - content: Quale delle seguenti affermazioni sulle reti virtuali è vera?
     choices:
-    - content: 'You configure virtual networks through software.'
+    - content: Le reti virtuali si configurano usando il software.
       isCorrect: true
-      correctExplanation: 'Software enables you to treat a virtual network just like your own network. Azure maintains the physical hardware for you.'
-    - content: 'A virtual network accepts network traffic on all ports. You configure the firewall through virtual machines.'
+      correctExplanation: Il software consente di gestire una rete virtuale esattamente come la propria rete. Azure gestisce l'hardware fisico per l'utente.
+    - content: Una rete virtuale accetta il traffico di rete su tutte le porte. Il firewall viene configurato attraverso le macchine virtuali.
       isCorrect: false
-      incorrectExplanation: 'You can associate your virtual network with a network security group, which acts as a cloud-level firewall.'
-    - content: 'Virtual networks are always reachable from the internet.'
+      incorrectExplanation: È possibile associare la rete virtuale a un gruppo di sicurezza di rete, che agisce come un firewall a livello cloud.
+    - content: Le reti virtuali sono sempre raggiungibili da Internet.
       isCorrect: false
-      incorrectExplanation: 'Although a virtual network is reachable from the internet by default, you configure which networks, including private networks, can reach yours.'
+      incorrectExplanation: Anche se una rete virtuale può essere raggiunta da Internet per impostazione predefinita, è necessario configurare le reti, incluse le reti private, che possono raggiungere la propria rete.

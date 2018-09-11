@@ -1,14 +1,13 @@
-Imagine you work for an escalator company that has invested in IoT technology to monitor its product in the field. You oversee the processing of temperature sensor data from the drive gears of the escalators. You monitor the temperature data and add a data flag to indicate when the gears are too hot. In downstream systems, this data helps determine when maintenance is required.
+Si supponga di lavorare per un'azienda di installazione di scale mobili che ha investito in tecnologia IoT per monitorare i prodotti nel luogo di installazione. L'utente controlla l'elaborazione dei dati dei sensori di temperatura degli ingranaggi di trasmissione delle scale mobili. Esegue il monitoraggio dei dati relativi alla temperatura e aggiunge un flag di dati per indicare quando gli ingranaggi hanno una temperatura troppo elevata. Nei sistemi a valle, questi dati consentono di determinare quando è necessaria la manutenzione.
 
-Your company receives sensor data from several locations and from different escalator models. The data arrives in different formats, including batch file uploads, scheduled database pulls, messages on a queue, and incoming data from an event hub. You want to develop a reusable service that can process your temperature data from all these sources.
+La società riceve i dati dei sensori da diverse località e da diversi modelli di scale mobili. I dati arrivano in formati diversi, inclusi caricamenti di file batch, estrazioni di database pianificate, messaggi in una coda o dati in ingresso da un hub eventi. Si intende sviluppare un servizio riutilizzabile in grado di elaborare i dati di temperatura da tutte queste origini.
 
-When designing a service such as this with traditional enterprise architecture strategies, you would need to consider server infrastructure and maintenance up front: scope out necessary hardware, plan to install it, coordinate with IT to manage it, etc. An alternative to all that work is **serverless computing**. With serverless computing, your cloud provider manages the provisioning and maintenance of the infrastructure letting you focus completely on building the app logic. Azure Functions is a key component of the serverless computing offering from Azure and enables you to run pieces of code or *functions*, written in the programming language of your choice, in the cloud.
+Quando si progetta un servizio di questo tipo con strategie di architettura aziendale tradizionali, è necessario prendere in considerazione l'infrastruttura server e la manutenzione fin dall'inizio: predisporre l'hardware necessario, pianificarne l'installazione, coordinare il personale IT per la gestione e così via. Un'alternativa a questo scenario è l'**elaborazione serverless**. Con l'elaborazione serverless il provider di servizi cloud gestisce il provisioning e la manutenzione dell'infrastruttura, consentendo agli sviluppatori di concentrarsi completamente sulla creazione del codice dell'app. Funzioni di Azure è un componente fondamentale dell'offerta di elaborazione serverless di Azure e consente di eseguire nel cloud frammenti di codice o *funzioni* scritte nel linguaggio di programmazione preferito.
 
-## Learning objectives
+## <a name="learning-objectives"></a>Obiettivi di apprendimento
+In questo modulo verrà descritto come:
 
-In this module, you will:
-
-- Decide if serverless computing is right for your business need.
-- Create an Azure function app in the Azure portal.
-- Execute a function using triggers.
-- Monitor and test your Azure function from the Azure portal .
+- Decidere se l'elaborazione serverless è adatta alle esigenze aziendali.
+- Creare un'app per le funzioni di Azure nel portale di Azure.
+- Eseguire una funzione con i trigger.
+- Monitorare e sottoporre a test la funzione di Azure nel portale di Azure.

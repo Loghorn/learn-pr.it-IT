@@ -1,40 +1,40 @@
-The storage account settings we've already covered apply to the data services in the account. Here, we will discuss the three settings that apply to the account itself, rather than to the data stored in the account:
+Le impostazioni dell'account di archiviazione illustrate in precedenza si applicano ai servizi dati nell'account. Questo articolo presenterà le tre impostazioni applicabili all'account stesso, anziché ai dati archiviati nell'account:
 
-- Name
-- Deployment model
-- Account kind
+- Nome
+- Modello di distribuzione
+- Tipo di account
 
-These settings impact how you manage your account and the cost of the services within it.
+Queste impostazioni influiscono sulla modalità di gestione dell'account e sul costo dei relativi servizi.
 
-## Name
+## <a name="name"></a>Nome
 
-Each storage account has a name. The name must be globally unique, use only lowercase letters and digits and be between 3 and 24 characters.
+Ogni account di archiviazione ha un nome. Il nome deve essere univoco a livello globale. Deve essere di lunghezza compresa tra 3 e 24 caratteri e contenere solo lettere minuscole e cifre.
 
-## Deployment model
+## <a name="deployment-model"></a>Modello di distribuzione
 
-A _deployment model_ is the system Azure uses to organize your resources. It defines the API that you use to create, configure, and manage those resources. Azure provides two deployment models:
+Un _modello di distribuzione_ è il sistema usato da Azure per organizzare le risorse. Definisce l'API utilizzabile per creare, configurare e gestire tali risorse. Azure offre due modelli di distribuzione:
 
-- **Resource Manager**: the current model that uses the Azure Resource Manager API
-- **Classic**: a legacy offering that uses the Azure Service Management API
+- **Resource Manager**: il modello corrente che usa l'API di Azure Resource Manager
+- **Classico**: un'offerta di tipo legacy che usa l'API di gestione del servizio Microsoft Azure.
 
-The decision on which one to choose is usually easy, because most Azure resources only work with Resource Manager. However, storage accounts, virtual machines, and virtual networks support both, so you must choose one or the other when you create your storage account.
+In genere, è semplice scegliere quale adottare dal momento che la maggior parte delle risorse di Azure può essere usata solo con Resource Manager. Tuttavia, gli account di archiviazione, le macchine virtuali e le reti virtuali supportano entrambi. Ciò significa che è necessario sceglierne uno quando si crea l'account di archiviazione.
 
-The key feature difference between the two models is their support for grouping. The Resource Manager model adds the concept of a _resource group_, which is not available in the classic model. A resource group lets you deploy and manage a collection of resources as a single unit.
+La differenza fondamentale tra i due modelli è il supporto per il raggruppamento. Il modello di Resource Manager aggiunge il concetto di un _gruppo di risorse_ che non è disponibile nel modello classico. Un gruppo di risorse consente di distribuire e gestire una raccolta di risorse come unità singola.
 
-Microsoft recommends that you use **Resource Manager** for all new resources.
+Per tutte le nuove risorse, Microsoft consiglia di usare Resource Manager.
 
-## Account kind
+## <a name="account-kind"></a>Tipo di account
 
-Storage account _kind_ is a set of policies that determine which data services you can include in the account and the pricing of those services. There are three kinds of storage accounts:
+Il _tipo_ di account di archiviazione è un set di criteri che determinano quali servizi dati è possibile includere nell'account e i relativi prezzi. Sono disponibili tre tipi di account di archiviazione:
 
-- **StorageV2 (general purpose v2)**: the current offering that supports all storage types and all of the latest features
-- **Storage (general purpose v1)**: a legacy kind that supports all storage types but may not support all features
-- **Blob storage**: a legacy kind that allows only block blobs and append blobs
+- **Archiviazione v2 (utilizzo generico v2)**: l'offerta corrente che supporta tutti i tipi di archiviazione e tutte le funzionalità più recenti
+- **Archiviazione (utilizzo generico v1)**: un tipo legacy che supporta tutti i tipi di archiviazione, ma potrebbe non supportare tutte le funzionalità
+- **Archiviazione BLOB**: un tipo legacy che consente solo BLOB in blocchi e BLOB di accodamento.
 
-Microsoft recommends that you use the **General-purpose v2** option for new storage accounts.
+Per i nuovi account di archiviazione, Microsoft consiglia di usare account per utilizzo generico v2.
 
-There are a few special cases that can be exceptions to this rule. For example, pricing for transactions is lower in general purpose v1, which would allow you to slightly reduce costs if that matches your typical workload.
+Esistono alcuni casi speciali che possono costituire un'eccezione a questa regola. Ad esempio, i prezzi per le transazioni sono inferiori per gli account per utilizzo generico v1, il che consentirebbe di ridurre leggermente i costi in caso di corrispondenza con il carico di lavoro tipico.
 
-## Summary
+## <a name="summary"></a>Riepilogo
 
-The core advice here is to choose the **Resource Manager** deployment model and the **StorageV2 (general purpose v2)** account kind for all your storage accounts. The other options still exist primarily to allow existing resources to continue operation. For new resources, there are few reasons to consider the other choices.
+Il consiglio generale è quello di scegliere il modello di distribuzione di **Resource Manager** e il tipo di account di **archiviazione v2 (utilizzo generico v2)** per tutti gli account di archiviazione. Le altre opzioni sono ancora disponibili principalmente per garantire la continuità del funzionamento delle risorse esistenti. Per le nuove risorse, ci sono davvero ben pochi motivi per prendere in considerazione le altre opzioni.

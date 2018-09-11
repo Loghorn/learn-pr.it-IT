@@ -1,12 +1,11 @@
-Imagine a scenario where a busy hair salon has a recurring problem: their customers commonly miss their appointments. The appointments are reserved time slots. If a customer misses an appointment, the salon loses money. To fix this problem, the salon reaches out to you, a software developer. To improve the problem, you decide to send reminder text messages. Every morning, you send a text message to every customer with an appointment that day.
+Immaginiamo uno scenario in cui un salone di parrucchieri molto attivo riscontri un problema ricorrente: i clienti saltano comunemente agli appuntamenti. Gli appuntamenti sono fasce orarie riservate. Se un cliente perde un appuntamento, il salone perde denaro. Per risolvere questo problema, il salone si rivolge a uno sviluppatore di software. Per migliorare il problema, decide di inviare messaggi di testo di promemoria. Ogni mattina, viene inviato un SMS a tutti i clienti che hanno un appuntamento quel giorno.
 
-As an Azure developer, you decide to solve this problem using an Azure function. You already know how to implement the logic to send a text message. Now you need to learn how to send the message at a specific time. Luckily, Azure Functions supports a feature called _triggers_. Triggers are used to determine how an Azure function is executed.
+Lo sviluppatore Azure decide di risolvere questo problema usando una funzione di Azure. Si conosce già il modo di implementare la logica per inviare un messaggio di testo. A questo punto è necessario avere informazioni su come inviare il messaggio in un momento specifico. Per fortuna, le funzioni di Azure supportano una funzionalità denominata _trigger_. I trigger vengono usati per determinare la modalità di esecuzione di una funzione di Azure.
 
-## Learning objectives
+## <a name="learning-objectives"></a>Obiettivi di apprendimento
+In questo modulo verrà descritto come:
 
-In this module, you will:
-
-- Determine which trigger works best for your business needs.
-- Create a timer trigger to invoke a function on a consistent schedule.
-- Create an HTTP trigger to invoke a function when an HTTP request is received.
-- Create a blob trigger to invoke a function when a blob is created or updated in Azure Storage.
+- Determinare quale trigger risulta più adatto alle esigenze aziendali.
+- Creare un trigger timer per richiamare una funzione in una pianificazione coerente.
+- Creare un trigger HTTP per richiamare una funzione quando viene ricevuta una richiesta HTTP.
+- Creare un trigger del BLOB per richiamare una funzione quando viene creato o aggiornato un BLOB nell'archivio di Azure.

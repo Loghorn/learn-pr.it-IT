@@ -1,29 +1,29 @@
-In the previous exercise, we enabled trial licenses, created a directory, created a user, and created a group to test our solution. In this unit, we will create our conditional access rule to require Azure Multi-Factor Authentication for the Azure portal.
+Nell'esercizio precedente abbiamo abilitato licenze di valutazione, creato una directory, creato un utente e creato un gruppo per testare la soluzione. In questo esercizio si creerà la regola di accesso condizionale per richiedere l'autenticazione a più fattori di Azure per il portale di Azure.
 
-## Enable conditional access-based Multi-Factor Authentication
+## <a name="enable-conditional-access-based-multi-factor-authentication"></a>Abilitare l'autenticazione a più fattori basata sull'accesso condizionale
 
-Conditional access allows administrators to configure when they do or do not want something to happen. They can use multiple rules in parallel to grant or deny access to resources. Here's the rule that we need to create:
+L'accesso condizionale consente agli amministratori di configurare quando deve verificarsi o meno un evento. È possibile usare più regole in parallelo per concedere o negare l'accesso alle risorse. Ecco la regola che è necessario creare:
 
-**When accessing the Azure portal - Require multi-factor authentication**
+**Quando si accede al portale di Azure: Richiedi autenticazione a più fattori**
 
-The steps that follow will walk you through the process to create a conditional access rule to require users to perform multi-factor authentication when they access the Azure portal.
+I passaggi seguenti spiegano in maniera dettagliata come creare una regola di accesso condizionale per richiedere agli utenti di eseguire l'autenticazione a più fattori quando accedono al portale di Azure.
 
-1. Browse to **Azure Active Directory** > **Conditional access**.
+1. Passare ad **Azure Active Directory** > **Accesso condizionale**.
 
-1. Click **New policy**.
+1. Fare clic su **Nuovo criterio**.
 
-1. Name the policy **Require MFA for Azure portal**.
+1. Denominare il criterio **Richiedi autenticazione a più fattori per il portale di Azure**.
 
-1. Under **Assignments** > **Users and groups**, select **Users and groups**. Select the group that we created **CA-MFA-AzurePortal**. and click **Done**.
+1. In **Assegnazioni** > **Utenti e gruppi** selezionare **Utenti e gruppi**. Selezionare il gruppo appena creato **CA-MFA-AzurePortal**. Fare clic su **Fatto**.
 
-1. Under **Cloud apps** > **Select apps**, select **Microsoft Azure Management**.
+1. In **App cloud** > **Selezionare le app**, selezionare **Microsoft Azure Management**.
 
-1. Under **Access controls** > **Grant**, select **Require multi-factor authentication**.
+1. In **Controlli di accesso** > **Concedi** selezionare **Richiedi autenticazione a più fattori**.
 
-1. Set **Enable policy** to **On**.
+1. Impostare **Abilita criterio** su **Sì**.
 
-1. Click **Create**.
+1. Fare clic su **Crea**.
 
-## Summary
+## <a name="summary"></a>Riepilogo
 
-In this unit, you learned how to create a conditional access rule. The rule requires Multi-Factor Authentication when accessing the Azure portal.
+In questa unità, è stato descritto come creare una regola di accesso condizionale. La regola richiede l'autenticazione a più fattori per l'accesso al portale di Azure.

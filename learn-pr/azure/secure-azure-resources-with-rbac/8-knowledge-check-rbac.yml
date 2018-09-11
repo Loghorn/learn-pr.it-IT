@@ -1,66 +1,68 @@
 ### YamlMime:ModuleUnit
 uid: learn.secure-azure-resources-with-rbac.8-knowledge-check-rbac
 metadata:
-  title: Knowledge check - Using RBAC
-  description: Knowledge check - Using RBAC
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
-title: Knowledge check - Using RBAC
+  title: Verifica delle conoscenze - Usare Controllo degli accessi in base al ruolo
+  description: Verifica delle conoscenze - Usare Controllo degli accessi in base al ruolo
+  displayType: one-column
+  ms.openlocfilehash: 6888c6b1d676f0bc3066cce4c92d0202984c2b52
+  ms.sourcegitcommit: 850ce909966600e7a8d6f89d8bdebbb621416838
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/03/2018
+  ms.locfileid: "43479201"
+title: Verifica delle conoscenze - Usare Controllo degli accessi in base al ruolo
 durationInMinutes: 5
+content: Verifica delle conoscenze - Usare Controllo degli accessi in base al ruolo
 quiz:
-  title: Knowledge check - Using RBAC
+  title: Verifica delle conoscenze - Usare Controllo degli accessi in base al ruolo
   questions:
-  - content: 'What is the name of the blade in the Azure portal where you grant access?'
+  - content: Qual è il nome del panello nel portale di Azure dal quale si concede l'accesso?
     choices:
-    - content: Azure resources
+    - content: Risorse di Azure
       isCorrect: false
-      correctExplanation: You can't assign roles on the Azure resources blade, but you can see what roles are assigned to yourself or the selected user.
+      correctExplanation: Non è possibile assegnare i ruoli nel pannello delle risorse di Azure, ma è possibile visualizzare i ruoli che vengono assegnati a se stessi o all'utente selezionato.
     - content: Azure Active Directory
       isCorrect: false
-      incorrectExplanation: You can't assign roles on the Azure Active Directory blade, but you can access the Azure Active Directory features on this blade.
-    - content: All users
+      incorrectExplanation: Non è possibile assegnare i ruoli nel pannello Azure Active Directory, ma è possibile accedere alle funzionalità di Azure Active Directory in questo pannello.
+    - content: Tutti gli utenti
       isCorrect: false
-      correctExplanation: You can't assign roles on the All users blade. This blade lists all the users for the selected directory.
-    - content: Access control (IAM)
+      correctExplanation: Non è possibile assegnare i ruoli nel pannello Tutti gli utenti. Questo pannello elenca tutti gli utenti per la directory selezionata.
+    - content: Controllo di accesso (IAM)
       isCorrect: true
-      correctExplanation: Correct! You assign roles on the Access control (IAM) blade. This blade appears in several areas in the portal.
-  - content: 'To grant a user access to Azure resources, you create a role assignment.'
+      correctExplanation: Corretto! Si assegnano ruoli nel pannello Controllo di accesso (IAM). Questo pannello viene visualizzato in diverse aree del portale.
+  - content: Per concedere a un utente l'accesso alle risorse di Azure, si crea un'assegnazione di ruolo.
     choices:
-    - content: 'True'
+    - content: Vero
       isCorrect: true
-      correctExplanation: Correct! A role assignment is the process of binding a role to a security principal at a particular scope for the purpose of granting access.
-    - content: 'False'
+      correctExplanation: Corretto! Un'assegnazione di ruolo è il processo di associazione di un ruolo a un'entità di sicurezza in un particolare ambito ai fini della concessione dell'accesso.
+    - content: Falso
       isCorrect: false
-      incorrectExplanation: A role assignment is the process of binding a role to a security principal at a particular scope for the purpose of granting access.
-  - content: 'What role enables you to grant access to others?'
+      incorrectExplanation: Un'assegnazione di ruolo è il processo di associazione di un ruolo a un'entità di sicurezza in un particolare ambito ai fini della concessione dell'accesso.
+  - content: Qual è il ruolo che consente di concedere l'accesso ad altri utenti?
     choices:
-    - content: Virtual Machine Contributor
+    - content: Collaboratore macchine virtuali
       isCorrect: false
-      correctExplanation: The Virtual Machine Contributor role allows you to manage virtual machines, but you can't grant access to others.
-    - content: User Access Administrator
+      correctExplanation: Il ruolo Collaboratore macchina virtuale consente di gestire le macchine virtuali, ma non di concedere l'accesso ad altri utenti.
+    - content: Amministratore accessi utente
       isCorrect: true
-      incorrectExplanation: Correct! The User Access Administrator role and also the Owner role allow you to grant access to others.
-    - content: Contributor
+      incorrectExplanation: Corretto! Il ruolo Amministratore accessi utente e il ruolo di proprietario consentono di concedere l'accesso ad altri utenti.
+    - content: Collaboratore
       isCorrect: false
-      correctExplanation: The Contributor role allows you to manage all resources, but you can't grant access to others.
-    - content: Reader
+      correctExplanation: Il ruolo Collaboratore consente di gestire le macchine virtuali, ma non di concedere l'accesso ad altri utenti.
+    - content: Lettore
       isCorrect: false
-      correctExplanation: The Reader role allows you to read all resources, but you can't grant access to others.
-  - content: 'A developer needs full access to a resource group. If you are following least-privilege best practices, what scope should you specify?'
+      correctExplanation: Il ruolo Lettore consente di leggere tutte le risorse, ma non di concedere l'accesso ad altri utenti.
+  - content: Uno sviluppatore deve avere accesso completo a un gruppo di risorse. Se si seguono le procedure consigliate con privilegi minimi, quale ambito si deve specificare?
     choices:
-    - content: Resource group
+    - content: Gruppo di risorse
       isCorrect: true
-      correctExplanation: Correct! Following least-privilege best practices, you just grant the access the user needs to do their job. In this case, you should set the scope to just the resource group.
-    - content: Subscription
+      correctExplanation: Corretto! Seguendo le procedure consigliate con privilegi minimi, è possibile concedere l'accesso solo all'utente dovrà svolgere il lavoro. In questo caso, è necessario impostare l'ambito solo per il gruppo di risorse.
+    - content: Sottoscrizione
       isCorrect: false
-      incorrectExplanation: A subscription scope would grant the developer access, but it would be broader than what they need.
-    - content: Resource
+      incorrectExplanation: Un ambito della sottoscrizione concede l'accesso agli sviluppatori, ma sarà più ampio rispetto a ciò di cui hanno bisogno.
+    - content: Risorsa
       isCorrect: false
-      correctExplanation: A resource scope would not grant the developer the access they require.
-    - content: User
+      correctExplanation: Un ambito delle risorse non concede agli sviluppatori di l'accesso di cui hanno bisogno.
+    - content: Utente
       isCorrect: false
-      correctExplanation: User is not a scope.
+      correctExplanation: L'utente non è un ambito.

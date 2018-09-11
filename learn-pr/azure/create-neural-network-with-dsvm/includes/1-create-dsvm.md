@@ -1,36 +1,51 @@
-### Create an Ubuntu Data Science VM
+### <a name="exercise-1-create-an-ubuntu-data-science-vm"></a>Esercizio 1: Creare una Data Science VM Ubuntu
 
-The Data Science Virtual Machine for Linux is a virtual-machine image that simplifies getting started with data science. Multiple tools are already built, installed, and configured in order to get you up and running quickly. The NVIDIA GPU driver, [NVIDIA CUDA](https://developer.nvidia.com/cuda-downloads) and the [NVIDIA CUDA Deep Neural Network](https://developer.nvidia.com/cudnn) (cuDNN) library are also included, as are [Jupyter](http://jupyter.org/), several sample Jupyter notebooks, and [TensorFlow](https://www.tensorflow.org/). All pre-installed frameworks are GPU-enabled but work on CPUs as well. In this unit, you will create an instance of the Data Science Virtual Machine (DSVM) for Linux on Azure.
+La Data Science Virtual Machine per Linux è un'immagine di macchina virtuale che semplifica gli approcci iniziali alle tecnologie di Data Science. Più strumenti sono già compilati, installati e configurati per essere operativi rapidamente. Sono inoltre inclusi il driver NVIDIA GPU, [NVIDIA CUDA](https://developer.nvidia.com/cuda-downloads), e la libreria [NVIDIA CUDA Deep Neural Network](https://developer.nvidia.com/cudnn) (cuDNN), così come [Jupyter](http://jupyter.org/), vari blocchi appunti di Jupyter di esempio e [TensorFlow](https://www.tensorflow.org/). Tutti i framework preinstallati sono abilitati per la GPU, ma funzionano anche su CPU. In questo esercizio verrà creata un'istanza di Data Science Virtual Machine per Linux in Azure.
 
-1. Open the [Azure Portal](https://portal.azure.com/?azure-portal=true) in your browser.
+1. Aprire il [portale di Azure](https://portal.azure.com) nel browser. Se viene richiesto di accedere, usare l'account Microsoft.
 
-1. Click **Create a resource** in the menu on the left side of the portal, and then type "data science" (without quotation marks) into the search box. Select **Data Science Virtual Machine for Linux (Ubuntu)** from the results list.
+1. Fare clic su **+ Crea una risorsa** nel menu sul lato sinistro del portale e quindi digitare "data science" (senza virgolette) nella casella di ricerca. Selezionare **Data Science Virtual Machine for Linux (Ubuntu)** nell'elenco dei risultati.
 
-    ![Finding the Ubuntu Data Science VM](../media-draft/1-new-data-science-vm.png)
+    ![Ricerca della Data Science VM Ubuntu](../images/new-data-science-vm.png)
 
-1. Take a moment to review the list of tools included in the VM. Then, click **Create** at the bottom of the blade.
+    _Ricerca della Data Science VM Ubuntu_
 
-1. Fill in the "Basics" blade as shown below. Provide a password that's at least 12 characters long containing a mix of uppercase letters, lowercase letters, numbers, and special characters. *Be sure to remember the user name and password that you enter, because you will need them later in the module.*
+1. Prendersi del tempo per esaminare l'elenco di strumenti inclusi nella macchina virtuale. Fare quindi clic su **Crea** nella parte inferiore del pannello.
 
-    ![Entering basic information about the VM](../media-draft/1-create-data-science-vm-1.png)
+1. Compilare il pannello "Informazioni di base" come illustrato di seguito. Specificare una password di almeno 12 caratteri contenente una combinazione di lettere maiuscole, lettere minuscole, numeri e caratteri speciali. *Assicurarsi di ricordare il nome utente e la password immessi, perché saranno necessari in un secondo momento nel lab.*
 
-1. In the "Choose a size" blade, select **DS1_V2 Standard**, which provides a low-cost way to experiment with Data Science VMs. Then, click the **Select** button at the bottom of the blade.
+    ![Immissione delle informazioni di base sulla macchina virtuale](../images/create-data-science-vm-1.png)
 
-    ![Choosing a VM size](../media-draft/1-create-data-science-vm-2.png)
+    _Immissione delle impostazioni di base_
 
-1. In the **Settings** blade, check **SSH (22)** in the list of inbound ports so clients can connect to the VM using the [Secure Shell](https://en.wikipedia.org/wiki/Secure_Shell) (SSH) protocol on port 22. Then, click **OK**.
+1. Nel pannello "Scegli una dimensione" selezionare **DS1_V2 Standard**, che rappresenta un modo economico per sperimentare le Data Science VM. Fare quindi clic sul pulsante **Seleziona** nella parte inferiore del pannello.
 
-    ![Creating the VM](../media-draft/1-create-data-science-vm-3.png)
+    ![Scelta della dimensione della macchina virtuale](../images/create-data-science-vm-2.png)
 
-1. In the **Create** blade, take a moment to review the options you selected for the VM, and click **Create** to start the VM creation process.
+    _Scelta della dimensione della macchina virtuale_
 
-    ![Creating the VM](../media-draft/1-create-data-science-vm-4.png)
+1. Nel pannello "Impostazioni" selezionare **SSH (22)** nell'elenco delle porte in ingresso, in modo che i client possano connettersi alla macchina virtuale usando il protocollo [Secure Shell](https://en.wikipedia.org/wiki/Secure_Shell) (SSH) sulla porta 22. Fare quindi clic su **OK**.
 
-1. Click **Resource groups** in the menu on the left side of the portal. Then, click the **data-science-rg** resource group.
+    ![Creazione della macchina virtuale](../images/create-data-science-vm-3.png)
 
-    ![Opening the resource group](../media-draft/1-open-resource-group.png)
+    _Creazione della macchina virtuale_
 
-  
-1. Wait until "Deploying" changes to "Succeeded", indicating that DSVM and supporting Azure resources have been created. Deployment typically takes five minutes or less. Periodically click **Refresh** at the top of the blade to refresh the deployment status.
+1. Nel pannello "Crea" prendersi un po' di tempo per verificare le opzioni selezionate per la macchina virtuale e fare clic su **Crea** per avviare il processo di creazione della macchina virtuale.
 
-    ![Monitoring the deployment status](../media-draft/1-deployment-succeeded.png)
+    ![Creazione della macchina virtuale](../images/create-data-science-vm-4.png)
+
+    _Creazione della macchina virtuale_
+
+1. Fare clic su **Gruppi di risorse** nel menu sul lato sinistro del portale. Fare quindi clic sul gruppo di risorse "data-science-rg".
+
+    ![Apertura del gruppo di risorse](../images/open-resource-group.png)
+
+    _Apertura del gruppo di risorse_
+
+1. Attendere fino a quando la distribuzione delle modifiche non viene segnalata come completata, che indica che la DSVM e le risorse di Azure di supporto sono state create. Per la distribuzione sono richiesti in genere al massimo 5 minuti. Fare clic periodicamente su **Aggiorna** nella parte superiore del pannello per aggiornare lo stato di distribuzione.
+
+    ![Monitoraggio dello stato di distribuzione](../images/deployment-succeeded.png)
+
+    _Monitoraggio della distribuzione_
+
+Dopo aver completato la distribuzione, procedere con il prossimo esercizio.

@@ -1,0 +1,34 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-security.2-defense-in-depth
+title: Difesa avanzata
+metadata:
+  title: Difesa avanzata
+  description: In questa unità viene spiegato come applicare la difesa avanzata
+  ms.openlocfilehash: 5a38b6b3200442e32bf80ae8c45f1209b2ec9000
+  ms.sourcegitcommit: 1663afb13d55c1fce5f2dc4c0f78ef2d74902c33
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 08/31/2018
+  ms.locfileid: "43367036"
+durationInMinutes: 5
+content: >
+  [!include[](includes/2-defense-in-depth.md)]
+quiz:
+  title: Verifica delle conoscenze - Difesa avanzata
+  questions:
+  - content: Quale delle seguenti tattiche può essere appropriata per applicare una strategia di difesa avanzata?
+    choices:
+    - content: Deallocare le macchine virtuali non in uso per ridurre i costi
+      isCorrect: false
+    - content: Impostare avvisi per quando la percentuale di utilizzo della CPU supera il 90%
+      isCorrect: false
+    - content: Memorizzare le stringhe di connessione in un file di configurazione
+      isCorrect: false
+    - content: Usare il servizio app di Azure per l'hosting di applicazioni Web
+      isCorrect: true
+  - content: Con il passaggio al cloud, l'architettura è completamente sicura ed è possibile incaricare il provider dei servizi cloud di tutte le responsabilità di sicurezza.
+    choices:
+    - content: Vero
+      isCorrect: false
+    - content: Falso
+      isCorrect: true

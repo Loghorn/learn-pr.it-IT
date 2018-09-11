@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.configure-the-network-for-your-virtual-machines.4-explore-azure-vpn-gateway
+title: Esplorare il Gateway VPN di Azure
+metadata:
+  title: Esplorare il Gateway VPN di Azure
+  description: Esplorare il Gateway VPN di Azure
+  ms.openlocfilehash: fed82960fbd61bfa2accf398c90629635cfedd9f
+  ms.sourcegitcommit: 8d5c75ba3026e29b302d962ace4a29fa1b47a6d2
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/04/2018
+  ms.locfileid: "43544122"
+durationInMinutes: 10
+content: '[!include[](includes/4-explore-azure-vpn-gateway.md)]'

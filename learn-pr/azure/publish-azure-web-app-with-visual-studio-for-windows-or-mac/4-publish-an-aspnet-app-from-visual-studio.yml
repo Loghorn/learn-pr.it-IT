@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.publish-azure-web-app-with-visual-studio.4-publish-an-aspnet-app-from-visual-studio
+title: Pubblicare un'app ASP.NET da Visual Studio in esecuzione su un Mac o un PC
+metadata:
+  title: Pubblicare un'app ASP.NET da Visual Studio in esecuzione su un Mac o un PC
+  description: Pubblicare un'app ASP.NET da Visual Studio in esecuzione su un Mac o un PC
+  ms.openlocfilehash: f1d3774d05ed6de6eccfa4375c0b13566fcbfe22
+  ms.sourcegitcommit: 91b4553dbbbf6d8b6b359142332d0654aae326e8
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 08/30/2018
+  ms.locfileid: "43251815"
+durationInMinutes: 5
+content: '[!include[](includes/4-publish-an-aspnet-app-from-visual-studio.md)]'

@@ -1,47 +1,44 @@
-Azure provides PaaS services to help you manage all kinds of data, from highly structured relational data to unstructured data.
+Azure offre servizi PaaS per semplificare la gestione di tutti i tipi di dati, da dati relazionali altamente strutturati a dati non strutturati.
 
-Here you'll learn why Azure SQL Database is a convenient, cost-effective, and secure way to host your relational databases.
+Di seguito verranno descritti i motivi per cui il database SQL di Azure è un sistema pratico, conveniente e sicuro per ospitare i database relazionali.
 
-## Why choose Azure SQL Database?
+## <a name="why-choose-azure-sql-database"></a>Perché scegliere il database SQL di Azure?
 
-Your transportation logistics application requires stored procedures that run basic CRUD (**create**, **read**, **update**, and **delete**) operations. You have experience working with SQL Server and other relational databases.
+L'applicazione di logistica per i trasporti richiede stored procedure che eseguano operazioni CRUD (**create**, **read**, **update** e **delete**) di base. Si ha familiarità con SQL Server e altri database relazionali.
 
-You consider two choices for your database:
+Si prendono in considerazione due opzioni per il database:
 
-1. Host SQL Server on-premises. Your IT team runs a small in-house data center to support the finance department and a few other teams. You can work with IT to host a SQL Server deployment in their data center.
+1. Ospitare SQL Server in locale. Il team IT esegue un data center interno di piccole dimensioni per supportare il reparto finanziario e alcuni altri team. È possibile collaborare con il team IT per ospitare una distribuzione di SQL Server in questo data center.
+1. Ospitare il database SQL di Azure nel cloud. Il database SQL di Azure si basa su SQL Server e fornisce le funzionalità per i database relazionale necessarie.
 
-1. Host Azure SQL Database in the cloud. Azure SQL Database is based on SQL Server and provides the relational database functionality you need.
+Poiché si è deciso di sviluppare i livelli Web e applicazione per l'app di logistica su Azure, è opportuno ospitare anche il database in Azure. Esistono tuttavia altri motivi per cui il database SQL di Azure rappresenta una scelta intelligente e per cui è ancora più semplice rispetto all'uso di macchine virtuali.
 
-You've decided to build the web and application tiers for your logistics app on Azure. So it makes sense to also host your database there. But there are some other reasons why Azure SQL Database is a smart choice, and why it's even easier than using virtual machines.
+* **Praticità**
 
-- **Convenience**
+    Per la configurazione di SQL Server in una macchina virtuale o su hardware fisico, è necessario conoscere i requisiti hardware e software. È necessario comprendere le più recenti procedure consigliate di sicurezza e gestire periodicamente le patch per il sistema operativo e SQL Server. È infine necessario occuparsi autonomamente del backup e della conservazione dei dati.
 
-    Setting up SQL Server on a VM or on physical hardware requires you to know about hardware and software requirements. You'll need to understand the latest security best practices and manage operating system and SQL Server patches on a routine basis. You also need to manage backup and data retention issues yourself.
+    Con il database SQL di Azure, l'hardware, gli aggiornamenti software e le patch del sistema operativo vengono gestiti automaticamente. Tutto quello che occorre specificare sono il nome del database e alcune opzioni. Il database SQL sarà in esecuzione in pochi minuti.
 
-    With Azure SQL Database, we manage the hardware, software updates, and OS patches for you. All you specify is the name of your database and a few options. You'll have a running SQL database in minutes.
+    È possibile aprire e chiudere le istanze del database SQL di Azure in qualsiasi momento. Il database SQL di Azure è rapidamente accessibile e semplice da configurare. È possibile dedicare meno tempo alla configurazione del software, per concentrarsi sulle funzionalità dell'app.
+* **Costi**
 
-    You can bring up and tear down Azure SQL Database instances at your convenience. Azure SQL Database comes up fast and is easy to configure. You can focus less on configuring software and more on making your app great.
+    Poiché le operazioni vengono gestite automaticamente, non è necessario acquistare sistemi, alimentarli o provvedere alla relativa manutenzione.
 
-- **Cost**
+    Il database SQL di Azure offre diverse opzioni di prezzo, che consentono di bilanciare prestazioni e costi. È possibile iniziare con una spesa mensile molto contenuta.
+* **Scalabilità**
+ 
+    Si scopre che la quantità di dati logistici sui trasporti che è necessario archiviare raddoppia ogni anno. In caso di esecuzione in locale, quanta capacità in eccesso è necessario pianificare?
 
-    Because we manage things for you, there are no systems for you to buy, provide power for, or otherwise maintain.
+    Con il database SQL di Azure è possibile regolare velocemente le prestazioni e le dimensioni del database quando cambiano le esigenze.
 
-    Azure SQL Database has several pricing options. These pricing options enable you to balance performance versus cost. You can start for just a few dollars a month.
+* **Sicurezza**
 
-- **Scale**
+    Il database SQL di Azure viene fornito con un firewall configurato automaticamente per limitare le connessioni da Internet.
 
-    You find that the amount of transportation logistics data you must store doubles every year. When running on-premises, how much excess capacity should you plan for?
+    È possibile consentire gli indirizzi che si ritengono attendibili. L'elenco degli indirizzi consentiti permette di usare Visual Studio, SQL Server Management Studio o altri strumenti per gestire il database SQL di Azure.
 
-    With Azure SQL Database, you can adjust the performance and size of your database on the fly when your needs change.
+## <a name="summary"></a>Riepilogo
 
-- **Security**
+Con il database SQL di Azure, l'hardware, gli aggiornamenti software e le patch del sistema operativo vengono gestiti automaticamente. Sono disponibili varie opzioni di acquisto per ottenere le prestazioni necessarie a costi prevedibili. Il database SQL di Azure include anche un firewall, pertanto è possibile controllare l'accesso ai dati.
 
-    Azure SQL Database comes with a firewall that's automatically configured to restrict connections from the Internet.
-
-    You can "whitelist" IP addresses you trust. Whitelisting lets you use Visual Studio, SQL Server Management Studio, or other tools to manage your Azure SQL database.
-
-## Summary
-
-With Azure SQL Database, we manage the hardware, software updates, and OS patches for you. We provide buying options to help you get the performance you need at a predictable cost. Azure SQL Database also comes with a firewall so that you can control access to your data.
-
-Although you don't need to be a DBA to use Azure SQL Database, there are a few concepts you should understand before you start. We'll cover these concepts next.
+Sebbene non sia necessario essere un amministratore di database per usare il database SQL di Azure, vi sono alcuni concetti che è necessario comprendere prima di iniziare. Questi concetti verranno illustrati nella sezione successiva.

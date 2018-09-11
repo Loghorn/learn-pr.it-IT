@@ -1,33 +1,28 @@
-The following is the typical workflow for apps that use Azure Blob storage:
+Di seguito è riportato il flusso di lavoro tipico per le app che usano l'archiviazione BLOB di Azure:
 
-1. **Retrieve configuration**: At startup, load the storage account configuration. This is typically a storage account connection string.
+1. **Recuperare la configurazione**: all'avvio, caricare la configurazione dell'account di archiviazione. Solitamente si tratta della stringa di connessione dell'account di archiviazione.
+1. **Inizializzare i client**: usare la stringa di connessione per inizializzare la libreria client di Archiviazione di Azure. Verranno creati gli oggetti che l'app userà per collaborare con l'API di archiviazione BLOB.
+1. **Usare**: consentire alle chiamate API con la libreria client di operare su contenitori e blob.
 
-1. **Initialize client**: Use the connection string to initialize the Azure Storage client library. This creates the objects the app will use to work with the Blob storage API.
+## <a name="configure-your-connection-string"></a>Configurare la stringa di connessione
 
-1. **Use**: Make API calls with the client library to operate on containers and blobs.
+Prima di scrivere qualsiasi codice, è necessario avere la stringa di connessione per l'account di archiviazione che verrà usato.
 
-## Configure your connection string
-
-Before running your app, you'll need the connection string for the storage account you will use. You can use any Azure management interface to get it, including the Azure portal, the Azure CLI or Azure PowerShell. When we set up the web app to run our code near the end of this module, we'll use the Azure CLI to get the connection string for the storage account you created earlier.
-
-Storage account connection strings include the account key. The account key is considered a secret and should be stored securely. Here, we will store the connection string in an App Service application setting. App Service application settings are a secure place for application secrets, but this design does not support local development and is not a robust, end-to-end solution on its own.
+Le stringhe di connessione dell'account di archiviazione includono la chiave dell'account. La chiave dell'account viene considerata un segreto e deve essere archiviata in modo sicuro. In questo caso la stringa di connessione verrà archiviata in un'impostazione dell'applicazione del servizio app. Un'impostazione dell'applicazione del servizio app è una posizione sicura per i segreti dell'applicazione, ma non supporta lo sviluppo locale e non è una soluzione affidabile end-to-end di per sé.
 
 > [!WARNING]
-> **Do not place storage account keys in code or in unprotected configuration files.** Storage account keys enable full access to your storage account. Leaking a key can result in unrecoverable damage and large bills. See the Further Reading section at the end of this module for storage guidance and advice about how to recover from a leaked key.
+> **Non inserire chiavi dell'account di archiviazione nel codice o nei file di configurazione non protetti.** Le chiavi dell'account di archiviazione abilitano l'accesso completo all'account di archiviazione. La perdita di una chiave può comportare danni irreversibili e fatture molto consistenti. Vedere la sezione Altre informazioni al termine di questo modulo per una guida sull'archiviazione e consigli su come eseguire il ripristino da una chiave persa.
 
-## Initialize the Blob storage object model
+## <a name="initialize-the-blob-storage-object-model"></a>Inizializzare il modello oggetto di archiviazione BLOB
 
-In the Azure Storage SDK for .NET Core, the standard pattern for using Blob storage consists of the following steps:
+In Archiviazione di Azure e SDK per .NET Core, il modello standard per l'uso dell'archiviazione BLOB prevede i passaggi seguenti:
 
-1. Call `CloudStorageAccount.Parse` (or `TryParse`) with your connection string to get a `CloudStorageAccount`.
+1. Chiamare `CloudStorageAccount.Parse` (o `TryParse`) con la stringa di connessione per ottenere `CloudStorageAccount`.
+1. Chiamare `CreateCloudBlobClient` in `CloudStorageAccount` per ottenere `CloudBlobClient`.
+1. Chiamare `GetContainerReference` in `CloudBlobClient` per ottenere `CloudBlobContainer`.
+1. Usare metodi per ottenere un elenco di blob e/o ottenere riferimenti a singoli blob per caricare e scaricare i dati nei contenitori.
 
-1. Call `CreateCloudBlobClient` on the `CloudStorageAccount` to get a `CloudBlobClient`.
-
-1. Call `GetContainerReference` on the `CloudBlobClient` to get a `CloudBlobContainer`.
-
-1. Use methods on the container to get a list of blobs and/or get references to individual blobs to upload and download data.
-
-In code, steps 1&ndash;3 look like this:
+Nel codice i passaggi 1&ndash;3 sono simili a:
 
 ```csharp
 CloudStorageAccount storageAccount = CloudStorageAccount.Parse(connectionString); // or TryParse()
@@ -35,56 +30,58 @@ CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
 CloudBlobContainer container = blobClient.GetContainerReference(containerName);
 ```
 
-None of this initialization code makes calls over the network. This means that some exceptions that occur because of incorrect information won't be thrown until later. For example, the call to `CloudStorageAccount.Parse` will throw an exception immediately if the connection string is formatted incorrectly, but no exception will be thrown if the storage account that a connection string points to doesn't exist.
+Nessuno di tali codici di inizializzazione esegue le chiamate sulla rete. Ciò significa che alcune eccezioni che si verificano a causa di informazioni non corrette verranno generate solo in un momento successivo. Ad esempio, la chiamata a `CloudStorageAccount.Parse` genera un'eccezione immediatamente se la stringa di connessione non è formattata correttamente, ma non verrà generata alcuna eccezione se l'account di archiviazione a cui fa riferimento una stringa di connessione non esiste.
 
-## Create containers at startup
+## <a name="create-containers-at-startup"></a>Creare contenitori all'avvio
 
-Calling `CreateIfNotExistsAsync` on a `CloudBlobContainer` is the best way to create a container when your application starts or when it first tries to use it.
+La chiamata di `CreateIfNotExistsAsync` su un `CloudBlobContainer` è il modo migliore per creare un contenitore quando l'applicazione si avvia o quando tenta di usarlo per la prima volta.
 
-`CreateIfNotExistsAsync` won't throw an exception if the container already exists, but it does make a network call to Azure Storage. Call it once during initialization, not every time you try to use a container.
+`CreateIfNotExistsAsync` non genera un'eccezione se il contenitore esiste già, ma esegue una chiamata di rete ad Archiviazione di Azure. La chiamata viene eseguita una volta durante l'inizializzazione, non ogni volta che si prova a usare un contenitore.
 
-## Exercise
+## <a name="exercise"></a>Esercizio
 
-### Clone and explore the unfinished app
+### <a name="clone-and-explore-the-unfinished-app"></a>Clonare ed esplorare l'app non completata
 
-First, let's clone the starter app from GitHub. In the Cloud Shell terminal, run the following command to get a copy of the source code and open it in the editor:
+Prima di tutto, è possibile clonare l'app iniziale da GitHub. Nel terminale Cloud Shell eseguire il comando seguente per ottenere una copia del codice sorgente e aprirla nell'editor:
+
+**Aggiornamento TODO a URL archivio finale**
 
 ```console
-git clone https://github.com/MicrosoftDocs/mslearn-store-data-in-azure.git
-cd mslearn-store-data-in-azure/store-app-data-with-azure-blob-storage/src/start
+git clone https://github.com/nickwalkmsft/FileUploader.git
+cd FileUploader
 code .
 ```
 
-Open the file `Controllers/FilesController.cs` in the editor. There's no work to do here, but we're going to have a quick look at what the app does.
+Aprire il file `Controllers/FilesController.cs`. Non vi è alcuna operazione da eseguire in questo passaggio, ma è necessario verificare il funzionamento dell'app.
 
-This controller implements an API with three actions:
+Questo controller implementa un'API con tre azioni:
 
-- **Index** (GET /api/Files) returns a list of URLs, one for each file that's been uploaded. The app front end calls this method to build a list of hyperlinks to the uploaded files.
-- **Upload** (POST /api/Files) receives an uploaded file and saves it.
-- **Download** (GET /api/Files/{filename}) downloads an individual file by its name.
+* **Indice** (GET /api/Files) restituisce un elenco di URL, uno per ogni file che è stato caricato. Il front-end di app chiama questo metodo per compilare un elenco di collegamenti ipertestuali nei file caricati.
+* **Caricamento** (POST /api/Files) riceve un file caricato e lo salva.
+* **Download** (GET/api/Files/{nomefile}) scarica un singolo file in base al nome.
 
-Each method uses an `IStorage` instance called `storage` to do its work. There is an incomplete implementation of `IStorage` in `Models/BlobStorage.cs` that we're going to fill in.
+Ogni metodo usa un'istanza `IStorage` denominata `storage` per l'esecuzione delle operazioni. In `Models/BlobStorage.cs` è presente un'implementazione incompleta di `IStorage` che è necessario sistemare.
 
-### Add the NuGet package
+### <a name="add-the-nuget-package"></a>Aggiungere il pacchetto NuGet
 
-First, add a reference to the Azure Storage SDK. In the terminal, run the following:
+In primo luogo, aggiungere un riferimento all'SDK di Archiviazione di Azure. Eseguire i comandi seguenti dal terminale:
 
 ```console
 dotnet add package WindowsAzure.Storage
 dotnet restore
 ```
 
-This will make sure we're using the newest version of the Blob storage client library.
+Ciò ci consentirà di sapere che stiamo usando la versione più recente della libreria del client di archiviazione BLOB.
 
-### Configure
+### <a name="configure"></a>Configurare
 
-The configuration values we need are the storage account connection string and the name of the container the app will use to store files. In this module, we're only going to run the app in Azure App Service, so we'll follow App Service best practice and store the values in App Service application settings. We'll do that when we create the App Service instance, so there's nothing we need to do at the moment.
+I valori di configurazione necessari per eseguire l'app sono la stringa di connessione dell'account di archiviazione e il nome del contenitore dell'app che verrà usata per archiviare i file. In questo esercizio l'app verrà eseguita solo nel servizio app di Azure quindi verrà seguita la procedura consigliata del servizio app e i valori verranno archiviati nelle impostazioni applicazione del servizio app. Questa operazione verrà eseguita quando verrà creata l'istanza del servizio app, non in questo momento.
 
-When it comes to *using* the configuration, our starter app already includes the plumbing we need. The `IOptions<AzureStorageConfig>` constructor parameter in `BlobStorage` has two properties: the storage account connection string and the name of the container our app will store blobs in. There is code in the `ConfigureServices` method of `Startup.cs` that loads the values from configuration when the app starts.
+Quando sarà il momento di *usare* la configurazione, l'app iniziale includerà già le operazioni di base necessarie. Il parametro del costruttore `IOptions<AzureStorageConfig>` in `BlobStorage` ha due proprietà: la stringa di connessione dell'account di archiviazione e il nome del contenitore in cui l'app archivierà i BLOB. Nel metodo `ConfigureServices` di `Startup.cs` è presente un codice che carica i valori dalla configurazione all'avvio dell'app.
 
-### Initialize
+### <a name="initialize"></a>Inizializzare
 
-Open `Models/BlobStorage.cs` in the editor. Add the following `using` statements to the top of the file to prepare it for the code you're going to add during the exercise.
+Aprire `Models/BlobStorage.cs`. Aggiungere le istruzioni `using` seguenti all'inizio del file per eseguire la preparazione al codice che si vuole aggiungere durante l'esercizio.
 
 ```csharp
 using System.Linq;
@@ -92,9 +89,9 @@ using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Blob;
 ```
 
-Locate the `Initialize` method. Our app will call this method when `BlobStorage` is used for the first time. If you're curious, you can look at `ConfigureServices` in `Startup.cs` to see how this is done.
+Individuare il metodo `Initialize`. Quando `BlobStorage` viene usato per la prima volta, l'app chiamerà questo metodo. Per curiosità, è possibile esaminare `ConfigureServices` in `Startup.cs` per visualizzare informazioni su questa procedura.
 
-`Initialize` is where we want to create our container if it doesn't already exist. Replace the current implementation of `Initialize` with the following code and save your work:
+`Initialize` è la posizione in cui si vuole creare il contenitore se non esiste già. Sostituire l'implementazione corrente di `Initialize` con il codice seguente e salvare il lavoro:
 
 ```csharp
 public Task Initialize()

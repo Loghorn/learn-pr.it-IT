@@ -1,17 +1,16 @@
-Most organizations have diverse requirements for their cloud-hosted data. For example, you might need to store data in a specific region, or you might require separate billing for different data categories. Azure storage accounts let you formalize these types of policies and apply them to your Azure data.
+La maggior parte delle organizzazioni ha requisiti diversi per i dati ospitati nel cloud. Può ad esempio essere necessario archiviare i dati in un'area specifica o fatturare separatamente le diverse categorie di dati. Gli account di archiviazione di Azure consentono di formalizzare questi tipi di criteri e di applicarli ai dati di Azure.
 
-Suppose you work at a chocolate manufacturer that produces baking ingredients such as cocoa powder and chocolate chips. You market your products to grocery stores who then sell them to consumers.
+Si supponga di lavorare presso un produttore di cioccolato che produce ingredienti per dolci, ad esempio cacao in polvere e gocce di cioccolato. I prodotti vengono commercializzati presso supermercati che poi li vendono ai clienti.
 
-Your formulations and manufacturing processes are trade secrets. The spreadsheets, documents, and instructional videos that capture this information are critical to your business and require geographically-redundant storage. This data is primarily accessed from your main factory, so you would like to store it in a nearby datacenter. The expense for this storage needs to be billed to the manufacturing department.
+Le formulazioni e i processi di produzione sono segreti commerciali. Fogli di calcolo, documenti e video informativi contenenti queste informazioni sono estremamente importanti per l'azienda e richiedono l'archiviazione con ridondanza geografica. A questi dati si accede principalmente dallo stabilimento principale ed è quindi preferibile archiviarli in un data center non troppo distante. Le spese relative a queste risorse di archiviazione devono essere fatturate al reparto di produzione.
 
-You also have a sales group that creates cookie recipes and baking videos to promote your products to consumers. Your priority for this data is low cost, rather than redundancy or location. This storage must be billed to the sales team.
+È anche presente un gruppo vendite che crea ricette di biscotti e video per promuovere i prodotti presso i clienti. La priorità per questi dati è il basso costo piuttosto che la ridondanza o la posizione. Queste risorse di archiviazione devono essere fatturate al team di vendita.
 
-Here, you will see how to handle these types of business requirements by creating multiple Azure storage accounts. Each storage account will have the appropriate settings for the data it holds.
+Di seguito viene illustrato come gestire questi tipi di requisiti aziendali tramite la creazione di più account di archiviazione di Azure. Ogni account di archiviazione avrà le impostazioni appropriate per i dati che contiene.
 
-## Learning objectives
+## <a name="learning-objectives"></a>Obiettivi di apprendimento
 
-In this module, you will:
-
- - Decide how many storage accounts you need for your project.
- - Determine the appropriate settings for each storage account.
- - Create a storage account using the Azure portal.
+In questo modulo verrà descritto come:
+ - Decidere quanti account di archiviazione siano necessari per il progetto
+ - Determinare le impostazioni appropriate per ogni account di archiviazione
+ - Creare un account di archiviazione usando il portale di Azure

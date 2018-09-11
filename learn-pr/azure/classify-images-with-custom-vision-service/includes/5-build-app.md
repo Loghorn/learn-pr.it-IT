@@ -1,61 +1,83 @@
-The true power of the Microsoft Custom Vision Service is the ease with which developers can incorporate its intelligence into their own applications using the [Custom Vision Prediction API](https://southcentralus.dev.cognitive.microsoft.com/docs/services/eb68250e4e954d9bae0c2650db79c653/operations/58acd3c1ef062f0344a42814). In this unit, you will use Visual Studio Code to modify an app named Artwork to use the model you built and trained in previous exercises.
+### <a name="exercise-5-create-a-nodejs-app-that-uses-the-model"></a>Esercizio 5: Creare un'app Node.js che usa il modello
 
-1. If Node.js isn't installed on your system, go to https://nodejs.org and install the latest LTS version for your operating system.
+Il vero punto di forza del Servizio visione artificiale personalizzato Microsoft è la semplicità con cui gli sviluppatori possono integrare le sue funzionalità nelle proprie applicazioni usando l'[API per le stime del Servizio visione artificiale personalizzato](https://southcentralus.dev.cognitive.microsoft.com/docs/services/eb68250e4e954d9bae0c2650db79c653/operations/58acd3c1ef062f0344a42814). In questo esercizio si userà Visual Studio Code per modificare un'app denominata Artworks in modo da usare il modello creato e di cui è stato eseguito il training negli esercizi precedenti.
 
-   > If you aren't sure whether Node.js is installed, open a command prompt or terminal window and type **node -v**. If you don't see a Node.js version number, then Node.js isn't installed. If a version of Node.js older than 6.0 is installed, we highly recommend that you download and install the latest version.
+1. Se Node.js non è installato nel sistema, andare all'indirizzo https://nodejs.org e installare la versione LTS più recente per il sistema operativo in uso.
 
-1. If Visual Studio Code isn't installed on your workstation, go to http://code.visualstudio.com and install it now.
+    > Se non si è certi che Node.js sia già installato, aprire un prompt dei comandi o una finestra del terminale e digitare **node -v**. Se non viene visualizzato alcun numero di versione di Node.js, Node.js non è installato. Se è installata una versione precedente a Node.js 6.0, è consigliabile scaricare e installare la versione più recente.
 
-1. Start Visual Studio Code and select **Open Folder...** from the **File** menu. In the ensuing dialog, select the "Client\Artworks" folder included in the module resources.
+1. Se Visual Studio Code non è installato nella workstation, andare all'indirizzo http://code.visualstudio.com e installarlo.
 
-    ![Selecting the Artworks folder](../media/5-fe-select-folder.png)
+1. Avviare Visual Studio Code e scegliere **Apri cartella** dal menu **File**. Nella finestra di dialogo successiva selezionare la cartella "Client\Artworks" inclusa nelle risorse del lab.
 
-1. Use the **View** > **Integrated Terminal** command to open an integrated terminal window in Visual Studio Code. Then execute the following command in the integrated terminal to load the packages required by the app:
+    ![Selezione della cartella Artworks](../images/fe-select-folder.png)
 
-	```
-	npm install
-	```
+    _Selezione della cartella Artworks_ 
 
-1. Return to the Artwork project in the Custom Vision Service portal, click **Performance**, and then click **Make default** to make sure the latest iteration of the model is the default iteration.
+1. Usare il comando **Visualizza** > **Terminale integrato** per aprire una finestra del terminale integrato in Visual Studio Code. Eseguire quindi il comando seguente nel terminale integrato per caricare i pacchetti necessari per l'app:
 
-    ![Specifying the default iteration](../media/5-portal-make-default.png)
+    ```
+    npm install
+    ```
 
-1. Before you can run the app and use it to call the Custom Vision Service, it must be modified to include endpoint and authorization information. To that end, click **Prediction URL**.
+1. Tornare al progetto Artworks nel portale del Servizio visione artificiale personalizzato, fare clic su **Prestazioni** e quindi su **Predefinito** per assicurarsi che l'iterazione più recente del modello sia quella predefinita. 
 
-    ![Viewing Prediction URL information](../media/5-portal-prediction-url.png)
+    ![Impostazione dell'iterazione predefinita](../images/portal-make-default.png)
 
-1. The ensuing dialog lists two URLs: one for uploading images via URL, and another for uploading local images. Copy the Prediction API URL for image files to the clipboard.
+    _Impostazione dell'iterazione predefinita_ 
 
-    ![Copying the Prediction API URL](../media/5-copy-prediction-url.png)
+1. Prima di poter eseguire l'app e usarla per chiamare il Servizio visione artificiale personalizzato, l'app deve essere modificata in modo da includere informazioni su endpoint e autorizzazioni. A questo scopo, fare clic su **Prediction URL** (URL stime).
 
-1. Return to Visual Studio Code and click **predict.js** to open it in the code editor.
+    ![Visualizzazione delle informazioni sull'URL dell'API per le stime](../images/portal-prediction-url.png)
 
-    ![Opening predict.js](../media/5-vs-predict-file.png)
+    _Visualizzazione delle informazioni sull'URL dell'API per le stime_ 
 
-1. Replace "PREDICTION_ENDPOINT" in line 3 with the URL on the clipboard.
+1. Nella finestra di dialogo successiva sono indicati due URL, uno per il caricamento di immagini tramite URL e un altro per il caricamento di immagini locali. Copiare l'URL dell'API per le stime per i file di immagine negli Appunti. 
 
-    ![Adding the Prediction API URL](../media/5-vs-prediction-endpoint.png)
+    ![Copia dell'URL dell'API per le stime](../images/copy-prediction-url.png)
 
-1. Return to the Custom Vision Service portal and copy the Prediction API key to the clipboard.
+    _Copia dell'URL dell'API per le stime_ 
 
-    ![Copying the Prediction API key](../media/5-copy-prediction-key.png)
+1. Tornare a Visual Studio Code e fare clic su **predict.js** per aprirlo nell'editor di codice.
 
-1. Return to Visual Studio Code and replace "PREDICTION_KEY" in line 4 of **predict.js** with the API key on the clipboard.
+    ![Apertura di predict.js](../images/vs-predict-file.png)
 
-    ![Adding the Prediction API key](../media/5-vs-prediction-key.png)
+    _Apertura di predict.js_ 
 
-1. Scroll down in **predict.js** and examine the block of code that begins on line 34. This is the code that calls out to the Custom Vision Service using AJAX. Using the Custom Vision Prediction API is as easy as making a simple, authenticated POST to a REST endpoint.
+1. Sostituire "PREDICTION_ENDPOINT" nella riga 3 con l'URL copiato negli Appunti.
 
-    ![Making a call to the Prediction API](../media/5-vs-code-block.png)
+    ![Aggiunta dell'URL dell'API per le stime](../images/vs-prediction-endpoint.png)
 
-1. Return to the integrated terminal in Visual Studio Code and execute the following command to start the app:
+    _Aggiunta dell'URL dell'API per le stime_ 
 
-	```
-	npm start
-	```
+1. Tornare al portale del Servizio visione artificiale personalizzato e copiare la chiave API per le stime negli Appunti. 
 
-1. Confirm that the Artworks app starts and displays a window like this one:
+    ![Copia della chiave API per le stime](../images/copy-prediction-key.png)
 
-    ![The Artworks app](../media/5-app-startup.png)
+    _Copia della chiave API per le stime_ 
 
-Artworks is a cross-platform app written with Node.js and [Electron](https://electron.atom.io/). As such, it is equally capable of running on Windows, macOS, and Linux. In the next exercise, you will use it to classify images by the artists who painted them.
+1. Tornare a Visual Studio Code e sostituire "PREDICTION_KEY" nella riga 4 di **predict.js** con la chiave API copiata negli Appunti.
+
+    ![Aggiunta della chiave API per le stime](../images/vs-prediction-key.png)
+
+    _Aggiunta della chiave API per le stime_ 
+
+1. Scorrere verso il basso in **predict.js** ed esaminare il blocco di codice che inizia alla riga 34. Si tratta del codice che effettua una chiamata in uscita al Servizio visione artificiale personalizzato tramite AJAX. L'uso dell'API per le stime del Servizio visione artificiale personalizzato è tanto facile quanto l'esecuzione di una semplice richiesta POST autenticata a un endpoint REST.
+
+    ![Esecuzione di una chiamata all'API per le stime](../images/vs-code-block.png)
+
+    _Esecuzione di una chiamata all'API per le stime_ 
+
+1. Tornare al terminale integrato in Visual Studio Code ed eseguire il comando seguente per avviare l'app:
+
+    ```
+    npm start
+    ```
+
+1. Verificare che l'app Artworks venga avviata e visualizzi una finestra come questa:
+
+    ![App Artworks](../images/app-startup.png)
+
+    _App Artworks_ 
+
+Artworks è un'app multipiattaforma scritta con Node.js ed [Electron](https://electron.atom.io/). In quanto tale, può essere eseguita ugualmente in Windows, macOS e Linux. Nel prossimo esercizio si userà questa app per classificare immagini in base agli artisti che le hanno dipinte.

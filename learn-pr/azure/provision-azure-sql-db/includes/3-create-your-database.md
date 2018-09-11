@@ -1,124 +1,115 @@
-Your transportation company wants to set themselves apart from other companies but without breaking the bank. You must have a good handle on how to set up the database to provide the best service while controlling costs.
+L'azienda di trasporti vuole distinguersi dalla concorrenza, ma senza costi eccessivi. È necessario comprendere a fondo come configurare il database per offrire il miglior servizio e al tempo stesso controllare i costi.
 
-Here, you'll learn:
+Si apprenderà:
 
-- What considerations you need to make when creating an Azure SQL database, including:
-  - How a logical server acts as an administrative container for your databases.
-  - The differences between purchasing models.
-  - How elastic pools enable you to share processing power among databases.
-  - How collation rules affect how data is compared and sorted.
-- How to bring up Azure SQL Database from the portal.
-- How to add firewall rules so that your database is accessible from only trusted sources.
+* Quali aspetti prendere in considerazione al momento della creazione di un database SQL di Azure, ad esempio:
+  * Ruolo di un server logico come contenitore amministrativo per i database.
+  * Differenze tra i modelli di acquisto.
+  * Come usare i pool elastici per condividere la potenza di elaborazione tra i database.
+  * Influenza delle regole di confronto sul modo in cui vengono confrontati e ordinati i dati.
+* Come accedere al database SQL di Azure dal portale.
+* Come aggiungere regole del firewall in modo da rendere accessibile il database solo da origini attendibili.
 
-Let's take a quick look at some things you need to consider when you create an Azure SQL database.
+Esaminiamo rapidamente alcuni degli aspetti da considerare al momento della creazione di un database SQL di Azure.
 
-## One server, many databases
+## <a name="one-server-many-databases"></a>Un server, molti database
 
-When you create your first Azure SQL database, you also create an _Azure SQL logical server_. Think of a logical server as an administrative container for your databases. You can control logins, firewall rules, and security policies through the logical server. You can also override these policies on each database within the logical server.
+Quando si crea il primo database SQL di Azure, viene creato anche un _server logico SQL di Azure_. Un server logico è paragonabile a un contenitore amministrativo per i database. È possibile controllare gli account di accesso, le regole del firewall e i criteri di sicurezza tramite il server logico. È anche possibile eseguire l'override di questi criteri in ogni database all'interno del server logico.
 
-For now, you need just one database. But a logical server enables you to add more later and tune performance among all your databases.
+Per il momento, è sufficiente un solo database. Tuttavia, un server logico consente di aggiungerne altri più avanti e di ottimizzare le prestazioni tra tutti i database.
 
-## Choose performance: DTUs versus vCores
+## <a name="choose-performance-dtus-versus-vcores"></a>Scegliere le prestazioni: DTU o vCore
 
-Azure SQL Database has two purchasing models: DTU and vCore.
+Il database SQL di Azure offre due modelli di acquisto: DTU e vCore.
 
-### What are DTUs?
+### <a name="what-are-dtus"></a>Che cosa sono le DTU?
 
-DTU stands for Database Transaction Unit and is a combined measure of compute, storage, and IO resources. Think of the DTU model as a simple, preconfigured purchase option.
+Le DTU (Database Transaction Unit) o unità di transazione di database rappresentano una misura combinata di risorse di calcolo, archiviazione e I/O. Il modello basato su DTU offre un'opzione di acquisto semplice e preconfigurata.
 
-Because your logical server can hold more than one database, there's also the idea of eDTUs, or elastic Database Transaction Units. This option enables you to choose one price, but allow each database in the pool to consume fewer or greater resources depending on current load.
+Poiché il server logico può contenere più di un database, esistono anche le eDTU (elastic Database Transaction Unit), o unità di transazione di database elastico. Con questa opzione è possibile scegliere un unico prezzo, ma consentire a ogni database nel pool di usare un numero inferiore o superiore di risorse in base al carico corrente.
 
-### What are vCores?
+### <a name="what-are-vcores"></a>Che cosa sono i vCore?
 
-vCore gives you greater control over what compute and storage resources you create and pay for.
+I vCore offrono maggiore controllo sulle risorse di calcolo e archiviazione create e per cui vengono effettuati pagamenti.
 
-While the DTU model provides fixed combinations of compute, storage, and IO resources, the vCore model enables you to configure resources independently. For example, with the vCore model you can increase storage capacity but keep the existing amount of compute and IO throughput.
+Mentre il modello basato su DTU offre combinazioni fisse di risorse di calcolo, archiviazione e I/O, il modello basato su vCore consente di configurare le risorse in modo indipendente. Ad esempio, con il modello basato su vCore è possibile aumentare la capacità di archiviazione, ma mantenere la quantità esistente di risorse di calcolo e velocità effettiva di I/O. 
 
-Your transportation and logistics prototype only needs one Azure SQL Database instance. You decide on the DTU option because it provides a good balance of compute, storage, and IO performance and is less expensive to get started.
+Il prototipo per i trasporti e la logistica richiede una sola istanza del database SQL di Azure. Si sceglie l'opzione DTU perché fornisce un buon compromesso tra calcolo, archiviazione e prestazioni di I/O, oltre a essere meno costosa per iniziare.
 
-## What are SQL elastic pools?
+## <a name="what-are-sql-elastic-pools"></a>Che cosa sono i pool elastici SQL?
 
-When you create your Azure SQL database, you can create a _SQL elastic pool_.
+Quando si crea il database SQL di Azure, è possibile creare un _pool elastico SQL_.
 
-SQL elastic pools relate to eDTUs. They enable you to buy a set of compute and storage resources that are shared among all the databases in the pool. Each database can use the resources they need, within the limits you set, depending on current load.
+I pool elastici SQL sono correlati alle eDTU. Consentono di acquistare un set di risorse di calcolo e archiviazione che vengono condivise tra tutti i database nel pool. Ogni database può usare le risorse necessarie, entro i limiti impostati, a seconda del carico corrente.
 
-For your prototype, you won't need a SQL elastic pool because you need only one SQL database.
+Per il prototipo, non è necessario un pool elastico SQL perché è richiesto un solo database SQL.
 
-## What is collation?
+## <a name="what-is-collation"></a>Che cosa sono le regole di confronto?
 
-Collation refers to the rules that sort and compare data. Collation helps you define sorting rules when case sensitivity, accent marks, and other language characteristics are important.
+Le regole di confronto si riferiscono alle regole per l'ordinamento e il confronto dei dati. Consentono di definire le regole di ordinamento quando la distinzione tra maiuscole e minuscole, gli accenti e altre caratteristiche linguistiche sono importanti.
 
-Let's take a moment to consider what the default collation, **SQL_Latin1_General_CP1_CI_AS**, means.
+Esaminiamo velocemente il significato delle regole di confronto predefinite **SQL_Latin1_General_CP1_CI_AS**.
 
-- **Latin1_General** refers to the family of Western European languages.
-- **CP1** refers to code page 1252, a popular character encoding of the Latin alphabet.
-- **CI** means that comparisons are case insensitive. For example, "HELLO" compares equally to "hello".
-- **AS** means that comparisons are accent sensitive. For example, "résumé" doesn't compare equally to "resume".
+* **Latin1_General** si riferisce alla famiglia di lingue dell'Europa occidentale.
+* **CP1** fa riferimento alla tabella codici 1252, una codifica dei caratteri dell'alfabeto latino molto diffusa.
+* **CI** indica che nei confronti non viene fatta distinzione tra maiuscole e minuscole. Ad esempio, "HELLO" viene confrontato in modo equivalente a "hello".
+* **AS** indica che nei confronti viene fatta distinzione tra le lettere accentate. Ad esempio, "résumé" non viene confrontato in modo equivalente a "resume".
 
-Because you don't have specific requirements around how data is sorted and compared, you choose the default collation.
+Poiché non esistono requisiti specifici per la modalità di ordinamento e confronto dei dati, è possibile scegliere le regole di confronto predefinite.
 
-## Create your Azure SQL database
+## <a name="create-your-azure-sql-database"></a>Creare il database SQL di Azure
 
-Here you'll set up your database, which includes creating your logical server. You'll choose settings that support your transportation logistics application. In practice, you would choose settings that support the kind of app you're building.
+A questo punto, è possibile eseguire la configurazione del database, che include la creazione del server logico. Si sceglieranno impostazioni che supportano l'applicazione di logistica per i trasporti. Nella pratica, sarebbe necessario scegliere le impostazioni che supportano il tipo di app da creare.
 
-1. Sign in to the [Azure portal](https://portal.azure.com?azure-portal=true).
+1. [Accedere al portale di Azure](https://portal.azure.com?azure-portal=true).
+1. Nell'angolo superiore sinistro del portale fare clic su **Crea una risorsa**. Selezionare **Database**, quindi selezionare **Database SQL**.
 
-1. From the portal, click **Create a resource** from the upper left-hand corner. Select **Databases**, then select **SQL Database**.
+    ![Creazione del database SQL di Azure dal portale](../media-draft/create-db.png)
+1. In **Server** fare clic su **Configurare le impostazioni necessarie**, compilare il modulo, quindi fare clic su **Seleziona**. Ecco altre informazioni su come compilare il modulo:
 
-   ![Screenshot of the Azure portal showing the Create a resource blade with the Databases section selected and the Create a resource, Databases, and SQL Database buttons highlighted.](../media-draft/create-db.png)
-
-1. Under **Server**, click **Configure required settings**, fill out the form, then click **Select**. Here's more information on how to fill out the form:
-
-    | Setting      | Value |
+    | Impostazione      | Valore |
     | ------------ | ----- |
-    | **Server name** | A globally unique [server name](https://docs.microsoft.com/azure/architecture/best-practices/naming-conventions). |
-    | **Server admin login** | A [database identifier](https://docs.microsoft.com/sql/relational-databases/databases/database-identifiers) that serves as your primary administrator login name. |
-    | **Password** | Any valid password that has at least eight characters and contains characters from three of these categories: uppercase characters, lowercase characters, numbers, and non-alphanumeric characters. |
-    | **Location** | Any valid location. |
+    | **Nome server** | [Nome server](https://docs.microsoft.com/azure/architecture/best-practices/naming-conventions) univoco a livello globale. |
+    | **Accesso amministratore server** | [Identificatore di database](https://docs.microsoft.com/sql/relational-databases/databases/database-identifiers) usato come nome di accesso dell'amministratore primario. |
+    | **Password** | Qualsiasi password valida che contiene almeno otto caratteri delle tre categorie seguenti: maiuscole, minuscole, numeri e caratteri non alfanumerici. |
+    | **Posizione** | Qualsiasi posizione valida. |
     > [!IMPORTANT]
-    > Note your server name, admin login, and password for later.
+    > Prendere nota del nome del server, dell'account di accesso dell'amministratore e della password per usarli in seguito.
+1. Fare clic su **Piano tariffario** per specificare il livello di servizio. Selezionare il livello di servizio **Basic**, quindi fare clic su **Applica**.
+1. Usare i valori seguenti per compilare il resto del modulo.
 
-1. Click **Pricing tier** to specify the service tier. Select the **Basic** service tier, then click **Apply**.
-
-1. Use these values to fill out the rest of the form.
-
-    | Setting      | Value |
+    | Impostazione      | Valore |
     | ------------ | ----- |
-    | **Database name** | **Logistics** |
-    | **Subscription** | Your subscription |
-    | **Resource group** | **logistics-db-rg** |
-    | **Select source** | **Blank database** |
-    | **Want to use SQL elastic pool?** | **Not now** |
-    | **Collation** | **SQL_Latin1_General_CP1_CI_AS** |
+    | **Nome database** | **Logistics** | 
+    | **Sottoscrizione** | Sottoscrizione in uso |
+    | **Gruppo di risorse** | **logistics-db-rg** | 
+    | **Seleziona origine** | **Database vuoto** | 
+    | **Usare il pool elastico SQL?** | **Non ora** |
+    | **Regole di confronto** | **SQL_Latin1_General_CP1_CI_AS** |
+1. Fare clic su **Crea** per creare il database SQL di Azure.
+1. Sulla barra degli strumenti fare clic su **Notifiche** per monitorare il processo di distribuzione.
+    ![Monitoraggio del processo di distribuzione](../media-draft/notifications-progress.png) Al termine del processo, fare clic su **Aggiungi al dashboard** per aggiungere il server di database al dashboard, in modo da potervi accedere rapidamente in un secondo momento.
+    ![Aggiunta del server al dashboard](../media-draft/notifications-complete.png)
 
-1. Click **Create** to create your Azure SQL database.
+## <a name="set-the-server-firewall"></a>Impostare il firewall del server
 
-1. On the toolbar, click **Notifications** to monitor the deployment process.
+A questo punto, il database SQL di Azure è operativo. Sono disponibili numerose opzioni per configurare ulteriormente, proteggere, monitorare e risolvere i problemi del nuovo database.
 
-When the process completes, click **Pin to dashboard** to pin your database server to the dashboard so that you have quick access when you need it later.
+Si supponga ad esempio che nel corso del tempo si renda necessario aumentare la potenza di calcolo per soddisfare le richieste. È possibile modificare le opzioni relative alle prestazioni o perfino passare dal modello di prestazioni DTU a vCore o viceversa.
 
-   ![Screenshot of the Azure portal showing the Notifications menu with the Pin to dashboard button from a recent deployment success message highlighted.](../media-draft/notifications-complete.png)
+È inoltre possibile specificare i sistemi che possono accedere al database attraverso il firewall. Inizialmente, il firewall impedisce qualsiasi accesso al server di database dall'esterno di Azure.
 
-## Set the server firewall
+Per il prototipo, è sufficiente accedere al database dal proprio portatile. In seguito, sarà possibile consentire altri sistemi, ad esempio l'app per dispositivi mobili.
 
-Your Azure SQL database is now up and running. You have many options to further configure, secure, monitor, and troubleshoot your new database.
+Vediamo come abilitare il computer di sviluppo per l'accesso al database attraverso il firewall.
 
-For example, say that over time you realize you need additional compute power to keep up with demand. You can adjust performance options or even switch between the DTU and vCore performance models.
+1.  Passare al pannello Panoramica del database Logistics. Se il database è stato aggiunto al dashboard, è possibile fare clic sul riquadro **Logistics** nel dashboard per accedervi.
+    ![Riquadro Logistics](../media-draft/logistics-tile.png)
+1. Fare clic su **Imposta firewall server**.
 
-You can also specify which systems can access your database through the firewall. Initially, the firewall prevents all access to your database server from outside of Azure.
+    ![Impostazione del firewall del server](../media-draft/set-server-firewall.png)
+1. Fare clic su **Aggiungi IP client** e fare clic su **Salva**.
 
-For your prototype, you only need to access the database from your laptop. Later, you can whitelist additional systems, such as your mobile app.
+    ![Aggiunta dell'indirizzo IP del client](../media-draft/add-client-ip.png)
 
-Let's enable your development computer to access the database through the firewall now.
-
-1. Go to the overview blade of the Logistics database. If you pinned the database earlier, you can click the **Logistics** tile on the dashboard to get there.
-
-1. Click **Set server firewall**.
-
-    ![Screenshot of the Azure portal showing a SQL database overview blade with the Set server firewall button highlighted.](../media-draft/set-server-firewall.png)
-
-1. Click **Add client IP**, and then click **Save**.
-
-    ![Screenshot of the Azure portal showing a SQL database Firewall settings blade with the Add client IP button highlighted.](../media-draft/add-client-ip.png)
-
-In the next part, you'll get some hands-on practice with your new database and with Azure Cloud Shell. You'll connect to the database, create a table, add some sample data, and execute a few SQL statements.
+Nella parte successiva si eseguiranno alcune esercitazioni pratiche con il nuovo database e con Cloud Shell. Verrà descritto come connettersi al database, creare una tabella, aggiungere alcuni dati di esempio ed eseguire alcune istruzioni SQL.

@@ -1,82 +1,79 @@
-Choosing the correct storage solution can lead to better performance, cost savings, and improved managability. Here, you'll apply what you've learned about the data in your online retail scenario, and find the best Azure service for each data set. 
+La scelta della soluzione di archiviazione appropriata può aiutare a migliorare le prestazioni. In questa unità si applicheranno le nozioni apprese sui dati dello scenario di vendita online e si troverà il servizio di Azure migliore per ogni set di dati. 
 
-## Product catalog data
+## <a name="product-catalog-data"></a>Dati del catalogo prodotti
 
-**Data classification:** Semi-structured because of the need to extend or modify the schema for new products
+Classificazione dei dati: semistrutturati
 
-**Operations:**
+Operazioni:
 
-- Customers require a high number of read operations, with the ability to query on many fields within the database.
-- The business requires a high number of write operations to track the constantly changing inventory.
+* I clienti richiedono numerose operazioni di lettura, con la possibilità di eseguire query su numerosi campi nel database.
+* L'azienda richiede un numero elevato di operazioni di scrittura per tenere traccia dell'inventario che cambia continuamente.
 
-**Latency & throughput:** High throughput and low latency
+Latenza e velocità effettiva: velocità effettiva elevata e bassa latenza
 
-**Transactional support:** Required
+Supporto delle transazioni: richiesto
 
-### Recommended service: Azure Cosmos DB
+### <a name="recommended-service-azure-cosmos-db"></a>Servizio consigliato: Azure Cosmos DB
 
-Azure Cosmos DB supports semi-structured data, or NoSQL data, by design. So, supporting new fields, such as the "Bluetooth Enabled" field or any new fields you need in the future, is a given with Azure Cosmos DB.
+Azure Cosmos DB supporta i dati semistrutturati, o dati NoSQL, per impostazione predefinita. Con Azure Cosmos DB è quindi disponibile il supporto dei nuovi campi, ad esempio il campo relativo alla funzionalità Bluetooth o qualsiasi nuovo campo necessario in futuro.
 
-Regarding operations, Azure Cosmos DB supports SQL for queries and every property is indexed by default. Creating queries to match your customers’ need to filter on almost everything is supported.
+Per quanto riguarda le operazioni, Azure Cosmos DB supporta SQL per le query e tutte le proprietà vengono indicizzate per impostazione predefinita, quindi è supportata la creazione di query che permettono ai clienti di applicare filtri di quasi tutti i tipi in base alle esigenze.
 
-Regarding latency and throughput, Azure Cosmos DB enables you to configure your both. You can scale up to handle higher customer demand during peak shopping times, or scale down during slower times to conserve cost. And because Azure Cosmos DB indexes all properties by default, customers will be able to query on any field.
+Per quanto riguarda latenza e velocità effettiva, Azure Cosmos DB consente di configurare la velocità effettiva, che può essere aumentata per gestire l'aumento della domanda dei clienti nei periodi di picco degli acquisti o ridotta nei periodi meno intensi per risparmiare sui costi. E poiché Azure Cosmos DB indicizza tutte le proprietà per impostazione predefinita, è possibile consentire ai clienti di eseguire query su qualsiasi campo.
 
-Azure Cosmos DB is also ACID-compliant, so you can be assured that your transactions are completed according to those strict requirements.
+Azure Cosmos DB è anche conforme ad ACID, quindi le transazioni vengono completate in base a tali requisiti rigorosi.
 
-As an added plus, Azure Cosmos DB also enables you to replicate your data anywhere in the world with the click of a button. So, if your e-commerce site has concentrated users in the US, France, and England, you can replicate your data to those data centers to reduce latency, as you've physically moved the data closer to your users. And even with data replicated around the world, you can choose from one of five consistency levels. By choosing the right consistency level, you can determine the tradeoffs to make between consistency, availability, latency, and throughput.
+Azure Cosmos DB consente inoltre di replicare i dati ovunque nel mondo con un semplice clic. Se quindi il sito di e-commerce ha utenti concentrati negli Stati Uniti, in Francia e in Inghilterra, è possibile replicare i dati in tali data center per ridurre la latenza grazie a una maggiore vicinanza fisica dei dati agli utenti. E, anche con i dati replicati in tutto il mondo, è possibile scegliere uno dei cinque livelli di coerenza in modo da determinare il compromesso ideale tra coerenza, disponibilità, latenza e velocità effettiva.
 
-### Why not other Azure services?
+### <a name="why-not-other-azure-services"></a>Perché non scegliere altri servizi di Azure?
 
-Azure SQL Database would be an excellent choice for this data set, were it not for the need to extend the schema ad-hoc for new products. Azure SQL Database can provide many of the same benefits of Azure Cosmos DB, but it cannot handle heterogeneous data, all data needs to adhere to a schema.
+Anche altri servizi di Azure, come Archiviazione tabelle di Azure, Azure HBase in HDInsight e Cache Redis di Azure, consentono di archiviare dati NoSQL. In questo scenario, poiché gli utenti devono poter eseguire una query su più campi, Azure Cosmos DB è una soluzione migliore rispetto ad Archiviazione tabelle di Azure, Cache Redis di Azure e Azure HBase in HDInsight perché Azure Cosmos DB indicizza tutti i campi per impostazione predefinita, mentre i dati indicizzati dagli altri servizi sono limitati e ciò limita la possibilità di eseguire query su qualsiasi campo del database.
 
-Other Azure services, such as Azure Table storage, Azure HBase as a part of HDInsight, and Azure Redis Cache, can also store NoSQL data. In this scenario, because users will want to query on multiple fields, Azure Cosmos DB is a better fit. This is because Azure Cosmos DB indexes every field by default, whereas the other services are limited in the data they index, so they have reduced abilities to query on any field in the database.
+## <a name="photos-and-videos"></a>Foto e video
 
-## Photos and videos
+Classificazione dei dati: non strutturati
 
-**Data classification:** Unstructured
+Operazioni:
 
-**Operations:**
+* Foto e video devono essere recuperati solo in base all'ID.
+* Le operazioni di creazione e aggiornamento saranno abbastanza rare e possono avere una latenza maggiore rispetto alle operazioni di lettura.
 
-- Only need to be retrieved by ID.
-- Customers require a high number of read operations with low-latency.
-- Creates and updates will be somewhat infrequent and can have higher latency than read operations.
+Latenza e velocità effettiva: le operazioni di recupero in base all'ID devono supportare bassa latenza e velocità effettiva elevata. Le operazioni di creazione e aggiornamento possono avere una latenza maggiore rispetto alle operazioni di lettura.
 
-**Latency & throughput:** Retrievals by ID need to support low latency and high throughput. Creates and updates can have higher latency than read operations.
+Supporto delle transazioni: non richiesto
 
-**Transactional support:** Not required
+## <a name="recommended-service-azure-blob-storage"></a>Servizio consigliato: Archiviazione BLOB di Azure
 
-### Recommended service: Azure Blob storage
+Archiviazione BLOB di Azure supporta l'archiviazione di file come foto e video. Si integra anche con Rete di distribuzione dei contenuti di Azure (rete CDN) per la memorizzazione nella cache dei contenuti più usati e la loro archiviazione nei server perimetrali, riducendo la latenza di recupero delle immagini per gli utenti.
 
-Azure Blob storage supports storing files such as photos and videos. It also works with Azure Content Delivery Network (CDN) by caching the most used content and storing it on edge servers. This reduces latency in serving up those images to your users.
+Con Archiviazione BLOB di Azure, è anche possibile spostare le immagini dal livello di archiviazione ad accesso frequente al livello di archiviazione archivio o ad accesso sporadico per ridurre i costi e ottimizzare la velocità effettiva per le immagini e i video più visualizzati.
 
-By using Azure Blob storage, you can also move images from the hot storage tier to the cool or archive storage tier, to reduce costs and focus throughput on the most viewed images and videos.
+### <a name="why-not-other-azure-services"></a>Perché non scegliere altri servizi di Azure?
 
-### Why not other Azure services?
+Si potrebbe caricare le immagini in Servizi app di Azure, così che lo stesso server che esegue l'app fornisca anche le immagini. Ciò potrebbe funzionare se le immagini non fossero molte, ma in presenza di numerosi file per un pubblico globale si otterranno risultati migliori usando Archiviazione BLOB di Azure con Rete di distribuzione dei contenuti di Azure.
 
-You could upload your images to Azure App Service, so that the same server running your app is serving up your images. That would work if you didn't have many file. But if you have lots of files, and a global audience, you'll get more performant results by using Azure Blob storage with Azure CDN.
+## <a name="business-data"></a>Dati di business
 
-## Business data
+Classificazione dei dati: strutturati
 
-**Data classification:** Structured
+Operazioni: query analitiche complesse di sola lettura su più database
 
-**Operations:** Read-only, complex analytical queries across multiple databases
+Latenza e velocità effettiva: è prevista una certa latenza nei risultati a causa della natura complessa delle query.
 
-**Latency & throughput:** Some latency in the results is expected based on the complex nature of the queries.
+Supporto delle transazioni: richiesto
 
-**Transactional support:** Required
+### <a name="recommended-service-azure-sql-database"></a>Servizio consigliato: database SQL di Azure
 
-### Recommended service: Azure SQL Database
+Le query sui dati di business vengono in genere eseguite dai business analyst, che conoscono più probabilmente SQL rispetto a qualsiasi altro linguaggio di query. Il database SQL di Azure può essere usato come soluzione autonoma ma, se usato in combinazione con Azure Analysis Services consente agli analisti di creare un modello semantico basato sui dati nel database SQL di Azure e quindi di condividerlo con gli utenti aziendali, che potranno semplicemente connettersi al modello da qualsiasi strumento di business intelligence per iniziare immediatamente a esplorare i dati e ottenere informazioni dettagliate. 
 
-Business data will most likely be queried by business analysts, who are more likely to know SQL than any other query language. Azure SQL Database could be used as the solution by itself, but pairing it with Azure Analysis Services enables data analysts to create a semantic model over the data in SQL Database. They can then share it with business users, so that all they need to do is connect to the model from any business intelligence (BI) tool, and immediately explore the data and gain insights. 
+### <a name="why-not-other-azure-services"></a>Perché non scegliere altri servizi di Azure?
 
-### Why not other Azure services?
+Azure SQL Data Warehouse supporta le soluzioni OLAP e le query SQL, ma i business analyst devono eseguire query su più database e questa funzionalità non è supportata da Azure SQL Data Warehouse.
 
-Azure SQL Data Warehouse supports OLAP solutions and SQL queries. But your business analysts will need to perform cross-database queries, which SQL Data Warehouse does not support.
+È possibile usare Azure Analysis Services in aggiunta al database SQL di Azure, tuttavia i business analyst sono più esperti in SQL rispetto all'uso di Power BI, quindi preferiscono un database che supporti le query SQL, non supportate da Azure Analysis Services. I dati finanziari archiviati nel set di dati di business sono inoltre di natura relazionale e multidimensionale e Azure Analysis Services supporta i dati tabulari archiviati nel servizio, ma non i dati multidimensionali. Per analizzare i dati multidimensionali con Azure Analysis Services, è possibile usare DirectQuery nel database SQL di Azure.
 
-Azure Analysis Services could be used in addition to Azure SQL Database. But your business analysts are more well versed in SQL than working with Power BI. So they'd like a database that supports SQL queries, which Azure Analysis Services does not. In addition, the financial data you're storing in your business data set is relational and multidimensional in nature. Azure Analysis Services supports tabular data stored on the service itself, but not multidimensional data. To analyze multidimensional data with Azure Analysis Services, you can use direct query to the SQL Database.
+Analisi di flusso di Azure è un'ottima soluzione per analizzare i dati e trasformarli in informazioni dettagliate di utilità pratica, ma è un servizio incentrato sui dati di streaming in tempo reale, mentre in questo caso i business analyst esaminano solo dati cronologici.
 
-Azure Stream Analytics is a great way to analyze data and transform it into actionable insights, but its focus is on real-time data that is streaming in. In this case, our business analysts will be looking at historical data only.
+## <a name="summary"></a>Riepilogo
 
-## Summary
-
-Each category of data has different storage requirements, and it's your job to figure out which solution is best. You should always consider the category of data, required operations, latency, and the need for transactional support.
+Ogni categoria di dati ha requisiti di archiviazione diversi ed è necessario capire qual è la soluzione più appropriata. È sempre necessario considerare la categoria dei dati, le operazioni richieste, la latenza e la necessità del supporto delle transazioni.

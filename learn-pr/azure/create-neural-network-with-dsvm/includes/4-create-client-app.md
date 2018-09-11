@@ -1,10 +1,10 @@
-### Create a NotHotDog app
+### <a name="exercise-4-create-a-nothotdog-app"></a>Esercizio 4: Creare un'app NotHotDog
 
-In this unit, you will use [Visual Studio Code](https://code.visualstudio.com/), Microsoft's free, cross-platform source-code editor which is preinstalled in the Data Science VM, to write a NotHotDog app in Python. The app will use [Tkinter](https://wiki.python.org/moin/TkInter), which is a popular GUI framework for Python, to implement its user interface, and it will allow you to select images from your local file system. Then, it will pass those images to the model you trained in the previous exercise and tell you whether they contain a hot dog.
+In questo esercizio si userà [Visual Studio Code](https://code.visualstudio.com/), l'editor di codice sorgente multipiattaforma gratuito di Microsoft, preinstallato nella Data Science VM, per scrivere un'app NotHotDog in Python. L'app userà [TkInter](https://wiki.python.org/moin/TkInter), un noto framework GUI per Python, per implementare l'interfaccia utente e consentirà di selezionare le immagini dal file system locale. Le immagini verranno quindi passate al modello sottoposto a training nell'esercizio precedente e l'app indicherà se contengono un hot dog.
 
-1. Click **Applications** in the upper-left corner of the desktop and select **Accessories > Visual Studio Code** to start Visual Studio Code. Use Visual Studio Code's **File > Open Folder...** command to open the "notebooks/tensorflow-for-poets-2/tf_files" folder containing the **retrained_graph_hotdog.pb** file created when you trained the model.
+1. Fare clic su **Applicazioni** nell'angolo superiore sinistro del desktop e selezionare **Accessori > Visual Studio Code** per avviare Visual Studio Code. Usare il comando di Visual Studio Code **File > Apri cartella** per aprire la cartella "notebooks/tensorflow-for-poets-2/tf_files" contenente il file **retrained_graph_hotdog.pb** creato durante il training del modello.
 
-1. Create a new file named **classify.py** in the current folder. If Visual Studio Code offers to install the Python extension, click **Install** to install it. Copy the code below to the clipboard and use **Shift+Ins** to paste it into **classify.py**. Then, save the file:
+1. Creare un nuovo file denominato **classify.py** nella cartella corrente. Se Visual Studio Code offre di installare l'estensione di Python, fare clic su **Installa** per installarla. Copiare il codice seguente negli Appunti e usare **MAIUSC+INS** per incollarlo in **classify.py**. Salvare quindi il file:
 
     ```python
     import tkinter as tk
@@ -75,22 +75,24 @@ In this unit, you will use [Visual Studio Code](https://code.visualstudio.com/),
         run()
     ```
 
-    The key code here is the call to ```subprocess.check_output```, which invokes the trained model by executing a Python script named **label_image.py** found in the "scripts" folder, passing in the image that the user selected. This script came from the repo that you cloned in the previous exercise.
+    Il codice importante qui è la chiamata a ```subprocess.check_output```, che richiama il modello sottoposto a training eseguendo uno script Python denominato **label_image.py** disponibile nella cartella "scripts", passando l'immagine selezionata dall'utente. Questo script proviene dal repository clonato nell'esercizio precedente.
 
-1. Use your favorite search engine to find a few food images — some containing hot dogs and some not. Download these images and store them in the location of your choice in the VM's file system.
+1. Usare il motore di ricerca preferito per trovare alcune immagini di cibo, alcune contenenti hot dog e altre no. Scaricare queste immagini e archiviarle in una posizione a propria scelta nel file system della macchina virtuale.
 
-1. Use Visual Studio Code's **View > Integrated Terminal** command to open an integrated terminal. Then, execute the following command in the integrated terminal to run the app:
+1. Selezionare il comando di Visual Studio Code **Visualizza > Terminale integrato** per aprire un terminale integrato. Eseguire quindi il comando seguente nel terminale integrato per eseguire l'app:
 
      ```bash
      python classify.py
      ```
 
-1. Click the app's **Select** button and pick one of the hot-dog images you downloaded in Step 3. Wait for a message box to appear, indicating whether the image contains a hot dog. Did the model get it correct?
+1. Fare clic sul pulsante **Select** dell'app e selezionare una delle immagini con hot dog scaricate nel passaggio 3. Attendere che venga visualizzata una finestra di messaggio che indica se l'immagine contiene un hot dog. Il modello rileva correttamente l'immagine?
 
-	> If you see error messages regarding a missing kernel driver in the terminal window when you process an image, you can safely ignore them. They result from the fact that the Data Science VM does not contain a virtual GPU.
+    > Se vengono visualizzati messaggi di errore riguardanti un driver del kernel mancate nella finestra del terminale durante l'elaborazione di un'immagine, è possibile ignorarli. Sono il risultato del fatto che la Data Science VM non contiene una GPU virtuale.
 
-    ![Selecting an image](../media-draft/4-select-image.png)
+    ![Selezione di un'immagine](../images/select-image.png)
 
-1. Repeat the previous step using an image that doesn't contain a hot dog. Was the model right this time?
+    _Selezione di un'immagine_
 
-Continue feeding food images into the app until you're satisfied that it can identify images containing hot dogs. Don't expect it to be right 100% of the time, but do expect it to be right *most* of the time.
+1. Ripetere il passaggio precedente usando un'immagine che non contiene un hot dog. Il modello risponde correttamente questa volta?
+
+Continuare inserendo le immagini di cibo nell'app fino a quando non si verifica che è in grado di identificare le immagini contenenti hot dog. Non aspettarsi che il risultato sia sempre corretto, ma che lo sia *la maggior parte* delle volte.

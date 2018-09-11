@@ -1,62 +1,57 @@
-The Azure CLI lets you type commands and execute them immediately from the command line. Recall that the overall goal in the software development example is to deploy new builds of a web app for testing. Let's talk about the sorts of tasks you can do with the Azure CLI.
+L'interfaccia della riga di comando di Azure consente di digitare i comandi e di eseguirli immediatamente dalla riga di comando. Ricordare che l'obiettivo complessivo dell'esempio di sviluppo software è distribuire nuove build di un'app Web per i test. Di seguito vengono esaminati i tipi di attività che è possibile eseguire con l'interfaccia della riga di comando di Azure.
 
-## What Azure resources can be managed using the Azure CLI?
+## <a name="what-azure-resources-can-be-managed-using-the-azure-cli"></a>Quali risorse di Azure possono essere gestite tramite l'interfaccia della riga di comando di Azure?
+L'interfaccia della riga di comando di Azure consente di controllare quasi tutti gli aspetti di ogni risorsa di Azure. È possibile lavorare con gruppi di risorse, archiviazione, macchine virtuali, Azure Active Directory (Azure AD), contenitori, apprendimento automatico e così via.
 
-The Azure CLI lets you control nearly every aspect of every Azure resource. You can work with resource groups, storage, virtual machines, Azure Active Directory (Azure AD), containers, machine learning, and so on.
+I comandi nell'interfaccia della riga di comando sono strutturati in _gruppi_ e _sottogruppi_. Ogni gruppo rappresenta un servizio offerto da Azure e i sottogruppi dividono i comandi per questi servizi in raggruppamenti logici. Ad esempio, il gruppo `storage` include sottogruppi, tra i quali **account**, **blob**, **storage** e **queue**.
 
-Commands in the CLI are structured in _groups_ and _subgroups_. Each group represents a service provided by Azure, and the subgroups divide commands for these services into logical groupings. For example, the `storage` group contains subgroups including **account**, **blob**, **storage**, and **queue**.
-
-So, how do you find the particular commands you need? One way is to use `az find`. For example, if you want to find commands that might help you manage a storage blob, you can use the following find command:
+Quindi, come si possono trovare i comandi specifici necessari? Un modo consiste nell'usare `az find`. Ad esempio, se si vogliono trovare i comandi utili per gestire un BLOB di archiviazione, si può usare il comando find seguente:
 
 ```bash
 az find -q blob
 ```
 
-If you already know the name of the command you want, the `--help` argument for that command will get you more detailed information on the command, and for a command group, a list of the available subcommands. So, with our storage example, here's how you can get a list of the subgroups and commands for managing blob storage:
+Se si conosce già il nome del comando, l'argomento `--help` per il comando restituirà informazioni più dettagliate su di esso e, per un gruppo di comandi, un elenco dei sottocomandi disponibili. Ritornando all'esempio di archiviazione, ecco come è possibile ottenere un elenco dei sottogruppi e dei comandi per la gestione dell'archiviazione BLOB:
 
 ```bash
 az storage blob --help
 ```
 
-## How to create an Azure resource
+## <a name="how-to-create-an-azure-resource"></a>Come creare una risorsa di Azure
+La creazione di una nuova risorsa di Azure prevede in genere tre passaggi: connessione alla sottoscrizione di Azure, creazione della risorsa e verifica del completamento della creazione. La figura seguente illustra una panoramica di alto livello del processo.
 
-When creating a new Azure resource, there are typically three steps: connect to your Azure subscription, create the resource, and verify that creation was successful. The following illustration shows a high-level overview of the process.
+![Illustrazione contenente i passaggi per creare una risorsa di Azure usando l'interfaccia della riga di comando.](../media-drafts/4-create-resources-overview.png)
 
-![An illustration showing the steps to create an Azure resource using the command-line interface.](../media-drafts/4-create-resources-overview.png)
+Ogni passaggio corrisponde a un comando diverso dell'interfaccia della riga di comando di Azure.
 
-Each step corresponds to a different Azure CLI command.
-
-### Connect
-
-Since you're working with a local install of the Azure CLI, you'll need to authenticate before you can execute Azure commands, by using the Azure CLI **login** command. 
+### <a name="connect"></a>Connettersi
+Dato che si sta lavorando con un'installazione locale dell'interfaccia della riga di comando di Azure, è necessario eseguire l'autenticazione prima di poter eseguire i comandi di Azure, tramite il comando **login** dell'interfaccia della riga di comando di Azure. 
 
 ```bash
 az login
 ```
 
-The Azure CLI will typically launch your default browser to open the Azure sign-in page. If this doesn't work, follow the command-line instructions and enter an authorization code at [https://aka.ms/devicelogin](https://aka.ms/devicelogin).
+L'interfaccia della riga di comando di Azure in genere avvierà il browser predefinito per aprire la pagina di accesso di Azure. Se ciò non accade, seguire le istruzioni della riga di comando e immettere un codice di autorizzazione all'indirizzo [https://aka.ms/devicelogin](https://aka.ms/devicelogin).
 
-After a successful sign in, you'll be connected to your Azure subscription. 
+Quando l'accesso riesce, si verrà connessi alla sottoscrizione di Azure. 
 
-### Create
+### <a name="create"></a>Creare
+È spesso necessario creare un nuovo gruppo di risorse prima di creare un nuovo servizio di Azure, quindi i gruppi di risorse verranno usati come esempio per mostrare come creare le risorse di Azure dall'interfaccia della riga di comando.
 
-You'll often need to create a new resource group before you create a new Azure service, so we'll use resource groups as an example to show how to create Azure resources from the CLI.
-
-The Azure CLI **group create** command creates a resource group. You must specify a name and location. The name must be unique within your subscription. The location determines where the metadata for your resource group will be stored. You use strings like "West US", "North Europe", or "West India" to specify the location; alternatively, you can use single word equivalents, such as westus, northeurope, or westindia. The core syntax is:
+Il comando **group create** dell'interfaccia della riga di comando di Azure crea un gruppo di risorse. È necessario specificare un nome e una posizione. Il nome deve essere univoco all'interno della sottoscrizione. La posizione determina dove vengono archiviati i metadati per il gruppo di risorse. Per specificare la posizione si usano stringhe come "West US", "North Europe" o "West India". In alternativa, è possibile usare gli equivalenti composti da una parola singola, ad esempio westus, northeurope o westindia. La sintassi di base è:
 
 ```bash
 az group create --name <name> --location <location>
 ```
 
-### Verify
-
-For many Azure resources, the Azure CLI provides a **list** subcommand to view resource details. For example, the Azure CLI **group list** command lists your Azure resource groups. This is useful here to verify whether creation of the resource group was successful:
+### <a name="verify"></a>Verificare
+Per molte risorse di Azure, l'interfaccia della riga di comando di Azure include un sottocomando **list** per visualizzare i dettagli della risorsa. Ad esempio, il comando **group list** dell'interfaccia della riga di comando di Azure elenca i gruppi di risorse di Azure. Questo comando è utile in questo contesto per verificare se è stata completata la creazione del gruppo di risorse:
 
 ```bash
 az group list
 ```
 
-To get a more concise view, you can format the output as a simple table:
+Per ottenere una visualizzazione più concisa, è possibile formattare l'output come una tabella semplice:
 
 ```bash
 az group list --output table

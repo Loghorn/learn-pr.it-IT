@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.create-linux-vm-in-azure.7-manage-vm
+title: Configurare le impostazioni di rete
+metadata:
+  title: Configurare le impostazioni di rete
+  description: Configurare le impostazioni di rete
+  ms.openlocfilehash: 626e1009161b800f8beaa098f90ebba97cef49d0
+  ms.sourcegitcommit: 1aec476e479e92851bc3b5b7795f1200740bc1e5
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/03/2018
+  ms.locfileid: "43498848"
+durationInMinutes: 10
+content: '[!include[](includes/7-manage-vm.md)]'
