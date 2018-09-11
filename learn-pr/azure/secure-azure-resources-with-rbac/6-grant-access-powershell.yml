@@ -1,16 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.secure-azure-resources-with-rbac.6-grant-access-powershell
 metadata:
-  title: <span data-ttu-id="0dc75-101">Garantire l'accesso tramite il controllo degli accessi in base al ruolo e Azure PowerShell</span><span class="sxs-lookup"><span data-stu-id="0dc75-101">Grant access using RBAC and Azure PowerShell</span></span>
-  description: <span data-ttu-id="0dc75-102">Qui sono riportate informazioni su come concedere a un utente le autorizzazioni di accesso per creare e gestire macchine virtuali in un gruppo di risorse con Azure PowerShell.</span><span class="sxs-lookup"><span data-stu-id="0dc75-102">Learn how to grant a user access to create and manage virtual machines in a resource group using Azure PowerShell.</span></span>
-  displayType: one-column
-  ms.openlocfilehash: 5675e822091ab1bc73be393997b2963436edafae
-  ms.sourcegitcommit: bb4b1f9e2a7399769ff84199f018abd14a3e73aa
+  title: <span data-ttu-id="d3e73-101">Garantire l'accesso tramite il controllo degli accessi in base al ruolo e Azure PowerShell</span><span class="sxs-lookup"><span data-stu-id="d3e73-101">Grant access using RBAC and Azure PowerShell</span></span>
+  description: <span data-ttu-id="d3e73-102">Qui sono riportate informazioni su come concedere a un utente le autorizzazioni di accesso per creare e gestire macchine virtuali in un gruppo di risorse con Azure PowerShell.</span><span class="sxs-lookup"><span data-stu-id="d3e73-102">Learn how to grant a user access to create and manage virtual machines in a resource group using Azure PowerShell.</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: e649fb682e0bffdbac9c29779913e3117b5bb97c
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/01/2018
-  ms.locfileid: "43454359"
-title: <span data-ttu-id="0dc75-103">Garantire l'accesso tramite il controllo degli accessi in base al ruolo e Azure PowerShell</span><span class="sxs-lookup"><span data-stu-id="0dc75-103">Grant access using RBAC and Azure PowerShell</span></span>
-labOnDemandUrl: https://labondemand.com/Launch/00000000
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44237080"
+title: <span data-ttu-id="d3e73-103">Garantire l'accesso tramite il controllo degli accessi in base al ruolo e Azure PowerShell</span><span class="sxs-lookup"><span data-stu-id="d3e73-103">Grant access using RBAC and Azure PowerShell</span></span>
 durationInMinutes: 10
 content: '[!include[](includes/6-grant-access-powershell.md)]'
