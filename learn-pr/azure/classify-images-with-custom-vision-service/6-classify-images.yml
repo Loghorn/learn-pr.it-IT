@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.classify-images-with-custom-vision-services.6-classify-images
+title: <span data-ttu-id="ccaef-101">Usare l'app per classificare immagini</span><span class="sxs-lookup"><span data-stu-id="ccaef-101">Use the app to classify images</span></span>
+metadata:
+  title: <span data-ttu-id="ccaef-102">Usare l'app per classificare immagini</span><span class="sxs-lookup"><span data-stu-id="ccaef-102">Use the app to classify images</span></span>
+  description: <span data-ttu-id="ccaef-103">Usare l'app per classificare immagini</span><span class="sxs-lookup"><span data-stu-id="ccaef-103">Use the app to classify images</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: c057fe82b57ef6cc2fe15aec4d0752e5a5ae7389
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44233184"
+durationInMinutes: 10
+content: '[!include[](includes/6-classify-images.md)]'

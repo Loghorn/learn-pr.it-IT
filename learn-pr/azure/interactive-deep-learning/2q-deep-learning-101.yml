@@ -1,0 +1,53 @@
+### YamlMime:ModuleUnit
+uid: learn.interactive-deep-learning.2q-deep-learning-101
+title: <span data-ttu-id="7d111-101">Verifica delle conoscenze</span><span class="sxs-lookup"><span data-stu-id="7d111-101">Knowledege Check</span></span>
+metadata:
+  title: <span data-ttu-id="7d111-102">Verifica delle conoscenze</span><span class="sxs-lookup"><span data-stu-id="7d111-102">Knowledege Check</span></span>
+  description: '<span data-ttu-id="7d111-103">Verifica delle conoscenze: Apprendimento avanzato 101</span><span class="sxs-lookup"><span data-stu-id="7d111-103">Deep learning 101 Knowledege Check</span></span>'
+  displayType: one-column
+  ms.openlocfilehash: 6539b5c2f32d97a1a20ef2f801a1749f760643e7
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43835118"
+durationInMinutes: 2
+content: <span data-ttu-id="7d111-104">Rispondere alle domande seguenti per continuare</span><span class="sxs-lookup"><span data-stu-id="7d111-104">Answer the following to continue</span></span>
+quiz:
+  title: '<span data-ttu-id="7d111-105">Test: Apprendimento avanzato 101</span><span class="sxs-lookup"><span data-stu-id="7d111-105">Deep Learning 101 Quiz</span></span>'
+  questions:
+  - content: <span data-ttu-id="7d111-106">Qual è una delle differenze principali tra apprendimento automatico tradizionale e apprendimento avanzato?</span><span class="sxs-lookup"><span data-stu-id="7d111-106">What is one of the main differences between traditional machine learning and deep learning?</span></span>
+    choices:
+    - content: <span data-ttu-id="7d111-107">Nell'ambito dell'apprendimento avanzato vengono usati solo modelli lineari, mentre l'apprendimento automatico tradizionale presuppone l'uso di tutti i tipi di grafici dei modelli, operatori algebrici e probabilistici.</span><span class="sxs-lookup"><span data-stu-id="7d111-107">In deep learning we only use linear models where as in traditonal machine learning we use all kinds of models graph, algebraic and probablistic.</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="7d111-108">L'apprendimento automatico tradizionale usa funzionalità selezionate a mano, mentre l'apprendimento avanzato usa funzionalità selezionate a mano e apprese.</span><span class="sxs-lookup"><span data-stu-id="7d111-108">In traditional machine learning features are hand picked in deep learning they are hand picked and learned.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="7d111-109">Nell'apprendimento avanzato, il processo di estrazione delle funzioni viene appreso tramite la rappresentazione di input sotto forma di vettori e la relativa trasformazione, con una serie di operazioni algebriche lineari in un determinato output.</span><span class="sxs-lookup"><span data-stu-id="7d111-109">In Deep Learning (DL), the process of feature extraction is learned through representing inputs as vectors and transforming them, with a series of clever linear algebra operations, into a given output.</span></span>
+    - content: <span data-ttu-id="7d111-110">L'apprendimento avanzato è stato sviluppato tenendo in considerazione il cervello, mentre l'apprendimento automatico tradizionale tenendo in considerazione il cuore.</span><span class="sxs-lookup"><span data-stu-id="7d111-110">Deep learning is modeled after the brain and traditional machine learning is modeled after the heart.</span></span>
+      isCorrect: false
+  - content: <span data-ttu-id="7d111-111">Qual è lo scopo della DSVM?</span><span class="sxs-lookup"><span data-stu-id="7d111-111">What is the purpose of the DSVM?</span></span>
+    choices:
+    - content: <span data-ttu-id="7d111-112">Le DSVM sono l'unico modo per interagire con l'apprendimento automatico in Azure.</span><span class="sxs-lookup"><span data-stu-id="7d111-112">The DSVMs are the only way to interact with machine learning on Azure.</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="7d111-113">Le DSVM sono immagini predefinite che forniscono il supporto per i framework di apprendimento automatico e data science più famosi.</span><span class="sxs-lookup"><span data-stu-id="7d111-113">DSVMs are prebuilt images that provide support for the most popular data science and machine learning frameworks.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="7d111-114">Le DSVM sono immagini di macchine virtuali di Azure preinstallate, configurate e testate con alcuni degli strumenti più diffusi usati comunemente per analisi dei dati, Machine Learning e training di apprendimento avanzato.</span><span class="sxs-lookup"><span data-stu-id="7d111-114">DSVMs are Azure Virtual Machine images, pre-installed, configured, and tested with several popular tools that are commonly used for data analytics, machine learning, and deep learning training.</span></span>
+    - content: <span data-ttu-id="7d111-115">A differenza dell'immagine della macchina virtuale di apprendimento avanzato, le DSVM possono essere usate solo per la data science tradizionale.</span><span class="sxs-lookup"><span data-stu-id="7d111-115">Unlike the Deep Learning Virtual Machine image DSVMs can only be used for traditional data science.</span></span>
+      isCorrect: false
+  - content: <span data-ttu-id="7d111-116">Perché le GPU vengono spesso usate per l'apprendimento avanzato?</span><span class="sxs-lookup"><span data-stu-id="7d111-116">Why are GPUs often used for deep learning?</span></span>
+    choices:
+    - content: <span data-ttu-id="7d111-117">L'algebra di matrice dell'apprendimento avanzato richiede una quantità elevata di calcolo parallelo e le GPU si occupano della validità.</span><span class="sxs-lookup"><span data-stu-id="7d111-117">The matrix algebra in deep learning requires lots of parallel computation and GPUs make the viable.</span></span>
+      correctExplanation: <span data-ttu-id="7d111-118">Le operazioni della matrice che vengono calcolate come parte del componente algebrico lineare tendono a essere costose e sono spesso eseguibili in parallelo. Ciò presuppone strumenti specialistici, ad esempio le GPU di elaborazione grafica, per eseguire il calcolo in modo efficiente.</span><span class="sxs-lookup"><span data-stu-id="7d111-118">The series of matrix operations that we computer as part of the linear algebra component tend to be computationally expensive and are often heavily parallelizable, requiring specialized compute such as Graphics Processing Units GPUs to compute efficiently.</span></span>
+      isCorrect: true
+    - content: <span data-ttu-id="7d111-119">Le GPU garantiscono che i modelli di apprendimento avanzato convergano durante la discesa del gradiente.</span><span class="sxs-lookup"><span data-stu-id="7d111-119">GPUs ensure that deep learning models converge during gradient decent.</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="7d111-120">Le GPU sono necessarie per valutare una funzione di perdita.</span><span class="sxs-lookup"><span data-stu-id="7d111-120">GPUs are needed to evaluate a loss function.</span></span>
+      isCorrect: false
+  - content: <span data-ttu-id="7d111-121">Qual è la differenza tra una macchina serie N e una macchina serie D in Azure?</span><span class="sxs-lookup"><span data-stu-id="7d111-121">What is the difference between an N-Series and D-Series machines on Azure?</span></span>
+    choices:
+    - content: <span data-ttu-id="7d111-122">Le macchine di serie D sono state sviluppate per l'apprendimento avanzato, mentre quelle di serie N per il calcolo normale.</span><span class="sxs-lookup"><span data-stu-id="7d111-122">D series are for deep learning where as N series are for Normal compute.</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="7d111-123">Le macchine di serie D sono state concepite per il calcolo generale, mentre quelle di serie N contengono GPU.</span><span class="sxs-lookup"><span data-stu-id="7d111-123">D series are for general compute where as N series contain GPUs.</span></span>
+      isCorrect: true
+    - content: <span data-ttu-id="7d111-124">Le macchine di serie D sono state concepite per prestazioni elevate, mentre quelle di serie N contengono GPU.</span><span class="sxs-lookup"><span data-stu-id="7d111-124">D series are for high preformance compute where as N series contain GPUs.</span></span>
+      isCorrect: false

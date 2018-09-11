@@ -1,15 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.choose-storage-approach-in-azure.6-summary
 metadata:
-  title: <span data-ttu-id="3d078-101">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="3d078-101">Summary</span></span>
-  description: <span data-ttu-id="3d078-102">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="3d078-102">Summary</span></span>
-  displayType: one-column
-  ms.openlocfilehash: 9c000e9fc1ecf7ea34fe33ff64cf78d68bdec5fd
-  ms.sourcegitcommit: 91b4553dbbbf6d8b6b359142332d0654aae326e8
+  title: <span data-ttu-id="9f346-101">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="9f346-101">Summary</span></span>
+  description: <span data-ttu-id="9f346-102">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="9f346-102">Summary</span></span>
+  ms.openlocfilehash: d0051f7fd21fbb12ab1dfb64bc07bf73f7c9f61c
+  ms.sourcegitcommit: b97ed72bd7e3fb77b49de71e8ef35d3f70dfd636
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 08/30/2018
-  ms.locfileid: "43252461"
-title: <span data-ttu-id="3d078-103">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="3d078-103">Summary</span></span>
+  ms.lasthandoff: 09/05/2018
+  ms.locfileid: "43790149"
+title: <span data-ttu-id="9f346-103">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="9f346-103">Summary</span></span>
 durationInMinutes: 3
 content: '[!include[](includes/6-summary.md)]'

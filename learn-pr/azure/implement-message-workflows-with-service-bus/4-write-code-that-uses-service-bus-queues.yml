@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.implement-message-workflows-with-service-bus.4-write-code-that-uses-service-bus-queues
+title: <span data-ttu-id="12244-101">Scrivere codice che usa le code del bus di servizio</span><span class="sxs-lookup"><span data-stu-id="12244-101">Write code that uses Service Bus queues</span></span>
+metadata:
+  title: <span data-ttu-id="12244-102">Scrivere codice che usa le code del bus di servizio</span><span class="sxs-lookup"><span data-stu-id="12244-102">Write code that uses Service Bus queues</span></span>
+  description: <span data-ttu-id="12244-103">Scrivere codice che usa le code del bus di servizio</span><span class="sxs-lookup"><span data-stu-id="12244-103">Write code that uses Service Bus queues</span></span>
+  ms.openlocfilehash: 3dbc868f9f645a83811f63d179a8c63d5f538a9b
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43834659"
+durationInMinutes: 5
+content: '[!include[](includes/4-write-code-that-uses-service-bus-queues.md)]'

@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.create-a-windows-vm-in-azure.3-exercise-create-a-vm
+title: <span data-ttu-id="47d45-101">Creare una macchina virtuale Windows</span><span class="sxs-lookup"><span data-stu-id="47d45-101">Create a Windows virtual machine</span></span>
+metadata:
+  title: <span data-ttu-id="47d45-102">Creare una macchina virtuale Windows</span><span class="sxs-lookup"><span data-stu-id="47d45-102">Create a Windows virtual machine</span></span>
+  description: <span data-ttu-id="47d45-103">Creare una macchina virtuale Windows</span><span class="sxs-lookup"><span data-stu-id="47d45-103">Create a Windows virtual machine</span></span>
+  ms.openlocfilehash: e7d3032684489e24b19aac0357da9ddf6b2652d5
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43834992"
+durationInMinutes: 10
+content: '[!include[](includes/3-exercise-create-a-vm.md)]'

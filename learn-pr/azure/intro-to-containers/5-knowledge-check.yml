@@ -1,0 +1,57 @@
+### YamlMime:ModuleUnit
+uid: learn.intro-to-containers.5-knowledge-check
+title: <span data-ttu-id="4ac76-101">Verifica delle conoscenze</span><span class="sxs-lookup"><span data-stu-id="4ac76-101">Knowledge check</span></span>
+metadata:
+  title: <span data-ttu-id="4ac76-102">Verifica delle conoscenze</span><span class="sxs-lookup"><span data-stu-id="4ac76-102">Knowledge check</span></span>
+  description: <span data-ttu-id="4ac76-103">Introduzione alla verifica delle conoscenze sui contenitori.</span><span class="sxs-lookup"><span data-stu-id="4ac76-103">Introduction to containers knowledge check.</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: d4fc7700e80f8716294a84f91da41e80c76f1be1
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44247280"
+durationInMinutes: 5
+quiz:
+  title: <span data-ttu-id="4ac76-104">Introduzione ai contenitori</span><span class="sxs-lookup"><span data-stu-id="4ac76-104">Introduction to containers</span></span>
+  questions:
+  - content: <span data-ttu-id="4ac76-105">Quale dei seguenti non è un vantaggio offerto dall'adozione dei contenitori?</span><span class="sxs-lookup"><span data-stu-id="4ac76-105">Which of the following is not a benefit of container adoption?</span></span>
+    choices:
+    - content: <span data-ttu-id="4ac76-106">Tempi di avvio rapidi.</span><span class="sxs-lookup"><span data-stu-id="4ac76-106">Fast start times.</span></span>
+      incorrectExplanation: <span data-ttu-id="4ac76-107">I contenitori possono essere avviati molto più velocemente rispetto ai sistemi fisici o virtuali.</span><span class="sxs-lookup"><span data-stu-id="4ac76-107">Containers can start significantly faster than virtual or physical systems.</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="4ac76-108">Uso efficiente della risorsa host.</span><span class="sxs-lookup"><span data-stu-id="4ac76-108">Efficient use of host resource.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="4ac76-109">Grazie a un'architettura di immagini condivise, molti contenitori possono essere eseguiti in un singolo host, utilizzando al contempo le risorse dell'host in modo efficiente.</span><span class="sxs-lookup"><span data-stu-id="4ac76-109">Due to a shared image architecture, many containers can run on a single host, while efficiently utilizing host resources.</span></span>
+    - content: <span data-ttu-id="4ac76-110">Ripristino di emergenza predefinito.</span><span class="sxs-lookup"><span data-stu-id="4ac76-110">Built-in disaster recovery.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="4ac76-111">I contenitori non modificano intrinsecamente le procedure di ripristino di emergenza.</span><span class="sxs-lookup"><span data-stu-id="4ac76-111">Containers don't inherently change disaster recovery procedures.</span></span>
+    - content: <span data-ttu-id="4ac76-112">Abilita l'architettura delle applicazioni native del cloud.</span><span class="sxs-lookup"><span data-stu-id="4ac76-112">Enables cloud-native application architecture.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="4ac76-113">I contenitori consentono di sviluppare applicazioni con un'architettura moderna o nativa del cloud.</span><span class="sxs-lookup"><span data-stu-id="4ac76-113">Containers can help to develop applications with a modern or cloud-native architecture.</span></span>
+  - content: <span data-ttu-id="4ac76-114">Quale comando visualizza tutte le istanze di contenitore (arrestate e in esecuzione)?</span><span class="sxs-lookup"><span data-stu-id="4ac76-114">What command will show all container instances (stopped and running)?</span></span>
+    choices:
+    - content: <span data-ttu-id="4ac76-115">docker ps</span><span class="sxs-lookup"><span data-stu-id="4ac76-115">docker ps</span></span>
+      incorrectExplanation: <span data-ttu-id="4ac76-116">Questo comando visualizza solo i contenitori in esecuzione.</span><span class="sxs-lookup"><span data-stu-id="4ac76-116">This command will only show running containers.</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="4ac76-117">docker ps -a</span><span class="sxs-lookup"><span data-stu-id="4ac76-117">docker ps -a</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="4ac76-118">Questo comando elenca tutti i contenitori in esecuzione e arrestati.</span><span class="sxs-lookup"><span data-stu-id="4ac76-118">This command will list all running and stopped containers.</span></span>
+    - content: <span data-ttu-id="4ac76-119">docker ps -x</span><span class="sxs-lookup"><span data-stu-id="4ac76-119">docker ps -x</span></span>
+      incorrectExplanation: <span data-ttu-id="4ac76-120">Non è un comando di Docker valido.</span><span class="sxs-lookup"><span data-stu-id="4ac76-120">This isn't a valid Docker command.</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="4ac76-121">docker ps</span><span class="sxs-lookup"><span data-stu-id="4ac76-121">docker ps</span></span>
+      incorrectExplanation: <span data-ttu-id="4ac76-122">Questo comando elenca le immagini dei contenitori.</span><span class="sxs-lookup"><span data-stu-id="4ac76-122">This command lists container images.</span></span>
+      isCorrect: false
+  - content: <span data-ttu-id="4ac76-123">Nell'ambiente di produzione la creazione di immagini dei contenitori deve essere automatizzata con un Dockerfile.</span><span class="sxs-lookup"><span data-stu-id="4ac76-123">In production, container image creation should be automated with a Dockerfile.</span></span>
+    choices:
+    - content: <span data-ttu-id="4ac76-124">Falso.</span><span class="sxs-lookup"><span data-stu-id="4ac76-124">False.</span></span>
+      incorrectExplanation: <span data-ttu-id="4ac76-125">L'automazione della creazione dei contenitori offre numerosi vantaggi e deve essere utilizzata in ambienti di contenitori di produzione.</span><span class="sxs-lookup"><span data-stu-id="4ac76-125">Container creation automation has many benefits and should be utilized in production container environments.</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="4ac76-126">Vero.</span><span class="sxs-lookup"><span data-stu-id="4ac76-126">True.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="4ac76-127">L'automazione della creazione dei contenitori offre numerosi vantaggi e deve essere utilizzata in ambienti di contenitori di produzione.</span><span class="sxs-lookup"><span data-stu-id="4ac76-127">Container creation automation has many benefits and should be utilized in production container environments.</span></span>

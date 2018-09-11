@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.sample-module-cloudshell.1-unit-text-only
+metadata:
+  title: <span data-ttu-id="63141-101">Unità di esempio 1 - Solo testo</span><span class="sxs-lookup"><span data-stu-id="63141-101">Sample unit 1 - Text only</span></span>
+  description: <span data-ttu-id="63141-102">Questo è un esempio di contenuto "solo testo", senza esercizi o componenti di verifica delle conoscenze.</span><span class="sxs-lookup"><span data-stu-id="63141-102">This is a sample of "text-only" content (no exercise or knowledge check components).</span></span>
+  ms.date: 09/04/2018
+  ms.openlocfilehash: 230e62a832cbf36a042eb88b88d6d8ab6ea14ecd
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43824196"
+title: <span data-ttu-id="63141-103">Unità di esempio 1 - Solo testo</span><span class="sxs-lookup"><span data-stu-id="63141-103">Sample unit 1 - Text only</span></span>
+durationInMinutes: 11
+content: '[!include[](includes/1-unit-text-only.md)]'

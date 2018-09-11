@@ -1,0 +1,26 @@
+### YamlMime:ModuleUnit
+uid: learn.sample-module-cloudshell.3-unit-knowledge-check-only
+metadata:
+  title: <span data-ttu-id="9a73d-101">Unità di esempio 3 - Solo verifica delle conoscenze</span><span class="sxs-lookup"><span data-stu-id="9a73d-101">Sample unit 3 - Knowledge check only</span></span>
+  description: <span data-ttu-id="9a73d-102">Questo è un esempio di un'unità che contiene solo una verifica delle conoscenze.</span><span class="sxs-lookup"><span data-stu-id="9a73d-102">This is an example of a unit that only contains a knowledge check.</span></span>
+  ms.date: 09/04/2018
+  ms.openlocfilehash: 5a112df167d8656605dda8110cc85b86a5fc3c46
+  ms.sourcegitcommit: 56db32ad6f98b7d769f2b1201825d4f6d9b7362d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/05/2018
+  ms.locfileid: "43729918"
+title: <span data-ttu-id="9a73d-103">Unità di esempio 3 - Solo verifica delle conoscenze</span><span class="sxs-lookup"><span data-stu-id="9a73d-103">Sample unit 3 - Knowledge check only</span></span>
+durationInMinutes: 11
+content: <span data-ttu-id="9a73d-104">Il contenuto è facoltativo. Rimuoverlo se non è necessario.</span><span class="sxs-lookup"><span data-stu-id="9a73d-104">Content is optional (if you don't need this, remove content)</span></span>
+quiz:
+  title: <span data-ttu-id="9a73d-105">Titolo del quiz</span><span class="sxs-lookup"><span data-stu-id="9a73d-105">Quiz Title</span></span>
+  questions:
+  - content: <span data-ttu-id="9a73d-106">Argomento di questo file markdown:</span><span class="sxs-lookup"><span data-stu-id="9a73d-106">What this markdown file talking about:</span></span>
+    choices:
+    - content: <span data-ttu-id="9a73d-107">Brainstorming per il formato di file markdown per il quiz.</span><span class="sxs-lookup"><span data-stu-id="9a73d-107">Brainstorming of markdown file format for quiz.</span></span>
+      correctExplanation: <span data-ttu-id="9a73d-108">Perché questa risposta è corretta</span><span class="sxs-lookup"><span data-stu-id="9a73d-108">Why this answer is correct</span></span>
+      incorrectExplanation: <span data-ttu-id="9a73d-109">Perché questa risposta non è corretta</span><span class="sxs-lookup"><span data-stu-id="9a73d-109">Why this answer is incorrect</span></span>
+      isCorrect: true
+    - content: <span data-ttu-id="9a73d-110">Brainstorming per il formato di file markdown per il quiz.</span><span class="sxs-lookup"><span data-stu-id="9a73d-110">Brainstorming of markdown file format for quiz.</span></span> <span data-ttu-id="9a73d-111">Parte 2</span><span class="sxs-lookup"><span data-stu-id="9a73d-111">Part 2</span></span>
+      isCorrect: false

@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.create-computer-vision-service.2-create-service
+interactive: bash
+title: <span data-ttu-id="de0fe-101">Creazione di un servizio Visione artificiale</span><span class="sxs-lookup"><span data-stu-id="de0fe-101">Creating a Computer Vision Service</span></span>
+metadata:
+  title: <span data-ttu-id="de0fe-102">Creazione di un servizio Visione artificiale</span><span class="sxs-lookup"><span data-stu-id="de0fe-102">Creating a Computer Vision Service</span></span>
+  description: <span data-ttu-id="de0fe-103">Creazione di un servizio Visione artificiale</span><span class="sxs-lookup"><span data-stu-id="de0fe-103">Creating a Computer Vision Service</span></span>
+  ms.openlocfilehash: dc75dff8f715bc31251e59c7560566b252733a2a
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43833099"
+durationInMinutes: 10
+content: '[!include[](includes/2-create-service.md)]'

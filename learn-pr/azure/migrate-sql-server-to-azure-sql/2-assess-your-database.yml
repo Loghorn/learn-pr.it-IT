@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.migrate-sql-server-relational-data.2-assess-your-database
+title: <span data-ttu-id="989a4-101">Utilizzo di Data Migration Assistant (DMA)</span><span class="sxs-lookup"><span data-stu-id="989a4-101">Using the Data Migration Assistant (DMA)</span></span>
+metadata:
+  title: <span data-ttu-id="989a4-102">Utilizzo di Data Migration Assistant (DMA)</span><span class="sxs-lookup"><span data-stu-id="989a4-102">Using the Data Migration Assistant (DMA)</span></span>
+  description: <span data-ttu-id="989a4-103">Utilizzo di Data Migration Assistant (DMA)</span><span class="sxs-lookup"><span data-stu-id="989a4-103">Usuing the Data Migration Assistant (DMA)</span></span>
+  ms.openlocfilehash: e43a0173768421e371d065125dcea2e92cf9d51f
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43835874"
+durationInMinutes: 5
+content: '[!include[](includes/2-assess-your-database.md)]'

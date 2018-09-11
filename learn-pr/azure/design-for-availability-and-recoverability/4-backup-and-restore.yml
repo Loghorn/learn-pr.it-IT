@@ -1,0 +1,43 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-availability-and-recoverability.4-backup-and-restore
+title: <span data-ttu-id="e2b0e-101">Proteggere i dati tramite il backup e il ripristino</span><span class="sxs-lookup"><span data-stu-id="e2b0e-101">Protect your data with backup and restore</span></span>
+metadata:
+  title: <span data-ttu-id="e2b0e-102">Proteggere i dati tramite il backup e il ripristino</span><span class="sxs-lookup"><span data-stu-id="e2b0e-102">Protect your data with backup and restore</span></span>
+  description: <span data-ttu-id="e2b0e-103">Proteggere i dati tramite il backup e il ripristino</span><span class="sxs-lookup"><span data-stu-id="e2b0e-103">Protect your data with backup and restore</span></span>
+  ms.openlocfilehash: 6bd2d58b595798d9c811c75e22d8f2d92d877c72
+  ms.sourcegitcommit: 09425147d998035edf9d2d36006a54d85e3cf75d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43848992"
+durationInMinutes: 15
+content: >
+  [!include[](includes/4-backup-and-restore.md)]
+quiz:
+  title: '<span data-ttu-id="e2b0e-104">Verifica delle conoscenze: proteggere i dati tramite il backup e il ripristino</span><span class="sxs-lookup"><span data-stu-id="e2b0e-104">Knowledge Check - Protect your data with backup and restore</span></span>'
+  questions:
+  - content: <span data-ttu-id="e2b0e-105">È importante eseguire periodicamente test dei ripristini perché</span><span class="sxs-lookup"><span data-stu-id="e2b0e-105">It is important to test restores regularly because</span></span>
+    choices:
+    - content: <span data-ttu-id="e2b0e-106">Consente di convalidare l'integrità dei backup</span><span class="sxs-lookup"><span data-stu-id="e2b0e-106">It allows you to validate the integrity of your backups</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="e2b0e-107">L'esecuzione periodica di test dei ripristini effettivamente consente di convalidare l'integrità dei backup, ma questa non è l'unica scelta corretta.</span><span class="sxs-lookup"><span data-stu-id="e2b0e-107">Testing restores regularly does allow you to validate the integrity of your backups, but this is not the only correct choice.</span></span>
+    - content: <span data-ttu-id="e2b0e-108">Consente di acquisire familiarità con il processo di ripristino</span><span class="sxs-lookup"><span data-stu-id="e2b0e-108">It allows you to become familiar with the restoration process</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="e2b0e-109">L'esecuzione periodica di test dei ripristini effettivamente consente di acquisire familiarità con il processo di ripristino, ma questa non è l'unica scelta corretta.</span><span class="sxs-lookup"><span data-stu-id="e2b0e-109">Testing restores regularly does allow you to become more familiar with the restoration process, but this is not the only correct choice.</span></span>
+    - content: <span data-ttu-id="e2b0e-110">Consente di identificare i gap nei processi di backup e ripristino</span><span class="sxs-lookup"><span data-stu-id="e2b0e-110">It can help you identify gaps in your backup & restore processes</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="e2b0e-111">L'esecuzione periodica di test dei ripristini effettivamente consente di identificare i gap nei processi di backup e ripristino, ma questa non è l'unica scelta corretta.</span><span class="sxs-lookup"><span data-stu-id="e2b0e-111">Testing restores regularly does allow you to identify gaps in your backup & restore processes, but this is not the only correct choice.</span></span>
+    - content: <span data-ttu-id="e2b0e-112">Tutte le precedenti</span><span class="sxs-lookup"><span data-stu-id="e2b0e-112">All of the above</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="e2b0e-113">Tutte le risposte precedenti rappresentano ottimi motivi per eseguire periodicamente test del ripristino dei backup.</span><span class="sxs-lookup"><span data-stu-id="e2b0e-113">All of the above are excellent reasons to regularly test the restoration of your backups.</span></span>
+  - content: <span data-ttu-id="e2b0e-114">Quali dei seguenti elementi non include il backup periodico e automatico dei dati?</span><span class="sxs-lookup"><span data-stu-id="e2b0e-114">Which of the following does not include automatic, regular backup of data?</span></span>
+    choices:
+    - content: <span data-ttu-id="e2b0e-115">Archiviazione BLOB di Azure</span><span class="sxs-lookup"><span data-stu-id="e2b0e-115">Azure blob storage</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="e2b0e-116">Archiviazione BLOB di Azure non include backup automatici dei dati.</span><span class="sxs-lookup"><span data-stu-id="e2b0e-116">Azure blob storage does not include automatic backups of your data.</span></span> <span data-ttu-id="e2b0e-117">Sarà necessario implementare i backup tramite altri metodi.</span><span class="sxs-lookup"><span data-stu-id="e2b0e-117">You will need to implement backups through other methods.</span></span>
+    - content: <span data-ttu-id="e2b0e-118">Cosmos DB</span><span class="sxs-lookup"><span data-stu-id="e2b0e-118">Cosmos DB</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="e2b0e-119">Cosmos DB include backup periodici e completamente automatizzati dei dati.</span><span class="sxs-lookup"><span data-stu-id="e2b0e-119">Cosmos DB does include fully automated, regular backups of your data.</span></span>
+    - content: <span data-ttu-id="e2b0e-120">Database SQL di Azure</span><span class="sxs-lookup"><span data-stu-id="e2b0e-120">Azure SQL Database</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="e2b0e-121">Il database SQL di Azure include backup periodici e completamente automatizzati dei dati.</span><span class="sxs-lookup"><span data-stu-id="e2b0e-121">Azure SQL Database does include fully automated, regular backups of your data.</span></span>
