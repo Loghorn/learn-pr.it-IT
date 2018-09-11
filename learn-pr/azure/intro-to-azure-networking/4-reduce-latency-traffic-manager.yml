@@ -1,0 +1,37 @@
+### YamlMime:ModuleUnit
+uid: learn.intro-to-azure-networking.4-reduce-latency-traffic-manager
+title: <span data-ttu-id="ee1ca-101">Ridurre la latenza con Gestione traffico</span><span class="sxs-lookup"><span data-stu-id="ee1ca-101">Reduce latency with Traffic Manager</span></span>
+metadata:
+  title: <span data-ttu-id="ee1ca-102">Ridurre la latenza con Gestione traffico</span><span class="sxs-lookup"><span data-stu-id="ee1ca-102">Reduce latency with Traffic Manager</span></span>
+  description: <span data-ttu-id="ee1ca-103">Informazioni su come Gestione traffico consente di ridurre la latenza e creare resilienza in più aree geografiche.</span><span class="sxs-lookup"><span data-stu-id="ee1ca-103">Learn how Traffic Manager can reduce latency and create resiliency across geographic regions.</span></span>
+  ms.openlocfilehash: fa64f6d6e7bfe0f991bf15002f24690a2c02f0fd
+  ms.sourcegitcommit: 40481ae733648a8b13402bf276d7acfd4da440f6
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/03/2018
+  ms.locfileid: "43477557"
+durationInMinutes: 7
+content: >
+  [!include[](includes/4-reduce-latency-traffic-manager.md)]
+quiz:
+  title: '<span data-ttu-id="ee1ca-104">Verifica delle conoscenze: Ridurre la latenza con Gestione traffico</span><span class="sxs-lookup"><span data-stu-id="ee1ca-104">Knowledge Check: Reduce latency with Traffic Manager</span></span>'
+  questions:
+  - content: <span data-ttu-id="ee1ca-105">In che modo Gestione traffico riduce la latenza?</span><span class="sxs-lookup"><span data-stu-id="ee1ca-105">How does Traffic Manager reduce latency?</span></span>
+    choices:
+    - content: <span data-ttu-id="ee1ca-106">Sceglie solo le reti più veloci tra endpoint.</span><span class="sxs-lookup"><span data-stu-id="ee1ca-106">It chooses only the fastest networks between endpoints.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="ee1ca-107">Gestione traffico non tiene conto delle specifiche velocità di rete.</span><span class="sxs-lookup"><span data-stu-id="ee1ca-107">Traffic Manager does not take specific network speeds into account.</span></span>
+    - content: <span data-ttu-id="ee1ca-108">Sceglie l'endpoint più vicino al server DNS dell'utente.</span><span class="sxs-lookup"><span data-stu-id="ee1ca-108">It chooses the endpoint that's closest to the user's DNS server.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="ee1ca-109">Scegliere il server che si trova più vicino all'utente è un buon modo per ridurre la latenza.</span><span class="sxs-lookup"><span data-stu-id="ee1ca-109">Choosing the server that's closest to the user is a good way to reduce latency.</span></span>
+    - content: <span data-ttu-id="ee1ca-110">I contenuti vengono memorizzati nella cache, in modo simile a quanto avviene nelle reti per la distribuzione di contenuti.</span><span class="sxs-lookup"><span data-stu-id="ee1ca-110">It caches content, similar to how content delivery networks work.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="ee1ca-111">Gestione traffico non vede il traffico tra il client e il server e non inserisce il contenuto nella cache.</span><span class="sxs-lookup"><span data-stu-id="ee1ca-111">Traffic Manager doesn't see the traffic that's passed between the client and server, nor does it cache content.</span></span>
+  - content: <span data-ttu-id="ee1ca-112">Si supponga che l'utente viva Inghilterra, ma che il server DNS sia in Italia.</span><span class="sxs-lookup"><span data-stu-id="ee1ca-112">You live in England, but your DNS server is in Italy.</span></span> <span data-ttu-id="ee1ca-113">In che modo Gestione traffico indirizza il traffico?</span><span class="sxs-lookup"><span data-stu-id="ee1ca-113">How does Traffic Manager direct traffic?</span></span>
+    choices:
+    - content: <span data-ttu-id="ee1ca-114">Sceglie il servizio più vicino all'Inghilterra.</span><span class="sxs-lookup"><span data-stu-id="ee1ca-114">It chooses the service that's closest to England.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="ee1ca-115">Per indirizzare il traffico, Gestione traffico usa il _server DNS_ più vicino all'utente e non alla posizione in cui l'utente si trova.</span><span class="sxs-lookup"><span data-stu-id="ee1ca-115">Traffic Manager uses the _DNS server_ that's closest to the user, not the user's location, to direct traffic.</span></span>
+    - content: <span data-ttu-id="ee1ca-116">Sceglie quindi il servizio più vicino all'Italia.</span><span class="sxs-lookup"><span data-stu-id="ee1ca-116">It chooses the service that's closest to Italy.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="ee1ca-117">Per indirizzare il traffico, Gestione traffico usa il _server DNS_ più vicino all'utente e non alla posizione in cui l'utente si trova.</span><span class="sxs-lookup"><span data-stu-id="ee1ca-117">Traffic Manager uses the _DNS server_ that's closest to the user, not the user's location, to direct traffic.</span></span>

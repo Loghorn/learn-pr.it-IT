@@ -1,0 +1,34 @@
+### YamlMime:ModuleUnit
+uid: learn.predict-costs-and-optimize-spending.3-predict-and-optimize-with-cost-management-and-advisor
+title: <span data-ttu-id="b4fab-101">Stimare e ottimizzare con Gestione costi e Azure Advisor</span><span class="sxs-lookup"><span data-stu-id="b4fab-101">Predict and optimize with Cost Management and Azure Advisor</span></span>
+metadata:
+  title: <span data-ttu-id="b4fab-102">Stimare e ottimizzare con Gestione costi e Azure Advisor</span><span class="sxs-lookup"><span data-stu-id="b4fab-102">Predict and optimize with Cost Management and Azure Advisor</span></span>
+  description: <span data-ttu-id="b4fab-103">In questa unità verrà illustrato come stimare e ottimizzare con Gestione costi e Azure Advisor</span><span class="sxs-lookup"><span data-stu-id="b4fab-103">In this unit, we'll discuss how to predict and optimize with Cost Management and Azure Advisor</span></span>
+  ms.openlocfilehash: b49ee199391539f75bcea8cc1044d6df92e20f50
+  ms.sourcegitcommit: 81cb0c300be030565fb0b7c5b57413c4a2aa5410
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 08/28/2018
+  ms.locfileid: "43141569"
+durationInMinutes: 15
+content: >
+  [!include[](includes/3-predict-and-optimize-with-cost-management-and-advisor.md)]
+quiz:
+  title: <span data-ttu-id="b4fab-104">Stimare e ottimizzare con Gestione costi e Azure Advisor</span><span class="sxs-lookup"><span data-stu-id="b4fab-104">Predict and optimize with Cost Management and Azure Advisor</span></span>
+  questions:
+  - content: <span data-ttu-id="b4fab-105">Azure Advisor fornisce consigli solamente sui costi.</span><span class="sxs-lookup"><span data-stu-id="b4fab-105">Azure Advisor provides recommendations on cost only.</span></span>
+    choices:
+    - content: <span data-ttu-id="b4fab-106">Vero</span><span class="sxs-lookup"><span data-stu-id="b4fab-106">True</span></span>
+      incorrectExplanation: <span data-ttu-id="b4fab-107">Azure Advisor offre indicazioni sulla disponibilità elevata, sicurezza, prestazioni e costi.</span><span class="sxs-lookup"><span data-stu-id="b4fab-107">Azure Advisor provides recommendations on high availability, security, performance, and cost.</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="b4fab-108">Falso</span><span class="sxs-lookup"><span data-stu-id="b4fab-108">False</span></span>
+      correctExplanation: <span data-ttu-id="b4fab-109">Azure Advisor offre indicazioni sulla disponibilità elevata, sicurezza, prestazioni e costi.</span><span class="sxs-lookup"><span data-stu-id="b4fab-109">Azure Advisor provides recommendations on high availability, security, performance, and cost.</span></span>
+      isCorrect: true
+  - content: <span data-ttu-id="b4fab-110">Gestione costi di Azure consente di _________.</span><span class="sxs-lookup"><span data-stu-id="b4fab-110">Azure Cost Management allows you to _________.</span></span>
+    choices:
+    - content: <span data-ttu-id="b4fab-111">Vedere i dettagli cronologici dei servizi per i quali si sta spendendo denaro.</span><span class="sxs-lookup"><span data-stu-id="b4fab-111">See historical breakdowns of what services you are spending your money on.</span></span>
+      correctExplanation: <span data-ttu-id="b4fab-112">Gestione costi analizza le tendenze di spesa ed è in grado di confrontarle con i budget impostati.</span><span class="sxs-lookup"><span data-stu-id="b4fab-112">Cost Management analyzes where you are historically spending your money and can track it against budgets you have set.</span></span>
+      isCorrect: true
+    - content: <span data-ttu-id="b4fab-113">Vedere le stime dei costi dei servizi in caso vengano apportate modifiche.</span><span class="sxs-lookup"><span data-stu-id="b4fab-113">See estimates of what your services might cost if you make a change.</span></span>
+      incorrectExplanation: <span data-ttu-id="b4fab-114">Usare il Calcolatore prezzi di Azure per stimare i costi.</span><span class="sxs-lookup"><span data-stu-id="b4fab-114">To see cost estimates, you use the Azure pricing calculator.</span></span> <span data-ttu-id="b4fab-115">Gestione costi analizza le tendenze di spesa ed è in grado di confrontarle con i budget impostati.</span><span class="sxs-lookup"><span data-stu-id="b4fab-115">Cost Management analyzes where you are historically spending your money and can track it against budgets you have set.</span></span>
+      isCorrect: false

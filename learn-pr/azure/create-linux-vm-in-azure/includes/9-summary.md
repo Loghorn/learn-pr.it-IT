@@ -1,0 +1,21 @@
+<span data-ttu-id="79e38-101">In questo modulo si è appreso come creare una macchina virtuale Linux usando il portale di Azure.</span><span class="sxs-lookup"><span data-stu-id="79e38-101">In this module, you learned how to create a Linux VM using the Azure portal.</span></span> <span data-ttu-id="79e38-102">Ci si è quindi connessi all'indirizzo IP pubblico della macchina virtuale e questa è stata gestita tramite una connessione SSH.</span><span class="sxs-lookup"><span data-stu-id="79e38-102">You then connected to the public IP address of the VM and managed it with an SSH connection.</span></span> 
+
+<span data-ttu-id="79e38-103">Si è inoltre appreso che mentre SSH consente di interagire con il sistema operativo e con il software della macchina virtuale, il portale permette di configurare l'hardware virtuale e la connettività.</span><span class="sxs-lookup"><span data-stu-id="79e38-103">You learned that while SSH allows us to interact with the operating system and software of the virtual machine, the portal will enable us to configure the virtual hardware and connectivity.</span></span> <span data-ttu-id="79e38-104">È anche possibile usare PowerShell o l'interfaccia della riga di comando di Azure, se si preferisce un ambiente gestibile tramite script o riga di comando.</span><span class="sxs-lookup"><span data-stu-id="79e38-104">We also could have used PowerShell or the Azure CLI, if a command-line or scriptable environment were preferred.</span></span>
+
+## <a name="clean-up-the-resources"></a><span data-ttu-id="79e38-105">Pulire le risorse</span><span class="sxs-lookup"><span data-stu-id="79e38-105">Clean up the resources</span></span>
+
+<span data-ttu-id="79e38-106">Sono previsti addebiti per le macchine virtuali in esecuzione e per l'archiviazione in base alla quantità di spazio usato.</span><span class="sxs-lookup"><span data-stu-id="79e38-106">You are charged for VMs while they run, and for the storage based on how much you use.</span></span> <span data-ttu-id="79e38-107">Arrestare e deallocare sempre le macchine virtuali quando non sono in uso. Quando le risorse non sono più necessarie, è consigliabile eliminarle.</span><span class="sxs-lookup"><span data-stu-id="79e38-107">Always stop and deallocate VMs when you aren't using them, and when you no longer need the resources, it's a good idea to delete them.</span></span> <span data-ttu-id="79e38-108">Per rimuovere tutte le risorse create, è possibile eliminarle una per una oppure eliminare il gruppo di risorse.</span><span class="sxs-lookup"><span data-stu-id="79e38-108">To remove all the resources that you created, you can delete them one-by-one, or delete the resource group.</span></span>
+
+1. <span data-ttu-id="79e38-109">Accedere al portale di Azure.</span><span class="sxs-lookup"><span data-stu-id="79e38-109">Sign in to the Azure portal.</span></span>
+
+1. <span data-ttu-id="79e38-110">Nel menu a sinistra selezionare **Tutti i servizi**.</span><span class="sxs-lookup"><span data-stu-id="79e38-110">On the left menu, select **All Services**.</span></span>
+
+1. <span data-ttu-id="79e38-111">Selezionare **Gruppi di risorse**.</span><span class="sxs-lookup"><span data-stu-id="79e38-111">Select **Resource Groups**.</span></span>
+
+1. <span data-ttu-id="79e38-112">Trovare il gruppo di risorse creato nel primo esercizio.</span><span class="sxs-lookup"><span data-stu-id="79e38-112">Find the resource group that you created in the first exercise.</span></span> <span data-ttu-id="79e38-113">Fare clic sui puntini di sospensione (...) sul lato destro della visualizzazione elenco.</span><span class="sxs-lookup"><span data-stu-id="79e38-113">Click the ellipsis (...) on the right side of the list view.</span></span>
+
+1. <span data-ttu-id="79e38-114">Selezionare **Elimina gruppo di risorse**.</span><span class="sxs-lookup"><span data-stu-id="79e38-114">Select **Delete resource group**.</span></span>
+
+1. <span data-ttu-id="79e38-115">Nella schermata successiva immettere il nome del gruppo di risorse per confermare l'eliminazione.</span><span class="sxs-lookup"><span data-stu-id="79e38-115">On the next screen, enter the resource group name to confirm the deletion.</span></span>
+
+1. <span data-ttu-id="79e38-116">Fare clic su **Elimina**.</span><span class="sxs-lookup"><span data-stu-id="79e38-116">Click **Delete**.</span></span>

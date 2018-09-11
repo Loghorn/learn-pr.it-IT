@@ -1,0 +1,16 @@
+### YamlMime:ModuleUnit
+uid: learn.run-docker-containers-aci.5-use-data-volumes
+interactive: bash
+metadata:
+  title: <span data-ttu-id="21399-101">Usare volumi di dati</span><span class="sxs-lookup"><span data-stu-id="21399-101">Use data volumes</span></span>
+  description: <span data-ttu-id="21399-102">Usare volumi di dati con istanze di contenitore di Azure (ACI).</span><span class="sxs-lookup"><span data-stu-id="21399-102">Use data volumes with Azure Container Instances (ACI).</span></span>
+  displayType: one-column
+  ms.openlocfilehash: 1dd9bdaf7186ad3424cd87c46c057c40bc00ce4b
+  ms.sourcegitcommit: 926510a198d738c5726081f6d7994fe9b6fc6edb
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 08/29/2018
+  ms.locfileid: "43180770"
+title: <span data-ttu-id="21399-103">Usare volumi di dati</span><span class="sxs-lookup"><span data-stu-id="21399-103">Use data volumes</span></span>
+durationInMinutes: 10
+content: '[!include[](includes/5-use-data-volumes.md)]'

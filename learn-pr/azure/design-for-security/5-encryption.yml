@@ -1,0 +1,34 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-security.5-encryption
+title: <span data-ttu-id="3e588-101">Crittografia</span><span class="sxs-lookup"><span data-stu-id="3e588-101">Encryption</span></span>
+metadata:
+  title: <span data-ttu-id="3e588-102">Crittografia</span><span class="sxs-lookup"><span data-stu-id="3e588-102">Encryption</span></span>
+  description: <span data-ttu-id="3e588-103">In questa unità viene spiegato come utilizzare la crittografia per proteggere l'architettura</span><span class="sxs-lookup"><span data-stu-id="3e588-103">In this unit we'll discuss how to use encryption to secure your architecture</span></span>
+  ms.openlocfilehash: 2252612477ca95ad299a40cf97f91514ad7ab9f5
+  ms.sourcegitcommit: 1663afb13d55c1fce5f2dc4c0f78ef2d74902c33
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 08/31/2018
+  ms.locfileid: "43367126"
+durationInMinutes: 5
+content: >
+  [!include[](includes/5-encryption.md)]
+quiz:
+  title: '<span data-ttu-id="3e588-104">Verifica delle conoscenze: Crittografia</span><span class="sxs-lookup"><span data-stu-id="3e588-104">Knowledge Check - Encryption</span></span>'
+  questions:
+  - content: <span data-ttu-id="3e588-105">Solo le macchine virtuali di Windows possono usare la Crittografia dischi di Azure</span><span class="sxs-lookup"><span data-stu-id="3e588-105">Only Windows virtual machines can use Azure Disk Encryption</span></span>
+    choices:
+    - content: <span data-ttu-id="3e588-106">Vero</span><span class="sxs-lookup"><span data-stu-id="3e588-106">True</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="3e588-107">Falso</span><span class="sxs-lookup"><span data-stu-id="3e588-107">False</span></span>
+      isCorrect: true
+  - content: <span data-ttu-id="3e588-108">Per la classificazione dei dati, quale dei seguenti aspetti determinerà la classificazione?</span><span class="sxs-lookup"><span data-stu-id="3e588-108">When classifying data, which of the following will determine its classification?</span></span>
+    choices:
+    - content: <span data-ttu-id="3e588-109">Livello di rischio posto ai clienti se divulgati</span><span class="sxs-lookup"><span data-stu-id="3e588-109">Level of risk posed to customers if exposed</span></span>
+      isCorrect: true
+    - content: <span data-ttu-id="3e588-110">Metodo di trasporto dei dati</span><span class="sxs-lookup"><span data-stu-id="3e588-110">Method of data transport</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="3e588-111">Se i dati sono archiviati in macchine virtuali o in un database</span><span class="sxs-lookup"><span data-stu-id="3e588-111">Whether the data is stored on virtual machines or in a database</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="3e588-112">La quantità di dati archiviati</span><span class="sxs-lookup"><span data-stu-id="3e588-112">The amount of data stored</span></span>
+      isCorrect: false

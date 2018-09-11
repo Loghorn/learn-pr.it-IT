@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.azure-container-registry.deploy-acr
+interactive: bash
+metadata:
+  title: <span data-ttu-id="a2c07-101">Distribuire il Registro contenitori di Azure</span><span class="sxs-lookup"><span data-stu-id="a2c07-101">Deploy Azure Container Registry</span></span>
+  description: <span data-ttu-id="a2c07-102">Distribuire il Registro contenitori di Azure</span><span class="sxs-lookup"><span data-stu-id="a2c07-102">Deploy Azure Container Registry</span></span>
+  ms.openlocfilehash: 906093e77dc9cfe267552bd0775e4422be97606a
+  ms.sourcegitcommit: a29274a7a22a1b88016cd49c067921557992c945
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 08/30/2018
+  ms.locfileid: "43317810"
+title: <span data-ttu-id="a2c07-103">Distribuire il Registro contenitori di Azure</span><span class="sxs-lookup"><span data-stu-id="a2c07-103">Deploy Azure Container Registry</span></span>
+durationInMinutes: 10
+content: '[!include[](includes/2-deploy-acr.md)]'

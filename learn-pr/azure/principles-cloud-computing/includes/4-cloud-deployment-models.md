@@ -1,0 +1,50 @@
+<span data-ttu-id="9d0ed-101">Esistono tre modelli di distribuzione cloud diversi.</span><span class="sxs-lookup"><span data-stu-id="9d0ed-101">There are three different cloud deployment models.</span></span> <span data-ttu-id="9d0ed-102">Un modello di distribuzione cloud definisce dove vengono archiviati i dati e come i clienti interagiscono con i dati, ovvero come vi accedono e dove vengono eseguite le applicazioni.</span><span class="sxs-lookup"><span data-stu-id="9d0ed-102">A cloud deployment model defines where your data is stored and how your customers interact with it – how do they get to it, and where do the applications run?</span></span> <span data-ttu-id="9d0ed-103">Il modello dipende anche dalle parti dell'infrastruttura che si vuole o è necessario gestire.</span><span class="sxs-lookup"><span data-stu-id="9d0ed-103">It also depends on how much of your own infrastructure you want or need to manage.</span></span>
+
+<span data-ttu-id="9d0ed-104">In questo caso, si esamineranno i diversi tipi di metodi di distribuzione per le risorse di cloud computing.</span><span class="sxs-lookup"><span data-stu-id="9d0ed-104">Here, you'll explore the different types of deployment methods for your cloud computing resources.</span></span> 
+
+## <a name="public-cloud"></a><span data-ttu-id="9d0ed-105">Cloud pubblico</span><span class="sxs-lookup"><span data-stu-id="9d0ed-105">Public cloud</span></span>
+
+<span data-ttu-id="9d0ed-106">Si tratta del modello di distribuzione più comune.</span><span class="sxs-lookup"><span data-stu-id="9d0ed-106">This is the most common deployment model.</span></span> <span data-ttu-id="9d0ed-107">In questo caso, non è necessario gestire o mantenere aggiornato un hardware locale: tutto viene eseguito nell'hardware del provider cloud.</span><span class="sxs-lookup"><span data-stu-id="9d0ed-107">In this case, you have no local hardware to manage or keep up-to-date – everything runs on your cloud provider’s hardware.</span></span> <span data-ttu-id="9d0ed-108">In alcuni casi, è possibile evitare costi aggiuntivi condividendo le risorse di elaborazione con altri utenti cloud.</span><span class="sxs-lookup"><span data-stu-id="9d0ed-108">In some cases, you can save additional costs by sharing computing resources with other cloud users.</span></span> 
+
+### <a name="advantages"></a><span data-ttu-id="9d0ed-109">Vantaggi</span><span class="sxs-lookup"><span data-stu-id="9d0ed-109">Advantages</span></span>
+
+- <span data-ttu-id="9d0ed-110">Scalabilità elevata: non è necessario acquistare un nuovo server per eseguire il ridimensionamento</span><span class="sxs-lookup"><span data-stu-id="9d0ed-110">High scalability – you don’t have to buy a new server in order to scale</span></span>
+- <span data-ttu-id="9d0ed-111">Prezzi con pagamento in base al consumo: si paga solo per ciò che si usa</span><span class="sxs-lookup"><span data-stu-id="9d0ed-111">Pay-as-you-go pricing – you pay only for what you use</span></span>
+- <span data-ttu-id="9d0ed-112">Non si è responsabili della manutenzione o degli aggiornamenti dell'hardware</span><span class="sxs-lookup"><span data-stu-id="9d0ed-112">You’re not responsible for maintenance or updates of the hardware</span></span>
+
+### <a name="disadvantages"></a><span data-ttu-id="9d0ed-113">Svantaggi</span><span class="sxs-lookup"><span data-stu-id="9d0ed-113">Disadvantages</span></span>
+
+- <span data-ttu-id="9d0ed-114">Minaccia alla sicurezza più elevata</span><span class="sxs-lookup"><span data-stu-id="9d0ed-114">Higher security threat</span></span>
+- <span data-ttu-id="9d0ed-115">Hardware condiviso</span><span class="sxs-lookup"><span data-stu-id="9d0ed-115">Shared hardware</span></span>
+
+## <a name="private-cloud"></a><span data-ttu-id="9d0ed-116">Cloud privato</span><span class="sxs-lookup"><span data-stu-id="9d0ed-116">Private cloud</span></span>
+
+<span data-ttu-id="9d0ed-117">Questo termine indica in genere un data center locale supportato dalla società.</span><span class="sxs-lookup"><span data-stu-id="9d0ed-117">This usually refers to a local datacenter that your company supports.</span></span> <span data-ttu-id="9d0ed-118">Non è connesso ad alcun servizio in esecuzione nel cloud.</span><span class="sxs-lookup"><span data-stu-id="9d0ed-118">It has no connection to any services you have running in the cloud.</span></span> <span data-ttu-id="9d0ed-119">Si pensi, ad esempio, a una società che non ha eseguito migrazioni al cloud e non ha intenzione di farlo.</span><span class="sxs-lookup"><span data-stu-id="9d0ed-119">An example of this would be a company that has not migrated anything to the cloud, and doesn’t plan to.</span></span>
+
+### <a name="advantages"></a><span data-ttu-id="9d0ed-120">Vantaggi</span><span class="sxs-lookup"><span data-stu-id="9d0ed-120">Advantages</span></span>
+
+- <span data-ttu-id="9d0ed-121">Maggiore sicurezza perché è tutto nella rete aziendale</span><span class="sxs-lookup"><span data-stu-id="9d0ed-121">Increased security because everything is within your company's network</span></span>
+- <span data-ttu-id="9d0ed-122">Hardware e risorse non condivisi</span><span class="sxs-lookup"><span data-stu-id="9d0ed-122">Non-shared hardware/resources</span></span>
+
+### <a name="disadvantages"></a><span data-ttu-id="9d0ed-123">Svantaggi</span><span class="sxs-lookup"><span data-stu-id="9d0ed-123">Disadvantages</span></span>
+
+- <span data-ttu-id="9d0ed-124">È necessario acquistare l'hardware iniziale ed eseguire la manutenzione</span><span class="sxs-lookup"><span data-stu-id="9d0ed-124">Have to purchase the hardware for startup, and maintanence</span></span>
+- <span data-ttu-id="9d0ed-125">Richiede competenze IT</span><span class="sxs-lookup"><span data-stu-id="9d0ed-125">Requires IT expertise</span></span>
+
+## <a name="hybrid-cloud"></a><span data-ttu-id="9d0ed-126">Cloud ibrido</span><span class="sxs-lookup"><span data-stu-id="9d0ed-126">Hybrid cloud</span></span>
+
+<span data-ttu-id="9d0ed-127">Si tratta di una combinazione del data center locale supportato dalla società e del cloud pubblico.</span><span class="sxs-lookup"><span data-stu-id="9d0ed-127">This is a combination of the local data center supported by your company, and the public cloud.</span></span> <span data-ttu-id="9d0ed-128">I due cloud sono connessi e possono scambiarsi i dati.</span><span class="sxs-lookup"><span data-stu-id="9d0ed-128">The two clouds are connected and may exchange data back and forth.</span></span> <span data-ttu-id="9d0ed-129">Ciò è utile quando si hanno dati che non possono essere inseriti nel cloud, magari per motivi legali.</span><span class="sxs-lookup"><span data-stu-id="9d0ed-129">This is helpful when you have some things that cannot be put in the cloud, maybe for legal reasons.</span></span> <span data-ttu-id="9d0ed-130">È il caso, ad esempio, di dati che non possono essere esposti pubblicamente (come i dati sanitari).</span><span class="sxs-lookup"><span data-stu-id="9d0ed-130">For example, you may have data that cannot be exposed publicly (such as medical data).</span></span> <span data-ttu-id="9d0ed-131">Un altro esempio è quello di una o più applicazioni in esecuzione su hardware obsoleto che non può essere aggiornato.</span><span class="sxs-lookup"><span data-stu-id="9d0ed-131">Another example is one or more applications that run on old hardware that can’t be updated.</span></span> <span data-ttu-id="9d0ed-132">In questo caso, è possibile mantenere il vecchio sistema in esecuzione in locale e connetterlo al cloud pubblico per l'autorizzazione o l'archiviazione.</span><span class="sxs-lookup"><span data-stu-id="9d0ed-132">In this case, you can keep the old system running locally, and connect it to the public cloud for authorization or storage.</span></span>
+
+### <a name="advantages"></a><span data-ttu-id="9d0ed-133">Vantaggi</span><span class="sxs-lookup"><span data-stu-id="9d0ed-133">Advantages</span></span>
+
+- <span data-ttu-id="9d0ed-134">È possibile mantenere in esecuzione e accessibili tutti i sistemi che usano hardware obsoleto o un sistema operativo non aggiornato</span><span class="sxs-lookup"><span data-stu-id="9d0ed-134">You can keep any systems running and accessible that use out-of-date hardware or an out-of-date operating system</span></span>
+- <span data-ttu-id="9d0ed-135">Flessibilità con ciò che si esegue in locale rispetto a ciò che si esegue nel cloud</span><span class="sxs-lookup"><span data-stu-id="9d0ed-135">Flexibility with what you run locally versus in the cloud</span></span>
+
+### <a name="disadvantages"></a><span data-ttu-id="9d0ed-136">Svantaggi</span><span class="sxs-lookup"><span data-stu-id="9d0ed-136">Disadvantages</span></span>
+
+- <span data-ttu-id="9d0ed-137">Può essere più costoso di un modello di distribuzione</span><span class="sxs-lookup"><span data-stu-id="9d0ed-137">Can be more expensive than selecting one deployment model</span></span>
+- <span data-ttu-id="9d0ed-138">Più complicato da configurare e gestire</span><span class="sxs-lookup"><span data-stu-id="9d0ed-138">More complicated to set up and manage</span></span>
+
+## <a name="summary"></a><span data-ttu-id="9d0ed-139">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="9d0ed-139">Summary</span></span>
+
+<span data-ttu-id="9d0ed-140">Il cloud computing è flessibile e offre la possibilità di scegliere la modalità di distribuzione.</span><span class="sxs-lookup"><span data-stu-id="9d0ed-140">Cloud computing is flexible and gives you the ability to choose how you want to deploy it.</span></span> <span data-ttu-id="9d0ed-141">In genere, la modalità di distribuzione dipende dal budget e dalle esigenze di sicurezza, scalabilità e manutenzione.</span><span class="sxs-lookup"><span data-stu-id="9d0ed-141">Normally, how you deploy it depends on your budget, and on your security, scalability, and maintenance needs.</span></span>

@@ -1,0 +1,21 @@
+<span data-ttu-id="21ccf-101">In questo modulo sono stati creati più documenti, ognuno dei quali rappresenta un prodotto nel catalogo.</span><span class="sxs-lookup"><span data-stu-id="21ccf-101">In this module you've created multiple documents, each representing a product in your product catalog.</span></span> <span data-ttu-id="21ccf-102">Sono stati esaminati i tipi di query che è possibile eseguire sui dati e sono state eseguite; inoltre si è appreso come eseguire e archiviare operazioni complesse sul motore di database usando le stored procedure e le funzioni definite dall'utente.</span><span class="sxs-lookup"><span data-stu-id="21ccf-102">You've learned about the types of queries you can perform on your data and performed those queries, and you've learned how to perform complex operations and store them on the database engine by using stored procedures and UDFs.</span></span> 
+
+<span data-ttu-id="21ccf-103">Questi concetti di base offrono informazioni dettagliate sul funzionamento di Azure Cosmos DB e su come è possibile usarlo come base per i progetti di database di grandi dimensioni, ad esempio le applicazioni di e-commerce, che richiedono la capacità di eseguire rapidamente query e visualizzare i dati in un catalogo, nonché eseguire operazioni e transazioni sui dati nel database.</span><span class="sxs-lookup"><span data-stu-id="21ccf-103">These fundamentals give you insight into how Azure Cosmos DB works, and how you can use it as the foundation for large database projects like e-commerce applications, that require the ability to quickly query and display data in a catalog, and perform operations and transactions on data in the database.</span></span>
+
+## <a name="clean-up"></a><span data-ttu-id="21ccf-104">Eseguire la pulizia</span><span class="sxs-lookup"><span data-stu-id="21ccf-104">Clean up</span></span>
+
+<span data-ttu-id="21ccf-105">Se si prevede di continuare a usare i moduli in questo percorso di apprendimento, è utile non cancellare le risorse create.</span><span class="sxs-lookup"><span data-stu-id="21ccf-105">If you plan to continue working on the modules in this learning path, you'll likely want to leave your resources in place.</span></span>
+
+<span data-ttu-id="21ccf-106">Se non si prevede di completare altri moduli in questo percorso di apprendimento, usare la procedura seguente per eliminare le risorse per evitare di incorrere in addebiti per l'uso del servizio:</span><span class="sxs-lookup"><span data-stu-id="21ccf-106">If you do not plan on completing additional modules in this learning path, use the following steps to delete your resources to avoid incurring charges for use of the service.:</span></span>
+
+1. <span data-ttu-id="21ccf-107">Nel portale di Azure selezionare **Gruppi di risorse** all'estrema sinistra e quindi selezionare il gruppo di risorse creato.</span><span class="sxs-lookup"><span data-stu-id="21ccf-107">In the Azure portal, select **Resource groups** on the far left, and then select the resource group you created.</span></span>  
+
+    <span data-ttu-id="21ccf-108">Se il menu a sinistra è compresso, fare clic sul</span><span class="sxs-lookup"><span data-stu-id="21ccf-108">If the left menu is collapsed, click</span></span> ![pulsante Espandi](../media-draft/5-javascript-programming/expand.png) <span data-ttu-id="21ccf-110">per espanderlo.</span><span class="sxs-lookup"><span data-stu-id="21ccf-110">to expand it.</span></span>
+
+   ![Metriche nel portale di Azure](../media-draft/5-javascript-programming/delete-resources-select.png)
+
+2. <span data-ttu-id="21ccf-112">Nella nuova finestra selezionare il gruppo di risorse e quindi fare clic su **Elimina gruppo di risorse**.</span><span class="sxs-lookup"><span data-stu-id="21ccf-112">In the new window select the resource group, and then click **Delete resource group**.</span></span>
+
+   ![Metriche nel portale di Azure](../media-draft/5-javascript-programming/delete-resources.png)
+
+3. <span data-ttu-id="21ccf-114">Nella nuova finestra digita il nome del gruppo di risorse da eliminare e quindi fai clic su **Elimina**.</span><span class="sxs-lookup"><span data-stu-id="21ccf-114">In the new window, type the name of the resource group to delete, and then click **Delete**.</span></span>
