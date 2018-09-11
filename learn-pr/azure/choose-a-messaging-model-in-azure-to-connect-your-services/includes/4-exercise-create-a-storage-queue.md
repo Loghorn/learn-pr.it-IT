@@ -8,15 +8,16 @@ Poiché le code di archiviazione di Azure fanno parte degli account di archiviaz
 
 1. In un browser passare al [portale di Azure](https://portal.azure.com?azure-portal=true) e accedere con le credenziali normali.
 
-2. In alto a sinistra fare clic su **Tutti i servizi**.
+1. In alto a sinistra fare clic su **Tutti i servizi**.
 
-3. Scorrere verso il basso fino alla sezione **Archiviazione** e quindi fare clic su **Account di archiviazione**.
+1. Scorrere verso il basso fino alla sezione **Archiviazione** e quindi fare clic su **Account di archiviazione**.
 
-4. In alto a sinistra nel pannello **Account di archiviazione** fare clic su **Aggiungi**.
+1. In alto a sinistra nel pannello **Account di archiviazione** fare clic su **Aggiungi**.
 
-  ![Screenshot del pannello Account di archiviazione con Aggiungi evidenziato](../images/5-create-a-storage-account-1.png)
+  ![Screenshot del pannello Account di archiviazione con Aggiungi evidenziato](../media-draft/4-create-a-storage-account-1.png)
 
-5. Nella finestra di dialogo risultante immettere le informazioni seguenti. Ognuna di queste opzioni ha un'icona `(i)` nel portale, che è possibile usare per ottenere altre informazioni sull'opzione.
+1. Nella finestra di dialogo risultante immettere le informazioni seguenti. Ognuna di queste opzioni ha un'icona `(i)` nel portale, che è possibile usare per ottenere altre informazioni sull'opzione.
+
     - Nella casella di testo **Nome** digitare un nome univoco per l'account di archiviazione.
     - In **Modello di distribuzione** assicurarsi che l'opzione **Resource Manager** sia selezionata.
     - Nell'elenco a discesa **Tipologia account** selezionare **Archiviazione (utilizzo generico v2)**.
@@ -29,37 +30,37 @@ Poiché le code di archiviazione di Azure fanno parte degli account di archiviaz
     - In **Gruppo di risorse** selezionare **Crea nuovo**. Nella casella di testo digitare **MusicSharingResourceGroup**.
     - In **Reti virtuali** selezionare **Disabilitato**. 
 
-    ![Screenshot della finestra di dialogo Crea account di archiviazione](../images/5-create-a-storage-account-2.png)
+    ![Screenshot della finestra di dialogo Crea account di archiviazione](../media-draft/4-create-a-storage-account-2.png)
 
-6. Fare clic su **Crea**: Azure creerà un nuovo gruppo di risorse con un nuovo account di archiviazione associato.
+1. Fare clic su **Crea**: Azure creerà un nuovo gruppo di risorse con un nuovo account di archiviazione associato.
 
-    ![Screenshot della finestra di dialogo Crea account di archiviazione, con Crea evidenziato](../images/5-create-a-storage-account-3.png)
+    ![Screenshot della finestra di dialogo Crea account di archiviazione, con Crea evidenziato](../media-draft/4-create-a-storage-account-3.png)
 
 ## <a name="create-a-queue"></a>Creare una coda
 
 Ora che è stato creato l'account di archiviazione, è possibile aggiungere una nuova coda. È necessario creare la coda usando i comandi di PowerShell:
 
-1. In alto a destra nel portale fare clic sul collegamento **Cloud Shell** `(>)`.
+1. In alto a destra nel portale fare clic sul collegamento **Cloud Shell** `(>_)`.
 
-    ![Screenshot del portale di Azure con l'icona Cloud Shell evidenziata](../images/5-create-a-storage-queue-1.png)
+    ![Screenshot del portale di Azure con l'icona Cloud Shell evidenziata](../media-draft/4-create-a-storage-queue-1.png)
 
-2. Nella schermata **Benvenuto in Azure Cloud Shell** fare clic su **PowerShell (Linux)**.
+1. Nella schermata **Benvenuto in Azure Cloud Shell** fare clic su **PowerShell (Linux)**.
 
-3. Se viene visualizzata la schermata **Non sono state montate risorse di archiviazione** fare clic su **Crea risorsa di archiviazione**.
+1. Se viene visualizzata la schermata **Non sono state montate risorse di archiviazione** fare clic su **Crea risorsa di archiviazione**.
 
-4. Quando viene visualizzato il prompt `PS Azure`, per ottenere l'account di archiviazione, digitare il comando seguente. Sostituire `<storageaccountname>` con il nome univoco dell'account di archiviazione creato prima e quindi premere **INVIO**. Si vuole assegnare l'oggetto risultante a una variabile denominata `$storageaccount`.
+1. Quando viene visualizzato il prompt `PS Azure`, per ottenere l'account di archiviazione, digitare il comando seguente. Sostituire `<storageaccountname>` con il nome univoco dell'account di archiviazione creato prima e quindi premere **INVIO**. Si vuole assegnare l'oggetto risultante a una variabile denominata `$storageaccount`.
 
     ```powershell
     $storageaccount = Get-AzureRmStorageAccount -Name <storageaccountname> -ResourceGroup  MusicSharingResourceGroup
     ```
 
-5. È quindi necessario ottenere il _contesto_ dell'account di archiviazione, che è una proprietà per l'oggetto restituito. Verrà ora assegnato a un'altra variabile denominata `$context`.
+1. È quindi necessario ottenere il _contesto_ dell'account di archiviazione, che è una proprietà per l'oggetto restituito. Verrà ora assegnato a un'altra variabile denominata `$context`.
 
     ```powershell
     $context = $storageaccount.Context
     ```
 
-6. A questo punto è possibile creare la coda. Usare il comando `New-AzureStorageQueue` e assegnarla a una variabile `$messageQueue`.
+1. A questo punto è possibile creare la coda. Usare il comando `New-AzureStorageQueue` e assegnarla a una variabile `$messageQueue`.
     - Passare un parametro `-Name` con il valore `musicsharingmessages`
     - Passare un parametro `-Context` con il valore recuperato nel passaggio precedente.
 
@@ -77,7 +78,7 @@ Dopo avere creato una coda nell'account di archiviazione, è possibile aggiunger
     $newSongMessage = New-Object -TypeName Microsoft.WindowsAzure.Storage.Queue.CloudQueueMessage -ArgumentList "A new song has been added."
     ```
 
-2. Per aggiungere il nuovo messaggio alla nuova coda, passare l'elemento `CloudQueueMessage` creato al metodo `AddMessageAsync` nella coda `$messageQueue`.
+1. Per aggiungere il nuovo messaggio alla nuova coda, passare l'elemento `CloudQueueMessage` creato al metodo `AddMessageAsync` nella coda `$messageQueue`.
 
     ```powershell
     $messageQueue.CloudQueue.AddMessageAsync($newSongMessage)
@@ -85,18 +86,18 @@ Dopo avere creato una coda nell'account di archiviazione, è possibile aggiunger
 
 ## <a name="verify-the-message-was-queued"></a>Verificare che messaggio sia stato accodato
 
-È possibile usare **Storage Explorer** per lavorare con la coda. Sono disponibili due variazioni:
+Quando si usano le code, è possibile usare **Storage Explorer**. Sono disponibili due varianti:
 
 - Un'app desktop multipiattaforma per Linux, macOS e Windows che è possibile scaricare.
 - Una versione Web di anteprima nel portale di Azure. Quest'ultima sarà quella usata qui, ma è possibile installare la versione desktop se si preferisce. Le istruzioni sono molto simili.
 
 1. Fare clic su **Tutte le risorse** nel menu sul lato sinistro del portale di Azure.
 
-2. Nell'elenco delle risorse fare clic sull'account di archiviazione creato in precedenza.
+1. Nell'elenco delle risorse fare clic sull'account di archiviazione creato in precedenza.
 
-3. Nel pannello dell'account di archiviazione fare clic su **Storage Explorer (anteprima)**.
+1. Nel pannello dell'account di archiviazione fare clic su **Storage Explorer (anteprima)**.
 
-4. In Storage Explorer, sotto **Code**, fare clic su **musicsharingmessages**. Storage Explorer visualizzerà il messaggio appena aggiunto.
+1. In Storage Explorer, sotto **Code**, fare clic su **musicsharingmessages**. Storage Explorer visualizzerà il messaggio appena aggiunto.
 
 ## <a name="retrieve-and-remove-the-message"></a>Recuperare e rimuovere il messaggio
 
@@ -108,25 +109,25 @@ Un componente di destinazione per un messaggio in una coda di archiviazione deve
     $retrievedMessage = $messageQueue.CloudQueue.GetMessageAsync().Result
     ```
 
-2. È possibile ottenere una versione testuale del messaggio chiamando `AsString`. In questo modo il valore verrà visualizzato nella console.
+1. È possibile ottenere una versione testuale del messaggio chiamando `AsString`. In questo modo il valore verrà visualizzato nella console.
 
     ```powershell
     $retrievedMessage.AsString
     ```
 
-3. In alternativa, è possibile visualizzare tutte le proprietà del messaggio digitando il nome della variabile e premendo **INVIO**.
+1. In alternativa, è possibile visualizzare tutte le proprietà del messaggio digitando il nome della variabile e premendo **INVIO**.
 
     ```powershell
     $retrievedMessage
     ```
 
-4. `GetMessageAsync` *non* rimuove il messaggio, semplicemente lo restituisce ed è quindi possibile elaborarlo nuovamente. Per rimuovere il messaggio dalla coda, è possibile usare il metodo `DeleteMessageAsync` sulla coda. A questo scopo, è necessario passare il messaggio che si vuole rimuovere.
+1. `GetMessageAsync` *non* rimuove il messaggio, semplicemente lo restituisce ed è quindi possibile elaborarlo nuovamente. Per rimuovere il messaggio dalla coda, è possibile usare il metodo `DeleteMessageAsync` sulla coda. A questo scopo, è necessario passare il messaggio che si vuole rimuovere.
 
     ```powershell
     $messageQueue.CloudQueue.DeleteMessageAsync($retrievedMessage)
     ```
 
-5. Per verificare che il messaggio sia stato rimosso, aggiornare la visualizzazione della coda nel portale di Azure passando al pannello Account di archiviazione e selezionando **Panoramica> Storage Explorer**. In **Code** fare clic su **musicsharingmessages**. Storage Explorer mostrerà ora che la coda è vuota perché è stato rimosso l'unico messaggio.
+1. Per verificare che il messaggio sia stato rimosso, aggiornare la visualizzazione della coda nel portale di Azure passando al pannello Account di archiviazione e selezionando **Panoramica> Storage Explorer**. In **Code** fare clic su **musicsharingmessages**. Storage Explorer mostrerà ora che la coda è vuota perché è stato rimosso l'unico messaggio.
 
 
 ## <a name="summary"></a>Riepilogo

@@ -1,4 +1,4 @@
-Si supponga di dover pianificare l'architettura di un'applicazione per la condivisione di musica. Si vuole essere certi che i file musicali vengano caricati in modo affidabile nell'API Web dall'app per dispositivi mobili. È quindi necessario che i dettagli sui nuovi brani aggiunti da un artista alla propria raccolta vengano distribuiti direttamente all'app. Si tratta di un uso ideale di un sistema basato su messaggi e Azure offre due soluzioni a questo problema:
+Si supponga di dover pianificare l'architettura di un'applicazione per la condivisione di musica. Si vuole essere certi che i file musicali vengano caricati in modo affidabile nell'API Web dall'app per dispositivi mobili. È quindi necessario che i dettagli sui nuovi brani aggiunti da un artista alla propria raccolta vengano distribuiti direttamente nell'app. Si tratta di un uso ideale di un sistema basato su messaggi e Azure offre due soluzioni a questo problema:
 
 - Archiviazione code di Azure
 - Bus di servizio di Azure
@@ -38,6 +38,7 @@ In questo caso si vuole essere certi che vengano elaborati _tutti_ i messaggi op
 Dopo aver stabilito che la strategia di comunicazione per questa architettura deve essere un messaggio, è necessario scegliere se usare le code di archiviazione di Azure o il bus di servizio di Azure, entrambi servizi che possono essere usati per archiviare e recapitare messaggi tra i componenti. Ogni tecnologia presenta un set di funzionalità leggermente diverso, quindi è possibile scegliere l'una o l'altra, o entrambe, a seconda del problema da risolvere.
 
 #### <a name="choose-service-bus-queues-if"></a>Scegliere le code del bus di servizio se:
+
 - È necessaria una garanzia di recapito At-Most-Once.
 - È necessaria una garanzia FIFO.
 - È necessario raggruppare i messaggi in transazioni.
@@ -50,6 +51,7 @@ Dopo aver stabilito che la strategia di comunicazione per questa architettura de
 Archiviazione code non ha altrettante funzionalità, ma se tali funzionalità non sono necessarie, può essere una scelta più semplice. È inoltre la soluzione migliore se l'app presenta uno qualsiasi dei requisiti seguenti.
 
 #### <a name="choose-queue-storage-if"></a>Scegliere Archiviazione code se:
+
 - È necessario un audit trail di tutti i messaggi che passano attraverso la coda.
 - Si prevede che le dimensioni della coda possano superare gli 80 GB.
 - Si vuole tenere traccia dello stato dell'elaborazione di un messaggio all'interno della coda.

@@ -13,7 +13,7 @@ Un sottoscrittore di eventi è qualsiasi componente che può ricevere eventi da 
 
 Griglia di eventi supporta la maggior parte dei servizi di Azure come origine di pubblicazione o sottoscrittore e può anche essere usato con servizi di terze parti. Fornisce un sistema di messaggistica scalabile dinamicamente e a basso costo, che consente alle origini di pubblicazione di notificare una modifica di stato ai sottoscrittori.
 
-![Diagramma delle origini e dei sottoscrittori di Griglia di eventi](../images/6-event-grid.png)
+![Diagramma delle origini e dei sottoscrittori di Griglia di eventi](../media-draft/5-event-grid.png)
 
 > [!NOTE]
 > Griglia di eventi invia un evento per notificare una modifica ai sottoscrittori, ma l'_oggetto effettivo_ che è stato modificato non fa parte del recapito dell'evento.
