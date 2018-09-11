@@ -1,20 +1,21 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-computer-vision-service.5-extract-printed-text
-interactive: bash
-title: <span data-ttu-id="6bc7e-101">Estrazione di testo stampato dalle immagini</span><span class="sxs-lookup"><span data-stu-id="6bc7e-101">Extracting printed text from images</span></span>
+title: <span data-ttu-id="0efb5-101">Estrazione di testo stampato dalle immagini</span><span class="sxs-lookup"><span data-stu-id="0efb5-101">Extracting printed text from images</span></span>
 metadata:
-  title: <span data-ttu-id="6bc7e-102">Estrazione di testo stampato dalle immagini</span><span class="sxs-lookup"><span data-stu-id="6bc7e-102">Extracting printed text from images</span></span>
-  description: <span data-ttu-id="6bc7e-103">Estrazione di testo stampato dalle immagini</span><span class="sxs-lookup"><span data-stu-id="6bc7e-103">Extracting printed text from images</span></span>
+  title: <span data-ttu-id="0efb5-102">Estrazione di testo stampato dalle immagini</span><span class="sxs-lookup"><span data-stu-id="0efb5-102">Extracting printed text from images</span></span>
+  description: <span data-ttu-id="0efb5-103">Estrazione di testo stampato dalle immagini</span><span class="sxs-lookup"><span data-stu-id="0efb5-103">Extracting printed text from images</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: f373e925bcb1231c883fb129817876528febef3b
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: 403cf1d1e78f1532880d4826555e3d6d1039225f
+  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44245257"
+  ms.lasthandoff: 09/10/2018
+  ms.locfileid: "44308981"
 durationInMinutes: 10
+interactive: bash
+azureSandbox: true
 content: '[!include[](includes/5-extract-printed-text.md)]'
