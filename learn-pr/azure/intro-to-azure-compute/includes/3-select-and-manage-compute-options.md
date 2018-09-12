@@ -14,9 +14,9 @@ Si ipotizzi di gestire un sito Web che ospita a sua volta un sito Web per la riv
 
 Azure rende disponibili anche servizi di macchine virtuali avanzati:
 
-* Per eseguire in modo coerente istanze disponibili della stessa app o set di app su macchine virtuali configurate in modo analogo, utilizzare l'opzione **Set di scalabilità di macchine virtuali**. In pochi minuti, l'opzione genera automaticamente migliaia di macchine virtuali identiche caricate con l'applicazione, evitando agli utenti qualsiasi attesa. Non essendo necessario il pre-provisioning delle macchine virtuali, vengono sempre usate esclusivamente le risorse di calcolo necessarie all'applicazione.
+- Per eseguire in modo coerente istanze disponibili della stessa app o set di app su macchine virtuali configurate in modo analogo, utilizzare l'opzione **Set di scalabilità di macchine virtuali**. In pochi minuti, l'opzione genera automaticamente migliaia di macchine virtuali identiche caricate con l'applicazione, evitando agli utenti qualsiasi attesa. Non essendo necessario il pre-provisioning delle macchine virtuali, vengono sempre usate esclusivamente le risorse di calcolo necessarie all'applicazione.
 
-* Nei casi in cui è necessaria potenza di elaborazione non elaborata o potenza di calcolo da supercomputer, l'opzione **Batch** consente la gestione del calcolo e della pianificazione dei processi a livello di cloud, con la possibilità di scalare fino a decine, centinaia o migliaia di macchine virtuali. È anche possibile specificare macchine virtuali con capacità di supercomputer.
+- Nei casi in cui è necessaria potenza di elaborazione non elaborata o potenza di calcolo da supercomputer, l'opzione **Batch** consente la gestione del calcolo e della pianificazione dei processi a livello di cloud, con la possibilità di scalare fino a decine, centinaia o migliaia di macchine virtuali. È anche possibile specificare macchine virtuali con capacità di supercomputer.
 
 ## <a name="azure-containers"></a>Contenitori di Azure
 

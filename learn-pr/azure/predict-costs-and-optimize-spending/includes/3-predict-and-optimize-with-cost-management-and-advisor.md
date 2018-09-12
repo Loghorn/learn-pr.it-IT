@@ -9,10 +9,10 @@ Advisor fornisce consigli sui costi nelle aree seguenti:
 1. **Ridurre i costi eliminando i circuiti ExpressRoute il cui provisioning è stato annullato.** 
     Identifica i circuiti ExpressRoute che sono rimasti nello stato provider *Senza provisioning* per più di un mese e consiglia di eliminare il circuito se non si intende effettuarne il provisioning con il provider di connettività.
 
-2. **Acquistare istanze riservate per risparmiare denaro rispetto ai costi dei piani con pagamento in base al consumo.** 
+1. **Acquistare istanze riservate per risparmiare denaro rispetto ai costi dei piani con pagamento in base al consumo.** 
     Esamina l'utilizzo della macchina virtuale negli ultimi 30 giorni e determina se sarà possibile risparmiare denaro acquistando istanze riservate. Advisor mostra le aree e le dimensioni con le massime potenzialità di risparmio e indica il risparmio stimato conseguibile con l'acquisto di istanze riservate.
     
-3. **Ridimensionare o arrestare le macchine virtuali sottoutilizzate.** 
+1. **Ridimensionare o arrestare le macchine virtuali sottoutilizzate.** 
     Monitora l'utilizzo delle macchine virtuali per 14 giorni, in modo da identificare quelle sottoutilizzate. Le macchine virtuali con un utilizzo medio della CPU del 5% o inferiore e un utilizzo di rete di 7 MB o inferiore per quattro o più giorni sono considerate macchine virtuali sottoutilizzate. La soglia di uso medio della CPU è regolabile fino al 20%. Identificando queste macchine virtuali, è possibile decidere di ridimensionarle in un tipo di istanza ridotto, diminuendo i costi.
 
 Di seguito è indicato dove è possibile trovare Azure Advisor nel portale. Accedere prima di tutto al portale di Azure all'indirizzo [https://portal.azure.com](https://portal.azure.com?azure-portal=true). Fare clic su **Tutti i servizi** e, nella categoria **Strumenti di gestione**, è disponibile **Advisor**. È anche possibile digitare **Advisor** nella casella del filtro per visualizzare solo questo servizio. 

@@ -1,34 +1,34 @@
-An Azure function doesn't do work until something tells it to execute. For example, we could create an Azure function to send out a reminder text message to our customers before an appointment. If we don't tell the function when it should run, our customers will never receive a message.
+Una funzione di Azure non funziona finché un elemento non indicherà di eseguirla. Ad esempio, è possibile creare una funzione di Azure per inviare un promemoria tramite SMS ai clienti prima di un appuntamento. Se non viene abilitata la funzione quando deve essere eseguita, i clienti non riceveranno mai un messaggio.
 
-Here, you'll examine triggers at a high level and explore the most common types of triggers.
+In questo caso, verranno esaminati i trigger di alto livello ed esplorati i tipi più comuni di trigger.
 
-## What is a trigger?
+## <a name="what-is-a-trigger"></a>Che cos'è un trigger?
 
-A trigger is a service that defines how an Azure function is invoked. For example, if you want a function to execute every 10 minutes, you could use a timer trigger.
+Un trigger è un servizio che definisce il modo in cui viene richiamata una funzione di Azure. Ad esempio, se si desidera che una funzione venga eseguita ogni 10 minuti, è possibile usare un trigger timer.
 
-Every function must have exactly one trigger associated with it. If you want to execute a piece of logic under multiple conditions, you need to create multiple functions.
+Una funzione deve avere esattamente un trigger associato a essa. Se si desidera eseguire una parte di logica in più condizioni, è necessario creare più funzioni.
 
-## What is a binding?
+## <a name="what-is-a-binding"></a>Che cos'è un'associazione?
 
-A binding is a connection to data within your function. Bindings are optional and come in the form of input and output bindings. An input binding is the data that your function receives. An output binding is the data that your function sends.
+Un'associazione è una connessione ai dati all'interno della funzione. Le associazioni sono facoltative e sono disponibili sotto forma di associazioni di input e output. Un'associazione di input è costituita dai dati ricevuti dalla funzione. Un'associazione di output è costituita dai dati inviati dalla funzione.
 
-Unlike a trigger, a function can have multiple input and output bindings.
+A differenza di un trigger, una funzione può avere più associazioni di input e output.
 
-## Types of triggers
+## <a name="types-of-triggers"></a>Tipi di trigger
 
-Azure Functions support a wide range of trigger types. Here are some of the most common types:
+Le funzioni di Azure supportano un'ampia gamma di tipi di trigger. Ecco alcuni dei tipi più comuni:
 
-| Type | Purpose |
+| Tipo | Scopo |
 | --- | --- |
-| **Timer** | Execute a function at a set interval. |
-| **HTTP** | Execute a function when an HTTP request is received. |
-| **Blob** | Execute a function when a file is uploaded or updated in Azure Blob storage. |
-| **Queue** | Execute a function when a message is added to an Azure Storage queue. |
-| **Cosmos DB** | Execute a function when a document changes in a collection. |
-| **Event Hub** | Execute a function when an event hub receives a new event. |
+| **Timer** | Eseguire una funzione in un intervallo specificato. |
+| **HTTP** | Eseguire una funzione quando viene ricevuta una richiesta HTTP. |
+| **Blob** | Eseguire una funzione quando un file viene caricato o aggiornato nell'archivio BLOB di Azure. |
+| **Coda** | Eseguire una funzione quando un messaggio viene aggiunto a una coda di Archiviazione di Azure. |
+| **Cosmos DB** | Eseguire una funzione quando un documento viene modificato in una raccolta. |
+| **Hub eventi** | Eseguire una funzione quando un Hub eventi riceve un nuovo evento. |
 
-In this module, we're going to focus on the **timer**, **HTTP**, and **blob** types.
+In questo modulo si approfondiranno i tipi di **timer**, **HTTP** e **blob**.
 
-## Summary
+## <a name="summary"></a>Riepilogo
 
-To execute an Azure function, we need to use a trigger. Timer, HTTP, and blob triggers are three of the most common trigger types that you'll use to execute serverless logic.
+Per eseguire una funzione di Azure, è necessario usare un trigger. I trigger timer, HTTP e di blob sono tre tipi di trigger tra i più comuni che verranno usati per eseguire la logica senza server.

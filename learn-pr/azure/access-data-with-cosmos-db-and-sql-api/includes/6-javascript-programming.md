@@ -77,7 +77,7 @@ Verrà ora creata una nuova stored procedure nel portale. Il portale inserisce a
 
 3. Nella casella **Parametri di input** digitare il nome di una chiave di partizione *33218896* e quindi fare clic su **Esegui**. Si noti che le stored procedure funzionano all'interno di una singola partizione.
 
-    ![Eseguire una stored procedure nel portale](../media-draft/6-stored-procedure.gif)
+    ![Eseguire una stored procedure nel portale](../media/6-stored-procedure.gif)
 
     Il riquadro **Risultato** visualizza il feed dal primo documento nella raccolta.
 
