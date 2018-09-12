@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.azure-services-features.8-customize-the-dashboard
+title: <span data-ttu-id="98dcb-101">Dashboard del portale di Azure</span><span class="sxs-lookup"><span data-stu-id="98dcb-101">Azure Portal dashboards</span></span>
+metadata:
+  title: <span data-ttu-id="98dcb-102">Dashboard del portale di Azure</span><span class="sxs-lookup"><span data-stu-id="98dcb-102">Azure Portal dashboards</span></span>
+  description: <span data-ttu-id="98dcb-103">Dashboard del portale di Azure</span><span class="sxs-lookup"><span data-stu-id="98dcb-103">Azure Portal dashboards</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 2e820981a7c79eb64ea2af90335cfbe9c835ddbf
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44230263"
+durationInMinutes: 10
+content: '[!include[](includes/8-customize-the-dashboard.md)]'
