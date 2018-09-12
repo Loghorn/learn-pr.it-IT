@@ -1,53 +1,53 @@
-At First Up Consultants, you've been granted access to the Azure subscription for the marketing team. You want to familiarize yourself with the Azure portal and see what roles are currently assigned.
+Presso la First Up Consultants, all'utente è stato concesso l'accesso alla sottoscrizione di Azure per il team di marketing. Si desidera acquisire familiarità con il portale di Azure e visualizzare i ruoli attualmente assegnati.
 
-## List role assignments for yourself
+## <a name="list-role-assignments-for-yourself"></a>Elencare i ruoli assegnati all’utente stesso
 
-Follow these steps to see what roles are currently assigned to you.
+Seguire questa procedura per vedere quali sono i ruoli attualmente assegnati all'utente.
 
-1. In the navigation list, click **Azure Active Directory**.
+1. Nell'elenco di spostamento fare clic su **Azure Active Directory**.
 
-1. Click **Users** to open **All users**.
+1. Fare clic su **Utenti** e aprire **Tutti gli utenti**.
 
-    ![Azure Active Directory users](../media-draft/4-aad-all-users.png)
+    ![Utenti di Azure Active Directory](../media-draft/4-aad-all-users.png)
 
-1. Find and click the **LabAdmin-_XXXXXXX_** user name.
+1. Trovare e selezionare il nome utente **LabAdmin -_XXXXXXX_**.
 
-    ![Azure Active Directory lab users](../media-draft/4-aad-all-users-lab.png)
+    ![Utenti lab di Azure Active Directory](../media-draft/4-aad-all-users-lab.png)
 
-1. In the **Manage** section, click **Azure resources**.
+1. Nella sezione **Gestisci** fare clic su **Risorse di Azure**.
 
-    ![Azure resources](../media-draft/4-aad-user-azure-resources.png)
+    ![Risorse di Azure](../media-draft/4-aad-user-azure-resources.png)
 
-    On the Azure resources blade, you can see the resources and roles you have access to. Your list will look different.
+    Nel pannello delle risorse di Azure, è possibile visualizzare le risorse e ruoli a cui si ha accesso. L'elenco avrà un aspetto diverso.
 
-## List role assignments for a resource group
+## <a name="list-role-assignments-for-a-resource-group"></a>Elencare le assegnazioni di ruolo per un gruppo di risorse
 
-Follow these steps to see what roles are assigned at the resource group scope.
+Seguire questa procedura per visualizzare quali ruoli vengono assegnati nell'ambito del gruppo di risorse.
 
-1. In the navigation list, click **Resource groups**.
+1. Nell'elenco di spostamento fare clic su **Gruppi di risorse**.
 
-   ![Resource groups](../media-draft/4-resource-groups.png)
+   ![Gruppi di risorse](../media-draft/4-resource-groups.png)
 
-1. Click the resource group named **FirstUpConsultantsRG1-_XXXXXXX_**.
+1. Fare clic sul gruppo di risorse denominato **FirstUpConsultantsRG1-_XXXXXXX_**.
 
-1. Click **Access control (IAM)**.
+1. Fare clic su **Controllo di accesso (IAM)**.
 
-   On the Access control (IAM) blade, you can see who has access to this resource group. Notice that some roles are scoped to **This resource** while others are **(Inherited)** from a parent scope.
+   Nel pannello Controllo di accesso (IAM) è possibile vedere chi ha accesso al gruppo di risorse. Si noterà che l'ambito di alcuni ruoli è **Questa risorsa**, mentre quello di altri è **(Ereditato)** da un altro ambito.
 
-   ![Access control (IAM) for resource group](../media-draft/4-resource-group-access-control.png)
+   ![Controllo di accesso (IAM) per il gruppo di risorse](../media-draft/4-resource-group-access-control.png)
 
-## List roles
+## <a name="list-roles"></a>Elenco dei ruoli
 
-As you learned in the previous unit, a role is a collection of permissions. Azure has over 70 built-in roles that you can use in your role assignments. Follow these steps to list the roles.
+Come illustrato nell'unità di precedente, un ruolo è una raccolta di autorizzazioni. Azure dispone di più di 70 ruoli predefiniti che è possibile usare nelle assegnazioni di ruolo. Per elencare i ruoli, eseguire questa procedura.
 
-- At the top of the Access control (IAM) blade, click **Roles** to see a list of all the built-in and custom roles.
+- Nella parte superiore del pannello Controllo di accesso (IAM), fare clic su **Ruoli** per visualizzare un elenco di tutti i ruoli predefiniti e personalizzati.
 
-   ![Roles option](../media-draft/4-roles-option.png)
+   ![Opzione Ruoli](../media-draft/4-roles-option.png)
 
-   You can see the number of users and groups that are assigned to each role.
+   È possibile visualizzare il numero di utenti e gruppi assegnati a ogni ruolo.
 
-   ![Roles list](../media-draft/4-roles-list.png)
+   ![Elenco dei ruoli](../media-draft/4-roles-list.png)
 
-## Summary
+## <a name="summary"></a>Riepilogo
 
-In this unit, you learned how to list the role assignments for yourself in the Azure portal. You also learned how to list the role assignments at different scopes. In the next unit, you take the next step and use RBAC to grant access to a user.
+In questa unità viene illustrato come elencare le assegnazioni di ruolo per se stessi nel portale di Azure. Inoltre, sarà illustrato come elencare le assegnazioni di ruolo in ambiti diversi nel portale. Nell'unità successiva, verrà illustrato il passaggio successivo e come usare RBAC (Controllo degli accessi in base al ruolo) per concedere l'accesso a un utente.
