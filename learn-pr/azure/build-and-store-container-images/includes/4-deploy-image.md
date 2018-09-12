@@ -1,34 +1,34 @@
-Container images can be pulled from Azure Container Registry from many container management platforms, such as Azure Container Instances, Azure Kubernetes Registry, and Docker for Windows or Mac. When running container images from Azure Container Registry, authentication credentials may be needed. It is recommended to use an Azure service principal for authentication with Container Registry. Furthermore, it is also recommended to secure the Azure service principal credentials in Azure Key Vault.
+È possibile eseguire il pull di immagini del contenitore dal Registro contenitori di Azure da molte piattaforme di gestione contenitori, ad esempio Istanze di contenitore di Azure, servizio Kubernetes di Azure e Docker per Windows o Mac. Quando si eseguono immagini del contenitore dal Registro contenitori di Azure, potrebbero essere necessarie credenziali di autenticazione. È consigliabile usare un'entità servizio di Azure per l'autenticazione con Container Registry. Inoltre, è consigliabile anche proteggere le credenziali dell'entità servizio di Azure in Azure Key Vault.
 
-In this unit, you will create a service principal for your Azure container registry, store it in Azure Key Vault, and then deploy the container to Azure Container Instances using the service principal's credentials.
+In questa unità si crea un'entità servizio per il registro contenitori di Azure, la si archivia in Azure Key Vault e quindi si distribuisce il contenitore in Istanze di contenitore di Azure usando le credenziali dell'entità servizio.
 
-## Configure registry authentication
+## <a name="configure-registry-authentication"></a>Configurare l'autenticazione del registro
 
-All production scenarios should use service principals to access an Azure container registry. Service principals allow you to provide role-based access control (RBAC) to your container images. For example, you can configure a service principal with pull-only access to a registry.
+In tutti gli scenari di produzione dovrebbero essere usate entità servizio per accedere a un registro contenitori di Azure. Le entità servizio consentono di fornire il controllo degli accessi in base al ruolo alle immagini del contenitore. Ad esempio, è possibile configurare un'entità servizio con accesso solo pull a un registro.
 
-If you don't already have a vault in Azure Key Vault, create one with the Azure CLI using the following commands.
+Se non si ha già un insieme di credenziali in Azure Key Vault, crearne uno usando i comandi seguenti nell'interfaccia della riga di comando di Azure.
 
-First, create a variable with the name of your container registry. This variable is used throughout this unit.
+Prima di tutto, creare una variabile con il nome del registro contenitori. Questa variabile verrà usata in tutta l'unità.
 
 ```azurecli
 ACR_NAME=<acrName>
 ```
 
-Create an Azure key vault with the `az keyvault create` command.
+Creare un insieme di credenziali delle chiavi di Azure con il comando `az keyvault create`.
 
 ```azurecli
 az keyvault create --resource-group myResourceGroup --name $ACR_NAME-keyvault
 ```
 
-Now, you need to create a service principal and store its credentials in your key vault.
+A questo punto occorre creare un'entità servizio e archiviarne le credenziali nell'insieme di credenziali delle chiavi.
 
-Use the `az ad sp create-for-rbac` command to create the service principal. The `--role` argument configures the service principal with the *reader* role, which grants it pull-only access to the registry. To grant both push and pull access, change the `--role` argument to *contributor*.
+Per creare l'entità servizio, usare il comando `az ad sp create-for-rbac`. L'argomento `--role` configura l'entità servizio con il ruolo *lettore*, che concede l'accesso di tipo solo pull al registro. Per concedere l'accesso sia push che pull, impostare l'argomento `--role` su *collaboratore*.
 
 ```azurecli
 az ad sp create-for-rbac --scopes $(az acr show --name $ACR_NAME --query id --output tsv) --role reader
 ```
 
-This is what the output of the service principal creation will look like. Take note of the `appId` and the `password` values. These will be stored in the Azure key vault.
+L'output della creazione dell'entità servizio avrà un aspetto simile al seguente. Prendere nota dei valori `appId` e `password`. Questi valori verranno archiviati dell'insieme di credenziali delle chiavi di Azure.
 
 ```bash
 {
@@ -40,30 +40,30 @@ This is what the output of the service principal creation will look like. Take n
 }
 ```
 
-Next, use the `az keyvault secret set` command to store the service principal's *appId* in the vault. Replace `<appId>` with the `appId` of the service principal.
+Successivamente, usare il comando `az keyvault secret set` per archiviare l'*appId* dell'entità servizio nell'insieme di credenziali. Sostituire `<appId>` con il valore `appId` dell'entità servizio.
 
 ```azurecli
 az keyvault secret set --vault-name $ACR_NAME-keyvault --name $ACR_NAME-pull-usr --value <appId>
 ```
 
-Now, use the `az keyvault secret set` command to store the service principal's *password* in the vault. Replace `<password>` with the `password` of the service principal.
+A questo punto, usare il comando `az keyvault secret set` per archiviare la *password* dell'entità servizio nell'insieme di credenziali. Sostituire `<password>` con il valore `password` dell'entità servizio.
 
 ```azurecli
 az keyvault secret set --vault-name $ACR_NAME-keyvault --name $ACR_NAME-pull-pwd --value <password>
 ```
 
-You've created an Azure key vault and stored two secrets in it:
+È stato creato un insieme di credenziali delle chiavi di Azure e vi sono stati archiviati due segreti:
 
-* `$ACR_NAME-pull-usr`: The service principal ID, for use as the container registry **username**.
-* `$ACR_NAME-pull-pwd`: The service principal password, for use as the container registry **password**.
+* `$ACR_NAME-pull-usr`: ID dell'entità servizio, da usare come **nome utente** del registro contenitori.
+* `$ACR_NAME-pull-pwd`: password dell'entità servizio, da usare come **password** del registro contenitori.
 
-You can now reference these secrets by name when you or your applications and services pull images from the registry.
+Ora è possibile fare riferimento a questi segreti per nome quando gli utenti o le applicazioni e i servizi eseguono il pull di immagini dal registro.
 
-### Deploy a container with Azure CLI
+### <a name="deploy-a-container-with-azure-cli"></a>Distribuire un contenitore con l'interfaccia della riga di comando di Azure
 
-Now that the service principal credentials are stored in Azure Key Vault, your applications and services can use them to access your private registry.
+Ora che le credenziali dell'entità servizio sono archiviate in Azure Key Vault, le applicazioni e i servizi possono usarle per accedere al registro privato.
 
-Execute the following `az container create` command to deploy a container instance. The command uses the service principal's credentials stored in Azure Key Vault to authenticate to your container registry.
+Eseguire il comando `az container create` seguente per distribuire un'istanza di contenitore. Il comando usa le credenziali dell'entità servizio archiviate in Azure Key Vault per eseguire l'autenticazione al registro contenitori.
 
 ```azurecli
 az container create \
@@ -76,13 +76,13 @@ az container create \
     --registry-password $(az keyvault secret show --vault-name $ACR_NAME-keyvault --name $ACR_NAME-pull-pwd --query value -o tsv)
 ```
 
-Get the IP address of the Azure container instance.
+Ottenere l'indirizzo IP dell'istanza di contenitore di Azure.
 
 ```azurecli
 az container show --resource-group myResourceGroup --name acr-build --query ipAddress.ip --output table
 ```
 
-Open up a browser and navigate to the IP address of the container. If everything has been configured correctly, you should see the following results:
+Aprire un browser e passare all'indirizzo IP del contenitore. Se tutto è configurato correttamente, si dovrebbero visualizzare i risultati seguenti:
 
-![Sample web application with the text Hello World](../media/hello.png)
+![Applicazione Web di esempio con il testo Hello World](../media/hello.png)
 

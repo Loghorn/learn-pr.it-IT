@@ -4,11 +4,16 @@ title: Utilizzo di Data Migration Assistant (DMA)
 metadata:
   title: Utilizzo di Data Migration Assistant (DMA)
   description: Utilizzo di Data Migration Assistant (DMA)
-  ms.openlocfilehash: e43a0173768421e371d065125dcea2e92cf9d51f
-  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: b0ddf46f054877c446cfe3325ebebc808ad8848b
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43835874"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44232864"
 durationInMinutes: 5
 content: '[!include[](includes/2-assess-your-database.md)]'

@@ -136,7 +136,7 @@ Queste informazioni sono disponibili anche nel portale di Azure. Per visualizzar
 ![Visualizzazione nel portale di Azure delle informazioni relative all'uso di memoria e CPU da parte di Istanze di contenitore di Azure](../media-draft/cpu-memory.png)
 
 ## <a name="clean-up"></a>Eseguire la pulizia
-<!---TODO: Do we need to include cleanup for the free education tier?--->
+<!---TODO: Update for sandbox?--->
 
 Questa è l'ultima unità del modulo di apprendimento relativo alle Istanze di contenitore di Azure. A questo punto è possibile pulire le risorse create eliminando il gruppo di risorse. A tale scopo, usare il comando **az group delete**:
 

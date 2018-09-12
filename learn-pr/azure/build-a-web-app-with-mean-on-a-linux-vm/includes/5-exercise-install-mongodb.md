@@ -1,59 +1,59 @@
-In this unit, you will install MongoDB on your Ubuntu Linux virtual machine to act as a data store for your upcoming sample web application.
+In questa unità si installerà MongoDB nella macchina virtuale Ubuntu Linux in modo che funga da archivio dati per la nuova applicazione Web di esempio.
 
-## Connect to the VM
+## <a name="connect-to-the-vm"></a>Connettersi alla macchina virtuale
 
-In order to install MongoDB, you have to connect to the VM using **ssh**. Substitute your admin username and your VM's public IP address from above for the `<vm-admin-username>` and `<vm-public-ip>` placeholders.
+Per installare MongoDB, è necessario connettersi alla macchina virtuale mediante **ssh**. Sostituire i segnaposto `<vm-admin-username>` e `<vm-public-ip>` con il nome utente amministratore e l'indirizzo IP pubblico della macchina virtuale precedenti.
 
 ```bash
 ssh <vm-admin-username>@<vm-public-ip>
 ```
 
-## Install MongoDB
+## <a name="install-mongodb"></a>Installare MongoDB
 
 > [!Important]
-> Ubuntu provides an unofficial package called **mongodb**. This package is not maintained by MongoDB Inc.
+> Ubuntu fornisce un pacchetto non ufficiale denominato **mongodb**. Questo pacchetto non viene gestito da MongoDB Inc.
 
-1. Import the encryption key for the MongoDB repository. This will allow the package manager to verify that the mongodb packages you install are coming from MongoDB Inc.
+1. Importare la chiave di crittografia per il repository MongoDB. Questo consente allo strumento di gestione pacchetti di verificare che i pacchetti mongodb da installare provengano da MongoDB Inc.
 
     ```bash
     sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 9DA31620334BD75D9DCB49F368818C72E52529D4
     ```
 
-    The **sudo** command means that we want to run the specified command with administrative privileges.
+    Il comando **sudo** determina l'esecuzione del comando specificato con privilegi amministrativi.
 
-1. Register the MongoDB Ubuntu repository so the package manager can locate the mongodb packages.
+1. Registrare il repository Ubuntu di MongoDB in modo da consentire allo strumento di gestione pacchetti di individuare i pacchetti mongodb.
 
     > [!NOTE]
-    > This command is different for different versions of Ubuntu. To find out which version of Ubuntu you're using, run: `uname -v`.
-    > This command will output something like this: `#21~16.04.1-Ubuntu SMP Fri Aug 10 12:36:09 UTC 2018`.
+    > Questo comando varia a seconda delle versioni di Ubuntu. Per sapere qual è la versione di Ubuntu in uso, eseguire: `uname -v`.
+    > Questo comando genererà un output simile a `#21~16.04.1-Ubuntu SMP Fri Aug 10 12:36:09 UTC 2018`.
     >
-    > This output indicates that we're running Ubuntu version 16.04.1.
-    > Refer to the [Install MongoDB Community Edition on Ubuntu](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/) documentation to get the exact command for your version.
+    > Questo output indica che la versione di Ubuntu in esecuzione è la 16.04.1.
+    > Vedere [Install MongoDB Community Edition on Ubuntu](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/) (Installare MongoDB Community Edition su Ubuntu) per ottenere il comando esatto per la versione in uso.
 
-    On Ubuntu 16.04, we run this command:
+    In Ubuntu 16.04 occorre eseguire questo comando:
 
     ```bash
     echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.0.list
     ```
 
-1. Reload the package database so we have the latest package information.
+1. Ricaricare il database del pacchetto in modo da avere le informazioni sul pacchetto più recenti.
 
     ```bash
     sudo apt-get update
     ```
 
-1. Install the MongoDB package onto our VM.
+1. Installare il pacchetto MongoDB nella macchina virtuale.
 
     ```bash
     sudo apt-get install -y mongodb-org
     ```
 
-1. Start the MongoDB service so you can connect to it later.
+1. Avviare il servizio MongoDB per potersi connettere a esso successivamente.
 
     ```bash
     sudo service mongod start
     ```
 
-## Summary
+## <a name="summary"></a>Riepilogo
 
-We now have MongoDB installed on our Ubuntu Linux VM. MongoDB will serve as your backing data store for the information you save and retrieve in your web application.
+MongoDB è ora installato nella macchina virtuale Ubuntu Linux. Fungerà da archivio dati sottostante per le informazioni salvate e recuperate nell'applicazione Web.

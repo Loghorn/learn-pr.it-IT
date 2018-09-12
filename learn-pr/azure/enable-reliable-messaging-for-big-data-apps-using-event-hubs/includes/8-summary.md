@@ -7,7 +7,7 @@ In questo modulo è stato descritto come distribuire Hub eventi di Azure nell'am
 - Usare il portale di Azure per visualizzare lo stato e le prestazioni dell'hub eventi.
 
 ## <a name="clean-up"></a>Eseguire la pulizia 
-<!---TODO: Do we need to include cleanup for the free education tier?--->
+<!---TODO: Update for sandbox?--->
 
 Le risorse usate per i test degli hub eventi comportano l'addebito di costi per la sottoscrizione. Quando l'hub eventi non è più necessario, ricordarsi di rimuovere le risorse per evitare addebiti inutili.
 

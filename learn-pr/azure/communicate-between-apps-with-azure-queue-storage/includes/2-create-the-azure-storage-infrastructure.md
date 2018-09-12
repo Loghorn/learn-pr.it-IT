@@ -1,28 +1,28 @@
-Direct communication between the components of a distributed application can be problematic because it might be disrupted when network bandwidth is low or when demand is high.
+La comunicazione diretta tra i componenti di un'applicazione distribuita può essere problematica, in quanto potrebbe subire interruzioni in caso di larghezza di banda ridotta o numero elevato di richieste.
 
-We've seen this in our system: the web portal calls a web service, which works great if the service responds in a timely manner. High traffic causes problems and so the plan is to use a queue to eliminate the direct link between the front-end apps and your middle-tier web service.
+Abbiamo riscontrato questo problema nel nostro sistema: il portale Web chiama un servizio Web, che funziona perfettamente finché il servizio risponde in maniera tempestiva. Dato che il traffico elevato causa problemi, la soluzione è usare una coda per eliminare il collegamento diretto tra le app front-end e il servizio Web del livello intermedio.
 
-## What is Azure Queue storage?
+## <a name="what-is-azure-queue-storage"></a>Informazioni su Archiviazione code di Azure
 
-Azure Queue storage is an Azure service that implements cloud-based queues. Each queue maintains a list of messages. Application components access a queue using a REST API or an Azure-supplied client library. Typically, you will have one or more _sender_ components and one or more _receiver_ components. Sender components add message to the queue. Receiver components retrieve messages from the front of the queue for processing. The following illustration shows multiple sender applications adding messages to the Azure Queue and one receiver application retrieving the messages.
+Archiviazione code di Azure è un servizio di Azure che implementa code basate sul cloud. Ogni coda gestisce un elenco di messaggi. I componenti delle applicazioni accedono a una coda usando un'API REST o una libreria client fornita da Azure. Generalmente sono presenti uno o più componenti _mittenti_ e uno o più componenti _destinatari_. I componenti mittenti aggiungono messaggi alla coda. I componenti destinatari recuperano i messaggi dall'inizio della coda per l'elaborazione. L'illustrazione seguente mostra più applicazioni mittenti che aggiungono messaggi alla coda di Azure e un'applicazione destinataria che li recupera.
 
-![An illustration showing a high-level architecture of Azure Queue storage](../media/2-queue-overview.png)
+![Illustrazione di un'architettura generale di Archiviazione code di Azure](../media/2-queue-overview.png)
 
-Pricing is based on queue size and number of operations. Larger message queues cost more than smaller queues. Charges are also incurred for each operation, such as adding a message and deleting a message. For pricing details, see [Azure Queue storage pricing](https://azure.microsoft.com/pricing/details/storage/queues/).
+Il prezzo è basato sulle dimensioni della coda e sul numero di operazioni. Più grandi sono le dimensioni di una coda di messaggi, maggiore è il costo. Viene inoltre addebitato un costo per ogni operazione, come l'aggiunta e l'eliminazione di un messaggio. Per informazioni sui prezzi, vedere [Prezzi di Archiviazione code di Azure](https://azure.microsoft.com/pricing/details/storage/queues/).
 
-## Why use queues?
+## <a name="why-use-queues"></a>Perché usare le code?
 
-A queue increases resiliency by temporarily storing waiting messages. At times of low or normal demand, the size of the queue remains small because the destination component removes messages from the queue faster than they are added. At times of high demand, the queue may increase in size, but messages are not lost. The destination component can catch up and empty the queue as demand returns to normal.
+Una coda aumenta la resilienza archiviando temporaneamente i messaggi in attesa. Nei periodi in cui le richieste sono limitate o normali, le dimensioni della coda rimangono ridotte in quanto il componente di destinazione rimuove i messaggi dalla coda più velocemente di quanto vengono aggiunti. Se invece il numero di richieste è elevato, le dimensioni della coda possono aumentare, ma i messaggi non vanno persi. Il componente di destinazione può aggiornare e svuotare la coda quando il numero di richieste torna alla normalità.
 
-A single queue can be up to **500 TB** in size, so it can potentially store _millions_ of messages. The target throughput for a single queue is 2000 messages per second, allowing it to handle high-volume scenarios.
+Una singola coda può raggiungere dimensioni massime di **500 TB**, quindi potenzialmente può archiviare _milioni_ di messaggi. La velocità effettiva da raggiungere per una singola coda è di 2000 messaggi al secondo, velocità che le consente di gestire situazioni di traffico elevato.
 
-Queues let your application scale automatically and immediately when demand changes. This makes them useful for critical business data that would be damaging to lose. Azure offers many other services that scale automatically. For example, the **Autoscale** feature is available on Azure virtual machine scale sets, cloud services, Azure App Service plans, and App Service environments. This lets you define rules that Azure uses to identify periods of high demand and automatically add capacity without involving an administrator. Autoscaling responds to demand quickly, but not instantaneously. By contrast, Azure Queue storage instantaneously handles high demand by storing messages until processing resources are available.
+Le code consentono una scalabilità automatica e immediata dell'applicazione man mano che cambia il numero di richieste. Sono quindi utili per i dati aziendali di importanza critica, la cui perdita causerebbe danni all'organizzazione. Azure offre molti altri servizi a scalabilità automatica. Ad esempio, la funzionalità **Scalabilità automatica** è disponibile nei set di scalabilità di macchine virtuali, nei servizi cloud, nei piani di servizio app e negli ambienti di servizio app di Azure. Grazie a questa funzionalità è possibile definire regole che Azure userà per identificare i periodi di picco delle richieste e aggiungere automaticamente capacità senza coinvolgere un amministratore. La scalabilità automatica risponde alle richieste rapidamente, ma non immediatamente. Archiviazione code di Azure, invece, gestisce istantaneamente i picchi di richieste archiviando i messaggi finché non sono disponibili risorse di elaborazione.
 
-## What is a message?
+## <a name="what-is-a-message"></a>Che cos'è un messaggio?
 
-A message in a queue is a byte array of up to 64 KB. Message contents are not interpreted at all by any Azure component.
+Un messaggio in una coda è una matrice di byte con dimensioni massime di 64 KB. Il contenuto dei messaggi non viene interpretato in alcun modo da nessun componente di Azure.
 
-If you want to create a structured message, you could format the message content using XML or JSON. Your code is responsible for generating and interpreting your custom format. For example, you could make a custom JSON message that looks like the following:
+Se si vuole creare un messaggio strutturato, è possibile formattarne il contenuto tramite XML o JSON. Il codice è responsabile della generazione e dell'interpretazione del formato personalizzato. Ad esempio, si potrebbe creare un messaggio JSON personalizzato con un aspetto simile al seguente:
 
 ```json
 {
@@ -35,26 +35,26 @@ If you want to create a structured message, you could format the message content
 }
 ```
 
-## Creating a storage account
+## <a name="creating-a-storage-account"></a>Creazione di un account di archiviazione
 
-A queue must be part of a storage account. You can create a storage account using the Azure CLI (or PowerShell), or Azure portal. The portal is easiest because it's all guided and prompts you for each piece of information. 
+Una coda deve far parte di un account di archiviazione. È possibile creare un account di archiviazione usando l'interfaccia della riga di comando di Azure (o PowerShell) oppure il portale di Azure. Il portale è il mezzo più semplice perché è completamene guidato e richiede esplicitamente l'immissione di ogni singola informazione. 
 
-The following screenshot shows the location of the Storage accounts category.
+Lo screenshot seguente mostra la posizione della categoria degli account di archiviazione.
 
-![Screenshot of the All services blade with the Storage accounts category highlighted.](../media/2-create-storage-account-1.png)
+![Screenshot del pannello Tutti i servizi con la categoria Account di archiviazione evidenziata.](../media/2-create-storage-account-1.png)
 
-There are several options you can supply when you create the account, most of which you can use the default selection. We covered these options in a previous module, but you can hover over the `(i)` tip associated with each option to get a reminder of what it does. Here's an example of filling out the portal blade.
+Per creare l'account sono disponibili diverse opzioni, ma nella maggior parte dei casi è possibile usare la selezione predefinita. Queste opzioni sono state illustrate in un modulo precedente, ma è possibile passare il puntatore sopra il suggerimento `(i)` associato a ciascuna opzione per visualizzarne una breve descrizione. Ecco un esempio di inserimento delle informazioni nel pannello del portale.
 
-The following screenshot displays the Create storage account blade and the information required to create a storage account.
+Lo screenshot seguente mostra il pannello Crea account di archiviazione e le informazioni necessarie per creare un account di archiviazione.
 
-![Screenshot of the Create storage account blade showing the options to specify when creating a storage account.](../media/2-create-storage-account-2.png)
+![Screenshot del pannello Crea account di archiviazione con le opzioni da specificare per creare un account di archiviazione.](../media/2-create-storage-account-2.png)
 
-### Settings for queues
-When you create a storage account that will contain queues, you should consider the following settings:
+### <a name="settings-for-queues"></a>Impostazioni per le code
+Quando si crea un account di archiviazione che conterrà code, è opportuno considerare le impostazioni seguenti:
 
-- Queues are only available as part of Azure general-purpose storage accounts (v1 or v2). You cannot add them to Blob storage accounts.
-- The **Access tier** setting which is shown for StorageV2 accounts applies only to Blob storage and does not affect queues.
-- You should choose a location that is close to either the source components or destination components or (preferably) both.
-- Data is always replicated to multiple servers to guard against disk failures and other hardware problems. You have a choice of replication strategies: **Locally Redundant Storage (LRS)** is low-cost but vulnerable to disasters that affect an entire data center while **Geo-Redundant Storage (GRS)** replicates data to other Azure data centers. Choose the replication strategy that meets your redundancy needs.
-- The performance tier determines how your message are stored: **Standard** uses magnetic drives while **Premium** uses solid-state drives. Choose Standard if you expect peaks in demand to be short. Consider Premium if queue length sometimes becomes long and you need to minimize the time to access messages.
-- Require secure transfer if sensitive information may pass through the queue. This setting ensures that all connections to the queue are encrypted using Secure Sockets Layer (SSL).
+- Le code sono disponibili solo all'interno degli account di archiviazione per utilizzo generico di Azure (v1 o v2). Non è possibile aggiungerle ad account di archiviazione BLOB.
+- L'impostazione **Livello di accesso** disponibile per gli account di archiviazione v2 si applica solo all'archiviazione BLOB e non ha alcun effetto sulle code.
+- È consigliabile scegliere una posizione vicina ai componenti di origine o a quelli di destinazione oppure (preferibilmente) a entrambi.
+- I dati vengono sempre replicati su più server come misura di protezione da errori del disco e altri problemi a livello di hardware. È possibile scegliere fra due strategie di replica: l'**archiviazione con ridondanza locale** ha costi contenuti ma è vulnerabile agli eventi critici che colpiscono un intero data center, mentre l'**archiviazione con ridondanza geografica** esegue la replica dei dati in altri data center di Azure. Scegliere la strategia di replica più adatta alle proprie esigenze di ridondanza.
+- Il livello di prestazioni determina la modalità di archiviazione dei messaggi: il livello **Standard** usa unità magnetiche, mentre il livello **Premium** usa unità SSD. Scegliere il livello Standard se si prevede che i picchi di richieste siano di breve durata. Scegliere il livello Premium se la lunghezza della coda talvolta aumenta notevolmente e occorre ridurre al minimo il tempo di accesso ai messaggi.
+- Richiedere il trasferimento sicuro se esiste la possibilità che attraverso la coda passino informazioni riservate. Questa impostazione assicura che tutte le connessioni alla coda vengano crittografate tramite SSL (Secure Sockets Layer).

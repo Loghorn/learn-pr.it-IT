@@ -2,9 +2,9 @@
 
 ## <a name="what-is-a-timer-trigger"></a>Cos è un trigger timer?
 
-Un trigger timer è un trigger che esegue una funzione a un intervallo costante. Per creare un trigger timer, è necessario specificare due tipi di informazioni. 
+Un trigger timer è un trigger che esegue una funzione a un intervallo costante. Per creare un trigger timer, è necessario specificare due tipi di informazioni.
 
-1. Un *nome del parametro timestamp*, che è semplicemente un identificatore per accedere al trigger nel codice. 
+1. Un *nome del parametro timestamp*, che è semplicemente un identificatore per accedere al trigger nel codice.
 2. Una *Pianificazione*, ovvero un'*espressione CRON* che imposta l'intervallo del timer.
 
 ## <a name="what-is-a-cron-expression"></a>Cos'è un espressione CRON?
@@ -15,7 +15,7 @@ L'ordine dei sei campi in Azure è: `{second} {minute} {hour} {day} {month} {day
 
 Ad esempio, un'*espressione CRON* per creare un trigger che viene eseguita ogni cinque minuti potrebbe essere:
 
-```
+```log
 0 */5 * * * *
 ```
 
@@ -32,7 +32,7 @@ Per creare un'*espressione CRON*, è necessario avere una conoscenza di base di 
 
 Ora torniamo all'esempio dell'espressione CRON originale. Proviamo a capirla meglio suddividendola campo per campo.
 
-```
+```log
 0 */5 * * * *
 ```
 

@@ -1,6 +1,6 @@
-In this module, you created a new Ubuntu Linux virtual machine in Azure. Using this new Linux VM, you installed the MEAN stack for web development:
+In questo modulo è stata creata una nuova macchina virtuale Ubuntu Linux in Azure. Mediante questa nuova VM Linux è stata completata l'installazione dello stack MEAN per lo sviluppo Web:
 
-- MongoDB for a data store.
-- Express for web request routing.
-- AngularJS for client-side web application functionality.
-- Node.js for server-side web application functionality.
+- MongoDB per un archivio dati.
+- Express per il routing di richieste Web.
+- AngularJS per funzionalità dell'applicazione Web lato client.
+- Node.js per funzionalità dell'applicazione Web lat server.

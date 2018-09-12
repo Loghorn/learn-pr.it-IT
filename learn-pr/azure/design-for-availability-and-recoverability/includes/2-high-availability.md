@@ -44,7 +44,7 @@ La piattaforma cloud di Azure è stata progettata per garantire una disponibilit
 
 * Set di disponibilità
 * Zone di disponibilità
-* Bilanciamento del carico.
+* Bilanciamento del carico
 * Funzionalità PaaS per la disponibilità elevata
 
 ### <a name="availability-sets"></a>Set di disponibilità
@@ -69,7 +69,7 @@ Le aree supportate contengono almeno tre zone di disponibilità. Quando si crean
 
 Le zone di disponibilità sono un servizio di configurazione della disponibilità elevata più recente per le aree di Azure e sono attualmente disponibili in determinate aree geografiche. Se si intende usare questa funzionalità, è importante verificare la disponibilità di questo servizio nell'area in cui si prevede di distribuire l'applicazione. Le zone di disponibilità sono supportate quando si usano macchine virtuali, nonché diversi servizi PaaS. Le zone di disponibilità sostituiscono i set di disponibilità nelle aree geografiche supportate.
 
-### <a name="load-balancing"></a>Bilanciamento del carico.
+### <a name="load-balancing"></a>Bilanciamento del carico
 
 I servizi di bilanciamento del carico consentono di gestire la distribuzione del traffico di rete per un'applicazione. I servizi di bilanciamento del carico sono fondamentali per mantenere l'applicazione resiliente agli errori dei singoli componenti e per garantire che sia disponibile per l'elaborazione delle richieste. Per le applicazioni che non dispongono di un servizio di individuazione incorporato, il bilanciamento del carico è necessario sia per i set di disponibilità che per le zone di disponibilità.
 

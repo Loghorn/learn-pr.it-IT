@@ -1,114 +1,113 @@
 ### YamlMime:ModuleUnit
 uid: learn.build-azure-bot-services-bot.8-knowledge-check
-title: Check your knowledge
+title: Verificare le proprie conoscenze
 metadata:
-  title: Check your knowledge
-  description: Confirm that you understood the steps required to build a chat bot with the Azure Bot Service.
+  title: Verificare le proprie conoscenze
+  description: Verificare di aver compreso i passaggi necessari per compilare un chatbot con il servizio Azure Bot.
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
+  ms.openlocfilehash: 9c4187ec4b1b72632f0ffa9e8a5166f59679e170
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44239088"
 durationInMinutes: 10
 quiz:
-  title: Building neural networks with TensorFlow and the Azure Data Science Virtual Machine
+  title: Building Neural Networks with TensorFlow and the Azure Data Science Virtual Machine (Creazione di reti neurali con TensorFlow e la Data Science Virtual Machine di Azure)
   questions:
-  - content: "When the Azure web app bot was deployed, what all was created?"
+  - content: Cosa è stato creato quando è stato distribuito il bot app Web di Azure?
     choices:
-    - content: "A bot service"
+    - content: Un servizio bot
       isCorrect: false
-      incorrectExplanation: "A bot service was created, but something else was, too."
-    - content: "A web app"
+      incorrectExplanation: È stato creato un servizio bot, ma anche qualcos'altro.
+    - content: Un'app Web
       isCorrect: false
-      incorrectExplanation: "A web app was created, but something else was, too."
-    - content: "A bot service and web app"
+      incorrectExplanation: È stata creata un'app Web, ma anche qualcos'altro.
+    - content: Un servizio bot e un'app Web
       isCorrect: true
-      #TODO: Update explanation - should not instruct user what to do next. Should reinforce knowledge. correctExplanation: "Great! Proceed to the next part of the module."
-    - content: "Nothing got deployed yet"
+    - content: Non è stato ancora distribuito nulla
       isCorrect: false
-      incorrectExplanation: "A deployment happened by this step."
-  - content: "What is QnA Maker used to create?"
+      incorrectExplanation: In questo passaggio è stata eseguita una distribuzione.
+  - content: Per cosa viene usato QnA Maker?
     choices:
-    - content: "A service that takes in a set of questions and answers"
+    - content: Per creare un servizio che accetta un set di domande e risposte
       isCorrect: true
-      #TODO: Update explanation - should not instruct user what to do next. Should reinforce knowledge. correctExplanation: "Great! Proceed to the next part of the lab."
-    - content: "A service to answer questions"
+    - content: Per creare un servizio per rispondere alle domande
       isCorrect: false
-      incorrectExplanation: "It helps answer questions, but that's not all QnA Maker can do."
-    - content: "A service that generates new answers to questions"
+      incorrectExplanation: Aiuta a rispondere alle domande, ma QnA Maker può fare anche altro.
+    - content: Un servizio che genera nuove risposte a domande
       isCorrect: false
-      incorrectExplanation: "QnA Maker doesn't generate new answers, but it does give answers it knows about."
-    - content: "A bot"
+      incorrectExplanation: QnA Maker non genera nuove risposte, ma fornisce le risposte che conosce.
+    - content: Per creare un bot
       isCorrect: false
-      incorrectExplanation: "QnA Maker can be associated with a bot, but it doesn't create one."
-  - content: "What ways can you populate your knowledge base in QnA Maker?"
+      incorrectExplanation: QnA Maker può essere associato a un bot, ma non ne crea uno.
+  - content: In che modo è possibile popolare la knowledge base in QnA Maker?
     choices:
-    - content: "Can only manually populate your knowledge base"
+    - content: Si può popolare la knowledge base solo manualmente
       isCorrect: false
-      incorrectExplanation: "You could manually populate the knowledge base, but there are other ways."
-    - content: "With a text file"
+      incorrectExplanation: È possibile popolare manualmente la knowledge base, ma esistono altri modi.
+    - content: Con un file di testo
       isCorrect: false
-      incorrectExplanation: "A text file isn't the only way to populate the knowledge base."
-    - content: "With a URL"
+      incorrectExplanation: Un file di testo non è l'unico modo per popolare la knowledge base.
+    - content: Con un URL
       isCorrect: false
-      incorrectExplanation: "A URL isn't the only way to populate the knowledge base."
-    - content: "With a text file or URL"
+      incorrectExplanation: Un URL non è l'unico modo per popolare la knowledge base.
+    - content: Con un file di testo o un URL
       isCorrect: true
-      #TODO: Update explanation - should not instruct user what to do next. Should reinforce knowledge. correctExplanation: "Great! Proceed to the next part of the lab."
-  - content: "What step(s) are needed to use QnA Maker in your applications?"
+  - content: Quali sono i passaggi necessari per usare QnA Maker nelle applicazioni?
     choices:
-    - content: "Save"
+    - content: Salvare
       isCorrect: false
-      incorrectExplanation: "You do need to save, but other steps are needed."
-    - content: "Save and train"
+      incorrectExplanation: È necessario salvare, ma sono necessari altri passaggi.
+    - content: Salvare ed eseguire il training
       isCorrect: false
-      incorrectExplanation: "Training is important, but what else do you need to consume the service?"
-    - content: "Save, train, and publish"
+      incorrectExplanation: Eseguire il training è importante, ma cos'altro occorre per utilizzare il servizio?
+    - content: Salvare, eseguire il training e pubblicare
       isCorrect: true
-      #TODO: Update explanation - should not instruct user what to do next. Should reinforce knowledge. correctExplanation: "Great! Proceed to the next part of the lab."
-    - content: "Publish"
+    - content: Pubblicare
       isCorrect: false
-      incorrectExplanation: "Unfortunately, you can't just go straight to publishing."
-  - content: "Other than the bot framework packages, what other package is needed to build and consume RESTful services?"
+      incorrectExplanation: Non è possibile passare direttamente alla pubblicazione.
+  - content: Oltre ai pacchetti Bot Framework, quali altri pacchetti sono necessari per creare e utilizzare servizi RESTful?
     choices:
-    - content: "restify"
+    - content: Restify
       isCorrect: true
-      #TODO: Update explanation - should not instruct user what to do next. Should reinforce knowledge. correctExplanation: "Great! Proceed to the next part of the lab."
-    - content: "express"
+    - content: Express
       isCorrect: false
-      incorrectExplanation: "Express is used to as a full web framework, not to just create RESTful services."
-    - content: "swagger"
+      incorrectExplanation: Express viene usato per fungere da framework Web completo, non solo per creare servizi RESTful.
+    - content: Swagger
       isCorrect: false
-      incorrectExplanation: "Swagger is used to specify, build, and test your APIs, not just to create RESTful services."
-    - content: "babel"
+      incorrectExplanation: Swagger viene usato per specificare, compilare e testare le API, non solo per creare servizi RESTful.
+    - content: Babel
       isCorrect: false
-      incorrectExplanation: "Babel is used to compile new versions of JavaScript for browsers that may not support the new syntax."
-  - content: "In the Azure portal for the web app bot, what section do you go to add the QnA Maker settings?"
+      incorrectExplanation: Babel viene usato per compilare nuove versioni di JavaScript per i browser che non supportano la nuova sintassi.
+  - content: In quale sezione del portale di Azure per il bot app Web si aggiungono le impostazioni di QnA Maker?
     choices:
-    - content: "All app service settings"
+    - content: All App service settings (Tutte le impostazioni del servizio app)
       isCorrect: false
-      incorrectExplanation: "This setting allows you to change settings on the app service associated with the web app."
-    - content: "Application settings"
+      incorrectExplanation: Questa impostazione consente di modificare le impostazioni nel servizio app associato all'app Web.
+    - content: Impostazioni applicazione
       isCorrect: true
-      correctExplanation: "Great! Proceed to the next part of the lab."
-    - content: "Build"
+      correctExplanation: Corretto. Passare alla parte successiva del lab.
+    - content: Compilazione
       isCorrect: false
-      incorrectExplanation: "This section allows you to view and get the code for the bot."
-    - content: "Channels"
+      incorrectExplanation: Questa sezione consente di visualizzare e ottenere il codice per il bot.
+    - content: Canali
       isCorrect: false
-      incorrectExplanation: "This section allows you to hook the bot up to different services to interact with the bot."
-  - content: "If you wanted to add your bot to Microsoft Teams, what section in the Azure portal do you go to?"
+      incorrectExplanation: Questa sezione consente di collegare il bot a diversi servizi perché interagisca con essi.
+  - content: Se si vuole aggiungere il bot a Microsoft Teams, a quale sezione del portale di Azure occorre passare?
     choices:
-    - content: "All app service settings"
+    - content: All App service settings (Tutte le impostazioni del servizio app)
       isCorrect: false
-      incorrectExplanation: "This setting allows you to change."
-    - content: "Application settings"
+      incorrectExplanation: Questa impostazione consente la modifica.
+    - content: Impostazioni applicazione
       isCorrect: false
-      incorrectExplanation: "This setting allows you to specify specific settings for the web application."
-    - content: "Build"
+      incorrectExplanation: Questa impostazione consente di specificare impostazioni specifiche per l'applicazione Web.
+    - content: Compilazione
       isCorrect: false
-      incorrectExplanation: "This section allows you to view and get the code for the bot."
-    - content: "Channels"
+      incorrectExplanation: Questa sezione consente di visualizzare e ottenere il codice per il bot.
+    - content: Canali
       isCorrect: true
-      #TODO: Update explanation - should not instruct user what to do next. Should reinforce knowledge. correctExplanation: "Great! Proceed to the next part of the lab."

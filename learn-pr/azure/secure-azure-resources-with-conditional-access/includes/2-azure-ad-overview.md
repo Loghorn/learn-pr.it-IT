@@ -11,9 +11,10 @@ Quando si crea la directory, l'account diventa automaticamente un amministratore
 Azure AD Premium include alcune funzionalità, ad esempio Multi-Factor Authentication, e criteri di accesso condizionale. Se queste funzionalità vengono usate insieme, offrono la massima granularità per la protezione dell'accesso alle applicazioni.
 
 I criteri di accesso condizionale sono costituiti da:
-   * Utenti o gruppi
-   * Applicazioni a cui si tenta di accedere
-   * Controlli da effettuare, ad esempio Multi-Factor Authentication
+
+- Utenti o gruppi
+- Applicazioni a cui si tenta di accedere
+- Controlli da effettuare, ad esempio Multi-Factor Authentication
 
 ## <a name="summary"></a>Riepilogo
 
