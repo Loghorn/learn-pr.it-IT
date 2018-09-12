@@ -47,7 +47,7 @@ az container logs --resource-group myResourceGroup --name mycontainer-restart-de
 
 Output:
 
-```bash
+```json
 [('the', 990),
  ('and', 702),
  ('of', 628),

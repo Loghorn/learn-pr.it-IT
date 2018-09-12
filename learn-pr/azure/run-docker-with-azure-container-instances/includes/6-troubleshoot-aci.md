@@ -18,7 +18,7 @@ az container logs --resource-group myResourceGroup --name mycontainer
 
 Di seguito è riportato l'output del log generato dal contenitore di esempio dopo aver eseguito più volte l'accesso all'app Web:
 
-```bash
+```output
 listening on port 80
 ::ffff:0.0.0.0 - - [20/Aug/2018:21:44:24 +0000] "GET / HTTP/1.1" 200 1663 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36"
 ::ffff:0.0.0.0 - - [20/Aug/2018:21:44:24 +0000] "GET /favicon.ico HTTP/1.1" 404 150 "http://23.101.136.193/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36"
@@ -37,7 +37,7 @@ az container attach --resource-group myResourceGroup --name mycontainer
 Output di esempio:
 
 
-```bash
+```output
 Container 'mycontainer' is in state 'Running'...
 (count: 1) (last timestamp: 2018-08-20 21:43:26+00:00) pulling image "microsoft/aci-helloworld"
 (count: 1) (last timestamp: 2018-08-20 21:43:32+00:00) Successfully pulled image "microsoft/aci-helloworld"
@@ -61,7 +61,7 @@ az container exec --resource-group myResourceGroup --name mycontainer --exec-com
 
 Una volta completato il comando, si potrà lavorare all'interno del contenitore. In questo esempio, è stato eseguito il comando `ls` per visualizzare il contenuto della directory di lavoro:
 
-```bash
+```output
 usr/src/app # ls
 index.html         node_modules       package.json
 index.js           package-lock.json
@@ -85,7 +85,7 @@ az monitor metrics list --resource $CONTAINER_ID --metric CPUUsage --output tabl
 
 Output di esempio:
 
-```bash
+```output
 Timestamp            Name              Average
 -------------------  ------------  -----------
 2018-08-20 21:39:00  CPU Usage
@@ -113,7 +113,7 @@ az monitor metrics list --resource $CONTAINER_ID --metric MemoryUsage --output t
 
 Output di esempio:
 
-```bash
+```output
 Timestamp            Name              Average
 -------------------  ------------  -----------
 2018-08-20 21:43:00  Memory Usage

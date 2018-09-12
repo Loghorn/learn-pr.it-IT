@@ -1,6 +1,6 @@
 L'interfaccia della riga di comando di Azure è un programma della riga di comando per connettersi ad Azure ed eseguire comandi amministrativi sulle risorse di Azure. Viene eseguita in Linux, macOS e Windows e consente ad amministratori e sviluppatori di eseguire i comandi tramite un terminale o un prompt della riga di comando (o script) anziché tramite un Web browser. Per riavviare una macchina virtuale, ad esempio, si userebbe un comando simile al seguente:
 
- ```bash
+ ```azurecli
  az vm restart -g MyResourceGroup -n MyVm
  ```
 
@@ -20,7 +20,7 @@ Per installare l'interfaccia della riga di comando di Azure in Windows, occorre 
 
 Se si vogliono usare i comandi dell'interfaccia della riga di comando di Azure negli script, è necessario essere a conoscenza di eventuali problemi correlati alla "shell" o all'ambiente usato per l'esecuzione dello script. In una shell bash, ad esempio, viene usata la sintassi seguente per l'impostazione delle variabili:
 
- ```bash
+ ```azurecli
  variable="value"
  variable=integer
  ```

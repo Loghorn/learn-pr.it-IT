@@ -8,12 +8,12 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: e649fb682e0bffdbac9c29779913e3117b5bb97c
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: f05922f6048219adc45ed0e467861c72cdd3c030
+  ms.sourcegitcommit: 4605f6af0037078761ef50cac6879711c7319635
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44237080"
+  ms.lasthandoff: 09/11/2018
+  ms.locfileid: "44344451"
 title: Garantire l'accesso tramite il controllo degli accessi in base al ruolo e Azure PowerShell
 durationInMinutes: 10
 content: '[!include[](includes/6-grant-access-powershell.md)]'

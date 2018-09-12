@@ -30,7 +30,7 @@ az ad sp create-for-rbac --scopes $(az acr show --name $ACR_NAME --query id --ou
 
 L'output della creazione dell'entità servizio avrà un aspetto simile al seguente. Prendere nota dei valori `appId` e `password`. Questi valori verranno archiviati dell'insieme di credenziali delle chiavi di Azure.
 
-```bash
+```output
 {
   "appId": "1fa05179-0000-0000-0000-e269a4e97c41",
   "displayName": "azure-cli-2018-08-19-22-35-26",

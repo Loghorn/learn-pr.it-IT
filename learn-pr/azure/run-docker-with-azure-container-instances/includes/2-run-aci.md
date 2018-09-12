@@ -39,7 +39,7 @@ az container show \
 
 Quando si esegue il comando, vengono visualizzati il nome di dominio completo (FQDN) del contenitore e il relativo stato di provisioning:
 
-```bash
+```output
 FQDN                                    ProvisioningState
 --------------------------------------  -------------------
 aci-demo.eastus.azurecontainer.io       Succeeded

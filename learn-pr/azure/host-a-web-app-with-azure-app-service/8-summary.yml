@@ -1,5 +1,5 @@
 ### YamlMime:ModuleUnit
-uid: learn.principles-cloud-computing.7-summary
+uid: learn.host-a-web-application-with-azure-app-service.8-summary
 title: Riepilogo
 metadata:
   title: Riepilogo
@@ -9,11 +9,11 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 5c854b5b57ecf9f5e09d30f04bca42e671969d3f
+  ms.openlocfilehash: 2851f0a0c34e94200117396710f0ad3a6493925d
   ms.sourcegitcommit: 7de323416e472639edcff135bfc7d47bd5715256
   ms.translationtype: HT
   ms.contentlocale: it-IT
   ms.lasthandoff: 09/11/2018
-  ms.locfileid: "44370549"
-durationInMinutes: 3
-content: '[!include[](includes/7-summary.md)]'
+  ms.locfileid: "44372580"
+durationInMinutes: 5
+content: '[!include[](includes/8-summary.md)]'
