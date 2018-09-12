@@ -1,54 +1,58 @@
 ### YamlMime:ModuleUnit
 uid: learn.interactive-deep-learning.3q-docker
-title: <span data-ttu-id="a1858-101">Verifica delle conoscenze</span><span class="sxs-lookup"><span data-stu-id="a1858-101">Knowledege Check</span></span>
+title: <span data-ttu-id="6478a-101">Verifica delle conoscenze</span><span class="sxs-lookup"><span data-stu-id="6478a-101">Knowledege Check</span></span>
 metadata:
-  title: <span data-ttu-id="a1858-102">Verifica delle conoscenze</span><span class="sxs-lookup"><span data-stu-id="a1858-102">Knowledege Check</span></span>
-  description: '<span data-ttu-id="a1858-103">Verifica delle conoscenze: Docker + Apprendimento avanzato</span><span class="sxs-lookup"><span data-stu-id="a1858-103">Docker + Deep Learning Knowledege Check</span></span>'
-  displayType: one-column
-  ms.openlocfilehash: 1327473f4e03e1d186b07e110c14c3439d7acb3b
-  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  title: <span data-ttu-id="6478a-102">Verifica delle conoscenze</span><span class="sxs-lookup"><span data-stu-id="6478a-102">Knowledege Check</span></span>
+  description: '<span data-ttu-id="6478a-103">Verifica delle conoscenze: Docker + Apprendimento avanzato</span><span class="sxs-lookup"><span data-stu-id="6478a-103">Docker + Deep Learning Knowledege Check</span></span>'
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 083fc6a378cf9502b0f58ec211c17393c2d1ebb2
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43835188"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44245291"
 durationInMinutes: 2
-content: <span data-ttu-id="a1858-104">Rispondere alle domande seguenti per continuare</span><span class="sxs-lookup"><span data-stu-id="a1858-104">Answer the following to continue</span></span>
+content: <span data-ttu-id="6478a-104">Rispondere alle domande seguenti per continuare</span><span class="sxs-lookup"><span data-stu-id="6478a-104">Answer the following to continue</span></span>
 quiz:
-  title: '<span data-ttu-id="a1858-105">Test di apprendimento avanzato: Docker</span><span class="sxs-lookup"><span data-stu-id="a1858-105">Docker Deep Learning Quiz</span></span>'
+  title: '<span data-ttu-id="6478a-105">Test di apprendimento avanzato: Docker</span><span class="sxs-lookup"><span data-stu-id="6478a-105">Docker Deep Learning Quiz</span></span>'
   questions:
-  - content: <span data-ttu-id="a1858-106">Che cos'è CUDA?</span><span class="sxs-lookup"><span data-stu-id="a1858-106">What is CUDA?</span></span>
+  - content: <span data-ttu-id="6478a-106">Che cos'è CUDA?</span><span class="sxs-lookup"><span data-stu-id="6478a-106">What is CUDA?</span></span>
     choices:
-    - content: <span data-ttu-id="a1858-107">CUDA è un'API e una piattaforma di calcolo parallela.</span><span class="sxs-lookup"><span data-stu-id="a1858-107">CUDA is a parallel computing platform and API.</span></span>
+    - content: <span data-ttu-id="6478a-107">CUDA è un'API e una piattaforma di calcolo parallela.</span><span class="sxs-lookup"><span data-stu-id="6478a-107">CUDA is a parallel computing platform and API.</span></span>
       isCorrect: true
-    - content: <span data-ttu-id="a1858-108">CUDA è un modello GPU molto potente fornito da Nvidia. Il suo nome deriva da una famosa hot rod degli anni '60.</span><span class="sxs-lookup"><span data-stu-id="a1858-108">CUDA is a super powerful GPU model provided by Nvidia and nicknamed after a famous hotrod from the 60s.</span></span>
+    - content: <span data-ttu-id="6478a-108">CUDA è un modello GPU molto potente fornito da Nvidia. Il suo nome deriva da una famosa hot rod degli anni '60.</span><span class="sxs-lookup"><span data-stu-id="6478a-108">CUDA is a super powerful GPU model provided by Nvidia and nicknamed after a famous hotrod from the 60s.</span></span>
       isCorrect: false
-    - content: <span data-ttu-id="a1858-109">CUDA è un'architettura di apprendimento avanzato usata per la classificazione delle immagini.</span><span class="sxs-lookup"><span data-stu-id="a1858-109">CUDA is a deep learning architecture used for image classification.</span></span>
+    - content: <span data-ttu-id="6478a-109">CUDA è un'architettura di apprendimento avanzato usata per la classificazione delle immagini.</span><span class="sxs-lookup"><span data-stu-id="6478a-109">CUDA is a deep learning architecture used for image classification.</span></span>
       isCorrect: false
-  - content: <span data-ttu-id="a1858-110">Che cos'è Docker?</span><span class="sxs-lookup"><span data-stu-id="a1858-110">What is docker?</span></span>
+  - content: <span data-ttu-id="6478a-110">Che cos'è Docker?</span><span class="sxs-lookup"><span data-stu-id="6478a-110">What is docker?</span></span>
     choices:
-    - content: <span data-ttu-id="a1858-111">Docker è un framework per le reti neurali di training.</span><span class="sxs-lookup"><span data-stu-id="a1858-111">Docker is a framework for training neural networks.</span></span>
+    - content: <span data-ttu-id="6478a-111">Docker è un framework per le reti neurali di training.</span><span class="sxs-lookup"><span data-stu-id="6478a-111">Docker is a framework for training neural networks.</span></span>
       isCorrect: false
-    - content: <span data-ttu-id="a1858-112">Docker è un'applicazione distribuita con piattaforma aperta.</span><span class="sxs-lookup"><span data-stu-id="a1858-112">Docker is an open platform distributed applications.</span></span>
-      correctExplanation: <span data-ttu-id="a1858-113">Docker è una piattaforma aperta concepita per sviluppatori e amministratori di sistema che desiderano compilare, distribuire ed eseguire applicazioni distribuite su computer portatili, macchine virtuali data center o cloud.</span><span class="sxs-lookup"><span data-stu-id="a1858-113">Docker is an open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud.</span></span>
+    - content: <span data-ttu-id="6478a-112">Docker è un'applicazione distribuita con piattaforma aperta.</span><span class="sxs-lookup"><span data-stu-id="6478a-112">Docker is an open platform distributed applications.</span></span>
+      correctExplanation: <span data-ttu-id="6478a-113">Docker è una piattaforma aperta concepita per sviluppatori e amministratori di sistema che desiderano compilare, distribuire ed eseguire applicazioni distribuite su computer portatili, macchine virtuali data center o cloud.</span><span class="sxs-lookup"><span data-stu-id="6478a-113">Docker is an open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud.</span></span>
       isCorrect: true
-    - content: <span data-ttu-id="a1858-114">Docker è una piattaforma per le app Web.</span><span class="sxs-lookup"><span data-stu-id="a1858-114">Docker is a platform for webapps.</span></span>
+    - content: <span data-ttu-id="6478a-114">Docker è una piattaforma per le app Web.</span><span class="sxs-lookup"><span data-stu-id="6478a-114">Docker is a platform for webapps.</span></span>
       isCorrect: false
-  - content: <span data-ttu-id="a1858-115">Qual è la differenza principale tra Nvidia-Docker e Docker?</span><span class="sxs-lookup"><span data-stu-id="a1858-115">What is the main difference between Nvidia-Docker and Docker?</span></span>
+  - content: <span data-ttu-id="6478a-115">Qual è la differenza principale tra Nvidia-Docker e Docker?</span><span class="sxs-lookup"><span data-stu-id="6478a-115">What is the main difference between Nvidia-Docker and Docker?</span></span>
     choices:
-    - content: <span data-ttu-id="a1858-116">Docker viene eseguito in Windows, mentre Nvidia-Docker viene eseguito solo in Linux.</span><span class="sxs-lookup"><span data-stu-id="a1858-116">Docker runs on windows and Nvidia-Docker runs only on linux.</span></span>
+    - content: <span data-ttu-id="6478a-116">Docker viene eseguito in Windows, mentre Nvidia-Docker viene eseguito solo in Linux.</span><span class="sxs-lookup"><span data-stu-id="6478a-116">Docker runs on windows and Nvidia-Docker runs only on linux.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="a1858-117">Anche se questa risposta è corretta, non si tratta della differenza principale.</span><span class="sxs-lookup"><span data-stu-id="a1858-117">While this answer is correct, it is not the main difference.</span></span>
-    - content: <span data-ttu-id="a1858-118">Nvidia Docker fornisce il supporto per GPU Nvidia, mentre Docker supporta solo CPU</span><span class="sxs-lookup"><span data-stu-id="a1858-118">Nvidia Docker provides support for Nvidia GPUs where as a Docker supports only CPUs</span></span>
+      incorrectExplanation: <span data-ttu-id="6478a-117">Anche se questa risposta è corretta, non si tratta della differenza principale.</span><span class="sxs-lookup"><span data-stu-id="6478a-117">While this answer is correct, it is not the main difference.</span></span>
+    - content: <span data-ttu-id="6478a-118">Nvidia Docker fornisce il supporto per GPU Nvidia, mentre Docker supporta solo CPU</span><span class="sxs-lookup"><span data-stu-id="6478a-118">Nvidia Docker provides support for Nvidia GPUs where as a Docker supports only CPUs</span></span>
       isCorrect: true
-    - content: <span data-ttu-id="a1858-119">Docker supporta tutte le GPU Nvidia-Docker ed è più leggero in quanto deve solo supportare le GPU Nvidia.</span><span class="sxs-lookup"><span data-stu-id="a1858-119">Docker supports all GPUs Nvidia-Docker is more light weight since it only needs ot support Nvidia GPUs.</span></span>
+    - content: <span data-ttu-id="6478a-119">Docker supporta tutte le GPU Nvidia-Docker ed è più leggero in quanto deve solo supportare le GPU Nvidia.</span><span class="sxs-lookup"><span data-stu-id="6478a-119">Docker supports all GPUs Nvidia-Docker is more light weight since it only needs ot support Nvidia GPUs.</span></span>
       isCorrect: false
-  - content: <span data-ttu-id="a1858-120">Qual è uno dei principali problemi in termini di dipendenza riscontrati quando si usa la DSVM (Data Science Virtual Machine)?</span><span class="sxs-lookup"><span data-stu-id="a1858-120">What is one of the main dependency challenges faced when using the DSVM?</span></span>
+  - content: <span data-ttu-id="6478a-120">Qual è uno dei principali problemi in termini di dipendenza riscontrati quando si usa la DSVM (Data Science Virtual Machine)?</span><span class="sxs-lookup"><span data-stu-id="6478a-120">What is one of the main dependency challenges faced when using the DSVM?</span></span>
     choices:
-    - content: <span data-ttu-id="a1858-121">La DSVM viene eseguita in modalità sandbox e non fornisce il supporto diretto per l'installazione di nuovi pacchetti.</span><span class="sxs-lookup"><span data-stu-id="a1858-121">The DSVM is sandboxed and doesn't provide direct support for installing new packages.</span></span>
-      incorrectExplanation: <span data-ttu-id="a1858-122">Le DSVM sono immagini di macchine virtuali di Azure preinstallate, configurate e testate con alcuni degli strumenti più diffusi usati comunemente per analisi dei dati, apprendimento automatico e training di apprendimento avanzato. Sono personalizzabili.</span><span class="sxs-lookup"><span data-stu-id="a1858-122">DSVMs are Azure Virtual Machine images, pre-installed, configured, and tested with several popular tools that are commonly used for data analytics, machine learning, and deep learning training, they are customizable.</span></span>
+    - content: <span data-ttu-id="6478a-121">La DSVM viene eseguita in modalità sandbox e non fornisce il supporto diretto per l'installazione di nuovi pacchetti.</span><span class="sxs-lookup"><span data-stu-id="6478a-121">The DSVM is sandboxed and doesn't provide direct support for installing new packages.</span></span>
+      incorrectExplanation: <span data-ttu-id="6478a-122">Le DSVM sono immagini di macchine virtuali di Azure preinstallate, configurate e testate con alcuni degli strumenti più diffusi usati comunemente per analisi dei dati, apprendimento automatico e training di apprendimento avanzato. Sono personalizzabili.</span><span class="sxs-lookup"><span data-stu-id="6478a-122">DSVMs are Azure Virtual Machine images, pre-installed, configured, and tested with several popular tools that are commonly used for data analytics, machine learning, and deep learning training, they are customizable.</span></span>
       isCorrect: false
-    - content: <span data-ttu-id="a1858-123">La DSVM supporta solo CNTK e le dipendenze dei servizi cognitivi.</span><span class="sxs-lookup"><span data-stu-id="a1858-123">The DSVM only supports CNTK and Cognitive Service dependencies.</span></span>
-      incorrectExplanation: <span data-ttu-id="a1858-124">Le DSVM forniscono opzioni predefinite di supporto per diversi framework molto diffusi, ad esempio PyTorch, Chainer e Tensorflow.</span><span class="sxs-lookup"><span data-stu-id="a1858-124">DSVMs provide out of the box support for many popular frameworks such as PyTorch, Chainer, and Tensorflow.</span></span>
+    - content: <span data-ttu-id="6478a-123">La DSVM supporta solo CNTK e le dipendenze dei servizi cognitivi.</span><span class="sxs-lookup"><span data-stu-id="6478a-123">The DSVM only supports CNTK and Cognitive Service dependencies.</span></span>
+      incorrectExplanation: <span data-ttu-id="6478a-124">Le DSVM forniscono opzioni predefinite di supporto per diversi framework molto diffusi, ad esempio PyTorch, Chainer e Tensorflow.</span><span class="sxs-lookup"><span data-stu-id="6478a-124">DSVMs provide out of the box support for many popular frameworks such as PyTorch, Chainer, and Tensorflow.</span></span>
       isCorrect: false
-    - content: <span data-ttu-id="a1858-125">Alcuni pacchetti e framework per l'apprendimento avanzato richiedono diversi ambienti, driver GPU pacchetti binari</span><span class="sxs-lookup"><span data-stu-id="a1858-125">Certain deep learning frameworks and packages require different enviorments, GPU drivers and binary packages</span></span>
+    - content: <span data-ttu-id="6478a-125">Alcuni pacchetti e framework per l'apprendimento avanzato richiedono diversi ambienti, driver GPU pacchetti binari</span><span class="sxs-lookup"><span data-stu-id="6478a-125">Certain deep learning frameworks and packages require different enviorments, GPU drivers and binary packages</span></span>
       isCorrect: true
