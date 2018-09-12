@@ -1,0 +1,20 @@
+### YamlMime:ModuleUnit
+uid: learn.cosmos-db-app-with-vscode.setup-cosmosdb
+metadata:
+  title: <span data-ttu-id="d6191-101">Configurare il database e la raccolta di Cosmos DB</span><span class="sxs-lookup"><span data-stu-id="d6191-101">Setup your Cosmos DB database and collection</span></span>
+  description: <span data-ttu-id="d6191-102">Configurare il database e la raccolta di Cosmos DB</span><span class="sxs-lookup"><span data-stu-id="d6191-102">Setup your Cosmos DB database and collection</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: b9684227e9c78c821d44475bdb8cd5fdcdaf63e4
+  ms.sourcegitcommit: 7de323416e472639edcff135bfc7d47bd5715256
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/11/2018
+  ms.locfileid: "44372647"
+title: <span data-ttu-id="d6191-103">Configurare il database e la raccolta di Cosmos DB</span><span class="sxs-lookup"><span data-stu-id="d6191-103">Setup your Cosmos DB database and collection</span></span>
+durationInMinutes: 5
+interactive: bash
+content: '[!include[](includes/setup-cosmosdb.md)]'
