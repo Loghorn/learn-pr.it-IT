@@ -2,15 +2,15 @@ Capita di frequente che più documenti nel database debbano essere aggiornati co
 
 ## <a name="create-a-stored-procedure-in-your-app"></a>Creare una stored procedure nell'app
 
-In questa stored procedure, OrderId, che contiene un elenco di tutti gli articoli nell'ordine, viene usato per calcolare il totale di un ordine. Il totale degli ordini viene calcolato dalla somma degli articoli nell'ordine, meno eventuali bonus (crediti) del cliente e tenendo conto di eventuali codici di coupon.
+In questa stored procedure OrderId, che contiene un elenco di tutti gli articoli nell'ordine, viene usato per calcolare il totale di un ordine. Il totale degli ordini viene calcolato sommando gli articoli nell'ordine, sottraendo eventuali bonus (crediti) del cliente e tenendo conto di eventuali codici di coupon.
 
-1. In Visual Studio Code, nella scheda Azure, espandere **modulo di apprendimento (SQL)** > **Utenti** > **WebCustomers**, fare clic con il pulsante destro del mouse su **Stored procedure** e quindi fare clic su **Crea Stored Procedure**.
+1. Nella scheda Azure in Visual Studio Code espandere il **modulo di apprendimento (SQL)** > **Utenti** > **WebCustomers**, fare clic con il pulsante destro del mouse su **Stored procedure**, quindi fare clic su **Crea Stored Procedure**.
 
-1. Nella casella di testo nella parte superiore della schermata, digitare *UpdateOrderTotal* e premere Invio per assegnare un nome alla stored procedure.
+1. Nella casella di testo nella parte superiore della schermata digitare *UpdateOrderTotal* e premere Invio per assegnare un nome alla stored procedure.
 
 1. Espandere **Stored procedure** e fare clic su **UpdateOrderTotal**.
 
-1. Per impostazione predefinita, viene fornita una stored procedure che recupera il primo elemento.
+1. Per impostazione predefinita, viene offerta una stored procedure che recupera il primo elemento.
 
 1. Per eseguire questa stored procedure dall'applicazione, aggiungere il codice seguente al file Program.cs.
 
@@ -41,23 +41,24 @@ In questa stored procedure, OrderId, che contiene un elenco di tutti gli articol
     ```
     dotnet run
     ```
-    La console mostra l'output che indica il completamento della stored procedure.
+    La console visualizza l'output indicando il completamento della stored procedure.
 
 ## <a name="clean-up"></a>Eseguire la pulizia
+<!---TODO: Update for sandbox?--->
 
 Se si prevede di continuare a utilizzare i moduli in questo percorso di apprendimento, ignorare il processo di pulizia, altrimenti usare la procedura seguente per eliminare le risorse per evitare di incorrere in addebiti per l'uso del servizio.
 
-1. Nel portale di Azure selezionare **Gruppi di risorse** all'estrema sinistra e quindi selezionare il gruppo di risorse creato.  
+1. Nel portale di Azure selezionare **Gruppi di risorse** all'estrema sinistra, quindi selezionare il gruppo di risorse creato.  
 
     Se il menu a sinistra è compresso, fare clic sul ![pulsante Espandi](../media/5-javascript-programming/expand.png) per espanderlo.
 
    ![Metriche nel portale di Azure](../media/5-javascript-programming/delete-resources-select.png)
 
-1. Nella nuova finestra selezionare il gruppo di risorse e quindi fare clic su **Elimina gruppo di risorse**.
+1. Nella nuova finestra selezionare il gruppo di risorse e fare clic su **Elimina gruppo di risorse**.
 
    ![Metriche nel portale di Azure](../media/5-javascript-programming/delete-resources.png)
 
-1. Nella nuova finestra digitare il nome del gruppo di risorse da eliminare e quindi fare clic su **Elimina**.
+1. Nella nuova finestra digitare il nome del gruppo di risorse da eliminare, quindi fai clic su **Elimina**.
 
 ## <a name="summary"></a>Riepilogo
 
