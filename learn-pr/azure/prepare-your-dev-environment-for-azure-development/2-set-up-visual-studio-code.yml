@@ -1,14 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.prepare-azure-dev-environment.2-set-up-visual-studio-code
-title: <span data-ttu-id="8eed3-101">Utilizzo di Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="8eed3-101">Using Visual Studio Code</span></span>
+title: <span data-ttu-id="8bd9d-101">Utilizzo di Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="8bd9d-101">Using Visual Studio Code</span></span>
 metadata:
-  title: <span data-ttu-id="8eed3-102">Utilizzo di Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="8eed3-102">Using Visual Studio Code</span></span>
-  description: <span data-ttu-id="8eed3-103">Utilizzo di Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="8eed3-103">Using Visual Studio Code</span></span>
-  ms.openlocfilehash: 306759ba8db89f4aec6fcf0b6aa06b030b52ff4d
-  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  title: <span data-ttu-id="8bd9d-102">Utilizzo di Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="8bd9d-102">Using Visual Studio Code</span></span>
+  description: <span data-ttu-id="8bd9d-103">Utilizzo di Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="8bd9d-103">Using Visual Studio Code</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 4acd62c2b33c9f766213c8716c1fbe83eb0542ea
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43835594"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44247297"
 durationInMinutes: 5
 content: '[!include[](includes/2-set-up-visual-studio-code.md)]'

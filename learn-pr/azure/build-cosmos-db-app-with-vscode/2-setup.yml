@@ -1,14 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.cosmos-db-app-with-vscode.2-setup
 metadata:
-  title: <span data-ttu-id="b40da-101">Configurare l'app in Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="b40da-101">Set up your app in Visual Studio Code</span></span>
-  description: <span data-ttu-id="b40da-102">Configurare l'app in Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="b40da-102">Set up your app in Visual Studio Code</span></span>
-  ms.openlocfilehash: 84b7016b85cc49165abfc4301f8d3b8e26527e73
-  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  title: <span data-ttu-id="63434-101">Configurare l'app in Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="63434-101">Set up your app in Visual Studio Code</span></span>
+  description: <span data-ttu-id="63434-102">Configurare l'app in Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="63434-102">Set up your app in Visual Studio Code</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: aeb3b265dc618556f17ab4e08fc8bcdee79f560d
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43836529"
-title: <span data-ttu-id="b40da-103">Configurare l'app in Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="b40da-103">Set up your app in Visual Studio Code</span></span>
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44235312"
+title: <span data-ttu-id="63434-103">Configurare l'app in Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="63434-103">Set up your app in Visual Studio Code</span></span>
 durationInMinutes: 15
 content: '[!include[](includes/2-setup.md)]'

@@ -1,15 +1,21 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-linux-vm-in-azure.3-exercise-generate-ssh-key
-title: <span data-ttu-id="c620c-101">Scegliere un metodo di autenticazione per SSH</span><span class="sxs-lookup"><span data-stu-id="c620c-101">Decide an authentication method for SSH</span></span>
+title: <span data-ttu-id="54b3f-101">Scegliere un metodo di autenticazione per SSH</span><span class="sxs-lookup"><span data-stu-id="54b3f-101">Decide an authentication method for SSH</span></span>
 metadata:
-  title: <span data-ttu-id="c620c-102">Scegliere un metodo di autenticazione per SSH</span><span class="sxs-lookup"><span data-stu-id="c620c-102">Decide an authentication method for SSH</span></span>
-  description: <span data-ttu-id="c620c-103">Scegliere un metodo di autenticazione per SSH</span><span class="sxs-lookup"><span data-stu-id="c620c-103">Decide an authentication method for SSH</span></span>
-  ms.openlocfilehash: 8171140ebe5ae8689c0be373d609be006f4b04ad
-  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  title: <span data-ttu-id="54b3f-102">Scegliere un metodo di autenticazione per SSH</span><span class="sxs-lookup"><span data-stu-id="54b3f-102">Decide an authentication method for SSH</span></span>
+  description: <span data-ttu-id="54b3f-103">Scegliere un metodo di autenticazione per SSH</span><span class="sxs-lookup"><span data-stu-id="54b3f-103">Decide an authentication method for SSH</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 6ed2657b9f15394369447de2bc157597dafdbc83
+  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43833723"
+  ms.lasthandoff: 09/10/2018
+  ms.locfileid: "44309151"
 durationInMinutes: 10
 interactive: bash
+azureSandbox: true
 content: '[!include[](includes/3-exercise-generate-ssh-key.md)]'

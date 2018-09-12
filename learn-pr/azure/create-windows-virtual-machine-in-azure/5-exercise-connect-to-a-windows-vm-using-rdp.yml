@@ -1,14 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-a-windows-vm-in-azure.5-exercise-connect-to-a-windows-vm-using-rdp
-title: <span data-ttu-id="bf5ff-101">Connettersi a una macchina virtuale Windows tramite RDP</span><span class="sxs-lookup"><span data-stu-id="bf5ff-101">Connect to a Windows virtual machine using RDP</span></span>
+title: <span data-ttu-id="ac30b-101">Connettersi a una macchina virtuale Windows tramite RDP</span><span class="sxs-lookup"><span data-stu-id="ac30b-101">Connect to a Windows virtual machine using RDP</span></span>
 metadata:
-  title: <span data-ttu-id="bf5ff-102">Connettersi a una macchina virtuale Windows tramite RDP</span><span class="sxs-lookup"><span data-stu-id="bf5ff-102">Connect to a Windows virtual machine using RDP</span></span>
-  description: <span data-ttu-id="bf5ff-103">Connettersi a una macchina virtuale Windows tramite RDP</span><span class="sxs-lookup"><span data-stu-id="bf5ff-103">Connect to a Windows virtual machine using RDP</span></span>
-  ms.openlocfilehash: 9432fbb200a9dfee4e098de2bfaa79ef8a5981f9
-  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  title: <span data-ttu-id="ac30b-102">Connettersi a una macchina virtuale Windows tramite RDP</span><span class="sxs-lookup"><span data-stu-id="ac30b-102">Connect to a Windows virtual machine using RDP</span></span>
+  description: <span data-ttu-id="ac30b-103">Connettersi a una macchina virtuale Windows tramite RDP</span><span class="sxs-lookup"><span data-stu-id="ac30b-103">Connect to a Windows virtual machine using RDP</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 96e661e5ccb86635df533a594e90c4133d326fe7
+  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43835745"
+  ms.lasthandoff: 09/10/2018
+  ms.locfileid: "44310498"
 durationInMinutes: 10
+azureSandbox: true
 content: '[!include[](includes/5-exercise-connect-to-a-windows-vm-using-rdp.md)]'
