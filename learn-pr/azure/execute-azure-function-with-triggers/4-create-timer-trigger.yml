@@ -1,14 +1,20 @@
 ### YamlMime:ModuleUnit
-uid: execute-azure-function-with-triggers.4-create-timer-trigger
+uid: learn.execute-azure-function-with-triggers.4-create-timer-trigger
 title: Creare un trigger timer
 metadata:
   title: Creare un trigger timer
   description: Creare un trigger timer
-  ms.openlocfilehash: b346540b583275bc85b016b5a9414437ba36e98c
-  ms.sourcegitcommit: b97ed72bd7e3fb77b49de71e8ef35d3f70dfd636
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: a08cbc3772552f39db96676cf3c13e02a87a91b4
+  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/05/2018
-  ms.locfileid: "43792699"
+  ms.lasthandoff: 09/10/2018
+  ms.locfileid: "44308624"
+azureSandbox: true
 durationInMinutes: 15
 content: '[!include[](includes/4-create-timer-trigger.md)]'

@@ -27,6 +27,7 @@ A causa di tutti i problemi verificatisi in azienda con i segreti delle applicaz
 Per iniziare, si creerà un insieme di credenziali e si archivierà un segreto.
 
 ### <a name="create-a-resource-group"></a>Creare un gruppo di risorse
+<!---TODO: Update for sandbox?--->
 
 Creare un gruppo di risorse denominato `keyvault-exercise-group` per tutte le risorse di questa unità. Alla fine di questo modulo si eliminerà questo gruppo di risorse per eseguire la pulizia di tutte le risorse contemporaneamente. Come località si userà `eastus` per tutti gli elementi dell'unità.
 

@@ -29,7 +29,7 @@ Poiché si è deciso di sviluppare i livelli Web e applicazione per l'app di log
     Il database SQL di Azure offre diverse opzioni di prezzo, che consentono di bilanciare prestazioni e costi. È possibile iniziare con una spesa mensile molto contenuta.
 
 - **Scalabilità**
- 
+
     La quantità di dati logistici sui trasporti che è necessario archiviare raddoppia ogni anno. In caso di esecuzione in locale, quanta capacità in eccesso è necessario pianificare?
 
     Con il database SQL di Azure è possibile regolare velocemente le prestazioni e le dimensioni del database quando cambiano le esigenze.

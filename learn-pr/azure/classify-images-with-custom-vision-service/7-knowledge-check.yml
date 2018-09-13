@@ -4,12 +4,17 @@ title: Verificare le proprie conoscenze
 metadata:
   title: Verificare le proprie conoscenze
   description: Verificare di aver compreso i passaggi necessari per classificare immagini con il Servizio visione artificiale personalizzato Microsoft.
-  ms.openlocfilehash: b217a3b77827db2dc79334d15f430d7289f7ada5
-  ms.sourcegitcommit: 1663afb13d55c1fce5f2dc4c0f78ef2d74902c33
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: c69b14bf20dbd79b03402009a2fb8ece7c4466ab
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 08/31/2018
-  ms.locfileid: "43363863"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44233137"
 durationInMinutes: 10
 quiz:
   title: Uso del Servizio visione artificiale personalizzato Microsoft per eseguire la classificazione delle immagini

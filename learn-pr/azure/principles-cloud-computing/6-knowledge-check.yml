@@ -1,14 +1,19 @@
 ### YamlMime:ModuleUnit
-uid: principles-cloud-computing.6-knowledge-check
+uid: learn.principles-cloud-computing.6-knowledge-check
 metadata:
   title: Verificare le proprie conoscenze
   description: Verificare le proprie conoscenze
-  ms.openlocfilehash: d821c3443ce6a6af180d08f23c6f406529c7a5d3
-  ms.sourcegitcommit: c8d798ed14ad798f83559db0641c7cbc9728a7bf
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 78df80c68173adf2fa391cedd9a13e81db4744c6
+  ms.sourcegitcommit: 7de323416e472639edcff135bfc7d47bd5715256
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/05/2018
-  ms.locfileid: "43730795"
+  ms.lasthandoff: 09/11/2018
+  ms.locfileid: "44371662"
 title: Verificare le proprie conoscenze
 durationInMinutes: 3
 quiz:

@@ -8,7 +8,7 @@ Il vero punto di forza del Servizio visione artificiale personalizzato Microsoft
 
 1. Avviare Visual Studio Code e scegliere **Apri cartella** dal menu **File**. Nella finestra di dialogo successiva selezionare la cartella "Client\Artworks" inclusa nelle risorse del modulo.
 
-    ![Selezione della cartella Artworks](../media-draft/5-fe-select-folder.png)
+    ![Selezione della cartella Artworks](../media/5-fe-select-folder.png)
 
 1. Usare il comando **Visualizza** > **Terminale integrato** per aprire una finestra del terminale integrato in Visual Studio Code. Eseguire quindi il comando seguente nel terminale integrato per caricare i pacchetti necessari per l'app:
 
@@ -16,37 +16,37 @@ Il vero punto di forza del Servizio visione artificiale personalizzato Microsoft
     npm install
     ```
 
-1. Tornare al progetto Artworks nel portale del Servizio visione artificiale personalizzato, fare clic su **Prestazioni** e quindi su **Predefinito** per assicurarsi che l'iterazione più recente del modello sia quella predefinita. 
+1. Tornare al progetto Artworks nel portale del Servizio visione artificiale personalizzato, fare clic su **Prestazioni** e quindi su **Predefinito** per assicurarsi che l'iterazione più recente del modello sia quella predefinita.
 
-    ![Impostazione dell'iterazione predefinita](../media-draft/5-portal-make-default.png)
+    ![Impostazione dell'iterazione predefinita](../media/5-portal-make-default.png)
 
 1. Prima di poter eseguire l'app e usarla per chiamare il Servizio visione artificiale personalizzato, l'app deve essere modificata in modo da includere informazioni su endpoint e autorizzazioni. A questo scopo, fare clic su **Prediction URL** (URL stime).
 
-    ![Visualizzazione delle informazioni sull'URL dell'API per le previsioni](../media-draft/5-portal-prediction-url.png)
+    ![Visualizzazione delle informazioni sull'URL dell'API per le previsioni](../media/5-portal-prediction-url.png)
 
-1. Nella finestra di dialogo successiva sono indicati due URL, uno per il caricamento di immagini tramite URL e un altro per il caricamento di immagini locali. Copiare l'URL dell'API per le stime per i file di immagine negli Appunti. 
+1. Nella finestra di dialogo successiva sono indicati due URL, uno per il caricamento di immagini tramite URL e un altro per il caricamento di immagini locali. Copiare l'URL dell'API per le stime per i file di immagine negli Appunti.
 
-    ![Copia dell'URL dell'API per le previsioni](../media-draft/5-copy-prediction-url.png)
+    ![Copia dell'URL dell'API per le previsioni](../media/5-copy-prediction-url.png)
 
 1. Tornare a Visual Studio Code e fare clic su **predict.js** per aprirlo nell'editor di codice.
 
-    ![Apertura di predict.js](../media-draft/5-vs-predict-file.png)
+    ![Apertura di predict.js](../media/5-vs-predict-file.png)
 
 1. Sostituire "PREDICTION_ENDPOINT" nella riga 3 con l'URL copiato negli Appunti.
 
-    ![Aggiunta dell'URL dell'API per le previsioni](../media-draft/5-vs-prediction-endpoint.png)
+    ![Aggiunta dell'URL dell'API per le previsioni](../media/5-vs-prediction-endpoint.png)
 
-1. Tornare al portale del Servizio visione artificiale personalizzato e copiare la chiave API per le previsioni negli Appunti. 
+1. Tornare al portale del Servizio visione artificiale personalizzato e copiare la chiave API per le previsioni negli Appunti.
 
-    ![Copia della chiave API per le previsioni](../media-draft/5-copy-prediction-key.png)
+    ![Copia della chiave API per le previsioni](../media/5-copy-prediction-key.png)
 
 1. Tornare a Visual Studio Code e sostituire "PREDICTION_KEY" nella riga 4 di **predict.js** con la chiave API copiata negli Appunti.
 
-    ![Aggiunta della chiave API per le previsioni](../media-draft/5-vs-prediction-key.png)
+    ![Aggiunta della chiave API per le previsioni](../media/5-vs-prediction-key.png)
 
 1. Scorrere verso il basso in **predict.js** ed esaminare il blocco di codice che inizia alla riga 34. Si tratta del codice che effettua una chiamata in uscita al Servizio visione artificiale personalizzato tramite AJAX. L'uso dell'API per le stime del Servizio visione artificiale personalizzato è tanto facile quanto l'esecuzione di una semplice richiesta POST autenticata a un endpoint REST.
 
-    ![Esecuzione di una chiamata all'API per le previsioni](../media-draft/5-vs-code-block.png)
+    ![Esecuzione di una chiamata all'API per le previsioni](../media/5-vs-code-block.png)
 
 1. Tornare al terminale integrato in Visual Studio Code ed eseguire il comando seguente per avviare l'app:
 
@@ -56,6 +56,6 @@ Il vero punto di forza del Servizio visione artificiale personalizzato Microsoft
 
 1. Verificare che l'app Artworks venga avviata e visualizzi una finestra come questa:
 
-    ![App Artworks](../media-draft/5-app-startup.png)
+    ![App Artworks](../media/5-app-startup.png)
 
 Artworks è un'app multipiattaforma scritta con Node.js ed [Electron](https://electron.atom.io/). In quanto tale, può essere eseguita ugualmente in Windows, macOS e Linux. Nel prossimo esercizio si userà questa app per classificare immagini in base agli artisti che le hanno dipinte.

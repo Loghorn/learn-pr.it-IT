@@ -4,12 +4,16 @@ metadata:
   title: Distribuire un sito Web in Azure con il servizio app di Azure
   description: Le app Web di Azure consentono di pubblicare e gestire il sito Web in modo facile, senza dover usare i server, gli archivi o le risorse di rete sottostanti. In alternativa, è possibile concentrarsi sulle funzionalità del sito Web e affidarsi alla solida piattaforma di Azure per garantire l'accesso sicuro al sito.
   ms.date: 09/24/2018
-  ms.openlocfilehash: 0799ae4438edc35c2710d7619a452b1d3e760aa4
-  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 2278a66a927883590cf4fe3b4afa72e338eb8a16
+  ms.sourcegitcommit: 7de323416e472639edcff135bfc7d47bd5715256
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43826077"
+  ms.lasthandoff: 09/11/2018
+  ms.locfileid: "44371544"
 title: Distribuire un sito Web in Azure con il Servizio app di Azure
 summary: Le app Web di Azure consentono di pubblicare e gestire il sito Web in modo facile, senza dover usare i server, gli archivi o le risorse di rete sottostanti. In alternativa, è possibile concentrarsi sulle funzionalità del sito Web e affidarsi alla solida piattaforma di Azure per garantire l'accesso sicuro al sito.
 prerequisites: Nessuno
@@ -21,6 +25,6 @@ roles:
 products:
 - azure
 modules:
-- learn.host-a-web-application-with-azure-web-apps
+- learn.host-a-web-application-with-azure-app-service
 - learn.publish-azure-web-app-with-visual-studio
 achievement: learn.deploy-a-website-with-azure-app-service.trophy

@@ -4,12 +4,16 @@ metadata:
   title: Usare i dati relazionali in Azure
   description: Azure supporta diverse soluzioni comuni di database basato su SQL tra cui SQL Server, PostgreSQL e MySQL. Informazioni su come usare tali soluzioni di dati aziendali in Azure per archiviare e recuperare i dati dell'app nel cloud.
   ms.date: 09/24/2018
-  ms.openlocfilehash: 7ed3e1fd490f0fcf15f57027ccbec97760006bad
-  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 25f7290859d39787b8c71cf31b61293a96ee4aa4
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43824496"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44247943"
 title: Usare i dati relazionali in Azure
 summary: Azure supporta diverse soluzioni comuni di database basato su SQL tra cui SQL Server, PostgreSQL e MySQL. Scopri altre informazioni sulle modalità di utilizzo di tali soluzioni di dati aziendali in Azure per archiviare e recuperare i dati dell'app nel cloud.
 prerequisites: Nessuno
@@ -23,4 +27,6 @@ products:
 modules:
 - learn.provision-azure-sql-db
 - learn.migrate-sql-server-relational-data
+- learn.create-azure-db-for-postgresql
+- learn.secure-your-azure-sql-database
 achievement: learn.work-with-relational-data-in-azure.trophy

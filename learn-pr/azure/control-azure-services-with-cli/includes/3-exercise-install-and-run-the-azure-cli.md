@@ -76,7 +76,7 @@ Per eseguire l'interfaccia della riga di comando di Azure, aprire una shell bash
 
 1. Avviare l'interfaccia della riga di comando di Azure e verificare l'installazione eseguendo il controllo della versione.
 
-    ```bash
+    ```azurecli
     az --version
     ```
 

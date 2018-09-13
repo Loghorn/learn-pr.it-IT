@@ -6,20 +6,20 @@ Usare quindi l'interfaccia della riga di comando di Azure per creare un gruppo d
 
 1. Avviare l'interfaccia della riga di comando di Azure ed eseguire il comando di accesso.
 
-    ```bash
+    ```azurecli
     az login
     ```
     Se non viene visualizzata la pagina di accesso ad Azure nel Web browser, seguire le istruzioni della riga di comando e immettere un codice di autorizzazione all'indirizzo [https://aka.ms/devicelogin](https://aka.ms/devicelogin).
 
 1. Creare un gruppo di risorse.
 
-    ```bash
+    ```azurecli
     az group create --location westeurope --name popupResGroup
     ```
 
 1. Verificare che il gruppo di risorse sia stato creato correttamente elencando tutti i gruppi di risorse in una tabella.
 
-    ```bash
+    ```azurecli
     az group list --output table
     ```
 
@@ -28,7 +28,7 @@ Usare quindi l'interfaccia della riga di comando di Azure per creare un gruppo d
 
 1. Se nel gruppo sono presenti molti elementi, è possibile filtrare i valori restituiti aggiungendo un'opzione `--query`. Provare questo comando:
 
-    ```bash
+    ```azurecli
     az group list --query '[?name == popupResGroup]'
     ```
 
@@ -43,13 +43,13 @@ Quando si eseguono app Web, usando il servizio app di Azure, si paga per le riso
     > [!WARNING]
     > I nomi dell'app e del piano devono essere _univoci_. Aggiungere quindi un suffisso al nome e sostituire il testo `<unique>` nel comando seguente con un set di numeri, con le proprie iniziali o con qualsiasi altro testo per assicurarsi che sia univoco in Azure. 
 
-    ```bash
+    ```azurecli
     az appservice plan create --name popupapp-<unique> --resource-group popupResGroup --location westeurope
     ```
 
 1. Verificare che il piano di servizio sia stato creato correttamente elencando tutti i piani in una tabella.
 
-    ```bash
+    ```azurecli
     az appservice plan list --output table
     ```
 
@@ -58,13 +58,13 @@ Quando si eseguono app Web, usando il servizio app di Azure, si paga per le riso
 A questo punto verrà creata l'app Web nel piano di servizio. È possibile distribuire il codice nello stesso momento, ma per questo esempio l'operazione verrà eseguita in passaggi separati.
 
 1. Creare l'app Web e specificare il nome del piano creato in precedenza. **Analogamente al nome del piano, anche il nome dell'app deve essere univoco. Sostituire l'indicatore `<unique>` con un testo per rendere il nome univoco a livello globale.**
-    ```bash
+    ```azurecli
     az webapp create --name popupapp-<unique> --resource-group popupResGroup --plan popupapp-<unique>
     ```
 
 1. Verificare che l'app sia stata creata correttamente elencando tutte le app in una tabella.
 
-    ```bash
+    ```azurecli
     az webapp list --output table
     ```
 
@@ -74,7 +74,7 @@ A questo punto verrà creata l'app Web nel piano di servizio. È possibile distr
 
 1. Il passaggio finale consiste nel distribuire il codice da un repository di GitHub all'app Web. Verrà usata una semplice pagina PHP disponibile nel repository GitHub di esempi di Azure che visualizza "HelloWorld!" quando viene eseguita. Assicurarsi di usare il nome dell'app Web creato.
 
-    ```bash
+    ```azurecli
     az webapp deployment source config --name popupapp-<unique> --resource-group popupResGroup --repo-url "https://github.com/Azure-Samples/php-docs-hello-world" --branch master --manual-integration
     ```
 
