@@ -1,13 +1,13 @@
-Cloud computing resources are delivered using three different service models.
+Le risorse di cloud computing distribuite con tre modelli di servizio diversi.
 
-- **Infrastructure-as-a-service (IaaS)** provides instant computing infrastructure that you can provision and manage over the Internet.
-- **Platform as a service (PaaS)** provides ready-made development and deployment environments that you can use to deliver your own cloud services.
-- **Software as a service (SaaS)** delivers applications over the Internet as a web-based service.
+- **IaaS (Infrastructure-as-a-Service)** offre un'infrastruttura di calcolo di accesso immediato di cui è possibile eseguire il provisioning e che può essere gestita tramite Internet.
+- **PaaS (Platform-as-a-service)** offre ambienti di sviluppo e distribuzione pronti che è possibile usare per fornire servizi cloud personalizzati.
+- **SaaS (Software-as-a-service)** offre applicazioni tramite Internet come servizio basato sul Web.
 
 !!! Video TC-007 placeholder !!!
 
 > [!VIDEO https://channel9.msdn.com/Series/History/The-History-of-Microsoft-1995/player]
 
-When choosing a service model, consider which party should be responsible for the computing resource. Based on your scenario, you can decide how much shared management responsibility you want. The following illustration shows a list of resources that you manage and that your service provider manages in each cloud service category.
+Per la scelta di un modello di servizio, valutare quale parte deve essere responsabile per la risorsa di calcolo. In base allo scenario, è possibile decidere quante responsabilità di gestione condivise si vogliono assumere. L'illustrazione seguente mostra un elenco di risorse gestite dall'utente e dal provider di servizi in ogni categoria del servizio cloud.
 
-![An illustration showing the level of shared management responsibility in each category of cloud service.](../media/3-shared-responsibility.png)
+![Illustrazione che mostra il livello di responsabilità di gestione condivisa in ogni categoria del servizio cloud.](../media/3-shared-responsibility.png)

@@ -1,6 +1,6 @@
-### <a name="exercise-3-train-a-tensorflow-model"></a>Esercizio 3: Eseguire il training di un modello TensorFlow
+### <a name="train-a-tensorflow-model"></a>Eseguire il training di un modello TensorFlow
 
-In questo esercizio, si eseguirà il training di un modello di classificazione delle immagini compilato con [TensorFlow](https://www.tensorflow.org/) per riconoscere le immagini che contengono hot dog. Invece di creare il modello da zero, operazione che richiederebbe una quantità elevata di potenza di calcolo e decine o centinaia di migliaia di immagini, si personalizzerà un modello preesistente, una pratica nota come [transfer learning](https://en.wikipedia.org/wiki/Transfer_learning). La tecnica del transfer learning consente di raggiungere livelli elevati di precisione con un training di pochi minuti su un laptop o PC standard con poche decine di immagini.
+In questo esercizio si eseguirà il training di un modello di classificazione delle immagini compilato con [TensorFlow](https://www.tensorflow.org/) per riconoscere le immagini che contengono hot dog. Invece di creare il modello da zero, operazione che richiederebbe una quantità elevata di potenza di calcolo e decine o centinaia di migliaia di immagini, si personalizzerà un modello preesistente, pratica nota come [transfer learning](https://en.wikipedia.org/wiki/Transfer_learning). La tecnica del transfer learning consente di raggiungere livelli elevati di precisione con un training di pochi minuti su un laptop o PC standard con poche decine di immagini.
 
 Nel contesto del deep learning, il transfer learning richiede di iniziare con una rete neurale profonda già sottoposta a training per eseguire la classificazione di immagini, per poi aggiungere un livello che personalizza la rete per il dominio specifico del problema, ad esempio, per classificare le immagini in due gruppi : quelle contenenti hot dog e quelle che non li contengono. Sono disponibili in più di 20 modelli di classificazione delle immagini di TensorFlow già sottoposti a training all'indirizzo <https://github.com/tensorflow/models/tree/master/research/slim#pre-trained-models.>. I modelli [Inception](https://arxiv.org/abs/1512.00567) e [ResNet](https://towardsdatascience.com/an-overview-of-resnet-and-its-variants-5281e2f56035) sono caratterizzati da una maggiore precisione e requisiti a livello di risorse proporzionalmente più alti, mentre i modelli MobileNet sono stati sviluppati per i dispositivi motivi per offrire compattezza ed efficienza a discapito della precisione. Tutti questi modelli sono ben noti alla community del deep learning e sono stati usati in numerose competizioni, così come in applicazioni reali. Si userà uno dei modelli MobileNet come base per la rete neurale, in modo da ottenere un equilibrio ragionevole tra precisione e tempi di training.
 
@@ -8,7 +8,7 @@ Il training del modello prevede poco di più che eseguire uno script Python che 
 
 1. Nella Data Science VM fare clic sull'icona del Terminale nella parte inferiore della schermata per aprire una finestra del terminale.
 
-    ![Avvio di una finestra del terminale](../images/launch-terminal.png)
+    ![Avvio di una finestra del terminale](../media-draft/3-launch-terminal.png)
 
     _Avvio di una finestra del terminale_
 
@@ -44,7 +44,7 @@ Il training del modello prevede poco di più che eseguire uno script Python che 
 
 1. Fare clic sull'icona di File Manager nella parte inferiore della schermata per aprire una finestra di File Manager.
 
-    ![Avvio di File Manager](../images/launch-file-manager.png)
+    ![Avvio di File Manager](../media-draft/3-launch-file-manager.png)
 
     _Avvio di File Manager_
 
@@ -52,7 +52,7 @@ Il training del modello prevede poco di più che eseguire uno script Python che 
 
     > Per eseguire il training di una rete neurale per determinare se un'immagine include un hot dog, si eseguirà il training sia con immagini che includono hot dog che con immagini che non li includono.
 
-    ![Immagini nella cartella "hot_dog"](../images/hot-dog-images.png)
+    ![Immagini nella cartella "hot_dog"](../media-draft/3-hot-dog-images.png)
 
     *Immagini nella cartella "hot_dog"*
 
@@ -64,7 +64,7 @@ Il training del modello prevede poco di più che eseguire uno script Python che 
      tensorboard --logdir tf_files/training_summaries
      ```
 
-     > Questo comando avrà esito negativo se è già presente un'istanza di TensorBoard in esecuzione. Se si riceve una notifica che la porta 6006 è già in uso, usare un comando ```pkill -f "tensorboard"``` per terminare il processo esistente. Eseguire quindi di nuovo il comando ```tensorboard```.
+     > Questo comando avrà esito negativo se è già in esecuzione un'istanza di TensorBoard. Se si riceve una notifica che la porta 6006 è già in uso, usare un comando ```pkill -f "tensorboard"``` per terminare il processo esistente. Eseguire quindi di nuovo il comando ```tensorboard```.
 
 1. Tornare alla finestra del terminale originale ed eseguire i comandi seguenti:
 
@@ -73,7 +73,7 @@ Il training del modello prevede poco di più che eseguire uno script Python che 
     ARCHITECTURE="mobilenet_0.50_${IMAGE_SIZE}";
     ```
 
-    Questi comandi inizializzano le variabili di ambiente specificando la risoluzione delle immagini di training e il modello di base su cui verrà creata la rete neurale. I valori validi per IMAGE_SIZE sono 128, 160, 192 e 224. Valori più alti aumentano il tempo di training, ma anche l'accuratezza del classificatore.
+    Questi comandi inizializzano le variabili di ambiente specificando la risoluzione delle immagini di training e il modello di base su cui verrà creata la rete neurale. I valori validi per IMAGE_SIZE sono 128, 160, 192 e 224. Valori più alti aumentano il tempo di training, ma anche la precisione del classificatore.
 
 1. A questo punto eseguire il comando seguente per avviare il processo di transfer learning, vale a dire, per eseguire il training del modello con le immagini scaricate:
 
@@ -93,29 +93,21 @@ Il training del modello prevede poco di più che eseguire uno script Python che 
 
     **retrain.py** è uno degli script nel repository scaricato. È complesso e composto da più di 1.000 righe di codice e commenti. Il processo dello script prevede il download del modello specificato con l'opzione ```--architecture``` e l'aggiunta a tale modello di un nuovo livello sottoposto a training con le immagini disponibili nelle sottodirectory della directory specificata con l'opzione ```--image_dir```. Ogni immagine viene etichettata con il nome della sottodirectory in cui si trova, in questo caso, "hot_dog" o "not_hot_dog" e in questo modo la rete neurale modificata può classificare le immagini di input come immagini con hot-dog ("hot_dog") o immagini senza hot dog ("not_hot_dog"). L'output della sessione di training è un file di modello TensorFlow denominato **retrained_graph_hotdog.pb**. Il nome e il percorso vengono specificati nell'opzione ```--output_graph```.
 
-1. Attendere il completamento del training, che dovrebbe richiedere meno di 5 minuti. Controllare quindi l'output per determinare la precisione del modello. I risultati possono variare leggermente rispetto a quello riportato di seguito, perché il processo di training include una quantità ridotta di stima casuale.
+1. Attendere il completamento del training, che dovrebbe richiedere meno di cinque minuti. Controllare quindi l'output per determinare la precisione del modello. I risultati possono variare leggermente rispetto a quello riportato di seguito, perché il processo di training include un minimo di stima casuale.
 
-      ![Valutazione della precisione del modello](../images/running-transfer-learning.png)
-
-      _Valutazione della precisione del modello_
+      ![Valutazione della precisione del modello](../media-draft/3-running-transfer-learning.png)
 
 1. Fare clic sull'icona del browser nella parte inferiore del desktop per aprire il browser installato nella Data Science VM. Passare quindi a <http://0.0.0.0:6006> per connettersi a TensorBoard.
 
-    ![Avvio di Firefox](../images/launch-firefox.png)
+    ![Avvio di Firefox](../media-draft/3-launch-firefox.png)
 
-    _Avvio di Firefox_
+1. Esaminare il grafico con l'etichetta "accuracy_1". La linea blu rappresenta la precisione ottenuta nel tempo durante l'esecuzione dei 500 passaggi di training specificati con l'opzione ```how_many_training_steps```. Questa metrica è importante, perché mostra come la precisione del modello si evolva man mano che procede il training. Altrettanto importante è la distanza tra le linee blu e arancione che quantifica la quantità di overfitting che si è verificato e che dovrebbe essere sempre ridotto al minimo. [Overfitting](https://en.wikipedia.org/wiki/Overfitting) significa che il modello è ideale per la classificazione delle immagini con il quale è stato sottoposto a training, ma non per la classificazione di altre immagini presentate. In questo caso i risultati sono accettabili, perché esiste una differenza minore del 10% tra la linea arancione (la precisione di "training" ottenuta con le immagini di training) e la linea blu (la precisione di "convalida" ottenuta con il test con immagini all'esterno del set di training).
 
-1. Esaminare il grafico con l'etichetta "accuracy_1." La linea blu rappresenta la precisione ottenuta nel tempo durante l'esecuzione dei 500 passaggi di training specificati con l'opzione ```how_many_training_steps```. Questa metrica è importante, perché mostra come la precisione del modello si evolva man mano che procede il training. Altrettanto importante è la distanza tra le linee blu e arancione che quantifica la quantità di overfitting che si è verificato e che dovrebbe essere sempre ridotto al minimo. [Overfitting](https://en.wikipedia.org/wiki/Overfitting) significa che il modello è ideale per la classificazione delle immagini con il quale è stato sottoposto a training, ma non per la classificazione di altre immagini presentate. In questo caso i risultati sono accettabili, perché esiste una differenza minore del 10% tra la linea arancione (la precisione di "training" ottenuta con le immagini di training) e la linea blu (la precisione di "convalida" ottenuta con il test con immagini all'esterno del set di training).
+    ![Visualizzazione dei valori scalari di TensorBoard](../media-draft/3-tensorboard-scalars.png)
 
-    ![Visualizzazione dei valori scalari di TensorBoard](../images/tensorboard-scalars.png)
+1. Fare clic su **GRAPHS** (GRAFICI) nel menu di TensorBoard ed esaminare il grafico visualizzato. Lo scopo principale di questo grafico è rappresentare la rete neurale e i livelli che la compongono. In questo esempio, "input_1" è il livello che è stato sottoposto a training con le immagini di cibo e aggiunto alla rete. "MobilenetV1" è la rete neurale di base di partenza. Contiene molti livelli che non sono visualizzati. Se si fosse creata una rete neurale dettagliata da zero, tutti i livelli sarebbero rappresentati in questo grafico. (Se si desidera vedere i livelli che costituiscono MobileNet, fare doppio clic sul blocco "MobilenetV1" nel diagramma.) Per altre informazioni sulla visualizzazione Graphs (Grafici) e le informazioni presentate, vedere [TensorBoard: Graph Visualization](https://www.tensorflow.org/programmers_guide/graph_viz) (TensorBoard: visualizzazione dei grafici).
 
-    _Visualizzazione dei valori scalari di TensorBoard_
-
-1. Fare clic su **GRAPHS** (Grafici) nel menu di TensorBoard ed esaminare il grafico visualizzato. Lo scopo principale di questo grafico è rappresentare la rete neurale e i livelli che la compongono. In questo esempio, "input_1" è il livello che è stato sottoposto a training con le immagini di cibo e aggiunto alla rete. "MobilenetV1" è la rete neurale di base di partenza. Contiene molti livelli che non sono visualizzati. Se si fosse creata una rete neurale dettagliata da zero, tutti i livelli sarebbero rappresentati in questo grafico. (Se si desidera vedere i livelli che costituiscono MobileNet, fare doppio clic sul blocco "MobilenetV1" nel diagramma.) Per altre informazioni sulla visualizzazione Graphs (Grafici) e le informazioni presentate, vedere [TensorBoard: Graph Visualization](https://www.tensorflow.org/programmers_guide/graph_viz) (TensorBoard: visualizzazione dei grafici).
-
-    ![Visualizzazione Graphs (Grafici) di TensorBoard](../images/tensorboard-graphs.png)
-
-    _Visualizzazione Graphs (Grafici) di TensorBoard_
+    ![Visualizzazione Graphs (Grafici) di TensorBoard](../media-draft/3-tensorboard-graphs.png)
 
 1. Tornare a File Manager e passare alla cartella "notebooks/tensorflow-for-poets-2/tf_files". Verificare che contenga un file denominato **retrained_graph_hotdog.pb**. *Questo file è stato creato durante il processo di training e contiene il modello TensorFlow sottoposto a training*. Verrà usato nel prossimo esercizio per richiamare il modello dall'app NotHotDog.
 

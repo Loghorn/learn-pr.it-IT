@@ -14,9 +14,9 @@ Si vuole creare rapidamente un prototipo da condividere con il team. Il prototip
 
 ## <a name="learning-objectives"></a>Obiettivi di apprendimento
 
-Si apprenderà:
+In questo modulo si apprenderà:
 
 - Perché il database SQL di Azure rappresenta una scelta ottimale per l'esecuzione del database relazionale
 - Quali opzioni di configurazione e di prezzo sono disponibili per il database SQL di Azure
 - Come creare un database SQL di Azure dal portale
-- Come usare Cloud Shell per connettersi al database SQL di Azure, aggiungere una tabella e usare i dati
+- Come usare Azure Cloud Shell per connettersi al database SQL di Azure, aggiungere una tabella e usare i dati

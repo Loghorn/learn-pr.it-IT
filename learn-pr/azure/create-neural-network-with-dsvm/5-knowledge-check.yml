@@ -4,16 +4,15 @@ title: Verificare le proprie conoscenze
 metadata:
   title: Verificare le proprie conoscenze
   description: Confermare di aver compreso i passaggi necessari per creare reti neurali con Tensorflow e la Data Science Virtual Machine di Azure.
-  ms.openlocfilehash: e325b7c5ca9c29b5267feb7fc69e7ffe9abca1c5
-  ms.sourcegitcommit: 107578417899e44b5611917dec7bcc21d4c1582e
+  ms.openlocfilehash: 118d9b5f0fe9aa3299d4504df9027010135648ab
+  ms.sourcegitcommit: b1b68b477ab39109c48f227b504a5050cae7a718
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 08/29/2018
-  ms.locfileid: "43230664"
+  ms.lasthandoff: 09/01/2018
+  ms.locfileid: "43414456"
 durationInMinutes: 10
-content: Obbligatorio
 quiz:
-  title: Building Neural Networks with TensorFlow and the Azure Data Science Virtual Machine (Creazione di reti neurali con TensorFlow e la Data Science Virtual Machine di Azure)
+  title: Creazione di reti neurali con TensorFlow e la Data Science Virtual Machine di Azure
   questions:
   - content: È possibile creare una Data Science VM con un sistema operativo diverso da Linux?
     choices:
@@ -29,7 +28,7 @@ quiz:
       isCorrect: true
       correctExplanation: Corretto. Passare alla parte successiva del lab.
     - content: Nome della sottoscrizione
-      isCorrect: true
+      isCorrect: false
       incorrectExplanation: Il nome della sottoscrizione non è necessario per connettersi alla macchina virtuale.
     - content: Nome DNS
       isCorrect: false

@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.connect-app-to-azure-storage.6-connect-to-your-azure-storage-account
+title: Connettersi all'account di archiviazione di Azure
+metadata:
+  title: Connettersi all'account di archiviazione di Azure
+  description: Connettersi all'account di archiviazione di Azure
+  ms.openlocfilehash: 8d034f3138e78737be15d6b70b1f08446cd89652
+  ms.sourcegitcommit: 850ce909966600e7a8d6f89d8bdebbb621416838
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/03/2018
+  ms.locfileid: "43479575"
+durationInMinutes: 5
+content: '[!include[](includes/6-connect-to-your-azure-storage-account.md)]'

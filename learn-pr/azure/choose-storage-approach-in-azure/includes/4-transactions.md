@@ -1,4 +1,4 @@
-Spesso è necessario raggruppare una serie di aggiornamenti ai dati perché una modifica a un tipo di dati comporta una modifica a un altro tipo di dati. Le transazioni consentono di raggruppare questi aggiornamenti in modo che, se un evento in una serie di aggiornamenti ha esito negativo, è possibile eseguire il rollback dell'intera serie o annullarla. Un rivenditore online potrebbe ad esempio usare una transazione per l'invio di un ordine e la verifica del pagamento. Raggruppando gli eventi correlati, è possibile evitare di ridurre i livelli di inventario fino a quando non si riceve un metodo di pagamento approvato.
+Spesso è necessario raggruppare una serie di aggiornamenti ai dati perché una modifica a un blocco di dati comporta una modifica a un altro blocco di dati. Le transazioni consentono di raggruppare questi aggiornamenti in modo che, se un evento in una serie di aggiornamenti ha esito negativo, è possibile eseguire il rollback dell'intera serie o annullarla. Un rivenditore online potrebbe ad esempio usare una transazione per l'invio di un ordine e la verifica del pagamento. Raggruppando gli eventi correlati, è possibile evitare di ridurre le scorte di magazzino fino a quando non si riceve un metodo di pagamento approvato.
 
 In questo modulo si apprenderà che cos'è una transazione e quando è necessario usarla per i dati.
 
@@ -10,22 +10,22 @@ Ecco la domanda da porsi per determinare se è necessario un database transazion
 
 Le transazioni vengono spesso definite da un set di quattro requisiti, detti anche garanzie ACID. ACID è l'acronimo di Atomicità, Coerenza, Isolamento e Durabilità:
 
-* L'atomicità indica che tutti i dati vengono aggiornati oppure viene eseguito il rollback di tutti i dati allo stato originale.
-* La coerenza garantisce che se accade qualcosa nel corso della transazione, non venga aggiornata solo una parte dei dati, mentre l'altra no. La transazione viene applicata in modo coerente a tutti i dati oppure non viene applicata.
-* L'isolamento garantisce che una transazione non influisca su un'altra transazione.
-* La durabilità significa che le modifiche apportate nell'ambito della transazione vengono salvate in modo permanente nel sistema. I dati di cui viene eseguito il commit vengono salvati dal sistema in modo che, anche in caso di un errore con conseguente riavvio del sistema, i dati saranno disponibili nello stato corretto.
+- L'atomicità indica che tutti i dati vengono aggiornati oppure viene eseguito il rollback di tutti i dati allo stato originale.
+- La coerenza garantisce che se accade qualcosa nel corso della transazione, non venga aggiornata solo una parte dei dati, mentre l'altra no. La transazione viene applicata in modo coerente a tutti i dati oppure non viene applicata.
+- L'isolamento garantisce che una transazione non influisca su un'altra transazione.
+- La durabilità significa che le modifiche apportate nell'ambito della transazione vengono salvate in modo permanente nel sistema. I dati di cui viene eseguito il commit vengono salvati dal sistema in modo che, anche in caso di un errore con conseguente riavvio del sistema, i dati saranno disponibili nello stato corretto.
 
 Quando un database ha le garanzie ACID, questi principi vengono applicati alle transazioni e si può avere la certezza che le transazioni verranno applicate in modo coerente.
 
 ## <a name="oltp-vs-olap"></a>OLTP e OLAP
 
-I database transazionali vengono spesso denominati sistemi OLTP (Online Transaction Processing, elaborazione di transazioni online). I sistemi OLTP supportano in genere numerosi utenti, hanno tempi di risposta rapidi, gestiscono volumi elevati di dati, offrono disponibilità elevata, ovvero hanno tempi di inattività minimi, e in genere gestiscono le transazioni di piccole dimensioni o relativamente semplici.
+I database transazionali vengono spesso denominati sistemi OLTP (Online Transaction Processing, elaborazione delle transazioni online). I sistemi OLTP supportano in genere numerosi utenti, garantiscono tempi di risposta rapidi e possono gestire volumi elevati di dati. Offrono inoltre una disponibilità elevata (ovvero un tempo di inattività minimo) e gestiscono transazioni di piccole dimensioni o relativamente semplici.
 
-Al contrario, i sistemi OLAP (Online Analytical Processing, elaborazione analitica online) supportano in genere un numero inferiore di utenti, hanno tempi di risposta più lunghi, possono offrire una minore disponibilità e in genere gestiscono le transazioni di grandi dimensioni e complesse.
+Al contrario, i sistemi OLAP (Online Analytical Processing) supportano in genere un numero inferiore di utenti, hanno tempi di risposta più lunghi, possono offrire una minore disponibilità e normalmente gestiscono transazioni di grandi dimensioni e complesse.
 
-I sistemi OLTP e OLAP non vengono usati tanto frequentemente quanto in passato, ma il confronto semplifica la classificazione delle esigenze dell'applicazione, pertanto si tratta di concetti importanti da conoscere. 
+I sistemi OLTP e OLAP non vengono usati tanto frequentemente quanto in passato, ma il confronto semplifica la classificazione delle esigenze dell'applicazione, di conseguenza si tratta di concetti importanti da conoscere. 
 
-Ora che è stata acquisita familiarità con le transazioni e con i concetti di OLTP e OLAP, verranno esaminati i set di dati dello scenario di vendita online per determinare la necessità di transazioni.
+Ora che è stata acquisita familiarità con le transazioni e con i concetti di OLTP e OLAP, verranno esaminati i set di dati dello scenario di vendita online per determinare le esigenze in termini di transazioni.
 
 ### <a name="product-catalog-data"></a>Dati del catalogo prodotti
 
@@ -33,7 +33,7 @@ I dati del catalogo prodotti devono essere archiviati in un database transaziona
 
 ### <a name="photos-and-videos"></a>Foto e video
 
-Le foto e i video in un catalogo prodotti non richiedono il supporto delle transazioni. L'unico motivo per cui può venire apportata una modifica a una foto o a un video è la presenza di un aggiornamento o l'aggiunta di nuovi file. Anche se c'è una relazione tra l'immagine e i dati effettivi del prodotto, la natura non è transazionale.
+Le foto e i video in un catalogo prodotti non richiedono il supporto delle transazioni. L'unico motivo per cui può venire apportata una modifica a una foto o a un video è la presenza di un aggiornamento o l'aggiunta di nuovi file. Anche se esiste una relazione tra l'immagine e i dati effettivi del prodotto, la natura non è transazionale.
 
 ### <a name="business-data"></a>Dati di business
 

@@ -68,7 +68,7 @@ L'interfaccia della riga di comando di Azure è lo strumento da riga di comando 
 
 Ad esempio, è possibile creare una macchina virtuale di Azure con il comando `az vm create`.
 
-```bash
+```azurecli
 az vm create \
     --resource-group TestResourceGroup \
     --name test-wp1-eus-vm \

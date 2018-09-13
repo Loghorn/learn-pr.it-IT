@@ -1,7 +1,9 @@
 Di seguito è riportato il flusso di lavoro tipico per le app che usano l'archiviazione BLOB di Azure:
 
 1. **Recuperare la configurazione**: all'avvio, caricare la configurazione dell'account di archiviazione. Solitamente si tratta della stringa di connessione dell'account di archiviazione.
+
 1. **Inizializzare i client**: usare la stringa di connessione per inizializzare la libreria client di Archiviazione di Azure. Verranno creati gli oggetti che l'app userà per collaborare con l'API di archiviazione BLOB.
+
 1. **Usare**: consentire alle chiamate API con la libreria client di operare su contenitori e blob.
 
 ## <a name="configure-your-connection-string"></a>Configurare la stringa di connessione
@@ -18,8 +20,11 @@ Le stringhe di connessione dell'account di archiviazione includono la chiave del
 In Archiviazione di Azure e SDK per .NET Core, il modello standard per l'uso dell'archiviazione BLOB prevede i passaggi seguenti:
 
 1. Chiamare `CloudStorageAccount.Parse` (o `TryParse`) con la stringa di connessione per ottenere `CloudStorageAccount`.
+
 1. Chiamare `CreateCloudBlobClient` in `CloudStorageAccount` per ottenere `CloudBlobClient`.
+
 1. Chiamare `GetContainerReference` in `CloudBlobClient` per ottenere `CloudBlobContainer`.
+
 1. Usare metodi per ottenere un elenco di blob e/o ottenere riferimenti a singoli blob per caricare e scaricare i dati nei contenitori.
 
 Nel codice i passaggi 1&ndash;3 sono simili a:
@@ -56,9 +61,9 @@ Aprire il file `Controllers/FilesController.cs`. Non vi è alcuna operazione da 
 
 Questo controller implementa un'API con tre azioni:
 
-* **Indice** (GET /api/Files) restituisce un elenco di URL, uno per ogni file che è stato caricato. Il front-end di app chiama questo metodo per compilare un elenco di collegamenti ipertestuali nei file caricati.
-* **Caricamento** (POST /api/Files) riceve un file caricato e lo salva.
-* **Download** (GET/api/Files/{nomefile}) scarica un singolo file in base al nome.
+- **Indice** (GET /api/Files) restituisce un elenco di URL, uno per ogni file che è stato caricato. Il front-end di app chiama questo metodo per compilare un elenco di collegamenti ipertestuali nei file caricati.
+- **Caricamento** (POST /api/Files) riceve un file caricato e lo salva.
+- **Download** (GET/api/Files/{nomefile}) scarica un singolo file in base al nome.
 
 Ogni metodo usa un'istanza `IStorage` denominata `storage` per l'esecuzione delle operazioni. In `Models/BlobStorage.cs` è presente un'implementazione incompleta di `IStorage` che è necessario sistemare.
 
@@ -75,7 +80,7 @@ Ciò ci consentirà di sapere che stiamo usando la versione più recente della l
 
 ### <a name="configure"></a>Configurare
 
-I valori di configurazione necessari per eseguire l'app sono la stringa di connessione dell'account di archiviazione e il nome del contenitore dell'app che verrà usata per archiviare i file. In questo esercizio l'app verrà eseguita solo nel servizio app di Azure quindi verrà seguita la procedura consigliata del servizio app e i valori verranno archiviati nelle impostazioni applicazione del servizio app. Questa operazione verrà eseguita quando verrà creata l'istanza del servizio app, non in questo momento.
+I valori di configurazione necessari per eseguire l'app sono la stringa di connessione dell'account di archiviazione e il nome del contenitore dell'app che verrà usata per archiviare i file. In questa unità verrà eseguita l'app solo nel Servizio app di Azure e quindi verrà seguita la procedura consigliata del servizio app e verranno archiviati i valori nelle impostazioni applicazione del servizio app. Questa operazione verrà eseguita quando verrà creata l'istanza del servizio app, non in questo momento.
 
 Quando sarà il momento di *usare* la configurazione, l'app iniziale includerà già le operazioni di base necessarie. Il parametro del costruttore `IOptions<AzureStorageConfig>` in `BlobStorage` ha due proprietà: la stringa di connessione dell'account di archiviazione e il nome del contenitore in cui l'app archivierà i BLOB. Nel metodo `ConfigureServices` di `Startup.cs` è presente un codice che carica i valori dalla configurazione all'avvio dell'app.
 

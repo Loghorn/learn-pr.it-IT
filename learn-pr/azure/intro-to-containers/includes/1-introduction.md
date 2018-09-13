@@ -1,23 +1,23 @@
-Containers are a modern way of delivering applications and compute processes. When using containers, applications and all dependencies are packaged into what is known as a *container image*. Container images are super portable when using a container image registry. You can create a container image on your development system, then run an instance of that image in an Azure datacenter and have confidence that it will work without additional modification.
+I contenitori sono un modo moderno per distribuire le applicazioni e i processi di calcolo. Quando si usano i contenitori, le applicazioni e tutte le dipendenze vengono organizzate in pacchetti nelle cosiddette *immagini del contenitore*. Le immagini dei contenitori sono estremamente portabili grazie a un registro immagini dei contenitori. È possibile creare un'immagine del contenitore nel sistema di sviluppo e quindi eseguire un'istanza di tale immagine in un data center di Azure avendo la certezza che funzionerà senza ulteriori modifiche.
 
-## Container efficiencies
+## <a name="container-efficiencies"></a>Efficienze dei contenitori
 
-Containers and container images are built in such a way that they efficiently use host resources, such as disk space, memory, and CPU. Due to these efficiencies, containers start quickly. In some cases, starting a new instance of a container is almost instantaneous. This not only allows for quick provisioning of applications, it also allows for a new model of on-demand processing and scale operations.
+I contenitori e le immagini dei contenitori vengono compilati per poter usare in modo efficiente le risorse host, ad esempio spazio su disco, memoria e CPU. Grazie a queste efficienze, i contenitori vengono avviati velocemente. In alcuni casi, l'avvio di una nuova istanza di un contenitore è quasi immediata. Ciò consente non solo il rapido provisioning delle applicazioni, ma anche un nuovo modello di operazioni di elaborazione e scalabilità on demand.
 
-Envision this scenario: You run a batch processing service that occasionally sees a large spike in demand. Using containers, you can build a system that reacts to increased demand by quickly provisioning new container instances to meet the increased demand. That's powerful and not easy to achieve with traditional virtual machines.
+Si immagini questo scenario: si esegue un servizio di elaborazione batch che in alcuni casi rileva un picco elevato nella domanda. Usando i contenitori, è possibile compilare un sistema che reagisce all'aumento della domanda effettuando rapidamente il provisioning di nuove istanze di contenitore per soddisfare tale aumento. Si tratta di un sistema avanzato e non facile da realizzare con le macchine virtuali tradizionali.
 
-In addition to their fast start, containers also allow you to achieve "hyper density". This effectively means that you can run more applications and processes with less virtual or physical resources.
+Oltre all'avvio veloce, con i contenitori è possibile ottenere l'"iperdensità". Ciò significa che è possibile eseguire più applicazioni e processi con meno risorse fisiche o virtuali.
 
-## Use cases
+## <a name="use-cases"></a>Casi d'uso
 
-While containers are a great platform for running traditional workload like webservers, they also help open opportunities, such as burstable batch processing, applications built with a modern and distributed architecture, and anything that requires on-demand scale.
+I contenitori non sono solo una piattaforma ideale per l'esecuzione di un carico di lavoro tradizionale, ad esempio i server Web, ma offrono anche nuove opportunità, come l'elaborazione batch con possibilità di burst, applicazioni compilate con un'architettura moderna e distribuita e qualsiasi elemento richieda la scalabilità on demand.
 
-## Learning objectives
+## <a name="learning-objectives"></a>Obiettivi di apprendimento
 
-In this module, you will:
+In questo modulo verrà descritto come:
 
-- Prepare a local container development environment.
-- Learn basic Docker operations.
-- Run, list, and delete containers.
-- Create a custom container images.
-- Push container images to a public container registry and run containers from these images.
+- Preparare un ambiente di sviluppo del contenitore locale.
+- Apprendere le operazioni di base di Docker.
+- Eseguire, elencare ed eliminare i contenitori.
+- Creare un'immagine personalizzata del contenitore.
+- Eseguire il push delle immagini dei contenitori in un registro contenitori pubblico ed eseguire i contenitori da queste immagini.

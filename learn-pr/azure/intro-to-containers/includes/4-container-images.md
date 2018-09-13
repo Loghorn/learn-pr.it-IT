@@ -1,126 +1,126 @@
-In the last unit, you worked with pre-created container images to perform some basic Docker operations. In this unit, you will create custom container images, push these images to a public container registry, and run containers from these images.
+Nell'ultima unità sono state usate immagini dei contenitori già pronte per eseguire alcune operazioni di Docker di base. In questa unità si creeranno immagini dei contenitori personalizzate, si eseguirà il push di queste immagini in un registro contenitori pubblico e si eseguiranno i contenitori da queste immagini.
 
-Container images can be created by hand or using what's called a Dockerfile to automate the process. The preferred method is using a Dockerfile, but this unit will demonstrate both methods. Understanding the manual process will help you better understand what's occurring when using a Dockerfile for automation.
+Le immagini dei contenitori possono essere create manualmente o usando un cosiddetto Dockerfile per automatizzare il processo. Il metodo preferito consiste nell'usare un Dockerfile, ma questa unità illustrerà entrambi i metodi. L'obiettivo è conoscere il processo manuale per poter comprendere meglio cosa accade quando si usa un Dockerfile per l'automazione.
 
-## Manual image creation
+## <a name="manual-image-creation"></a>Creazione di un'immagine manuale
 
-When manually creating a container image, the following actions are taken:
+Quando si crea manualmente un'immagine del contenitore, vengono eseguite le azioni seguenti:
 
-- Start an instance of a container.
-- Establish a terminal session with the container.
-- Modify the container by installing software and making configuration changes.
-- Capturing the container into a new image using the `docker capture` command.
+- Avviare un'istanza di un contenitore.
+- Stabilire una sessione terminal con il contenitore.
+- Modificare il contenitore installando software e apportando modifiche alla configurazione.
+- Acquisizione del contenitore in una nuova immagine usando il comando `docker capture`.
 
-In this first example, you start an instance of a container that's running Python, create a 'Hello World' application, and then capture the container to a new image.
+In questo primo esempio si avvia un'istanza di un contenitore che esegue Python, si crea un'applicazione hello world e quindi si acquisisce il contenitore in una nuova immagine.
 
-First, run a container from the NGINX image. This command looks a bit different from the commands that you ran in the previous unit. Because you want to establish a terminal session with the running container, the `-t` and `-i` arguments are provided. Together, these arguments instruct Docker to allocate a pseudo terminal that will remain in a runnings state. In other words, the `-t` and `-i` arguments create an interactive session with the running container.
+In primo luogo, eseguire un contenitore dall'immagine NGINX. Questo comando è leggermente diverso dai comandi eseguiti nell'unità precedente. Poiché si vuole stabilire una sessione terminal con il contenitore in esecuzione, vengono forniti gli argomenti `-t` e `-i`. L'unione di questi argomenti consente di indicare a Docker di allocare uno pseudoterminale che rimarrà in uno stato di esecuzione. In altre parole, gli argomenti `-t` e `-i` creano una sessione interattiva con il contenitore in esecuzione.
 
-You then specify that the `python` container image is used, and the process to run inside of the container is `bash`.
+Si specifica quindi che viene usata l'immagine del contenitore `python` e il processo da eseguire nel contenitore è `bash`.
 
 ```bash
 docker run --name python-demo -ti python bash
 ```
 
-After the command is run, your terminal session should switch to the containers pseudo terminal. This can be seen by the terminal prompt, which should have changed to something similar to the following:
+Dopo che il comando viene eseguito, la sessione terminal passerà allo pseudoterminale del contenitore. Questo passaggio può essere visualizzato dal prompt del terminale, che dovrebbe ora essere simile al seguente:
 
-```output
+```bash
 root@d8ccada9c61e:/#
 ```
 
-At this point, you're working inside the container. You should find that working inside a container is much like working inside a virtual or physical system. For instance, you can list, create, and delete files, install software, and make configuration changes. For this simple example, a Python-based 'Hello World' script is created. This can be done with the following command:
+A questo punto, si lavorerà all'interno del contenitore. Si noterà che lavorare all'interno di un contenitore è molto simile a lavorare all'interno di un sistema fisico o virtuale. È ad esempio possibile elencare, creare ed eliminare file, installare software e apportare modifiche alla configurazione. Per questo semplice esempio, viene creato uno script hello world basato su Python. A tale scopo, eseguire il comando seguente:
 
 ```bash
 echo 'print("Hello World!")' > hello.py
 ```
 
-To test the script while you're still in the container, run the following command:
+Per testare lo script mentre si è ancora nel contenitore, eseguire il comando seguente:
 
 ```bash
 python hello.py
 ```
 
-This will produce the following output:
+L'output sarà il seguente:
 
-```output
+```bash
 Hello World!
 ```
 
-When you're satisfied that the script functions as expected, exit out of the container by typing `exit`:
+Dopo aver verificato che lo script funziona come previsto, uscire dal contenitore digitando `exit`:
 
 ```bash
 exit
 ```
 
-Back in the terminal of your local system, use the `docker ps` command to list all running containers:
+Nel terminale del sistema locale usare il comando `docker ps` per elencare tutti i contenitori in esecuzione:
 
 ```bash
 docker ps
 ```
 
-Notice that nothing is running. When you entered `exit` in the running container, the Bash process completed, which then stopped the container. This is the expected behavior and is ok.
+Si noti che nessuno è in esecuzione. Quando è stato immesso `exit` nel contenitore in esecuzione, il processo Bash è stato completato e il contenitore è stato quindi arrestato. Si tratta del comportamento previsto ed è corretto.
 
-```output
+```bash
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
 ```
 
-Use `docker ps` again and include the `-a` argument. This command will return a list of all containers, regardless if they're running.
+Usare di nuovo `docker ps` e includere l'argomento `-a`. Questo comando restituirà un elenco di tutti i contenitori, indipendentemente dal fatto che siano in esecuzione.
 
 ```bash
 docker ps -a
 ```
 
-Notice that a container with the name *python-demo* has a status of *Exited*. This container is the stopped instance of the container that you just exited from.
+Si noti che un contenitore con il nome *python-demo* ha lo stato *Exited*. Questo contenitore è l'istanza arrestata del contenitore da cui si è appena usciti.
 
-```output
+```bash
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                      PORTS               NAMES
 cf6ac8e06fd9        python              "bash"              27 seconds ago      Exited (0) 12 seconds ago                       python-demo
 ```
 
-To create a new container image from this container, use the `docker commit` command. The following example instructs *docker commit* to create an image named *python-custom* from the *python-demo* containers.
+Per creare una nuova immagine del contenitore da questo contenitore, usare il comando `docker commit`. L'esempio seguente indica a *docker commit* di creare un'immagine denominata *python-custom* dai contenitori *python-demo*.
 
 ```bash
 docker commit python-demo python-custom
 ```
 
-After the command completes, you should see output similar to the following:
+Dopo il completamento del comando, l'output dovrebbe essere simile al seguente:
 
-```output
+```bash
 sha256:91a0cf9aa9857bebcd7ebec3418970f97f043e31987fd4a257c8ac8c8418dc38
 ```
 
-Now run `docker images` to see a list of container images:
+Eseguire ora `docker images` per visualizzare un elenco di immagini dei contenitori:
 
 ```bash
 docker images
 ```
 
-You should now see the custom Python image.
+Si noterà ora l'immagine personalizzata di Python.
 
-```output
+```bash
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
 python-custom       latest              1f231e7127a1        6 seconds ago       922MB
 python              latest              638817465c7d        24 hours ago        922MB
 alpine              latest              11cd0b38bc3c        2 weeks ago         4.41MB
 ```
 
-Run a container from the new image. You also need to specify what command or process to run inside of the container. With this example, run `python hello.py`.
+Eseguire un contenitore dalla nuova immagine. È anche necessario specificare quale comando o processo eseguire all'interno del contenitore. Con questo esempio, eseguire `python hello.py`.
 
 
 ```bash
 docker run python-custom python hello.py
 ```
 
-The container will start and output the 'Hello World' message. The Python process is then complete and the container stops.
+Il contenitore verrà avviato e restituirà il messaggio hello world. Il processo di Python viene quindi completato e il contenitore viene arrestato.
 
-```output
+```bash
 Hello World!
 ```
 
-## Automated image creation
+## <a name="automated-image-creation"></a>Creazione di un'immagine automatizzata
 
-In the last section, a container image was manually created. While this method works great for one-off or experiential image creation, it's not sustainable in a production environment. Container image creation can be automated using a *Dockerfile* and the `docker build` command. The *docker build* command essentially starts a container, runs the instructions found in the *Dockerfile*, and then captures the results to a new container image.
+Nell'ultima sezione è stata creata manualmente un'immagine del contenitore. Questo metodo funziona perfettamente per la creazione occasionale o pratica di immagini, ma non è sostenibile in un ambiente di produzione. La creazione di un'immagine del contenitore può essere automatizzata usando un *Dockerfile* e il comando `docker build`. Il comando *docker build* esegue, in pratica, le istruzioni trovate nel *Dockerfile* e quindi acquisisce i risultati in una nuova immagine del contenitore.
 
-Create a file named *Dockerfile* and enter the following text:
+Creare un file denominato *Dockerfile* e immettere il testo seguente:
 
 ```bash
 FROM python
@@ -132,17 +132,17 @@ RUN echo 'print("Hello World!")' > hello.py
 CMD python hello.py
 ```
 
-The *FROM* statement specifies the base image to be used during image creations. The *RUN* statement runs commands inside of the container. *RUN* can be used to install software, make configuration changes, and cleanup the container before the capture event. The *CMD* statement specifies the process that should run when a container is started.
+L'istruzione *FROM* specifica l'immagine di base da usare durante le creazioni delle immagini. L'istruzione *RUN* esegue i comandi all'interno del contenitore. *RUN* può essere usata per installare software, apportare modifiche alla configurazione e pulire il contenitore prima dell'evento di acquisizione. L'istruzione *CMD* specifica il processo da eseguire quando viene avviato un contenitore.
 
-Use the `docker build` command to create a new container image using the instructions specified in the Dockerfile.
+Usare il comando `docker build` per creare una nuova immagine del contenitore con le istruzioni specificate nel Dockerfile.
 
 ```bash
 docker build -t python-dockerfile .
 ```
 
-You should see output similar to the following.
+L'output dovrebbe essere simile al seguente.
 
-```output
+```bash
 Sending build context to Docker daemon  2.048kB
 Step 1/4 : FROM python
  ---> 638817465c7d
@@ -162,62 +162,62 @@ Successfully built 98c39b91770f
 Successfully tagged python-dockerfile:latest
 ```
 
-Use the `docker images` command to return a list of container images.
+Usare il comando `docker images` per restituire un elenco di immagini dei contenitori.
 
 ```bash
 docker images
 ```
 
-You should now see the custom image.
+Si noterà ora l'immagine personalizzata.
 
-```output
+```bash
 REPOSITORY          TAG                 IMAGE ID            CREATED              SIZE
 python-dockerfile   latest              98c39b91770f        About a minute ago   922MB
 python              latest              638817465c7d        26 hours ago         922MB
 alpine              latest              11cd0b38bc3c        2 weeks ago          4.41MB
 ```
 
-Use the `docker run` command to run a container from the custom image.
+Usare il comando `docker run` per eseguire un contenitore dall'immagine personalizzata.
 
-Notice here that no arguments have been provided to the `docker run` command. Unlike when you manually create a container image, a Dockerfile allows you to include a command to run when the container starts. In this case, the specified command is `python hello.py`, which causes the container to run the Python script.
+Si noti che non sono stati forniti argomenti al comando `docker run`. A differenza di quando si crea manualmente un'immagine del contenitore, un Dockerfile consente di includere un comando da eseguire all'avvio del contenitore. In questo caso, il comando specificato è `python hello.py`, che fa eseguire al contenitore lo script Python.
 
 ```bash
 docker run python-dockerfile
 ```
 
-After you run the command, you should see the container output.
+Dopo aver eseguito il comando, verrà visualizzato l'output del contenitore.
 
-```output
+```bash
 Hello World!
 ```
 
-## Push the image to a public registry
+## <a name="push-the-image-to-a-public-registry"></a>Eseguire il push dell'immagine in un registro pubblico
 
-Docker Hub is a public container registry. In order to push container images to Docker Hub, you must have a Docker account. If needed, visit the [Docker Hub site](https://hub.docker.com/) to register for an account.
+Docker Hub è un registro contenitori pubblico. Per eseguire il push delle immagini dei contenitori in Docker Hub, è necessario un account Docker. Se necessario, visitare il [sito di Docker Hub](https://hub.docker.com/) per eseguire la registrazione per un account.
 
-After you have a Docker Hub account, the container image must be tagged with the account name. To do so, use the `docker tag` command.
+Dopo aver creato un account Docker Hub, è necessario applicare un tag con il nome dell'account all'immagine del contenitore. A questo scopo, usare il comando `docker tag`.
 
-In the following example, the *python-dockerfile* image is tagged with a Docker Hub account name. Replace `<account name>` with your Docker Hub account name.
+Nell'esempio seguente all'immagine *python-dockerfile* viene applicato un tag con un nome dell'account Docker Hub. Sostituire `<account name>` con i nome dell'account Docker Hub.
 
 ```bash
 docker tag python-dockerfile <account name>/python-dockerfile
 ```
 
-Next, make sure that you are logged into Docker Hub using the `docker login` command.
+Assicurarsi quindi di essere connessi a Docker Hub usando il comando `docker login`.
 
 ```bash
 docker login
 ```
 
-Finally push the *python-dockerfile* image to Docker Hub using the `docker push` command. Replace `<account name>` with your Docker Hub account name.
+Eseguire infine il push dell'immagine *python-dockerfile* in Docker Hub con il comando `docker push`. Sostituire `<account name>` con i nome dell'account Docker Hub.
 
 ```bash
 docker push <account name>/python-dockerfile
 ```
 
-While the container image is being uploaded to Docker Hub, you will see output similar to the following:
+Mentre l'immagine del contenitore viene caricata in Docker Hub, verrà visualizzato un output simile al seguente:
 
-```output
+```bash
 The push refers to repository [docker.io/account/python-dockerfile]
 f39073ca4d5a: Pushed
 9dfcec2738a9: Pushed
@@ -232,8 +232,8 @@ ce6466f43b11: Mounted from account/python
 3b10514a95be: Mounted from account/python
 ```
 
-The container image is now stored in Docker Hub and can be accessed from any Internet-connected machine using `docker pull` or `docker run`.
+L'immagine del contenitore è ora archiviata in Docker Hub ed è accessibile da qualsiasi computer connesso a Internet tramite `docker pull` o `docker run`.
 
-## Summary
+## <a name="summary"></a>Riepilogo
 
-In this unit, you created two container images. The first was created manually and the second was automated using a Dockerfile.
+In questa unità sono state create due immagini dei contenitori. La prima è stata creata manualmente e la seconda è stata automatizzata usando un Dockerfile.

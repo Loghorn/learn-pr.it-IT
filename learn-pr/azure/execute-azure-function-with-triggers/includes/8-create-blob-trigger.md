@@ -1,65 +1,69 @@
-In this unit, we're going to create an Azure function that displays the name and size of a blob when it's created or updated.
+In questa unità si creerà una funzione di Azure per visualizzare il nome e le dimensioni di un BLOB quando viene creato o aggiornato. 
 
-## Create a blob trigger
+## <a name="create-a-blob-trigger"></a>Creare un trigger BLOB
 
-Again, let's continue using our existing Azure Functions application and add a blob trigger.
+Anche in questo caso, continuiamo a usare l'applicazione Funzioni di Azure esistente e aggiungiamo un trigger BLOB.
 
-1. Sign into the [Azure portal](https://portal.azure.com?azure-portal=true).
+1. Accedere al [portale di Azure](https://portal.azure.com?azure-portal=true).
 
-1. Point to **Functions** and select the plus (+) icon.
+1. Selezionare **Funzioni**, quindi l'icona del segno più (+).
 
-1. Select **Custom Function** and then **Blob trigger**.
+    ![Selezionare Funzioni, quindi il segno più](../media-drafts/4-hover-function.png)
 
-1. Select **C#** as the language.
+1. Selezionare **Funzione personalizzata** e quindi **Trigger BLOB**.
 
-1. Leave the **Name** set to the default value.
+1. Selezionare il linguaggio di programmazione **C#**. 
 
-1. Leave the **Path** set to the default value.
+1. Lasciare **Nome** impostato sul valore predefinito.
 
-1. Select an existing Azure Storage account, or select **Create** if you want Azure to create a new account for you.
+1. Lasciare **Percorso** impostato sul valore predefinito.
 
-## Create a blob container
+1. Selezionare un account di archiviazione di Azure esistente oppure selezionare **Crea** se si vuole che Azure crei un nuovo account per l'utente.
 
-Now that we've created a blob trigger, let's use the Storage Explorer to create a blob and trigger the function.
+## <a name="create-a-blob-container"></a>Creare un contenitore BLOB
 
-1. Open the storage account you used (or created) in a new tab. An easy way to do this is to open a new Azure Portal tab and click on **Storage accounts** in the sidebar, or to use **All services** in the sidebar and then filter by the name. We want to use a new tab so we can switch between the two services we are working with.
+Ora che è stato creato un trigger di BLOB, si userà Storage Explorer per creare un BLOB e attivare la funzione.
 
-1. Click on the **Storage Explorer (preview)** section - this will open a new blade where you can work with blobs and files.
+1. Aprire l'account di archiviazione usato (o creato) in una nuova scheda. Un modo semplice per farlo consiste nell'aprire una nuova scheda del portale di Azure e fare clic su **Account di archiviazione** nella barra laterale oppure usare **Tutti i servizi** nella barra laterale e quindi filtrare per nome. Si sceglie di aprire una nuova scheda per poter passare da uno all'altro dei due servizi usati.
 
-Remember that our blob trigger is monitoring only the location described in the **Path** field. By default, our path should be:
+1. Fare clic sulla sezione **Storage Explorer (anteprima)** per aprire un nuovo pannello in cui è possibile usare i BLOB e i file.
+
+Tenere presente che il trigger del BLOB monitora solo la posizione descritta nel campo **Percorso**. Per impostazione predefinita, il percorso deve essere:
 
 > samples-workitems/{name}
 
-We need to create a container called **samples-workitems**.
+È necessario creare un contenitore denominato **samples-workitems**.
 
-1. Right-click **BLOB CONTAINERS** and select **Create blob container**.
+1. Fare clic con il pulsante destro del mouse su **CONTENITORI BLOB** e scegliere **Crea contenitore BLOB**.
 
-1. Enter **samples-workitems** as the name, leave the access level at the default **Private** setting.
+1. Immettere **samples-workitems** come nome e lasciare l'impostazione predefinita **Privato** per il livello di accesso.
 
-## Turn on your blob trigger
+## <a name="turn-on-your-blob-trigger"></a>Attivare il trigger del BLOB
 
-Now that we've created our container to monitor, let's run our function so we can see output when a blob is created.
+Ora che è stato creato il contenitore per il monitoraggio, è possibile eseguire la funzione per visualizzare l'output quando il BLOB viene creato.
 
-1. Switch back to the Azure Function tab (or reopen it).
+1. Tornare alla scheda Funzione di Azure (o riaprirla).
 
-1. Select your blob trigger to open the code screen.
+1. Selezionare il trigger del BLOB per aprire la schermata di codice.
 
-1. Select **Run** - this will open the output window.
+1. Selezionare **Esegui** per aprire la finestra di output.
 
-## Create a blob
+## <a name="create-a-blob"></a>Creare un BLOB
 
-Our blob trigger is now up and listening for activity. Let's create a blob to see if we get a log message.
+Il trigger del blob è ora attivo e in ascolto per l'attività. È possibile creare un blob per vedere se viene visualizzato un messaggio di registro.
 
-1. In Storage explorer, select the **samples-workitems** container.
+1. In Storage Explorer selezionare il contenitore **samples-workitems**.
 
-1. Select **Upload** from the toolbar.
+1. Selezionare **Carica** dalla barra degli strumenti.
 
-1. Select any file from your computer.
+1. Selezionare i file dal computer.
 
-1. Select **Upload**.
+1. Selezionare **Carica**.
 
-1. Switch back to the Azure Function tab and check the output logs for a message that displays what file was uploaded.
+1. Tornare alla scheda Funzione di Azure e cercare nei log di output un messaggio che visualizza il file caricato.
 
-## Pause the Function
+## <a name="pause-the-function"></a>Sospendere la funzione
 
-To ensure that you aren't charged for additional requests, you can click **Pause** above the log window.
+Per assicurarsi che non verranno applicati costi per richieste aggiuntive, è possibile fare clic su **Sospendi** sopra la finestra del log.
+
+![Sospendere la funzione](../media-drafts/4-pause-timer.png)

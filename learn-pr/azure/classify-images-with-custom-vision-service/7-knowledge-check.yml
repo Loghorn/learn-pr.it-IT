@@ -4,14 +4,13 @@ title: Verificare le proprie conoscenze
 metadata:
   title: Verificare le proprie conoscenze
   description: Verificare di aver compreso i passaggi necessari per classificare immagini con il Servizio visione artificiale personalizzato Microsoft.
-  ms.openlocfilehash: 3db5e215d180bf5350d2ca8a45b265f5c76d8b30
-  ms.sourcegitcommit: 107578417899e44b5611917dec7bcc21d4c1582e
+  ms.openlocfilehash: b217a3b77827db2dc79334d15f430d7289f7ada5
+  ms.sourcegitcommit: 1663afb13d55c1fce5f2dc4c0f78ef2d74902c33
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 08/29/2018
-  ms.locfileid: "43228771"
+  ms.lasthandoff: 08/31/2018
+  ms.locfileid: "43363863"
 durationInMinutes: 10
-content: Obbligatorio
 quiz:
   title: Uso del Servizio visione artificiale personalizzato Microsoft per eseguire la classificazione delle immagini
   questions:
@@ -37,9 +36,9 @@ quiz:
     - content: Per inserire le immagini in una categoria per il training
       isCorrect: true
       correctExplanation: Corretto. Passare alla parte successiva del lab.
-    - content: Per generare un word cloud dopo il training
+    - content: Per generare una nuvola di parole dopo il training
       isCorrect: false
-      incorrectExplanation: Il Servizio visione artificiale personalizzato non gestisce in alcun modo i word cloud.
+      incorrectExplanation: Il Servizio visione artificiale personalizzato non gestisce in alcun modo le nuvole di parole.
     - content: Non è necessario aggiungere un tag a questo scopo
       isCorrect: false
       incorrectExplanation: Per il corretto funzionamento della classificazione delle immagini, è necessario aggiungere almeno un tag.
@@ -60,7 +59,7 @@ quiz:
       isCorrect: false
       incorrectExplanation: Il servizio può eseguire un rapido test sugli URL immagine, ma può eseguirne anche di altro tipo.
     - content: Pagina Web di immagini
-      isCorrect: true
+      isCorrect: false
       incorrectExplanation: Il servizio non può eseguire un rapido test solo su una pagina Web contenente immagini.
     - content: File di immagine e URL immagine
       isCorrect: true
@@ -84,16 +83,16 @@ quiz:
     - content: Chiave di sottoscrizione
       isCorrect: false
       incorrectExplanation: Per il Servizio visione artificiale personalizzato non viene usata alcuna chiave di sottoscrizione.
-    - content: Chiave per le stime
+    - content: Chiave per le previsioni
       isCorrect: true
       correctExplanation: Corretto. Passare alla parte successiva del lab.
     - content: Chiave di training
       isCorrect: false
-      incorrectExplanation: La chiave di training viene usata per il training di nuove iterazioni nel modello, ma non per eseguire stime.
+      incorrectExplanation: La chiave di training viene usata per il training di nuove iterazioni nel modello, ma non per eseguire previsioni.
     - content: Chiave API
       isCorrect: false
       incorrectExplanation: Per il Servizio visione artificiale personalizzato non viene usata alcuna chiave API.
-  - content: Quando si usa l'API per le stime che cosa altro accade nel portale del Servizio visione artificiale personalizzato?
+  - content: Quando si usa l'API per le previsioni che cosa altro accade nel portale del Servizio visione artificiale personalizzato?
     choices:
     - content: Vengono aggiunti tag alle immagini se queste vengono restituite come sconosciute
       isCorrect: false
@@ -101,7 +100,7 @@ quiz:
     - content: Le immagini vengono caricate come prive di tag nel set di training
       isCorrect: false
       incorrectExplanation: Le immagini devono essere caricate in modo esplicito per fare parte del set di training.
-    - content: Le immagini vengono mostrate nella scheda Predictions (Stime)
+    - content: Le immagini vengono mostrate nella scheda Predictions (Previsioni)
       isCorrect: true
       correctExplanation: Corretto. Passare alla parte successiva del lab.
     - content: Non accade altro

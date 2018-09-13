@@ -1,10 +1,10 @@
-### <a name="exercise-4-create-a-nothotdog-app"></a>Esercizio 4: Creare un'app NotHotDog
+### <a name="create-a-nothotdog-app"></a>Creare un'app NotHotDog
 
-In questo esercizio si userà [Visual Studio Code](https://code.visualstudio.com/), l'editor di codice sorgente multipiattaforma gratuito di Microsoft, preinstallato nella Data Science VM, per scrivere un'app NotHotDog in Python. L'app userà [TkInter](https://wiki.python.org/moin/TkInter), un noto framework GUI per Python, per implementare l'interfaccia utente e consentirà di selezionare le immagini dal file system locale. Le immagini verranno quindi passate al modello sottoposto a training nell'esercizio precedente e l'app indicherà se contengono un hot dog.
+In questa unità si userà [Visual Studio Code](https://code.visualstudio.com/), l'editor di codice sorgente multipiattaforma gratuito di Microsoft, preinstallato nella Data Science VM, per scrivere un'app NotHotDog in Python. L'app userà [TkInter](https://wiki.python.org/moin/TkInter), un noto framework GUI per Python, per implementare l'interfaccia utente e consentirà di selezionare le immagini dal file system locale. Le immagini verranno quindi passate al modello sottoposto a training nell'esercizio precedente e l'app indicherà se contengono un hot dog.
 
 1. Fare clic su **Applicazioni** nell'angolo superiore sinistro del desktop e selezionare **Accessori > Visual Studio Code** per avviare Visual Studio Code. Usare il comando di Visual Studio Code **File > Apri cartella** per aprire la cartella "notebooks/tensorflow-for-poets-2/tf_files" contenente il file **retrained_graph_hotdog.pb** creato durante il training del modello.
 
-1. Creare un nuovo file denominato **classify.py** nella cartella corrente. Se Visual Studio Code offre di installare l'estensione di Python, fare clic su **Installa** per installarla. Copiare il codice seguente negli Appunti e usare **MAIUSC+INS** per incollarlo in **classify.py**. Salvare quindi il file:
+1. Creare un nuovo file denominato **classify.py** nella cartella corrente. Se Visual Studio Code offre di installare l'estensione di Python, fare clic su **Installa** per installarla. Copiare il codice seguente negli Appunti e usare **MAIUSC+INS** per incollarlo in **classify.py**. Salvare quindi il file.
 
     ```python
     import tkinter as tk
@@ -89,9 +89,7 @@ In questo esercizio si userà [Visual Studio Code](https://code.visualstudio.com
 
     > Se vengono visualizzati messaggi di errore riguardanti un driver del kernel mancate nella finestra del terminale durante l'elaborazione di un'immagine, è possibile ignorarli. Sono il risultato del fatto che la Data Science VM non contiene una GPU virtuale.
 
-    ![Selezione di un'immagine](../images/select-image.png)
-
-    _Selezione di un'immagine_
+    ![Selezione di un'immagine](../media-draft/4-select-image.png)
 
 1. Ripetere il passaggio precedente usando un'immagine che non contiene un hot dog. Il modello risponde correttamente questa volta?
 

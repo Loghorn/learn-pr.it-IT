@@ -1,85 +1,84 @@
-In this unit, we create an Azure function that's invoked every 20 seconds using a timer trigger.
+In questa unità si crea una funzione di Azure che verrà richiamata ogni 20 secondi con un trigger timer.
 
-## Create an Azure function
+## <a name="create-an-azure-function"></a>Creare una funzione di Azure
 
-Let’s start by creating an Azure Function in the portal.
+Per iniziare, creare una funzione di Azure nel portale.
 
-1. Sign into the [Azure portal](https://portal.azure.com?azure-portal=true).
+1. Accedere al [portale di Azure](https://portal.azure.com?azure-portal=true).
 
-1. In the left navigation, select **Create a resource**.
+1. Nel riquadro di spostamento a sinistra selezionare **Crea una risorsa**.
 
-1. Select **Compute**.
+1. Selezionare **Calcolo**.
 
-1. Locate and select **Function App**. You can also optionally use the search bar to locate the template.
+1. Individuare e selezionare **App per le funzioni**. Facoltativamente, è anche possibile usare la barra di ricerca per individuare il modello.
 
-    ![Screenshot of the Azure portal showing the Create a resource blade with the Function App highlighted.](../media/4-click-function-app.png)
+    ![Selezionare App per le funzioni](../media-drafts/4-click-function-app.png)
 
-1. Enter a unique **App name**.
+1. Immettere un **nome dell'app** univoco.
 
-1. Select a **Subscription**.
+1. Selezionare una **sottoscrizione**.
 
-1. Create a new **Resource Group**.
+1. Creare un nuovo **gruppo di risorse**.
 
-1. Choose **Windows** as your **OS**.
+1. Scegliere **Windows** come **sistema operativo**.
 
-1. Choose **Consumption Plan** for your **Hosting Plan**. You're charged for each execution of your function. Resources are automatically allocated based on your application workload.
+1. Scegliere **Piano A consumo** in **Piano di hosting**. Verranno addebitati costi per ogni esecuzione della funzione. Le risorse verranno allocate automaticamente in base al carico di lavoro dell'applicazione.
 
-1. Select a **Location**.
+1. Selezionare una **località**.
 
-1. Create a new **Storage** account, you can change the name if you like - it will default to a variation of the App name
+1. Creare un nuovo account di **archiviazione**. Per impostazione predefinita, il nome sarà una variante del nome dell'app, ma è possibile modificarlo.
 
-1. Turn off **Application Insights**.
+1. Disattivare **Application Insights**.
 
-1. Select **Create**. This will take a few minutes to complete, you can watch the **Notifications** icon in the toolbar area - once it has finished creating the resource it will have a button there to open it in the Azure Portal.
+1. Selezionare **Crea**. Il completamento richiederà alcuni minuti. Al termine della creazione della risorsa, l'icona **Notifiche** nell'area della barra degli strumenti avrà un pulsante per aprirla nel portale di Azure.
 
-## Create a timer trigger
+## <a name="create-a-timer-trigger"></a>Creare un trigger timer
 
-Now we're going to create a timer trigger inside our Azure function.
+Verrà ora creato un trigger timer all'interno della funzione di Azure.
 
-1. After the Azure function is created, select **All resources** from the left navigation.
+1. Al termine della creazione della funzione di Azure, selezionare **Tutte le risorse** nel riquadro di spostamento a sinistra.
 
-1. Locate and select your Azure function.
+1. Individuare e selezionare la funzione di Azure.
 
-1. On the new blade, point to **Functions** and select the plus (+) icon.
+1. Nel nuovo pannello scegliere **Funzioni** e selezionare l'icona con il segno più (+).
 
-    ![Screenshot of the Azure portal showing a Functions App blade with the add (+) button of the Functions sub-menu highlighted.](../media/4-hover-function.png)
+    ![Selezionare Funzioni, quindi il segno più](../media-drafts/4-hover-function.png)
 
-1. Select **Timer**.
+1. Selezionare **Timer**.
 
-1. Select **CSharp** as the language.
+1. Selezionare **CSharp** come linguaggio.
 
-1. Select **Create this function**.
+1. Selezionare **Creare questa funzione**.
 
-## Configure the timer trigger
+## <a name="configure-the-timer-trigger"></a>Configurare il trigger timer
 
-We have an Azure function with logic to print a message to the log window. We're going to set the schedule of the timer to execute every 20 seconds.
+Si ha una funzione di Azure la cui logica stampa un messaggio nella finestra di log. Si imposterà la pianificazione del timer per l'esecuzione ogni 20 secondi.
 
-1. Select **Integrate**.
+1. Selezionare **Integrazione**.
 
-1. Enter the following value into the **Schedule** box:
+1. Immettere il valore seguente nella casella **Pianifica**:
 
-    ```log
+    ```
     */20 * * * * *
     ```
 
-1. Select **Save**.
+1. Selezionare **Salva**.
 
-## Start the timer
+## <a name="start-the-timer"></a>Avviare il timer
 
-Now that we've configured the timer, we're ready to start it.
+Dopo aver configurato il timer, è possibile avviarlo.
 
-1. Select **TimerTriggerCSharp1**.
+1. Selezionare **TimerTriggerCSharp1**. 
 
     > [!NOTE]
-    > **TimerTriggerCSharp1** is a default name. It's automatically selected when you create the trigger.
+    > **TimerTriggerCSharp1** è un nome predefinito. Viene selezionato automaticamente quando si crea il trigger.
 
-1. Select **Run**.
+1. Selezionare **Esegui**. 
 
-At this point, you should see a message every 20 seconds in the log window.
+A questo punto, nella finestra di log dovrebbe essere visualizzato un messaggio ogni 20 secondi.
 
-## Clean up
-<!---TODO: Update for sandbox?--->
+## <a name="clean-up"></a>Eseguire la pulizia
 
-To ensure that you aren't charged for this function, above the log window, select **Pause** to stop the timer.
+Per evitare che vengano addebitati costi per questa funzione, selezionare **Sospendi** sopra la finestra di log per arrestare il timer.
 
-![Screenshot of the Azure portal showing a Functions App's Logs output panel with the Pause button highlighted.](../media/4-pause-timer.png)
+![Sospensione](../media-drafts/4-pause-timer.png)

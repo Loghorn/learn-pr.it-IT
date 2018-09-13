@@ -1,89 +1,89 @@
-Next, let's use the Azure CLI to create a resource group, and then to deploy a web app into this resource group. 
+Usare quindi l'interfaccia della riga di comando di Azure per creare un gruppo di risorse e quindi per distribuire un'app Web in questo gruppo di risorse. 
 
-### Create a resource group
+### <a name="create-a-resource-group"></a>Creare un gruppo di risorse
 
-1. Open a bash shell on Linux or macOS, or open the Command Prompt window or PowerShell if working from Windows.
+1. Aprire una shell di bash in Linux o macOS oppure aprire la finestra del prompt dei comandi o PowerShell in ambiente Windows.
 
-1. Start the Azure CLI and run the login command.
+1. Avviare l'interfaccia della riga di comando di Azure ed eseguire il comando di accesso.
 
     ```bash
     az login
     ```
-    If you do not get an Azure sign-in page in your web browser, follow the command-line instructions and enter an authorization code at [https://aka.ms/devicelogin](https://aka.ms/devicelogin).
+    Se non viene visualizzata la pagina di accesso ad Azure nel Web browser, seguire le istruzioni della riga di comando e immettere un codice di autorizzazione all'indirizzo [https://aka.ms/devicelogin](https://aka.ms/devicelogin).
 
-1. Create a resource group.
+1. Creare un gruppo di risorse.
 
     ```bash
     az group create --location westeurope --name popupResGroup
     ```
 
-1. Verify that the resource group was created successfully by listing all your resource groups in a table.
+1. Verificare che il gruppo di risorse sia stato creato correttamente elencando tutti i gruppi di risorse in una tabella.
 
     ```bash
     az group list --output table
     ```
 
 > [!TIP]
-> You can also confirm the resource was created in the Azure portal. Open a web browser, sign in to the portal and navigate to the **Resource Groups** section. The new resource group should be displayed in the list.
+> Verificare anche che la risorsa sia stata creata nel portale di Azure. Aprire un Web browser, accedere al portale e passare alla sezione **Gruppi di risorse**. Il nuovo gruppo di risorse dovrebbe essere visualizzato nell'elenco.
 
-1. If you have a lot of items in the group, you can filter the return values by adding a `--query` option, try this command:
+1. Se nel gruppo sono presenti molti elementi, è possibile filtrare i valori restituiti aggiungendo un'opzione `--query`. Provare questo comando:
 
     ```bash
     az group list --query '[?name == popupResGroup]'
     ```
 
-    The query is formmated using **JMESPath** which is a standard query language for JSON requests. You can learn more about this powerful filter language at <http://jmespath.org/>. We also cover queries in more depth in the **Manage VMs with the Azure CLI** module.
+    La query è formattata usando **JMESPath**, che è un linguaggio di query standard per le richieste JSON. Altre informazioni su questo linguaggio di filtro avanzato si possono trovare all'indirizzo <http://jmespath.org/>. Nel modulo **Gestire macchine virtuali con l'interfaccia della riga di comando di Azure** vengono analizzate le query in modo più approfondito.
 
-### Steps to create a service plan
+### <a name="steps-to-create-a-service-plan"></a>Procedura per creare un piano di servizio
 
-When you run Web Apps, using the Azure App Service, you pay for the Azure compute resources used by the app, and this depends on the App Service plan associated with your Web Apps. Service plans determine the region used for the app datacenter, number of VMs used, and pricing tier.
+Quando si eseguono app Web, usando il servizio app di Azure, si paga per le risorse di calcolo di Azure usate dall'app e ciò dipende dal piano di servizio app associato alle app Web. I piani di servizio determinano l'area usata per il data center dell'app, il numero di macchine virtuali usate e il piano tariffario.
 
-1. Create an App Service plan to run your app. The following command does not specify a pricing tier or VM instance details, so by default, you'll get a **Basic** plan with 1 **Small** VM instance.
+1. Creare un piano di servizio app per eseguire l'app. Il comando seguente non specifica un piano tariffario o dettagli sull'istanza della macchina virtuale, quindi per impostazione predefinita si otterrà un piano **Basic** con una istanza di macchina virtuale **Piccola**.
 
     > [!WARNING]
-    > The name of the app and plan must be _unique_, so add a suffix to the name and replace the `<unique>` text in the command below with a set of numbers, your initials, or some other piece of text to make sure it's unique in all of Azure. 
+    > I nomi dell'app e del piano devono essere _univoci_. Aggiungere quindi un suffisso al nome e sostituire il testo `<unique>` nel comando seguente con un set di numeri, con le proprie iniziali o con qualsiasi altro testo per assicurarsi che sia univoco in Azure. 
 
     ```bash
     az appservice plan create --name popupapp-<unique> --resource-group popupResGroup --location westeurope
     ```
 
-1. Verify that the service plan was created successfully by listing all your plans in a table.
+1. Verificare che il piano di servizio sia stato creato correttamente elencando tutti i piani in una tabella.
 
     ```bash
     az appservice plan list --output table
     ```
 
-### Steps to create a web app
+### <a name="steps-to-create-a-web-app"></a>Procedura per creare un'app Web
 
-Next, you'll create the web app in your service plan. You can deploy the code at the same time, but for our example, we'll do this as separate steps.
+A questo punto verrà creata l'app Web nel piano di servizio. È possibile distribuire il codice nello stesso momento, ma per questo esempio l'operazione verrà eseguita in passaggi separati.
 
-1. Create the web app, supply the name of the plan you created above. **Just like the plan, the app name must be unique, replace the `<unique>` marker with some text to make the name globally unique.**
+1. Creare l'app Web e specificare il nome del piano creato in precedenza. **Analogamente al nome del piano, anche il nome dell'app deve essere univoco. Sostituire l'indicatore `<unique>` con un testo per rendere il nome univoco a livello globale.**
     ```bash
     az webapp create --name popupapp-<unique> --resource-group popupResGroup --plan popupapp-<unique>
     ```
 
-1. Verify that the app was created successfully by listing all your apps in a table.
+1. Verificare che l'app sia stata creata correttamente elencando tutte le app in una tabella.
 
     ```bash
     az webapp list --output table
     ```
 
-1. Make a note of the **DefaultHostName**; you will need this later.
+1. Prendere nota di **DefaultHostName** perché sarà necessario in un secondo momento.
 
-### Steps to deploy code from GitHub
+### <a name="steps-to-deploy-code-from-github"></a>Procedura per distribuire il codice da GitHub
 
-1. The final step is to deploy code from a GitHub repository to the web app. Let's use a simple PHP page available in the Azure Samples Github repository that displays "HelloWorld!" when it executes. Make sure to use the web app name you created.
+1. Il passaggio finale consiste nel distribuire il codice da un repository di GitHub all'app Web. Verrà usata una semplice pagina PHP disponibile nel repository GitHub di esempi di Azure che visualizza "HelloWorld!" quando viene eseguita. Assicurarsi di usare il nome dell'app Web creato.
 
     ```bash
     az webapp deployment source config --name popupapp-<unique> --resource-group popupResGroup --repo-url "https://github.com/Azure-Samples/php-docs-hello-world" --branch master --manual-integration
     ```
 
-1. Once it's deployed, Azure will make your website available through the unique app name in the `azurewebsites.net` domain. For example, if my app name was "popupapp-mslearn123", then my website address would be: <http://popupapp-mslearn123.azurewebsites.net>. You will need to type in the correct URL to hit your specific instance.
+1. Al termine della distribuzione, Azure renderà disponibile il sito Web tramite il nome app univoco nel dominio `azurewebsites.net`. Se, ad esempio, il nome dell'app fosse "popupapp-mslearn123", l'indirizzo del sito Web sarebbe: <http://popupapp-mslearn123.azurewebsites.net>. Sarà necessario digitare l'URL corretto per accedere all'istanza specifica.
 
-1. The page displays "HelloWorld!"
+1. Nella pagina viene visualizzato "HelloWorld!"
 
-1. Close the browser window.
+1. Chiudere la finestra del browser.
 
-## Summary
+## <a name="summary"></a>Riepilogo
 
-This exercise demonstrated a typical pattern for an interactive Azure CLI session. You first used a standard command to create a new resource group. You then used a set of commands to deploy a resource (in this example, a web app) into this resource group. This set of commands could easily be combined into a shell script, and executed every time you need to create the same resource.
+In questo esercizio è stato dimostrato un modello tipico per una sessione interattiva dell'interfaccia della riga di comando di Azure. È stato prima di tutto usato un comando standard per creare un nuovo gruppo di risorse. È stato quindi usato un set di comandi per distribuire una risorsa (in questo esempio, un'app Web) in questo gruppo di risorse. Questo set di comandi può essere facilmente combinato in uno script della shell da eseguire ogni volta che è necessario creare la stessa risorsa.

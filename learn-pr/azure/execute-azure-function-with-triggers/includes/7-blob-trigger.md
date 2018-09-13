@@ -19,10 +19,10 @@ Archiviazione BLOB di Azure è una soluzione di archiviazione oggetti progettata
 
 Ad esempio, Archiviazione BLOB di Azure è ideale per eseguire operazioni quali:
 
-- Archiviazione di file.
-- Gestione di file.
-- Streaming di audio e video.
-- Registrazione dei dati.
+- Archiviazione di file
+- Gestione di file
+- Streaming di audio e video
+- Registrazione dei dati
 
 Esistono tre tipi di BLOB: **BLOB in blocchi**, **BLOB di accodamento** e **BLOB di pagine**. I BLOB in blocchi sono i tipi più comuni. Consentono di archiviare in modo efficiente dati binari o testo. I BLOB di accodamento sono simili ai BLOB in blocchi, ma sono stati progettati più che altro per le operazioni di accodamento, quali la creazione di un file di log che viene continuamente aggiornato. Infine, i BLOB di pagine sono costituiti da pagine e sono progettati per operazioni frequenti di lettura e scrittura casuali.
 
