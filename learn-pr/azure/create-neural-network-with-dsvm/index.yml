@@ -1,25 +1,32 @@
 ### YamlMime:Module
 uid: learn.create-neural-network-with-dsvm
 metadata:
-  title: Building Neural Networks with TensorFlow and the Azure Data Science Virtual Machine (Creazione di reti neurali con TensorFlow e la Data Science Virtual Machine di Azure)
-  description: In questo modulo si apprenderà come usare TensorFlow per il training di una rete neurale profonda nella Data Science Virtual Machine di Azure.
-  ms.openlocfilehash: ad925ff00cca11575b94de0a25f4cd9a339fb718
-  ms.sourcegitcommit: 107578417899e44b5611917dec7bcc21d4c1582e
+  title: Creazione di reti neurali con TensorFlow e la Data Science Virtual Machine di Azure
+  description: Informazioni su come usare TensorFlow per il training di una rete neurale profonda nella Data Science Virtual Machine di Azure.
+  ms.date: 09/24/2018
+  ms.openlocfilehash: 79ac3231f183a0fbb92ac35a22550b93f431d945
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 08/29/2018
-  ms.locfileid: "43230032"
-title: Building Neural Networks with TensorFlow and the Azure Data Science Virtual Machine (Creazione di reti neurali con TensorFlow e la Data Science Virtual Machine di Azure)
-summary: In questo modulo si apprenderà come usare TensorFlow per il training di una rete neurale profonda nella Data Science Virtual Machine di Azure.
-abstract: In questo modulo si apprenderà come usare TensorFlow per il training di una rete neurale profonda nella Data Science Virtual Machine di Azure.
-cardDescription: In questo modulo si apprenderà come usare TensorFlow per il training di una rete neurale profonda nella Data Science Virtual Machine di Azure.
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43826553"
+title: Creazione di reti neurali con TensorFlow e la Data Science Virtual Machine di Azure
+summary: Informazioni su come usare TensorFlow per il training di una rete neurale profonda nella Data Science Virtual Machine di Azure.
+abstract: >
+  In questo modulo verrà descritto come:
+    - Creare una Data Science Virtual Machine di Linux in Azure
+    - Connettersi alla DSVM tramite desktop remoto
+    - Eseguire il training di un modello TensorFlow per classificare le immagini contenenti hot dog e quelle che non contengono hot dog
+    - Usare il modello in un'app Python
+prerequisites: >
+  - Un client desktop remoto [Xfce](https://xfce.org/), come [X2Go](https://wiki.x2go.org/doku.php/download:start)
 iconUrl: http://via.placeholder.com/120x120
 levels:
 - beginner
 roles:
 - developer
 products:
-- Azure
+- azure
 units:
 - learn.create-neural-network-with-dsvm.0-overview
 - learn.create-neural-network-with-dsvm.1-create-dsvm
@@ -28,4 +35,4 @@ units:
 - learn.create-neural-network-with-dsvm.4-create-client-app
 - learn.create-neural-network-with-dsvm.5-knowledge-check
 - learn.create-neural-network-with-dsvm.6-delete-env-summary
-achievement: learn.placeholder.badge
+achievement: learn.create-neural-network-with-dsvm.badge

@@ -1,0 +1,30 @@
+### YamlMime:LearningPath
+uid: learn.manage-resources-in-azure
+metadata:
+  title: Gestire le risorse in Azure
+  description: Informazioni su come usare la riga di comando di Azure e il portale Web per creare, gestire e controllare le risorse basate su cloud.
+  ms.date: 09/24/2018
+  ms.openlocfilehash: dd659efb544350a1e9b622532b3b0fea1e03e509
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43826868"
+title: Gestire le risorse in Azure
+summary: Informazioni su come usare la riga di comando di Azure e il portale Web per creare, gestire e controllare le risorse basate su cloud.
+prerequisites: Nessuno
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- beginner
+roles:
+- developer
+- solution-architect
+- administrator
+products:
+- azure
+modules:
+- learn.align-requirements-in-azure
+- learn.control-azure-services-with-cli
+- learn.automate-azure-tasks-with-powershell
+- learn.predict-costs-and-optimize-spending
+achievement: learn.manage-resources-in-azure.trophy

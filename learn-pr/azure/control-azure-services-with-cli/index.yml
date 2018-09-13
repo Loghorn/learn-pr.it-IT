@@ -1,0 +1,41 @@
+### YamlMime:Module
+uid: learn.control-azure-services-with-cli
+metadata:
+  title: Controllare i servizi di Azure con l'interfaccia della riga di comando
+  description: Installare l'interfaccia della riga di comando di Azure in locale e usarla per gestire le risorse di Azure.
+  ms.date: 09/24/2018
+  ms.openlocfilehash: 4c91411059ac9767a0fcc199cd2e336e27e708f1
+  ms.sourcegitcommit: 09425147d998035edf9d2d36006a54d85e3cf75d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43847912"
+title: Controllare i servizi di Azure con l'interfaccia della riga di comando
+summary: Installare l'interfaccia della riga di comando di Azure in locale e usarla per gestire le risorse di Azure.
+abstract: >
+  In questo modulo verrà descritto come:
+    - Installare l'interfaccia della riga di comando di Azure in Linux, macOS e/o Windows
+    - Connettersi a una sottoscrizione di Azure tramite l'interfaccia della riga di comando di Azure
+    - Creare risorse di Azure tramite l'interfaccia della riga di comando di Azure
+prerequisites: >
+  - Esperienza con un'interfaccia della riga di comando, ad esempio PowerShell o Bash
+
+  - Conoscenza dei concetti di base di Azure, ad esempio i gruppi di risorse
+
+  - Esperienza di amministrazione delle risorse di Azure tramite il portale di Azure
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- beginner
+roles:
+- developer
+products:
+- azure
+- azure-clis
+units:
+- learn.control-azure-services-with-cli.1-introduction
+- learn.control-azure-services-with-cli.2-what-is-the-azure-cli
+- learn.control-azure-services-with-cli.3-exercise-install-and-run-the-azure-cli
+- learn.control-azure-services-with-cli.4-work-with-the-cli
+- learn.control-azure-services-with-cli.5-exercise-create-website-using-the-cli
+- learn.control-azure-services-with-cli.6-summary
+achievement: learn.control-azure-services-with-cli.badge

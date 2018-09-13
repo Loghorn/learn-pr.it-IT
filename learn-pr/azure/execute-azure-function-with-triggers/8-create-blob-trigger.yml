@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: execute-azure-function-with-triggers.8-create-blob-trigger
+title: <span data-ttu-id="7ea16-101">Creare un trigger BLOB</span><span class="sxs-lookup"><span data-stu-id="7ea16-101">Create a Blob trigger</span></span>
+metadata:
+  title: <span data-ttu-id="7ea16-102">Creare un trigger BLOB</span><span class="sxs-lookup"><span data-stu-id="7ea16-102">Create a Blob trigger</span></span>
+  description: <span data-ttu-id="7ea16-103">Creare un trigger BLOB ed eseguire una funzione di Azure quando viene creato un BLOB</span><span class="sxs-lookup"><span data-stu-id="7ea16-103">Create a Blob trigger and run an Azure Function when a blob is created</span></span>
+  ms.openlocfilehash: ab4af54c1a56bfb5489976fb78f7cfa251d21a75
+  ms.sourcegitcommit: b97ed72bd7e3fb77b49de71e8ef35d3f70dfd636
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/05/2018
+  ms.locfileid: "43792767"
+durationInMinutes: 15
+content: '[!include[](includes/8-create-blob-trigger.md)]'

@@ -1,109 +1,108 @@
 ### YamlMime:ModuleUnit
 uid: learn.classify-images-with-custom-vision-services.7-knowledge-check
-title: <span data-ttu-id="48f93-101">Verificare le proprie conoscenze</span><span class="sxs-lookup"><span data-stu-id="48f93-101">Check your knowledge</span></span>
+title: <span data-ttu-id="3011e-101">Verificare le proprie conoscenze</span><span class="sxs-lookup"><span data-stu-id="3011e-101">Check your knowledge</span></span>
 metadata:
-  title: <span data-ttu-id="48f93-102">Verificare le proprie conoscenze</span><span class="sxs-lookup"><span data-stu-id="48f93-102">Check your knowledge</span></span>
-  description: <span data-ttu-id="48f93-103">Verificare di aver compreso i passaggi necessari per classificare immagini con il Servizio visione artificiale personalizzato Microsoft.</span><span class="sxs-lookup"><span data-stu-id="48f93-103">Confirm that you understood the steps required to classify images with the Microsoft Custom Vision Service.</span></span>
-  ms.openlocfilehash: 3db5e215d180bf5350d2ca8a45b265f5c76d8b30
-  ms.sourcegitcommit: 107578417899e44b5611917dec7bcc21d4c1582e
+  title: <span data-ttu-id="3011e-102">Verificare le proprie conoscenze</span><span class="sxs-lookup"><span data-stu-id="3011e-102">Check your knowledge</span></span>
+  description: <span data-ttu-id="3011e-103">Verificare di aver compreso i passaggi necessari per classificare immagini con il Servizio visione artificiale personalizzato Microsoft.</span><span class="sxs-lookup"><span data-stu-id="3011e-103">Confirm that you understand the steps required to classify images with the Microsoft Custom Vision Service.</span></span>
+  ms.openlocfilehash: b217a3b77827db2dc79334d15f430d7289f7ada5
+  ms.sourcegitcommit: 1663afb13d55c1fce5f2dc4c0f78ef2d74902c33
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 08/29/2018
-  ms.locfileid: "43228771"
+  ms.lasthandoff: 08/31/2018
+  ms.locfileid: "43363863"
 durationInMinutes: 10
-content: <span data-ttu-id="48f93-104">Obbligatorio</span><span class="sxs-lookup"><span data-stu-id="48f93-104">required</span></span>
 quiz:
-  title: <span data-ttu-id="48f93-105">Uso del Servizio visione artificiale personalizzato Microsoft per eseguire la classificazione delle immagini</span><span class="sxs-lookup"><span data-stu-id="48f93-105">Using the Microsoft Custom Vision Service to Perform Image Classification</span></span>
+  title: <span data-ttu-id="3011e-104">Uso del Servizio visione artificiale personalizzato Microsoft per eseguire la classificazione delle immagini</span><span class="sxs-lookup"><span data-stu-id="3011e-104">Using the Microsoft Custom Vision Service to perform image classification</span></span>
   questions:
-  - content: <span data-ttu-id="48f93-106">Quando si crea un nuovo progetto del Servizio visione artificiale personalizzato, per che cosa viene usato un dominio?</span><span class="sxs-lookup"><span data-stu-id="48f93-106">When creating a new custom vision project, what does a domain used for?</span></span>
+  - content: <span data-ttu-id="3011e-105">Quando si crea un nuovo progetto del Servizio visione artificiale personalizzato, per che cosa viene usato un dominio?</span><span class="sxs-lookup"><span data-stu-id="3011e-105">When you're creating a new Custom Vision Service project, what is a domain used for?</span></span>
     choices:
-    - content: <span data-ttu-id="48f93-107">Aiuta a decidere che nome assegnare al progetto</span><span class="sxs-lookup"><span data-stu-id="48f93-107">Helps you decide what to name your project</span></span>
+    - content: <span data-ttu-id="3011e-106">Aiuta a decidere che nome assegnare al progetto</span><span class="sxs-lookup"><span data-stu-id="3011e-106">Helps you decide what to name your project</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="48f93-108">È possibile assegnare al progetto qualsiasi nome desiderato.</span><span class="sxs-lookup"><span data-stu-id="48f93-108">You can name the project anything you need.</span></span> <span data-ttu-id="48f93-109">Il dominio non interferisce con questo aspetto.</span><span class="sxs-lookup"><span data-stu-id="48f93-109">The domain doesn't interfere with that.</span></span>
-    - content: <span data-ttu-id="48f93-110">Aiuta a decidere come strutturare il progetto</span><span class="sxs-lookup"><span data-stu-id="48f93-110">Helps you decide how to structure your project</span></span>
+      incorrectExplanation: <span data-ttu-id="3011e-107">È possibile assegnare al progetto qualsiasi nome desiderato.</span><span class="sxs-lookup"><span data-stu-id="3011e-107">You can name the project anything you want.</span></span> <span data-ttu-id="3011e-108">Il dominio non interferisce con questo aspetto.</span><span class="sxs-lookup"><span data-stu-id="3011e-108">The domain doesn't interfere with that.</span></span>
+    - content: <span data-ttu-id="3011e-109">Aiuta a decidere come strutturare il progetto</span><span class="sxs-lookup"><span data-stu-id="3011e-109">Helps you decide how to structure your project</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="48f93-111">I progetti hanno la stessa struttura per quanto riguarda immagini di training e stime.</span><span class="sxs-lookup"><span data-stu-id="48f93-111">Projects have the same structure in terms of training images and predictions.</span></span> <span data-ttu-id="48f93-112">Il dominio non interferisce con questo aspetto.</span><span class="sxs-lookup"><span data-stu-id="48f93-112">The domain doesn't interfere with that.</span></span>
-    - content: <span data-ttu-id="48f93-113">Ottimizza un modello per tipi specifici di immagini</span><span class="sxs-lookup"><span data-stu-id="48f93-113">Optimizes a model for specific types of images</span></span>
+      incorrectExplanation: <span data-ttu-id="3011e-110">I progetti hanno la stessa struttura per quanto riguarda immagini di training e stime.</span><span class="sxs-lookup"><span data-stu-id="3011e-110">Projects have the same structure in terms of training images and predictions.</span></span> <span data-ttu-id="3011e-111">Il dominio non interferisce con questo aspetto.</span><span class="sxs-lookup"><span data-stu-id="3011e-111">The domain doesn't interfere with that.</span></span>
+    - content: <span data-ttu-id="3011e-112">Ottimizza un modello per tipi specifici di immagini</span><span class="sxs-lookup"><span data-stu-id="3011e-112">Optimizes a model for specific types of images</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="48f93-114">Corretto.</span><span class="sxs-lookup"><span data-stu-id="48f93-114">Great!</span></span> <span data-ttu-id="48f93-115">Passare alla parte successiva del lab.</span><span class="sxs-lookup"><span data-stu-id="48f93-115">Proceed to the next part of the lab.</span></span>
-    - content: <span data-ttu-id="48f93-116">Ottimizza le immagini di training per l'organizzazione</span><span class="sxs-lookup"><span data-stu-id="48f93-116">Optimizes your training images for organization</span></span>
+      correctExplanation: <span data-ttu-id="3011e-113">Corretto.</span><span class="sxs-lookup"><span data-stu-id="3011e-113">Great!</span></span> <span data-ttu-id="3011e-114">Passare alla parte successiva del lab.</span><span class="sxs-lookup"><span data-stu-id="3011e-114">Proceed to the next part of the lab.</span></span>
+    - content: <span data-ttu-id="3011e-115">Ottimizza le immagini di training per l'organizzazione</span><span class="sxs-lookup"><span data-stu-id="3011e-115">Optimizes your training images for organization</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="48f93-117">Le immagini di training sono organizzate tramite tag.</span><span class="sxs-lookup"><span data-stu-id="48f93-117">Training images are organized by tag.</span></span> <span data-ttu-id="48f93-118">Il dominio non interferisce con questo aspetto.</span><span class="sxs-lookup"><span data-stu-id="48f93-118">The domain doesn't interfere with that.</span></span>
-  - content: <span data-ttu-id="48f93-119">Perché è consigliabile aggiungere un tag dopo il caricamento di immagini?</span><span class="sxs-lookup"><span data-stu-id="48f93-119">Why should you add a tag after uploading images?</span></span>
+      incorrectExplanation: <span data-ttu-id="3011e-116">Le immagini di training sono organizzate tramite tag.</span><span class="sxs-lookup"><span data-stu-id="3011e-116">Training images are organized by tag.</span></span> <span data-ttu-id="3011e-117">Il dominio non interferisce con questo aspetto.</span><span class="sxs-lookup"><span data-stu-id="3011e-117">The domain doesn't interfere with that.</span></span>
+  - content: <span data-ttu-id="3011e-118">Perché è consigliabile aggiungere un tag dopo il caricamento di immagini?</span><span class="sxs-lookup"><span data-stu-id="3011e-118">Why should you add a tag after uploading images?</span></span>
     choices:
-    - content: <span data-ttu-id="48f93-120">Per semplificare l'organizzazione delle immagini nel progetto per l'uso successivo</span><span class="sxs-lookup"><span data-stu-id="48f93-120">To help you organize your images in the project for later use</span></span>
+    - content: <span data-ttu-id="3011e-119">Per semplificare l'organizzazione delle immagini nel progetto per l'uso successivo</span><span class="sxs-lookup"><span data-stu-id="3011e-119">To help you organize your images in the project for later use</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="48f93-121">Anche se i tag aiutano a organizzare le immagini, questo non è lo scopo principale dei tag.</span><span class="sxs-lookup"><span data-stu-id="48f93-121">While tags do help organize images, that's not the full purpose of tags.</span></span>
-    - content: <span data-ttu-id="48f93-122">Per inserire le immagini in una categoria per il training</span><span class="sxs-lookup"><span data-stu-id="48f93-122">To put the images in a category for training</span></span>
+      incorrectExplanation: <span data-ttu-id="3011e-120">Anche se i tag aiutano a organizzare le immagini, questo non è lo scopo principale dei tag.</span><span class="sxs-lookup"><span data-stu-id="3011e-120">While tags do help organize images, that's not the full purpose of tags.</span></span>
+    - content: <span data-ttu-id="3011e-121">Per inserire le immagini in una categoria per il training</span><span class="sxs-lookup"><span data-stu-id="3011e-121">To put the images in a category for training</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="48f93-123">Corretto.</span><span class="sxs-lookup"><span data-stu-id="48f93-123">Great!</span></span> <span data-ttu-id="48f93-124">Passare alla parte successiva del lab.</span><span class="sxs-lookup"><span data-stu-id="48f93-124">Proceed to the next part of the lab.</span></span>
-    - content: <span data-ttu-id="48f93-125">Per generare un word cloud dopo il training</span><span class="sxs-lookup"><span data-stu-id="48f93-125">To generate a word cloud after training</span></span>
+      correctExplanation: <span data-ttu-id="3011e-122">Corretto.</span><span class="sxs-lookup"><span data-stu-id="3011e-122">Great!</span></span> <span data-ttu-id="3011e-123">Passare alla parte successiva del lab.</span><span class="sxs-lookup"><span data-stu-id="3011e-123">Proceed to the next part of the lab.</span></span>
+    - content: <span data-ttu-id="3011e-124">Per generare una nuvola di parole dopo il training</span><span class="sxs-lookup"><span data-stu-id="3011e-124">To generate a word cloud after training</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="48f93-126">Il Servizio visione artificiale personalizzato non gestisce in alcun modo i word cloud.</span><span class="sxs-lookup"><span data-stu-id="48f93-126">The Custom Vision service doesn't do anything with word clouds.</span></span>
-    - content: <span data-ttu-id="48f93-127">Non è necessario aggiungere un tag a questo scopo</span><span class="sxs-lookup"><span data-stu-id="48f93-127">You don't need to add a tag</span></span>
+      incorrectExplanation: <span data-ttu-id="3011e-125">Il Servizio visione artificiale personalizzato non gestisce in alcun modo le nuvole di parole.</span><span class="sxs-lookup"><span data-stu-id="3011e-125">The Custom Vision Service doesn't do anything with word clouds.</span></span>
+    - content: <span data-ttu-id="3011e-126">Non è necessario aggiungere un tag a questo scopo</span><span class="sxs-lookup"><span data-stu-id="3011e-126">You don't need to add a tag</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="48f93-128">Per il corretto funzionamento della classificazione delle immagini, è necessario aggiungere almeno un tag.</span><span class="sxs-lookup"><span data-stu-id="48f93-128">In order for the image classification to work, you do need to add at least one tag.</span></span>
-  - content: <span data-ttu-id="48f93-129">La precisione e il richiamo sono correlati nella misurazione delle prestazioni del modello?</span><span class="sxs-lookup"><span data-stu-id="48f93-129">Are precision and recall related when measuring the model's performance?</span></span>
+      incorrectExplanation: <span data-ttu-id="3011e-127">Per il corretto funzionamento della classificazione delle immagini, è necessario aggiungere almeno un tag.</span><span class="sxs-lookup"><span data-stu-id="3011e-127">In order for the image classification to work, you do need to add at least one tag.</span></span>
+  - content: <span data-ttu-id="3011e-128">La precisione e il richiamo sono correlati nella misurazione delle prestazioni del modello?</span><span class="sxs-lookup"><span data-stu-id="3011e-128">Are precision and recall related when you're measuring the model's performance?</span></span>
     choices:
-    - content: <span data-ttu-id="48f93-130">No</span><span class="sxs-lookup"><span data-stu-id="48f93-130">No</span></span>
+    - content: <span data-ttu-id="3011e-129">No</span><span class="sxs-lookup"><span data-stu-id="3011e-129">No</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="48f93-131">La precisione e il richiamo sono correlati.</span><span class="sxs-lookup"><span data-stu-id="48f93-131">Precision and recall are related.</span></span> <span data-ttu-id="48f93-132">Se la precisione è elevata e il richiamo è ridotto, il modello non avrà prestazioni soddisfacenti.</span><span class="sxs-lookup"><span data-stu-id="48f93-132">You won't have a good performing model if you have high precision and low recall.</span></span>
-    - content: <span data-ttu-id="48f93-133">Sì</span><span class="sxs-lookup"><span data-stu-id="48f93-133">Yes</span></span>
+      incorrectExplanation: <span data-ttu-id="3011e-130">La precisione e il richiamo sono correlati.</span><span class="sxs-lookup"><span data-stu-id="3011e-130">Precision and recall are related.</span></span> <span data-ttu-id="3011e-131">Se la precisione è elevata e il richiamo è ridotto, il modello non avrà prestazioni soddisfacenti.</span><span class="sxs-lookup"><span data-stu-id="3011e-131">You won't have a model that performs well if you have high precision and low recall.</span></span>
+    - content: <span data-ttu-id="3011e-132">Sì</span><span class="sxs-lookup"><span data-stu-id="3011e-132">Yes</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="48f93-134">Corretto.</span><span class="sxs-lookup"><span data-stu-id="48f93-134">Great!</span></span> <span data-ttu-id="48f93-135">Passare alla parte successiva del lab.</span><span class="sxs-lookup"><span data-stu-id="48f93-135">Proceed to the next part of the lab.</span></span>
-  - content: <span data-ttu-id="48f93-136">In che modi è possibile eseguire un rapido test sul modello dopo il training?</span><span class="sxs-lookup"><span data-stu-id="48f93-136">Which ways can you perform a quick test on your model after training?</span></span>
+      correctExplanation: <span data-ttu-id="3011e-133">Corretto.</span><span class="sxs-lookup"><span data-stu-id="3011e-133">Great!</span></span> <span data-ttu-id="3011e-134">Passare alla parte successiva del lab.</span><span class="sxs-lookup"><span data-stu-id="3011e-134">Proceed to the next part of the lab.</span></span>
+  - content: <span data-ttu-id="3011e-135">In che modi è possibile eseguire un rapido test sul modello dopo il training?</span><span class="sxs-lookup"><span data-stu-id="3011e-135">Which ways can you perform a quick test on your model after training?</span></span>
     choices:
-    - content: <span data-ttu-id="48f93-137">File di immagine</span><span class="sxs-lookup"><span data-stu-id="48f93-137">Image file</span></span>
+    - content: <span data-ttu-id="3011e-136">File di immagine</span><span class="sxs-lookup"><span data-stu-id="3011e-136">Image file</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="48f93-138">Il servizio può eseguire un rapido test sui file di immagine, ma può eseguirne anche di altro tipo.</span><span class="sxs-lookup"><span data-stu-id="48f93-138">While the service can do a quick test on image files, it can do others, too.</span></span>
-    - content: <span data-ttu-id="48f93-139">URL immagine</span><span class="sxs-lookup"><span data-stu-id="48f93-139">Image URL</span></span>
+      incorrectExplanation: <span data-ttu-id="3011e-137">Il servizio può eseguire un rapido test sui file di immagine, ma può eseguirne anche di altro tipo.</span><span class="sxs-lookup"><span data-stu-id="3011e-137">While the service can do a quick test on image files, it can do others, too.</span></span>
+    - content: <span data-ttu-id="3011e-138">URL immagine</span><span class="sxs-lookup"><span data-stu-id="3011e-138">Image URL</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="48f93-140">Il servizio può eseguire un rapido test sugli URL immagine, ma può eseguirne anche di altro tipo.</span><span class="sxs-lookup"><span data-stu-id="48f93-140">While the service can do a quick test on image URLs, it can do others, too.</span></span>
-    - content: <span data-ttu-id="48f93-141">Pagina Web di immagini</span><span class="sxs-lookup"><span data-stu-id="48f93-141">Web page of images</span></span>
+      incorrectExplanation: <span data-ttu-id="3011e-139">Il servizio può eseguire un rapido test sugli URL immagine, ma può eseguirne anche di altro tipo.</span><span class="sxs-lookup"><span data-stu-id="3011e-139">While the service can do a quick test on image URLs, it can do others, too.</span></span>
+    - content: <span data-ttu-id="3011e-140">Pagina Web di immagini</span><span class="sxs-lookup"><span data-stu-id="3011e-140">Web page of images</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="3011e-141">Il servizio non può eseguire un rapido test solo su una pagina Web contenente immagini.</span><span class="sxs-lookup"><span data-stu-id="3011e-141">The service is unable to perform a quick test on just a web page with images on it.</span></span>
+    - content: <span data-ttu-id="3011e-142">File di immagine e URL immagine</span><span class="sxs-lookup"><span data-stu-id="3011e-142">Image file and image URL</span></span>
       isCorrect: true
-      incorrectExplanation: <span data-ttu-id="48f93-142">Il servizio non può eseguire un rapido test solo su una pagina Web contenente immagini.</span><span class="sxs-lookup"><span data-stu-id="48f93-142">The service is unable to perform a quick test on just a web page with images on it.</span></span>
-    - content: <span data-ttu-id="48f93-143">File di immagine e URL immagine</span><span class="sxs-lookup"><span data-stu-id="48f93-143">Image file and image URL</span></span>
-      isCorrect: true
-      correctExplanation: <span data-ttu-id="48f93-144">Corretto.</span><span class="sxs-lookup"><span data-stu-id="48f93-144">Great!</span></span> <span data-ttu-id="48f93-145">Passare alla parte successiva del lab.</span><span class="sxs-lookup"><span data-stu-id="48f93-145">Proceed to the next part of the lab.</span></span>
-  - content: <span data-ttu-id="48f93-146">Che operazione viene eseguita tramite l'opzione "Predefinito" nella scheda Prestazioni?</span><span class="sxs-lookup"><span data-stu-id="48f93-146">What does marking 'Make default' from the Performance tab do?</span></span>
+      correctExplanation: <span data-ttu-id="3011e-143">Corretto.</span><span class="sxs-lookup"><span data-stu-id="3011e-143">Great!</span></span> <span data-ttu-id="3011e-144">Passare alla parte successiva del lab.</span><span class="sxs-lookup"><span data-stu-id="3011e-144">Proceed to the next part of the lab.</span></span>
+  - content: <span data-ttu-id="3011e-145">Che operazione viene eseguita tramite l'opzione "Predefinito" nella scheda Prestazioni?</span><span class="sxs-lookup"><span data-stu-id="3011e-145">What does marking 'Make default' from the Performance tab do?</span></span>
     choices:
-    - content: <span data-ttu-id="48f93-147">L'interazione più recente viene contrassegnata come iterazione predefinita</span><span class="sxs-lookup"><span data-stu-id="48f93-147">Marks the latest iteration of the model as the default iteration</span></span>
+    - content: <span data-ttu-id="3011e-146">L'interazione più recente viene contrassegnata come iterazione predefinita</span><span class="sxs-lookup"><span data-stu-id="3011e-146">Marks the latest iteration of the model as the default iteration</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="48f93-148">Corretto.</span><span class="sxs-lookup"><span data-stu-id="48f93-148">Great!</span></span> <span data-ttu-id="48f93-149">Passare alla parte successiva del lab.</span><span class="sxs-lookup"><span data-stu-id="48f93-149">Proceed to the next part of the lab.</span></span>
-    - content: <span data-ttu-id="48f93-150">L'endpoint URL dell'immagine viene contrassegnato come endpoint predefinito</span><span class="sxs-lookup"><span data-stu-id="48f93-150">Marks the image URL endpoint as the default endpoint</span></span>
+      correctExplanation: <span data-ttu-id="3011e-147">Corretto.</span><span class="sxs-lookup"><span data-stu-id="3011e-147">Great!</span></span> <span data-ttu-id="3011e-148">Passare alla parte successiva del lab.</span><span class="sxs-lookup"><span data-stu-id="3011e-148">Proceed to the next part of the lab.</span></span>
+    - content: <span data-ttu-id="3011e-149">L'endpoint URL dell'immagine viene contrassegnato come endpoint predefinito</span><span class="sxs-lookup"><span data-stu-id="3011e-149">Marks the image URL endpoint as the default endpoint</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="48f93-151">Gli endpoint sono costanti indipendentemente dal numero di iterazioni nel modello.</span><span class="sxs-lookup"><span data-stu-id="48f93-151">The endpoints are constant regardless of the number of iterations on the model.</span></span>
-    - content: <span data-ttu-id="48f93-152">L'endpoint del file di immagine viene contrassegnato come endpoint predefinito</span><span class="sxs-lookup"><span data-stu-id="48f93-152">Marks the image file endpoint as the default endpoint</span></span>
+      incorrectExplanation: <span data-ttu-id="3011e-150">Gli endpoint sono costanti indipendentemente dal numero di iterazioni nel modello.</span><span class="sxs-lookup"><span data-stu-id="3011e-150">The endpoints are constant regardless of the number of iterations on the model.</span></span>
+    - content: <span data-ttu-id="3011e-151">L'endpoint del file di immagine viene contrassegnato come endpoint predefinito</span><span class="sxs-lookup"><span data-stu-id="3011e-151">Marks the image file endpoint as the default endpoint</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="48f93-153">Gli endpoint sono costanti indipendentemente dal numero di iterazioni nel modello.</span><span class="sxs-lookup"><span data-stu-id="48f93-153">The endpoints are constant regardless of the number of iterations on the model.</span></span>
-    - content: <span data-ttu-id="48f93-154">Il progetto corrente viene contrassegnato come progetto predefinito da usare</span><span class="sxs-lookup"><span data-stu-id="48f93-154">Marks the current project as the default project to use</span></span>
+      incorrectExplanation: <span data-ttu-id="3011e-152">Gli endpoint sono costanti indipendentemente dal numero di iterazioni nel modello.</span><span class="sxs-lookup"><span data-stu-id="3011e-152">The endpoints are constant regardless of the number of iterations on the model.</span></span>
+    - content: <span data-ttu-id="3011e-153">Il progetto corrente viene contrassegnato come progetto predefinito da usare</span><span class="sxs-lookup"><span data-stu-id="3011e-153">Marks the current project as the default project to use</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="48f93-155">Il progetto deve essere specificato in modo che gli endpoint riconoscano quale usare.</span><span class="sxs-lookup"><span data-stu-id="48f93-155">The project must be specified so the endpoint knows which one to use.</span></span> <span data-ttu-id="48f93-156">L'ID progetto è incluso nell'URL nella scheda Prediction URL (URL stime).</span><span class="sxs-lookup"><span data-stu-id="48f93-156">The project ID is included in the URL on the Prediction URL tab.</span></span>
-  - content: <span data-ttu-id="48f93-157">Come si chiama l'intestazione per la chiave per le stime da inviare con l'endpoint per le stime?</span><span class="sxs-lookup"><span data-stu-id="48f93-157">What is the name of the header for the prediction key to send with the prediction endpoint?</span></span>
+      incorrectExplanation: <span data-ttu-id="3011e-154">Il progetto deve essere specificato in modo che gli endpoint riconoscano quale usare.</span><span class="sxs-lookup"><span data-stu-id="3011e-154">The project must be specified so the endpoint knows which one to use.</span></span> <span data-ttu-id="3011e-155">L'ID progetto è incluso nell'URL nella scheda Prediction URL (URL stime).</span><span class="sxs-lookup"><span data-stu-id="3011e-155">The project ID is included in the URL on the Prediction URL tab.</span></span>
+  - content: <span data-ttu-id="3011e-156">Come si chiama l'intestazione per la chiave per le stime da inviare con l'endpoint per le stime?</span><span class="sxs-lookup"><span data-stu-id="3011e-156">What is the name of the header for the prediction key to send with the prediction endpoint?</span></span>
     choices:
-    - content: <span data-ttu-id="48f93-158">Chiave di sottoscrizione</span><span class="sxs-lookup"><span data-stu-id="48f93-158">Subscription Key</span></span>
+    - content: <span data-ttu-id="3011e-157">Chiave di sottoscrizione</span><span class="sxs-lookup"><span data-stu-id="3011e-157">Subscription Key</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="48f93-159">Per il Servizio visione artificiale personalizzato non viene usata alcuna chiave di sottoscrizione.</span><span class="sxs-lookup"><span data-stu-id="48f93-159">There is no Subscription Key used for the custom vision service.</span></span>
-    - content: <span data-ttu-id="48f93-160">Chiave per le stime</span><span class="sxs-lookup"><span data-stu-id="48f93-160">Prediction Key</span></span>
+      incorrectExplanation: <span data-ttu-id="3011e-158">Per il Servizio visione artificiale personalizzato non viene usata alcuna chiave di sottoscrizione.</span><span class="sxs-lookup"><span data-stu-id="3011e-158">There is no subscription key used for the Custom Vision Service.</span></span>
+    - content: <span data-ttu-id="3011e-159">Chiave per le previsioni</span><span class="sxs-lookup"><span data-stu-id="3011e-159">Prediction Key</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="48f93-161">Corretto.</span><span class="sxs-lookup"><span data-stu-id="48f93-161">Great!</span></span> <span data-ttu-id="48f93-162">Passare alla parte successiva del lab.</span><span class="sxs-lookup"><span data-stu-id="48f93-162">Proceed to the next part of the lab.</span></span>
-    - content: <span data-ttu-id="48f93-163">Chiave di training</span><span class="sxs-lookup"><span data-stu-id="48f93-163">Training Key</span></span>
+      correctExplanation: <span data-ttu-id="3011e-160">Corretto.</span><span class="sxs-lookup"><span data-stu-id="3011e-160">Great!</span></span> <span data-ttu-id="3011e-161">Passare alla parte successiva del lab.</span><span class="sxs-lookup"><span data-stu-id="3011e-161">Proceed to the next part of the lab.</span></span>
+    - content: <span data-ttu-id="3011e-162">Chiave di training</span><span class="sxs-lookup"><span data-stu-id="3011e-162">Training Key</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="48f93-164">La chiave di training viene usata per il training di nuove iterazioni nel modello, ma non per eseguire stime.</span><span class="sxs-lookup"><span data-stu-id="48f93-164">The Training Key is used to train new iterations on your model, but not to make predictions.</span></span>
-    - content: <span data-ttu-id="48f93-165">Chiave API</span><span class="sxs-lookup"><span data-stu-id="48f93-165">API Key</span></span>
+      incorrectExplanation: <span data-ttu-id="3011e-163">La chiave di training viene usata per il training di nuove iterazioni nel modello, ma non per eseguire previsioni.</span><span class="sxs-lookup"><span data-stu-id="3011e-163">The training key is used to train new iterations on your model, but not to make predictions.</span></span>
+    - content: <span data-ttu-id="3011e-164">Chiave API</span><span class="sxs-lookup"><span data-stu-id="3011e-164">API Key</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="48f93-166">Per il Servizio visione artificiale personalizzato non viene usata alcuna chiave API.</span><span class="sxs-lookup"><span data-stu-id="48f93-166">There is no API Key used for the custom vision service.</span></span>
-  - content: <span data-ttu-id="48f93-167">Quando si usa l'API per le stime che cosa altro accade nel portale del Servizio visione artificiale personalizzato?</span><span class="sxs-lookup"><span data-stu-id="48f93-167">When using the prediction API what else happens back in the Custom Vision portal?</span></span>
+      incorrectExplanation: <span data-ttu-id="3011e-165">Per il Servizio visione artificiale personalizzato non viene usata alcuna chiave API.</span><span class="sxs-lookup"><span data-stu-id="3011e-165">There is no API key used for the Custom Vision Service.</span></span>
+  - content: <span data-ttu-id="3011e-166">Quando si usa l'API per le previsioni che cosa altro accade nel portale del Servizio visione artificiale personalizzato?</span><span class="sxs-lookup"><span data-stu-id="3011e-166">When you're using the prediction API, what else happens back in the Custom Vision Service portal?</span></span>
     choices:
-    - content: <span data-ttu-id="48f93-168">Vengono aggiunti tag alle immagini se queste vengono restituite come sconosciute</span><span class="sxs-lookup"><span data-stu-id="48f93-168">Images are tagged if they come back as unknown</span></span>
+    - content: <span data-ttu-id="3011e-167">Vengono aggiunti tag alle immagini se queste vengono restituite come sconosciute</span><span class="sxs-lookup"><span data-stu-id="3011e-167">Images are tagged if they come back as unknown</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="48f93-169">I tag vengono aggiunti alle immagini solo manualmente nel portale, non automaticamente.</span><span class="sxs-lookup"><span data-stu-id="48f93-169">Images are only manually tagged in the portal, not automatically.</span></span>
-    - content: <span data-ttu-id="48f93-170">Le immagini vengono caricate come prive di tag nel set di training</span><span class="sxs-lookup"><span data-stu-id="48f93-170">Images are loaded as untagged in the training set</span></span>
+      incorrectExplanation: <span data-ttu-id="3011e-168">I tag vengono aggiunti alle immagini solo manualmente nel portale, non automaticamente.</span><span class="sxs-lookup"><span data-stu-id="3011e-168">Images are only manually tagged in the portal, not automatically.</span></span>
+    - content: <span data-ttu-id="3011e-169">Le immagini vengono caricate come prive di tag nel set di training</span><span class="sxs-lookup"><span data-stu-id="3011e-169">Images are loaded as untagged in the training set</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="48f93-171">Le immagini devono essere caricate in modo esplicito per fare parte del set di training.</span><span class="sxs-lookup"><span data-stu-id="48f93-171">Images have to be explicity uploaded to be a part of the training set.</span></span>
-    - content: <span data-ttu-id="48f93-172">Le immagini vengono mostrate nella scheda Predictions (Stime)</span><span class="sxs-lookup"><span data-stu-id="48f93-172">Images are shown in the Predictions tab</span></span>
+      incorrectExplanation: <span data-ttu-id="3011e-170">Le immagini devono essere caricate in modo esplicito per fare parte del set di training.</span><span class="sxs-lookup"><span data-stu-id="3011e-170">Images have to be explicitly uploaded to be a part of the training set.</span></span>
+    - content: <span data-ttu-id="3011e-171">Le immagini vengono mostrate nella scheda Predictions (Previsioni)</span><span class="sxs-lookup"><span data-stu-id="3011e-171">Images are shown in the Predictions tab</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="48f93-173">Corretto.</span><span class="sxs-lookup"><span data-stu-id="48f93-173">Great!</span></span> <span data-ttu-id="48f93-174">Passare alla parte successiva del lab.</span><span class="sxs-lookup"><span data-stu-id="48f93-174">Proceed to the next part of the lab.</span></span>
-    - content: <span data-ttu-id="48f93-175">Non accade altro</span><span class="sxs-lookup"><span data-stu-id="48f93-175">Nothing happens</span></span>
+      correctExplanation: <span data-ttu-id="3011e-172">Corretto.</span><span class="sxs-lookup"><span data-stu-id="3011e-172">Great!</span></span> <span data-ttu-id="3011e-173">Passare alla parte successiva del lab.</span><span class="sxs-lookup"><span data-stu-id="3011e-173">Proceed to the next part of the lab.</span></span>
+    - content: <span data-ttu-id="3011e-174">Non accade altro</span><span class="sxs-lookup"><span data-stu-id="3011e-174">Nothing happens</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="48f93-176">Le immagini vengono inserite in una parte specifica del portale.</span><span class="sxs-lookup"><span data-stu-id="48f93-176">The images are put in a certain part of the portal.</span></span>
+      incorrectExplanation: <span data-ttu-id="3011e-175">Le immagini vengono inserite in una parte specifica del portale.</span><span class="sxs-lookup"><span data-stu-id="3011e-175">The images are put in a certain part of the portal.</span></span>

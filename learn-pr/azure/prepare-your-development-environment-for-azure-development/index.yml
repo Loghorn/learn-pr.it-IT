@@ -1,0 +1,44 @@
+### YamlMime:Module
+uid: learn.prepare-azure-dev-environment
+metadata:
+  title: Preparare l'ambiente di sviluppo per lo sviluppo in Azure
+  description: Configurare l'ambiente di sviluppo locale con alcuni IDE comuni.
+  ms.date: 09/24/2018
+  ms.openlocfilehash: fd629f8b14de0cc4b51e1d39ed8592903232b72a
+  ms.sourcegitcommit: d6a4ffb95924e4af3bd445aaf263f34253735861
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/02/2018
+  ms.locfileid: "43459844"
+title: Preparare l'ambiente di sviluppo per lo sviluppo in Azure
+summary: Configurare l'ambiente di sviluppo locale con alcuni IDE comuni.
+abstract: >
+  In questo modulo verrà descritto come:
+
+  - Configurare Visual Studio Code.
+
+  - Configurare Visual Studio.
+
+  - Configurare Eclipse per lo sviluppo Java.
+
+  - Preparare tutti gli ambienti per lo sviluppo in Azure.
+prerequisites: Nessuno
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- beginner
+roles:
+- developer
+products:
+- azure
+- vsCode
+- sdks
+units:
+- learn.prepare-azure-dev-environment.1-introduction
+- learn.prepare-azure-dev-environment.2-set-up-visual-studio-code
+- learn.prepare-azure-dev-environment.3-exercise-set-up-visual-studio-code
+- learn.prepare-azure-dev-environment.4-set-up-visual-studio
+- learn.prepare-azure-dev-environment.5-exercise-set-up-visual-studio
+- learn.prepare-azure-dev-environment.6-set-up-eclipse-ide-for-java-developers
+- learn.prepare-azure-dev-environment.7-exercise-set-up-eclipse
+- learn.prepare-azure-dev-environment.8-summary
+achievement: learn.prepare-azure-dev-environment.badge

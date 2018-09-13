@@ -1,0 +1,27 @@
+### YamlMime:LearningPath
+uid: learn.secure-your-cloud-data
+metadata:
+  title: Proteggere i dati Web in Azure
+  description: Azure è stato progettato per offrire sicurezza e conformità. Informazioni su come sfruttare i servizi predefiniti per archiviare i dati delle app in modo sicuro e garantire che siano accessibili solo ai client e ai servizi autorizzati.
+  ms.date: 09/24/2018
+  ms.openlocfilehash: 053f7f830d915769bbd40d918e3de8a72e23054c
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43826094"
+title: Proteggere i dati cloud
+summary: Azure è stato progettato per offrire sicurezza e conformità. Verrà illustrato come sfruttare i servizi predefiniti per archiviare i dati delle app in modo sicuro e garantire che siano accessibili solo ai client e ai servizi autorizzati.
+prerequisites: Nessuno
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- intermediate
+roles:
+- developer
+products:
+- azure
+modules:
+- learn.manage-secrets-with-azure-key-vault
+- learn.secure-access-azure-ad-multi-factor-authentication
+- learn.secure-azure-resources-with-rbac
+achievement: learn.secure-your-cloud-data.trophy

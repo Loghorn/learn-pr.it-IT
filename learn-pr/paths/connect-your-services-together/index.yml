@@ -1,0 +1,27 @@
+### YamlMime:LearningPath
+uid: learn.connect-your-services-together
+metadata:
+  title: Collegare i servizi tra loro
+  description: 'Azure consente di creare applicazioni costituite da diversi componenti: front-end del sito Web, servizi di back-end e funzioni attivate che eseguono servizi di calcolo on demand. Azure include anche diverse strategie di comunicazione che consentono ai vari componenti di passarsi i dati tra di loro. Informazioni su come usare questi servizi di comunicazione per creare delle soluzioni scalabili ed efficienti dai componenti testabili.'
+  ms.date: 09/24/2018
+  ms.openlocfilehash: 10fb00fdb0ac4c8563f1290c9dd5340a42c43942
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43824785"
+title: Collegare i servizi tra loro
+summary: 'Azure consente di creare applicazioni costituite da diversi componenti: front-end del sito Web, servizi di back-end e funzioni attivate che eseguono servizi di calcolo on demand. Azure include anche diverse strategie di comunicazione che consentono ai vari componenti di passarsi i dati tra di loro. Informazioni su come usare questi servizi di comunicazione per creare delle soluzioni scalabili ed efficienti dai componenti testabili.'
+prerequisites: Nessuno
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- beginner
+roles:
+- developer
+products:
+- azure
+modules:
+- learn.choose-messaging-model
+- learn.communicate-between-applications-with-azure-queue-storage
+- learn.enable-reliable-messaging-for-big-data-applications-using-azure-event-hubs
+achievement: learn.connect-your-services-together.trophy

@@ -1,0 +1,25 @@
+### YamlMime:LearningPath
+uid: learn.prepare-to-develop-apps-on-azure
+metadata:
+  title: Preparazione all'uso di Azure
+  description: Informazioni su come configurare il computer in modo da poter essere usato con i servizi di Azure dalla riga di comando, dagli script o da un ambiente di sviluppo.
+  ms.date: 09/24/2018
+  ms.openlocfilehash: 07ef9cccc0609ac8c33a07cf4061d9d32d39dd4a
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43824204"
+title: Preparazione all'uso di Azure
+summary: Informazioni su come configurare il computer in modo che funzioni con i servizi di Azure dalla riga di comando, dagli script o da un ambiente di sviluppo.
+prerequisites: Nessuno
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- beginner
+roles:
+- developer
+products:
+- azure
+modules:
+- learn.prepare-azure-dev-environment
+achievement: learn.prepare-to-develop-apps-on-azure.trophy
