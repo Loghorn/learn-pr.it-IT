@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.create-serverless-logic-with-functions.6-exercise-creating-and-executing-an-azure-function
+title: 'Esercizio: creazione ed esecuzione di una funzione di Azure'
+metadata:
+  title: 'Esercizio: creazione ed esecuzione di una funzione di Azure'
+  description: 'Esercizio: creazione ed esecuzione di una funzione di Azure'
+  ms.openlocfilehash: 8a5de43ca01030c8118b17a37e46573397785e75
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40438843"
+durationInMinutes: 10
+content: '[!include[](includes/6-exercise-creating-and-executing-an-azure-function.md)]'
