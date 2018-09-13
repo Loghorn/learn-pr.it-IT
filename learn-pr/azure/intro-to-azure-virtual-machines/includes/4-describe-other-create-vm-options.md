@@ -1,49 +1,49 @@
-The Azure portal is the easiest way to create resources such as VMs when you are getting started. However, it's not necessarily the most efficient or quickest way to work with Azure, particularly if you need to create several resources together. In our case, we will eventually be creating dozens of VMs to handle different tasks. Creating them manually in the Azure portal wouldn't be a fun task!
+Il portale di Azure è il modo più semplice per creare per la prima volta risorse come le macchine virtuali. Tuttavia, non si tratta necessariamente del modo più rapido o efficiente per lavorare con Azure, specialmente se si devono creare più risorse contemporaneamente. In questo caso, si creeranno decine di macchine virtuali per gestire attività diverse. Senza dubbio, crearle manualmente nel portale di Azure non è la soluzione ideale;
 
-Let's look at some other ways to create and administer resources in Azure:
+verranno quindi illustrati altri modi per creare e amministrare risorse in Azure:
 
 - [Azure Resource Manager](#Azure_RM)
 - [Azure PowerShell](#Azure_PowerShell)
-- [Azure CLI](#Azure_CLI)
-- [Azure REST API](#Azure_REST_API)
-- [Azure Client SDK](#Azure_Client_SDK)
-- [Azure VM Extensions](#Azure_VMExtensions)
-- [Azure Automation Services](#Azure_Automation)
+- [Interfaccia della riga di comando di Azure](#Azure_CLI)
+- [API REST di Azure](#Azure_REST_API)
+- [SDK per client Azure](#Azure_Client_SDK)
+- [Estensioni di macchina virtuale di Azure](#Azure_VMExtensions)
+- [Servizi di Automazione di Azure](#Azure_Automation)
 
 <a name="Azure_RM" />
 
-## Azure Resource Manager
+## <a name="azure-resource-manager"></a>Azure Resource Manager
 
-Let's assume you want to create a copy of a VM with the same settings. You could create a VM image, upload it to Azure, and reference it as the basis for your new VM. This process is inefficient and time-consuming. Azure provides you with the option to create a template from which to create an exact copy of a VM.
+Si supponga di voler creare una copia di una macchina virtuale con le stesse impostazioni. È possibile creare un'immagine di macchina virtuale, caricarla in Azure e basarsi su di essa per la nuova macchina, ma si tratta di un processo inefficiente e che richiede molto tempo. Azure offre la possibilità di creare un modello da cui creare una copia esatta di una macchina virtuale.
 
-Typically, your Azure infrastructure will contain many resources, many of them related to one another in some way. For example, the VM we created has the virtual machine itself, storage, network interface, web server, and a database - all created together to run the WordPress site. **Azure Resource Manager** makes working with these related resources more efficient. It organizes resources into named **resource groups** that let you deploy, update, or delete all of the resources together. When we created the WordPress site, we identified the resource group as part of the VM creation, and Resource Manager placed the associated resources into the same group.
+In genere, l'infrastruttura di Azure contiene molte risorse, molte delle quali correlate in qualche modo. Ad esempio, la macchina virtuale creata offre archiviazione, interfaccia di rete, server Web, database e la macchina stessa, tutte risorse create contemporaneamente per eseguire il sito WordPress. **Azure Resource Manager** permette di lavorare in modo più efficiente con queste risorse correlate, organizzandole in **gruppi di risorse** denominati che consentono di distribuirle, aggiornarle o eliminarle tutte contemporaneamente. Quando è stato creato il sito WordPress, il gruppo di risorse è stato identificato come parte della creazione della macchina virtuale e Resource Manager ha posizionato le risorse associate nel medesimo gruppo.
 
-Resource Manager also allows you to create _templates_, which can be used to create and deploy specific configurations.
+Resource Manager consente anche di creare _modelli_ utilizzabili per creare e distribuire configurazioni specifiche.
 
-### What are Resource Manager templates?
+### <a name="what-are-resource-manager-templates"></a>Cosa sono i modelli di Azure Resource Manager?
 
-**Resource Manager templates** are JSON files that define the resources you need to deploy for your solution.
+I **modelli di Resource Manager** sono file JSON che definiscono le risorse che è necessario distribuire per la soluzione.
 
-You can create resource templates from the **Settings** section for a specific VM by selecting the Automation script option.
+È possibile creare modelli di risorse dalla sezione **Impostazioni** per una determinata macchina virtuale selezionando l'opzione Script di automazione.
 
-![Automation script for our VM](../media-draft/4-automation-script.png)
+![Script di automazione per la macchina virtuale](../media-draft/4-automation-script.png)
 
-You have the option to save the resource template for later use or immediately deploy a new VM based on this template. For example, you might create a VM from a template in a test environment and find it doesn’t quite work to replace your on-premises machine. You can delete the resource group, which deletes all of the resources, tweak the template, and try again. If you only want to make changes to the existing deployed resources, you can change the template used to create it and deploy it again. Resource Manager will change the resources to match the new template.
+È possibile salvare il modello di risorse per usarlo in un secondo momento o distribuire subito una nuova macchina virtuale basata su di esso. Ad esempio, si potrebbe creare una macchina virtuale da un modello in un ambiente di test e riscontrare che non è adatta a sostituire quella locale. È possibile eliminare il gruppo di risorse, azione che eliminerà tutte le risorse, modificare il modello e riprovare. Se si vogliono solo apportare modifiche alle risorse distribuite esistenti, è possibile modificare il modello usato per crearla e distribuirla nuovamente. Resource Manager modificherà le risorse in modo da correlarle al nuovo modello.
 
-Once you have it working the way you want it, you can take that template and easily re-create multiple versions of your infrastructure, such as staging and production. You can parameterize fields such as the VM name, network name, storage account name, etc., and load the template repeatedly, using different parameters to customize each environment.
+Una volta ottenuto il modello desiderato, è possibile usarlo per ricreare più versioni dell'infrastruttura, ad esempio per la gestione temporanea e la produzione. È possibile impostare i parametri per i campi, ad esempio il nome della macchina virtuale, il nome di rete, il nome dell'account di archiviazione e così via, con la possibilità di caricare il modello più volte usando parametri diversi per personalizzare ciascun ambiente.
 
-You can use automation scripting tools such as the Azure CLI, Azure PowerShell, or even the Azure REST APIs with your favorite programming language to process resource templates, making this a powerful tool for quickly spinning up your infrastructure.
+È possibile usare strumenti per gli script di automazione come l'interfaccia della riga di comando di Azure, Azure PowerShell o anche le API REST di Azure con il linguaggio di programmazione preferito per elaborare i modelli di risorse, cosa che rende questo strumento utile per rendere subito operativa l'infrastruttura.
 
 <a name="Azure_PowerShell" />
 
-## Azure PowerShell
+## <a name="azure-powershell"></a>Azure PowerShell
 
-Creating administration scripts is a powerful way to optimize your workflow. You can automate everyday, repetitive tasks, and once a script has been verified, it will run consistently, likely reducing errors. **Azure PowerShell** is ideal for one-off interactive tasks and/or the automation of repeated tasks.
+La creazione di script di amministrazione rappresenta un potente strumento per ottimizzare il flusso di lavoro. È possibile automatizzare le attività quotidiane e ripetitive. Inoltre, dopo aver verificato uno script, questo verrà eseguito uniformemente, con una probabile riduzione degli errori. **Azure PowerShell** è ideale per attività occasionali interattive e/o per l'automazione di attività ripetute.
 
 > [!NOTE]
-> PowerShell is a cross-platform shell that provides services like the shell window and command parsing. Azure PowerShell is an optional add-on package that adds the Azure-specific commands (referred to as **cmdlets**). You can learn more about installing and using Azure PowerShell in a separate training module.
+> PowerShell è una shell multipiattaforma che fornisce servizi come la finestra della shell e l'analisi dei comandi. Azure PowerShell è un pacchetto aggiuntivo facoltativo che aggiunge i comandi specifici di Azure (detti **cmdlet**). È possibile ottenere altre informazioni sull'installazione e l'utilizzo di Azure PowerShell in un modulo di formazione separato.
 
-For example, you can use the `New-AzureRmVM` cmdlet to create a new Azure virtual machine.
+Ad esempio, è possibile usare il cmdlet `New-AzureRmVM` per creare una nuova macchina virtuale di Azure.
 
 ```powershell
 New-AzureRmVm `
@@ -57,16 +57,16 @@ New-AzureRmVm `
     -OpenPorts 80,3389
 ```
 
-As shown here, you supply various parameters to handle the large number of VM configuration settings available. Most of the parameters have reasonable values; you only need to specify the required parameters. Learn more about creating and managing VMs with Azure PowerShell in the **Automate Azure tasks using scripts with PowerShell** module.
+Come illustrato di seguito, vengono forniti vari parametri per gestire tutte le varie impostazioni di configurazione della macchina virtuale disponibili. La maggior parte dei parametri ha valori accettabili, quindi è necessario specificare solo quelli richiesti. Altre informazioni sulla creazione e la gestione di macchine virtuali con Azure PowerShell sono disponibili nel modulo **Automatizzare le attività di Azure usando gli script con PowerShell**.
 <a name="Azure_CLI" />
 
-## Azure CLI
+## <a name="azure-cli"></a>Interfaccia della riga di comando di Azure
 
-Another option for scripting and command-line Azure interaction is the **Azure CLI**.
+Un'altra opzione per l'interazione di scripting e da riga di comando in Azure è l'**interfaccia della riga di comando di Azure**.
 
-The Azure CLI is Microsoft's cross-platform command-line tool for managing Azure resources such as virtual machines and disks from the command line. It's available for macOS, Linux, and Windows, or in the browser using the Cloud Shell. Like Azure PowerShell, the Azure CLI is a powerful way to streamline your administrative workflow. Unlike Azure PowerShell, the Azure CLI does not need PowerShell to function.
+L'interfaccia della riga di comando di Azure è lo strumento da riga di comando multipiattaforma di Microsoft per la gestione delle risorse di Azure, ad esempio macchine virtuali e dischi, dalla riga di comando. È disponibile per macOS, Linux e Windows oppure nel browser, con Cloud Shell. Come Azure PowerShell, l'interfaccia della riga di comando di Azure è un potente strumento da usare per semplificare il flusso di lavoro di amministrazione. A differenza di Azure PowerShell, l'interfaccia della riga di comando di Azure non necessita di PowerShell per il funzionamento.
 
-For example, you can create an Azure VM with the `az vm create` command.
+Ad esempio, è possibile creare una macchina virtuale di Azure con il comando `az vm create`.
 
 ```bash
 az vm create \
@@ -77,41 +77,41 @@ az vm create \
     --admin-password aReallyGoodPasswordHere
 ```
 
-The Azure CLI can be used with other scripting languages, for example, Ruby and Python. Both languages are commonly used on non-Windows-based machines where the developer might not be familiar with PowerShell.
+L'interfaccia della riga di comando di Azure è compatibile con altri linguaggi di scripting, ad esempio Ruby e Python. Entrambi i linguaggi vengono comunemente usati nei computer non basati su Windows in cui lo sviluppatore potrebbe non avere familiarità con PowerShell.
 
-Learn more about creating and managing VMs in the **Manage virtual machines with the Azure CLI tool** module.
+Altre informazioni sulla creazione e la gestione di macchine virtuali sono disponibili nel modulo **Gestire le macchine virtuali con l'interfaccia della riga di comando di Azure**.
 
-## Programmatic (APIs)
+## <a name="programmatic-apis"></a>Approccio a livello di codice (API)
 
-Generally speaking, both Azure PowerShell and Azure CLI are good options if you have simple scripts to run and want to stick to command-line tools. When it comes to more complex scenarios, where the creation and management of VMs form part of a larger application with complex logic, another approach is needed.
+In generale, Azure PowerShell e l'interfaccia della riga di comando di Azure sono modi validi se si hanno script semplici da eseguire e si preferisce usare strumenti da riga di comando. Quando entrano in gioco scenari più complessi, dove la creazione e la gestione delle macchine virtuali fanno parte di un'applicazione più ampia con logica più strutturata, è necessario un approccio diverso.
 
-You can interact with every type of resource in Azure programmatically.
+È possibile interagire con tutti i tipi di risorse in Azure a livello di codice.
 
 <a name="Azure_REST_API" />
 
-### Azure REST API
+### <a name="azure-rest-api"></a>API REST di Azure
 
-The Azure REST API provides developers with operations categorized by resource as well as the ability to create and manage VMs. Operations are exposed as URIs with corresponding HTTP methods (`GET`, `PUT`, `POST`, `DELETE`, and `PATCH`) and a corresponding response.
+L'API REST di Azure offre agli sviluppatori operazioni categorizzate per risorsa, oltre alla possibilità di creare e gestire le macchine virtuali. Le operazioni sono esposte come URI con i corrispondenti metodi HTTP (`GET`, `PUT`, `POST`, `DELETE` e `PATCH`) e una risposta corrispondente.
 
-The Azure Compute APIs give you programmatic access to virtual machines and their supporting resources. With this API, you have operations to:
+Le API di calcolo di Azure forniscono accesso a livello di codice alle macchine virtuali e alle relative risorse di supporto. Con questa API, sono disponibili operazioni per:
 
-- Create and manage availability sets
-- Add and manage virtual machine extensions
-- Create and manage managed disks, snapshots, and images
-- Access the platform images available in Azure
-- Retrieve usage information of your resources
-- Create and manage virtual machines
-- Create and manage virtual machine scale sets
+- Creare e gestire set di disponibilità
+- Aggiungere e gestire estensioni macchina virtuale
+- Creare e gestire dischi gestiti, snapshot e immagini
+- Accedere alle immagini della piattaforma disponibili in Azure
+- Recuperare le informazioni sull'utilizzo delle risorse
+- Creare e gestire macchine virtuali
+- Creare e gestire i set di scalabilità delle macchine virtuali
 
 <a name="Azure_Client_SDK" />
 
-### Azure Client SDK
+### <a name="azure-client-sdk"></a>SDK per client Azure
 
-Even though the REST API is platform and language agnostic, most often developers will look toward a higher level of abstraction. The Azure Client SDK encapsulates the Azure REST API, making it much easier for developers to interact with Azure.
+Anche se l'API REST non dipende da una piattaforma o da un linguaggio, spesso gli sviluppatori cercheranno un livello superiore di astrazione. L'SDK per client Azure incapsula l'API REST di Azure, facilitando l'interazione degli sviluppatori con Azure.
 
-The Azure Client SDKs are available for a variety of languages and frameworks, including .NET-based languages such as C#, Java, Node.js, PHP, Python, Ruby, and Go.
+Gli SDK per client Azure sono disponibili per vari linguaggi e framework, inclusi quelli basati su .NET come C#, Java, Node.js, PHP, Python, Ruby e Go.
 
-Here's an example snippet of C# code to create an Azure VM using the `Microsoft.Azure.Management.Fluent` NuGet package:
+Ecco un frammento di codice C# di esempio per creare una macchina virtuale di Azure usando il pacchetto NuGet `Microsoft.Azure.Management.Fluent`:
 
 ```csharp
 var azure = Azure
@@ -134,7 +134,7 @@ azure.VirtualMachines.Define(vmName)
     .Create();
 ```
 
-Here's the same snippet in Java using the **Azure Java SDK**:
+Di seguito è riportato lo stesso frammento in Java con **Azure Java SDK**:
 
 ```java
 String vmName = "test-wp1-eus-vm";
@@ -154,26 +154,26 @@ VirtualMachine virtualMachine = azure.virtualMachines()
 
 <a name="Azure_VMExtensions" />
 
-## Azure VM Extensions
+## <a name="azure-vm-extensions"></a>Estensioni di macchina virtuale di Azure
 
-Let's assume you want to configure and install additional software on your virtual machine after the initial deployment. You want this task to use a specific configuration, monitored and executed automatically.
+Si supponga di voler configurare e installare software aggiuntivo sulla macchina virtuale dopo la distribuzione iniziale. Si vuole che l'attività usi una configurazione specifica, monitorata ed eseguita automaticamente.
 
-**Azure VM extensions** are small applications that allow you to configure and automate tasks on Azure VMs after initial deployment. **Azure VM extensions** can be run with the Azure CLI, PowerShell, Azure Resource Manager templates, and the Azure portal.
+**Le estensioni macchina virtuale di Azure** sono piccole applicazioni che consentono di configurare e automatizzare le attività nelle macchine virtuali di Azure dopo la distribuzione iniziale. Le **estensioni macchina virtuale di Azure** possono essere eseguite con l'interfaccia della riga di comando di Azure, PowerShell, i modelli di Azure Resource Manager e il portale di Azure.
 
-You bundle extensions with a new VM deployment or run them against an existing system.
+Possono essere aggregate con una nuova distribuzione di macchina virtuale o eseguite su un sistema esistente.
 
 <a name="Azure_Automation" />
 
-## Azure Automation Services
+## <a name="azure-automation-services"></a>Servizi di Automazione di Azure
 
-Saving time, reducing errors, and increasing efficiency are some of the most significant operational management challenges faced when managing remote infrastructure. If you have a lot of infrastructure services, you might want to consider using higher-level services in Azure to help you operate from a higher level.
+Alcune delle sfide operative più rilevanti nella gestione dell'infrastruttura remota consistono nel risparmiare tempo, ridurre gli errori e aumentare l'efficienza. Se si hanno molti servizi di infrastruttura, è consigliabile usare servizi di livello superiore in Azure per lavorare con più facilità.
 
-**Azure Automation** allows you to integrate services that allow you to automate frequent, time-consuming, and error-prone management tasks with ease. These services include **process automation**, **configuration management**, and **update management**.
+**Automazione di Azure** permette di integrare i servizi che consentono di automatizzare con facilità le attività di gestione più frequenti, complesse e soggette a errori. Questi servizi includono **automazione dei processi**, **gestione della configurazione** e **gestione degli aggiornamenti**.
 
-- **Process Management**. Let's assume you have a VM that is monitored for a specific error event. You want to take action and fix the problem as soon as it's reported. Process automation allows you to set up watcher tasks that can respond to events that may occur in your datacenter.
+- **Gestione dei processi**. Si supponga di avere una macchina virtuale monitorata per un evento di errore specifico. Si vuole intervenire e risolvere il problema non appena viene segnalato. L'automazione dei processi consente di configurare attività watcher in grado di rispondere agli eventi che possono verificarsi nel data center.
 
-- **Configuration Management**.  Perhaps you want to track software updates that become available for the operating system that runs on your VM. There are specific updates you may want to include or exclude. Configuration management allows you to track these updates and take action as required. You use **System Center Configuration Manager** to manage your company's PC, servers, and mobile devices. You can extend this support to your Azure VMs with Configuration Manager.
+- **Gestione della configurazione**.  Potrebbe essere necessario tener traccia degli aggiornamenti software disponibili per il sistema operativo eseguito nella macchina virtuale, con aggiornamenti specifici da includere o escludere. La gestione della configurazione consente di tenere traccia di questi aggiornamenti e di intervenire in base alle esigenze. È possibile usare **System Center Configuration Manager** per gestire PC, server e dispositivi mobili aziendali. Il supporto può essere esteso alle macchine virtuali di Azure grazie a Configuration Manager.
 
-- **Update Management**. This is used to manage updates and patches for your VMs. With this service, you're able to assess the status of available updates, schedule installation, and review deployment results to verify updates applied successfully. Update management incorporates services that provide process and configuration management. You enable update management for a VM directly from your **Azure Automation** account. You can also allow update management for a single virtual machine from the virtual machine blade in the portal.
+- **Gestione aggiornamenti**. È possibile gestire gli aggiornamenti e le patch per le macchine virtuali. Con questo servizio, si può valutare in modo rapido lo stato degli aggiornamenti disponibili, pianificare l'installazione ed esaminare i risultati della distribuzione per verificare che gli aggiornamenti siano stati applicati correttamente. La gestione degli aggiornamenti include servizi che permettono di gestire i processi e la configurazione. È possibile abilitare Gestione aggiornamenti per una macchina virtuale direttamente nell'account di **Automazione di Azure**. È anche possibile abilitare Gestione aggiornamenti per una singola macchina virtuale dal riquadro della macchina virtuale nel portale.
 
-As you can see, Azure provides a variety of tools to create and administer resources so that you can integrate management operations into a process _that works for you_. Let's examine some of the other Azure services to make sure your infrastructure resources are running smoothly.
+Come si può notare, Azure offre un'ampia gamma di strumenti per creare e amministrare le risorse, quindi è possibile integrare le operazioni di gestione nel processo _più appropriato_. Ora verranno esaminati altri servizi di Azure per assicurare il funzionamento ottimale delle risorse di infrastruttura.

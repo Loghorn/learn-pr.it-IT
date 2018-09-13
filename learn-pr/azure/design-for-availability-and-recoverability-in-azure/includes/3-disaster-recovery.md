@@ -1,115 +1,115 @@
-Designing for high availability helps keep an application or process running despite unfavorable events and adverse conditions. But what do you do when something so significant happens that you've lost data and it's impossible to keep your apps and processes from going down? When disaster strikes, you need to have a plan. You should know what your goals and expectations are for recovering, what are the costs and limitations of your plan, and how to execute on it.
+La progettazione per la disponibilità elevata consente di mantenere un'applicazione o un processo in esecuzione nonostante condizioni avverse ed eventi sfavorevoli. Tuttavia, come è necessario procedere quando si verifica un evento talmente significativo da determinare la perdita dei dati e rendere impossibile mantenere disponibili le app e i processi? In caso di emergenza, è necessario avere un piano. È necessario conoscere gli obiettivi e le aspettative per il ripristino, essere consapevoli dei costi e dei limiti del piano e sapere come metterlo in atto.
 
-## What is disaster recovery?
+## <a name="what-is-disaster-recovery"></a>Che cos'è il ripristino di emergenza?
 
-Disaster recovery is about *recovering from high-impact events* that result in downtime and loss of data. A disaster is a single, major event with an impact much larger and long-lasting than the application can mitigate through the high-availability portion of its design.
+Il ripristino di emergenza riguarda il *ripristino da eventi a impatto elevato* che comportano tempi di inattività e perdite di dati. Una situazione di emergenza è un singolo evento importante con un impatto molto più grande e di lunga durata rispetto alle capacità di attenuare il problema offerte dalla parte relativa alla disponibilità elevata della progettazione dell'applicazione.
 
-The word "disaster" often evokes thoughts of *natural* disasters and external events (earthquakes, floods, tropical storms, and so on) but many other kinds of disasters exist as well. A deployment or upgrade that goes horribly wrong can leave an app in an unrecognizable state. Subtle implementation or configuration errors can write bad data or delete data that's assumed to be permanent. Malicious hackers can corrupt or delete data and inflict other kinds of damage that take an app offline or eliminate some of its functionality.
+Il termine "emergenza" spesso evoca scenari relativi a calamità *naturali* ed eventi esterni (terremoti, alluvioni, tempeste tropicali e così via), ma esistono molti altri tipi di emergenze. Un problema estremamente grave nel corso di una distribuzione o un aggiornamento può lasciare un'app in uno stato non riconoscibile. Lievi errori di implementazione o di configurazione possono scrivere dati errati o eliminare dati che invece dovrebbero essere permanenti. Pirati informatici possono danneggiare o eliminare i dati e causare danni di altro tipo, che portano offline un'app o eliminano una parte delle relative funzionalità.
 
-Regardless of its cause, the only remedy for a disaster once it has occurred is a well-defined, tested disaster recovery plan and an application that actively supports disaster recovery efforts through its design.
+Indipendentemente dalla causa, una volta che si è verificata una situazione di emergenza, l'unico rimedio sono un piano di ripristino di emergenza ben definito e accuratamente testato e un'applicazione che supporta attivamente le attività di ripristino di emergenza a livello di progettazione.
 
-## How to create a disaster recovery plan
+## <a name="how-to-create-a-disaster-recovery-plan"></a>Come creare un piano di ripristino di emergenza
 
-A disaster recovery plan is a single document that details the procedures that are required to recover from data loss and downtime caused by a disaster, and identifies who's in charge of directing those procedures. Operators should be able to use the plan as a manual to restore application connectivity and recover data after a disaster occurs. A detailed, written plan that's dedicated to disaster recovery is critical to ensuring a favorable outcome. The process of creating the plan will help to assemble a complete picture of the application. The resulting written steps will promote good decision-making and follow-through in the panicked, chaotic aftermath of a disaster event.
+Un piano di ripristino di emergenza è un singolo documento che descrive in dettaglio le procedure necessarie per il ripristino dalla perdita di dati e dai tempi di inattività causati da una situazione di emergenza e identifica il responsabile della gestione di tali procedure. Gli operatori devono saper usare il piano come un manuale per ripristinare la connettività dell'applicazione e i dati quando si verifica un'emergenza. Un piano scritto in modo dettagliato dedicato al ripristino di emergenza è essenziale per garantire un risultato favorevole: il processo di creazione del piano consentirà di ottenere un quadro completo dell'applicazione e le procedure scritte risultanti agevoleranno i processi decisionali e le operazioni nella situazione caotica che segue un evento di emergenza.
 
-Creating a disaster recovery plan requires expert knowledge of the application's workflows, data, infrastructure, and dependencies.
+La creazione di un piano di ripristino di emergenza richiede un'approfondita conoscenza dei flussi di lavoro, dei dati, dell'infrastruttura e delle dipendenze dell'applicazione.
 
-### Risk assessment and process inventory
+### <a name="risk-assessment-and-process-inventory"></a>Valutazione dei rischi e inventario dei processi
 
-The first step in creating a disaster recovery plan is performing a risk analysis that examines the impact of different kinds of disasters on the application. The exact nature of a disaster isn't as important to the risk analysis as its potential impact through data loss and application downtime. Explore various kinds of hypothetical disasters and try to be specific when thinking about their effects. For example, a targeted malicious attack may modify code or data that results in a different kind of impact than an earthquake that disrupts network connectivity and datacenter availability.
+Il primo passaggio per la creazione di un piano di ripristino di emergenza è l'esecuzione di un'analisi dei rischi per determinare l'impatto dei diversi tipi di emergenze sull'applicazione. Per l'analisi dei rischi non è importante l'esatta natura di un'emergenza, ma piuttosto il relativo impatto potenziale in termini di perdita di dati e tempo di inattività dell'applicazione. Esplorare i vari tipi di emergenze e provare a considerare in modo specifico i relativi effetti: ad esempio, un attacco dannoso mirato potrebbe modificare il codice o i dati, generando un impatto di tipo diverso rispetto a un terremoto che interrompe la connettività di rete e rende non disponibile un data center.
 
-The risk assessment needs to consider *every* process that can't afford unlimited downtime, and every category of data that can't afford unlimited loss. When a disaster that affects multiple application components occurs, it's critical that the plan owners can use the plan to take a complete inventory of what needs attention and how to prioritize each item.
+La valutazione dei rischi deve prendere in considerazione *tutti* i processi che non possono tollerare tempi di inattività illimitati e tutte le categorie di dati che non possono tollerare una perdita illimitata. Quando si verifica un'emergenza che interessa più componenti dell'applicazione, è fondamentale che i proprietari del piano possano usarlo per eseguire un inventario completo degli elementi che richiedono attenzione e definire le priorità di ogni elemento.
 
-Some apps may only constitute a single process or classification of data. This is still important to note, as the application will likely be one component of a larger disaster recovery plan that includes multiple applications with the organization.
+Alcune app possono costituire un singolo processo o una singola classificazione dei dati. È comunque importante tenere presente questo aspetto, dal momento che probabilmente l'applicazione sarà un componente di un piano di ripristino di emergenza più ampio che include più applicazioni dell'organizzazione.
 
-### Recovery objectives
+### <a name="recovery-objectives"></a>Obiettivi di ripristino
 
-A complete plan needs to specify two critical business requirements for each process implemented by the application:
+Un piano completo deve specificare due requisiti aziendali di importanza critica per ogni processo implementato dall'applicazione:
 
-* **Recovery Point Objective (RPO)**: The maximum duration of acceptable data loss. RPO is measured in units of time, not volume: "30 minutes of data", "four hours of data", and so on. RPO is about limiting and recovering from data *loss*, not data *theft*.
-* **Recovery Time Objective (RTO)**: The maximum duration of acceptable downtime, where "downtime" needs to be defined by your specification.
+* **Obiettivo del punto di ripristino (RPO)**: la durata massima di perdita dei dati accettabile. L'obiettivo RPO viene misurato in unità di tempo, non per volume: "30 minuti di dati", "quattro ore di dati" e così via. L'obiettivo RPO riguarda la limitazione e il ripristino in seguito a una *perdita* di dati, non a un *furto* di dati.
+* **Obiettivo del tempo di ripristino (RTO)**: la durata massima di tempo di inattività accettabile, dove "tempo di inattività" deve essere definito dalle proprie specifiche.
 
-![RTO and RPO](../media-draft/rto-rpo.png)
+![RTO e RPO](../media-draft/rto-rpo.png)
 
-Each major process or workload that's implemented by an app should have separate RPO and RTO values. Even if you arrive at the same values for different processes, each one should be generated through a separate analysis that examines disaster scenario risks and potential recovery strategies for each respective process.
+Ogni processo o carico di lavoro principale implementato da un'app deve avere valori RPO e RTO separati. Anche se si arriva agli stessi valori per processi diversi, ognuno di essi deve essere generato con un'analisi distinta, in cui vengono analizzati i rischi di uno scenario di emergenza e le potenziali strategie di ripristino per ogni processo corrispondente.
 
-The process of specifying an RPO and RTO is effectively the creation of disaster recovery requirements for your application. It requires establishing the priority of each workload and category of data and performing a cost-benefit analysis. The analysis includes concerns, such as implementation and maintenance cost, operational expense, process overhead, performance impact, and the impact of downtime and lost data. You'll need to define exactly what "downtime" means for your application, and in some cases, you may establish separate RPO and RTO values for different levels of functionality. Specifying RPO and RTO should be more than simply choosing arbitrary values. Much of the value of a disaster recovery plan comes from the research and analysis that goes into discovering the potential impact of a disaster and the cost of mitigating the risks.
+Il processo di specificazione dei valori RPO e RTO di fatto rappresenta la creazione dei requisiti di ripristino di emergenza per l'applicazione. È necessario stabilire la priorità di ogni carico di lavoro e categoria di dati ed eseguire un'analisi costi/benefici che includa aspetti come costi di implementazione e manutenzione, spese operative, overhead del processo, impatto sulle prestazioni e impatto del tempo di inattività e della perdita di dati. È necessario definire esattamente il significato di "tempo di inattività" per l'applicazione e in alcuni casi è possibile stabilire valori RPO e RTO distinti per diversi livelli di funzionalità. Specificare gli obiettivi RPO e RTO non significa semplicemente scegliere valori arbitrari. Gran parte del valore di un piano di ripristino di emergenza deriva dalle ricerche e dalle analisi necessarie per l'individuazione del potenziale impatto di un'emergenza e del costo per l'attenuazione dei rischi.
 
-RPO and RTO are *objectives*. Disasters are unpredictable, and you may not be able to meet your established RPO and RTO for a given event. The business has agreed to take on the costs required to maintain the agreed-upon RPO and RTO values, and in return those targets should generally be achieved in a disaster recovery scenario. All disaster events should include a post-recovery retrospective that examines strengths and weaknesses, but disasters that result in a failure to meet RPO or RTO merit special attention.
+I valori RPO e RTO sono *obiettivi*. Le situazioni di emergenza sono imprevedibili e potrebbe risultare impossibile soddisfare gli obiettivi RPO e RTO stabiliti per un determinato evento. L'azienda ha accettato di sostenere i costi necessari per mantenere i valori RPO e RTO concordati. In cambio, è generalmente necessario raggiungere questi obiettivi in uno scenario di ripristino di emergenza. Tutti gli eventi di emergenza devono includere un'analisi retrospettiva post-ripristino in cui vengono esaminati i punti di forza e i punti deboli, ma le emergenze che generano il mancato rispetto degli obiettivi RPO o RTO meritano particolare attenzione.
 
-### Detailing recovery steps
+### <a name="detailing-recovery-steps"></a>Definizione dei dettagli delle procedure di ripristino
 
-The final plan should go into detail about exactly what steps should be taken to restore lost data and application connectivity. Steps often include information about:
+Il piano finale deve descrivere in dettaglio le esatte procedure da eseguire per il ripristino dei dati persi e della connettività dell'applicazione. Le procedure spesso includono informazioni relative a:
 
-* **Backups**: How often they're created, where they're located, and how to restore data from them.
-* **Data replicas**: The number and locations of replicas, the nature and consistency characteristics of the replicated data, and how to switch over to a different replica.
-* **Deployments**: How deployments are executed, how rollbacks occur, and failure scenarios for deployments.
-* **Infrastructure**: On-premises and cloud resources, network infrastructure, and hardware inventory.
-* **Dependencies**: External services that are used by the application, including SLAs and contact information.
-* **Configuration and notification**: Flags or options that can be set to gracefully degrade the application, and services that are used to notify users of application impact.
+* **Backup**: frequenza con cui vengono creati; posizione in cui si trovano; modalità d'uso per il ripristino dei dati.
+* **Repliche dei dati**: numero e posizioni delle repliche; natura e caratteristiche di coerenza dei dati replicati; modalità per il passaggio a una replica diversa.
+* **Distribuzioni**: modalità di esecuzione delle distribuzioni; modalità di esecuzione del rollback; scenari di errore per le distribuzioni.
+* **Infrastruttura**: risorse locali e cloud; infrastruttura di rete; inventario hardware.
+* **Dipendenze**: servizi esterni usati dall'applicazione, inclusi contratti di servizio e informazioni di contatto.
+* **Configurazione e notifica**: flag o opzioni che possono essere impostati per ridurre in modo graduale le prestazioni dell'applicazione; servizi usati per notificare agli utenti l'impatto sull'applicazione.
 
-The exact steps that are required will depend heavily on implementation details of the app, making it important to keep the plan updated. Routinely testing the plan will help identify gaps and outdated sections.
+Gli esatti passaggi necessari dipenderanno principalmente dai dettagli di implementazione dell'app, quindi è importante mantenere aggiornato il piano. L'esecuzione di test periodici del piano consentirà di identificare i gap e le sezioni non aggiornate.
 
-## Designing for disaster recovery
+## <a name="designing-for-disaster-recovery"></a>Progettazione per il ripristino di emergenza
 
-Disaster recovery is not an automatic feature. It must be designed, built, and tested. An app that needs to support a solid disaster recovery strategy must be built from the ground up with disaster recovery in mind. Azure offers services, features, and guidance to help you create apps that support disaster recovery, but it's up to you to include them in your design.
+Il ripristino di emergenza non è una funzionalità automatica. Deve essere progettato, realizzato e testato. Un'app che deve supportare un'efficace strategia di ripristino di emergenza deve essere completamente sviluppata per il ripristino di emergenza. Azure offre servizi, funzionalità e indicazioni che aiutano a creare app che supportano il ripristino di emergenza, ma è possibile scegliere se includerli o meno nella progettazione.
 
-Designing for disaster recovery has two main concerns:
+La progettazione per il ripristino di emergenza presenta due problemi principali:
 
-* **Data recovery**: Using backups and replication to restore lost data.
-* **Process recovery**: Recovering services and deploying code to recover from outages.
+* **Ripristino dei dati**: usare i backup e la replica per ripristinare i dati persi.
+* **Processo di ripristino**: ripristinare i servizi e distribuire il codice per il ripristino in seguito a interruzioni.
 
-### Data recovery and replication
+### <a name="data-recovery-and-replication"></a>Replica e ripristino dei dati
 
-Replication duplicates stored data between multiple data store replicas. Unlike *backup*, which creates long-lived, read-only snapshots of data for use in recovery, replication creates real-time or near-real-time copies of live data. The goal of replication is to keep replicas synchronized with as little latency as possible while maintaining application responsiveness. Replication is a key component of designing for high availability and disaster recovery, and is a common feature of production-grade applications.
+La replica consente di duplicare i dati archiviati tra diverse repliche di un archivio dati. A differenza del *backup*, che crea snapshot dei dati di sola lettura e di lunga durata da usare per il ripristino, la replica crea copie dei dati in tempo reale o quasi in tempo reale. L'obiettivo della replica è mantenere sincronizzate le repliche con la minima latenza possibile, garantendo al tempo stesso la velocità di risposta dell'applicazione. La replica è un componente fondamentale della progettazione per la disponibilità elevata e il ripristino di emergenza e rappresenta una caratteristica comune delle applicazioni a livello di produzione.
 
-Replication is used to mitigate a failed or unreachable data store by executing a *failover*: changing application configuration to route data requests to a working replica. Failover is often automated, triggered by error detection built into a data storage product, or detection that you implement through your monitoring solution. Depending on the implementation and the scenario, failover may need to be manually executed by system operators.
+La replica viene usata per attenuare i problemi causati da un archivio dati non raggiungibile o in cui si è verificato un errore con l'esecuzione di un *failover*: la modifica della configurazione dell'applicazione per instradare le richieste di dati a una replica funzionante. Il failover è spesso automatizzato, attivato dal rilevamento degli errori incorporato in un prodotto di archiviazione dati o dalle funzionalità di rilevamento implementate con la propria soluzione di monitoraggio. A seconda dell'implementazione e dello scenario, il failover potrebbe dover essere eseguito manualmente dagli operatori del sistema.
 
-Replication is not something you implement from scratch. Most fully featured database systems and other data storage products and services include some kind of replication as a tightly integrated feature due to its functional and performance requirements. However, it's up to you to include these features in your application design and make appropriate use of them.
+La replica non è un elemento che è possibile implementare da zero. La maggior parte dei sistemi di database completi e altri prodotti e servizi di archiviazione dati includono un qualche tipo di replica come una funzionalità strettamente integrata, a causa dei relativi requisiti funzionali e di prestazioni. È tuttavia lo sviluppatore a decidere se includere queste funzionalità nella progettazione dell'applicazione e a doverle usarle in modo appropriato.
 
-Different Azure services support various levels and concepts of replication. For example:
+Diversi servizi di Azure supportano vari livelli e concetti di replica. Ad esempio:
 
-* **Azure Storage** replication is effectively automatic. Neither your application nor your operators interact with it directly. Failovers are automatic and transparent, and you simply need to select a replication level that balances cost and risk.
-* **Azure SQL Database** replication is automatic at a small scale, but recovery from a full Azure datacenter or regional outage requires geo-replication. Setting up geo-replication is manual, but it's a first-class feature of the service and well supported by documentation.
-* **Cosmos DB** is a globally distributed database system, and replication is central to its implementation. With Azure Cosmos DB, instead of configuring replication directly, you configure options related to partitioning and data consistency.
+* La replica di **Archiviazione di Azure** è completamente automatica. Né l'applicazione né gli operatori interagiscono direttamente con questa caratteristica. I failover sono automatici e trasparenti ed è sufficiente selezionare un livello di replica che consente di bilanciare i costi e i rischi.
+* La replica del **database SQL di Azure** è automatica su scala ridotta, ma il ripristino in seguito a un'interruzione di un intero data center di Azure o a livello regionale richiede la replica geografica. L'impostazione della replica geografica è manuale, ma si tratta di una funzionalità di alto livello del servizio ed è ampiamente supportata dalla documentazione.
+* **Cosmos DB** è un sistema di database distribuito a livello globale e la replica è fondamentale per la relativa implementazione. Con Cosmos DB, invece di configurare direttamente la replica, si configurano le opzioni correlate al partizionamento e alla coerenza dei dati.
 
-Many different replication designs exist that place different priorities on data consistency, performance, and cost. *Active* replication requires updates to take place on multiple replicas simultaneously, guaranteeing consistency at the cost of throughput. In contrast, *passive* replication performs synchronization in the background, removing replication as a constraint on application performance, but increasing RPO. *Active-active* or *multi-master* replication enables multiple replicas to be used simultaneously, enabling load balancing at the cost of complicating data consistency, while *active-passive* replication reserves replicas for live use only during failover.
+Esistono molte progettazioni di replica differenti, che presentano diverse priorità in termini di costi, prestazioni e coerenza dei dati. La replica *attiva* richiede l'esecuzione di aggiornamenti in più repliche contemporaneamente, assicurando la coerenza al costo della velocità effettiva. Al contrario, la replica *passiva* esegue la sincronizzazione in background, rimuovendo la replica come vincolo per le prestazioni dell'applicazione ma incrementando il valore RPO. La replica *attiva-attiva* o *multimaster* rende possibile l'uso di più repliche contemporaneamente, consentendo il bilanciamento del carico al costo di complicare la coerenza dei dati, mentre la replica *attiva-passiva* mantiene repliche di riserva da usare esclusivamente durante il failover.
 
-![Azure SQL Database geo-replication](../media-draft/geo-replication.png)
+![Replica geografica del database SQL di Azure](../media-draft/geo-replication.png)
 
 > [!IMPORTANT]
-> **Neither replication nor backup are complete disaster recovery solutions on their own**. Data recovery is only one component of disaster recovery, and replication will not fully satisfy many kinds of disaster recovery scenarios. For example, in a data corruption scenario, the nature of the corruption may allow it to spread from the primary data store to the replicas, rendering all the replicas useless and requiring a backup for recovery.
+> **Né la replica né il backup da soli offrono una soluzione completa per il ripristino di emergenza**. Il ripristino dei dati è un solo componente del ripristino di emergenza e la replica non soddisfa completamente molti tipi di scenari di ripristino di emergenza. Ad esempio, in uno scenario di danneggiamento dei dati, la natura del danno potrebbe consentirne la diffusione dall'archivio dati primario alle repliche, rendendo inutili tutte le repliche e richiedendo un backup per il ripristino.
 
-### Process recovery
+### <a name="process-recovery"></a>Ripristino dei processi
 
-After a disaster, business data isn't the only asset that needs recovering. Disaster scenarios will also commonly result in downtime, whether it's due to network connectivity problems, datacenter outages, or damaged VM instances or software deployments. The design of your application needs to enable you to restore it to a working state.
+Dopo un'emergenza, i dati aziendali non sono l'unica risorsa di cui è necessario il ripristino. Gli scenari di emergenza spesso determinano tempi di inattività, che si tratti di problemi di connettività di rete, interruzioni del data center o istanze di macchine virtuali o distribuzioni software danneggiate. La progettazione dell'applicazione deve consentire di eseguire il ripristino a uno stato funzionante.
 
-In most cases, process restoration involves failover to a separate, working deployment. Depending on the scenario, geographic location may be a critical aspect. For example, a large-scale natural disaster that brings an entire Azure region offline will necessitate restoring service in another region. Your application's disaster recovery requirements, especially RTO, should drive your design and help you decide how many replicated environments you should have, where they should be located, and whether they should be maintained in a ready-to-run state or should be ready to accept a deployment in the event of disaster.
+Nella maggior parte dei casi, il ripristino dei processi comporta il failover in una distribuzione funzionante distinta. A seconda dello scenario, l'area geografica può rappresentare un aspetto critico: ad esempio, una calamità naturale su larga scala che rende offline un'intera area di Azure richiederà il ripristino del servizio in un'altra area. I requisiti di ripristino di emergenza dell'applicazione, in particolare l'obiettivo RTO, dovrebbero guidare la progettazione e aiutare a decidere quanti ambienti replicati sono necessari, dove devono essere posizionati e se devono essere mantenuti in uno stato pronto per l'esecuzione o devono essere pronti ad accettare una distribuzione in caso di emergenza.
 
-Depending on the design of your application, there are a few different strategies and Azure services and features that you can take advantage of to improve your app's support for process recovery after a disaster.
+A seconda della progettazione dell'applicazione, esistono differenti strategie e servizi e funzionalità di Azure che è possibile sfruttare per migliorare il supporto dell'app per il ripristino dei processi dopo un'emergenza.
 
-#### Azure Site Recovery
+#### <a name="azure-site-recovery"></a>Azure Site Recovery
 
-Azure Site Recovery is a service that's dedicated to managing process recovery for workloads running on VMs deployed to Azure, VMs running on physical servers, and workloads running directly on physical servers. Site Recovery replicates workloads to alternate locations and helps you to fail over when an outage occurs and supports testing of a disaster recovery plan.
+Azure Site Recovery è un servizio dedicato per la gestione del ripristino dei processi per i carichi di lavoro in esecuzione in macchine virtuali distribuite in Azure, macchine virtuali in esecuzione in server fisici e carichi di lavoro in esecuzione direttamente nei server fisici. Site Recovery replica i carichi di lavoro in posizioni alternative, consente di eseguire il failover quando si verifica un'interruzione del servizio e supporta il test di un piano di ripristino di emergenza.
 
 ![Azure Site Recovery](../media-draft/asr.png)
 
-Site Recovery supports replicating whole VMs and physical server images as well as individual *workloads*, where a workload may be an individual application or an entire VM or operating system with its applications. Any application workload can be replicated, but Site Recovery has first-class integrated support for many Microsoft server applications, such as SQL Server and SharePoint, as well as a handful of third-party applications like SAP.
+Site Recovery supporta la replica di intere macchine virtuali e immagini di server fisici, nonché di singoli *carichi di lavoro*, dove un carico di lavoro può essere una singola applicazione, un'intera macchina virtuale o un sistema operativo con le relative applicazioni. È possibile replicare qualsiasi carico di lavoro dell'applicazione, ma Site Recovery offre un supporto integrato di alto livello per numerose applicazioni server Microsoft, come SQL Server e SharePoint, nonché per un numero limitato di applicazioni di terze parti come SAP.
 
-Any app that runs on VMs or physical servers should at least investigate the use of Azure Site Recovery. It's a great way to discover and explore scenarios and possibilities for process recovery.
+Per tutte le app eseguite in macchine virtuali o server fisici è consigliabile quanto meno valutare l'uso di Azure Site Recovery, perché è un ottimo modo per scoprire ed esplorare gli scenari e le possibilità per il ripristino dei processi.
 
-#### Service-specific features
+#### <a name="service-specific-features"></a>Funzionalità specifiche dei servizi
 
-For apps that run on Azure PaaS offerings like App Service, most such services offer features and guidance for supporting disaster recovery. In many cases, disaster recovery is automatic and performed transparently by Azure. For certain scenarios, you can use service-specific features to support fast recovery. For example, Azure SQL Server supports geo-replication for quickly restoring service in another region. Azure App Service has a Backup and Restore feature, and the documentation includes guidance for using Azure Traffic Manager to support routing traffic to a secondary region.
+Per le app eseguite nelle offerte PaaS di Azure come il servizio app, la maggior parte di questi servizi offre funzionalità e indicazioni per il supporto del ripristino di emergenza. In molti casi, il ripristino di emergenza è automatico e viene eseguito in modo trasparente da Azure. Per alcuni scenari, è possibile usare funzionalità specifiche dei servizi per supportare il ripristino rapido. Ad esempio, il server SQL Azure supporta la replica geografica per il ripristino rapido del servizio in un'altra area. Il servizio app di Azure offre una funzionalità di backup e ripristino e la documentazione include indicazioni per l'uso di Gestione traffico di Azure per il supporto del routing del traffico a un'area secondaria.
 
-![Region pairs](../media-draft/AzRegionPairs.png)
+![Coppie di aree](../media-draft/AzRegionPairs.png)
 
-## Testing a disaster recovery plan
+## <a name="testing-a-disaster-recovery-plan"></a>Test di un piano di ripristino di emergenza
 
-Disaster recovery planning doesn't end once you have a completed plan in hand. Testing the plan is a crucial aspect of disaster recovery, to ensure that the directions and explanations are clear and up-to-date.
+La pianificazione del ripristino di emergenza non termina con il completamento del piano. Testare il piano è un aspetto fondamentale del ripristino di emergenza, per garantire che le indicazioni e le spiegazioni siano chiare e aggiornate.
 
-Choose intervals to perform different types and scopes of tests, such as testing backups and failover mechanisms every month, and performing a full-scale disaster recovery simulation every six months. Always follow the steps and details exactly as they're documented in the plan, and consider having someone unfamiliar with the plan give perspective on anything that could be made clearer.
+Scegliere gli intervalli per l'esecuzione dei diversi tipi e ambiti di test, ad esempio test dei backup e dei meccanismi di failover ogni mese e l'esecuzione di una simulazione di ripristino di emergenza su larga scala ogni sei mesi. Seguire sempre le procedure e i dettagli esattamente come sono documentati nel piano. Eventualmente, è possibile richiedere a qualcuno che non ha familiarità con il piano di fornire il proprio punto di vista su tutto ciò che potrebbe essere reso più chiaro.
 
-Make sure to include your monitoring system in your testing as well. For example, if your application supports automated failover, introduce failures in a dependency or other critical component to ensure that the application behaves correctly end-to-end, including detection of the failure and triggering of the automated failover.
+Assicurarsi di includere nei test anche il sistema di monitoraggio. Ad esempio, se l'applicazione supporta il failover automatizzato, introdurre errori in una dipendenza o un altro componente di importanza critica per assicurarsi che l'applicazione funzioni correttamente end-to-end, inclusi il rilevamento dell'errore e l'attivazione del failover automatizzato.
 
- By carefully identifying your requirements and laying out a plan, you'll be able to determine what types of services you'll need to use to meet your recovery objectives. Azure provides several services and features to help you meet these objectives.
+ Identificando attentamente i requisiti e articolando un piano, sarà possibile determinare i tipi di servizi da usare per soddisfare gli obiettivi di ripristino. Azure offre diversi servizi e funzionalità che consentono di soddisfare questi obiettivi.
