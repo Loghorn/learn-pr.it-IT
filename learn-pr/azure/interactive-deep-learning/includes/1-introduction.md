@@ -10,4 +10,5 @@ In questo modulo verranno illustrati i concetti fondamentali dell'apprendimento 
 
 ## <a name="prerequisites"></a>Prerequisiti
 
+<!---TODO: Update for sandbox?--->
 - Sottoscrizione ad Azure con accesso alle macchine virtuali serie D 

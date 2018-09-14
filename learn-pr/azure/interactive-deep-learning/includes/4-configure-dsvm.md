@@ -27,7 +27,7 @@ Compilare lo schema di distribuzione seguente e salvarlo come parameter_file.jso
 }
 ```
 
-È possibile visualizzare un elenco delle dimensioni delle macchine virtuali disponibili in [Ubuntu DSVM ARM template](https://azure.microsoft.com/en-us/global-infrastructure/services/?WT.mc_id=blog-learning-abornst) (Modello ARM di DSVM Ubuntu).
+È possibile visualizzare un elenco delle dimensioni delle macchine virtuali disponibili in [Ubuntu DSVM ARM template](https://azure.microsoft.com/global-infrastructure/services/?WT.mc_id=blog-learning-abornst) (Modello ARM di DSVM Ubuntu).
 
 
 ### <a name="create-a-resource-group-for-your-dsvm-in-a-region-of-your-choice"></a>Creare un gruppo di risorse per la DSVM in un'area a propria scelta:
@@ -50,7 +50,7 @@ $ az vm open-port -g [[NAME OF RESOURCE GROUP]] -n [[HOSTNAME OF DSVM]] --port 2
 $ az vm open-port -g [[NAME OF RESOURCE GROUP]] -n [[HOSTNAME OF DSVM]] --port 8888 --priority 901
 ```
 
-La porta 8888 è la porta predefinita per i notebook Jupyter. Per informazioni dettagliate su come aprire una porta, [fare clic qui](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/nsg-quickstart-portal?WT.mc_id=blog-medium-abornst)
+La porta 8888 è la porta predefinita per i notebook Jupyter. Per informazioni dettagliate su come aprire una porta, [fare clic qui](https://docs.microsoft.com/azure/virtual-machines/windows/nsg-quickstart-portal?WT.mc_id=blog-medium-abornst)
  
 ## <a name="step-3-connect-to-the-dsvm-with-the-azure-shell"></a>Passaggio 3: Connettersi alla DSVM con la shell di Azure 
  
