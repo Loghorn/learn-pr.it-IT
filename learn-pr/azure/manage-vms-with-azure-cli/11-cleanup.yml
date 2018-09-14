@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.manage-vms-with-azure-cli-data.11-cleanup
+title: Riepilogo e pulizia
+metadata:
+  title: Riepilogo e pulizia
+  description: Eseguire la pulizia delle risorse usate in questo modulo
+  ms.openlocfilehash: fc8e310be1430b16db2af5b9b2a902c0845edffd
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40446608"
+interactive: bash
+durationInMinutes: 2
+content: '[!include[](includes/11-cleanup.md)]'

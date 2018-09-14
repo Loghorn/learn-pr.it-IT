@@ -1,0 +1,60 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-performance-and-scalability.2-scaling-up-and-scaling-out
+title: Aumento delle prestazioni e aumento del numero di istanze
+metadata:
+  title: Aumento delle prestazioni e aumento del numero di istanze
+  description: In questa unità viene illustrato come sfruttare l'aumento delle prestazioni e l'aumento del numero di istanze nell'architettura
+  ms.openlocfilehash: 2c96a9d03be66aab1c4ff95035ea847bf61765be
+  ms.sourcegitcommit: 2df436853854bfcb39bc82ee461d7011bf8531ca
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/04/2018
+  ms.locfileid: "43675458"
+durationInMinutes: 5
+content: >
+  [!include[](includes/2-scaling-up-and-scaling-out.md)]
+quiz:
+  title: Verifica delle conoscenze - Aumento delle prestazioni e aumento del numero di istanze
+  questions:
+  - content: Qual è la descrizione più accurata di aumento del numero di istanze?
+    choices:
+    - content: Aumento della quantità di risorse di un'istanza
+      isCorrect: false
+      incorrectExplanation: Aumentare la quantità di risorse di una singola istanza è una descrizione per l'aumento delle prestazioni
+    - content: Aumento del numero di istanze che servono le richieste
+      isCorrect: true
+      correctExplanation: È corretto. L'aumento del numero di istanze aumenta il numero di istanze delle richieste di servizio.
+    - content: Aggiunta di ulteriore spazio di archiviazione a una macchina virtuale
+      isCorrect: false
+      incorrectExplanation: L'aggiunta di ulteriore spazio di archiviazione non è un esempio di aumento delle prestazioni.
+    - content: Raggiungimento del massimo livello di scalabilità per l'applicazione
+      isCorrect: false
+      incorrectExplanation: Il raggiungimento del massimo livello di scalabilità per l'applicazione può essere risolto con l'aumento del numero di istanze, ma non è una descrizione accurata dell'aumento del numero di istanze.
+  - content: Qual è la descrizione più accurata di riduzione delle prestazioni?
+    choices:
+    - content: Riduzione del numero di istanze che servono le richieste
+      isCorrect: false
+      incorrectExplanation: La riduzione del numero di istanze che servono le richieste rappresenta un ridimensionamento con riduzione del numero di istanze
+    - content: Acquisizione della proprietà delle modalità di scalabilità dell'applicazione
+      isCorrect: false
+      incorrectExplanation: L'acquisizione della proprietà delle modalità di scalabilità dell'applicazione non rappresenta la riduzione delle prestazioni.
+    - content: Riduzione della quantità di risorse di un'istanza
+      isCorrect: true
+      correctExplanation: La riduzione delle prestazioni rappresenta la riduzione delle risorse disponibili in una singola istanza.
+    - content: Massimo livello di scalabilità per l'applicazione non ancora raggiunto
+      isCorrect: false
+      incorrectExplanation: Non è una descrizione della riduzione delle prestazioni.
+  - content: Quale dei seguenti NON è un aspetto da prendere in considerazione quando si integra una strategia di scalabilità in un'applicazione?
+    choices:
+    - content: Criteri di conservazione del backup per le istanze
+      isCorrect: true
+      correctExplanation: Sebbene sia importante definire i criteri di conservazione dei backup, questi non sono correlati alla possibilità di scalabilità di un'applicazione.
+    - content: Gestione dello stato dell'applicazione
+      isCorrect: false
+      incorrectExplanation: Quando si crea una strategia di scalabilità è importante prendere in considerazione la gestione dello stato. La possibilità di una scalabilità ottimale dipende dalla possibilità di archiviare lo stato utente di fuori delle singole istanze in modo da garantire che l'esperienza utente non venga interrotta quando le istanze vengono aggiunte e rimosse.
+    - content: Tempo di avvio delle istanze
+      isCorrect: false
+      incorrectExplanation: Il tempo di avvio è un aspetto importante in una strategia di scalabilità. Quanto più aumenta il tempo necessario per avviare un'istanza, maggiore sarà il tempo necessario per consentire la scalabilità dell'applicazione.
+    - content: Automazione della scalabilità delle istanze in base a una metrica o a una pianificazione
+      isCorrect: false
+      incorrectExplanation: L'automazione della scalabilità è un componente essenziale della strategia di scalabilità. Quanto più si automatizzano le capacità di scalabilità, maggiore sarà la possibilità di gestire le fluttuazioni del carico utente senza l'intervento manuale o un'esperienza utente poco soddisfacente.

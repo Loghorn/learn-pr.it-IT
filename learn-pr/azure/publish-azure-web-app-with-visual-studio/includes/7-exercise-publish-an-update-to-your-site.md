@@ -1,4 +1,4 @@
-L'app Web Alpine Ski House è attiva e in esecuzione, ora è necessario farla vedere al capo. È necessario aggiornare il sito e pubblicare gli aggiornamenti in Azure.
+L'app Web Alpine Ski House è attiva e in esecuzione, ora bisogna farla vedere al capo. È necessario aggiornare il sito e pubblicare gli aggiornamenti in Azure.
 
 ## <a name="update-your-web-app"></a>Aggiornare l'app Web
 
@@ -14,7 +14,7 @@ L'app Web Alpine Ski House è attiva e in esecuzione, ora è necessario farla ve
 
 1. Aprire il file **About.cshtml.cs**.
 
-1. Sostituire la stringa `Message` per dire **Alpine Ski House è la località sciistica numero uno del nordest.**
+1. Sostituire la stringa `Message` per dire **Alpine Ski House is the premier ski hill in Northeast** (Alpine Ski House è la località sciistica numero uno dell'area nordest).
 
 1. Salvare il file.
 
@@ -22,9 +22,9 @@ L'app Web Alpine Ski House è attiva e in esecuzione, ora è necessario farla ve
 
 1. In Esplora soluzioni fare clic con il pulsante destro del mouse sul progetto.
 
-1. Selezionare **Pubblica**. Deve essere visualizzata un'opzione che include la distribuzione web di [sitoWeb].
+1. Selezionare **Pubblica**. Deve essere visualizzata un'opzione che include la distribuzione Web di [sitoWeb].
 
-1. Selezionare il sito. Visual Studio invierà le modifiche a Azure.
+1. Selezionare il sito. Visual Studio invierà le modifiche ad Azure.
 
 ### <a name="view-your-changes"></a>Visualizzare le modifiche
 

@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.cosmos-db-app-with-vscode.5-stored-procedure
+metadata:
+  title: Creare ed eseguire stored procedure dall'app
+  description: Creare ed eseguire stored procedure dall'app
+  ms.openlocfilehash: 3bce8765056c10db898ae9050cf89aae09faa26d
+  ms.sourcegitcommit: b97ed72bd7e3fb77b49de71e8ef35d3f70dfd636
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/05/2018
+  ms.locfileid: "43791695"
+title: Creare ed eseguire stored procedure dall'app
+durationInMinutes: 10
+content: '[!include[](includes/5-stored-procedure.md)]'

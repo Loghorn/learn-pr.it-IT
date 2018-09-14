@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.build-azure-bot-services-bot.9-delete-env
+title: Eliminare il gruppo di risorse
+metadata:
+  title: Eliminare il gruppo di risorse
+  description: Eliminare il gruppo di risorse
+  ms.openlocfilehash: eafceea3d3c1badd4c57286825acf38dea146990
+  ms.sourcegitcommit: b97ed72bd7e3fb77b49de71e8ef35d3f70dfd636
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/05/2018
+  ms.locfileid: "43795297"
+durationInMinutes: 10
+content: '[!include[](includes/9-delete-env.md)'
