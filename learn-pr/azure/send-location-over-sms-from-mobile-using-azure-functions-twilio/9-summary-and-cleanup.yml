@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.send-location-over-sms-from-mobile-using-azure-functions-twilio.9-summary-and-cleanup
+title: <span data-ttu-id="0dcfd-101">Riepilogo e pulizia</span><span class="sxs-lookup"><span data-stu-id="0dcfd-101">Summary and cleanup</span></span>
+metadata:
+  title: <span data-ttu-id="0dcfd-102">Riepilogo e pulizia</span><span class="sxs-lookup"><span data-stu-id="0dcfd-102">Summary and cleanup</span></span>
+  description: <span data-ttu-id="0dcfd-103">Un riepilogo dei passaggi eseguiti e delle istruzioni di pulizia per pulire le risorse di Azure con provisioning</span><span class="sxs-lookup"><span data-stu-id="0dcfd-103">A summary or the steps taken and cleanup instructions to clean up the provisioned Azure resources</span></span>
+  ms.openlocfilehash: 61135f41f0ce1bd683e28a2921ec706b622cbf96
+  ms.sourcegitcommit: b97ed72bd7e3fb77b49de71e8ef35d3f70dfd636
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/05/2018
+  ms.locfileid: "43791713"
+durationInMinutes: 2
+content: '[!include[](includes/9-summary-and-cleanup.md)]'

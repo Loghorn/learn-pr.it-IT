@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.choose-messaging-model.6-choose-azure-event-hubs
+title: <span data-ttu-id="00d0c-101">Scegliere Hub eventi di Azure</span><span class="sxs-lookup"><span data-stu-id="00d0c-101">Choose Azure Event Hubs</span></span>
+metadata:
+  title: <span data-ttu-id="00d0c-102">Scegliere Hub eventi di Azure</span><span class="sxs-lookup"><span data-stu-id="00d0c-102">Choose Azure Event Hubs</span></span>
+  description: <span data-ttu-id="00d0c-103">Scegliere Hub eventi di Azure</span><span class="sxs-lookup"><span data-stu-id="00d0c-103">Choose Azure Event Hubs</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 7bb94c6f5a70792125c040df90db1c01227356cf
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44242826"
+durationInMinutes: 10
+content: '[!include[](includes/6-choose-azure-event-hubs.md)]'
