@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.build-azure-bot-services-bot.3-create-qna-maker
+title: Creare una knowledge base con Microsoft QnA Maker
+metadata:
+  title: Creare una knowledge base con Microsoft QnA Maker
+  description: Creare una knowledge base con Microsoft QnA Maker
+  ms.openlocfilehash: c4b06f8c19882e8ad12bc94f81f7c7e1939aa049
+  ms.sourcegitcommit: b97ed72bd7e3fb77b49de71e8ef35d3f70dfd636
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/05/2018
+  ms.locfileid: "43795201"
+durationInMinutes: 10
+content: '[!include[](includes/3-create-qna-maker.md)'

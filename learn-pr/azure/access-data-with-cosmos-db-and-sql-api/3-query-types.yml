@@ -1,0 +1,29 @@
+### YamlMime:ModuleUnit
+uid: learn.access-data-with-cosmos-db-and-sql-api.3-query-types
+metadata:
+  title: Tipi di query
+  description: Informazioni sui tipi di query che possono essere usati in Azure Cosmos DB per recuperare i dati.
+  ms.openlocfilehash: 3df6fc94dfc10fa5fd8cf12f402967f32047c7fb
+  ms.sourcegitcommit: 56db32ad6f98b7d769f2b1201825d4f6d9b7362d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/05/2018
+  ms.locfileid: "43727377"
+title: Tipi di query
+durationInMinutes: 10
+content: >
+  [!include[](includes/3-query-types.md)]
+quiz:
+  title: Titolo del quiz
+  questions:
+  - content: Qual è l'unica clausola necessaria in una query di SQL?
+    choices:
+    - content: SELECT p.productId FROM Products p ORDER BY p.productId ASC
+      isCorrect: false
+      incorrectExplanation: No, questa query restituirebbe solo gli ID prodotto in ordine crescente.
+    - content: SELECT p.id FROM Products p ORDER BY p.productId DESC
+      isCorrect: false
+      incorrectExplanation: No, questa query restituirebbe gli ID in ordine decrescente.
+    - content: SELECT p.productId, p.description FROM Products p ORDER BY p.productId DESC
+      isCorrect: true
+      incorrectExplanation: Corretto. Questa query restituirebbe l'ID prodotto e la descrizione del prodotto in ordine crescente.
