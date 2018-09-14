@@ -1,0 +1,9 @@
+È stato illustrato come usare Funzioni di Azure per ospitare servizi con logica di business nel cloud. È un ottimo modo per aggiungere alla soluzione servizi ospitati scalabili ed espandibili in base alle esigenze dell'azienda. È possibile concentrarsi sul codice usando il linguaggio di propria scelta lasciando che Azure gestisca l'infrastruttura.
+
+## <a name="clean-up"></a>Eseguire la pulizia
+Nonostante le funzioni di Azure vengano eseguite solo quando attivate, può essere opportuno rimuovere le risorse create nel corso dell'esercizio.
+
+1. Accedere al [portale di Azure](https://portal.azure.com) con il proprio account Azure.
+1. Accedere al gruppo di risorse creato nel primo esercizio scegliendo **Tutte le risorse** nel menu a sinistra e quindi selezionando **escalator-functions-group**.
+1. Sulla barra degli strumenti fare clic sul pulsante **Elimina gruppo di risorse**. Verrà richiesto di digitare il nome del gruppo di risorse da eliminare. Al termine, fare clic sul pulsante **Elimina**.  
+![Eliminare un gruppo di risorse](../images/7-cleanup.png) 
