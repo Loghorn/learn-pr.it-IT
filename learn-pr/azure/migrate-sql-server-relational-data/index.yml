@@ -1,0 +1,31 @@
+### YamlMime:Module
+uid: learn.migrate-sql-server-relational-data
+metadata:
+  title: Eseguire la migrazione dei dati relazionali di SQL Server a SQL di Azure
+  description: In questo modulo si eseguirà la migrazione di un database di SQL Server a un database SQL di Azure. Verranno descritti le scelte disponibili e i vantaggi di ciascun approccio. Verrà inoltre eseguita una valutazione del database di SQL Server e quindi si eseguirà la migrazione del database a un database SQL di Azure.
+  ms.openlocfilehash: 26b3ef58ca10f5cd958a48faf6777fa79c399215
+  ms.sourcegitcommit: 1aec476e479e92851bc3b5b7795f1200740bc1e5
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/03/2018
+  ms.locfileid: "43497835"
+title: Eseguire la migrazione dei dati relazionali di SQL Server a SQL di Azure
+summary: In questo modulo si apprenderà come usare Data Migration Assistant (DMA) per ottenere valutazioni dei database di SQL Server locali ed eseguirne la migrazione a un database SQL di Azure.
+abstract: In questo modulo si eseguirà la migrazione di un database di SQL Server a un database SQL di Azure. Verranno descritti le scelte disponibili e i vantaggi di ciascun approccio. Verrà inoltre eseguita una valutazione del database di SQL Server e quindi si eseguirà la migrazione del database a un database SQL di Azure.
+cardDescription: In questo modulo si apprenderà come usare Data Migration Assistant (DMA) per ottenere valutazioni dei database di SQL Server locali ed eseguirne la migrazione a un database SQL di Azure.
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- intermediate
+roles:
+- developer
+products:
+- Azure
+units:
+- learn.migrate-sql-server-relational-data.1-introduction
+- learn.migrate-sql-server-relational-data.2-assess-your-database
+- learn.migrate-sql-server-relational-data.3-exercise-assess-your-database
+- learn.migrate-sql-server-relational-data.4-deploy-fixes-and-migrate-the-database
+- learn.migrate-sql-server-relational-data.5-exercise-migrate-the-database
+- learn.migrate-sql-server-relational-data.6-knowledge-check-deploy-fixes-and-migrate-the-database
+- learn.migrate-sql-server-relational-data.7-summary
+achievement: learn.migrate-sql-server-relational-data.badge

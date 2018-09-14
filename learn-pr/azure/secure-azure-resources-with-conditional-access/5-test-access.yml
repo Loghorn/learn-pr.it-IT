@@ -1,19 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.secure-access-azure-ad-multi-factor-authentication.5-test-access
 metadata:
-  title: <span data-ttu-id="9cfc9-101">Testare l'accesso alle risorse</span><span class="sxs-lookup"><span data-stu-id="9cfc9-101">Test access to resources</span></span>
-  description: <span data-ttu-id="9cfc9-102">Testare l'accesso al portale di Azure e al portale MyApps garantisce che l'autenticazione a più fattori sia applicata quando previsto.</span><span class="sxs-lookup"><span data-stu-id="9cfc9-102">Test access to the Azure portal and MyApps portal to ensure multi-factor authentication is enforced when expected.</span></span>
+  title: <span data-ttu-id="75d77-101">Testare l'accesso alle risorse</span><span class="sxs-lookup"><span data-stu-id="75d77-101">Test access to resources</span></span>
+  description: <span data-ttu-id="75d77-102">Testare l'accesso al portale di Azure e al portale MyApps garantisce che l'autenticazione a più fattori sia applicata quando previsto.</span><span class="sxs-lookup"><span data-stu-id="75d77-102">Test access to the Azure portal and MyApps portal to ensure multi-factor authentication is enforced when expected.</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 4804f2ede733f521d18afbf55ba7a97121c8c2e4
-  ms.sourcegitcommit: 5130ac6e16956e1cd182c3d5f2721b881a186c63
+  ms.openlocfilehash: b8bf593949c359e501b5d81e7557121a8a6cf80a
+  ms.sourcegitcommit: 8fd7e2e04388cfcae1204c7bd49dfab9af74e4c3
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/12/2018
-  ms.locfileid: "44503105"
-title: <span data-ttu-id="9cfc9-103">Testare l'accesso alle risorse</span><span class="sxs-lookup"><span data-stu-id="9cfc9-103">Test access to resources</span></span>
+  ms.lasthandoff: 09/14/2018
+  ms.locfileid: "45598631"
+title: <span data-ttu-id="75d77-103">Testare l'accesso alle risorse</span><span class="sxs-lookup"><span data-stu-id="75d77-103">Test access to resources</span></span>
+labId: 46071
 durationInMinutes: 3
 content: '[!include[](includes/5-test-access.md)]'
