@@ -1,0 +1,29 @@
+### YamlMime:ModuleUnit
+uid: learn.access-data-with-cosmos-db-and-sql-api.5-javascript-programming
+metadata:
+  title: <span data-ttu-id="85398-101">Eseguire operazioni complesse sui dati</span><span class="sxs-lookup"><span data-stu-id="85398-101">Run complex operations on your data</span></span>
+  description: <span data-ttu-id="85398-102">Informazioni su come eseguire operazioni complesse mediante stored procedure e funzioni definite dall'utente nel portale di Azure.</span><span class="sxs-lookup"><span data-stu-id="85398-102">Learn how to perform complex operations by using stored procedures and user defined functions (UDFs) in the Azure portal.</span></span>
+  ms.openlocfilehash: 78ae511bda4b59934d13d9a23fc7eec56a6b3311
+  ms.sourcegitcommit: 56db32ad6f98b7d769f2b1201825d4f6d9b7362d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/05/2018
+  ms.locfileid: "43728788"
+title: <span data-ttu-id="85398-103">Eseguire operazioni complesse sui dati</span><span class="sxs-lookup"><span data-stu-id="85398-103">Run complex operations on your data</span></span>
+durationInMinutes: 10
+content: >
+  [!include[](includes/5-javascript-programming.md)]
+tasks:
+- action: exists
+  environment: azure
+  hint: <span data-ttu-id="85398-104">Assicurarsi di avere creato una stored procedure denominata "HelloWorld" e "CreateDocument" e una funzione definita dall'utente denominata "Discount".</span><span class="sxs-lookup"><span data-stu-id="85398-104">Please make sure that you have created a stored procedure named "HelloWorld" and "CreateDocument", and a UDF named "Discount".</span></span>
+  azure:
+    location: eastus
+- action: exists
+  environment: azure
+  azure:
+    resource:
+      type: Microsoft.Storage/storageAccounts
+      name: docsproxyppea427
+      tags:
+        triplecrown: true

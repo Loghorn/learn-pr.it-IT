@@ -1,0 +1,30 @@
+### YamlMime:Module
+uid: learn.intro-to-compute
+title: Introduzione a Calcolo di Azure
+summary: Calcolo di Azure offre risorse di calcolo che possono essere applicate in modo flessibile da un utente per elaborare grandi quantità di dati per varie attività, ad esempio l'elaborazione di modelli sugli effetti dei farmaci a livello molecolare, il data mining sulle informazioni di marketing, il rendering di video di fascia alta e l'analisi dei dati astronomici raccolti dai telescopi. Lo scopo di questo modulo è fornire una descrizione dettagliata del servizio di calcolo di Azure, le opzioni e suggerimenti su come è possibile usarlo per risolvere i problemi degli studenti riscontrati nel lavoro quotidiano.
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- beginner
+roles:
+- developer
+- solutions-architect
+- administrator
+products:
+- Azure
+metadata:
+  title: Introduzione a Calcolo di Azure
+  description: Calcolo di Azure offre risorse di calcolo che possono essere applicate in modo flessibile da un utente per elaborare grandi quantità di dati per varie attività, ad esempio l'elaborazione di modelli sugli effetti dei farmaci a livello molecolare, il data mining sulle informazioni di marketing, il rendering di video di fascia alta e l'analisi dei dati astronomici raccolti dai telescopi. Lo scopo di questo modulo è fornire una descrizione dettagliata del servizio di calcolo di Azure, le opzioni e suggerimenti su come è possibile usarlo per risolvere i problemi degli studenti riscontrati nel lavoro quotidiano.
+  ms.openlocfilehash: fbde0360e0fec828ef2232411659f796830c1c28
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40440236"
+abstract: 'Dopo aver completato questo modulo, gli studenti saranno in grado di: -identificare le opzioni di calcolo di Azure. - selezionare una o più opzioni di calcolo appropriate per la risoluzione dei problemi aziendali.'
+units:
+- learn.intro-to-compute.1-introduction
+- learn.intro-to-compute.2-essential-azure-compute-concepts
+- learn.intro-to-compute.3-select-and-manage-compute-options
+- learn.intro-to-compute.4-knowledge-check
+- learn.intro-to-compute.5-summary
+achievement: learn.intro-to-compute.badge

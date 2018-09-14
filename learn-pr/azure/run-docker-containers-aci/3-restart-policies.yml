@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.run-docker-containers-aci.3-restart-policy
+interactive: bash
+metadata:
+  title: <span data-ttu-id="c231c-101">Controllare il comportamento di riavvio di Istanze di contenitore di Azure</span><span class="sxs-lookup"><span data-stu-id="c231c-101">Control Azure Container Instances restart behavior</span></span>
+  description: <span data-ttu-id="c231c-102">Controllare il comportamento di riavvio delle istanze di contenitore.</span><span class="sxs-lookup"><span data-stu-id="c231c-102">Control Container Instances restart behavior.</span></span>
+  ms.openlocfilehash: b244e3cea5ca80aba22af2252e4f94dd8405bb99
+  ms.sourcegitcommit: d23e6fce3265655449b132f089793bdbc67e76e3
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/02/2018
+  ms.locfileid: "43473006"
+title: <span data-ttu-id="c231c-103">Controllare il comportamento di riavvio</span><span class="sxs-lookup"><span data-stu-id="c231c-103">Control restart behavior</span></span>
+durationInMinutes: 6
+content: '[!include[](includes/3-restart-policy.md)]'

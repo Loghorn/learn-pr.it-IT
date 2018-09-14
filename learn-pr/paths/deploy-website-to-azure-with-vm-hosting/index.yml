@@ -1,0 +1,25 @@
+### YamlMime:LearningPath
+uid: learn.deploy-a-website-to-azure-with-vm-hosting
+title: Distribuire un sito Web in Azure con l'hosting di macchine virtuali
+summary: Se i propri requisiti di hosting Web non sono supportati direttamente dalla piattaforma per app Web di Azure, è possibile sfruttare le macchine virtuali per personalizzare e controllare tutti gli aspetti del server Web. Informazioni su come creare, configurare e gestire macchine virtuali su Linux e Windows che ospitano app Web.
+cardDescription: Se i propri requisiti di hosting Web non sono supportati direttamente dalla piattaforma per app Web di Azure, è possibile sfruttare le macchine virtuali per personalizzare e controllare tutti gli aspetti del server Web. Informazioni su come creare, configurare e gestire macchine virtuali in Linux e Windows che ospitano app Web.
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- beginner
+roles:
+- developer
+products:
+- Azure
+prerequisites: Nessuna
+metadata:
+  title: Distribuire un sito Web in Azure con l'hosting di macchine virtuali
+  description: Le app Web di Azure consentono di pubblicare e gestire il sito Web in modo facile, senza dover usare server, risorse di archiviazione o asset di rete sottostanti. In alternativa, è possibile concentrarsi sulle funzionalità del sito Web e affidarsi alla solida piattaforma di Azure per garantire l'accesso sicuro al sito.
+  ms.openlocfilehash: 379e583f3b2b92d0983506d421364dc37747bb7e
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40449400"
+modules:
+- learn.manage-vms-with-azure-cli
+achievement: learn.deploy-a-website-to-azure-with-vm-hosting.trophy
