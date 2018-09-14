@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.choose-messaging-model.4-choose-azure-storage-queues
+title: Scegliere le code di archiviazione di Azure
+metadata:
+  title: Scegliere le code di archiviazione di Azure
+  description: Scegliere le code di archiviazione di Azure
+  ms.openlocfilehash: ffc8134a9043ea8ba8eb830f784955557ee928ed
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40445273"
+durationInMinutes: 10
+content: '[!include[](includes/4-choose-azure-storage-queues.md)]'

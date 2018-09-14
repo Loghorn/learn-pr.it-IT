@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.publish-azure-web-app-with-visual-studio.6-update-your-app
+title: Aggiornamento dell'app
+metadata:
+  title: Aggiornamento dell'app
+  description: Aggiornamento dell'app
+  ms.openlocfilehash: c286ab84ccd88b125640c643f048e988063cbf7f
+  ms.sourcegitcommit: a8497a897faccb27bfeaf5812a5887ac15f97625
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 08/24/2018
+  ms.locfileid: "42822180"
+durationInMinutes: 5
+content: '[!include[](includes/6-update-your-app.md)]'
