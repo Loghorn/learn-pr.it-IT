@@ -4,31 +4,42 @@ metadata:
   title: Tipi di query
   description: Informazioni sui tipi di query che possono essere usati in Azure Cosmos DB per recuperare i dati.
   ms.date: 09/24/2018
-  author: markjulmar
-  ms.author: smmark
+  author: mimig1
+  ms.author: mimig
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 6c086c70eeb3baecd55d819dae074e978663bb97
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: de4e0ee9f21fb69c453bd36d7ea9c75f0d38b4c2
+  ms.sourcegitcommit: 62416ff619ca53bbda14edfbd05a1d1cf659743b
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44240633"
+  ms.lasthandoff: 09/14/2018
+  ms.locfileid: "45582352"
 title: Tipi di query
-durationInMinutes: 10
+durationInMinutes: 5
 content: >
   [!include[](includes/4-query-types.md)]
 quiz:
-  title: Titolo del quiz
+  title: Verifica delle conoscenze di tipi di query
   questions:
   - content: Qual è l'unica clausola necessaria in una query di SQL?
     choices:
+    - content: SELECT
+      isCorrect: true
+      correctExplanation: Selezionare è l'unica clausola necessario in una query.
+    - content: DA
+      isCorrect: false
+      incorrectExplanation: DA è una clausola facoltativa in una query SQL.
+    - content: IN CUI
+      isCorrect: false
+      incorrectExplanation: DOVE è una clausola facoltativa in una query SQL.
+  - content: Quali query consenta di ottenere un elenco ordinato di ID prodotto e le descrizioni, inizia con l'ID di prodotto più grande e terminando con l'ID di prodotto più piccolo?
+    choices:
     - content: SELECT p.productId FROM Products p ORDER BY p.productId ASC
       isCorrect: false
-      incorrectExplanation: No, questa query restituirebbe solo gli ID prodotto in ordine crescente.
+      incorrectExplanation: Ciò restituirà solo l'ID di prodotto in ordine crescente.
     - content: SELECT p.id FROM Products p ORDER BY p.productId DESC
       isCorrect: false
-      incorrectExplanation: No, questa query restituirebbe gli ID in ordine decrescente.
+      incorrectExplanation: Ciò restituirà solo l'ID in ordine decrescente
     - content: SELECT p.productId, p.description FROM Products p ORDER BY p.productId DESC
       isCorrect: true
-      incorrectExplanation: Corretto. Questa query restituirebbe l'ID prodotto e la descrizione del prodotto in ordine crescente.
+      incorrectExplanation: Verrà così restituito l'ID prodotto e descrizione, ma in ordine crescente.

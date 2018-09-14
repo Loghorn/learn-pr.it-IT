@@ -1,20 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.cosmos-db-app-with-vscode.setup-cosmosdb
 metadata:
-  title: Configurare l'account Azure Cosmos DB
-  description: Configurare l'account Azure Cosmos DB
+  title: Creare risorse di Azure Cosmos DB in Visual Studio Code
+  description: Informazioni su come creare risorse di Azure Cosmos DB usando l'estensione di Azure Cosmos DB per Visual Studio Code.
   ms.date: 09/24/2018
-  author: markjulmar
-  ms.author: smmark
+  author: mimig1
+  ms.author: mimig
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 793491d1cdae44e7f128cbaa0be25ac0765f2f07
-  ms.sourcegitcommit: 2e31e2186d3bd659d3582edaf79e3581f6b92423
+  ms.openlocfilehash: 2cbe18deff81f96e07d550eaf0c762b2354f8d00
+  ms.sourcegitcommit: 85169b96f980f61cf8558e3df6f32527973bfde4
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/12/2018
-  ms.locfileid: "44655646"
-title: Configurare l'account Cosmos DB
+  ms.lasthandoff: 09/13/2018
+  ms.locfileid: "45556207"
+title: Creare risorse di Azure Cosmos DB in Visual Studio Code
 durationInMinutes: 5
-interactive: bash
+azureSandbox: true
 content: '[!include[](includes/setup-cosmosdb.md)]'

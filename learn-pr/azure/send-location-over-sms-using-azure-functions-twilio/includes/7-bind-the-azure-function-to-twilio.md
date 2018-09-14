@@ -33,7 +33,7 @@ L'invio di SMS messaggi tramite Twilio richiede un'associazione di output che vi
 
     Quando si crea un account Twilio, viene assegnato un numero di telefono da cui è possibile inviare messaggi. È possibile trovare questo numero di telefono nel dashboard **Numeri di telefono** di Twilio. Dal sito di Twilio, selezionare i puntini di sospensione nella parte inferiore del menu a sinistra. Quindi, selezionare *SUPER NETWORK -> Numeri di telefono*. È possibile aggiungere questo dashboard al menu a sinistra mediante l'icona della puntina. Il numero Twilio si troverà in *Gestisci numeri -> Numeri attivi*. È necessario rimuovere gli spazi dal numero.
 
-    ![Ricerca del numero Twilio](../media-drafts/7-twilio-find-number.png)
+    ![Ricerca del numero Twilio](../media/7-twilio-find-number.png)
 
     ```cs
     [TwilioSms(AccountSidSetting = "TwilioAccountSid",
@@ -130,15 +130,15 @@ public static async Task<HttpResponseMessage> Run([HttpTrigger(AuthorizationLeve
 
 1. Fare clic sul pulsante **Invia posizione**. Se il messaggio SMS è stato inviato correttamente, nell'app Xamarin.Forms verrà visualizzato un messaggio simile a "Posizione inviata correttamente".
 
-    ![App Xamarin.Forms in cui la posizione risulta inviata](../media-drafts/7-ui-location-sent.png)
+    ![App Xamarin.Forms in cui la posizione risulta inviata](../media/7-ui-location-sent.png)
 
 1. Nei log console per la funzione di Azure, verrà visualizzato il messaggio creato e inviato. Se si verificano errori (ad esempio, il numero ha un formato non corretto), si verrà disconnessi.
 
-    ![La console di funzioni di Azure con il messaggio visualizzato è stata inviata](../media-drafts/7-function-message-sent.png)
+    ![La console di funzioni di Azure con il messaggio visualizzato è stata inviata](../media/7-function-message-sent.png)
 
 1. Controllare se sul telefono è presente un messaggio. Fare clic sul collegamento nel messaggio per visualizzare la posizione.
 
-    ![Il messaggio SMS ricevuto su un telefono cellulare](../media-drafts/7-message-received.png)
+    ![Il messaggio SMS ricevuto su un telefono cellulare](../media/7-message-received.png)
 
 ## <a name="summary"></a>Riepilogo
 

@@ -1,6 +1,6 @@
 Le attività complesse o ripetitive spesso richiedono una notevole quantità di tempo di amministrazione. Le organizzazioni preferiscono automatizzare queste attività per ridurre i costi ed evitare gli errori.
 
-Questo aspetto è importante nell'esempio relativo all'azienda CRM (Customer Relationship Management). In questo caso, il software viene testato su più macchine virtuali Linux, che è necessario eliminare e ricreare continuamente. Si vuole usare uno script di PowerShell per automatizzare la creazione delle macchine virtuali.
+Questo aspetto è importante nell'esempio relativo all'azienda CRM (Customer Relationship Management). In questo caso, il software viene testato su più macchine virtuali Linux, che è necessario eliminare e ricreare continuamente. Si vuole usare uno script di PowerShell per automatizzare la creazione delle macchine virtuali e la loro creazione manualmente ogni volta come abbiamo appena fatto.
 
 Oltre al funzionamento di base per la creazione di una macchina virtuale, sono previsti alcuni requisiti aggiuntivi per lo script. 
 - Poiché verranno create più macchine virtuali, si vuole inserire la creazione all'interno di un ciclo
@@ -30,7 +30,7 @@ Dopo avere scritto lo script, eseguirlo dalla riga di comando di PowerShell pass
 PowerShell offre numerose funzionalità disponibili nei tipici linguaggi di programmazione. È possibile definire variabili, usare rami e cicli, acquisire parametri della riga di comando, scrivere funzioni, aggiungere commenti e così via. Saranno necessarie tre funzionalità per il nostro script: variabili, cicli e parametri.
 
 ### <a name="variables"></a>Variabili
-PowerShell supporta le variabili. Usare **$** per dichiarare una variabile e **=** per assegnare un valore. Ad esempio:
+Come illustrato nell'ultimo unità, PowerShell supporta le variabili. Usare **$** per dichiarare una variabile e **=** per assegnare un valore. Ad esempio:
 
 ```powershell
 $loc = "East US"
@@ -87,25 +87,7 @@ Nello script è possibile basarsi sulla posizione per la corrispondenza quando i
 param([int]$size, [string]$location)
 ```
 
-## <a name="how-to-create-a-linux-virtual-machine"></a>Come creare una macchina virtuale Linux
-Azure PowerShell fornisce il cmdlet **New-AzureRmVm** per creare una macchina virtuale. Il cmdlet dispone di diversi parametri che consentono di gestire le numerose impostazioni di configurazione della macchina virtuale. La maggior parte dei parametri ha valori predefiniti accettabili, pertanto è necessario specificare solo cinque elementi:
-
-- **ResourceGroupName**: il gruppo di risorse in cui verrà inserita la nuova macchina virtuale.
-- **Name**: il nome della macchina virtuale in Azure.
-- **Location**: la posizione geografica in cui verrà eseguito il provisioning della macchina virtuale.
-- **Credential**: un oggetto contenente il nome utente e la password per l'account di amministratore della macchina virtuale. Useremo il cmdlet **Get-Credential** per la richiesta del nome utente e della password. **Get-Credential** inserisce il nome utente e la password in un oggetto credenziali, che viene restituito come risultato.
-- **Image**: identità del sistema operativo da usare per la macchina virtuale. In questo caso, verrà usato "UbuntuLTS".
-
-La sintassi per il cmdlet è illustrata di seguito:
-
-```powershell
-   New-AzureRmVm 
-       -ResourceGroupName <resource group name> 
-       -Name <machine name> 
-       -Credential <credentials object> 
-       -Location <location> 
-       -Image <image name>
-```
+È stato possibile accettare questi parametri come input e utilizzare un ciclo per creare un set di macchine virtuali dai parametri specificati. Si proverà a eseguire più avanti.
 
 ## <a name="summary"></a>Riepilogo
 La combinazione di PowerShell e Azure PowerShell offre tutti gli strumenti necessari per l'automazione di Azure. Nell'esempio relativo a CRM, sarà possibile creare più macchine virtuali Linux usando un parametro per mantenere lo script generico e un ciclo per evitare la ripetizione del codice. Questo significa che un'operazione precedentemente complessa ora può essere eseguita in un unico passaggio.

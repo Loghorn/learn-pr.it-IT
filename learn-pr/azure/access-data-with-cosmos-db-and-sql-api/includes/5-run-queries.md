@@ -1,6 +1,6 @@
 Ora che si è appreso quali tipi di query è possibile creare, si userà Esplora dati nel portale di Azure per recuperare e filtrare i dati dei prodotti.
 
-Si noti che per impostazione predefinita nella finestra di Esplora dati la query nella scheda **Documento** è impostata su `SELECT * FROM c`. La query predefinita recupera e visualizza tutti i documenti nella raccolta.
+Nella finestra di Esplora dati, si noti che per impostazione predefinita, la query nella **documento** scheda è impostata su `SELECT * FROM c` come illustrato nell'immagine seguente. La query predefinita recupera e visualizza tutti i documenti nella raccolta.
 
 ![La query predefinita in Esplora dati è SELECT * FROM c](../media/5-azure-cosmosdb-data-explorer-query.png)
 
@@ -12,10 +12,8 @@ Si noti che per impostazione predefinita nella finestra di Esplora dati la query
 
 2. A questo punto è possibile eseguire alcune query illustrate nell'unità precedente. Nella scheda della query eliminare `SELECT * from c`, copiare e incollare la query seguente e quindi fare clic su **Esegui query**:
 
-    ```
-    SELECT *
-    FROM Products p
-    WHERE p.id ="1"
+    ```sql
+    SELECT * FROM Products p WHERE p.id ="1"
     ```
 
     I risultati restituiscono il prodotto dove `productId` è 1.
@@ -24,10 +22,10 @@ Si noti che per impostazione predefinita nella finestra di Esplora dati la query
 
 3. Eliminare la query precedente, copiare e incollare la query seguente e fare clic su **Esegui query**. Questa query restituisce il prezzo, la descrizione e l'ID prodotto per tutti i prodotti, ordinati in base al prezzo, in ordine crescente.
  
-    ```
-    SELECT p.price, p.description, p.productId
-    FROM Products p
-    ORDER BY p.price ASC
+    ```sql
+    SELECT p.price, p.description, p.productId 
+        FROM Products p 
+        ORDER BY p.price ASC
     ```
 
 ## <a name="summary"></a>Riepilogo

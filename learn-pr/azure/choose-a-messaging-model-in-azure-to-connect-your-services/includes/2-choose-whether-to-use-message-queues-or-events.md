@@ -4,6 +4,10 @@ Prima di poter scegliere la tecnologia di Azure corretta, è necessario conoscer
 
 La prima cosa da capire per una comunicazione è se invia **messaggi** o **eventi**. Questa è una scelta fondamentale che aiuta a scegliere il servizio di Azure appropriato da usare.
 
+#### <a name="communication-strategies-in-azure-apis"></a>Strategie di comunicazione in Azure (API)
+
+> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE2yuaw]
+
 ## <a name="what-is-a-message"></a>Che cos'è un messaggio?
 Nella terminologia delle applicazioni distribuite, i **messaggi** hanno le caratteristiche seguenti:
 

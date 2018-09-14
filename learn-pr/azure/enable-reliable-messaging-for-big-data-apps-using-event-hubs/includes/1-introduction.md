@@ -18,5 +18,5 @@ In questo modulo verrà descritto come:
 ## <a name="prerequisites"></a>Prerequisiti
 
 - Esperienza nella creazione e gestione delle risorse tramite il portale di Azure.
-- Esperienza con l'uso dell'interfaccia della riga di comando di Azure 2.0 per accedere ad Azure e creare le risorse.
+- Esperienza con utilizzando CLI di Azure per accedere ad Azure e creare le risorse.
 - Conoscenza dei concetti di base relativi ai Big Data, ad esempio la trasmissione e l'elaborazione degli eventi.

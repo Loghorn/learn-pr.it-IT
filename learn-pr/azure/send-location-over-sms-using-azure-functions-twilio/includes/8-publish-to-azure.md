@@ -1,7 +1,7 @@
 L'app e la funzione di Azure sono ora complete e in esecuzione in locale. In questa unità la funzione viene pubblicata in Azure per l'esecuzione nel cloud.
 
-> In questa unità si pubblicherà la funzione da Visual Studio. Si tratta di un modo efficace per iniziare a usare modelli di prova, prototipi e apprendimento, ma **non** per un'app di qualità idonea ad ambienti di produzione. È consigliabile usare un tipo di distribuzione basata sull'integrazione continua. Altre informazioni sono disponibili nei [documenti sulla distribuzione di Funzioni di Azure](https://docs.microsoft.com/azure/azure-functions/functions-continuous-deployment).
->
+> [!Note]
+> La funzione da Visual Studio verrà pubblicato. Si tratta di un modo efficace per iniziare a usare modelli di prova, prototipi e apprendimento, ma **non** per un'app di qualità idonea ad ambienti di produzione. È consigliabile usare un tipo di distribuzione basata sull'integrazione continua. Altre informazioni sono disponibili nei [documenti sulla distribuzione di Funzioni di Azure](https://docs.microsoft.com/azure/azure-functions/functions-continuous-deployment).
 
 ## <a name="publishing-your-app-to-azure"></a>Pubblicazione di un'app in Azure
 
@@ -11,11 +11,11 @@ L'app e la funzione di Azure sono ora complete e in esecuzione in locale. In que
 
 1. Fare clic con il pulsante destro del mouse sull'app `ImHere.Functions` in Esplora soluzioni e scegliere *Pubblica*.
 
-    ![Pubblicazione diretta nell'app per le funzioni](../media-drafts/8-right-click-publish.png)
+    ![Pubblicazione diretta nell'app per le funzioni](../media/8-right-click-publish.png)
 
 1. Nella finestra di dialogo **Selezionare una destinazione di pubblicazione** selezionare *App per le funzioni di Azure* e per **Servizio app di Azure** selezionare *Crea nuovo*. Fare clic su **Pubblica**.
 
-    ![Creazione di una nuova istanza di Servizio app di Azure in cui eseguire la pubblicazione](../media-drafts/8-pick-publish-target.png)
+    ![Creazione di una nuova istanza di Servizio app di Azure in cui eseguire la pubblicazione](../media/8-pick-publish-target.png)
 
 1. Selezionare l'account di Azure nell'elenco a discesa nell'angolo superiore destro se si hanno più account di Azure e non è selezionato quello giusto.
 
@@ -23,23 +23,24 @@ L'app e la funzione di Azure sono ora complete e in esecuzione in locale. In que
 
 1. Selezionare la sottoscrizione in cui si intende creare questa app per le funzioni.
 
+<!---TODO: Update for sandbox?--->
 1. Creare un nuovo gruppo di risorse per questa app per le funzioni scegliendo il pulsante **Nuovo...** accanto all'elenco a discesa **Gruppo di risorse** e assegnargli un nome, ad esempio "ImHere". I nomi dei gruppi di risorse devono essere univoci per la sottoscrizione, non globalmente univoci in Azure. Fare quindi clic su **OK**.
 
-    ![Creare un nuovo gruppo di risorse](../media-drafts/8-create-new-resource-group.png)
+    ![Creare un nuovo gruppo di risorse](../media/8-create-new-resource-group.png)
 
-   La creazione di un nuovo gruppo di risorse semplifica la pulizia in un secondo momento. È possibile eliminare il gruppo di risorse con la certezza che tutti gli elementi creati per questa app per le funzioni verranno eliminati contemporaneamente.
+   La creazione di un nuovo gruppo di risorse ne semplifica la pulizia in un secondo momento. È possibile eliminare il gruppo di risorse con la certezza che tutti gli elementi creati per questa app per le funzioni verranno eliminati contemporaneamente.
 
 1. Creare un nuovo piano di hosting facendo clic sul pulsante **Nuovo...**  accanto all'elenco a discesa **Piano di hosting**. Il nome del piano del servizio app predefinito sarà il nome dell'app con "Plan" alla fine. Impostare la **posizione** sulla posizione più vicina e assicurarsi che **Dimensioni** sia impostata su Consumo. Fare quindi clic su **OK**.
 
-    ![Configurare il piano di hosting](../media-drafts/8-configure-hosting-plan.png)
+    ![Configurare il piano di hosting](../media/8-configure-hosting-plan.png)
 
 1. Creare un nuovo account di archiviazione facendo clic sul pulsante **Nuovo...** accanto all'elenco a discesa **Account di archiviazione**. Verrà fornito un nome predefinito. Mantenere tutti i valori predefiniti e fare clic su **OK**.
 
-    ![Creare un account di archiviazione](../media-drafts/8-create-storage-account.png)
+    ![Creare un account di archiviazione](../media/8-create-storage-account.png)
 
 1. Fare clic su **Crea** per effettuare il provisioning di tutte le risorse in Azure e pubblicare l'app per le funzioni di Azure.
 
-    ![Creare il servizio app](../media-drafts/8-create-app-service.png)
+    ![Creare il servizio app](../media/8-create-app-service.png)
 
 L'esecuzione del provisioning richiede pochi minuti. Verrà effettuato il provisioning delle risorse seguenti:
 
@@ -55,23 +56,23 @@ Quando la funzione di Azure era in esecuzione in locale, usava le credenziali di
 
 1. Nella scheda Pubblica fare clic sull'opzione **Gestisci impostazioni applicazione**.
 
-    ![Opzione Gestisci impostazioni applicazione](../media-drafts/8-application-settings-option.png)
+    ![Opzione Gestisci impostazioni applicazione](../media/8-application-settings-option.png)
 
 1. Fare clic sul pulsante **Aggiungi** per aggiungere una nuova impostazione. Denominarla "TwilioAccountSid" e impostare il valore sul SID dell'account Twilio. Ripetere questo passaggio per il token di autenticazione usando il nome "TwilioAuthToken".
 
-    ![Impostare le credenziali Twilio nelle impostazioni dell'applicazione](../media-drafts/8-set-creds-in-app-settings.png)
+    ![Impostare le credenziali Twilio nelle impostazioni dell'applicazione](../media/8-set-creds-in-app-settings.png)
 
 1. Fare clic su **OK**.
 
 1. Fare clic su **pubblica** per ripubblicare l'app per le funzioni di Azure con le nuove impostazioni dell'applicazione.
 
-    ![Pulsante Pubblica](../media-drafts/8-publish-application-button.png)
+    ![Pulsante Pubblica](../media/8-publish-application-button.png)
 
 ## <a name="pointing-the-mobile-app-to-azure"></a>Come puntare l'app per dispositivi mobili ad Azure
 
 1. Dalla scheda Pubblica copiare l'**URL del sito** usando il pulsante Copia accanto al valore.
 
-    ![Copiare l'URL del sito dalla scheda Pubblica](../media-drafts/8-copy-site-url.png)
+    ![Copiare l'URL del sito dalla scheda Pubblica](../media/8-copy-site-url.png)
 
 1. Aprire il file `MainViewModel` dal progetto `ImHere`.
 

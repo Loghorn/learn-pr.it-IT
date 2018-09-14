@@ -10,9 +10,9 @@ Esistono tre modelli di distribuzione per il cloud computing: cloud pubblico, cl
 
 ![Figura che mostra una panoramica generale dei modelli di distribuzione del cloud.](../media/2-cloud-deployment.png)
 
-!!! Video TC-008 placeholder !!! 
+#### <a name="public-versus-private-versus-hybrid"></a>Public e Private e ibride
 
-> [!VIDEO https://channel9.msdn.com/Series/History/The-History-of-Microsoft-1995/player]
+> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE2yEv7]
 
 ## <a name="public-cloud"></a>Cloud pubblico
 

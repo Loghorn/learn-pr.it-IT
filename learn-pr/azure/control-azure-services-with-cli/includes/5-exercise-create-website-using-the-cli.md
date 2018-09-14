@@ -29,7 +29,7 @@ Usare quindi l'interfaccia della riga di comando di Azure per creare un gruppo d
 1. Se nel gruppo sono presenti molti elementi, è possibile filtrare i valori restituiti aggiungendo un'opzione `--query`. Provare questo comando:
 
     ```azurecli
-    az group list --query '[?name == popupResGroup]'
+    az group list --query "[?name == 'popupResGroup']"
     ```
 
     La query è formattata usando **JMESPath**, che è un linguaggio di query standard per le richieste JSON. Altre informazioni su questo linguaggio di filtro avanzato si possono trovare all'indirizzo <http://jmespath.org/>. Nel modulo **Gestire macchine virtuali con l'interfaccia della riga di comando di Azure** vengono analizzate le query in modo più approfondito.

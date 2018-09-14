@@ -4,13 +4,13 @@ Capita di frequente che più documenti nel database debbano essere aggiornati co
 
 In questa stored procedure OrderId, che contiene un elenco di tutti gli articoli nell'ordine, viene usato per calcolare il totale di un ordine. Il totale degli ordini viene calcolato sommando gli articoli nell'ordine, sottraendo eventuali bonus (crediti) del cliente e tenendo conto di eventuali codici di coupon.
 
-1. Nella scheda Azure in Visual Studio Code espandere il **modulo di apprendimento (SQL)** > **Utenti** > **WebCustomers**, fare clic con il pulsante destro del mouse su **Stored procedure**, quindi fare clic su **Crea Stored Procedure**.
+1. In Visual Studio Code nel **Azure: Cosmos DB** scheda, quindi espandere l'account Azure Cosmos DB > **Users** > **WebCustomers** e quindi fare doppio clic su  **Le stored procedure** e quindi fare clic su **Create Stored Procedure**.
 
 1. Nella casella di testo nella parte superiore della schermata digitare *UpdateOrderTotal* e premere Invio per assegnare un nome alla stored procedure.
 
-1. Espandere **Stored procedure** e fare clic su **UpdateOrderTotal**.
+1. Nel **Azure: Cosmos DB** scheda, quindi espandere **Stored procedure** e fare clic su **UpdateOrderTotal**.
 
-1. Per impostazione predefinita, viene offerta una stored procedure che recupera il primo elemento.
+    Per impostazione predefinita, viene offerta una stored procedure che recupera il primo elemento.
 
 1. Per eseguire questa stored procedure dall'applicazione, aggiungere il codice seguente al file Program.cs.
 
@@ -19,7 +19,7 @@ In questa stored procedure OrderId, che contiene un elenco di tutti gli articoli
     {
         try
         {
-            await client.ExecuteStoredProcedureAsync<string>(UriFactory.CreateStoredProcedureUri(databaseName, collectionName, "sample"), new RequestOptions { PartitionKey = new PartitionKey(user.UserId) });
+            await client.ExecuteStoredProcedureAsync<string>(UriFactory.CreateStoredProcedureUri(databaseName, collectionName, "UpdateOrderTotal"), new RequestOptions { PartitionKey = new PartitionKey(user.UserId) });
             Console.WriteLine("Stored procedure complete");
         }
         catch (DocumentClientException de)
@@ -28,9 +28,8 @@ In questa stored procedure OrderId, che contiene un elenco di tutti gli articoli
         }
     }
     ```
-    <!--TODO: Update sproc to take order total and check for available dividend, and use of summer coupon code, and provide updated total-->
 
-1. Copiare ora il codice seguente e incollarlo alla fine del metodo **BasicOperations**.
+1. A questo punto copiare il codice seguente e incollarlo prima la `await this.DeleteUserDocument("Users", "WebCustomers", yanhe);` riga nel **BasicOperations** (metodo).
 
     ```
     await this.RunStoredProcedure("Users", "WebCustomers", yanhe);
@@ -43,23 +42,8 @@ In questa stored procedure OrderId, che contiene un elenco di tutti gli articoli
     ```
     La console visualizza l'output indicando il completamento della stored procedure.
 
-## <a name="clean-up"></a>Eseguire la pulizia
-<!---TODO: Update for sandbox?--->
-
-Se si prevede di continuare a utilizzare i moduli in questo percorso di apprendimento, ignorare il processo di pulizia, altrimenti usare la procedura seguente per eliminare le risorse per evitare di incorrere in addebiti per l'uso del servizio.
-
-1. Nel portale di Azure selezionare **Gruppi di risorse** all'estrema sinistra, quindi selezionare il gruppo di risorse creato.  
-
-    Se il menu a sinistra è compresso, fare clic sul ![pulsante Espandi](../media/5-javascript-programming/expand.png) per espanderlo.
-
-   ![Metriche nel portale di Azure](../media/5-javascript-programming/delete-resources-select.png)
-
-1. Nella nuova finestra selezionare il gruppo di risorse e fare clic su **Elimina gruppo di risorse**.
-
-   ![Metriche nel portale di Azure](../media/5-javascript-programming/delete-resources.png)
-
-1. Nella nuova finestra digitare il nome del gruppo di risorse da eliminare, quindi fai clic su **Elimina**.
-
 ## <a name="summary"></a>Riepilogo
 
 In questo modulo è stata creata un'applicazione console .NET Core che crea, aggiorna ed elimina i record utente, esegue query per gli utenti con SQL e LINQ ed esegue una stored procedure per eseguire query per gli elementi nel database.
+
+[!include[](../../../includes/azure-sandbox-cleanup.md)]

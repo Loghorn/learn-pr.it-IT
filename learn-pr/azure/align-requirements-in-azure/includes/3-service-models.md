@@ -4,9 +4,9 @@ Le risorse di cloud computing distribuite con tre modelli di servizio diversi.
 - **PaaS (Platform-as-a-service)** offre ambienti di sviluppo e distribuzione pronti che è possibile usare per fornire servizi cloud personalizzati.
 - **SaaS (Software-as-a-service)** offre applicazioni tramite Internet come servizio basato sul Web.
 
-!!! Video TC-007 placeholder !!!
+#### <a name="iaas-versus-sass-versus-paas"></a>IaaS e il Sass e PaaS
 
-> [!VIDEO https://channel9.msdn.com/Series/History/The-History-of-Microsoft-1995/player]
+> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE2yEbs]
 
 Per la scelta di un modello di servizio, valutare quale parte deve essere responsabile per la risorsa di calcolo. In base allo scenario, è possibile decidere quante responsabilità di gestione condivise si vogliono assumere. L'illustrazione seguente mostra un elenco di risorse gestite dall'utente e dal provider di servizi in ogni categoria del servizio cloud.
 

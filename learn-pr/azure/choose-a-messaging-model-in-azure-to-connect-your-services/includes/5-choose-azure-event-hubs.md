@@ -7,6 +7,10 @@ Si supponga di lavorare per Contoso Aircraft Engines. I motori prodotti dall'azi
 ## <a name="what-is-azure-event-hubs"></a>Che cos'è Hub eventi di Azure?
 Hub eventi è un intermediario per il modello di comunicazione pubblicazione-sottoscrizione. A differenza di Griglia di eventi, tuttavia, è ottimizzato per una velocità effettiva molto elevata, un numero considerevole di origini di pubblicazione, sicurezza e resilienza.
 
+#### <a name="what-is-an-event-hub"></a>Che cos'è un Hub eventi?
+
+> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE2yuat]
+
 Mentre Griglia di eventi si integra perfettamente nel modello di pubblicazione-sottoscrizione semplicemente perché gestisce le sottoscrizioni e indirizza le comunicazioni ai sottoscrittori, Hub eventi consente di eseguire alcuni servizi aggiuntivi. Questi servizi aggiuntivi lo rendono più simile a un bus di servizio o a una coda di messaggi, piuttosto che a un semplice strumento di trasmissione di eventi.
 
 #### <a name="partitions"></a>Partizioni

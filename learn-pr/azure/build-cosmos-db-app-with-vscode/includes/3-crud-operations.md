@@ -4,7 +4,7 @@ Dopo che è stata stabilita una connessione ad Azure Cosmos DB, il passaggio suc
 
 ## <a name="working-with-documents-programmatically"></a>Uso dei documenti a livello di codice
 
-I dati vengono archiviati in documenti JSON in Azure Cosmos DB. I [documenti](https://docs.microsoft.com/azure/cosmos-db/sql-api-resources#documents) possono essere creati, recuperati, sostituiti o eliminati nel portale, come illustrato nel modulo precedente, oppure a livello di programmazione, come descritto in questo modulo. Azure Cosmos DB offre SDK lato client per .NET, .NET Core, Java, Node.js e Python, ognuno dei quali supporta queste operazioni. In questo modulo si userà .NET Core SDK per eseguire operazioni CRUD (Create, Retrieve, Update, Delete). 
+I dati vengono archiviati in documenti JSON in Azure Cosmos DB. I [documenti](https://docs.microsoft.com/azure/cosmos-db/sql-api-resources#documents) possono essere creati, recuperati, sostituiti o eliminati nel portale, come illustrato nel modulo precedente, oppure a livello di programmazione, come descritto in questo modulo. Azure Cosmos DB offre SDK lato client per .NET, .NET Core, Java, Node.js e Python, ognuno dei quali supporta queste operazioni. In questo modulo verrà usato il SDK di .NET Core per eseguire operazioni (creare, recuperare, aggiornare ed eliminare) le operazioni sui dati NoSQL archiviati in Azure Cosmos DB. 
 
 Le operazioni principali per i documenti di Azure Cosmos DB fanno parte della classe [DocumentClient](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.documentclient?view=azure-dotnet):
 * [CreateDocumentAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.documentclient.createdocumentasync?view=azure-dotnet)
@@ -113,7 +113,7 @@ Dopo aver creato queste classi per rappresentare gli utenti, verranno creati nuo
         }
     ```
 
-1. Aggiungere quindi quanto segue al metodo **BasicOperations**.
+1. Aggiungere quindi quanto segue alla fine della **BasicOperations** (metodo).
 
     ```csharp
      User yanhe = new User
@@ -192,13 +192,13 @@ Dopo aver creato queste classi per rappresentare gli utenti, verranno creati nuo
                 await this.CreateUserDocumentIfNotExists("Users", "WebCustomers", nelapin);
     ```
 
-1. Di nuovo nel terminale integrato, digitare il comando seguente per eseguire il programma per assicurarsi che funzioni.
+1. Nel terminale integrato, anche in questo caso, digitare il comando seguente per eseguire il programma.
 
     ```csharp
     dotnet run
     ```
 
-    Il terminale visualizza l'output seguente, a indicare che sono stati creati correttamente entrambi i record utente.
+    Il terminale viene visualizzato un output come l'applicazione crea ogni nuovo documento di utente. Premere un tasto qualsiasi per completare il programma.
 
     ```
     Database and collection validation complete
@@ -211,7 +211,7 @@ Dopo aver creato queste classi per rappresentare gli utenti, verranno creati nuo
 
 ## <a name="read-documents"></a>Leggere i documenti
 
-1. Per leggere i documenti dal database, copiare il codice seguente e inserirlo alla fine del file Program.cs.
+1. Per leggere i documenti dal database, copiarvi il codice seguente e luogo dopo il metodo WriteToConsoleAndPromptToContinue nel file Program.cs.
     
     ```csharp
     private async Task ReadUserDocument(string databaseName, string collectionName, User user)
@@ -241,7 +241,7 @@ Dopo aver creato queste classi per rappresentare gli utenti, verranno creati nuo
     await this.ReadUserDocument("Users", "WebCustomers", yanhe);
     ```
 
-1. Salvare il file Program.cs e quindi eseguire il comando seguente nel terminale integrato.
+1. Nel terminale integrato, digitare il comando seguente per eseguire il programma.
 
     ```
     dotnet run
@@ -250,9 +250,9 @@ Dopo aver creato queste classi per rappresentare gli utenti, verranno creati nuo
 
     ```
     Database and collection validation complete
-    Created User 1
+    User 1 already exists in the database
     Press any key to continue ...
-    Created User 2
+    User 2 already exists in the database
     Press any key to continue ...
     Read user 1
     Press any key to continue ...
@@ -263,7 +263,7 @@ Dopo aver creato queste classi per rappresentare gli utenti, verranno creati nuo
 
 Azure Cosmos DB supporta la sostituzione di documenti JSON. In questo caso, verrà aggiornato un record utente per registrare una modifica al cognome.
 
-1. Copiare e incollare il metodo **ReplaceFamilyDocument** alla fine del file Program.cs.
+1. Copiare e incollare il **ReplaceFamilyDocument** metodo dopo il metodo ReadUserDocument nel file Program.cs.
 
     ```csharp
     private async Task ReplaceUserDocument(string databaseName, string collectionName, User updatedUser)
@@ -294,7 +294,7 @@ Azure Cosmos DB supporta la sostituzione di documenti JSON. In questo caso, verr
     await this.ReplaceUserDocument("Users", "WebCustomers", yanhe);
     ```
 
-1. Salvare il file Program.cs e quindi eseguire il comando seguente nel terminale integrato.
+1. Nel terminale integrato eseguire questo comando.
 
     ```
     dotnet run
@@ -303,13 +303,13 @@ Azure Cosmos DB supporta la sostituzione di documenti JSON. In questo caso, verr
 
     ```
     Database and collection validation complete
-    Created User 1
-    Press any key to continue ...
-    Created User 2
-    Press any key to continue ...
-    Read user 1
+    User 1 already exists in the database
     Press any key to continue ...
     Replaced last name for Suh
+    Press any key to continue ...
+    User 2 already exists in the database
+    Press any key to continue ...
+    Read user 1
     Press any key to continue ...
     End of demo, press any key to exit.
     ```
@@ -340,7 +340,7 @@ Azure Cosmos DB supporta la sostituzione di documenti JSON. In questo caso, verr
     }
     ```
 
-1. Copiare e incollare il codice seguente nel metodo **BasicOperations** sotto il codice di esecuzione della seconda query.
+1. Copiare e incollare il codice seguente alla fine del **BasicOperations** (metodo).
 
     ```csharp
     await this.DeleteUserDocument("Users", "WebCustomers", yanhe);
@@ -356,13 +356,13 @@ Azure Cosmos DB supporta la sostituzione di documenti JSON. In questo caso, verr
 
     ```
     Database and collection validation complete
-    Created User 1
-    Press any key to continue ...
-    Created User 2
-    Press any key to continue ...
-    Read user 1
+    User 1 already exists in the database
     Press any key to continue ...
     Replaced last name for Suh
+    Press any key to continue ...
+    User 2 already exists in the database
+    Press any key to continue ...
+    Read user 1
     Press any key to continue ...
     Deleted user 1
     End of demo, press any key to exit.

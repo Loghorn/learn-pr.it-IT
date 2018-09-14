@@ -59,7 +59,7 @@ La tabella seguente mostra come le query LINQ vengono convertite in SQL.
     this.ExecuteSimpleQuery("Users", "WebCustomers");
     ```
 
-1. Salvare il file Program.cs e quindi eseguire il comando seguente nel terminale integrato.
+1. Nel terminale integrato eseguire questo comando.
     
     ```
     dotnet run

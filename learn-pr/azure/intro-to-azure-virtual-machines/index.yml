@@ -1,23 +1,23 @@
 ### YamlMime:Module
 uid: learn.introduction-to-azure-virtual-machines
 metadata:
-  title: Introduzione alle macchine virtuali di Azure
-  description: Informazioni sulle decisioni prese prima di creare una VM, sulle opzioni per creare e gestire la VM e sulle estensioni e i servizi usati per gestirla.
+  title: Introduzione a macchine virtuali di Azure
+  description: Informazioni sulle decisioni prima di creare una macchina virtuale, le opzioni per creare e gestire la macchina virtuale e le estensioni e i servizi usati per gestire la macchina virtuale.
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 149a21c1ab2e9278a6cf454a9b2b5ea13e819134
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: 735a93908602500f6912e1cd35015d34597a2e5f
+  ms.sourcegitcommit: 85169b96f980f61cf8558e3df6f32527973bfde4
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44241942"
-title: Introduzione alle macchine virtuali di Azure
-summary: Informazioni sulle decisioni prese prima di creare una VM, sulle opzioni per creare e gestire la VM e sulle estensioni e i servizi usati per gestirla.
+  ms.lasthandoff: 09/13/2018
+  ms.locfileid: "45556241"
+title: Introduzione a macchine virtuali di Azure
+summary: Informazioni sulle decisioni prima di creare una macchina virtuale, le opzioni per creare e gestire la macchina virtuale e le estensioni e i servizi usati per gestire la macchina virtuale.
 abstract: >
-  Contenuto del modulo:
+  In questo modulo verrà descritto come:
 
   - Compilare un elenco di controllo per creare una macchina virtuale
 
@@ -25,7 +25,7 @@ abstract: >
 
   - Descrivere i servizi aggiuntivi disponibili per amministrare le macchine virtuali
 prerequisites: Nessuna
-iconUrl: http://via.placeholder.com/120x120
+iconUrl: /learn/achievements/intro-to-azure-virtual-machines.svg
 levels:
 - beginner
 roles:
@@ -34,6 +34,7 @@ roles:
 - solution-architect
 products:
 - azure
+- azure-virtual-machines
 units:
 - learn.introduction-to-azure-virtual-machines.1-introduction
 - learn.introduction-to-azure-virtual-machines.2-compile-a-checklist-for-creating-a-vm
