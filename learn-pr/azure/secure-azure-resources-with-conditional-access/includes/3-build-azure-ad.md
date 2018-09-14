@@ -12,7 +12,7 @@ Viene creata una nuova directory per First Up Consultants in cui è possibile es
    1. NOME ORGANIZZAZIONE: `First Up Consultants`.
    1. NOME DI DOMINIO INIZIALE: `firstupconsultants<XXXX>.onmicrosoft.com`.
 
-1. Attendere che la directory venga creata. Fare clic sul collegamento per passare alla nuova directory oppure fare clic su **Filtro per directory e sottoscrizione** nella parte superiore della finestra e quindi scegliere la directory appena creata.
+1. Attendere che la directory venga creata. Fare clic sul collegamento per passare alla nuova directory oppure fare clic sui **Directory e sottoscrizione filtro** nella parte superiore della finestra e quindi scegliere la directory appena creata.
 
 ## <a name="get-trial-licenses"></a>Ottenere le licenze di valutazione
 
@@ -32,7 +32,9 @@ Per eseguire il test è necessario un utente. Isabella Simonsen, un altro membro
 
 1. Creare un utente denominato **Isabella Simonsen** con questo nome utente:
 
-   * `Isabella@firstupconsultants<XXXX>.onmicrosoft.com`
+   `Isabella@firstupconsultants<XXXX>.onmicrosoft.com`
+
+   Corrisponde al dominio dopo il @ con il dominio è stato creato nel *creare una directory* sezione precedente.
 
 1. Selezionare la casella per **visualizzare la password** per l'utente. Prendere nota della password in modo da usarla in un secondo tempo durante il test.
 
@@ -52,7 +54,7 @@ Il criterio creato verrà assegnato a un gruppo di utenti, ma è necessario crea
 
 1. Tipo di appartenenza **Assegnato**.
 
-1. Selezionare l'utente creato nel passaggio precedente e scegliere **Seleziona**.
+1. Selezionare l'utente creato nel passaggio precedente e scegliere **seleziona**.
 
 1. Fare clic su **Crea**.
 

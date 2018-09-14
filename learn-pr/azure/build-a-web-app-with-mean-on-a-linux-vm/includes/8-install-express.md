@@ -1,19 +1,21 @@
-In the MEAN stack, the **E** represents the Express component. Express is a web server framework that's built for Node.js. It will handle our request routing and helper system. It's designed to simplify building web applications that are hosted on the Node.js runtime. While the core of Express is routing, it also helps web applications work with HTTP cookies and request query string data.
+Nello stack MEAN la lettera **E** rappresenta il componente Express. Express è un framework di server Web compilato per Node.js. Gestirà il routing delle richieste e il sistema per helper. È progettato per semplificare la creazione di applicazioni Web ospitate nel runtime di Node.js. Benché la sua attività principale sia il routing, Express consente anche il funzionamento delle applicazioni Web con i cookie HTTP e con i dati stringa delle query di richiesta.
 
-## Express version
+## <a name="express-version"></a>Versione di Express
 
-Because Express is a Node.js web application framework, we need to have Node.js and the node package manager installed.
+Poiché Express è un framework di applicazione web Node. js, è necessario disporre di Node. js e node package manager installato.
 
-At the time of this writing, the Express version is `4.16.0`.
+La versione di Express disponibile al momento della stesura di questo articolo è la `4.16.0`.
 
-## How to install Express
+## <a name="how-to-install-express"></a>Come installare Express
 
-The installation is as simple as running the following command:
+Per l'installazione è sufficiente eseguire questo comando:
 
    ```bash
    npm install express
    ```
 
-## Summary
+Non è necessario eseguire questa operazione sulla macchina virtuale ancora, torniamo tra breve per il poco.
 
-With Express installed, we have a shortcut path to responding to HTTP requests. We can quickly set up request routing and handlers for handling API and web page response data.
+## <a name="summary"></a>Riepilogo
+
+Con Express installato è ora possibile rispondere rapidamente alle richieste HTTP. È possibile configurare rapidamente il routing delle richieste e i gestori delle API e dei dati di risposta delle pagine Web.

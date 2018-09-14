@@ -1,124 +1,124 @@
-You are a solution architect. Your organization, Lamna Healthcare has moved its workloads to the cloud. Recently, the bill for these resources and workflows has increased more than Lamna had anticipated. You have been asked to determine whether the increase is natural, efficient growth, or whether the cost can be reduced by being more efficient with the organization's cloud resources.
+L'utente è un architetto delle soluzioni. L'organizzazione, Lamna Healthcare, ha spostato i carichi di lavoro nel cloud. Di recente, la fattura per queste risorse e questi flussi di lavoro è aumentata più di quanto previsto da Lamna. È stato chiesto di determinare se l'aumento è dovuto a una naturale crescita in termini di efficienza o se il costo può essere ridotto gestendo in modo più efficiente le risorse cloud dell'organizzazione.
 
-## How the cloud changes your expenses
+## <a name="how-the-cloud-changes-your-expenses"></a>Impatto del cloud sulle spese
 
-One of the differences between the public cloud and on-premises infrastructure is how you pay for the services you use. In an on-premises datacenter, hardware procurement time is long, hardware is sized for maximum capacity, and some of the costs, such as power and space, can be hidden from the business unit consuming the resources. Purchasing physical infrastructure ties up investments in long-term assets, hindering your ability to be agile with your resources.
+Una delle differenze tra il cloud pubblico e l'infrastruttura locale è il metodo di pagamento per i servizi usati. In un data center locale il tempo necessario per l'approvvigionamento hardware è lungo, le dimensioni dell'hardware vengono scelte in modo da garantire la massima capacità e alcuni dei costi, ad esempio quelli per l'alimentazione e lo spazio, possono essere nascosti alla business unit che utilizza le risorse. L'acquisto dell'infrastruttura fisica blocca gli investimenti in asset a lungo termine, impedendo di essere agili con le risorse.
 
-Shifting to the cloud introduces a pay-for-what-you-use cost model. You no longer need to tie up investments in assets, and if your resource requirements change, you can respond by adding, moving, or removing resources. Workloads vary between and within services, demand can be unpredictable, and your growth patterns shift over time. Since you only pay for what you use in the cloud, your cost structure can move in sync with the changes in resources.
+Il passaggio al cloud introduce un modello di costo con pagamento per le risorse usate. Non è più necessario bloccare gli investimenti in asset e, se i requisiti relativi alle risorse cambiano, è possibile reagire aggiungendole, spostandole o rimuovendole. I carichi di lavoro variano tra i servizi e al loro interno, la domanda può essere imprevedibile e i modelli di crescita cambiano nel tempo. Dal momento che si paga solo per le risorse usate nel cloud, la struttura dei costi può adattarsi alle modifiche apportate alle risorse.
 
-Cloud infrastructure can handle fluctuating resource usage scenarios. Resources that have significant periods of inactivity can be shut down when not in use and not incur any cost at all. Resources can grow with a successful service as it grows, rather than having to wait for the next procurement cycle. More resources can be dynamically added and removed to respond to predictable and unpredictable bursts of demand. The following illustration shows why the on-premises infrastructure cannot handle all these fluctuating scenarios.
+L'infrastruttura cloud è in grado di gestire scenari di utilizzo variabile delle risorse. Le risorse con periodi significativi di inattività possono essere arrestate quando non sono in uso e non comportano alcun costo. Le risorse possono crescere parallelamente a un servizio invece di dover attendere il ciclo di approvvigionamento successivo. Altre risorse possono essere aggiunte e rimosse in modo dinamico per rispondere a picchi prevedibili e imprevedibili nella domanda. La figura seguente illustra il motivo per cui l'infrastruttura locale non può gestire tutti questi scenari di utilizzo variabile delle risorse.
 
-![An illustration showing disadvantages of using on-premises infrastructure.](../media/cloudcomputingpatterns.png)
+![Figura che illustra gli svantaggi associati all'uso di un'infrastruttura locale.](../media/cloudcomputingpatterns.png)
 
-In an efficient architecture, provisioned resources match the demand for those resources. If a virtual machine is less than 10% utilized the majority of the time, you are wasting resources, both in compute and cost. Conversely, a virtual machine that is running 90% utilized is using the majority of the available resources and is an efficient use of money. Running a system to 100% utilization runs the risk of introducing performance issues. It is important to ensure that maximizing efficiency doesn't negatively impact the performance of your system. Demand is rarely constant, so adjusting resources when possible to match demand is important to ensure efficiency.
+In un'architettura efficiente le risorse sottoposte a provisioning soddisfano la domanda di tali risorse. Se l'utilizzo di una macchina virtuale è inferiore al 10% per la maggior parte del tempo, è in atto uno spreco di risorse, a livello sia di calcolo che di costo. Al contrario, una macchina virtuale in esecuzione, che viene utilizzata al 90%, usa la maggior parte delle risorse disponibili e consente un uso efficiente del denaro. L'esecuzione di un sistema fino al 100% di utilizzo comporta il rischio di introdurre problemi di prestazioni. È importante garantire che l'ottimizzazione dell'efficienza non comprometta le prestazioni del sistema. Poiché la domanda raramente è costante, adattare le risorse, quando è possibile soddisfare la domanda, è importante per poter garantire l'efficienza.
 
-## Track your cloud spend
+## <a name="track-your-cloud-spend"></a>Tener traccia della spesa per il cloud
 
-In order to make intelligent decisions, you need data. By looking at where your money is going, you can start comparing that to utilization to uncover where you may have waste within your environment.
+Per prendere decisioni intelligenti, sono necessari i dati. Osservando la destinazione del denaro, è possibile iniziare a confrontarla con l'utilizzo effettivo per capire dove si sta verificando uno spreco all'interno dell'ambiente.
 
-An export of your billing data is available at any time. Using your billing data, you can track where your costs are going and how they're allocated across your resources. The challenge is that the billing data shows cost but not utilization. You'll have data that indicates you're paying for that large VM, but how much are you actually using it?
+Un'esportazione dei dati di fatturazione è disponibile in qualsiasi momento. Usando i dati di fatturazione, è possibile risalire alle cause dei costi e stabilire come vengono allocati tra le risorse. Il problema è che i dati di fatturazione indicano il costo, ma non l'utilizzo. I dati indicheranno, ad esempio, che si sta pagando per una VM di grandi dimensioni, ma quanto la si sta effettivamente usando?
 
-Azure Cost Management gives you insights where your spend is going, as well as underutilized resources. Azure Cost Management tracks your total spend, cost by service, and cost over time. You can drill down into resource types and instances. You can also break down your costs by organization or cost center by tagging resources with those categories.
+Gestione costi di Azure offre informazioni dettagliate non solo sulla destinazione di spesa, ma anche sulle risorse sottoutilizzate. Gestione costi di Azure tiene traccia della spesa totale, del costo del servizio e del costo nel tempo. È possibile eseguire il drill-down di tipi di risorse e istanze. È anche possibile suddividere i costi per organizzazione o centro di costo assegnando alle risorse tag corrispondenti a tali categorie.
 
-Azure Advisor also has a cost component. It recommends VM resizing, buying reserved instances when more cost effective than pay-as-you-go instances. It identifies unused ExpressRoute circuits and idle virtual network gateways. Advisor makes additional recommendations in the areas of performance, high availability, and security.
+Azure Advisor ha anche un componente di costo. Consiglia il ridimensionamento della VM, con l'acquisto di istanze riservate qualora siano più convenienti delle istanze con pagamento al consumo. Identifica i circuiti di ExpressRoute non usati e i gateway di rete virtuale inattivi. Advisor offre suggerimenti aggiuntivi in termini di prestazioni, disponibilità elevata e sicurezza.
 
-The important part is to take time to review your spend and evaluate where your money is going. Identify areas of inefficiency to ensure you're operating as efficiently as possible.
+L'importante è dedicare tempo a esaminare la spesa e a valutare la destinazione del denaro. Identificare le aree di inefficienza per assicurarsi di operare nel modo più efficiente possibile.
 
-## Organize to optimize
+## <a name="organize-to-optimize"></a>Organizzare le risorse per l'ottimizzazione
 
-Putting some organization to your resources can help track where some of your costs are going. There are ways to group resources together, establishing a relationship so you know where your costs are related. From a billing perspective, resources can be easily grouped by:
+Organizzare le risorse consente di tener traccia dell'andamento di alcuni costi. Esistono modi per raggruppare le risorse, stabilendo una relazione per sapere a che cosa sono correlati i costi. Nell'ambito della fatturazione, le risorse possono essere facilmente raggruppate per:
 
-- Assigning resources to different subscriptions.
-- Assigning resources to different resource groups.
-- Applying tags to resources.
+- Assegnazione delle risorse a sottoscrizioni diverse.
+- Assegnazione delle risorse a gruppi di risorse diversi.
+- Applicazione di tag alle risorse.
 
-Using subscriptions and resource groups to organize resources is an easy way to logically group resources and can be leveraged when going through billing data. Tags come into play when resource relationships span the boundaries of subscriptions and resource groups. Tags are key/value pairs that can be added to any resource, and are exposed in billing data, allowing you to associate a department or cost center with your resource. Tags improve your ability to report on cost, as well as giving each department in your organization accountability for their own costs. The following illustration shows how you can apply the same tag to resources in different resource groups and even in different subscriptions.
+L'uso di sottoscrizioni e gruppi di risorse per organizzare le risorse è un modo semplice per raggruppare logicamente le risorse, utile quando si devono esaminare i dati di fatturazione. I tag sono utili quando le relazioni tra le risorse oltrepassano i limiti delle sottoscrizioni e dei gruppi di risorse. I tag sono coppie chiave-valore che possono essere aggiunte a qualsiasi risorsa e vengono esposte nei dati di fatturazione, consentendo di associare un centro di costo o un reparto alla risorsa. I tag consentono di creare più facilmente report sui costi, oltre ad attribuire a ogni reparto dell'organizzazione la responsabilità dei propri costi. La figura seguente mostra come applicare lo stesso tag alle risorse in gruppi di risorse diversi e persino in sottoscrizioni diverse.
 
-![An illustration showing resources organized using tags, resource groups, and subscriptions.](../media/tagging.png)
+![Figura che mostra le risorse organizzate tramite tag, gruppi di risorse e sottoscrizioni.](../media/tagging.png)
 
-Adding some organization to your resources can go a long way and can really aid in your ability to understand where your costs are going. Now let's take a look at some ways to optimize costs.
+L'aggiunta di alcune organizzazioni alle risorse può essere molto utile e consente di conoscere l'andamento dei costi. Verranno ora esaminati alcuni modi per ottimizzare i costi.
 
-## Optimizing IaaS costs
+## <a name="optimizing-iaas-costs"></a>Ottimizzazione dei costi IaaS
 
-For organizations using virtual machines, the cost associated with virtual machines is often the biggest portion of spend. The compute costs are typically the biggest piece, followed by storage. Taking time to optimize pay-for-what-you-use resources can have a large impact on the size of your monthly bill.
+Per le organizzazioni che usano le macchine virtuali, il costo associato alle macchine virtuali è spesso la voce principale della spesa. I costi di calcolo sono in genere la voce principale, seguita da quella per lo spazio di archiviazione. Dedicare tempo all'ottimizzazione delle risorse con pagamento in base all'uso può avere un notevole impatto sul totale della fattura mensile.
 
-Let's take a look at best practices to reduce your compute and storage costs.
+Verranno ora illustrate le procedure consigliate per ridurre i costi di calcolo e di archiviazione.
 
-### Compute
+### <a name="compute"></a>Calcolo
 
-There are different options available to achieve cost savings for virtual machines.
+Sono disponibili diverse opzioni per realizzare risparmi sui costi delle macchine virtuali.
 
-- Choose a smaller virtual machine instance size.
-- Reduce the number of hours a virtual machine runs.
-- Use discounts for the compute costs.
+- Scegliere un'istanza di macchina virtuale di dimensioni inferiori.
+- Ridurre il numero di ore di esecuzione di una macchina virtuale.
+- Usare gli sconti per i costi di calcolo.
 
-#### Right size virtual machines
+#### <a name="right-size-virtual-machines"></a>Scegliere le dimensioni appropriate per le macchine virtuali
 
-Right sizing a virtual machine is the process of matching the virtual machine size with the resource demand required of the VM. If a VM is running 25% idle, reducing the size of the VM will immediately reduce your cost. Virtual machine costs are linear within an instance family; each next size larger will double your cost. Conversely, reducing a VM by a single instance size will reduce your cost in half. The following illustration shows a 50% savings achieved by moving one size down within the same series.
+Il corretto ridimensionamento di una macchina virtuale è il processo in cui le dimensioni della macchina virtuale vengono scelte in base alla domanda di risorse richiesta dalla VM. Se una VM in esecuzione è inattiva al 25%, riducendo le dimensioni della VM si ridurranno immediatamente i costi. I costi delle macchine virtuali sono lineari all'interno di una famiglia di istanze. Ogni dimensione maggiore successiva raddoppierà i costi. Al contrario, la riduzione di una VM di una singola dimensione di istanza ridurrà i costi della metà. La figura seguente mostra come è possibile ottenere un risparmio del 50% riducendo la VM di una dimensione all'interno della stessa serie.
 
-![An illustration to demonstrate savings achieved by downsizing an under-utilized virtual machine.](../media/vm-resize.png)
+![Figura che illustra i risparmi ottenuti riducendo le dimensioni di una macchina virtuale sottoutilizzata.](../media/vm-resize.png)
 
-Azure Advisor identifies which virtual machines are underutilized. Advisor monitors your virtual machine usage for 14 days and then identifies underutilized virtual machines. Virtual machines whose CPU utilization is 5 percent or less and network usage is 7 MB or less for four or more days are considered underutilized virtual machines.
+Azure Advisor identifica le macchine virtuali sottoutilizzate. Advisor monitora l'utilizzo delle macchine virtuali per 14 giorni, in modo da identificare quelle sottoutilizzate. Le macchine virtuali con un utilizzo della CPU non superiore al 5% e un utilizzo di rete non superiore a 7 MB per almeno quattro giorni sono considerate macchine virtuali sottoutilizzate.
 
-#### Implement shutdown schedules for virtual machines
+#### <a name="implement-shutdown-schedules-for-virtual-machines"></a>Implementare pianificazioni di arresto per le macchine virtuali
 
-If you have VM workloads that are only used periodically, but are running continuously, you're wasting money. These VMs can be shut down when not in use, and started back up on a schedule, saving you compute costs while the VM is deallocated. This is particularly applicable for development environments, where it's often the case that development happens only during business hours. You can deallocate these systems in the off-hours, stopping your compute costs from accruing.
+Se si hanno carichi di lavoro di VM usati solo periodicamente, ma eseguiti in modo continuo, si sta sprecando denaro. Queste VM possono essere arrestate se non in uso e riavviate in base a una pianificazione, consentendo di risparmiare costi di calcolo mentre la VM è deallocata. Ciò è particolarmente adatto agli ambienti di sviluppo, in cui spesso le operazioni di sviluppo vengono eseguite solo durante le ore lavorative. È possibile deallocare questi sistemi negli orari di minore attività, evitando l'accumularsi dei costi di calcolo.
 
-Use Azure Automation to limit the periods your VMs run to only those times that your workloads require.
+Usare Automazione di Azure per limitare i periodi di esecuzione delle VM solo agli orari necessari per i carichi di lavoro.
 
-You can also use the auto-shutdown feature on a virtual machine to schedule a one-off automated shutdown.
+È anche possibile usare la funzionalità di arresto automatico in una macchina virtuale per pianificare un arresto automatizzato occasionale.
 
-#### Apply compute cost discounts
+#### <a name="apply-compute-cost-discounts"></a>Applicare gli sconti ai costi di calcolo
 
-The Azure Hybrid Benefit allows you to further optimize your costs for both Windows Server and SQL Server by allowing you to use your on-premises Windows Server or SQL Server licenses with Software Assurance to be used as a discount toward the compute cost of these VMs, eliminating the costs for Windows and SQL Server on enabled instances.
+Il vantaggio Azure Hybrid consente di ottimizzare ulteriormente i costi sia per Windows Server che per SQL Server, consentendo di usare le licenze di Windows Server o di SQL Server locali con Software Assurance da usare come sconto sul costo di calcolo di queste VM, eliminando i costi per Windows e SQL Server nelle istanze abilitate.
 
-Some virtual machines need to be up and running all the time. Maybe you have a web application server farm for a production workload or maybe a domain controller supporting various servers on a virtual network. If you know with certainty that these virtual machines will run over the coming year or maybe longer, you can get further cost savings by purchasing a reserved instance. Azure Reserved Virtual Machine Instances can be purchased for one year or three years of compute capacity, at a discount compared to pay-as-you-go compute resources. Azure Reserved Virtual Machine Instances can significantly reduce your virtual machine costs, up to 72 percent on pay-as-you-go prices, with one-year or three-year upfront commitment. The following illustration shows savings achieved when you combine your on-premises license with the Azure Hybrid Benefit and when you combine your on-premises license with both Azure RI and the Azure Hybrid Benefit.
+Alcune macchine virtuali devono essere continuamente operative. È il caso di una server farm di applicazioni Web per un carico di lavoro di produzione oppure di un controller di dominio che supporta vari server in una rete virtuale. Se si è certi che tali macchine virtuali verranno eseguite durante il prossimo anno o anche più a lungo, è possibile ottenere ulteriori risparmi sui costi acquistando un'istanza riservata. Si possono acquistare istanze di macchina virtuale riservate di Azure per uno o tre anni di capacità di calcolo, a un prezzo scontato rispetto alle risorse di calcolo con pagamento in base al consumo. Le istanze di macchina virtuale riservate di Azure consentono di ridurre in modo significativo i costi delle macchine virtuali, ovvero fino al 72% rispetto ai prezzi con pagamento in base al consumo, con un impegno anticipato di uno o tre anni. La figura seguente mostra i risparmi ottenuti quando si combina la licenza locale con Vantaggio Azure Hybrid e quando si combina la licenza locale con le istanze riservate di Azure e Vantaggio Azure Hybrid.
 
-![An illustration showing the savings on Azure products when you have on-premises licenses with Software Assurance.](../media/ahub-save.png)
+![Figura che mostra i risparmi relativi ai prodotti Azure quando si dispone di licenze locali con Software Assurance.](../media/ahub-save.png)
 
-### Virtual machine disk storage cost optimization
+### <a name="virtual-machine-disk-storage-cost-optimization"></a>Ottimizzazione dei costi di archiviazione su disco di una macchina virtuale
 
-For workloads that do not require high reliability and performance disks, you can use the reduced-cost standard storage. You might choose to use standard storage for development and test environments that are not required to be an identical match for a production workload.
+Per i carichi di lavoro che non richiedono dischi con affidabilità e prestazioni elevate, è possibile usare la risorsa di archiviazione standard a costi ridotti. È possibile scegliere di usare la risorsa di archiviazione standard per gli ambienti di sviluppo e test che non devono necessariamente essere una corrispondenza esatta per un carico di lavoro di produzione.
 
-Ensure you don't have any orphaned disks remaining in your environment. Disks that aren't associated with a VM still incur storage costs. If you've removed a VM but not the disks, the orphaned disks may be a place to reduce your storage cost.
+Assicurarsi che nell'ambiente non rimangano dischi orfani. I dischi non associati a una VM continuano a incorrere nei costi di archiviazione. Se è stata rimossa una VM, ma non i dischi, i dischi orfani potrebbero essere un'opportunità di ridurre i costi di archiviazione.
 
-Similar to orphaned disks, if you have any orphaned snapshots lingering around, take some time to clean them up. Pricing for these is lower than the disks themselves, but it's still a good practice to eliminate costs of unnecessary resources.
+Come per i dischi orfani, nel caso di snapshot orfani residui, eseguirne la pulizia. Il loro prezzo è inferiore a quello dei dischi in sé, ma è comunque consigliabile eliminare i costi delle risorse non necessarie.
 
-## Optimizing PaaS costs
+## <a name="optimizing-paas-costs"></a>Ottimizzazione dei costi PaaS
 
-PaaS services are typically optimized for costs over IaaS services, but there are opportunities to identify waste and optimize for minimal costs. Let's take a look at ways to reduce Azure SQL Database and Azure Blob storage costs.
+I servizi PaaS hanno in genere costi ottimizzati rispetto ai servizi IaaS, ma è ugualmente possibile identificare gli sprechi e ottimizzare i servizi per ridurre al minimo i costi. Verrà ora illustrato come ridurre i costi di archiviazione BLOB di Azure e del database SQL di Azure.
 
-### Optimizing Azure SQL Database costs
+### <a name="optimizing-azure-sql-database-costs"></a>Ottimizzazione dei costi del database SQL di Azure
 
-When creating an Azure SQL database, you have to select an Azure SQL Server and decide on a performance tier. Each tier provides a performance level either in database transaction units (DTUs) or virtual cores (vCores). For database loads that are steady, it's easy to optimize by selecting the properly sized tier for the needed performance. But what if your database has unpredictable bursts or spikes in activity? Elastic pools can reduce costs for unpredictable workloads.
+Quando si crea un database SQL di Azure, è necessario selezionare un server SQL di Azure e scegliere un livello di prestazioni. Ogni livello offre un grado di prestazioni nelle unità di transazione di database (DTU) o nelle memorie centrali virtuali (vCore). Per i carichi di database stabili, per ottimizzare è sufficiente selezionare il livello con le dimensioni corrette per le prestazioni necessarie. Ma cosa accade se il database ha burst imprevedibili o picchi di attività? I pool elastici possono ridurre i costi per i carichi di lavoro imprevedibili.
 
-SQL Database elastic pools are a simple, cost-effective solution for managing and scaling several databases that have varying and unpredictable usage demands. The databases in an elastic pool are on a single Azure SQL Database server and share a set number of resources at a set price. Pools are well suited for a large number of databases with specific utilization patterns. For a given database, this pattern is characterized by low average utilization with relatively infrequent utilization spikes.
-The more databases you can add to a pool, the greater your savings become. The following illustration shows the capabilities of the three types of Elastic Database Pools: basic, standard, and premium.  Basic auto scales up to 5 eDTUs per DB, standard auto scales up to 100 eDTUs per DB, and Premium that auto scales up to 1000 eDTUs per DB.
+I pool elastici di database SQL offrono una soluzione semplice e conveniente per la gestione e il ridimensionamento di diversi database con esigenze di utilizzo variabili e imprevedibili. I database in un pool elastico si trovano in un server di database SQL di Azure singolo e condividono un determinato numero di risorse a un prezzo specifico. I pool sono adatti per un numero elevato di database con modelli di utilizzo specifici. Per un determinato database, questo modello è caratterizzato da un utilizzo medio ridotto con picchi di utilizzo relativamente poco frequenti.
+Più alto è il numero di database che è possibile aggiungere a un pool, maggiori diventano i risparmi. La figura seguente illustra le capacità dei tre tipi di pool di database elastici, ovvero Basic, Standard e Premium.  Il tipo Basic consente di usufruire della scalabilità automatica fino a 5 eDTU per database, con quello Standard fino a 100 eDTU per database e infine con quello Premium fino a 1000 eDTU per database.
 
-![An illustration showing auto-scaling capacity of different types of Elastic Database Pools.](../media/sqldb-elastic-pools.png)
+![Figura che illustra la capacità di scalabilità automatica dei diversi tipi di pool di database elastici.](../media/sqldb-elastic-pools.png)
 
-Elastic pools are a great way to spread costs across multiple databases and can make a significant impact on reducing your Azure SQL Database costs.
+I pool elastici sono un'ottima soluzione per distribuire i costi tra più database e possono avere un impatto significativo sulla riduzione dei costi del database SQL di Azure.
 
-### Optimizing Blob storage costs
+### <a name="optimizing-blob-storage-costs"></a>Ottimizzazione dei costi di archiviazione BLOB
 
-Blob storage is a cost-effective way to store data, but as the amount of data grows, your bill can benefit from optimizing how the data is stored.
+L'archivio BLOB è un modo economico per archiviare i dati, ma man mano che aumenta la quantità di dati, è possibile ridurre il totale della fattura ottimizzando la modalità di archiviazione dei dati.
 
-Let's return to Lamna Healthcare. You have a medical-imaging application that stores images in blob storage. Due to the quantity and size of the images, the storage ends up being a notable cost for the application. When an image has been taken for a patient, it's likely that in the first week, that image will be viewed several times, and the performance of image retrieval is expected to be high. Conversely, an image taken two years ago may be accessed infrequently and has a lower retrieval performance expectation. You can use storage tiering to optimize the cost of image retrieval, given the reduced performance required as the image ages.
+Si userà di nuovo l'esempio di Lamna Healthcare. È presente un'applicazione di diagnostica per immagini che archivia le immagini nell'archivio BLOB. A causa della quantità e delle dimensioni delle immagini, lo spazio di archiviazione finisce per essere un costo significativo per l'applicazione. Quando viene acquisita un'immagine per un paziente, è probabile che durante la prima settimana tale immagine venga visualizzata diverse volte e che quindi le prestazioni previste per la funzionalità di recupero di immagini debbano essere elevate. Un'immagine ottenuta due anni fa verrà invece aperta raramente e le prestazioni di recupero previste sono inferiori. È possibile usare il livello di archiviazione per ottimizzare i costi del recupero di immagini, considerata la riduzione delle prestazioni richieste man mano che l'immagine diventa obsoleta.
 
-Azure Storage offers three storage tiers for blob object storage. The Azure hot storage tier is optimized for storing data that is accessed frequently. The Azure cool storage tier is optimized for storing data that is infrequently accessed and stored for at least 30 days. The Azure archive storage tier is optimized for storing data that is rarely accessed and stored for at least 180 days with flexible latency requirements.
+Per gli oggetti BLOB in Azure sono disponibili tre livelli di archiviazione. Il livello di archiviazione ad accesso frequente di Azure è ottimizzato per l'archiviazione di dati a cui si accede di frequente. Il livello di archiviazione ad accesso sporadico di Azure è ottimizzato per l'archiviazione di dati a cui si accede poco frequentemente e che vengono archiviati per almeno 30 giorni. Il livello di archiviazione archivio di Azure è ottimizzato per l'archiviazione dei dati a cui si accede raramente e che rimangono archiviati per almeno 180 giorni con requisiti di latenza flessibili.
 
-- **Hot access tier** - Highest storage costs but the lowest access costs.
-- **Cool access tier** - Lower storage costs and higher access costs compared to hot storage. This tier is intended for data that will stay in the cool tier for at least 30 days.
-- **Archive access tier** - Lowest storage cost and highest data retrieval costs compared to hot and cool storage. This tier is intended for data that can tolerate several hours of retrieval latency and will stay in the archive tier for at least 180 days.
+- **Livello di accesso frequente**: costi di archiviazione massimi, ma costi di accesso minimi.
+- **Livello di accesso sporadico**: costi di archiviazione più bassi e costi di accesso più alti rispetto all'archiviazione ad accesso frequente. Questo livello è destinato ai dati che rimangono nel livello ad accesso sporadico per almeno 30 giorni.
+- **Livello di accesso archivio**: costo di archiviazione più basso e costi di recupero dati più alti rispetto all'archiviazione ad accesso sporadico e ad accesso frequente. Questo livello è destinato ai dati che possono tollerare alcune ore di latenza di recupero e rimarranno nel livello archivio per almeno 180 giorni.
 
-For Lamna Healthcare, keeping new images on the hot access tier for a month makes sense, so that viewing the most recent images performs as fast as possible. You could then move images over one year old to the archive tier since it is likely that these images will not be retrieved. This would reduce their costs associated with storing these images.
+Per Lamna Healthcare, è utile mantenere le immagini nuove nel livello accesso frequente per un mese, in modo che la visualizzazione delle immagini più recenti sia il più veloce possibile. Si possono quindi spostare le immagini più vecchie di un anno al livello archivio perché è probabile che queste immagini non verranno recuperate. Si ridurrebbero così i costi associati all'archiviazione di queste immagini.
 
-## Cost optimization at Lamna Healthcare
+## <a name="cost-optimization-at-lamna-healthcare"></a>Ottimizzazione dei costi in Lamna Healthcare
 
-Lamna Healthcare is making strides on reducing their costs. They have organized a monthly review of their costs, and each department has access to Azure Cost Management, where they can review their costs throughout the month. They've identified a number of places where reserved instances can be used and have purchased several to take advantage of this discount. They have implemented automated processes to stop development environments in off-hours, saving them additional costs during times when these resources were not being used. 
+Lamna Healthcare sta facendo progressi nella riduzione dei costi. È stata organizzata una verifica mensile dei costi e ogni reparto ha accesso a Gestione costi di Azure, in cui è possibile controllare i costi di tutto il mese. Sono stati identificati alcuni ambiti in cui si possono usare le istanze riservate e ne sono state acquistate diverse per sfruttare i vantaggi di questo sconto. Sono stati implementati processi automatizzati per arrestare gli ambienti di sviluppo negli orari di minore attività, evitando costi aggiuntivi durante le ore in cui queste risorse non vengono usate. 
 
-Along with the optimization of blob storage for their imaging storage, they've managed to drop their bill notably over the past couple of months.
+Con l'ottimizzazione dell'archivio BLOB per l'archiviazione di immagini, è stato possibile ridurre considerevolmente i costi rispetto ai due mesi precedenti.
 
-## Summary
+## <a name="summary"></a>Riepilogo
 
-Optimizing the cost of your cloud infrastructure involves tracking your spend and ensuring that your resource utilization matches the demands of your workloads. Using the right quality and performance tier for your resources further optimizes your cloud costs.
+Per ottimizzare i costi dell'infrastruttura cloud, è necessario tener traccia delle spese e assicurarsi che l'utilizzo delle risorse corrisponda alle domande dei carichi di lavoro. Usando il livello di prestazioni e qualità appropriato per le risorse, è possibile ottimizzare ulteriormente i costi del cloud.

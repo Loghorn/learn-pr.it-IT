@@ -1,36 +1,34 @@
 ### YamlMime:Module
 uid: learn.intro-to-azure-networking
 metadata:
-  title: Introduction to Azure networking
-  description: Running your app or service in the cloud requires a fast and secure network. Learn some of the Azure networking basics and how Azure networking helps improve resiliency and reduce latency.
+  title: Introduzione a rete di Azure
+  description: 'Per eseguire un''app o un servizio nel cloud, è necessaria una rete veloce e protetta. Informazioni su alcune delle nozioni di base di rete di Azure e su come rete di Azure consente di migliorare la resilienza e di ridurre la latenza.'
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Introduction to Azure networking
-summary: Running your app or service in the cloud requires a fast and secure network. Learn some of the Azure networking basics and how Azure networking helps improve resiliency and reduce latency.
+title: Introduzione a rete di Azure
+summary: 'Per eseguire un''app o un servizio nel cloud, è necessaria una rete veloce e protetta. Informazioni su alcune delle nozioni di base di rete di Azure e su come rete di Azure consente di migliorare la resilienza e di ridurre la latenza.'
 abstract: |
-  In this module, you will:
-  - Learn how virtual networking helps you isolate network and compute resources
-  - Learn how Azure Load Balancer helps improve resiliency, or the ability to recover when your service goes down
-  - Learn how Traffic Manager Traffic Manager can route traffic to different endpoints, including the endpoint with the lowest latency to the user
-prerequisites: None
-#TODO: Update icon URL with real image 
-iconUrl: http://via.placeholder.com/120x120
+  In questo modulo verrà descritto come:
+  - Informazioni su come consente di funzionalità di rete virtuale isolare rete e le risorse di calcolo
+  - Informazioni su come Azure Load Balancer consente di migliorare la resilienza, o la capacità di recupero quando il servizio diventa inattivo
+  - Informazioni su come gestione traffico di gestione traffico può indirizzare il traffico a endpoint diversi, tra cui l'endpoint con latenza minima per l'utente
+prerequisites: Nessuno
+iconUrl: /learn/achievements/intro-to-azure-networking.svg
 levels:
-- beginner
+  - beginner
 roles:
-- developer
-- administrator
-- solution-architect
+  - developer
+  - administrator
+  - solution-architect
 products:
-- azure
+  - azure
 units:
-- learn.intro-to-azure-networking.1-introduction
-- learn.intro-to-azure-networking.2-deploy-to-azure
-- learn.intro-to-azure-networking.3-scale-load-balancer
-- learn.intro-to-azure-networking.4-reduce-latency-traffic-manager
-- learn.intro-to-azure-networking.5-summary
+  - learn.intro-to-azure-networking.1-introduction
+  - learn.intro-to-azure-networking.2-deploy-to-azure
+  - learn.intro-to-azure-networking.3-scale-load-balancer
+  - learn.intro-to-azure-networking.4-reduce-latency-traffic-manager
+  - learn.intro-to-azure-networking.5-summary
 achievement: learn.intro-to-azure-networking.badge

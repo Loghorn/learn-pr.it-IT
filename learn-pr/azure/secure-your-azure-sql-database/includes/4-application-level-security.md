@@ -1,31 +1,31 @@
-Imagine that a hacker is trying to access your database. Applications that connect to the database are vulnerable spots to attack. Those applications may not be connecting to the database using secure methods.
+Si supponga che un utente malintenzionato sta provando ad accedere al database. Le applicazioni che si connettono al database sono aree vulnerabili agli attacchi. Tali applicazioni potrebbero non essere connesso al database usando metodi sicuri.
 
-Databases need their own security, but how the database is accessed can play an important role in data security. Successful database breaches are normally the result of SQL injection attacks. SQL injection attacks are the result of applications not using preferred practices for accessing a database. 
+I database necessari per la protezione, ma come si accede al database possono svolgono un ruolo importante nella protezione dei dati. Violazioni del database ha esito positivo sono in genere il risultato di attacchi SQL injection. Attacchi SQL injection sono il risultato delle applicazioni che non usano procedure Preferiti per l'accesso a un database.
 
-Let's look at techniques to secure your database at the application layer.
+Esaminiamo le tecniche per proteggere il database al livello dell'applicazione.
 
-## SQL injection attacks
+## <a name="sql-injection-attacks"></a>Attacchi SQL injection
 
-The [OWASP foundation](https://owasp.org) is a not-for-profit organization that is designed to build standards for applications to be trusted. It publishes regularly a list of the top 10 security vulnerabilities.   
+Il [foundation OWASP](https://owasp.org) è un'organizzazione no profit che è progettata per compilare gli standard per le applicazioni siano attendibili. Pubblica regolarmente un elenco le prime 10 vulnerabilità della protezione.
 
-The most common vulnerability according to the OWASP is injection attacks, which normally take the form of SQL injection attacks. In a SQL injection attack, information that is passed to a SQL statement is modified. These modified queries either return sensitive information, or perform malicious operations on the database.
+La vulnerabilità più comune in base a OWASP è attacchi intrusivi nel codice, che in genere assumono la forma di attacchi SQL injection. In un attacco SQL injection, le informazioni passate a un'istruzione SQL viene modificate. Queste query modificate restituiscono le informazioni riservate, o eseguono operazioni dannose per il database.
 
-Let’s look at the following ASP.NET Core code using ADO.NET to fetch the interactions with a particular customer. 
+Esaminiamo il codice seguente di ASP.NET Core usando ADO.NET per recuperare le interazioni con un cliente specifico.
 
 ```csharp
 public List<CustomerInteraction> GetCustomerInteractions(string customerId)
 {
     var result = new List<CustomerInteraction>();
 
-    using (var conn = new SqlConnection(ConnectionString))  
-    {  
-        var sql = "select Id, CustomerId, InteractionDate, Details " + 
+    using (var conn = new SqlConnection(ConnectionString))
+    {
+        var sql = "select Id, CustomerId, InteractionDate, Details " +
             "from CustomerInteractions where CustomerId = '" + customerId + "'";
-        
-        using (var command = conn.CreateCommand())  
-        {  
+
+        using (var command = conn.CreateCommand())
+        {
             command.CommandText = sql;
-            conn.Open();  
+            conn.Open();
 
             using (var reader = command.ExecuteReader())
             {
@@ -35,52 +35,53 @@ public List<CustomerInteraction> GetCustomerInteractions(string customerId)
                         result.Add(GetInteractionsFromReader(reader));
                 }
             }
-        }  
+        }
         return result.OrderByDescending(i => i.InteractionDate).ToList();
-    } 
+    }
 }
 ```
 
-The query itself is primed for an SQL attack, as the customerId parameter isn't sanitized before going into the query and so could be modified. The website that is calling the query is passing the customerId parameter on the URL query string as follows:
+La query stessa è si prepara per un attacco SQL, come il parametro customerId non viene ripulito prima di approfondire la query e pertanto può essere modificato. Il sito Web che chiama la query è passando il parametro customerId nella stringa di query URL come indicato di seguito:
 
 .../Home/ViewInteractions?customerId=8c69a607-3c09-45ac-9beb-c59ca2de2385
 
-The problem with this strategy is that the customerId parameter can be modified. For example, you could modify the customerId parameter to put additional information into the query and select data from a different table. 
+Il problema con questa strategia è che il parametro customerId può essere modificato. Ad esempio, è possibile modificare il parametro customerId per inserire informazioni aggiuntive nella query e selezionare i dati da un'altra tabella.
 
 ```sql
-select Id, CustomerId, InteractionDate, Details from CustomerInteractions where CustomerId = '8c69a607-3c09-45ac-9beb-c59ca2de2385' 
+select Id, CustomerId, InteractionDate, Details from CustomerInteractions where CustomerId = '8c69a607-3c09-45ac-9beb-c59ca2de2385'
 ```
 
-It can now be modified to add additional information via a UNION statement to add additional information, by adding the following to the query:
+Ora può essere modificato per aggiungere informazioni aggiuntive tramite un'istruzione UNION per aggiungere informazioni aggiuntive, aggiungere il codice seguente alla query:
 
 ```sql
-union select Id, Id as CustomerId, getdate() as InteractionDate, CreditCardNumber + '/' + STR(CreditCardExpiryMonth, 2) + '/' + STR(CreditCardExpiryYear, 4) + ' cvv ' + STR(CreditCardCVV, 3) as Details from Customers --    
+union select Id, Id as CustomerId, getdate() as InteractionDate, CreditCardNumber + '/' + STR(CreditCardExpiryMonth, 2) + '/' + STR(CreditCardExpiryYear, 4) + ' cvv ' + STR(CreditCardCVV, 3) as Details from Customers --
 ```
 
-The SQL query is URL-encoded so that the value is accepted as a valid web URL part. The URL is passed to the website and the additional SQL query executed on the database. 
+La query SQL è codificato con URL in modo che il valore viene accettato come una parte di URL web valido. L'URL viene passata al sito Web e la query SQL aggiuntiva eseguite sul database.
 
 ```sql
 %27+union+select+Id%2C+Id+as+CustomerId%2C+getdate%28%29+as+InteractionDate%2C+CreditCardNumber+%2B+%27%2F%27+%2B+STR%28CreditCardExpiryMonth%2C+2%29+%2B+%27%2F%27+%2B+STR%28CreditCardExpiryYear%2C+4%29+%2B+%27+cvv+%27+%2B+STR%28CreditCardCVV%2C+3%29+as+Details+from+Customers+--
 ```
-This example demonstrates how not sanitizing the information from the site can lead to data security issues.
 
-![An example of a SQL injection attack via a web app](../media-draft/4-view-web-page-after-sql-injection.png)
+Questo esempio viene illustrato come non bonificando le informazioni del sito può causare problemi di protezione dati.
+
+![Screenshot di un indirizzo web browser a barre che mostra un esempio di un tentativo di attacco SQL injection tramite un'app web.](../media-draft/4-view-web-page-after-sql-injection.png)
 
 > [!Note]
-> To find out more about injection attacks, visit the [OWASP Foundation](https://www.owasp.org/). 
+> Per altre informazioni sugli attacchi intrusivi nel codice, visitare il [OWASP Foundation](https://www.owasp.org/).
 
-## Avoiding SQL injection attacks
+## <a name="avoiding-sql-injection-attacks"></a>Come evitare attacchi SQL injection
 
-To avoid SQL injection attacks, you should always make sure that any user-entered input is sanitized. User input used as parameters for queries shouldn't be constructed through string concatenation, but passed as actual query parameters.
+Per evitare attacchi SQL injection, è necessario assicurarsi sempre che qualsiasi input immesso dall'utente viene ripulito. Input dell'utente usati come parametri per le query non deve essere costruita mediante la concatenazione di stringhe, ma passati come parametri di query effettivo.
 
-In the following example, you can see how the CustomerId is now passed in as a parameter using the @ symbol. Parameters are defined explicitly and values passed into the query.
+Nell'esempio seguente, è possibile visualizzare come CustomerId ora passato come un parametro usando il simbolo @. I parametri vengono definiti in modo esplicito e i valori passati nella query.
 
 ```csharp
 using (var command = conn.CreateCommand())
 {
     var sql = "select Id, CustomerId, InteractionDate, Details " +
         "from CustomerInteractions where CustomerId = @CustomerId order by InteractionDate";
-    
+
     command.CommandText = sql;
     var prmCustomerId = command.Parameters.Add("@CustomerId", SqlDbType.UniqueIdentifier);
     prmCustomerId.Value = Guid.Parse(customerId);
@@ -98,51 +99,49 @@ using (var command = conn.CreateCommand())
 }
 ```
 
-The core lines of code are:
+Le linee di base di codice sono:
 
 ```csharp
     var prmCustomerId = command.Parameters.Add("@CustomerId", SqlDbType.UniqueIdentifier);
     prmCustomerId.Value = Guid.Parse(customerId);
 ```
 
-Using sanitized data input and parameterized queries reduces the chances of SQL injection attacks on your database. 
+Usando input di dati puro e le query con parametri, si riduce le probabilità di attacchi intrusivi nel codice SQL nel database.
 
-Our example used ASP.NET Core to demonstrate the concepts. However, keep in mind that all programming systems that support access to SQL Server have mechanisms to pass parameters into the values for queries.
+Questo esempio usato ASP.NET Core per illustrare i concetti. Tuttavia, tenere presente che tutti i sistemi di programmazione che supportano l'accesso a SQL Server dispongono di meccanismi per passare i parametri nei valori per le query.
 
-## Dynamic data masking
+## <a name="dynamic-data-masking"></a>Maschera dati dinamica
 
-You might have noticed that some of the information in the database is particularly sensitive; perhaps credit card information. In a real-world system, you would never store credit card information unencrypted. Unfortunately, the credit card information is not encrypted, and you'll need to find another way to hide the data.
+È possibile osservare che alcune informazioni nel database sono particolarmente sensibili; ad esempio informazioni della carta di credito. In un sistema nel mondo reale, si potrebbero non archiviare mai le informazioni della carta di credito non crittografate. Sfortunatamente, le informazioni della carta di credito non sono crittografate e sarà necessario trovare un altro modo per nascondere i dati.
 
-Let's assume you're building a shopping website, and during the order process the site has to display credit card details. You want to display the first 12 digits blocked out from the user, to appear like xxxx-xxxx-xxxx-1234.
+Si supponga che si sta creando un sito Web di acquisti e durante il processo di ordine il sito dispone di visualizzare i dettagli della carta di credito. Si desidera visualizzare i primi 12 cifre impedite all'utente, simile alla seguente xxxx-xxxx-xxxx-1234.
 
-This technique is called dynamic data masking. Dynamic data masking allows you to add masks against the columns within your database. 
+Questa tecnica è definita la maschera dati dinamica. Maschera dati dinamica consentono di aggiungere le maschere in base alle colonne all'interno del database.
 
-Using the portal, you select the database you want to apply the masks to, and then select the Dynamic Data Masking option from the Security setting.
+1. Tramite il portale, selezionare il database si desidera applicare le maschere per e quindi selezionare il **Dynamic Data Masking** opzione il **sicurezza** impostazione.
 
-![Select Dynamic Data Masking.](../media-draft/4-select-dynamic-data-masking.png)
+    Schermata di regole di maschera mostra un elenco di maschera dati dinamica esistente e le raccomandazioni per le colonne che devono avere una maschera dati dinamica applicata.
 
-The Masking rules screen shows a list of existing dynamic data masks, and recommendations for columns that should potentially have a dynamic data mask applied. 
+    ![Screenshot del portale di Azure che mostra un elenco delle maschere consigliate per le varie colonne di un database di esempio del database.](../media-draft/4-view-recommended-masked-columns.png)
 
-![List of the recommended masked columns](../media-draft/4-view-recommended-masked-columns.png)
+1. Per aggiungere una maschera a una colonna, scegliere il **Aggiungi maschera** pulsante per aggiungere la maschera consigliata per la colonna.
 
- To add a mask to a column, click the Add mask button to add the recommended mask to the column. 
+    ![Schermata di Auzre portale che Mostra colonne con mascherate applicate consigliate e funzioni di maschera usate.](../media-draft/4-recommended-masks-applied.png)
 
-![The recommended masked columns once applied](../media-draft/4-recommended-masks-applied.png)
+1. Ogni nuova maschera verrà aggiunti all'elenco di regole di maschera. Scegliere il **salvare** pulsante per applicare le maschere.
 
-Each new mask will be added to the Masking rules list. Click the Save button to apply the masks.
+Quando si eseguono query su colonne, gli amministratori di database verranno ancora visualizzati i valori originali, ma non sono amministratori verranno visualizzati i valori con mascherati.
 
-When querying the columns, database administrators will still see the original values, but non-administrators will see the masked values. 
+È possibile consentire ad altri utenti di visualizzare le versioni non mascherate aggiungendoli agli utenti SQL esclusi dalla maschera di elenco.
 
-You can allow other users to see the non-masked versions by adding them to the SQL users excluded from masking list.  
+È possibile visualizzare qui i dati mascherati aspetto quando eseguire una query mediante un utente non amministratore.
 
-You can see here what the masked data looks like when queried by a non-administrator.
+![Screenshot di una query sul database che mostra il messaggio di posta elettronica, il numero di telefono, SocialSecurityNumber e CreditCardNumber risultato colonne nascoste durante cui verrebbe visualizzati da un utente non amministratore.](../media-draft/4-sql-query-showing-masks.png)
 
-![List of the recommended masked columns](../media-draft/4-sql-query-showing-masks.png)
+Le maschere sugli schermi sono quelli aggiunti in base alle raccomandazioni, ma è possibile aggiungere una maschera manualmente troppo. Selezionare il + Aggiungi maschera e quindi pop-over modo sarà possibile selezionare lo schema, tabella e colonna da utilizzare. È quindi possibile definire il mascheramento che viene usato. Sono disponibili le maschere di standard che possono essere utilizzate, ad esempio:
 
-The masks on the displays are ones added based on recommendations, but you can add a mask manually too. Select the + Add mask button, and then the popover will allow you to select the schema, table, and column to use. You then define the masking that is used. There are standard masks that can be used such as:
-
-- Default value, which displays the default value for that data type instead;
-- Credit card value, which only shows the last four digits of the number, converting all other numbers to lower case x’s;
-- Email, which hides the domain name and all but the first character of the email account name; 
-- Number, which specifies a random number between a range of values. For example, on the credit card expiry month and year, you could select random months from 1 to 12 and set the year range from 2018 to 3000; or
-- Custom string. This allows you to set the number of characters exposed from the start of the data, the number of characters exposed from the end of the data, and the characters to repeat for the remainder of the data. 
+- Valore predefinito, ovvero il valore predefinito per tale tipo di dati viene invece visualizzato.
+- Valore carta di credito, che mostra solo le ultime quattro cifre del numero, la conversione di tutti gli altri numeri in caratteri minuscoli x;
+- Messaggio di posta elettronica, che nasconde il dominio nome e tutto tranne il primo carattere del nome dell'account di posta elettronica;
+- Numero, che specifica un numero casuale compreso tra un intervallo di valori. Nel mese di scadenza della carta di credito e anno, ad esempio, è possibile selezionare i mesi casuale compreso tra 1 e 12 e impostare l'intervallo di anni da 2018 a 3000; o
+- Stringa personalizzata. In questo modo è possibile impostare il numero di caratteri esposto dall'inizio dei dati, il numero di caratteri esposte dalla fine dei dati e i caratteri ripetuta per il resto dei dati.

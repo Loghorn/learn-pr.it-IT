@@ -1,23 +1,10 @@
-Containers are a modern way of delivering applications and compute processes. When using containers, applications and all dependencies are packaged into what is known as a *container image*. Container images are super portable when using a container image registry. You can create a container image on your development system, then run an instance of that image in an Azure datacenter and have confidence that it will work without additional modification.
+I contenitori sono un modo moderno per distribuire le applicazioni e i processi di calcolo. Quando si usano i contenitori, le applicazioni e tutte le dipendenze vengono organizzate in pacchetti nelle cosiddette *immagini del contenitore*. Le immagini del contenitore sono portabili quando si usa un registro di immagini contenitore. È possibile creare un'immagine del contenitore nel sistema di sviluppo, quindi eseguita un'istanza di tale immagine in un Data Center di Azure e hanno la certezza che funzionerà senza alcuna modifica.
 
-## Container efficiencies
+## <a name="learning-objectives"></a>Obiettivi di apprendimento
 
-Containers and container images are built in such a way that they efficiently use host resources, such as disk space, memory, and CPU. Due to these efficiencies, containers start quickly. In some cases, starting a new instance of a container is almost instantaneous. This not only allows for quick provisioning of applications, it also allows for a new model of on-demand processing and scale operations.
+In questo modulo verrà descritto come:
 
-Envision this scenario: You run a batch processing service that occasionally sees a large spike in demand. Using containers, you can build a system that reacts to increased demand by quickly provisioning new container instances to meet the increased demand. That's powerful and not easy to achieve with traditional virtual machines.
-
-In addition to their fast start, containers also allow you to achieve "hyper density". This effectively means that you can run more applications and processes with less virtual or physical resources.
-
-## Use cases
-
-While containers are a great platform for running traditional workload like webservers, they also help open opportunities, such as burstable batch processing, applications built with a modern and distributed architecture, and anything that requires on-demand scale.
-
-## Learning objectives
-
-In this module, you will:
-
-- Prepare a local container development environment.
-- Learn basic Docker operations.
-- Run, list, and delete containers.
-- Create a custom container images.
-- Push container images to a public container registry and run containers from these images.
+- Preparare un ambiente di sviluppo del contenitore locale
+- Eseguire, elencare ed eliminare i contenitori
+- Creare un'immagine personalizzata del contenitore
+- Eseguire il push delle immagini dei contenitori in un registro contenitori pubblico ed eseguire i contenitori da queste immagini

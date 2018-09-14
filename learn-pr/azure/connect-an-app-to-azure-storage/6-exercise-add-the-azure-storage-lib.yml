@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.connect-app-to-azure-storage.6-exercise-add-the-azure-storage-lib
-title: Add the storage client library to your app
+title: Aggiungere la libreria client di archiviazione per l'app
 metadata:
-  title: Add the storage client library to your app
-  description: Add the storage client library to your app
+  title: Aggiungere la libreria client di archiviazione per l'app
+  description: Aggiungere la libreria client di archiviazione per l'app
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial

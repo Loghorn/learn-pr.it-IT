@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.monitor-manage-device-with-iotcentral.2-define-coffee-machine-with-device-template
-title: Define the coffee machine in a device template
+title: Definire la macchina per il caffè in un modello di dispositivo
 metadata:
-  title: Define the coffee machine in a device template
-  description: Define the coffee machine in a device template
+  title: Definire la macchina per il caffè in un modello di dispositivo
+  description: Definire la macchina per il caffè in un modello di dispositivo
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial

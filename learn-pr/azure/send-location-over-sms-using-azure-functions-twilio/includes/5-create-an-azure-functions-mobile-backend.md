@@ -8,11 +8,11 @@ A questo punto, l'app sta cercando di ottenere la posizione dell'utente ed è pr
 
 1. Denominare il progetto "ImHere.Functions" e quindi fare clic su **OK**.
 
-    ![Finestra di dialogo Aggiungi nuovo progetto](../media-drafts/5-add-new-functions-project.png)
+    ![Finestra di dialogo Aggiungi nuovo progetto](../media/5-add-new-functions-project.png)
 
 1. Nella finestra di configurazione **Nuovo progetto**, lasciare Versione Funzioni impostata su *Funzioni di Azure v1 (.NET Framework)*. Selezionare *Trigger HTTP*, lasciare l'account di archiviazione impostato su *Emulatore di archiviazione*e impostare i diritti di accesso su *Anonimo*. Fare quindi clic su **OK**.
 
-    ![Finestra di dialogo di configurazione del progetto Funzioni di Azure](../media-drafts/5-configure-trigger.png)
+    ![Finestra di dialogo di configurazione del progetto Funzioni di Azure](../media/5-configure-trigger.png)
 
 Il nuovo progetto verrà creato e includerà una funzione predefinita denominata `Function1`.
 
@@ -52,7 +52,7 @@ Quando vengono inviati a una funzione di Azure, i dati sono in formato JSON. L'a
 
 1. Denominare il progetto "ImHere.Data" e quindi fare clic su **OK**.
 
-    ![Finestra di dialogo Aggiungi nuovo progetto](../media-drafts/5-add-new-net-standard-project.png)
+    ![Finestra di dialogo Aggiungi nuovo progetto](../media/5-add-new-net-standard-project.png)
 
 1. Eliminare il file "Class1.cs" generato automaticamente.
 
@@ -71,7 +71,7 @@ Quando vengono inviati a una funzione di Azure, i dati sono in formato JSON. L'a
 
 1. Aggiungere un riferimento a questo progetto in entrambi i progetti `ImHere.Functions` e `ImHere` facendo clic sul progetto e selezionando *Aggiungi -> Riferimento...*. Selezionare *Progetti* nell'albero a sinistra, quindi selezionare la casella accanto a *ImHere.Data*.
 
-    ![Configurazione dei riferimenti del progetto](../media-drafts/5-configure-project-references.png)
+    ![Configurazione dei riferimenti del progetto](../media/5-configure-project-references.png)
 
 ## <a name="read-the-data-sent-to-the-function"></a>Leggere i dati inviati alla funzione
 
@@ -127,7 +127,7 @@ public static async Task<HttpResponseMessage> Run([HttpTrigger(AuthorizationLeve
 
 1. Dal menu *Debug*, selezionare *Avvia senza eseguire debug*. Il runtime di Funzioni di Azure locale verrà avviato all'interno di una finestra della console e avvierà la funzione, in ascolto su una porta disponibile in `localhost`.
 
-    ![Funzione di Azure eseguita localmente](../media-drafts/5-function-running-locally.png)
+    ![Funzione di Azure eseguita localmente](../media/5-function-running-locally.png)
 
 1. Prendere nota della porta su cui è in ascolto la funzione. Sarà necessaria nell'unità successiva per testare l'app per dispositivi mobili. Nell'immagine precedente, la funzione è in ascolto sulla porta **7071**.
 

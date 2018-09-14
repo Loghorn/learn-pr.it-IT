@@ -1,40 +1,37 @@
 ### YamlMime:Module
 uid: learn.design-for-security
 metadata:
-  title: Design for security in Azure
-  description: Security is arguably the most important aspect of any architecture. From financial institutions handling millions of dollars in transactions a day, to  health care organizations dealing with sensitive patient records, ensuring that your environment and data are secure is critical to the success of your business. In this module, we’ll talk through key architectural security considerations as you design an environment on the cloud. Using this as a groundwork, you can ensure you have the right pieces in place to keep your customer and institutional data secure.
+  title: Progettazione per la sicurezza in Azure
+  description: 'La sicurezza è senza dubbio uno degli aspetti essenziali di qualsiasi architettura. Da istituti finanziari, la gestione di milioni di dollari in transazioni di un giorno in modo da health care organizzazioni che trattano sensibili record dei pazienti, assicurando che l''ambiente e i dati siano protette è fondamentale per il successo del tuo business. In questo modulo, verranno fornite tramite considerazioni sulla sicurezza dell''architettura di chiavi quando si progetta un ambiente nel cloud. Mettendo in pratica queste linee guida, si avrà la certezza di avere tutti gli elementi necessari per proteggere i dati istituzionali e dei clienti.'
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Design for security in your cloud infrastructure
-summary: Review key architectural security considerations as you design an environment on the cloud. Using this as a groundwork, you can ensure you have the right pieces in place to keep your customer and institutional data secure.
-abstract:  | 
-  In this module, you will:
-  - Learn how to take a defense in depth approach to securing your architecture
-  - Learn how to protect your identities
-  - Learn what technologies are available to protect your Azure infrastructure
-  - Learn how and where to use encryption to secure your data
-  - Learn how to protect your architecture at the network level
-  - Learn how to leverage application security best practices to integrate security into your application
-prerequisites: None
-#TODO: Update icon URL with real image 
-iconUrl: http://via.placeholder.com/120x120
+title: Progettare un'infrastruttura cloud per la sicurezza
+summary: 'Si prega di rivedere le considerazioni chiave sulla sicurezza dell''architettura durante la progettazione di un ambiente nel cloud. Mettendo in pratica queste linee guida, si avrà la certezza di avere tutti gli elementi necessari per proteggere i dati istituzionali e dei clienti.'
+abstract: |
+  In questo modulo verrà descritto come:
+  - Informazioni su come eseguire una difesa approccio alla protezione dell'architettura
+  - Informazioni su come proteggere le identità
+  - Informazioni su quali tecnologie sono disponibili per la protezione dell'infrastruttura di Azure
+  - Informazioni su come e dove usare la crittografia per proteggere i dati
+  - Informazioni su come proteggere l'architettura a livello di rete
+  - Informazioni su come sfruttare i vantaggi dell'applicazione le procedure consigliate per integrare la sicurezza nell'applicazione
+prerequisites: Nessuno
+iconUrl: /learn/achievements/design-for-security-in-azure.svg
 levels:
-- intermediate
+  - intermediate
 roles:
-- solution-architect
+  - solution-architect
 products:
-- azure
+  - azure
 units:
-- learn.design-for-security.1-introduction
-- learn.design-for-security.2-defense-in-depth
-- learn.design-for-security.3-identity-management
-- learn.design-for-security.4-infrastructure-protection
-- learn.design-for-security.5-encryption
-- learn.design-for-security.6-network-security
-#TODO: Add - learn.design-for-security.7-application-security
-- learn.design-for-security.8-summary
+  - learn.design-for-security.1-introduction
+  - learn.design-for-security.2-defense-in-depth
+  - learn.design-for-security.3-identity-management
+  - learn.design-for-security.4-infrastructure-protection
+  - learn.design-for-security.5-encryption
+  - learn.design-for-security.6-network-security
+  - learn.design-for-security.8-summary
 achievement: learn.design-for-security.badge

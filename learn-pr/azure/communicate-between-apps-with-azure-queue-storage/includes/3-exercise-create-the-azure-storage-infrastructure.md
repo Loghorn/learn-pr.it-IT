@@ -1,31 +1,31 @@
-You've discovered that spikes in traffic can overwhelm our middle-tier. To deal with this, you've decided to add a queue between the front-end and the middle tier in your article-upload application.
+Si è notato che i picchi di traffico possono sovraccaricare il livello intermedio. Per risolvere questo problema, si è deciso di aggiungere una coda tra il front-end e il livello intermedio nell'applicazione di caricamento degli articoli.
 
-The first step in creating a queue is to create the Azure Storage Account that will store our data.
+Il primo passaggio della procedura di creazione di una coda è creare l'account di archiviazione di Azure in cui verranno archiviati i dati.
 
 <!-- Activate the sandbox -->
 [!include[](../../../includes/azure-sandbox-activate.md)]
 
-## Create a Storage Account with the Azure CLI
+## <a name="create-a-storage-account-with-the-azure-cli"></a>Creare un account di archiviazione usando l'interfaccia della riga di comando di Azure
 
 > [!TIP] 
-> Normally, you'd start a new project by creating a _resource group_ to hold all the associated resources. In this case, we'll be using the Azure Sandbox which provides a resource group named <rgn>[Sandbox resource group name]</rgn>.
+> In genere, si potrebbe avviare un nuovo progetto mediante la creazione di un _gruppo di risorse_ per contenere tutte le risorse associate. In questo caso, verrà usato l'ambiente Sandbox di Azure che fornisce un gruppo di risorse denominato <rgn>[nome gruppo di risorse di tipo Sandbox]</rgn>.
 
-1. In the Cloud shell on the right, select Bash if you are given a choice.
+1. In Cloud Shell a destra selezionare Bash se è possibile scegliere un'opzione.
 
-1. Use the `az storage account create` command to create the storage account. You'll need to supply several parameters:
+1. Usare il `az storage account create` comando per creare l'account di archiviazione. È necessario specificare alcuni parametri:
 
-| Parameter | Value |
+| Parametro | Valore |
 |-----------|-------|
-| `--name`  | Sets the name. Remember that storage accounts use the name to generate a public URL - so it has to be unique. In addition, the account name must be between 3 and 24 characters, and be composed of numbers and lowercase letters only. We recommend you use the prefix **articles** with a random number suffix but you can use whatever you like. |
-| `-g`        | Supplies the **Resource Group**, use <rgn>[Sandbox resource group name]</rgn> as the value. |
-| `--kind`    | Sets the **Storage Account type** - use _StorageV2_ to create a general-purpose V2 account. |
-| `-l`        | Sets the **Location** independent of the Resource Group owner. It's optional, but you can use it to place the queue in a different region than the Resource Group. |
-| `--sku`     | Sets the **Replication and Storage type**, it defaults to _Standard_RAGRS_. Let's use _Standard_LRS_ which means it's only locally redundant within the data center. |
+| `--name`  | Imposta il nome. Tenere presente che gli account di archiviazione usano il nome per generare un URL pubblico, quindi deve essere univoco. Inoltre, il nome dell'account deve avere una lunghezza compresa tra 3 e 24 caratteri e può contenere solo numeri e lettere minuscole. È consigliabile usare il prefisso **articles** con un numero casuale come suffisso ma è possibile usare ciò che si vuole. |
+| `-g`        | Fornisce il **gruppo di risorse**, usare <rgn>[nome gruppo di risorse di tipo Sandbox]</rgn> come valore. |
+| `--kind`    | Imposta il **tipo di Account di archiviazione** -utilizzare _archiviazione v2_ per creare un account per utilizzo generico V2. |
+| `-l`        | Imposta il **posizione** indipendenti del proprietario del gruppo di risorse. È facoltativo, ma è possibile usarlo per posizionare la coda in un'area diversa rispetto al gruppo di risorse. |
+| `--sku`     | Imposta il **tipo di replica e archiviazione**, per impostazione predefinita _Standard_RAGRS_. Verrà quindi usato _Standard_LRS_, che è ridondante solo a livello locale all'interno del data center. |
 
 <!-- Resource selection -->
 [!include[](../../../includes/azure-sandbox-regions-first-mention-note.md)]
 
-Here's an example command line that uses the above parameters. Make sure to change the `--name` and `--location` parameters if you decide to copy/paste this command.
+Di seguito è riportato un esempio di riga di comando che usa i parametri indicati sopra. Assicurarsi di modificare la `--name` e `--location` parametri se si decide di questo comando Copia/Incolla.
 
 ```azurecli
 az storage account create --name [unique-name] -g <rgn>[Sandbox resource group name]</rgn> --kind StorageV2 -l [location-name] --sku Standard_LRS

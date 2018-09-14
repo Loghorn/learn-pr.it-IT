@@ -1,42 +1,37 @@
-In order to connect to a data source we have to configure an *input binding*. This binding will make it possible to write minimal code to create a message. You don't have to write code for tasks such as opening a storage connection. The Azure Functions runtime and binding take care of those tasks for you.
+Per connettersi a un'origine dati è necessario configurare un *associazione di input*. Questa associazione verrà rendono possibile scrivere codice minimo per creare un messaggio. Non devi scrivere codice per attività quali l'apertura di una connessione di archiviazione. Il runtime di funzioni di Azure e l'associazione richiedere automaticamente di tali attività.
 
-## Input binding types
+## <a name="input-binding-types"></a>Tipi di associazione di input
 
-There are multiple types of input, however not all types support both input and output. You'll use them anytime you want to ingest data of that type. Here, we'll look at the types that support input bindings and when to use them.
+Sono disponibili più tipi di input, tuttavia, non tutti i tipi supportano sia di input e output. Sarà possibile usarli ogni volta che si desidera inserire i dati di quel tipo. In questo caso, esamineremo i tipi che supportano le associazioni di input e quando utilizzarle.
 
-- **Blob Storage**
-    The blob storage bindings allow you to read from a blob.
+- **Archivio BLOB** le associazioni di archiviazione blob consentono di leggere da un blob.
 
-- **Cosmos DB**
-    The Azure Cosmos DB input binding uses the SQL API to retrieve one or more Azure Cosmos DB documents and passes them to the input parameter of the function. The document ID or query parameters can be determined based on the trigger that invokes the function.
+- **COSMOS DB** The Azure Cosmos DB input binding Usa l'API SQL per recuperare uno o più Azure Cosmos DB documenti e li passa al parametro di input della funzione. L'ID documento o i parametri di query possono essere determinati in base al trigger che richiama la funzione.
 
-- **Microsoft Graph**
-    Microsoft Graph input bindings allow you to read files from OneDrive, read data from Excel, and get auth tokens so you can interact with any Microsoft Graph API.
-- **Mobile Apps**
-    The Mobile Apps input binding loads a record from a mobile table endpoint and passes it into your function.
+- **Microsoft Graph** le associazioni di input di Microsoft Graph consentono di leggere i file da OneDrive, leggere i dati da Excel e ottenere i token di autenticazione in modo che sia possibile interagire con qualsiasi API Microsoft Graph.
+- **App per dispositivi mobili** associazione di input per l'App per dispositivi mobili carica un record da un endpoint tabella per dispositivi mobili e lo passa alla funzione.
 
-- **Table storage**
-    You can read data and work with Azure Table storage.
+- **Archivio tabelle** è possibile leggere i dati e usare l'archiviazione tabelle di Azure.
 
-## How to create an input binding?
+## <a name="how-to-create-an-input-binding"></a>Come creare un'associazione di input?
 
-In order to define a binding an input, you must define the `direction` as `in`.
-The parameters for each type of binding may differ, those are well documented in [Microsoft's Documentation](https://docs.microsoft.com/azure/azure-functions/functions-triggers-bindings#supported-bindings?azure-portal=true)
+Per definire un'associazione di input, è necessario definire il `direction` come `in`.
+I parametri per ogni tipo di associazione possono differire; sono quelle descritte nella [documentazione Microsoft](https://docs.microsoft.com/azure/azure-functions/functions-triggers-bindings#supported-bindings?azure-portal=true)
 
-## What is a binding expression?
+## <a name="what-is-a-binding-expression"></a>Che cos'è un'espressione di associazione?
 
-A binding expression is specialized text in function.json, function parameters, or code that is evaluated when the function is invoked to yield a value. For example, you can use a binding expression to get the current time or retrieve a value from app settings.
+Un'espressione di associazione è di testo specializzata in Function. JSON, i parametri di funzione o il codice che viene valutato quando viene richiamata la funzione per produrre un valore. Ad esempio, è possibile usare un'espressione di associazione per ottenere l'ora corrente o recuperare un valore dalle impostazioni dell'app.
 
-### Types of binding expressions
+### <a name="types-of-binding-expressions"></a>Tipi di espressioni di associazione
 
-- App settings
-- Trigger file name
-- Trigger metadata
-- JSON payloads
-- New GUID
-- Current date and time
-- Binding expressions
+- Impostazioni app
+- Nome file del trigger
+- Metadati del trigger
+- Payload JSON
+- Nuovo GUID
+- Data e ora corrente
+- Espressioni di associazione
 
-Most expressions are identified by wrapping them in curly braces. However, app setting binding expressions are identified differently from other binding expressions: they are wrapped in percent signs rather than curly braces. For example if the blob output binding path is `%Environment%/newblob.txt` and the Environment app setting value is Development, a blob will be created in the Development container.
+Quasi tutte le espressioni sono identificate tramite la disposizione del testo tra parentesi graffe. Tuttavia, le espressioni di associazione di impostazione di app vengono identificate in modo diverso da altre espressioni di associazione: tali tipi vengono incapsulati in segni di percentuale anziché in parentesi graffe. Se, ad esempio il percorso di associazione di output di blob è `%Environment%/newblob.txt` e il valore dell'impostazione app ambiente è lo sviluppo, verrà creato un blob nel contenitore di sviluppo.
 
-Input bindings allow us to connect our function to a data source. There are several types of data sources we can connect to and the parameters for each vary. We can use binding expressions in the function.json, function parameters or code, to resolve values from various sources.
+Le associazioni di input consentono di connettere la funzione a un'origine dati. Esistono diversi tipi di origini dati a che è possibile connettersi e i parametri per ogni variabile. È possibile usare espressioni di associazione nel file Function. JSON, i parametri di funzione o il codice, per risolvere i valori da varie origini.

@@ -1,215 +1,225 @@
-As a technology professional, you likely have expertise in a specific area. Perhaps you're a storage admin or virtualization expert, or maybe you focus on the latest security practices. If you're a student, you may still be exploring what interests you most.
+Come un professionista IT, probabile che hanno esperienza in un'area specifica. Si supponga di essere un amministratore di archiviazione o esperto di virtualizzazione o forse si è concentrati sulle procedure di protezione più recenti. Se sei uno studente, si potrebbe comunque essere esplorazione cosa di maggior interesse.
 
 ::: zone pivot="windows-cloud"
 
-No matter your role, most people get started with the cloud by creating a virtual machine. Here you'll bring up a virtual machine running Windows Server 2016.
+Indipendentemente dal proprio ruolo, la maggior parte delle persone inizia con il cloud mediante la creazione di una macchina virtuale. Qui offriremo rapidamente una macchina virtuale che esegue Windows Server 2016.
 
 ::: zone-end
 
 ::: zone pivot="linux-cloud"
 
-No matter your role, most people get started with the cloud by creating a virtual machine. Here you'll bring up a virtual machine running Ubuntu 16.04.
+Indipendentemente dal proprio ruolo, la maggior parte delle persone inizia con il cloud mediante la creazione di una macchina virtuale. Qui verrà visualizzata una macchina virtuale che esegue Ubuntu 16.04.
 
 ::: zone-end
 
-There are many ways to create a virtual machine on Azure. Here, you'll bring up a Windows or Linux VM using an interactive terminal called Cloud Shell. If you work from the terminal on a daily basis, you know this is often the fastest way to get the job done.
+Esistono molti modi per creare una macchina virtuale in Azure. In questo caso, verrà visualizzata una macchina virtuale Windows o Linux usando un terminale interattivo chiamato Cloud Shell. Se si lavora dal terminale su base giornaliera, si conosce che ciò è spesso il modo più rapido per svolgere il lavoro.
 
 ::: zone pivot="windows-cloud"
 
 > [!TIP]
-> Prefer Linux or want to try something new? Select **Linux** from the top of this page to run a Linux VM.
+> Preferisce Linux o per provare qualcosa di nuovo? Selezionare **Linux** dall'inizio di questa pagina per l'esecuzione di una macchina virtuale Linux.
 
 ::: zone-end
 
 ::: zone pivot="linux-cloud"
 
 > [!TIP]
-> Prefer Windows or want to try something new? Select **Windows** from the top of this page to run a Windows Server VM.
+> Preferisce Windows o per provare qualcosa di nuovo? Selezionare **Windows** dall'inizio di questa pagina per l'esecuzione di una macchina virtuale Windows Server.
 
 ::: zone-end
 
-Let's review some basic terms and get your first virtual machine up and running.
+È possibile esaminare alcuni termini di base e ottenere la prima macchina virtuale sia operativa.
 
-## What is a virtual machine?
+## <a name="what-is-a-virtual-machine"></a>Che cos'è una macchina virtuale?
 
-A virtual machine, or VM, is a software emulation of a physical computer. Because VMs exist as software, dozens, hundreds, or even thousands of Azure VMs can be generated in minutes, then deleted when you don't need them anymore. With low-cost, per-minute billing, you pay only for the compute resources you use, for as long as you are using them. Plus, there are many ways to configure the VMs to fit your needs.
+Una macchina virtuale o macchina virtuale, è un'emulazione software di un computer fisico. Poiché le macchine virtuali esistono come software, decine, centinaia o anche migliaia di macchine virtuali di Azure può essere generati in pochi minuti, quindi eliminato quando non servono più. Con la fatturazione al minuto a basso costo, si paga solo per le risorse di calcolo che usi, fintanto che li si stia usando. Inoltre, esistono diversi modi per configurare le macchine virtuali per soddisfare le esigenze.
 
 ::: zone pivot="windows-cloud"
 
-A snapshot of a running VM is called an _image_. Azure provides images for Windows and several flavors of Linux. You can also create your own preconfigured images to make deployments go faster. Here you'll bring up a Windows Server 2016 VM, provided by Microsoft.
+Viene chiamato uno snapshot di una macchina virtuale in esecuzione un' _immagine_. Azure offre immagini per diverse versioni di Linux e Windows. È anche possibile creare le proprie immagini preconfigurate per eseguire le distribuzioni più velocemente. In questo caso verrà visualizzata una VM Windows Server 2016, fornito da Microsoft.
+
 ::: zone-end
 
 ::: zone pivot="linux-cloud"
 
-A snapshot of a running VM is called an _image_. Azure provides images for Windows and several flavors of Linux. You can also create your own preconfigured images to make deployments go faster. Here you'll bring up an Ubuntu 16.04 VM, provided by Canonical.
+Viene chiamato uno snapshot di una macchina virtuale in esecuzione un' _immagine_. Azure offre immagini per diverse versioni di Linux e Windows. È anche possibile creare le proprie immagini preconfigurate per eseguire le distribuzioni più velocemente. In questo caso verrà visualizzata una VM Ubuntu 16.04, fornito da Canonical.
+
 ::: zone-end
 
-## What defines a virtual machine on Azure?
+## <a name="what-defines-a-virtual-machine-on-azure"></a>Definisce una macchina virtuale in Azure?
 
-A virtual machine is defined by a number of factors, including its size and location. Before you bring up your VM, let's briefly cover what's involved.
+Una macchina virtuale è definita da numerosi fattori, tra cui la posizione e dimensioni. Prima di connettere la macchina virtuale, questo articolo verranno brevemente illustrati gli elementi coinvolti.
 
 :::row:::
     :::column:::
-        **Size**
+        **Dimensione**
     :::column-end:::
-    :::column span="3":::
-A VM's _size_ defines its processor speed, amount of memory, initial amount of storage, and expected network bandwidth. Some sizes even include specialized hardware such as GPUs for heavy graphics rendering and video editing.
+    ::: estensione della colonna = "3"::: una macchina virtuale _dimensioni_ definisce la velocità del processore, quantità di memoria, quantità iniziale di archiviazione e larghezza di banda di rete previsto. Alcune dimensioni includono anche hardware specializzato, ad esempio GPU per il rendering di grafiche complesse e modifica di video.
     :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
-        **Region**
+        **Area**
     :::column-end:::
-    :::column span="3":::
-Azure is made up of data centers distributed throughout the world. A _region_ is a set of Azure data centers in a named geographic location. Every Azure resource, including virtual machines, is assigned a region. East US and North Europe are examples of regions.
-    :::column-end:::
-:::row-end:::
-
-:::row:::
-    :::column:::
-        **Network**
-    :::column-end:::
-    :::column span="3":::
-A _virtual network_ is a logically isolated network on Azure. Each virtual machine on Azure is associated with a virtual network. Azure provides cloud-level firewalls for your virtual networks called _network security groups_.
+    ::: estensione della colonna = "3"::: Azure è costituita da data center distribuiti in tutto il mondo. Oggetto _regione_ è un set di data center di Azure in una posizione geografica specifica. Ogni risorsa di Azure, tra cui macchine virtuali, viene assegnata un'area. Stati Uniti orientali ed Europa settentrionale sono esempi di aree.
     :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
-        **Resource groups**
+        **Rete**
     :::column-end:::
-    :::column span="3":::
-Virtual machines and other cloud resources are grouped into logical containers called _resource groups_. Groups are typically used to organize sets of resources that are deployed together as part of an application or service. You refer to a resource group by its name.
+    ::: estensione della colonna = "3"::: un' _rete virtuale_ è una rete isolata logicamente in Azure. Ogni macchina virtuale in Azure è associata a una rete virtuale. Azure offre i firewall a livello cloud per le reti virtuali denominate _gruppi di sicurezza di rete_.
     :::column-end:::
 :::row-end:::
 
-## What is Azure Cloud Shell?
+:::row:::
+    :::column:::
+        **Gruppi di risorse**
+    :::column-end:::
+    ::: estensione della colonna = "3"::: le macchine virtuali e altre risorse cloud sono raggruppati in contenitori logici denominati _gruppi di risorse_. Gruppi vengono in genere usati per organizzare set di risorse che sono distribuite insieme come parte di un'applicazione o servizio. Fare riferimento a un gruppo di risorse in base al nome.
+    :::column-end:::
+:::row-end:::
 
-Azure Cloud Shell is a browser-based command-line experience for managing and developing Azure resources. Think of Cloud Shell as an interactive console that you run in the cloud.
+## <a name="what-is-azure-cloud-shell"></a>Che cos'è Azure Cloud Shell?
 
-Cloud Shell provides two experiences to choose from: Bash and PowerShell. Both include access to the Azure CLI, the command-line interface for Azure.
+Azure Cloud Shell è un'esperienza da riga di comando basata su browser per la gestione e sviluppo di risorse di Azure. Cloud Shell può essere paragonato a una console interattiva che si esegue nel cloud.
 
-You can use any Azure management interface, including the Azure portal, Azure CLI, and Azure PowerShell, to manage any kind of VM. For learning purposes, here you'll use PowerShell if you're creating a Windows VM, or the Azure CLI if you're creating a Linux VM.
+Cloud Shell offre due esperienze di scegliere tra: Bash e PowerShell. Entrambi includono l'accesso per il comando di Azure, l'interfaccia della riga di comando di Azure.
+
+È possibile utilizzare qualsiasi interfaccia di gestione di Azure, tra cui il portale di Azure CLI di Azure e Azure PowerShell, per gestire qualsiasi tipo di macchina virtuale. Ai fini dell'apprendimento, in questo caso si userà la CLI di Azure per creare e gestire VM Linux o Windows.
 
 ::: zone pivot="windows-cloud"
 
-## Create a Windows VM
+## <a name="create-a-windows-vm"></a>Creare una macchina virtuale Windows
 
-Let's get your Windows VM up and running. First, we create security credentials so you can later log in to your VM.
+[!include[](../../../includes/azure-sandbox-activate.md)]
 
-1. From Cloud Shell on the right side of this page, run these commands to generate a credential object. Replace "Password" with a password you'll remember later.
+È possibile ottenere la macchina virtuale Windows in esecuzione.
 
-    > [!NOTE]
-    > Choose a password that contains at least 8 characters with a combination of upper and lowercase letters, numbers, and symbols. Don't use a password you use elsewhere.
+<!--
 
-    ```powershell
-    $pass = ConvertTo-SecureString "Password" -AsPlainText -Force
+TODO: Omitted for sandbox. Possibly re-insert later for non-sandbox workflow.
+
+1. From Cloud Shell on the right side of this page, run the `az group create` command to create a resource group named **myResourceGroup** in the East US region.
+
+    ```azurecli
+    az group create \
+      --location eastus \
+      --name myResourceGroup
     ```
-    ```powershell
-    $cred = New-Object System.Management.Automation.PSCredential ("azureuser", $pass)
-    ```
-    **azureuser** specifies the user name. You can change it if you'd like.
- 
-1. Run the `New-AzureRmVm` cmdlet to create your VM.
+-->
 
-    ```powershell
-    New-AzureRmVm `
-      -Image "Win2016Datacenter" `
-      -ResourceGroupName "myResourceGroup" `
-      -Name "myVM" `
-      -Size "Standard_DS2_v2" `
-      -Location "East US" `
-      -VirtualNetworkName "myVnet" `
-      -SubnetName "mySubnet" `
-      -SecurityGroupName "myNetworkSecurityGroup" `
-      -PublicIpAddressName "myPublicIpAddress" `
-      -OpenPorts 80 `
-      -Credential $cred `
-      -Verbose
+1. Da Cloud Shell sul lato destro della pagina, eseguire il `az vm create` comando per creare la macchina virtuale. Si consiglia di che modificare la password su uno in un secondo momento si ricorderà illustrata di seguito.
+
+      > [!NOTE]
+    > Scegliere una password contenente almeno 8 caratteri con una combinazione di maiuscole e lettere minuscole, numeri e simboli.
+
+    ```azurecli
+    az vm create \
+      --name myWindowsVM \
+      --resource-group <rgn>[Sandbox resource group name]</rgn> \
+      --image Win2016Datacenter \
+      --size Standard_DS2_v2 \
+      --admin-username azureuser \
+      --admin-password "Password1234&"
     ```
 
     > [!TIP]
-    > This is a long command. You can use the **Copy** button to copy it. To paste it, right click on the new line in the Cloud Shell window and select **Paste**.
+    > È possibile usare la **copia** per copiare ogni comando. Per incollare il codice, fare clic con il pulsante destro sulla nuova riga nella finestra della Cloud Shell e selezionare **incollare**.
 
-    Your VM will take about five minutes to come up. Compare that to the time it takes to purchase, rack, and configure a system in your data center. Quite a difference!
+    La macchina virtuale richiederà da quattro a cinque minuti per avviarsi. Confronta con il tempo che necessario per acquistare, installare in rack e configurare un sistema nel data center. Una differenza.
 
-While you're waiting, let's review the command you just ran.
+Durante l'attesa, è opportuno esaminare i comandi che sono stati eseguiti.
 
-* **Win2016Datacenter** specifies the Windows Server 2016 VM image.
-* The resource group, or the VM's logical container, is named **myResourceGroup**.
-* The VM is named **myVM**. This name identifies the VM in Azure. It also becomes the VM's internal hostname, or computer name.
-* **Standard_DS2_v2** refers to the size of the VM. This size has two virtual CPUs and 7 GB of memory.
-* The VM exists in the **East US** location, or region.
-* The command also assigns a public IP address to the VM. You can configure a VM to be accessible from the Internet or only from the internal network.
-* The network firewall allows inbound traffic on port 80 to allow HTTP traffic to your web server.
-* The credential object specifies your username and password.
-* `-Verbose` is an optional parameter you can provide to get detailed information about the operation, similar to a trace or transaction log. You can use this parameter to learn what's happening during the operation or to troubleshoot failures.
+* La VM è denominata **myWindowsVM**. Questo nome identifica la macchina virtuale in Azure. Diventa anche il nome host interno della macchina virtuale o nome del computer.
+* Il gruppo di risorse o un contenitore logico della VM è denominata  **<rgn>[nome gruppo di risorse di tipo Sandbox]</rgn>**.
+* **Win2016Datacenter** specifica l'immagine di macchina virtuale di Windows Server 2016.
+* **Standard_DS2_v2** indicano le dimensioni della macchina virtuale. Questa dimensione dispone di due CPU e 7 GB di memoria virtuale.
+* Il nome utente e la password per potersi connettere alla macchina virtuale in un secondo momento. Ad esempio, è possibile connettersi tramite Desktop remoto o gestione remota Windows per usare e configurare il sistema.
 
-You can also check out this short video about some of the options you have to create and manage VMs.
+Per impostazione predefinita, Azure assegna un indirizzo IP pubblico alla macchina virtuale. È possibile configurare una macchina virtuale per essere accessibile da Internet o solo dalla rete interna.
+
+È anche possibile leggere questo breve video su alcune delle opzioni che disponibili per creare e gestire le macchine virtuali.
 
 > [!VIDEO https://www.microsoft.com/videoplayer/embed/RE2yJKx]
 
-When the process completes, you see information in Cloud Shell about your new VM. Here's an example.
+Quando la macchina virtuale è pronta, noterete che le relative informazioni. Ecco un esempio.
 
 ```console
-ResourceGroupName        : myResourceGroup
-Id                       : /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachines/myVM
-VmId                     : 6684cc9a-ef9f-47dd-92ed-ce1dbcd98396
-Name                     : myVM
-Type                     : Microsoft.Compute/virtualMachines
-Location                 : eastus
-Tags                     : {}
-HardwareProfile          : {VmSize}
-NetworkProfile           : {NetworkInterfaces}
-OSProfile                : {ComputerName, AdminUsername, WindowsConfiguration, Secrets}
-ProvisioningState        : Succeeded
-StorageProfile           : {ImageReference, OsDisk, DataDisks}
-FullyQualifiedDomainName : myvm-edce6d.East US.cloudapp.azure.com
+{
+  "fqdns": "",
+  "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachines/myWindowsVM",
+  "location": "eastus",
+  "macAddress": "00-0D-3A-1E-1B-3B",
+  "powerState": "VM running",
+  "privateIpAddress": "10.0.0.5",
+  "publicIpAddress": "104.211.9.245",
+  "resourceGroup": "myResourceGroup",
+  "zones": ""
+}
 ```
 
 ::: zone-end
 
 ::: zone pivot="linux-cloud"
 
-## Create a Linux VM
+## <a name="create-a-linux-vm"></a>Creare una macchina virtuale Linux
 
-Here, you'll bring up an Ubuntu VM using Cloud Shell.
+[!include[](../../../includes/azure-sandbox-activate.md)]
 
+È possibile ottenere la VM Linux in esecuzione.
+
+<!--
+
+TODO: Omitted for sandbox. Possibly re-insert later for non-sandbox workflow.
+ 
 1. From Cloud Shell on the right side of this page, run the `az group create` command to create a resource group named **myResourceGroup** in the East US region.
 
     ```azurecli
-    az group create --location eastus --name myResourceGroup
+    az group create \
+      --location eastus \
+      --name myResourceGroup
     ```
+-->
 
-1. Run the `az vm create` command to create your VM.
+1. Da Cloud Shell sul lato destro della pagina, eseguire il `az vm create` comando per creare la macchina virtuale.
 
     ```azurecli
-    az vm create -n myVM -g myResourceGroup --image UbuntuLTS --size Standard_DS2_v2 --generate-ssh-keys
+    az vm create \
+      --name myLinuxVM \
+      --resource-group <rgn>[Sandbox resource group name]</rgn> \
+      --image UbuntuLTS \
+      --size Standard_DS2_v2 \
+      --generate-ssh-keys
     ```
 
-Your VM will take about two minutes to come up. Compare that to the time it takes to purchase, rack, and configure a system in your data center. Quite a difference!
+    > [!TIP]
+    > È possibile usare la **copia** per copiare ogni comando. Per incollare il codice, fare clic con il pulsante destro sulla nuova riga nella finestra della Cloud Shell e selezionare **incollare**.
 
-While you're waiting, let's review the command you just ran.
+    La macchina virtuale richiederà circa due minuti per avviarsi. Confronta con il tempo che necessario per acquistare, installare in rack e configurare un sistema nel data center. Una differenza.
 
-* **UbuntuLTS** specifies the Ubuntu 16.04 LTS VM image.
-* The resource group, or the VM's logical container, is named **myResourceGroup**.
-* The VM is named **myVM**. This name identifies the VM in Azure. It also becomes the VM's internal hostname, or computer name.
-* **Standard_DS2_v2** refers to the size of the VM. This size has two virtual CPUs and 7 GB of memory.
-* The VM exists in the **East US** location, or region.
-* The command also assigns a public IP address to the VM. You can configure a VM to be accessible from the Internet or only from the internal network.
-* The `--generate-ssh-keys` option creates an SSH key pair to enable you to log in to the VM.
+Durante l'attesa, è opportuno esaminare i comandi che sono stati eseguiti.
 
-You can also check out this short video about some of the options you have to create and manage VMs.
+* La VM è denominata **myLinuxVM**. Questo nome identifica la macchina virtuale in Azure. Diventa anche il nome host interno della macchina virtuale o nome del computer.
+* Il gruppo di risorse o un contenitore logico della VM è denominata  **<rgn>[nome gruppo di risorse di tipo Sandbox]</rgn>**.
+* **UbuntuLTS** specifica l'immagine di macchina virtuale di Ubuntu 16.04 LTS.
+* **Standard_DS2_v2** indicano le dimensioni della macchina virtuale. Questa dimensione dispone di due CPU e 7 GB di memoria virtuale.
+* Il `--generate-ssh-keys` opzione Crea una coppia di chiavi SSH per consentire di accedere alla macchina virtuale.
+
+Per impostazione predefinita, Azure assegna un indirizzo IP pubblico alla macchina virtuale. È possibile configurare una macchina virtuale per essere accessibile da Internet o solo dalla rete interna.
+
+È anche possibile leggere questo breve video su alcune delle opzioni che disponibili per creare e gestire le macchine virtuali.
 
 > [!VIDEO https://www.microsoft.com/videoplayer/embed/RE2yJKx]
 
-When the VM is ready, you see information about it. Here's an example.
+Quando la macchina virtuale è pronta, noterete che le relative informazioni. Ecco un esempio.
 
 ```console
 {
     "fqdns": "",
-    "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachines/myVM",
+    "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachines/myLinuxVM",
     "location": "eastus",
     "macAddress": "00-0D-3A-1D-EB-02",
     "powerState": "VM running",
@@ -222,8 +232,8 @@ When the VM is ready, you see information about it. Here's an example.
 
 ::: zone-end
 
-## Summary
+## <a name="summary"></a>Riepilogo
 
-With just a few concepts under your belt, you're able to spin up a VM on Azure in just a few minutes. Many of these concepts, such as a VM's size and firewall rules, are likely familiar to you already.
+Con pochi concetti disposizione, si è in grado di creare una macchina virtuale in Azure in pochi minuti. Molti di questi concetti, ad esempio le dimensioni della macchina virtuale e regole del firewall sono già probabilmente familiari per l'utente.
 
-Next, you'll connect to your VM, install a web server, and configure your web server to serve up a basic web site.
+Successivamente, si verrà installare un server web nella VM e configurare il server web per gestire un sito web di base.

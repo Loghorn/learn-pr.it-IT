@@ -16,7 +16,7 @@ sudo apt-get -y update && sudo apt-get -y install nginx
 curl 168.61.54.62
 ```
 
-Non verrà completata perché la macchina virtuale Linux non espone la porta 80 (`http`) attraverso il firewall incorporato. Per fortuna, l'interfaccia della riga comando di Azure dispone di un comando apposito: `vm open-port`. 
+Non verrà completata perché la macchina virtuale Linux non espone la porta 80 (`http`) attraverso il firewall incorporato. Per fortuna, il comando di Azure dispone di un comando apposito: `vm open-port`. 
 
 1. Per aprire la porta 80 in Cloud Shell, digitare quanto segue:
 

@@ -1,37 +1,33 @@
 ### YamlMime:ModuleUnit
 uid: learn.intro-to-azure-networking.4-reduce-latency-traffic-manager
-title: Ridurre la latenza con Gestione traffico
+title: Ridurre la latenza con gestione traffico di Azure
 metadata:
-  title: Ridurre la latenza con Gestione traffico
+  title: Ridurre la latenza con gestione traffico di Azure
   description: Informazioni su come Gestione traffico consente di ridurre la latenza e creare resilienza in più aree geografiche.
-  ms.openlocfilehash: fa64f6d6e7bfe0f991bf15002f24690a2c02f0fd
-  ms.sourcegitcommit: 40481ae733648a8b13402bf276d7acfd4da440f6
-  ms.translationtype: HT
-  ms.contentlocale: it-IT
-  ms.lasthandoff: 09/03/2018
-  ms.locfileid: "43477557"
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
 durationInMinutes: 7
-content: >
+content: |
   [!include[](includes/4-reduce-latency-traffic-manager.md)]
 quiz:
   title: 'Verifica delle conoscenze: Ridurre la latenza con Gestione traffico'
   questions:
-  - content: In che modo Gestione traffico riduce la latenza?
-    choices:
-    - content: Sceglie solo le reti più veloci tra endpoint.
-      isCorrect: false
-      incorrectExplanation: Gestione traffico non tiene conto delle specifiche velocità di rete.
-    - content: Sceglie l'endpoint più vicino al server DNS dell'utente.
-      isCorrect: true
-      correctExplanation: Scegliere il server che si trova più vicino all'utente è un buon modo per ridurre la latenza.
-    - content: I contenuti vengono memorizzati nella cache, in modo simile a quanto avviene nelle reti per la distribuzione di contenuti.
-      isCorrect: false
-      incorrectExplanation: Gestione traffico non vede il traffico tra il client e il server e non inserisce il contenuto nella cache.
-  - content: Si supponga che l'utente viva Inghilterra, ma che il server DNS sia in Italia. In che modo Gestione traffico indirizza il traffico?
-    choices:
-    - content: Sceglie il servizio più vicino all'Inghilterra.
-      isCorrect: false
-      incorrectExplanation: Per indirizzare il traffico, Gestione traffico usa il _server DNS_ più vicino all'utente e non alla posizione in cui l'utente si trova.
-    - content: Sceglie quindi il servizio più vicino all'Italia.
-      isCorrect: true
-      correctExplanation: Per indirizzare il traffico, Gestione traffico usa il _server DNS_ più vicino all'utente e non alla posizione in cui l'utente si trova.
+    - content: Modo in cui gestione traffico di Azure ridurre la latenza?
+      choices:
+        - content: Sceglie solo le reti più veloci tra endpoint.
+          isCorrect: false
+        - content: Sceglie l'endpoint più vicino al server DNS dell'utente.
+          isCorrect: true
+          correctExplanation: Scegliere il server che si trova più vicino all'utente è un buon modo per ridurre la latenza.
+        - content: 'I contenuti vengono memorizzati nella cache, in modo simile a quanto avviene nelle reti per la distribuzione di contenuti.'
+          isCorrect: false
+    - content: 'Si supponga che si risiede in Inghilterra, ma il server DNS sia in Italia. In che modo Gestione traffico indirizza il traffico?'
+      choices:
+        - content: Sceglie il servizio più vicino all'Inghilterra.
+          isCorrect: false
+        - content: Sceglie quindi il servizio più vicino all'Italia.
+          isCorrect: true
+          correctExplanation: 'Gestione traffico Usa il _server DNS_ più vicino all''utente, per indirizzare il traffico.'

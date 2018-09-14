@@ -1,14 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.top-5-security-items-to-consider.6-safe-dependencies
-title: Safe Dependencies
+title: Dipendenze sicuro
 metadata:
-  title: Safe Dependencies
-  description: Safe Dependencies
+  title: Dipendenze sicuro
+  description: Dipendenze sicuro
   author: lnyswonger
   ms.date: 09/24/2018
   ms.author: luken
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-durationInMinutes: 10
+durationInMinutes: 5
 content: |
   [!include[](includes/6-safe-dependencies.md)]

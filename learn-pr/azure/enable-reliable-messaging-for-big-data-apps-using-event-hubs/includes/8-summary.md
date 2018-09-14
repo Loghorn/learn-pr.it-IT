@@ -6,19 +6,4 @@ In questo modulo è stato descritto come distribuire Hub eventi di Azure nell'am
 - Configurare le applicazioni mittente e ricevitore per l'invio e la ricezione dei messaggi tramite l'hub eventi.
 - Usare il portale di Azure per visualizzare lo stato e le prestazioni dell'hub eventi.
 
-## <a name="clean-up"></a>Eseguire la pulizia 
-<!---TODO: Update for sandbox?--->
-
-Le risorse usate per i test degli hub eventi comportano l'addebito di costi per la sottoscrizione. Quando l'hub eventi non è più necessario, ricordarsi di rimuovere le risorse per evitare addebiti inutili.
-
-Poiché l'hub, lo spazio dei nomi e la risorsa di archiviazione sono stati creati nello stesso gruppo di risorse, il modo più semplice per pulire la sottoscrizione di Azure consiste nel rimuovere il gruppo di risorse. Verranno così eliminati tutti i contenuti. 
-
-Eseguire il comando seguente per rimuovere il gruppo di risorse, lo spazio dei nomi, l'account di archiviazione e tutte le risorse correlate. Sostituire `myResourceGroup` con il nome del gruppo di risorse creato:
-
-```azurecli
-az group delete --resource-group myResourceGroup
-```
-
-Quando viene richiesto di confermare l'eliminazione, rispondere **Sì**.
-
-Il completamento di questo comando può richiedere alcuni minuti mentre vengono eliminate le risorse.
+[!include[](../../../includes/azure-sandbox-cleanup.md)]

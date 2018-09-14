@@ -1,6 +1,6 @@
 I contenitori si stanno affermando come soluzione preferita per la creazione di pacchetti, la distribuzione e la gestione di applicazioni cloud. Istanze di contenitore di Azure rappresenta il modo più semplice e rapido per eseguire un contenitore in Azure, senza dover gestire macchine virtuali né dover adottare un servizio di livello superiore.
 
-Istanze di contenitore di Azure è un'ottima soluzione per gli scenari che possono funzionare in contenitori isolati, inclusi i processi di compilazione, l'automazione di attività e le applicazioni semplici. Per gli scenari in cui è necessaria l'orchestrazione completa dei contenitori, ad esempio l'individuazione dei servizi tra più contenitori, la scalabilità automatica e gli aggiornamenti coordinati delle applicazioni, è consigliabile usare il servizio Kubernetes di Azure (AKS).
+Istanze di contenitore di Azure è un'ottima soluzione per qualsiasi scenario e funziona anche in contenitori isolati, inclusi i processi di compilazione, l'automazione di attività e le applicazioni semplici. Per gli scenari in cui è necessaria l'orchestrazione completa dei contenitori, quali il rilevamento dei servizi tra più contenitori, la scalabilità automatica e gli aggiornamenti coordinati delle applicazioni, è consigliabile usare Azure Kubernetes Service (AKS).
 
 La soluzione Istanze di contenitore di Azure offre i vantaggi seguenti:
 
@@ -13,7 +13,7 @@ La soluzione Istanze di contenitore di Azure offre i vantaggi seguenti:
 
 ## <a name="learning-objectives"></a>Obiettivi di apprendimento  
 
-Contenuto del modulo:
+In questo modulo verrà descritto come:
 
 - Eseguire un contenitore in Istanze di contenitore di Azure.
 - Gestire il comportamento di riavvio dei contenitori.

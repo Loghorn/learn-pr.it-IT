@@ -1,61 +1,61 @@
-Your server needs enough resources to handle daily demand. A typical strategy is to choose a VM size at creation that is sufficient for typical workloads and then resize it when demand changes.
+Il server deve risorse sufficienti per gestire la domanda giornaliera. Una tipica strategia consiste nel scegliere una dimensione di VM in fase di creazione che è sufficiente per i carichi di lavoro tipici e quindi ridimensionarlo al mutare delle esigenze.
 
-In the toy company scenario, this strategy would be useful to manage resources for your medium-term growth. You can increase the size of your VM to handle the added demand as your business grows.
+Nello scenario aziendale di giocattoli, questa strategia potrebbe essere utile per gestire le risorse per la crescita medio termine. È possibile aumentare le dimensioni della VM per gestire la richiesta di aggiunta man mano che aumenta l'azienda.
 
-## What is virtual machine size?
+## <a name="what-is-virtual-machine-size"></a>Che cos'è di dimensioni della macchina virtuale?
 
-The _size_ of a virtual machine is a measure of its CPU, memory, disk, and expected network bandwidth. Virtual machines are available in a predetermined number of sizes. For example, the **Standard_F32s_v2** size has 32 virtual CPUs, 64 GiB of memory, a 256 GiB local SSD, and 14,000 of Mbps expected network bandwidth.
+Il _dimensioni_ di una macchina virtuale è una misura del relativo della CPU, memoria, disco e larghezza di banda di rete previsto. Sono disponibili in un numero predeterminato di dimensioni delle macchine virtuali. Ad esempio, il **Standard_F32s_v2** dimensioni con 32 CPU virtuali, 64 GiB di memoria, un disco SSD locale GiB 256 e 14.000 Mbps di larghezza di banda di rete previsto.
 
-When you create a new virtual machine in Azure, you must choose a size. Larger sizes cost more. The goal is to choose a size that can handle your workload without configuring more power than you need.
+Quando si crea una nuova macchina virtuale in Azure, è necessario scegliere una dimensione. Dimensioni maggiori hanno costi maggiori. L'obiettivo consiste nello scegliere una dimensione in grado di gestire il carico di lavoro non si configurano più energia maggiore del necessario.
 
-## What is virtual machine type?
+## <a name="what-is-virtual-machine-type"></a>Che cos'è il tipo di macchina virtuale?
 
-The _type_ of a virtual machine is the workload for which the VM has been optimized. For example, some VMs are targeted at CPU-intensive tasks like hosting a web server. Others are intended for storage-focused jobs like running a database.
+Il _tipo_ di una macchina virtuale è il carico di lavoro per cui è stata ottimizzata la macchina virtuale. Ad esempio, alcune macchine virtuali sono destinati a attività a elevato utilizzo della CPU, ad esempio un server web di hosting. Altri sono destinati i processi incentrati su archiviazione simile all'esecuzione di un database.
 
-There are _types_ that correspond to each core hardware component in a modern computer: **compute**, **memory**, **storage**, and **GPU**. There's also a **general purpose** type if you need a balanced combination of resources. The following table lists the types and the VM sizes that are part of that type along with a brief description of the target workload.
+Esistono _tipi_ che corrispondono a ciascun componente hardware di core in un computer moderni: **compute**, **memoria**, **archiviazione**e  **GPU**. È inoltre disponibile un' **generico** digitare se è necessaria una combinazione bilanciata delle risorse. Nella tabella seguente sono elencati i tipi e le dimensioni di VM che fanno parte di ogni tipo, insieme a una breve descrizione del carico di lavoro di destinazione.
 
-|Type|Sizes|Description|
+|Tipo|Dimensioni|Descrizione|
 |---|---|---|
-|General purpose|B, Ds_v3, D_v3, some DS_v2, some D_v2, A_v2|General purpose machines have a balanced CPU to memory ratio. General purpose machines are good for testing or development servers, also small to medium database, or low to medium traffic web servers.|
-|Compute optimized|Fs_v2, Fs, F|Compute optimized virtual machines have a higher CPU to memory ratio than general purpose machines, for tasks that require extra processing power, such as application servers, network appliances, or medium traffic web servers.|
-|Memory optimized|Es_v3, E_v3, M, GS, G, some DS_v2, some D_v2|Memory optimized virtual machines have a high memory to CPU ratio. These machines are good for relational database servers, servers that require or perform a lot of caching, or perform in-memory analytics.|
-|Storage optimized|Ls|These virtual machines are configured for high disk throughput and IO operations to suit Big Data, SQL, and NoSQL databases.|
-|GPU|NV, NC, NC_v2, NC_v3, ND|GPU virtual machines are specialized for tasks such as heavy duty graphic rendering or video editing, also model training and inferencing (ND series) with deep learning. You can choose single or multiple GPUs for these machines.|
-|High performance compute|H|The fastest, most powerful CPUs are available in these virtual machines. You can also add high-throughput network interfaces (RDMA).|
+|Utilizzo generico|B, Ds_v3, D_v3, some DS_v2, some D_v2, A_v2|Le macchine per utilizzo generico hanno un rapporto CPU-memoria equilibrato. Per utilizzo generico macchine sono ideali per test o sviluppo server, database medio-piccoli o un server web con bassa a livelli medi di traffico.|
+|Ottimizzato per il calcolo|Fs_v2, Fs, F|Ottimizzate per il calcolo macchine virtuali hanno un rapporto tra CPU e memoria superiore rispetto alle macchine per utilizzo generico, per le attività che richiedono potenza di elaborazione aggiuntivi, ad esempio i server applicazioni, i dispositivi di rete o server web con traffico medio.|
+|Ottimizzato per la memoria|Es_v3, E_v3, M, GS, G, alcuni DS_v2, alcuni D_v2|Le macchine virtuali ottimizzate per la memoria hanno un rapporto elevato tra memoria e CPU. Queste macchine sono ideali per i server di database relazionali, i server che richiedono o eseguono una grande quantità di memorizzazione nella cache o i server che eseguono analitica in memoria.|
+|Ottimizzato per l'archiviazione|Ls|Queste macchine virtuali sono configurate per la velocità effettiva del disco elevata e le operazioni dei / o in base alle proprie dei big data, SQL e i database NoSQL.|
+|GPU|NV, NC, NC_v2, NC_v3, ND|Le macchine virtuali GPU sono specializzate per le attività, ad esempio di rendering della grafica robusto alloggiamento o modifica di video, insieme a training del modello e l'inferenza dei (serie ND) con apprendimento profondo. È possibile scegliere unica o più GPU per tali macchine.|
+|High Performance Computing (HPC)|H|CPU più potenti più rapidamente, sono disponibili in queste macchine virtuali. È anche possibile aggiungere interfacce di rete e velocità effettiva elevata (RDMA).|
 
-## Clusters
+## <a name="clusters"></a>Cluster
 
-The physical server hardware in Azure regions is grouped together into clusters. Each cluster can support several different virtual machine sizes based on the physical hardware.
+L'hardware del server fisico in aree di Azure sia raggruppato in cluster. Ogni cluster può supportare diverse dimensioni di macchina virtuale diversa in base all'hardware fisico.
 
-When you create a virtual machine and choose a specific size, the virtual machine is provisioned to an appropriate hardware cluster for that size. Although you can resize virtual machines after creation, the resizing options may be limited by the hardware cluster chosen for the initial size.
+Quando si crea una macchina virtuale e sceglie una dimensione specifica, il provisioning della macchina virtuale a un cluster di hardware appropriato per tale dimensione. Anche se è possibile ridimensionare le macchine virtuali dopo la creazione, le opzioni di ridimensionamento possono essere limitate dal cluster hardware scelto per le dimensioni iniziali.
 
-## What is vertical scaling?
+## <a name="what-is-vertical-scaling"></a>Che cos'è il ridimensionamento verticale?
 
-_Vertical scaling_ is the process of changing the _size_ of a virtual machine. You can _scale up_ by choosing a more powerful size to handle increased demand or _scale down_ to allocate fewer resources and reduce costs. The following illustration shows an example of changing the size of a virtual machine.
+_Il ridimensionamento verticale_ è il processo di modifica il _dimensioni_ di una macchina virtuale. È possibile _aumentare le prestazioni_ scegliendo una dimensione più potente per gestire un aumento della domanda oppure _ridurle_ allocare un numero di risorse e ridurre i costi. La figura seguente mostra un esempio di modifica delle dimensioni di una macchina virtuale.
 
-![An illustration showing scaling up and scaling down of a virtual machine to change the performance capabilities.](../media/2-ScaleUpDown.png)
+![Un'illustrazione che mostra la scalabilità verticale e scalabilità verso il basso di una macchina virtuale per modificare le funzionalità delle prestazioni.](../media/2-ScaleUpDown.png)
 
-You can resize a VM using the Azure portal, Azure PowerShell, or the Azure command-line interface (CLI).
+È possibile ridimensionare una VM usando il portale di Azure, Azure PowerShell o l'interfaccia CLI di Azure.
 
-### Resize in the portal
+### <a name="resize-in-the-portal"></a>Ridimensiona nel portale
 
-In the Azure portal, you can resize a virtual machine by selecting the virtual machine, clicking the **Size** entry, and selecting an entry from the **Choose a size** blade. 
+Nel portale di Azure, è possibile ridimensionare una macchina virtuale selezionando la macchina virtuale, fare clic sui **dimensioni** voce e selezionare una voce dalle **Scegli una dimensione** pannello. 
 
-If the virtual machine is running at the time, the available sizes you can select from will depend on the available sizes in your region. You will only see resize options compatible with the same hardware cluster that the virtual machine is currently running on; this is sometimes called a *size family*. If you choose a new size while the virtual machine is running, the VM will be restarted automatically to apply the new size.
+Se la macchina virtuale è in esecuzione al momento, le dimensioni disponibili che è possibile selezionare variano in base le dimensioni disponibili nella propria area. Viene visualizzata solo ridimensionare opzioni compatibile con stesso cluster hardware che la macchina virtuale è attualmente in esecuzione; è talvolta definito una *dimensioni famiglia*. Se si sceglie una nuova dimensione mentre è in esecuzione la macchina virtuale, la macchina virtuale verrà riavviata automaticamente per applicare le nuove dimensioni.
 
-If the size you are looking for is not visible in the portal when the virtual machine is running, then you can shut down the virtual machine to see more options. When the machine is in the **stopped (deallocated)** state, you will be able to select sizes from other hardware in the same region.
+Se la dimensione desiderata non è visibile nel portale quando la macchina virtuale è in esecuzione, è possibile arrestare la macchina virtuale per visualizzare altre opzioni. Quando la macchina è il **arrestata (deallocata)** lo stato, sarà possibile selezionare le dimensioni da altri componenti hardware nella stessa area.
 
-### Resize with PowerShell
+### <a name="resize-with-powershell"></a>Ridimensionare con PowerShell
 
-You can use PowerShell to perform vertical scaling interactively or with scripts. Scripts are good for complex scenarios; for example, if you need to resize several VMs at once. They are also convenient if you need to perform the resize during non-working hours to avoid user disruption.
+È possibile usare PowerShell per eseguire la scalabilità verticale in modo interattivo o tramite script. Gli script sono buone per scenari complessi; ad esempio, se è necessario ridimensionare le macchine virtuali diverse in una sola volta. Possono inoltre essere utile se è necessario eseguire il ridimensionamento durante orari non lavorativi per evitare interruzioni dell'utente.
 
-The following cmdlet lists VM sizes of the same size-family as the current hardware:
+Il cmdlet seguente elenca le dimensioni VM della stessa famiglia di dimensioni come hardware corrente:
 
 ```PowerShell
 Get-AzureRmVMSize -ResourceGroupName "myResourceGroup" -VMName "MyVM"
 ```
 
-If the desired size is displayed, use the following cmdlet to change the virtual machine size:
+Se viene visualizzata la dimensione desiderata, usare il cmdlet seguente per modificare le dimensioni di macchina virtuale:
 
 ```PowerShell
 $vm = Get-AzureRmVM -ResourceGroupName "myResourceGroup" -VMName "MyVM"
@@ -63,7 +63,7 @@ $vm.HardwareProfile.VmSize = "<newVMsize>"
 Update-AzureRmVM -VM $vm -ResourceGroupName "myResourceGroup"
 ```
 
-If the desired size is not displayed with the machine running, use the following commands to deallocate the virtual machine, resize the machine, and start the machine again:
+Se la dimensione desiderata non viene visualizzata con la macchina in esecuzione, usare i comandi seguenti per deallocare la macchina virtuale, ridimensionare la macchina e riavviare il computer:
 
 ```PowerShell
 Stop-AzureRmVM -ResourceGroupName "myResourceGroup" -Name "MyVM" -Force
@@ -73,4 +73,4 @@ Update-AzureRmVM -VM $vm -ResourceGroupName "myResourceGroup"
 Start-AzureRmVM -ResourceGroupName "myResourceGroup" -Name "MyVM"
 ```
 
-Virtual machines in Azure can be resized as needed to increase performance or decrease costs. Performing the resize manually, either with the portal or a script, is useful to handle gradual business growth or when you know about a change in demand ahead-of-time. In the toy-company scenario, they could scale up before a holiday to handle the spike in demand and then scale down afterward.
+Macchine virtuali in Azure può essere ridimensionate in base alle esigenze per migliorare le prestazioni o ridurre i costi. Esecuzione manuale, il ridimensionamento con il portale o uno script, è utile per la crescita del business graduale handle o per sapere quando su una modifica della domanda anticipatamente. Nello scenario aziendale di giocattoli, cui è stato possibile aumentare le prestazioni prima di un giorno festivo per gestire il picco della domanda, quindi ridurle in un secondo momento.

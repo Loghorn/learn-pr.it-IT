@@ -2,10 +2,10 @@ In questa unità verranno eseguite alcune operazioni di risoluzione dei problemi
 
 ## <a name="create-a-container"></a>Creare un contenitore
 
-Creare un contenitore da usare in questa unità. Se si dispone ancora del primo contenitore creato in questo modulo, ignorare questo passaggio:
+Per iniziare, creare un contenitore da usare in questa unità. Se si dispone ancora del primo contenitore creato in questo modulo, ignorare questo passaggio:
 
 ```azurecli
-az container create --resource-group myResourceGroup --name mycontainer --image microsoft/aci-helloworld --ports 80 --ip-address Public
+az container create --resource-group <rgn>[Sandbox resource group name]</rgn> --name mycontainer --image microsoft/aci-helloworld --ports 80 --ip-address Public
 ```
 
 ## <a name="get-logs-from-a-container-instance"></a>Ottenere i log da un'istanza di contenitore
@@ -13,7 +13,7 @@ az container create --resource-group myResourceGroup --name mycontainer --image 
 Per visualizzare i log generati dal codice dell'applicazione all'interno di un contenitore, è possibile usare il comando `az container logs`:
 
 ```azazurecli
-az container logs --resource-group myResourceGroup --name mycontainer
+az container logs --resource-group <rgn>[Sandbox resource group name]</rgn> --name mycontainer
 ```
 
 Di seguito è riportato l'output del log generato dal contenitore di esempio dopo aver eseguito più volte l'accesso all'app Web:
@@ -31,7 +31,7 @@ listening on port 80
 Il comando `az container attach` fornisce informazioni diagnostiche durante l'avvio del contenitore. Dopo l'avvio, il contenitore trasmette inoltre STDOUT e STDERR alla console locale:
 
 ```azazurecli
-az container attach --resource-group myResourceGroup --name mycontainer
+az container attach --resource-group <rgn>[Sandbox resource group name]</rgn> --name mycontainer
 ```
 
 Output di esempio:
@@ -56,7 +56,7 @@ Istanze di contenitore di Azure supporta l'esecuzione di un comando in un conten
 Questo esempio avvia una sessione interattiva del terminale con il contenitore in esecuzione:
 
 ```azurecli
-az container exec --resource-group myResourceGroup --name mycontainer --exec-command /bin/sh
+az container exec --resource-group <rgn>[Sandbox resource group name]</rgn> --name mycontainer --exec-command /bin/sh
 ```
 
 Una volta completato il comando, si potrà lavorare all'interno del contenitore. In questo esempio, è stato eseguito il comando `ls` per visualizzare il contenuto della directory di lavoro:
@@ -71,10 +71,10 @@ Digitare `exit` per arrestare la sessione remota.
 
 ## <a name="monitor-container-cpu-and-memory"></a>Monitorare CPU e memoria del contenitore
 
-Potrebbe essere utile eseguire il pull di metriche relative all'uso di CPU e memoria. A questo scopo, ottenere innanzitutto l'ID dell'Istanza di contenitore di Azure. In questo esempio, l'ID è inserito in una variabile denominata `CONTAINER_ID`:
+Potrebbe essere utile eseguire il pull di metriche relative all'uso di CPU e memoria. A questo scopo, ottenere innanzitutto l'ID dell'istanza di contenitore di Azure. In questo esempio, l'ID è inserito in una variabile denominata `CONTAINER_ID`:
 
 ```azurecli
-CONTAINER_ID=$(az container show --resource-group myResourceGroup --name mycontainer --query id --output tsv)
+CONTAINER_ID=$(az container show --resource-group <rgn>[Sandbox resource group name]</rgn> --name mycontainer --query id --output tsv)
 ```
 
 Usare il comando `az monitor metrics list` per estrarre le informazioni sull'uso della CPU:
@@ -135,14 +135,7 @@ Queste informazioni sono disponibili anche nel portale di Azure. Per visualizzar
 
 ![Visualizzazione nel portale di Azure delle informazioni relative all'uso di memoria e CPU da parte di Istanze di contenitore di Azure](../media-draft/cpu-memory.png)
 
-## <a name="clean-up"></a>Eseguire la pulizia
-<!---TODO: Update for sandbox?--->
-
-Questa è l'ultima unità del modulo di apprendimento relativo alle Istanze di contenitore di Azure. A questo punto è possibile pulire le risorse create eliminando il gruppo di risorse. A tale scopo, usare il comando **az group delete**:
-
-```azurecli
-az group delete --name myResourceGroup --no-wait
-```
+[!include[](../../../includes/azure-sandbox-cleanup.md)]
 
 ## <a name="summary"></a>Riepilogo
 

@@ -1,32 +1,32 @@
-Data is not always permanent and there are times you would like to delete it at a specific time. For example, in your instant messaging application, users can set the display name of the group chat, however, you want the name to reset after one hour. You could accomplish this by writing your own server-side logic that set an hour timer and deleted the name. However, Redis supports data expiration, which is a feature that does this automatically without writing additional logic.
+I dati non sempre è permanenti e talvolta che si desidera eliminarlo in un momento specifico. Ad esempio, nell'applicazione di messaggistica istantanea, gli utenti possono impostare il nome visualizzato della chat di gruppo. Tuttavia, si desidera che il nome reimpostare dopo un'ora. È possibile eseguire questa operazione la scrittura logica personalizzata lato server che impostano un timer per l'ora e il nome. Tuttavia, Cache Redis di Azure supporta la scadenza dei dati, che è una funzionalità che viene eseguito automaticamente senza dover scrivere logica aggiuntiva.
 
-Here, you'll learn about the common Redis commands to implement data expiration.
+In questo caso, scoprirai i comuni comandi di Redis per implementare scadenza dei dati.
 
-## What is data expiration?
+## <a name="what-is-data-expiration"></a>Che cos'è scadenza dei dati?
 
-Data expiration is a feature that can automatically delete a key and value in the cache after a set amount of time.
+Scadenza dei dati è una funzionalità in grado di eliminare automaticamente una chiave e il valore nella cache dopo un periodo di tempo.
 
-## Why use data expiration?
+## <a name="why-use-data-expiration"></a>Perché usare scadenza dei dati?
 
-Data expiration is commonly used in situations where the data you're storing is short-lived.  This is important because Redis is an in-memory database and you don't have as much memory available to use as you would if you were storing on disk. Since you have limited storage with Redis, you want to make sure you're only storing data that is important. If the data doesn't need to be around for a long time, make sure you set an expiration.
+Scadenza dei dati viene comunemente usato in situazioni in cui i dati archiviati sono di breve durati.  Questo è importante poiché Cache Redis di Azure è un database in memoria e non si dispone della quantità di memoria disponibile per l'uso come si farebbe se sono stati archiviati su disco. Poiché è limitato archiviazione Cache Redis di Azure, è possibile assicurarsi che solo si archiviano dati importanti. Se i dati non è necessaria in circolazione per molto tempo, assicurarsi di che impostare una scadenza.
 
-## How to use data expiration in Redis
+## <a name="how-to-use-data-expiration-in-azure-redis-cache"></a>Come usare la scadenza dei dati in Cache Redis di Azure
 
-There are different commands to implement and manage data expiration in Redis:
+Sono disponibili diversi comandi per implementare e gestire la scadenza dei dati in Cache Redis di Azure:
 
-- `EXPIRE`: Sets the timeout of a key in seconds
-- `PEXIRE`: Sets the timeout of a key in milliseconds
-- `EXPIREAT`: Sets the timeout of a key using an absolute Unix timestamp in seconds
-- `PEXPIREAT`: Sets the timeout of a key using an absolute Unix timestamp in milliseconds
-- `TTL`: Returns the remaining time a key has to live in seconds
-- `PTTL`: Returns the remaining time a key has to live in milliseconds
-- `PERSIST`: Makes a key never expire
+- `EXPIRE`: Imposta il timeout di una chiave in secondi
+- `PEXIRE`: Imposta il timeout di una chiave in millisecondi
+- `EXPIREAT`: Imposta il timeout di una chiave usando un timestamp Unix dell'ora assolute in pochi secondi
+- `PEXPIREAT`: Imposta il timeout di una chiave usando un timestamp Unix dell'ora assolute in millisecondi
+- `TTL`: Restituisce il tempo rimanente che dispone di una chiave di durata (TTL) in pochi secondi
+- `PTTL`: Restituisce il tempo rimanente che dispone di una chiave di durata (TTL) in millisecondi
+- `PERSIST`: Rende una chiave senza scadenza
 
-The most common command is `EXPIRE` and we'll use it throughout this module.
+Il comando più comune è `EXPIRE`, e verrà usato in tutto questo modulo.
 
-### Example of data expiration using C# and ServiceStack.Redis
+### <a name="example-of-data-expiration-using-c-and-servicestackredis"></a>Esempio di scadenza dei dati con c# e ServiceStack.Redis
 
-Remember, when using a client library like **ServiceStack.Redis**, we don't have to worry about remembering the low-level Redis commands. Instead, we can use simple C# methods.
+Tenere presente che, quando si usa una libreria client, ad esempio **ServiceStack.Redis**, non è necessario preoccuparsi di ricordare i comandi di Cache Redis di Azure a basso livello. In alternativa, è possibile usare i metodi c# semplici.
 
 ```csharp
 public static void SetGroupChatName(string groupChatID, string chatName)
@@ -45,4 +45,4 @@ public static void SetGroupChatName(string groupChatID, string chatName)
 }
 ```
 
-Redis allows you to delete data automatically after a set amount of time using data expiration. This is important because Redis is an in-memory database, and you don't have as much memory available as you would with storing data on disk. If the data you're storing doesn't need to be around for a long time, make sure you set an expiration.
+Cache Redis di Azure consente di eliminare automaticamente i dati dopo un periodo di tempo Usa la scadenza dei dati. Questo è importante poiché Cache Redis di Azure è un database in memoria e non si dispone di una quantità di memoria disponibile con l'archiviazione dei dati su disco. Se si archiviano dati senza dover essere intorno a lungo, assicurarsi di che impostare una scadenza.

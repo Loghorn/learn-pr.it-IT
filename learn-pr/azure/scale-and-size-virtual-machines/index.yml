@@ -1,34 +1,38 @@
 ### YamlMime:Module
 uid: learn.scale-and-size-virtual-machines
 metadata:
-  title: Scale and size virtual machines
-  description: You can change the CPU and memory resources of your virtual machines as needed to handle demand and control costs. Manual adjustment can work when demand is predictable and changes infrequently. An automated solution is better when your workload changes unpredictably or frequently. Here, you will see how to control the power of your virtual machines by modifying the size of individual servers or changing the number of available machines. We'll cover how to do this both manually and with scale sets and AutoScaling.
+  title: Scalabilità e dimensioni delle macchine virtuali
+  description: 'È possibile modificare le risorse della CPU e memoria delle macchine virtuali in base alle esigenze per gestire la domanda e controllare i costi. La regolazione manuale può operare quando la richiesta è prevedibile e non vengono modificati spesso. Una soluzione automatizzata è migliore quando il carico di lavoro viene modificato in modo imprevedibile o di frequente. In questo caso, si noterà come controllare la potenza delle macchine virtuali, modificare le dimensioni dei singoli server o modifica del numero di computer disponibili. Illustreremo come eseguire questa operazione sia manualmente e con il set di scalabilità e la scalabilità automatica.'
   ms.date: 09/24/2018
-title: Scale and size virtual machines
-summary: Adjust your virtual machine compute and storage power manually or using AutoScale.
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+title: Scalabilità e dimensioni delle macchine virtuali
+summary: Regolare la potenza di calcolo e archiviazione delle macchine virtuali manualmente o mediante la scalabilità automatica.
 abstract: |
-  In this module, you will:
-  - Vertically scale virtual machines by resizing
-  - Horizontally scale virtual machines using scale sets
-  - Configure autoscaling
+  In questo modulo verrà descritto come:
+  - Scalabilità verticale di macchine virtuali ridimensionando
+  - In senso orizzontale scalabilità macchine virtuali usando i set di scalabilità
+  - Configurare la scalabilità automatica
 prerequisites: |
-  - Experience with a command-line interface such as PowerShell or Bash
-  - Knowledge of basic Azure concepts such as resource groups and virtual machines
-  - Experience administering Azure resources using the Azure portal
-iconUrl: http://via.placeholder.com/120x120
+  - Esperienza con un'interfaccia della riga di comando, ad esempio PowerShell o Bash
+  - Conoscenza dei concetti fondamentali di Azure, ad esempio i gruppi di risorse e le macchine virtuali
+  - Esperienza di amministrazione delle risorse di Azure usando il portale di Azure
+iconUrl: /learn/achievements/scale-and-size-virtual-machines.svg
 levels:
-- intermediate
+  - intermediate
 roles:
-- developer
+  - developer
 products:
-- azure
-- azure-virtual-machines
+  - azure
+  - azure-virtual-machines
 units:
-- learn.scale-and-size-virtual-machines.1-introduction
-- learn.scale-and-size-virtual-machines.2-size-and-resize-virtual-machines-in-azure
-- learn.scale-and-size-virtual-machines.3-exercise-resize-a-virtual-machine
-- learn.scale-and-size-virtual-machines.4-horizontal-scaling-using-scale-sets
-- learn.scale-and-size-virtual-machines.5-exercise-create-a-scale-set-and-configure-autoscaling
-- learn.scale-and-size-virtual-machines.6-knowledge-check
-- learn.scale-and-size-virtual-machines.7-summary
+  - learn.scale-and-size-virtual-machines.1-introduction
+  - learn.scale-and-size-virtual-machines.2-size-and-resize-virtual-machines-in-azure
+  - learn.scale-and-size-virtual-machines.3-exercise-resize-a-virtual-machine
+  - learn.scale-and-size-virtual-machines.4-horizontal-scaling-using-scale-sets
+  - learn.scale-and-size-virtual-machines.5-exercise-create-a-scale-set-and-configure-autoscaling
+  - learn.scale-and-size-virtual-machines.6-knowledge-check
+  - learn.scale-and-size-virtual-machines.7-summary
 achievement: learn.scale-and-size-virtual-machines.badge

@@ -1,17 +1,17 @@
-Si supponga di sviluppare un'applicazione di gestione finanziaria per nuove startup. Poiché è necessario assicurarsi che tutti i dati dei clienti siano protetti, si è deciso di implementare Crittografia dischi di Azure in tutti i dischi del sistema operativo e di dati sui server che ospiteranno l'applicazione. Per soddisfare i requisiti di conformità, è anche necessario essere responsabili della gestione delle chiavi di crittografia.
+Si supponga di sviluppare un'applicazione di gestione finanziaria per nuove startup. Si desidera assicurarsi che tutti i dati dei clienti è protetta, in modo che si è deciso di implementare la crittografia dischi di Azure (ADE) in tutti i dischi del sistema operativo e i dati sui server che ospiterà l'applicazione. Per soddisfare i requisiti di conformità, è anche necessario essere responsabili della gestione delle chiavi di crittografia.
 
-In questa unità si crittograferanno i dischi nelle macchine virtuali Windows esistenti e si gestiranno le chiavi di crittografia usando Azure Key Vault.
+In questa unità, verrà crittografare i dischi di macchine virtuali di Windows esistenti e gestire le chiavi di crittografia usando il proprio insieme di credenziali chiave di Azure.
 
 > [!IMPORTANT] 
-> In questo esercizio si presuppone che Azure PowerShell sia installato nel computer. Per informazioni su come installare Azure PowerShell, vedere [Installare Azure PowerShell in Windows con PowerShellGet](https://docs.microsoft.com/powershell/azure/install-azurerm-ps?view=azurermps-6.7.0).
+> Questo esercizio si presuppone che Azure PowerShell sia installato nel computer. Passare a [installare Azure PowerShell su Windows con PowerShellGet](https://docs.microsoft.com/powershell/azure/install-azurerm-ps?view=azurermps-6.7.0) per informazioni su come installare Azure PowerShell.
 
 ## <a name="prepare-the-environment"></a>Preparare l'ambiente
 
-Si inizierà distribuendo una macchina virtuale Windows in un nuovo gruppo di risorse e quindi si aggiungerà un disco dati alla macchina virtuale.
+Si verrà inizialmente la distribuzione di una macchina virtuale Windows in un nuovo gruppo di risorse e quindi aggiungere un disco dati alla macchina virtuale.
 
-### <a name="deploy-windows-vm-using-azure-portal"></a>Distribuire una macchina virtuale Windows con il portale di Azure
+### <a name="deploy-windows-vm-using-the-azure-portal"></a>Distribuire VM Windows usando il portale di Azure
 
-Si userà ora il portale di Azure per creare e distribuire una macchina virtuale Windows. Iniziare definendo le informazioni di base sulla macchina virtuale:
+In questo caso si userà il portale di Azure per creare e distribuire una macchina virtuale Windows. Iniziare definendo le informazioni di base sulla macchina virtuale:
 
 1. In un browser passare al [portale di Azure](http://portal.azure.com) e accedere con le credenziali normali.
 
@@ -29,7 +29,7 @@ Si userà ora il portale di Azure per creare e distribuire una macchina virtuale
 
 1. Nella casella **Sottoscrizione** selezionare la sottoscrizione di Azure.
 
-1. In **Gruppo di risorse** selezionare **Crea nuovo** e digitare **moneyapprg** nella casella.
+1. Sotto **gruppo di risorse**, selezionare **Crea nuovo**. Nella casella, digitare **moneyapprg**.
 
 1. Selezionare un'area nelle vicinanze nell'elenco a discesa **Località**.
 
@@ -38,11 +38,11 @@ Si userà ora il portale di Azure per creare e distribuire una macchina virtuale
 ### <a name="choose-a-size-for-the-vm-and-start-the-deployment"></a>Scegliere una dimensione per la macchina virtuale e avviare la distribuzione
 
 > [!IMPORTANT]
-> Tenere presente che le macchine virtuali di livello Basic non supportano Crittografia dischi di Azure
+> Tenere presente che le macchine virtuali di livello basic non supportano ADE.
 
-1. Nel pannello **Scegli una dimensione** selezionare uno SKU **Standard**, ad esempio **B1s** e quindi fare clic su **Seleziona**.
+1. Nel **Scegli una dimensione** pannello Seleziona un **Standard** SKU, ad esempio **B1s**. Fare clic su **Seleziona**.
 
-1. Nel pannello **Impostazioni**, nell'elenco **Selezionare le porte in ingresso pubbliche** fare clic su **RDP**, quindi scorrere verso il basso e fare clic su **OK**.
+1. Nel **impostazioni** pannello nella **selezionare le porte in ingresso pubbliche** elenco, fare clic su **RDP**. Scorrere verso il basso e fare clic su **OK**.
 
 1. Nel pannello **Crea** fare clic su **Crea**.
 
@@ -66,25 +66,25 @@ Si userà ora il portale di Azure per creare e distribuire una macchina virtuale
 
 1. Attendere il completamento della creazione del disco prima di continuare.
 
-1. Nel pannello **Dischi** fare clic su **Salva**. Si noti che lo stato della crittografia del disco dati è attualmente **_Non abilitato_**.
+1. Nel pannello **Dischi** fare clic su **Salva**. Si noti che lo stato della crittografia del disco di dati è attualmente **non è abilitato**.
 
-## <a name="configure-disk-encryption-pre-requisites"></a>Configurare i prerequisiti di crittografia dei dischi
+## <a name="configure-disk-encryption-prerequisites"></a>Configurare i prerequisiti di crittografia del disco
 
-Si userà ora lo script di configurazione dei prerequisiti di Crittografia dischi di Azure per configurare tutti i prerequisiti di crittografia dei dischi. Questo script crea e prepara un insieme di credenziali delle chiavi nella stessa area della macchina virtuale.
+A questo punto si userà lo script di configurazione dei prerequisiti di crittografia dischi di Azure per configurare tutti i prerequisiti di crittografia del disco. Questo script crea e preparare un insieme di credenziali delle chiavi nella stessa area della macchina virtuale.
 
-### <a name="prepare-the-azure-disk-encryption-prerequisite-setup-script"></a>Preparare lo script di configurazione dei prerequisiti di Crittografia dischi di Azure
+### <a name="prepare-the-azure-disk-encryption-prerequisite-setup-script"></a>Preparare lo script di installazione dei prerequisiti di crittografia dischi di Azure
 
-1. Andare alla pagina di GitHub [Azure Disk Encryption Prerequisite Setup Script](https://github.com/Azure/azure-powershell/blob/master/src/ResourceManager/Compute/Commands.Compute/Extension/AzureDiskEncryption/Scripts/AzureDiskEncryptionPreRequisiteSetup.ps1) (Script di configurazione dei prerequisiti di Crittografia dischi di Azure).
+1. Andare alla [script di installazione dei prerequisiti di crittografia dischi di Azure](https://github.com/Azure/azure-powershell/blob/master/src/ResourceManager/Compute/Commands.Compute/Extension/AzureDiskEncryption/Scripts/AzureDiskEncryptionPreRequisiteSetup.ps1) pagina su GitHub.
 
 1. Nella pagina di GibHub fare clic su **Raw** (Non elaborato).
 
-1. Premere CTRL+A per selezionare tutto il testo della pagina e quindi CTRL+C per copiarlo negli Appunti.
+1. Usare Ctrl + A per selezionare tutto il testo della pagina e quindi usare Ctrl + C per copiare tutto il testo della pagina negli Appunti.
 
-1. Nel computer fare clic su **Start**, quindi passare a **Windows PowerShell ISE**.
+1. Nel computer, fare clic su **avviare**, quindi selezionare **Windows PowerShell ISE**.
 
-1. Fare clic con il pulsante destro del mouse su **Windows PowerShell ISE** e scegliere **Esegui come amministratore**.
+1. Fare doppio clic su **Windows PowerShell ISE**, fare clic su **Esegui come amministratore**.
 
-1. Nella finestra Amministratore: Windows PowerShell ISE fare clic su **Visualizza** e quindi su **Mostra riquadro di script**.
+1. Nell'amministratore: finestra di Windows PowerShell ISE, fare clic su **vista**, quindi fare clic su **Mostra riquadro di Script**.
 
 1. Incollare il testo copiato nel riquadro di script.
 
@@ -102,15 +102,15 @@ Si userà ora lo script di configurazione dei prerequisiti di Crittografia disch
 
 1. Nella casella **Nome file** digitare **ADEPrereqScript.ps1** e fare clic su **Salva**.
 
-### <a name="run-the-azure-disk-encryption-prerequisite-setup-script"></a>Eseguire lo script di configurazione dei prerequisiti di Crittografia dischi di Azure
+### <a name="run-the-azure-disk-encryption-prerequisite-setup-script"></a>Eseguire lo script di installazione dei prerequisiti di crittografia dischi di Azure
 
-1. Nel riquadro della console di PowerShell ISE digitare il comando seguente e premere **INVIO**:
+1. In PowerShell ISE console riquadro, digitare il comando seguente e premere **invio**:
 
    ```console
    cd <path to your folder containing ADEPrereqScript.ps1>
    ```
 
-1. Nel riquadro della console di PowerShell ISE digitare il comando seguente e premere **INVIO**:
+1. In PowerShell ISE console riquadro, digitare il comando seguente e premere **invio**:
 
    ```powershell
    Set-ExecutionPolicy Unrestricted
@@ -118,7 +118,7 @@ Si userà ora lo script di configurazione dei prerequisiti di Crittografia disch
 
    Se viene visualizzata la finestra di dialogo **Modifica ai criteri di esecuzione** fare clic su **Sì per tutti** o su **Sì** (se non viene visualizzata l'opzione _Sì per tutti_).
 
-1. Nel riquadro della console di PowerShell ISE digitare il comando seguente e premere **INVIO**:
+1. In PowerShell ISE console riquadro, digitare il comando seguente e premere **invio**:
 
    ```powershell
    Login-AzureRmAccount
@@ -128,11 +128,11 @@ Si userà ora lo script di configurazione dei prerequisiti di Crittografia disch
 
 1. Selezionare la stringa **SubscriptionId** e copiarla negli Appunti.
 
-1. In PowerShell ISE fare clic su **File** e quindi su **Esegui**.
+1. In PowerShell ISE, fare clic su **File**, quindi fare clic su **eseguire**.
 
-1. Nel riquadro della console, al prompt **resourceGroupName:** digitare **moneyapprg** e premere **INVIO**.
+1. Nel riquadro della console, nelle **resourceGroupName:** , digitare **moneyapprg**. Quindi premere **invio**.
 
-1. Nel riquadro della console, al prompt **keyVaultName:** digitare **moneyappkv** e premere **INVIO**.
+1. Nel riquadro della console, nelle **keyVaultName:** , digitare **moneyappkv**. Quindi premere **invio**.
 
 1. Nel riquadro della console, al prompt **location:** digitare la posizione usata durante la creazione della macchina virtuale.
 
@@ -140,19 +140,19 @@ Si userà ora lo script di configurazione dei prerequisiti di Crittografia disch
 
 1. Verrà ora creato l'insieme di credenziali delle chiavi **moneyappkv**. Al termine, selezionare il testo di riepilogo (in verde) e copiarlo nel Blocco note.
 
-1. Premere **INVIO** per continuare.
+1. Premere **invio** per continuare.
 
-1. Nel riquadro della console, al prompt **aadAppName:** digitare **moneyapp** e premere **INVIO**.
+1. Nel riquadro della console, nelle **aadAppName:** , digitare **moneyapp**. Quindi premere **invio**.
 
 1. Verrà ora creata l'applicazione di Azure AD **moneyapp**. Al termine, selezionare il testo di riepilogo (in verde) e copiarlo nel Blocco note.
 
-1. Premere **INVIO** per continuare.
+1. Premere **invio** per continuare.
 
 ### <a name="encrypt-your-vm-disks-with-powershell"></a>Crittografare i dischi delle macchina virtuale con PowerShell
 
 Verificare lo stato della crittografia dei dischi del sistema operativo e dei dati:
 
-1. Nel riquadro della console di PowerShell ISE digitare il comando seguente e premere INVIO:
+1. In PowerShell ISE console riquadro, digitare il comando seguente e premere **invio**:
 
     ```powershell
     $vmName = 'moneyappsvr01'
@@ -161,7 +161,7 @@ Verificare lo stato della crittografia dei dischi del sistema operativo e dei da
     > [!NOTE]
     > Il nome della macchina virtuale deve essere racchiuso tra virgolette singole.
 
-1. Nel riquadro di script di PowerShell ISE immettere il comando seguente e premere INVIO:
+1. Nel riquadro di script di PowerShell ISE, immettere il seguente comando e premere **invio**:
 
     ```powershell
     Set-AzureRmVMDiskEncryptionExtension -ResourceGroupName $resourceGroupName -VMName $vmName -AadClientID $aadClientID -AadClientSecret $aadClientSecret -DiskEncryptionKeyVaultUrl $diskEncryptionKeyVaultUrl -DiskEncryptionKeyVaultId $keyVaultResourceId -VolumeType All
@@ -170,8 +170,8 @@ Verificare lo stato della crittografia dei dischi del sistema operativo e dei da
 1. Nella finestra di dialogo **Enable AzureDiskEncryption on the VM** (Abilita Crittografia dischi di Azure nella VM) fare clic su **Sì** e notare il messaggio indicante che il completamento della crittografia può richiedere 10-15 minuti.
 
 >[!IMPORTANT]
-> Attendere il completamento del comando prima di continuare con questo esercizio
+> Attendere che il comando è stata completata prima di continuare con questo esercizio.
 
 ### <a name="verify-the-encryption-status-of-your-vm-disks"></a>Verificare lo stato della crittografia dei dischi delle macchina virtuale
 
-Passare al portale di Azure e nel pannello **Dischi** per **moneyappsvr01** si noti che lo stato della crittografia per i dischi del sistema operativo e dei dati ora è **Abilitato**.
+Passare al portale di Azure. Nel **dischi** pannello **moneyappsvr01**, si noti che lo stato della crittografia del disco per i dischi dati e del sistema operativo è a questo punto **abilitato**.

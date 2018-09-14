@@ -1,17 +1,12 @@
 In questa unità si installerà MongoDB nella macchina virtuale Ubuntu Linux in modo che funga da archivio dati per la nuova applicazione Web di esempio.
 
-## <a name="connect-to-the-vm"></a>Connettersi alla macchina virtuale
-
-Per installare MongoDB, è necessario connettersi alla macchina virtuale mediante **ssh**. Sostituire i segnaposto `<vm-admin-username>` e `<vm-public-ip>` con il nome utente amministratore e l'indirizzo IP pubblico della macchina virtuale precedenti.
-
-```bash
-ssh <vm-admin-username>@<vm-public-ip>
-```
-
 ## <a name="install-mongodb"></a>Installare MongoDB
 
-> [!Important]
-> Ubuntu fornisce un pacchetto non ufficiale denominato **mongodb**. Questo pacchetto non viene gestito da MongoDB Inc.
+1. Da Cloud Shell, SSH alla macchina virtuale.
+
+    ```bash
+    ssh <vm-admin-username>@<vm-public-ip>
+    ```
 
 1. Importare la chiave di crittografia per il repository MongoDB. Questo consente allo strumento di gestione pacchetti di verificare che i pacchetti mongodb da installare provengano da MongoDB Inc.
 
@@ -36,7 +31,7 @@ ssh <vm-admin-username>@<vm-public-ip>
     echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.0.list
     ```
 
-1. Ricaricare il database del pacchetto in modo da avere le informazioni sul pacchetto più recenti.
+1. Aggiornare il database del pacchetto in modo sono disponibili le informazioni più recenti del pacchetto.
 
     ```bash
     sudo apt-get update

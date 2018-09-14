@@ -19,4 +19,3 @@ In questo modulo verrà descritto come:
 - Esperienza con un'interfaccia della riga di comando, ad esempio PowerShell o Bash
 - Conoscenza dei concetti di base di Azure, ad esempio i gruppi di risorse
 - Esperienza di amministrazione delle risorse di Azure tramite il portale di Azure
-- 

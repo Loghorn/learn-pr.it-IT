@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.design-for-security.2-defense-in-depth
-title: Defense in depth
+title: Difesa avanzata
 metadata:
-  title: Defense in depth
-  description: In this unit we'll discuss how to practice defense in depth
+  title: Difesa avanzata
+  description: In questa unità viene spiegato come applicare la difesa avanzata
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
@@ -14,27 +13,27 @@ durationInMinutes: 5
 content: |
   [!include[](includes/2-defense-in-depth.md)]
 quiz:
-  title: 'Knowledge Check - Defense in depth'
+  title: Verifica delle conoscenze - Difesa avanzata
   questions:
-  - content: 'Which of the following would be an appropriate tactic to apply to a defense in depth security strategy?'
-    choices:
-    - content: 'Deallocating virtual machines when not in use'
-      isCorrect: false
-      incorrectExplanation: 'This can be an effective tactic to reduce costs, but it not a tactic for a security strategy.'
-    - content: 'Setting up alerts for CPU percentage exceeds 90%'
-      isCorrect: false
-      incorrectExplanation: 'This may be a valuable monitoring metric to identify performance issues in your application, but is not a tactic in a security strategy.'
-    - content: 'Storing connection strings in a configuration file'
-      isCorrect: false
-      incorrectExplanation: 'Storing connection strings in a configuration file is a security risk and is not a tactic in a security strategy.'
-    - content: 'Enforcing MFA for all administrative level accounts'
-      isCorrect: true
-      correctExplanation: 'Enforcing MFA for all administrative level accounts adds an extra layer of protection for highly privliged accounts and is an effective tactic as part of a defense in depth security strategy.'
-  - content: 'By moving to the cloud, my architecture is fully secure and I can hand off all security responsibilities to my cloud provider.'
-    choices:
-    - content: 'True'
-      isCorrect: false
-      incorrectExplanation: 'Moving to the cloud does offload some responsibilities to the cloud provider, but a model of shared responsibility is still in effect.'
-    - content: 'False'
-      isCorrect: true
-      correctExplanation: 'Moving to the cloud does offload some responsibilities to the cloud provider, but a model of shared responsibility is still in effect.'
+    - content: Quale delle seguenti tattiche può essere appropriata per applicare una strategia di difesa avanzata?
+      choices:
+        - content: Deallocazione delle macchine virtuali quando non è in uso
+          isCorrect: false
+          incorrectExplanation: 'Può trattarsi di una strategia efficace per ridurre i costi, ma non una strategia per una strategia di sicurezza.'
+        - content: Impostare avvisi per quando la percentuale di utilizzo della CPU supera il 90%
+          isCorrect: false
+          incorrectExplanation: 'Ciò può essere una metrica di monitoraggio utile per identificare i problemi di prestazioni nell''applicazione, ma non è una strategia in una strategia di sicurezza.'
+        - content: Memorizzare le stringhe di connessione in un file di configurazione
+          isCorrect: false
+          incorrectExplanation: L'archiviazione delle stringhe di connessione in un file di configurazione è un rischio per la sicurezza e non è una strategia in una strategia di sicurezza.
+        - content: L'applicazione di MFA per tutti gli account a livello amministrativi
+          isCorrect: true
+          correctExplanation: L'applicazione di MFA per tutti gli account amministrativi a livello aggiunge un ulteriore livello di protezione per gli account di privliged elevata ed è un'efficace strategia come parte di una difesa nella strategia di sicurezza.
+    - content: 'Con il passaggio al cloud, l''architettura è completamente sicura ed è possibile incaricare il provider dei servizi cloud di tutte le responsabilità di sicurezza.'
+      choices:
+        - content: Vero
+          isCorrect: false
+          incorrectExplanation: 'Lo spostamento nel cloud l''offload di alcune responsabilità al provider di cloud, ma un modello di responsabilità condivisa è ancora attiva.'
+        - content: Falso
+          isCorrect: true
+          correctExplanation: 'Lo spostamento nel cloud l''offload di alcune responsabilità al provider di cloud, ma un modello di responsabilità condivisa è ancora attiva.'

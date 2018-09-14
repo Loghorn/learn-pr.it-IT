@@ -9,33 +9,37 @@ In questo esercizio si creerà uno spazio dei nomi del bus di servizio, che cont
 
 ## <a name="create-a-service-bus-namespace"></a>Creare uno spazio dei nomi del bus di servizio
 
+[!include[](../../../includes/azure-sandbox-activate.md)]
+
+[!include[](../../../includes/azure-sandbox-regions-first-mention-note.md)]
+
 Nel bus di servizio di Azure uno spazio dei nomi è un contenitore, con un nome di dominio completo univoco, per code, argomenti e inoltri. È necessario iniziare creando lo spazio dei nomi.
 
-Ogni spazio dei nomi include anche le chiavi di crittografia di firma di accesso condiviso (SAS, Shared Access Signature) primaria e secondaria. Un componente mittente o destinatario deve fornire queste chiavi quando si connette per ottenere l'accesso agli oggetti nello spazio dei nomi.
+Ogni spazio dei nomi ha anche chiavi di crittografia di firma di accesso condiviso primarie e secondarie. Un componente mittente o destinatario deve fornire queste chiavi quando si connette per ottenere l'accesso agli oggetti nello spazio dei nomi.
 
-Per creare uno spazio dei nomi del bus di servizio usando il portale di Azure, eseguire questa procedura:
+Per creare uno spazio dei nomi del Bus di servizio usando il portale di Azure, seguire questa procedura:
 
-1. In un browser passare al [portale di Azure](https://portal.azure.com/) e accedere con le proprie credenziali dell'account di Azure.
+1. Accedere al [portale di Azure](https://portal.azure.com/?azure-portal=true).
 
 1. Nel riquadro di spostamento a sinistra fare clic su **Tutti i servizi**.
 
-1. Nel pannello **Tutti i servizi** scorrere verso il basso fino alla sezione **INTEGRAZIONE** e quindi fare clic su **Bus di servizio**.
+1. Nel **tutti i servizi** scorrere verso il basso fino al pannello il **INTEGRATION** sezione e quindi fare clic su **del Bus di servizio**.
 
-    ![Creare uno spazio dei nomi del bus di servizio](../media-draft/3-create-namespace-1.png)
+    ![Creare uno spazio dei nomi del bus di servizio](../media/3-create-namespace-1.png)
 
 1. In alto a sinistra nel pannello **Bus di servizio** fare clic su **Aggiungi**.
 
-1. Nella casella di testo **Nome** digitare un nome univoco per lo spazio dei nomi. Ad esempio "salesteamapp" + *iniziali del nome* + *data corrente*
+1. Nel **nome** testo, digitare un nome univoco per lo spazio dei nomi. Ad esempio "salesteamapp" + *le iniziali seguite* + *data corrente*.
 
 1. Nell'elenco a discesa **Piano tariffario** selezionare **Standard**.
 
 1. Nell'elenco a discesa **Sottoscrizione** selezionare la sottoscrizione in uso.
 
-1. In **Gruppo di risorse** selezionare **Crea nuovo** e quindi digitare **SalesTeamAppRG**.
+1. Sotto **gruppo di risorse**, selezionare **Usa esistente** e scegliere <rgn>[nome gruppo di risorse di tipo Sandbox]</rgn>.
 
-1. Nell'elenco a discesa **Località** selezionare una località nelle vicinanze e quindi fare clic su **Crea**. Azure creerà il nuovo spazio dei nomi del bus di servizio.
+1. Nel **ubicazione** dall'elenco a discesa, seleziona una località vicino a te e quindi fare clic su **crea**. Azure creerà il nuovo spazio dei nomi del bus di servizio.
 
-    ![Creare uno spazio dei nomi del bus di servizio](../media-draft/3-create-namespace-2.png)
+    ![Creare uno spazio dei nomi del bus di servizio](../media/3-create-namespace-2.png)
 
 ## <a name="create-a-service-bus-queue"></a>Creare una coda del bus di servizio
 
@@ -47,9 +51,9 @@ Dopo aver creato uno spazio dei nomi, è possibile creare una coda per i messagg
 
 1. In alto a sinistra nel pannello dello spazio dei nomi fare clic su **Coda**.
 
-1. Nel pannello **Crea coda**, nella casella di testo **Nome** digitare **salesmessages** e quindi fare clic su **Crea**. Azure creerà la coda nello spazio dei nomi.
+1. Nel **Crea coda** pannello nella **nome** casella di testo, digitare **salesmessages**e quindi fare clic su **Create**. Azure creerà la coda nello spazio dei nomi.
 
-    ![Creazione di una coda](../media-draft/3-create-queue.png)
+    ![Creazione di una coda](../media/3-create-queue.png)
 
 ## <a name="create-a-service-bus-topic-and-subscriptions"></a>Creare un argomento del bus di servizio e le sottoscrizioni
 
@@ -59,18 +63,18 @@ Seguire questa procedura:
 
 1. Nel pannello **Spazio dei nomi del bus di servizio** fare clic su **+ Argomento**.
 
-1. Nel pannello **Crea argomento**, nella casella di testo **Nome** digitare **salesperformancemessages** e quindi fare clic su **Crea**. Azure creerà l'argomento nello spazio dei nomi.
+1. Nel **Crea argomento** pannello nella **nome** casella di testo, digitare **salesperformancemessages**e quindi fare clic su **Create**. Azure creerà l'argomento nello spazio dei nomi.
 
-    ![Creazione di un argomento](../media-draft/3-create-topic.png)
+    ![Creazione di un argomento](../media/3-create-topic.png)
 
-1. Quando l'argomento è stato creato, nel pannello **Spazio dei nomi del bus di servizio** fare clic su **Argomenti** in **Entità**.
+1. Quando l'argomento è stato creato, nelle **Service Bus Namespace** pannello, in **entità**, fare clic su **argomenti**.
 
-1. Nell'elenco di argomenti fare clic su **salesperformancemessages** e quindi fare clic su **+ Sottoscrizione**.
+1. Nell'elenco di argomenti, fare clic su **salesperformancemessages**, quindi fare clic su **+ sottoscrizione**.
 
-1. Nella casella di testo **Nome** digitare **Americas** e quindi fare clic su **Crea**.
+1. Nel **nome** casella di testo, digitare **Americas**, quindi fare clic su **Create**.
 
 1. Fare clic su **+ Sottoscrizione**.
 
-1. Nella casella di testo **Nome** digitare **EuropeAndAfrica** e quindi fare clic su **Crea**.
+1. Nel **Name** casella di testo, digitare **EuropeAndAfrica**, quindi fare clic su **crea**.
 
 È stata creata l'infrastruttura necessaria per usare il bus di servizio per aumentare la resilienza dell'applicazione distribuita per la forza vendita. Sono stati creati una coda per i messaggi relativi alle singole vendite e un argomento per i messaggi relativi alle prestazioni di vendita. L'argomento include più sottoscrizioni perché i messaggi inviati all'argomento possono essere recapitati a più servizi Web di destinazione in tutto il mondo.

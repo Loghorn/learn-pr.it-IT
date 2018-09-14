@@ -1,15 +1,15 @@
-Si supponga di gestire l'infrastruttura IT di un sito di e-commerce in crescita. L'attività è florida e il data center inizia ad avere qualche difficoltà a soddisfare la domanda degli utenti. Quando troppi utenti si connettono contemporaneamente, il servizio non funziona. Le finestre di manutenzione pianificate e non pianificate sono inoltre sempre più numerose. 
+Si supponga di gestire l'infrastruttura IT di un sito di e-commerce in crescita. Ia di business complessa e il Data Center sta iniziando a incontrare delle difficoltà nel soddisfare la richiesta da parte degli utenti. Quando troppi utenti si connettono contemporaneamente, il servizio non funziona. Le finestre di manutenzione pianificate e non pianificate sono inoltre sempre più numerose. 
 
-Dal momento che la sede del sito è nella California settentrionale, si noterà anche che il ritardo di rete penalizza in modo particolare gli utenti che si trovano in altre aree geografiche, ad esempio Europa e Asia.
+Poiché il sito è basato in California settentrionale, si noterà anche che il ritardo di rete è in particolare non sono consigliato agli utenti che si trovano in altre aree, ad esempio Europa e Asia.
 
 Si decide allora di spostare il sito di e-commerce nel cloud per ridurre i costi. Ma in che modo Azure può contribuire a una migliore esecuzione del sito?
 
-La gestione delle reti in Azure non è totalmente diversa dalla gestione di reti locali. 
+La gestione delle reti in Azure non è completamente diverso dalla gestione di reti locali. 
 
-## <a name="learing-objectives"></a>Obiettivi di apprendimento
+## <a name="learning-objectives"></a>Obiettivi di apprendimento
 
-In questo modulo si apprenderà:
+In questo modulo verrà descritto come:
 
-- Come una rete virtuale di Azure offra una comunicazione di rete sicura tra le risorse, ad esempio macchine virtuali e altre reti
-- Il significato di disponibilità elevata e resilienza e come Azure Load Balancer possa aumentare la resilienza all'interno di una singola area geografica
-- Cos'è la latenza e come Gestione traffico possa contribuire a ridurre la latenza di rete e offra resilienza nelle diverse posizioni geografiche
+- Informazioni su come una rete virtuale di Azure fornisce comunicazioni di rete sicure tra le risorse quali macchine virtuali e ad altre reti
+- Informazioni su cosa significa disponibilità elevata e resilienza e su come aumentare la resilienza all'interno di una singola area geografica di Azure Load Balancer
+- Informazioni su quali la latenza è e come gestione traffico consente di ridurre la latenza di rete e offre la resilienza in diverse posizioni geografiche

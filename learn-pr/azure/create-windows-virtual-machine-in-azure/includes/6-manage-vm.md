@@ -6,10 +6,9 @@ Sono già state esaminate alcune delle informazioni base e opzioni di gestione n
 
 ## <a name="opening-ports-in-azure-vms"></a>Apertura delle porte nelle macchine virtuali di Azure
 
-<!-- TODO: Azure portal is inconsistent here in applying the NSG.
-By default, new VMs are locked down. 
+Per impostazione predefinita, le nuove macchine virtuali siano bloccate. 
 
-Apps can make outgoing requests, but the only inbound traffic allowed is from the virtual network (e.g. other resources on the same local network), and from Azure's Load Balancer (probe checks). -->
+Le app possono effettuare richieste in uscita, ma solo il traffico in ingresso consentito dalla rete virtuale (ad esempio, altre risorse nella stessa rete locale) e dal servizio di bilanciamento del carico di Azure (controlli di probe).
 
 Esistono due passaggi per modificare la configurazione e supportare FTP. Quando si crea una nuova macchina virtuale, è possibile aprire alcune porte comuni (RDP, HTTP, HTTPS e SSH). Se sono tuttavia necessarie altre modifiche al firewall, sarà necessario intervenire personalmente.
 

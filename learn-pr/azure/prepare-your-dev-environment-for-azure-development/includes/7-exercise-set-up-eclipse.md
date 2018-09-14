@@ -1,4 +1,4 @@
-In questa unità verrà installato Eclipse nel computer locale e quindi si installerà Azure Toolkit, in preparazione dello sviluppo di applicazioni Java con l'integrazione di Azure. L'installazione è rapida e semplice. Al termine dell'esercizio, sarà pronto tutto quello che serve per avviare la prima applicazione Java, sfruttando le funzionalità e i servizi di Azure.
+In questa unità, verrà installato Eclipse e il Toolkit di Azure nel computer locale. L'installazione è rapida e semplice. Al termine dell'esercizio, si avrà tutto ciò che occorre per creare la prima applicazione Java in Azure.
 
 ## <a name="install-eclipse-ide"></a>Installare l'IDE di Eclipse
 
@@ -8,7 +8,7 @@ In questa unità verrà installato Eclipse nel computer locale e quindi si insta
 
     1. In Windows, fare doppio clic sul file scaricato.
 
-    1. In macOS e Linux, decomprimere il programma di installazione dal file scaricato. Avviare quindi il programma di installazione dopo averlo decompresso.
+    1. In macOS e Linux, decomprimere il programma di installazione dal file scaricato ed eseguirlo.
 
         > [!NOTE]
         > Il programma di installazione potrebbe richiedere di installare Java Development Kit, se risulta mancante.
@@ -47,8 +47,8 @@ La procedura per l'installazione di Azure Toolkit è identica in Windows, macOS 
 
 1. Se richiesto, riavviare Eclipse.
 
-1. Convalidare l'installazione di Azure Toolkit verificando che sia disponibile la voce di menu **Tools** > **Azure** (Strumenti, Azure) in Eclipse.
+1. Convalidare l'installazione del Toolkit di Azure tramite la verifica che è possibile trovare un **degli strumenti** > **Azure** opzione di menu di Eclipse.
 
 ## <a name="summary"></a>Riepilogo
 
-In questa unità è stato installato Eclipse per Java e il programma è stato preparato per sfruttare i vantaggi dell'integrazione con i prodotti e i servizi Azure. L'installazione è rapida e semplice e ciò rende Eclipse uno strumento ideale per l'attività di sviluppo Java con l'integrazione di servizi cloud.
+In questa unità, viene installato Eclipse e preparati per sfruttare i vantaggi dell'integrazione con prodotti e servizi di Azure.

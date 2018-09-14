@@ -1,48 +1,25 @@
-Raspberry Pi boards have garnered much interest of late for testing theories or
-event making cool things. While the cost on this boards are quite low, some may
-be interested in testing out the Raspberry Pi functionality before investing in
-one.
+Lavagne di raspberry Pi sono ottenute molto interesse di ritardo per teorie o eventi interessanti che effettua il test. Mentre il costo questo lavagne sono abbastanza basso, alcuni possono risultare utili durante i test la funzionalità di Raspberry Pi prima di investire in uno.
 
-Microsoft has built an online Raspberry Pi simulator allowing users to control
-the emulated hardware via code. The emulator portrays a graphic of a Raspberry
-Pi connected to a temperature, humidity, pressure sensor, and a red LED via
-breadboard allowing circuits to be wired together. The displayed side panel
-allows users to enter Node.js JavaScript code to control the LED and collect
-dummy data from the simulated sensor.
+Microsoft ha creato una linea [il simulatore Raspberry Pi Azure IoT](https://azure-samples.github.io/raspberry-pi-web-simulator?azure-portal=true) consentendo agli utenti di controllare l'hardware emulato tramite codice. L'emulatore è rappresentato da un'immagine di un dispositivo Raspberry Pi connessi a una temperatura, umidità, sensore di pressione e un LED rosso tramite basetta sperimentale che consente di circuiti per essere collegati. Il pannello visualizzato sul lato consente agli utenti di immettere il codice JavaScript di Node. js per controllare il LED e raccogliere dati fittizi dai sensori simulati.
 
-At first run, the simulator operates a sample temperature capture program which
-is displayed via the command line. The same sample application can also be run
-on a real Pi as the simulator is designed to allow people to test code before
-transferring it to a real device.
+![Simulatore raspberry Pi](../media-draft/RaspberryPiSimulator.png)
 
-## Web simulator
+## <a name="raspberry-pi-azure-iot-online-simulator"></a>Simulatore Online Azure IoT raspberry Pi
 
-There are three areas in the web simulator:
+Alla prima esecuzione, il simulatore viene eseguito un programma di acquisizione della temperatura di esempio che viene visualizzato tramite la riga di comando. La stessa applicazione di esempio anche possibile eseguibili in un reale Pi poiché l'applicazione client simulator è progettato per consentire agli utenti di testare il codice prima che venga trasferito a un dispositivo reale.
 
-1.  Assembly area - The default circuit is that a Pi connects with a BME280
-    sensor and an LED. The area is locked in preview version so currently you
-    cannot do customization.
+Esistono tre aree nel simulatore web:
 
-2.  Coding area - An online code editor for you to code with Raspberry Pi. The
-    default sample application helps to collect sensor data from BME280 sensor
-    and sends to your Azure IoT Hub. The application is fully compatible with
-    real Pi devices.
+1. **Area dell'assembly**. Si tratta di cui è possibile visualizzare lo stato del dispositivo. Per impostazione predefinita, si tratta di un connessione con un sensore BME280 e un LED light di Pi. Questa configurazione non è personalizzabile in questo momento.
+2. **Area di codifica**. Un editor di codice online per poter rendere un'app su Raspberry Pi con Node. js. L'applicazione di esempio predefinita consente di raccogliere i dati dei sensori dal sensore BME280 e lo invia all'hub IoT di Azure.
+3. **Finestra della console integrata**. Si tratta in cui è possibile visualizzare l'output dell'app. All'interno della console sono disponibili tre funzioni:
+    - `run` : Esegue il codice di esempio (durante l'esecuzione, esempio di codice è di sola lettura).
+    - `Stop` -Interrompe il codice di esempio in esecuzione.
+    - `Reset` -Viene reimpostato il codice.
 
-3.  Integrated console window - It shows the output of your code. At the top of
-    this window, there are three buttons.
-
-    -   **Run** - Run the application in the coding area.
-
-    -   **Reset** - Reset the coding area to the default sample application.
-
-    -   **Fold/Expand** - On the right side there is a button for you to
-        fold/expand the console window.
-
-[Overview image of Pi online simulator](./../media-draft/image1.png)
+Ora che disponibile una panoramica del simulatore Raspberry Pi, esploreremo l'IoT Hub in Azure in cui si creerà una nuova risorsa per acquisire i dati dal simulatore.
 
 <!-- Reference links 
 -   Online Raspberry Pi Emulator:
     <https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-raspberry-pi-web-simulator-get-started>
-
 -   <https://azure-samples.github.io/raspberry-pi-web-simulator/#GetStarted>-->
-

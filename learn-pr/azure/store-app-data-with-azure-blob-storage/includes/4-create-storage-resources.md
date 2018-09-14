@@ -22,16 +22,16 @@ Il codice con cui si inizierà viene compilato ed eseguito, ma le parti responsa
 
 Configurare l'infrastruttura di archiviazione per l'app.
 
-### <a name="resource-group-and-storage-account"></a>Gruppo di risorse e account di archiviazione
-<!---TODO: Update for sandbox?--->
+### <a name="storage-account"></a>Account di archiviazione
 
-In primo luogo, verrà creato un gruppo di risorse per contenere tutte le risorse di questa unità. Il gruppo di risorse verrà eliminato alla fine per eseguire la pulizia di tutto ciò che è stato creato. Verrà inoltre creato l'account di archiviazione che verrà usato dall'app per archiviare i BLOB.
+[!include[](../../../includes/azure-sandbox-activate.md)]
 
-Usare il terminale Azure Cloud Shell per creare il gruppo di risorse e account di archiviazione eseguendo i seguenti comandi dell'interfaccia della riga di comando di Azure. È necessario specificare un nome univoco per l'account di archiviazione &mdash; prendere nota per un uso successivo. La scelta di `eastus` per il percorso è arbitraria.
+[!include[](../../../includes/azure-sandbox-regions-first-mention-note.md)]
+
+Usare il terminale Azure Cloud Shell per creare un account di archiviazione. È necessario specificare un nome univoco per l'account di archiviazione &mdash; prendere nota per un uso successivo.
 
 ```console
-az group create --name blob-exercise-group --location eastus
-az storage account create --name <your-unique-storage-account-name> --resource-group blob-exercise-group --location eastus --kind StorageV2
+az storage account create --name <your-unique-storage-account-name> --resource-group <rgn>[Sandbox resource group name]</rgn> --location <location-name> --kind StorageV2
 ```
 
 > [!NOTE]
@@ -39,4 +39,4 @@ az storage account create --name <your-unique-storage-account-name> --resource-g
 
 ### <a name="container"></a>Contenitore
 
-L'applicazione con cui lavoreremo in questo modulo usa un singolo contenitore. È necessario seguire le procedure consigliate per lasciare che l'app crei il contenitore all'avvio. Tuttavia, la creazione del contenitore può essere eseguita dall'interfaccia della riga di comando di Azure: eseguire `az storage container create -h` nel terminale Cloud Shell se si desidera vedere la documentazione.
+L'applicazione con cui lavoreremo in questo modulo usa un singolo contenitore. È necessario seguire le procedure consigliate per lasciare che l'app crei il contenitore all'avvio. Tuttavia, la creazione del contenitore può essere eseguita dal comando di Azure: eseguire `az storage container create -h` nel terminale Cloud Shell se si desidera vedere la documentazione.

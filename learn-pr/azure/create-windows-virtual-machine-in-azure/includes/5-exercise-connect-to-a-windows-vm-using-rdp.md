@@ -1,6 +1,6 @@
 A questo punto la macchina virtuale Windows è stata distribuita ed è in esecuzione, ma non è configurata per eseguire alcuna operazione.
 
-È importante ricordare che questo scenario è un sistema di elaborazione video. La piattaforma riceve i file tramite FTP. Le telecamere del traffico caricano i clip video in un URL noto di cui è stato eseguito il mapping a una cartella nel server. Il software personalizzato in ogni macchina virtuale Windows viene eseguito come servizio, controlla la cartella ed elabora ogni clip caricato. Passa quindi il video normalizzato agli algoritmi in esecuzione in altri servizi di Azure.
+È importante ricordare che questo scenario è un sistema di elaborazione video. La piattaforma riceve i file tramite FTP. Le fotocamere del traffico caricare clip video da un URL noto, che è mappato a una cartella nel server. Il software personalizzato in ogni macchina virtuale Windows viene eseguito come servizio, controlla la cartella ed elabora ogni clip caricato. Passa quindi il video normalizzato agli algoritmi in esecuzione in altri servizi di Azure.
 
 Sono necessarie alcune configurazioni per supportare questo scenario:
 
@@ -8,7 +8,7 @@ Sono necessarie alcune configurazioni per supportare questo scenario:
 - Installare il codec video proprietario univoco per il sistema di telecamere della città.
 - Installare il servizio di transcodifica che elabora i video caricati.
 
-Molte di queste sono tipiche attività amministrative che di fatto non verranno illustrate di seguito e quindi non richiedono software da installare. Verrà invece illustrato come è _possibile_ installare software personalizzato o di terze parti usando Desktop remoto e verranno esaminati i passaggi necessari. Si inizierà ottenendo le informazioni di connessione.
+Molte di queste sono tipiche attività amministrative che di fatto non verranno illustrate di seguito e quindi non richiedono software da installare. Al contrario, verrà descritta la procedura e mostrano come si _è stato possibile_ installare software personalizzato o di terze parti tramite Desktop remoto. Si inizierà ottenendo le informazioni di connessione.
 
 ## <a name="connect-to-the-vm-with-remote-desktop-protocol"></a>Connettersi alla macchina virtuale con Remote Desktop Protocol
 
@@ -51,17 +51,17 @@ Per connettersi a una macchina virtuale di Azure con un client RDP, sono necessa
 1. Nella finestra di dialogo **Connessione Desktop remoto** prendere nota dell'avviso di sicurezza e dell'indirizzo IP del computer remoto, quindi fare clic su **Connetti**.
 
 1. Nella finestra di dialogo **Sicurezza di Windows** immettere il nome utente e la password usati nei passaggi 6 e 7.
-    
+
     > [!NOTE]
     > Se si usa un client Windows per connettersi alla macchina virtuale, per impostazione predefinita verranno usate le identità note nel computer. È possibile fare clic sull'opzione **Altre opzioni** e selezionare "Usa un account diverso" per poter immettere una combinazione diversa di nome utente/password.
-    
+
 1. Nella seconda finestra di dialogo **Connessione Desktop remoto** prendere nota degli errori di certificato e fare clic su **Sì**.
 
 ### <a name="install-worker-roles"></a>Installare i ruoli di lavoro
 
 La prima volta che ci si connette a una macchina virtuale Windows Server, verrà avviato Server Manager. In questo modo è possibile assegnare un ruolo di lavoro per le attività di dati o Web comuni. È anche possibile avviare Server Manager tramite il menu Start.
 
-È a questo punto che si aggiungerebbe il ruolo del server Web al server. In questo modo verrebbe installato IIS e durante la configurazione si disattiverebbero le richieste HTTP e si abiliterebbe il server FTP. È anche possibile ignorare IIS e installare un server FTP di terze parti. Si configurerebbe quindi il server FTP per consentire l'accesso a una cartella nell'unità dei Big Data aggiunta alla macchina virtuale.
+È a questo punto che si aggiungerebbe il ruolo del server Web al server. In questo modo verrebbe installato IIS e durante la configurazione si disattiverebbero le richieste HTTP e si abiliterebbe il server FTP. In alternativa, è possibile ignorare IIS e installare un server FTP di terze parti. Si configurerebbe quindi il server FTP per consentire l'accesso a una cartella nell'unità dei Big Data aggiunta alla macchina virtuale.
 
 Poiché questo server non verrà effettivamente configurato qui, chiudere Server Manager.
 
@@ -75,7 +75,7 @@ Esistono due approcci che è possibile usare per installare il software. In prim
     - Unità di archiviazione temporanea (D:).
     - L'unità C: locale, che avrà un nome diverso da quello visualizzato sotto.
 
-    ![Unità locale condivisa con Azure](../media-drafts/6-drive-list.png)
+    ![Screenshot che mostra l'unità locale condivisa con la macchina virtuale di Azure.](../media/6-drive-list.png)
 
 Con l'accesso all'unità locale, è possibile copiare i file per il software personalizzato nella macchina virtuale e installare il software. Questa operazione non verrà effettivamente eseguita perché si tratta solo di uno scenario simulato, ma si può immaginare come funzionerebbe.
 
@@ -85,11 +85,11 @@ L'aspetto più interessante da osservare nell'elenco delle unità è cosa _manca
 
 Tutte le unità aggiuntive create da zero dovranno essere inizializzate e formattate. Il processo per eseguire questa operazione è identico a quello valido per un'unità fisica.
 
-1. Avviare lo strumento **Gestione disco** dal menu Start.
+1. Avviare lo strumento **Gestione disco** dal menu Start. Potrebbe essere necessario passare a Computer Management dello strumento per primo, quindi Gestione disco o prova la ricerca di "Gestione disco" nel Menu Start.
 
 1. Verrà visualizzato un avviso che informa che è stato rilevato un disco non inizializzato.
 
-    ![Inizializzare il disco dati nella macchina virtuale](../media-drafts/6-disk-management.png)
+    ![Screenshot che mostra l'avviso dello strumento Gestione disco su un disco dati non inizializzati nella macchina virtuale.](../media/6-disk-management.png)
 
 1. Fare clic su **OK** per inizializzare il disco. Verrà quindi visualizzato nell'elenco di volumi in cui è possibile formattarlo e assegnare una lettera di unità.
 
@@ -97,4 +97,4 @@ Tutte le unità aggiuntive create da zero dovranno essere inizializzate e format
 
 1. Proseguire e chiudere il client RDP per uscire dalla macchina virtuale. Il server continuerà a venire eseguito.
 
-RDP consente di lavorare con la macchina virtuale di Azure come con un computer locale. Con l'accesso all'interfaccia utente del desktop, è possibile amministrare questa macchina virtuale come qualsiasi computer Windows: installare software, configurare ruoli, mettere a punto le funzionalità ed eseguire altre attività comuni. Si tratta tuttavia di processi manuali. Se è necessario installare sempre alcuni software, è possibile valutare la possibilità di automatizzare il processo tramite scripting.
+RDP consente di lavorare con la macchina virtuale di Azure come con un computer locale. Con l'accesso all'interfaccia utente del desktop, è possibile amministrare questa macchina virtuale come qualsiasi computer Windows: installare software, configurare ruoli, mettere a punto le funzionalità ed eseguire altre attività comuni. Si tratta tuttavia di processi manuali. Se è necessario installare sempre alcuni software, valutare la possibilità di automatizzare il processo tramite scripting.

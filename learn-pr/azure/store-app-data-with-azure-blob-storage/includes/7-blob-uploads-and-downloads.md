@@ -22,7 +22,7 @@ Un consiglio comune quando si lavora con oggetti dati di grandi dimensioni consi
 
 Per caricare un blob, verrà implementato il metodo `BlobStorage.Save` che usa `GetBlockBlobReference` per ottenere un `CloudBlockBlob` dal contenitore. `FilesController.Upload` passa il flusso di file a `Save`, quindi è possibile usare `UploadFromStreamAsync` per eseguire il caricamento per la massima efficienza.
 
-Aprire `BlobStorage.cs` nell'editor e sostituire `Save` con il codice seguente:
+Nell'editor, sostituire `Save` in `BlobStorage.cs` con il codice seguente:
 
 ```csharp
 public Task Save(Stream fileStream, string name)
@@ -61,22 +61,22 @@ L'app è stata completata &mdash; è possibile distribuirla e visualizzarne il f
 Il nome dell'app deve essere globalmente univoco, quindi è necessario sceglierne uno per riempire `<your-unique-app-name>`.
 
 ```azurecli
-az appservice plan create --name blob-exercise-plan --resource-group blob-exercise-group
-az webapp create --name <your-unique-app-name> --plan blob-exercise-plan --resource-group blob-exercise-group
+az appservice plan create --name blob-exercise-plan --resource-group <rgn>[Sandbox resource group name]</rgn>
+az webapp create --name <your-unique-app-name> --plan blob-exercise-plan --resource-group <rgn>[Sandbox resource group name]</rgn>
 CONNECTIONSTRING=$(az storage account show-connection-string --name <your-unique-storage-account-name> --output tsv)
-az webapp config appsettings set --name <your-unique-app-name> --resource-group blob-exercise-group --settings AzureStorageConfig:ConnectionString=$CONNECTIONSTRING AzureStorageConfig:FileContainerName=files
+az webapp config appsettings set --name <your-unique-app-name> --resource-group <rgn>[Sandbox resource group name]</rgn> --settings AzureStorageConfig:ConnectionString=$CONNECTIONSTRING AzureStorageConfig:FileContainerName=files
 ```
 
 A questo punto l'app viene distribuita. I comandi seguenti pubblicheranno il sito nella cartella `pub`, la comprimeranno in `site.zip` e quindi distribuiranno il file con estensione zip nel servizio app.
 
 > [!NOTE]
-> Verificare che la shell sia nella directory `FileUploader` per i comandi seguenti.
+> Assicurarsi che la shell è ancora nel `mslearn-store-data-in-azure/store-app-data-with-azure-blob-storage/src/start` directory prima di eseguire i comandi seguenti.
 
 ```azurecli
 dotnet publish -o pub
 cd pub
 zip -r ../site.zip *
-az webapp deployment source config-zip --src ../site.zip --name <your-unique-app-name> --resource-group blob-exercise-group
+az webapp deployment source config-zip --src ../site.zip --name <your-unique-app-name> --resource-group <rgn>[Sandbox resource group name]</rgn>
 ```
 
 Aprire `https://<your-unique-app-name>.azurewebsites.net` in un browser per visualizzare l'app in esecuzione. L'aspetto dovrebbe essere simile a quanto riportato di seguito.

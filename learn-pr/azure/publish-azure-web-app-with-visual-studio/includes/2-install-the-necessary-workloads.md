@@ -2,13 +2,13 @@ Il primo passaggio per approntare il nuovo sito consiste nel preparare l'ambient
 
 ## <a name="prepare-your-development-environment"></a>Preparare l'ambiente di sviluppo
 
-Visual Studio 2017 include due carichi di lavoro necessari per creare, pubblicare e distribuire il sito Web in Azure. Questi carichi di lavoro includono tutti i modelli per il sito ASP.NET e offrono la possibilità di connettere ad Azure e distribuire il sito in Azure.
+Visual Studio 2017 include due carichi di lavoro che è necessario creare, pubblicare e distribuire il sito Web in Azure. Questi carichi di lavoro includono tutti i modelli per il sito ASP.NET e offrono la possibilità di connettere ad Azure e distribuire il sito in Azure.
 
 È necessario assicurarsi di avere i carichi di lavoro seguenti installati:
 
 - Sviluppo ASP.NET e Web
 
-Il carico di lavoro Sviluppo ASP.NET e Web in Visual Studio 2017 è progettato per massimizzare la produttività sviluppando applicazioni Web con ASP.NET e tecnologie basate su standard come HTML e JavaScript.
+Il carico di lavoro sviluppo web in Visual Studio 2017 è progettato per massimizzare la produttività nello sviluppo di applicazioni web con ASP.NET e tecnologie basate su standard come HTML e JavaScript.
 
 - Sviluppo di Azure
 

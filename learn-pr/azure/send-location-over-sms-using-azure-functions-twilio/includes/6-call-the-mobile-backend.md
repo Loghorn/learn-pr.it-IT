@@ -96,7 +96,7 @@ async Task SendLocation()
 
 1. Impostare l'app UWP come app di avvio ed eseguirla. Fare clic sul pulsante **Invia posizione**. L'output verrà visualizzato nella finestra della console del runtime di Funzioni di Azure con la funzione chiamata e la registrazione che mostra l'URL generato.
 
-    ![Output della funzione chiamata](../media-drafts/6-function-called.png)
+    ![Output della funzione chiamata](../media/6-function-called.png)
 
 1. Per testare la generazione dell'URL, incollarlo dalla console in un browser. Dovrebbe mostrare la posizione corrente.
 

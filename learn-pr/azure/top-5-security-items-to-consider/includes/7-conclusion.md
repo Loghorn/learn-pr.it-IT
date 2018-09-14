@@ -1,12 +1,12 @@
-In this module, you learned how to safeguard your applications in Azure against common attacks.
+In questo modulo è stato descritto come proteggere le applicazioni in Azure da attacchi comuni.
 
-In this module, we looked at several key security tips:
+In questo modulo è stato illustrato alcuni suggerimenti per la protezione di chiavi:
 
 > [!div class="checklist"]
-> * Use Azure Security Center
-> * Verify your application inputs and outputs
-> * Store your secrets into Key Vault
-> * Ensure you are using the latest version of your framework, and using its security features
-> * Verify your program dependencies and libraries are safe to use
+> * Usare il Centro sicurezza Azure
+> * Verificare l'input dell'applicazione e gli output
+> * Store i segreti in Key Vault
+> * Verificare che si usa la versione più recente del framework e uso delle funzionalità di sicurezza
+> * Verificare le dipendenze di programma e le librerie sono sicuri
 
-By following the five items in this list, you will have taken leaps and strides towards ensuring that your applications are safe and that they remain that way.
+Seguendo i cinque elementi in questo elenco, verranno eseguite nulla e progressi assicurandosi che le applicazioni siano sicure e che rimangano in questo modo.

@@ -1,59 +1,70 @@
-In un'azienda di vendita online, possono esserci diversi tipi di dati. Alcuni dati potrebbero essere strutturati, ad esempio le informazioni di contatto dei clienti, mentre altri dati potrebbero essere non strutturati, ad esempio un'immagine di un prodotto. Ci sono tre categorie di dati: strutturati, semistrutturati e non strutturati. Per ogni categoria di dati può essere più vantaggiosa una soluzione di archiviazione specifica.
+Un'azienda di vendita online ha diversi tipi di dati. Ogni tipo di dati può trarre vantaggio da una soluzione di archiviazione diverso. 
 
-In questo modulo si apprenderà come classificare i dati nelle categorie appropriate, in modo che sia possibile scegliere la soluzione di archiviazione appropriata.
+I dati dell'applicazione possono essere classificati in tre modi diversi: strutturati, semistrutturati e strutturati. In questo caso, verrà illustrato come classificare i dati in modo che sia possibile scegliere la soluzione di archiviazione appropriato.
+
+> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE2yEuY]
 
 ## <a name="structured-data"></a>Dati strutturati
 
-I dati strutturati sono dati che rispettano uno schema e quindi hanno tutti gli stessi campi o proprietà. I dati strutturati possono essere archiviati in una tabella di database con righe e colonne. I dati strutturati si basano sulle chiavi per mettere in correlazione una riga in una tabella con i dati correlati in un'altra riga di un'altra tabella. I dati strutturati sono detti anche dati relazionali, in quanto lo schema definisce le tabelle di dati e i campi nelle tabelle, oltre che una chiara relazione tra i due elementi.
+I dati strutturati sono dati che rispettano uno schema e quindi hanno tutti gli stessi campi o proprietà. I dati strutturati possono essere archiviati in una tabella di database con righe e colonne. I dati strutturati si basa sulle chiavi per indicare come una riga in una tabella è correlato ai dati in un'altra riga di un'altra tabella. I dati strutturati sono detto anche ai dati relazionali, come schema di dati definisce la tabella di dati, i campi della tabella e di chiara relazione tra i due.
 
-I dati strutturati sono semplici da immettere e analizzare ed è facile anche eseguire query su di essi, in quanto tutti i dati hanno lo stesso formato.
+I dati strutturati sono semplici, nel senso che l'immissione, l'esecuzione di query e l'analisi risultano facilitate, in quanto tutti i dati hanno lo stesso formato.
 
 Esempi di dati strutturati includono:
-* Dati di sensori
-* Dati finanziari
+
+- Dati di sensori
+- Dati finanziari
 
 ## <a name="semi-structured-data"></a>Dati semistrutturati
 
-I dati semistrutturati sono meno organizzati rispetto ai dati strutturati e non vengono archiviati in database relazionali, in quanto i campi non si adattano perfettamente a tabelle, righe e colonne. I dati semistrutturati contengono tag che creano un'organizzazione e una gerarchia apparenti all'interno dei dati.  
+Dati semistrutturati sono organizzati minore rispetto a dati strutturati e non viene archiviati in un formato relazionale, come i campi non rientrano esattamente in tabelle, righe e colonne. Dati semistrutturati contengono tag che rendono evidente l'organizzazione e della gerarchia dei dati. I dati semistrutturati sono definiti anche dati non relazionali o dati NoSQL.
 
-I dati semistrutturati sono definiti anche dati non relazionali o dati NoSQL.
+### <a name="what-is-nosql"></a>Che cos'è NoSQL?
+
+> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE2yEvd]
 
 Esempi di dati semistrutturati includono:
-* File JSON
-* File XML
+
+- Chiave / valore coppie
+- Dati a grafo
+- File JSON
+- File XML
 
 ## <a name="unstructured-data"></a>Dati non strutturati
 
-L'organizzazione dei dati non strutturati è in genere ambigua quando si osservano i dati. I dati non strutturati sono spesso inclusi in file come foto o video, in cui il file video stesso può avere una struttura generale e includere metadati semistrutturati, tuttavia i dati che costituiscono il video stesso sono di tipo non strutturato e pertanto foto, video e altri file simili sono classificati come dati non strutturati.
+L'organizzazione dei dati non strutturati è ambiguo a livello generale. Dati non strutturati vengono inviati spesso nei file, ad esempio foto o video. Il file video stesso può presentare una struttura complessiva e includere metadati semistrutturati, ma i dati che costituiscono il video stesso sono non strutturati. Di conseguenza, le foto, i video e altri file simili sono classificati come dati non strutturati.
 
 Esempi di dati non strutturati includono:
-* File multimediali, come foto, video e file audio
-* File di Office, come documenti di Word
-* File di testo
-* File di log
 
-Ora che si conoscono le differenze tra i diversi tipi di dati, è possibile esaminare i set di dati usati in un'app di vendita online e classificarli.
+- File multimediali, come foto, video e file audio
+- File di Office, come documenti di Word
+- File di testo
+- File di log
 
-### <a name="product-catalog-data"></a>Dati del catalogo prodotti
+Dopo avere appreso le differenze tra ogni tipo di dati, è possibile esaminare i set di dati usati in un'azienda di vendita online e averli classificati.
 
-I dati del catalogo prodotti per un rivenditore sono piuttosto strutturati di natura, perché ogni prodotto ha un codice SKU, una descrizione, una quantità, un prezzo, opzioni di dimensioni, opzioni di colore, una foto e in alcuni casi un video. Si tratta quindi di dati relazionali da cui partire, in quanto hanno tutti la stessa struttura. Man mano che si introducono nuovi prodotti, tuttavia, si potrebbero aggiungere campi diversi. Ad esempio, si potrebbero introdurre nuove scarpe tennis con una funzionalità Bluetooth per l'inoltro dei dati dei sensori dalla scarpa a un'app di fitness nel telefono dell'utente con funzione di contapassi. Si tratta di una tendenza sempre più diffusa, quindi in futuro si vuole consentire ai clienti di applicare un filtro per cercare le scarpe con "funzionalità Bluetooth". Non si vuole tornare indietro e aggiornare tutti i dati delle scarpe esistenti con la proprietà relativa alla funzionalità Bluetooth, ma si vuole semplicemente aggiungere questa caratteristica alle nuove scarpe.
+## <a name="product-catalog-data"></a>Dati del catalogo prodotti
 
-Con l'aggiunta del campo relativo alla funzionalità Bluetooth, i dati delle scarpe non sono più eterogenei, in quanto sono state introdotte differenze nello schema. Se si trattasse di un caso unico e si pensasse che sarà l'unica eccezione, si potrebbe tornare indietro e normalizzare i dati esistenti in modo che tutti i prodotti includano un campo relativo alla funzionalità Bluetooth. Tuttavia, questo è solo uno dei molti campi di specializzazione che si prevede di supportare in futuro. Di conseguenza, questi dati sono classificati come semistrutturati. I dati sono organizzati in base a tag, ma ogni prodotto nel catalogo può contenere campi univoci.
+Dati del catalogo di prodotti per un'azienda di vendita online sono piuttosto strutturati in natura, perché ogni prodotto dispone di un SKU del prodotto, una descrizione, una quantità, un prezzo, opzioni di dimensioni, le opzioni di colore, una foto e possibilmente un video. Si tratta quindi di dati relazionali, in quanto hanno tutti la stessa struttura. Tuttavia, quando si introducono nuovi prodotti o tipi diversi di prodotti, è possibile aggiungere campi diversi come passare del tempo. Nuovo scarpe tennis in esecuzione, ad esempio, sono abilitato Bluetooth, per inoltrare i dati di sensori dal weekend a un'app di idoneità al telefono dell'utente. Questa sembra essere una tendenza in crescita, e si desidera consentire ai clienti di filtrare in base a "Funzione Bluetooth attivata" shoes in futuro. Non si desidera tornare indietro e aggiornare tutti i dati di casa esistente con una proprietà di funzione Bluetooth attivata, si desidera semplicemente aggiungerlo al nuovo shoes.
+
+Con l'aggiunta della proprietà funzione Bluetooth attivata, i dati di casa non sono più omogenei, come è stato introdotto il concetto le differenze nello schema. Se questo è l'unica eccezione che si prevede di verifica, è possibile tornare indietro e normalizzare i dati esistenti in modo che tutti i prodotti inclusi un campo "Funzione Bluetooth attivata" per mantenere un'organizzazione strutturata e relazionale. Tuttavia, se questo è solo uno dei molti campi specializzati che hai immaginato che supportano in futuro, la classificazione dei dati è semi-strutturata. I dati sono organizzati per tag, ma ogni prodotto nel catalogo può contenere campi univoci.
 
 Classificazione dei dati: **semistrutturati**
 
-### <a name="photos-and-videos"></a>Foto e video
+## <a name="photos-and-videos"></a>Foto e video
 
 La foto e i video visualizzati nelle pagine dei prodotti sono dati non strutturati. Anche se il file multimediale può contenere metadati, il corpo del file multimediale è non strutturato.
 
 Classificazione dei dati: **non strutturati**
 
-### <a name="business-data"></a>Dati di business
+## <a name="business-data"></a>Dati di business
 
-I business analyst desiderano implementare la business intelligence per eseguire valutazioni delle pipeline di inventario e revisioni dei dati di vendita. Per eseguire queste operazioni, i dati di più mesi devono essere aggregati e quindi è necessario eseguire query su di essi. Vista la necessità di aggregare i dati, questi dati devono essere strutturati in modo che un mese possa essere confrontato con il successivo.
+I business analyst desiderano implementare la business intelligence per eseguire valutazioni delle pipeline di inventario e revisioni dei dati di vendita. Per eseguire queste operazioni, i dati di più mesi devono essere aggregati e quindi è necessario eseguire query su di essi. A causa della necessità di aggregare i dati simili, questi dati devono essere strutturati, in modo che un mese può essere confrontato con quella successiva.
 
 Classificazione dei dati: **strutturati**
 
 ## <a name="summary"></a>Riepilogo
 
-Ci sono tre categorie di dati: strutturati, semistrutturati e non strutturati. È utile comprendere le differenze e determinare la categoria dei dati in uso per scegliere la soluzione di archiviazione appropriata. I dati strutturati sono dati organizzati che si adattano perfettamente alle righe e alle colonne delle tabelle. I dati semistrutturati sono comunque organizzati e hanno proprietà e valori ben definiti, ma possono variare. I dati non strutturati non si adattano alle tabelle e non hanno uno schema.
+I dati possono essere classificati in tre modi diversi: strutturati, semistrutturati e strutturati. Comprendere le differenze in modo che è possibile classificare i propri dati, sarà possibile scegliere la soluzione di archiviazione corretto. 
+
+Ricapitolando, dati strutturati sono organizzati i dati che si adatta perfettamente in righe e colonne nelle tabelle. I dati semistrutturati sono comunque organizzati e hanno proprietà e valori ben definiti, ma possono variare. I dati non strutturati non si adattano alle tabelle e non hanno uno schema.

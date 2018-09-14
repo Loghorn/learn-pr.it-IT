@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.design-for-security.5-encryption
-title: Encryption
+title: Crittografia
 metadata:
-  title: Encryption
-  description: In this unit we'll discuss how to use encryption to secure your architecture
+  title: Crittografia
+  description: In questa unità viene spiegato come utilizzare la crittografia per proteggere l'architettura
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
@@ -14,27 +13,27 @@ durationInMinutes: 5
 content: |
   [!include[](includes/5-encryption.md)]
 quiz:
-  title: 'Knowledge Check - Encryption'
+  title: 'Verifica delle conoscenze: Crittografia'
   questions:
-  - content: 'Only Windows virtual machines can use Azure Disk Encryption'
-    choices:
-    - content: 'True'
-      isCorrect: false
-      incorrectExplanation: 'Azure Disk Encryption is available for both Windows and Linux virtual machines.'
-    - content: 'False'
-      isCorrect: true
-      correctExplanation: 'Azure Disk Encryption is available for both Windows and Linux virtual machines.'
-  - content: 'When classifying data, which of the following is a factor when determining its classification?'
-    choices:
-    - content: 'Level of risk posed to customers if exposed'
-      isCorrect: true
-      correctExplanation: 'The level of risk posed to customers if data is exposed is a key factor in its classification.'
-    - content: 'Method of data transport'
-      isCorrect: false
-      incorrectExplanation: 'The method of data transport is important once data has been classified, but is not a factor in determining its classification.'
-    - content: 'Whether the data is stored on virtual machines or in a database'
-      isCorrect: false   
-      incorrectExplanation: 'The location of storage may be dependant on the classification of data, but is not a factor when determining the classification.' 
-    - content: 'The amount of data stored'
-      isCorrect: false
-      incorrectExplanation: 'The amount of data being stored is irrelevant in its classification.'
+    - content: Solo le macchine virtuali di Windows possono usare la Crittografia dischi di Azure
+      choices:
+        - content: Vero
+          isCorrect: false
+          incorrectExplanation: Crittografia dischi di Azure è disponibile per le macchine virtuali sia Windows che Linux.
+        - content: Falso
+          isCorrect: true
+          correctExplanation: Crittografia dischi di Azure è disponibile per le macchine virtuali sia Windows che Linux.
+    - content: Quando la classificazione di dati che delle operazioni seguenti sono un fattore per determinare la relativa classificazione?
+      choices:
+        - content: Livello di rischio posto ai clienti se divulgati
+          isCorrect: true
+          correctExplanation: Il livello di rischio associato ai clienti se i dati vengono esposti è un fattore chiave nella relativa classificazione.
+        - content: Metodo di trasporto dei dati
+          isCorrect: false
+          incorrectExplanation: 'Il metodo di trasporto dei dati è importante quando i dati sono stati classificati, ma non sono un fattore che determina la classificazione.'
+        - content: Se i dati sono archiviati in macchine virtuali o in un database
+          isCorrect: false
+          incorrectExplanation: 'La posizione dell''archivio potrebbe essere dipendente sulla classificazione dei dati, ma non è un fattore durante la determinazione della classificazione.'
+        - content: La quantità di dati archiviati
+          isCorrect: false
+          incorrectExplanation: La quantità di dati da archiviare è irrilevante nella relativa classificazione.

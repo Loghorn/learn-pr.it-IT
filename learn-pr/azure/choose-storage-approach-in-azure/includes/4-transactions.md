@@ -1,44 +1,46 @@
-Spesso è necessario raggruppare una serie di aggiornamenti ai dati perché una modifica a un tipo di dati comporta una modifica a un altro tipo di dati. Le transazioni consentono di raggruppare questi aggiornamenti in modo che, se un evento in una serie di aggiornamenti ha esito negativo, è possibile eseguire il rollback dell'intera serie o annullarla. Un rivenditore online potrebbe ad esempio usare una transazione per l'invio di un ordine e la verifica del pagamento. Raggruppando gli eventi correlati, è possibile evitare di ridurre i livelli di inventario fino a quando non si riceve un metodo di pagamento approvato.
+Le applicazioni potrebbe essere necessario raggruppare una serie di aggiornamenti dei dati, perché una modifica a un pezzo di dati deve comportare una modifica a un altro blocco di dati. Le transazioni consentono di raggruppare questi aggiornamenti in modo che, se un evento in una serie di aggiornamenti ha esito negativo, è possibile eseguire il rollback dell'intera serie o annullarla. 
 
-In questo modulo si apprenderà che cos'è una transazione e quando è necessario usarla per i dati.
+Ad esempio, come un rivenditore online è possibile utilizzare una transazione per il posizionamento di una verifica ordine e il pagamento. Raggruppando gli eventi correlati, è possibile evitare di ridurre le scorte di magazzino fino a quando non si riceve un metodo di pagamento approvato.
+
+In questo caso, si apprenderà sulle transazioni e se sono necessarie per i dati.
 
 ## <a name="what-is-a-transaction"></a>Che cos'è una transazione?
 
 Una transazione è un'unità logica che viene eseguita in modo indipendente per il recupero o gli aggiornamenti dei dati.
 
-Ecco la domanda da porsi per determinare se è necessario un database transazionale: una modifica a un tipo di dati nel set di dati influirà su un altro tipo di dati? Se la risposta è affermativa, nel servizio di database sarà necessario il supporto per le transazioni.
+Ecco la domanda da porsi sulla necessità di utilizzare le transazioni nell'applicazione: una modifica a un pezzo di dati nel set di dati influirà un'altra? Se la risposta è affermativa, allora sarà necessario il supporto per le transazioni del servizio di database.
 
 Le transazioni vengono spesso definite da un set di quattro requisiti, detti anche garanzie ACID. ACID è l'acronimo di Atomicità, Coerenza, Isolamento e Durabilità:
 
-* L'atomicità indica che tutti i dati vengono aggiornati oppure viene eseguito il rollback di tutti i dati allo stato originale.
-* La coerenza garantisce che se accade qualcosa nel corso della transazione, non venga aggiornata solo una parte dei dati, mentre l'altra no. La transazione viene applicata in modo coerente a tutti i dati oppure non viene applicata.
-* L'isolamento garantisce che una transazione non influisca su un'altra transazione.
-* La durabilità significa che le modifiche apportate nell'ambito della transazione vengono salvate in modo permanente nel sistema. I dati di cui viene eseguito il commit vengono salvati dal sistema in modo che, anche in caso di un errore con conseguente riavvio del sistema, i dati saranno disponibili nello stato corretto.
+- L'atomicità indica che tutti i dati vengono aggiornati o che tutti i dati viene eseguito il rollback allo stato originale.
+- La coerenza garantisce che se si verifica un evento solo tramite la transazione, una parte dei dati non viene escluso dagli aggiornamenti. Tutti i livelli, la transazione viene applicata in modo coerente o non ereditarli affatto.
+- L'isolamento garantisce che una transazione non influisca su un'altra transazione.
+- La durabilità significa che le modifiche apportate nell'ambito della transazione vengono salvate in modo permanente nel sistema. Il commit dei dati viene salvati dal sistema in modo che anche in caso di un riavvio del sistema e di errore, i dati sono disponibili nello stato corretto.
 
-Quando un database ha le garanzie ACID, questi principi vengono applicati alle transazioni e si può avere la certezza che le transazioni verranno applicate in modo coerente.
+Quando un database offre garanzie ACID, questi principi vengono applicati a tutte le transazioni in modo coerente.
 
 ## <a name="oltp-vs-olap"></a>OLTP e OLAP
 
-I database transazionali vengono spesso denominati sistemi OLTP (Online Transaction Processing, elaborazione di transazioni online). I sistemi OLTP supportano in genere numerosi utenti, hanno tempi di risposta rapidi, gestiscono volumi elevati di dati, offrono disponibilità elevata, ovvero hanno tempi di inattività minimi, e in genere gestiscono le transazioni di piccole dimensioni o relativamente semplici.
+I database transazionali vengono spesso denominati sistemi OLTP (Online Transaction Processing, elaborazione delle transazioni online). I sistemi OLTP supportano in genere numerosi utenti, garantiscono tempi di risposta rapidi e possono gestire volumi elevati di dati. Offrono inoltre una disponibilità elevata (ovvero un tempo di inattività minimo) e gestiscono transazioni di piccole dimensioni o relativamente semplici.
 
-Al contrario, i sistemi OLAP (Online Analytical Processing, elaborazione analitica online) supportano in genere un numero inferiore di utenti, hanno tempi di risposta più lunghi, possono offrire una minore disponibilità e in genere gestiscono le transazioni di grandi dimensioni e complesse.
+Al contrario, i sistemi OLAP (Online Analytical Processing) supportano in genere un numero inferiore di utenti, hanno tempi di risposta più lunghi, possono offrire una minore disponibilità e normalmente gestiscono transazioni di grandi dimensioni e complesse.
 
-I sistemi OLTP e OLAP non vengono usati tanto frequentemente quanto in passato, ma il confronto semplifica la classificazione delle esigenze dell'applicazione, pertanto si tratta di concetti importanti da conoscere. 
+Con la frequenza alle precedenti, ma comprendere li rende più semplice classificare le esigenze dell'applicazione non vengono utilizzati i termini OLTP e OLAP. 
 
-Ora che è stata acquisita familiarità con le transazioni e con i concetti di OLTP e OLAP, verranno esaminati i set di dati dello scenario di vendita online per determinare la necessità di transazioni.
+Ora che si ha familiarità con le transazioni, OLTP e OLAP, verrà ora illustrato ognuno dei set di dati nello scenario di vendita online e determinare la necessità di transazioni.
 
-### <a name="product-catalog-data"></a>Dati del catalogo prodotti
+## <a name="product-catalog-data"></a>Dati del catalogo prodotti
 
 I dati del catalogo prodotti devono essere archiviati in un database transazionale. Quando gli utenti effettuano un ordine e il pagamento viene verificato, l'inventario per l'articolo deve venire aggiornato. Analogamente, se la carta di credito del cliente viene rifiutata, deve essere eseguito il rollback dell'ordine e l'inventario non deve venire aggiornato. Queste relazioni richiedono tutte le transazioni.
 
-### <a name="photos-and-videos"></a>Foto e video
+## <a name="photos-and-videos"></a>Foto e video
 
-Le foto e i video in un catalogo prodotti non richiedono il supporto delle transazioni. L'unico motivo per cui può venire apportata una modifica a una foto o a un video è la presenza di un aggiornamento o l'aggiunta di nuovi file. Anche se c'è una relazione tra l'immagine e i dati effettivi del prodotto, la natura non è transazionale.
+Foto e video in un catalogo di prodotti non richiedono il supporto delle transazioni. Questi file vengono modificati solo quando viene eseguito un aggiornamento oppure vengono aggiunti nuovi file. Anche se esiste una relazione tra l'immagine e i dati effettivi del prodotto, la natura non è transazionale.
 
-### <a name="business-data"></a>Dati di business
+## <a name="business-data"></a>Dati aziendali
 
-Per i dati di business, poiché tutti i dati sono cronologici e non cambiano, il supporto delle transazioni non è richiesto. I business analyst che usano i dati hanno esigenze specifiche, in quanto spesso richiedono l'uso delle aggregazioni nelle query, in modo da poter lavorare con i totali di gruppi di dati più piccoli.
+Per i dati di business, perché tutti i dati cronologici e non modificabile, il supporto delle transazioni non è obbligatorio. I business analyst che usano i dati hanno esigenze specifiche, in quanto spesso richiedono l'uso delle aggregazioni nelle query, in modo da poter lavorare con i totali di gruppi di dati più piccoli.
 
 ## <a name="summary"></a>Riepilogo
 
-Garantire che i dati siano nello stato corretto non è sempre facile. Le transazioni possono risultare utili in quanto permettono di applicare requisiti di integrità dei dati. Se i principi ACID possono essere utili per i dati, è consigliabile scegliere una soluzione di archiviazione che supporti le transazioni.
+Garantire che i dati siano nello stato corretto non è sempre facile. Le transazioni possono risultare utili in quanto permettono di applicare requisiti di integrità dei dati. Se i dati trae vantaggio dai principi ACID, quindi scegliere una soluzione di archiviazione che supporta le transazioni.

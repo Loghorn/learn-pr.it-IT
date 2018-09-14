@@ -1,17 +1,14 @@
-You have learned the basics of creating and connecting to an Azure storage account. You wrote a simple application to connect to a storage account and create a blob container. Other modules in this Learning Path will build on that knowledge to show you how to use Blob Storage and Queues to store data and connect apps together.
+Si è appreso le nozioni di base di creazione e connessione a un account di archiviazione di Azure. È stata scritta un'applicazione semplice per connettersi a un account di archiviazione e creare un contenitore blob. Altri moduli in questo percorso di apprendimento verranno compilata su tale conoscenza descrive come usare archiviazione Blob e code per archiviare i dati e connettere le app.
 
-We only used examples of JavaScript and C#, but Azure supports a variety of other languages. Check the official [SDK Tools documentation page](https://docs.microsoft.com/azure/#pivot=sdkstools) to find the official list of links to the client libraries for all the currently supported languages.
+È stato usato solo alcuni esempi di JavaScript e c#, ma Azure supporta un'ampia gamma di altri linguaggi. Controllare ufficiale [pagina della documentazione di SDK Tools](https://docs.microsoft.com/azure/#pivot=sdkstools) per trovare l'elenco ufficiale dei collegamenti per le librerie client per tutte le lingue attualmente supportate.
 
-## Additional resources
+## <a name="additional-resources"></a>Risorse aggiuntive
 
-- [Azure Storage Services REST API Reference](https://docs.microsoft.com/rest/api/storageservices/)
-- [Using shared access signatures to provide limited access to a storage account](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1)
-- [Manage secrets with Azure Key Vault](https://docs.microsoft.com/learn/modules/manage-secrets-with-azure-key-vault/)
-- [Using Azure Key Vault Storage Account Keys with server apps](https://docs.microsoft.com/azure/key-vault/key-vault-ovw-storage-keys)
-- [Source code for the .NET Azure SDKs](https://github.com/Azure/azure-sdk-for-net)
-- [Azure Storage Client Library for JavaScript](https://github.com/Azure/azure-storage-node#azure-storage-javascript-client-library-for-browsers)
+- [Riferimento all'API REST dei servizi di archiviazione di Azure](https://docs.microsoft.com/rest/api/storageservices/)
+- [Uso delle firme di accesso condiviso per fornire accesso limitato a un account di archiviazione](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1)
+- [Gestire i segreti con Azure Key Vault](https://docs.microsoft.com/learn/modules/manage-secrets-with-azure-key-vault/)
+- [Uso di chiavi di Account di archiviazione di Azure Key Vault con le app server](https://docs.microsoft.com/azure/key-vault/key-vault-ovw-storage-keys)
+- [Codice sorgente per gli SDK .NET di Azure](https://github.com/Azure/azure-sdk-for-net)
+- [Azure Storage Client Library per JavaScript](https://github.com/Azure/azure-storage-node#azure-storage-javascript-client-library-for-browsers)
 
-## Clean up
-<!---TODO: Update for sandbox?--->
-
-It's a good idea to cleanup your resources in Azure when you are finished with them. If you are using the free sandbox, you don't have to do this step - but in your own subscriptions you'll want to delete unused resources to avoid unnecessary charges. The easiest way to do this is to delete the Resource Group you placed all the resources into. This can be done through the Azure portal, or on the command line.
+[!include[](../../../includes/azure-sandbox-cleanup.md)]

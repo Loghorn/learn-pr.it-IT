@@ -6,17 +6,17 @@ L'uso del pannello **Controllo di accesso (IAM)**  nel portale di Azure funziona
 
 1. Per aprire il riquadro di Cloud Shell, fare clic su **Cloud Shell** nella parte superiore del portale.
 
-    ![Pulsante Cloud Shell](../media-draft/6-cloud-shell-button.png)
+    ![Pulsante Cloud Shell](../media/6-cloud-shell-button.png)
 
 1. Nell'angolo superiore sinistro del riquadro di Cloud Shell verificare che sia impostato su **PowerShell**. Se è impostato su **Bash**, modificarlo in **PowerShell**.
 
     Il caricamento potrebbe richiedere alcuni istanti. Al termine, sarà simile al seguente:
 
-    ![PowerShell Cloud Shell](../media-draft/6-cloud-shell-powershell.png)
+    ![PowerShell Cloud Shell](../media/6-cloud-shell-powershell.png)
 
 ## <a name="grant-access"></a>Concedere l'accesso
 
-Per concedere l'accesso a un utente con Azure PowerShell, si usa il comando [New-AzureRmRoleAssignment](/powershell/module/azurerm.resources/new-azurermroleassignment). È necessario specificare l'entità di sicurezza, la definizione del ruolo e l'ambito.
+Per concedere l'accesso a un utente usando Azure PowerShell, utilizzare il comando New-AzureRmRoleAssignment. È necessario specificare l'entità di sicurezza, la definizione del ruolo e l'ambito.
 
 Seguire questa procedura per assegnare il ruolo Collaboratore Macchina virtuale a un utente **LabUser-_XXXXXXX_** nell'ambito del gruppo di risorse.
 
@@ -44,7 +44,7 @@ Seguire questa procedura per assegnare il ruolo Collaboratore Macchina virtuale 
 
 ## <a name="list-access"></a>Elencare l'accesso
 
-Per verificare l'accesso al gruppo di risorse, usare il comando [Get-AzureRmRoleAssignment](/powershell/module/azurerm.resources/get-azurermroleassignment) per elencare le assegnazioni dei ruoli.
+Per verificare l'accesso per il gruppo di risorse, usare il comando Get-AzureRmRoleAssignment per elencare le assegnazioni di ruolo.
 
 Seguire questa procedura per elencare le assegnazioni dei ruoli per l'utente **LabUser-XXXXXXX** nell'ambito del gruppo di risorse.
 
@@ -59,7 +59,7 @@ Seguire questa procedura per elencare le assegnazioni dei ruoli per l'utente **L
     RoleAssignmentId   : /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/FirstUpConsultantsRG1-XXXXXXX/providers/Microsoft.Authorization/roleAssignments/33333333-3333-3333-3333-333333333333
     Scope              : /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/FirstUpConsultantsRG1-XXXXXXX
     DisplayName        : LabUser-XXXXXXX
-    SignInName         : LabUser-XXXXXXX@xxxxxxxxxxxx.onmicrosoft.com 
+    SignInName         : LabUser-XXXXXXX@xxxxxxxxxxxx.onmicrosoft.com
     RoleDefinitionName : Virtual Machine Contributor
     RoleDefinitionId   : 9980e02c-c2be-4d73-94e8-173b1dc7cf3c
     ObjectId           : 11111111-1111-1111-1111-111111111111
@@ -71,11 +71,11 @@ Seguire questa procedura per elencare le assegnazioni dei ruoli per l'utente **L
 
     Se si aggiorna il pannello **Controllo di accesso (IAM)** per il gruppo di risorse nel portale di Azure, l'assegnazione del ruolo avrà un aspetto simile al seguente:
 
-    ![Assegnazioni dei ruoli a un utente nell'ambito del gruppo di risorse](../media-draft/6-cloud-shell-access-control.png)
+    ![Assegnazioni dei ruoli a un utente nell'ambito del gruppo di risorse](../media/6-cloud-shell-access-control.png)
 
 ## <a name="remove-access"></a>Rimuovere l'accesso
 
-Per rimuovere l'accesso per utenti, gruppi e applicazioni, usare [Remove-AzureRmRoleAssignment](/powershell/module/azurerm.resources/remove-azurermroleassignment) per rimuovere l'assegnazione di un ruolo.
+Per rimuovere l'accesso per gli utenti, gruppi e applicazioni, utilizzare Remove-AzureRmRoleAssignment per rimuovere un'assegnazione di ruolo.
 
 Seguire questa procedura per rimuovere l'assegnazione del ruolo Collaboratore Macchina virtuale all'utente **LabUser-_XXXXXXX_** nell'ambito del gruppo di risorse.
 
@@ -91,8 +91,7 @@ Seguire questa procedura per rimuovere l'assegnazione del ruolo Collaboratore Ma
 
 1. Nel riquadro di PowerShell fare clic sul pulsante di chiusura (**X**) per chiudere il riquadro.
 
-    ![Pulsante di chiusura di Cloud Shell](../media-draft/6-cloud-shell-close.png)
-
+    ![Pulsante di chiusura di Cloud Shell](../media/6-cloud-shell-close.png)
 
 ## <a name="summary"></a>Riepilogo
 

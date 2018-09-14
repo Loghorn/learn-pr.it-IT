@@ -1,35 +1,33 @@
 ### YamlMime:Module
 uid: learn.intro-to-compute
 metadata:
-  title: Introduction to Azure compute
-  description: Review the Azure compute services and how they can be used to solve common business needs.
+  title: Introduzione a Calcolo di Azure
+  description: Esaminare i servizi di calcolo di Azure e Scopri come è possibile risolvere esigenze aziendali comuni.
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Introduction to Azure compute
-summary: Review the Azure compute services and how they can be used to solve common business needs.
-abstract:  | 
-  In this module, you will:
-  - Identify Azure compute options
-  - Select one or more compute options that are appropriate for solving your business needs
-prerequisites: None
-#TODO: Update icon URL with real image 
-iconUrl: http://via.placeholder.com/120x120
+title: Introduzione a Calcolo di Azure
+summary: Esaminare i servizi di calcolo di Azure e Scopri come è possibile risolvere esigenze aziendali comuni.
+abstract: |
+  In questo modulo verrà descritto come:
+  - Identificare le opzioni di calcolo di Azure
+  - Selezionare le opzioni di calcolo che consentirà di risolvere esigenze aziendali specifiche
+prerequisites: Nessuno
+iconUrl: /learn/achievements/intro-to-azure-compute.svg
 levels:
-- beginner
+  - beginner
 roles:
-- developer
-- solution-architect
-- administrator
+  - developer
+  - solution-architect
+  - administrator
 products:
-- azure
+  - azure
 units:
-- learn.intro-to-compute.1-introduction
-- learn.intro-to-compute.2-essential-azure-compute-concepts
-- learn.intro-to-compute.3-select-and-manage-compute-options
-- learn.intro-to-compute.4-knowledge-check
-- learn.intro-to-compute.5-summary
+  - learn.intro-to-compute.1-introduction
+  - learn.intro-to-compute.2-essential-azure-compute-concepts
+  - learn.intro-to-compute.3-select-and-manage-compute-options
+  - learn.intro-to-compute.4-knowledge-check
+  - learn.intro-to-compute.5-summary
 achievement: learn.intro-to-compute.badge

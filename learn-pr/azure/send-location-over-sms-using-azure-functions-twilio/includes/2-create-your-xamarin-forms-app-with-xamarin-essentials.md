@@ -14,7 +14,7 @@ L'applicazione in fase di compilazione è un'app per dispositivi mobili multipia
 
 1. Fare clic su **OK**.
 
-    ![Finestra di dialogo Nuova soluzione](../media-drafts/2-new-solution-dialog.png)
+    ![Finestra di dialogo Nuova soluzione](../media/2-new-solution-dialog.png)
 
 1. Nella finestra di dialogo **Nuova app multipiattaforma** selezionare il modello *App vuota*.
 
@@ -26,7 +26,7 @@ L'applicazione in fase di compilazione è un'app per dispositivi mobili multipia
 
 1. Fare clic su **OK**.
 
-    ![Finestra di dialogo Configura la nuova soluzione](../media-drafts/2-configure-solution-dialog.png)
+    ![Finestra di dialogo Configura la nuova soluzione](../media/2-configure-solution-dialog.png)
 
 Visual Studio creerà due progetti: un'app UWP denominata `ImHere.UWP` e una libreria .NET Standard, `ImHere`. Le app Xamarin.Forms sono costituite da due parti: uno o più progetti di app specifici della piattaforma e una o più librerie .NET Standard. I progetti di app specifici della piattaforma contengono il codice specifico della piattaforma necessario per eseguire un'app nella piattaforma pertinente. Questi progetti avviano quindi un'app Xamarin.Forms definita in una libreria .NET Standard multipiattaforma. L'app viene compilata in codice multipiattaforma e, in fase di esecuzione, eventuali interfacce utente create verranno convertite nei componenti dell'interfaccia utente specifici della piattaforma pertinente.
 
@@ -44,7 +44,7 @@ Le piattaforme iOS, Android e UWP forniscono numerose funzionalità simili che s
 
 1. Fare clic sul pulsante **Installa** per installare il pacchetto NuGet. È necessario accettare le condizioni di licenza per continuare.
 
-    ![Aggiunta del pacchetto NuGet Xamarin.Essentials a tutti i progetti nella soluzione](../media-drafts/2-add-essentials-nuget.png)
+    ![Aggiunta del pacchetto NuGet Xamarin.Essentials a tutti i progetti nella soluzione](../media/2-add-essentials-nuget.png)
 
     > Se si esegue questo modulo in locale e si intende usare Android come destinazione, è necessario eseguire operazioni di configurazione aggiuntive. Per altre informazioni, vedere la [documentazione introduttiva di Xamarin.Essentials](https://docs.microsoft.com/xamarin/essentials/get-started?context=xamarin%2Fios&tabs=windows%2Candroid).
 
@@ -54,11 +54,11 @@ Le piattaforme iOS, Android e UWP forniscono numerose funzionalità simili che s
 
 1. Impostare la configurazione della compilazione su **Debug**, la piattaforma su **x86**e il dispositivo di esecuzione su **Computer locale**.
 
-    ![Impostazione della configurazione di Debug x86 per l'esecuzione nel dispositivo locale](../media-drafts/2-debug-configuration.png)
+    ![Impostazione della configurazione di Debug x86 per l'esecuzione nel dispositivo locale](../media/2-debug-configuration.png)
 
 1. Avviare il debug dell'app.
 
-    ![L'app in esecuzione](../media-drafts/2-debuging-app.png)
+    ![L'app in esecuzione](../media/2-debuging-app.png)
 
 ## <a name="summary"></a>Riepilogo
 

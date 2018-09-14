@@ -1,274 +1,422 @@
 ### YamlMime:Achievements
 achievements:
-- uid: learn.placeholder.badge
-  type: badge
-  iconUrl: http://via.placeholder.com/120x120
-  title: Badge del segnaposto per il modulo
-  summary: Riepilogo del trofeo per il modulo di esempio
-- uid: learn.sample-module-cloudshell.badge
-  type: badge
-  title: Badge per il modulo di esempio con CloudShell
-  summary: Badge per il modulo 'Modulo di esempio con CloudShell'.
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.build-a-serverless-web-app.badge
-  type: badge
-  title: Badge per Creare un'app Web serverless
-  summary: Badge per il modulo 'Creare un'app Web serverless'.
-  iconUrl: /learn/azure/build-a-serverless-web-app/achievement/build-a-serverless-web-app.svg
-- uid: learn.cd-pipeline-github-to-azure-web-app.badge
-  type: badge
-  title: Badge per Creare una pipeline di distribuzione continua da GitHub all'app Web di Azure
-  summary: Riepilogo del badge per Creare una pipeline di distribuzione continua da GitHub all'app Web di Azure
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.connect-app-to-azure-storage.badge
-  type: badge
-  title: Connettere un'app ad Archiviazione di Azure
-  summary: Connettere un'app ad Archiviazione di Azure
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.create-azure-storage-account.badge
-  type: badge
-  title: Badge per Creare un account di archiviazione di Azure
-  summary: Riepilogo del badge per Creare un account di archiviazione di Azure
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.create-serverless-logic-with-functions.badge
-  type: badge
-  title: Creare logica serverless con Funzioni di Azure
-  summary: Creare logica serverless con Funzioni di Azure
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.host-a-web-application-with-azure-web-apps.badge
-  type: badge
-  title: Badge per Ospitare un'applicazione Web con le app Web di Azure
-  summary: Riepilogo del badge per Ospitare un'applicazione Web con le app Web di Azure
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.publish-azure-web-app-with-visual-studio.badge
-  type: badge
-  title: Pubblicare un'app Web di Azure con Visual Studio per Windows o Mac
-  summary: Pubblicare un'app Web di Azure con Visual Studio per Windows o Mac
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.administer-containers-in-azure.trophy
-  type: trophy
-  title: Trofeo per Amministrare i contenitori in Azure
-  summary: Trofeo per il percorso di apprendimento "Amministrare i contenitori di Azure"
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.create-serverless-applications.trophy
-  type: trophy
-  title: Trofeo per Creare applicazioni senza server
-  summary: Trofeo per il percorso di apprendimento "Creare applicazioni senza server"
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.administer-infrastructure-resources-in-azure.trophy
-  type: trophy
-  title: Trofeo per Amministrare le risorse di infrastruttura in Azure
-  summary: Trofeo per il percorso di apprendimento "Amministrare le risorse di infrastruttura in Azure"
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.cloud-foundations.trophy
-  type: trophy
-  title: Trofeo per Concetti fondamentali del cloud
-  summary: Trofeo per il percorso di apprendimento "Concetti fondamentali del cloud"
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.connect-your-services-together.trophy
-  type: trophy
-  title: Trofeo per Collegare i servizi tra loro
-  summary: Trofeo per il percorso di apprendimento "Collegare i servizi tra loro"
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.architect-great-solutions-in-azure.trophy
-  type: trophy
-  title: Trofeo per Architettare grandi soluzioni in Azure
-  summary: Trofeo per il percorso di apprendimento "Architettare grandi soluzioni in Azure".
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.prepare-to-develop-apps-on-azure.trophy
-  type: trophy
-  title: Trofeo per Preparare lo sviluppo di app
-  summary: Trofeo per il percorso di apprendimento "Preparare lo sviluppo di app"
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.deploy-a-website-with-azure-app-service.trophy
-  type: trophy
-  title: Trofeo per Distribuire un sito Web con il Servizio app di Azure
-  summary: Trofeo per il percorso di apprendimento "Distribuire un sito Web con il Servizio app di Azure"
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.work-with-nosql-data-in-azure-cosmos-db.trophy
-  type: trophy
-  title: Trofeo per Operare con dati NoSQL in Azure Cosmos DB
-  summary: Trofeo per il percorso di apprendimento "Operare con dati NoSQL in Azure Cosmos DB"
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.work-with-relational-data-in-azure.trophy
-  type: trophy
-  title: Trofeo per Operare con dati relazionali in Azure
-  summary: Trofeo per il percorso di apprendimento "Operare con dati relazionali in Azure".
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.secure-your-cloud-data.trophy
-  type: trophy
-  title: Trofeo per Proteggere i dati cloud
-  summary: Trofeo per il percorso di apprendimento "Proteggere i dati cloud"
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.store-data-in-azure.trophy
-  type: trophy
-  title: Trofeo per "Archiviare i dati in Azure"
-  summary: Trofeo per il percorso di apprendimento 'Archiviazione di dati in Azure'.
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.automate-azure-tasks-with-powershell.badge
-  type: badge
-  title: Badge per Automatizzare le attività di Azure usando gli script con PowerShell
-  summary: Riepilogo per Automatizzare le attività di Azure usando gli script con PowerShell
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.create-azure-db-for-postgresql.badge
-  type: badge
-  title: Badge per Creare un server di database PostgreSQL mediante l'interfaccia della riga di comando di Azure
-  summary: Riepilogo per Creare un server di database PostgreSQL mediante l'interfaccia della riga di comando di Azure
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.create-linux-vm-in-azure.badge
-  type: badge
-  title: Badge per Creare una macchina virtuale Linux in Azure
-  summary: Riepilogo per Creare una macchina virtuale Linux in Azure
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.choose-messaging-model.badge
-  type: badge
-  title: Badge per Scegliere un modello di messaggistica
-  summary: Riepilogo del badge per Scegliere un modello di messaggistica
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.build-and-run-a-web-application-with-the-mean-stack-on-an-azure-linux-vm.badge
-  type: badge
-  title: Compilare ed eseguire un'applicazione Web con lo stack MEAN in una macchina virtuale Linux in Azure
-  summary: Compilare ed eseguire un'applicazione Web con lo stack MEAN in una macchina virtuale Linux in Azure
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.prepare-azure-dev-environment.badge
-  type: badge
-  title: Badge per Preparare l'ambiente di sviluppo di Azure
-  summary: Riepilogo del badge per Preparare l'ambiente di sviluppo di Azure
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.manage-resources-with-azure-portal.badge
-  type: badge
-  title: Badge per Gestire le risorse con il portale di Azure
-  summary: Riepilogo del badge per Gestire le risorse con il portale di Azure
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.explore-azure-services-for-web-devs.badge
-  type: badge
-  title: Badge per Esplorare i servizi di Azure per sviluppatori Web
-  summary: Riepilogo del badge per Esplorare i servizi di Azure per sviluppatori Web
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.control-azure-services-with-cli.badge
-  type: badge
-  title: Badge per Controllare i servizi di Azure con l'interfaccia della riga di comando
-  summary: Riepilogo del badge per Controllare i servizi di Azure con l'interfaccia della riga di comando
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.azure-services-features.badge
-  type: badge
-  title: Badge per Esplorare i servizi e le funzionalità di Azure
-  summary: Riepilogo per Esplorare i servizi e le funzionalità di Azure
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.migrate-sql-server-relational-data.badge
-  type: badge
-  title: Eseguire la migrazione dei dati relazionali di SQL Server a SQL di Azure
-  summary: Eseguire la migrazione dei dati relazionali di SQL Server a SQL di Azure
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.communicate-between-applications-with-azure-queue-storage.badge
-  type: badge
-  title: Comunicare tra le applicazioni con l'archiviazione code di Azure
-  summary: Comunicare tra le applicazioni con un'archiviazione code di Azure
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.create-a-windows-vm-in-azure.badge
-  type: badge
-  title: Creare una macchina virtuale Windows in Azure
-  summary: Creare una macchina virtuale Windows in Azure
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.choose-web-hosting.badge
-  type: badge
-  title: Scegliere un'opzione di hosting Web in Azure
-  summary: Scegliere un'opzione di hosting Web in Azure
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.interactive-iot-deployments.badge
-  type: badge
-  title: Utilizzo di distribuzioni IoT interattive in Azure
-  summary: Utilizzo di distribuzioni IoT interattive in Azure
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.iot-for-ops.badge
-  type: badge
-  title: IoT Suite per operazioni
-  summary: IoT Suite per operazioni
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.web-app-with-mean-on-linux-vm.badge
-  type: badge
-  title: Compilare ed eseguire un'applicazione Web con lo stack MEAN in una macchina virtuale di Linux in Azure
-  summary: Compilare ed eseguire un'applicazione Web con lo stack MEAN in una macchina virtuale di Linux in Azure
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.optimize-web-app-with-redis.badge
-  type: badge
-  title: Ottimizzare le applicazioni Web mediante memorizzazione nella cache dei dati di sola lettura con Redis
-  summary: Ottimizzare le applicazioni Web mediante memorizzazione nella cache dei dati di sola lettura con Redis
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.manage-secrets-with-azure-key-vault.badge
-  type: badge
-  title: Gestire segreti nelle app Web con Azure Key Vault
-  summary: Gestire segreti nelle app Web con Azure Key Vault
-  iconUrl: /learn/achievements/manage-secrets-with-azure-key-vault.svg
-- uid: learn.secure-azure-resources-with-rbac.badge
-  type: badge
-  title: Proteggere le risorse di Azure con il controllo degli accessi in base al ruolo (RBAC)
-  summary: Proteggere le risorse di Azure con il controllo degli accessi in base al ruolo (RBAC)
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.send-location-over-sms-from-mobile-using-azure-functions-twilio.badge
-  type: badge
-  title: Badge per Invio di informazioni sulla posizione con SMS dal telefono usando Funzioni di Azure e Twilio
-  summary: Badge per il modulo "Invio di informazioni sulla posizione con SMS dal telefono usando Funzioni di Azure e Twilio"
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.manage-vms-with-azure-cli-data.badge
-  type: badge
-  title: Gestire macchine virtuali con l'interfaccia della riga di comando di Azure
-  summary: Gestire macchine virtuali con l'interfaccia della riga di comando di Azure
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.deploy-a-website-with-azure-virtual-machines.trophy
-  type: trophy
-  title: Trofeo per Distribuire un sito Web con Macchine virtuali di Azure
-  summary: Trofeo per il percorso di apprendimento "Distribuire un sito Web con Macchine virtuali di Azure"
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.store-app-data-with-azure-blob-storage.badge
-  type: badge
-  title: Archiviare i dati delle applicazioni Web con Archiviazione BLOB di Azure
-  summary: Archiviare i dati delle applicazioni Web con Archiviazione Blob di Azure
-  iconUrl: /learn/modules/store-app-data-with-azure-blob-storage/achievement/store-app-data-with-azure-blob-storage.svg
-- uid: learn.enable-reliable-messaging-for-big-data-applications-using-azure-event-hubs.badge
-  type: badge
-  title: Abilitare la messaggistica affidabile per applicazioni di Big Data mediante l'hub eventi di Azure
-  summary: Modulo Abilitare la messaggistica affidabile per applicazioni di Big Data mediante l'hub eventi di Azure
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.intro-to-compute.badge
-  type: badge
-  title: Badge per Introduzione a Calcolo
-  summary: Badge per il modulo "Introduzione a Calcolo".
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.intro-to-data-in-azure.badge
-  type: badge
-  title: Badge per Introduzione ai dati in Azure
-  summary: Badge per il modulo "Introduzione ai dati in Azure".
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.cosmos-db-app-with-vscode.badge
-  type: badge
-  title: Compilare un'app di Azure Cosmos DB in Visual Studio Code
-  summary: Badge per il modulo "Compilare un'app di Azure Cosmos DB in Visual Studio Code".
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.create-cosmos-db-for-scale.badge
-  type: badge
-  title: Creare un database di Azure Cosmos DB per la scalabilità
-  summary: Badge per il modulo "Creare un database di Azure Cosmos DB per la scalabilità".
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.manage-resources-in-azure.trophy
-  type: trophy
-  title: Trofeo per Gestire le risorse in Azure
-  summary: Trofeo per il percorso di apprendimento "Gestire le risorse in Azure".
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.align-requirements-in-azure.badge
-  type: badge
-  title: Badge per Allineare i requisiti ai tipi di cloud e ai modelli di servizio in Azure
-  summary: Badge per il modulo "Allineare i requisiti ai tipi di cloud e ai modelli di servizio in Azure".
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.choose-storage-approach-in-azure.badge
-  type: badge
-  title: Badge per Scegliere un approccio all'archiviazione dei dati in Azure
-  summary: Badge per il modulo "Scegliere un approccio all'archiviazione dei dati in Azure".
-  iconUrl: http://via.placeholder.com/120x120
-metadata:
-  ms.openlocfilehash: 693a03cb55f823b85d8daa4246a9cdf16fdab8ce
-  ms.sourcegitcommit: 91b4553dbbbf6d8b6b359142332d0654aae326e8
-  ms.translationtype: HT
-  ms.contentlocale: it-IT
-  ms.lasthandoff: 08/30/2018
-  ms.locfileid: "43252130"
+  - uid: learn.build-a-serverless-web-app.badge
+    type: badge
+    title: Creare un'app Web serverless
+    summary: Badge per il modulo 'Creare un'app Web serverless'.
+    iconUrl: /learn/achievements/build-a-serverless-web-app.svg
+  - uid: learn.connect-app-to-azure-storage.badge
+    type: badge
+    title: Connettere un'app ad Archiviazione di Azure
+    summary: Connettere un'app ad Archiviazione di Azure
+    iconUrl: /learn/achievements/connect-an-app-to-azure-storage.svg
+  - uid: learn.create-azure-storage-account.badge
+    type: badge
+    title: Creare un account di Archiviazione di Azure
+    summary: Badge per Creare un account di archiviazione di Azure
+    iconUrl: /learn/achievements/create-azure-storage-account.svg
+  - uid: learn.create-serverless-logic-with-functions.badge
+    type: badge
+    title: Creare logica serverless con Funzioni di Azure
+    summary: Creare logica serverless con Funzioni di Azure
+    iconUrl: /learn/achievements/create-serverless-logic-with-azure-functions.svg
+  - uid: learn.host-a-web-application-with-azure-app-service.badge
+    type: badge
+    title: Ospitare un'applicazione web con il servizio App di Azure
+    summary: Badge per Ospitare un'applicazione Web con le app Web di Azure
+    iconUrl: /learn/achievements/host-a-web-app-with-azure-app-service.svg
+  - uid: learn.publish-azure-web-app-with-visual-studio.badge
+    type: badge
+    title: Pubblicare un'app Web di Azure con Visual Studio per Windows o Mac
+    summary: Pubblicare un'app Web di Azure con Visual Studio per Windows o Mac
+    iconUrl: /learn/achievements/publish-azure-web-app-with-visual-studio.svg
+  - uid: learn.administer-containers-in-azure.trophy
+    type: trophy
+    title: Trofeo per Amministrare i contenitori in Azure
+    summary: Trofeo per il percorso di apprendimento "Amministrare i contenitori di Azure"
+    iconUrl: /learn/achievements/administer-containers-in-azure.svg
+  - uid: learn.create-serverless-applications.trophy
+    type: trophy
+    title: Trofeo per Creare applicazioni senza server
+    summary: Trofeo per il percorso di apprendimento "Creare applicazioni senza server"
+    iconUrl: /learn/achievements/create-serverless-applications.svg
+  - uid: learn.administer-infrastructure-resources-in-azure.trophy
+    type: trophy
+    title: Trofeo per Amministrare le risorse di infrastruttura in Azure
+    summary: Trofeo per il percorso di apprendimento "Amministrare le risorse di infrastruttura in Azure"
+    iconUrl: /learn/achievements/administer-infrastructure-resources-in-azure.svg
+  - uid: learn.cloud-foundations.trophy
+    type: trophy
+    title: Trofeo per Concetti fondamentali del cloud
+    summary: Trofeo per il percorso di apprendimento "Concetti fondamentali del cloud"
+    iconUrl: /learn/achievements/cloud-foundations.svg
+  - uid: learn.connect-your-services-together.trophy
+    type: trophy
+    title: Trofeo per Collegare i servizi tra loro
+    summary: Trofeo per il percorso di apprendimento "Collegare i servizi tra loro"
+    iconUrl: /learn/achievements/connect-your-services-together.svg
+  - uid: learn.architect-great-solutions-in-azure.trophy
+    type: trophy
+    title: Trofeo per Architettare grandi soluzioni in Azure
+    summary: Trofeo per il percorso di apprendimento "Architettare grandi soluzioni in Azure".
+    iconUrl: /learn/achievements/architect-great-solutions-in-azure.svg
+  - uid: learn.deploy-a-website-with-azure-app-service.trophy
+    type: trophy
+    title: Trofeo per Distribuire un sito Web con il Servizio app di Azure
+    summary: Trofeo per il percorso di apprendimento "Distribuire un sito Web con il Servizio app di Azure"
+    iconUrl: /learn/achievements/deploy-a-website-with-azure-app-service.svg
+  - uid: learn.work-with-nosql-data-in-azure-cosmos-db.trophy
+    type: trophy
+    title: Trofeo per Operare con dati NoSQL in Azure Cosmos DB
+    summary: Trofeo per il percorso di apprendimento "Operare con dati NoSQL in Azure Cosmos DB"
+    iconUrl: /learn/achievements/work-with-nosql-data-in-azure-cosmos-db.svg
+  - uid: learn.work-with-relational-data-in-azure.trophy
+    type: trophy
+    title: Trofeo per Operare con dati relazionali in Azure
+    summary: Trofeo per il percorso di apprendimento "Operare con dati relazionali in Azure".
+    iconUrl: /learn/achievements/work-with-relational-data-in-azure.svg
+  - uid: learn.secure-your-cloud-data.trophy
+    type: trophy
+    title: Trofeo per Proteggere i dati cloud
+    summary: Trofeo per il percorso di apprendimento "Proteggere i dati cloud"
+    iconUrl: /learn/achievements/secure-your-cloud-data.svg
+  - uid: learn.store-data-in-azure.trophy
+    type: trophy
+    title: Trofeo per "Archiviare i dati in Azure"
+    summary: Trofeo per il percorso di apprendimento 'Archiviazione di dati in Azure'.
+    iconUrl: /learn/achievements/store-data-in-azure.svg
+  - uid: learn.automate-azure-tasks-with-powershell.badge
+    type: badge
+    title: Badge per Automatizzare le attività di Azure usando gli script con PowerShell
+    summary: Riepilogo per Automatizzare le attività di Azure usando gli script con PowerShell
+    iconUrl: /learn/achievements/automate-azure-tasks-with-powershell.svg
+  - uid: learn.create-azure-db-for-postgresql.badge
+    type: badge
+    title: Badge per Creare un server di database PostgreSQL mediante l'interfaccia della riga di comando di Azure
+    summary: Riepilogo per Creare un server di database PostgreSQL mediante l'interfaccia della riga di comando di Azure
+    iconUrl: /learn/achievements/create-azure-db-for-postgresql-server.svg
+  - uid: learn.create-linux-vm-in-azure.badge
+    type: badge
+    title: Badge per Creare una macchina virtuale Linux in Azure
+    summary: Riepilogo per Creare una macchina virtuale Linux in Azure
+    iconUrl: /learn/achievements/create-linux-virtual-machine-in-azure.svg
+  - uid: learn.choose-messaging-model.badge
+    type: badge
+    title: Badge per Scegliere un modello di messaggistica
+    summary: Riepilogo del badge per Scegliere un modello di messaggistica
+    iconUrl: /learn/achievements/choose-a-messaging-model-in-azure-to-connect-your-services.svg
+  - uid: learn.build-and-run-a-web-application-with-the-mean-stack-on-an-azure-linux-vm.badge
+    type: badge
+    title: Compilare ed eseguire un'applicazione Web con lo stack MEAN in una macchina virtuale Linux in Azure
+    summary: Compilare ed eseguire un'applicazione Web con lo stack MEAN in una macchina virtuale Linux in Azure
+    iconUrl: /learn/achievements/build-a-web-app-with-mean-on-a-linux-vm.svg
+  - uid: learn.prepare-azure-dev-environment.badge
+    type: badge
+    title: Badge per Preparare l'ambiente di sviluppo di Azure
+    summary: Riepilogo del badge per Preparare l'ambiente di sviluppo di Azure
+    iconUrl: /learn/achievements/prepare-your-dev-environment-for-azure-development.svg
+  - uid: learn.manage-resources-with-azure-portal.badge
+    type: badge
+    title: Badge per Gestire le risorse con il portale di Azure
+    summary: Riepilogo del badge per Gestire le risorse con il portale di Azure
+    iconUrl: /learn/achievements/manage-resources-with-azure-portal.svg
+  - uid: learn.control-azure-services-with-cli.badge
+    type: badge
+    title: Badge per Controllare i servizi di Azure con l'interfaccia della riga di comando
+    summary: Riepilogo del badge per Controllare i servizi di Azure con l'interfaccia della riga di comando
+    iconUrl: /learn/achievements/control-azure-services-with-cli.svg
+  - uid: learn.azure-services-features.badge
+    type: badge
+    title: Badge per Esplorare i servizi e le funzionalità di Azure
+    summary: Riepilogo per Esplorare i servizi e le funzionalità di Azure
+    iconUrl: /learn/achievements/tour-azure-services-and-features.svg
+  - uid: learn.migrate-sql-server-relational-data.badge
+    type: badge
+    title: Eseguire la migrazione dei dati relazionali di SQL Server a SQL di Azure
+    summary: Eseguire la migrazione dei dati relazionali di SQL Server a SQL di Azure
+    iconUrl: /learn/achievements/migrate-sql-server-to-azure-sql.svg
+  - uid: learn.communicate-between-applications-with-azure-queue-storage.badge
+    type: badge
+    title: Comunicare tra le applicazioni con l'archiviazione code di Azure
+    summary: Comunicare tra le applicazioni con un'archiviazione code di Azure
+    iconUrl: /learn/achievements/communicate-between-apps-with-storage-queues.svg
+  - uid: learn.caching-and-performance-azure-storage-and-disks.badge
+    type: badge
+    title: La memorizzazione nella cache e le prestazioni di archiviazione di Azure e dischi
+    summary: La memorizzazione nella cache e le prestazioni di archiviazione di Azure e dischi
+    iconUrl: /learn/achievements/caching-and-performance-azure-storage-and-disks.svg
+  - uid: learn.create-a-windows-vm-in-azure.badge
+    type: badge
+    title: Creare una macchina virtuale Windows in Azure
+    summary: Creare una macchina virtuale Windows in Azure
+    iconUrl: /learn/achievements/create-windows-virtual-machine-in-azure.svg
+  - uid: learn.web-app-with-mean-on-linux-vm.badge
+    type: badge
+    title: Compilare ed eseguire un'applicazione Web con lo stack MEAN in una macchina virtuale di Linux in Azure
+    summary: Compilare ed eseguire un'applicazione Web con lo stack MEAN in una macchina virtuale di Linux in Azure
+    iconUrl: /learn/achievements/build-a-web-app-with-mean-on-a-linux-vm.svg
+  - uid: learn.optimize-web-app-with-redis.badge
+    type: badge
+    title: Ottimizzare le applicazioni Web mediante memorizzazione nella cache dei dati di sola lettura con Redis
+    summary: Ottimizzare le applicazioni Web mediante memorizzazione nella cache dei dati di sola lettura con Redis
+    iconUrl: /learn/achievements/optimize-web-apps-with-redis.svg
+  - uid: learn.manage-secrets-with-azure-key-vault.badge
+    type: badge
+    title: Gestire segreti nelle app Web con Azure Key Vault
+    summary: Gestire segreti nelle app Web con Azure Key Vault
+    iconUrl: /learn/achievements/manage-secrets-with-azure-key-vault.svg
+  - uid: learn.secure-azure-resources-with-rbac.badge
+    type: badge
+    title: Proteggere le risorse di Azure con il controllo degli accessi in base al ruolo (RBAC)
+    summary: Proteggere le risorse di Azure con il controllo degli accessi in base al ruolo (RBAC)
+    iconUrl: /learn/achievements/secure-azure-resources-with-rbac.svg
+  - uid: learn.secure-access-azure-ad-multi-factor-authentication.badge
+    type: badge
+    title: 'Proteggere l''accesso alle risorse con Azure AD, accesso condizionale e Azure Multi-Factor Authentication'
+    summary: 'Proteggere l''accesso alle risorse con Azure AD, accesso condizionale e Azure Multi-Factor Authentication'
+    iconUrl: /learn/achievements/secure-azure-resources-with-conditional-access.svg
+  - uid: learn.send-location-over-sms-from-mobile-using-azure-functions-twilio.badge
+    type: badge
+    title: Badge per Invio di informazioni sulla posizione con SMS dal telefono usando Funzioni di Azure e Twilio
+    summary: Badge per il modulo "Invio di informazioni sulla posizione con SMS dal telefono usando Funzioni di Azure e Twilio"
+    iconUrl: /learn/achievements/send-location-over-sms-from-mobile-using-azure-functions-twilio.svg
+  - uid: learn.manage-vms-with-azure-cli-data.badge
+    type: badge
+    title: Gestire macchine virtuali con l'interfaccia della riga di comando di Azure
+    summary: Gestire macchine virtuali con l'interfaccia della riga di comando di Azure
+    iconUrl: /learn/achievements/manage-vms-with-azure-cli.svg
+  - uid: learn.deploy-a-website-with-azure-virtual-machines.trophy
+    type: trophy
+    title: Trofeo per Distribuire un sito Web con Macchine virtuali di Azure
+    summary: Trofeo per il percorso di apprendimento "Distribuire un sito Web con Macchine virtuali di Azure"
+    iconUrl: /learn/achievements/deploy-a-website-with-azure-virtual-machines.svg
+  - uid: learn.store-app-data-with-azure-blob-storage.badge
+    type: badge
+    title: Archiviare i dati delle applicazioni Web con Archiviazione BLOB di Azure
+    summary: Archiviare i dati delle applicazioni Web con Archiviazione Blob di Azure
+    iconUrl: /learn/achievements/store-app-data-with-azure-blob-storage.svg
+  - uid: learn.enable-reliable-messaging-for-big-data-applications-using-azure-event-hubs.badge
+    type: badge
+    title: Abilitare la messaggistica affidabile per applicazioni di Big Data mediante l'hub eventi di Azure
+    summary: Modulo Abilitare la messaggistica affidabile per applicazioni di Big Data mediante l'hub eventi di Azure
+    iconUrl: /learn/achievements/enable-reliable-messaging-for-big-data-apps-using-azure-event-hubs.svg
+  - uid: learn.secure-your-azure-sql-database.badge
+    type: badge
+    title: Proteggere un Database di Server SQL di Azure
+    summary: Proteggere un Database di Server SQL di Azure
+    iconUrl: /learn/achievements/secure-your-azure-sql-database.svg
+  - uid: learn.intro-to-compute.badge
+    type: badge
+    title: Badge per Introduzione a Calcolo
+    summary: Badge per il modulo "Introduzione a Calcolo".
+    iconUrl: /learn/achievements/intro-to-azure-compute.svg
+  - uid: learn.intro-to-data-in-azure.badge
+    type: badge
+    title: Badge per Introduzione ai dati in Azure
+    summary: Badge per il modulo "Introduzione ai dati in Azure".
+    iconUrl: /learn/achievements/intro-to-azure-networking.svg
+  - uid: learn.introduction-to-azure-virtual-machines.badge
+    type: badge
+    title: Introduzione alle macchine virtuali di Azure
+    summary: Introduzione alle macchine virtuali di Azure
+    iconUrl: /learn/achievements/intro-to-azure-virtual-machines.svg
+  - uid: learn.cosmos-db-app-with-vscode.badge
+    type: badge
+    title: Compilare un'app di Azure Cosmos DB in Visual Studio Code
+    summary: Badge per il modulo "Compilare un'app di Azure Cosmos DB in Visual Studio Code".
+    iconUrl: /learn/achievements/build-cosmos-db-app-with-vscode.svg
+  - uid: learn.create-cosmos-db-for-scale.badge
+    type: badge
+    title: Creare un database di Azure Cosmos DB per la scalabilità
+    summary: Badge per il modulo "Creare un database di Azure Cosmos DB per la scalabilità".
+    iconUrl: /learn/achievements/create-cosmos-db-for-scale.svg
+  - uid: learn.manage-resources-in-azure.trophy
+    type: trophy
+    title: Trofeo per Gestire le risorse in Azure
+    summary: Trofeo per il percorso di apprendimento "Gestire le risorse in Azure".
+    iconUrl: /learn/achievements/manage-resources-with-azure-portal.svg
+  - uid: learn.ci-cd-pipelines-azure-devops.badge
+    type: badge
+    title: Creare pipeline continua integrazione e distribuzione continua usando il badge di Azure DevOps
+    summary: Badge per il modulo 'Compilazione continua integrazione e distribuzione continua delle pipeline usando Azure DevOps'.
+    iconUrl: /learn/achievements/build-ci-cd-pipelines-using-azure-devops.svg
+  - uid: learn.top-5-security-items-to-consider.badge
+    type: badge
+    title: Primi 5 elementi di sicurezza da considerare prima di eseguire il push in produzione
+    summary: Primi 5 elementi di sicurezza da considerare prima di eseguire il push in produzione
+    iconUrl: /learn/achievements/top-5-security-items-to-consider.svg
+  - uid: learn.interactive-deep-learning.badge
+    type: badge
+    title: Cinque passaggi per la notifica di apprendimento avanzato più interattiva
+    summary: Notifica utente visuale per il modulo 'Cinque passaggi per deep learning più interattivo'.
+    iconUrl: /learn/achievements/interactive-deep-learning.svg
+  - uid: learn.create-computer-vision-service.badge
+    type: badge
+    title: Creare un servizio visione artificiale di Computer
+    summary: Badge per il modulo 'Crea un servizio visione artificiale di Computer'.
+    iconUrl: /learn/achievements/create-computer-vision-service-to-classify-images.svg
+  - uid: learn.monitor-manage-device-with-iotcentral.badge
+    type: badge
+    title: Monitorare e gestire la macchina di caffè con Badge di Azure IoT Central
+    summary: Aggiungere il logo per il ' monitoraggio e gestione di machine caffè con Azure IoT Central' modulo.
+    iconUrl: /learn/achievements/monitor-and-manage-device-with-iot-central.svg
+  - uid: learn.align-requirements-in-azure.badge
+    type: badge
+    title: Badge per Allineare i requisiti ai tipi di cloud e ai modelli di servizio in Azure
+    summary: Badge per il modulo "Allineare i requisiti ai tipi di cloud e ai modelli di servizio in Azure".
+    iconUrl: /learn/achievements/align-requirements-in-azure.svg
+  - uid: learn.choose-storage-approach-in-azure.badge
+    type: badge
+    title: Badge per Scegliere un approccio all'archiviazione dei dati in Azure
+    summary: Badge per il modulo "Scegliere un approccio all'archiviazione dei dati in Azure".
+    iconUrl: /learn/achievements/choose-storage-approach-in-azure.svg
+  - uid: learn.azure-container-registry.badge
+    type: badge
+    title: Creare e archiviare le immagini dei contenitori con badge di registro contenitori di Azure
+    summary: Notifica utente visuale per il modulo 'Creare e archiviare le immagini dei contenitori con registro contenitori di Azure'.
+    iconUrl: /learn/achievements/build-and-store-container-images.svg
+  - uid: learn.build-azure-bot-services-bot.badge
+    type: badge
+    title: Crea un chat bot con badge il servizio Azure Bot
+    summary: Notifica utente visuale per il modulo 'Build un chat bot con il servizio Azure Bot'.
+    iconUrl: /learn/achievements/build-chat-bot-with-azure-bot-service.svg
+  - uid: learn.classify-images-with-custom-vision-services.badge
+    type: badge
+    title: Classificare le immagini con il badge servizio visione artificiale personalizzato di Microsoft
+    summary: Notifica utente visuale per il modulo 'Classificare le immagini con il servizio visione artificiale personalizzato di Microsoft'.
+    iconUrl: /learn/achievements/classify-images-with-custom-vision-service.svg
+  - uid: learn.create-neural-network-with-dsvm.badge
+    type: badge
+    title: Creazione di reti neurali con TensorFlow e il badge di macchina virtuale di Azure Data Science
+    summary: Notifica utente visuale per il modulo 'Predefiniti Neural Network con la macchina virtuale di Azure Data Science e TensorFlow'.
+    iconUrl: /learn/achievements/create-neural-network-with-dsvm.svg
+  - uid: learn.design-for-efficiency-and-operations.badge
+    type: badge
+    title: Progettazione per l'efficienza e le operazioni di notifica
+    summary: Notifica utente visuale per il modulo 'Progettazione per l'efficienza e le operazioni'.
+    iconUrl: /learn/achievements/design-for-efficiency-and-operations-in-azure.svg
+  - uid: learn.design-for-performance-and-scalability.badge
+    type: badge
+    title: Progettare per prestazioni e scalabilità badge
+    summary: Notifica utente visuale per il modulo 'Progettazione per prestazioni e scalabilità'.
+    iconUrl: /learn/achievements/design-for-performance-and-scalability-in-azure.svg
+  - uid: learn.design-for-security.badge
+    type: badge
+    title: Progettazione per la notifica di sicurezza
+    summary: Notifica utente visuale per il modulo 'Progettazione per la sicurezza'.
+    iconUrl: /learn/achievements/design-for-security-in-azure.svg
+  - uid: learn.execute-azure-function-with-triggers.badge
+    type: badge
+    title: Eseguire una funzione di Azure con badge di trigger
+    summary: Notifica utente visuale per il modulo 'Eseguire una funzione di Azure con i trigger'.
+    iconUrl: /learn/achievements/execute-azure-function-with-triggers.svg
+  - uid: learn.intro-to-containers.badge
+    type: badge
+    title: Introduzione al badge di contenitori
+    summary: Notifica utente visuale per il modulo 'Introduzione ai contenitori'.
+    iconUrl: /learn/achievements/intro-to-containers.svg
+  - uid: learn.predict-costs-and-optimize-spending.badge
+    type: badge
+    title: Stimare i costi e ottimizzare la spesa per la notifica di Azure
+    summary: Notifica utente visuale per il modulo "Stimare i costi e ottimizzare la spesa per Azure".
+    iconUrl: /learn/achievements/predict-costs-optimize-spending-on-azure.svg
+  - uid: learn.principles-cloud-computing.badge
+    type: badge
+    title: Principi del Cloud Computing badge
+    summary: Notifica utente visuale per il modulo "Principi del Cloud Computing".
+    iconUrl: /learn/achievements/principles-cloud-computing.svg
+  - uid: learn.provision-azure-sql-db.badge
+    type: badge
+    title: Effettuare il provisioning di un database SQL di Azure per archiviare il badge di dati dell'applicazione
+    summary: Notifica utente visuale per il modulo 'Effettuare il provisioning di un database SQL di Azure per archiviare i dati dell'applicazione'.
+    iconUrl: /learn/achievements/provision-azure-sql-db.svg
+  - uid: learn.run-docker-containers-aci.badge
+    type: badge
+    title: Esegui i contenitori Docker con badge di istanze di contenitore di Azure (ACI)
+    summary: Notifica utente visuale per il modulo 'Contenitori di Docker eseguiti con le istanze di contenitore di Azure (ACI)'.
+    iconUrl: /learn/achievements/run-docker-with-azure-container-instances.svg
+  - uid: learn.access-data-with-cosmos-db-and-sql-api.badge
+    type: badge
+    title: Store e accedere ai dati con Cosmos DB e il Badge di API SQL
+    summary: Notifica utente visuale per il modulo 'Store e accedere ai dati con Cosmos DB e l'API SQL'.
+    iconUrl: /learn/achievements/access-data-with-cosmos-db-and-sql-api.svg
+  - uid: learn.configure-the-network-for-your-virtual-machines.badge
+    type: badge
+    title: Configurare la rete per le macchine virtuali
+    summary: Configurare la rete per le macchine virtuali
+    iconUrl: /learn/achievements/configure-network-for-azure-virtual-machines.svg
+  - uid: learn.introduction-to-security.badge
+    type: badge
+    title: Introduzione alla sicurezza in Azure
+    summary: Introduzione alla sicurezza in Azure
+    iconUrl: /learn/achievements/intro-to-security-in-azure.svg
+  - uid: learn.secure-your-azure-virtual-machine-disks.badge
+    type: badge
+    title: Proteggere i dischi delle macchine virtuali di Azure
+    summary: Proteggere i dischi delle macchine virtuali di Azure
+    iconUrl: /learn/achievements/secure-your-azure-virtual-machine-disks.svg
+  - uid: learn.make-your-virtual-machines-highly-available.badge
+    type: badge
+    title: Rendere le macchine virtuali a disponibilità elevata
+    summary: Rendere le macchine virtuali a disponibilità elevata
+    iconUrl: /learn/achievements/make-your-virtual-machines-highly-available.svg
+  - uid: learn.implement-message-workflows-with-service-bus.badge
+    type: badge
+    title: Implementare flussi di lavoro di comunicazione basati sui messaggi con il bus di servizio di Azure
+    summary: Implementare flussi di lavoro di comunicazione basati sui messaggi con il bus di servizio di Azure
+    iconUrl: /learn/achievements/implement-message-workflows-with-service-bus.svg
+  - uid: learn.intro-to-azure-networking.badge
+    type: badge
+    title: Introduzione a Azure badge di rete
+    summary: Introduzione a rete di Azure
+    iconUrl: /learn/achievements/intro-to-azure-networking.svg
+  - uid: learn.pillars-of-a-great-azure-architecture.badge
+    type: badge
+    title: Concetti fondamentali di un badge di eccezionali architettura di Azure
+    summary: Concetti fondamentali di un badge di eccezionali architettura di Azure
+    iconUrl: /learn/achievements/pillars-of-a-great-azure-architecture.svg
+  - uid: learn.add-and-size-disks-in-azure-virtual-machines.badge
+    type: badge
+    title: Aggiungere le dimensioni di dischi nelle macchine virtuali di Azure
+    summary: Aggiungere le dimensioni di dischi nelle macchine virtuali di Azure
+    iconUrl: /learn/achievements/add-and-size-disks-in-azure-virtual-machines.svg
+  - uid: learn.scale-and-size-virtual-machines.badge
+    type: badge
+    title: Ridimensionare e macchine virtuali in Azure
+    summary: Ridimensionare e macchine virtuali in Azure
+    iconUrl: /learn/achievements/scale-and-size-virtual-machines.svg
+  - uid: learn.manage-iot-devices.badge
+    type: badge
+    title: IoT Suite per operazioni
+    summary: IoT Suite per operazioni
+    iconUrl: /learn/achievements/manage-your-iot-devices.svg
+  - uid: learn.the-mojifier.badge
+    type: badge
+    title: Il Mojifier
+    summary: Il badge Mojifier
+    iconUrl: /learn/achievements/replace-faces-with-emojis-matching-emotion.svg
+  - uid: learn.work-with-mutable-and-partial-data-in-a-redis-cache.badge
+    type: badge
+    title: Usare i dati parziali e modificabili in una cache Redis
+    summary: Usare i dati parziali e modificabili in una cache Redis
+    iconUrl: /learn/achievements/work-with-mutable-and-partial-data-in-a-redis-cache.svg
+  - uid: learn.chain-azure-functions-data-using-input-output-bindings.badge
+    type: badge
+    title: Concatenare i dati di funzioni di Azure usando il binding i/o
+    summary: Concatenare i dati di funzioni di Azure usando il binding i/o
+    iconUrl: /learn/achievements/chain-azure-functions-data-using-bindings.svg
+  - uid: learn.design-for-availability-and-recoverability.badge
+    type: badge
+    title: Progettare per la disponibilità e la recuperabilità in Azure
+    summary: Progettare per la disponibilità e la recuperabilità in Azure
+    iconUrl: /learn/achievements/design-for-availability-and-recoverability-in-azure.svg
+  - uid: learn.welcome-to-azure.badge
+    type: badge
+    title: Benvenuto in Azure
+    summary: Benvenuto in Azure
+    iconUrl: /learn/achievements/welcome-to-azure.svg
+  - uid: learn.classify-user-feedback-with-the-text-analytics-api.badge
+    type: badge
+    title: Individuazione del sentiment del testo con l'API di Analitica di testo
+    summary: Individuazione del sentiment del testo con l'API di Analitica di testo
+    iconUrl: /learn/achievements/classify-user-feedback-with-the-text-analytics-api.svg

@@ -1,30 +1,29 @@
-The MEAN stack of components requires a server. It could be a Linux machine or virtual machine running in your own server room, or it can be configured on a cloud-based virtual machine. In this module, we will set up the stack to run on an Ubuntu Linux virtual machine running on Azure.
+Lo stack MEAN di componenti richiede un server. Può essere un computer Linux o una macchina virtuale in esecuzione nella sala server oppure può essere configurato in una macchina virtuale basata sul cloud. In questo modulo lo stack verrà configurato per l'esecuzione in una macchina virtuale Ubuntu Linux in esecuzione in Azure.
 
-In this unit, you will be creating a new Ubuntu Linux virtual machine hosted on Azure. You could also install your MEAN stack components on an existing virtual machine or physical host machine. By creating a new one with this exercise, you can tie together all the components into an Azure resource group for easier management and clean-up after you complete the exercises.
+In questa unità, si creerà una nuova macchina virtuale Ubuntu Linux ospitata in Azure. È anche possibile installare i componenti dello stack MEAN in una macchina virtuale esistente o in un computer host fisico. Creandone uno nuovo con questo esercizio, è possibile collegare tra loro tutti i componenti in un gruppo di risorse di Azure per semplificare la gestione e la pulizia dopo aver completato gli esercizi.
 
-We will use the Cloud Shell command line that's integrated into the Azure portal to create the Linux VM.
+## <a name="provision-an-ubuntu-linux-vm"></a>Effettuare il provisioning di una macchina virtuale Ubuntu Linux
 
-## Provision an Ubuntu Linux VM
+[!include[](../../../includes/azure-sandbox-activate.md)]
 
-1. Go to the [Azure portal](https://portal.azure.com?azure-portal=true).
+<!--
+TODO: Omitting for sandbox. Keeping here for possible later inclusion.
 
-1. Open Cloud Shell from the angle bracket (>_) icon in the Azure portal toolbar.
-
-<!---TODO: Update for sandbox--->
 1. In Cloud Shell, execute the command to create an Azure resource group, which will include our VM. Substitute your own resource group name for `<resource-group-name>` and your desired Azure location for `<resource-group-location>` (`westus`, for example).
 
 
-    ```bash
+    ```azurecli
     az group create --name <resource-group-name> --location <resource-group-location>
     ```
 
     Remember your resource group name, as we will use it in other commands.
+-->
 
-1. In Cloud Shell, run the following command to create a new Ubuntu Linux VM. Substitute your own resource group name for `<resource-group-name>` and your preferred admin username and password for `<vm-admin-username>` and `<vm-admin-password>`.
+1. In Cloud Shell eseguire questo comando per creare una nuova macchina virtuale Ubuntu Linux. Sostituire con il nome utente amministratore preferito e la password per `<vm-admin-username>` e `<vm-admin-password>`.
 
-    ```bash
+    ```azurecli
     az vm create \
-        --resource-group <resource-group-name> \
+        --resource-group <rgn>[Sandbox resource group name]</rgn> \
         --name MeanDemo \
         --image UbuntuLTS \
         --admin-username <vm-admin-username> \
@@ -32,48 +31,46 @@ We will use the Cloud Shell command line that's integrated into the Azure portal
         --generate-ssh-keys
     ```
 
-    Take note of your admin username and password to allow you to connect to this VM later.
+    Prendere nota del nome utente e della password amministratore per potersi connettere a questa macchina virtuale in un secondo momento.
 
-    This command takes about two minutes to complete. When the command finishes, the resulting output will look similar to this.
+    Il completamento di questo comando richiede circa 2 minuti. Al termine del comando, l'output risultante sarà simile al seguente.
 
     ```json
     {
         "fqdns": "",
         "id": "...",
-        "location": "<location you chose for the resource group>",
+        "location": "<resource group location>",
         "macAddress": "00-0D-3A-3A-54-EC",
         "powerState": "VM running",
         "privateIpAddress": "10.0.0.4",
         "publicIpAddress": "<the public IP address of the newly created machine>",
-        "resourceGroup": "<name you chose for thr resource group>",
+        "resourceGroup": "<rgn>[Sandbox resource group name]</rgn>",
         "zones": ""
     }
     ```
 
-    You will also want to save the public IP address of the newly created VM in order to connect to the VM.
+    È consigliabile salvare anche l'indirizzo IP pubblico della VM appena creata per potersi connettere alla VM.
 
-1. Try connecting to your new VM.
+1. Provare a connettersi alla nuova macchina virtuale.
 
-    Open a command prompt/terminal window and run the following command. Substitute your admin username and your VM's public IP address from above for the `<vm-admin-username>` and `<vm-public-ip>` placeholders.
+    Da Cloud Shell, eseguire il comando seguente. Sostituire i segnaposto `<vm-admin-username>` e `<vm-public-ip>` con il nome utente amministratore e l'indirizzo IP pubblico della VM precedenti.
 
     ```bash
     ssh <vm-admin-username>@<vm-public-ip>
     ```
 
-    The first time you connect to the machine, you'll be asked if you trust the remote machine. By answering `yes`, the machine's ECDSA key fingerprint will be saved locally, so subsequent connections will be trusted.
+    La prima volta che ci si connette al computer, verrà chiesto se si considera attendibile il computer remoto. Rispondendo `yes`, l'impronta digitale della chiave ECDSA del computer verrà salvata in locale, quindi le connessioni successive saranno considerate attendibili.
 
-    If everything looks fine, type `exit` to close the SSH session.
+    Se è tutto corretto, digitare `exit` per chiudere la sessione SSH.
 
-1. Open port 80 to allow incoming HTTP traffic to the new web application that you will create.
-
-    Go back to Cloud Shell on the Azure portal. Issue the following command using your original resource group name for `<resource-group-name>`.
+1. Aprire la porta 80 nella macchina virtuale per consentire il traffico HTTP in ingresso per la nuova applicazione web che verrà creato.
 
     ``` bash
-    az vm open-port --port 80 --resource-group <resource-group-name> --name MeanDemo
+    az vm open-port --port 80 --resource-group <rgn>[Sandbox resource group name]</rgn> --name MeanDemo
     ```
 
-    This command will open up the HTTP port on your VM that was named "MeanDemo" when it was created.
+    Il comando aprirà la porta HTTP nella macchina virtuale denominata "MeanDemo" al momento della creazione.
 
-## Summary
+## <a name="summary"></a>Riepilogo
 
-With your new Ubuntu Linux VM ready to go, we can now connect to it to start installing the various components of the MEAN stack.
+Quando la nuova VM Ubuntu Linux è pronta, è possibile connettersi a essa per avviare l'installazione dei diversi componenti dello stack MEAN.

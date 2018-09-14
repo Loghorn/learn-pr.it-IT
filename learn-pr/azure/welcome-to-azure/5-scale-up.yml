@@ -1,11 +1,16 @@
 ### YamlMime:ModuleUnit
 uid: learn.welcome-to-azure.5-scale-up
-title: Scale up
+title: Aumentare le prestazioni
 metadata:
-  title: Scale up
-  description: Scale up your VM to give it more compute power and memory.
+  title: Aumentare le prestazioni
+  description: Scalabilità della macchina virtuale per fornire più potenza di calcolo e memoria.
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
   zone_pivot_groups: platform-cloud
-interactive: powershell
+interactive: bash
 azureSandbox: true
 durationInMinutes: 7
 content: |

@@ -1,10 +1,10 @@
-Now that we have an account, we can sign into the **Azure portal**. The portal is a web-based administration site that lets you interact with all of your subscriptions and resources you have created. Almost everything you do with Azure can be done through this web interface.
+Ora che abbiamo un account, è possibile accedere al **portale di Azure**. Il portale è un sito di amministrazione basata su web che consente di interagire con tutte le sottoscrizioni e risorse che è stato creato. Quasi tutte le operazioni eseguite con Azure può avvenire tramite questa interfaccia web.
 
-## Azure portal layout
+## <a name="azure-portal-layout"></a>Layout del portale di Azure
 
-The Azure portal is the primary graphical user interface (GUI) for controlling Microsoft Azure. You can carry out the majority of management actions in the portal, and it is typically the best interface for carrying out single tasks or where you want to look at the configuration options in detail.
+Il portale di Azure è l'interfaccia utente principale di con interfaccia grafica (GUI) per il controllo di Microsoft Azure. È possibile eseguire la maggior parte delle azioni di gestione nel portale, ed è in genere l'interfaccia ottimo per l'esecuzione delle singole attività o in cui si desidera esaminare le opzioni di configurazione in modo dettagliato.
 
-![The Azure portal](../media-draft/5-portal.png)
+![Portale di Azure](../media-draft/5-portal.png)
 
 :::row:::
 
@@ -24,77 +24,77 @@ The Azure portal is the primary graphical user interface (GUI) for controlling M
 
 :::row-end:::
 
-The remainder of the portal view is for the specific elements you are working with. The default (main) page is the _dashboard_. We'll cover this a bit later, but this represents a customizable birds-eye-view of your resources. You can use it to jump into specific resources you want to manage, or search for resources with the **All resources** entry in the resource panel. When you are managing a resource, such as a virtual machine or a web app, you will work with a _blade_ that presents specific information about the resource.
+Il resto della vista del portale è per gli elementi specifici che si sta lavorando. La pagina (principale) predefinito è il _dashboard_. Parleremo un po' più avanti, ma rappresenta una personalizzabile volatili--visualizzazione delle risorse. È possibile usarlo per passare a risorse specifiche da gestire o eseguire la ricerca per le risorse con il **tutte le risorse** voce nel Pannello di risorse. Quando si gestiscono una risorsa, ad esempio una macchina virtuale o un'app web, verrà usata un' _pannello_ che presenta informazioni specifiche sulla risorsa.
 
-## What is a blade?
+## <a name="what-is-a-blade"></a>Che cos'è un pannello?
 
-The Azure portal uses a blades model for navigation. A _blade_ is a slide-out panel containing the UI for a single level in a navigation sequence. For example, each of these elements in this sequence would be represented by a blade: **Virtual machines** > **Compute** > **Ubuntu Server**.
+Il portale di Azure usa un modello a pannelli per lo spostamento. Un _pannello_ è un elemento scorrevole contenente l'interfaccia utente per un singolo livello in una sequenza di spostamento. Ad esempio, ognuno degli elementi in questa sequenza è rappresentato da un pannello: **Macchine virtuali** > **Calcolo** > **Server Ubuntu**.
 
-Each blade contains some information and configurable options. Some of these options generate another blade, which reveals itself to the right of any existing blade. On the new blade, any further configurable options will spawn another blade, and so on. Pretty soon, you can end up with several blades open at the same time. You can maximize blades as well so that they fill the entire screen.
+Ogni pannello contiene alcune informazioni e opzioni configurabili. Alcune di queste opzioni generano un altro pannello, che viene visualizzato a destra di quelli esistenti. Nel nuovo pannello le eventuali altre opzioni configurabili si espanderanno in un altro pannello e così via. In poco tempo si avranno quindi diversi pannelli aperti nello stesso momento. È possibile ingrandire i pannelli in modo da occupare l'intera schermata.
 
-Since new blades are always added to the right of the owner, you can use the scrollbar at the bottom of the window to go backwards to see how you got to this spot in the configuration. Alternatively, you can close blades individually by clicking the `X` button in the top corner of the blade. If you have unsaved changes, Azure will prompt you to let you know that the changes will be lost if you continue.
+Poiché nuovi pannelli vengono sempre aggiunti a destra del proprietario, è possibile utilizzare la barra di scorrimento nella parte inferiore della finestra per spostarsi indietro a vedere come si è arrivati a questo punto nella configurazione. In alternativa, è possibile chiudere i pannelli singolarmente facendo la `X` pulsante nell'angolo superiore del pannello. Se si presenti modifiche non salvate, Azure richiederà di consentono di sapere che le modifiche andranno perse se sceglie di continuare.
 
-## Configuring settings in the Azure portal
+## <a name="configuring-settings-in-the-azure-portal"></a>Configurazione delle impostazioni nel portale di Azure
 
-The Azure portal displays several configuration options, mostly in the status bar at the top-right of the screen.
+Il portale di Azure consente di visualizzare diverse opzioni di configurazione, principalmente nella barra di stato in alto a destra della schermata.
 
-### Notifications
+### <a name="notifications"></a>Notifiche
 
-Clicking the bell icon displays the **Notifications** pane. This pane lists the last actions that have been carried out, along with their status.
+Per visualizzare il riquadro **Notifiche** fare clic sull'icona a forma di campanello. Questo riquadro elenca le ultime azioni completate con il relativo stato.
 
-### Cloud Shell
+### <a name="cloud-shell"></a>Cloud Shell
 
-If you click the **Cloud Shell** icon (>_), you will create a new Azure Cloud Shell session. Azure Cloud Shell is an interactive, browser-accessible shell for managing Azure resources. It provides the flexibility of choosing the shell experience that best suits the way you work. Linux users can opt for a Bash experience, while Windows users can opt for PowerShell. This browser-based terminal lets you control and administer all of your Azure resources in the current subscription through a command-line interface built right into the portal.
+Selezionando l'icona di **Cloud Shell** (>_) viene creata una nuova sessione di Azure Cloud Shell. Azure Cloud Shell è una shell interattiva accessibile dal browser per la gestione delle risorse di Azure. Offre la flessibilità necessaria per scegliere l'esperienza shell più adatta al proprio modo di lavorare. Gli utenti Linux possono scegliere un'esperienza Bash, mentre gli utenti Windows possono scegliere PowerShell. Questo terminal basati su browser consente di controllare e amministrare tutte le risorse nella sottoscrizione corrente tramite un'interfaccia della riga di comando integrata nel portale di Azure.
 
-### Settings
+### <a name="settings"></a>Impostazioni
 
-Click the **gear** icon to change the Azure portal settings. These settings include:
+Per modificare le impostazioni del portale di Azure fare clic sull'icona a forma di **ingranaggio**. Le impostazioni includono:
 
-- Logout time
-- Color and contrast themes
-- Toast notifications (to a mobile device)
-- Language and regional format
+- Tempo di disconnessione
+- Temi di colore e a contrasto elevato
+- Avvisi popup (per un dispositivo mobile)
+- Linguaggio e il formato regionale
 
-![Portal settings](../media-draft/5-settings-blade.png)
+![Impostazioni del portale](../media-draft/5-settings-blade.png)
 
-When you have changed settings, click **Apply** to accept your changes.
+Dopo aver modificato le impostazioni, fare clic su **Applica** per accettare le modifiche.
 
-### Feedback blade
+### <a name="feedback-blade"></a>Pannello Commenti e suggerimenti
 
-The **smiley face** icon opens the **Send us feedback** blade. Here you can send feedback to Microsoft about Azure. Note that you can specify whether Microsoft can respond to your feedback by email.
+L'icona a forma di **faccina sorridente** apre il pannello **Inviare commenti e suggerimenti**. In quest'area è possibile inviare a Microsoft commenti e suggerimenti su Azure. Si noti che è possibile specificare se Microsoft può rispondere a commenti e suggerimenti tramite posta elettronica.
 
-### Help blade
+### <a name="help-blade"></a>Pannello Guida e supporto
 
-Click the **question mark** icon to show the **Help** blade. Here you choose from several options, including:
+Fare clic sull'icona del **punto interrogativo** per visualizzare il pannello **Guida e supporto**. Qui è possibile scegliere tra diverse opzioni, tra cui:
 
-- What's new
-- Azure roadmap
-- Launch guided tour
-- Keyboard shortcuts
-- Show diagnostics
-- Privacy + terms
+- Novità
+- Roadmap per Azure
+- Avvia presentazione guidata
+- Scelte rapide da tastiera
+- Visualizza diagnostica
+- Privacy e condizioni
 
-### Directory and subscription
+### <a name="directory-and-subscription"></a>Directory e sottoscrizione
 
-Click the **Book and Filter** icon to show the **Directory + subscription** blade.
+Fare clic sull'icona a forma di **libro e filtro** per visualizzare il pannello **Directory e sottoscrizione**.
 
-Azure allows you to have more than one subscription associated with one directory. On the **Directory + subscription** blade, you can change between subscriptions. Here, you can change your subscription or change to another directory.
+Azure consente di avere più sottoscrizioni associate a una stessa directory. Nel pannello **Directory e sottoscrizione** è possibile passare da una sottoscrizione all'altra. In quest'area è possibile cambiare la sottoscrizione o passare a un'altra directory.
 
 ![Directory](../media-draft/5-directory-blade.png)
 
-### Profile settings
+### <a name="profile-settings"></a>Impostazioni del profilo
 
-If you click on your name in the top right-hand corner, you can then change your profile settings.
-Options include:
+Se si fa clic sul nome nell'angolo superiore destro, è possibile modificare le impostazioni del profilo.
+Le opzioni includono:
 
-- Sign out of Azure
-- Change password
-- Change contact information
-- View permissions
-- Submit an idea to the Azure team
-- View your bill
-- Switch directory (shows the **Directory + subscription** blade as in the previous section)
+- Disconnetti da Azure
+- Cambia password
+- Modifica informazioni di contatto
+- Visualizza autorizzazioni
+- Invia un'idea al team di Azure
+- Visualizzare la fattura
+- Cambia directory (viene visualizzato il pannello **Directory e sottoscrizione** come nella sezione precedente)
 
-If you now click **View my bill**, Azure takes you to the **Cost Management + Billing - Invoices** page, which helps you analyze where Azure is generating costs.
+Se si seleziona **Visualizza fattura**, viene visualizzata la pagina **Gestione dei costi e fatturazione - Fatture** che consente di analizzare i costi generati da Azure.
 
-Azure is a large product, and the Azure portal user interface (UI) reflects this. The sliding blade approach allows you to navigate back and forth through the various administration tasks with ease. Let's experiment a bit with this UI so you get some practice.
+Azure è un prodotto di grandi dimensioni e l'interfaccia utente del portale di Azure (UI) rifletterà la sovrascrizione. L'approccio di pannello scorrevole consente di spostarsi avanti e indietro tra le varie attività di amministrazione con facilità. È possibile fare alcune prove con questa interfaccia utente in modo ottenere alcune procedure consigliate.

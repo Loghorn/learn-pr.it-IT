@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.automate-azure-tasks-with-powershell.6-exercise-create-resource-interactively
-title: Exercise - Create an Azure Resource using scripts in Azure PowerShell
+title: 'Esercizio: creare una risorsa di Azure usando gli script in Azure PowerShell'
 metadata:
-  title: Exercise - Create an Azure Resource using scripts in Azure PowerShell
-  description: Exercise - Create an Azure Resource using scripts in Azure PowerShell
+  title: 'Esercizio: creare una risorsa di Azure usando gli script in Azure PowerShell'
+  description: 'Esercizio: creare una risorsa di Azure usando gli script in Azure PowerShell'
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial

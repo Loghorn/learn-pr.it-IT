@@ -44,7 +44,6 @@ In questa stored procedure OrderId, che contiene un elenco di tutti gli articoli
     La console visualizza l'output indicando il completamento della stored procedure.
 
 ## <a name="clean-up"></a>Eseguire la pulizia
-<!---TODO: Update for sandbox?--->
 
 Se si prevede di continuare a utilizzare i moduli in questo percorso di apprendimento, ignorare il processo di pulizia, altrimenti usare la procedura seguente per eliminare le risorse per evitare di incorrere in addebiti per l'uso del servizio.
 

@@ -1,89 +1,90 @@
-Setting up a CI/CD pipeline has always been challenging to do quickly. Now, it is incredibly easy to go from nothing at all to a full end to end Azure DevOps project. And in the Azure DevOps project, you get the following:
+Configurazione di una pipeline CI/CD sempre stato problematico per eseguire rapidamente. A questo punto, è estremamente facile da implementare da zero a un progetto Azure DevOps end to end completo. E nel progetto DevOps di Azure, si ottiene quanto segue:
 
-1. Infrastructure provisioned for you in Azure.
+1. Infrastruttura di provisioning per l'utente in Azure.
 
-2. A Team Project in a VSTS instance.
+2. Un progetto Team in un'istanza di Visual Studio Team Services.
 
-3. Source code for a sample app in the language that you picked in the repo of your VSTS instance.
+3. Codice sorgente per un'app di esempio nella lingua scelto nel repository dell'istanza di Visual Studio Team Services.
 
-4. A build and release pipeline that makes sense for the technologies picked.
+4. Una pipeline di compilazione e versione che risulta utile per le tecnologie selezionato.
 
-And when its's done, the Azure DevOps project takes the sample app, builds and releases it through the pipelines into the infrastructure it provisions for you up in Azure. And you get all of this with just a couple of clicks.
+E quando relativo dell'operazione eseguita, Azure DevOps progetto accetta l'app di esempio, compila e lo rilascia tramite la pipeline nell'infrastruttura viene effettuato il provisioning per l'iscrizione in Azure. E ottenere tutti questi vantaggi con un paio di clic.
 
-## Create an Azure DevOps project
+## <a name="create-an-azure-devops-project"></a>Creare un progetto DevOps di Azure
 
-You create an Azure DevOps project from the Azure portal.
+Si crea un progetto Azure DevOps dal portale di Azure.
 
-1. Head to the [Azure Portal](https://portal.azure.com) and click `Create a resource`  
-![](/media-draft/1-azureportal.png)
+1. Head per il [portale di Azure](https://portal.azure.com) e fare clic su `Create a resource`  
+![AzurePortal](../media-drafts/1-azureportal.png)
 
-2. Click `DevOps Project`  
-![Pick DevOps Project](/media-draft/1-pickdevopsproject.png)
+2. Fare clic su`DevOps Project`.  
+![Scegliere il progetto DevOps](../media-drafts/1-pickdevopsproject.png)
 
-3. The next screen is where you get to pick what language you want to use. Notice how you can choose .NET (of course), java, node, php, python, ruby, and go. You can even bring your own code in from a git repo. For this unit, let’s go ahead and create a Node.js app. Click Node.js and click Next  
-![Pick Node.js for language](/media-draft/1-picknodejsforlang.png)
+3. Nella schermata successiva è in cui si ottiene scegliere quale lingua si desidera utilizzare. Si noti come è possibile scegliere .NET (naturalmente), java, nodo, php, python, ruby e go. Puoi anche inserire codice personalizzato da un repository git. Per questa unità, è possibile procedere e creare un'app Node. js. Fare clic su Node. js e fare clic su Avanti  
+![Selezionare Node. js per lingua](../media-drafts/1-picknodejsforlang.png)
 
-4. Next it's going to ask you what node.js framework you want to use. For this unit, pick Simple Node.js app and click Next  
-![Pick Simple Node](/media-draft/1-picksimplenode.png)
+4. Successivamente verrà chiesto quali framework di Node. js che si desidera utilizzare. Per questa unità, selezionare l'app Node. js semplice e fare clic su Avanti  
+![Selezionare il nodo semplice](../media-drafts/1-picksimplenode.png)
 
-5. Next, it's going to ask you what infrastructure do you want to provision and run your app in? For this unit, let’s provision and deploy into a Kubernetes cluster using Azure Kubernetes Service. Select Kubernetes Service and click Next  
-![Pick Kubernetes](/media-draft/1-pickkubernetes.png)
+5. Successivamente, verrà chiesto il tipo di infrastruttura si vuole effettuare il provisioning ed eseguire l'app in? Per questa unità, è possibile eseguire il provisioning e distribuire in un cluster Kubernetes con Azure Kubernetes Service. Selezionare Kubernetes Service e fare clic su Avanti  
+![Selezionare Kubernetes](../media-drafts/1-pickkubernetes.png)
 
-6. And now, you can either create a brand new instance of VSTS or choose an existing one. You also get to set up where and how you want your kubernetes cluster to run. For this unit, go ahead and create a new VSTS instance by choosing Select new and give your VSTS instance a unique name. Enter Learn for the Project name, pick your azure subscription, name the Cluster Name LearnCluster, select East US for the location, and click Done  
-![Final Confirmation Screen](/media-draft/1-finalconfirmation.png)
+6. E a questo punto, è possibile creare una nuova istanza di Visual Studio Team Services o sceglierne uno esistente. Puoi anche configurare dove e come si desidera che il cluster kubernetes per eseguire. Per questa unità, proseguire e creare una nuova istanza di Visual Studio Team Services scegliendo selezionare Nuovo e assegnare un nome univoco l'istanza di Visual Studio Team Services. Immettere informazioni per il nome del progetto, selezionare la sottoscrizione di azure, assegnare un nome LearnCluster il nome del Cluster, selezionare l'area Stati Uniti orientali per il percorso e fare clic su Fine  
+![](../media-drafts/1-finalconfirmation2.png)
 
-And that is literally it! This takes a while so kick back, relax and just let Azure do its thing. Most of the time will be spent provisioning and configuring your Azure infrastructure. For this module, this will be your Azure Kubernetes Service and Azure Container Registry.
+E questo è letteralmente tutto! Questa operazione richiede un po' di tempo quindi avviare nuovamente, ridurre e consentire solo ad Azure 2.(e relativa operazione. La maggior parte dei casi verrà eseguita il provisioning e la configurazione dell'infrastruttura di Azure. Per questo modulo, questo sarà il servizio Kubernetes di Azure e registro contenitori di Azure.
 
-## A lap around the finished Azure DevOps Project
+## <a name="a-lap-around-the-finished-azure-devops-project"></a>Panoramica di Azure DevOps progetto finito
 
-When Azure is done, you will be notified in your Alerts
+Quando Azure ha terminato, riceverà una notifica degli avvisi
 
-1. Click on the alert and then Go to resource  
-![Go To Resource From Alert](/media-draft/1-gotoresourcefromalert.png)
+1. Fare clic sull'avviso e quindi Vai alla risorsa  
+![Vai alla risorsa di avviso](../media-drafts/1-gotoresourcefromalert.png)
 
-2. This takes you to a portal blade that displays everything provisioned. On the left-hand side is your CI/CD pipeline. You have your code repository, your build definition, and also your release definition. All the links are deep links that take you directly into the resource in VSTS. And on the right-hand side, you see all the infrastructure deployed for you in Azure. You have your Kubernetes cluster with your sample app already deployed and also application insight. Once again, all these links are deep links to the resources in Azure.  
-![Portal DevOps Project](/media-draft/1-pickdevopsproject.png)
+2. Verrà aperto un pannello del portale che visualizza tutto ciò che è stato effettuato il provisioning. Sul lato sinistro è la pipeline di integrazione continua/recapito Continuo. È necessario nel repository del codice, la definizione di compilazione e anche la definizione di versione. Tutti i collegamenti sono collegamenti diretti da consentono è direttamente la risorsa in Visual Studio Team Services. E a destra, visualizzata tutta l'infrastruttura distribuita automaticamente in Azure. Si dispone di un cluster Kubernetes con l'app di esempio già distribuite e anche application Insights. Ancora una volta, tutti i collegamenti seguenti sono collegamenti diretti alle risorse in Azure.  
+![Portal DevOps Proj](../media-drafts/1-portaldevopsproj.png)
 
-3. Click on the link for your source code  
-![Link to Source](/media-draft/1-linktosource.png)
+3. Fare clic sul collegamento per il codice sorgente  
+![Collegamento all'origine dati](../media-drafts/1-linktosource.png)
 
-4. This takes you to the git repo in your VSTS project. Notice this is just a normal git repo holding the sample node.js app with helm charts.  
-![VSTS Repo](/media-draft/1-vstsrepo.png)
+4. Verrà visualizzata per il repository git nel codice di Azure. Si noti che questo è solo un repository git di normale che contiene l'app Node. js di esempio con i grafici di helm.  
+![Repository di Azure](../media-drafts/1-azurerepo.png)
 
-5. Go into the builds  
-![Link to Builds](/media-draft/1-navtobuild.png)
+5. Analizzare le compilazioni  
+![Collegamento alle compilazioni](../media-drafts/1-linktobuild.png)
 
-6. Edit the created build by clicking on the build and then click Edit  
-![](/media-draft/1-editbuildlink.png)
+6. Modifica di compilazione creata facendo clic sulla compilazione e quindi fare clic su Modifica  
+![Modifica collegamento di compilazione](../media-drafts/1-editbuildlink2.png)
 
-7. You will see a build pipeline that makes sense for the technologies picked. Since we picked a node.js app into a Kubernetes cluster, we get a build pipeline that uses Docker tasks to build the Node.js app, create the image container image and then Helm tasks to create a Helm package.  
-![Build Pipeline](/media-draft/1-buildpipeline.png)
+7. Vedrai una pipeline di compilazione che risulta utile per le tecnologie selezionato. Poiché abbiamo scelto un'app Node. js in un cluster Kubernetes, otteniamo una pipeline di compilazione che usa le attività di Docker per compilare l'app Node. js, creare l'immagine del contenitore immagine e quindi Helm le attività per creare un pacchetto di Helm.  
+![La Pipeline di compilazione](../media-drafts/1-buildpipeline2.png)
 
-8. Go to the Release pipeline by clicking `Releases`  
-![Go to Releases](/media-draft/1-gotoreleases.png)
+8. Passare alla pipeline di rilascio, fare clic su `Releases`  
+![Collegamento di versione](../media-drafts/1-gotoreleaselink.png)
 
-9. You'll see the release pipeline created. Edit it by clicking on the release and selecting `Edit pipeline`  
-![Edit Release](/media-draft/1-editrelease.png)
+9. Si noterà la pipeline di rilascio creata. Modificarlo facendo clic sul rilascio e selezionando `Edit pipeline`  
+![Modifica la versione](../media-drafts/1-editrelease2.png)
 
-10. Azure has created a release pipeline that makes sense for the technologies picked. A node app running in a container hosted in a Kubernetes cluster.
-![Release Pipeline](/media-draft/1-releasepipeline.png)
+10. Azure ha creato una pipeline di rilascio che risulta utile per le tecnologie selezionato. Un'app node in esecuzione in un contenitore e ospitato in un cluster Kubernetes.
+![Pipeline di rilascio](../media-drafts/1-releasepipeline2.png)  
+![Passaggi della Pipeline del rilascio](../media-drafts/1-pipelinesteps.png)
 
-11. Go back to the Azure portal and click on the external endpoint for the kubernetes service  
-![](/media-draft/1-clickonendpoint.png)
+11. Tornare al portale di Azure e fare clic sull'endpoint esterni per il servizio di kubernetes  
+![](../media-drafts/1-clickonendpoint.png)
 
-12. You should see the sample app build and deployed into your AKS cluster  
-![App Running](/media-draft/1-apprunning.png)
+12. Si dovrebbe essere visualizzato l'app di esempio di compilazione e distribuito nel cluster AKS  
+![App in esecuzione](../media-drafts/1-apprunning.png)
 
-## Summary
+## <a name="summary"></a>Riepilogo
 
-In this unit, you created an Azure DevOps project that consists of:
+In questa unità, è stato creato un progetto Azure DevOps costituito da:
 
-1. Infrastructure for your app - Azure Kubernetes Service and Application Insight
+1. Infrastruttura per l'app - Application Insights e Azure Kubernetes Service
 
-2. A Team Project in a VSTS instance.
+2. Un progetto Team in un'istanza di Visual Studio Team Services.
 
-3. Source code for a Node.js sample app running in a container in the repo of your VSTS instance.
+3. Codice sorgente per un'app di esempio Node. js in esecuzione in un contenitore nel repository dell'istanza di Visual Studio Team Services.
 
-4. A build and release pipeline for a Node.js container app running in your Azure Kubernetes Service instance.
+4. Una pipeline di compilazione e versione per un'app contenitore di Node. js in esecuzione nell'istanza di Azure Kubernetes Service.
 
-Next, learn how to replace the sample app with your real app.
+Successivamente, informazioni su come sostituire l'app di esempio con l'app reale.

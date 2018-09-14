@@ -8,7 +8,7 @@ Tutte le piattaforme mobili dispongono di funzionalità di sicurezza per protegg
 
 1. Accedere alla scheda **Funzionalità** e selezionare la funzionalità *Posizione*.
 
-    ![Scheda delle funzionalità della piattaforma UWP](../media-drafts/4-uwp-location-capability.png)
+    ![Scheda delle funzionalità della piattaforma UWP](../media/4-uwp-location-capability.png)
 
 > Se si vuole supportare Android o iOS, le autorizzazioni devono essere configurate in modo diverso. Queste informazioni sono descritte dettagliatamente nella [documentazione sulla geolocalizzazione di Xamarin.Essentials](https://docs.microsoft.com/xamarin/essentials/geolocation?tabs=android#getting-started).
 
@@ -49,7 +49,7 @@ async Task SendLocation()
 
 Eseguire l'app e fare clic sul pulsante **Invia posizione** per vedere la posizione nell'interfaccia utente.
 
-![App in esecuzione che mostra la posizione dell'utente](../media-drafts/4-running-app-showing-location.png)
+![App in esecuzione che mostra la posizione dell'utente](../media/4-running-app-showing-location.png)
 
 > Questa app usa l'ultima posizione nota. In un'app per ambienti di produzione può essere utile ottenere la posizione precisa corrente con un periodo di scadenza per cui se una posizione non viene trovata entro il tempo specificato, viene restituita l'ultima posizione nota. Per altre informazioni su questa operazione, vedere la [documentazione sulla geolocalizzazione di Xamarin.Essentials](https://docs.microsoft.com/xamarin/essentials/geolocation?tabs=uwp#using-geolocation). Questa app non include funzionalità per la gestione degli errori. In un'app per ambienti di produzione è consigliabile gestire tutte le eccezioni che si verificano, ad esempio in caso di posizione non disponibile.
 

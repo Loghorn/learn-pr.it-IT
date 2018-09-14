@@ -1,36 +1,35 @@
 ### YamlMime:ModuleUnit
 uid: learn.introduction-to-azure-virtual-machines.7-knowledge-check
-title: Knowledge check
+title: Verifica delle conoscenze
 metadata:
-  title: Knowledge check
-  description: Knowledge check
+  title: Verifica delle conoscenze
+  description: Verifica delle conoscenze
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
 durationInMinutes: 3
 quiz:
-  title: 'Azure Virtual Machine'
+  title: Macchina virtuale di Azure
   questions:
-  - content: 'Suppose you want to run a network appliance on a virtual machine. Which workload option will you choose?'
-    choices:
-    - content: General purpose
-      isCorrect: false
-    - content: Compute optimized
-      isCorrect: true
-    - content: Memory optimized
-      isCorrect: false
-    - content: Storage optimized
-      isCorrect: false
-  - content: 'Assume you want to deploy a copy of an existing Azure virtual machine. Which option will you choose to complete the job?'
-    choices:
-    - content: PowerShell
-      isCorrect: false
-    - content: Resource Manager Templates
-      isCorrect: true
-    - content: Azure CLI
-      isCorrect: false
-    - content: Azure Client SDK
-      isCorrect: false
+    - content: Si supponga di voler eseguire un'appliance di rete su una macchina virtuale. Quale opzione di carico di lavoro verrà scelta?
+      choices:
+        - content: Utilizzo generico
+          isCorrect: false
+        - content: Ottimizzato per il calcolo
+          isCorrect: true
+        - content: Ottimizzato per la memoria
+          isCorrect: false
+        - content: Ottimizzato per l'archiviazione
+          isCorrect: false
+    - content: Si supponga di voler distribuire una copia di una macchina virtuale di Azure esistente. L'opzione si sceglierà di completare il processo?
+      choices:
+        - content: PowerShell
+          isCorrect: false
+        - content: Modelli di Resource Manager
+          isCorrect: true
+        - content: Interfaccia della riga di comando di Azure
+          isCorrect: false
+        - content: SDK per client Azure
+          isCorrect: false

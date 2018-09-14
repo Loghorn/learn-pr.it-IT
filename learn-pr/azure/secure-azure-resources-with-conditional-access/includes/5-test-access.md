@@ -10,7 +10,7 @@ Gli utenti eseguiranno l'accesso a tutte le applicazioni SaaS tramite il portale
 
 1. Passare a https://myapps.microsoft.com.
 
-1. Accedere usando le credenziali dell'utente creato nell'unità 2.
+1. Accedere come l'utente che è stato creato nell'unità 3.
 
    * Si noti che si esegue l'accesso al portale senza l'autenticazione a più fattori.
 

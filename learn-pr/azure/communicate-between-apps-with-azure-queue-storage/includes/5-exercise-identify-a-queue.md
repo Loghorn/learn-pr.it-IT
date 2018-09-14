@@ -1,16 +1,16 @@
-Let's create a client application to work with a queue. Then we'll add our connection string to the code.
+Qui sotto si vedrà come creare un'applicazione client per lavorare con una coda. Quindi, la stringa di connessione verrà aggiunta al codice.
 
-## Create the application
+## <a name="create-the-application"></a>Creare l'applicazione
 
-We'll create a .NET Core application that you can run on Linux, macOS, or Windows. Let's name it **QueueApp**. For simplicity, we'll use a single app that will both send and receive messages through our queue.
+Si creerà un'applicazione .NET Core che è possibile eseguire su Linux, macOS o Windows. L'applicazione verrà chiamata **QueueApp**. Per semplicità, verrà usata una sola app che invierà e riceverà messaggi tramite la coda.
 
-1. Use the `dotnet new` command to create a new console app with the name **QueueApp**. You can type commands into the Cloud Shell on the right, or if you are working locally, in a terminal/console window. This creates a simple app with a single source file: `Program.cs`.
+1. Usare il comando `dotnet new` per creare una nuova app console con il nome **QueueApp**. È possibile digitare i comandi in Cloud Shell a destra, oppure se si lavora in locale, in una finestra del terminale o della console. Verrà creata un'app semplice con un singolo file di origine: `Program.cs`.
 
     ```azurecli
     dotnet new console -n QueueApp
     ```
 
-1. Switch to the newly created `QueueApp` folder and build the app to verify that all is well.
+1. Passare alla cartella `QueueApp` appena creata e compilare l'app per verificare che tutto funzioni correttamente.
 
     ```azurecli
     cd QueueApp
@@ -20,17 +20,17 @@ We'll create a .NET Core application that you can run on Linux, macOS, or Window
     dotnet build
     ```
 
-## Get your connection string
+## <a name="get-your-connection-string"></a>Ottenere una stringa di connessione
 
-Recall that your connection string is available in the Azure portal **Settings > Access keys** section of your storage account.
+È importante ricordare che la stringa di connessione è disponibile nella sezione **Impostazioni > Chiavi di accesso** dell'account di archiviazione nel portale di Azure.
 
-You can also retrieve it through the Azure CLI or PowerShell tools. Let's use the Azure CLI command. Remember to replace the `<name>` with the specific name of the storage account you created. You can use `az storage account list` if you need a reminder.
+È anche possibile recuperarla tramite gli strumenti interfaccia della riga di comando di Azure o PowerShell. Verrà usata l'interfaccia della riga di comando di Azure. Ricordare di sostituire `<name>` con il nome specifico dell'account di archiviazione creato. È possibile usare `az storage account list` se è necessario un promemoria.
 
 ```azurecli
 az storage account show-connection-string --name <name> --resource-group ExerciseResources
 ```
 
-This command will return a JSON block with your connection string. It will include the storage account name and the account key:
+Questo comando restituirà un blocco JSON con la stringa di connessione. Includerà il nome e la chiave dell'account di archiviazione:
 
 ```json
 {
@@ -38,22 +38,22 @@ This command will return a JSON block with your connection string. It will inclu
 }
 ```
 
-## Add the connection string to the application
+## <a name="add-the-connection-string-to-the-application"></a>Aggiungere la stringa di connessione all'applicazione
 
-Finally, let's add the connection string into our app so it can access the storage account.
+Infine, aggiungere la stringa di connessione all'app in modo che possa accedere all'account di archiviazione.
 
 > [!WARNING]
-> For simplicity, you will place the connection string in the **Program.cs** file. In a production application, you should store it in a secure location. For server side use, we recommend using Azure Key Vault.
+> Per semplicità, la stringa di connessione verrà inserita nel file **Program.cs**. In un'applicazione di produzione è necessario archiviarla in una posizione sicura. Per l'uso sul lato server, è consigliabile usare Azure Key Vault.
 
-1. Type `code .` in the terminal to open the online code editor. Alternatively, if you are working on your own you can use the IDE of your choice. We recommend Visual Studio Code, which is an excellent cross-platform IDE.
+1. Digitare `code .` nel terminale per aprire l'editor di codice online. In alternativa, se si lavora in modo autonomo è possibile usare l'IDE preferito. Si consiglia Visual Studio Code, che è un eccellente IDE multipiattaforma.
 
-1. Open the `Program.cs` source file in the project.
+1. Aprire il file di origine `Program.cs` nel progetto.
 
-1. In the `Program` class, add a `const string` value to hold the connection string. You only need the value (it starts with the text **DefaultEndpointsProtocol**).
+1. Nella classe `Program`, aggiungere un valore `const string` per memorizzare la stringa di connessione. È necessario solo il valore (inizia con il testo **DefaultEndpointsProtocol**).
 
-1. Save the file. You can click the ellipse "..." in the right corner of the cloud editor, it will also show you the keyboard shortcut.
+1. Salvare il file. È possibile fare clic sui puntini di sospensione "..." nell'angolo a destra dell'editor del cloud. Verranno visualizzati anche i tasti di scelta rapida.
 
-Your code should look something like this (the string value will be unique to your account).
+Il codice dovrebbe essere simile al seguente (il valore della stringa sarà univoco per l'account).
 
 ```csharp
 ...
@@ -68,4 +68,4 @@ namespace QueueApp
 }
 ```
 
-Now that we have this starter project setup, let's look at how to work with a queue in code. It all starts with _messages_.
+Con questa configurazione iniziale del progetto, sarà possibile esaminare come lavorare con una coda nel codice. Tutto inizia con i _messaggi_.

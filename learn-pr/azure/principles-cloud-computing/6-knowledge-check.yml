@@ -1,55 +1,33 @@
 ### YamlMime:ModuleUnit
-uid: principles-cloud-computing.6-knowledge-check
+uid: learn.principles-cloud-computing.6-knowledge-check
 metadata:
   title: Verificare le proprie conoscenze
   description: Verificare le proprie conoscenze
-  displayType: one-column
-  ms.openlocfilehash: 4e9c2a54209bec5caf81ac2d41ad00b58146244c
-  ms.sourcegitcommit: 926510a198d738c5726081f6d7994fe9b6fc6edb
-  ms.translationtype: HT
-  ms.contentlocale: it-IT
-  ms.lasthandoff: 08/29/2018
-  ms.locfileid: "43179846"
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
 title: Verificare le proprie conoscenze
-durationInMinutes: 2
+durationInMinutes: 3
 quiz:
   title: Verifica delle conoscenze
   questions:
-  - content: Vero o falso, quando si usa un provider di servizi cloud pubblico come Azure, viene richiesto di pagare l'intero costo dell'hardware fisico fin dall'inizio?
-    choices:
-    - content: Vero
-      incorrectExplanation: Azure supporta un modello di prezzi con pagamento in base al consumo. Ciò significa che si noleggia l'hardware e si paga solo per le risorse utilizzate.
-      isCorrect: false
-    - content: Falso
-      correctExplanation: Azure supporta un modello di prezzi con pagamento in base al consumo. Ciò significa che si noleggia l'hardware e si paga solo per le risorse utilizzate.
-      isCorrect: true
-  - content: Si supponga che il sito Web abbia avuto un picco di traffico durante la notte. Usando un provider di servizi cloud pubblico come Azure, è possibile che il sito Web non abbia riscontrato tempi di inattività perché ha ridimensionato automaticamente le relative risorse.
-    choices:
-    - content: Vero
-      correctExplanation: Il cloud computing è considerato elastico. Ciò significa che le risorse possono essere automaticamente allocate o deallocate in base alla domanda.
-      isCorrect: true
-    - content: Falso
-      incorrectExplanation: Il cloud computing è considerato elastico. Ciò significa che le risorse possono essere automaticamente allocate o deallocate in base alla domanda.
-      isCorrect: false
-  - content: Si supponga che si desideri passare al cloud e si desideri una scalabilità elevata, un hardware noleggiato, e che la sicurezza non sia un problema rilevante. Quale modello di distribuzione cloud è consigliabile usare?
-    choices:
-    - content: Cloud pubblico
-      correctExplanation: Un cloud pubblico è di proprietà e gestito da un provider di servizi cloud di terze parti, che offre i vantaggi di scalabilità e un hardware noleggiato. Poiché l'hardware non è di proprietà dell'utente, non è possibile controllare chi ha accesso fisico a esso.
-      isCorrect: true
-    - content: Cloud privato
-      incorrectExplanation: Un motivo importante per scegliere un cloud privato è la sicurezza. Con un cloud privato, l'hardware è in genere di proprietà e gestito in locale.
-      isCorrect: false
-    - content: Cloud ibrido
-      incorrectExplanation: Un cloud ibrido è un cloud pubblico e privato combinato. Dal momento che la sicurezza in merito non è un problema, non è necessario spostare nulla sul cloud privato.
-      isCorrect: false
-  - content: Si supponga che si stia creando un'applicazione e si desideri renderla accessibile agli utenti nel minor tempo possibile. Non ci si deve preoccupare di gestire l'hardware o il software sottostanti, ma solo di creare, testare e distribuire. Quale tipo di servizio cloud è più adatto?
-    choices:
-    - content: 'Infrastructure as a Service: infrastruttura distribuita come servizio'
-      incorrectExplanation: Con l'infrastruttura distribuita come servizio, si è responsabili della gestione di hardware e software. Ciò include attività quali l'esecuzione degli aggiornamenti di sistema nelle macchine virtuali.
-      isCorrect: false
-    - content: 'Platform as a Service: piattaforma distribuita come servizio'
-      correctExplanation: L'obiettivo della piattaforma distribuita come servizio consiste nell'assistere alla creazione di un'applicazione nel minor tempo possibile. Le attività di gestione IT vengono eseguite automaticamente, in modo che sia possibile concentrarsi sulla scrittura del codice.
-      isCorrect: true
-    - content: 'Software as a Service: software come servizio'
-      incorrectExplanation: Con il software come servizio, si usa un'applicazione esistente tramite un web browser o applicazioni software.
-      isCorrect: false
+    - content: 'Si supponga di avere due tipi di applicazioni: applicazioni legacy che richiedono hardware specializzato mainframe e le applicazioni più recenti che è possono eseguire in hardware apposito. Quale modello di distribuzione cloud sono adatta a te?'
+      choices:
+        - content: Cloud pubblico
+          isCorrect: false
+        - content: Cloud privato
+          isCorrect: false
+        - content: Cloud ibrido
+          isCorrect: true
+          correctExplanation: Un cloud ibrido è un cloud pubblico e privato combinato. È possibile eseguire le nuove applicazioni in hardware apposito è noleggiare dal cloud pubblico e gestire l'hardware di mainframe specializzato su premeses.
+    - content: 'Si sta sviluppando un''applicazione e si vuole concentrarsi sulla compilazione, test e la distribuzione. Non si vuole preoccuparsi della gestione dell''hardware o software sottostanti. Quale tipo di servizio cloud è più adatto?'
+      choices:
+        - content: Infrastructure-as-a-service
+          isCorrect: false
+        - content: Platform-as-a-service
+          isCorrect: true
+          correctExplanation: 'Platform-as-a-service è la scelta migliore in questo caso, poiché le attività di gestione IT di gestire i servizi PaaS, è possibile concentrarsi sulla scrittura di codice.'
+        - content: Software-as-a-service
+          isCorrect: false

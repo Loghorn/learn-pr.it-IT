@@ -1,32 +1,30 @@
 ### YamlMime:LearningPath
 uid: learn.cloud-foundations
 metadata:
-  title: Cloud foundations
-  description: Interested in the cloud, but aren't quite sure what it can do for you? This learning path is the place to start. Learn the benefits of cloud computing, features in Azure that will save you time and money, basic strategies for transitioning to the cloud and more.
+  title: Concetti fondamentali del cloud
+  description: 'Si è interessati al cloud, ma non si sa bene cosa può fare per le proprie esigenze? Questo percorso di apprendimento è il punto di partenza. Informazioni sui vantaggi del cloud computing, le funzionalità di Azure che consentono di risparmiare tempo e denaro, le strategie di base per la transizione al cloud e altro ancora.'
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Cloud foundations
-summary: Interested in the cloud, but aren't quite sure what it can do for you? This learning path is the place to start. Learn the benefits of cloud computing, features in Azure that will save you time and money, basic strategies for transitioning to the cloud and more.
-prerequisites: None
-#TODO: Update icon URL with real image 
-iconUrl: http://via.placeholder.com/120x120
+title: Concetti fondamentali del cloud
+summary: 'Si è interessati al cloud, ma non si sa bene cosa può fare per le proprie esigenze? Questo percorso di apprendimento è il punto di partenza. Informazioni sui vantaggi del cloud computing, le funzionalità di Azure che consentono di risparmiare tempo e denaro, le strategie di base per la transizione al cloud e altro ancora.'
+prerequisites: Nessuno
+iconUrl: /achievements/cloud-foundations.svg
 levels:
-- beginner
+  - beginner
 roles:
-- developer
-- solution-architect
-- administrator
+  - developer
+  - solution-architect
+  - administrator
 products:
-- azure
+  - azure
 modules:
-- principles-cloud-computing
-- learn.azure-services-features
-- learn.intro-to-compute
-- learn.intro-to-data-in-azure
-- learn.introduction-to-security
-- learn.intro-to-azure-networking
+  - learn.principles-cloud-computing
+  - learn.azure-services-features
+  - learn.intro-to-compute
+  - learn.intro-to-data-in-azure
+  - learn.introduction-to-security
+  - learn.intro-to-azure-networking
 achievement: learn.cloud-foundations.trophy

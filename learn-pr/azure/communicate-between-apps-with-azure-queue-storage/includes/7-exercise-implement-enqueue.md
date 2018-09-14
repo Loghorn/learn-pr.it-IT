@@ -1,35 +1,35 @@
-Now that all the requirements are in place, you can write code that creates a new storage queue and adds a message. We would typically place this code in our front-end apps that generate the data.
+Ora che tutti i requisiti sono soddisfatti, è possibile scrivere codice per creare una nuova coda di archiviazione e aggiungere un messaggio. In genere, questo codice viene inserito nelle app front-end che generano i dati.
 
-## Add the client library for Azure Storage
+## <a name="add-the-client-library-for-azure-storage"></a>Aggiungere la libreria client di Archiviazione di Azure
 
-Let's start by adding the **Azure Storage Client Library for .NET** to our app. It can be installed with NuGet (a .NET package manager). 
+Per iniziare, aggiungere la **libreria client Archiviazione di Azure per .NET** all'app. È possibile installarla con NuGet (uno strumento di gestione pacchetti .NET). 
 
 > [!NOTE]
-> Even though a new Cloud Shell was created, your files are all still present. However, you will need to switch into the `QueueApp` folder since you will now be at the root of your storage area. Just type `cd QueueApp` to switch folders. Make sure to do this before attempting to add the package since the .NET app is in that folder.
+> Anche se è stata creata una nuova Cloud Shell, i file sono ancora presenti. Tuttavia è necessario passare alla cartella `QueueApp` poiché ora ci si trova nella radice dell'area di archiviazione. È sufficiente digitare `cd QueueApp` per passare da una cartella all'altra. Assicurarsi di eseguire questa operazione prima di aggiungere il pacchetto, poiché l'app .NET si trova in tale cartella.
 
-1. Change the current directory to the `QueueApp` folder.
+1. Modificare la directory corrente alla cartella `QueueApp`.
 
-1. Install the `WindowsAzure.Storage` package to the project with the `dotnet add package` command.
+1. Installare il pacchetto `WindowsAzure.Storage` sul progetto con il comando `dotnet add package`.
 
 ```azurecli
 dotnet add package WindowsAzure.Storage
 ```
 
-## Add a method to send a news alert
+## <a name="add-a-method-to-send-a-news-alert"></a>Aggiungere un metodo per inviare un avviso sulle notizie
 
-Next, let's create a new method to send a news story into a queue.
+È possibile creare un nuovo metodo per l'invio di una storia di notizie in una coda.
 
-1. Open the code editor by typing `code .`
+1. Aprire l'editor di codice digitando `code .`
 
-1. Open the `Program.cs` file.
+1. Aprire il file `Program.cs`.
 
-1. At the top of the file, add the following namespaces. We'll be using types from both of these to connect to Azure Storage and then to work with queues.
+1. Aggiungere gli spazi dei nomi seguenti all'inizio del file. Verranno usati tipi di entrambi gli spazi per connettersi ad Archiviazione di Azure e quindi lavorare con le code.
 
     - System.threading.task
     - Microsoft.WindowsAzure.Storage
     - Microsoft.WindowsAzure.Storage.Queue
 
-1. Create a static method in the `Program` class named `SendArticleAsync` that takes a `string` and returns a `Task`. We'll use this method to send a news article in to our service. Name the input parameter `newsMesasage` as shown below.
+1. Creare un metodo statico nella classe `Program` denominato `SendArticleAsync` che accetta un `string` e restituisce `Task`. Questo metodo verrà usato per inviare un articolo al servizio. Assegnare un nome al parametro di input `newsMesasage` come illustrato di seguito.
 
     ```csharp
     ...
@@ -46,20 +46,21 @@ Next, let's create a new method to send a news story into a queue.
     }
     ```
     
-1. In your new method, use the static `CloudStorageAccount.Parse` method to parse your connection string (recall we placed it into a constant string). This method returns a `CloudStorageAccount` object that needs to be stored in a variable.
+1. Nel nuovo metodo, usare il metodo statico `CloudStorageAccount.Parse` per analizzare la stringa di connessione (tenere presente che è stata inserita in una stringa costante). Questo metodo restituisce un oggetto `CloudStorageAccount` che deve essere archiviato in una variabile.
 
-1. Call the `CreateCloudQueueClient()` method on the storage account object to get a client object and store that in a variable.
+1. Chiamare il metodo `CreateCloudQueueClient()` nell'oggetto account di archiviazione per ottenere un oggetto client e archiviarlo in una variabile.
 
-1. Next, call `GetQueueReference` method on the client object and pass the string `"newsqueue"` for the queue name. This returns a `CloudQueue` object that we can use to work with the queue. It's OK if the queue does not exist yet.
+1. Successivamente, chiamare il metodo `GetQueueReference` sull'oggetto client e passare la stringa `"newsqueue"` per il nome della coda. In questo modo verrà restituito un oggetto `CloudQueue` che è possibile usare per lavorare con la coda. Non importa se la coda non esiste ancora.
 
-1. Call `CreateIfNotExistsAsync()` on the `CloudQueue` object to ensure the queue is ready for use. This will create the queue if necessary.
-    - Since this is an asynchronous method, use the C# `await` keyword to ensure we work properly with it. That also means you need to decorate the _method_ with the `async` keyword. 
-    - `CreateIfNotExistsAsync` returns a `bool` value that will be `true` if the queue was created and `false` if it already exists. Output a message to the console if we created the queue.
-    - Here's an example if you need some help.
+1. Chiamare `CreateIfNotExistsAsync()` sull'oggetto `CloudQueue` per verificare che la coda sia pronta per l'uso. Verrà creata la coda se necessario.
+    - Poiché si tratta di un metodo asincrono, usare la parola chiave `await` di C# per verificarne il corretto funzionamento. Inoltre, sarà necessario decorare il _metodo_ con la parola chiave `async`. 
+    - `CreateIfNotExistsAsync` restituisce il valore `bool` che diventerà `true` se la coda è stata creata, oppure `false` se esiste già. Inviare un messaggio alla console se la coda è stata creata.
+    - L'esempio seguente fornisce supporto.
 
     ```csharp
     static async Task SendArticleAsync(string newsMessage)
     {
+        // Not Shown here - code from prior steps
         ...
         bool createdQueue = await queue.CreateIfNotExistsAsync();
         if (createdQueue)
@@ -69,13 +70,13 @@ Next, let's create a new method to send a news story into a queue.
     }
     ```
 
-1. Create an instance of a `CloudQueueMessage`. 
-    - It takes a `string` parameter, pass in the method parameter (`newsMessage`). This will be the _body_ of the message. There is also a static method named  that can create a binary message payload.
+1. Creare un'istanza di un `CloudQueueMessage`. 
+    - Richiede un parametro `string`, quindi passare il parametro del metodo (`newsMessage`). Questo sarà il _corpo_ del messaggio. È inoltre disponibile un metodo statico denominato che può creare un payload del messaggio binario.
     
 
-1. Call `AddMessageAsync` on the `CloudQueue` object to add the message to the queue. This is also an asynchronous method and you will need to use the `await` keyword to ensure we properly interact with it.
+1. Chiamare `AddMessageAsync` sull'oggetto `CloudQueue` per aggiungere il messaggio alla coda. Questo è anche un metodo asincrono e sarà necessario usare la parola chiave `await` per verificarne la corretta interazione con l'utente.
 
-1. Save the file and build it by typing `dotnet build` into the command window. Fix any errors, you can use the following code to check your work.
+1. Salvare il file e compilarlo digitando `dotnet build` nella finestra di comando. Risolvere eventuali errori. È possibile usare il codice seguente per controllare il lavoro.
 
     ```csharp
     static async Task SendArticleAsync(string newsMessage)
@@ -96,22 +97,22 @@ Next, let's create a new method to send a news story into a queue.
     }
     ```
 
-## Add code to send a message
+## <a name="add-code-to-send-a-message"></a>Aggiungere codice per inviare un messaggio
 
-Let's modify the `Main` method to pass any parameters received into our new method so we can test our new send method.
+Si modificherà il metodo `Main` per passare i parametri ricevuti nel nuovo metodo, in modo che sia possibile testare il nuovo metodo di invio.
 
-1. Locate the `Main` method.
+1. Individuare il metodo `Main`.
 
-1. Check the passed `args` parameter to see if any data was passed to the command line. If so, use `String.Join` to create a single string from all the words using a space as the separator.
+1. Controllare il parametro passato `args` per verificare se alcuni dati sono stati passati alla riga di comando. In caso affermativo, usare `String.Join` per creare una singola stringa con tutte le parole usando uno spazio come separatore.
 
-1. Pass that to the new `SendArticleAsync` method. 
+1. Passare al nuovo metodo `SendArticleAsync`. 
 
-1. Once it returns, use `Console.WriteLine` to output the message we sent.
+1. Una volta che viene restituito, usare `Console.WriteLine` per inviare il messaggio inviato.
 
-1. Save the file and build the program (`dotnet build`), you can use the code below to check your work.
+1. Salvare il file e compilare il programma (`dotnet build`). È possibile usare il codice seguente per controllare il lavoro.
 
 > [!NOTE]
-> Since our method is technically asynchronous, we normally would want to use the `await` keyword, however that feature isn't available on your `Main` method unless you are using C# 7.2 (it's a new feature). To ensure we can use this on older versions of the language, just call `Wait()` on the method to actually block waiting for the method to return.
+> Poiché il metodo è tecnicamente asincrono, in genere è preferibile usare la parola chiave `await`, tuttavia questa funzionalità non è disponibile nel metodo `Main` a meno che non si usi C# 7.2 (si tratta di una nuova funzionalità). Per assicurarsi di poterla usare nelle versioni precedenti del linguaggio, è sufficiente chiamare `Wait()` sul metodo per evitare di attendere la restituzione del metodo.
 
     ```csharp
     static void Main(string[] args)
@@ -125,30 +126,30 @@ Let's modify the `Main` method to pass any parameters received into our new meth
     }
     ```
 
-## Execute the application
+## <a name="execute-the-application"></a>Eseguire l'applicazione
 
-The application can now send messages. To test it, you can run it from the command line with the `dotnet run` command. Any additional strings are passed as parameters to the application. As an example, you can type:
+L'applicazione può ora inviare messaggi. Per testarla, è possibile eseguirla dalla riga di comando con il comando `dotnet run`. Eventuali stringhe aggiuntive vengono passate all'applicazione come parametri. Ad esempio, è possibile digitare:
 
     ```azurecli
     dotnet run Send this message
     ```
 
 > [!WARNING]
-> Make sure you have saved all the files in the online editor before you build and run the program.
+> Assicurarsi di aver salvato tutti i file nell'editor online prima di compilare ed eseguire il programma.
 
-This should add the string `"Send this message"` into the queue.
+In questo modo, la stringa `"Send this message"` dovrebbe venire aggiunta alla coda.
 
-## Check your results
+## <a name="check-your-results"></a>Controllare i risultati
 
-You can check queues in the Azure portal using the **Storage Explorer**, if you open that product it will let you explore the data in each storage account you own.
+È possibile controllare le code nel portale di Azure usando **Storage Explorer**. Se si apre questo prodotto, sarà possibile esplorare i dati in tutti gli account di archiviazione di cui si è proprietari.
 
-Alternatively, you can use the Azure CLI or PowerShell. Try this command in the shell, replacing the `<connection-string>` value with your specific connection string:
+In alternativa, è possibile usare l'interfaccia della riga di comando di Azure o PowerShell. Provare a eseguire questo comando nella shell, sostituendo il valore `<connection-string>` con la stringa di connessione specifica:
 
 ```azurecli
 az storage message peek --queue-name newsqueue --connection-string <connection-string> 
 ```
 
-This should dump the information for your message, which will look something like this:
+Ciò dovrebbe avviare il dump delle informazioni per il messaggio, che avrà un aspetto simile al seguente:
 
 ```json
 [
@@ -164,9 +165,9 @@ This should dump the information for your message, which will look something lik
 ]
 ```
 
-There are several other commands available that you can try with the tools - check out both `az storage queue --help` and `az storage message --help` to explore them.
+Sono disponibili numerosi altri comandi che è possibile provare con gli strumenti; eseguire il checkout di `az storage queue --help` e `az storage message --help` per esplorarli.
 
 > [!TIP]
-> Put your connection string value into an environment variable named `AZURE_STORAGE_CONNECTION_STRING` to save yourself from having to type the `--connection-string` parameter every time!
+> Inserire il valore della stringa di connessione in una variabile di ambiente denominata `AZURE_STORAGE_CONNECTION_STRING` per non dover digitare ogni volta il parametro `--connection-string`.
 
-Now that we have sent a message, the last step is to add support to _receive_ the message.
+Ora che il messaggio è stato inviato, l'ultimo passaggio consiste nell'aggiungere il supporto per la _ricezione_ del messaggio.

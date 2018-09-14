@@ -1,37 +1,37 @@
-When building an application, you want to provide a great user experience, and a part of that is quick data retrieval. Retrieving data from a database is typically a slow process and if this data is read often, this could provide a poor user experience. The cache-aside pattern describes how you can implement a cache in conjunction with a database to return the most commonly accessed data as quickly as possible.
+Quando si compila un'applicazione, si desidera fornire un'esperienza utente eccezionale e una parte di che è il recupero rapido dei dati. Il recupero dei dati da un database è in genere un processo lenta e se questi dati viene letto spesso, è possibile ottenere un'esperienza utente di scarsa qualità. Il modello cache-aside descrive come è possibile implementare una cache in combinazione con un database, per restituire più di frequente i dati nel minor tempo.
 
-Here, you'll learn how the cache-aside pattern can be used to ensure your important data is quickly accessible.
+In questo caso, si apprenderà come utilizzare il modello cache-aside per assicurarsi che i dati importanti sono rapidamente accessibili.
 
-## What is the cache-aside pattern?
+## <a name="what-is-the-cache-aside-pattern"></a>Che cos'è il modello cache-aside?
 
-The cache-aside pattern dictates that when you need to retrieve data from a data source, like a relational database, you should first check for the data in your cache. If the data is in your cache, use it. If the data is not in your cache, then query the database, and when you're returning the data back to the user add it to your cache. This will then allow you to access the data from your cache the next time it's needed.
+Il modello cache-aside determina, quando è necessario recuperare i dati da un'origine dati, ad esempio un database relazionale, è necessario prima di tutto controllare per i dati nella cache. Se i dati sono presenti nella cache, è necessario usarlo. Se i dati sono non nella cache e quindi eseguono query sul database e quando i dati restituiti all'utente, aggiungerlo alla cache. Ciò consentirà quindi di accedere ai dati dalla cache la volta successiva che è necessaria.
 
-## When to implement cache-aside pattern?
+## <a name="when-to-implement-the-cache-aside-pattern"></a>Quando implementare il modello cache-aside?
 
-Reading data from a database is usually a slow process because it involves compilation of a complex query, preparation of a query execution plan, execution of the query, and then preparation of the result. In some cases, this process may read data from the disk as well. There are optimizations that can be done on the database level like having pre-compiling the queries, and loading some of the data in memory. However, execution of the query and preparation of the result will always happen when retrieving data from a database.
+Lettura di dati da un database è in genere un processo lenta. Questa operazione implica la compilazione di una query complessa, la preparazione di un piano di esecuzione di query, l'esecuzione della query, quindi la preparazione del risultato. In alcuni casi, questo processo può leggere i dati dal disco anche. Sono disponibili ottimizzazioni che possono essere eseguite a livello di database, come la pre-compilazione di query e il caricamento di alcuni dei dati in memoria. Tuttavia, l'esecuzione della query e la preparazione del risultato verrà sempre eseguito durante il recupero dei dati da un database.
 
-We can solve this problem using cache-aside pattern. In the cache-aside pattern, we still have the application and the database, but now we also have a cache. A cache stores its data in memory, so it doesn't have to interact with the file system. Caches also store data in very simple data structures, like key value pairs, so they don't have to execute complex queries to gather data or maintain indexes when writing data. Because of this, a cache is typically more performant than a database. When you use an application, it will try to read data from the cache first. If the requested data is not in the cache, the application will retrieve it from the database, like it always has done. However, then it stores the data in the cache for subsequent requests. Next time when any user requests the data, it will return it from the cache directly.
+È possibile risolvere il problema usando il modello cache-aside. Nel modello cache-aside, c'è ancora l'applicazione e il database, ma ora è presente anche una cache. Una cache archivia i dati in memoria, in modo da non dover interagire con il file system. Le cache di archiviano i dati in strutture di dati molto semplice, come coppie chiave-valore, in modo che gli utenti non devono eseguire query complesse per raccogliere i dati o gestione degli indici durante la scrittura dei dati. Per questo motivo, una cache è in genere più efficiente rispetto a un database. Quando si usa un'applicazione, verrà effettuato un tentativo di leggere prima di tutto i dati dalla cache. Se i dati richiesti non sono presente nella cache, l'applicazione verrà recuperarlo dal database, come viene sempre completata. Tuttavia, quindi Archivia i dati nella cache per le richieste successive. La volta successiva quando un utente richiede i dati, verrà restituito viene dalla cache direttamente.
 
-![Load Data to Cache](../media-draft/cache-aside-set-cache.png)
+![Diagramma di caricamento dei dati da memorizzare nella cache](../media-draft/cache-aside-set-cache.png)
 
-### How to manage updating data
+### <a name="how-to-manage-updating-data"></a>Come gestire l'aggiornamento dei dati
 
-When you implement the cache-aside pattern, you introduce a small problem. Since your data is now stored in a cache and a data store, you can run into problems when you try to make an update. For example, to update your data, you would need to update both the cache and the data store.
+Quando si implementa il modello cache-aside, si introduce un piccolo problema. Poiché i dati viene ora archiviati in una cache e un archivio dati, si verificano problemi quando si prova a eseguire un aggiornamento. Ad esempio, per aggiornare i dati, è necessario aggiornare la cache e l'archivio dati.
 
-The solution to this problem in the cache-aside pattern is to invalidate the data in the cache. When you update date in your application you should first delete the data in the cache and then make the changes to the data source directly. By doing this, next time the data is requested, it won't be present in the cache, and the process will repeat. 
+La soluzione al problema del modello cache-aside è per invalidare i dati nella cache. Quando si aggiornano i dati nell'applicazione, è necessario innanzitutto eliminare i dati nella cache e quindi apportare le modifiche all'origine dati direttamente. In questo modo, la volta successiva che vengono richiesti i dati, non sarà presente nella cache e il processo viene ripetuto. 
 
-![Invalidate Cached Data](../media-draft/cache-aside-invalidate.png)
+![Diagramma di invalidamento dati memorizzati nella cache](../media-draft/cache-aside-invalidate.png)
 
-## Considerations for using the cache-aside pattern
+## <a name="considerations-for-using-the-cache-aside-pattern"></a>Considerazioni sull'uso del modello cache-aside
 
-Carefully consider which data we should put in the cache. Not all data is suitable to be cached.
+Valutare con attenzione i dati da inserire nella cache. Non tutti i dati sono adatti da memorizzare nella cache.
 
-- **Lifetime**: For cache-aside to be effective, make sure that the expiration policy matches the access frequency of the data. Making the expiration period too short can cause applications to continually retrieve data from the data store and add it to the cache.
+- **Durata**: per la cache-aside essere efficace, assicurarsi che i criteri di scadenza corrispondano la frequenza di accesso dei dati. Effettua il periodo di scadenza troppo breve possono causa applicazioni recuperino continuamente i dati dai dati di archiviare e aggiungerlo alla cache.
 
-- **Evicting**: Caches have a limited size compared to typical data stores, and they'll evict data if necessary. Make sure you choose an appropriate eviction policy for your data.
+- **Rimozione**: le cache hanno dimensioni limitate rispetto agli archivi dati utilizzati in genere, e i dati verranno rimossi se necessario. Assicurarsi di che scegliere un criterio di rimozione appropriato per i dati.
 
-- **Priming**: To make the cache-aside pattern effect, many solutions will prepopulate the cache with data that they think will be accessed often.
+- **Inizializzazione**: per rendere effettivo il modello cache-aside, molte soluzioni verranno la cache viene prepopolata con dati che pensano sarà possibile accedere spesso.
 
-- **Consistency**: Implementing the Cache-Aside pattern doesn't guarantee consistency between the data store and the cache. Data in a data store can be changed without notifying the cache. This can lead to serious synchronization issues.
+- **Coerenza**: implementazione del modello cache-aside non garantisce la coerenza tra l'archivio dati e la cache. Dati in un archivio dati possono essere modificati senza inviare notifica cache. Questo può causare problemi gravi di sincronizzazione.
 
-The cache-aside pattern is useful when you're required to access data frequently from a data source that uses a disk. Using the cache-aside pattern, you'll store important data in a cache to help increase the speed of retrieving it. 
+Il modello cache-aside è utile quando si è necessaria per accedere ai dati frequentemente da un'origine dati che usa un disco. Usa il modello cache-aside, si archivierà i dati importanti in una cache per contribuire ad aumentare la velocità di recuperarli. 

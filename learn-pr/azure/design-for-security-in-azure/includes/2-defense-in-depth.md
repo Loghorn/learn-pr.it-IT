@@ -1,109 +1,109 @@
-There's no "easy button" for security and no solution that solves all your problems from a security perspective. Let's imagine that Lamna Healthcare has been neglecting security in their environment, but has realized that they need to put some major focus in this area. They're not exactly sure where to start, or if they can just buy a solution to make their environment secure. They know they need an overall holistic approach, but are unsure what really fits into that. Here, we'll identify key concepts of defense in depth, identify key security technologies and approaches to support a defense in depth strategy, and discuss how to apply these concepts when architecting your own Azure services.
+Non esiste un "pulsante" né una soluzione facile in grado di risolvere tutte le questioni di sicurezza. Immaginiamo che Lamna Healthcare abbia trascurato la sicurezza nel proprio ambiente, ma che ora si renda conto che deve dare maggiore spazio a questo ambito. I responsabili non sanno esattamente da dove iniziare, né se possono limitarsi ad acquistare una soluzione che protegga il loro ambiente. Sanno che devono adottare un approccio globale, ma non sanno che cosa deve farne parte. Ora individueremo i concetti chiave della difesa avanzata, identificheremo le tecnologie di sicurezza chiave e le strategie per supportare una difesa avanzata e parleremo di come applicare questi concetti in fase di progettazione dei servizi di Azure.
 
-## A layered approach to security
+## <a name="a-layered-approach-to-security"></a>Approccio alla sicurezza strutturato su più livelli
 
-*Defense in depth* is a strategy that employs a series of mechanisms to slow the advance of an attack aimed at acquiring unauthorized access to information. Each layer provides protection so that if one layer is breached, a subsequent layer is already in place to prevent further exposure. Microsoft applies a layered approach to security, both in our physical datacenters and across Azure services. The objective of defense in depth is to protect and prevent information from being stolen by individuals not authorized to access it. The common principles used to define a security posture are confidentiality, integrity, and availability, known collectively as CIA.
+*Difesa avanzata* è una strategia che impiega una serie di meccanismi per rallentare l'avanzamento di un attacco volto ad accedere a informazioni senza autorizzazione. Ogni livello offre protezione in modo che se un livello verrà violato, un livello successivo è già in grado di impedire ulteriori l'esposizione. Microsoft applica un approccio a livelli di sicurezza, nei nostri Data Center fisico e nei servizi di Azure. Lo scopo della difesa avanzata è proteggere le informazioni e prevenirne il furto da parte di utenti non autorizzati. I principi comuni usati per definire lo stato di sicurezza sono la riservatezza, l'integrità e la disponibilità.
 
-- __Confidentiality__ - Principle of least privilege. Restricting access to information only to individuals explicitly granted access. This information includes protection of user passwords, remote access certificates, and email content.
+- __Riservatezza__: principio del privilegio minimo. Limitare l'accesso alle informazioni a quegli utenti a cui l'accesso è esplicitamente concesso. Queste informazioni includono la protezione delle password degli utenti, dei certificati per l'accesso remoto e del contenuto della posta elettronica.
 
-- __Integrity__ - The prevention of unauthorized changes to information at rest or in transit. A common approach used in data transmission is for the sender to create a unique fingerprint of the data using a one-way hashing algorithm. The hash is sent to the receiver along with the data. The data's hash is recalculated and compared to the original by the receiver to ensure the data wasn't lost or modified in transit.
+- __Integrità__: impedire modifiche non autorizzate alle informazioni quando sono inattive o in transito. Un approccio comune utilizzato per la trasmissione dei dati è che il mittente crea un'impronta digitale univoca dei dati usando un algoritmo hash unidirezionale. L'hash viene inviato al destinatario insieme ai dati. Il destinatario ricalcola l'hash dei dati e lo confronta con l'originale per verificare che i dati non siano stati persi o modificati in transito.
 
-- __Availability__ - Ensure services are available to authorized users. Denial of service attacks are the most prevalent malicious example of this. Natural disasters also drive system design to prevent singe points of failure and deploy multiple instances of an application to geo-dispersed locations.
+- __Disponibilità__: assicurarsi che i servizi siano disponibili per gli utenti autorizzati. Gli attacchi Denial of Service sono l'esempio di danno più comune. Anche l'eventualità di calamità naturali porta la progettazione dei sistemi ad evitare i singoli punti di vulnerabilità (SPOF) e a distribuire più istanze di un'applicazione in posizioni geograficamente isolate.
 
-## Security layers
+## <a name="security-layers"></a>Livelli di sicurezza
 
-Defense in depth can be visualized as a set of concentric rings, with the data to be secured at the center. Each ring adds an additional layer of security around the data. This approach removes reliance on any single layer of protection and acts to slow down an attack and provide alert telemetry that can be acted upon, either automatically or manually. Let's take a look at each of the layers.
+La difesa avanzata può essere considerata come una serie di anelli concentrici in cui i dati da proteggere stanno al centro. Ogni anello aggiunge un ulteriore livello di protezione ai dati. Questa strategia annulla la dipendenza da un qualsiasi singolo livello di protezione e opera rallentando l'attacco e fornendo dati di telemetria in base ai quali è possibile intervenire automaticamente o manualmente. Esaminiamo ciascuno di questi livelli.
 
-![Defense in depth](../media-draft/defense_in_depth_layers_small.PNG)
+![Difesa avanzata](../media-draft/defense_in_depth_layers_small.PNG)
 
-### Data
+### <a name="data"></a>Dati
 
-In almost all cases, attackers are after data:
+Nella quasi totalità dei casi, gli utenti malintenzionati cercano:
 
-- Data stored in a database
-- Data stored on disk inside virtual machines
-- Data stored on a SaaS application such as Office 365
-- Data stored in cloud storage
+- Dati archiviati in un database
+- Dati archiviati su disco all'interno di macchine virtuali
+- Dati archiviati in un'applicazione SaaS come Office 365
+- Dati archiviati nel cloud
 
-It's the responsibility of those storing and controlling access to data to ensure that it's properly secured. Often there are regulatory requirements that dictate the controls and processes that must be in place to ensure the confidentiality, integrity, and availability of the data.
+È responsabilità di chi archivia i dati e di chi ne controlla l'accesso assicurarsi che siano adeguatamente protetti. Esistono spesso requisiti normativi che determinano i controlli e i processi da predisporre per garantire la riservatezza, l'integrità e la disponibilità dei dati.
 
-### Applications
+### <a name="applications"></a>Applicazioni
 
-- Ensure applications are secure and free of vulnerabilities
-- Store sensitive application secrets in a secure storage medium
-- Make security a design requirement for all application development
+- Verificare che le applicazioni siano protette e prive di vulnerabilità
+- Archiviare i segreti sensibili dell'applicazione in un supporto di archiviazione sicura
+- Considerare la sicurezza un requisito di progettazione per lo sviluppo di tutte le applicazioni
 
-Integrating security into the application development life cycle will help reduce the number of vulnerabilities introduced in code. Encourage all development teams to ensure their applications are secure by default, and are making security requirements non-negotiable.
+L'integrazione della sicurezza nel ciclo di vita dello sviluppo dell'applicazione consentirà di ridurre il numero di vulnerabilità introdotte nel codice. Incoraggiare tutti i team di sviluppo ad assicurarsi che le proprie applicazioni nascano sicure e rendere i requisiti di sicurezza non negoziabili.
 
-### Compute
+### <a name="compute"></a>Calcolo
 
-- Secure access to virtual machines
-- Implement endpoint protection and keep systems patched and current
+- Accesso sicuro alle macchine virtuali
+- Implementare la protezione degli endpoint e mantenere aggiornati i sistemi con le patch di sicurezza
 
-Malware, unpatched systems, and improperly secured systems open your environment to attacks. The focus in this layer is on making sure your compute resources are secure, and you have the proper controls in place to minimize security issues.
+Malware, sistemi privi di patch e sistemi protetti in modo non corretto aprono l'ambiente agli attacchi. In questo livello è attiva assicurandosi che le risorse di calcolo sono sicure e disporre i controlli appropriati in grado di ridurre al minimo i problemi di sicurezza.
 
-### Networking
+### <a name="networking"></a>Rete
 
-- Limit communication between resources
-- Deny by default
-- Restrict inbound internet access and limit outbound where appropriate
-- Implement secure connectivity to on-premises networks
+- Limitare la comunicazione tra risorse
+- Negare per impostazione predefinita
+- Limitare l'accesso da Internet in ingresso e in uscita, dove appropriato
+- Implementare una connettività sicura verso le reti locali
 
-At this layer, the focus is on limiting the network connectivity across all your resources to only allow what is required. By limiting this communication, you reduce the risk of lateral movement throughout your network.
+A questo livello, lo scopo è limitare la connettività di rete di tutte le risorse per consentire unicamente quella necessaria. Limitando queste comunicazioni, si riduce il rischio di movimento laterale in tutta la rete.
 
-### Perimeter
+### <a name="perimeter"></a>Perimetro
 
-- Use distributed denial-of-service (DDoS) protection to filter large-scale attacks before they can cause a denial of service for end users
-- Use perimeter firewalls to identify and alert on malicious attacks against your network
+- Utilizzare la protezione Distributed Denial-of-Service (DDoS) per filtrare gli attacchi su larga scala prima che possano bloccare il servizio per gli utenti finali
+- Usare firewall perimetrali per identificare e segnalare gli attacchi dannosi alla rete
 
-At the network perimeter, it's about protecting from network-based attacks against your resources. Identifying these attacks, eliminating their impact, and alerting on them is important to keep your network secure.
+A livello di perimetro della rete, lo scopo è impedire gli attacchi di rete diretti alle risorse. Identificare gli attacchi, eliminarne l'impatto e segnalarli è importante per proteggere la rete.
 
-### Policies & access
+### <a name="policies--access"></a>Criteri e accesso
 
-- Control access to infrastructure, change control
-- Use single sign-on and multi-factor authentication
-- Audit events and changes
+- Controllare l'accesso all'infrastruttura, controllo delle modifiche
+- Usare l'autenticazione Single Sign-On e a più fattori
+- Verificare eventi e modifiche
 
-The policy & access layer is all about ensuring identities are secure, and that access granted is only what is needed, and changes are logged.
+Al livello criteri e accesso lo scopo è verificare che le identità siano protette, che l'accesso venga concesso solo se necessario e che le modifiche vengano registrate.
 
-### Physical security
+### <a name="physical-security"></a>Sicurezza fisica
 
-- Physical building security and controlling access to computing hardware within the data center is the first line of defense.
+- La sicurezza fisica e controllo dell'accesso all'hardware nel data center è la prima linea di difesa.
 
-With physical security, the intent is to provide physical safeguards against access to assets. This ensures that other layers can't be bypassed, and loss or theft is handled appropriately.
+Sicurezza fisica, l'intento consiste nel fornire protezioni fisiche contro l'accesso agli asset. Ciò garantisce che non sia possibile superare gli altri livelli e che la perdita o il furto vengano gestiti in modo appropriato.
 
-Each layer can implement one or more of the CIA concerns.
+Ogni livello può riguardare uno o più dei principi di riservatezza, integrità e disponibilità.
 
-|#|Ring|Example|Principle
+|#|Anello|Esempio|Principio
 |---|---|---|---|
-|1|Data|Data encryption at rest in Azure blob storage|Integrity|
-|2|Application|SSL/TLS encrypted sessions|Integrity|
-|3|Compute|Regularly apply OS and layered software patches|Availability|
-|4|Network|Network security rules|Confidentiality|
-|5|Perimeter|DDoS protection|Availability|
-|6|Policies & Access|Azure Active Directory user authentication|Integrity|
-|7|Physical Security|Azure data center biometric access controls|Confidentiality|
+|1|Dati|Crittografia dei dati inattivi in archivi blob di Azure|Integrità|
+|2|Applicazione|Sessioni SSL/TLS crittografate|Integrità|
+|3|Calcolo|Applicare regolarmente patch software al sistema operativo e a più livelli|Disponibilità|
+|4|Rete|Regole di sicurezza di rete|Riservatezza|
+|5|Perimetro|Protezione DDoS|Disponibilità|
+|6|Criteri e accesso|Autenticazione utente con Azure Active Directory|Integrità|
+|7|Sicurezza fisica|Controlli di accesso biometrici ai data center di Azure|Riservatezza|
 
-## Shared responsibilities
+## <a name="shared-responsibilities"></a>Responsabilità condivise
 
-As computing environments move from customer-controlled datacenters to cloud datacenters, the responsibility of security also shifts. Security is now a concern shared by both cloud providers and customers.
+Ora che gli ambienti informatici passano da data center controllati dal cliente a data center nel cloud, anche la responsabilità della sicurezza cambia. La sicurezza ora è un compito condiviso dai provider di servizi cloud e dai clienti.
 
 ![shared_responsibility.png](../media-draft/shared_responsibilities.png)
 
-## Continuous improvement
+## <a name="continuous-improvement"></a>Miglioramento continuo
 
-The threat landscape is evolving in real time and at massive scale, therefore a security architecture is never complete. Microsoft and our customers require the ability to respond to these threats intelligently, quickly, and at scale.
+Il panorama delle minacce evolve in tempo reale e su larga scala, pertanto un'architettura di sicurezza non può mai essere considerata completa. Microsoft e i clienti richiedono la possibilità di rispondere a queste minacce in modo intelligente, rapidamente e su larga scala.
 
-[Azure Security Center](https://azure.microsoft.com/services/security-center/) provides customers with unified security management and advanced threat protection to understand and respond to security events on-premises and in Azure. In turn, Azure customers have a responsibility to continually reevaluate and evolve their security architecture.
+Il [Centro sicurezza di Azure](https://azure.microsoft.com/services/security-center/) offre ai clienti una gestione unificata della sicurezza e la protezione avanzata dalle minacce per rilevare e reagire agli attacchi che avvengono localmente e in Azure. A loro volta, i clienti di Azure hanno la responsabilità di continuare a valutare e far evolvere la loro architettura di sicurezza.
 
-## Defense in depth at Lamna Healthcare
+## <a name="defense-in-depth-at-lamna-healthcare"></a>Difesa avanzata presso Lamna Healthcare
 
-Lamna Healthcare has put a strong focus on defense in depth across all IT teams. Since the organization is responsible for a substantial amount of sensitive health care data, they realize that a comprehensive approach is their best path forward. 
+Lamna Healthcare ha posto una grande attenzione alla difesa avanzata in tutti i reparti informatici. Poiché è responsabile di una notevole quantità di dati clinici riservati, l'organizzazione ha capito che un approccio globale è la strada migliore. 
 
-They've formed a virtual team, with representatives from each IT team along with their security team, that is focused on driving this across the organization. They work on educating engineers and architects on vulnerabilities, how to address them, and provide guidance as projects move through the organization.
+Costituissero un team virtuale, con i rappresentanti di ogni team IT insieme ai loro team di sicurezza, che è concentravamo sul migliorare questo nell'intera organizzazione. Offrono formazione a sviluppatori e architetti sulle vulnerabilità, spiegano come affrontarle e offrono consulenza per i progetti che nascono nell'organizzazione.
 
-They realize that this effort is never done, and have put in place regular policy, process, technical, and architectural reviews to ensure they are constantly looking at ways to improve security.
+Si renderanno conto che questa attività non viene mai eseguita e inseriti nella posizione regolari dei criteri, processo, tecniche e architetturale le verifiche per garantire che sono costantemente alla ricerca di metodi per migliorare la sicurezza.
 
-## Summary
+## <a name="summary"></a>Riepilogo
 
-We've looked at what a defense in depth approach to security looks like, what the layers of this approach look like, and what each layer is focused on. Using this approach to secure your architecture will put you on a path forward to ensure you're addressing security comprehensively across your environment instead of focusing on one single layer or technology.
+Abbiamo esaminato che cosa si intende per difesa avanzata, quali sono i livelli di questo approccio e qual è lo scopo di ogni livello. Con questo approccio per proteggere l'architettura è consente di inserire in un inoltro di percorso per verificare che si sta addressing migliorano sicurezza nell'intero ambiente invece di focalizzarsi su una tecnologia o un singolo livello.

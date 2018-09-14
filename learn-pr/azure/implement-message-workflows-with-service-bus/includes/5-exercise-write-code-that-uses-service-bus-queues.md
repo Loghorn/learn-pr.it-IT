@@ -1,16 +1,16 @@
-Si è scelto di usare una coda del bus di servizio per lo scambio di messaggi relativi alle singole vendite tra l'app per dispositivi mobili usata dal personale di vendita e il servizio Web, ospitato in Azure, che archivierà i dettagli di ogni vendita in un database SQL di Azure.
+Si è scelto di usare una coda del Bus di servizio per lo scambio di messaggi su singole vendite tra l'app per dispositivi mobili che usano il personale di vendita e il servizio web, ospitata in Azure, in cui verrà archiviati i dettagli su ogni vendita in un'istanza di Database SQL di Azure.
 
-Sono già stati implementati gli oggetti necessari nella sottoscrizione di Azure. Ora si vuole scrivere il codice che invia i messaggi alla coda e recupera i messaggi.
+Sono già stati implementati gli oggetti necessari nella sottoscrizione di Azure. A questo punto, si desidera scrivere codice che invia messaggi alla coda e recupera i messaggi.
 
 ## <a name="clone-and-open-the-starter-application"></a>Clonare e aprire l'applicazione iniziale
 
-In questa unità verranno create due applicazioni console in **Visual Studio Code**. La prima inserisce i messaggi in una coda del bus di servizio e la seconda li recupera. Le applicazioni fanno parte di un'unica soluzione .NET Core. 
+In questa unità verranno create due applicazioni console in **Visual Studio Code**. La prima applicazione inserisce i messaggi in una coda del Bus di servizio e il secondo li recupera. Le applicazioni fanno parte di un'unica soluzione .NET Core. 
 
 Iniziare clonando la soluzione:
 
 1. Avviare un prompt dei comandi e passare alla directory in cui si vuole ospitare il codice sorgente per l'applicazione.
 
-1. Digitare il comando seguente e quindi premere **INVIO**:
+1. Digitare il comando seguente e quindi premere **invio**:
 
     ```powershell
     git clone https:\\ <!-- TODO: (add git URL) -->
@@ -18,7 +18,7 @@ Iniziare clonando la soluzione:
 
 1. Una volta completata l'operazione di clonazione, passare alla cartella iniziale.
 
-1. Digitare il comando seguente e quindi premere **INVIO**.
+1. Digitare il comando seguente e quindi premere **invio**.
 
     ```powershell
     code .
@@ -36,7 +36,7 @@ Per accedere a uno spazio dei nomi del bus di servizio e usare una coda, è nece
 È possibile ottenere entrambi questi valori dal portale di Azure sotto forma di stringa di connessione completa.
 
 > [!NOTE]
-> Per semplicità, la stringa di connessione sarà hardcoded nel file **Program.cs** di entrambe le applicazioni console. In un'applicazione di produzione si potrebbe usare un file di configurazione o anche Azure Key Vault per archiviare la stringa di connessione.
+> Per semplicità, si apprenderà come hardcoded la stringa di connessione nel **Program.cs** file di entrambe le applicazioni console. In un'applicazione di produzione si potrebbe usare un file di configurazione o anche Azure Key Vault per archiviare la stringa di connessione.
 
 1. Passare al portale di Azure.
 
@@ -46,7 +46,7 @@ Per accedere a uno spazio dei nomi del bus di servizio e usare una coda, è nece
 
 1. Nell'elenco dei criteri fare clic su **RootManageSharedAccessKey**.
 
-1. A destra della casella di testo **Stringa di connessione primaria** scegliere il pulsante **Fare clic per copiare**.
+1. A destra del **stringa di connessione primaria** casella di testo, fare clic sui **fare clic per copiare** pulsante.
 
 1. Passare a **Visual Studio Code**.
 
@@ -58,7 +58,7 @@ Per accedere a uno spazio dei nomi del bus di servizio e usare una coda, è nece
     const string ServiceBusConnectionString = "";
     ```
 
-1. Posizionare il cursore tra le virgolette e quindi premere **CTRL+V**.
+1. Posizionare il cursore tra le virgolette e quindi premere **Ctrl + V**.
 
 1. Nel riquadro **Esplora risorse**, nella cartella **privatemessagereceiver** fare clic sul file **Program.cs**.
 
@@ -68,9 +68,9 @@ Per accedere a uno spazio dei nomi del bus di servizio e usare una coda, è nece
     const string ServiceBusConnectionString = "";
     ```
 
-1. Posizionare il cursore tra le virgolette e quindi premere **CTRL+V**.
+1. Posizionare il cursore tra le virgolette e quindi premere **Ctrl + V**.
 
-1. Fare clic su **File** e quindi su **Salva tutto**.
+1. Fare clic su **File**, quindi fare clic su **Salva tutto**.
 
 1. Chiudere tutte le finestre aperte dell'editor.
 
@@ -85,7 +85,7 @@ Per completare il componente che invia i messaggi sulle vendite, seguire questa 
 1. All'interno di questo metodo individuare la riga di codice seguente:
 
     ```C#
-    // Create a Queue Client here
+    // Create a queue client here
     ```
 
 1. Per creare un client di accodamento, sostituire la riga di codice con il codice seguente:
@@ -139,13 +139,13 @@ Per eseguire il componente che invia un messaggio su una vendita, seguire questa
 
 1. In Visual Studio Code scegliere **Debug** dal menu **Visualizza**.
 
-1. Nel riquadro **Debug** selezionare **Launch Private Message Sender** (Avvia mittente messaggio privato) nell'elenco a discesa e quindi premere **F5**. Visual Studio Code compila ed esegue l'applicazione console in modalità di debug.
+1. Nel **Debug** riquadro, nell'elenco a discesa elenco, selezionare **avviare mittente del messaggio privato**e quindi premere **F5**. Visual Studio Code compila ed esegue l'applicazione console in modalità di debug.
 
 1. Mentre il programma viene eseguito, esaminare i messaggi nella **Console di debug**.
 
 1. Passare al portale di Azure.
 
-1. Se il bus di servizio non viene visualizzato, nella home page fare clic su **Tutte le risorse** e quindi fare clic sullo spazio dei nomi del bus di servizio creato in precedenza.
+1. Se lo spazio dei nomi del Bus di servizio non viene visualizzato, nella home page, fare clic su **tutte le risorse**, quindi fare clic sullo spazio dei nomi del Bus di servizio creato in precedenza.
 
 1. Nel pannello **Spazio dei nomi del bus di servizio**, in **ENTITÀ** fare clic su **Code** e quindi sulla coda **salesmessages**. In **NUMERO DI MESSAGGI ATTIVI** dovrebbe venire indicato che è stato aggiunto un messaggio alla coda.
 
@@ -160,7 +160,7 @@ Per completare il componente che recupera i messaggi sulle vendite, seguire ques
 1. All'interno di questo metodo individuare la riga di codice seguente:
 
     ```C#
-    // Create a Queue Client here
+    // Create a queue client here
     ```
 
 1. Per creare un client di accodamento, sostituire la riga con il codice seguente:
@@ -207,7 +207,7 @@ Per completare il componente che recupera i messaggi sulle vendite, seguire ques
     // Close the queue here
     ```
 
-1. Per chiudere la connessione al bus di servizio, sostituire il codice con il codice seguente:
+1. Per chiudere la connessione al Bus di servizio, sostituire la riga con il codice seguente:
 
     ```C#
     await queueClient.CloseAsync();
@@ -221,7 +221,7 @@ Per eseguire il componente che recupera un messaggio su una vendita, seguire que
 
 1. In Visual Studio Code scegliere **Debug** dal menu **Visualizza**.
 
-1. Nel riquadro **Debug** selezionare **Launch Private Message Receiver** (Avvia destinatario messaggio privato) nell'elenco a discesa e quindi premere **F5**. Visual Studio Code compila ed esegue l'applicazione console in modalità di debug.
+1. Nel **Debug** riquadro, nell'elenco a discesa elenco, selezionare **avviare ricevitore del messaggio privato**e quindi premere **F5**. Visual Studio Code compila ed esegue l'applicazione console in modalità di debug.
 
 1. Mentre il programma viene eseguito, esaminare i messaggi nella **Console di debug**.
 
@@ -229,10 +229,10 @@ Per eseguire il componente che recupera un messaggio su una vendita, seguire que
 
 1. Passare al portale di Azure.
 
-1. Se il bus di servizio non viene visualizzato, nella home page fare clic su **Tutte le risorse** e quindi fare clic sullo spazio dei nomi del bus di servizio creato in precedenza.
+1. Se lo spazio dei nomi del Bus di servizio non viene visualizzato, nella home page, fare clic su **tutte le risorse**, quindi fare clic sullo spazio dei nomi del Bus di servizio creato in precedenza.
 
 1. Nel pannello **Spazio dei nomi del bus di servizio**, in **ENTITÀ** fare clic su **Code** e quindi sulla coda **salesmessages**. In **NUMERO DI MESSAGGI ATTIVI** dovrebbe venire indicato che il messaggio è stato rimosso dalla coda.
 
-È stato scritto codice che invia un messaggio sulle singole vendite a una coda del bus di servizio. Nell'applicazione distribuita per la forza vendita è necessario scrivere questo codice nell'app per dispositivi mobili usata dal personale di vendita nei dispositivi.
+È stato scritto codice che invia un messaggio sulle singole vendite a una coda del bus di servizio. Nell'applicazione forza vendita distribuito, è necessario scrivere questo codice nell'app per dispositivi mobili che usano personale addetto alle vendite nei dispositivi.
 
-È stato scritto anche il codice che riceve un messaggio dalla coda del bus di servizio. Nell'applicazione distribuita per la forza vendita è necessario scrivere questo codice nel servizio Web in esecuzione in Azure che elabora i messaggi ricevuti.
+È anche stato scritto codice che riceve un messaggio dalla coda del Bus di servizio. Nell'applicazione distribuita per la forza vendita è necessario scrivere questo codice nel servizio Web in esecuzione in Azure che elabora i messaggi ricevuti.

@@ -1,183 +1,184 @@
-You have an on-premises datacenter that you plan to keep, but you want to use Azure to offload peak traffic using virtual machines (VMs) hosted in Azure. You want to keep your existing IP addressing scheme and network appliances, while ensuring that any data transfer is secure.
+Si dispone di un data center locale che si prevede di continuare, ma si vuole usare Azure per l'offload di picco di traffico usando macchine virtuali (VM) ospitate in Azure. Si desidera mantenere l'indirizzo IP esistente addressing Appliance di rete e lo schema, garantendo che qualsiasi trasferimento di dati sia sicuro.
 
-## What is Azure virtual networking?
+## <a name="what-is-azure-virtual-networking"></a>Che cos'è rete virtuale di Azure?
 
-**Azure virtual networks** enable Azure resources, such as virtual machines, web apps, and databases, to communicate with: each other, users on the Internet, and on-premises client computers. You can think of an Azure network as a set of resources that links other Azure resources.
+**Reti virtuali di Azure** consentono alle risorse di Azure, ad esempio le macchine virtuali, App web e database, per comunicare con: ogni altro, gli utenti su Internet e i computer client locale. Una rete di Azure può essere considerata un set di risorse che consente il collegamento di altre risorse di Azure.
 
-Azure virtual networks provide key networking capabilities:
+Reti virtuali di Azure forniscono le funzionalità di rete principali:
 
-- Isolation and segmentation
-- Internet communications
-- Communicate between Azure resources
-- Communicate with on-premises resources
-- Route network traffic
-- Filter network traffic
-- Connect virtual networks
+- Isolamento e segmentazione
+- Comunicazioni Internet
+- Comunicazione tra risorse di Azure
+- Comunicazione con le risorse locali
+- Routing del traffico di rete
+- Filtri per il traffico di rete
+- Connessione di reti virtuali
 
-### Isolation and segmentation
+> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE2yEve]
 
-Azure allows you to create multiple isolated virtual networks. When you set up a virtual network, you define a private Internet Protocol (IP) address space, using either public or private IP address ranges. You can then segment that IP address space into subnets, and allocate part of the defined address space to each named subnet.
+### <a name="isolation-and-segmentation"></a>Isolamento e segmentazione
 
-For name resolution, you can use the name resolution service that's built in to Azure, or you can configure the virtual network to use either an internal or an external Domain Name System (DNS) server.
+Azure consente di creare più reti virtuali isolate. Quando è stata configurata una rete virtuale, si definisce uno spazio di indirizzi IP (Internet Protocol) privati, usando intervalli di indirizzi IP pubblici o privati. È quindi possibile segmentare tale spazio indirizzi IP in subnet e allocare parte dello spazio indirizzi definito a ogni subnet denominata.
 
-### Internet communications
+Per la risoluzione dei nomi, è possibile usare il servizio di risoluzione dei nomi integrata Azure oppure è possibile configurare la rete virtuale per l'uso interna o un server di sistema DNS (Domain Name) esterno.
 
-A VM in Azure can connect to the Internet by default. However, you need to connect to and control that VM, with either the Azure CLI, Remote Desktop Protocol (RDP), or Secure Shell (SSH). You can enable incoming communications by defining a public IP address or a public load balancer.
+### <a name="internet-communications"></a>Comunicazioni Internet
 
-### Communicate between Azure resources
+Per impostazione predefinita, una macchina virtuale in Azure possa connettersi a Internet. Tuttavia, è necessario connettersi a e controllare tale macchina virtuale, con il comando di Azure, Remote Desktop Protocol (RDP) o Secure Shell (SSH). È possibile abilitare le comunicazioni in ingresso definendo un indirizzo IP pubblico o un servizio di bilanciamento del carico pubblico.
 
-You'll want to enable Azure resources to communicate securely with each other. You can do that in one of two ways:
+### <a name="communicate-between-azure-resources"></a>Comunicazione tra risorse di Azure
 
-- **Virtual networks**
+È opportuno abilitare le risorse di Azure di comunicare in modo sicuro tra loro. È possibile ottenere questo risultato in due modi:
+
+- **Reti virtuali**
     
-    Virtual networks can connect not only VMs, but other Azure resources, such as the App Service Environment, Azure Kubernetes Service, and Azure virtual machine scale sets.
+    Le reti virtuali possono connettersi le macchine virtuali non solo, ma altre risorse di Azure, ad esempio l'ambiente del servizio App, Azure Kubernetes Service fornisce e set di scalabilità di macchine virtuali di Azure.
 
-- **Service endpoints**
+- **Endpoint servizio**
      
-     You can use service endpoints to connect to other Azure resource types, such as Azure SQL databases and storage accounts. This approach enables you to link multiple Azure resources to virtual networks, thereby improving security and providing optimal routing between resources.
+     È possibile usare gli endpoint di servizio per connettersi ad altri tipi di risorse di Azure, ad esempio account di archiviazione e database SQL di Azure. Questo approccio consente di collegare più risorse di Azure alle reti virtuali, migliorando quindi la sicurezza e offrendo un routing ottimale tra le risorse.
 
-### Communicate with on-premises resources
+### <a name="communicate-with-on-premises-resources"></a>Comunicazione con le risorse locali
 
-Azure virtual networks enable you to link resources together in your on-premises environment and within your Azure subscription, in effect creating a network that spans both your local and cloud environments. There are three mechanisms for you to achieve this connectivity:
+Reti virtuali di Azure consentono di collegare tra loro le risorse nell'ambiente locale e nella sottoscrizione di Azure, in effetti la creazione di una rete che si estende su entrambi locale e ambienti cloud. Sono disponibili tre meccanismi per ottenere tale connettività:
 
-- **Point-to-site Virtual Private Networks**
+- **Point-to-site reti Private virtuali**
 
-   This approach is like a Virtual Private Network (VPN) connection that a computer outside your organization makes back into your corporate network, except that it's working in the opposite direction. In this case, the client computer initiates an encrypted VPN connection to Azure, connecting that computer to the Azure virtual network.
+   Questo approccio è simile a una connessione di rete privata virtuale (VPN, Virtual Private Network) che un computer all'esterno dell'organizzazione effettua nuovamente nella tua rete aziendale, ad eccezione del fatto che funziona nella direzione opposta. In questo caso il computer client attiva una connessione VPN crittografata ad Azure, connettendo il computer alla rete virtuale di Azure.
 
-- **Site-to-site Virtual Private Networks**
-    A site-to-site VPN links your on-premises VPN device or gateway to the Azure VPN gateway in a virtual network. In effect, the devices in Azure can appear as being on the local network. The connection is encrypted and works over the Internet.
+- **Le reti Private virtuali Site-to-site** una VPN site-to-site collega il dispositivo VPN locale o un gateway con gateway VPN di Azure in una rete virtuale. I dispositivi in Azure possono essere in effetti visualizzati come se si trovassero nella rete locale. La connessione è crittografata e funziona su Internet.
 
-- **Azure ExpressRoute**
+- **ExpressRoute di Azure**
 
-    For environments where you need greater bandwidth and even higher levels of security, Azure ExpressRoute is the best approach. Azure ExpressRoute provides dedicated private connectivity to Azure that does not travel over the Internet.
+    Per gli ambienti in cui è necessario maggiore larghezza di banda e livelli superiori di sicurezza, Azure ExpressRoute è l'approccio migliore. Azure ExpressRoute offre connettività privata dedicata per Azure, che non vengano trasmessi tramite Internet.
 
-### Route network traffic
+### <a name="route-network-traffic"></a>Routing del traffico di rete
 
-By default, Azure will route traffic between subnets on any connected virtual networks, on-premises networks, and the Internet. However, you can control routing and override those settings as follows:
+Per impostazione predefinita, Azure instrada il traffico tra subnet su qualsiasi connesse le reti virtuali, reti locali e Internet. È tuttavia possibile controllare il routing ed eseguire l'override di queste impostazioni, come indicato di seguito:
 
-- **Route tables**
+- **Tabelle di route**
 
-    A route table allows you to define rules as to how traffic should be directed. You can create custom route tables that control how packets are routed between subnets.
+    Una tabella di route consente di definire le regole per quanto riguarda la modalità deve essere indirizzato il traffico. È possibile creare tabelle di route personalizzate che controllano il modo in cui i pacchetti vengono indirizzati tra subnet.
 
 - **Border Gateway Protocol**
 
-    Border Gateway Protocol (BGP) works with Azure VPN gateways or ExpressRoute to propagate on-premises BGP routes to Azure virtual networks.
+    Protocollo BGP (Border Gateway) funziona con i gateway VPN di Azure o ExpressRoute per la propagazione in locale le route BGP alle reti virtuali di Azure.
 
-### Filter network traffic
+### <a name="filter-network-traffic"></a>Filtri per il traffico di rete
 
-Azure virtual networks enable you to filter traffic between subnets by using the following approaches:
+Le reti virtuali di Azure consentono di filtrare il traffico tra le subnet mediante gli approcci seguenti:
 
-- **Network security groups**
+- **Gruppi di sicurezza di rete**
 
-    A network security group is an Azure resource that can contain multiple inbound and outbound security rules. You can define these rules to allow or block traffic, based on factors such as source and destination IP address, port, and protocol.
+    Un gruppo di sicurezza di rete è una risorsa di Azure che può contenere più regole di sicurezza in ingresso e in uscita. È possibile definire queste regole per consentire o bloccare il traffico in base a fattori quali l'indirizzo IP di origine e di destinazione, la porta e il protocollo.
 
-- **Network virtual appliances**
+- **Appliance virtuali di rete**
     
-    A network virtual appliance is a specialized VM that can be compared to a hardened network appliance. A network virtual appliance carries out a particular network function, such as running a firewall or performing WAN optimization.
+    Appliance virtuale di rete è una macchina virtuale specializzata che può essere confrontato con un'appliance di rete con protezione avanzata. Appliance virtuale di rete esegue una funzione di rete specifica, ad esempio l'esecuzione di un firewall o eseguire l'ottimizzazione WAN.
 
-## Connect virtual networks
+## <a name="connect-virtual-networks"></a>Connessione di reti virtuali
 
-You can link virtual networks together using virtual network _peering_. Peering enables resources in each virtual network to communicate with each other. These virtual networks can be in separate regions, allowing you to create a global interconnected network through Azure.
+È possibile collegare le reti virtuali mediante il _peering_ di rete virtuale. Il peering consente alle risorse in ogni rete virtuale di comunicare tra loro. Queste reti virtuali possono trovarsi in aree separate, consentendo di creare una rete interconnessa globale tramite Azure.
 
-## Azure virtual network settings
+## <a name="azure-virtual-network-settings"></a>Impostazioni di rete virtuale di Azure
 
-You can create and configure Azure virtual networks from the Azure portal, Azure PowerShell on your local computer, or Azure Cloud Shell.
+È possibile creare e configurare reti virtuali di Azure dal portale di Azure, Azure PowerShell nel computer locale o Azure Cloud Shell.
 
-### Create a virtual network
+### <a name="create-a-virtual-network"></a>Creare una rete virtuale
 
-When you create an Azure virtual network, you configure a number of basic settings. You'll have the option to configure advanced settings, such as multiple subnets, distributed denial of service (DDoS) protection, and service endpoints.
+Quando si crea una rete virtuale di Azure, si configura un numero di impostazioni di base. È possibile scegliere di configurare le impostazioni avanzate, ad esempio più subnet, attacchi distribuiti denial of dervice (DDoS) protezione e gli endpoint di servizio.
 
-![Screenshot of the Azure portal showing an example of the Create virtual network blade fields.](../media/2-create-virtual-network.PNG)
+![Screenshot del portale di Azure che mostra un esempio della rete virtuale crea i campi del pannello.](../media/2-create-virtual-network.PNG)
 
-You'll configure the following settings for a basic virtual network:
+È possibile configurare le seguenti impostazioni per una rete virtuale di base:
 
-- **Network name**
+- **Nome di rete**
 
-    The network name must be unique in your subscription, but does not need to be globally unique. Make the name a descriptive one that is easy to remember and identified from other virtual networks.
+    Il nome di rete deve essere univoco nella sottoscrizione, ma non dovrà essere globalmente univoco. Rendere il nome di un'istanza descrittiva che è facile da ricordare e identificato da altre reti virtuali.
 
-- **Address space**
+- **Spazio degli indirizzi**
     
-    When you set up a virtual network, you define the internal address space in Classless Inter-Domain Routing (CIDR) format. This address space needs to be unique within your subscription and any other networks that you connect to.
+    Quando si configura una rete virtuale, si definisce lo spazio degli indirizzi interni in formato Classless Interdomain Routing (CIDR). Questo spazio di indirizzi deve essere univoco nella propria sottoscrizione e altre reti a cui ci si connette.
     
-    Let's assume, you choose an address space of 10.0.0.0/24 for your first virtual network. The addresses defined in this address space ranges from 10.0.0.1 - 10.0.0.254. You the create a second virtual network and choose an address space of 10.1.0.0./8. The address in this address space ranges from 10.0.0.1 - 10.255.255.254. Some of the address overlap and can't be used for the two virtual networks.
+    Si supponga, si sceglie uno spazio indirizzi 10.0.0.0/24 per la prima rete virtuale. Gli indirizzi definiti in questo intervalli di spazi di indirizzi da 10.0.0.1 - 10.0.0.254. Si crea un secondo virtuale di rete e scegliere uno spazio indirizzi 10.1.0.0./8. L'indirizzo in questo spazio di indirizzi compreso tra 10.0.0.1 - 10.255.255.254. Alcuni dell'indirizzo si sovrappongono e non può essere usati per le due reti virtuali.
 
-    However, you can use 10.0.0.0/16, with addresses ranging from 10.0.0.1 - 10.0.255.254, and 10.1.0.0/16, with addresses ranging from 10.1.0.1 - 10.1.255.254. You can assign these address spaces to your virtual networks since there's no address overlap.
+    Tuttavia, è possibile usare 10.0.0.0/16, con indirizzi compresi tra 10.0.0.1 - 10.0.255.254 e 10.1.0.0/16, con indirizzi compresi tra 10.1.0.1 - 10.1.255.254. Poiché non si verificano sovrapposizioni di indirizzo, è possibile assegnare questi spazi degli indirizzi per le reti virtuali.
 
     > [!NOTE] 
-    > You can add address spaces after creating the virtual network.
+    > È possibile aggiungere gli spazi degli indirizzi dopo aver creato la rete virtuale.
 
-- **Subscription**
+- **Sottoscrizione**
 
-    Only applies if you have multiple subscriptions to choose from.
+    Si applica solo se si hanno più sottoscrizioni, tra cui scegliere.
 
-- **Resource group**
+- **Gruppo di risorse**
     
-    Like any other Azure resource, a virtual network needs to exist in a resource group. You can either select an existing resource group or create a new one.
+    Come qualsiasi altra risorsa di Azure, una rete virtuale deve esistere in un gruppo di risorse. È possibile selezionare un gruppo di risorse esistente o crearne uno nuovo.
     
-- **Location**
+- **Posizione**
 
-    Select the location where you want the virtual network to exist.
+    Selezionare il percorso in cui si desidera la rete virtuale esistente.
 
 - **Subnet**
     
-    Within each virtual network address range, you can create one or more subnets that partition the virtual network's address space. Routing between subnets will then depend on the default traffic routes, or you can define custom routes. Alternatively, you can define one subnet that encompasses all the virtual networks' address ranges.
+    All'interno di ogni intervallo di indirizzi di rete virtuale, è possibile creare uno o più subnet in cui partizionare lo spazio di indirizzi della rete virtuale. Il routing tra le subnet dipenderà quindi dalle route di traffico predefinite. In alternativa, è possibile definire route personalizzate. In alternativa, è possibile definire una subnet che include intervalli degli tutte le reti virtuali indirizzi.
 
     > [!NOTE]
-    > Subnet names must begin with a letter or number, end with a letter, number or underscore, and may contain only letters, numbers, underscores, periods, or hyphens.
+    > I nomi di subnet devono iniziare con una lettera o un numero, terminare con una lettera, un numero o un carattere di sottolineatura e possono contenere solo lettere, numeri, caratteri di sottolineatura, punti o trattini.
 
-- **Distributed Denial of Service (DDoS) protection**
+- **Protezione Denial of Service (DDoS) distribuita**
 
-    You can select either Basic or Standard DDoS protection. Standard DDoS Protection is a premium service. The [Azure DDoS Protection Standard](https://docs.microsoft.com/azure/virtual-network/ddos-protection-overview) provides for more information on Standard DDoS protection. 
+    È possibile selezionare la protezione di base o Standard DDoS. La Protezione DDoS Standard è un servizio Premium. Il [protezione DDoS di Azure Standard](https://docs.microsoft.com/azure/virtual-network/ddos-protection-overview) fornisce per altre informazioni su protezione DDoS Standard. 
 
-- **Service Endpoints**
+- **Endpoint di servizio**
     
-    Here, you enable service endpoints, and then select from the list which Azure service endpoints you want to enable. Options include Azure Cosmos DB, Azure Service Bus, Azure Key Vault, and so on.
+    In questo caso, si abilita gli endpoint di servizio e quindi selezionare dall'elenco quali endpoint del servizio di Azure a cui si vuole abilitare. Le opzioni includono Azure Cosmos DB, il Bus di servizio di Azure, Azure Key Vault e così via.
 
-When you have configured these settings, click the **Create** button.
+Dopo avere configurato queste impostazioni, fare clic sul pulsante **Crea**.
 
-### Define additional settings
+### <a name="define-additional-settings"></a>Definire le impostazioni aggiuntive
 
-After creating a virtual network, you can then define further settings. These include:
+Dopo avere creato una rete virtuale è possibile definire altre impostazioni, tra cui:
 
-- **Network security group**
+- **Gruppo di sicurezza di rete**
     
-    Network security groups have security rules that enable you to filter the type of network traffic that can flow in and out of virtual network subnets and network interfaces. You create the network security group separately, and then associate it with the virtual network.
+    Gruppi di sicurezza di rete hanno regole di sicurezza che consentono di filtrare il tipo di traffico di rete che può scorrere da e verso subnet della rete virtuale e le interfacce di rete. Creare il gruppo di sicurezza di rete separatamente e quindi associarlo alla rete virtuale.
 
-- **Route table**
+- **Tabella di route**
 
-    Azure automatically creates a route table for each subnet within an Azure virtual network and adds system default routes to the table. However, you can add custom route tables to modify traffic between virtual networks.
+    Azure crea automaticamente una tabella di route per ogni subnet all'interno di una rete virtuale di Azure e aggiunge le route predefinite di sistema alla tabella. È tuttavia possibile aggiungere tabelle di route personalizzate per modificare il traffico tra reti virtuali.
 
-You can also amend the service endpoints.
+È anche possibile modificare gli endpoint di servizio.
 
-![Screenshot of the Azure portal showing an example blade for editing virtual network settings.](../media/2-virtual-network-additional-settings.PNG)
+![Screenshot del portale di Azure che mostra un pannello di esempio per la modifica delle impostazioni di rete virtuale.](../media/2-virtual-network-additional-settings.PNG)
 
-### Configure virtual networks
+### <a name="configure-virtual-networks"></a>Configurare reti virtuali
 
-When you have created a virtual network, you can change any further settings from the Virtual Networks blade in the Azure portal. Alternatively, you can use PowerShell commands or commands in Cloud Shell to make changes.
+Dopo avere creato una rete virtuale, è possibile modificare altre impostazioni dal pannello Reti virtuali nel portale di Azure. In alternativa, è possibile usare i comandi di PowerShell o i comandi in Cloud Shell per apportare modifiche.
 
-![Screenshot of the Azure portal showing an example blade for configuring a virtual network.](../media/2-configure-virtual-network.PNG)
+![Screenshot del portale di Azure che mostra un pannello di esempio per la configurazione di una rete virtuale.](../media/2-configure-virtual-network.PNG)
 
-You can then review and change settings in further sub-blades.
-These settings include:
+È quindi possibile verificare e modificare le impostazioni in altri pannelli secondari.
+Le impostazioni includono:
 
-- Address spaces
+- Spazi di indirizzi
 
-    You can add further address spaces to the initial definition
+    È possibile aggiungere altri spazi degli indirizzi per la definizione iniziale
 
-- Connected devices
+- Dispositivi connessi
 
-    Use the virtual network to connect machines
+    Usare la rete virtuale per connettere le macchine
 
-- Subnets
+- Subnet
 
-    Add further subnets
+    Aggiungere altre subnet
 
-- Peerings
+- Peering
 
-    Link virtual networks in peering arrangements
+    Collegare reti virtuali in modalità di peering
 
-You can also monitor and troubleshoot virtual networks, or create an automation script to generate the current virtual network.
+È anche possibile monitorare e risolvere i problemi delle reti virtuali o creare uno script di automazione per generare la rete virtuale corrente.
 
-## Summary
+## <a name="summary"></a>Riepilogo
 
-Virtual networks are powerful and highly configurable mechanisms for connecting entities in Azure. You can connect Azure resources to one another or to resources you have on-premises. You can isolate, filter and route your network traffic, and Azure allows you to increase security where you feel you need it.
+Le reti virtuali sono meccanismi avanzati e a configurabilità elevata per la connessione di entità in Azure. È possibile connettere le risorse di Azure tra loro o a risorse disponibili in locale. È possibile isolare, filtrare e instradare il traffico di rete e Azure consente di aumento della protezione in cui si ritiene necessario.

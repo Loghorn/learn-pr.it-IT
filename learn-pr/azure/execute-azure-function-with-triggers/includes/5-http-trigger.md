@@ -1,4 +1,4 @@
-Una richiesta HTTP è un'operazione comune sulla maggior parte delle piattaforme e dei dispositivi. Indipendentemente se la richiesta riguarda la ricerca di una parola in un dizionario o informazioni sulle previsioni meteo locali, vengono continuamente inviate richieste HTTP. Funzioni di Azure consente di creare rapidamente una parte di logica da eseguire quando viene ricevuta una richiesta HTTP.  
+Una richiesta HTTP è un'operazione comune sulla maggior parte delle piattaforme e dei dispositivi. Indipendentemente se la richiesta riguarda la ricerca di una parola in un dizionario o informazioni sulle previsioni meteo locali, vengono continuamente inviate richieste HTTP. Funzioni di Azure consente di creare rapidamente una parte di logica da eseguire quando viene ricevuta una richiesta HTTP.
 
 In questo caso, si apprenderà come creare e richiamare una funzione di Azure tramite un trigger HTTP. Verranno inoltre illustrate alcune delle opzioni di personalizzazione disponibili.
 
@@ -30,7 +30,7 @@ Il livello **Anonimo** indica che non è richiesta alcuna autenticazione. Nell'e
 
 ## <a name="how-to-create-an-http-trigger"></a>Come creare un trigger HTTP
 
-Proprio come un trigger timer, è possibile creare un trigger HTTP tramite il portale di Azure. All'interno della funzione di Azure, selezionare **Trigger HTTP** dall'elenco dei tipi di trigger predefiniti. Quindi immettere la logica da eseguire e apportare le eventuali personalizzazioni, ad esempio limitando l'uso di alcuni verbi HTTP. 
+Proprio come un trigger timer, è possibile creare un trigger HTTP tramite il portale di Azure. All'interno della funzione di Azure, selezionare **Trigger HTTP** dall'elenco dei tipi di trigger predefiniti. Quindi immettere la logica da eseguire e apportare le eventuali personalizzazioni, ad esempio limitando l'uso di alcuni verbi HTTP.
 
 Un'impostazione importante da comprendere è **Richiedi nome parametro**. Questa impostazione è una stringa che rappresenta il nome del parametro che contiene le informazioni relative a una richiesta HTTP in ingresso. Per impostazione predefinita, il nome del parametro è *req*.
 
@@ -38,10 +38,8 @@ Un'impostazione importante da comprendere è **Richiedi nome parametro**. Questa
 
 Per richiamare un trigger HTTP, inviare una richiesta HTTP all'URL per la funzione. Per ottenere questo URL, passare alla tabella codici per la funzione e selezionare il collegamento **Ottieni URL della funzione**.
 
-![Individuare l'URL per la funzione](../media-drafts/5-function-url.png)
+![Screenshot del portale di Azure che mostra un pannello App per le funzioni con il pulsante dell'app Get funzione URL evidenziato.](../media/5-function-url.png)
 
 Dopo aver ottenuto l'URL per la funzione, è possibile inviare richieste HTTP. Se la funzione riceve i dati, tenere presente che è possibile usare i parametri della stringa di query o fornire i dati tramite il corpo della richiesta.
-
-## <a name="summary"></a>Riepilogo
 
 Un trigger HTTP richiama una funzione di Azure quando viene ricevuta una richiesta HTTP per l'URL della funzione. I trigger HTTP consentono di ricevere dati e di restituirli al chiamante.

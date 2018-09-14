@@ -1,14 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.top-5-security-items-to-consider.7-conclusion
-title: Conclusion
+title: Conclusioni
 metadata:
-  title: Conclusion
-  description: Conclusion
+  title: Conclusioni
+  description: Conclusioni
   author: lnyswonger
   ms.date: 09/24/2018
   ms.author: luken
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-durationInMinutes: 10
+durationInMinutes: 1
 content: |
   [!include[](includes/7-conclusion.md)]

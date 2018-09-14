@@ -1,75 +1,73 @@
-We're going to look at the factors that affect disk performance in Azure, and at how caching can help optimize performance. 
+Dobbiamo esaminare i fattori che influenzano le prestazioni del disco in Azure, e su come la memorizzazione nella cache per ottimizzare le prestazioni.
 
-### Disk caching
+### <a name="disk-caching"></a>La cache del disco
 
-A cache is a specialized component in a computer that stores data so it can be accessed faster, typically in memory. The data in a cache is often data that has been read previously, or is data that resulted from an earlier calculation. The goal is to access data faster than getting it from disk.
+Una cache è un componente specifico in un computer che archivia i dati in modo che sia accessibile più rapidamente, in genere in memoria. I dati in una cache sono spesso i dati sono stati letti in precedenza o dati ottenuti da un calcolo del precedente. L'obiettivo è accedere ai dati più velocemente rispetto a ottenerlo dal disco.
 
-Caching uses specialized, and sometimes expensive, temporary storage that has faster read and/or write performance than permanent storage. Because this cache storage is often limited, decisions need to be made as to what data operations will benefit most from caching. But even where the cache can be made widely available, such as in Azure, it's still important to know the workload patterns of each disk before deciding on what caching type to use.
+La memorizzazione nella cache utilizza specializzato e talvolta costosa archiviazione temporanea che è più veloce di lettura e/o scrittura delle prestazioni rispetto a un archivio permanente. Poiché questo tipo di archiviazione della cache è spesso limitato, le decisioni necessario decidere quali operazioni sui dati verranno ottenere il massimo vantaggio dalla memorizzazione nella cache. Ma anche in cui la cache può essere resi ampiamente disponibile, ad esempio in Azure, è comunque importante conoscere i modelli di carico di lavoro di ogni disco prima di decidere in quale tipo di memorizzazione nella cache da usare.
 
-**Read caching** tries to speed up data retrieval. Instead of reading from permanent storage, the data is read from the faster cache. Data reads hit the cache under the following conditions:
+**Caching di lettura** tenta di velocizzare il recupero dei dati. Invece di lettura da un archivio permanente, i dati vengono letti dalla cache più veloce. Letture dati trovate nella cache nelle condizioni seguenti:
 
-- The data has been read before and exists in the cache.
-- And the cache is large enough to hold all of this data.
+- I dati sono state lette prima e presente nella cache.
+- E la cache è sufficientemente grande da contenere tutti i dati.
 
-It's important to note that read caching helps when there is some _predictability_ to the read queue, such as a set of sequential reads. For random I/O, where the data you're accessing is scattered across storage, caching will be of little or no benefit, and can even reduce disk performance.
+È importante notare che la cache di lettura interviene nel caso alcune _prevedibilità_ alla coda di lettura, ad esempio un set di letture sequenziali. Per i/o casuali, in cui si accede a dati sono sparsi tra archiviazione, la memorizzazione nella cache sarà di non offre alcun vantaggio e possono anche ridurre le prestazioni del disco.
 
-**Write caching** tries to speed up writing data to storage. By using a write cache, the app can consider the data to be saved. In reality, the data is queued up in a cache, waiting to be written to permanent storage. As you can imagine, this mechanism can be a potential point of failure, like if the system shuts down before this cached data is flushed to disk. Some systems, such as SQL Server, handle writing cached data to persistent disk storage themselves.  
+**La cache in scrittura** tenta di accelerare la scrittura dei dati all'archiviazione. Usando una cache in scrittura, l'app può prendere in considerazione i salvataggio dei dati. In realtà, i dati sono in coda in una cache, in attesa di essere scritti in un archivio permanente. Come è facile immaginare, questo meccanismo può essere un potenziale punto di guasto, come se il sistema è in esecuzione viene scaricato verso il basso prima che questo dati memorizzati nella cache su disco. Alcuni sistemi, ad esempio SQL Server, gestiscono la scrittura di dati memorizzati nella cache per l'archiviazione su disco persistente autonomamente.
 
-### Azure disk caching
+### <a name="azure-disk-caching"></a>La memorizzazione nella cache di dischi di Azure
 
-There are two types of disk caching that concern disk storage:
+Esistono due tipi di disco di archiviazione su disco tale problema di memorizzazione nella cache:
 
-- Azure storage caching
-- Azure virtual machine (VM) disk caching
+- La memorizzazione nella cache di archiviazione di Azure
+- La cache del disco di macchina virtuale di Azure (VM)
 
-Azure storage caching provides cache services for Azure Blob storage, Azure Files, and other content in Azure. Configuration of these types of cache is beyond the scope of this module.
+La memorizzazione nella cache di archiviazione di Azure fornisce servizi di cache per l'archiviazione Blob di Azure, file di Azure e altri contenuti in Azure. Configurazione di questi tipi di cache esula dall'ambito di questo modulo.
 
-Azure virtual machine disk caching is about optimizing read and write access to the virtual hard disk (VHD) files attached to Azure VMs. We'll focus on disk caching in this module.
+La cache del disco di macchina virtuale di Azure è come ottimizzare l'accesso in lettura e scrittura ai file di disco rigido virtuale (VHD) collegati alle macchine virtuali di Azure. Ci concentreremo sul caching su disco in questo modulo.
 
-### Azure virtual machine disk types
+### <a name="azure-virtual-machine-disk-types"></a>Tipi di disco di macchina virtuale di Azure
 
-There are three types of disks used with Azure VMs:
+Esistono tre tipi di dischi usati con macchine virtuali di Azure:
 
-- **OS disk**: When you create an Azure VM, Azure automatically attaches a VHD for the operating system (OS). The VHD is stored as a page blob in Azure storage.
-- **Temporary disk**: When you create an Azure VM, Azure also automatically adds a temporary disk. This disk is used for data, such as page and swap files. The data on this disk may be lost during maintenance or a VM redeploy. So, don't use it for storing permanent data, such as database files or transaction logs.
-- **Data disks**: A data disk is a VHD that's attached to a virtual machine to store application data or other data you need to keep.
+- **Disco del sistema operativo**: quando si crea una VM di Azure, Azure associa automaticamente un disco rigido virtuale per il sistema operativo (OS). Il disco rigido virtuale verrà archiviato come blob di pagine in archiviazione di Azure.
+- **Disco temporaneo**: quando si crea una VM di Azure, Azure aggiunge automaticamente un disco temporaneo. Questo disco viene usato per i dati, ad esempio i file di pagina e lo scambio. I dati sul disco vadano persi durante la manutenzione o ridistribuire una macchina virtuale. Pertanto, non usarlo per l'archiviazione permanente dei dati, ad esempio i file di database o log delle transazioni.
+- **I dischi dati**: un disco dati è un disco rigido virtuale collegato a una macchina virtuale per archiviare i dati dell'applicazione o altri dati da mantenere.
 
-OS disks and data disks take advantage of Azure VM disk caching. The cache size for a VM disk depends on the VM instance size and on the number of disks mounted on the VM. Caching can be enabled for only up to four data disks.
+Dischi del sistema operativo e i dischi dati sfruttano i vantaggi della memorizzazione nella cache del disco di macchina virtuale di Azure. Le dimensioni della cache per un disco di macchina virtuale dipende la dimensione di istanza di macchina virtuale e sul numero di dischi montati nella macchina virtuale. La memorizzazione nella cache può essere abilitata per i dischi dati solo fino a quattro.
 
-## Cache options for Azure VMs
+## <a name="cache-options-for-azure-vms"></a>Opzioni della cache per macchine virtuali di Azure
 
-There are three common options for VM disk caching:
+Sono disponibili tre opzioni comuni per la cache del disco della macchina virtuale:
 
-- **Read/write** – Write-back cache. Use this option only if your application properly handles writing cached data to persistent disks when needed.
-- **Read-only** - Reads are performed from cache.
-- **None** - No cache. Select this option for write-only and write-heavy disks. Log files are a good candidate because they're write-heavy operations.
+- **Lettura/scrittura** – cache Write-back. Usare questa opzione solo se l'applicazione gestisce correttamente la scrittura dei dati memorizzati nella cache in dischi persistenti, quando necessario.
+- **Sola lettura** -operazioni di lettura vengono eseguite dalla cache.
+- **Nessuno** -Nessuna cache. Selezionare questa opzione per i dischi in sola lettura e scrittura con intensa attività. File di log sono un candidato valido dal momento che le operazioni di scrittura pesanti.
 
-Not every caching option is available for each type of disk. The following table shows you the caching options for each disk type:
+Non tutte le opzioni di memorizzazione nella cache sono disponibile per ogni tipo di disco. Nella tabella seguente illustra le opzioni di memorizzazione nella cache per ogni tipo di disco:
 
-| |**Read-only**  |**Read/write**  |**None**  |
+| |**sola lettura**  |**Lettura/scrittura**  |**Nessuno**  |
 |---------|---------|---------|---------|
-|OS disk     |   yes      |   yes (default)     |   yes      |
-|Data disk     |   yes (default)      |  yes       |  yes       |
-|Temporary disk     |  no       |   no      |   no      |
+|Disco del sistema operativo     |   Sì      |   Sì (impostazione predefinita)     |   Sì      |
+|Disco dati     |   Sì (impostazione predefinita)      |  Sì       |  Sì       |
+|Disco temporaneo     |  no       |   no      |   no      |
 
 > [!NOTE]
-> Disk caching options can't be changed for L-Series and B-series virtual machines.
+> Impossibile modificare le opzioni di memorizzazione nella cache di disco per L-Series e macchine virtuali serie B.
 
-## Performance considerations for Azure VM disk caching
+## <a name="performance-considerations-for-azure-vm-disk-caching"></a>Considerazioni sulle prestazioni per la cache del disco di macchina virtuale di Azure
 
-So, how can your cache settings affect the performance of your workloads running on Azure VMs?
+Pertanto, come le impostazioni della cache possono influenzare le prestazioni dei carichi di lavoro in esecuzione in macchine virtuali di Azure?
 
-### OS disk
+### <a name="os-disk"></a>Disco del sistema operativo
 
-For a VM OS disk, the default behavior is to use the cache in read/write mode. If you have applications that store data files on the OS disk, and the applications do lots of random read/write operations to data files, consider moving those files to a data disk that has the caching turned off. Why is that? Well, if the read queue does not contain sequential reads, caching will be of little or no benefit. The overhead of maintaining the cache, as if the data was sequential, can reduce disk performance.
+Per un disco del sistema operativo della macchina virtuale, il comportamento predefinito consiste nell'utilizzare la cache in modalità lettura/scrittura. Se si hanno applicazioni che archiviano file di dati sul disco del sistema operativo e le applicazioni consentono di eseguire numerose operazioni di lettura/scrittura casuale ai file di dati, si consiglia di spostare tali file in un disco dati con la memorizzazione nella cache disattivata. Perché? Anche se la coda di lettura non contiene letture sequenziali, la memorizzazione nella cache sarà di non offre alcun vantaggio. Il sovraccarico della gestione della cache, come se i dati non sequenziali, può ridurre le prestazioni del disco.
 
-### Data disks
+### <a name="data-disks"></a>Dischi dati
 
-For performance-sensitive applications, you should use data disks rather than the OS disk. Using separate disks allows you to configure the appropriate cache settings for each disk.
+Per le applicazioni sensibili alle prestazioni, è consigliabile usare dischi dati anziché il disco del sistema operativo. Utilizzo dischi separati consente di configurare le impostazioni della cache appropriate per ogni disco.
 
-For example, on Azure VMs running SQL Server, enabling **Read-only** caching on the data disks (for regular and TempDB data) can result in significant performance improvements. Log files, on the other hand, are good candidates for data disks with no caching.
+Ad esempio, nelle macchine virtuali di Azure che esegue SQL Server, l'abilitazione **Read-only** miglioramenti significativi delle prestazioni può causare la memorizzazione nella cache sui dischi dati (per normali e di dati TempDB). File di log, d'altra parte, sono buoni candidati per i dischi dati con nessuna memorizzazione nella cache.
 
 > [!WARNING]
-> Changing the cache setting of an Azure disk detaches and then reattaches the target disk. If it's the operating system disk, the VM is restarted. Stop all applications/services that might be affected by this disruption before changing the disk cache setting.
->
->
+> La modifica l'impostazione della cache di un disco di Azure, scollega e quindi ricollega il disco di destinazione. Se il disco del sistema operativo, la VM viene riavviata. Arrestare tutte le applicazioni/i servizi che potrebbero essere interessati da questa interruzione prima di modificare l'impostazione della cache del disco.

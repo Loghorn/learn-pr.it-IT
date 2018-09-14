@@ -1,20 +1,19 @@
-In this short exercise, we'll learn how to migrate an existing, unmanaged VHD to a managed VHD. 
+In questa breve esercitazione si apprenderà come eseguire la migrazione di un disco rigido virtuale esistente, non gestito a un disco rigido virtuale gestito. 
 
-## Sign in to Azure
-<!---TODO: Update for sandbox?--->
+## <a name="sign-in-to-azure"></a>Accedere ad Azure
 
-1. Sign in to the [Azure portal](https://portal.azure.com/?azure-portal=true).
+1. Accedere al [portale di Azure](https://portal.azure.com/?azure-portal=true).
 
-## Migrate our disks to managed disks
+## <a name="migrate-our-disks-to-managed-disks"></a>Migrare i dischi a dischi gestiti
 
-1. In the Azure portal, in the navigation on the left, select **Virtual machines**.
+1. Nel portale di Azure, nel riquadro di spostamento a sinistra, selezionare **macchine virtuali**.
 
-1. In the list of virtual machines, select our virtual machine,  **MailSenderVM**.
+1. Nell'elenco delle macchine virtuali, selezionare la macchina virtuale, **MailSenderVM**.
 
-1. In the **MailSenderVM** pane, under **SETTINGS**, select **Disks**.
+1. Nel **MailSenderVM** riquadro, di sotto **impostazioni**, selezionare **dischi**.
 
-1. In the **MailSenderVM - Disks** page, select **Migrate to managed disks**.
+1. Nel **MailSenderVM - Disks** pagina, selezionare **eseguire la migrazione a managed disks**.
 
-1. In the **Migrate to managed disks** page, select **Migrate**. Azure stops the VM, migrates the disks, and then restarts the VM. This process may take several minutes.
+1. Nel **eseguire la migrazione a managed disks** pagina, selezionare **Migrate**. Azure arresta la macchina virtuale, viene eseguita la migrazione dei dischi e quindi riavvia la macchina virtuale. L'esecuzione può richiedere alcuni minuti.
 
-We migrated our disks to managed disks in this exercise. By using managed disks, you don't have to configure storage accounts for those disks because Azure manages them for you.
+I dischi di migrazione a managed disks in questo esercizio. Usando dischi gestiti, non devi configurare account di archiviazione per tali dischi poiché Azure li gestisce automaticamente.

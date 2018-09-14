@@ -1,13 +1,12 @@
-Imagine you're building an instant messaging mobile application. Your application allows users to send messages to all members of a specific user-defined group. There's some data that needs to be stored about each user like their username, email, and password. So you decide to use SQL Server to create a relational database for that information. However, the messages themselves need to be sent and accessed quickly and a relational database is too slow for that.
+Immagini di che compilare un'applicazione per dispositivi mobili di messaggistica immediata. L'applicazione consente agli utenti di inviare messaggi a tutti i membri di un gruppo specifico definito dall'utente. Ci sono alcuni dati che devono essere archiviati su ciascun utente, ad esempio il nome utente, indirizzo di posta elettronica e la password. Pertanto, si decide di usare SQL Server per creare un database relazionale per tali informazioni. Tuttavia, i messaggi stessi devono essere inviate e accedere rapidamente ai e un database relazionale è troppo lento adatto.
 
-You decide to create a Redis cache because of the number of benefits it provides. For example, you'll use transactions to ensure a message with a picture and text are sent together. You'll use data expiration to reset the name of the group chat after an hour. Finally, you'll use eviction policies to make sure the oldest messages are being deleted first when you're running low on memory.
+Si decide di creare una Cache Redis di Azure a causa del numero dei suoi vantaggi. Ad esempio, si userà le transazioni per garantire un messaggio con un'immagine e testo vengono inviate insieme. Scadenza dei dati si userà per reimpostare il nome della chat di gruppo dopo un'ora. Infine, si userà criteri di rimozione per verificare che i messaggi meno recenti vengono eliminati prima di tutto se sta per esaurirsi la memoria.
 
-## Learning objectives
+## <a name="learning-objectives"></a>Obiettivi di apprendimento
 
-In this module, you will:
-- Group multiple operations into a transaction
-- Set an expiration time on your data
-- Manage out of memory conditions
-- Use the cache-aside pattern
+In questo modulo verrà descritto come:
 
-
+- Raggruppare più operazioni in una transazione
+- Impostare una scadenza sui dati
+- Gestire le condizioni di memoria insufficiente
+- Usare il modello cache-aside

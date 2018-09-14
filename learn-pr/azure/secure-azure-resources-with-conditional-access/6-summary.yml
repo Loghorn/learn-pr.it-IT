@@ -3,44 +3,42 @@ uid: learn.secure-access-azure-ad-multi-factor-authentication.6-summary
 metadata:
   title: Riepilogo
   description: Riepilogo
-  displayType: one-column
-  ms.openlocfilehash: 254fbb2d71f03aa6048c4fab026724c2bb8c2077
-  ms.sourcegitcommit: 40481ae733648a8b13402bf276d7acfd4da440f6
-  ms.translationtype: HT
-  ms.contentlocale: it-IT
-  ms.lasthandoff: 09/03/2018
-  ms.locfileid: "43477176"
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
 title: Riepilogo
-durationInMinutes: 10
-content: >
+durationInMinutes: 5
+content: |
   [!include[](includes/6-summary.md)]
 quiz:
-  title: "Quiz: Azure Active Directory e l'accesso condizionale"
+  title: 'Verifica delle conoscenze: Azure Active Directory e l''accesso condizionale'
   questions:
-  - content: Azure AD è solo un controller di dominio di Active Directory Domain Services in esecuzione in Azure.
-    choices:
-    - content: Vero
-      isCorrect: false
-      incorrectExplanation: Anche se esegue molte delle stesse funzioni del tradizionale Active Directory Domain Services, Azure Active Directory è un servizio per la gestione delle identità e delle directory multi-tenant basato sul cloud.
-    - content: Falso
-      isCorrect: true
-      correctExplanation: Corretto! Active Directory Domain Services è un ruolo del server in Windows Server. Azure AD è un servizio directory pubblico a più clienti basato su cloud.
-  - content: Quali sono i tre elementi necessari per un criterio di accesso condizionale completo?
-    choices:
-    - content: Utente o gruppo, applicazione, ora del giorno
-      isCorrect: false
-      correctExplanation: L'opzione ora del giorno non è disponibile nelle regole di accesso condizionale.
-    - content: Utente o gruppo, applicazione, controllo da applicare
-      isCorrect: true
-      incorrectExplanation: Corretto! Selezionando questi tre elementi, verranno create delle regole di accesso condizionale funzionali e complete.
-    - content: Utente o gruppo, sistema operativo Linux, controllo da applicare
-      isCorrect: false
-      correctExplanation: Anche se è possibile scegliere alcune piattaforme del dispositivo, Linux non è attualmente supportato.
-  - content: Come si può modificare la regola di accesso condizionale creata per richiedere l'autenticazione a più fattori per tutti gli utenti?
-    choices:
-    - content: In **Controlli di accesso** > **Sessione** selezionare **Usa restrizioni imposte dalle app**.
-      isCorrect: false
-      correctExplanation: Quell'opzione non modifica correttamente la regola.
-    - content: Modificare l'assegnazione di utenti e gruppi in **Selezionare Utenti e gruppi** in **Tutti gli utenti**.
-      isCorrect: true
-      incorrectExplanation: Corretto! Selezionando tutti gli utenti, il criterio verrà applicato a qualsiasi utente che attiva la regola di accesso condizionale. È consigliabile creare un gruppo e aggiungerlo all'elenco di esclusione per le istanze in cui gli utenti potrebbero dover ignorare l'autenticazione a più fattori a causa di metodi persi o dimenticati.
+    - content: Azure AD è solo un controller di dominio di Active Directory Domain Services in esecuzione in Azure.
+      choices:
+        - content: Vero
+          isCorrect: false
+          incorrectExplanation: 'Anche se esegue molte delle stesse funzioni del tradizionale Active Directory Domain Services, Azure Active Directory è un servizio per la gestione delle identità e delle directory multi-tenant basato sul cloud.'
+        - content: Falso
+          isCorrect: true
+          correctExplanation: Corretto! Active Directory Domain Services è un ruolo del server in Windows Server. Azure AD è un servizio directory pubblico a più clienti basato su cloud.
+    - content: Quali sono i tre elementi necessari per un criterio di accesso condizionale completo?
+      choices:
+        - content: 'Utente o gruppo, applicazione, ora del giorno'
+          isCorrect: false
+          correctExplanation: L'opzione ora del giorno non è disponibile nelle regole di accesso condizionale.
+        - content: 'Utente o gruppo, applicazione, controllo da applicare'
+          isCorrect: true
+          incorrectExplanation: 'Corretto! Selezionando questi tre elementi, verranno create delle regole di accesso condizionale funzionali e complete.'
+        - content: 'Utente o gruppo, sistema operativo Linux, controllo da applicare'
+          isCorrect: false
+          correctExplanation: 'Anche se è possibile scegliere alcune piattaforme del dispositivo, Linux non è attualmente supportato.'
+    - content: Come si può modificare la regola di accesso condizionale creata per richiedere l'autenticazione a più fattori per tutti gli utenti?
+      choices:
+        - content: In **Controlli di accesso** > **Sessione** selezionare **Usa restrizioni imposte dalle app**.
+          isCorrect: false
+          correctExplanation: Quell'opzione non modifica correttamente la regola.
+        - content: Modificare l'assegnazione di utenti e gruppi in **Selezionare Utenti e gruppi** in **Tutti gli utenti**.
+          isCorrect: true
+          incorrectExplanation: 'Corretto! Selezionando tutti gli utenti, il criterio verrà applicato a qualsiasi utente che attiva la regola di accesso condizionale. È consigliabile creare un gruppo e aggiungerlo all''elenco di esclusione per le istanze in cui gli utenti potrebbero dover ignorare l''autenticazione a più fattori a causa di metodi persi o dimenticati.'

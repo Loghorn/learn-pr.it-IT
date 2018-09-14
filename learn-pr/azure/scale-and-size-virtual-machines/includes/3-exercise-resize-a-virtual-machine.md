@@ -1,58 +1,62 @@
-In this exercise, you will create a virtual machine and then resize it using the portal and Azure PowerShell.
+In questo esercizio, si crea una macchina virtuale e quindi ridimensionarlo usando il portale e Azure PowerShell.
 
-## Create a VM
+## <a name="create-a-vm"></a>Creare una macchina virtuale
 
-1. In your web browser, navigate to the [Azure Portal](https://portal.azure.com?azure-portal=true) and sign into your account.
+[!include[](../../../includes/azure-sandbox-activate.md)]
 
-1. In the Azure portal, create a new resource. In the **New** blade, type **virtual machine** in the search box, and then press ENTER.
+[!include[](../../../includes/azure-sandbox-regions-first-mention-note.md)]
 
-1. In the **Everything** blade, under **Results**, click **Windows Server 2016 Datacenter**.
+1. Accedere al [portale di Azure](https://portal.azure.com/?azure-portal=true).
 
-1. In the **Windows Server 2016 Datacenter** blade, click **Create**.
+1. Nel portale di Azure, creare una nuova risorsa. Nel **New** blade, digitare **macchina virtuale** nella casella di ricerca e quindi premere INVIO.
 
-1. In the **Basics** blade, complete the details using the following information, and then click **OK**.
+1. Nel **tutti gli elementi** pannello, in **risultati**, fare clic su **Windows Server 2016 Datacenter**.
 
-    |Setting|Value|
+1. Nel **Windows Server 2016 Datacenter** pannello, fare clic su **crea**.
+
+1. Nel **nozioni di base** blade, completare i dettagli usando le informazioni seguenti e quindi fare clic su **OK**.
+
+    |Impostazione|Valore|
     |---|---|
-    |Name|DB01|
+    |Nome|DB01|
     |Username|LocalAdmin|
-    |Password and Confirm password|Adm1nPa$$word|
-    |Resource group|ExerciseRG|
-    |Location|Central US|
+    |Password e Conferma password|Adm1nPa$$word|
+    |Gruppo di risorse|<rgn>[Nome gruppo di risorse di tipo sandbox]</rgn>|
+    |Posizione|*Selezionare un'area nell'elenco*|
 
-1. On the **Choose a size** blade, select **D2s_v3**, and then click **Select**.
+1. Nel **Scegli una dimensione** pannello, seleziona **D2s_v3**, quindi fare clic su **selezionare**.
 
-1. On the **Settings** blade, under **Select public inbound ports** select **HTTP**, **HTTPS**, and **RDP (3389)**, under **Boot diagnostics** click **Disabled**, leave all other settings at the default value, and then click **OK**.
+1. Nel **le impostazioni** pannello, in **selezionare le porte in ingresso pubbliche** seleziona **HTTP**, **HTTPS**, e **RDP (3389)**. Sotto **diagnostica di avvio**, fare clic su **disabilitato**. Tutte le altre impostazioni lasciare il valore predefinito e quindi fare clic su **OK**.
 
-1. On the **Create** blade, click **Create**.
+1. Nel pannello **Crea** fare clic su **Crea**.
 
-1. Wait until the deployment is complete before continuing the exercise.
+1. Attendere che la distribuzione è stata completata prima di continuare l'esercizio.
 
-## Resize using the portal
+## <a name="resize-using-the-portal"></a>Ridimensionare con il portale
 
-1. In the Azure portal, browse to the ExerciseRG resource group, and in the **ExerciseRG** blade, click the **DB01** virtual machine object.
+1. Nel portale di Azure, passare al gruppo di risorse ExerciseRG e il **ExerciseRG** pannello, fare clic sui **DB01** oggetto macchina virtuale.
 
-1. On the **DB01** blade, click **Size**. Note the currently highlighted size is the size you selected when creating the virtual machine.
+1. Nel **DB01** pannello, fare clic su **dimensioni**. Si noti che la dimensione attualmente evidenziata è di dimensione selezionato al momento della creazione della macchina virtuale.
 
-1. On the **Choose a size** blade, try to find the **F2s_v2** size - it should not be available in the list of sizes because the VM is currently running and that size is from a different family. Close the **Choose a size** blade.
+1. Nel **Scegli una dimensione** pannello, provare a trovare il **F2s_v2** dimensioni - non deve essere disponibile nell'elenco delle dimensioni in quanto la macchina virtuale è attualmente in esecuzione e che la dimensione è una famiglia diversa. Chiudi il **Scegli una dimensione** pannello.
 
-1. In the **DB01** blade, click **Stop**. In the **Stop this virtual machine** dialog box, click **Yes**, and wait for the virtual machine status to show **Stopped (deallocated)**.
+1. Nel **DB01** pannello, fare clic su **arrestare**. Nel **arresta questa macchina virtuale** della finestra di dialogo fare clic su **Yes**e attendere che lo stato della macchina virtuale mostrare **arrestato (deallocato)**.
 
-1. On the **DB01** blade, click **Size**. On the **Choose a size** blade, select **F2s_v2** and then click **Select**. Notice the notification about resizing the virtual machine.
+1. Nel **DB01** pannello, fare clic su **dimensioni**. Nel **Scegli una dimensione** blade, selezionare **F2s_v2** e quindi fare clic su **selezionare**. Si noti che la notifica sul ridimensionamento della macchina virtuale.
 
-1. On the **DB01** blade, click **Overview**, then click **Start**.
+1. Nel **DB01** pannello, fare clic su **Cenni preliminari sulla**e quindi fare clic su **avviare**.
 
-## Resize using PowerShell
+## <a name="resize-using-powershell"></a>Ridimensionare con PowerShell
 
-1. In the Azure portal, open the Cloud Shell.
+1. Nel portale di Azure, aprire Azure Cloud Shell.
 
-1. Use the following cmdlet to get the list of available virtual machine sizes.
+1. Usare il cmdlet seguente per ottenere l'elenco delle dimensioni delle macchine virtuali disponibili.
 
     ```PowerShell
     Get-AzureRmVMSize -ResourceGroupName ExerciseRG -VMName DB01
     ```
 
-1. Use the following cmdlet to resize the virtual machine to an F4s_v2 size.
+1. Usare il cmdlet seguente per ridimensionare la macchina virtuale a una dimensione F4s_v2.
 
     ```PowerShell
     $vm = Get-AzureRmVM -ResourceGroupName ExerciseRG -VMName DB01
@@ -60,6 +64,6 @@ In this exercise, you will create a virtual machine and then resize it using the
     Update-AzureRmVM -VM $vm -ResourceGroupName ExerciseRG
     ```
 
-1. Click the Refresh button in the DB01 blade while you are waiting for the PowerShell command to complete - you should notice that the virtual machine is restarting to accommodate the change in size.
+1. Fare clic sul pulsante Aggiorna il pannello DB01 mentre si attende il completamento del comando PowerShell. Si noterà che la macchina virtuale verrà riavviata per supportare la modifica delle dimensioni.
 
-In this exercise, you created a virtual machine and resized it with two different tools. A good tip to keep in mind is that the target size may not be available while the virtual machine is running; stopping the virtual machine lets you choose more sizes.
+In questo esercizio, viene creata una macchina virtuale e viene ridimensionato con due diversi strumenti. Un buon suggerimento da tenere a mente è che le dimensioni di destinazione potrebbero non essere disponibile mentre è in esecuzione la macchina virtuale. arresto della macchina virtuale è possibile scegliere altre dimensioni.

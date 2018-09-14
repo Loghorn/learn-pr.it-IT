@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.configure-the-network-for-your-virtual-machines.5-exercise-create-azure-vpn-gateway
-title: Exercise - Create an Azure VPN gateway
+title: 'Esercizio: creare un gateway VPN di Azure'
 metadata:
-  title: Exercise - Create an Azure VPN gateway
-  description: Exercise - Create an Azure VPN gateway
+  title: 'Esercizio: creare un gateway VPN di Azure'
+  description: 'Esercizio: creare un gateway VPN di Azure'
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial

@@ -1,31 +1,14 @@
 <!--Video script: It began with Personal Digital Assistants, then smartphones and now everything from smart watches to smart thermostats are connecting people with more information than ever before. Once limited to just PCs, the Internet now allows anything that has valuable information to go online. How does this trend have the potential to impact all aspects of IT professional’s role? More importantly, how can IT professionals prepare for the Internet of Things?-->
 
-Improving your hard skills is just one of the steps necessary for success in
-this changing technological landscape. Gone are the days of getting years
-between new product releases as the Internet of Things allows for sweeping
-changes across industries. IT professionals will be required to possibly prepare
-quarterly, if not more frequent, updates to all company assets connected to
-their network.
+Migliorare le tue competenze di disco rigide è solo uno dei passaggi necessari per il corretto funzionamento di questo cambiamento del panorama tecnologico. Sono finiti i tempi di recupero di anni tra nuove versioni dei prodotti come Internet delle cose (IoT) consente di scansione sistematica delle modifiche in vari settori. Gli amministratori IT dovranno probabilmente preparare ogni trimestre, in caso contrario gli aggiornamenti a tutti gli asset aziendali più frequenti, connesso alla rete.
 
-The amount of data that the Internet of Things can capture will create a unique
-opportunity for IT Operations. Businesses will be looking to IT Ops to help them
-understand what data to collect and help them unleash the full potential of that
-data. As an example, IoT can be harnessed to capture and run predictive
-analytics on data from heart monitors alerting users when they’re at risk of a
-heart episode. These same heart monitors could possibly collect information
-enabling doctors to make more informed treatment plans for their patients.
+La quantità di dati che consente di acquisire l'Internet of Things creerà un'opportunità unica per le operazioni IT. Le aziende eseguiranno la ricerca di operazioni IT per aiutarli a capire su quali dati raccogliere e aiutarli a sfruttare appieno il potenziale dei dati. Ad esempio, IoT possono essere sfruttate per acquisire ed eseguire analitica predittiva sui dati dei monitoraggi cuore avvisare gli utenti in caso di rischio di un episodio di cuore. Questi monitoraggi essenza stessa probabilmente è stato possibile raccogliere informazioni abilitazione doctors rendere più informati piani trattamento i pazienti.
 
-The greatest IoT opportunity for IT Operations is data security. Taking the time
-to update your network security knowledge and skills could enable your
-organization to understand the IT Operations role in addressing potential
-security breaches. Security positions are already in high demand and the need
-for experienced data security professionals will increase more companies deploy
-Internet of Things solutions.
+La migliore opportunità di IoT per operazioni IT è la protezione dei dati. Il tempo per aggiornare le competenze e conoscenze di sicurezza di rete potrebbe consentire l'organizzazione comprendere il ruolo operatori IT per rispondere a potenziali violazioni della sicurezza. Le posizioni di sicurezza sono già presenti numero elevato di richieste e la necessità per professionisti della sicurezza esperti di dati aumenterà che più aziende di distribuire soluzioni Internet delle cose.
 
-Internet of Things has created virtually unlimited possibilities across all
-industries, not just a select few. IoT will lead to unprecedented opportunities
-for any IT professional willing to embrace the technology and become an
-authority in it.
+Internet delle cose ha creato possibilità praticamente illimitate in tutti i settori, non solo un'istruzione select pochi. IoT porterà a opportunità impareggiabile per qualsiasi professionista IT disposto ad adottare la tecnologia e diventare un'autorità in esso.
+
+ Il resto di questo modulo verrà richiedere queste informazioni fondamentali di Internet delle cose e applicarla a uno scenario reale. Si sarà in linea e che interagiscono con il simulatore Raspberry Pi per acquisire i dati meteo simulato tramite l'IoT Hub di Azure.
 
 <!--Reference links: 
 

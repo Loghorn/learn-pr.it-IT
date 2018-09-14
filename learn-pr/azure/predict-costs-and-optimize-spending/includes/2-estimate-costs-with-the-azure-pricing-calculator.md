@@ -1,4 +1,4 @@
-Supponiamo che sia stato chiesto di creare un sistema in Azure e di fare una stima dei costi che il sistema avrebbe nei 12 mesi successivi. Si sa già che i prezzi di Azure sono pienamente trasparenti e che ogni mese vengono fatturati solo i servizi usati. Come si può ricavare tale stima senza distribuire ed eseguire i servizi o senza determinare manualmente i prezzi di ogni servizio dalle pagine sui prezzi dei servizi di Azure? 
+Supponiamo che sia stato chiesto di creare un sistema in Azure e di fare una stima dei costi che il sistema avrebbe nei 12 mesi successivi. Si sa già che i prezzi di Azure sono pienamente trasparenti e che ogni mese vengono fatturati solo i servizi usati. Come si può ricavare tale stima senza distribuire ed eseguire i servizi o senza determinare manualmente i prezzi di ogni servizio dalle pagine sui prezzi dei servizi di Azure?
 
 ## <a name="introducing-the-azure-pricing-calculator"></a>Introduzione al calcolo dei prezzi di Azure
 
@@ -10,15 +10,15 @@ In un'altra finestra o scheda del browser passare al [calcolatore prezzi di Azur
 2. **Stime.** Questa scheda include tutte le stime salvate in precedenza. Questo processo verrà esaminato più avanti.
 3. **DOMANDE FREQUENTI.** Questa scheda contiene le risposte ad alcune domande frequenti.
 
-Iniziamo con la scheda **Prodotti**. A sinistra è presente l'elenco completo delle categorie dei servizi. Se si fa clic su una qualsiasi di queste categorie, vengono visualizzati i servizi corrispondenti. È disponibile anche una casella di ricerca che consente di cercare il servizio desiderato tra tutti i servizi. Se si fa clic sul servizio, questo viene aggiunto alla stima. È possibile aggiungere un solo servizio o tanti servizi in base alle esigenze, inclusi i multipli dello stesso servizio (ad esempio più macchine virtuali). 
+Iniziamo con la scheda **Prodotti**. A sinistra è presente l'elenco completo delle categorie dei servizi. Se si fa clic su una qualsiasi di queste categorie, vengono visualizzati i servizi corrispondenti. È disponibile anche una casella di ricerca che consente di cercare il servizio desiderato tra tutti i servizi. Se si fa clic sul servizio, questo viene aggiunto alla stima. È possibile aggiungere un solo servizio o tanti servizi in base alle esigenze, inclusi i multipli dello stesso servizio (ad esempio più macchine virtuali).
 
 Dopo aver aggiunto i servizi, occorre determinarne i prezzi. Scorrendo la pagina verso il basso vengono visualizzati dettagli personalizzabili sul servizio che riguardano la determinazione del prezzo. Nelle macchine virtuali ad esempio è possibile selezionare dettagli come la regione, il sistema operativo e la dimensione di istanza. Tutte informazioni che influiranno sul piano tariffario per la macchina virtuale. Verrà visualizzato un subtotale per il servizio. Se si continua a scorrere la pagina verso il basso, si vedrà il totale completo per tutti i servizi inclusi nella stima. Insieme al totale saranno visualizzati i pulsanti per esportare, salvare e condividere la stima.
 
 ## <a name="estimate-a-solution"></a>Stimare una soluzione
 
-Partendo da questo scenario originale immaginiamo che il sistema sia destinato a essere eseguito in due macchine virtuali di Azure e a connettersi a un'istanza di database SQL di Azure. Si intende includere anche un firewall di livello 7 in modo da garantire le funzionalità avanzate di bilanciamento del carico riportate di seguito. La figura seguente illustra un gateway applicazione connesso a due macchine virtuali connesse a una singola istanza del database SQL di Azure.
+Partendo da questo scenario originale immaginiamo che il sistema sia destinato a essere eseguito in due macchine virtuali di Azure e a connettersi a un'istanza di database SQL di Azure. Vogliamo anche presente un firewall di livello 7 per garantire che sono state migliorate le funzionalità di bilanciamento del carico. La figura seguente illustra un gateway applicazione connesso a due macchine virtuali connesse a una singola istanza del database SQL di Azure.
 
-![Si tratta di un'architettura che verrà usata come esempio per spiegare la stima dei costi.](../media-drafts/2-estimate-costs-architecture.png)
+![Si tratta di un'architettura che verrà usata come esempio per spiegare la stima dei costi.](../media/2-estimate-costs-architecture.png)
 
 È possibile usare il calcolatore prezzi di Azure per determinare il costo della soluzione ed esportare la stima per condividerla con il team.
 
@@ -27,15 +27,15 @@ Partendo da questo scenario originale immaginiamo che il sistema sia destinato a
 
 Nella scheda **Prodotti** del calcolatore prezzi di Azure selezionare i servizi seguenti per aggiungerli alla stima:
 
-- Macchine virtuali nella categoria Calcolo
-- Database SQL di Azure nella categoria Database
-- Gateway applicazione nella categoria Rete
+* Macchine virtuali nella categoria Calcolo
+* Database SQL di Azure nella categoria Database
+* Gateway applicazione nella categoria Rete
 
 È possibile configurare i dettagli di ogni servizio nella scheda **Stime** oppure ottenere una stima generale dei costi. Usare la regione **Stati Uniti occidentali** per tutte le risorse.
 
-* **Macchine virtuali.** Si tratta di un'applicazione ASP.NET, quindi sarà necessario usare una macchina virtuale con **sistema operativo Windows**. Questa applicazione non richiede una potenza di calcolo eccessiva, quindi selezionare la dimensione di istanza **D2v3**. Saranno necessarie due macchine virtuali che verranno eseguite continuamente (730 ore al mese). Verrà usata l'archiviazione Premium in unità SSD per queste macchine virtuali e occorrerà un solo disco per macchina virtuale di dimensioni **E10**, per un totale di due dischi. 
+* **Macchine virtuali.** Si tratta di un'applicazione ASP.NET, quindi sarà necessario usare una macchina virtuale con **sistema operativo Windows**. Questa applicazione non richiede una potenza di calcolo eccessiva, quindi selezionare la dimensione di istanza **D2v3**. Saranno necessarie due macchine virtuali che verranno eseguite continuamente (730 ore al mese). Verrà usata l'archiviazione Premium in unità SSD per queste macchine virtuali e occorrerà un solo disco per macchina virtuale di dimensioni **E10**, per un totale di due dischi.
 
-* **Database SQL.** Per il database si eseguirà il provisioning di un **singolo tipo di database** usando il **modello basato su vCore**. Si vuole usare un database di quarta generazione per Utilizzo generico con 4 vCore. Saranno necessari 32 GB di spazio di archiviazione e sarà possibile mantenere una media di 16 GB di spazio di archiviazione. I criteri di conservazione saranno otto settimane, 12 mesi e cinque anni. 
+* **Database SQL.** Per il database si eseguirà il provisioning di un **singolo tipo di database** usando il **modello basato su vCore**. Si vuole usare un database di quarta generazione per Utilizzo generico con 4 vCore. Saranno necessari 32 GB di spazio di archiviazione e sarà possibile mantenere una media di 16 GB di spazio di archiviazione. I criteri di conservazione sarà 8 settimane di 12 mesi e 5 anni.
 
 * **Gateway applicazione.** Per il gateway applicazione si userà il livello Web application firewall, per garantire un livello di protezione per l'ambiente. Verranno usate solo due istanze e le dimensioni medie, poiché il carico non sarà elevato. Si prevede di elaborare 1 TB di dati al mese.
 
@@ -43,7 +43,7 @@ Esaminando la stima, si noterà un costo riepilogativo per ogni servizio che è 
 
 ## <a name="share-and-save-your-estimate"></a>Condividere e salvare la stima
 
-La stima per la soluzione è a questo punto pronta. È possibile salvarla, per poterci tornare in un secondo momento e apportare eventuali modifiche, esportarla in Excel per un'ulteriore analisi e condividerla tramite un URL. 
+La stima per la soluzione è a questo punto pronta. È possibile salvarla, per poterci tornare in un secondo momento e apportare eventuali modifiche, esportarla in Excel per un'ulteriore analisi e condividerla tramite un URL.
 
 Per esportare la stima, fare clic su `Export` nella parte inferiore della stima. La stima verrà scaricata in formato Excel (con estensione **xlsx**) e includerà tutti i servizi aggiunti.
 

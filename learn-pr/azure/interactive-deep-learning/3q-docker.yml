@@ -9,50 +9,44 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 083fc6a378cf9502b0f58ec211c17393c2d1ebb2
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
-  ms.translationtype: HT
-  ms.contentlocale: it-IT
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44245291"
 durationInMinutes: 2
 content: Rispondere alle domande seguenti per continuare
 quiz:
   title: 'Test di apprendimento avanzato: Docker'
   questions:
-  - content: Che cos'è CUDA?
-    choices:
-    - content: CUDA è un'API e una piattaforma di calcolo parallela.
-      isCorrect: true
-    - content: CUDA è un modello GPU molto potente fornito da Nvidia. Il suo nome deriva da una famosa hot rod degli anni '60.
-      isCorrect: false
-    - content: CUDA è un'architettura di apprendimento avanzato usata per la classificazione delle immagini.
-      isCorrect: false
-  - content: Che cos'è Docker?
-    choices:
-    - content: Docker è un framework per le reti neurali di training.
-      isCorrect: false
-    - content: Docker è un'applicazione distribuita con piattaforma aperta.
-      correctExplanation: Docker è una piattaforma aperta concepita per sviluppatori e amministratori di sistema che desiderano compilare, distribuire ed eseguire applicazioni distribuite su computer portatili, macchine virtuali data center o cloud.
-      isCorrect: true
-    - content: Docker è una piattaforma per le app Web.
-      isCorrect: false
-  - content: Qual è la differenza principale tra Nvidia-Docker e Docker?
-    choices:
-    - content: Docker viene eseguito in Windows, mentre Nvidia-Docker viene eseguito solo in Linux.
-      isCorrect: false
-      incorrectExplanation: Anche se questa risposta è corretta, non si tratta della differenza principale.
-    - content: Nvidia Docker fornisce il supporto per GPU Nvidia, mentre Docker supporta solo CPU
-      isCorrect: true
-    - content: Docker supporta tutte le GPU Nvidia-Docker ed è più leggero in quanto deve solo supportare le GPU Nvidia.
-      isCorrect: false
-  - content: Qual è uno dei principali problemi in termini di dipendenza riscontrati quando si usa la DSVM (Data Science Virtual Machine)?
-    choices:
-    - content: La DSVM viene eseguita in modalità sandbox e non fornisce il supporto diretto per l'installazione di nuovi pacchetti.
-      incorrectExplanation: Le DSVM sono immagini di macchine virtuali di Azure preinstallate, configurate e testate con alcuni degli strumenti più diffusi usati comunemente per analisi dei dati, apprendimento automatico e training di apprendimento avanzato. Sono personalizzabili.
-      isCorrect: false
-    - content: La DSVM supporta solo CNTK e le dipendenze dei servizi cognitivi.
-      incorrectExplanation: Le DSVM forniscono opzioni predefinite di supporto per diversi framework molto diffusi, ad esempio PyTorch, Chainer e Tensorflow.
-      isCorrect: false
-    - content: Alcuni pacchetti e framework per l'apprendimento avanzato richiedono diversi ambienti, driver GPU pacchetti binari
-      isCorrect: true
+    - content: Che cos'è CUDA?
+      choices:
+        - content: CUDA è un'API e una piattaforma di calcolo parallela.
+          isCorrect: true
+        - content: CUDA è un modello GPU molto potente fornito da Nvidia. Il suo nome deriva da una famosa hot rod degli anni '60.
+          isCorrect: false
+        - content: CUDA è un'architettura di apprendimento avanzato usata per la classificazione delle immagini.
+          isCorrect: false
+    - content: Che cos'è Docker?
+      choices:
+        - content: Docker è un framework per le reti neurali di training.
+          isCorrect: false
+        - content: Docker è un'applicazione distribuita con piattaforma aperta.
+          correctExplanation: 'Docker è una piattaforma aperta concepita per sviluppatori e amministratori di sistema che desiderano compilare, distribuire ed eseguire applicazioni distribuite su computer portatili, macchine virtuali data center o cloud.'
+          isCorrect: true
+        - content: Docker è una piattaforma per le app Web.
+          isCorrect: false
+    - content: Qual è la differenza principale tra Nvidia-Docker e Docker?
+      choices:
+        - content: 'Docker viene eseguito in Windows, mentre Nvidia-Docker viene eseguito solo in Linux.'
+          isCorrect: false
+          incorrectExplanation: 'Anche se questa risposta è corretta, non si tratta della differenza principale.'
+        - content: 'Nvidia Docker fornisce il supporto per GPU Nvidia, mentre Docker supporta solo CPU'
+          isCorrect: true
+        - content: Docker supporta tutte le GPU Nvidia-Docker ed è più leggero in quanto deve solo supportare le GPU Nvidia.
+          isCorrect: false
+    - content: Qual è uno dei principali problemi in termini di dipendenza riscontrati quando si usa la DSVM (Data Science Virtual Machine)?
+      choices:
+        - content: La DSVM viene eseguita in modalità sandbox e non fornisce il supporto diretto per l'installazione di nuovi pacchetti.
+          incorrectExplanation: 'Le DSVM sono immagini di macchine virtuali di Azure preinstallate, configurate e testate con alcuni degli strumenti più diffusi usati comunemente per analisi dei dati, apprendimento automatico e training di apprendimento avanzato. Sono personalizzabili.'
+          isCorrect: false
+        - content: La DSVM supporta solo CNTK e le dipendenze dei servizi cognitivi.
+          incorrectExplanation: 'Le DSVM forniscono opzioni predefinite di supporto per diversi framework molto diffusi, ad esempio PyTorch, Chainer e Tensorflow.'
+          isCorrect: false
+        - content: 'Alcuni pacchetti e framework per l''apprendimento avanzato richiedono diversi ambienti, driver GPU pacchetti binari'
+          isCorrect: true

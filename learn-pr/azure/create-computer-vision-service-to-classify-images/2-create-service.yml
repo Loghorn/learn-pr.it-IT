@@ -1,30 +1,17 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-computer-vision-service.2-create-service
-title: Creating a Computer Vision service
+title: Creare un account Servizi cognitivi
 metadata:
-  title: Creating a Computer Vision service
-  description: Creating a Computer Vision service
+  title: Creare un account Servizi cognitivi
+  description: Creare un account Servizi cognitivi
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
+  author: AndrewJByrne
+  ms.author: marouill
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
+labId: 45986
 interactive: bash
 azureSandbox: true
-durationInMinutes: 10
+durationInMinutes: 5
 content: |
   [!include[](includes/2-create-service.md)]
-# tasks:
-# - action: exists
-#   environment: azure
-#   hint: 'Please make sure that you have created the "ComputerVisionService" within the resource group "ComputerVisionRG" in the "westus2" location'
-#   azure:
-#     resourceGroup: ComputerVisionRG
-#     resource: 
-#       type: Microsoft.CognitiveServices/accounts
-#       kind: ComputerVision
-#       name: ComputerVisionService
-#       location: westus2
-#       properties: 
-#         provisioningState: Succeeded

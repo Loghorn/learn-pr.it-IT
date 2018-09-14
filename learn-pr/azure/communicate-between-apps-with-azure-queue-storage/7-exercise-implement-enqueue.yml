@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.communicate-between-applications-with-azure-queue-storage.7-exercise-implement-enqueue
-title: Add a message to the queue
+title: Aggiungere un messaggio alla coda
 metadata:
-  title: Add a message to the queue
-  description: Add a message to the queue
+  title: Aggiungere un messaggio alla coda
+  description: Aggiungere un messaggio alla coda
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial

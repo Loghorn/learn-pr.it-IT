@@ -4,7 +4,7 @@ In questo articolo esamineremo alcuni dei principi di base che assicurano presta
 
 ## <a name="what-is-scaling-and-performance-optimization"></a>Che cosa sono il ridimensionamento e l'ottimizzazione delle prestazioni?
 
-Per ridimensionamento e ottimizzazione delle prestazioni si intende la capacità di dosare le risorse a disposizione di un'applicazione in base alle richieste che riceve. L'ottimizzazione delle prestazioni include il ridimensionamento delle risorse, l'identificazione e l'ottimizzazione di potenziali colli di bottiglia e l'ottimizzazione del codice dell'applicazione per le prestazioni massime.
+Per ridimensionamento e ottimizzazione delle prestazioni si intende la capacità di adattare le risorse a disposizione di un'applicazione in base alle richieste che riceve. L'ottimizzazione delle prestazioni include il ridimensionamento delle risorse, l'identificazione e l'ottimizzazione di potenziali colli di bottiglia e l'ottimizzazione del codice dell'applicazione per le prestazioni massime.
 
 ### <a name="scaling"></a>Ridimensionamento
 
@@ -15,7 +15,7 @@ Le risorse di calcolo possono essere ridimensionate, o scalate, in due direzioni
 
 ![Scalabilità verticale e orizzontale](../media-draft/scale-up-scale-out.png)
 
-La scalabilità verticale riguarda l'aggiunta di più risorse, come CPU o memoria, a una singola istanza. Questa istanza potrebbe essere una macchina virtuale o un servizio PaaS. L'aggiunta di ulteriore capacità all'istanza aumenta le risorse disponibili per l'applicazione, ma non senza un limite. La capacità delle macchine virtuali è limitata a quella dell'host in cui vengono eseguite e gli host stessi hanno limitazioni fisiche. Quando si scala verticalmente un'istanza, prima o poi si incorre in questi limiti, che impediscono di aggiungere ulteriori risorse all'istanza.
+La scalabilità verticale riguarda l'aggiunta di più risorse, come CPU o memoria, a una singola istanza. Questa istanza potrebbe essere una macchina virtuale o un servizio PaaS. L'aggiunta di ulteriore capacità all'istanza aumenta le risorse disponibili per l'applicazione, ma non senza un limite. La capacità delle macchine virtuali è infatti limitata a quella dell'host in cui vengono eseguite e gli host stessi hanno limitazioni fisiche. Quando si scala verticalmente un'istanza, prima o poi si incorre in questi limiti, che impediscono di aggiungere ulteriori risorse all'istanza.
 
 La scalabilità orizzontale riguarda l'aggiunta di ulteriori istanze a un servizio. Possono essere macchine virtuali o servizi PaaS, ma in questo caso, invece di aggiungere capacità rendendo una singola istanza più potente, si aggiunge capacità aumentando il numero totale di istanze. Il vantaggio della scalabilità orizzontale è che può essere applicata all'infinito se si hanno più computer da aggiungere all'architettura. La scalabilità orizzontale richiede un qualche tipo di distribuzione del carico. Può essere un servizio di bilanciamento del carico che distribuisce le richieste tra i server disponibili oppure un meccanismo di individuazione dei servizi che identifica i server attivi a cui inviare le richieste.
 

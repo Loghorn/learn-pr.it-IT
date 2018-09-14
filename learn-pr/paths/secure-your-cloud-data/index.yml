@@ -1,31 +1,27 @@
 ### YamlMime:LearningPath
 uid: learn.secure-your-cloud-data
 metadata:
-  title: Secure your cloud data in Azure
-  description: Azure was designed for security and compliance. Learn how to leverage the built-in services to store your app data securely to ensure that only authorized services and clients have access to it.
+  title: Proteggere i dati nel cloud in Azure
+  description: Azure è stato progettato per offrire sicurezza e conformità. Informazioni su come sfruttare i servizi predefiniti per archiviare i dati delle app in modo sicuro e garantire che siano accessibili solo ai client e ai servizi autorizzati.
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Secure your cloud data
-summary: Azure was designed for security and compliance. Learn how to leverage the built-in services to store your app data securely to ensure that only authorized services and clients have access to it.
-prerequisites: None
-#TODO: Update icon URL with real image 
-iconUrl: http://via.placeholder.com/120x120
+title: Proteggere i dati cloud
+summary: Azure è stato progettato per offrire sicurezza e conformità. Verrà illustrato come sfruttare i servizi predefiniti per archiviare i dati delle app in modo sicuro e garantire che siano accessibili solo ai client e ai servizi autorizzati.
+prerequisites: Nessuno
+iconUrl: /achievements/secure-your-cloud-data.svg
 levels:
-- intermediate
+  - intermediate
 roles:
-- developer
+  - developer
 products:
-- azure
+  - azure
 modules:
-- learn.top-5-security-items-to-consider
-- learn.manage-secrets-with-azure-key-vault
-- learn.secure-your-azure-sql-database
-#TODO: Add - secure/protect resources with azure security center (POST-IGNITE)
-#TODO: Add - learn.auth-apps-with-app-services (POST-IGNITE)
-- learn.secure-access-azure-ad-multi-factor-authentication
-- learn.secure-azure-resources-with-rbac
+  - learn.top-5-security-items-to-consider
+  - learn.manage-secrets-with-azure-key-vault
+  - learn.secure-your-azure-sql-database
+  - learn.secure-access-azure-ad-multi-factor-authentication
+  - learn.secure-azure-resources-with-rbac
 achievement: learn.secure-your-cloud-data.trophy

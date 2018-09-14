@@ -4,7 +4,7 @@ Dopo aver creato un'app per le funzioni, verrà spiegato come compilare, configu
 
 Le funzioni sono basate sugli eventi, ovvero vengono eseguite in risposta a un evento.
 
-Il tipo di evento che avvia la funzione viene chiamato *trigger*. La funzione deve essere configurata con un solo trigger.
+Il tipo di evento che avvia la funzione viene chiamato **trigger**. La funzione deve essere configurata con un solo trigger.
 
 Azure supporta i trigger per i servizi seguenti.
 
@@ -22,10 +22,9 @@ Azure supporta i trigger per i servizi seguenti.
 
 ### <a name="bindings"></a>Associazioni
 
-Le associazioni sono una modalità dichiarativa per connettere dati e servizi alla funzione. Sono in grado di parlare a servizi diversi e questo significa che non è necessario scrivere codice nella funzione per connettersi alle origini dati e gestire le connessioni. La piattaforma risolve automaticamente questa complessità come parte del codice di associazione. Ogni associazione ha una direzione: il codice legge i dati dalle associazioni di *input* e scrive i dati nelle associazioni di *output*. Ogni funzione può avere zero o più associazioni per gestire i dati di input e output elaborati dalla funzione.
+Le associazioni sono una modalità dichiarativa per connettere dati e servizi alla funzione. Le associazioni in grado di comunicare con diversi servizi, il che significa non dover scrivere il codice nella funzione per connettersi alle origini dati e gestire le connessioni. La piattaforma si occupa di tale complessità come parte del codice di associazione. Ogni associazione ha una direzione: il codice legge i dati dalle associazioni di *input* e scrive i dati nelle associazioni di *output*. Ogni funzione può avere zero o più associazioni per gestire i dati di input e output elaborati dalla funzione.
 
-> [!NOTE]
-> Tecnicamente, un trigger è un tipo speciale di associazione di input che in più consente di avviare l'esecuzione.
+Un trigger è un tipo speciale di associazione di input con le funzionalità aggiuntive di avviare l'esecuzione.
 
 Azure offre [numerose associazioni](https://docs.microsoft.com/azure/azure-functions/functions-triggers-bindings#supported-bindings) per connettersi a diversi servizi di archiviazione e messaggistica.
 
@@ -33,7 +32,7 @@ Azure offre [numerose associazioni](https://docs.microsoft.com/azure/azure-funct
 
 L'esempio che segue illustra la configurazione di una funzione con un'associazione di input (trigger) e un'associazione di output. Si supponga di voler leggere i dati dall'archiviazione BLOB, elaborarli nella funzione e quindi scrivere un messaggio a una coda. Sarà necessario configurare un'_associazione di input_ di tipo *blob* e un'_associazione di output_ di tipo *queue*.
 
-Le associazioni possono essere definite nel portale di Azure e vengono archiviate come file JSON che possono anche essere modificati direttamente. Il file JSON seguente è una definizione di esempio di un trigger e di un'associazione per una funzione.
+Le associazioni possono essere definite nel portale di Azure e vengono archiviate come file JSON, che è anche possibile modificare direttamente. Il file JSON seguente è una definizione di esempio di un trigger e di un'associazione per una funzione.
 
 ```json
 {
@@ -64,8 +63,8 @@ Azure offre diversi modelli di funzione già pronti per gli scenari comuni.
 
 ### <a name="quickstart-templates"></a>Modelli di avvio rapido
 
-Quando si aggiunge la prima funzione, viene visualizzata la schermata Avvio rapido. Questa schermata consente di scegliere un tipo di trigger (HTTP, Timer o Dati) e un linguaggio di programmazione (C#, JavaScript, F# o Java). Quindi, in base alle selezioni effettuate, Azure genera il codice della funzione e la configurazione con un codice di esempio usato per visualizzare i dati di input ricevuti nel registro. 
- 
+Quando si aggiunge la prima funzione, viene visualizzata la schermata Avvio rapido. Questa schermata consente di scegliere un tipo di trigger (HTTP, Timer o Dati) e un linguaggio di programmazione (C#, JavaScript, F# o Java). Quindi, in base alle selezioni effettuate, Azure genera il codice della funzione e la configurazione con un codice di esempio usato per visualizzare i dati di input ricevuti nel registro.
+
 ### <a name="custom-function-templates"></a>Modelli di funzione personalizzati
 
 La selezione dei modelli di Avvio rapido consente di accedere facilmente agli scenari più comuni. Tuttavia, Azure offre altri 30 modelli con cui è possibile iniziare e che possono essere selezionati dalla schermata di elenco dei modelli durante la creazione delle funzioni successive o usando l'opzione **Funzione personalizzata** nella schermata Avvio rapido.
@@ -84,9 +83,9 @@ Quando si crea una funzione da un modello, vengono creati numerosi file. Ad esem
 
 Quando si seleziona una funzione nell'app per le funzioni, un editor di codice si apre e visualizza il codice relativo alla funzione, come illustrato nello screenshot seguente.
 
-![Interfaccia di selezione del modello di funzione, in cui sono elencati i modelli che si possono usare per velocizzare lo sviluppo delle funzioni.](../media-draft/4-file-navigation.png)
+![Screenshot del portale di Azure che mostra il pannello di editor (funzione), tra cui menu espanso Visualizza i file, con la funzione "HttpTriggerJS1" selezionata nel nostro spostamento del servizio app e dal menu Visualizza i file evidenziati.](../media/4-file-navigation.png)
 
-Come si può vedere nello screenshot precedente, a destra è visualizzato un menu a comparsa che include una scheda per la **visualizzazione dei file**. Selezionando la scheda, viene visualizzata la struttura di file che compone la funzione.  
+Come può vedere nello screenshot precedente, è un menu a comparsa a destra che include una scheda al **visualizzare i file**. Selezionando la scheda, viene visualizzata la struttura di file che compone la funzione.
 
 ## <a name="testing-your-azure-function"></a>Test della funzione di Azure
 
@@ -94,27 +93,27 @@ Dopo aver creato una funzione, è opportuno testarla. Esistono due approcci: l'e
 
 ### <a name="manual-execution"></a>Esecuzione manuale
 
-È possibile avviare una funzione attivando manualmente il trigger configurato. Se ad esempio si usa un trigger HTTP, è possibile usare uno strumento come Postman o cURL per avviare una richiesta HTTP all'URL dell'endpoint della funzione, disponibile nella definizione del trigger HTTP (**Recupera URL della funzione**).  
+È possibile avviare una funzione attivando manualmente il trigger configurato. Ad esempio, se si usa un trigger HTTP, è possibile utilizzare uno strumento come Postman o cURL per avviare una richiesta HTTP all'URL dell'endpoint (funzione), disponibile dalla definizione del trigger HTTP (**recupera URL della funzione**).
 
 ### <a name="testing-in-the-azure-portal"></a>Test nel portale di Azure
 
-Il portale offre un altro modo pratico per testare le funzioni. Sul lato destro della finestra del codice è presente un menu di spostamento con schede a comparsa. In questo menu è presente la scheda **Test**. Se si espande il menu e si seleziona questa scheda, è possibile eseguire la funzione e visualizzarne il risultato. Quando si fa clic su **Esegui** in questa finestra di test, i risultati vengono visualizzati nella finestra di output insieme a un codice di stato. 
+Il portale offre un altro modo pratico per testare le funzioni. Sul lato destro della finestra del codice è presente un menu di spostamento con schede a comparsa. In questo menu è presente la scheda **Test**. Se si espande il menu e si seleziona questa scheda, è possibile eseguire la funzione e visualizzarne il risultato. Quando si fa clic su **Esegui** in questa finestra di test, i risultati vengono visualizzati nella finestra di output insieme a un codice di stato.
 
 ## <a name="monitoring-dashboard"></a>Dashboard di monitoraggio
 
 La possibilità di monitorare le funzioni è fondamentale durante lo sviluppo e nell'ambiente di produzione. Il portale di Azure offre un dashboard di monitoraggio disponibile se si attiva l'integrazione di Application Insights. Nel menu di spostamento dell'app per le funzioni, quando si espande il nodo della funzione, viene visualizzata la voce di menu **Monitor**. Il dashboard di monitoraggio offre un modo rapido per visualizzare la cronologia delle esecuzioni della funzione e visualizza il timestamp, il codice di risultato, la durata e l'ID operazione inseriti da Application Insights.
 
-![Screenshot del dashboard di monitoraggio avviato usando la voce di menu **Monitor** della funzione che visualizza un elenco di chiamate riuscite e non riuscite alla funzione.](../media-draft/4-monitor-function.png)
+![Screenshot del portale di Azure che mostra un pannello monitoraggio di funzione HTTP con più risultati di funzione e i codici di stato HTTP corrispondenti, con la voce di menu del modulo della funzione evidenziata.](../media/4-monitor-function.png)
 
 ## <a name="streaming-log-window"></a>Flusso della finestra registro
 
-È anche possibile aggiungere alla funzione istruzioni di registrazione per il debug nel portale di Azure. I metodi chiamati per ogni lingua vengono passati a un oggetto di "registrazione" che può essere usato per registrare le informazioni nella finestra registro, che si trova in un menu a schede a comparsa nella parte inferiore della finestra del codice. 
+È anche possibile aggiungere alla funzione istruzioni di registrazione per il debug nel portale di Azure. I metodi chiamati per ogni lingua vengono passati a un oggetto "registrazione", che può essere usato per registrare le informazioni alla finestra del log che si trova nel menu a comparsa a schede nella parte inferiore della finestra del codice.
 
 Il seguente frammento di codice JavaScript illustra come registrare un messaggio usando il metodo `context.log` (l'oggetto `context` viene passato al gestore).
 
 ```javascript
   context.log('Enter your logging statement here');
-```  
+```
 
 Si può eseguire la stessa operazione in C# usando il metodo `log.Info`. In questo caso l'oggetto `log` viene passato al metodo C# che elabora la funzione.
 

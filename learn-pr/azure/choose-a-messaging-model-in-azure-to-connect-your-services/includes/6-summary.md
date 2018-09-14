@@ -1,0 +1,3 @@
+In questo modulo sono stati esaminati quattro diversi servizi di Azure che consentono di creare applicazioni distribuite affidabili e resilienti. Per sceglierne uno, è necessario decidere il tipo di dati che devono essere passati tra i componenti (messaggi o eventi) e quindi le funzionalità necessarie per recapitare ed elaborare i dati.
+
+Continuare l'apprendimento con gli altri moduli di Microsoft Learn che spiega come usare ognuno di questi componenti di messaggistica in Azure.

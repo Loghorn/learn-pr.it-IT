@@ -2,25 +2,19 @@ In questo modulo verrà creata una semplice un'app console tramite il terminale 
 
 ## <a name="create-a-console-app"></a>Creare un'app console
 
-1. Creare una cartella di lavoro.
-
-1. Aprire un prompt dei comandi e passare a tale cartella.
-
-1. Creare una nuova applicazione console .NET Core
-
-```bash
-dotnet new console 
-```
-
 1. Aprire Visual Studio Code e quindi selezionare **File** > **Apri cartella**.
 
 1. Creare una nuova cartella denominata in cui inserire il nuovo progetto C# e quindi fare clic su **Seleziona cartella**.
 
-1. Assicurarsi che il salvataggio automatico dei file sia abilitato. Fare clic sul menu File e selezionare l'opzione per il salvataggio automatico se è deselezionata.
+1. Assicurarsi che tale automatico di file facendo clic sul menu File e il controllo è abilitato salvataggio **salvataggio automatico** se è vuota.
 
-1. Aprire il terminale integrato da Visual Studio Code selezionando **Visualizza** > **Terminale integrato** nel menu principale.
+1. Aprire il terminale integrato da Visual Studio Code selezionando **View** > **Terminal** dal menu principale.
 
-1. Nella finestra del terminale digitare **dotnet new console**.
+1. Nella finestra del terminale, digitare il comando seguente.
+
+    ```
+    dotnet new console
+    ```
 
     Questo comando crea un file **Program.cs** nella cartella con un semplice programma "Hello World" già scritto, oltre a un file di progetto C# denominato **learning-module.csproj**.
 
@@ -38,7 +32,7 @@ dotnet new console
 
     Seguire le istruzioni per copiare e incollare il codice fornito nel Web browser, che autentica la sessione di Visual Studio Code.
 
-1. Fare clic sull'![icona di Esplora risorse](../media/2-setup/visual-studio-code-explorer-icon.png) **Esplora risorse** nel menu a sinistra e quindi espandere **Azure Cosmos DB**.
+1. Fare clic sui ![icona di Azure](../media/2-setup/visual-studio-code-explorer-icon.png) **Azure** icona nel menu a sinistra, quindi espandere **Azure Cosmos DB**.
 
 1. Espandere la sottoscrizione di Azure > account Azure Cosmos DB. Se nei moduli precedenti sono stati creati il database **Products** e la raccolta **Clothing**, l'estensione li visualizza.
 
@@ -46,11 +40,11 @@ dotnet new console
 
 1. Verranno ora creati un nuovo database e una raccolta per i clienti.
 
-    Nella finestra Esplora risorse fare clic con il pulsante destro del mouse sul proprio account e quindi fare clic su **Crea database**. 
+    Nella finestra di Azure, fare clic sul proprio account e quindi fare clic su **Create Database**.
     
     Nella casella di testo nella parte superiore della schermata, digitare **Users** per il nome del database > **INVIO** > **WebCustomers** per il nome della raccolta >  **INVIO** > **userId** per la chiave di partizione > **INVIO** > **1000** per la capacità di unità elaborate iniziale > **INVIO**.
 
-    ![Estensione di Visual Studio Code per Azure Cosmos DB](../media/2-setup/vs-code-azure-cosmos-db-extension.gif) <!--Retake on fresh machine without the other subscriptions showing-->
+    ![Estensione di Visual Studio Code per Azure Cosmos DB](../media/2-setup/vs-code-azure-cosmos-db-extension.gif) 
 
     Il nuovo database Users e la raccolta WebCustomers vengono visualizzati nella finestra Esplora risorse.
 
@@ -95,8 +89,6 @@ dotnet new console
     ```
 
 1. Copiare la stringa di connessione dall'estensione Azure Cosmos DB facendo clic con il pulsante destro del mouse sull'account del modulo di apprendimento e scegliendo **Copy Connection String** (Copia stringa di connessione).
-
-    ![Estensione di Visual Studio Code per Azure Cosmos DB](../media/2-setup/vs-code-copy-connection-string.gif) 
 
 1. Incollare la stringa di connessione in un file di testo e quindi copiare la parte **AccountEndpoint** dal file di testo in **accountEndpoint** nel file App.config.
 

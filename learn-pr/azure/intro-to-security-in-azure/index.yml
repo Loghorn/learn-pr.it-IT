@@ -1,37 +1,36 @@
 ### YamlMime:Module
 uid: learn.introduction-to-security
 metadata:
-  title: Introduction to security in Azure
-  description: Discuss the basic concepts for protecting your infrastructure and data when you work in the cloud. Understand what responsibilities are yours and what Azure takes care of for you.
+  title: Introduzione alla sicurezza in Azure
+  description: Discutere concetti di base per proteggere l'infrastruttura e i dati quando si lavora nel cloud. Comprendere le responsabilità sono quelle in uso e quali farà Azure per l'utente.
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Introduction to security in Azure
-summary: Discuss the basic concepts for protecting your infrastructure and data when you work in the cloud. Understand what responsibilities are yours and what Azure takes care of for you.
-abstract: |  
-  In this module, you will:
-  - Learn how security responsibility is shared with Azure
-  - Learn how identity management provides protection, even outside your network
-  - Learn how encryption capabilities built in to Azure can protect your data
-  - Learn how to protect your network and virtual networks
-prerequisites: None
-iconUrl: http://via.placeholder.com/120x120
+title: Introduzione alla sicurezza in Azure
+summary: Discutere concetti di base per proteggere l'infrastruttura e i dati quando si lavora nel cloud. Comprendere le responsabilità sono quelle in uso e quali farà Azure per l'utente.
+abstract: |
+  In questo modulo verrà descritto come:
+  - Informazioni su come la responsabilità di sicurezza è condiviso con Azure
+  - Informazioni su come la gestione delle identità offre protezione, anche all'esterno della rete
+  - Informazioni su come le funzionalità di crittografia incorporate in Azure possono proteggere i dati
+  - Informazioni su come proteggere la rete e reti virtuali
+prerequisites: Nessuno
+iconUrl: /learn/achievements/intro-to-security-in-azure.svg
 levels:
-- beginner
+  - beginner
 roles:
-- developer
-- administrator
-- solution-architect
+  - developer
+  - administrator
+  - solution-architect
 products:
-- azure
+  - azure
 units:
-- learn.introduction-to-security.1-introduction
-- learn.introduction-to-security.2-shared-responsibility
-- learn.introduction-to-security.3-identity-and-access
-- learn.introduction-to-security.4-encryption
-- learn.introduction-to-security.5-network-security
-- learn.introduction-to-security.6-summary
+  - learn.introduction-to-security.1-introduction
+  - learn.introduction-to-security.2-shared-responsibility
+  - learn.introduction-to-security.3-identity-and-access
+  - learn.introduction-to-security.4-encryption
+  - learn.introduction-to-security.5-network-security
+  - learn.introduction-to-security.6-summary
 achievement: learn.introduction-to-security.badge

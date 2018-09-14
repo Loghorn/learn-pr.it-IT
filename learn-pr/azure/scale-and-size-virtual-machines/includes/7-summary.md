@@ -1,11 +1,3 @@
-You saw two ways to meet demand using Virtual Machines. If your load is predictable you can use the portal or scripts to manually resize your VMs. For unpredictable demand patterns, a better approach is to use scale sets with autoscale to automatically add and remove instances as demand changes. Multiple VMs have the added benefit of increasing the availability of your system since a failed VM will not disrupt your service.
+Si è visto due modi per soddisfare la domanda usando macchine virtuali. Se il carico è prevedibile, è possibile usare il portale o gli script di ridimensionare manualmente le macchine virtuali. Per modelli di domanda non prevedibile, un approccio migliore consiste nell'utilizzare i set di scalabilità con scalabilità automatica per aggiungere e rimuovere le istanze come alle fluttuazioni della domanda automaticamente. Più macchine virtuali hanno l'ulteriore vantaggio di aumentare la disponibilità del sistema, poiché una macchina virtuale malfunzionante non interromperà il servizio.
 
-## Cleanup
-
-While a VM is provisioned and running, it incurs costs against your subscription. Because you create all the VMs in the same resource group, the easiest way to clean up your Azure subscription is to remove the resource group, which will remove all its contents. Please run the following PowerShell cmdlet when you are finished with the exercise:
-
-   ```powershell
-   Remove-AzureRmResourceGroup -Name ExerciseRG
-   ```
-
-When you are asked to confirm the delete, answer **Yes**. The command may take several minutes to complete as resources are deleted.
+[!include[](../../../includes/azure-sandbox-cleanup.md)]

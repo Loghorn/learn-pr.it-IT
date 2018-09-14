@@ -6,9 +6,9 @@ Visual Studio e Servizio app di Azure offrono un meccanismo potente per la creaz
 
 In questo modulo verrà descritto come:
 
-- Creare un'app Web ASP.NET Core in Visual Studio 2017 per PC o Mac.
-- Pubblicare un'app Web ASP.NET in Azure con Visual Studio 2017.
-- Aggiornare un'applicazione ASP.NET in Azure usando Visual Studio per PC o Mac.
+- Creare un'app web ASP.NET in Visual Studio 2017 per Mac o PC
+- Pubblicare un'app web ASP.NET in Azure con Visual Studio 2017
+- Aggiornare un'applicazione ASP.NET in Azure usando Visual Studio per Mac o PC
 
 ## <a name="prerequisites"></a>Prerequisiti
 

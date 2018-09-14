@@ -9,11 +9,43 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: ce5e1852bec8bd2fae48d5abc05ccc41c6ddd368
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
-  ms.translationtype: HT
-  ms.contentlocale: it-IT
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44233221"
 durationInMinutes: 3
-content: '[!include[](includes/7-summary.md)]'
+content: |
+  [!include[](includes/7-summary.md)]
+quiz:
+  title: 'Verifica delle conoscenze: la memorizzazione nella cache e le prestazioni di archiviazione di Azure e dischi'
+  questions:
+    - content: 'Quale opzione di memorizzazione nella cache è una scelta ottimale per le operazioni di scrittura pesanti, ad esempio l''archiviazione file di log?'
+      choices:
+        - content: Sola lettura
+          isCorrect: false
+          incorrectExplanation: 'La memorizzazione nella cache di sola lettura funziona bene per i dischi dati, inclusi i dati di TempDB. Tuttavia, non migliora le prestazioni delle operazioni di scrittura pesanti e può provocare un lieve calo nelle prestazioni.'
+        - content: Lettura/Scrittura
+          isCorrect: false
+          incorrectExplanation: 'Questa è un''opzione valida se l''app gestisce correttamente la scrittura di dati memorizzati nella cache in dischi persistenti, quando necessario.'
+        - content: Nessuno
+          isCorrect: true
+          correctExplanation: Operazioni di scrittura pesanti in genere non trarre vantaggio dalla memorizzazione nella cache. 'None' è probabilmente la scelta migliore per un disco dedicato al file di log.
+    - content: Per il tipo di disco Azure riavvia la macchina virtuale per modificare il tipo di memorizzazione nella cache?
+      choices:
+        - content: Dati
+          isCorrect: false
+          incorrectExplanation: Modifica dell'impostazione della cache di un disco dati Scollega e ricollega il disco di destinazione ma non riavvia la macchina virtuale.
+        - content: Sistema operativo (OS)
+          isCorrect: true
+          correctExplanation: Modifica dell'impostazione della cache del disco del sistema operativo richiede un riavvio della macchina virtuale.
+        - content: Temporanee
+          isCorrect: false
+          incorrectExplanation: Non è possibile modificare le opzioni di memorizzazione nella cache in un disco temporaneo.
+        - content: Archiviazione con ridondanza della zona (ZRS).
+          isCorrect: false
+          incorrectExplanation: Un account di archiviazione premium non supporta ZRS.
+    - content: Si supponga di che usare Azure PowerShell per gestire una macchina virtuale. Si dispone di un oggetto locale che rappresenta la macchina virtuale e sono state apportate diversi aggiornamenti per quell'oggetto locale. Il cmdlet di PowerShell usereste per applicare le modifiche locali per la VM effettiva?
+      choices:
+        - content: Update-AzureRmVM
+          isCorrect: true
+          correctExplanation: Questo cmdlet Aggiorna lo stato di una macchina virtuale di Azure per lo stato di un oggetto macchina virtuale.
+        - content: Set-AzureRmVM
+          isCorrect: false
+        - content: New-AzureRmVM
+          isCorrect: false

@@ -1,19 +1,20 @@
-You're building a new stand-alone customer-facing website for your business. The exact needs of this website haven't been defined yet, but you'll be responsible for creating the site from start to finish. You have substantial experience in JavaScript, so you want to find a solution that will play well to your strengths.
+Si vuole creare un nuovo sito Web autonomo rivolto ai clienti della propria attività. Le esigenze esatte di questo sito Web non sono state ancora definite, ma si sarà responsabili della creazione del sito in tutte le sue fasi. Si ha una sostanziale esperienza in JavaScript, quindi si vuole trovare una soluzione che consenta di sfruttare al meglio le proprie competenze.
 
-In this module, you will create a MEAN (MongoDB, Express, AngularJS, and Node.js) web application stack host on a Linux virtual machine hosted in Azure.
+In questo modulo, si creerà un MEAN (MongoDB, Express, AngularJS e Node. js) host applicazioni web stack in una macchina virtuale Linux ospitata in Azure.
 
-## Learning objectives
-In this module, you will:
+## <a name="learning-objectives"></a>Obiettivi di apprendimento
 
-- Decide if the MEAN web stack is right for you
-- Create an Ubuntu Linux VM to host your web app
-- Add MongoDB as a data store for your web app
-- Add Node.js as a host runtime for your web app
-- Add Express as a Node.js web framework
-- Add mongooseJS for object modeling of your MongoDB data
-- Create a simple web app hosted on the MEAN stack
-- Make the web application publicly available from your VM
+In questo modulo verrà descritto come:
 
-## Prerequisites
+- Decidere se lo stack Web MEAN è adatto alle proprie esigenze
+- Creare una macchina virtuale Ubuntu Linux in cui ospitare l'app Web
+- Aggiungere MongoDB come archivio dati per l'app Web
+- Aggiungere Node.js come runtime host dell'app Web
+- Aggiungere Express come framework Web di Node.js
+- Aggiungere mongooseJS per la modellazione oggetti dei dati MongoDB
+- Creare una semplice app Web ospitata nello stack MEAN
+- Rendere l'applicazione Web pubblicamente disponibile dalla macchina virtuale
 
-- Experience with the Bash command-line interface
+## <a name="prerequisites"></a>Prerequisiti
+
+- Conoscenza dell'interfaccia della riga di comando Bash

@@ -20,9 +20,9 @@ Per visualizzare i criteri di riavvio in azione, creare un'istanza del contenito
 
 Eseguire il contenitore di esempio con il comando `az container create` seguente:
 
-```azureclu
+```azurecli
 az container create \
-    --resource-group myResourceGroup \
+    --resource-group <rgn>[Sandbox resource group name]</rgn> \
     --name mycontainer-restart-demo \
     --image microsoft/aci-wordcount:latest \
     --restart-policy OnFailure
@@ -34,7 +34,7 @@ Istanze di contenitore di Azure avvia il contenitore e lo interrompe quando la s
 
 ```azurecli
 az container show \
-    --resource-group myResourceGroup \
+    --resource-group <rgn>[Sandbox resource group name]</rgn> \
     --name mycontainer-restart-demo \
     --query containers[0].instanceView.currentState.state
 ```
@@ -42,7 +42,7 @@ az container show \
 Quando lo stato del contenitore di esempio mostra **Terminato**, è possibile visualizzare l'output dell'attività visualizzando i log dei contenitori. Eseguire il comando **az container logs** per visualizzare l'output dello script:
 
 ```azurecli
-az container logs --resource-group myResourceGroup --name mycontainer-restart-demo
+az container logs --resource-group <rgn>[Sandbox resource group name]</rgn> --name mycontainer-restart-demo
 ```
 
 Output:
@@ -64,4 +64,4 @@ Output:
 
 In questa unità è stata creata un'istanza di contenitore con il criterio di riavvio *OnFailure*. Questa configurazione funziona per i contenitori che eseguono attività di breve durata.
 
-Nell'unità successiva sarà possibile impostare variabili di ambiente in un'Istanza di contenitore di Azure.
+Nell'unità successiva sarà possibile impostare variabili di ambiente in Istanze di contenitore di Azure.

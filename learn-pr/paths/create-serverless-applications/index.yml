@@ -1,28 +1,26 @@
 ### YamlMime:LearningPath
 uid: learn.create-serverless-applications
 metadata:
-  title: Create serverless applications
-  description: Azure Functions enable the creation of event driven, compute-on-demand systems that can be triggered by various external events. Learn how to leverage functions to execute server-side logic and build serverless architectures.
+  title: Creare applicazioni senza server
+  description: Funzioni di Azure consente la creazione di sistemi di calcolo on demand basati su eventi che possono essere attivati da vari eventi esterni. Informazioni su come sfruttare le funzioni per eseguire la logica lato server e creare architetture serverless.
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Create serverless applications
-summary: Azure Functions enable the creation of event driven, compute-on-demand systems that can be triggered by various external events. Learn how to leverage functions to execute server-side logic and build serverless architectures.
-prerequisites: None
-#TODO: Update icon URL with real image 
-iconUrl: http://via.placeholder.com/120x120
-levels: 
-- beginner
-roles: 
-- developer
-products: 
-- azure
+title: Creare applicazioni serverless
+summary: Funzioni di Azure consente la creazione di sistemi di calcolo on demand basati su eventi che possono essere attivati da vari eventi esterni. Scopri come sfruttare le funzioni per eseguire la logica lato server e la compilazione di architetture senza server.
+prerequisites: Nessuno
+iconUrl: /achievements/create-serverless-applications.svg
+levels:
+  - beginner
+roles:
+  - developer
+products:
+  - azure
 modules:
-- learn.create-serverless-logic-with-functions
-- learn.execute-azure-function-with-triggers
-- learn.chain-azure-functions-data-using-input-output-bindings
-- learn.build-a-serverless-web-app
+  - learn.create-serverless-logic-with-functions
+  - learn.execute-azure-function-with-triggers
+  - learn.chain-azure-functions-data-using-input-output-bindings
+  - learn.build-a-serverless-web-app
 achievement: learn.create-serverless-applications.trophy

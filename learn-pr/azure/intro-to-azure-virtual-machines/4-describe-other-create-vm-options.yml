@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.introduction-to-azure-virtual-machines.4-describe-other-create-vm-options
-title: Describe the options available to create and manage an Azure Virtual Machine
+title: Descrizione delle opzioni disponibili per creare e gestire una macchina virtuale di Azure
 metadata:
-  title: Describe the options available to create and manage an Azure Virtual Machine
-  description: Describe the options available to create and manage an Azure Virtual Machine
+  title: Descrizione delle opzioni disponibili per creare e gestire una macchina virtuale di Azure
+  description: Descrizione delle opzioni disponibili per creare e gestire una macchina virtuale di Azure
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial

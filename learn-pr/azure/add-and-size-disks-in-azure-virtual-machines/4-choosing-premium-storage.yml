@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.add-and-size-disks-in-azure-virtual-machines.4-choosing-premium-storage
-title: Determine whether to use premium storage
+title: Determinare se usare l'archiviazione premium
 metadata:
-  title: Determine whether to use premium storage
-  description: Determine whether to use premium storage
+  title: Determinare se usare l'archiviazione premium
+  description: Determinare se usare l'archiviazione premium
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial

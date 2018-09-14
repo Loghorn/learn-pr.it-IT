@@ -1,4 +1,4 @@
-Nell'esercizio precedente abbiamo abilitato licenze di valutazione, creato una directory, creato un utente e creato un gruppo per testare la soluzione. In questo esercizio si creerà la regola di accesso condizionale per richiedere l'autenticazione a più fattori di Azure per il portale di Azure.
+Nell'esercizio precedente abbiamo abilitato licenze di valutazione, creato una directory, creato un utente e creato un gruppo per testare la soluzione. In questa unità, si creerà la regola di accesso condizionale per richiedere Azure multi-Factor Authentication per il portale di Azure.
 
 ## <a name="enable-conditional-access-based-multi-factor-authentication"></a>Abilitare l'autenticazione a più fattori basata sull'accesso condizionale
 

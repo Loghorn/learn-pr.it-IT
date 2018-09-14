@@ -2,7 +2,7 @@ In questa unità verrà creata un'app web ASP.NET Core tramite l'interfaccia del
 
 ## <a name="aspnet-core-installation-on-linux-environment"></a>Installazione di ASP.NET Core in ambiente Linux
 
-Visitare la [pagina dei download di .NET](https://www.microsoft.com/net/download) di Microsoft e seguire gli stessi passaggi indicati nella pagina di .NET Core SDK. Sono riportati di seguito. Per eseguire i comandi, è necessario aprire una nuova istanza della riga di comando del **terminale**.
+Visitare la [pagina dei download di .NET](https://www.microsoft.com/net/download) di Microsoft e seguire gli stessi passaggi indicati nella pagina di .NET Core SDK. Sono riportati di seguito. Per eseguire i comandi, è necessario aprire una nuova istanza della riga del comando del **terminale**.
 
 ### <a name="register-microsoft-key-and-feed"></a>Registrare la chiave Microsoft e il feed
 
@@ -58,7 +58,7 @@ cd BestBikeApp      # Hit Enter
 dotnet new mvc      # Hit Enter
 ```
 
-Con i comandi precedenti si passa alla cartella radice *Documenti* e quindi si crea una nuova cartella. Si passa quindi all'interno di questa cartella e infine si invia il comando dell'interfaccia della riga di comando di .NET per generare una nuova applicazione ASP.NET MVC con tutti i pacchetti ripristinati:
+Con i comandi precedenti si passa alla cartella radice *Documenti* e quindi si crea una nuova cartella. Si passa quindi all'interno della cartella. Infine si invia il comando dell'interfaccia della riga di comando di .NET per generare una nuova applicazione ASP.NET MVC con tutti i pacchetti ripristinati:
 
 ```console
 The template "ASP.NET Core Web App (Model-View-Controller)" was created successfully.
@@ -107,11 +107,11 @@ The HTTPS developer certificate was generated successfully.
 
 ## <a name="run-the-application"></a>Eseguire l'applicazione
 
-Per questa dimostrazione verrà usato il browser Firefox.
+Per questa dimostrazione viene usato il browser Firefox.
 
 Aprire il browser e digitare l'indirizzo `http://localhost:5001` per verificare che l'applicazione funzioni correttamente.
 
-![Screenshot che mostra la pagina Web predefinita del modello ASP.NET Core MVC nel Web browser.](../media/5-asp-core-mvc-default-template.PNG)
+![Screenshot che mostra una visualizzazione del Web browser della pagina Web predefinita del modello MVC ASP.NET.](../media/5-asp-core-mvc-default-template.PNG)
 
 > [!NOTE]
-> È necessario **aggiungere un'eccezione** per l'URL dell'applicazione perché Firefox non è stato in grado di verificare il certificato autofirmato per lo sviluppo.
+> È necessario **aggiungere un'eccezione** per l'URL dell'applicazione in quanto il certificato autofirmato per lo sviluppo non è stato verificato da Firefox.

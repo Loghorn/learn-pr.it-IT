@@ -1,8 +1,6 @@
-Ora che l'app è pronta e in esecuzione nel computer locale, è possibile pubblicarla in Azure. 
-
 In questa unità verrà creata, compilata ed eseguita una nuova applicazione Web ASP.NET nel computer locale.
 
-## <a name="create-a-new-project"></a>Creare un nuovo progetto
+## <a name="create-a-project"></a>Creare un progetto
 
 ### <a name="visual-studio-for-windows"></a>Visual Studio per Windows
 
@@ -37,7 +35,7 @@ Il primo passaggio è avviare Visual Studio e creare un'applicazione Web ASP.NET
 
 1. In **.NET Core** selezionare **App Web ASP.NET Core** e quindi fare clic su **Avanti**.
 
-1. In **Nome progetto** digitare **AlpineSkiHouse**. In questo modo viene popolato automaticamente anche il nome della soluzione.
+1. In **Nome progetto** digitare **AlpineSkiHouse**. Questo dovrebbe popolamento automatico il nome della soluzione.
 
 1. Selezionare una **posizione** nel computer locale per il progetto.
 

@@ -1,4 +1,4 @@
-In questa unità verrà installato Visual Studio nel computer Windows o nel macOS in uso. In Windows sarà necessario installare il carico di lavoro Sviluppo di Azure. In Visual Studio per Mac, il flusso di lavoro di Servizi connessi predefinito consentirà di creare app per Servizio app di Azure. Al termine, sarà tutto pronto per iniziare a creare le applicazioni e pubblicarle in Azure.
+In questa unità verrà installato Visual Studio nel computer Windows o nel macOS in uso. In Windows sarà necessario installare il carico di lavoro Sviluppo di Azure. Con Visual Studio per Mac, il flusso di lavoro predefinito di servizi connessi consentirà di creare App per il servizio App di Azure. Al termine, sarà tutto pronto per iniziare a creare le applicazioni e pubblicarle in Azure.
 
 ## <a name="exercise-steps"></a>Passaggi dell'esercizio
 
@@ -8,7 +8,7 @@ Esistono piccole differenze per l'installazione di Visual Studio tra Windows e m
 
 1. Scaricare il programma di installazione di Visual Studio da https://visualstudio.microsoft.com/downloads/.
 
-1. Eseguire il programma di installazione. Si aprirà la finestra Carichi di lavoro.
+1. Eseguire il programma di installazione, aprire la finestra di carichi di lavoro.
 
 1. Scegliere il carico di lavoro **Sviluppo di Azure**.
 
@@ -32,7 +32,7 @@ Esistono piccole differenze per l'installazione di Visual Studio tra Windows e m
 
 1. Passare a https://visualstudio.microsoft.com/ e scaricare il programma di installazione di Visual Studio per Mac.
 
-1. Fare clic sul file VisualStudioInstaller.dmg per montare il programma di installazione e quindi eseguirlo facendo doppio clic sul logo.
+1. Fare clic sul file visualstudioinstaller. dmg per montare il programma di installazione, quindi eseguirlo facendo doppio clic sul logo.
 
 1. Accettare le condizioni di licenza e privacy quando vengono visualizzate.
 

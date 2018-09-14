@@ -1,15 +1,15 @@
 ### YamlMime:ModuleUnit
 uid: learn.caching-and-performance-azure-storage-and-disks.4-exercise-enable-and-configure-azure-vm-disk-cache-by-using-the-azure-portal
-title: Exericse - Enable and configure Azure VM disk cache by using the Azure portal
+title: Exericse - abilitare e configurare la cache disco macchina virtuale di Azure usando il portale di Azure
 metadata:
-  title: Exericse - Enable and configure Azure VM disk cache by using the Azure portal
-  description: Exericse - Enable and configure Azure VM disk cache by using the Azure portal
+  title: Exericse - abilitare e configurare la cache disco macchina virtuale di Azure usando il portale di Azure
+  description: Exericse - abilitare e configurare la cache disco macchina virtuale di Azure usando il portale di Azure
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
+azureSandbox: true
 durationInMinutes: 10
 content: |
   [!include[](includes/4-exercise-enable-and-configure-azure-vm-disk-cache-by-using-the-azure-portal.md)]

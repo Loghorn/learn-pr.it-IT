@@ -39,10 +39,10 @@ PowerShell Core verrà installato in Ubuntu Linux tramite Advanced Packaging Too
     ```
 
 ### <a name="macos"></a>macOS
-Installare quindi **PowerShell Core** su macOS tramite la gestione pacchetti Homebrew.
+Installare quindi **PowerShell Core** su macOS tramite la gestione pacchetti HomeBrew.
 
 > [!IMPORTANT]
-> Se il comando **brew** non è disponibile, potrebbe essere necessario installare la gestione pacchetti Homebrew. Per informazioni dettagliate, vedere il [sito Web di Homebrew](https://brew.sh/).
+> Se il comando **brew** non è disponibile, potrebbe essere necessario installare la gestione pacchetti HomeBrew. Per informazioni dettagliate, vedere il [sito Web di Homebrew](https://brew.sh/).
 
 1. Installare Homebrew-Cask per ottenere altri pacchetti, incluso il pacchetto di PowerShell Core:
 

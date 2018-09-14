@@ -9,11 +9,38 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 357689c42fb2bfb076bf2aebd1aae20d3d346d25
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
-  ms.translationtype: HT
-  ms.contentlocale: it-IT
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44233799"
 durationInMinutes: 3
-content: '[!include[](includes/8-summary.md)]'
+content: |
+  [!include[](includes/8-summary.md)]
+quiz:
+  title: 'Verifica delle conoscenze: aggiungere le dimensioni di dischi in macchine virtuali di Azure'
+  questions:
+    - content: I file del disco rigido virtuale (VHD) vengono archiviati in quale dei seguenti tipi di BLOB in archiviazione di Azure?
+      choices:
+        - content: BLOB in blocchi
+          isCorrect: false
+        - content: BLOB di accodamento
+          isCorrect: false
+        - content: BLOB di pagine
+          isCorrect: true
+          correctExplanation: 'I dischi rigidi virtuali sono supportati da BLOB di pagine in archiviazione di Azure. I BLOB di pagine sono appropriati perché sono una raccolta di pagine da 512 byte ottimizzata per la scrittura e lettura casuale. I BLOB in blocchi, né i BLOB di accodamento sono ottimizzati per la lettura casuali e scrivere operazioni comuni con i dischi rigidi virtuali.'
+    - content: Quale delle seguenti strategie di replica dei dati è l'unica opzione supportata da un account di archiviazione premium?
+      choices:
+        - content: Archiviazione con ridondanza geografica e accesso in lettura (RA-GRS).
+          isCorrect: false
+        - content: Archiviazione con ridondanza locale (LRS)
+          isCorrect: true
+          correctExplanation: 'Un account di Archiviazione Premium supporta solo l''archiviazione con ridondanza locale come opzione di replica. L''archiviazione con ridondanza locale mantiene tre copie dei dati in una singola area. Per il ripristino di emergenza a livello di area, è necessario eseguire il backup dei dischi delle VM in un''area diversa usando Backup di Azure. È necessario anche usare un account di archiviazione con ridondanza geografica come insieme di credenziali di backup.'
+        - content: Archiviazione con ridondanza geografica (GRS)
+          isCorrect: false
+        - content: Archiviazione con ridondanza della zona (ZRS).
+          isCorrect: false
+    - content: Quale dei seguenti tipi di disco è disponibile solo per i dischi gestiti?
+      choices:
+        - content: Standard unità SSD (Solid State Drive)
+          isCorrect: true
+          correctExplanation: Scelta di dischi gestiti ti offre la possibilità di usare unità SSD standard. Questo tipo di disco è compreso tra HDD standard e premium SSD dal punto di vista delle prestazioni e costo.
+        - content: Unità disco rigido standard (HDD)
+          isCorrect: false
+        - content: Unità SSD Premium (SSD)
+          isCorrect: false

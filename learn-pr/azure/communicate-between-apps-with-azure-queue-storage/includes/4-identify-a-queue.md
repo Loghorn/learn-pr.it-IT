@@ -1,35 +1,35 @@
-Now that we have a storage account, let's look at how we work with the queue that it will hold.
+Dopo aver creato l'account di archiviazione, sarà necessario esaminare come lavorare con la coda che conterrà.
 
-To access a queue, you need three pieces of information:
+Per accedere a una coda, sono necessarie tre informazioni:
 
- 1. Storage account name
- 2. Queue name
- 3. Authorization token
+ 1. Nome dell'account di archiviazione
+ 2. Nome della coda
+ 3. Token di autorizzazione
 
-This information is used by both applications that talk to the queue (the web front end that adds messages and the mid-tier that processes them).
+Queste informazioni vengono usate da entrambe le applicazioni che comunicano con la coda (il Web front-end che aggiunge i messaggi e il livello intermedio che li elabora).
 
-## Queue identity
+## <a name="queue-identity"></a>Identità della coda
 
-Every queue has a name that you assign during creation. The name must be unique within your storage account but doesn't need to be globally unique (unlike the storage account name).
+A ogni coda è stato assegnato un nome durante la creazione. Il nome deve essere univoco all'interno dell'account di archiviazione ma non deve necessariamente essere globalmente univoco (a differenza del nome dell'account di archiviazione).
 
-The combination of your storage account name and your queue name uniquely identifies a queue.
+La combinazione di nome dell'account di archiviazione e nome della coda identifica in modo univoco una coda.
 
-## Access authorization
+## <a name="access-authorization"></a>Autorizzazione all'accesso
 
-Every request to a queue must be authorized and there are several options to choose from.
+Tutte le richieste a una coda devono essere autorizzate e sono disponibili diverse opzioni tra cui scegliere.
 
-| Authorization Type | Description |
+| Tipo di autorizzazione | Descrizione |
 |--------------------|-------------|
-| **Azure Active Directory** | you can use role-based authentication and identify specific clients based on AAD credentials. |
-| **Shared Key** | Sometimes referred to as an **account key**, this is an encrypted key signature associated with the storage account. Every storage account has two of these keys that can be passed with each request to authenticate access. Using this approach is like using a root password - it provides _full access_ to the storage account. |
-| **Shared access signature** | A shared access signature (SAS) is a generated URI that grants limited access to objects in your storage account to clients. You can restrict access to specific resources, permissions, and scope to a data range to automatically turn off access after a period of time.  |
+| **Azure Active Directory** | è possibile usare l'autenticazione basata sui ruoli e identificare i client specifici in base alle credenziali AAD. |
+| **Chiave condivisa** | Talvolta chiamata **chiave dell'account**, si tratta di una firma di chiave crittografata associata all'account di archiviazione. Ogni account di archiviazione dispone di due di queste chiavi che possono essere passate con ogni richiesta per autenticare l'accesso. Questo approccio è simile all'uso di una password radice: fornisce _l'accesso completo_ all'account di archiviazione. |
+| **Firma di accesso condiviso** | Una firma di accesso condiviso (SAS) è un URI generato che concede ai client l'accesso limitato agli oggetti nell'account di archiviazione. È possibile limitare l'accesso a risorse e autorizzazioni specifiche ed esaminare un intervallo di dati per disattivare automaticamente l'accesso dopo un periodo di tempo.  |
 
 > [!NOTE]
-> We will use the account key authorization because it is the simplest way to get started working with queues, however it's recommended that you either use shared access signature (SAS) or Azure Active Directory (AAD) in production apps.
+> L'autorizzazione tramite chiave dell'account viene usata perché è il modo più semplice per iniziare a lavorare con le code, tuttavia si consiglia di usare la firma di accesso condiviso (SAS) o Azure Active Directory (AAD) nelle app di produzione.
 
-### Retrieving the account key
+### <a name="retrieving-the-account-key"></a>Recupero della chiave dell'account
  
-Your account key is available in the **Settings > Access keys** section of your storage account in the Azure portal, or you can retrieve it through the command line:
+La chiave dell'account è disponibile nella sezione **Impostazioni > Chiavi di accesso** dell'account di archiviazione nel portale di Azure, oppure è possibile recuperarla tramite la riga di comando:
 
 ```azurecli
 az storage account keys list ...
@@ -39,25 +39,25 @@ az storage account keys list ...
 Get-AzureRmStorageAccountKey ...
 ```
 
-## Accessing queues
+## <a name="accessing-queues"></a>Accesso alle code
 
-You access a queue using a REST API. To do this, you'll use a URL that combines the name you gave the storage account with the domain `queue.core.windows.net` and the path to the queue you want to work with. For example: `http://<storage account>.queue.core.windows.net/<queue name>`. An `Authorization` header must be included with every request. The value can be any of the three authorization styles.
+È possibile accedere a una coda usando un'API REST. A tale scopo, si userà un URL che combina il nome assegnato all'account di archiviazione con il dominio `queue.core.windows.net` e il percorso della coda con cui si desidera lavorare. Ad esempio: `http://<storage account>.queue.core.windows.net/<queue name>`. È necessario includere un'intestazione `Authorization` con ogni richiesta. Il valore può essere uno dei tre stili di autorizzazione.
 
-### Using the Azure Storage Client Library for .NET
+### <a name="using-the-azure-storage-client-library-for-net"></a>Uso della libreria client Archiviazione di Azure per .NET
 
-The Azure Storage Client Library for .NET is a library provided by Microsoft that formulates REST requests and parses REST responses for you. This greatly reduces the amount of code you need to write. Access using the client library still requires the same pieces of information (storage account name, queue name, and account key); however, they are organized differently.
+La libreria client Archiviazione di Azure per .NET è una libreria fornita da Microsoft che formula le richieste REST e analizza le risposte REST per l'utente. Questo riduce notevolmente la quantità di codice che è necessario scrivere. L'accesso tramite la libreria client richiede le stesse informazioni (nome account di archiviazione, nome della coda e chiave dell'account); tuttavia, sono organizzate in modo diverso.
 
-The client library uses a **connection string** to establish your connection. Your connection string is available in the **Settings** section of your Storage Account in the Azure portal, or through the Azure CLI and PowerShell.
+La libreria client usa una **stringa di connessione** per stabilire la connessione. La stringa di connessione è disponibile nella sezione **Impostazioni** dell'account di archiviazione nel portale di Azure, oppure tramite l'interfaccia della riga di comando di Azure e PowerShell.
 
-A connection string is a string that combines a storage account name and account key and must be known to the application to access the storage account. The format looks like this:
+Una stringa di connessione è una stringa che combina il nome dell'account di archiviazione e la chiave dell'account e deve essere nota all'applicazione per accedere all'account di archiviazione. Il formato è simile al seguente:
 
 ```csharp
 string connectionString = "DefaultEndpointsProtocol=https;AccountName=<your storage account name>;AccountKey=<your key>;EndpointSuffix=core.windows.net"
 ```
 
 > [!WARNING]
-> This string value should be stored in a secure location since anyone who has access to this connection string would be able to manipulate the queue.
+> Questo valore della stringa deve essere archiviato in una posizione sicura, poiché chiunque abbia accesso a questa stringa di connessione sarà in grado di modificare la coda.
 
-Notice that the connection string doesn't include the queue name. The queue name is supplied in your code when you establish a connection to the queue.
+Si noti che la stringa di connessione non include il nome della coda. Il nome della coda viene fornito nel codice quando si stabilisce una connessione alla coda.
 
-Let's get our connection string from Azure and set up a new application to use it.
+È necessario ottenere la stringa di connessione da Azure e configurare una nuova applicazione per usarla.

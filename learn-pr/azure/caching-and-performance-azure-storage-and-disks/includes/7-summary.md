@@ -1,21 +1,11 @@
-In this module, you learned about Azure disk caching and how it potentially improves performance. We used the Azure portal and Azure PowerShell to manage disk caching for our VM. 
+In questo modulo, sono illustrate la memorizzazione nella cache di dischi di Azure e come potenzialmente migliora le prestazioni. Viene usato il portale di Azure e Azure PowerShell per gestire la cache del disco per la macchina virtuale.
 
-Once you have an Azure VM disk caching strategy in place, you can then quickly and easily deploy new VMs and disks with the optimum disk cache settings by using scripts and templates.
+Dopo aver creato un disco di macchina virtuale di Azure caching strategia posto, è possibile quindi rapidamente e facilmente distribuire nuove macchine virtuali e dischi con le impostazioni della cache del disco ottimale usando gli script e i modelli.
 
-## Further reading
+## <a name="further-reading"></a>Altre informazioni
 
-- [Azure Premium Storage: Design for High Performance](https://docs.microsoft.com/azure/virtual-machines/windows/premium-storage-performance)
-- [Get started with Azure PowerShell](https://docs.microsoft.com/powershell/azure/get-started-azureps?view=azurermps-6.8.1)
-- [Azure Computer Cmdlets Reference](https://docs.microsoft.com/powershell/module/azurerm.compute/?view=azurermps-6.8.1#vm_disks)
+- [Archiviazione Premium di Azure: Progettata per prestazioni elevate](https://docs.microsoft.com/azure/virtual-machines/windows/premium-storage-performance)
+- [Guida introduttiva ad Azure PowerShell](https://docs.microsoft.com/powershell/azure/get-started-azureps?view=azurermps-6.8.1)
+- [Riferimento di cmdlet di calcolo di Azure](https://docs.microsoft.com/powershell/module/azurerm.compute/?view=azurermps-6.8.1#vm_disks)
 
-
-## Cleanup
-<!---TODO: Update for sandbox?--->
-
-Running Azure VMs incurs costs against your subscription. Remove unneeded resources to avoid unnecessary charges. The easiest way to clean up your Azure subscription is to remove the resource group. Deleting a resource group deletes all the resources in that group. When you're finished with this module, run the following Azure PowerShell cmdlet:
-
-```powershell
-Remove-AzureRmResourceGroup -Name "fotoshare-rg"
-```
-
-When asked to confirm the deletion, answer **Yes**. The command may take several minutes to complete as resources are deleted.
+[!include[](../../../includes/azure-sandbox-cleanup.md)]

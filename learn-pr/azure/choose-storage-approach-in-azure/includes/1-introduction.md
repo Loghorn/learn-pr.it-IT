@@ -1,8 +1,8 @@
-I dati possono avere forme e dimensioni diverse e non esiste un'unica soluzione di archiviazione adatta a tutte le situazioni. Ad esempio, un sito Web di vendita online usa diversi set di dati: dati del catalogo prodotti, file multimediali come foto e video e dati di business finanziari. Ogni set di dati ha requisiti diversi ed è necessario capire qual è la soluzione di archiviazione più appropriata. I principali fattori che determinano la soluzione di archiviazione migliore sono la categoria di dati, l'utilizzo dei dati e le prestazioni.
+I dati è disponibile in diverse forme e dimensioni e nessuna soluzione di archiviazione singolo adatta tutti i dati. Ad esempio, un sito Web di vendita online ha un numero di set di dati distinti che vengono utilizzati per l'azienda: dati del catalogo prodotti, i file multimediali, ad esempio foto e video e dati business finanziaria. Ogni set di dati ha requisiti diversi ed è necessario capire qual è la soluzione di archiviazione più appropriata. Sono i fattori chiave da considerare nella scelta della soluzione di archiviazione ottimale: modalità di classificazione dei dati, come verranno usati i dati e come è possibile ottenere prestazioni ottimali per l'applicazione.
 
 ## <a name="learning-objectives"></a>Obiettivi di apprendimento
 In questo modulo verrà descritto come:
 
-- Identificare le diverse categorie di dati
-- Determinare l'utilizzo dei dati
+- Classificare i dati strutturati, semi-strutturati o non strutturati
+- Determinare come verranno usati i dati
 - Determinare se i dati richiedono transazioni 

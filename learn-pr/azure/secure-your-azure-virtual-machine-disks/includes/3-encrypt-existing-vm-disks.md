@@ -4,35 +4,35 @@ In questo modulo si esamineranno i requisiti per Crittografia dischi di Azure e 
 
 ## <a name="azure-disk-encryption-prerequisites"></a>Prerequisiti di Crittografia dischi di Azure
 
-Per poter crittografare il primo disco di una macchina virtuale, è necessario
+Prima che sia possibile crittografare il primo disco della macchina virtuale, è necessario:
 
-1. Creare un insieme di credenziali delle chiavi
-1. Configurare un'applicazione Azure AD e un'entità servizio
-1. Impostare i criteri di accesso per l'insieme di credenziali delle chiavi per l'app Azure AD
-1. Impostare i criteri di accesso avanzati per l'insieme di credenziali delle chiavi
+1. Creare un insieme di credenziali delle chiavi.
+1. Configurare un'applicazione Azure Active Directory (Azure AD) e un'entità servizio.
+1. Configurare i criteri di accesso per l'insieme di credenziali delle chiavi per l'app Azure AD.
+1. Impostare i criteri di accesso avanzati per l'insieme di credenziali delle chiavi.
 
 ### <a name="azure-key-vault"></a>Azure Key Vault
 
-Le chiavi di crittografia usate da Crittografia dischi di Azure possono essere archiviate in Azure Key Vault. Azure Key Vault è uno strumento che consente di archiviare i segreti e accedervi in modo sicuro. Un segreto è qualsiasi elemento per cui si vuole controllare rigorosamente l'accesso, ad esempio chiavi API, password o certificati. Questa soluzione fornisce archiviazione sicura, scalabile e a disponibilità elevata in moduli di protezione hardware conformi a FIPS (Federal Information Processing Standards) 140-2, livello 2. Tramite Key Vault, è possibile avere il controllo completo delle chiavi usate per crittografare i dati ed è possibile gestire e controllare l'utilizzo delle chiavi. È possibile configurare e gestire un insieme di credenziali delle chiavi usando il portale di Azure, Azure PowerShell e l'interfaccia della riga di comando di Azure.
+Le chiavi di crittografia utilizzate da ADE possono essere archiviate in Azure Key Vault. Azure Key Vault è uno strumento che consente di archiviare i segreti e accedervi in modo sicuro. Un segreto è qualsiasi elemento per cui si vuole controllare rigorosamente l'accesso, ad esempio chiavi API, password o certificati. Ciò fornisce archiviazione protetta altamente disponibile e scalabile, in FIPS Federal Information Processing Standards () 140-2 livello 2 convalidati moduli di protezione Hardware (HSM). Tramite Key Vault, è possibile avere il controllo completo delle chiavi usate per crittografare i dati ed è possibile gestire e controllare l'utilizzo delle chiavi. È possibile configurare e gestire l'insieme di credenziali delle chiavi usando il portale di Azure, Azure PowerShell e la CLI di Azure.
 
 >[!NOTE]
-> Crittografia dischi di Azure richiede che l'istanza di Key Vault e le macchine virtuali si trovino nella stessa area di Azure, in modo che i segreti di crittografia non debbano attraversare limiti a livello di area.
+> Crittografia dischi di Azure richiede che l'insieme di credenziali delle chiavi e le macchine virtuali nella stessa area di Azure; Ciò garantisce che i segreti di crittografia non devono attraversare i limiti a livello di area.
 
 ### <a name="azure-ad-application-and-service-principal"></a>Applicazione Azure AD ed entità servizio
 
-Per accedere alle risorse o modificarle, ad esempio per la configurazione della crittografia per una macchina virtuale con script o codice, è prima necessario configurare un'**applicazione Azure Active Directory (AD)**. Azure Active Directory (Azure AD) è un servizio di gestione delle identità e directory basato sul cloud multi-tenant, che combina i principali servizi directory, la gestione dell'accesso alle applicazioni e la protezione delle identità in un'unica soluzione.
+Per accedere alle risorse o modificarle, ad esempio per la configurazione della crittografia per una macchina virtuale con script o codice, è prima necessario configurare un'**applicazione Azure Active Directory (AD)**. Azure AD è una directory di multi-tenant, basato sul cloud e il servizio di gestione di identità. Combina servizi directory di base, gestione dell'accesso alle applicazioni e protezione delle identità in un'unica soluzione.
 
-È necessaria anche un'**entità servizio** di Azure. Le entità servizio sono gli account del servizio usati per eseguire lo script o il codice e consentono di assegnare le autorizzazioni specifiche e l'ambito necessari per eseguire l'attività su una risorsa di Azure specifica.
+È necessaria anche un'**entità servizio** di Azure. Le entità servizio sono gli account del servizio usato per eseguire lo script o codice. Consentono di assegnare le autorizzazioni specifiche e l'ambito necessari per eseguire l'attività in una risorsa di Azure specifica.
 
-Ci sono due elementi in Azure AD: l'oggetto applicazione è la **_definizione_** dell'applicazione (la sua funzione) e l'entità servizio è l'**_istanza specifica_** dell'applicazione.
+Sono presenti due elementi in Azure AD: l'oggetto applicazione è il **_definizione_** dell'applicazione (cosa) e il servizio di entità è la **_specifica istanza_**  dell'applicazione.
 
 Questo approccio è in linea con il principio dei **privilegi minimi**, in base a cui le autorizzazioni assegnate all'app sono limitate al minimo richiesto per consentire all'app di svolgere le attività previste.
 
-È possibile configurare e gestire entità servizio e applicazioni Azure AD usando il portale di Azure, Azure PowerShell e l'interfaccia della riga di comando di Azure.
+È possibile configurare e gestire applicazioni di Azure AD e le entità servizio usando il portale di Azure, Azure PowerShell e la CLI di Azure.
 
 ### <a name="key-vault-access-policies"></a>Criteri di accesso per gli insiemi di credenziali delle chiavi
 
-Per poter archiviare le chiavi di crittografia in un'istanza di Key Vault, Crittografia dischi di Azure richiede le informazioni relative a **ID client** e **Segreto client** dell'applicazione Azure Active Directory che ha le autorizzazioni per scrivere in Key Vault.
+Prima di archiviare le chiavi di crittografia in un insieme di credenziali delle chiavi, ADE richiede informazioni dettagliate sul **ID Client** e il **privata del Client** dell'applicazione Azure AD che ha la possibilità di scrittura per l'insieme di credenziali delle chiavi.
 
 È anche necessario fornire ad Azure l'accesso alle chiavi di crittografia nell'insieme di credenziali delle chiavi, in modo che vengano rese disponibili alla macchina virtuale per l'avvio e la decrittografia dei volumi.
 
@@ -42,19 +42,19 @@ I **criteri di accesso avanzati** consentono la crittografia dei dischi nell'ins
 
 Ci sono tre criteri che devono essere abilitati:
 
-- **Key Vault per la crittografia dei dischi** Obbligatorio per Crittografia dischi di Azure.
-- **Key Vault per la distribuzione** Per consentire al provider di risorse Microsoft.Compute di recuperare i segreti dall'insieme di credenziali delle chiavi. Questo criterio è necessario quando si crea una macchina virtuale.
-- **Key Vault per la distribuzione di modelli, se necessario** Per consentire ad Azure Resource Manager di recuperare i segreti dall'insieme di credenziali delle chiavi. Questo criterio è necessario quando si usano modelli ARM per la distribuzione delle macchine virtuali.
+- **Insieme di credenziali delle chiavi per crittografia dischi di**. Obbligatorio per crittografia dischi di Azure.
+- **Key Vault per la distribuzione**. Consente al provider di risorse Microsoft. COMPUTE a recuperare segreti dall'insieme di credenziali chiave. Questo criterio è necessaria quando si crea una macchina virtuale.
+- **Key Vault per la distribuzione del modello, se necessario**. Consente a Azure Resource Manager per ottenere i segreti dall'insieme di credenziali chiave. Questo criterio è necessario quando si usa modelli di Azure Resource Manager per la distribuzione della macchina virtuale.
 
 I criteri di accesso dell'insieme di credenziali delle chiavi possono essere configurati e gestiti usando il portale di Azure, Azure PowerShell o l'interfaccia della riga di comando di Azure.
 
-### <a name="what-is-the-azure-disk-encryption-prerequisites-configuration-script"></a>Informazioni sullo script di configurazione dei prerequisiti di Crittografia dischi di Azure
+### <a name="what-is-the-azure-disk-encryption-prerequisites-configuration-script"></a>Che cos'è lo script di configurazione dei prerequisiti di crittografia dischi di Azure
 
-Lo **script di configurazione dei prerequisiti di Crittografia dischi di Azure** consente di configurare tutti i prerequisiti di crittografia (o quelli desiderati). Lo script assicura anche che Key Vault si trovi nella stessa area della macchina virtuale da crittografare. Lo script crea un gruppo di risorse e un insieme di credenziali delle chiavi e imposta i criteri di accesso dell'insieme di credenziali delle chiavi. Lo script crea anche un blocco delle risorse nell'insieme di credenziali delle chiavi per la protezione da eliminazioni accidentali.
+Il **script di configurazione dei prerequisiti di crittografia dischi di Azure** configura tutte (o il numero desiderato) i prerequisiti di crittografia. Lo script assicura anche che l'insieme di credenziali delle chiavi sia nella stessa area della macchina virtuale si desidera crittografare. Verranno creare un gruppo di risorse e un insieme di credenziali delle chiavi e impostare i criteri di accesso dell'insieme di credenziali chiave. Lo script crea anche un blocco delle risorse nell'insieme di credenziali delle chiavi per la protezione da eliminazioni accidentali.
 
 ## <a name="encrypting-an-existing-vm-disk"></a>Crittografia di un disco di una macchina virtuale esistente
 
-Per la crittografia di un disco di una macchina virtuale esistente usando lo **script di configurazione dei prerequisiti di Crittografia dischi di Azure** sono necessari due passaggi:
+Esistono due passaggi per crittografare un disco di macchina virtuale esistente, quando si usa lo script di configurazione dei prerequisiti di crittografia dischi di Azure:
 
-1. Eseguire lo script di configurazione dei prerequisiti di Crittografia dischi di Azure.
-1. Crittografare la macchina virtuale di Azure in PowerShell
+1. Eseguire lo script di configurazione dei prerequisiti di crittografia dischi di Azure.
+1. Crittografare la macchina virtuale di Azure PowerShell.

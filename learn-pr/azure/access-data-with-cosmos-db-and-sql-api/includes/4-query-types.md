@@ -31,6 +31,7 @@ WHERE p.id ="1"
         "category": "Women's Clothing",
         "manufacturer": "Contoso Sport",
         "description": "Quick dry crew neck t-shirt",
+        "price": "14.99",
         "shipping": {
             "weight": 1,
             "dimensions": {
@@ -39,11 +40,11 @@ WHERE p.id ="1"
                 "depth": 1
             }
         },
-        "_rid": "glAZAJFm0VsBAAAAAAAAAA==",
-        "_self": "dbs/glAZAA==/colls/glAZAJFm0Vs=/docs/glAZAJFm0VsBAAAAAAAAAA==/",
-        "_etag": "\"00006000-0000-0000-0000-5b71be760000\"",
+        "_rid": "iAEeANrzNAAJAAAAAAAAAA==",
+        "_self": "dbs/iAEeAA==/colls/iAEeANrzNAA=/docs/iAEeANrzNAAJAAAAAAAAAA==/",
+        "_etag": "\"00003a02-0000-0000-0000-5b9208440000\"",
         "_attachments": "attachments/",
-        "_ts": 1534180982
+        "_ts": 1536297028
     }
 ]
 ```
@@ -96,22 +97,22 @@ FROM Products.shipping
 
 ```
 [
-{
-    "weight": 1,
-    "dimensions": {
-        "width": 6,
-        "height": 8,
-        "depth": 1
+    {
+        "weight": 1,
+        "dimensions": {
+            "width": 6,
+            "height": 8,
+            "depth": 1
+        }
+    },
+    {
+        "weight": 2,
+        "dimensions": {
+            "width": 8,
+            "height": 11,
+            "depth": 3
+        }
     }
-},
-{
-    "weight": 1,
-    "dimensions": {
-        "width": 6,
-        "height": 8,
-        "depth": 1
-    }
-}
 ]
 ```
 
@@ -202,7 +203,7 @@ Nella query seguente vengono restituiti gli ID prodotto per ogni prodotto che ha
 
 ## <a name="geospatial-queries"></a>Query geospaziali
 
-Le query geospaziali consentono di eseguire query spaziali tramite punti GeoJSON. Usando le coordinate nel database, è possibile calcolare la distanza tra due punti e determinare se un punto, un poligono o una linea spezzata si trova all'interno di un altro punto, poligono o linea spezzata.
+Le query geospaziali consentono di eseguire query spaziali tramite i punti GeoJSON. Usa le coordinate del database, è possibile calcolare la distanza tra due punti e determinare se un punto, poligono o LineString è all'interno di un altro punto, poligono o LineString.
 
 Nel caso dei dati del catalogo prodotti, ciò consentirebbe agli utenti di immettere le informazioni sulla propria posizione e determinare se nel raggio di 50 miglia sono presenti negozi che hanno a disposizione l'articolo che stanno cercando. 
 

@@ -9,13 +9,13 @@ Creare l'istanza di Azure Cosmos DB con il comando `az Azure Cosmos DB create`. 
 Il comando potrebbe richiedere alcuni minuti:
 
 ```azurecli
-COSMOS_DB_ENDPOINT=$(az cosmosdb create --resource-group myResourceGroup --name aci-cosmos --query documentEndpoint -o tsv)
+COSMOS_DB_ENDPOINT=$(az cosmosdb create --resource-group <rgn>[Sandbox resource group name]</rgn> --name aci-cosmos --query documentEndpoint -o tsv)
 ```
 
 Successivamente, ottenere la chiave di connessione di Azure Cosmos DB con il comando `az cosmosdb list-keys` e archiviarla in una variabile denominata *COSMOS_DB_MASTERKEY*:
 
 ```azurecli
-COSMOS_DB_MASTERKEY=$(az cosmosdb list-keys --resource-group myResourceGroup --name aci-cosmos --query primaryMasterKey -o tsv)
+COSMOS_DB_MASTERKEY=$(az cosmosdb list-keys --resource-group <rgn>[Sandbox resource group name]</rgn> --name aci-cosmos --query primaryMasterKey -o tsv)
 ```
 
 ## <a name="deploy-a-container-instance"></a>Distribuire un'istanza di contenitore
@@ -24,7 +24,7 @@ Creare un'istanza di contenitore di Azure usando il comando `az container create
 
 ```azurecli
 az container create \
-    --resource-group myResourceGroup \
+    --resource-group <rgn>[Sandbox resource group name]</rgn> \
     --name aci-demo \
     --image microsoft/azure-vote-front:cosmosdb \
     --ip-address Public \
@@ -35,7 +35,7 @@ az container create \
 Dopo aver creato il contenitore, ottenere l'indirizzo IP usando il comando `az container show`:
 
 ```azurecli
-az container show --resource-group myResourceGroup --name aci-demo --query ipAddress.ip --output tsv
+az container show --resource-group <rgn>[Sandbox resource group name]</rgn> --name aci-demo --query ipAddress.ip --output tsv
 ```
 
 Aprire un browser e passare all'indirizzo IP del contenitore. Dovrebbe venire visualizzata l'applicazione seguente. Quando si inserisce un voto in un contenitore, il voto viene archiviato nell'istanza di Azure Cosmos DB.
@@ -49,7 +49,7 @@ Nell'esercizio precedente è stato creato un contenitore con le informazioni di 
 Ad esempio, se si ottengono informazioni sul contenitore creato nell'esercizio precedente con il comando `az container show`, le variabili di ambiente sono accessibili in formato testo normale:
 
 ```azurecli
-az container show --resource-group myResourceGroup --name aci-demo --query containers[0].environmentVariables
+az container show --resource-group <rgn>[Sandbox resource group name]</rgn> --name aci-demo --query containers[0].environmentVariables
 ```
 
 Output di esempio:
@@ -75,7 +75,7 @@ Eseguire l'esempio seguente per creare un contenitore denominato *aci-demo-secur
 
 ```azurecli
 az container create \
-    --resource-group myResourceGroup \
+    --resource-group <rgn>[Sandbox resource group name]</rgn> \
     --name aci-demo-secure \
     --image microsoft/azure-vote-front:cosmosdb \
     --ip-address Public \
@@ -86,7 +86,7 @@ az container create \
 A questo punto, quando il contenitore viene restituito con il comando `az container show`, non vengono visualizzate le variabili di ambiente:
 
 ```azurecli
-az container show --resource-group myResourceGroup --name aci-demo-secure --query containers[0].environmentVariables
+az container show --resource-group <rgn>[Sandbox resource group name]</rgn> --name aci-demo-secure --query containers[0].environmentVariables
 ```
 
 Output di esempio:
@@ -108,6 +108,6 @@ Output di esempio:
 
 ## <a name="summary"></a>Riepilogo
 
-In questa unità è stata creata un'istanza di Azure Cosmos DB e un'istanza di contenitore di Azure. Le variabili di ambiente sono state impostate nell'istanza di contenitore in modo che l'applicazione in esecuzione all'interno del contenitore sia in grado di connettersi all'istanza di Azure Cosmos DB.
+In questa unità sono state create un'istanza di Azure Cosmos DB e un'istanza di contenitore di Azure. Le variabili di ambiente sono state impostate nell'istanza di contenitore in modo che l'applicazione in esecuzione all'interno del contenitore sia in grado di connettersi all'istanza di Azure Cosmos DB.
 
 Nell'unità successiva si monteranno i volumi di dati in un'istanza di contenitore di Azure per la persistenza dei dati.

@@ -1,199 +1,249 @@
-Let's assume you're running an online business, and you're publishing your database to Azure. By default, an Azure SQL Server database will be accessible to any Azure application or service running within Azure. Even if you only allow services within Azure to connect, you should still restrict connections to the database to approved applications and services. 
+Si supponga che si esegue un'attività in linea e si esegue la pubblicazione del database in Azure. Per impostazione predefinita, un database di Server SQL di Azure sarà accessibile a qualsiasi applicazione di Azure o un servizio in esecuzione all'interno di Azure. Anche se si consentono solo i servizi all'interno di Azure per la connessione, è consigliabile limitare le connessioni al database ancora a servizi e applicazioni approvate.
 
-In this unit, we'll look at how to restrict access to the Azure SQL database via IP address ranges. 
+In questa unità, esamineremo come limitare l'accesso al database SQL di Azure tramite gli intervalli di indirizzi IP.
 
-## Overview
+## <a name="overview"></a>Panoramica
 
-A new Azure SQL database will, by default, only allow Azure services to connect to it. This configuration doesn’t mean a connecting service can gain access to the database contents, only that it can try to authenticate against the database. Requiring a service to authenticate is safer than unrestricted public internet access. You should still restrict access to your database to only the applications and services that need it.
+Un nuovo database SQL di Azure, per impostazione predefinita, consentirà solo servizi di Azure per la connessione. Questa configurazione non significa che un servizio che esegue la connessione può ottenere l'accesso al contenuto del database, solo che è possibile provare a eseguire l'autenticazione sul database. Richiedere un servizio per l'autenticazione è più sicuro di senza restrizioni accesso a internet pubblico. È comunque necessario limitare l'accesso al database solo le applicazioni e servizi che ne hanno necessità.
 
-For example, you may have an ASP.NET Core application talking to an Azure SQL database. It's the ASP.NET Core application that should access your Azure SQL Server database. Let’s look at how we would restrict the network access to the database from the web application.
+Ad esempio, potrebbe essere un'applicazione ASP.NET Core comunicando con un database SQL di Azure. È l'applicazione ASP.NET Core che deve accedere al database Azure SQL Server. Si esaminerà come si sarebbe limita l'accesso alla rete al database dall'applicazione web.
 
-## Restricting network access to the database
+## <a name="restricting-network-access-to-the-database"></a>Limitare l'accesso alla rete per il database
 
-You restrict network access to your database by only allowing access from a specific IP address range. 
+L'accesso di rete al database, consentendo solo l'accesso da un intervallo di indirizzi IP specifico.
 
-![Restricting access by limiting IP access](../media-draft/2-setting-ip-address-ranges-on-firewall.png)
+![Screenshot del portale di Azure che mostra il server di creazione della regola firewall con una configurazione della restrizione IP descritta aggiunta.](../media-draft/2-setting-ip-address-ranges-on-firewall.png)
 
-To create a server firewall rule, you'll enter a rule name, the starting IP address, and the ending IP address. Then click Save to record the changes. Only the IP addresses listed in the rules you create will have access to the database. 
+1. Per creare una regola firewall del server, immettere un **il nome della regola**, il **IP iniziale** indirizzo e il **indirizzo IP finale** indirizzo.
+1. Quindi fare clic su **salvare** per registrare le modifiche.
 
-## Locking down access at the database level 
+Solo gli indirizzi IP elencati nelle regole create avranno accesso al database.
 
-Let's assume you're running an Azure SQL Server failover group. With a failover group, the secondary servers are normally located at different regions. If the main server goes offline, the server firewall rules may no longer apply. Server firewall rules are set up per server hosting the database. Setting up a firewall rule at the database level will ensure that your rules replicate to the backup databases.
+## <a name="locking-down-access-at-the-database-level"></a>Blocco dell'accesso a livello di database
 
-To create a database firewall rule, connect to the database using either SQL Server Management Studio or SQL Operations Studio and create a new query. You'll create a database rule using the following convention, where you pass in the rule name, the starting IP address, and the ending IP address.
+Si supponga che si esegue un gruppo di failover di Server SQL di Azure. Con un gruppo di failover, i server secondari sono solitamente disponibile in aree diverse. Se il server principale viene portato offline, le regole firewall del server potrebbero non più valide. Regole firewall del server vengono configurate per ogni server che ospita il database. Configurazione di una regola del firewall a livello di database assicura che le regole di replicano i database di backup.
+
+Per creare una regola del firewall del database, connettersi al database usando SQL Server Management Studio o SQL Operations Studio e creare una nuova query. Si creerà una regola del database usando la convenzione seguente, dove si passano nel nome della regola, l'indirizzo IP iniziale e l'indirizzo IP finale.
 
 ```sql
 EXECUTE sp_set_database_firewall_rule N'<Rule Name>', '<From IP Address>', '<To IP Address>'
 ```
 
-For example, to restrict access to the database from the IP address range 10.21.2.33 – 10.21.2.54, you'll use a rule similar to the following SQL:
+Per limitare l'accesso al database dall'intervallo di indirizzi IP 10.21.2.33 – 10.21.2.54, ad esempio, si userà una regola simile per il codice SQL seguente:
 
 ```sql
 EXECUTE sp_set_database_firewall_rule N'Web Apps Firewall Rule', '10.21.2.33', '10.21.2.54'
-```  
+```
 
-## Enabling Transparent Data Encryption (TDE)
+## <a name="enabling-transparent-data-encryption-tde"></a>Enabling Transparent Data Encryption (TDE)
 
-### What is Transparent Data Encryption?
-Transparent Data Encryption (TDE)  performs real-time encryption and decryption of the database, backup files, and log files.
+### <a name="what-is-transparent-data-encryption"></a>Che cos'è Transparent Data Encryption?
 
-When new Azure SQL databases are created, they'll have TDE enabled by default.
+Transparent Data Encryption (TDE) esegue la crittografia in tempo reale e la decrittografia dei database, i file di backup e i file di log.
 
-It's important to check that data encryption hasn’t been turned off, and older Azure SQL Server databases may not have TDE enabled. 
+Quando vengono creati i nuovi database SQL di Azure, hanno TDE abilitata per impostazione predefinita.
 
-To verify and enable TDE:
-1. Select the database in the portal.
-1. Select the 'Transparent data encryption' option.
-1. In the data encryption option, select 'On'.
-1. Click 'Save'.
+È importante verificare che la crittografia dei dati non è stato disattivato e database di Azure SQL Server meno recenti potrebbero non essere abilitata la funzionalità TDE.
 
-## Create a secure connection to the server
+Per verificare e abilitare Transparent Data Encryption:
 
-Your applications should connect to your databases in a secure manner. You use a connection string with the right level of security to create a secure connection. These connections need to be encrypted to reduce the likelihood of a man-in-the-middle attack.
+1. Selezionare il database nel portale.
+1. Selezionare l'opzione 'Transparent data encryption'.
+1. Nell'opzione di crittografia dei dati, selezionare 'On'.
+1. Fare clic su 'Salva'.
 
-Let's look at how to get the connection string for a database.
+## <a name="create-a-secure-connection-to-the-server"></a>Creare una connessione protetta al server
 
-Using the portal, navigate to your SQL Server. Select the database you wish to gain access to.
+Le applicazioni devono connettersi ai database in modo sicuro. Usare una stringa di connessione con il corretto livello di sicurezza per creare una connessione sicura. Queste connessioni devono essere crittografati in modo da ridurre la probabilità di un attacco man-in-the-middle.
 
-Select the *Show Database Connection Strings* option. 
+Esaminiamo come ottenere la stringa di connessione per un database.
 
-Now, from the available options, select the tab that matches your programming language and copy the displayed connection string. You'll have to complete the password, as it is kept secret and not displayed here. 
+Tramite il portale, passare a SQL Server. Selezionare il database che si desidera ottenere l'accesso a.
 
-![Restricting access by limiting IP access](../media-draft/2-viewing-connection-strings.png) 
+Selezionare il *Mostra stringhe di connessione Database* opzione.
 
-It's important to protect the connection string from outside eyes. Connection strings should be stored in Azure Key Vault, not in your project, version control, or continuous integration systems. 
+A questo punto, tra le opzioni disponibili, selezionare la scheda corrispondente il linguaggio di programmazione e copiare la stringa di connessione visualizzato. È possibile completare la password, come viene mantenuta segreta e non visualizzati qui.
 
-### What is the Azure Key Vault?
+![Screenshot del portale di Azure che mostra la sezione di stringhe di connessione di database con ADO.NET scelto e il campo del valore fornito evidenziato.](../media-draft/2-viewing-connection-strings.png)
 
-The Azure Key Vault is a tool used to securely store credentials and other keys and secrets. These secrets can be protected either by software or hardware.
+È importante proteggere la stringa di connessione da parte dei clienti esterni. Le stringhe di connessione devono essere archiviate in Azure Key Vault, non nel progetto, il controllo delle versioni o sistemi di integrazione continua.
 
-## Open the correct ports for server access
+### <a name="what-is-the-azure-key-vault"></a>Che cos'è Azure Key Vault?
 
-Your Azure database allows outbound communication over port 1433. If you don’t have access to this port, talk to your network administrators to allow network traffic.
+Azure Key Vault è uno strumento utilizzato per archiviare in modo sicuro le credenziali e altre chiavi e segreti. Questi segreti possono essere protette da software o hardware.
 
-## Restrict server access with Azure virtual networks
+## <a name="open-the-correct-ports-for-server-access"></a>Aprire le porte appropriate per accedere al server
 
-### What is a virtual network?
+Il database di Azure consente comunicazioni in uscita sulla porta 1433. Se non hai accesso a questa porta, comunicare con gli amministratori di rete per consentire il traffico di rete.
 
-A virtual network is a logically isolated network created within the Azure network. You can use a virtual network to control what Azure resources can connect to other resources. 
+## <a name="restrict-server-access-with-azure-virtual-networks"></a>Limitare l'accesso al server con reti virtuali di Azure
 
-Imagine you're running a web application that connects to a database. You'll use subnets to isolate different parts of the network. A subnet is a part of a network based upon a range of IP addresses. 
+### <a name="what-is-a-virtual-network"></a>Informazioni sulla rete virtuale
 
-To configure these subnets, you'll create a virtual network and then subdivide the network into subnets. The web application will operate on one subnet and the database on another subnet. Each subnet will have its own rules for communicating to and from the other network. These rules give you the ability to restrict access from the database to the web application.
+Una rete virtuale è una rete isolata logicamente creata all'interno della rete di Azure. È possibile usare una rete virtuale per controllare quali le risorse di Azure possono connettersi ad altre risorse.
 
-### What is a network security group?
-A network security group defines rules, which allow or deny network traffic to and from source and destination addresses. Each subnet will have a network security group assigned to it. 
+Si supponga che si sta eseguendo un'applicazione web che si connette a un database. Si userà le subnet per isolare le diverse parti della rete. Una subnet è una parte di una rete basata su un intervallo di indirizzi IP.
 
-The diagram below shows an example of the groupings that are created. The web subnet allows access to the internet, but only for HTTP connections. The database subnet only allows access from the web subnet. Setting up the virtual network adds restrictions about how services can be accessed, and acts as a firewall around hosted services. 
+Per configurare queste subnet, viene creata una rete virtuale e quindi suddividere la rete in subnet. L'applicazione web operano su una subnet e il database in un'altra subnet. Ogni subnet avrà una proprio regole per la comunicazione da e verso l'altra rete. Queste regole consentono di limitare l'accesso dal database all'applicazione web.
 
-![Virtual Network for a web application with a connected database](../media-draft/2-virtualnetwork-overview.png) 
- 
-The next example assumes you're using virtual machines that will act as your web hosts and connect to your database. Let’s look at how to create a virtual network to set up this planned infrastructure. 
+### <a name="what-is-a-network-security-group"></a>Che cos'è un gruppo di sicurezza di rete?
 
-1. From the Azure portal, select the Create a resource link. 
+Un gruppo di sicurezza di rete definisce regole che consentono o rifiutano il traffico di rete da e verso gli indirizzi di origine e destinazione. Ogni subnet avrà un gruppo di sicurezza di rete assegnato a esso.
 
-2. From the Marketplace, select Virtual network. For the virtual network, if it requests to select a deployment model, select Resource Manager, and then click the Create button.
+Il diagramma seguente illustra un esempio dei raggruppamenti che vengono creati. La subnet web consente l'accesso a internet, ma solo per le connessioni HTTP. Subnet del database consente solo l'accesso dalla subnet di web. Configurazione di rete virtuale consente di aggiungere le restrizioni sul modo in cui servizi sono accessibili e agisce come un firewall che protegga i servizi ospitati.
 
-3. Enter the name for the virtual network and an address space that can be used. An address space is a way of outlining a range of IP addresses. In our example, 172.16.0.0/16 refers to a range of addresses from 172.16.0.0 to 172.16.255.255. 
-   An address space that is not already in use will be recommended. Where a IP address is detected from this range, it will be defined as being on this subnet.
+![Rete virtuale per un'applicazione web con un database connesso](../media-draft/2-virtualnetwork-overview.png)
 
-4. Select your subscription and either create or select a resource group. 
-   
-5. Enter the name of the subnet that you will create and its address range.
-   
-6. Click the Create button to create the virtual network.
+L'esempio seguente si presuppone che si usa macchine virtuali che fungono da host web e si connettono al database. Esaminiamo come creare una rete virtuale per configurare questa infrastruttura pianificata.
 
-![Create a virtual network.](../media-draft/2-create-virtual-network-settings.png)  
+1. Dal portale di Azure, selezionare la **crea una risorsa** collegamento.
+1. Da Azure Marketplace, selezionare **Networking** > **rete virtuale**. Se richiede di selezionare un modello di distribuzione, selezionare **Resource Manager**
+1. Fare clic sul pulsante **Create** (Crea).
+1. Immettere il **nome** per la rete virtuale.
+1. Fornire un' **spazio degli indirizzi** che può essere utilizzato. Uno spazio indirizzi è un modo per la struttura di un intervallo di indirizzi IP. In questo esempio, `172.16.0.0/16` fa riferimento a un intervallo di indirizzi da 172.16.0.0 a 172.16.255.255.
 
-You'll receive a notification once the virtual network is created. Click on the *Go to resource* button. 
+   Verrà generate indicazioni per uno spazio di indirizzi che non sia già in uso. In cui viene rilevato un indirizzo IP da questo intervallo, verrà definita come si trova in questa subnet.
 
-You'll now be taken to the virtual network settings. Select the Subnets configuration section. At this point, you'll have the subnet you created when you set up the initial network, called web_subnet. 
+1. Selezionare di Azure **sottoscrizione**.
+1. Selezionare o creare una nuova **gruppo di risorse**.
+1. Immettere il **nome** della subnet che verrà creato.
+1. Fornire un' **intervallo di indirizzi**.
+1. Scegliere il **Create** pulsante per creare la rete virtuale.
 
-You need to create another subnet that will represent the IP addresses for the database servers. Click on the + Subnet button to start the process of adding a new subnet for the database. 
+![Screenshot del portale di Azure con la creazione di un pannello della rete virtuale con la configurazione descritta.](../media-draft/2-create-virtual-network-settings.png)
 
-![Create the database subnet](../media-draft/2-create-database-subnet.png) 
- 
-Enter a name for the subnet. In the above example you called it database_subnet. You'll see that the address range is again populated with a range that isn't in conflict with other subnets in the system.
+Dopo aver creata la rete virtuale, si riceverà una notifica. Fare clic sui **Vai alla risorsa** pulsante nella notifica.
 
-Network security group is a core setting that you'll need to apply to the subnet. For now, leave this setting blank. Later you'll create the network security group and come back and set this value.
+Verrà ora visualizzata per il pannello rete virtuale. Selezionare il **le impostazioni** > **subnet** sezione di configurazione. A questo punto, è necessario che la subnet creata durante la configurazione di rete iniziale, denominata web_subnet.
 
-Click the **OK** button to save the subnet. 
+È necessario creare un'altra subnet che rappresenterà gli indirizzi IP per i server di database.
 
-## Creating a network security group
+1. Fare clic sui __+ Subnet__ per avviare il processo di aggiunta una nuova subnet per il database.
 
-Select + Create a resource and select Network security group. The job of the network security group is to act as a firewall, and it controls the flow of traffic in and out of a subnet. You'll create two network security groups. One is the web application subnet, and the other is for the database subnet. 
+1. Immettere un **nome** per la subnet. Nell'esempio precedente, abbiamo lo ha chiamato database_subnet.
 
-If asked to select a deployment model after clicking + Create a resource, select Azure Resource Manager.
- 
-Select the Create button and name of the network security group, the subscription, and resource group and location. 
-   
-![Define the network security group for the web subnet.](../media-draft/2-define-nsg-for-web-subnet.png) 
+1. Rivedere le **intervallo di indirizzi (blocco CIDR)**. Si noterà che l'intervallo di indirizzi viene popolato con un intervallo che non è in conflitto con altre subnet nel sistema.
 
-After the network security group has been created, it's then time to set up the inbound and outbound traffic rules for the security group. 
+1. **Gruppo di sicurezza di rete** è un'impostazione di core che è necessario applicare alla subnet. Per il momento, lasciare vuota questa impostazione. In un secondo momento verrà creare il gruppo di sicurezza di rete e tornare indietro e impostare questo valore.
 
-Select the network security group, and on the Overview display you'll see the list of inbound and outbound rules that have been created. There are default rules already created that are used for internal Azure access. While these rules can't be deleted, you can create additional rules with a higher priority that will take precedence over these rules. 
+1. Scegliere il **OK** consente di salvare la subnet.
 
-![Restricting access by limiting IP access](../media-draft/2-view-web-apps-security-group-rules.png)  
+![Screenshot del portale di Azure che mostra il pannello subnet Add con la configurazione descritta.](../media-draft/2-create-database-subnet.png)
 
-To select new rules, select Inbound security rules for the network security group and then select the + Add button. From here, you can configure the details for the network security rules. 
+## <a name="creating-a-network-security-group"></a>Creazione di un gruppo di sicurezza di rete
 
-By default, you'll see the advanced view to configure the rule, but by clicking the Basic button, you'll be able to select the protocol you want to allow. 
+Il processo del gruppo di sicurezza di rete è agire come un firewall, e controlla il flusso del traffico da e verso una subnet. È possibile creare due gruppi di sicurezza di rete. Una subnet dell'applicazione web e l'altra è per la subnet di database.
 
-You want to allow access to HTTP services from the internet. To filter for the HTTP protocol, you'll select the Source as Service Tag, and then set the Source service tag to Internet. Set the port ranges values to 80,443 to represent the ports that are used to access this service. Port 80 is used for HTTP, and port 443 is used for HTTPS access. Select TCP for the Protocol, and set Action to Allow. 
+1. Selezionare **crea una risorsa** e selezionare **Networking** > **gruppo di sicurezza di rete**. Se viene richiesto di selezionare un modello di distribuzione, selezionare Resource Manager.
+1. Fornire una **nome** per il gruppo di sicurezza di rete.
+1. Selezionare la sottoscrizione di Azure, gruppo di risorse e posizione desiderata.
+1. Fare clic sul pulsante **Create** (Crea).
 
-Give the rule a Priority value of 100. The lower the number, the more important the rule is.
+![Screenshot del portale di Azure che mostra il gruppo di sicurezza web scelto per la subnet di web.](../media-draft/2-define-nsg-for-web-subnet.png)
 
-![Add an inbound security rule for the web subnet.](../media-draft/2-add-inbound-security-rule-for-web-nsg.png)  
+Dopo aver creato il gruppo di sicurezza di rete, quindi è ora possibile configurare le regole di traffico in ingresso e in uscita per il gruppo di sicurezza.
 
-Now it’s time to set up the network security group settings for the database. For the database, you are going to set up a single incoming rule that allows for SQL requests from the IP range of the web applications subnet, and then deny other incoming and outgoing traffic. This will allow you to control access to the database and make sure that only database requests get through to the system from the website, and that no other access to the database is allowed. 
+1. Selezionare il nuovo gruppo di sicurezza di rete.
+1. Nel **Panoramica** schermo, si noterà l'elenco di regole in ingresso e in uscita che sono stati creati. Predefinite sono le regole già create utilizzati per l'accesso di Azure interno.
 
-Click on the + Create a resource to link a resource and again create a network security group that uses Resource Manager as the deployment model. This time you'll create one for the database. Click the Create button to create the new network security group.
+    > [!NOTE]
+    > Anche se non è possibile eliminare queste regole, è possibile creare regole aggiuntive con una priorità più alta che avrà la precedenza su queste regole.
 
-![Create the database network security group.](../media-draft/2-create-database-network-security-group.png)  
+![Screenshot del portale di Azure che mostra le regole di sicurezza preconfigurati in ingresso e in uscita di un gruppo di sicurezza di rete.](../media-draft/2-view-web-apps-security-group-rules.png)
 
-You'll need to wait until the network security group is created. Once done, select the Go to resource option to start configuring the rules for the network security group you created.
+1. Per creare nuove regole, selezionare la **regole di sicurezza in ingresso** sezione per il gruppo di sicurezza di rete.
+1. Fare clic su **Add** . A questo punto, è possibile configurare i dettagli per le regole di sicurezza di rete.
 
-For the network security group, the main focus is to allow database requests from the web application subnet only. You need to set up incoming TCP requests on port 1433 from the IP range of the web subnet. 
+    > [!NOTE]
+    > Per impostazione predefinita, si noterà la vista avanzata per configurare la regola, ma facendo il **base** pulsante, sarà possibile selezionare il protocollo si vuole consentire.
 
-On the Inbound security rules, select the + Add button to create a new rule. In this case, you want to only allow access from the web application subnet. You'll create an inbound rule that sets the Source to IP Addresses. 
+1. Si vuole consentire l'accesso ai servizi HTTP da internet. Per filtrare per il protocollo HTTP, si selezionano **Tag del servizio** come la **origine** valore.
+1. È quindi necessario verificare i **tag del servizio di origine** è impostata su **Internet**.
+1. Set di valori per gli intervalli di porta `80,443` per rappresentare le porte usate per accedere a questo servizio. (Porta 80 viene usata per il protocollo HTTP, e la porta 443 viene usata per l'accesso HTTPS).
+1. Selezionare **TCP** per il **protocollo**.
+1. Impostare **azione** al **consentire**.
+1. Assegnare alla regola un **priorità** pari a `100`.
 
-When the Source IP addresses/CIDR ranges are displayed, enter the CIDR range from the web subnet that was created earlier. For the destination port ranges, enter 1433 to indicate Azure SQL Server access only. You want to allow access and give it a priority and appropriate rule name.  Click Add to add the rule. 
+    > [!NOTE]
+    > Minore sarà il numero, più importante è la regola.
 
-![Restricting access by limiting IP access](../media-draft/2-create-inbound-rule-for-db-security-group.png)  
+![Screenshot del portale di Azure che Mostra pannello della regola di sicurezza in ingresso Add con configurazione specificata e il tag di servizio di origine (Internet) e porta di destinazione gli intervalli di campi (80,443) evidenziati.](../media-draft/2-add-inbound-security-rule-for-web-nsg.png)
 
-The basic security rules are now in place to limit access to the database system. What is left is to assign the network security groups to the subnets. 
+A questo punto è possibile configurare le impostazioni di gruppo di sicurezza di rete per il database. Per il database, si decide di configurare una singola regola in ingresso che consenta richieste SQL dall'intervallo IP della subnet applicazioni web e quindi negargli altro traffico in ingresso e in uscita. In questo modo sarà possibile controllare l'accesso al database e assicurarsi che solo le richieste di database ottenere tramite il sistema dal sito Web, e che nessun altro accesso al database è consentito.
 
-Open the virtual network you created earlier. Select Subnets, and then select the web subnet. Select the Network security group option, and then select the network security group that was created specifically for the web. 
+1. Fare clic sui **crea una risorsa** per creare un'altra **Networking** > **gruppo di sicurezza di rete** che usa il modello di distribuzione Resource Manager.
 
-![Setting the network security group for the subnet](../media-draft/2-define-nsg-for-web-subnet.png)  
+    Questa fase si creerà uno per il database.
 
-Select the Save option and the network security group will be applied against the subnet. 
+1. Fornire una **nome** per il gruppo di sicurezza di rete.
+1. Selezionare la sottoscrizione di Azure, gruppo di risorse e posizione desiderata.
+1. Scegliere il **Create** pulsante per creare il nuovo gruppo di sicurezza di rete.
 
-You want to repeat the same process for the database subnet. Navigate back to the subnets, select the database subnet, and then set its network security group to the network security group for the database. 
+    ![Screenshot del portale di Azure che mostra il pannello Crea rete sicurezza gruppo con una configurazione di esempio.](../media-draft/2-create-database-network-security-group.png)
 
-![Setting the network security group for the database](../media-draft/2-define-nsg-for-db-subnet.png)  
+    È necessario attendere fino a quando non viene creato il gruppo di sicurezza di rete.
 
-Select Save to save the changes. 
+1. Al termine, selezionare la **Vai alla risorsa** opzione della notifica per iniziare a configurare le regole per il gruppo di sicurezza di rete è stato creato.
 
-Now that you've configured access, it is a matter of applying the virtual networks and subnets against the database server and web servers. 
+Per il gruppo di sicurezza di rete, l'obiettivo principale è di consentire le richieste di database web dell'applicazione solo dalla subnet. È necessario configurare le richieste TCP in ingresso sulla porta 1433 dall'intervallo IP della subnet web.
 
-Let’s begin with the database server. Select the database, and from the database select the Firewalls and virtual networks configuration setting. 
+1. Nel **regole di sicurezza in ingresso** impostazioni, selezionare la **Add** pulsante per creare una nuova regola. In questo caso, si desidera solo consentire l'accesso dalla subnet dell'applicazione web.
+1. Si creerà una regola in ingresso che consente di impostare il **origine** al **gli indirizzi IP**.
+1. Quando la **origine indirizzi IP/intervalli CIDR** vengono visualizzati, immettere l'intervallo CIDR da una subnet web che è stata creata in precedenza.
+1. Per il **intervalli di porte di destinazione**, immettere `1433` per indicare solo l'accesso al Server SQL di Azure.
+1. Impostare il **Protocol** al **TCP** per limitare ulteriormente le connessioni in ingresso.
+1. Si desidera **Allow** accedere **azione**.
+1. Assegnargli un **priorità** di `100`.
+1. **Nome** la regola di sicurezza in modo appropriato.
+1. Fare clic su **Add** per aggiungere la regola.
 
-On the left, you'll see details about the configuration. You have a number of settings at play here. First, turn Allow access to Azure services to OFF. This is to ensure that only the services that you want to use are enabled. 
-You'll also notice that it shows a Client IP address. The Client IP address is the IP address of your computer connecting to the Azure SQL Server database. You could have added a Client IP to the rule name list. This is useful if you want to connect SQL Server Management Studio or SQL Operations Studio to your server. It will add a rule that indicates which IP addresses can connect. You won’t be doing that in this case, but you'll be setting up the virtual network. 
+![Screenshot del portale di Azure che Mostra pannello della regola di sicurezza in ingresso Aggiungi la configurazione descritta.](../media-draft/2-create-inbound-rule-for-db-security-group.png)
 
-Click on + Add existing virtual network, and you will be presented with an options screen to enter the details for the new rule. Enter the name of the rule you would like to use, and select the subscription that you were using. Most importantly, select the virtual network that you are using, then select the subnet with the appropriate network security group rules for database access. 
+Le regole di sicurezza di base sono ora disponibili per limitare l'accesso al sistema di database. Ciò che resta è per assegnare i gruppi di sicurezza di rete alle subnet.
 
-![Select the Add existing virtual network option.](../media-draft/2-select-add-existing-virtual-network.png) 
+1. Aprire la rete virtuale creata in precedenza. Selezionare il **le impostazioni** > **subnet** sezione.
+1. Selezionare la subnet web creata in precedenza.
+1. Selezionare il **gruppo di sicurezza di rete** opzione e il gruppo di sicurezza di rete creato in modo specifico per il web.
+1. Fare clic su **salvare** e il gruppo di sicurezza di rete verrà applicato a subnet.
 
-After you have configured all the settings, select the Enable button. It will then apply the database to the subnet within your virtual network. 
+    ![Screenshot del portale di Azure che illustra un gruppo di sicurezza di rete applicato per la subnet web](../media-draft/2-define-nsg-for-web-subnet.png)
 
-Once the database subnet is configured, you will perform similar steps with the web server. Regardless of how you've configured your application, it is a matter of ensuring that the web applications use the subnet for web access. 
+Si desidera ripetere lo stesso processo per la subnet di database.
 
-If you have a single virtual machine or a load balancer with virtual machines in a scale set, make sure that they are using the web subnet so they have access to the database. When you create resources such as virtual machines, make sure that their virtual network and subnets are configured to control the information that goes in and out of those services.
+1. Ritornare alla subnet.
+1. Selezionare la subnet di database
+1. Impostare relativi **gruppo di sicurezza di rete** al gruppo di sicurezza di rete per il database.
+1. È consigliabile fare clic su **Salva** per salvare le modifiche.
 
-![Select the Add existing virtual network option.](../media-draft/2-configure-virtual-machine-with-subnet.png) 
+    ![Screenshot del portale di Azure che illustra un gruppo di sicurezza di rete applicato scelto per la subnet di database.](../media-draft/2-define-nsg-for-db-subnet.png)
 
-Once the subnets are applied to both the database and the virtual machines running the web apps, then the appropriate configuration will be in place. Then there is tighter access between your apps and database.
+Ora che è stato configurato l'accesso, si tratta dell'applicazione le reti virtuali e subnet per il server di database e server web.
 
-Network security is the first core point of protection. Making sure that only the apps and services that should connect to the database do connect to the database will make your system more secure. 
+Iniziamo con il server di database.
+
+1. Selezionare il database.
+1. Il database, selezionare la **firewall e reti virtuali** impostazione di configurazione.
+
+A sinistra, si noterà i dettagli sulla configurazione. È presente un numero di impostazioni in gioco.
+
+1. In primo luogo, attivare **consentire l'accesso ai servizi di Azure** al **OFF**. Questo modo si garantisce che siano abilitati solo i servizi che si desidera utilizzare.
+
+    Si noterà anche che mostra un indirizzo IP del Client. L'indirizzo IP del Client è l'indirizzo IP del computer in uso la connessione al database del Server SQL di Azure. Si sarebbe possibile aggiungere un indirizzo IP del Client all'elenco Nome regola. Ciò è utile se si desidera connettersi al server SQL Server Management Studio o SQL Operations Studio. Aggiungerà una regola che indica quali indirizzi IP può connettersi. È non possibile questa operazione in questo caso, ma verrà impostato configurata la rete virtuale.
+
+1. Fare clic su **Aggiungi rete virtuale esistente**, e verrà visualizzata una schermata di opzioni per immettere i dettagli per la nuova regola.
+
+1. Immettere il **nome** della regola da utilizzare.
+1. Selezionare la sottoscrizione che erano in uso.
+1. In particolare, selezionare la rete virtuale che si sta utilizzando.
+1. Selezionare la subnet con le regole di gruppo di sicurezza di rete appropriata per l'accesso al database.
+1. Dopo aver configurato tutte le impostazioni, selezionare la **abilitare** pulsante. Il database verrà quindi applicata alla subnet all'interno della rete virtuale.
+
+Dopo aver configurata la subnet di database, si eseguirà una procedura simile con il server web. Indipendentemente dal modo in cui è stato configurato l'applicazione, è una questione di garantire che le applicazioni web di usano la subnet per accesso web.
+
+Se si dispone di una singola macchina virtuale o un servizio di bilanciamento del carico con le macchine virtuali in un set di scalabilità, assicurarsi che utilizzano la subnet web hanno accesso al database. Quando si creano risorse, ad esempio le macchine virtuali, assicurarsi che le subnet e della rete virtuale siano configurate per controllare le informazioni da inserire in e out di tali servizi.
+
+![Screenshot del portale di Azure che illustra il passaggio del pannello delle impostazioni di creazione di una nuova macchina virtuale in cui i valori di rete e subnet virtuali sono stati impostati.](../media-draft/2-configure-virtual-machine-with-subnet.png)
+
+Una volta applicate alle subnet per il database e le macchine virtuali che eseguono le app web, la configurazione appropriata sarà posto. Quindi è possibile accedere più forte tra le App e database.
+
+Sicurezza di rete è il primo punto di base di protezione. Assicurarsi che solo le applicazioni e servizi che devono connettersi al database di connettersi al database di sistema verrà rendere più sicura.

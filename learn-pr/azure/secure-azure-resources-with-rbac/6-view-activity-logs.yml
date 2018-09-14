@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.secure-azure-resources-with-rbac.6-view-activity-logs
+metadata:
+  title: Visualizzare i log attività delle modifiche apportate al controllo degli accessi in base al ruolo
+  description: Informazioni su come usare il log attività di Azure per elencare le modifiche apportate al controllo degli accessi in base al ruolo nel portale e generare un report semplice.
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+title: Visualizzare i log attività delle modifiche apportate al controllo degli accessi in base al ruolo
+labId: 45985
+durationInMinutes: 5
+content: |
+  [!include[](includes/6-view-activity-logs.md)]

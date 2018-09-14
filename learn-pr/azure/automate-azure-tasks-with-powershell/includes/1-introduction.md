@@ -9,10 +9,10 @@ Di seguito verrà illustrato come gestire le risorse di Azure tramite Azure Powe
 ## <a name="learning-objectives"></a>Obiettivi di apprendimento
 In questo modulo verrà descritto come:
 
-- Decidere se Azure PowerShell è lo strumento appropriato per le attività di amministrazione di Azure.
-- Installare Azure PowerShell in Linux, macOS e/o Windows.
-- Connettersi a una sottoscrizione di Azure tramite Azure PowerShell.
-- Creare risorse di Azure con Azure PowerShell.
+- Decidere se Azure PowerShell è lo strumento appropriato per le attività di amministrazione di Azure
+- Installare Azure PowerShell su Linux, macOS e/o Windows
+- Connettersi a una sottoscrizione di Azure tramite Azure PowerShell
+- Creare risorse di Azure con Azure PowerShell
 
 ## <a name="prerequisites"></a>Prerequisiti
 

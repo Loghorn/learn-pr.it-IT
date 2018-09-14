@@ -1,83 +1,83 @@
-Network perimeters and their firewalls and physical access controls used to be the primary protection for corporate data. But network perimeters have become increasingly porous with the explosion of bring your own device (BYOD), mobile apps, and cloud applications. 
+I perimetri di rete e firewall e ai controlli di accesso fisico usato per la protezione principale per i dati aziendali. Ma perimetri di rete sono diventati sempre più permeabili enorme diffusione di portare il proprio dispositivo (BYOD), App per dispositivi mobili, applicazioni e cloud. 
 
-Identity has become the new primary security boundary. Proper authentication and assignment of privileges is critical to maintaining control of your data.
+Identity è diventato il nuovo limite di sicurezza primario. L'autenticazione corretta e l'assegnazione dei privilegi è fondamentale per mantenere il controllo dei dati.
 
-Contoso Shipping is addressing these concerns right away. Their new hybrid cloud solution needs to account for mobile apps that have access to secret data when an authorized user is signed in. They also have shipping vehicles sending a constant stream of telemetry data that is critical to optimizing their business.
+Contoso Shipping risolve questi problemi sin da subito. La nuova soluzione cloud ibrida deve tenere conto delle App per dispositivi mobili che hanno accesso a dati riservati quando un utente autorizzato ha eseguito l'accesso. Dispongono anche di spedizione veicoli l'invio di un flusso costante di dati di telemetria che sono fondamentali per l'ottimizzazione della propria azienda.
 
-## Single sign-on
+## <a name="single-sign-on"></a>Single Sign-On
 
-The more identities a user has to manage, the greater the risk of a credential-related security incident. More identities mean more passwords to remember and change. Password policies can vary between applications and, as complexity requirements increase, it makes it more difficult for users to remember them.
+Maggiore è il numero di identità che un utente deve gestire, maggiore sarà il rischio di un incidente di sicurezza correlato alle credenziali. Più identità vuol dire più password da tenere a mente e modificare. I criteri password possono variare tra le applicazioni e, quando i requisiti di complessità aumentano, rende più difficile per gli utenti per ricordarle.
 
-On the other side is the management required for all those identities. Additional strain is placed on help desks as they deal with account lockouts and password reset requests. If a user leaves an organization, tracking down all those identities and ensuring they are disabled can be challenging. If an identity is overlooked, this could allow access when it should have been eliminated.
+Occorre anche considerare la gestione necessaria per tutte queste identità. Aumenta il carico di lavoro dell'help desk, che si occupa dei blocchi degli account e delle richieste di reimpostazione della password. Se un utente abbandona un'organizzazione, può essere difficile tenere traccia di tutte le identità e garantire che siano state disabilitate. Se un'identità da eliminare viene tralasciata, potrebbe consentire un accesso indesiderato.
 
-With single sign-on (SSO), users need to remember only one ID and one password. Access across applications is granted to a single identity tied to a user, simplifying the security model. As users change roles or leave an organization, access modifications are tied to the single identity, greatly reducing the effort needed to change or disable accounts. Using single sign-on for accounts will make it easier for users to manage their identities and will increase the security capabilities in your environment.
+Con single sign-on (SSO), gli utenti devono ricordare un solo ID e una password. L'accesso alle varie applicazioni viene concesso a una singola identità associata a un utente, semplificando il modello di sicurezza. Quando gli utenti cambiano ruolo o lasciano l'azienda, le modifiche all'accesso sono legate alla singola identità, riducendo significativamente l'impegno necessario per modificare o disabilitare gli account. Utilizza single sign-on per gli account rendono più facile per gli utenti gestire le identità e aumenteranno le funzionalità di sicurezza nell'ambiente in uso.
 
-### SSO with Azure Active Directory
+### <a name="sso-with-azure-active-directory"></a>SSO con Azure Active Directory
 
-Azure Active Directory (Azure AD) is a cloud-based identity service. It has built-in support for synchronizing with your existing on-premises Active Directory instance, or it can be used stand-alone.
+Azure Active Directory (Azure AD) è un servizio per la gestione delle identità basato sul cloud. Include supporto incorporato per la sincronizzazione con l'istanza di Active Directory locale esistente oppure può essere usato autonomo.
 
-This means that all your applications, whether on-premises, in the cloud (including Office 365), or even mobile can share the same credentials. 
+Questo vuol dire che tutte le applicazioni, locali, nel cloud (compreso Office 365) o persino per dispositivi mobili possono condividere le stesse credenziali. 
 
-Administrators and developers can control access to data and applications using centralized rules and policies configured in Azure AD.
+Amministratori e sviluppatori possono controllare l'accesso ai dati e alle applicazioni usando regole e criteri centralizzati configurati in Azure AD.
 
-In addition, Microsoft is uniquely positioned to combine multiple data sources into an intelligent security graph that can provide threat analysis and real-time identity protection to all accounts in Azure Active Directory (even accounts that are synchronized from your on-premises Active Directory instance).
+Inoltre, Microsoft è posizionato in modo univoco per combinare più origini dati in un grafico della sicurezza intelligente che può fornire l'analisi delle minacce e la protezione dell'identità in tempo reale a tutti gli account in Azure Active Directory (anche gli account che vengono sincronizzati l'istanza di Active Directory in locale).
 
-Contoso Shipping is integrating their existing Active Directory instance with Azure AD. This will make controlling access consistent across the organization. It will also make it a breeze for users to get into their email and Office 365 documents without having to reauthenticate.
+Spedizioni di Contoso prevede di integrare l'istanza di Active Directory esistente con Azure AD. In questo modo il controllo dell'accesso coerente nell'intera organizzazione. Inoltre consentirà un gioco da ragazzi per gli utenti a ottenere nel messaggio di posta elettronica e documenti di Office 365 senza la necessità di ripetere l'autenticazione.
 
-## Multi-factor authentication
+## <a name="multi-factor-authentication"></a>Autenticazione a più fattori
 
-Multi-factor authentication (MFA) provides additional security for your identities by requiring two or more elements for full authentication. These elements fall into three categories:
+L'autenticazione a più fattori (MFA) offre sicurezza aggiuntiva per le identità, richiedendo due o più elementi per l'autenticazione completa. Questi elementi sono suddivisi in tre categorie:
 
-- *something you know*
-- *something you possess*
-- *something you are*
+- *un'informazione nota*
+- *un oggetto fisico*
+- *una caratteristica fisica*
 
-**Something you know** would be a password or the answer to a security question. **Something you possess** could be a mobile app that receives a notification or a token-generating device. **Something you are** is typically some sort of biometric property, such as a fingerprint or face scan used on many mobile devices.
+**Un elemento noto** sarebbe una password o la risposta alla domanda di sicurezza. **Un elemento possiedono** potrebbe essere un'app per dispositivi mobili che riceve una notifica o un dispositivo di generazione di token. **Sono** viene in genere una sorta di proprietà biometrica, ad esempio una scansione di impronta digitale o viso utilizzata in molti dispositivi mobili.
 
-Using MFA increases security of your identity by limiting the impact of credential exposure. An attacker who has a user's password would also need to have possession of their phone or their face in order to fully authenticate. Authentication with only a single factor verified is insufficient, and the attacker would be unable to use those credentials to authenticate. The benefits this brings to security are huge, and it can't be repeated enough to enable MFA wherever possible.
+Uso di MFA aumenta la protezione della tua identità, limitando l'impatto di esposizione delle credenziali. Un utente malintenzionato che ha la password di un utente dovrà essere in possesso anche del suo telefono o avere il suo stesso viso per completamente l'autenticazione. L'autenticazione con un singolo fattore verificato è insufficiente e l'utente malintenzionato sarebbe in grado di utilizzare tali credenziali per l'autenticazione. I vantaggi per la sicurezza sono immensi ed è consigliabile abilitare l'autenticazione a più fattori ovunque sia possibile.
 
-Azure AD has MFA capabilities built in and will integrate with other third-party MFA providers. It's provided free of charge to any user who has the Global Administrators role in Azure AD, because these are highly sensitive accounts. All other accounts can have MFA enabled by purchasing licenses with this capability and assigning a license to the account.
+Azure AD offre funzionalità MFA incorporata e si integrerà con altri provider di autenticazione a più fattori di terze parti. Viene fornito gratuitamente a qualsiasi utente che ha il ruolo di amministratore globale in Azure AD, poiché si tratta di account riservati. Per tutti gli altri account è possibile abilitare MFA acquistando una licenza con questa funzionalità e assegnandola all'account in questione.
 
-For Contoso Shipping, you decide to enable MFA any time a user is signing in from a non-domain-connected computer. That includes the mobile apps.
+Per la spedizione di Contoso, si decide di abilitare l'autenticazione a più fattori ogni volta che un utente esegue l'accesso da un computer non connesso-dominio. Che include l'App per dispositivi mobili.
 
-## Providing identities to services
+## <a name="providing-identities-to-services"></a>Assegnazione di identità ai servizi
 
-It's often valuable for services to have identities. Often, and against best practices, credential information is embedded in configuration files. With no security around these configuration files, anyone with access to the systems or repositories can access these credentials and risk exposure.
+Spesso è utile assegnare ai servizi un'identità. Spesso e rispetto alle procedure consigliate, informazioni sulle credenziali vengono incorporate nel file di configurazione. Se questi file di configurazione non sono protetti, chiunque disponga di accesso ai sistemi o ai repository può accedere alle credenziali e rischiare l'esposizione.
 
-Azure AD addresses this problem through two methods: service principals and managed service identities.
+Azure AD risolve questo problema tramite due metodi: entità servizio e identità del servizio gestite.
 
-### Service principals
+### <a name="service-principals"></a>Entità servizio
 
-To understand service principals, it's useful to first understand the words **identity** and **principal**, because they are used in the identity management world.
+Per comprendere le entità servizio, è utile per capire le parole **identity** e **dell'entità**, perché vengono usate in tutto il mondo di gestione delle identità.
 
-An **identity** is just a thing that can be authenticated. Obviously, this includes users with a user name and password, but it can also include applications or other servers, which might authenticate with secret keys or certificates. As a bonus definition, an **account** is data associated with an identity.
+Un'**identità** è semplicemente un elemento che può essere autenticato. Ovviamente, inclusi gli utenti con un nome utente e password, ma può includere anche le applicazioni o altri server, che potrebbe eseguire l'autenticazione con certificati o chiavi private. Un **account** rappresenta i dati associati a un'identità.
 
-A **principal** is an identity acting with certain roles or claims. Often, it is not useful to consider identity and principal separately, but think of using `sudo` on a bash prompt or on Windows using "run as Administrator." In both those cases, you are still logged in as the same identity as before, but you've changed the role under which you are executing. Groups are often also considered principals because they can have rights assigned.
+Un'**entità di sicurezza** è un'identità che agisce con determinati ruoli o attestazioni. Non è spesso utile prendere in considerazione identity e principal separatamente, ma è opportuno utilizzare `sudo` in un prompt di bash o in Windows tramite "Esegui come amministratore". In entrambi i casi, è ancora connessi come la stessa identità, ma è stato modificato il ruolo in cui si sta eseguendo. I gruppi vengono considerati entità spesso anche perché possono disporre di diritti assegnati.
 
-So, a **service principal** is literally named. It is an identity that is used by a service or application. Like other identities, it can be assigned roles. 
+Pertanto, un **entità servizio** letteralmente denominato. un'identità che viene usata da un servizio o un'applicazione. Come altre identità, può essere assegnato i ruoli. 
 
-### Managed service identities
+### <a name="managed-service-identities"></a>Identità del servizio gestito
 
-The creation of service principals can be a tedious process, and there are a lot of touch points that can make maintaining them difficult. Managed service identities are much easier and will do most of the work for you. 
+La creazione dell'entità servizio può essere un'operazione laboriosa, ed esistono molti punti di tocco che può rendere su come gestirli difficile. Le identità del servizio gestito sono molto più semplice e verranno eseguita la maggior parte del lavoro per l'utente. 
 
-A managed service identity can be instantly created for any Azure service that supports it (the list is constantly growing). When you create a managed service identity for a service, you are creating an account on the Azure Active Directory tenant. The Azure infrastructure will automatically take care of authenticating the service and managing the account. You can then use that account like any other Azure AD account, including securely letting the authenticated service access other Azure resources.
+È possibile creare immediatamente un'identità del servizio gestito per qualsiasi servizio di Azure che lo supporta (l'elenco è in continua crescita). Quando si crea un'identità del servizio gestito per un servizio, si sta creando un account nel tenant di Azure Active Directory. L'infrastruttura di Azure si occuperà automaticamente di autenticazione del servizio e la gestione dell'account. È quindi possibile usare tale account come qualsiasi altro account di Azure AD, tra cui consentire in modo sicuro il servizio autenticato accedere ad altre risorse di Azure.
 
-## Role-based access control
+## <a name="role-based-access-control"></a>Controllo degli accessi in base al ruolo
 
-Roles are sets of permissions, like "Read-only" or "Contributor", that users can be granted to access an Azure service instance. 
+I ruoli sono set di autorizzazioni, ad esempio "Read-only" o "Collaboratore", che è possono concedere agli utenti per accedere a un'istanza di servizio di Azure. 
 
-Identities are mapped to roles directly or through group membership. Separating security principals, access permissions, and resources provides simple access management and fine-grained control. Administrators are able to ensure the minimum necessary permissions are granted.
+Le identità vengono mappate ai ruoli direttamente o tramite l'appartenenza al gruppo. La separazione delle entità di sicurezza, le autorizzazioni di accesso e delle risorse fornisce la gestione degli accessi semplice e il controllo con granularità fine. Gli amministratori sono in grado di verificare che siano concesse le autorizzazioni minime necessarie.
 
-Roles can be granted at the individual service instance level, but they also flow down the Azure Resource Manager hierarchy. Roles assigned at a higher scope, like an entire subscription, are inherited by child scopes, like service instances. 
-
-<!--TODO: replace with final media which was submitted for Design-for-security-in-azure -->
-![Management groups](../media-draft/3-role-assignment-scope.png)
-
-### Privileged Identity Management
-
-In addition to managing Azure resource access with role-based access control (RBAC), a comprehensive approach to infrastructure protection should consider including the ongoing auditing of role members as their organization changes and evolves. Azure AD Privileged Identity Management (PIM) is an additional, paid-for offering that provides oversight of role assignments, self-service, and just-in-time role activation and Azure AD and Azure resource access reviews.
+I ruoli possono essere concesse a livello di istanza di servizio singoli, ma sono anche fluiscono verso il basso della gerarchia di Azure Resource Manager. I ruoli assegnati in un ambito più elevato, ad esempio un'intera sottoscrizione, vengono ereditati dagli ambiti figlio, come le istanze del servizio. 
 
 <!--TODO: replace with final media which was submitted for Design-for-security-in-azure -->
-![Privileged identity management](../media-COPIED-FROM-DESIGNFORSECURITY/PIM_Dashboard.png)
+![Gruppi di gestione](../media-draft/3-role-assignment-scope.png)
 
-Identity allows us to maintain a security perimeter, even outside our physical control. With single sign-on and appropriate role-based access configuration, we can always be sure who has the ability to see and manipulate our data and infrastructure.
+### <a name="privileged-identity-management"></a>Privileged Identity Management
+
+Oltre a gestire l'accesso alle risorse di Azure con accesso in base al ruolo (RBAC) di controllo, un approccio completo alla protezione dell'infrastruttura è necessario considerare l'inclusione in corso il controllo dei membri del ruolo come le modifiche all'organizzazione e si evolve. Azure AD Privileged Identity Management (PIM) è un'offerta aggiuntiva, a pagamento che offre la supervisione di assegnazioni di ruolo, funzionalità Self-Service e just-in-time attivazione del ruolo e Azure AD e le verifiche di accesso alle risorse di Azure.
+
+<!--TODO: replace with final media which was submitted for Design-for-security-in-azure -->
+![Gestione delle identità con privilegi](../media-COPIED-FROM-DESIGNFORSECURITY/PIM_Dashboard.png)
+
+Identità consente di mantenere un perimetro di sicurezza, anche all'esterno del controllo fisico. Con accesso single sign-on e la configurazione di accesso in base al ruolo appropriato, possiamo sempre essere certi che ha la possibilità di visualizzare e modificare i dati e infrastruttura.

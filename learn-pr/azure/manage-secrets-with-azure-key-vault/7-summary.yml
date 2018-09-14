@@ -4,57 +4,47 @@ title: Riepilogo
 metadata:
   title: Riepilogo
   description: Riepilogo
-  ms.openlocfilehash: 8b422922451069a360481cdee7dde4effef0ea2c
-  ms.sourcegitcommit: 59967a43a5379f618738d95c9f82b7180a82187b
-  ms.translationtype: HT
-  ms.contentlocale: it-IT
-  ms.lasthandoff: 09/04/2018
-  ms.locfileid: "43694487"
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
 durationInMinutes: 3
-content: >
+content: |
   [!include[](includes/7-summary.md)]
 quiz:
   title: 'Verifica delle conoscenze: Azure Key Vault'
   questions:
-  - content: Quale dei seguenti **non** è uno dei vantaggi principali di Azure Key Vault?
-    choices:
-    - content: Archiviazione protetta delle informazioni personali dell'utente.
-      isCorrect: true
-      correctExplanation: Key Vault è progettato per l'archiviazione dei segreti dell'applicazione, non dei segreti dell'utente.
-    - content: Sincronizzazione dei segreti dell'applicazione tra più istanze di un'applicazione.
-      isCorrect: false
-      incorrectExplanation: Key Vault consente a più istanze delle applicazioni di accedere agli stessi segreti archiviandoli in modo centralizzato.
-    - content: Minore necessità da parte degli sviluppatori di applicazioni di gestire direttamente i segreti dell'applicazione.
-      isCorrect: false
-      incorrectExplanation: La riduzione dell'interazione effettiva con i segreti è il vantaggio principale di Key Vault e aumenta la sicurezza.
-    - content: Controllo dell'accesso ai segreti dell'applicazione con autorizzazioni assegnabili.
-      isCorrect: false
-      incorrectExplanation: I criteri di controllo dell'accesso di Key Vault aumenta la sicurezza del segreto limitando l'accesso ai segreti.
-  - content: Quali di queste affermazioni descrive al meglio l'autenticazione di Key Vault e il processo di autorizzazione?
-    choices:
-    - content: Le applicazioni eseguono l'autenticazione a un insieme di credenziali con il nome utente e la password dello sviluppatore responsabile e hanno accesso completo a tutti i segreti nell'insieme.
-      isCorrect: false
-      incorrectExplanation: L'autenticazione di Key Vault non usa nomi utente e password e le applicazioni devono eseguire l'autenticazione con le proprie identità, non l'identità di una persona.
-    - content: Le applicazioni e gli utenti eseguono l'autenticazione a un insieme di credenziali con un account Microsoft e sono autorizzati ad accedere a segreti specifici.
-      isCorrect: false
-      incorrectExplanation: L'autenticazione di Key Vault non usa account Microsoft e i criteri di accesso non offrono il controllo sui singoli segreti in un insieme di credenziali.
-    - content: Le applicazioni e gli utenti eseguono l'autenticazione a un insieme di credenziali con le proprie identità di Azure Active Directory e sono autorizzati a intraprendere diverse azioni su tutti i segreti nell'insieme.
-      isCorrect: true
-      correctExplanation: Tutte le autenticazioni a Key Vault usano le identità di Azure Active Directory e i criteri di accesso si basano sulle azioni che si applicano a ogni segreto nell'insieme di credenziali.
-    - content: Le applicazioni eseguono l'autenticazione a un insieme di credenziali usando i nomi utente e le password degli utenti che accedono all'app Web e dispongono dell'accesso ai segreti appartenenti a tali utenti.
-      isCorrect: false
-      incorrectExplanation: Gli utenti di un'app non hanno accesso a Key Vault dell'applicazione e gli insiemi di credenziali non devono essere usati per archiviare segreti dell'utente.
-  - content: In che modo Key Vault consente di proteggere i segreti dopo che sono stati caricati dall'app?
-    choices:
-    - content: Key Vault genera automaticamente nuovi valori del segreto ogni volta che lo si carica, in modo che non possano essere riutilizzati.
-      isCorrect: false
-      incorrectExplanation: Key Vault non genera automaticamente nuovi valori del segreto.
-    - content: La libreria client di Key Vault protegge le aree di memoria usate dall'applicazione per evitare l'esposizione accidentale dei segreti.
-      isCorrect: false
-      incorrectExplanation: Non si tratta di una funzionalità della libreria client di Key Vault.
-    - content: Key Vault applica una doppia crittografia ai segreti, la quale richiede la decrittografia dei file in locale da parte dell'app ogni volta che vengono usati.
-      isCorrect: false
-      incorrectExplanation: I valori del segreto restituiti all'app da un insieme di credenziali non sono crittografati.
-    - content: I segreti non sono protetti quando vengono caricati dall'applicazione.
-      isCorrect: true
-      correctExplanation: I segreti caricati da un'app non sono protetti. Prestare attenzione a non registrarli, archiviarli o restituirli nelle risposte client nel codice dell'applicazione.
+    - content: Quale delle seguenti **non** dei vantaggi di Azure Key Vault?
+      choices:
+        - content: Archiviazione protetta delle informazioni personali dell'utente.
+          isCorrect: true
+          correctExplanation: 'Key Vault è progettato per l''archiviazione dei segreti dell''applicazione, non dei segreti dell''utente.'
+        - content: Sincronizzazione dei segreti dell'applicazione tra più istanze di un'applicazione.
+          isCorrect: false
+        - content: Minore necessità da parte degli sviluppatori di applicazioni di gestire direttamente i segreti dell'applicazione.
+          isCorrect: false
+        - content: Controllo dell'accesso ai segreti dell'applicazione con autorizzazioni assegnabili.
+          isCorrect: false
+    - content: Quali di queste istruzioni migliore descrive l'autenticazione di Azure Key Vault e processo di autorizzazione?
+      choices:
+        - content: Le applicazioni eseguono l'autenticazione a un insieme di credenziali con il nome utente e la password dello sviluppatore responsabile e hanno accesso completo a tutti i segreti nell'insieme.
+          isCorrect: false
+        - content: Le applicazioni e gli utenti l'autenticazione a un insieme di credenziali con un account Microsoft e autorizzati ad accedere segreti specifici.
+          isCorrect: false
+        - content: Le applicazioni e agli utenti l'autenticazione a un insieme di credenziali con le identità di Azure Active Directory e sono autorizzati a eseguire azioni su tutti i segreti nell'insieme di credenziali.
+          isCorrect: true
+          correctExplanation: L'autenticazione in Key Vault Usa identità di Azure Active Directory. Criteri di accesso vengono usati per fornire l'autorizzazione per le azioni che si applicano a ogni segreto nell'insieme di credenziali.
+        - content: Applicazioni di eseguire l'autenticazione a un insieme di credenziali con il nome utente e password di un utente che esegue l'accesso all'app web e viene concesso l'accesso ai segreti appartenenti a tale utente.
+          isCorrect: false
+    - content: Come Azure Key Vault contribuisce a proteggere i propri segreti dopo essere stati caricati dall'app?
+      choices:
+        - content: Azure Key Vault genera automaticamente un nuovo master secret dopo ogni uso.
+          isCorrect: false
+        - content: La libreria client di Azure Key Vault protegge le aree di memoria usata dall'applicazione per evitare l'esposizione accidentale di segreti.
+          isCorrect: false
+        - content: 'Azure Key Vault doppia-consente di crittografare informazioni riservate, che richiedono l''app per decrittografare i file in locale ogni volta che vengono utilizzati.'
+          isCorrect: false
+        - content: 'Non protegge i segreti. Una volta che si sta caricati dall''applicazione, i segreti sono protetti.'
+          isCorrect: true
+          correctExplanation: 'I segreti caricati da un''app non sono protetti. Assicurarsi di non registrarli, archiviarli o restituirli nelle risposte alle richieste client.'

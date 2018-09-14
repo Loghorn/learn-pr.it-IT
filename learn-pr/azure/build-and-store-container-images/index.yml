@@ -1,38 +1,36 @@
 ### YamlMime:Module
 uid: learn.azure-container-registry
 metadata:
-  title: Build and store container images with Azure Container Registry
-  description: Azure Container Registry is a managed Docker registry service based on the open-source Docker Registry 2.0. Container Registry is private, hosted in Azure, and allows you to build, store, and manage images for all types of container deployments. Learn how to build and store container images with Azure Container Registry.
+  title: Compilare e archiviare le immagini del contenitore con il Registro contenitori di Azure
+  description: 'Registro contenitori di Azure è un servizio gestito di registri Docker basato sull''applicazione open source Docker Registry 2.0. Registro contenitori è un servizio privato ospitato in Azure che consente di creare, archiviare e gestire immagini per qualsiasi tipo di distribuzione di contenitori. Informazioni su come compilare e archiviare le immagini del contenitore con il Registro contenitori di Azure.'
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Build and store container images with Azure Container Registry
-summary: Azure Container Registry is a managed Docker registry service based on the open-source Docker Registry 2.0. Container Registry is private, hosted in Azure, and allows you to build, store, and manage images for all types of container deployments. Learn how to build and store container images with Azure Container Registry.
+title: Compilare e archiviare le immagini del contenitore con il Registro contenitori di Azure
+summary: 'Registro contenitori di Azure è un servizio gestito di registri Docker basato sull''applicazione open source Docker Registry 2.0. Registro contenitori è un servizio privato ospitato in Azure che consente di creare, archiviare e gestire immagini per qualsiasi tipo di distribuzione di contenitori. Informazioni su come compilare e archiviare le immagini del contenitore con il Registro contenitori di Azure.'
 abstract: |
-  In this module, you will:
-    - Deploy an Azure container registry
-    - Build a container image using Azure Container Registry Build
-    - Deploy this container to an Azure container instance
-    - Replicate the container image to multiple Azure datacenters
-prerequisites: None
-#TODO: Update icon URL with real image 
-iconUrl: http://via.placeholder.com/120x120
+  In questo modulo verrà descritto come:
+  - Distribuire un registro contenitori di Azure
+  - Compilare un'immagine dei contenitori con Azure Container Registry Build
+  - Distribuire il contenitore in un'istanza di contenitore di Azure
+  - Replicare l'immagine del contenitore in più data center di Azure
+prerequisites: Nessuno
+iconUrl: /learn/achievements/build-and-store-container-images.svg
 levels:
-- intermediate
+  - intermediate
 roles:
-- administrator
+  - administrator
 products:
-- azure
-- azure-container-instances
-- azure-container-registry
+  - azure
+  - azure-container-instances
+  - azure-container-registry
 units:
-- learn.azure-container-registry.introduction
-- learn.azure-container-registry.deploy-acr
-- learn.azure-container-registry.build-image
-- learn.azure-container-registry.deploy-image
-- learn.azure-container-registry.image-replication
-- learn.azure-container-registry.knowledge-check
+  - learn.azure-container-registry.introduction
+  - learn.azure-container-registry.deploy-acr
+  - learn.azure-container-registry.build-image
+  - learn.azure-container-registry.deploy-image
+  - learn.azure-container-registry.image-replication
+  - learn.azure-container-registry.knowledge-check
 achievement: learn.azure-container-registry.badge

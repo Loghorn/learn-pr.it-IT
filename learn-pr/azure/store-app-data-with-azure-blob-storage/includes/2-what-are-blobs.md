@@ -1,15 +1,15 @@
-I BLOB sono "file per il cloud". Le app usano i BLOB in modo molto simile a come userebbero i file su disco, quindi per leggere e scrivere dati. A differenza però di un file locale i BLOB possono essere raggiunti da qualsiasi punto con una connessione Internet.
+I BLOB sono "file per il cloud". Le app funzionano con i BLOB in modo analogo mentre lavorano con i file su disco, ad esempio la lettura e scrittura dei dati. A differenza però di un file locale i BLOB possono essere raggiunti da qualsiasi punto con una connessione Internet.
 
 L'archivio BLOB di Azure *non è strutturato*. Questo significa che non esistono restrizioni ai tipi di dati che un BLOB può contenere. Un BLOB può ad esempio contenere un documento PDF, un'immagine JPG, un file JSON, contenuto video e così via. I BLOB non sono limitati ai formati di file comuni. Un BLOB può contenere gigabyte di dati binari trasmessi da uno strumento scientifico, un messaggio crittografato per un'altra applicazione o può contenere dati in un formato personalizzato per un'app in via di sviluppo.
 
 I BLOB in genere non sono adatti a contenere dati strutturati che sono spesso sottoposti a query. Hanno una latenza maggiore rispetto alla memoria e al disco locale e non hanno le funzionalità di indicizzazione che rendono i database efficienti nell'esecuzione di query. I BLOB vengono comunque usati spesso in *combinazione* con i database per archiviare dati non disponibili per le query. Un'app con un database di profili utente ad esempio può archiviare nei BLOB le immagini dei profili. Ogni record di utente nel database includerà il nome o l'URL del BLOB contenente l'immagine dell'utente.
 
-I BLOB vengono usati per archiviare i dati in molti modi diversi tra tutti i tipi di applicazioni e architetture:
+I BLOB vengono usati per archiviare i dati in molti modi tra tutti i tipi di applicazioni e le architetture:
 
-* Le app che devono comunicare grandi quantità di dati attraverso un sistema di messaggistica che supporta solo messaggi di piccole dimensioni possono archiviare i dati nei BLOB e inviare nei messaggi l'URL dei BLOB.
-* L'archivio BLOB viene usato come un file system per l'archiviazione e la condivisione di documenti e altri dati personali.
-* Gli asset Web statici come le immagini possono essere archiviati in BLOB ed essere resi disponibili per il download pubblico come se fossero file in un server Web.
-* Molti componenti di Azure usano i BLOB dietro le quinte. Azure Cloud Shell ad esempio archivia i file e la configurazione in BLOB e Macchine virtuali di Azure usa i BLOB per l'archiviazione del disco rigido.
+- App che richiedono la trasmissione di grandi quantità di dati con sistema di messaggistica che supporta solo i messaggi di piccole dimensioni. Queste App possono archiviare dati nei blob e inviare il blob URL nei messaggi.
+- L'archivio BLOB viene usato come un file system per l'archiviazione e la condivisione di documenti e altri dati personali.
+- Gli asset Web statici come le immagini possono essere archiviati in BLOB ed essere resi disponibili per il download pubblico come se fossero file in un server Web.
+- Molti componenti di Azure usano i BLOB dietro le quinte. Azure Cloud Shell ad esempio archivia i file e la configurazione in BLOB e Macchine virtuali di Azure usa i BLOB per l'archiviazione del disco rigido.
 
 Alcune app creano, aggiornano ed eliminano BLOB costantemente come parte del proprio lavoro. Altre usano un piccolo set di BLOB che modificano raramente.
 

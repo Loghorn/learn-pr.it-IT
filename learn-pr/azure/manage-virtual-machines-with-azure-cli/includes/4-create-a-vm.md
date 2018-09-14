@@ -18,11 +18,11 @@ L'interfaccia della riga di comando di Azure include il comando `vm` per lavorar
 
 Si inizia dal primo: `az vm create`. Questo comando viene usato per creare una macchina virtuale in un gruppo di risorse. Esistono vari parametri che è possibile passare per configurare tutti gli aspetti della nuova macchina virtuale. I tre parametri da fornire sono:
 
-| Parametro | DESCRIZIONE |
+| Parametro | Descrizione |
 |-----------|-------------|
-| `resource-group` | Il gruppo di risorse che conterrà la macchina virtuale |
-| `name` | Il nome della macchina virtuale deve essere univoco all'interno del gruppo di risorse |
-| `image` | L'immagine del sistema operativo da usare per creare la macchina virtuale |
+| `resource-group` | Il gruppo di risorse che conterrà la macchina virtuale. |
+| `name` | Il nome della macchina virtuale - deve essere univoco all'interno del gruppo di risorse. |
+| `image` | Immagine del sistema operativo da usare per creare la macchina virtuale. |
 
 È anche utile aggiungere il flag `--verbose` per visualizzare lo stato di avanzamento della creazione della macchina virtuale. 
 
@@ -31,7 +31,7 @@ Si inizia dal primo: `az vm create`. Questo comando viene usato per creare una m
 Verrà ora illustrato come creare una nuova macchina virtuale Linux. Eseguire il comando seguente in Azure Cloud Shell:
 
 ```azurecli
-az vm create --resource-group ExerciseResources --name SampleVM --image Debian --admin-username aldis --generate-ssh-keys --verbose 
+az vm create --resource-group <rgn>[Sandbox resource group name]</rgn> --name SampleVM --image Debian --admin-username aldis --generate-ssh-keys --verbose 
 ```
 
 Questo comando crea una nuova macchina virtuale Linux **Debian** chiamata `SampleVM`. Si noti che lo strumento dell'interfaccia della riga di comando di Azure è bloccato durante la creazione della macchina virtuale. Se si preferisce non attendere, è possibile usare l'opzione `--no-wait` per indicare allo strumento dell'interfaccia della riga di comando di Azure di restituire subito un risultato, ad esempio se si esegue il comando in uno script. In seguito nello script, usare il comando `azure vm wait --name [vm-name]` per attendere la creazione della macchina virtuale.
@@ -55,6 +55,8 @@ Si usa anche il flag `generate-ssh-keys`. Questo parametro viene usato per le di
 
 Dopo aver creato la macchina virtuale, si otterrà una risposta JSON che include lo stato corrente della macchina virtuale e i relativi indirizzi IP pubblici e privati assegnati da Azure:
 
+<!-- TODO: find out the default location! -->
+
 ```json
 {
   "fqdns": "",
@@ -69,5 +71,7 @@ Dopo aver creato la macchina virtuale, si otterrà una risposta JSON che include
 }
 ```
 
+<!-- TODO: find out the default location! -->
+
 > [!NOTE]
-> Si noti che la macchina virtuale è stata creata nella località **eastus**. Per impostazione predefinita, la macchina virtuale viene creata nella località identificata dall'area di appartenenza. Tuttavia, in alcuni casi potrebbe essere necessario associare la macchina virtuale a un'area esistente, anche se si trova in un'altra parte del mondo. A tale scopo, è possibile specificare il parametro `--location` dell'opzione come parte del comando `az vm create`.
+> Si noti che la macchina virtuale è stata creata nella posizione **eastus**. Per impostazione predefinita, la macchina virtuale viene creata nella posizione identificata dall'area di appartenenza. Tuttavia, in alcuni casi potrebbe essere necessario associare la macchina virtuale a un'area esistente, anche se si trova in un'altra parte del mondo. A tale scopo, è possibile specificare il parametro `--location` dell'opzione come parte del comando `az vm create`.

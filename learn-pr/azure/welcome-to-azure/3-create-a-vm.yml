@@ -1,11 +1,16 @@
 ### YamlMime:ModuleUnit
 uid: learn.welcome-to-azure.3-create-a-vm
-title: Create a virtual machine
+title: Creare una macchina virtuale
 metadata:
-  title: Create a virtual machine
-  description: No matter your area of interest, get started with the cloud by creating your first virtual machine.
+  title: Creare una macchina virtuale
+  description: 'Indipendentemente dall''area di interesse, iniziare a usare il cloud creando la prima macchina virtuale.'
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
   zone_pivot_groups: platform-cloud
-interactive: powershell
+interactive: bash
 azureSandbox: true
 durationInMinutes: 10
 content: |

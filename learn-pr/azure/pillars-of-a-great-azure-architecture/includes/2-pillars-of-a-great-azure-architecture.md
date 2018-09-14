@@ -1,50 +1,52 @@
-The cloud has changed the way organizations solve their business challenges, and how applications and systems are designed. The role of a solution architect is not only to deliver business value through the functional requirements of the application, but to ensure the solution is designed in ways that are scalable, resilient, efficient and secure. Solution architecture is concerned with the planning, design, implementation, and ongoing improvement of a technology system. The architecture of a system must balance and align the business requirements with the technical capabilities needed to execute those requirements. It includes an evaluation of risk, cost, and capability throughout the system and its components.
+Il cloud ha cambiato il modo le organizzazioni risolvono sfide aziendali e come le applicazioni e sistemi sono stati progettati. Il ruolo di un progettista di soluzioni non è solo per fornire valore aziendale tramite i requisiti funzionali dell'applicazione, ma per assicurarsi che la soluzione è progettata in modo che sia scalabili, resilienti, efficiente e sicuro. Architettura della soluzione riguarda la pianificazione, progettazione, implementazione e miglioramento continuativo di un sistema di tecnologia. L'architettura di un sistema deve bilanciare e allineare i requisiti aziendali con le funzionalità tecniche necessarie per rispettare tali requisiti. Include la valutazione di rischi, costi e funzionalità nell'intero sistema e nei rispettivi componenti.
 
-While there is no one-size-fits-all approach to designing an architecture, there are some universal concepts that will apply regardless of the architecture, technology, or cloud provider. While these are not all-inclusive, focusing on these concepts will help you build a reliable, secure, and flexible foundation for your application.
+> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE2yEv2]
 
-A great architecture starts with a solid foundation built on four pillars:
+Se non è presente alcun approccio unico per la progettazione di un'architettura, esistono alcuni concetti universale che verranno applicato indipendentemente dall'architettura, la tecnologia o provider di servizi cloud. Anche se questi non sono gratis, con particolare attenzione su questi concetti consentirà le basi per l'applicazione affidabile, sicura e flessibile.
 
-* Security
-* Performance and scalability
-* Availability and recoverability
-* Efficiency and operations
+Un'architettura ottimale parte da una base solida costituita da quattro elementi principali:
 
-![Pillars of a great architecture](../media-draft/pillars.png)
+* Sicurezza
+* Prestazioni e scalabilità
+* Disponibilità e possibilità di ripristino
+* Efficienza e operazioni
 
-## Security
+![Elementi principali per un'architettura ottimale](../media-draft/pillars.png)
 
-Data in various forms is the most valuable piece of your organization's technical footprint. In this pillar, you'll be focused on securing access to your architecture through authentication and protecting your application and data from network vulnerabilities. The integrity of your data should be protected as well, using tools like encryption.
+## <a name="security"></a>Sicurezza
 
-You must think about security throughout the entire lifecycle of your application, from design and implementation to deployment and operations. The cloud provides protections against a variety of threats, such as network intrusion and DDoS attacks, but you still need to build security into your application, processes, and organizational culture.
+I dati in varie forme sono l'informazione più importante del footprint di tecnici della propria organizzazione. La sezione relativa a questo elemento fondamentale sarà incentrata sulla protezione dell'accesso all'architettura tramite l'autenticazione e la protezione dell'applicazione e dei dati dalle vulnerabilità di rete. È necessario proteggere anche l'integrità dei dati, usando strumenti quali la crittografia.
 
-![Types of attacks](../media-draft/security.png)
+È necessario considerare sulla sicurezza nell'intero ciclo di vita dell'applicazione, dalla progettazione e implementazione alla distribuzione e operazioni. Il cloud offre la protezione da un'ampia gamma di minacce, ad esempio intrusioni di rete e attacchi DDoS, ma è necessario implementare la sicurezza nell'applicazione, processi e delle impostazioni cultura dell'organizzazione.
 
-## Performance and scalability
+![Tipi di attacchi](../media-draft/security.png)
 
-For an architecture to perform well and be scalable, it should properly match resource capacity to demand. Traditionally, cloud architectures do so by scaling applications dynamically based off activity in the application. Demand for services change, so it's important for your architecture to have the ability to adjust to demand as well. By designing your architecture with performance and scalability in mind, you'll provide a great experience for your customers while being cost-effective.
+## <a name="performance-and-scalability"></a>Prestazioni e scalabilità
 
-![Graphic depicting large influx of data or requests](../media-draft/performance-demand.png))
+Per assicurare prestazioni eccellenti e scalabilità per un'architettura, è necessaria una corrispondenza corretta tra le capacità delle risorse e la domanda. Le architetture cloud ottengono in genere questo risultato ridimensionando le applicazioni in modo dinamico in base alle attività dell'applicazione. La domanda per i servizi è variabile, quindi è importante che l'architettura sia in grado di adattarsi anche alla domanda. Una progettazione dell'architettura incentrata su prestazioni e scalabilità consentirà di offrire un'esperienza ottimale ai clienti, risultando al tempo stesso economicamente conveniente.
 
-## Availability and recoverability
+![Illustrazione grafica di un afflusso elevato di dati o richieste](../media-draft/performance-demand.png))
 
-Every architect’s worst fear is having your architecture go down with no way to recover it. A successful cloud environment is designed in a way that anticipates failure at all levels. Part of anticipating these failures is designing a system that can recover from the failure, within the time required by your stakeholders and customers.
+## <a name="availability-and-recoverability"></a>Disponibilità e possibilità di ripristino
 
-![System failure](../media-draft/system-failure.png)
+Ogni architetto teme i problemi irreversibili dell'architettura. Un ambiente cloud ottimale è progettato in modo da anticipare gli errori a qualunque livello. L'anticipazione di tali errori comporta anche la progettazione di un sistema in grado di riprendesi da un errore, nei tempi richiesti da stakeholder e clienti.
 
-## Efficiency and operations
+![Errore di sistema](../media-draft/system-failure.png)
 
-You will want to design your cloud environment so that it's cost-effective to operate and develop against. Inefficiency and waste in cloud spending should be identified to ensure you're spending money where we can make the greatest use of it. You need to have a good monitoring architecture in place so that you can detect failures and problems before they happen or, at a minimum, before your customers notice. You also need to have some visibility in to how your application is using its available resources, through a robust monitoring framework.
+## <a name="efficiency-and-operations"></a>Efficienza e operazioni
 
-![Efficiency](../media-draft/efficiency.png)
+È opportuno progettare l'ambiente cloud in modo che risulti più conveniente per gestire e sviluppare in. Inefficienza e gli sprechi nel cloud spesa deve essere identificata per garantire la spesa denaro in cui è realizzare l'utilizzo massimo di esso. È necessario disporre una buona architettura del monitoraggio in modo che è possibile rilevare gli errori e problemi prima che si verifichino o, come minimo, prima si noti che i clienti. È anche necessario avere alcuni visibilità in al modo in cui l'applicazione usa le relative risorse disponibili tramite un framework di monitoraggio affidabile.
 
-## Shared responsibility
+![Efficienza](../media-draft/efficiency.png)
 
-Moving to the cloud introduces a model of shared responsibility. In this model, your cloud provider will manage certain aspects of your application, leaving you with the remaining responsibility. In an on-premises environment you are responsible for everything. As you move to infrastructure as a service (IaaS), then to platform as a service (PaaS) and software as a service (SaaS), your cloud provider will take on more of this responsibility. This shared responsibility will play a role in your architectural decisions, as they can have implications on cost, operational capabilities, security, and the technical capabilities of your application. By shifting these responsibilities to your provider you can focus on brining value to your business and move away from activities that aren't a core business function.
+## <a name="shared-responsibility"></a>Responsabilità condivisa
 
-![Cloud service models](../media-draft/cloud-responsibility-model.png)
+Lo spostamento nel cloud introduce un modello di responsabilità condivisa. In questo modello, il provider di cloud gestiranno alcuni aspetti dell'applicazione, offrendoti la responsabilità rimanente. In un ambiente locale è responsabile per tutte le operazioni. Quando si spostano all'infrastruttura come servizio (IaaS), quindi alla piattaforma distribuita come servizio (PaaS) e software come servizio (SaaS), il provider di cloud richiederà su più di questa responsabilità. Questa responsabilità condivisa svolgerà un ruolo nelle tue decisioni architetturale, come si possono avere implicazioni sul costo, capacità operativa, sicurezza e le funzionalità tecniche dell'applicazione. Grazie al passaggio queste responsabilità al provider di è possibile concentrarsi sulla salamoia valore all'azienda e spostarsi dall'attività che non sono una funzione aziendale principale.
 
-## Design choices
+![Modelli di servizio cloud](../media-draft/cloud-responsibility-model.png)
 
-In an ideal architecture, we would build the most secure, high performance, highly available, and efficient environment possible. However, as with everything, there are trade-offs. To build an environment with the highest level of all these pillars, there is a cost. That cost may be in actual money, time to deliver, or operational agility. Every organization will have different priorities that will impact the design choices made in each pillar. As you design your architecture, you will need to determine what trade-offs are acceptable and which are not.
+## <a name="design-choices"></a>Scelte di progettazione
 
-When building an Azure architecture, there are many considerations to keep in mind. You want your architecture to be secure, scalable, available, and recoverable. To make that possible, you'll have to make decisions based on cost, organizational priorities, and risk.
+In un'architettura ideale si crea l'ambiente più sicuro, con le prestazioni e la disponibilità più elevate e più efficiente possibile. Come in qualsiasi altra situazione, esistono tuttavia vantaggi e svantaggi. La creazione di un ambiente con i livelli più elevati per tutti questi aspetti comporta dei costi a livello di denaro, tempo necessario per la distribuzione o flessibilità operativa. Ogni organizzazione avrà priorità diverse che influiranno sulle scelte di progettazione relative a ogni elemento fondamentale. Quando si progetta l'architettura, è necessario determinare quali compromessi siano accettabili e non quelli attendibili.
+
+Quando si crea un'architettura di Azure, è necessario tenere in considerazione alcuni aspetti. Si vuole ottenere un'architettura sicura, ridimensionabile, disponibile e ripristinabile. A che scopo, è possibile prendere decisioni basate su costi, le priorità dell'organizzazione e al rischio.

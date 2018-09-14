@@ -1,17 +1,18 @@
-Suppose you work at an online retailer. It's your responsibility to make sure your database is as secure as possible, to protect both your customer data and your business data. 
+Si supponga che si lavora presso un rivenditore online. È responsabilità dell'utente per assicurarsi che il database non è sicuro quanto possibile, per proteggere i dati dei clienti e i dati aziendali.
 
-Data security is critical when protecting your customer's privacy and your organization’s reputation. Businesses have closed due to financial damage or ruined reputations. Customers have had their data accessed unlawfully because of security breaches exposing their personal details, and again, possibly causing financial harm.  
+Sicurezza dei dati è essenziale quando si protegge la privacy del cliente e la reputazione dell'organizzazione. Le aziende hanno chiusa a causa di danni finanziari o reputazione danneggiate. I clienti hanno avuto i propri dati di accedere illegalmente a causa di violazioni della sicurezza che espone i relativi dettagli personali, e anche in questo caso, causando potenzialmente finanziari danneggiare.
 
-A data breach happens when a hacker has gained access to critical information held in a database. This data is private and often highly sensitive information that is confidential to customers. It could include information to allow identity theft, it may hold passwords that customers use on other sites, or it might include details on associations that could be used to blackmail your customers. 
+Una violazione dei dati si verifica quando un pirata informatico ha ottenuto l'accesso alle informazioni critiche contenute in un database. Questi dati sono private e spesso altamente sensibili informazioni che sono riservate per i clienti. Può includere le informazioni per consentire il furto di identità, che può contenere le password usate dai clienti in altri siti o può includere i dettagli sulle associazioni che può essere usate per blackmail i tuoi clienti.
 
-In many countries, there's legislation on security breaches that must be adhered to.
+In molti paesi, c'è normativa sulla violazioni della sicurezza che devono essere rispettati.
 
-It's critical to monitor your database for potential threats to make sure you protect your customers' data. We'll look at ways to secure your database by configuring the database firewall, defining authentication levels, encrypting communication, and other techniques for database security. 
+È fondamentale monitorare il database per le potenziali minacce per assicurarsi di proteggere i dati dei clienti. Esamineremo i modi per proteggere il database di configurazione del firewall di database, che definisce i livelli di autenticazione, la crittografia delle comunicazioni e altre tecniche per la sicurezza del database.
 
-## Learning objectives
-In this module, you will:
+## <a name="learning-objectives"></a>Obiettivi di apprendimento
 
-- Configure the firewall for the Azure SQL Server database
-- Control user access at the database and Active Directory levels
-- Manage encryption between the client and server
-- Add auditing and threat monitoring to the Azure SQL Server database
+In questo modulo verrà descritto come:
+
+- Configurare il firewall per il database del Server SQL di Azure
+- Controllare l'accesso utente a livello di database e Active Directory
+- Gestire la crittografia tra il client e server
+- Aggiungere il controllo e monitoraggio per il database del Server SQL di Azure per le minacce

@@ -1,26 +1,16 @@
 Istanze di contenitore di Azure semplifica la creazione e gestione di contenitori Docker in Azure, senza dover eseguire il provisioning di macchine virtuali o adottare un servizio di livello superiore. In questa unità viene creato un contenitore in Azure, che viene quindi esposto a Internet con un nome di dominio completo (FQDN).
 
-## <a name="create-a-resource-group"></a>Creare un gruppo di risorse
-
-Le istanze di contenitore di Azure, come tutte le risorse di Azure, devono essere inserite in un gruppo di risorse, una raccolta logica in cui le risorse di Azure vengono distribuite e gestite.
-
-Creare un gruppo di risorse con il comando `az group create`.
-
-L'esempio seguente crea un gruppo di risorse denominato *myResourceGroup* nella posizione *eastus*:
-
-```azurecli
-az group create --name myResourceGroup --location eastus
-```
-
 ## <a name="create-a-container"></a>Creare un contenitore
 
-È possibile creare un contenitore specificando un nome, un'immagine Docker e un gruppo di risorse di Azure al comando **az container create**. Facoltativamente, è possibile esporre il contenitore in Internet specificando un'etichetta del nome DNS. In questo esempio si distribuisce un contenitore che ospita un'app Web di piccole dimensioni.
+[!include[](../../../includes/azure-sandbox-activate.md)]
 
-Eseguire il comando seguente per avviare un'istanza di contenitore. Il valore *--dns-name-label* deve essere univoco all'interno dell'area di Azure in cui si crea l'istanza, quindi potrebbe essere necessario modificare questo valore per garantire l'univocità:
+È possibile creare un contenitore specificando un nome, un'immagine Docker e un gruppo di risorse di Azure nel comando **az container create**. Facoltativamente, è possibile esporre il contenitore in Internet specificando un'etichetta del nome DNS. In questo esempio si distribuisce un contenitore che ospita un'app Web di piccole dimensioni.
+
+Eseguire il comando seguente in Cloud Shell per avviare un'istanza di contenitore. Il valore *--dns-name-label* deve essere univoco all'interno dell'area di Azure in cui si crea l'istanza, quindi potrebbe essere necessario modificare questo valore per garantire l'univocità:
 
 ```azurecli
 az container create \
-    --resource-group myResourceGroup \
+    --resource-group <rgn>[Sandbox resource group name]</rgn> \
     --name mycontainer \
     --image microsoft/aci-helloworld \
     --ports 80 \
@@ -31,7 +21,7 @@ In pochi secondi, verrà visualizzata una risposta alla richiesta. Il contenitor
 
 ```azurecli
 az container show \
-    --resource-group myResourceGroup \
+    --resource-group <rgn>[Sandbox resource group name]</rgn> \
     --name mycontainer \
     --query "{FQDN:ipAddress.fqdn,ProvisioningState:provisioningState}" \
     --out table

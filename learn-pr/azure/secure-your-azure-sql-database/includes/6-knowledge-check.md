@@ -1,1 +1,1 @@
-Having a quiz on security can only go so far. Check and monitor your database for security issues routinely. Before taking this quiz, be sure to read the previous units to be as prepared as possible. Be vigilant.
+Con un quiz alla sicurezza può raggiungere fino a questo momento. Controllare e monitorare regolarmente il database per i problemi di sicurezza. Prima di eseguire il test, assicurarsi di leggere le unità precedenti modo che sia possibile preparate. Prestare attenzione.

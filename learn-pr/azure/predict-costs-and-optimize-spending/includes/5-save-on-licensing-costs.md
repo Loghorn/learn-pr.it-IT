@@ -2,7 +2,7 @@ La gestione delle licenze è un'altra area che può avere un impatto significati
 
 ## <a name="azure-hybrid-benefit-for-windows-server"></a>Vantaggio Azure Hybrid per Windows Server
 
-Molti clienti hanno investito in licenze per Windows Server e ora vorrebbero trasferire questo investimento in Azure. Il Vantaggio Azure Hybrid offre ai clienti il diritto di usare queste licenze per le macchine virtuali in Azure. Ciò significa che non sono previsti costi per la licenza di Windows Server e che verrà invece addebitata la tariffa Linux. 
+Molti clienti hanno investito in licenze per Windows Server e ora vorrebbero trasferire questo investimento in Azure. Il Vantaggio Azure Hybrid offre ai clienti il diritto di usare queste licenze per le macchine virtuali in Azure. Ciò significa che non sono previsti costi per la licenza di Windows Server e che verrà invece addebitata la tariffa Linux.
 
 Per essere idonee a questo vantaggio, le licenze di Windows devono avere la copertura di Software Assurance. Vengono considerate anche le indicazioni seguenti:
 
@@ -31,7 +31,7 @@ Per il database SQL di Azure il Vantaggio Azure Hybrid funziona nel modo seguent
 
 La figura seguente mostra le opzioni basate su vCore disponibili in ogni livello di servizio con licenze Vantaggio Azure Hybrid per SQL Server.
 
-![Illustrazione che mostra un esempio di come ottimizzare la licenza SQL Server esistente usando Vantaggio Azure Hybrid.](../media-drafts/5-sql-tradein-value.png)
+![Illustrazione che mostra un esempio di come ottimizzare la licenza SQL Server esistente usando Vantaggio Azure Hybrid.](../media/5-sql-tradein-value.png)
 
 Per SQL Server in Macchine virtuali di Azure, il Vantaggio Azure Hybrid funziona nel modo seguente:
 
@@ -49,7 +49,7 @@ Di seguito sono riportati i dettagli completi per ciascuna offerta. Un cliente c
 
 Se si dispone di un contratto Enterprise e si è già investito in licenze di SQL Server, che sono state liberate con lo spostamento delle risorse in Azure, è possibile eseguire il provisioning delle immagini **Bring Your Own License** (BYOL) da Azure Marketplace, ottenendo così la possibilità di usufruire di queste licenze inutilizzate e ridurre il costo della VM di Azure. Questa operazione è sempre stata possibile eseguendo il provisioning di una VM Windows e installando SQL Server manualmente, ma questo approccio semplifica il processo di creazione grazie all'uso delle immagini certificate Microsoft. Per trovare queste immagini, cercare **BYOL** nel Marketplace.
 
-![BYOL per SQL Server in Azure](../media-drafts/5-byol-sql-server.png)
+![Screenshot del portale di Azure che mostra le opzioni BYOL per SQL Server.](../media/5-byol-sql-server.png)
 
 > [!IMPORTANT]
 > Per usare queste immagini BYOL certificate è necessaria una sottoscrizione Contratto Enterprise.
@@ -58,12 +58,12 @@ Se si dispone di un contratto Enterprise e si è già investito in licenze di SQ
 
 A molte persone non è chiaro che SQL Server Developer Edition è un prodotto gratuito per **uso in ambienti non di produzione**. La Developer Edition include le stesse funzionalità dell'Enterprise Edition, ma per carichi di lavoro non di produzione. Consente pertanto di risparmiare in modo significativo sui costi di licenza.
 
-Cercare le immagini di SQL Server Developer Edition su Azure Marketplace e usarle a scopi di sviluppo o test, eliminando così i costi aggiuntivi per SQL Server. 
+Cercare le immagini di SQL Server Developer Edition su Azure Marketplace e usarle a scopi di sviluppo o test, eliminando così i costi aggiuntivi per SQL Server.
 
 > [!TIP]
 > Per informazioni complete sulle licenze, vedere la [Guida ai prezzi documentati](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-pricing-guidance).
 
-## <a name="use-constrained-instance-sizes-for-database-workloads"></a>Usare dimensioni di istanze vincolate per i carichi di lavoro del database 
+## <a name="use-constrained-instance-sizes-for-database-workloads"></a>Usare dimensioni di istanze vincolate per i carichi di lavoro del database
 
 Molti clienti hanno requisiti elevati per la memoria, l'archiviazione o la larghezza di banda di I/O, ma un numero ridotto di core di CPU. Basandosi su questa richiesta generalizzata, Microsoft ha reso disponibili le dimensioni di macchina virtuale più comuni (DS, ES, GS e MS) in nuove dimensioni che limitano il numero di vCPU a metà o a un quarto della dimensione di macchina virtuale originale, mantenendo al contempo le stesse quantità di memoria, spazio di archiviazione e larghezza di banda di I/O.
 
@@ -74,4 +74,4 @@ Molti clienti hanno requisiti elevati per la memoria, l'archiviazione o la largh
 | Standard_GS5      | 32 | 448    | 64 | 80.000 operazioni di I/O al secondo o 2 GB/s   |           |           |
 | Standard_GS5-8    | **8**  | 448    | 64 | 80.000 operazioni di I/O al secondo o 2 GB/s   | 75% in meno | 42% in meno |
 
-Poiché i prodotti di database, ad esempio SQL Server e Oracle, sono concessi in licenza per CPU, i clienti possono ridurre il costo della licenza fino al 75%, mantenendo comunque le prestazioni elevate necessarie per i database. 
+Poiché i prodotti di database, ad esempio SQL Server e Oracle, sono concessi in licenza per CPU, i clienti possono ridurre il costo della licenza fino al 75%, mantenendo comunque le prestazioni elevate necessarie per i database.

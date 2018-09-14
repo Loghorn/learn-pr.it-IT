@@ -1,27 +1,24 @@
 ### YamlMime:LearningPath
 uid: learn.deploy-a-website-with-azure-app-service
 metadata:
-  title: Deploy a website to Azure with Azure App Service
-  description: Web apps in Azure allow you to publish and manage your website easily without having to work with the underlying servers, storage, or network assets. Instead, you can focus on your website features and rely on the robust Azure platform to provide secure access to your site.
+  title: Distribuire un sito Web in Azure con il servizio app di Azure
+  description: 'Le app Web di Azure consentono di pubblicare e gestire il sito Web in modo facile, senza dover usare i server, gli archivi o le risorse di rete sottostanti. In alternativa, è possibile concentrarsi sulle funzionalità del sito Web e affidarsi alla solida piattaforma di Azure per garantire l''accesso sicuro al sito.'
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Deploy a website to Azure with Azure App Service
-summary: Web apps in Azure allow you to publish and manage your website easily without having to work with the underlying servers, storage, or network assets. Instead, you can focus on your website features and rely on the robust Azure platform to provide secure access to your site.
-prerequisites: None
-#TODO: Update icon URL with real image 
-iconUrl: http://via.placeholder.com/120x120
-levels: 
-- beginner
-roles: 
-- developer
-products: 
-- azure
+title: Distribuire un sito Web in Azure con il Servizio app di Azure
+summary: 'Le app Web di Azure consentono di pubblicare e gestire il sito Web in modo facile, senza dover usare i server, gli archivi o le risorse di rete sottostanti. In alternativa, è possibile concentrarsi sulle funzionalità del sito Web e affidarsi alla solida piattaforma di Azure per garantire l''accesso sicuro al sito.'
+prerequisites: Nessuno
+iconUrl: /achievements/deploy-a-website-with-azure-app-service.svg
+levels:
+  - beginner
+roles:
+  - developer
+products:
+  - azure
 modules:
-- learn.host-a-web-application-with-azure-web-apps
-#TODO: Add - learn.cd-pipeline-github-to-azure-web-app (POST-IGNITE)
-- learn.publish-azure-web-app-with-visual-studio
+  - learn.host-a-web-application-with-azure-app-service
+  - learn.publish-azure-web-app-with-visual-studio
 achievement: learn.deploy-a-website-with-azure-app-service.trophy

@@ -1,54 +1,40 @@
-Similar to input bindings, there are multiple types of output bindings.
+Analogamente ai binding di input, sono disponibili più tipi di associazioni di output.
 
-There are multiple types of output bindings, however not all types support both input and output. You'll use them anytime you want to send or store data. Here, we'll look at the types that support output bindings and when to use them.
+Sono disponibili più tipi di associazioni di output, tuttavia, non tutti i tipi supportano sia di input e output. Sarà possibile usarli ogni volta che si vuole inviare o archiviare i dati. In questo caso, esamineremo i tipi che supportano le associazioni di output e quando utilizzarle.
 
-## Output binding types
+## <a name="output-binding-types"></a>Tipi di associazione di output
 
-- **Blob Storage**
-   You can use the blob output binding to write blobs.
+- **Archivio BLOB** è possibile usare l'associazione per scrivere i BLOB di output di blob.
 
-- **Cosmos DB**
-    The Azure Cosmos DB output binding lets you write a new document to an Azure Cosmos DB database using the SQL API.
+- **COSMOS DB** associazione consente di scrivere un nuovo documento a un database di Azure Cosmos DB usando l'API SQL di Azure Cosmos DB output.
 
-- **Event Hubs**
-    Use the Event Hubs output binding to write events to an event stream. You must have send permission to an event hub to write events to it.
+- **Hub eventi** Usa l'associazione per scrivere eventi in un flusso di eventi di output di hub eventi. Per scrivervi eventi, è necessario disporre dell'autorizzazione Send verso un Hub eventi.
 
-- **HTTP**
-    Use the HTTP output binding to respond to the HTTP request sender. This binding requires an HTTP trigger and allows you to customize the response associated with the trigger's request.
+- **HTTP** Usa associazione per rispondere al mittente della richiesta HTTP di output HTTP. Questa associazione richiede un trigger HTTP e consente di personalizzare la risposta associata alla richiesta del trigger.
 
-- **Microsoft Graph**
-    Microsoft Graph output bindings allow you to write to files in OneDrive, modify Excel data, and send email through Outlook.
+- **Microsoft Graph** associazioni di output di Microsoft Graph consentono di scrivere i file in OneDrive, modificare i dati di Excel e invio di posta elettronica tramite Outlook.
 
-- **Mobile Apps**
-    The Mobile Apps output binding writes a new record to a Mobile Apps table.
+- **App per dispositivi mobili** scritture di associazione di output di App per dispositivi mobili un nuovo record in una tabella di App per dispositivi mobili.
 
-- **Notification Hubs**
-    You can send push notifications with Notification Hubs output bindings.
+- **Hub di notifica** è possibile inviare notifiche push con le associazioni di output di hub di notifica.
 
-- **Queue Storage**
-    Use the Azure Queue storage output binding to write messages to a queue.
+- **Archiviazione code** associazione per scrivere messaggi in una coda di output archiviazione code di Azure.
 
-- **Send Grid**
-    Send emails using SendGrid bindings.
+- **Inviare griglia** trasmissione messaggi di posta elettronica con le associazioni di SendGrid.
 
-- **Service Bus**
-    Use Azure Service Bus output binding to send queue or topic messages.
+- **Il Bus di servizio** associazione per inviare messaggi di coda o argomento di output per usare Azure Service Bus.
 
-- **Table storage**
-    Use an Azure Table storage output binding to write to a table in an Azure Storage account.
+- **Archivio tabelle** Usa associazione per scrivere in una tabella in un account di archiviazione di Azure di output per una risorsa di archiviazione tabelle di Azure.
 
-- **Twilio**
-    Send text messages with Twilio.
+- **Twilio** inviare messaggi di testo con Twilio.
 
-- **Webhooks**
-    Use the HTTP output binding to respond to the HTTP request sender. This binding requires an HTTP trigger and allows you to customize the response associated with the trigger's request.
+- **I Webhook** Usa associazione per rispondere al mittente della richiesta HTTP di output HTTP. Questa associazione richiede un trigger HTTP e consente di personalizzare la risposta associata alla richiesta del trigger.
 
+## <a name="how-to-create-an-output-binding"></a>Come creare un'associazione di output?
+Per definire un'associazione di input, è necessario definire il `direction` come `out`.
+I parametri per ogni tipo di associazione possono differire; sono quelle descritte nella [documentazione Microsoft](https://docs.microsoft.com/azure/azure-functions/functions-triggers-bindings#supported-bindings)
 
-## How to create an output binding?
-In order to define a binding an input, you must define the `direction` as `out`.
-The parameters for each type of binding may differ, those are well documented in [Microsoft's Documentation](https://docs.microsoft.com/azure/azure-functions/functions-triggers-bindings#supported-bindings)
+## <a name="combining-input-and-output-bindings"></a>Combinazione di input e le associazioni di output 
+è possibile applicare più associazioni a una singola funzione. In questo modo è possibile definire associazioni di input e di output.
 
-## Combining input and output bindings 
-it's possible to apply multiple bindings to a single function. This allows you to define both input and output bindings.
-
-And the input and output can even be the same binding type .....
+E di input e output possono anche essere dello stesso tipo di binding...

@@ -1,19 +1,19 @@
-Security is one of the most important aspects of any architecture. Ensuring that your business data and customer data are secure is critical. A public data breach can ruin a company's reputation as well as cause significant personal and financial harm. In this module, we’ll discuss key architectural security considerations as you design an environment on the cloud.
+La sicurezza è uno degli aspetti più importanti di qualsiasi architettura. È fondamentale garantire che i dati aziendali e quelli dei clienti siano protetti. Una violazione dei dati pubblica possibile danneggiare la reputazione dell'azienda, nonché causare danni significativi personali e finanziari. In questo modulo verranno illustrate considerazioni chiave sulla sicurezza dell'architettura nella progettazione di un ambiente nel cloud.
 
-As we learn about architecting our cloud solutions with security as a primary consideration, we'll see how one fictional Azure customer puts these principles to work:
+Spiega l'architettura di soluzioni cloud con livello di protezione di primaria importanza, si vedrà come una Azure fittizia cliente include tali principi di funzionamento:
 
-Lamna Healthcare is a national healthcare provider. Their IT organization has recently started to move the majority of their IT systems to Azure. They have a mixture of custom apps, open-source apps, and off-the-shelf applications, with varying architectures and technology platforms. We'll learn what they need to do to migrate to the cloud while keeping their systems and data secure.
+Lamna Healthcare è un operatore sanitario nazionale. Il reparto IT ha di recente iniziato a spostare la maggior parte dei sistemi IT in Azure. Hanno una combinazione di App personalizzate, App open source e disponibili sul mercato delle applicazioni, con diverse architetture e le piattaforme di tecnologia. Si apprenderà come ne servano eseguire la migrazione al cloud, mantenendo i propri sistemi e della protezione dei dati.
 
 > [!NOTE]
-> The concepts discussed in this module are not all-inclusive, but represent some of the important considerations when building a solution on the cloud. Microsoft publishes a broad set of patterns, guidelines, and examples on designing applications on Azure. It is highly recommended that you look through the content in the [Azure Architecture Center](https://docs.microsoft.com/azure/architecture/) as you start planning and designing your architecture.
+> I concetti illustrati in questo modulo non sono inclusivi, ma rappresentano alcune importanti considerazioni quando si compila una soluzione nel cloud. Microsoft pubblica un'ampia gamma di modelli, le linee guida ed esempi sulla progettazione di applicazioni in Azure. È consigliabile esaminare il contenuto di [centro architetture Azure](https://docs.microsoft.com/azure/architecture/) quando si inizia a pianificazione e progettazione dell'architettura.
 
-## Learning objectives
+## <a name="learning-objectives"></a>Obiettivi di apprendimento
 
-In this module, you will:
+In questo modulo si otterranno:
 
-- Learn how to take a defense in depth approach to securing your architecture.
-- Learn how to protect your identities.
-- Learn what technologies are available to protect your Azure infrastructure.
-- Learn how and where to use encryption to secure your data.
-- Learn how to protect your architecture at the network level.
-- Learn how to leverage application security best practices to integrate security into your application.
+- Come adottare un approccio di difesa avanzato per proteggere l'architettura.
+- Come proteggere le identità.
+- Quali sono le tecnologie disponibili per proteggere l'infrastruttura di Azure.
+- Come e dove usare la crittografia per proteggere i dati.
+- Come proteggere l'architettura a livello di rete.
+- Informazioni su come sfruttare le procedure consigliate per la sicurezza delle applicazioni per integrare la sicurezza in un'applicazione.

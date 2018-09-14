@@ -2,15 +2,15 @@ L'azienda ha deciso di gestire i dati video dalle fotocamere del traffico in Azu
 
 ## <a name="introduction-to-windows-virtual-machines-in-azure"></a>Introduzione alle macchine virtuali Windows in Azure
 
-Le macchine virtuali di Azure sono risorse di cloud computing scalabili su richiesta. Sono simili alle macchine virtuali ospitate in Windows Hyper-V. Includono processore, memoria, spazio di archiviazione e risorse di rete. È possibile avviare e arrestare le macchine virtuali in base alle esigenze, come con Hyper-V, e gestirle dal portale di Azure o con l'interfaccia della riga di comando di Azure. È anche possibile usare un client RDP (Remote Desktop Protocol) per connettersi direttamente all'interfaccia utente del desktop di Windows e usare la macchina virtuale come dopo aver eseguito l'accesso a un computer Windows locale.
+Le VM di Azure sono risorse di cloud computing scalabili su richiesta. Sono simili alle macchine virtuali ospitate in Windows Hyper-V. Includono processore, memoria, spazio di archiviazione e risorse di rete. È possibile avviare e arrestare le macchine virtuali in base alle esigenze, come con Hyper-V, e gestirle dal portale di Azure o con l'interfaccia della riga di comando di Azure. È anche possibile usare un client RDP (Remote Desktop Protocol) per connettersi direttamente all'interfaccia utente del desktop di Windows e usare la macchina virtuale come dopo aver eseguito l'accesso a un computer Windows locale.
 
 ## <a name="creating-an-azure-vm"></a>Creazione di una macchina virtuale di Azure
 
-Le macchine virtuali possono essere definite e distribuite in Azure in diversi modi: il portale di Azure, uno script (tramite l'interfaccia della riga di comando di Azure o Azure PowerShell) oppure tramite un modello di Azure Resource Manager. In tutti i casi, sarà necessario specificare varie informazioni, che verranno trattate a breve.
+Le macchine virtuali possono essere definite e distribuite in Azure in diversi modi: il portale di Azure, uno script (tramite l'interfaccia della riga di comando di Azure o Azure PowerShell) oppure tramite un modello di Azure Resource Manager. In tutti i casi, è necessario fornire tipi diversi di informazioni, come si vedrà a breve.
 
 Azure Marketplace offre anche immagini preconfigurate che includono sia un sistema operativo che gli strumenti software più diffusi installati per scenari specifici.
 
-![Macchine virtuali di Azure Marketplace](../media-drafts/2-marketplace-vm-choices.png)
+![Screenshot che mostra l'elenco di Azure Marketplace di macchine virtuali.](../media/2-marketplace-vm-choices.png)
 
 ## <a name="resources-used-in-a-windows-vm"></a>Risorse usate in una macchina virtuale Windows
 
@@ -21,7 +21,7 @@ Quando si crea una macchina virtuale Windows in Azure, è necessario creare anch
 - Dischi virtuali per contenere il sistema operativo, le applicazioni e i dati.
 - Rete virtuale (VNet) per connettere la macchina virtuale ad altri servizi di Azure o all'hardware in locale.
 - Un'interfaccia di rete per comunicare con la rete virtuale.
-- Un indirizzo IP facoltativo in modo da poter accedere alla macchina virtuale. Questo indirizzo è facoltativo.
+- Un indirizzo IP pubblico in modo da poter accedere alla macchina virtuale. Questo indirizzo è facoltativo.
 
 Come per altri servizi di Azure, sarà necessario un **gruppo di risorse** per contenere la macchina virtuale (e, facoltativamente, raggruppare queste risorse per l'amministrazione). Quando si crea una nuova macchina virtuale, è possibile usare un gruppo di risorse esistente o crearne uno nuovo.
 
@@ -49,13 +49,13 @@ Le dimensioni delle macchine virtuali vengono raggruppate in categorie, a partir
 | **Attività di elaborazione/Web per utilizzo generico** Test e sviluppo, database medio-piccoli e server Web con traffico da medio a ridotto. | B, Dsv3, Dv3, DSv2, Dv2 |
 | **Attività di calcolo intensive** Server Web con livelli medi di traffico, appliance di rete, processi batch e server applicazioni. | Fsv2, Fs, F |
 | **Utilizzo elevato della memoria** Server di database relazionali, cache medio-grandi e analisi in memoria. | Esv3, Ev3, M, GS, G, DSv2, Dv2 |
-| **Elaborazione ed archiviazione dati** Big Data, SQL e database NoSQL con esigenze elevate per velocità effettiva del disco e I/O. | Ls |
+| **Elaborazione ed archiviazione dati** database Big Data, SQL e NoSQL, che necessitano di velocità effettiva del disco elevata e i/o. | Ls |
 | **Livelli intensivi di rendering della grafica** o modifica di video, nonché training e inferenza dei modelli (ND) con deep learning. | NV, NC, NCv2, NCv3, ND |
 | **HPC (High-Performance Computing)** Se servono le macchine virtuali con le CPU più veloci e potenti, con interfacce di rete ad alta velocità effettiva facoltative. | H |
 
 ## <a name="choosing-storage-options"></a>Scelta delle opzioni di archiviazione
 
-Il set successivo di decisioni riguarda l'archiviazione. Prima di tutto è possibile scegliere la tecnologia dei dischi. Le opzioni includono un'unità disco rigido tradizionale basata su platter o un'unità SSD più moderna. Proprio come per l'hardware acquistato, l'archiviazione SSD ha un costo maggiore, ma offre prestazioni migliori.
+Il set successivo di decisioni si basa su archiviazione. Prima di tutto è possibile scegliere la tecnologia dei dischi. Le opzioni includono un'unità disco rigido tradizionale basata su platter o un'unità SSD più moderna. Proprio come per l'hardware acquistato, l'archiviazione SSD ha un costo maggiore, ma offre prestazioni migliori.
 
 > [!TIP]
 > Sono disponibili due livelli di archiviazione su unità SSD: Standard e Premium. Per carichi di lavoro normali, ma se si vogliono prestazioni migliori, scegliere dischi SSD Standard. Scegliere dischi SSD Premium per carichi di lavoro con I/O intensivo oppure sistemi strategici che devono elaborare i dati molto rapidamente.
@@ -80,7 +80,7 @@ Per impostazione predefinita, per la macchina virtuale Windows verranno creati d
 > [!NOTE]
 > La caratteristica interessante è la possibilità di creare un'immagine di disco rigido virtuale da un disco reale. Ciò consente di eseguire facilmente la migrazione di informazioni _esistenti_ da un computer locale al cloud.
 
-### <a name="unmanaged-vs-managed-disks"></a>Dischi non gestiti e dischi gestiti
+### <a name="unmanaged-vs-managed-disks"></a>Dischi non gestiti Dischi gestiti
 
 La scelta finale per l'archiviazione consiste nel decidere se usare dischi **non gestiti** oppure **gestiti**.
 

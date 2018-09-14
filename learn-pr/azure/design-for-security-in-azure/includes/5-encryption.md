@@ -1,89 +1,89 @@
-Data is an organization’s most valuable and irreplaceable asset, and encryption serves as the last and strongest line of defense in a layered security strategy. Being a healthcare provider, Lamna Healthcare stores large amounts of sensitive data. They recently experienced a breach that exposed the unencrypted sensitive data of patients, and are now fully aware that they have gaps in their data protection capabilities. They want to understand how they could have better used encryption to protect themselves and their patients from this type of incident. Here, we'll take a look at what encryption is, how to approach the encryption of data, and what encryption capabilities are available on Azure.
+I dati sono le risorse più preziose e insostituibili di un’organizzazione e la crittografia viene utilizzata come la più avanzata e recente linea di difesa in una strategia di sicurezza su più livelli. In quanto provider di servizi sanitari, Lamna Healthcare archivia grandi quantità di dati sensibili. Di recente si è verificata una violazione che ha esposto i dati sensibili non crittografati dei pazienti e ora Lamna Healthcare è pienamente consapevole di avere delle lacune nella protezione dei dati. Lamna Healthcare desidera capire come avrebbe potuto utilizzare la crittografia in modo migliore per proteggere se stessi e i pazienti da questo tipo di evento imprevisto. In questa sezione, vedremo cos’è la crittografia, come implementare la crittografia dei dati e quali funzionalità di crittografia sono disponibili in Azure.
 
-## What is encryption?
+## <a name="what-is-encryption"></a>Che cos'è la crittografia?
 
-Encryption is the process of making data unreadable and unusable. To use or read the encrypted data, it must be *decrypted*, which requires the use of a secret key. There are two top-level types of encryption: **Symmetric** and **Asymmetric**.
+La crittografia è il processo che rende illeggibili e inutilizzabili i dati. Per usare o leggere i dati crittografati, devono essere *decrittografati*. Questo processo richiede l'uso di una chiave privata. Esistono due tipi di primo livello di crittografia: **Symmetric** e **asimmetrica**.
 
-Symmetric encryption uses the same key to encrypt and decrypt the data. Consider a desktop password manager application. You enter your passwords and they are encrypted with your own personal key (your key is often derived from your master password). When the data needs to be retrieved, the same key is used and the data is decrypted.
+La crittografia simmetrica utilizza la stessa chiave per crittografare e decrittografare i dati. Si consideri un'applicazione desktop di gestione delle password. Si immettono le password e vengono crittografate con la propria chiave privata (la chiave spesso deriva dalla password principale). Quando i dati devono essere recuperati, viene usata la stessa chiave e i dati vengono decrittografati.
 
-Asymmetric encryption uses a public key and private key pair. Either key can encrypt but cannot decrypt it's own encrypted data. To decrypt, you need the paired key. Asymmetric encryption is used for things like TLS (used in https), and data signing.
+La crittografia asimmetrica usa una chiave pubblica e una coppia di chiavi private. Entrambe le chiavi possono crittografare, ma non possono decrittografare i propri dati crittografati. Per decrittografare, è necessaria la chiave associata. La crittografia asimmetrica viene usata per operazioni come TLS (usato in https) e la firma dei dati.
 
-Both symmetric and asymmetric encryption play a role in properly securing your data. 
+Le crittografie simmetriche e asimmetriche rivestono un ruolo fondamentale per la corretta protezione dei dati. 
 
-Encryption is typically approached in two ways: encryption at rest and encryption in transit.
+In genere, la crittografia è eseguita in due modi: crittografia di dati inattivi e crittografia in transito.
 
-### Encryption at rest
+### <a name="encryption-at-rest"></a>Crittografia di dati inattivi
 
-Data at rest is the data that has been stored on a physical medium. This could be data stored on the disk of a server, data stored in a database, or data stored in a storage account. Regardless of the storage mechanism, encryption of data at rest ensures that the stored data is unreadable without the keys and secrets needed to decrypt it. If an attacker was to obtain a hard drive with encrypted data and did not have access to the encryption keys, the attacker would not compromise the data without great difficulty. In such a scenario, an attacker would have to attempt attacks against encrypted data, which are much more complex and resource consuming than accessing unencrypted data on a hard drive.
+I dati inattivi sono i dati che sono stati archiviati su un supporto fisico. Potrebbe trattarsi di dati archiviati sul disco di un server, dati archiviati in un database o dati archiviati in un account di archiviazione. Indipendentemente dal meccanismo di archiviazione, la crittografia dei dati inattivi assicura che i dati archiviati siano illeggibili senza le chiavi e segreti necessari per decrittografare i dati. Se un utente malintenzionato è stato per ottenere un disco rigido con i dati crittografati e non ha accesso alle chiavi di crittografia, l'utente malintenzionato sarebbe non compromettere i dati senza grande difficoltà. In uno scenario di questo tipo, sarebbe necessario tentare attacchi contro i dati crittografati, che sono molto più complessi e con un maggior consumo di risorse rispetto all'accesso ai dati non crittografati su un disco rigido.
 
-The actual data that is encrypted could vary in its content, usage, and importance to the organization. This could be financial information critical to the business, intellectual property that has been developed by the business, personal data that the business stores about customers or employees, and even the keys and secrets used for the encryption of the data itself.
+I dati effettivi che vengono crittografati possono variare nel contenuto, uso e importanza per l'organizzazione. Potrebbe trattarsi di informazioni finanziarie fondamentali per il business, proprietà intellettuali sviluppate dall’azienda, dati personali sui clienti o dipendenti archiviati dall’azienda e anche di chiavi e segreti usati per la crittografia dei dati stessi. .
 
-![Encryption at rest](../media-draft/encryption-at-rest.png)
+![Crittografia di dati inattivi](../media-draft/encryption-at-rest.png)
 
-### Encryption in transit
+### <a name="encryption-in-transit"></a>Crittografia in transito
 
-Data in transit is the data actively moving from one location to another, such as across the internet or through a private network. Secure transfer can be handled by encrypting the data prior to sending it over a network, or setting up a secure channel to transmit unencrypted data between two systems. Encrypting data in transit protects the data from outside observers and provides a mechanism to transmit data while limiting risk of exposure. 
+I dati in transito sono dati che vengono spostati attivamente da una posizione a un'altra, ad esempio attraverso la rete internet o tramite una rete privata. Il trasferimento sicuro può essere gestito attraverso la crittografia dei dati prima dell'invio in una rete o attraverso la configurazione di un canale sicuro per trasmettere i dati non crittografati tra due sistemi. La crittografia dei dati in transito consente di proteggere i dati da osservatori esterni e fornisce un meccanismo per trasmettere dati limitando il rischio di esposizione. 
 
-![Encryption in transit](../media-draft/encryption-in-transit.png)
+![Crittografia in transito](../media-draft/encryption-in-transit.png)
 
-## Identify and classify data
+## <a name="identify-and-classify-data"></a>Identificare e classificare i dati
 
-Let's revisit the problem Lamna Healthcare is attempting to solve. They have had previous incidents that exposed sensitive data, so there's a gap between what they are encrypting and what they should be encrypting. They need to start by identifying and classifying the types of data they are storing, and align this with the business and regulatory requirements surrounding the storage of data. It's beneficial to classify this data as it relates to the impact of exposure to the organization, its customers, or partners. An example classification could be as follows:
+Rivediamo il problema che Lamna Healthcare sta tentando di risolvere. Avevano avuto incidenti precedenti che avevano esposto dati sensibili, pertanto c'è una divario tra i dati che stanno crittografando e quelli che dovrebbero essere crittografati. Per iniziare, è necessario identificare e classificare i tipi di dati che archiviano e allinearli con i requisiti aziendali e i requisiti normativi riguardanti l'archiviazione dei dati. È utile classificare i dati in relazione all'impatto di esposizione dell'organizzazione, dei relativi clienti o partner. Ecco un esempio di classificazione:
 
-|Data classification|Explanation|
+|Classificazione dei dati|Spiegazione|
 |---|---|
-|Restricted|Data classified as restricted poses significant risk if exposed, altered, or deleted. Strong levels of protection are required for this data. |
-|Private| Data classified as private poses moderate risk if exposed, altered, or deleted. Reasonable levels of protection are required for this data. Data that is not classified as restricted or public will be classified as private.  |
-|Public| Data classified as public poses no risk if exposed, altered, or deleted. No protection is required for this data. |
+|Con restrizioni|I dati classificati con restrizioni pongono rischi significativi se esposti, modificati o eliminati. Per questi dati sono richiesti elevati livelli di protezione. |
+|Privati| I dati classificati come privati pongono rischi moderati se esposti, modificati o eliminati. Per questi dati sono richiesti livelli di protezione ragionevoli. I dati che non sono classificati con restrizioni o come pubblici saranno classificati come privati.  |
+|Pubblici| I dati classificati come pubblici non pongono rischi se esposti, modificati o eliminati. Per questi dati non è richiesta alcuna protezione. |
 
-By taking an inventory of the types of data being stored, they can get a better picture of where sensitive data may be stored and where existing encryption may or may not be happening.
+Grazie all'uso di un inventario dei tipi di dati archiviati, delineano un quadro generale delle posizioni in cui possono essere archiviati i dati sensibili e dove la crittografia dei dati esistente può essere applicata o meno.
 
-A thorough understanding of the regulatory and business requirements that apply to data the organization stores is also important. The regulatory requirements an organization must adhere to will often drive a large part of the data encryption requirements. For Lamna Healthcare, they are storing sensitive data that falls under the Health Insurance Portability and Accountability Act (HIPAA), which contains requirements on how to handle and store patient data. Other industries may fall under different regulatory requirements. A financial institution may store account information that falls within Payment Card Industry (PCI) standards. An organization doing business in the EU may fall under the General Data Protection Regulation (GDPR), which defines the handling of personal data in the EU. Business requirements may also dictate that any data that could put the organization at financial risk containing competitive information needs to be encrypted.
+Inoltre, è importante una conoscenza approfondita dei requisiti normativi e aziendali applicabili ai dati archiviati dell'organizzazione. I requisiti normativi che un'organizzazione deve rispettare spesso determinano una gran parte dei requisiti di crittografia dei dati. Lamna Healthcare, archivia dati sensibili che rientrano sotto l’Health Insurance Portability and Accountability Act (HIPAA), che contiene i requisiti sulla gestione e archiviazione dei dati dei pazienti. Altri settori possono essere soggetti a diversi requisiti normativi. Un istituto finanziario può archiviare le informazioni sul conto che rientrano negli standard Payment Card Industry (PCI). Un'organizzazione che intrattiene attività commerciali nell'Unione europea può essere soggetta al Regolamento generale sulla protezione dei dati (GDPR), che definisce la gestione dei dati personali nell'Unione europea. I requisiti aziendali possono anche richiedere che tutti i dati che contengono informazioni concorrenziali, che possono esporre l'organizzazione a rischi finanziari, siano crittografati.
 
-Once you have the data classified and your requirements defined, you can then take advantage of various tools and technologies to implement and enforce encryption in your architecture.
+Dopo aver classificato i dati e definito i requisiti, è possibile sfruttare diversi strumenti e tecnologie per implementare e applicare la crittografia nell'architettura.
 
-## Encryption on Azure
+## <a name="encryption-on-azure"></a>Crittografia in Azure
 
-Let's take a look at some ways that Azure enables you to encrypt data across services.
+Esaminiamo ora alcuni modi in cui Azure ti permette di crittografare i dati tra servizi.
 
-### Encrypting raw storage
+### <a name="encrypting-raw-storage"></a>Crittografia di archiviazione non elaborata
 
-Azure Storage Service Encryption for data at rest helps you protect your data to meet your organizational security and compliance commitments. With this feature, the Azure storage platform automatically encrypts your data before persisting it to Azure Managed Disks, Azure Blob storage, Azure Files, or Azure Queue storage, and decrypts the data before retrieval. The handling of encryption, encryption at rest, decryption, and key management in Storage Service Encryption is transparent to applications using the services.
+La crittografia del servizio di archiviazione di Azure per dati inattivi consente di proteggere i dati in modo da soddisfare i criteri di sicurezza e conformità dell'organizzazione. Con questa funzionalità, la piattaforma di archiviazione di Azure è in grado di crittografare automaticamente i dati prima del salvataggio permanente in Azure Managed Disks, Archiviazione BLOB di Azure, File di Azure o Archiviazione code di Azure e di decrittografarli prima del recupero. La gestione della crittografia, la crittografia di dati inattivi, la decrittografia e la gestione delle chiavi in crittografia del servizio di archiviazione sono attività completamente trasparenti per le applicazioni che usano il servizio.
 
-For Lamna Healthcare, this means that whenever they are using services that support storage service encryption, their data is encrypted on the physical medium of storage. In the highly unlikely event that access to the physical disk is obtained, data will be unreadable since it has been encrypted as written to the physical disk.
+Per Lamna Healthcare, ciò significa che ogni volta che usa servizi che supportano la crittografia del servizio di archiviazione, i dati sono crittografati nel supporto fisico di archiviazione. Nell'evento estremamente improbabile che l'accesso al disco sia violato, i dati saranno illeggibili poiché sono stati crittografati al momento della scrittura sul disco fisico.
 
-### Encrypting virtual machines
+### <a name="encrypting-virtual-machines"></a>Crittografia delle macchine virtuali
 
-Storage Service encryption provides low-level encryption protection for data written to physical disk, but how do you protect the virtual hard disks (VHD) of virtual machines? If a malicious attacker gained access to your Azure subscription and exfiltrated the VHDs of your virtual machines, how would you ensure they would be unable to access data stored on the VHD?
+La crittografia del servizio di archiviazione fornisce una protezione di crittografia di basso livello per i dati scritti sul disco fisico, ma come è possibile proteggere i dischi rigidi virtuali (VHD) delle macchine virtuali? Se un utente malintenzionato riesca ad accedere alla sottoscrizione di Azure ed exfiltrated i dischi rigidi virtuali delle macchine virtuali, come si garantirà non sarebbe in grado di accedere ai dati archiviati sul disco rigido virtuale?
 
-Azure Disk Encryption (ADE) is a capability that helps you encrypt your Windows and Linux IaaS virtual machine disks. ADE leverages the industry standard BitLocker feature of Windows and the DM-Crypt feature of Linux to provide volume encryption for the OS and data disks. The solution is integrated with Azure Key Vault to help you control and manage the disk-encryption keys and secrets (and you can use Managed Service Identities for accessing key vault).
+Crittografia dischi di Azure (ADE) è una funzionalità che consente di crittografare i dischi di macchine virtuali IaaS Windows e Linux. Crittografia dischi di Azure applica la funzionalità standard di settore BitLocker di Windows e la funzionalità DM-Crypt di Linux per offrire la crittografia del volume per i dischi dati e del sistema operativo. La soluzione è integrata con Azure Key Vault per consentire di controllare e gestire le chiavi di crittografia dei dischi e i segreti (ed è possibile usare identità del servizio gestite per accedere all’insieme di credenziali delle chiavi).
 
- Lamna Healthcare can apply ADE to their virtual machines to be sure any data stored on VHDs is secured to their organizational and compliance requirements. Because boot disks are also encrypted, they can control and audit usage.
+ Lamna Healthcare può applicare ADE alle macchine virtuali per avere la sicurezza che tutti i dati archiviati nei dischi rigidi virtuali siano protetti secondo i requisiti dell'organizzazione e normativi. Perché vengono anche crittografati i dischi di avvio, è possibile controllare e controllare l'utilizzo.
 
-### Encrypting databases
+### <a name="encrypting-databases"></a>Crittografia dei database
 
-Lamna Healthcare has several databases deployed that store data that needs additional protection. They've moved many databases to Azure SQL Database and want to ensure that their data is encrypted within their database. If the data files, log files, or backup files were stolen, they want to ensure they are unreadable without access to the encryption keys.
+Lamna Healthcare dispone di numerosi database distribuiti che archiviano i dati che necessitano di protezione aggiuntiva. Ha spostato molti database al database SQL di Azure e desidera assicurarsi che i dati siano crittografati nel rispettivo database. Se il file di dati, i file di log o file di backup sono stati rubati, vuole assicurarsi che siano leggibili senza disporre dell'accesso alle chiavi di crittografia.
 
-Transparent data encryption (TDE) helps protect Azure SQL Database and Azure Data Warehouse against the threat of malicious activity. It performs real-time encryption and decryption of the database, associated backups, and transaction log files at rest without requiring changes to the application. By default, TDE is enabled for all newly deployed Azure SQL Databases.
+La funzionalità Transparent Data Encryption (TDE) consente di proteggere il database SQL di Azure e Azure Data Warehouse dalla minaccia di attività dannose. Esegue in tempo reale la crittografia e la decrittografia del database, dei backup associati e dei file di log delle transazioni inattivi, senza richiedere modifiche dell'applicazione. Per impostazione predefinita, Transparent Data Encryption è abilitata per tutti i database SQL di Azure appena distribuiti.
 
-TDE encrypts the storage of an entire database by using a symmetric key called the database encryption key. By default Azure provides a unique encryption key per logical SQL Server and handles all the details. Bring-your-own-key is also supported with keys stored in Azure Key Vault.
+TDE esegue la crittografia dell'archiviazione di un intero database usando una chiave simmetrica detta "chiave di crittografia del database". Per impostazione predefinita, Azure fornisce una chiave di crittografia univoca per ogni SQL Server logico e gestisce tutti i dettagli. Bring-your-own-key è supportato anche usando chiavi archiviate in Azure Key Vault.
 
-Since TDE is enabled by default, Lamna Healthcare can be confident they have the proper protections in place for data stored in their databases.
+Poiché TDE è abilitata per impostazione predefinita, Lamna Healthcare può essere certa di avere la protezione appropriata per i dati archiviati nei database.
 
-### Encrypting secrets
+### <a name="encrypting-secrets"></a>Crittografia dei segreti
 
-We've seen that the encryption services all use keys to encrypt and decrypt data, so how do we ensure that the keys themselves are secure? Lamna Healthcare may also have passwords, connection strings, or other sensitive pieces of information that they need to securely store.
+Si è osservato che i servizi di crittografia che tutte utilizzano le chiavi per crittografare e decrittografare i dati, così come è assicurarsi che le chiavi siano sicure? Lamna Healthcare potrebbe avere anche password, stringhe di connessione o altri informazioni sensibili da archiviare in modo sicuro.
 
-Azure Key Vault is a cloud service that works as a secure secrets store. Key Vault allows you to create multiple secure containers, called vaults. These vaults are backed by hardware security modules (HSMs). Vaults help reduce the chances of accidental loss of security information by centralizing the storage of application secrets. Key Vaults also control and log the access to anything stored in them. Azure Key Vault can handle requesting and renewing Transport Layer Security (TLS) certificates, providing the features required for a robust certificate lifecycle management solution. Key Vault is designed to support any type of secret. These secrets could be passwords, database credentials, API keys and, certificates.
+Azure Key Vault è un servizio cloud che funziona come archivio protetto dei segreti. Key Vault consente di creare più contenitori sicuri denominati insiemi di credenziali. Questi insiemi di credenziali sono supportati da moduli di protezione hardware. Gli insiemi di credenziali consentono di ridurre le probabilità di perdita accidentale di informazioni di sicurezza centralizzando l'archiviazione dei segreti delle applicazioni. Gli insiemi di credenziali delle chiavi controllano e registrano anche l'accesso a tutti gli elementi archiviati al loro interno. Azure Key Vault può gestire la richiesta e il rinnovo dei certificati TLS (Transport Layer Security), offrendo le funzionalità necessarie per una soluzione affidabile di gestione del ciclo di vita dei certificati. Key Vault è progettato per supportare qualsiasi tipo di segreto. Questi segreti potrebbero essere password, credenziali del database, chiavi API e certificati.
 
-Because Azure AD identities can be granted access to use Azure Key Vault secrets, applications with MSI enabled can automatically and seamlessly acquire the secrets they need.
+Poiché è possibile concedere alle identità di Azure AD l’accesso per usare i segreti di Azure Key Vault, le applicazioni con identità del servizio gestito abilitata possono acquisire automaticamente e facilmente i segreti necessari.
 
-Lamna Healthcare can use Key Vault for the storage of all their sensitive application information, including the TLS certificates they use to secure communication between systems.
+Lamna Healthcare può usare Key Vault per l'archiviazione di tutte le informazioni sensibili dell'applicazione, inclusi i certificati TLS usati per proteggere la comunicazione tra i sistemi.
 
-## Encryption at Lamna Healthcare
+## <a name="encryption-at-lamna-healthcare"></a>Crittografia in Lamna Healthcare
 
-Lamna Healthcare has gone through the identification and classification process for all the data they are storing. They've aligned these classifications with the regulatory and business requirements, and realized they have far more data they have to encrypt. They have encrypted all virtual machines that are storing sensitive data, and are encrypting all sensitive patient information they are storing on blob storage. TDE is enabled on all of their databases, so their relational databases meet their encryption requirements regardless of classification. They have also worked across the organization use Key Vault to store all certificates and credential information that applications may need for operation.
+Lamna Healthcare ha eseguito il processo di identificazione e classificazione per tutti i dati che archivia. Ha allineato queste classificazioni con i requisiti normativi e aziendali e ha realizzato di avere molti più dati da crittografare. Ha crittografato tutte le macchine virtuali che archiviano dati sensibili e sta eseguendo la crittografia di tutte le informazioni sensibili dei pazienti che vengono archiviati nell'archivio BLOB. Transparent Data Encryption è abilitato in tutti i database, in modo che i database relazionali soddisfano i requisiti di crittografia indipendentemente dalla classificazione. Inoltre, Lamna Healthcare ha lavorato sull'uso di Key Vault da parte dell’organizzazione per archiviare tutti i certificati e le informazioni sulle credenziali che potrebbero servire alle applicazioni per l'esecuzione.
 
-## Summary
+## <a name="summary"></a>Riepilogo
 
-Encryption is often the last layer of defense from attackers, and is an important piece of a layered approach to securing your architecture. Azure provides built in capabilities and services to encrypt and protect data from unintended exposure. Protection of customer data stored within Azure Services is of paramount importance to Microsoft and should be included in any architecture design. Foundational services such as Azure Storage, Azure Virtual Machines, Azure SQL Database, and Azure Key Vault can help secure your environment through encryption.
+La crittografia spesso è l'ultimo livello di difesa da utenti malintenzionati e rappresenta un importante approccio a più livelli per la protezione dell'architettura. Azure offre funzionalità e servizi integrati per crittografare e proteggere i dati dall'esposizione non intenzionale. La protezione dei dati dei clienti archiviati nei servizi di Azure è di importanza fondamentale per Microsoft e dovrebbe essere inclusa in ogni progetto di architettura. Servizi fondamentali come archiviazione di Azure, macchine virtuali di Azure, Database SQL di Azure e Azure Key Vault consentono di proteggere l'ambiente tramite la crittografia.

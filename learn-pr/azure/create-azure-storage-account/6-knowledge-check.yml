@@ -5,37 +5,36 @@ durationInMinutes: 3
 metadata:
   title: 'Verifica delle conoscenze: creare un account di archiviazione'
   description: Domande sulle proprietà e sulla creazione dell'account di archiviazione.
-  ms.openlocfilehash: ab689dd2ef9802ce036ec683909b291c3b342370
-  ms.sourcegitcommit: c07e11980180ae35cb3485548f81e16152d77781
-  ms.translationtype: HT
-  ms.contentlocale: it-IT
-  ms.lasthandoff: 09/02/2018
-  ms.locfileid: "43471845"
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
 quiz:
   title: 'Verifica delle conoscenze: creare un account di archiviazione'
   questions:
-  - content: "Si supponga di avere due file video archiviati come BLOB. Uno dei video è business critical e richiede un criterio di replica che crei più copie tra data center in aree geografiche diverse. L'altro video è non-critico e pertanto è sufficiente un criterio di replica locale. Vero o falso: per soddisfare questi vincoli, i due BLOB dovranno essere in account di archiviazione distinti."
-    choices:
-    - content: Vero
-      isCorrect: true
-      correctExplanation: Il criterio di replica è una caratteristica dell'account di archiviazione. Tutti i membri dell'account di archiviazione devono usare lo stesso criterio. Se sono necessari alcuni dati per usare la strategia di replica geografica e altri dati per usare la strategia di replica locale, saranno necessari due account di archiviazione.
-    - content: Falso
-      isCorrect: false
-  - content: "Il nome dell'account di archiviazione deve essere:"
-    choices:
-    - content: Univoco all'interno del gruppo di risorse che lo contiene.
-      isCorrect: false
-    - content: Univoco all'interno della sottoscrizione di Azure.
-      isCorrect: false
-    - content: Univoco a livello globale
-      isCorrect: true
-      correctExplanation: Il nome dell'account di archiviazione viene usato come parte dell'URI usato per l'accesso all'API, quindi deve essere univoco a livello globale.
-  - content: In un progetto tipico, quando vengono creati gli account di archiviazione?
-    choices:
-    - content: All'inizio, durante la configurazione del progetto.
-      isCorrect: true
-      correctExplanation: In genere, gli account di archiviazione sono stabili per la durata di un progetto. È pratica comune crearli all'inizio di un progetto.
-    - content: Dopo la distribuzione, quando il progetto è in esecuzione.
-      isCorrect: false
-    - content: Alla fine, durante la pulizia delle risorse.
-      isCorrect: false
+    - content: 'Si supponga di avere due file video archiviati come BLOB. Uno dei video è business critical e richiede un criterio di replica che crei più copie tra data center in aree geografiche diverse. L''altro video è non-critico e pertanto è sufficiente un criterio di replica locale. True o false: per rispettare questi vincoli, i due BLOB dovrà essere nell''account di archiviazione separati.'
+      choices:
+        - content: Vero
+          isCorrect: true
+          correctExplanation: 'Il criterio di replica è una caratteristica dell''account di archiviazione. Tutti i membri dell''account di archiviazione devono usare lo stesso criterio. Se sono necessari alcuni dati per usare la strategia di replica geografica e altri dati da utilizzare nella strategia di replica locale, è necessario due account di archiviazione.'
+        - content: Falso
+          isCorrect: false
+    - content: 'Il nome di un account di archiviazione deve essere:'
+      choices:
+        - content: Univoco all'interno del gruppo di risorse che lo contiene.
+          isCorrect: false
+        - content: Univoco all'interno della sottoscrizione di Azure.
+          isCorrect: false
+        - content: Univoco a livello globale.
+          isCorrect: true
+          correctExplanation: 'Il nome dell''account di archiviazione viene usato come parte dell''URI usato per l''accesso all''API, quindi deve essere univoco a livello globale.'
+    - content: 'In un progetto tipico, quando vengono creati gli account di archiviazione?'
+      choices:
+        - content: 'All''inizio, durante la configurazione di progetto.'
+          isCorrect: true
+          correctExplanation: 'In genere, gli account di archiviazione sono stabili per la durata di un progetto. È pratica comune crearli all''inizio di un progetto.'
+        - content: 'Dopo la distribuzione, quando il progetto è in esecuzione.'
+          isCorrect: false
+        - content: 'Al termine, durante la pulizia delle risorse.'
+          isCorrect: false

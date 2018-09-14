@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.design-for-efficiency-and-operations.3-use-monitoring-and-analytics-to-gain-operational-insights
-title: Use monitoring and analytics to gain operational insights
+title: Usare il monitoraggio e l'analisi per ottenere informazioni operative
 metadata:
-  title: Use monitoring and analytics to gain operational insights
-  description: In this unit, we'll discuss how to use monitoring and analytics to gain operational insights
+  title: Usare il monitoraggio e l'analisi per ottenere informazioni operative
+  description: In questa unità verrà illustrato come usare il monitoraggio e l'analisi per ottenere informazioni operative
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
@@ -14,33 +13,33 @@ durationInMinutes: 8
 content: |
   [!include[](includes/3-use-monitoring-and-analytics-to-gain-operational-insights.md)]
 quiz:
-  title: 'Knowledge check - Use monitoring and analytics to gain operational insights'
+  title: Verifica delle conoscenze - Usare il monitoraggio e l'analisi per ottenere informazioni operative
   questions:
-  - content: 'Which of the following would you use to troubleshoot run-time exceptions in your application?'
-    choices:
-    - content: 'Service Health'
-      isCorrect: false
-      incorrectExplanation: 'Azure Service Health will give you insight into the health of Azure services, but will not provide insight into your application.'
-    - content: 'Network Watcher'
-      isCorrect: false
-      incorrectExplanation: 'Azure Network Watcher will help you troubleshoot network performance issues, but will not provide insight into your application.'
-    - content: 'Activity Log'
-      isCorrect: false
-      incorrectExplanation: 'Azure Activity Log will log events that have been performed on your resources on the Azure platform, but will not provide insight into your application.'
-    - content: 'Application Insights'
-      isCorrect: true
-      correctExplanation: 'Application Insights will help you detect & diagnose issues and understand usage for your web apps and services, including run-time exceptions.'
-  - content: 'Which of the following services would you use to identify who deleted a virtual machine?'
-    choices:
-    - content: 'Service Health'
-      isCorrect: false
-      incorrectExplanation: 'Azure Service Health will give you insight into the health of Azure services, but will not provide insight into actions performed on your resources.'
-    - content: 'Network Watcher'
-      isCorrect: false
-      incorrectExplanation: 'Azure Network Watcher will help you troubleshoot network performance issues, but will not provide insight into actions performed on your resources.'
-    - content: 'Activity Log'
-      isCorrect: true
-      correctExplanation: 'Azure Activity Log will log events that have been performed on your resources on the Azure platform, including deletion of resources.'
-    - content: 'Application Insights'
-      isCorrect: false
-      incorrectExplanation: 'Application Insights will help you detect & diagnose issues and understand usage for your web apps and services, but will not provide insight into actions performed on your resources.'
+    - content: Quale dei servizi seguenti si deve usare per risolvere i problemi relativi alle eccezioni di runtime nell'applicazione?
+      choices:
+        - content: Integrità dei servizi
+          isCorrect: false
+          incorrectExplanation: 'Integrità dei servizi di Azure fornisce informazioni dettagliate sull''integrità dei servizi di Azure, ma non sull''applicazione.'
+        - content: Network Watcher
+          isCorrect: false
+          incorrectExplanation: 'Azure Network Watcher consente di risolvere i problemi relativi alle prestazioni di rete, ma non fornisce informazioni dettagliate sull''applicazione.'
+        - content: Log attività
+          isCorrect: false
+          incorrectExplanation: 'Log attività di Azure registra gli eventi che sono stati eseguiti sulle risorse nella piattaforma Azure, ma non fornisce informazioni dettagliate sull''applicazione.'
+        - content: Application Insights
+          isCorrect: true
+          correctExplanation: 'Application Insights consente di rilevare e diagnosticare problemi, nonché di comprendere l''utilizzo di servizi e app Web, incluse le eccezioni di runtime.'
+    - content: Quale dei seguenti servizi si deve usare per identificare che ha eliminato una macchina virtuale?
+      choices:
+        - content: Integrità dei servizi
+          isCorrect: false
+          incorrectExplanation: 'Integrità dei servizi di Azure fornisce informazioni dettagliate sull''integrità dei servizi di Azure, ma non sulle azioni eseguite sulle risorse.'
+        - content: Network Watcher
+          isCorrect: false
+          incorrectExplanation: 'Azure Network Watcher consente di risolvere i problemi relativi alle prestazioni di rete, ma non fornisce informazioni dettagliate sulle azioni eseguite sulle risorse.'
+        - content: Log attività
+          isCorrect: true
+          correctExplanation: 'Log attività di Azure registra gli eventi che sono stati eseguiti sulle risorse nella piattaforma Azure, inclusa l''eliminazione di risorse.'
+        - content: Application Insights
+          isCorrect: false
+          incorrectExplanation: 'Application Insights consente di rilevare e diagnosticare problemi, nonché di comprendere l''utilizzo di servizi e app Web, ma non fornisce informazioni dettagliate sulle azioni eseguite sulle risorse.'

@@ -1,5 +1,5 @@
-|Unit  | Triggers  |Input bindings  |Output bindings  |
+|Unità  | Trigger  |Associazioni di input  |Le associazioni di output  |
 |---------|---------|---------|---------|
-|[Explore input and output binding types](../2-explore-input-and-output-binding-types-portal-lesson.yml)     |   HTTP      |   HTTP      |   HTTP      |
-|[Read data with input bindings](../4-read-data-with-input-bindings-portal-lesson.yml)     |   HTTP      |   HTTP<br/>**Azure Cosmos DB**      |  HTTP       |
-|[Write data with output bindings](../6-write-data-with-output-bindings-portal-lesson.yml)     |   HTTP      |   HTTP<br/>Azure Cosmos DB       |   HTTP<br/>**Azure Cosmos DB<br/>Azure Queue Storage**      |
+|[Esplorare l'input e tipi di associazione di output](../2-explore-input-and-output-binding-types-portal-lesson.yml)     |   HTTP      |   HTTP      |   HTTP      |
+|[Leggere i dati con le associazioni di input](../4-read-data-with-input-bindings-portal-lesson.yml)     |   HTTP      |   HTTP<br/>**Azure Cosmos DB**      |  HTTP       |
+|[Scrivere dati con le associazioni di output](../6-write-data-with-output-bindings-portal-lesson.yml)     |   HTTP      |   HTTP<br/>Azure Cosmos DB       |   HTTP<br/>**Azure Cosmos DB<br/>archiviazione code di Azure**      |

@@ -1,27 +1,27 @@
-You've successfully created a CI/CD pipeline for your custom application using Azure DevOps projects. 
+È stata creata correttamente una pipeline CI/CD per l'applicazione personalizzata usando progetti DevOps di Azure. 
 
-## Clean up resources
+## <a name="clean-up-resources"></a>Pulire le risorse
 
-When you're done working with this CI/CD pipeline, you can delete all resources created during the tutorial.
+Dopo aver completato utilizzano questa pipeline CI/CD, è possibile eliminare tutte le risorse create durante l'esercitazione.
 
-1. From the Azure portal, browse to `Resource Groups` and click on `VstsResourceGroup-LearnCluster-xxxx` where xxx is random groups of letters and numbers  
-![LearnClusterRG](/media-draft/4-learnclusterrg.png)
+1. Dal portale di Azure, passare a `Resource Groups` e fare clic su `VstsResourceGroup-LearnCluster-xxxx` dove xxx rappresenta gruppi casuale di lettere e numeri  
+![LearnClusterRG](../media-drafts/4-learnclusterrg.png)
 
-2. Click on the DevOps project named `Learn`  
-![Learn Link](/media-draft/4-learnlink.png)
+2. Fare clic sul progetto DevOps denominato `Learn`  
+![Informazioni su collegamento](../media-drafts/4-learnlink.png)
 
-3. Click on `Delete`  
-![Delete](/media-draft/4-deleteproj.png)
+3. Fare clic su `Delete`.  
+![Eliminare](../media-drafts/4-deleteproj.png)
 
-4. Click on `Yes`  
-![Yes](/media-draft/4-yes.png)
+4. Fare clic su `Yes`.  
+![Sì](../media-drafts/4-yes.png)
 
-This will delete all resource created in Azure.
+Questa operazione eliminerà tutte le risorse create in Azure.
 
-## Summary
+## <a name="summary"></a>Riepilogo
 
-In this tutorial, you learned how to:
+In questa esercitazione si è appreso come:
 > [!div class="checklist"]
-> * Create an Azure DevOps project
-> * Replace the sample app in the Azure DevOps project with your own
-> * Customize the Buld and Release pipelines
+> * Creare un progetto DevOps di Azure
+> * Sostituire l'app di esempio nel progetto Azure DevOps con i propri
+> * Personalizzare le pipeline nella compilazione e rilascio

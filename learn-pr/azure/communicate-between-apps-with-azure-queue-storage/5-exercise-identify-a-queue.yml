@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.communicate-between-applications-with-azure-queue-storage.5-exercise-identify-a-queue
-title: Identify a queue - Part 2
+title: Identificare una coda - Parte 2
 metadata:
-  title: Identify a queue - Part 2
-  description: Exercise - Identify a queue
+  title: Identificare una coda - Parte 2
+  description: 'Esercizio: identificare una coda'
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial

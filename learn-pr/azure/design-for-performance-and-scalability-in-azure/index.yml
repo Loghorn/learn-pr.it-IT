@@ -1,36 +1,34 @@
 ### YamlMime:Module
 uid: learn.design-for-performance-and-scalability
 metadata:
-  title: Design for performance and scalability in Azure
-  description: Whether you're running a public facing application that has to handle massive amounts of traffic or an internal business API that handles critical data for internal systems, your users expect a system that performs well. Scaling your system to handle load, identifying network bottlenecks and optimizing your storage performance are important to ensure your users have the best experience. In this module we'll talk through how to make your application perform at its best.
+  title: Progettare per prestazioni e scalabilità in Azure
+  description: 'Se si esegue un''applicazione con connessione pubblica che deve gestire ingenti quantità di traffico o un''API aziendale interna che gestisce dati critici per i sistemi interni, gli utenti si aspettano un sistema con prestazioni adeguate. Il ridimensionamento del sistema per la gestione dei carichi, l''identificazione di colli di bottiglia e l''ottimizzazione delle prestazioni di archiviazione sono importanti per garantire la miglior esperienza possibile agli utenti. Questo modulo offre informazioni su come ottimizzare le prestazioni dell''applicazione.'
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Design for performance and scalability in your cloud infrastructure
-summary: Whether you're running a public facing application that has to handle massive amounts of traffic or an internal business API that handles critical data for internal systems, your users expect a system that performs well. Scaling your system to handle load, identifying network bottlenecks and optimizing your storage performance are important to ensure your users have the best experience. In this module we'll talk through how to make your application perform at its best.
-abstract:  | 
-  In this module, you will:
-  - Learn how scaling up and scaling out allows you to dynamically adjust capacity to your workload
-  - Learn how to optimize network performance
-  - Learn how to optimize storage and database performance
-prerequisites: None
-#TODO: Update icon URL with real image 
-iconUrl: http://via.placeholder.com/120x120
+title: Progettare per le prestazioni e la scalabilità nell'infrastruttura cloud
+summary: 'Se si esegue un''applicazione con connessione pubblica che deve gestire ingenti quantità di traffico o un''API aziendale interna che gestisce dati critici per i sistemi interni, gli utenti si aspettano un sistema con prestazioni adeguate. Il ridimensionamento del sistema per la gestione dei carichi, l''identificazione di colli di bottiglia e l''ottimizzazione delle prestazioni di archiviazione sono importanti per garantire la miglior esperienza possibile agli utenti. Questo modulo offre informazioni su come ottimizzare le prestazioni dell''applicazione.'
+abstract: |
+  In questo modulo si otterranno:
+  - Informazioni su come la scalabilità verticale e orizzontale consentono di regolare in modo dinamico la capacità sul carico di lavoro
+  - Informazioni su come ottimizzare le prestazioni di rete
+  - Informazioni su come ottimizzare le prestazioni di archiviazione e database
+prerequisites: Nessuno
+iconUrl: /learn/achievements/design-for-performance-and-scalability-in-azure.svg
 levels:
-- intermediate
+  - intermediate
 roles:
-- solution-architect
+  - solution-architect
 products:
-- azure
-- azure-cdn
+  - azure
+  - azure-cdn
 achievement: learn.design-for-performance-and-scalability.badge
 units:
-- learn.design-for-performance-and-scalability.1-introduction
-- learn.design-for-performance-and-scalability.2-scaling-up-and-scaling-out
-- learn.design-for-performance-and-scalability.3-optimize-network-performance
-- learn.design-for-performance-and-scalability.4-optimize-storage-performance
-- learn.design-for-performance-and-scalability.5-identify-performance-bottlenecks-in-your-application
-- learn.design-for-performance-and-scalability.6-summary
+  - learn.design-for-performance-and-scalability.1-introduction
+  - learn.design-for-performance-and-scalability.2-scaling-up-and-scaling-out
+  - learn.design-for-performance-and-scalability.3-optimize-network-performance
+  - learn.design-for-performance-and-scalability.4-optimize-storage-performance
+  - learn.design-for-performance-and-scalability.5-identify-performance-bottlenecks-in-your-application
+  - learn.design-for-performance-and-scalability.6-summary

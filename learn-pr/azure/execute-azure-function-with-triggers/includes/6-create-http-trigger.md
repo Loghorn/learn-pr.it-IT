@@ -1,50 +1,49 @@
-In this unit, we're going to create an Azure function that accepts an HTTP request with a single string. The function returns a string back to the caller to represent success or failure.
+In questa unità verrà creata una funzione di Azure che accetta una richiesta HTTP con un'unica stringa. La funzione restituisce una stringa al chiamante per indicare l'esito positivo o negativo. Continueremo funzionante nella funzione nell'esercizio precedente.
 
-## Create an HTTP trigger
+## <a name="create-an-http-trigger"></a>Creare un trigger HTTP
 
-Let's continue using our existing Azure Functions application and add an HTTP trigger.
+È possibile continuare a usare l'applicazione Funzioni di Azure esistente e aggiungere un trigger HTTP.
 
-1. Sign into the [Azure portal](https://portal.azure.com?azure-portal=true).
+1. Accedere al [portale di Azure](https://portal.azure.com?azure-portal=true).
 
-1. Point to **Functions** and select the plus (+) icon.
+1. Selezionare **Funzioni**, quindi l'icona del segno più (+).
 
-1. Select **HTTP trigger**.
+1. Selezionare **Trigger HTTP**.
 
-1. Select **C#** as the language.
+1. Selezionare il linguaggio di programmazione **C#**.
 
-1. Leave the **Name** set to the default value.
+1. Lasciare **Nome** impostato sul valore predefinito.
 
-1. Set the **Authorization level** to **Anonymous**.
+1. Impostare il **livello di autorizzazione** su **Anonimo**.
 
-1. Select **Create**.
+1. Selezionare **Crea**.
 
-1. Take a quick look at the auto-generated code to get an idea about what's going on. The *req* parameter represents the incoming request and contains a *name* parameter. We check to see if *name* has a value. If it does, we return a greeting. Otherwise, we return an error message.
+1. Verificare rapidamente il codice generato automaticamente per capirne i contenuti. Il parametro *req* rappresenta la richiesta in ingresso e contiene un parametro *name*. È possibile controllare se *name* ha un valore. In caso affermativo, viene restituito un messaggio di saluto. In caso contrario, viene restituito un messaggio di errore.
 
-## Get your function URL
+## <a name="get-your-function-url"></a>Ottenere l'URL della funzione
 
-Now that we've created the HTTP trigger, let's get the function URL so we can begin to make a request.
+Dopo aver creato il trigger HTTP, è possibile ottenere l'URL della funzione così da poter iniziare a effettuare una richiesta.
 
-1. Select your HTTP trigger to open the code screen.
+1. Selezionare il trigger HTTP per aprire la schermata di codice.
 
-1. To the right of **Run**, select **Get function URL**.
+1. A destra di **Esegui** selezionare **Ottieni URL della funzione**.
 
-1. Select **Copy**.
+1. Selezionare **Copia**.
 
-1. Select **Run** to start your function.
+1. Selezionare **Esegui** per avviare la funzione.
 
-## Issue a GET request to your HTTP trigger
+## <a name="issue-a-get-request-to-your-http-trigger"></a>Inviare una richiesta GET al trigger HTTP
 
-We now have our function URL copied to our clipboard. Let's issue a GET request to see if we get a response.
+L'URL della funzione è stato copiato negli Appunti. È possibile inviare una richiesta GET per vedere se si ottiene una risposta.
 
-1. Open a new tab in your web browser.
+1. Aprire una nuova scheda nel Web browser.
 
-1. Paste the URL into the address bar.
+1. Incollare l'URL nella barra degli indirizzi.
 
-1. Add a query string parameter called *name* with your name for example `.../api/HttpTriggerCSharp1?name=Jesse`
+1. Aggiungere un parametro della stringa di query denominato *name* con il nome, ad esempio `.../api/HttpTriggerCSharp1?name=Jesse`
 
-1. Select ENTER to submit the request.
+1. Premere INVIO per inviare la richiesta.
 
-## Clean up
-<!---TODO: Update for sandbox?--->
+## <a name="clean-up"></a>Eseguire la pulizia
 
-To ensure that you aren't charged for this function, select **Pause** above the log window.
+Per assicurarsi che non verranno applicati costi per questa funzione, selezionare **Sospendi** sopra la finestra del log.

@@ -1,46 +1,46 @@
-Just like any other computer, virtual machines in Azure use disks as a place to store an operating system, applications, and data. These disks are called virtual hard disks (VHDs).
+Analogamente a qualsiasi altro computer, le macchine virtuali in Azure utilizzano i dischi come posizioni per archiviare un sistema operativo, le applicazioni e i dati. Questi dischi vengono chiamati i dischi rigidi virtuali (VHD).
 
-Suppose you have created a virtual machine (VM) in Azure, which will host the database of case histories that your law firm relies on. A well-designed disk configuration is fundamental to good performance and resilience for SQL Server.
+Supponiamo di che avere creato una macchina virtuale (VM) in Azure che ospiterà il database di cronologie di case da cui dipende l'ufficio legale. Una configurazione del disco ben progettata è fondamentale per buone prestazioni e resilienza per SQL Server.
 
-In this unit, you'll learn how to choose the right configuration values for your disks and how to attach those disks to a VM.
+In questa unità, si apprenderà come scegliere i valori di configurazione corretto per i dischi e come collegare i dischi a una macchina virtuale.
 
-## How disks are used by VMs
+## <a name="how-disks-are-used-by-vms"></a>Come i dischi vengono usati dalle macchine virtuali
 
-VMs use disks for three different purposes:
+Le macchine virtuali usano dischi per tre scopi diversi:
 
-- **Operating system storage**. Every VM includes one disk that stores the operating system. This drive is registered as a SATA drive and labeled as the C: drive in Windows and mounted at "/" in Unix-like operating systems. It has a maximum capacity of 2048 gigabytes (GB), and its content is taken from the VM image you used to create the VM.
-- **Temporary storage**. Every VM also includes a temporary VHD that is used for page and swap files. Data on this drive may be lost during a maintenance event or redeployment. The drive is labeled as D: on a Windows VM by default. Do not use this drive to store important data that you do not want to lose.
-- **Data storage**. A data disk is any other disk attached to a VM. You use data disks to store files, databases, and any other data that you need to persist across reboots. Some VM images include data disks by default. You can also add your own data disks up to the maximum number specified by the size of the VM. Each data disk is registered as a SCSI drive and has a max capacity of 4095 GB. You can choose drive letters or mount points for your data drives.
+- **Archiviazione del sistema operativo**. Tutte le macchine Virtuali includono un disco che archivia il sistema operativo. Questa unità viene registrata come unità SATA ed etichettata come unità c: in Windows e montata in "/" nei sistemi operativi simili a Unix. Ha una capacità massima di 2048 gigabyte (GB) e il relativo contenuto è tratto dall'immagine di macchina virtuale usata per creare la macchina virtuale.
+- **Archiviazione temporanea**. Tutte le macchine Virtuali includono un disco rigido virtuale temporaneo che viene usato per i file di pagina e lo scambio. Dati in questa unità possono essere persi durante un evento di manutenzione o la ridistribuzione. L'unità viene etichettato come unità d: in una macchina virtuale Windows per impostazione predefinita. Non utilizzare questo disco per archiviare dati importanti di cui non si desidera perdere.
+- **Archiviazione dei dati**. Un disco dati è qualsiasi altro disco collegato a una macchina virtuale. Si usano i dischi dati per archiviare i file, database e altri dati che è necessario rendere persistenti i riavvii. Alcune immagini di macchina virtuale includono dischi dati per impostazione predefinita. È anche possibile aggiungere i propri dischi di dati fino al numero massimo specificato per la dimensione della macchina virtuale. Ogni disco dati viene registrato come unità SCSI e ha una capacità massima di 4095 GB. È possibile scegliere le lettere di unità o punti di montaggio per unità dati.
 
-## Storing VHD files
+## <a name="storing-vhd-files"></a>L'archiviazione dei file di disco rigido virtuale
 
-In Azure, VHDs are stored in an Azure storage account as **page blobs**.
+In Azure, i dischi rigidi virtuali vengono archiviati in un account di archiviazione di Azure come **BLOB di pagine**.
 
-This table shows the various kinds of storage accounts and which objects can be used with each.
+Questa tabella mostra i diversi tipi di account di archiviazione e gli oggetti che possono essere usati con ogni tipo.
 
-|**Type of storage account**|**General-purpose standard**|**General-purpose premium**|**Blob storage, hot and cool access tiers**|
+|**Tipo di account di archiviazione**|**Standard per utilizzo generico**|**Utilizzo generico premium**|**Archiviazione BLOB, livelli ad accesso frequente e ad accesso sporadico**|
 |-----|-----|-----|-----|
-|**Services supported**| Azure Blob storage, Azure Files, Azure Queue storage | Blob storage | Blob storage|
-|**Types of blobs supported**|Block blobs, page blobs, and append blobs | Page blobs | Block blobs and append blobs|
+|**Servizi supportati**| Archiviazione code di Azure Blob di archiviazione, file di Azure, Azure | Archiviazione BLOB | Archiviazione BLOB|
+|**Tipi di BLOB supportati**|BLOB in blocchi, BLOB di pagine e BLOB di aggiunta | BLOB di pagine | BLOB in blocchi e BLOB di aggiunta|
 
-Because VHDs are stored as page blobs, and only standard storage supports page blobs, you need a standard storage account to store VHDs.
+Entrambi i BLOB di pagine supporto di archiviazione per utilizzo generico standard e premium. Scegliere un account di archiviazione standard se il costo è un problema primari. Archiviazione Premium comporta un costo in più, ma garantirà anche molto maggiore i/o operazioni al secondo (IOPS). Se le prestazioni dei dati sono un requisito per la macchina virtuale, preferisce archiviazione premium.
 
-## Attach data disks to VMs
+## <a name="attach-data-disks-to-vms"></a>Collegare dischi dati per le macchine virtuali
 
-You can add data disks to a virtual machine at any time by attaching them to the VM. Attaching a disk associates the VHD file with the VM. 
+È possibile aggiungere dischi dati a una macchina virtuale in qualsiasi momento da ricollegamento alla macchina virtuale. Per collegare un disco associa il file di disco rigido virtuale associato alla macchina virtuale. 
 
-The VHD can't be deleted from storage while it's attached.
+Il disco rigido virtuale non può essere eliminato dalla memoria mentre è collegato.
 
-### Attach an existing data disk to an Azure VM
+### <a name="attach-an-existing-data-disk-to-an-azure-vm"></a>Collegare un disco dati esistente a una VM di Azure
 
-You may already have a VHD that stores the data you want to use in your Azure VM. In our law firm scenario, for example,  perhaps you've already converted your physical disks to VHDs locally. In this case, you can use the PowerShell `Add-AzureRmVhd` cmdlet to upload it to the storage account. This cmdlet is optimized for transferring VHD files and may complete the upload faster than other methods. The transfer is completed by using multiple threads for best performance. Once the VHD has been uploaded, attach it to an existing VM as a data disk. This approach an excellent way to deploy data of all types to Azure VMs. The data is automatically present in the VM, and there's no need to partition or format the new disk.
+Si disponga già di un disco rigido virtuale che archivia i dati da usare nella macchina virtuale di Azure. In questo scenario ferma legge, ad esempio, magari aver già convertito i dischi fisici ai dischi rigidi virtuali in locale. In questo caso, è possibile usare il comando di PowerShell `Add-AzureRmVhd` cmdlet per caricarlo nell'account di archiviazione. Questo cmdlet è ottimizzato per il trasferimento dei file di disco rigido virtuale e può completare il caricamento più velocemente rispetto agli altri metodi. Il trasferimento viene completato utilizzando più thread per ottenere prestazioni ottimali. Dopo che è stato caricato il disco rigido virtuale, è necessario collegarlo a una VM esistente come disco dati. Questo approccio una modalità eccellente per distribuire i dati di tutti i tipi di macchine virtuali di Azure. I dati sono automaticamente presenti nella macchina virtuale e non è necessario per partizionare e formattare il nuovo disco.
 
-### Attach a new data disk to an Azure VM
+### <a name="attach-a-new-data-disk-to-an-azure-vm"></a>Collegare un nuovo disco dati a una VM di Azure
 
-You can use the Azure portal to add a new, empty data disk to a VM. 
+È possibile usare il portale di Azure per aggiungere un disco dati nuovo e vuoto a una macchina virtuale. 
 
-It will create a **.vhd** file as a page blob in the storage account that you specify, and it attaches that .vhd file as a data disk to the VM. 
+Questo processo verrà creato un **VHD** file come blob di pagine nell'account di archiviazione specificare e allegare il file con estensione vhd come disco dati alla macchina virtuale.
 
-Before you can use the new VHD to store data, you have to initialize, partition, and format the new disk. We'll practice these steps in the next exercise.
+Prima di poter utilizzare il nuovo disco rigido virtuale per archiviare i dati, è necessario inizializzare, partizioni e formattare il nuovo disco. È possibile mettere in pratica questi passaggi nell'esercizio successivo.
 
-In physical on-premises servers, you store data on physical hard disks. You store data in an Azure virtual machine (VM) on virtual hard disks (VHDs). These VHDs are stored as page blobs in Azure storage accounts. For example, when you migrate your law firm's database of case histories to Azure, you must create VHDs where the database files will be saved.
+In server fisici locali, i dati vengono archiviati su dischi rigidi fisici. Si archiviano dati in una macchina virtuale di Azure (VM) in dischi rigidi virtuali (VHD). Questi VHD sono archiviati come BLOB di pagine negli account di archiviazione di Azure. Ad esempio, quando si esegue la migrazione di database dell'azienda le forze di cronologie dei case in Azure, è necessario creare dischi rigidi virtuali in cui verranno salvati i file di database.

@@ -1,77 +1,76 @@
-If your virtual machine (VM) hosts a disk-intensive application, you should consider using premium storage for the virtual hard drives (VHDs).
+Se la macchina virtuale (VM) ospita un'applicazione a elevato utilizzo di dischi, è consigliabile usare archiviazione premium per dischi rigidi virtuali (VHD).
 
-For example, you decide to add a VHD to store outgoing mail on your SMTP server VM. To optimize disk performance, you decide on premium storage for outgoing mail. 
+Ad esempio, si decide di aggiungere un disco rigido virtuale per l'archiviazione della posta in uscita sul server SMTP della macchina virtuale. Per ottimizzare le prestazioni del disco, si decide in archiviazione premium per la posta in uscita.
 
-Let's add a premium SSD to the VM. 
+Aggiungere un'unità SSD premium alla macchina virtuale.
 
-## Sign in to Azure
-<!---TODO: Update for sandbox?--->
+## <a name="sign-in-to-azure"></a>Accedere ad Azure
 
-1. Sign in to the [Azure portal](https://portal.azure.com/?azure-portal=true).
+1. Accedere al [portale di Azure](https://portal.azure.com/?azure-portal=true).
 
-## Create a premium storage account
+## <a name="create-a-premium-storage-account"></a>Creare un account di Archiviazione Premium
 
-All premium storage VHDs must be stored in a premium storage account. Follow these steps to create a premium storage account.
+Archiviazione premium di tutti i dischi rigidi virtuali deve essere archiviati in un account di archiviazione premium. Seguire questi passaggi per creare un account di archiviazione premium.
 
-1. Select **Storage accounts** under **FAVORITES** in the left-hand menu of the portal.
+1. Selezionare **gli account di archiviazione** sotto **Preferiti** dal menu a sinistra del portale.
 
-1. Select **+ Add** at the top left of the **Storage accounts** screen.
+1. Selezionare **+ Aggiungi** in alto a sinistra il **gli account di archiviazione** dello schermo.
 
-1. In the **Create storage account** pane that opens, set the following properties.
+1. Nel **creare account di archiviazione** riquadro che viene aperta, impostare le proprietà seguenti.
 
-|Property  |Value  |Notes  |
+|Proprietà  |Valore  |Note  |
 |---------|---------|---------|
-|Name     |    *A unique name (see note)*     |   This name must be unique across all existing storage account names in Azure. It must be 3 to 24 characters long, and can contain only lowercase letters and numbers.      |
-|Account kind     |  **Storage (general-purpose v1)**       |         |
-|Location     |  *Select the same location as the VM you created earlier*       |         |
-|Replication     |   **Locally redundant storage (LRS)**      |  Select this value from the dropdown. If you recall, we're creating a premium storage account, and premium storage supports only LRS replication.       |
-|Performance     |  **Premium**       | Premium storage accounts are backed by solid-state drives and offer consistent, low-latency performance.        |
-|Resource group     |  *Select **Use existing** and then  **MailInfrastructure***      |  We want to keep all resources together under the same resource group.       |
+|Nome     |    *Un nome univoco (vedere la nota)*     |   Questo nome deve essere univoco tra tutti i nomi account di archiviazione esistenti in Azure. Deve essere compreso tra 3 e 24 caratteri e può contenere solo lettere minuscole e numeri.      |
+|Tipo di account     |  **Archiviazione (per utilizzo generico v1)**       |         |
+|Posizione     |  *Selezionare la stessa località della macchina virtuale creata in precedenza*       |         |
+|Replica     |   **Archiviazione con ridondanza locale (LRS)**      |  Selezionare questo valore dall'elenco a discesa. Si ricorderà, stiamo creando un account di archiviazione premium e archiviazione premium supporta solo la replica con ridondanza locale.       |
+|Prestazioni     |  **Premium**       | Account di archiviazione Premium sono supportati da unità SSD e offrono prestazioni coerenti e bassa latenza.        |
+|Gruppo di risorse     |  *Selezionare **Usa esistente** e quindi <rgn>[nome gruppo di risorse di tipo Sandbox]</rgn>*      |  Si vuole mantenere tutte le risorse sotto il gruppo di risorse stesso.       |
 
-When you've filled out this dialog, it should look like the following screenshot. 
+Quando è stato compilato questa finestra di dialogo, dovrebbe essere simile allo screenshot seguente. 
 
-!["Create storage account" dialog showing all properties set as instructed.](../media-draft/create-premium-sa.png)
+!["Creare account di archiviazione" finestra di dialogo che mostra tutte le proprietà impostate come indicato.](../media-draft/create-premium-sa.png)
 
-1. Select **Create** to start the storage account creation process. This process can take a few moments to complete. 
+1. Selezionare **Create** per avviare il processo di creazione di account di archiviazione. Questo processo può richiedere alcuni minuti per il completamento. 
 
-1. When you receive a notification that deployment of the new storage account finished successfully, select **Refresh** in the storage accounts list to display the premium storage account we created. Note the name of this account, as it will be used in the next step.
+1. Quando si riceve una notifica che la distribuzione del nuovo account di archiviazione è stata completata correttamente, selezionare **Aggiorna** nella risorsa di archiviazione elenco per visualizzare l'account di archiviazione premium è stato creato l'account. Prendere nota del nome di questo account, che verrà usato nel passaggio successivo.
 
-## Create VHD in the premium storage account
+## <a name="create-vhd-in-the-premium-storage-account"></a>Creare un disco rigido virtuale nell'account di archiviazione premium
 
-Now you can add a new VHD to the VM and specify the premium storage account as its location. Follow these steps:
+A questo punto è possibile aggiungere un nuovo disco rigido virtuale alla macchina virtuale e specificare l'account di archiviazione premium come posizione. Seguire questa procedura:
 
-1. In the navigation on the left, under **FAVORITES**, select **Virtual machines**.
+1. Nel riquadro di spostamento a sinistra, sotto **Preferiti**, selezionare **macchine virtuali**.
 
-1. In the list of VMs, select **MailSenderVM**.
+1. Nell'elenco delle macchine virtuali, selezionare **MailSenderVM**.
 
-1. Under **SETTINGS** of the **MailSenderVM** configuration menu on the left, select **Disks**.
+1. Sotto **le impostazioni** delle **MailSenderVM** dal menu di configurazione a sinistra, seleziona **dischi**.
 
-1. Under **Data disks**, select **Add data disk**.
+1. Sotto **dischi dati**, selezionare **Aggiungi disco dati**.
 
-1. In the **Attach unmanaged disks** pane, set the following properties.
+1. Nel **collegare i dischi non gestiti** riquadro, impostare le proprietà seguenti.
 
 
-|Property  |Value  |Notes  |
+|Proprietà  |Valore  |Note  |
 |---------|---------|---------|
-|Name     |   **MailSenderVMOutgoing**      |         |
-|Source type     |  **New (empty disk)**       |   Select this value from the dropdown.       |
-|Account type     |  **Premium SSD**       |  Select this value from the dropdown.        |
+|Nome     |   **MailSenderVMOutgoing**      |         |
+|Tipo di origine     |  **Nuovo (disco vuoto)**       |   Selezionare questo valore dall'elenco a discesa.       |
+|Tipo di account     |  **Unità SSD Premium**       |  Selezionare questo valore dall'elenco a discesa.        |
 
-1. To the left of the **Storage container** field, select **Browse**.
+1. A sinistra del **contenitore di archiviazione** campi, selezionare **Sfoglia**.
 
-1. In the list of storage accounts, find and select the premium storage account you created earlier in this unit. The type of the entry will be listed as **Premium-LRS**.
+1. Nell'elenco degli account di archiviazione, trovare e selezionare l'account di archiviazione premium creato in precedenza in questa unità. Il tipo della voce verrà elencato come **archiviazione con ridondanza locale Premium**.
 
-1. In the list of containers, select __+ Container__.
+1. Nell'elenco di contenitori, selezionare __+ contenitore__.
 
-1. In the **New container** pane, in the **Name** textbox, type **vhds** and then select **OK**.
+1. Nel **nuovo contenitore** riquadro, nella **nome** nella casella di testo, digitare **dischi rigidi virtuali** e quindi selezionare **OK**.
 
-1. In the list of containers, select **vhds** and then choose **Select**.
+1. Nell'elenco di contenitori, selezionare **VHD** e quindi scegliere **seleziona**.
 
-1. Back on the **Attach unmanaged disk** pane, select **OK**.
+1. Nella **collega disco non gestito** riquadro, selezionare **OK**.
 
-1. Back on the **MailSenderVM - Disks** pane, select **Save**. Azure adds the new premium storage disk to the VM.
+1. Nella **MailSenderVM - Disks** riquadro, selezionare **salvare**. Azure aggiunge il nuovo disco di archiviazione premium alla macchina virtuale.
 
-Our virtual machine has an operating system disk, a standard disk, and a premium SSD-based disk.
+Della macchina virtuale è un disco del sistema operativo, un disco standard e un disco basato su unità SSD premium.
 
 > [!NOTE]
-> The new disk must be initialized, partitioned, and formatted before it can store data. To avoid repetition, these steps have been omitted from this exercise. If you want to complete these tasks, complete the steps in the [Partition and format a data disk](../3-exercise-add-data-disks-to-azure-virtual-machines.yml##partition-and-format-a-data-disk) section of the preceding exercise.
+> Il nuovo disco deve essere inizializzato, partizionamento e formattazione prima che può archiviare i dati. Per evitare la ripetizione, questi passaggi sono stati omessi in questo esercizio. Se si desidera completare queste attività, completare i passaggi descritti nel [partizionare e formattare un disco dati](../3-exercise-add-data-disks-to-azure-virtual-machines.yml##partition-and-format-a-data-disk) sezione dell'esercizio precedente.

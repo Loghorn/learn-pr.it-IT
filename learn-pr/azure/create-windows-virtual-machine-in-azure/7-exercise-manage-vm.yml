@@ -9,12 +9,7 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 47e8b67ad041d8851c9f0c87c4986116db7dda37
-  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
-  ms.translationtype: HT
-  ms.contentlocale: it-IT
-  ms.lasthandoff: 09/10/2018
-  ms.locfileid: "44306720"
 durationInMinutes: 12
 azureSandbox: true
-content: '[!include[](includes/7-exercise-manage-vm.md)]'
+content: |
+  [!include[](includes/7-exercise-manage-vm.md)]

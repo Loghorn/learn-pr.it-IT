@@ -1,5 +1,5 @@
-Gli account di archiviazione consentono di creare un gruppo di regole di gestione dei dati e di applicarle tutte contemporaneamente a un gruppo di BLOB, file, code e tabelle di Azure. 
+Gli account di archiviazione consentono di creare un gruppo di regole di gestione dei dati e applicarle a tutti contemporaneamente a un gruppo di BLOB di Azure, file di Azure, le code di Azure e le tabelle di Azure. 
 
-L'uso degli account di archiviazione per ottenere questo risultato rende il processo meno noioso ed evita gli errori. Sarebbe infatti quasi impossibile applicare correttamente lo stesso esatto set di regole a migliaia di BLOB senza usare un account di archiviazione.
+Se si è provato a ottenere lo stesso risultato senza account di archiviazione, sarebbe noiosa e soggetta a errori. Ad esempio, quali sono le probabilità che è possibile applicare correttamente l'oggetto ruleset stesso esatto a migliaia di BLOB?
 
-Basta invece acquisire le regole nelle impostazioni relative a un account di archiviazione e queste regole vengono applicate automaticamente a ogni servizio dati nell'account.
+Al contrario, si acquisiscono le regole nelle impostazioni per un account di archiviazione e tali regole vengono applicate automaticamente a ogni servizio dati nell'account.

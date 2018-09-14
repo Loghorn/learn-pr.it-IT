@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.configure-the-network-for-your-virtual-machines.4-explore-azure-vpn-gateway
-title: Explore Azure VPN Gateway
+title: Scopri Gateway VPN di Azure
 metadata:
-  title: Explore Azure VPN Gateway
-  description: Explore Azure VPN Gateway
+  title: Scopri Gateway VPN di Azure
+  description: Scopri Gateway VPN di Azure
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial

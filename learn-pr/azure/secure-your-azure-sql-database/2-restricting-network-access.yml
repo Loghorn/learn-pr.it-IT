@@ -1,15 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.secure-your-azure-sql-database.2-restricting-network-access
 metadata:
-  title: Restricting network access
-  description: Learn how to restrict network access to your Azure SQL Server database.
+  title: Limitare l'accesso alla rete
+  description: Informazioni su come limitare l'accesso alla rete per il database del Server SQL di Azure.
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Restricting network access
+title: Limitare l'accesso alla rete
 durationInMinutes: 25
 content: |
   [!include[](includes/2-restricting-network-access.md)]

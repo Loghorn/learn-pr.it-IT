@@ -4,16 +4,11 @@ metadata:
   title: Configurare l'app in Visual Studio Code
   description: Configurare l'app in Visual Studio Code
   ms.date: 09/24/2018
-  author: markjulmar
-  ms.author: smmark
+  author: mimig1
+  ms.author: mimig
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: aeb3b265dc618556f17ab4e08fc8bcdee79f560d
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
-  ms.translationtype: HT
-  ms.contentlocale: it-IT
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44235312"
 title: Configurare l'app in Visual Studio Code
 durationInMinutes: 15
-content: '[!include[](includes/2-setup.md)]'
+content: |
+  [!include[](includes/2-setup.md)]

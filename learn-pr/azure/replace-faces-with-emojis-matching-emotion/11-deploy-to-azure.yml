@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.the-mojifier.11-deploy-to-azure
+metadata:
+  title: Distribuisci in Azure
+  description: Distribuire la funzione di Azure nel cloud e aggiornare la configurazione di slack per usare la nuova versione di produzione del codice.
+  author: lnyswonger
+  ms.date: 09/24/2018
+  ms.author: luken
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+title: Distribuisci in Azure
+durationInMinutes: 8
+content: |
+  [!include[](includes/11-deploy-to-azure.md)]

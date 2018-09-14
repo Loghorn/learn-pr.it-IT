@@ -1,19 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.prepare-azure-dev-environment.4-set-up-visual-studio
-title: Utilizzo di Visual Studio
+title: Con Visual Studio
 metadata:
-  title: Utilizzo di Visual Studio
-  description: Utilizzo di Visual Studio
+  title: Con Visual Studio
+  description: Con Visual Studio
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 4285e407fbb3f7609865129d808c6ebac4762f88
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
-  ms.translationtype: HT
-  ms.contentlocale: it-IT
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44241993"
 durationInMinutes: 5
-content: '[!include[](includes/4-set-up-visual-studio.md)]'
+content: |
+  [!include[](includes/4-set-up-visual-studio.md)]

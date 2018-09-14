@@ -1,43 +1,43 @@
-Securing your network from attacks and unauthorized access is an important part of any architecture. Here, we'll take a look at what network security looks like, how to integrate a layered approach into your architecture, and how Azure can help you provide network security for your environment.
+La protezione della rete da attacchi e da accessi non autorizzati è un elemento importante di qualsiasi architettura. Ora vedremo che cosa si intende per sicurezza di rete, come integrare un approccio a più livelli nell'architettura e come Azure consente di garantire la sicurezza di rete per l'ambiente.
 
-## A layered approach to network security
+## <a name="a-layered-approach-to-network-security"></a>Sicurezza di rete basata su un approccio a più livelli
 
-A common thread throughout this module has been taking a layered approach to security, and this approach is no different at the network layer. It's not enough to just focus on securing the network perimeter, or focusing on the network security between services inside a network. A layered approach provides multiple levels of protection, so that if an attacker gets through one layer, there's further protections in place to limit further attack.
+Il filo conduttore di questo modulo è l'impiego di un approccio alla sicurezza strutturato su più livelli e questo approccio vale anche per il livello di rete. Non è sufficiente concentrarsi solo sulla protezione del perimetro della rete oppure limitarsi a considerare la sicurezza tra servizi all'interno di una rete. Un approccio a più livelli significa predisporre vari livelli di protezione, in modo che, se un utente malintenzionato riesce ad accedere a un livello, sono presenti ulteriori protezioni per contenere l'attacco.
 
-Let's take a look at how Azure can provide the tools for a layered approach to securing your network footprint.
+Diamo un'occhiata agli strumenti che fornisce Azure per creare un approccio a più livelli in grado di proteggere la superficie della rete.
 
-### Internet protection
+### <a name="internet-protection"></a>Protezione di Internet
 
-If we start on the perimeter of the network, we're focused on limiting and eliminating attacks from the internet. A great first place to start is to assess the resources that are internet-facing, and allow only inbound and outbound communication where necessary. Identify all resources that are allowing inbound network traffic of any type, and ensure they are necessary and restricted to only the ports/protocols required. Azure Security Center is a great place to look for this information, because it will identify internet-facing resources that don't have network security groups associated with them, as well as resources that are not secured behind a firewall.
+Se si parte dal perimetro della rete, si lavora per limitare ed eliminare gli attacchi provenienti da Internet. Un ottimo primo punto di partenza consiste nel valutare le risorse che sono con connessione internet e consentano la comunicazione solo in ingresso e in uscita laddove necessario. Identificare tutte le risorse che consentono qualsiasi tipo di traffico di rete in ingresso, assicurarsi che siano necessarie e che utilizzino unicamente le porte e i protocolli richiesti. Centro sicurezza di Azure è un ottimo punto di cercare queste informazioni, perché vengono identificate con connessione internet alle risorse che non dispongono di gruppi di sicurezza di rete associati, nonché alle risorse non protette dietro un firewall.
 
-To provide inbound protection at the perimeter, you have a couple of choices:
+Per garantire la protezione in ingresso sul perimetro, sono disponibili due opzioni:
 
-* Azure Application Gateway is a load balancer that includes a web application firewall that provides protection from common, known vulnerabilities.
+* Gateway applicazione di Azure è un servizio di bilanciamento del carico che include un web application firewall che fornisca protezione dai più comuni, a causa di vulnerabilità note.
 
-* For non-HTTP services or advanced configurations, network virtual appliances (NVAs) can be used. NVAs are similar to hardware firewall appliances.
+* Per non HTTP servizi o configurazioni avanzate, è possono utilizzare Appliance virtuali di rete (Nva). Appliance virtuali di rete sono simili alle appliance firewall hardware.
 
 
-Any resource exposed to the internet is at risk of being attacked by a denial of service attack. These types of attacks attempt to overwhelm a network resource by sending so many requests that the resource becomes slow or unresponsive. To mitigate these attacks, Azure DDoS protection provides basic protection across all Azure services and enhanced protection for further customization for your resources. Azure DDoS protection blocks attack traffic and forwards the remaining traffic to its intended destination. Within a few minutes of attack detection, you are notified using Azure Monitor metrics.
+Tutte le risorse esposte a internet sono a rischio di attacchi da un attacco denial of service. Questi tipi di attacchi tentano di sovraccaricare una risorsa di rete inviando talmente tante richieste da rallentare o addirittura bloccare la risorsa. Per mitigare questi attacchi, protezione DDoS di Azure fornisce la protezione di base in tutti i servizi di Azure e una protezione avanzata per un'ulteriore personalizzazione per le risorse. Protezione DDoS di Azure blocca il traffico degli attacchi e inoltra il traffico rimanente verso la destinazione prevista. Entro pochi minuti dal rilevamento degli attacchi, l'utente riceve una notifica in base alle metriche di Monitoraggio di Azure.
 
 <!--TODO: replace with final media which was submitted for Design-for-security-in-azure -->
 ![DDoS](../media-COPIED-FROM-DESIGNFORSECURITY/ddos.png)
 
-### Virtual network security
+### <a name="virtual-network-security"></a>Sicurezza della rete virtuale
 
-Once inside a virtual network (VNet), it's important to limit communication between resources to only what is required.
+Una volta all'interno di una rete virtuale (VNet), è importante limitare la comunicazione tra le risorse solo a quella davvero necessaria.
 
-For communication between virtual machines, network security groups are a critical piece to restrict unnecessary communication. They provide a list of allowed and denied communication to and from network interfaces and subnets, and are fully customizable.
+Per la comunicazione tra macchine virtuali, i gruppi di sicurezza di rete sono una parte fondamentale per limitare la comunicazione non necessaria. Forniscono un elenco dei consentiti e negato la comunicazione da e verso le subnet e interfacce di rete e sono completamente personalizzabili.
 
-You can completely remove public internet access to your services by restricting access to service endpoints. With service endpoints, Azure service access can be limited to your virtual network.
+È possibile rimuovere completamente l'accesso a internet pubblico per i servizi limitando l'accesso agli endpoint del servizio. Con gli endpoint di servizio, accesso ai servizi di Azure può essere limitata alla rete virtuale.
 
-### Network integration
+### <a name="network-integration"></a>Integrazione di rete
 
-It's common to have existing network infrastructure that needs to be integrated to provide communication from on-premises networks or to provide improved communication between services in Azure. There are a few key ways to handle this integration and improve the security of your network.
+È comune disporre di infrastruttura di rete esistente che deve essere integrato per fornire la comunicazione da reti locali o per fornire maggiore comunicazione tra servizi in Azure. Esistono vari modi per gestire questa integrazione e migliorare la sicurezza della rete.
 
-Virtual private network (VPN) connections are a common way of establishing secure communication channels between networks. Connection between Azure Virtual Network and an on-premises VPN device is a great way to provide secure communication between your network and your VNet on Azure.
+Le connessioni di rete privata virtuale (VPN) sono un modo comune per stabilire canali di comunicazione sicura tra le reti. Connessione tra reti virtuali di Azure e il dispositivo VPN locale è un ottimo modo per garantire comunicazioni protette tra la rete e la rete virtuale in Azure.
 
-To provide a dedicated, private connection between your network and Azure, you can use Azure ExpressRoute. ExpressRoute lets you extend your on-premises networks into the Microsoft cloud over a private connection facilitated by a connectivity provider. With ExpressRoute, you can establish connections to Microsoft cloud services, such as Microsoft Azure, Office 365, and Dynamics 365. This improves the security of your on-premises communication by sending this traffic over the private circuit instead of over the internet. You don't need to allow access to these services for your end users over the internet, and youcan send this traffic through appliances for further traffic inspection.
+Per fornire una connessione privata dedicata tra la rete e Azure, è possibile usare Azure ExpressRoute. ExpressRoute consente di estendere le reti locali nel cloud Microsoft tramite una connessione privata fornita da un provider di connettività. Con ExpressRoute è possibile stabilire connessioni ai servizi cloud Microsoft, come Microsoft Azure, Office 365 e Dynamics 365. Ciò migliora la sicurezza delle comunicazioni locali perché questo tipo di traffico viene inviato tramite il circuito privato anziché tramite Internet. Non è necessario consentire l'accesso a questi servizi per gli utenti finali tramite internet, e possibile inviare il traffico attraverso Appliance per un'ulteriore controllo del traffico.
 
-## Summary
+## <a name="summary"></a>Riepilogo
 
-A layered approach to network security helps reduce your risk of exposure through network-based attacks. Azure provides several services and capabilities to secure your internet-facing resource, internal resources, and communication between on-premises networks. These features make it possible to create secure solutions on Azure.
+Un approccio alla sicurezza di rete strutturato su più livelli consente di ridurre il rischio di esposizione agli attacchi basati sulla rete. Azure offre diversi servizi e funzionalità per proteggere le risorse con connessione internet, risorse interne e la comunicazione tra le reti locali. Queste funzionalità rendono possibile la creazione di soluzioni sicure in Azure.

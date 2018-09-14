@@ -1,12 +1,12 @@
-Una funzione di Azure non funziona finché un elemento non indicherà di eseguirla. Ad esempio, è possibile creare una funzione di Azure per inviare un promemoria tramite SMS ai clienti prima di un appuntamento. Se non viene abilitata la funzione quando deve essere eseguita, i clienti non riceveranno mai un messaggio.
+Non esegue un'app per le funzioni di Azure fino a quando non si indica di eseguire attività di lavoro. Ad esempio, è possibile creare una funzione di Azure per inviare un promemoria tramite SMS ai clienti prima di un appuntamento. Se non viene abilitata la funzione quando deve essere eseguita, i clienti non riceveranno mai un messaggio.
 
 In questo caso, verranno esaminati i trigger di alto livello ed esplorati i tipi più comuni di trigger.
 
 ## <a name="what-is-a-trigger"></a>Che cos'è un trigger?
 
-Un trigger è un servizio che definisce il modo in cui viene richiamata una funzione di Azure. Ad esempio, se si desidera che una funzione venga eseguita ogni 10 minuti, è possibile usare un trigger timer.
+Un trigger è un oggetto che definisce come viene richiamata un'app per le funzioni di Azure. Ad esempio, se si desidera che una funzione venga eseguita ogni 10 minuti, è possibile usare un trigger timer.
 
-Una funzione deve avere esattamente un trigger associato a essa. Se si desidera eseguire una parte di logica in più condizioni, è necessario creare più funzioni.
+Una funzione deve avere esattamente un trigger associato a essa. Se si desidera eseguire una parte di logica in più condizioni, è necessario creare più funzioni che condividono th stesso codice della funzione di base.
 
 ## <a name="what-is-a-binding"></a>Che cos'è un'associazione?
 

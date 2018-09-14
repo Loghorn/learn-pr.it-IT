@@ -1,19 +1,20 @@
-If you want to understand what can go wrong with managing an application's configuration secrets, look no further than the story of Steve the senior developer.
+Se si desidera comprendere cosa può andare storto con la gestione dei segreti di configurazione di un'applicazione, cercare la storia di Steve lo sviluppatore senior.
 
-Steve had been in his job at a pet food delivery company for a few weeks. He was exploring the details of the company's web app &mdash; a .NET Core web application that used an Azure SQL database for storing order information and third-party APIs for credit card billing and mapping customer addresses &mdash; when he accidentally pasted the connection string for the orders database into a public forum.
+Steve aveva lavorato per alcune settimane presso un'azienda di distribuzione di alimenti per animali domestici. Stava esplorando i dettagli dell'app Web dell'azienda &mdash;, un'app Web .NET Core che usava un database Azure SQL per archiviare le informazioni sugli ordini e API di terze parti per la fatturazione con carta di credito e la mappatura degli indirizzi dei clienti &mdash; quando ha incollato accidentalmente la stringa di connessione per il database degli ordini in un forum pubblico.
 
-Days later, accounting noticed that the company was delivering a lot of pet food that nobody had paid for. Someone had used the connection string to access the database, reverse-engineered the schema, and placed orders without going through the website.
+Giorni dopo, la contabilità ha notato che l'azienda stava consegnando un sacco di cibo per animali domestici che nessuno aveva pagato. Qualcuno aveva usato la stringa di connessione per accedere al database, aveva decodificato lo schema ed effettuato gli ordini senza passare attraverso il sito Web.
 
-After realizing his mistake, Steve hurriedly changed the database password to lock out the attacker, breaking the website. He logged directly into the application server and changed the app configuration instead of redeploying, but the server was still showing failed requests.
+Dopo essersi reso conto del suo errore, Steve cambiò frettolosamente la password del database per bloccare l'aggressore, violando il sito Web. Effettuò l'accesso direttamente al server delle applicazioni e cambiò la configurazione delle app invece di distribuirle nuovamente, ma il server continuava a mostrare richieste non riuscite.
 
-Steve had forgotten that multiple instances of the app ran on different servers, and he had only changed the configuration for one. A full redeployment was needed, causing another 30 minutes of downtime.
+Steve aveva dimenticato che più istanze dell'app funzionavano su server diversi, ma ne aveva cambiato la configurazione solo per uno. Era necessaria una ridistribuzione completa, che ha causato altri 30 minuti di inattività.
 
-Leaking a database connection string, API key, or service password can be catastrophic. Stolen or deleted data, financial harm, application downtime, and irreparable damage to business assets and reputation are all potential results. Unfortunately, secret values often need to be deployed in multiple places simultaneously and changed at inopportune times. And you have to store them *somewhere*! Let's see how we can make all of this secure with Azure KeyVault.
+La perdita di una stringa di connessione al database, di una chiave API o di una password di servizio può essere catastrofica. Il furto o la cancellazione di dati, danni finanziari, tempi di inattività delle applicazioni e danni irreparabili ai beni aziendali e alla reputazione sono tutti potenziali risultati. Sfortunatamente, i valori segreti spesso devono essere implementati simultaneamente in più luoghi e modificati in momenti non opportuni. Ed è necessario archiviarli *in una posizione*! Vediamo come possiamo rendere tutto ciò sicuro con Azure KeyVault.
 
-## Learning objectives
+## <a name="learning-objectives"></a>Obiettivi di apprendimento
 
-  In this module, you will:
-    - Explore what types of information can be stored in Azure Key Vault.
-    - Create an Azure Key Vault and use it to store secret configuration values
-    - Enable secure access to the vault from an Azure App Service web app with managed identities for Azure resources
-    - Implement a web application that retrieves secrets from the vault
+In questo modulo verrà descritto come:
+
+- Esplorare i tipi di informazioni che possono essere archiviati in Azure Key Vault
+- Creare un Azure Key Vault e usarlo per archiviare i valori di configurazione segreto
+- Abilitare l'accesso sicuro all'insieme di credenziali da un'app web di servizio App di Azure con identità gestite per le risorse di Azure
+- Implementare un'applicazione web che consente di recuperare i segreti dall'insieme di credenziali

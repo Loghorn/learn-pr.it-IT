@@ -1,16 +1,16 @@
-You can configure virtual machine disk cache settings with any of the following tools:
+È possibile configurare le impostazioni della cache del disco di macchina virtuale con uno qualsiasi degli strumenti seguenti:
 
-- Azure portal
-- Resource Manager templates
-- Azure CLI
+- Portale di Azure
+- Modelli di Resource Manager
+- Interfaccia della riga di comando di Azure
 - Azure PowerShell
 
-In the next exercise, we're going to use the portal to create a VM and configure caching on its disks. Here's some information to keep in mind. 
+Nel prossimo esercizio, si userà il portale per creare una macchina virtuale e configurare caching sui relativi dischi. Ecco alcune informazioni da tenere presenti.
 
-When you provision a new VM using the Azure portal, you can't change the default caching configuration for the OS disk from read/write until the VM is deployed.
+Quando si effettua il provisioning di una nuova VM usando il portale di Azure, è possibile modificare il valore predefinito di memorizzazione nella cache di configurazione per il disco del sistema operativo da lettura/scrittura fino a quando non viene distribuita la macchina virtuale.
 
-When you add a data disk to an existing VM, you can configure the cache option before the disk is deployed to the VM.
+Quando si aggiunge un disco dati a una VM esistente, è possibile configurare l'opzione di memorizzazione nella cache prima che la distribuzione del disco alla macchina virtuale.
 
-Changing the cache setting of an Azure disk detaches and reattaches the target disk. If it's the operating system disk, the VM is restarted. Stop all applications/services that might be affected by this disruption before changing the disk cache setting.
+Modifica dell'impostazione della cache di un disco di Azure, scollega e ricollega il disco di destinazione. Se il disco del sistema operativo, la VM viene riavviata. Arrestare tutte le applicazioni/i servizi che potrebbero essere interessati da questa interruzione prima di modificare l'impostazione della cache del disco.
 
-Let's create a VM and change the cache settings using the Azure portal.
+È possibile creare una macchina virtuale e modificare le impostazioni della cache usando il portale di Azure.

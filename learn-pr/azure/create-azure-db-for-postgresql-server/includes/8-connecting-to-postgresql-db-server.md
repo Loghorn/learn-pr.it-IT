@@ -1,66 +1,54 @@
-Lets' assume you're using an on-premises PostgreSQL database. You're managing all security aspects and locked down all access to your servers using the standard PostgreSQL server level firewall rules. You now have a good understanding of how to configure the same server level firewall rules in Azure.
+Si supponga che si usi un database PostgreSQL locale. Si gestiscono tutti gli aspetti di sicurezza e tutti gli accessi è stato bloccato per i server con le regole del firewall a livello di server PostgreSQL standard. Ora possibile avere una buona conoscenza di come configurare le stesse regole del firewall a livello di server in Azure.
 
-You now have the chance to connect to one of the previous Azure Databases for PostgreSQL servers you created using `psql`.
+Sono ora la possibilità di connettersi a uno dei Database di Azure precedente per i server PostgreSQL creato usando `psql`.
 
-## Allow Azure service access
+## <a name="allow-azure-service-access"></a>Consentire l'accesso al servizio di Azure
 
-Before we begin. You'll have to allow access to Azure services if you want to use PowerShell and `psql` to connect to your server. Recall, that you can allow access in two ways.
+Prima di iniziare, è possibile consentire l'accesso ai servizi di Azure se si desidera usare PowerShell e `psql` per connettersi al server. È importante ricordare che è possibile consentire l'accesso in due modi.
 
-Your first option is to enable **Allow access to Azure services**. Allowing access will create a firewall rule even though the rule isn't entered in the list of custom rules you create.
+La prima opzione consiste nell'abilitare **consentire l'accesso ai servizi di Azure**. Che consente l'accesso creerà una regola del firewall, anche se la regola non viene inserita nell'elenco di regole personalizzate create.
 
-Your second option is to create a firewall rule that allows access to all IP addresses. The rule will include the IP address for the client running PowerShell that you'll use to execute `psql` from.
+La seconda opzione consiste nel creare una regola del firewall che consenta l'accesso a tutti gli indirizzi IP. La regola includeranno l'indirizzo IP per il client che esegue PowerShell che verrà usato per eseguire `psql` da.
 
-You also need to disable the **Enforce SSL connection**.
+È inoltre necessario disabilitare la **Imponi connessione SSL** opzione.
 
-Let's begin.
+Iniziamo.
 
-Sign in to [the Azure portal](https://portal.azure.com?azure-portal=true). Navigate to the server resource for which you would like to create a firewall rule.
+Accedere al [portale di Azure](https://portal.azure.com?azure-portal=true). Passare alla risorsa del server per il quale si desidera creare una regola del firewall.
 
-Select the **Connection Security** option to open the connection security blade to the right.
+Selezionare il **sicurezza della connessione** opzione per aprire il pannello sicurezza connessione a destra.
 
-![Screenshot of the Azure portal showing the Connection security section of the PostgreSQL database resource blade.](../media-draft/7-db-security-settings.png)
+![Screenshot del portale di Azure che illustra la sezione sicurezza di connessione del pannello della risorsa di database PostgreSQL](../media-draft/7-db-security-settings.png)
 
-Recall, you want to allow access to PowerShell clients running `psql`.
+Tenere presente che si vuole consentire l'accesso ai client di PowerShell che eseguono `psql`.
 
-You can choose to either:
+È possibile scegliere se:
 
-- Set **Allow access to Azure services** to **ON**
-- Set **Enforce SSL connection** to **DISABLED**
-- Click the **Save** button to save your changes
+- Impostare **consentire l'accesso ai servizi di Azure** a **via**
+- Impostare **Imponi connessione SSL** a **DISABILITATO**
+- Scegliere il **salvare** pulsante per salvare le modifiche
 
-Or, you can add a firewall rule to allow access to all IP addresses by adding a firewall rule. Use the following values:
+In alternativa, è possibile aggiungere una regola del firewall per consentire l'accesso a tutti gli indirizzi IP mediante l'aggiunta di una regola del firewall. Usare i valori seguenti:
 
-- Rule Name: `AllowAll`
-- Start IP: `0.0.0.0`
-- End IP: `255.255.255.255`
-- Set **Enforce SSL connection** to **DISABLED**
-- Click the **Save** button to save your changes
+- Nome della regola: `AllowAll`
+- Indirizzo IP iniziale: `0.0.0.0`
+- Indirizzo IP finale: `255.255.255.255`
+- Impostare **Imponi connessione SSL** a **DISABILITATO**
+- Scegliere il **salvare** pulsante per salvare le modifiche
 
 > [!Warning]
-> Creating this firewall rule will allow any IP address on the Internet to attempt to connect to your server. Even though clients will not be able access the server without the username and password, enable this rule with caution and make sure you understand the security implications. In production environments, you'll only allow access to specific client IP addresses.
+> Creazione di questa regola del firewall consentirà qualsiasi indirizzo IP nella rete internet per tentare di connettersi al server. Anche se i client non saranno in grado di accedere al server senza il nome utente e password, attivare la regola con cautela e assicurarsi di che comprendere le implicazioni di sicurezza. Negli ambienti di produzione, si consentirà solo l'accesso agli indirizzi IP client specifico.
 
-For the next steps, you'll start an Azure Cloud Shell session. This lab uses `bash` as the command-line environment.
+In Azure Cloud Shell connettersi psql al server usando il comando seguente:
 
-- Open the Cloud Shell from the Azure portal. Go to [Azure portal](https://portal.azure.com?azure-portal=true) and click the Open Cloud Shell button:
+```bash
+psql --host=<server-name>.postgres.database.azure.com --username=<admin-user>@<server-name> --dbname=postgres
+```
 
-- In case you have several subscriptions, check to make sure you're using the correct subscription when asked. You can also run the following command to set the active subscription. Remember to replace the zeros with your subscription identifier.
+Tenere presente, `server-name`, e `admin-user` sono i valori scelti per l'account dell'amministratore durante la creazione del server. `postgres` è ogni PostgreSQL server viene creato con il database di gestione predefinito. Verrà richiesto per la password specificata durante la creazione del server.
 
-   ```bash
-   az account set --subscription 00000000-0000-0000-0000-000000000000
-   ```
+Una volta stabilita la connessione, eseguire il `\l` comando per elencare tutti i database. Questo comando avrà come risultato in due o più database predefinito restituiti.
 
-- Connect psql to your server using the following command:
+Quando hai finito l'esecuzione di operazioni di psql sul server, eseguire il comando `\q` per uscire da `psql`.
 
-  ```bash
-  psql --host=<server-name>.postgres.database.azure.com --username=<admin-user>@<server-name> --dbname=postgres
-  ```
-
-   Recall, `server-name`, and `admin-user` are the values you chose for the administrator account when you created the server. `postgres` is the default management database every PostgreSQL server is created with. You'll be prompted for the password you provided when you created the server.
-
-- Once successfully connected, execute the `\l` command to list all databases.
-
-   This command will result in two or more default databases returned from.
-
-- When you're finished executing psql operations on your server, execute the command `\q` to quit `psql`.
-
-- Finally, to exit Cloud Shell, execute the command `exit`.
+Infine, per uscire da Cloud Shell, eseguire il comando `exit`.

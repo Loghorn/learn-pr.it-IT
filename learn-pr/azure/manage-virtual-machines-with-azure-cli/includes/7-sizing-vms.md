@@ -7,10 +7,10 @@ Azure definisce un set di [dimensioni di macchina virtuale predefinite](https://
 | Tipo | Dimensioni | Descrizione |
 |------|-------|-------------|
 | Utilizzo generico   | Dsv3, Dv3, DSv2, Dv2, DS, D, Av2, A0-7 | Rapporto equilibrato tra CPU e memoria. Soluzione ideale per sviluppo/test e soluzioni di dati e applicazioni medio-piccole. |
-| Ottimizzate per il calcolo | Fs, F | Rapporto elevato tra CPU e memoria. Soluzione idonea per applicazioni con livelli medi di traffico, appliance di rete e processi batch. |
+| Ottimizzato per il calcolo | Fs, F | Rapporto elevato tra CPU e memoria. Soluzione idonea per applicazioni con livelli medi di traffico, appliance di rete e processi batch. |
 | Ottimizzate per la memoria  | Esv3, Ev3, M, GS, G, DSv2, DS, Dv2, D   | Rapporto elevato tra memoria e core. Soluzione ideale per database relazionali, cache medio-grandi e analisi in memoria. |
 | Ottimizzate per l'archiviazione | Ls | I/O e velocità effettiva del disco elevati. Soluzione ideale per Big Data, database SQL e NoSQL. |
-| Ottimizzate per la GPU | NV, NC | Macchine virtuali specializzate ottimizzate per livelli intensivi di rendering della grafica ed editing di video. |
+| Ottimizzate per la GPU | NV, NC | VM specializzate ottimizzate per livelli intensivi di rendering della grafica ed editing di video. |
 | Prestazioni elevate | H, A8-11 | Le macchine virtuali con CPU più potenti, con interfacce di rete ad alta velocità effettiva opzionali (RDMA). | 
 
 Le dimensioni disponibili variano in base all'area in cui si crea la macchina virtuale. È possibile ottenere un elenco delle dimensioni disponibili tramite il comando `vm list-sizes`. Provare a digitare quanto segue in Azure Cloud Shell:
@@ -55,7 +55,7 @@ az vm create --resource-group ExerciseResources --name SampleVM \
 ```
 
 > [!WARNING]
-> Il livello di sottoscrizione [applica i limiti](https://docs.microsoft.com/azure/azure-subscription-service-limits) al numero di risorse che è possibile creare e alle dimensioni totali di queste risorse. Ad esempio, il limite massimo è di **20 CPU virtuali** per la sottoscrizione con pagamento in base al consumo e di solo **4 vCPU** per il livello gratuito. Quando il limite viene superato, l'interfaccia della riga di comando di Azure visualizzerà l'errore **Quota superata**. Se viene visualizzato questo errore durante la creazione dell'architettura, è possibile richiedere l'aumento dei limiti associati alla sottoscrizione a pagamento (fino a 10.000 vCPU) inviando una [richiesta online gratuita](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-quota-errors). 
+> Il livello di sottoscrizione [applica i limiti](https://docs.microsoft.com/azure/azure-subscription-service-limits) al numero di risorse che è possibile creare e alle dimensioni totali di queste risorse. Ad esempio, il limite massimo è di **20 CPU virtuali** per la sottoscrizione con pagamento in base al consumo e di solo **4 vCPU** per il livello gratuito. Quando il limite viene superato, l'interfaccia della riga di comando di Azure visualizzerà l'errore **Quota superata**. Se viene visualizzato questo errore durante la creazione dell'architettura, è possibile richiedere l'aumento dei limiti associati alla sottoscrizione a pagamento (fino a 10.000 vCPU) tramite una [richiesta online gratuita](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-quota-errors). 
 
 ## <a name="resizing-an-existing-vm"></a>Ridimensionamento di una macchina virtuale esistente
 È anche possibile ridimensionare una macchina virtuale esistente se si verifica una variazione del carico di lavoro o se non è stata definita la dimensione corretta in fase di creazione. Prima di richiedere un ridimensionamento, è necessario verificare se la dimensione desiderata è disponibile nel cluster di cui fa parte la macchina virtuale. A questo scopo, usare il comando `vm list-vm-resize-options`:

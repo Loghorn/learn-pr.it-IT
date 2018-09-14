@@ -2,12 +2,6 @@
 
 In questo caso, verrà illustrato come usare Visual Studio per pubblicare l'applicazione Web di ASP.NET Core in un piano di Servizio app di Azure.
 
-## <a name="azure-subscription"></a>Sottoscrizione di Azure
-
-Per pubblicare in Azure, è necessario avere una sottoscrizione di Azure. È possibile usare una [sottoscrizione gratuita di Azure](https://azure.microsoft.com/free/) per testare le funzionalità di Servizio app di Azure.
-
-## <a name="what-is-azure-app-service"></a>Che cos'è Servizio app di Azure?
-
 ## <a name="what-is-web-apps"></a>Che cos'è App Web?
 
 Servizio app di Azure è un servizio per l'hosting di applicazioni Web, API REST e back-end mobili. Servizio app supporta codice scritto in una vasta gamma di linguaggi, ad esempio .NET, .NET Core, Java, Ruby, Node.js, PHP e Python. Servizio app è ideale per la maggior parte dei siti Web, in particolare se non occorre un grande controllo sull'infrastruttura di hosting.
@@ -61,6 +55,8 @@ Come accade per la maggior parte delle risorse di Azure, è necessario specifica
 ## <a name="deploy-your-web-app-from-visual-studio"></a>Distribuire l'app Web da Visual Studio
 
 La procedura per pubblicare l'app in Azure da Visual Studio è breve.
+
+[!include[](../../../includes/azure-sandbox-activate.md)]
 
 ### <a name="select-the-project"></a>Selezionare il progetto
 

@@ -1,9 +1,9 @@
 ### YamlMime:ModuleUnit
 uid: learn.work-with-mutable-and-partial-data-in-a-redis-cache.3-create-a-transaction
-title: Create a transaction in Redis
+title: Creare una transazione in Cache Redis di Azure
 metadata:
-  title: Create a transaction in Redis
-  description: Create a transaction in Redis
+  title: Creare una transazione in Cache Redis di Azure
+  description: Creare una transazione in Cache Redis di Azure
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark

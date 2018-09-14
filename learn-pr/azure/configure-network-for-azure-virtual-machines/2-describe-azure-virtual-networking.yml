@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.configure-the-network-for-your-virtual-machines.2-describe-azure-virtual-networking
-title: Describe Azure virtual networking
+title: Descrivere la rete virtuale di Azure
 metadata:
-  title: Describe Azure virtual networking
-  description: Describe Azure virtual networking
+  title: Descrivere la rete virtuale di Azure
+  description: Descrivere la rete virtuale di Azure
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial

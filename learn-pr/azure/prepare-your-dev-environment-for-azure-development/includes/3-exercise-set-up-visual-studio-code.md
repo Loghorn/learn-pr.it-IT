@@ -20,11 +20,11 @@ Prima di tutto identificare il sistema operativo in uso e seguire i passaggi nel
 
 1. Trascinare Visual Studio Code.app nella cartella Applicazioni, rendendolo disponibile in Launchpad.
 
-1. Aggiungere Visual Studio Code a Dock facendo clic con il pulsante destro del mouse sull'icona e scegliendo Opzioni > Mantieni nel Dock.
+1. Aggiungere Visual Studio Code per l'ancoraggio facendo clic sull'icona e scegliendo le opzioni > mantenere nel Dock.
 
 ### <a name="linux--debian-and-ubuntu"></a>Linux - Debian e Ubuntu
 
-1. Scaricare e installare il [pacchetto DEB (64 bit)](https://go.microsoft.com/fwlink/?LinkID=760868), tramite un centro software con interfaccia grafica, se disponibile, o tramite la riga di comando (sostituendo `<file>` con il nome del file DEB scaricato):
+1. Scaricare e installare il [pacchetto DEB (64 bit)](https://go.microsoft.com/fwlink/?LinkID=760868) tramite il centro di software con interfaccia grafica, se disponibile, o tramite la riga di comando (sostituendo `<file>` con il nome del file DEB scaricato):
 
     ```bash
     sudo dpkg -i <file>.deb
@@ -80,4 +80,4 @@ Dopo aver installato Visual Studio Code, aprirlo.
 
     ![Screenshot di Visual Studio Code che mostra la scheda Estensioni con l'estensione di Servizio app di Azure evidenziata nei risultati della ricerca.](../media/3-install-azure-extension.png)
 
-Verrà così installata l'estensione. Sarà poi possibile connettersi alla sottoscrizione di Azure e sviluppare e distribuire un'app Web, per dispositivi mobili o API in Servizio app di Azure.
+Verrà così installata l'estensione. Ora possibile connettersi alla sottoscrizione di Azure e distribuire un web, mobili o app per le API in servizio App di Azure.

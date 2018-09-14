@@ -1,38 +1,35 @@
 ### YamlMime:ModuleUnit
 uid: learn.choose-storage-approach-in-azure.2-classify-data
 metadata:
-  title: Classificare i dati
-  description: Classificare i dati
-  displayType: one-column
-  ms.openlocfilehash: 361eb3c2315493975eea2c6bcab89b3baaa21913
-  ms.sourcegitcommit: 91b4553dbbbf6d8b6b359142332d0654aae326e8
-  ms.translationtype: HT
-  ms.contentlocale: it-IT
-  ms.lasthandoff: 08/30/2018
-  ms.locfileid: "43252578"
+  title: Verifica delle conoscenze
+  description: Verifica delle conoscenze
+  ms.date: 09/24/2018
+  author: mimig1
+  ms.author: mimig
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
 title: Classificare i dati
 durationInMinutes: 10
-content: >
+content: |
   [!include[](includes/2-classify-data.md)]
 quiz:
-  title: Classificazione dei dati
+  title: Verifica delle conoscenze
   questions:
-  - content: L'applicazione di vendita online archivia anche i dati utente, che includono gli indirizzi di spedizione, gli ordini precedenti e, se vengono fornite, le informazioni del profilo degli utenti. I dati utente in futuro potrebbero contenere altri campi per determinati utenti. Come si classificherebbe questo set di dati?
-    choices:
-    - content: Dati strutturati
-      isCorrect: false
-      incorrectExplanation: L'archiviazione dei dati in un formato strutturato non sarebbe ideale perché non tutti gli utenti dispongono delle stesse informazioni.
-    - content: Dati semistrutturati
-      isCorrect: true
-      correctExplanation: Corretto. I dati utente sono semistrutturati perché non tutti gli utenti dispongono di informazioni del profilo e per alcuni utenti in futuro potrebbero esserci campi aggiuntivi. Ciò indica che non tutti i dati rispettano lo stesso schema e dati specifici possono avere un'organizzazione univoca, quindi si tratta di dati semistrutturati.
-    - content: Dati non strutturati
-      isCorrect: false
-      incorrectExplanation: L'archiviazione dei dati utente come dati non strutturati non è consigliata perché potrebbe essere difficile lavorare con i dati in un formato non strutturato.
-  - content: I dati non strutturati possono avere metadati strutturati associati?
-    choices:
-    - content: Sì
-      isCorrect: true
-      correctExplanation: Corretto. I dati non strutturati possono avere metadati associati, come un timestamp, un indicatore di posizione o un ID dispositivo. La presenza di metadati associati ai dati non strutturati non cambia il fatto che la struttura interna dell'entità principale è non strutturata.
-    - content: No
-      isCorrect: false
-      incorrectExplanation: Purtroppo questa risposta non è corretta.
+    - content: Un file JSON è un esempio di quale tipo di dati?
+      choices:
+        - content: Dati strutturati
+          isCorrect: false
+        - content: Dati semistrutturati
+          isCorrect: true
+          correctExplanation: 'Dati semistrutturati contengono tag che rendono evidente l''organizzazione e della gerarchia dei dati. '
+        - content: Dati non strutturati
+          isCorrect: false
+    - content: Un video è un esempio di quale tipo di dati?
+      choices:
+        - content: Dati strutturati
+          isCorrect: false
+        - content: Dati semistrutturati
+          isCorrect: false
+        - content: Dati non strutturati
+          isCorrect: true
+          correctExplanation: 'Dati non strutturati vengono inviati spesso nei file. Un video può avere una struttura complessiva, ma non sono strutturati i dati che comprende il video di se stesso.'

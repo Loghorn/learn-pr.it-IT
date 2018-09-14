@@ -1,68 +1,67 @@
 ### YamlMime:ModuleUnit
 uid: learn.secure-your-azure-sql-database.6-knowledge-check
 metadata:
-  title: Knowledge check
-  description: Test your knowledge 
+  title: Verifica delle conoscenze
+  description: Verificare le proprie conoscenze
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Knowledge check
+title: Verifica delle conoscenze
 durationInMinutes: 5
 content: |
   [!include[](includes/6-knowledge-check.md)]
 quiz:
-  title: 'Quiz'
+  title: Quiz
   questions:
-  - content: 'A mask has been applied to a column in the database that holds a user’s email address laura@contoso.com. From the list of options, what would the mask display for a dbo account?'
-    choices:
-    - content: lxxx@xxxx.com
-      isCorrect: false
-      incorrectExplanation: dbo accounts do not have the masks applied to the data. 
-    - content: laura@xxxxxxx.com
-      isCorrect: false
-      incorrectExplanation: dbo accounts do not have the masks applied to the data. In addition, when email masks are applied, they also mask the name portion of the email address.
-    - content: laura@contoso.com
-      isCorrect: true
-      correctExplanation: Correct! When dbo accounts access data that has masks applied, they do not see the masks applied to the data.
-    - content: Data not available
-      isCorrect: false
-      incorrectExplanation: Data will be displayed when accessing an email mask. dbo accounts will not see the masks applied to the data. Non-dbo accounts will see the masks applied to the data, unless they have been listed to see data unmasked.
-  - content: 'Transparent Data Encryption will encrypt which database files?'
-    choices:
-    - content: Database files only 
-      isCorrect: false
-      incorrectExplanation: When Transparent Data Encryption is enabled, all database, log, and backup files will be encrypted.
-    - content: Log files and backup files only
-      isCorrect: false
-      incorrectExplanation: When Transparent Data Encryption is enabled, all database, log, and backup files will be encrypted.
-    - content: Backup files only
-      isCorrect: false
-      incorrectExplanation: When Transparent Data Encryption is enabled, all database, log, and backup files will be encrypted.
-    - content: Database files, log files, and backup files
-      isCorrect: true
-      correctExplanation: Correct! When Transparent Data Encryption is enabled, all database, log, and backup files will be encrypted.
-  - content: 'A database firewall rule can filter which IP addresses?'
-    choices:
-    - content: Azure-only IP addresses 
-      isCorrect: false
-      incorrectExplanation: The database firewall rules can define IP addresses or IP address ranges for both Azure and internet IP addresses. 
-    - content: IP addresses of other databases
-      isCorrect: false
-      incorrectExplanation: The database firewall rules can define IP addresses or IP address ranges for both Azure and internet IP addresses.
-    - content: Networks created on an Azure virtual network
-      isCorrect: false
-      incorrectExplanation: The database firewall rules can define IP addresses or IP address ranges for both Azure and internet IP addresses.
-    - content: Any IP address or IP address range
-      isCorrect: true
-      correctExplanation: Correct! The database firewall rules can define IP addresses or IP address ranges for both Azure and internet IP addresses.
-  - content: 'Is encrypted communication turned on automatically when connecting to an Azure SQL Server?'
-    choices:
-    - content: Yes
-      isCorrect: false
-      incorrectExplanation: The encryption options are defined in the connection string connecting to the database. The connection string should be set to use encryption and to not trust the certificate, to reduce the likelihood of a man-in-the-middle attack.
-    - content: No
-      isCorrect: true
-      correctExplanation: Correct! The encryption options are defined in the connection string connecting to the database. The connection string should be set to use encryption and to not trust the certificate, to reduce the likelihood of a man-in-the-middle attack.
+    - content: 'Viene applicato un filtro a una colonna nel database che contiene l''indirizzo di posta elettronica dell''utente laura@contoso.com. Dall''elenco di opzioni, quali la maschera visualizzerebbe per un account di dbo?'
+      choices:
+        - content: lxxx@xxxx.com
+          isCorrect: false
+          incorrectExplanation: account dbo non dispongono di maschere applicate ai dati.
+        - content: laura@xxxxxxx.com
+          isCorrect: false
+          incorrectExplanation: 'account dbo non dispongono di maschere applicate ai dati. Inoltre, quando vengono applicate le maschere di posta elettronica, sono anche mascherare la parte relativa al nome dell''indirizzo di posta elettronica.'
+        - content: laura@contoso.com
+          isCorrect: true
+          correctExplanation: 'Corretto! Quando l''account dbo di accedere ai dati con le maschere applicate, non vedono le maschere applicate ai dati.'
+        - content: Non sono disponibili dati
+          isCorrect: false
+          incorrectExplanation: 'Dati verranno visualizzati quando si accede a una maschera di indirizzo di posta elettronica. gli account dbo non visualizzeranno le maschere applicate ai dati. Gli account dbo non visualizzeranno le maschere applicate ai dati, a meno che non elencate per visualizzare i dati senza maschera.'
+    - content: Transparent Data Encryption crittograferà i file di database?
+      choices:
+        - content: Solo i file di database
+          isCorrect: false
+          incorrectExplanation: 'Quando Transparent Data Encryption è abilitato, verranno crittografati tutti i database, log e i file di backup.'
+        - content: File di log e solo i file di backup
+          isCorrect: false
+          incorrectExplanation: 'Quando Transparent Data Encryption è abilitato, verranno crittografati tutti i database, log e i file di backup.'
+        - content: Solo i file di backup
+          isCorrect: false
+          incorrectExplanation: 'Quando Transparent Data Encryption è abilitato, verranno crittografati tutti i database, log e i file di backup.'
+        - content: 'I file di database, i file di log e i file di backup'
+          isCorrect: true
+          correctExplanation: 'Corretto! Quando Transparent Data Encryption è abilitato, verranno crittografati tutti i database, log e i file di backup.'
+    - content: Una regola del firewall del database consente di filtrare gli indirizzi IP?
+      choices:
+        - content: Solo Azure gli indirizzi IP
+          isCorrect: false
+          incorrectExplanation: Le regole del firewall del database è possono definire gli indirizzi IP o intervalli di indirizzi IP per gli indirizzi IP di Azure e internet.
+        - content: Indirizzi IP di altri database
+          isCorrect: false
+          incorrectExplanation: Le regole del firewall del database è possono definire gli indirizzi IP o intervalli di indirizzi IP per gli indirizzi IP di Azure e internet.
+        - content: Reti create in una rete virtuale di Azure
+          isCorrect: false
+          incorrectExplanation: Le regole del firewall del database è possono definire gli indirizzi IP o intervalli di indirizzi IP per gli indirizzi IP di Azure e internet.
+        - content: Qualsiasi indirizzo IP o intervallo di indirizzi IP
+          isCorrect: true
+          correctExplanation: Corretto! Le regole del firewall del database è possono definire gli indirizzi IP o intervalli di indirizzi IP per gli indirizzi IP di Azure e internet.
+    - content: È comunicazione crittografata attivata automaticamente quando ci si connette a un Server SQL di Azure?
+      choices:
+        - content: Sì
+          isCorrect: false
+          incorrectExplanation: 'Le opzioni di crittografia sono definite nella stringa di connessione connette al database. La stringa di connessione deve essere impostata per usare la crittografia e non considerare attendibile il certificato, per ridurre la probabilità di un attacco man-in-the-middle.'
+        - content: 'No'
+          isCorrect: true
+          correctExplanation: 'Corretto! Le opzioni di crittografia sono definite nella stringa di connessione connette al database. La stringa di connessione deve essere impostata per usare la crittografia e non considerare attendibile il certificato, per ridurre la probabilità di un attacco man-in-the-middle.'

@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.design-for-security.3-identity-management
-title: Identity management
+title: Gestione delle identità
 metadata:
-  title: Identity management
-  description: In this unit we'll discuss how to protect your identities
+  title: Gestione delle identità
+  description: In questa unità viene spiegato come proteggere le identità
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
@@ -14,33 +13,33 @@ durationInMinutes: 5
 content: |
   [!include[](includes/3-identity-management.md)]
 quiz:
-  title: 'Knowledge Check - Identity management'
+  title: Verifica delle conoscenze - Gestione delle identità
   questions:
-  - content: 'Which of the following is not a factor in multi-factor authentication?'
-    choices:
-    - content: 'A thumbprint scanner on a mobile device'
-      isCorrect: false
-      incorrectExplanation: 'Biometric elements such as thumbprint scans can be used as factors in multi-factor authentication.'
-    - content: 'A token generated from the Azure Authenticator application'
-      isCorrect: false
-      incorrectExplanation: 'Tokens generated from applications and keyfobs can be used as factors in multi-factor authentication.'
-    - content: 'A password'
-      isCorrect: false
-      incorrectExplanation: 'Passwords can be used as factors in multi-factor authentication.'
-    - content: 'Your shoe size'
-      isCorrect: true
-      correctExplanation: 'Your shoe size is not something that can be used in multi-factor authentication.'
-  - content: 'Which of the following is NOT a benefit SSO provides?'
-    choices:
-    - content: 'Increased complexity assigning permissions to users'
-      isCorrect: true
-      correctExplanation: 'SSO can reduce the complexity needed to assign permissions to users.'
-    - content: 'Fewer IDs and passwords for users to remember'
-      isCorrect: false
-      incorrectExplanation: 'Fewer IDs and passwords for users to remember is a key benefit of SSO.'
-    - content: 'Lower adminmistration effort when users change roles or leave an organization'
-      isCorrect: false
-      incorrectExplanation: 'SSO reduces the amount of administration required to update or disable access when users change roles or leave an organization. This is a key benefit of SSO.'
-    - content: 'Ensures a consistent password policy across applications'
-      isCorrect: false
-      incorrectExplanation: 'By using SSO, users have a single password policy for all accounts. This is a key benefit of SSO.'
+    - content: Quale dei seguenti non è un fattore nell'autenticazione a più fattori?
+      choices:
+        - content: Un'identificazione personale analizzata in un dispositivo mobile
+          isCorrect: false
+          incorrectExplanation: 'Elementi biometrici, ad esempio identificazione personale esegue l''analisi possono essere utilizzati come fattori di autenticazione a più fattori.'
+        - content: Un token generato dall'applicazione Azure Authenticator
+          isCorrect: false
+          incorrectExplanation: I token generati da applicazioni e keyfobs possono essere utilizzati come fattori di multi-factor authentication.
+        - content: Una password
+          isCorrect: false
+          incorrectExplanation: Le password possono essere utilizzate come fattori di autenticazione a più fattori.
+        - content: Il numero di scarpe
+          isCorrect: true
+          correctExplanation: Le dimensioni di casa non sono qualcosa che può essere usato in multi-factor authentication.
+    - content: Quale delle seguenti non è un vantaggio SSO offre?
+      choices:
+        - content: Aumento della complessità nell'assegnazione delle autorizzazioni agli utenti
+          isCorrect: true
+          correctExplanation: SSO può ridurre la complessità necessaria per assegnare autorizzazioni agli utenti.
+        - content: Meno ID e password da ricordare per gli utenti
+          isCorrect: false
+          incorrectExplanation: Gli ID e password per gli utenti meno da ricordare è dei vantaggi principali di SSO.
+        - content: Minore lavoro di amministrazione richiesto quando gli utenti cambiano ruolo o lasciano l'azienda
+          isCorrect: false
+          incorrectExplanation: SSO consente di ridurre la quantità di attività di amministrazione per aggiornare o disabilitare l'accesso quando gli utenti di modificano i ruoli o lasciano l'azienda. Si tratta dei vantaggi principali di SSO.
+        - content: Assicura criteri password coerenti tra le applicazioni
+          isCorrect: false
+          incorrectExplanation: 'Tramite SSO, gli utenti hanno un singolo criterio password per tutti gli account. Si tratta dei vantaggi principali di SSO.'

@@ -1,14 +1,14 @@
-Suppose you work for a company that processes fitness tracker data for runners. Your company tracks the runners' routes and performance using a relational database hosted on an on-premise server.
+Si supponga che si lavora per un'azienda che elabora i dati di individuazione di idoneità per gli strumenti di esecuzione. La società tiene traccia delle route e le prestazioni usando un database relazionale ospitato in un server locale degli strumenti di esecuzione.
 
-The company wants to expand by tracking additional fitness tracking models and types and do that it will need to scale its database, both for capacity and performance. You want to move away from your current on-premise databases servers without compromising security.
+La società intende espandere tenendo traccia di tipi e i modelli di rilevamento di idoneità aggiuntivi. Per eseguire l'espansione, la società sarà necessario ridimensionare il database per la capacità e prestazioni. Si desidera spostare dal server di database locale corrente senza compromettere la sicurezza.
 
-When you consider cloud hosted database offerings, some of the questions that you may have might be aspects such as availability, scalability, and security. Azure Database for PostgreSQL allows you to take advantage of built-in security, fault tolerance, and data protection that you otherwise have to buy or design separately, build, and manage.
+Quando si prende in considerazione le offerte di database ospitato nel cloud, alcune delle domande a cui è possibile che si potrebbero essere aspetti quali disponibilità, scalabilità e sicurezza. Database di Azure per PostgreSQL consente di sfruttare i vantaggi di sicurezza predefinite, la tolleranza di errore e protezione dei dati che altrimenti necessario acquistare o progettare separatamente, compilare e gestire.
 
-## Learning objectives
+## <a name="learning-objectives"></a>Obiettivi di apprendimento
 
-By the end of this module, you will:
+Al termine di questo modulo, si apprenderà come:
 
-- Create an Azure Database for PostgreSQL using the Azure portal
-- Create an Azure Database for PostgreSQL using Azure CLI
-- Configure a PostgreSQL server-level firewall rule
-- Connect to the PostgreSQL server using _psql_ in Azure Cloud Shell
+- Creare un Database di Azure per PostgreSQL usando il portale di Azure
+- Creare un database di Azure per PostgreSQL tramite l'interfaccia della riga di comando di Azure
+- Configurare una regola del firewall a livello di server PostgreSQL
+- Connettersi al server PostgreSQL usando il `psql` comando in Azure Cloud Shell

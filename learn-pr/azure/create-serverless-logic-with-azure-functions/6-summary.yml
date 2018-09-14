@@ -9,12 +9,37 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 7f01289f6e6f74cca4daa8e53157514fa982c207
-  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
-  ms.translationtype: HT
-  ms.contentlocale: it-IT
-  ms.lasthandoff: 09/10/2018
-  ms.locfileid: "44307978"
 azureSandbox: true
 durationInMinutes: 3
-content: '[!include[](includes/6-summary.md)]'
+content: |
+  [!include[](includes/6-summary.md)]
+quiz:
+  title: Verifica delle conoscenze
+  questions:
+    - content: Quale delle seguenti descrizioni risponde maggiormente definisce la logica senza server?
+      choices:
+        - content: Codice scritto che non viene eseguito nei server.
+          isCorrect: false
+        - content: Gestire codice scritto in esecuzione su server.
+          isCorrect: false
+        - content: Consente di gestire codice che scritto nei server che esegue un provider cloud.
+          isCorrect: true
+          correctExplanation: 'Con l''espressione "senza server" non si intende assenza di server, ma che lo sviluppatore non deve preoccuparsi dei server. Al contrario, un provider di cloud, ad esempio, Azure gestisce i server.'
+    - content: 'Il contenitore che raggruppa le funzioni in un''unità logica per semplificare la gestione, distribuzione e la condivisione delle risorse è denominato?'
+      choices:
+        - content: Gruppo di risorse
+          isCorrect: false
+        - content: App per le funzioni
+          isCorrect: true
+          correctExplanation: 'App per le funzioni è un modo per organizzare e gestire collettivamente le funzioni. Un''app per le funzioni è costituita da una o più singole funzioni che vengono gestite insieme dal servizio app di Azure. Tutte le funzioni in un''app per le funzioni condividono lo stesso piano tariffario, la distribuzione continua e la versione di runtime.'
+        - content: Raccolta (funzione)
+          isCorrect: false
+    - content: La funzione in base ai chiamanti HTTP sconosciuti è protetto richiedendo una specifica della funzione chiave API essere passato con ogni chiamata. Quale delle seguenti è l'intestazione del nome nelle richieste HTTP che deve contenere questa chiave?
+      choices:
+        - content: x-funzioni-key
+          isCorrect: true
+          correctExplanation: 'L''API può essere incluso in una variabile di stringa di query denominata "code", o può essere incluso in un''intestazione HTTP x-funzioni-key'
+        - content: x-requested-with
+          isCorrect: false
+        - content: x-csrf-token
+          isCorrect: false

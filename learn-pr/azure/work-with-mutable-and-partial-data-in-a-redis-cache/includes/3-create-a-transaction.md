@@ -1,36 +1,36 @@
-Let's start by creating a Redis cache instance in Azure, then create a simple transaction that inserts two data values into the cache.
+È possibile iniziare creando un'istanza di Cache Redis di Azure e quindi creare una semplice transazione che inserisce i due valori di dati nella cache.
 
 <!-- Activate the sandbox -->
 [!include[](../../../includes/azure-sandbox-activate.md)]
 
-## Create an Azure Redis Cache
+## <a name="create-an-azure-redis-cache"></a>Creare una cache Redis di Azure
 
-Let's start by creating an Azure Redis Cache with the Azure CLI. Use the Cloud Shell on the right side of the browser window to interact with Azure.
+Iniziamo creando una Cache Redis di Azure con la CLI di Azure. Usare Cloud Shell sul lato destro della finestra del browser per interagire con Azure.
 
-We'll use the `azure rediscache create` command to create a new Azure Redis Cache. It takes several parameters. Here are the most common (to get a full list, check the documentation).
+Si userà il `azure rediscache create` comando per creare una nuova Cache Redis di Azure. Richiede diversi parametri. Ecco i più comuni (per ottenere un elenco completo, consultare la documentazione).
 
 > [!div class="mx-tableFixed"]
-> | Parameter | Description |
+> | Parametro | Descrizione |
 > |-----------|-------------|
-> | `--name`    | The name of the cache - this must be globally unique and composed of letters, numbers and dashes. |
-> | `--resource-group` | Use the pre-created Resource Group <rgn>[Sandbox resource group name]</rgn> which is part of the Azure Sandbox. |
-> | `--location` | Specify the location where the cache should be located. Normally, you will want to choose a location close to the data consumers. In this case, you are limited to the locations available in the Azure Sandbox. Select the closest one to you. |
-> | `--size` | Size of the Redis Cache. Valid values are [C0, C1, C2, C3, C4, C5, C6, P1, P2, P3, P4] |
-> | `--sku` | Redis SKU. Valid values are [Basic, Standard, Premium] |
-> | `--enable-non-ssl-port` | Add this flag if you want to enable the Non SSL Port for your cache. |
+> | `--name`    | Il nome della cache - deve essere globalmente univoco e composto da lettere, numeri e trattini. |
+> | `--resource-group` | Usare il gruppo di risorse creato in precedenza <rgn>[nome gruppo di risorse di tipo Sandbox]</rgn>, che fa parte della Sandbox di Azure. |
+> | `--location` | Specificare il percorso in cui la cache deve essere disponibile. In genere, è opportuno scegliere una località vicina i consumer di dati. In questo caso, si è limitati ai percorsi disponibili nell'ambiente Sandbox di Azure. Selezionare quella più vicina all'utente. |
+> | `--size` | Le dimensioni della Cache Redis di Azure. I valori validi sono [C0, C1, C2, C3, C4, C5, C6, P1, P2, P3, P4]. |
+> | `--sku` | La Cache Redis di Azure lo SKU. I valori validi sono [Basic, Standard, Premium]. |
+> | `--enable-non-ssl-port` | Aggiungere questo flag se si desidera abilitare la porta non SSL per la cache. |
 
-### Selecting a location
+### <a name="selecting-a-location"></a>Selezione di un percorso
 <!-- Resource selection -->
 [!include[](../../../includes/azure-sandbox-regions-first-mention-note.md)]
 
-1. Create a cache using the following options:
-    - Size: C0
+1. Creare una cache usando le opzioni seguenti:
+    - Dimensioni: C0
     - SKU: Basic
     - EnableNonSslPort
     
-1. Here's an example command line, make sure to replace the **[name]** and **[location]** with valid values.
+1. Ecco un esempio di riga di comando. Assicurarsi di sostituire il **[nome]** e **[percorso]** con i valori validi.
 
-    ```bash
+    ```azurecli
     azure rediscache create \
         --name [name] \
         --resource-group <rgn>[Sandbox resource group name]</rgn> \
@@ -38,106 +38,106 @@ We'll use the `azure rediscache create` command to create a new Azure Redis Cach
         --size C0 --sku Basic
     ```
 
-1. It will take a few minutes to create the cache.
+Richiederà alcuni minuti per creare la cache.
 
-## Create a .NET Core Console application
+## <a name="create-a-net-core-console-application"></a>Creare un'applicazione console .NET Core
 
-Next, create a .NET Core C#-based console application, which will be used to insert data values into our Azure Redis Cache.
+Successivamente, creare un'applicazione console basata su .NET Core in c#, che verrà usata per inserire i valori dei dati in Cache Redis di Azure.
 
-1. Create a new .NET Core application using the integrated Cloud Shell on the right hand side of the window. Name it "RedisData".
+1. Creare una nuova applicazione .NET Core Usa Cloud Shell integrata su lato destro della finestra. Denominarla "RedisData".
 
     ```bash
     dotnet new console --name RedisData
     ```
     
-1. Change into the new directory created for your app.
+1. Passare alla nuova directory creata per l'app.
 
     ```bash
     cd RedisData
     ```
     
-1. You should find a project file, and a single **Program.cs** source file.
+1. È necessario trovare un file di progetto e una singola **Program.cs** file di origine.
 
-1. Build and run the application - it should output "Hello, World!".
+1. Compilare ed eseguire l'applicazione, deve restituire come output "Hello, World!"
 
     ```bash
     dotnet run
     ```
     
-## Add the ServiceStack.Redis NuGet package
+## <a name="add-the-servicestackredis-nuget-package"></a>Aggiungere il pacchetto ServiceStack.Redis NuGet
 
-Now that we have our console application, we need to add the **ServiceStack.Redis** NuGet package. This will allow us to connect to the Redis Cache and issue commands in C#.
+Ora che abbiamo l'applicazione console, è necessario aggiungere il **ServiceStack.Redis** pacchetto NuGet. In questo modo sarà possibile connettersi per la Cache Redis di Azure ed eseguire comandi nel linguaggio c#.
 
-1. Add the NuGet package **ServiceStack.Redis** using the terminal shell.
+1. Aggiungere il pacchetto NuGet **ServiceStack.Redis** usando la shell del terminale.
 
     ```bash
     dotnet add package ServiceStack.Redis
     ```
     
-1. Build and run the application again to make sure it all compiles. It should still output "Hello, World!"
+1. Compilare ed eseguire nuovamente l'applicazione per assicurarsi che tutto venga compilato. Deve comunque restituire come output "Hello, World!"
 
-## Get your Azure Redis Cache connection string
+## <a name="get-your-azure-redis-cache-connection-string"></a>Ottenere la stringa di connessione di Cache Redis di Azure
 
-To connect to your Azure Redis Cache, you need a connection string that contains your password and URL. This connection string is unique to **ServiceStack.Redis** and is in the form of: `[password]@[host name]:[port]`
+Per connettersi a Cache Redis di Azure, è necessaria una stringa di connessione che contiene la password e l'URL. È univoca per questa stringa di connessione **ServiceStack.Redis**ed è nel formato: `[password]@[host name]:[port]`.
 
-You can retrieve this key with the Azure portal, or with the command line. Let's use the latter here since we used the portal approach in the **Optimize your web applications by caching read-only data with Redis** module.
+È possibile recuperare la chiave con il portale di Azure o con la riga di comando. Utilizziamo qui quest'ultima, poiché è stato usato l'approccio basato sul portale nel modulo "Ottimizzare le applicazioni web per la memorizzazione nella cache i dati di sola lettura con Redis".
 
-Use the `azure rediscache list-keys` command to get the access keys. You will need to supply the name and resource group as shown below:
+Usare il `azure rediscache list-keys` comando per ottenere le chiavi di accesso. È necessario fornire il nome e gruppo di risorse, come illustrato di seguito:
 
-```bash
+```azurecli
 azure rediscache list-keys \
     --name [name] \
     --resource-group <rgn>[Sandbox resource group name]</rgn>
 ```
 
-This will return something like
+Restituirà quanto segue:
 
 ```output
 Primary Key   : XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX=
 Secondary Key : XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX=
 ```
 
-1. Copy your **Primary** key to the clipboard.
+1. Copia il **primaria** chiave negli Appunti.
 
-1. The hostname will be the name you gave to the cache when you created it with the suffix `.redis.cache.windows.net`.
+1. Il nome host corrisponderà al nome scelto per la cache quando è stato creato, con il suffisso `.redis.cache.windows.net`.
 
-1. The port should be **6379**.
+1. La porta deve essere **6379**.
 
-1. You can verify all of that information in the console with the `azure rediscache list` command which will show you all the Redis cache instances in your active subscription (in this case, the Azure Sandbox).
+1. È possibile verificare tutte le informazioni nella console con il `azure rediscache list` comando. Questo comando Mostra tutte le istanze di Cache Redis di Azure nella sottoscrizione attiva (in questo caso, l'ambiente Sandbox di Azure).
 
-## Add the connection string to your app
+## <a name="add-the-connection-string-to-your-app"></a>Aggiungere la stringa di connessione all'app
 
-1. Make sure you are in the app folder. The **Program.cs** should be in the current folder if you type `ls` or `dir`.
+1. Assicurarsi che si è nella cartella dell'app. Il **Program.cs** devono trovarsi nella cartella corrente, se si digita `ls` o `dir`.
 
-1. Open the built-in editor by typing `code .` in the app folder.
+1. Aprire l'editor predefinito digitando `code .` nella cartella dell'app.
 
-1. Select the **Program.cs** source file.
+1. Selezionare il **Program.cs** file di origine.
 
-1. Create the following field in the `Program` class.
+1. Creare il campo seguente nel `Program` classe.
 
     ```csharp
     static string redisConnectionString = "";
     ```
 
-1. Paste in your connection string in the **redisConnectionString** field you just created and use **6379** as your port number. Remember, your connection string is in the form of: `[password]@[host name]:[port]`
+1. Incollare la stringa di connessione nel **redisConnectionString** campo appena creato e usare **6379** come il numero di porta. Tenere presente che la stringa di connessione è nel formato: `[password]@[host name]:[port]`.
 
-An example connection string would look something like this:
+Una stringa di connessione di esempio sarebbe simile al seguente:
 
 ```output
 ToOosHLZw9Gwyr46ZlxcNeCCIzS35IBkEtwsCt1Xu4c=@myname.redis.cache.windows.net:6379
 ```
     
-## Insert two data values into your Azure Redis Cache
+## <a name="insert-two-data-values-into-your-azure-redis-cache"></a>Inserire due valori di dati in Cache Redis di Azure
 
-Finally, we're going to add data into your Azure Redis Cache.
+Infine, dobbiamo aggiungere dati in Cache Redis di Azure.
 
-1. Add the following using statement to the top of the **Program.cs** file.
+1. Aggiungere il codice seguente `using` all'inizio dell'istruzione il **Program.cs** file.
 
     ```csharp
     using ServiceStack.Redis;
     ```
 
-1. Add the following snippet of code in your **Main** method. This will add two values transitionally.
+1. Aggiungere il seguente frammento di codice nel **Main** (metodo). Consente di aggiungere due valori in termini di transazioni.
 
     ```csharp
     using (RedisClient redisClient = new RedisClient(redisConnectionString))
@@ -158,26 +158,26 @@ Finally, we're going to add data into your Azure Redis Cache.
             Console.WriteLine("Transaction failed to commit");
     }
     ```
-1. Run the application through the command prompt at the bottom of the editor window and verify that the console says **Transaction committed**. 
+1. Eseguire l'applicazione tramite il prompt dei comandi nella parte inferiore della finestra dell'editor e verificare che la console viene visualizzato **commit della transazione**. 
 
     ```bash
     dotnet run
     ```
     
-## Verify your data
+## <a name="verify-your-data"></a>Verificare i dati
 
-To finish off, let's verify that the data we added is in our Azure Redis Cache.
+Per concludere, è possibile verificare che i dati che è stata aggiunta in Cache Redis di Azure.
 
-1. Sign into the [Azure portal](https://portal.azure.com?azure-portal=true).
+1. Accedere al [portale di Azure](https://portal.azure.com?azure-portal=true).
 
-1. Locate your Redis cache by selecting **All Resources** in the left-hand sidebar and using the filter box on the left to select Redis Cache instances. Alternatively, you can use the search box at the top and type the name of the cache.
+1. Individuare Cache Redis di Azure selezionando **tutte le risorse** nella barra laterale sinistra e usando la casella di filtro a sinistra per selezionare le istanze di Cache Redis di Azure. In alternativa, è possibile usare la casella di ricerca nella parte superiore e digitare il nome della cache.
 
-1. Select your Redis cache instance.
+1. Selezionare l'istanza di Cache Redis di Azure.
 
-1. In the **Overview** blade for your Redis Cache, select **Console**. This will open a Redis console, which allows you to enter low-level Redis commands.
+1. Nel **Overview** pannello Cache Redis di Azure, selezionare **Console**. Verrà aperta una console di Cache Redis di Azure che consente di immettere i comandi di Cache Redis di Azure a basso livello.
 
-1. Type **get MyKey1**. Verify that the value returned is **MyValue1**.
+1. Tipo di **ottenere MyKey1**. Verificare che il valore restituito sia **MyValue1**.
 
-1. Type **get MyKey2**. Verify that the value returned is **MyValue2**.
+1. Tipo di **ottenere MyKey2**. Verificare che il valore restituito sia **MyValue2**.
 
-    ![Screenshot of the Azure Redis console showing the values of MyKey1 and MyKey2.](../media/4-redis-console.png)
+    ![Screenshot della console di Cache Redis di Azure che mostra i valori di MyKey1 e MyKey2.](../media/4-redis-console.png)

@@ -1,4 +1,4 @@
-È frequente l'esecuzione di alcune logiche a un intervallo impostato. Si supponga di essere un proprietario di un blog e di notare che i sottoscrittori non leggono i post più recenti. Si decide che l'azione più efficace consiste nell'inviare un messaggio di posta elettronica una volta a settimana per ricordare ai componenti di controllare il blog. La logica viene implementata usando una funzione di Azure con un _trigger timer_ per richiamare la funzione ogni settimana.
+È frequente l'esecuzione di alcune logiche a un intervallo impostato. Si supponga di essere un proprietario di un blog e di notare che i sottoscrittori non leggono i post più recenti. Si decide che l'azione più efficace consiste nell'inviare un messaggio di posta elettronica una volta a settimana per ricordare ai componenti di controllare il blog. Implementare questa logica usando un'app per le funzioni di Azure con un _trigger timer_ per richiamare la funzione di ogni settimana.
 
 ## <a name="what-is-a-timer-trigger"></a>Cos è un trigger timer?
 
@@ -46,8 +46,8 @@ Quando si inseriscono tutti i campi contemporaneamente, l'espressione viene lett
 
 ## <a name="how-to-create-a-timer-trigger"></a>Come creare un trigger timer
 
-È possibile creare un trigger timer interamente all'interno del portale di Azure. All'interno della funzione di Azure, selezionare **trigger timer** dall'elenco dei tipi di trigger predefiniti. Immettere la logica che si desidera eseguire. Specificare un **Nome del parametro Timestamp** e l'**espressione CRON**.
+È possibile creare un trigger timer interamente all'interno del portale di Azure. Nell'app per le funzioni di Azure, selezionare **trigger timer** dall'elenco dei modelli di trigger. Immettere la logica che si desidera eseguire. Specificare un **Nome del parametro Timestamp** e l'**espressione CRON**.
 
-## <a name="summary"></a>Riepilogo
+In questo modulo è rivolta al portale, ma è anche possibile creare trigger a livello di codice usando strumenti di base, Visual Studio o Visual Studio Code.
 
-Creare un trigger timer per richiamare una funzione in una pianificazione coerente. Per definire la pianificazione di un trigger timer, creiamo un'*espressione CRON*, ovvero una stringa che rappresenta un insieme di tempi.
+Un trigger timer richiama un'app per le funzioni di Azure in una pianificazione coerente. Per definire la pianificazione di un trigger timer, creiamo un'*espressione CRON*, ovvero una stringa che rappresenta un insieme di tempi.

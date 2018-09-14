@@ -1,28 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.chain-azure-functions-data-using-input-output-bindings.2-explore-input-and-output-binding-types-portal-lesson
 metadata:
-  title: Explore input and output binding types
-  description: In this unit, we'll use the Azure Portal to explore understand bindings and the array of supported bindings that are available to us. 
+  title: Esplorare l'input e tipi di associazione di output
+  description: 'In questa unità, si userà il portale di Azure per esplorare comprendere le associazioni e la matrice di associazioni supportate disponibili per noi.'
   ms.date: 09/24/2018
   author: andrewjbyrne
   ms.author: anbyrne
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Explore input and output binding types
+title: Esplorare l'input e tipi di associazione di output
 durationInMinutes: 10
 content: |
   [!include[](includes/2-explore-input-and-output-binding-types-portal-lesson.md)]
-#tasks:
-#- action: exists
-#  environment: azure
-#  hint: 'Please make sure that you have named the resource group "myResourceGroup" and it was added to the "eastus" location'
-#  azure:
-#    location: eastus
-#- action: exists
-#  environment: azure
-#  azure:
-#    resource:
-#      type: Microsoft.Storage/storageAccounts
-#      name: docsproxyppea427
-#      tags:
-#        triplecrown: true

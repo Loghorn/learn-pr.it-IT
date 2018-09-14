@@ -4,24 +4,23 @@ Il nostro obiettivo consiste nel creare una nuova macchina virtuale di Azure. È
 
 Azure usa _gruppi di risorse_ per raggruppare le risorse correlate, ad esempio macchine virtuali e database. Il gruppo di risorse identifica anche un percorso specifico (denominato "area") che deciderà quale data center di risorsa è inserito.
 
-Dal momento che si tratta di un esperimento, per iniziare creare un nuovo gruppo di risorse denominato `ExerciseResources` e posizionarlo nell'area `eastus`.
+> [!NOTE]
+> Sandbox di Azure fornisce un gruppo di risorse creato in precedenza denominato <rgn>[nome gruppo di risorse di tipo Sandbox]</rgn>. Non devi eseguire questi passaggi. Tuttavia, quando si crea il _proprio_ risorse per i progetti reali, questi saranno i comandi da eseguire. Sandbox di Azure non consente di creare gruppi di risorse direttamente.
 
-<!-- TODO: replace with free ed-tier -->
-
-Digitare il comando dell'interfaccia della riga di comando di Azure seguente in Azure Cloud Shell per creare il gruppo di risorse nella sottoscrizione.
+Ad esempio, è possibile digitare il comando di Azure in Azure Cloud Shell creare un gruppo di risorse nel **Stati Uniti orientali** area. Sostituirà **[gruppo di risorse]** con un nome valido che sia univoco nella sottoscrizione attiva.
 
 ```azurecli
-az group create --name ExerciseResources --location eastus
+az group create --name [resource-group] --location eastus
 ```
 
-Verrà restituito un blocco JSON che indica che il gruppo di risorse è stato creato. Dovrebbe essere simile a:
+Verrà così restituito un blocco JSON che indica che il gruppo di risorse creato.
 
 ```json
 {
-  "id": "/subscriptions/abc13b0c-d2c4-64b2-9ac5-2f4cb819b752/resourceGroups/ExerciseResources",
+  "id": "/subscriptions/abc13b0c-d2c4-64b2-9ac5-2f4cb819b752/resourceGroups/<resourcegroup>",
   "location": "eastus",
   "managedBy": null,
-  "name": "ExerciseResources",
+  "name": "<resourcegroup>",
   "properties": {
     "provisioningState": "Succeeded"
   },
@@ -31,4 +30,4 @@ Verrà restituito un blocco JSON che indica che il gruppo di risorse è stato cr
 
 Si noti che viene restituito l'identificatore univoco, il percorso e il nome della sottoscrizione come parte della risposta. È possibile usare questi elementi per verificare che il gruppo sia stato creato nella sottoscrizione e posizione appropriate.
 
-Con un gruppo di risorse disponibile, creare una nuova macchina virtuale contenuta in esso.
+Ora che abbiamo imparato a creare un gruppo di risorse, è possibile creare una nuova macchina virtuale.

@@ -1,4 +1,4 @@
-Dopo aver appreso come l'abilitazione dell'identità del servizio gestita crea un'identità che l'app può usare per l'autenticazione, verrà creata un'app che usa tale identità per accedere ai segreti nell'insieme di credenziali.
+Ora che sai di abilitazione della gestione delle identità per le risorse di Azure crea un'identità per l'app da usare per l'autenticazione, si creerà un'app che usa tale identità per i segreti di accesso nell'insieme di credenziali.
 
 ## <a name="reading-secrets-in-an-aspnet-core-app"></a>Lettura di segreti in un'app ASP.NET Core
 
@@ -9,7 +9,7 @@ La libreria client ufficiale dell'insieme di credenziali delle chiavi per .NET C
 > [!TIP]
 > Indipendentemente dal framework o dal linguaggio usato per compilare l'app, memorizzare i valori segreti nella cache locale o caricarli in memoria all'avvio dell'app, a meno che non si abbia un motivo valido per non farlo. Leggere i segreti direttamente dall'insieme di credenziali ogni volta che sono necessari è un'attività lenta e costosa.
 
-Come input, il metodo `AddAzureKeyVault` richiede solo il nome dell'insieme di credenziali, che viene ottenuto dalla configurazione dell'app locale. Gestisce automaticamente anche l'autenticazione dell'identità del servizio gestita. Quando usato in un'app distribuita nel servizio app di Azure con l'identità del servizio gestita abilitata, rileva il servizio token dell'identità del servizio gestita e lo usa per eseguire l'autenticazione. È una scelta ideale per la maggior parte degli scenari e consente di adottare tutte le procedure consigliate. Verrà usato nell'esercizio di questa unità.
+Come input, il metodo `AddAzureKeyVault` richiede solo il nome dell'insieme di credenziali, che viene ottenuto dalla configurazione dell'app locale. Gestisce automaticamente anche l'autenticazione identità gestita &mdash; quando utilizzata in un'app distribuita in Azure App Service con identità gestite per le risorse di Azure abilitate, verrà rilevato le identità gestite il servizio token e usano per eseguire l'autenticazione. È una scelta ideale per la maggior parte degli scenari e consente di adottare tutte le procedure consigliate. Verrà usato nell'esercizio di questa unità.
 
 ## <a name="handling-secrets-in-an-app"></a>Gestione di segreti in un'app
 
@@ -71,9 +71,10 @@ namespace KeyVaultDemoApp
                     var vaultUrl = $"https://{builtConfig["VaultName"]}.vault.azure.net/";
 
                     // Load all secrets from the vault into configuration. This will automatically
-                    // authenticate to the vault using MSI. If MSI is not available, it will
-                    // check if Visual Studio and/or the Azure CLI are installed locally and
-                    // see if they are configured with credentials that can access the vault.
+                    // authenticate to the vault using a managed identity. If a managed identity
+                    // is not available, it will check if Visual Studio and/or the Azure CLI are
+                    // installed locally and see if they are configured with credentials that can
+                    // access the vault.
                     config.AddAzureKeyVault(vaultUrl);
                 })
                 .UseStartup<Startup>();

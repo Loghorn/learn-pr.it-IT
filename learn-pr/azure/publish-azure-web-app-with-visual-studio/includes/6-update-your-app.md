@@ -25,7 +25,7 @@ Ogni pagina del sito è rappresentata con due file di codice:
 
 - il primo è un file `.cshtml`, che è il file di markup Razor. Include l'HTML visualizzato e alcuni elementi della logica C#.
 
-- Il secondo file è un file `.cs`, ossia il code-behind C# che include la classe `PageModel`. Questo file consente di intercettare le richieste HTTP e di elaborarle in qualche modo prima di passare qualsiasi dato al file Razor.
+- Il secondo file è un `.cs` file, ovvero il code-behind c# che include `PageModel` classe. Questo file consente di intercettare le richieste HTTP e di elaborarle in qualche modo prima di passare qualsiasi dato al file Razor.
 
 ### <a name="appsettingjson"></a>appsetting.json
 
@@ -49,7 +49,7 @@ Razor è una sintassi ASP.NET che viene usata per creare pagine Web dinamiche co
 
 Razor usa direttive `@` per indicare ad ASP.NET come elaborare una pagina.
 
-Vediamo ad esempio il codice nella pagina `Contact.cshtml`.
+Ad esempio, esaminiamo il codice nel `Contact.cshtml` pagina:
 
 ```aspx-csharp
 @page
@@ -62,11 +62,10 @@ Vediamo ad esempio il codice nella pagina `Contact.cshtml`.
 ...
 ```
 
-Ad esempio, la direttiva `@page` indica ad ASP.NET di elaborare questo file come una pagina Razor.
-La direttiva `@model` indica ad ASP.NET di collegare questa pagina Razor a una classe C# denominata `ContactModel`.
+- Il `@page` ASP.NET per elaborare questo file come una pagina Razor impone alla direttiva.
+- La direttiva `@model` indica ad ASP.NET di collegare questa pagina Razor a una classe C# denominata `ContactModel`.
 
-Razor usa anche il simbolo `@` per eseguire la transizione tra il codice e HTML.
-Si noti ad esempio la parte `@{ ... }` nel frammento di codice riportato sopra. È un **blocco di codice Razor**. È codice che viene _eseguito, ma senza rendering_.
+Razor usa anche il simbolo `@` per eseguire la transizione tra il codice e HTML. Se si osserva il frammento di codice precedente, si noterà che `@{ ... }`. È un **blocco di codice Razor**. È codice che viene _eseguito, ma senza rendering_.
 
 Per eseguire il rendering dell'output di un'istruzione di codice, si usa `@` davanti a un'espressione C#. Ne abbiamo due esempi nel blocco di codice riportato sopra nei tag `<h2>` e `<h3>`.
 
@@ -76,7 +75,7 @@ Dopo aver apportato le modifiche al sito Web, è possibile pubblicarle in Azure.
 
 1. In Esplora soluzioni fare clic con il pulsante destro del mouse sul progetto.
 
-1. Dovrebbe essere visualizzato il nome del sito Web seguito da Distribuzione Web. Ad esempio, se si è assegnato al sito Web il nome AlpineSkiHouse42, si dovrebbe vedere **AlpineSkiHouse42 - Distribuzione Web** nelle opzioni disponibili. Selezionare questo nome per aggiornare il sito in Azure.
+1. Dovrebbe essere visualizzato il nome del sito Web seguito da Distribuzione Web. Se fosse stata denominata AlpineSkiHouse42 sito Web, si vedrebbe **AlpineSkiHouse42 - distribuzione Web** nelle opzioni disponibili. Selezionare questo nome per aggiornare il sito in Azure.
 
 ## <a name="summary"></a>Riepilogo
 

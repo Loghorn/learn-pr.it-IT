@@ -8,50 +8,44 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 85b15c5e29716aa4aa54bc49c7ad6c016901c41b
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
-  ms.translationtype: HT
-  ms.contentlocale: it-IT
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44243251"
 title: Verifica delle conoscenze - cosa si intende per controllo degli accessi in base al ruolo?
 durationInMinutes: 3
 quiz:
   title: Verifica delle conoscenze - cosa si intende per controllo degli accessi in base al ruolo?
   questions:
-  - content: In Azure un ruolo è una raccolta di autorizzazioni.
-    choices:
-    - content: Vero
-      isCorrect: true
-      correctExplanation: Corretto! In Azure un ruolo è una raccolta di autorizzazioni con un nome che è possibile assegnare a un utente, a un gruppo o a un'applicazione.
-    - content: Falso
-      isCorrect: false
-      incorrectExplanation: In Azure un ruolo è una raccolta di autorizzazioni con un nome che è possibile assegnare a un utente, a un gruppo o a un'applicazione.
-  - content: Quali sono i tre elementi che costituiscono un'assegnazione di ruolo?
-    choices:
-    - content: Utente, gruppo e applicazione
-      isCorrect: false
-      correctExplanation: Utente, gruppo e applicazione sono entità di sicurezza.
-    - content: Entità di sicurezza, ruolo e ambito
-      isCorrect: true
-      incorrectExplanation: Corretto! Un'assegnazione di ruolo è il processo di associazione di un ruolo a un'entità di sicurezza in un particolare ambito ai fini della concessione dell'accesso.
-    - content: Gruppo di gestione, sottoscrizione e gruppo di risorse
-      isCorrect: false
-      correctExplanation: Gruppo di gestione, sottoscrizione e gruppo di risorse costituiscono le modalità con cui organizzare le risorse di Azure e rappresentano gli ambiti.
-    - content: Proprietario, collaboratore e lettore
-      isCorrect: false
-      correctExplanation: Proprietario, collaboratore e lettore sono ruoli predefiniti in Azure.
-  - content: Qual è l'ordine di ereditarietà per l'ambito in Azure?
-    choices:
-    - content: Gruppo di gestione, gruppo di risorse, sottoscrizione, risorsa
-      isCorrect: false
-      correctExplanation: L'ordine non è corretto.
-    - content: Gruppo di gestione, sottoscrizione, gruppo di risorse, risorsa
-      isCorrect: true
-      incorrectExplanation: Corretto!
-    - content: Sottoscrizione, gruppo di gestione, gruppo di risorse, risorsa
-      isCorrect: false
-      correctExplanation: L'ordine non è corretto.
-    - content: Sottoscrizione, gruppo di risorse, gruppo di risorse, risorsa
-      isCorrect: false
-      correctExplanation: L'ordine non è corretto.
+    - content: In Azure un ruolo è una raccolta di autorizzazioni.
+      choices:
+        - content: Vero
+          isCorrect: true
+          correctExplanation: 'Corretto! In Azure un ruolo è una raccolta di autorizzazioni con un nome che è possibile assegnare a un utente, a un gruppo o a un''applicazione.'
+        - content: Falso
+          isCorrect: false
+          incorrectExplanation: 'In Azure un ruolo è una raccolta di autorizzazioni con un nome che è possibile assegnare a un utente, a un gruppo o a un''applicazione.'
+    - content: Quali sono i tre elementi che costituiscono un'assegnazione di ruolo?
+      choices:
+        - content: 'Utente, gruppo e applicazione'
+          isCorrect: false
+          correctExplanation: 'Utente, gruppo e applicazione sono entità di sicurezza.'
+        - content: 'Entità di sicurezza, ruolo e ambito'
+          isCorrect: true
+          incorrectExplanation: Corretto! Un'assegnazione di ruolo è il processo di associazione di un ruolo a un'entità di sicurezza in un particolare ambito ai fini della concessione dell'accesso.
+        - content: 'Gruppo di gestione, sottoscrizione e gruppo di risorse'
+          isCorrect: false
+          correctExplanation: 'Gruppo di gestione, sottoscrizione e gruppo di risorse costituiscono le modalità con cui organizzare le risorse di Azure e rappresentano gli ambiti.'
+        - content: 'Proprietario, collaboratore e lettore'
+          isCorrect: false
+          correctExplanation: 'Proprietario, collaboratore e lettore sono ruoli predefiniti in Azure.'
+    - content: Qual è l'ordine di ereditarietà per l'ambito in Azure?
+      choices:
+        - content: 'Gruppo di gestione, gruppo di risorse, sottoscrizione, risorsa'
+          isCorrect: false
+          correctExplanation: L'ordine non è corretto.
+        - content: 'Gruppo di gestione, sottoscrizione, gruppo di risorse, risorsa'
+          isCorrect: true
+          incorrectExplanation: Corretto!
+        - content: 'Sottoscrizione, gruppo di gestione, gruppo di risorse, risorsa'
+          isCorrect: false
+          correctExplanation: L'ordine non è corretto.
+        - content: 'Sottoscrizione, gruppo di risorse, gruppo di risorse, risorsa'
+          isCorrect: false
+          correctExplanation: L'ordine non è corretto.

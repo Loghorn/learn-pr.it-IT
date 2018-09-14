@@ -1,38 +1,38 @@
 ### YamlMime:ModuleUnit
 uid: learn.scale-and-size-virtual-machines.6-knowledge-check
-title: "Knowledge check: Scale and size virtual machines"
+title: 'Verifica delle conoscenze: scalabilità e le macchine virtuali di dimensioni'
 durationInMinutes: 3
-
 metadata:
-  title: "Knowledge check: Scale and size virtual machines"
-  description: Questions about scaling and sizing virtual machines in Azure.
-
+  title: 'Verifica delle conoscenze: scalabilità e le macchine virtuali di dimensioni'
+  description: Domande sulla scalabilità e il ridimensionamento delle macchine virtuali in Azure.
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
 quiz:
-  title: "Knowledge check: Scale and size virtual machines"
+  title: 'Verifica delle conoscenze: scalabilità e le macchine virtuali di dimensioni'
   questions:
- 
-  - content: "True or false: when using virtual machine scale sets with autoscale, the autoscale rules can be configured to change the _size_ of the virtual machines in your scale set."
-    choices:
-    - content: "True"
-      isCorrect: false
-    - content: "False"
-      isCorrect: true
-      correctExplanation: "Autoscale changes the number of instances in your scale set, it does not change the size of the instances."
-
-  - content: "What is typically the most important criterion to use when choosing a _type_ for your virtual machine?"
-    choices:
-    - content: "Your workload; that is, the kind of operations you expect the virtual machine to perform most often."
-      isCorrect: true
-      correctExplanation: "Virtual machine _type_ describes the mix of CPU, GPU, memory, storage, and networking bandwidth allocated to a VM. Your goal is to find the best match of resources for your workload."
-    - content: "The brand of the underlying hardware."
-      isCorrect: false
-    - content: "The operating systems and images that the type supports."
-      isCorrect: false
-       
-  - content: "Suppose you work for a government department responsible for severe-weather alerts. You can achieve the performance you need using one large VM or two small VMs with a load balancer. Which configuration is likely to be a better choice?"
-    choices:
-    - content: "One VM"
-      isCorrect: false
-    - content: "Two VMs and a load balancer"
-      isCorrect: true
-      correctExplanation: "Multiple VMs is appropriate because it provides redundancy. If one of the VMs crashes, the other can continue to service requests."
+    - content: 'True o false: quando si usa il set di scalabilità di macchine virtuali con la scalabilità automatica, è possono configurare le regole di scalabilità automatica per modificare la _dimensioni_ delle macchine virtuali di scalabilità impostata.'
+      choices:
+        - content: Vero
+          isCorrect: false
+        - content: Falso
+          isCorrect: true
+          correctExplanation: Scalabilità automatica viene modificato il numero di istanze nel set di scalabilità. Non modifica la dimensione delle istanze.
+    - content: Che cos'è in genere il criterio più importante da utilizzare quando si sceglie un _tipo_ per la macchina virtuale?
+      choices:
+        - content: 'Il carico di lavoro vale a dire, il tipo di operazioni si prevede che la macchina virtuale per eseguire più spesso.'
+          isCorrect: true
+          correctExplanation: 'Macchina virtuale _tipo_ descrive la combinazione di CPU, GPU, memoria, archiviazione e larghezza di banda rete allocata a una macchina virtuale. L''obiettivo consiste nel trovare la corrispondenza migliore delle risorse per il carico di lavoro.'
+        - content: Il marchio dell'hardware sottostante.
+          isCorrect: false
+        - content: I sistemi operativi e le immagini che supporta il tipo.
+          isCorrect: false
+    - content: Si supponga che si lavora per un responsabile di bollettini meteo negativi-avvisi di reparto per enti pubblici. È possibile ottenere le prestazioni che ti servono usando una macchina virtuale di grandi dimensioni o due macchine virtuali di piccole dimensioni con un servizio di bilanciamento del carico. Come scegliere la configurazione è probabile che sia una scelta migliore?
+      choices:
+        - content: Una macchina virtuale
+          isCorrect: false
+        - content: Due macchine virtuali e un servizio di bilanciamento del carico
+          isCorrect: true
+          correctExplanation: 'Una configurazione con più macchine virtuali è appropriata in quanto fornisce la ridondanza. Se una delle VM si blocca, l''altro può continuare per soddisfare le richieste.'

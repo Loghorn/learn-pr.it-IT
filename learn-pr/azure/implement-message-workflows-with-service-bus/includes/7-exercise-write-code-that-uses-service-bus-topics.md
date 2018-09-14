@@ -1,20 +1,20 @@
-Si è scelto di usare un argomento del bus di servizio di Azure per distribuire i messaggi relativi all'andamento delle vendite nell'applicazione distribuita degli addetti alle vendite. L'app usata dal personale di vendita sui propri dispositivi mobili invierà messaggi che riassumono i dati di vendita per ogni area e periodo di tempo. Tali messaggi saranno distribuiti ai servizi Web situati nelle aree operative dell'azienda, comprese le Americhe e l'Europa.
+Si è scelto di usare un argomento del Bus di servizio di Azure per distribuire i messaggi relativi alle prestazioni di vendita nell'applicazione forza vendita distribuito. L'app usata dal personale addetto alle vendite nei dispositivi mobili verrà inviati i messaggi che riepilogano i dati relativi alle vendite per ogni area e periodo di tempo. Tali messaggi saranno distribuiti ai servizi Web situati nelle aree operative dell'azienda, comprese le Americhe e l'Europa.
 
-È già stata implementata l'infrastruttura necessaria nella sottoscrizione di Azure, incluso l'argomento e le sottoscrizioni. Ora si vuole scrivere il codice che invia messaggi all'argomento e recupera i messaggi da ogni sottoscrizione.
+È già stata implementata l'infrastruttura necessaria nella sottoscrizione di Azure, incluso l'argomento e le sottoscrizioni. A questo punto, si desidera scrivere il codice che invia messaggi all'argomento e recupera i messaggi di ogni sottoscrizione.
 
 ## <a name="configure-a-connection-string-to-a-service-bus-namespace"></a>Configurare una stringa di connessione a uno spazio dei nomi del bus di servizio
 
-Iniziare configurando le stringhe di connessione nei componenti di invio e di ricezione:
+È possibile iniziare configurando le stringhe di connessione sia l'invio e la ricezione di componenti:
 
-1. Accedere al portale di Azure.
+1. Passare al portale di Azure.
 
-1. Nella home page fare clic su **Tutte le risorse**, quindi sullo spazio dei nomi del bus di Servizio creato in precedenza.
+1. Nella home page fare clic su **Tutte le risorse** e quindi fare clic sullo spazio dei nomi del bus di servizio creato in precedenza.
 
 1. In **IMPOSTAZIONI** fare clic su **Criteri di accesso condiviso**.
 
 1. Nell'elenco dei criteri fare clic su **RootManageSharedAccessKey**.
 
-1. A destra della casella di testo **Stringa di connessione primaria** scegliere il pulsante **Fare clic per copiare**.
+1. A destra del **stringa di connessione primaria** casella di testo, fare clic sui **fare clic per copiare** pulsante.
 
 1. Passare a **Visual Studio Code**.
 
@@ -38,7 +38,7 @@ Iniziare configurando le stringhe di connessione nei componenti di invio e di ri
 
 1. Posizionare il cursore tra le virgolette e quindi premere **Ctrl + V**.
 
-1. Fare clic su **File** e quindi su **Salva tutto**.
+1. Fare clic su **File**, quindi fare clic su **Salva tutto**.
 
 1. Chiudere tutte le finestre aperte dell'editor.
 
@@ -93,7 +93,7 @@ Per completare il componente che invia messaggi sull'andamento delle vendite, se
     // Close the connection to the topic here
     ```
 
-1. Per chiudere la connessione del bus di servizio, sostituire la riga di codice con il codice seguente:
+1. Per chiudere la connessione al Bus di servizio, sostituire la riga di codice con il codice seguente:
 
     ```C#
     await topicClient.CloseAsync();
@@ -107,13 +107,13 @@ Per eseguire il componente che invia un messaggio su una vendita, seguire questa
 
 1. In Visual Studio Code scegliere **Debug** dal menu **Visualizza**.
 
-1. Nel riquadro **Debug** selezionare **Avvia Private Message Sender** nell'elenco a discesa e quindi premere **F5**. Visual Studio Code compila ed esegue l'applicazione console in modalità di debug.
+1. Nel **Debug** riquadro, nell'elenco a discesa elenco, selezionare **mittente del messaggio prestazioni avviare**e quindi premere **F5**. Visual Studio Code compila ed esegue l'applicazione console in modalità di debug.
 
 1. Mentre il programma viene eseguito, esaminare i messaggi nella **Console di debug**.
 
-1. Accedere al portale di Azure.
+1. Passare al portale di Azure.
 
-1. Se il bus di servizio non viene visualizzato, nella home page fare clic su **Tutte le risorse** e quindi sullo spazio dei nomi del bus di servizio creato in precedenza.
+1. Se lo spazio dei nomi del Bus di servizio non viene visualizzato, nella home page, fare clic su **tutte le risorse**, quindi fare clic sullo spazio dei nomi del Bus di servizio creato in precedenza.
 
 1. Nel pannello **Spazio dei nomi del bus di servizio** fare clic su **Argomenti** in **ENTITÀ** e quindi sull'argomento **salesperformancemessages**. Nell'elenco delle sottoscrizioni verrà visualizzato un messaggio nelle sottoscrizioni **Americhe** ed **Europa**.
 
@@ -128,7 +128,7 @@ Per completare il componente che recupera messaggi sull'andamento delle vendite,
 1. All'interno di questo metodo individuare la riga di codice seguente:
 
     ```C#
-    // Create a Subscription Client here
+    // Create a subscription client here
     ```
 
 1. Per creare un client di sottoscrizione, sostituire la riga con il codice seguente:
@@ -189,14 +189,14 @@ Per eseguire il componente che recupera un messaggio sull'andamento delle vendit
 
 1. In Visual Studio Code scegliere **Debug** dal menu **Visualizza**.
 
-1. Nel riquadro **Debug** selezionare **Avvia Performance Message Receiver** nell'elenco a discesa e quindi premere **F5**. Visual Studio Code compila ed esegue l'applicazione console in modalità di debug.
+1. Nel **Debug** riquadro, nell'elenco a discesa elenco, selezionare **ricevitore del messaggio prestazioni avviare**e quindi premere **F5**. Visual Studio Code compila ed esegue l'applicazione console in modalità di debug.
 
 1. Mentre il programma viene eseguito, esaminare i messaggi nella **Console di debug**.
 
 1. Quando si nota che il messaggio è stato ricevuto e viene visualizzato nella console, scegliere **Arresta debug**dal menu **Debug**.
 
-1. Accedere al portale di Azure.
+1. Passare al portale di Azure.
 
-1. Se il bus di servizio non viene visualizzato, nella home page fare clic su **Tutte le risorse** e quindi sullo spazio dei nomi del bus di servizio creato in precedenza.
+1. Se lo spazio dei nomi del Bus di servizio non viene visualizzato, nella home page, fare clic su **tutte le risorse**, quindi fare clic sullo spazio dei nomi del Bus di servizio creato in precedenza.
 
 1. Nel pannello **Spazio dei nomi del bus di servizio** fare clic su **Argomenti** in **ENTITÀ** e quindi sull'argomento **salesperformancemessages**. Nell'elenco delle sottoscrizioni non verranno visualizzati messaggi nella sottoscrizione **Americhe** perché l'applicazione ha elaborato e rimosso l'unico messaggio presente. Si noti che il messaggio è ancora presente nella sottoscrizione **Europa**.

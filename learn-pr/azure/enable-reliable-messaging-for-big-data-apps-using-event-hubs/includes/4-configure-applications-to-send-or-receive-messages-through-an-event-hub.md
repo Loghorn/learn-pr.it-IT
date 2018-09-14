@@ -27,7 +27,7 @@ Se si dispone di un'applicazione ricevitore che archivia i messaggi in Archiviaz
 
 ## <a name="the-azure-cli-commands-for-creating-a-general-purpose-standard-storage-account"></a>Comandi dell'interfaccia della riga di comando di Azure per la creazione di un account di archiviazione standard per utilizzo generico
 
-1. Creare l'account di archiviazione (per utilizzo generico V2) nel gruppo di risorse e nella posizione del data center di Azure usati per la creazione del gruppo di risorse.
+1. Creare un account di archiviazione V2 generico nel gruppo di risorse e la stessa posizione Data Center di Azure che è stato utilizzato durante la creazione del gruppo di risorse.
 
     ```azurecli
     az storage account create --name <storage account name> --resource-group <resource group name> --location <location> --sku Standard_RAGRS --encryption blob

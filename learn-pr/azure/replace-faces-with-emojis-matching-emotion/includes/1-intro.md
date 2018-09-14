@@ -1,39 +1,31 @@
-TheMojifier is a Slack _slash_ command which replaces peoples faces in images with emojis matching their emotion, like so:
+TheMojifier è un Slack _barra_ comando che sostituisce i visi di persone nelle immagini con emoji corrispondenza relativi emozioni, come segue:
 
-![Example image](/media-drafts/example-mojify-image.png)
+![Immagine di esempio](/media-drafts/example-mojify-image.png)
 
-It's designed to work from Slack as a custom command, you can name the command how you want, for this document I've named it `mojify`.
+È progettato per funzionare da Slack come un comando personalizzato. È possibile assegnare il comando desiderato, ma per questo modulo, chiamiamo `mojify`.
 
-To execute the commmand type `/mojify <image to mojify>`, like so:
+Per eseguire il comando, digitare `/mojify <image to mojify>`:
 
-![Example Image](/media-drafts/9.slack-type-mojify.png)
+![Immagine di esempio](/media-drafts/9.slack-type-mojify.png)
 
-The mojifier then:
+Verrà quindi il Mojifier:
 
-1.  Calculates the emotion of any people in the image.
-2.  Matches emotions to emojis.
-3.  Replaces the faces with emojis.
-4.  Posts the image back to Twitter as a reply.
+  1.  Il calcolo delle emozioni di persone nell'immagine
+  2.  Corrispondenza emozioni per emoji
+  3.  Sostituisce i volti nell'immagine con emoji
+  4.  Pubblica l'immagine aggiornata in Slack come risposta
 
-It’s written using TypeScript and several Azure technologies including [Azure Functions](https://azure.microsoft.com/services/functions/&WT.mc_id=mojifier-sandbox-ashussai) and [Azure Cognitive Services](https://azure.microsoft.com/services/cognitive-services/?WT.mc_id=mojifier-sandbox-ashussai)
+Scritto con TypeScript e tecnologie di Azure diversi tra cui la Mojifier [funzioni di Azure](https://azure.microsoft.com/services/functions/) e [servizi cognitivi di Azure](https://azure.microsoft.com/services/cognitive-services/). Si userà queste per verificare la propria versione di _TheMojifier_. 
 
-In this tutorial I’m going to explain how TheMojifier was made and show you how to create your own Slack command using Azure technologies.
+> [!NOTE] 
+> È disponibile in tutto il codice per Mojifier [GitHub](https://github.com/microsoftdocs/mslearn-the-mojifier).
 
-> TODO, where will this be now?
-> All the code for Mojifier is available on [GitHub](https://github.com/jawache/mojifier)
+## <a name="tools-youll-use"></a>Strumenti necessari
 
-# Requirements
+### <a name="azure-cognitive-services"></a>Servizi cognitivi di Azure
 
-To build the mojifier, we need to use several Azure services.
+Servizi cognitivi di Azure sono un set di API ad alto livello, è possibile usare per aggiungere rapidamente funzionalità avanzate di intelligenza artificiale (AI) in un'app. Se si sa come eseguire una richiesta HTTP, quindi sarà possibile usare servizi cognitivi.
 
-## Azure Cognitive Services
+### <a name="azure-functions"></a>Funzioni di Azure
 
-Azure Cognitive Services are a set of high-level APIs you can use to add advanced AI functionality into your application quickly. If you can make an HTTP request, you can use Cognitive Services.
-
-[More info](https://azure.microsoft.com/services/cognitive-services/?WT.mc_id=mojifier-sandbox-ashussai)
-
-## Azure Functions
-
-As powerful as Logic Apps are sometimes you need to write business logic using the full expressiveness of a programming language. Azure Functions is a technology that lets you host snippets of code that can respond to events or HTTP requests, Azure handles all of the scaling issues for you and you only pay for what you use.
-
-[More info](https://azure.microsoft.com/services/functions/&WT.mc_id=mojifier-sandbox-ashussai)
+Azure consente di funzioni di includere frammenti di codice in grado di rispondere a eventi o le richieste HTTP. Azure gestisce automaticamente i problemi di scalabilità, e si paga solo per le risorse usate. Come con qualsiasi parte del Microsoft Learn, si affronterà tutti i costi per l'utente nell'ambiente di apprendimento.

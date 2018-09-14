@@ -1,9 +1,9 @@
 ### YamlMime:ModuleUnit
 uid: learn.ci-cd-pipelines-azure-devops.2-replacing-sample-code-with-your-own-code
-title: Repacing the sample code with your own code
+title: Il codice di esempio con il proprio codice repacing
 metadata:
-  title: Replacing the sample code with your own code
-  description: Learn how to replace the sample code in an Azure DevOps project with your own code.
+  title: Sostituire il codice di esempio con il proprio codice
+  description: Informazioni su come sostituire il codice di esempio in un progetto Azure DevOps con il proprio codice.
   author: lnyswonger
   ms.date: 09/24/2018
   ms.author: luken
@@ -12,4 +12,3 @@ metadata:
 durationInMinutes: 5
 content: |
   [!include[](includes/2-replacing-sample-code-with-your-own-code.md)]
-  

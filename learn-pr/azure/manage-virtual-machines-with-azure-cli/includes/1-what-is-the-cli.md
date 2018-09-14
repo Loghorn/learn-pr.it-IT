@@ -2,7 +2,7 @@ Si supponga di dover gestire un set di macchine virtuali di Azure in esecuzione 
 
 Il portale di Azure è facile da usare, ma i vari spostamenti da un pannello all'altro aumentano il tempo necessario per eseguire alcune attività. 
 
-Tra le possibili alternative è disponibile lo strumento di interfaccia della riga di comando di Azure.
+Tra le possibili alternative è disponibile lo strumento della riga di comando di Azure.
 
 Tramite l'interfaccia della riga di comando di Azure, è possibile scrivere script per controllare lo stato dei server, distribuire una nuova configurazione, aprire una porta o connettersi a una macchina virtuale per modificare un'impostazione.
 
@@ -19,7 +19,7 @@ L'interfaccia della riga di comando di Azure può essere utile per gestire le ri
 
 ## <a name="learning-objectives"></a>Obiettivi di apprendimento
 
-Contenuto del modulo:
+In questo modulo verrà descritto come:
 
 - Creare una macchina virtuale con l'interfaccia della riga di comando di Azure
 - Ridimensionare macchine virtuali con l'interfaccia della riga di comando di Azure.

@@ -1,47 +1,47 @@
-Your healthcare organization stores personal and potentially sensitive client data. A security incident could expose this sensitive data, which could cause personal embarrassment or financial harm. How do you ensure the integrity of their data and ensure your systems are secure? 
+Un'organizzazione sanitaria archivia informazioni personali e potenzialmente riservate sui clienti. Un evento imprevisto per la sicurezza potrebbe esporre questi dati sensibili, causando imbarazzo personale o danni finanziari. Cosa si può fare per garantire l'integrità dei dati dei clienti e la sicurezza dei sistemi aziendali? 
 
-Here, we'll talk about how to approach the security of an architecture.
+In questo articolo vedremo come affrontare la sicurezza di un'architettura.
 
-## What should I protect?
+## <a name="what-should-i-protect"></a>Cosa è necessario proteggere?
 
-The data your organization stores is at the heart of your securable assets. This data could be sensitive data about customers, financial information about your organization, or critical line-of-business data supporting your organization. Along with data, securing the infrastructure it exists on, and the identities we use to access it, are also critically important.
+Gli archivi di dati dell'organizzazione o di handle è il fulcro delle risorse di entità a protezione diretta. Possono essere dati sensibili sui clienti, informazioni finanziarie sull'organizzazione o informazioni line-of-business critiche che supportano l'organizzazione. Insieme ai dati, è fondamentale proteggere anche l'infrastruttura che li contiene e le identità usate per accedervi.
 
-Your data may be subject to additional legal and regulatory requirements depending on where you are located, the type of data you are storing, or the industry that your application operates in. For instance, in the healthcare industry in the US, there is a law called the Health Insurance Portability and Accountability Act (HIPAA). Organizations that store data that is in scope for this law are required to ensure certain safeguards are in place. In Europe, the General Data Protection Regulation (GDPR) lays out the rules of how personal data is protected, and defines individuals' rights related to stored data. Some countries require that certain types of data do not leave their borders.
+I dati possono essere soggetti a ulteriori requisiti legali e normativi a seconda della località in cui si trova l'organizzazione, del tipo di dati archiviati o del settore in cui opera l'applicazione. Ad esempio, negli Stati Uniti il settore sanitario è regolato da una legge nota come Health Insurance Portability and Accountability Act (HIPAA). Nel settore finanziario, Payment Card Industry Data Security Standard riguarda la gestione di dati della carta di credito. Le organizzazioni che memorizzano i dati che si trova nell'ambito di tali leggi e standard sono necessari per verificare che determinate misure di sicurezza siano soddisfatti per la protezione dei dati. In Europa il Regolamento generale sulla protezione dei dati (GDPR) stabilisce le norme per la protezione delle informazioni personali e definisce i diritti individuali in relazione ai dati archiviati. Alcuni paesi impongono che determinati tipi di dati rimangano entro i confini nazionali.
 
-When a security breach occurs, there can be substantial impacts to the finances and reputation of both organizations and customers. This breaks down the trust customers are willing to instill in your organization, and can impact its long-term health.
+Se si verifica una violazione della sicurezza, l'impatto sulle finanze e la reputazione di organizzazioni e clienti può essere notevole. Viene infatti meno la fiducia dei clienti nei confronti dell'organizzazione, con ripercussioni negative sulla sua solidità a lungo termine.
 
-## Defense in depth
+## <a name="defense-in-depth"></a>Difesa avanzata
 
-A multilayered approach to securing your environment will increase the security posture of your environment. Commonly known as _defense in depth_, we can break down the layers as follows:
+Un approccio multilivello alla protezione dell'ambiente ne migliorerà le condizioni di sicurezza. Comunemente noto come _difesa in profondità_, suddividere i livelli come indicato di seguito:
 
-* Data
-* Applications
-* VM/compute
-* Networking
-* Perimeter
-* Policies & access
-* Physical security
+* Dati
+* Applicazioni
+* Macchine virtuali/risorse di calcolo
+* Rete
+* Perimetro
+* Criteri e accesso
+* Sicurezza fisica
 
-Each layer focuses on a different area where attacks can happen and creates a depth of protection, should one layer fail or be bypassed by an attacker. If we were to just focus on one layer, an attacker would have unfettered access to your environment should they get through this layer. Addressing security in layers increases the work an attacker must do to gain access to your systems and data. Each layer will have different security controls, technologies, and capabilities that will apply. When identifying the protections to put in place, cost will often be of concern, and will need to be balanced with business requirements and overall risk to the business.
+Ogni livello è incentrato su una diversa area in cui possono verificarsi attacchi e rafforza la protezione nell'eventualità in cui un livello sperimenti un errore o venga aggirato da un utente malintenzionato. Se esistesse un solo livello, un utente malintenzionato avrebbe libero accesso all'ambiente di lavoro, qualora riuscisse a superarlo. L'uso dei livelli di sicurezza aumenta il numero di operazioni che un utente malintenzionato deve eseguire per riuscire ad accedere ai sistemi e ai dati aziendali. Ogni livello avrà controlli, tecnologie e funzionalità di sicurezza specifici. Una volta identificati i meccanismi di protezione da applicare, sarà necessario trovare un equilibrio fra i costi e i requisiti aziendali e il livello di rischio a cui l'organizzazione è esposta.
 
-![Security layers](../media-draft/security-layers.png)
+![Livelli di sicurezza](../media-draft/security-layers.png)
 
-There is no single security system, control, or technology that will fully protect your architecture. Security is more than just technology, it's also about people and processes. Creating an environment that looks holistically at security, and making it a requirement by default will help ensure your organization is as secure as possible.
+Non esiste un solo sistema, controllo o tecnologia di sicurezza in grado di proteggere l'architettura. La sicurezza non è limitata alla tecnologia, ma riguarda anche le persone e i processi. La creazione di un ambiente che consideri la sicurezza nella sua globalità e l'aggiunta delle sicurezza tra i requisiti predefiniti contribuiranno a rendere l'organizzazione il più sicura possibile.
 
-## Common attacks
+## <a name="common-attacks"></a>Attacchi più comuni
 
-At each layer, there are some common attacks that you will want to protect against. These are not all-inclusive, but can give you an idea of how each layer can be attacked and what types of protections you may need to look at.
+A ogni livello sono associati alcuni attacchi comuni da cui è opportuno proteggersi. Sono solo un esempio, ma possono dare un'idea del modo in cui ogni livello può essere attaccato e dei tipi di protezioni che può essere necessario considerare.
 
-* **Data layer**: Encryption key exposure or using weak encryption can leave your data vulnerable should unauthorized access occur.
-* **Application layer**: Malicious code injection and execution are the hallmarks of application-layer attacks. Common attacks include SQL injection and cross-site scripting (XSS).
-* **VM/compute layer**: Malware is a common method of attacking an environment, which involves executing malicious code to compromise a system. Once malware is present on a system, further attacks leading to credential exposure and lateral movement throughout the environment can occur.
-* **Networking layer**: Unnecessary open ports to the Internet are a common method of attack. These could include leaving SSH or RDP open to virtual machines. When open, these could allow brute-force attacks against your systems as attackers attempt to gain access.
-* **Perimeter layer**: Denial-of-service (DoS) attacks are often seen at this layer. These attacks attempt to overwhelm network resources, forcing them to go  offline or making them incapable of responding to legitimate requests.
-* **Policies & access layer**: This is where authentication occurs for your application. This could include modern authentication protocols such as OpenID Connect, OAuth, or Kerberos-based authentication such as Active Directory. Exposed credentials are a risk here and it's important to limit the number of identities permissions of identities. We also want to have monitoring in place to look for possible compromised accounts, such as logins coming from unusual places.
-* **Physical layer**: Unauthorized access to facilities through methods such as door drafting and theft of security badges can be seen at this layer.
+* **Livello dati**: l'esposizione della chiave di crittografia o l'uso di una crittografia debole può lasciare i dati vulnerabili in caso di accesso non autorizzato.
+* **Livello applicazione**: l'aggiunta e l'esecuzione di malware sono le caratteristiche distintive degli attacchi del livello applicazione. Gli attacchi più comuni sono gli attacchi SQL injection e gli attacchi tramite script da altri siti (XSS).
+* **Livello macchina virtuale/calcolo**: il malware è un metodo molto usato per attaccare un ambiente e consiste nell'esecuzione di codice dannoso per compromettere un sistema. Una volta che il malware è entrato nel sistema, possono verificarsi altri attacchi che conducono all'esposizione delle credenziali e allo spostamento laterale nell'intero sistema.
+* **Livello rete**: le porte aperte a Internet senza necessità costituiscono un metodo di attacco comune. In questo scenario i protocolli SSH o RDP potrebbero rimanere aperti alle macchine virtuali, permettendo agli utenti malintenzionati di eseguire attacchi di forza bruta per accedere ai sistemi aziendali.
+* **Livello perimetro**: questo livello è spesso soggetto ad attacchi Denial of Service (DoS). Questi attacchi tentano di sovraccaricare le risorse di rete, obbligandole a passare offline o rendendole incapaci di rispondere alle richieste legittime.
+* **Livello criteri e accesso**: è il livello in cui ha luogo l'autenticazione dell'applicazione. Può includere protocolli di autenticazione moderni come OpenID Connect, OAuth o l'autenticazione basata su Kerberos come Active Directory. A questo livello le credenziali esposte rappresentano un rischio ed è importante limitare il numero di autorizzazioni delle identità. È anche opportuno implementare un sistema di monitoraggio che individui i possibili account compromessi, come gli accessi da posizioni insolite.
+* **Livello fisico**: questo livello può essere soggetto ad accessi non autorizzati alle strutture aziendali tramite metodi come la progettazione di ingressi e il furto dei badge di sicurezza.
 
-## Shared security responsibility
+## <a name="shared-security-responsibility"></a>Responsabilità di sicurezza condiviso
 
-Revisiting the model of shared responsibility, we can reframe this in the context of security. Depending on the type of service you select, some security protections will be built in to the service, while others will remain your responsibility. Careful evaluation of the services and technologies you select will be necessary, to ensure you are providing the proper security controls for your architecture.
+Rivedere il modello di responsabilità condivisa, è possibile rivaluti questo nel contesto di sicurezza. A seconda del tipo di servizio che scelto, alcuni meccanismi di protezione verranno compilate al servizio, mentre altre rimangono responsabilità dell'utente. Un'attenta valutazione delle tecnologie che si seleziona servizi e sarà necessaria, verificare di avere specificato i controlli di sicurezza appropriate per l'architettura.
 
-![Shared security responsibilities](../media-draft/shared_responsibilities.png)
+![Responsabilità di sicurezza condiviso](../media-draft/shared_responsibilities.png)

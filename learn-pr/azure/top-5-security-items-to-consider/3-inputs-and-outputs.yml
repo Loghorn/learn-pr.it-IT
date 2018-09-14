@@ -1,9 +1,9 @@
 ### YamlMime:ModuleUnit
 uid: learn.top-5-security-items-to-consider.3-inputs-and-outputs
-title: Inputs and Outputs
+title: Input e output
 metadata:
-  title: Inputs and Outputs
-  description: Inputs and Outputs
+  title: Input e output
+  description: Input e output
   author: lnyswonger
   ms.date: 09/24/2018
   ms.author: luken
@@ -13,47 +13,47 @@ durationInMinutes: 10
 content: |
   [!include[](includes/3-inputs-and-outputs.md)]
 quiz:
-  title: 'Knowledge Check - Azure Security center'
+  title: Verifica delle conoscenze - Centro sicurezza di Azure
   questions:
-  - content: 'Which of the following data sources need to be sanitized?'
-    choices:
-    - content: 'Data from a 3rd party API.'
-      isCorrect: false
-      incorrectExplanation: 'TBD.'
-    - content: 'Data from the URL parameter.'
-      isCorrect: false
-      correctExplanation: 'TBD.'
-    - content: 'Data collected from the user via an input field.'
-      isCorrect: false
-      incorrectExplanation: 'TBD.'
-    - content: 'All of the above'
-      isCorrect: true
-      incorrectExplanation: 'TBD.'
-  - content: 'Which of the following data needs to be output encoded?'
-    choices:
-    - content: 'Data saved to the database'
-      isCorrect: false
-      incorrectExplanation: 'TBD.'
-    - content: 'Data to be output to the screen'
-      isCorrect: true
-      correctExplanation: 'TBD.'
-    - content: 'Data sent to a 3rd party API'
-      isCorrect: false
-      incorrectExplanation: 'TBD.'
-    - content: 'Data in the URL parameters'
-      isCorrect: false
-      incorrectExplanation: 'TBD.'
-  - content: 'Parameterized queries (stored procedures in SQL) are always a more secure choice for talking to the database because:'
-    choices:
-    - content: 'They are more organized than inline database commands, and therefore less confusing for users.'
-      isCorrect: false
-      incorrectExplanation: 'TBD.'
-    - content: 'There is a clear outline of the script in the stored procedure, ensuring better visibility.'
-      isCorrect: false
-      incorrectExplanation: 'TBD.'
-    - content: 'Hackers don’t understand how to program in SQL.'
-      isCorrect: false
-      incorrectExplanation: 'TBD.'
-    - content: 'Parameterized queries substitute variables before running queries, meaning it avoids the opportunity for code to be submitted in place of a variable.'
-      isCorrect: true
-      correctExplanation: 'TBD.'
+    - content: Quale delle seguenti origini dati devono essere convalidate?
+      choices:
+        - content: I dati da un 3rd party API.
+          isCorrect: false
+          incorrectExplanation: Questo è solo una delle molte origini che deve essere convalidata.
+        - content: Dati dal parametro URL.
+          isCorrect: false
+          incorrectExplanation: Questo è solo una delle molte origini che deve essere convalidata
+        - content: I dati raccolti da parte dell'utente tramite un campo di input.
+          isCorrect: false
+          incorrectExplanation: Questo è solo una delle molte origini che deve essere convalidata.
+        - content: Tutte le opzioni sopra indicate.
+          isCorrect: true
+          correctExplanation: Correggere. Tutte le origini dei dati devono essere convalidate.  Mai fidarsi tutti i dati che può essere modificati.
+    - content: Quale dei seguenti dati deve essere con codifica output?
+      choices:
+        - content: Dati salvati nel database
+          isCorrect: false
+          incorrectExplanation: 'Anche se i dati salvati nel database devono essere convalidata per garantire che i dati siano validi, non dobbiamo codificarli per l''output.'
+        - content: Dati siano inviato allo schermo
+          isCorrect: true
+          correctExplanation: 'Che sono corrette, i dati viene sempre inviato allo schermo devono consentire l''output codificato per assicurarsi che non viene interpretato come codice.'
+        - content: I dati inviati a un 3rd party API
+          isCorrect: false
+          incorrectExplanation: 'Anche se i dati inviati a un 3rd party API devono essere convalidata per garantire che i dati siano validi, non dobbiamo codificarli per l''output.'
+        - content: Dati nei parametri di URL
+          isCorrect: false
+          incorrectExplanation: 'Anche se i dati di parametri dell''URL devono essere convalidata prima che venga utilizzato nell''applicazione, non dobbiamo codificarli per l''output.'
+    - content: 'Le query con parametri (stored procedure in SQL) sono sempre una scelta più sicura per comunicare con il database perché:'
+      choices:
+        - content: Sono più organizzata rispetto i comandi di database inline e pertanto meno confusione per gli utenti.
+          isCorrect: false
+          incorrectExplanation: Organizzazione del codice non è il motivo per cui le query con parametri sono più sicure rispetto a SQL inline.
+        - content: 'È disponibile una visione chiara dello script nella stored procedure, garantendo una maggiore visibilità.'
+          isCorrect: false
+          incorrectExplanation: Cancella struttura dello script non è il motivo per cui le query con parametri sono più sicure rispetto a SQL inline.
+        - content: Utenti malintenzionati non comprendere come programmare in SQL.
+          isCorrect: false
+          incorrectExplanation: 'Molti utenti malintenzionati si sa in SQL, questo non è la risposta corretta.'
+        - content: 'Le query con parametri di sostituire le variabili prima di eseguire query, vale a dire evita la possibilità di essere inviato al posto di una variabile di codice.'
+          isCorrect: true
+          correctExplanation: 'Campi dei parametri utilizzati nelle query con parametri vengono considerati come dati, non nel codice, la protezione contro vulnerabilità di tipo injection. Per altre informazioni su come implementare le query con parametri, vedere la [foglio informativo sulle Query la parametrizzazione di OWASP]( https://www.owasp.org/index.php/Query_Parameterization_Cheat_Sheet).'

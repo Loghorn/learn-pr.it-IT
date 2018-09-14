@@ -1,103 +1,103 @@
-Imagine you receive an alert from your company's security administrator that a potential security breach has been detected on your network. In order to protect your database servers, you decide to add auditing and monitoring.
+Si supponga che si riceve un avviso dall'amministratore della sicurezza della società che è stata rilevata una potenziale violazione della sicurezza della rete. Per proteggere i server di database, si decide di aggiungere il controllo e monitoraggio.
 
-In this unit, we look at how auditing is configured against a database, and how to use these audits.
+In questa unità, esamineremo come il controllo è configurato su un database e come usare questi controlli.
 
-## Configure auditing
+## <a name="configure-auditing"></a>Configurare il controllo
 
-You'll enable auditing to store the operations that occur on the database for later inspection, or have automated tools analyze them. Auditing is also used for compliance management or understanding how your database is used. Auditing is also required if you wish to use Azure threat detection on your Azure SQL database. 
+Si sarà Abilita il controllo archiviare le operazioni che si verificano nel database per l'analisi successive o avere strumenti automatizzati analizzarli. Il controllo viene utilizzato anche per la gestione della conformità o informazioni sulle modalità di utilizzo del database. Il controllo è necessario anche se si vuole usare il rilevamento delle minacce in Azure nel database SQL di Azure.
 
-In order to store audits of the database, an Azure storage account will be needed to store the audit history.  
+Per poter archiviare i controlli del database, sarà necessario un account di archiviazione di Azure per archiviare la cronologia di controllo.
 
-Let's look at the steps you take to set up auditing on your system.
+Esaminiamo la procedura da seguire per configurare il controllo del sistema.
 
-1. Select the Azure SQL Server in the portal.
- 
-2. Navigate to the Auditing item in the left configuration options. You will find it in the Security category. 
- 
-3. Auditing is turned off by default. To enable it on your database server, tap the ON button. 
+1. Selezionare il Server SQL di Azure nel portale.
 
-4. Once the ON button is selected, select the Configure button to define the storage account. You can select an existing storage account or create a new storage account to store your audits. The storage account must be configured to use the same region as your server. 
+2. Passare all'elemento di controllo nelle opzioni di configurazione a sinistra. Si troverà nella categoria di sicurezza.
 
-5. Click the 'Save' button in the toolbar to save your changes. 
+3. Il controllo è stato disattivata per impostazione predefinita. Per abilitarla sul server di database, toccare il pulsante su ON.
 
-These actions configure the audits at the database server level. You can also configure auditing to happen at a database level. 
+4. Dopo aver selezionato il pulsante su ON, selezionare il pulsante Configura per definire l'account di archiviazione. È possibile selezionare un account di archiviazione esistente o creare un nuovo account di archiviazione per archiviare i controlli. L'account di archiviazione deve essere configurato per usare la stessa area del server.
 
-You'll now configure Advanced Threat Protection. 
+5. Fare clic sul pulsante "Salva" nella barra degli strumenti per salvare le modifiche.
 
-## Configure Advanced Threat Protection
+Queste azioni configurare i controlli a livello di server di database. È anche possibile configurare il controllo che viene eseguita a livello di database.
 
-The Advanced Threat Protection system analyzes audit logs to look for potential problems and threats against your database.
+Ora si configurerà Advanced Threat Protection.
 
-Let's look at the steps you take to configure Advanced Threat Protection on your system.
+## <a name="configure-advanced-threat-protection"></a>Configurare la protezione avanzata dalle minacce
 
-1. Select the Azure SQL Server in the portal.
+Il sistema di Advanced Threat Protection consente di analizzare i log di controllo per individuare potenziali problemi e le minacce nel database.
 
-2. Navigate to the Advanced Threat Protection item in the left configuration options. You'll find it in the Security category.
+Esaminiamo i passaggi per la configurazione di Advanced Threat Protection nel sistema.
 
-3. Click the 'Enable Advanced Threat Protection on the server' button. 
+1. Selezionare il Server SQL di Azure nel portale.
 
-4. Change the Advanced Threat Protection switch to ON. 
- 
-5. Select View Advanced Threat Protection server settings to see the options for the database system. 
+2. Passare all'elemento di Advanced Threat Protection nelle opzioni di configurazione a sinistra. Si potrà risultare nella categoria di sicurezza.
 
-6. Next, define where notification emails will be delivered as a list of semicolon separated email addresses. Select Email service and co-administrators to send the threats to the service administrators. 
+3. Fare clic sul pulsante 'Abilita Advanced Threat Protection nel server'.
 
-7. You'll now specify the subscription and storage account that will be analyzed for any threats on the system. This should be the subscription and Azure storage account configured for auditing. You also need to set the number of days to retain the audit history. Setting the value to zero means that the audit will be stored forever. 
+4. Modificare il commutatore di Advanced Threat Protection su ON.
 
-Next, select the Storage access key to connect to the audits. Once you have configured the options, press OK.
+5. Selezionare le impostazioni di visualizzazione Advanced Threat Protection server per visualizzare le opzioni per il sistema di database.
 
-Finally, set the Threat Detection types. The preferred option is All.
+6. Successivamente, definire in cui la notifica verrà recapitate messaggi di posta elettronica come un elenco di punti e virgola separati indirizzi di posta elettronica. Selezionare il servizio di posta elettronica e ai coamministratori per inviare i rischi per gli amministratori del servizio.
 
-All represents the following values:
+7. Verrà ora specificare la sottoscrizione e account di archiviazione che verrà analizzato per minacce nel sistema. La sottoscrizione e l'archiviazione di Azure deve essere l'account configurato per il controllo. È anche necessario impostare il numero di giorni per cui conservare la cronologia di controllo. Impostazione del valore su zero indica che il controllo verrà archiviato per sempre.
 
-- SQL injection reports where SQL injections attacks have occurred;
-- SQL injection vulnerability reports where the possibility of a SQL injection is likely; and
-- Anomalous client login looks at logins that are irregular and could be cause for concern, such as a potential attacker gaining access.  
+Selezionare quindi la chiave di accesso di archiviazione per connettersi a controlli. Dopo aver configurato le opzioni, fare clic su OK.
 
-Click the **Save** button to apply the changes. 
+Infine, impostare i tipi di rilevamento delle minacce. L'opzione preferita è tutto.
 
-You'll receive email notifications as vulnerabilities are detected. The email will outline what occurred and the actions to take. 
+Tutti rappresenta i valori seguenti:
 
-## Enable Advanced Threat Protection
+- Report SQL injection in cui si sono verificati gli attacchi SQL injection.
+- Rapporti sulle vulnerabilità di attacchi injection SQL in cui la possibilità di un attacco SQL injection è probabilmente; e
+- Accesso client anomalo vengono esaminati gli account di accesso irregolare e potrebbe essere motivo di preoccupazione, ad esempio un potenziale che accede autore dell'attacco.
 
-Once you've configured the server for Advanced Threat Protection, you enable the option on each individual database. Navigate to the individual databases and enable Advanced Threat Protection by selecting 'Enable Advanced Threat Protection on the server'. 
+Scegliere il **salvare** pulsante per applicare le modifiche.
 
-You can turn on periodic recurring scans that will scan the system every seven days to look for vulnerabilities. 
+Si riceveranno notifiche tramite posta elettronica vengono rilevate vulnerabilità. Messaggio di posta elettronica descrive cosa è accaduto e le azioni da eseguire.
 
-When you select the Periodic recurring scan option, a scan will run immediately after saving the settings. 
+## <a name="enable-advanced-threat-protection"></a>Abilita Advanced Threat Protection
 
-Click the **Save** button to save your changes. 
+Dopo aver configurato il server per Advanced Threat Protection, si abilita l'opzione su ogni singolo database. Passare a singoli database e abilitare Advanced Threat Protection selezionando 'Abilitare Advanced Threat Protection nel server'.
 
-You'll receive an email notification notifying you of any security issues. Make sure to address the threat immediately. You may get a notification for a number of reasons:
+È possibile attivare le analisi ricorrenti periodiche che analizzeranno il sistema ogni sette giorni per cercare i punti deboli.
 
-![An example notification warning from Advanced Threat Protection](../media-draft/5-email-with-warning.png)
+Quando si seleziona l'opzione di analisi ricorrenti periodiche, verrà eseguita immediatamente dopo il salvataggio delle impostazioni di un'analisi.
 
-Selecting the Advanced Threat Protection option when Advanced Threat Protection is running, you'll see a list of issues presented. This list may include Data Discovery & Classification problems such as sensitive data, a list of vulnerabilities on the system, and potential threats.  
+Fare clic sul pulsante **Salva** per salvare le modifiche apportate.
 
-![Data Discovery & Classification](../media-draft/5-data-discovery-and-classification.png)
+Si riceverà una notifica tramite posta elettronica di notifica delle eventuali problemi di sicurezza. Assicurarsi di risolvere immediatamente il rischio. Si potrebbe ricevere una notifica per una serie di motivi:
 
-The Data Discovery & Classification panel shows columns within your tables that need to be protected. Some of the columns may have sensitive information, or would be considered classified in different countries or regions.  
+![Un avviso di notifica di esempio da Advanced Threat Protection](../media-draft/5-email-with-warning.png)
 
-Click on the Data Discovery & Classification panel. 
+Selezionando l'opzione di Advanced Threat Protection durante l'esecuzione di Advanced Threat Protection, vedrai un elenco di problemi presentati. Questo elenco potrebbe includere individuazione dati e i problemi di classificazione, ad esempio i dati sensibili, un elenco delle vulnerabilità nel sistema e le potenziali minacce.
 
-A message will be displayed if any columns need protection configured. This message will be in the form of *"We have found 10 columns with classification recommendations"*. You can click on the text to view the recommendations. 
+![Individuazione dati e classificazione](../media-draft/5-data-discovery-and-classification.png)
 
-Select the columns that you want to classify by clicking the checkmark next to the column, or select the checkbox to the left of the schema header. Select the Accept selected recommendations options to apply the classification recommendations.
+Il pannello di individuazione dati e classificazione Mostra colonne all'interno delle tabelle che devono essere protetti. Alcune colonne potrebbero contenere informazioni sensibili o possa essere considerato classificati in diversi paesi o aree geografiche.
 
-You'll edit the columns and then define the information type and the sensitivity label for the database. Click on the Save button to save the changes. 
+Fare clic sul pannello di individuazione dati e classificazione.
 
-No active recommendations should be listed once you've managed the recommendations successfully.
+Verrà visualizzato un messaggio se tutte le colonne necessitano garantire la protezione configurata. Questo messaggio verrà costituiti *"Abbiamo scoperto 10 colonne con raccomandazioni di classificazione"*. È possibile fare clic sul testo per visualizzare le raccomandazioni.
 
-![Vulnerability Assessment Dashboard](../media-draft/5-vunrability-assessment-dashboard.png)
+Selezionare le colonne che si desidera classificare facendo clic sul segno di spunta accanto alla colonna oppure selezionare la casella di controllo a sinistra dell'intestazione dello schema. Selezionare le opzioni di raccomandazioni Accept selezionato per applicare le raccomandazioni di classificazione.
 
-The Vulnerability Assessment lists configuration issues on your database and the associated risk. For example, in the image above, you can see the server-level firewall needs to be set up.
+Si modifica le colonne e quindi definire il tipo di informazioni e l'etichetta di riservatezza per il database. Fare clic sul pulsante Salva per salvare le modifiche.
 
-Click on the Vulnerability Assessment panel to review a full list of vulnerabilities. From here, you'll click on each individual vulnerability. 
+Nessuna raccomandazione attiva dovrebbero essere elencata quando è stato gestito correttamente le raccomandazioni.
 
-On that page you will see the details such as the risk level, which database it applies to, a description of the vulnerability, and the recommended remediation to fix the issue. You'll apply the remediation to fix the issue or issues. Make sure to address all the vulnerabilities.
- 
-![Threat Detection](../media-draft/5-threat-detection-dashboard.png)
+![Dashboard di valutazione della vulnerabilità](../media-draft/5-vulnerability-assessment-dashboard.png)
 
-The last chart displays a list of threat detections. For example, in this list you'll see a number of potential SQL injection attacks. 
- 
-Like the vulnerabilities, click on the Threat Detection panel to navigate to the list of entries to see what the threat is. Then address that issue by following the recommendations.  For issues such as the SQL injection warnings, you'll be able to look at the query and work backward to where that query is being executed in code. Once found, you'll rewrite the code so it will no longer have the issue. 
+La valutazione della vulnerabilità sono elencati i problemi di configurazione nel database e i rischi associati. Ad esempio, nell'immagine precedente, è possibile visualizzare che il firewall a livello di server deve essere configurato.
+
+Fare clic sul pannello di valutazione della vulnerabilità per esaminare un elenco completo delle vulnerabilità. A questo punto, sarà fare clic su ogni singola vulnerabilità.
+
+Nella pagina verranno visualizzati i dettagli, ad esempio il livello di rischio, il database a cui si applica a, una descrizione della vulnerabilità e la correzione consigliata per risolvere il problema. Verrà applicata la correzione per risolvere il problema o problemi. Assicurarsi di soddisfare tutte le vulnerabilità.
+
+![Rilevamento delle minacce](../media-draft/5-threat-detection-dashboard.png)
+
+L'ultimo grafico visualizza un elenco di rilevamento delle minacce. In questo elenco, ad esempio, si noterà un numero di potenziali attacchi SQL injection.
+
+Ad esempio le vulnerabilità, fare clic sul pannello di rilevamento delle minacce per passare all'elenco di voci per visualizzare gli elementi della condizione di minaccia. Quindi risolvere il problema seguendo le indicazioni.  Per i problemi, ad esempio gli avvisi di attacchi injection SQL, sarà possibile esaminare la query e procedere a ritroso per cui è in esecuzione tale query nel codice. Una volta trovato, è possibile riscrivere il codice in modo che non sarà più possibile il problema.

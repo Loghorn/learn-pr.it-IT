@@ -1,0 +1,35 @@
+### YamlMime:Module
+uid: learn.host-a-web-application-with-azure-app-service
+metadata:
+  title: Ospitare un'applicazione web con il servizio App di Azure
+  description: Creare un sito Web tramite la piattaforma per app web ospitate nel servizio App di Azure.
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+title: Ospitare un'applicazione web con il servizio App di Azure
+summary: Creare un sito Web tramite la piattaforma per app web ospitate nel servizio App di Azure.
+abstract: |
+  In questo modulo verrà descritto come:
+  - Usare il portale di Azure per creare un'App del servizio app
+  - Creare un'applicazione ASP.NET Core in un ambiente di sviluppo Linux
+  - Caricare il codice dell'applicazione di servizio App tramite Git
+prerequisites: Nessuno
+iconUrl: /learn/achievements/host-a-web-app-wtih-azure-app-service.svg
+levels:
+  - beginner
+roles:
+  - developer
+products:
+  - azure
+units:
+  - learn.host-a-web-application-with-azure-app-service.1-introduction
+  - learn.host-a-web-application-with-azure-app-service.2-create-a-web-app-in-the-azure-portal
+  - learn.host-a-web-application-with-azure-app-service.3-exercise-create-a-web-app-in-the-azure-portal
+  - learn.host-a-web-application-with-azure-app-service.4-using-asp.net-core-on-linux
+  - learn.host-a-web-application-with-azure-app-service.5-exercise-create-an-asp.net-core-web-application-on-linux
+  - learn.host-a-web-application-with-azure-app-service.6-upload-your-code-to-azure
+  - learn.host-a-web-application-with-azure-app-service.7-exercise-upload-your-code-to-azure
+  - learn.host-a-web-application-with-azure-app-service.8-summary
+achievement: learn.host-a-web-application-with-azure-app-service.badge

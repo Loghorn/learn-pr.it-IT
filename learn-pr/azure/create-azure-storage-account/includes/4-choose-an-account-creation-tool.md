@@ -4,14 +4,14 @@ Esistono diversi strumenti per creare un account di archiviazione. In genere si 
 
 Gli strumenti disponibili sono:
 
-- Portale
-- Interfaccia della riga di comando (CLI)
+- Portale di Azure
+- Azure CLI (interfaccia della riga di comando)
 - Azure PowerShell
-- Librerie di gestione client.
+- Librerie client di gestione
 
-Il portale offre un'interfaccia utente grafica con le descrizioni comandi per ogni impostazione. Questo lo rende facile da usare e utile per conoscere le opzioni.
+Il portale offre un'interfaccia utente grafica con le spiegazioni per ogni impostazione. Questo rende facile da usare e utili per apprendere come eseguire le opzioni.
 
-Gli altri strumenti supportano tutti l'automazione. Interfaccia della riga di comando e Azure PowerShell consentono di scrivere script mentre le librerie di gestione consentono di incorporare la creazione in un'app client.
+Gli altri strumenti supportano tutti l'automazione. Il comando di Azure e Azure PowerShell che consentono di scrivere script, mentre le librerie di gestione consentono di incorporare la creazione di un'app client.
 
 ## <a name="how-to-choose-a-tool"></a>Come scegliere uno strumento
 

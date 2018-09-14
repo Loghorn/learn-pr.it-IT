@@ -1,13 +1,15 @@
-End users often post content that may be inappropriate for work in their personal online interactions. As a lead developer at Contoso Beverage Distribution, you are responsible for building and maintaining a line-of-business app that lets your frontline distributors scan and upload images of store shelves where they are restocking. 
+Come uno sviluppatore di lead presso Contoso bevande distribuzione, ha la responsabilità per la creazione e gestione di un'app line-of-business che consente la distribuzione nel sistema dalla scansione e caricare le immagini o sugli scaffali archivio in cui essi sono re-immagazzinamento.
 
-You need to validate that any images posted by users respect the content rules set by your company. Your goals are clear; the company doesn't want inappropriate content posted to company sites. Given the advancements in Artificial Intelligence, you decide that rewriting this app to include Computer Vision will proactively prevent these types of incidents from occurring. The service you create will identify images and provide many other functionalities to fulfill your company's needs.
+Si desidera convalidare che le immagini inviate dagli utenti rispettino le regole di contenuto aziendali stabilite. L'azienda non vuole contenuti inappropriati inseriti nei siti aziendali. 
 
-## Learning objectives
+È stata per decidere se creare o acquistare una soluzione. Creazione di un motore di analisi e l'elaborazione di immagini sofisticati è costosa. In alternativa, è possibile utilizzare l'API visione artificiale di Microsoft. In questo modulo verranno esplorare le funzionalità offerte da questa API e chiamare il servizio per l'elaborazione di alcune immagini. 
 
-In this module, you will:
+## <a name="learning-objectives"></a>Obiettivi di apprendimento
 
-- Create a Computer Vision API service
-- Analyze an image and identify its content
-- Generate thumbnails
-- Extract printed text
-- Convert handwritten words into text
+In questo modulo verrà descritto come:
+
+- Creare un account Servizi cognitivi
+- Ottenere informazioni su al contenuto visivo presente in un'immagine
+- Genera un'anteprima di un'immagine
+- Rileva ed Estrai testo stampato da un'immagine
+- Rilevare ed estrarre testo scritto a mano da un'immagine

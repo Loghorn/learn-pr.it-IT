@@ -5,7 +5,7 @@ Il backup e ripristino dei dati è una parte necessaria della pianificazione di 
 Backup di Azure può essere usato per svariati scenari di backup dei dati, ad esempio i seguenti:
 
 - File e cartelle in computer con sistema operativo Windows (fisici o virtuali, locali o cloud)
-- Snapshot con riconoscimento dell'applicazione (Servizio Copia Shadow del volume)
+- Snapshot con riconoscimento dell'applicazione (servizio Copia Shadow del volume)
 - Carichi di lavoro dei server Microsoft più diffusi, ad esempio Microsoft SQL Server, Microsoft SharePoint e Microsoft Exchange
 - Supporto nativo per Macchine virtuali di Azure, sia Windows che Linux
 - Computer client Linux e Windows 10

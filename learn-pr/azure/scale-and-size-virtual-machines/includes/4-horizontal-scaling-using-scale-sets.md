@@ -1,87 +1,87 @@
-You can get the resources you need using either one large virtual machine or several small VMs with a load balancer to distribute requests among the VMs.
+È possibile ottenere le risorse necessarie usando una macchina virtuale grande o diverse macchine virtuali di piccole dimensioni con un servizio di bilanciamento del carico per distribuire le richieste tra le macchine virtuali.
 
-The VM pool has the nice advantage that you can add or remove VMs quickly when demand changes. In the toy company scenario, this strategy would be useful to handle unexpected spikes in demand. You could add VMs to the pool when demand increased and remove them when demand returned to normal. The pool also gives you redundancy; if one VM fails, the others can continue to handle requests with no interruption in service.
+Il pool di macchine Virtuali offre il vantaggio interessante che è possibile aggiungere o rimuovere rapidamente le macchine virtuali al mutare delle esigenze. Nello scenario aziendale di giocattoli, questa strategia potrebbe essere utile per gestire i picchi imprevisti della domanda. È possibile aggiungere le macchine virtuali nel pool quando richiesta aumentata e rimuoverle quando richiesta torna allo stato normale. Il pool fornisce anche ridondanza; Se una macchina virtuale non riesce, gli altri possibile continuare a gestire le richieste senza interruzione del servizio.
 
-In this section, you will see how to provision multiple VMs using scale sets and how to automatically add and remove instances in response to changing demand. 
+In questa sezione, si verrà illustrato come effettuare il provisioning di più macchine virtuali usando i set di scalabilità e su come aggiungere e rimuovere le istanze in risposta alla richiesta di modifica automaticamente. 
 
-## What is horizontal scaling?
+## <a name="what-is-horizontal-scaling"></a>Che cos'è la scalabilità orizzontale?
 
-*Horizontal scaling* is the process of adding or removing virtual machines from a pool to adjust the amount of available resources. Adding machines is called _scaling out_ and removing machines is called _scaling in_. Solutions that use horizontal scaling include a load balancer or gateway to distribute requests among the VMs in the pool. The following illustration shows an example of changing the number of virtual machine instances.
+*Scalabilità orizzontale* è il processo di aggiunta o rimozione di macchine virtuali da un pool per regolare la quantità di risorse disponibili. Aggiunta di computer viene chiamato _la scalabilità orizzontale_, e la rimozione delle macchine viene chiamata _scalabilità in_. Le soluzioni che usano la scalabilità orizzontale includono un load balancer o gateway per distribuire le richieste tra le macchine virtuali nel pool. La figura seguente mostra un esempio di modifica del numero di istanze di macchine virtuali.
 
-![An illustration showing scaling out the resources to handle demand and scaling in the resources to reduce costs.](../media/4-ScaleInOut.png)
+![Un'illustrazione che mostra la scalabilità orizzontale di risorse per gestire la domanda e la scalabilità nelle risorse per ridurre i costi.](../media/4-ScaleInOut.png)
 
-This technique works best for applications that can be run across multiple, identical servers. For example, you can duplicate your web server and web pages on multiple VMs and they will all give the same response no matter which server receives the request. On the other hand, a VM that runs your backend database is not an ideal candidate because running multiple copies of the database requires some effort to keep the copies in sync.
+Questa tecnica funziona meglio per le applicazioni che possono essere eseguite tra più server identici. Ad esempio, è possibile duplicare i server web e pagine web in più macchine virtuali e lo faranno forniscono tutti la stessa risposta, indipendentemente dal server che riceve la richiesta. D'altra parte, una macchina virtuale che esegue il database back-end non è un candidato ideale perché l'esecuzione di più copie del database richiede qualche sforzo per mantenere sincronizzati le copie.
 
-## What is a scale set?
+## <a name="what-is-a-scale-set"></a>Che cos'è un set di scalabilità?
 
-A *scale set* is a pool of identical virtual machines, a load balancer or gateway to distribute requests, and an optional set of rules that control when VMs are added or removed from the pool. Here, "identical" means that each VM in the set is created using the same image and has the same size.
+Oggetto *set di scalabilità* è un pool di macchine virtuali identiche, un servizio di bilanciamento del carico o un gateway per distribuire le richieste e un set facoltativo di regole che controlla quando le macchine virtuali vengono aggiunte o rimosse dal pool. In questo caso, "identiche" significa che ogni macchina virtuale nel set viene creato utilizzando la stessa immagine e abbia le stesse dimensioni.
 
-You have some flexibility in how a new VM is configured with the software you need. You can start with a predefined image for the base OS and then use scripts to install or copy files automatically after the OS is set up. Alternately, you can create a custom virtual machine image with the operating system and your application software already installed.
+Una certa flessibilità nel modo in cui una nuova macchina virtuale è configurata con il software è necessario. È possibile iniziare con un'immagine predefinita per il sistema operativo di base e quindi usare gli script per installare o copiare i file automaticamente dopo aver configurato il sistema operativo. In alternativa, è possibile creare un'immagine di macchina virtuale personalizzata con il sistema operativo e il software applicativo già installato.
 
-## How to distribute requests
+## <a name="how-to-distribute-requests"></a>Come distribuire le richieste
 
-You can use either a load balancer or an Application Gateway to distribute requests to the VM instances in a scale set.
+È possibile usare un servizio di bilanciamento del carico o un gateway applicazione per distribuire le richieste a istanze di macchina virtuale in un set di scalabilità.
 
-An Azure load balancer operates at OSI layer 4 (TCP and UDP) and routes traffic based on source IP address and port combined with the destination IP address and port. It can provide affinity, where traffic from the same source IP address is routed to the same destination server to provide consistency across a client session. The load balancer also has a health probe mechanism that determines the availability of server instances. If a virtual machine becomes unresponsive to the health probe, the load balancer will avoid routing any new connections to that machine.
+Un servizio di bilanciamento del carico di Azure opera a livello dello stack OSI 4 (TCP e UDP) e indirizza il traffico in base a indirizzo IP di origine e porta combinata con l'indirizzo IP di destinazione e la porta. Può fornire affinità, l'instradamento del traffico dallo stesso indirizzo IP di origine al server di destinazione stessa per ottenere la coerenza tra una sessione client. Il servizio di bilanciamento del carico ha anche un meccanismo di probe di integrità che determina la disponibilità di istanze del server. Se una macchina virtuale smette di rispondere al probe di integrità, il servizio di bilanciamento del carico eviterà di routing di tutte le nuove connessioni a tale macchina.
 
-An Application Gateway operates at OSI layer 7 (the application layer). For example, if your VMs are running a web server, then the gateway can use the requested URL to perform routing. This means you could forward requests with `*/customers*` in the URL to one pool of servers and requests with `*/partners*` in the URL to a different pool. The Application Gateway can also provide HTTP to HTTPS redirection, Secure Sockets Layer (SSL) termination to reduce the processing requirement on the virtual machines for encryption, and a Web application firewall (WAF) that uses rules to detect known web exploits and prevent these requests from reaching the web servers.
+Un gateway applicazione opera a livello dello stack OSI 7 (il livello di applicazione). Ad esempio, se le macchine virtuali eseguono un server web, quindi il gateway può usare URL richiesto per eseguire il routing. Ciò significa che è possibile inoltrare le richieste con `*/customers*` nell'URL per un pool di server e le richieste con `*/partners*` nell'URL per un pool diverso. Il gateway applicazione può anche fornire HTTP al reindirizzamento HTTPS, la terminazione Secure Sockets Layer (SSL) per ridurre l'esigenza di elaborazione in macchine virtuali per la crittografia e un web application firewall (WAF) che utilizza regole per rilevare web noto sfrutta ed evitare queste richieste di raggiungere i server web.
 
-## What is autoscaling?
+## <a name="what-is-autoscaling"></a>Che cos'è la scalabilità automatica?
 
-_Autoscaling_ is the process of automatically scaling out or in based on a set of rules. The rules can be triggered by machine load or a schedule. The following illustration shows how the autoscale feature manages instances to handle the load.
+_La scalabilità automatica_ è il processo di scalabilità automatica orizzontale o in basato su un set di regole. Le regole possono essere attivate dal carico del computer o a una pianificazione. La figura seguente mostra come la funzionalità scalabilità automatica gestisce le istanze per gestire il carico.
 
-![An illustration showing how autoscale monitors the CPU levels of a pool of virtual machines and adds instances when the CPU utilization is above the threshold.](../media/4-autoscale.png)
+![Un'illustrazione che mostra come la scalabilità automatica consente di monitorare i livelli di CPU di un pool di macchine virtuali e aggiunge istanze quando l'utilizzo della CPU è superiore alla soglia.](../media/4-autoscale.png)
 
-To enable autoscaling for a scale set, you must create an autoscale profile. The profile defines the minimum and maximum number of VM instances for the set and the scaling rules. Autoscale rules have the following elements:
+Per abilitare la scalabilità automatica per un set di scalabilità, è necessario creare un profilo di scalabilità automatica. Il profilo definisce il numero minimo e massimo di istanze di macchina virtuale per il set e le regole di ridimensionamento. Regole di scalabilità automatica sono i seguenti elementi:
 
-* Metric source - the source of information or data that triggers the autoscale rule. There are four options:
-  * *Current scale set* provides host-based metrics that do not require any additional agents.
-  * *Storage account* the Azure diagnostic extension writes performance metrics to Azure storage that are used to trigger autoscale rules.
-  * *Service Bus Queue* can specify application-based or other Azure Service Bus messages to trigger autoscaling.
-  * *App Insights* uses an instrumentation package that needs to be installed in the application running on the scale set to stream metric data direct from the application.
-* Rule criteria - This is the specific metric you want to use to trigger an autoscale rule. If you are using host-based metrics, this can include aspects such as CPU usage, volume of network traffic, disk operations, or CPU credits. For example, you could configure a rule to scale out if disk write operations per second exceed a threshold. Using the Azure diagnostic extension or App Insights enables you to use any available measure to trigger the rule but requires configuration of the appropriate agent.
-* Aggregation type - This specifies how you want to measure the metric data and will be one of the following options:
-  * Average
-  * Minimum
-  * Maximum
-  * Total
-  * Last
-  * Count
-* Operator - The operator denotes how a metric must be different to a defined threshold to trigger the rules action. This is particularly important when identifying whether the rule will scale out or in. Operators can be:
-  * Greater than
-  * Greater than or equal to
-  * Less than
-  * Less than or equal to
-  * Equal to
-  * Not equal to
-* Action - This determines how the number of instances will change when the rule is triggered. The following actions are available:
-  * *Increase count by* a fixed number of virtual machines.
-  * *Increase percent by* a percentage of existing instances.
-  * *Increase count to* a specific number of virtual machines.
-  * *Decrease count by* a fixed number of virtual machines.
-  * *Decrease percent by* a percentage of existing instances.
-  * *Decrease count to* a specific number of virtual machines.
+* Origine della metrica: l'origine di informazioni o i dati che attiva la regola di scalabilità automatica. Vi sono quattro opzioni:
+  * *Set di scalabilità corrente* fornisce le metriche basate su host che non necessitano di tutti gli altri agenti.
+  * *Account di archiviazione*. L'estensione diagnostica di Azure scrive le metriche delle prestazioni per archiviazione di Azure. Queste metriche vengono usate per attivare le regole di scalabilità automatica.
+  * *Coda del Bus di servizio di Azure* specificabile basato sull'applicazione o altri messaggi del Bus di servizio di Azure per attivare la scalabilità automatica.
+  * *Azure Application Insights* Usa un pacchetto di strumentazione che deve essere installato nell'applicazione in esecuzione nel set di scalabilità per i dati delle metriche di flusso direttamente dall'applicazione.
+* Criteri delle regole - questa è la metrica specifica da usare per attivare una regola di scalabilità automatica. Se si usa metriche basate su host, può trattarsi di aspetti come utilizzo della CPU, il volume di traffico di rete, le operazioni del disco o i crediti di CPU. Ad esempio, è possibile configurare una regola di scalabilità orizzontale se operazioni di scrittura su disco al secondo superano una soglia. Usando l'estensione diagnostica di Azure o Application Insights consente di usare le misure disponibili per attivare la regola, ma richiede la configurazione dell'agente appropriato.
+* Tipo di aggregazione - questo consente di specificare come si desidera misurare i dati delle metriche e sarà una delle opzioni seguenti:
+  * Media
+  * Minima
+  * Massima
+  * Totale
+  * Last (Ultimo)
+  * Conteggio
+* Operatore - indica come una metrica deve essere diversa rispetto a una soglia definita per attivare l'azione di regole. Ciò è particolarmente importante quando si identificano se la regola verrà aumentare o ridurre. Gli operatori possono essere:
+  * Maggiore di
+  * Maggiore o uguale a
+  * Minore di
+  * Minore o uguale a
+  * Uguale a
+  * Diverso da
+* Azione - determina come verrà modificato il numero di istanze quando viene attivata la regola. Sono disponibili le seguenti azioni:
+  * *Aumenta numero di* un numero fisso di macchine virtuali.
+  * *Aumenta percentuale di* percentuale delle istanze esistenti.
+  * *Aumenta numero a* un numero specifico di macchine virtuali.
+  * *Riduci numero di* un numero fisso di macchine virtuali.
+  * *Riduci percentuale di* percentuale delle istanze esistenti.
+  * *Riduci numero a* un numero specifico di macchine virtuali.
 
-You can also create autoscale rules that trigger on a schedule. For example, you might define a rule that scales out in the morning when you know demand is high and then scales in after lunch when demand typically decreases.
+È anche possibile creare regole di scalabilità automatica che attivano in una pianificazione. Ad esempio, si potrebbe definire una regola che viene scalata orizzontalmente al mattino quando si conosce la domanda è elevata e quindi ridimensiona nel dopo pranzo quando si riduce in genere richiesta.
 
-## How to create a scale set
+## <a name="how-to-create-a-scale-set"></a>Come creare un set di scalabilità
 
-You can create a scale set using the Azure portal, Azure PowerShell, or the Azure command-line interface (CLI).
+È possibile creare un set di scalabilità tramite il portale di Azure, Azure PowerShell o l'interfaccia CLI di Azure.
 
-### Portal
+### <a name="portal"></a>Portale
 
-If you use the Azure portal to create the scale set, you will specify the operating system image to use for the virtual machines and how many VM instances to create at startup. You will also specify the size of virtual machine for each instance and whether to use the Azure load balancer or the Application Gateway for load balancing. If you choose a load balancer, the portal will create a default health probe on port 80 for it.
+Se si usa il portale di Azure per creare il set di scalabilità, si specificherà l'immagine del sistema operativo da usare per le macchine virtuali e il numero di istanze di macchina virtuale per creare all'avvio. Inoltre, si specificherà le dimensioni della macchina virtuale per ogni istanza e la possibilità di usare Azure load balancer o gateway applicazione per il bilanciamento del carico. Se si sceglie un bilanciamento del carico, il portale creerà un probe di integrità predefinito sulla porta 80 per tale.
 
-### PowerShell
+### <a name="powershell"></a>PowerShell
 
-You can create a virtual machine scale set with the **New-AzureRmVmss** PowerShell cmdlet. This cmdlet can create a new scale set, a load balancer, and control IP address and virtual network assignments. Unless specified in the cmdlet, **New-AzureRmVmss** will use the following default settings:
+È possibile creare un macchina virtuale set di scalabilità con il **New-AzureRmVmss** cmdlet di PowerShell. Questo cmdlet è possibile creare un nuovo set di scalabilità, bilanciamento del carico e controllare l'indirizzo IP e le assegnazioni di rete virtuale. A meno che non sono specificate nel cmdlet, **New-AzureRmVmss** utilizzerà le impostazioni predefinite seguenti:
 
-* Create two virtual machine instances
-* Use the Windows Server 2016 Datacenter image
-* Use the Standard DS1_v2 virtual machine size
-* Create a load balancer
-* Create load balancer rules for ports 3389 and 5985 for Windows, port 22 for Linux
+* Creare due istanze di macchina virtuale
+* Usare l'immagine di Windows Server 2016 Datacenter
+* Usare dimensioni della macchina virtuale DS1_v2 Standard
+* Creare un servizio di bilanciamento del carico
+* Creare regole di bilanciamento del carico per le porte 3389 e 5985 per Windows, la porta 22 per Linux
 
-**New-AzureRmVmss** does not create a health probe for the load balancer. Best practice would be to create this using **Add-AzureRmLoadBalancerProbeConfig** after you have created the scale set.
+**New-AzureRmVmss** non crea un probe di integrità per il bilanciamento del carico. Le procedure consigliate, è possibile creare questo usando **Add-AzureRmLoadBalancerProbeConfig** dopo aver creato il set di scalabilità.
 
-Horizontal scaling with scale sets gives you multiple servers to run your application. Using multiple servers lets you handle high loads and ensures your services remain available even if a server crashes. You can add autoscale to your scale sets, so your system automatically adjusts to unexpected changes in demand.
+Scalabilità orizzontale con set di scalabilità offre più server per eseguire l'applicazione. L'utilizzo di più server consente che maneggiare alto carica e garantisce che i servizi rimangono disponibili anche se si blocca un server. È possibile aggiungere la scalabilità automatica per i set di scalabilità, in modo che il sistema si adatta automaticamente alle modifiche impreviste della domanda.

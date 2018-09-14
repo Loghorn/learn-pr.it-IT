@@ -4,7 +4,9 @@ In questo modulo si apprenderà quando è necessaria la disponibilità elevata, 
 
 ## <a name="what-is-high-availability"></a>Che cos'è la disponibilità elevata?
 
-Un servizio a disponibilità elevata è un'applicazione che assorbe le fluttuazioni di disponibilità, carico ed errori temporanei nell'hardware e nei servizi dipendenti. L'applicazione rimane online e disponibile (o continua a sembrare tale), offrendo un livello di prestazioni accettabile. Questa disponibilità è spesso definita da requisiti di business o contratti di servizio dell'applicazione.
+> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE2yEvc]
+
+Un servizio a disponibilità elevata è un servizio che assorbe le fluttuazioni di disponibilità, carico ed errori temporanei nell'hardware e i servizi dipendenti. L'applicazione rimane online e disponibile (o continua a sembrare tale), offrendo un livello di prestazioni accettabile. Questa disponibilità è spesso definita da requisiti aziendali, gli obiettivi a livello di servizio o contratti di servizio.
 
 La disponibilità elevata in definitiva riguarda la capacità di gestire la perdita o una grave riduzione delle prestazioni di un componente di un sistema. Il problema può essere causato dal passaggio alla modalità offline di una macchina virtuale che ospita un'applicazione perché si è verificato un problema dell'host. Può essere dovuto a una manutenzione pianificata per un aggiornamento del sistema. Può anche essere causato dall'errore di un servizio nel cloud. Identificando le posizioni in cui potrebbe verificarsi un errore del sistema e creando le funzionalità per gestire tali errori, è possibile garantire la costante disponibilità online dei servizi offerti ai clienti.
 
@@ -24,7 +26,25 @@ Esaminiamo questi passaggi in dettaglio.
 
 Un contratto di servizio è un contratto tra il provider di un servizio e un consumer del servizio, in cui il provider del servizio si impegna per il rispetto di uno standard del servizio basato su metriche misurabili e responsabilità definite. I contratti di servizio possono essere accordi contrattuali legalmente vincolanti o aspettative di disponibilità da parte dei clienti. Le metriche del servizio in genere riguardano la velocità effettiva, la capacità e la disponibilità del servizio, ognuna delle quali può essere misurata in vari modi. Indipendentemente dalle specifiche metriche che costituiscono il contratto di servizio, il mancato rispetto del contratto di servizio può avere gravi conseguenze finanziarie per il provider del servizio. Un componente comune dei contratti di servizio è un rimborso finanziario garantito in caso di mancato rispetto del contratto.
 
-![Handshake del contratto di servizio](../media-draft/SLAHandshake.png)
+Gli obiettivi a livello di servizio (SLO) sono i valori delle metriche di destinazione che vengono utilizzati per misurare le prestazioni, affidabilità o disponibilità. Può trattarsi di metriche che definisce le prestazioni di elaborazione delle richieste in millisecondi, la disponibilità dei servizi in pochi minuti al mese o il numero di richieste elaborate per ogni ora. Valutando le metriche esposte dall'applicazione e informazioni sui clienti utilizzano come misura della qualità, è possibile definire gli intervalli accettabili e inaccettabili per questi obiettivi. Definendo questi obiettivi, è necessario impostare in modo chiaro gli obiettivi e le aspettative con entrambi i team che supportano i servizi e i clienti che utilizzano questi servizi. Questi obiettivi verranno utilizzati per determinare se il contratto di servizio complessivo è soddisfatta.
+
+La tabella seguente illustra il potenziale tempo totale di inattività per vari livelli di contratto di servizio. 
+
+| Contratto di servizio | Tempo di inattività settimanale | Tempo di inattività mensile | Tempo di inattività annuale |
+| --- | --- | --- | --- |
+| 99% |1,68 ore |7,2 ore |3,65 giorni |
+| 99,9% |10,1 minuti |43,2 minuti |8,76 ore |
+| 99,95% |5 minuti |21,6 minuti |4,38 ore |
+| 99,99% |1,01 minuti |4,32 minuti |52,56 minuti |
+| 99,999% |6 secondi |25,9 secondi |5,26 minuti |
+
+Naturalmente, a parità di condizioni, una maggiore disponibilità è migliore. Tuttavia, quando si cercano di ottenere più 9, i costi e la complessità per raggiungere quel livello di disponibilità aumentano. Un tempo di attività pari al 99,99% si traduce in circa 5 minuti di inattività totale al mese. Vale la pena sostenere questa maggiore complessità e questi costi aggiuntivi per raggiungere cinque 9? La risposta dipende dai requisiti aziendali. 
+
+Di seguito sono riportate alcune altre considerazioni che emergono quando si definisce un contratto di servizio:
+
+* Per ottenere quattro 9 (99,99%), non ci si può probabilmente basare su un intervento manuale per correggere gli errori. L'applicazione, infatti, deve essere in grado di eseguire automaticamente la diagnosi e la riparazione. 
+* Dopo il quarto 9, è difficile rilevare le interruzioni in modo sufficientemente rapido per soddisfare il contratto di servizio.
+* Si pensi all'intervallo di tempo rispetto al quale viene misurato il contratto di servizio: minore è la finestra, più ristretto sarà il livello di tolleranza. Probabilmente non ha senso definire il contratto di servizio in termini di tempo di attività oraria o giornaliera. 
 
 L'identificazione dei contratti di servizio è un primo passaggio importante per determinare le funzionalità con disponibilità elevata che richiederà l'architettura. Queste funzionalità consentiranno di identificare i metodi da usare per garantire la disponibilità elevata dell'applicazione.
 
@@ -36,7 +56,7 @@ Per valutare le funzionalità per la disponibilità elevata dell'applicazione, e
 
 ### <a name="evaluate-the-ha-capabilities-of-dependent-applications"></a>Valutare le funzionalità per la disponibilità elevata delle applicazioni dipendenti
 
-È necessario comprendere non solo i requisiti del contratto di servizio dell'applicazione per i consumer, ma anche i contratti di servizio di tutte le risorse da cui l'applicazione può dipendere. Se ci si impegna con i clienti per un tempo di attività pari al 99,9%, ma un servizio da cui dipende l'applicazione ha un contratto di servizio solo del 99%, questo potrebbe mettere a rischio la capacità di rispettare il contratto di servizio per i clienti. Se un servizio dipendente non riesce a fornire un contratto di servizio sufficiente, potrebbe essere necessario modificare il proprio contratto di servizio, sostituire la dipendenza con un'alternativa o trovare un modo per rispettare il contratto di servizio quando la dipendenza non è disponibile. A seconda dello scenario e della natura della dipendenza, è possibile usare soluzioni alternative per i problemi delle dipendenze, come cache e code di lavoro.
+È necessario comprendere non solo i requisiti del contratto di servizio dell'applicazione per i consumer, ma anche i contratti di servizio di tutte le risorse da cui l'applicazione può dipendere. Se si esegue il commit di un tempo di attività ai clienti disponibilità del 99,9%, ma un servizio che dipende l'applicazione dispone solo di un impegno di tempo di attività del 99%, ciò potrebbe si mettono a rischio di non soddisfano il contratto di servizio ai clienti. Se un servizio dipendente non riesce a fornire un contratto di servizio sufficiente, potrebbe essere necessario modificare il proprio contratto di servizio, sostituire la dipendenza con un'alternativa o trovare un modo per rispettare il contratto di servizio quando la dipendenza non è disponibile. A seconda dello scenario e della natura della dipendenza, è possibile usare soluzioni alternative per i problemi delle dipendenze, come cache e code di lavoro.
 
 ## <a name="azures-highly-available-platform"></a>Piattaforma a disponibilità elevata di Azure
 
@@ -45,17 +65,17 @@ La piattaforma cloud di Azure è stata progettata per garantire una disponibilit
 * Set di disponibilità
 * Zone di disponibilità
 * Bilanciamento del carico
-* Funzionalità PaaS per la disponibilità elevata
+* Piattaforma distribuita come una funzionalità a disponibilità elevata del servizio (PaaS)
 
 ### <a name="availability-sets"></a>Set di disponibilità
 
 I set di disponibilità sono un modo per informare Azure che è necessario distribuire macchine virtuali che appartengono allo stesso carico di lavoro dell'applicazione per evitare l'impatto simultaneo da errori hardware e manutenzione pianificata. I set di disponibilità sono costituiti da *domini di aggiornamento* e *domini di errore*.
 
-![Set di disponibilità](../media-draft/AzAvailSets.png)
+![Set di disponibilità](../media/AzAvailSets.png)
 
 I domini di aggiornamento garantiscono che un subset dei server dell'applicazione rimanga sempre in esecuzione quando in un data center di Azure è necessario un periodo di inattività degli host delle macchine virtuali per attività di manutenzione. La maggior parte degli aggiornamenti può essere eseguita senza alcun impatto per le macchine virtuali in esecuzione, ma talvolta questo non è possibile. Per garantire che gli aggiornamenti non vengano eseguiti per un intero data center contemporaneamente, il data center di Azure è suddiviso a livello logico in domini di aggiornamento. Quando è necessario applicare all'host un evento di manutenzione come un aggiornamento per le prestazioni o una patch di sicurezza critica, l'aggiornamento viene eseguito in sequenza tramite i domini di aggiornamento. L'applicazione in sequenza degli aggiornamenti tramite i domini di aggiornamento evita che l'intero data center risulti non disponibile durante gli aggiornamenti della piattaforma e l'applicazione di patch.
 
-Mentre i domini di aggiornamento rappresentano una sezione logica del data center, i domini di errore ne rappresentano le sezioni fisiche e garantiscono la diversità dei rack dei server in un set di disponibilità. I domini di errore sono allineati alla separazione fisica dell'hardware condiviso nel data center. Questo include l'alimentazione, il raffreddamento e l'hardware di rete che supporta i server fisici nei rack. Se l'hardware che supporta un rack di server diventa non disponibile, solo tale rack di server è interessato dall'interruzione.
+Mentre i domini di aggiornamento rappresentano una sezione logica del data center, i domini di errore ne rappresentano le sezioni fisiche e garantiscono la diversità dei rack dei server in un set di disponibilità. I domini di errore sono allineati alla separazione fisica dell'hardware condiviso nel data center. Questo include l'alimentazione, il raffreddamento e l'hardware di rete che supporta i server fisici nei rack. Se l'hardware che supporta un rack di server diventa non disponibile, solo tale rack di server è interessato dall'interruzione. Inserendo le macchine virtuali in un set di disponibilità, le macchine virtuali verranno automaticamente distribuite tra più domini di errore in modo che in caso di errore hardware solo una parte delle macchine virtuali sarà interessata.
 
 Con i set di disponibilità, è possibile garantire che l'applicazione rimanga online se è necessario un evento di manutenzione con un impatto elevato o se si verificano errori hardware.
 
@@ -63,11 +83,11 @@ Con i set di disponibilità, è possibile garantire che l'applicazione rimanga o
 
 Le zone di disponibilità sono data center fisici in località indipendenti all'interno di un'area geografica, ognuno con sistemi autonomi di alimentazione, raffreddamento e rete. Tenendo conto delle zone di disponibilità al momento della distribuzione delle risorse, è possibile proteggere i carichi di lavoro dalle interruzioni dei data center, mantenendo al tempo stesso la presenza in una determinata area geografica. I servizi come le macchine virtuali sono *servizi di zona* e possono essere distribuiti in zone specifiche all'interno di un'area geografica. Altri servizi sono *servizi con ridondanza della zona* e vengono replicati tra le zone di disponibilità nella specifica area di Azure. Entrambi i tipi garantiscono che in un'area di Azure non siano presenti singoli punti di errore.
 
-![Zone di disponibilità](../media-draft/AzAvailZones.png)
+![Zone di disponibilità](../media/AzAvailZones.png)
 
 Le aree supportate contengono almeno tre zone di disponibilità. Quando si creano le risorse di un servizio di zona in tali aree, è possibile selezionare la zona in cui deve essere creata la risorsa. Questo consente di progettare l'applicazione in modo che tolleri un'interruzione di zona e continui a funzionare in un'area di Azure, prima che sia necessario spostare l'applicazione in un'altra area di Azure.
 
-Le zone di disponibilità sono un servizio di configurazione della disponibilità elevata più recente per le aree di Azure e sono attualmente disponibili in determinate aree geografiche. Se si intende usare questa funzionalità, è importante verificare la disponibilità di questo servizio nell'area in cui si prevede di distribuire l'applicazione. Le zone di disponibilità sono supportate quando si usano macchine virtuali e diversi servizi PaaS. Le zone di disponibilità sostituiscono i set di disponibilità nelle aree geografiche supportate.
+Le zone di disponibilità sono un servizio di configurazione della disponibilità elevata più recente per le aree di Azure e sono attualmente disponibili in determinate aree geografiche. Se si intende usare questa funzionalità, è importante verificare la disponibilità di questo servizio nell'area in cui si prevede di distribuire l'applicazione. Le zone di disponibilità sono supportate quando si usano macchine virtuali e diversi servizi PaaS. Le zone di disponibilità si escludono a vicenda con set di disponibilità. Quando si usano le zone di disponibilità è non è più necessario definire un set di disponibilità per i sistemi. È possibile la diversità a livello di area dati e non verranno mai eseguiti aggiornamenti a più zone di disponibilità nello stesso momento.
 
 ### <a name="load-balancing"></a>Bilanciamento del carico
 
@@ -81,7 +101,7 @@ Azure dispone di tre servizi con tecnologie di bilanciamento del carico, con div
 
 L'uso di una delle tecnologie di bilanciamento del carico di Azure o di una combinazione delle stesse può offrire le opzioni necessarie per progettare una soluzione a disponibilità elevata per l'instradamento del traffico di rete tramite l'applicazione.
 
-![Opzioni di bilanciamento del carico di Azure](../media-draft/AzLBOptions.png)
+![Opzioni di bilanciamento del carico di Azure](../media/AzLBOptions.png)
 
 ### <a name="paas-ha-capabilities"></a>Funzionalità PaaS per la disponibilità elevata
 

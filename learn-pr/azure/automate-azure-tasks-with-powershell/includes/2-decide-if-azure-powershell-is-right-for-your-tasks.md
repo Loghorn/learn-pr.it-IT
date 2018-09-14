@@ -1,11 +1,11 @@
-Si supponga che sia necessario scegliere uno strumento per amministrare le risorse di Azure usate per testare il sistema CRM (Customer Relationship Management). Le principali operazioni da eseguire sono: creare i gruppi di risorse ed eseguire il provisioning delle macchine virtuali.
+Si supponga che sia necessario scegliere uno strumento per amministrare le risorse di Azure usate per testare il sistema CRM (Customer Relationship Management). I test richiedono consente di creare gruppi di risorse ed eseguire il provisioning di macchine virtuali (VM).
 
-Si vuole una soluzione che sia facile da apprendere per gli amministratori, ma sufficientemente potente da consentire di automatizzare l'installazione e la configurazione di più macchine virtuali o creare script per un intero ambiente applicativo. Sono disponibili diversi strumenti. È necessario trovare quello più adatto per le specifiche persone e attività.
+Si desidera qualcosa che è facile per gli amministratori di conoscere, ma sufficientemente potente per automatizzare l'installazione e configurazione di più macchine virtuali o creare degli script di un ambiente completo dell'applicazione. Sono disponibili diversi strumenti. È necessario trovare quello più adatto per le specifiche persone e attività.
 
 ## <a name="what-tools-are-available"></a>Quali strumenti sono disponibili?
-Azure offre tre strumenti di amministrazione tra cui scegliere: 
+Azure offre tre strumenti di amministrazione tra cui scegliere:
 
-- Portale di Azure 
+- Portale di Azure
 - Interfaccia della riga di comando di Azure
 - Azure PowerShell
 
@@ -21,7 +21,7 @@ Il portale non fornisce alcun sistema per automatizzare le attività ripetitive.
 ## <a name="what-is-the-azure-cli"></a>Che cos'è l'interfaccia della riga di comando di Azure?
 L'interfaccia della riga di comando di Azure è un programma della riga di comando multipiattaforma per connettersi ad Azure ed eseguire comandi amministrativi sulle risorse di Azure. Per creare una macchina virtuale, ad esempio, si userebbe un comando simile al seguente:
 
-```bash
+```azurecli
 az vm create \
   --resource-group CrmTestingResourceGroup \
   --name CrmUnitTests \
@@ -34,7 +34,7 @@ L'interfaccia della riga di comando di Azure è disponibile in due modalità: al
 ## <a name="what-is-azure-powershell"></a>Informazioni su Azure PowerShell.
 Azure PowerShell è un modulo che viene aggiunto a Windows PowerShell o PowerShell Core per consentire di connettersi alla sottoscrizione di Azure e gestire le risorse. Per il funzionamento di Azure PowerShell è necessario PowerShell. PowerShell fornisce servizi come la finestra della shell, l'analisi dei comandi e così via. Azure PowerShell aggiunge i comandi specifici di Azure.
 
-Ad esempio, Azure PowerShell fornisce il comando **New-AzureRmVM**, che crea una macchina virtuale all'interno della sottoscrizione di Azure. Per usarlo, è necessario avviare l'applicazione PowerShell e quindi eseguire un comando simile al seguente:
+Ad esempio, Azure PowerShell fornisce il **New-AzureRmVM** comando che crea una macchina virtuale per l'utente all'interno della sottoscrizione di Azure. Per usarlo, è necessario avviare l'applicazione PowerShell e quindi eseguire un comando simile al seguente:
 
 ```powershell
 New-AzureRmVm `

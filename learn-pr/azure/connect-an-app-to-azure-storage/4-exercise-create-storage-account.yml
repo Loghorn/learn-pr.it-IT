@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.connect-app-to-azure-storage.4-exercise-create-storage-account
-title: Create an Azure storage account
+title: Creare un account di archiviazione di Azure
 metadata:
-  title: Create an Azure storage account
-  description: Create an Azure storage account
+  title: Creare un account di archiviazione di Azure
+  description: Creare un account di archiviazione di Azure
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial

@@ -1,5 +1,7 @@
 In questo modulo è stato descritto che cos'è il cloud computing e sono stati illustrati i vantaggi che offre tutti i tipi di aziende, dalle startup alle aziende di grandi dimensioni. A questo punto, sono stati appresi i concetti del cloud computing, ma non si è discusso di un provider di servizi cloud specifico.
 
+![Un plug connesse per rappresentare elettricità recapitati](../media/7-heading.png)
+
 ### <a name="microsoft-azure"></a>Microsoft Azure
 
 Azure è una piattaforma di cloud computing di Microsoft. Azure offre più di 100 servizi che consentono di eseguire tutte le operazioni, dall'esecuzione di applicazioni esistenti su macchine virtuali all'esplorazione di nuovi paradigmi di software, come bot intelligenti e realtà mista.

@@ -1,32 +1,34 @@
-In the last chapter we learnt that `shared/mojis.ts` file has a list of emojis and their emotional points.
+Nel capitolo precedente, abbiamo appreso che `shared/mojis.ts` file include un elenco di emoji e i relativi punti emotivo.
 
-In this chapter we will learn about the rest of the code that we will use to map a face to an emoji.
+In questo capitolo contiene informazioni sul resto del codice che utilizziamo per eseguire il mapping di un viso per un emoji.
 
-You will learn how to:
+Si apprenderà come:
 
-1. Create a script where you pass in a URL of an image of a face.
-2. Calculate the emotional point of any faces in the image.
-3. Map the faces in the image to the closest emojis
+1. Creare uno script dove si passano in un URL di un'immagine di un viso.
+2. Calcolare il punto emotivo di qualsiasi volti nell'immagine.
+3. Eseguire il mapping di volti nell'immagine per gli emoji più vicino
 
-Eventually we will be implementing this functionally as a Slack command, but for now we are going to start with a simple node script that you can run on the comand line, like so:
+Alla fine si implementa questo a livello funzionale di un comando Slack, ma per ora, si userà per iniziare con uno script semplice che è possibile eseguire nella riga di comando, come segue:
 
 ```bash
 node bin/mojify.js <url-of-image-with-face>
 ```
 
-## Debugging TypeScript
+## <a name="debugging-typescript-in-vs-code"></a>Debug TypeScript in Visual Studio Code
 
-We are writing in TypeScript but executing JavaScript. This makes debugging hard as we would have to set breakpoints and debug in the transpiled JavaScript files which can be hard to read.
+Viene scritta `TypeScript` ma l'esecuzione `JavaScript`; questo semplifica il debug di difficoltà che presentava è stato necessario impostare punti di interruzione ed eseguire il debug nel convertito tramite transpile in file JavaScript che può essere difficile da leggere.
 
-What we ideally want is to write _and_ debug in TypeScript.
+In teoria è scrivere _e_ eseguire il debug in TypeScript.
 
-The good news is that it's possible with vs code with just a little bit of configuration.
+La buona notizia è che è possibile eseguire con Visual Studio code con solo un po' di configurazione.
 
-Open up the `launch.json` file by using the command paletee `Ctrl+P > Debug: Open launch.json`
+Aprire il `launch.json` file, utilizzando il comando palete <kbd>Ctrl</kbd>+<kbd>P</kbd> e sono digitando `Debug: Open launch.json`
 
-> TODO: Image
+![Aprire avvio Json](/media-drafts/5.open-debug-launch.json.png)
 
-Add in a configuration option like so:
+Verrà visualizzata la `launch.json` file di configurazione. Il file viene modificato per aggiungere e rimuovere le configurazioni di debug.
+
+Aggiungere la seguente opzione di configurazione del debug nella matrice di impostazioni:
 
 ```json
 {
@@ -37,7 +39,7 @@ Add in a configuration option like so:
     "DEBUG": "*"
   },
   "args": [
-    "https://pbs.twmedia-drafts.com/profile_images/833970306339446784/83MO53R9_400x400.jpg"
+    "https://pbs.twimg.com/profile_images/833970306339446784/83MO53R9_400x400.jpg"
   ],
   "sourceMaps": true,
   "stopOnEntry": false,
@@ -48,11 +50,11 @@ Add in a configuration option like so:
 }
 ```
 
-Now in the debug menu you will see an option called `Mojify` this will run the mojify script passing in a URL as the argument. You will be able to set breakpoints in the TypeScript file and inspect variables directly from there.
+A questo punto nel menu debug, viene visualizzata un'opzione denominata `Mojify` ciò viene eseguito lo script mojify passando in un URL come argomento. È possibile impostare i punti di interruzione nel `TypeScript` file e ispezionare le variabili direttamente da questa posizione.
 
-## Open up `bin/mojis.ts`
+## <a name="open-up-binmojists"></a>Aprite `bin/mojis.ts`
 
-The file is already scaffolded with all the required imports, like so:
+Il file è già sottoposto a scaffolding con tutte le importazioni necessarie, come illustrato di seguito:
 
 ```typescript
 require("dotenv").config();
@@ -60,17 +62,17 @@ import fetch from "node-fetch";
 import { EmotivePoint, Face, Rect } from "../shared/models";
 ```
 
-`dotenv` is a helper package which loads up the contents of a .env file in the root of your project as environment variables, useful for development.
+`dotenv` è un pacchetto di supporto che carica il contenuto di un file con estensione env nella radice del progetto come variabili di ambiente, utile per lo sviluppo.
 
-`node-fetch` we use to make http requests to the Azure Face API.
+`node-fetch` viene usato per effettuare richieste HTTP all'API viso di Azure.
 
-`EmotivePoint` is a helper class that describes a point in _emotional space_ - we will be discussing this in more details below.
+`EmotivePoint` è una classe helper che descrive un punto nel _emotivo spazio_ -questo argomento viene illustrato in modo più dettagliato riportato di seguito.
 
-`Rect` is a helper class to describe a rectangle shape, we use this to describe the position of a face in an image.
+`Rect` è una classe helper per descrivere una forma di rettangolo, useremo queste per descrivere la posizione di un viso in un'immagine.
 
-`Face` is a helper utility class which combines the rectangle and emotive point informatoin about a face in an image.
+`Face` è una classe di utilità helper che combina il rettangolo e punto emotive informazioni su un viso in un'immagine.
 
-In the middle of the file you should see some stub functions, like so:
+Al centro il file verrà visualizzato alcune funzioni stub, come illustrato di seguito:
 
 ```typescript
 async function getFaces(imageUrl) {
@@ -82,9 +84,9 @@ async function createMojifiedImage(imageUrl, faces) {
 }
 ```
 
-These are the functions you will be fleshing out in this lecture and the next
+Queste sono le funzioni che è essere fleshing out in questa lezione e quella successiva.
 
-At the end of the file you should see this code
+Alla fine del file, si dovrebbe visualizzare il codice:
 
 ```typescript
 async function main() {
@@ -96,21 +98,25 @@ async function main() {
 main();
 ```
 
-## Add the environment variables
+## <a name="add-the-environment-variables"></a>Aggiungere le variabili di ambiente
 
-We are going to call the Face API so we need to use those secret keys and urls we generated before, add this to the top of the file under the imports:
+Si procede a chiamare l'API viso, pertanto è necessario utilizzare tali URL viene generati prima e chiavi private, aggiungere quanto segue la parte superiore del file sotto le importazioni:
 
 ```typescript
 const API_URL = process.env["FACE_API_URL"];
 const API_KEY = process.env["FACE_API_KEY"];
 ```
 
-## Call the Face API with the provided image and get a response
+## <a name="call-the-face-api-with-the-provided-image-and-get-a-response"></a>Chiamare l'API viso con l'immagine fornita e ottenere una risposta
 
-To make a reques to the Face API we add this code to the top of the `getFaces` function
+Per effettuare una richiesta all'API viso, aggiungiamo questo codice all'inizio del `getFaces` (funzione)
 
 ```typescript
-let response = await fetch(API_URL, {
+const fullUrl =
+  API_URL +
+  "/detect?returnFaceId=false&returnFaceLandmarks=false&returnFaceAttributes=emotion";
+
+let response = await fetch(fullUrl, {
   headers: {
     "Ocp-Apim-Subscription-Key": API_KEY,
     "Content-Type": "application/json"
@@ -122,27 +128,31 @@ let resp = await response.json();
 console.log(resp);
 ```
 
-The code above uses the `fetch` command to send a `POST` request to the Face API.
+Il codice precedente Usa la `fetch` comando per inviare un `POST` richiesta all'API viso.
 
-We pass the `API_KEY` in the header so the Face API knows the request comes from us, otherwise the request is rejected.
+> **NOTA**
+>
+> È necessario aggiungere `/detect` e alcuni parametri di query per il API_URL per fare in modo che rileva i visi e restituire anche le emozioni.
 
-We pass the `imageUrl` we want the Face API to analyse in the body.
+Passiamo la `API_KEY` nell'intestazione, in modo che l'API viso possa la richiesta proviene da Microsoft; in caso contrario, la richiesta viene rifiutata.
 
-We then get the responce from the API request and print it out.
+Passiamo la `imageUrl` vogliamo l'API viso per analizzare nel corpo.
 
-If you now run the script with
+Abbiamo quindi ottenere la risposta della richiesta di API e stamparlo.
+
+Se ora si esegue lo script con
 
 ```bash
 node bin/mojify.js <path-to-image>
 ```
 
-It should print out the json responce returned from passing that image to the face API.
+Vengono stampate le la risposta JSON restituita dal passaggio di tale immagine per l'API viso.
 
-## Parse the responce
+## <a name="parse-the-response"></a>Analizzare la risposta
 
-To calculate the emojis ee need to convert each face returned in the responce from the API to an instance of a `Face` class.
+Per calcolare gli emoji ee necessaria convertire ogni viso restituito nella risposta dell'API a un'istanza di un `Face` classe.
 
-We add this code just after the code to call the API in the `getFaces` fucntion:
+Aggiungiamo questo codice subito dopo il codice per chiamare l'API nel `getFaces` funzione:
 
 ```typescript
 let faces = [];
@@ -156,20 +166,20 @@ for (let f of resp) {
 return faces;
 ```
 
-- We loop through each face returned in the responce.
-- We generate an `EmotivePoint`, a `Rect` and a `Face` from the returned json.
-- Creating the `Face` instance matches the face to an emoji
-- To see which emoji was matched we print out the `mojiicon`.
+- Esaminati in ciclo ogni viso restituito nella risposta.
+- È possibile generare una `EmotivePoint`, una `Rect` e un `Face` dal codice json restituito.
+- Creazione di `Face` istanza corrisponde la faccia di un emoji
+- Per vedere quali emoji è stata trovata corrispondenza si stampa il `mojiicon`.
 
-## Try it out
+## <a name="try-it-out"></a>Provare il servizio
 
-Now if you run the script it should:
+Se si esegue lo script che dovrebbe essere ora:
 
-- Pass the provided image through the Face API and calculate the emotion.
-- Match emotions to emojis.
-- Print the emojis to the terminal.
+1. Passare l'immagine fornita tramite l'API viso e calcolare le emozioni.
+2. Corrisponde a emozioni per emoji.
+3. Stampare gli emoji sul terminale.
 
-Like so:
+In questo modo:
 
 ```bash
 node bin/mojify.js <path-to-image>

@@ -1,40 +1,48 @@
-Before you run a container or container-integrated application in Azure, you'll most likely work in a local development environment like your laptop. This unit helps you prepare your system for container development with Docker.
+Prima di eseguire un contenitore o un'applicazione integrata nel contenitore in Azure, molto probabilmente si lavorerà in un ambiente di sviluppo locale, ad esempio il portatile. In questo caso, si preparerà il sistema per lo sviluppo dei contenitori con Docker.
 
-## Docker for Windows and Mac
+## <a name="why-use-containers"></a>Perché usare i contenitori
 
-Docker, Inc. has published two applications to install and configure local container development environments. Essentially, each application prepares your system with Docker tooling, such as the necessary CLI and automation tools. A virtual machine is also created that hosts the Docker platform. The environment is configured such that Docker commands are passed through to the virtual machine. Each of these applications is similar in functionality and includes the following features:
+I contenitori e le immagini dei contenitori usano in modo efficiente risorse host quali CPU, memoria e spazio su disco. Grazie a queste efficienze, i contenitori vengono avviati velocemente. In alcuni casi, l'avvio di una nuova istanza di un contenitore è quasi immediata. Ciò consente il provisioning rapido delle applicazioni e consente a un nuovo modello di operazioni di elaborazione e la scalabilità on demand.
 
-- **Docker platform:** The core components necessary to create and run containers.
-- **Docker CLI:** The command-line interface for interacting with Docker containers.
-- **Docker Compose:** Automation tooling for defining and running multi-container applications.
+Si immagini questo scenario: si esegue un servizio di elaborazione batch che in alcuni casi rileva un picco elevato nella domanda. I contenitori consentono di compilare un sistema che reagisce all'aumento della domanda eseguendo rapidamente il provisioning di nuove istanze. Si tratta di un sistema avanzato e non facile da realizzare con le macchine virtuali tradizionali.
 
-Open the appropriate link below in a new tab to install Docker on your operating system. 
+I contenitori consentono anche di ottenere "density hyper". Ciò significa che è possibile eseguire altre applicazioni e processi con minori risorse fisiche o virtuali.
 
-- [Docker for Windows](https://www.docker.com/docker-windows)
-- [Docker for Mac](https://www.docker.com/docker-mac)
+I contenitori non sono solo una piattaforma ideale per l'esecuzione di un carico di lavoro tradizionale, ad esempio i server Web, ma offrono anche nuove opportunità, come l'elaborazione batch con possibilità di burst, applicazioni compilate con un'architettura moderna e distribuita e qualsiasi elemento richieda la scalabilità on demand.
 
-## Docker for Windows environments
+## <a name="docker-for-windows-and-mac"></a>Docker per Windows e Mac
 
-When you use Docker for Windows, two environments are available: Linux and Windows. Using the Linux environment allows you to run Linux containers on your Windows system. You can select an environment by right-clicking on the Docker task bar icon, selecting **Switch to Linux containers**, and following the on-screen prompts.
+Docker, Inc. ha pubblicato due applicazioni per installare e configurare gli ambienti di sviluppo contenitore locale. Le applicazioni di preparare il sistema con Docker degli strumenti, ad esempio gli strumenti di automazione e della riga di comando necessari. Viene anche creata una macchina virtuale che ospita la piattaforma Docker. L'ambiente è configurato in modo che i comandi di Docker vengano passati alla macchina virtuale. La funzionalità di ognuna di queste applicazioni è simile e include le funzioni seguenti:
 
-![Docker for Windows, switch to Linux containers](../media-draft/2-docker-linux.png)
+- **Piattaforma docker:** i componenti di base necessari per creare ed eseguire i contenitori.
+- **Docker CLI:** l'interfaccia della riga di comando per l'interazione con i contenitori Docker.
+- **Docker Compose:** gli strumenti per definire ed eseguire applicazioni multicontenitore di automazione.
+
+Aprire il collegamento appropriato seguente in una nuova scheda per installare Docker nel sistema operativo. 
+
+- [Docker per Windows](https://www.docker.com/docker-windows)
+- [Docker per Mac](https://www.docker.com/docker-mac)
+
+## <a name="docker-for-windows-environments"></a>Docker per ambienti Windows
+
+Quando si usa Docker per Windows, sono disponibili due ambienti: Linux e Windows. Se si usa l'ambiente Linux, è possibile eseguire i contenitori Linux nel sistema Windows. Per selezionare un ambiente, fare clic con il pulsante destro del mouse sull'icona della barra delle applicazioni di Docker, scegliere **Switch to Linux containers** (Passa a contenitori Linux) e seguire i prompt visualizzati.
 
 > [!NOTE]
-> The steps in this tutorial assume that your system is configured to work with Linux containers.
+> I passaggi descritti in questa esercitazione presuppongono che il sistema sia configurato per funzionare con i contenitori Linux.
 
-## Docker on Linux
+## <a name="docker-on-linux"></a>Docker in Linux
 
-If you're working on a Linux-based system, the Docker server components and CLI tools can be manually installed. Follow the instructions found on [About Docker CE](https://docs.docker.com/install/#server) for your specific Linux distribution.
+Non è attualmente alcuna applicazione di installazione per Linux. Se si lavora in un sistema basato su Linux, i componenti di server di Docker e gli strumenti dell'interfaccia della riga devono essere installati manualmente. Seguire le istruzioni disponibili nel [su Docker CE](https://docs.docker.com/install/#server) per la distribuzione Linux specifica.
 
-## Validate configuration
+## <a name="validate-configuration"></a>Convalidare la configurazione
 
-To validate that Docker has been successfully installed and configured, open a terminal and run the following command:
+Per convalidare l'installazione e la configurazione di Docker, aprire un terminale ed eseguire il comando seguente:
 
 ```bash
 docker search nginx
 ```
 
-If you see output similar to the following, your environment is ready for the next unit.
+Se viene visualizzato output simile al seguente, l'ambiente è pronto per l'unità successiva.
 
 ```output
 NAME                                                   DESCRIPTION                                     STARS               OFFICIAL            AUTOMATED
@@ -64,7 +72,3 @@ travix/nginx                                           NGinx reverse proxy      
 ansibleplaybookbundle/nginx-apb                        An APB to deploy NGINX                          0                                       [OK]
 mailu/nginx                                            Mailu nginx frontend                            0                                       [OK]
 ```
-
-## Summary
-
-In this unit, you prepared a local container development environment. In the next unit, you will learn about some basic Docker operations.

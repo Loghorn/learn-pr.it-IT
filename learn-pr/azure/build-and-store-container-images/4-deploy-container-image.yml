@@ -1,15 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.azure-container-registry.deploy-image
 metadata:
-  title: Deploy images from Azure Container Registry
-  description: Deploy images from Azure Container Registry
+  title: Distribuire immagini dal Registro contenitori di Azure
+  description: Distribuire immagini dal Registro contenitori di Azure
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Deploy images from Azure Container Registry
+title: Distribuire immagini dal Registro contenitori di Azure
 durationInMinutes: 20
 interactive: bash
 azureSandbox: true

@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.connect-app-to-azure-storage.3-exercise-create-your-app
-title: Create a new app to work with Azure storage
+title: Creare una nuova app da usare con archiviazione di Azure
 metadata:
-  title: Create a new app to work with Azure storage
-  description: Create a new app to work with Azure storage
+  title: Creare una nuova app da usare con archiviazione di Azure
+  description: Creare una nuova app da usare con archiviazione di Azure
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial

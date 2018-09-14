@@ -1,114 +1,111 @@
-Suppose you run a photo sharing site, with data stored on Azure virtual machines (VMs) running SQL Server and custom applications. You want to make the following adjustments:
+Si supponga di che esegue una foto di condivisione del sito, i dati archiviati in macchine virtuali di Azure (VM) che eseguono SQL Server e applicazioni personalizzate. Si vuole apportare le modifiche seguenti:
 
-- You need to change the disk cache settings on a VM.
-- You want to add a new data disk to the VM with caching enabled.
+- È necessario modificare le impostazioni della cache del disco in una macchina virtuale.
+- Si desidera aggiungere un nuovo disco dati alla macchina virtuale con la memorizzazione nella cache abilitata.
 
-You've decided to make these changes through the Azure portal.
+Si è deciso di apportare queste modifiche tramite il portale di Azure.
 
-In this exercise, we'll walk through making the changes to a VM that we described above. First, let's sign in to the portal and create a VM.
+In questo esercizio illustra apportare le modifiche in una macchina virtuale che è descritti sopra. In primo luogo, è possibile accedere al portale e creare una macchina virtuale.
 
-## Sign in to the Azure portal
-<!---TODO: Update for sandbox?--->
+## <a name="sign-in-to-the-azure-portal"></a>Accedere al portale di Azure
 
-1. Sign in to the [Azure portal](https://portal.azure.com/?azure-portal=true).
+[!include[](../../../includes/azure-sandbox-activate.md)]
 
-## Create a virtual machine
+1. Accedere al [portale di Azure](https://portal.azure.com/?azure-portal=true).
 
-In this step, we're going to create a VM with the following properties:
+## <a name="create-a-virtual-machine"></a>Creare una macchina virtuale
 
-|Property  |Value  |
+In questo passaggio, dobbiamo creare una VM con le proprietà seguenti:
+
+|Proprietà  |Valore  |
 |---------|---------|
 |Image     |   **Windows Server 2016 Datacenter**      |
-|Name     |   **fotoshareVM**     |
-|Resource group     |   **fotoshare-rg**      |
+|Nome     |   **fotoshareVM**     |
+|Gruppo di risorse     |   **<rgn>[Nome gruppo di risorse di tipo sandbox]</rgn>**      |
 
+[!include[](../../../includes/azure-sandbox-regions-first-mention-note.md)]
 
-1. In the left menu of the portal, select **Virtual machines**.
+1. Nel menu a sinistra del portale, selezionare **macchine virtuali**.
 
-1. Now select **+ Add** in the top left of the **Virtual machines** screen. This action starts the creation process.
+1. A questo punto selezionare **Aggiungi** in alto a sinistra il **macchine virtuali** schermata. Questa azione avvia il processo di creazione.
 
-1. On the **Compute** panel that lists available VM images, type *Windows Server 2016 Datacenter* into the search box.
+1. Nel **Compute** pannello che elenca immagini VM disponibili, digitare *Windows Server 2016 Datacenter* nella casella di ricerca.
 
-1. Select **Windows Server 2016 Datacenter** from the search results, and then select **Create** to start the VM creation process.
+1. Selezionare **Windows Server 2016 Datacenter** dai risultati della ricerca e quindi selezionare **crea** per avviare il processo di creazione della macchina virtuale.
 
-1. In the **Basics** panel, in the **Name** box, enter **fotoshareVM**.
+1. Nel **nozioni di base** panel, verificare selezionato **sottoscrizione**.
 
-1. In the **Username** and **Password**  boxes, enter a name and password for an administrator account on this server.
+1. Per **gruppo di risorse**, fare clic su **Crea nuovo** e specificare la **Name** di `fotoshare-rg` e fare clic su **OK**.
 
-1. In the **Subscription** drop-down list, select your Azure subscription.
+1. nel **nome della macchina virtuale** immettere `fotoshareVM`.
 
-1. Under **Resource Group**, select **Create new**, and in the box, type **fotoshare-rg**.
+1. Sotto **gruppo di risorse**, selezionare **Usa esistente** e scegliere <rgn>[nome gruppo di risorse di tipo Sandbox]</rgn>.
 
-1. In the **Location** drop-down list, select a region near you.
+1. Nel **posizione** elenco a discesa, selezionare un'area nell'elenco precedente.
 
-    The following is an example of what the **Basics** configuration looks like when filled out:
+1. Per la macchina virtuale **dimensioni**, è possibile lasciare l'impostazione predefinita consigliata o fare clic su **modificare dimensioni** per selezionare una dimensione diversa dal **Scegli una dimensione** pannello.
 
-    ![Screenshot of VM Basics config filled out.](../media-draft/vm-basics-settings.PNG)
+    > [!NOTE]
+    > Non sono disponibili opzioni per configurare la cache del disco in questo momento, anche all'interno di **dischi** scheda del Pannello di creazione.
 
-1. Select **OK** to move on to the next step.
+    > [!IMPORTANT]
+    > Tenere presente che la cache del disco non può essere modificata per le macchine virtuali serie g e serie B. Sceglieremo ora una dimensione diversa.
 
-You now need to choose a size for the VM, and then start the deployment:
+1. Nella **ACCOUNT di amministratore** , quindi immettere un **Username** e **Password**/**Conferma password** per un account amministratore nella nuova VM.
+
+1. L'immagine seguente è riportato un esempio di ciò che il **nozioni di base** simile di configurazione durante la compilazione. Lasciare i valori predefiniti per le schede e i campi rimanenti e fare clic su **revisione + Crea**.
+
+    ![Screenshot del portale di Azure con la creazione di un pannello della macchina virtuale con alcune configurazioni di nozioni di base riportato di seguito viene compilato come descritto.](../media/4-basics-vm.png)
+
+1. Dopo aver esaminato le nuove impostazioni della macchina virtuale, fare clic su **Create** per iniziare a distribuire la nuova macchina virtuale.
+
+Creazione della macchina virtuale può richiedere un po' di tempo. Attendere il completamento della distribuzione della macchina virtuale prima di continuare con l'esercizio. Si riceverà un messaggio nell'hub di notifica quando il processo è completato.
 
 > [!IMPORTANT]
-> Remember that disk caching can't be changed for L-Series and B-series virtual machines. We'll select a different size.
+> Si verrà usare questa macchina virtuale nella lezione successiva, quindi, rimanere disponibile per un periodo di tempo!
 
-1. In the **Choose a size** section, select a **Standard** SKU, such as **F1s**, and then choose **Select**.
+## <a name="view-os-disk-cache-status-in-the-portal"></a>Stato di visualizzazione del sistema operativo disco della cache nel portale di
 
-1. Scroll down the **Settings** pane and observe that there is no option to configure disk caching. Let's accept the defaults on this step and choose **OK** at the bottom of the pane.
+Dopo aver distribuita la VM, è possibile verificare lo stato di memorizzazione nella cache del disco del sistema operativo usando la procedura seguente:
 
-1. On the **Create** panel, review the summary, and then choose **Create**.
+1. Nel menu a sinistra, fare clic su **tutte le risorse**, quindi selezionare la VM **fotoshareVM**.
 
-1. VM creation can take a while. Wait until the VM has deployed before continuing with the exercise. You'll get a message in the notification hub when the process is complete.
+1. Nel **macchina virtuale** pannello, in **impostazioni**, selezionare **dischi**.
 
-> [!IMPORTANT]
-> We'll use this VM in the next lesson, so keep it around for a while!
+1. Nel **dischi** riquadro, la macchina virtuale è un disco, il disco del sistema operativo. Il tipo di cache è attualmente impostato sul valore predefinito di **lettura/scrittura**.
 
-## View OS disk cache status in the portal
+![Screenshot del portale di Azure che mostra la sezione dischi del blade della macchina virtuale, con il disco del sistema operativo riportati e impostare per la memorizzazione nella cache di sola lettura.](../media/4-os-disk-rw.PNG)
 
-Once our VM is deployed, we can confirm the caching status of the OS disk using the following steps:
+## <a name="change-the-cache-settings-of-the-os-disk-in-the-portal"></a>Modificare le impostazioni della cache del disco del sistema operativo nel portale
 
-1. In the left menu, click **All resources**, and then select your VM,  **fotoshareVM**.
+1. Nel **Disks** riquadro, selezionare **modifica** in alto a sinistra della schermata.
 
-1. On the **Virtual machine** screen, under **SETTINGS**, select **Disks**.
+1. Modifica il **memorizzazione nella cache HOST** valore per il disco del sistema operativo **Read-only** usando l'elenco a discesa elenco e quindi selezionare **Salva** in alto a sinistra della schermata.
 
-1. On the **Disks** pane, the VM has one disk, the OS disk. Its cache type is currently set to the default value of **Read/write**.
+1. Questo aggiornamento può richiedere alcuni minuti. Il motivo è che la modifica l'impostazione della cache di un disco di Azure Scollega e ricollega il disco di destinazione. Se il disco del sistema operativo, la VM viene riavviata anche. Al termine dell'operazione, si riceverà una notifica che informa che i dischi delle macchine Virtuali sono stati aggiornati.
 
-![Screenshot of our OS and data disks, both set to Read-only caching.](../media-draft/os-disk-rw.PNG)
+1. Al termine dell'operazione, il tipo di cache del disco del sistema operativo è impostato su **Read-only**.
 
-## Change the cache settings of the OS disk in the portal
+È possibile passare alla configurazione della cache del disco dati. Per configurare un disco, è necessario prima crearne uno.
 
-1. On the **Disks** pane, select **Edit** in the upper left of the screen.
+## <a name="add-a-data-disk-to-the-vm-and-set-caching-type"></a>Aggiungere un disco dati per la macchina virtuale e impostare la memorizzazione nella cache di tipo
 
-1. Change the **HOST CACHING** value for the OS disk to **Read-only** using the drop-down list, and then select **Save** in the upper left of the screen.
+1. Nella **Disks** vista della macchina virtuale nel portale andare avanti e selezionare **Aggiungi disco dati**. Viene immediatamente visualizzato un errore nel **nome** campo, indicando che il campo non può essere vuoto. Si dispone di un disco dati ancora non, creato appositamente.
 
-1. This update takes a while. The reason is that changing the cache setting of an Azure disk detaches and reattaches the target disk. If it's the operating system disk, the VM is also restarted. You'll get a message similar to the following notification when the update has finished:
+1. Fare clic nell'elenco **Nome** e quindi su **Crea disco**.
 
-    ![Example of notification you receive when the cache setting update has completed.](../media-draft/vm-disk-update-complete.PNG)
+1. Nel **creare un disco gestito** riquadro, nella **nome** , digitare **fotosharesVM-data**.
 
-4. Once complete, the OS disk cache type is set to **Read-only**.
+1. Sotto **gruppo di risorse**, selezionare **Usa esistente**e selezionare <rgn>[nome gruppo di risorse di tipo Sandbox]</rgn>.
 
-Let's move on to data disk cache configuration. To configure a disk, we'll need to first create one.
+1. Lasciare i campi rimanenti come predefiniti, quindi scegliere **Create** nella parte inferiore della schermata.
 
-## Add a data disk to the VM and set caching type
+    Attendere il completamento della creazione del disco prima di continuare.
 
-1. Back on the **Disks** view of our VM in the portal, go ahead and select **Add data disk**. An error immediately appears in the **Name** field, telling us that the field can't be empty. We don't have a data disk yet, so let's create one.
+1. Modifica il **memorizzazione nella cache HOST** valore per il nuovo disco dati a **Read-only** usando l'elenco a discesa elenco e quindi selezionare **Salva** in alto a sinistra della schermata.
 
-1. Click in the **Name** list, and then click **Create disk**.
+    Al termine dell'aggiornamento il nuovo disco dati della macchina virtuale di attesa. Al termine dell'operazione, il tipo di cache del disco dati verrà automaticamente impostato **Read-only**.
 
-1. In the **Create managed disk** pane, in the **Name** box, type **fotosharesVM-data**.
+In questo esercizio viene usato il portale di Azure per configurare la memorizzazione nella cache in una nuova VM, modificare le impostazioni della cache in un disco esistente e configurare la memorizzazione nella cache in un nuovo disco dati. Lo screenshot seguente mostra la configurazione finale:
 
-1. Under **Resource Group**, select **Use existing**, and select **fotoshare-rg** from the drop-down menu.
-
-1. Select **Create** at the bottom of the screen.
-
-1. Wait until the disk has been created before continuing.
-
-1. Change the **HOST CACHING** value for our new data disk to **Read-only** using the drop-down list, and then select **Save** in the upper left of the screen.
-
-1. Wait for the VM to update. Updating takes a while because Azure detaches and reattaches the data disk to change this setting.
-
-1. Once complete, the data disk cache type is set to **Read-only**.
-
-In this exercise, we used the Azure portal to configure caching on a new VM, change cache settings on an existing disk, and configure caching on a new data disk. The following screenshot shows the final configuration: 
-
-![Screenshot of our OS and data disks, both set to Read-only caching.](../media-draft/disks-final-config-portal.PNG)
+![Screenshot del portale di Azure che mostra il disco del sistema operativo e il nuovo disco dati nella sezione dei dischi del nostro pannello macchina virtuale, con entrambi i dischi impostati per la memorizzazione nella cache di sola lettura.](../media/disks-final-config-portal.PNG)

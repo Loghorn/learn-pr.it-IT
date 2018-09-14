@@ -10,7 +10,7 @@ In questa unità si userà il portale di Azure per verificare che l'hub eventi f
 
     ![Visualizzare i messaggi dell'hub eventi](../media-draft/6-view-messages.png)
 
-1. Le applicazioni SimpleSend ed EventProcessorSample sono configurate per l'invio e la ricezione di 100 messaggi. Si noterà che l'hub eventi ha elaborato 100 messaggi dall'applicazione SimpleSend e ha trasmesso 100 messaggi all'applicazione EventProcessorSample.
+1. Le applicazioni SimpleSend ed EventProcessorSample sono configurate per l'invio e la ricezione di 100 messaggi. Si noterà che l'hub eventi ha elaborato i 100 messaggi dall'applicazione SimpleSend e ha trasmesso 100 messaggi all'applicazione EventProcessorSample.
 
 ## <a name="test-event-hub-resilience"></a>Testare la resilienza dell'hub eventi
 
@@ -22,7 +22,6 @@ Usare la procedura seguente per vedere cosa accade quando un'applicazione invia 
     cd ~
     cd azure-event-hubs/samples/Java/Basic/SimpleSend
     java -jar ./target/simplesend-1.0.0-jar-with-dependencies.jar
-    ENTER
     ```
 
 1. Quando viene visualizzato il messaggio **Invio completato...** premere INVIO.
@@ -43,7 +42,6 @@ Attendere almeno cinque minuti.
     cd ~
     cd azure-event-hubs/samples/Java/Basic/EventProcessorSample
     java -jar ./target/eventprocessorsample-1.0.0-jar-with-dependencies.jar
-    ENTER
     ```
 
 1. Quando non vengono più visualizzati messaggi nella console, premere INVIO.

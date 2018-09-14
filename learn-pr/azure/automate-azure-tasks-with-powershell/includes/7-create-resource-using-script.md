@@ -29,7 +29,7 @@ Dopo avere scritto lo script, eseguirlo dalla riga di comando di PowerShell pass
 ## <a name="powershell-techniques"></a>Tecniche di PowerShell
 PowerShell offre numerose funzionalità disponibili nei tipici linguaggi di programmazione. È possibile definire variabili, usare rami e cicli, acquisire parametri della riga di comando, scrivere funzioni, aggiungere commenti e così via. Saranno necessarie tre funzionalità per il nostro script: variabili, cicli e parametri.
 
-### <a name="variables"></a>Variabili
+### <a name="variables"></a>variables
 PowerShell supporta le variabili. Usare **$** per dichiarare una variabile e **=** per assegnare un valore. Ad esempio:
 
 ```powershell
@@ -88,6 +88,7 @@ param([int]$size, [string]$location)
 ```
 
 ## <a name="how-to-create-a-linux-virtual-machine"></a>Come creare una macchina virtuale Linux
+
 Azure PowerShell fornisce il cmdlet **New-AzureRmVm** per creare una macchina virtuale. Il cmdlet dispone di diversi parametri che consentono di gestire le numerose impostazioni di configurazione della macchina virtuale. La maggior parte dei parametri ha valori predefiniti accettabili, pertanto è necessario specificare solo cinque elementi:
 
 - **ResourceGroupName**: il gruppo di risorse in cui verrà inserita la nuova macchina virtuale.

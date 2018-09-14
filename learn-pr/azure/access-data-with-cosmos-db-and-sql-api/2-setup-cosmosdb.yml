@@ -1,21 +1,16 @@
 ### YamlMime:ModuleUnit
 uid: learn.access-data-with-cosmos-db-and-sql-api.2-setup-cosmosdb
 metadata:
-  title: Configurare il database e la raccolta di Cosmos DB
-  description: Configurare il database e la raccolta di Cosmos DB
+  title: Configurare la raccolta e un database Azure Cosmos DB
+  description: Configurare la raccolta e un database Azure Cosmos DB
   ms.date: 09/24/2018
-  author: markjulmar
-  ms.author: smmark
+  author: mimig1
+  ms.author: mimig
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 007affefbcce8a7ef65f704d915aa8222125e4e0
-  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
-  ms.translationtype: HT
-  ms.contentlocale: it-IT
-  ms.lasthandoff: 09/10/2018
-  ms.locfileid: "44307998"
-title: Configurare il database e la raccolta di Cosmos DB
+title: Configurare la raccolta e un database Azure Cosmos DB
 durationInMinutes: 5
 interactive: bash
 azureSandbox: true
-content: '[!include[](includes/2-setup-cosmosdb.md)]'
+content: |
+  [!include[](includes/2-setup-cosmosdb.md)]

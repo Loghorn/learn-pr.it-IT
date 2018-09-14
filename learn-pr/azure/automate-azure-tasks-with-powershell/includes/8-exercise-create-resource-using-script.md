@@ -76,7 +76,8 @@ Avviare PowerShell e passare alla directory in cui è stato salvato il file di s
 
 Per il completamento dello script possono essere necessari alcuni minuti. Al termine, verificare che sia stato eseguito correttamente:
 
-1. Da un browser accedere al portale di Azure.
+<!---TODO: Update for sandbox?--->
+1. In un browser, accedere al [portale di Azure](https://portal.azure.com/?azure-portal=true).
 
 1. Nel riquadro di spostamento a sinistra fare clic su **Gruppi di risorse**.
 

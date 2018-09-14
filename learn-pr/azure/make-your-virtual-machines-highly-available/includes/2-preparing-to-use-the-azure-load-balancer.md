@@ -1,99 +1,101 @@
-Suppose your company wants to see if Azure Load Balancer will support your Enterprise Resource Planning (ERP) application. Your application has a web interface for users and runs on multiple servers. Each server has a local copy of the ERP database, which is synced across all servers.
+Si supponga che la società decide di vedere se Azure Load Balancer supporta l'applicazione della risorsa pianificazione ERP (Enterprise). L'applicazione ha un'interfaccia web per gli utenti e viene eseguito su più server. Ogni server ha una copia locale del database, ERP che viene sincronizzato tra tutti i server.
 
-Here, you will look at how a load balancer can help provide high availability of services. You will identify the difference between the basic and standard load balancer options and see how to create a load balancer for Azure Virtual Machines.
+In questo caso, esaminerà come un servizio di bilanciamento del carico consente di garantire un'elevata disponibilità dei servizi. Verranno identificati la differenza tra le opzioni di servizio di bilanciamento del carico basic e standard e vedere come creare un servizio di bilanciamento del carico per le macchine virtuali di Azure.
 
-## What is load balancing?
+## <a name="what-is-load-balancing"></a>Che cos'è il bilanciamento del carico?
 
-_Load balancing_ describes various techniques for distributing workloads across multiple devices, such as compute, storage, and networking devices. The goal of load balancing is to optimize the use of multiple resources, to make the most efficient use of these resources as an infrastructure is scaled out, and to ensure services are maintained if some components are unavailable.
+_Il bilanciamento del carico_ vengono descritte varie tecniche per la distribuzione di carichi di lavoro tra più dispositivi, tra cui calcolo, archiviazione e i dispositivi di rete. L'obiettivo di bilanciamento del carico è ottimizzare l'utilizzo di più risorse, in modo da ottimizzare l'uso di queste risorse come un'infrastruttura di aumento del numero, e per garantire servizi vengono mantenuti se alcuni componenti non sono disponibili.
 
-Here, we'll look at Azure's load balancing support for virtual machines (VMs).
+In questo caso, verrà esaminato il supporto per le macchine virtuali (VM) di bilanciamento del carico di Azure.
 
-### What is high availability?
+### <a name="what-is-high-availability"></a>Che cos'è la disponibilità elevata?
 
-High availability (HA) measures the ability of an application or service to remain accessible despite a failure in any system component. Ideally, there will be not be any noticeable loss of service.
+Disponibilità elevata (HA) misura la capacità di un'applicazione o servizio deve rimanere accessibile anche se un errore in qualsiasi componente di sistema. In teoria, non essere esisterà alcun notevole perdita di servizio.
 
-Load balancing is fundamental to the delivery of HA because it allows multiple VMs to act as a pool of servers. The pool can continue to service requests even if some VMs crash or are taken offline for maintenance.
+Bilanciamento del carico è fondamentale per il recapito della disponibilità elevata poiché consente a più macchine virtuali di agire come un pool di server. Il pool possono continuare a servizio richieste anche nel caso di arresto anomalo del sistema alcune macchine virtuali o vengano portati offline per manutenzione.
 
-## What is Azure Load Balancer?
+## <a name="what-is-azure-load-balancer"></a>Che cos'è Azure Load Balancer?
 
-**Azure Load Balancer** is an Azure service that distributes incoming requests across multiple VMs in a pool. It distributes incoming network traffic across a set of healthy VMs and avoids any VM that is not able to respond.
+**Azure Load Balancer** è un servizio di Azure che distribuisce le richieste in ingresso tra più macchine virtuali in un pool. Distribuisce il traffico di rete in ingresso in un set di macchine virtuali integre e consente di evitare tutte le macchine Virtuali che non sono in grado di rispondere.
 
- Azure Load Balancer operates at Layer-4 (TCP, UDP) of the OSI 7-layer model. It can be configured to support TCP and UDP application scenarios where the traffic is inbound to Azure VMs, as well as outbound scenarios where other Azure services are passing TCP and UDP traffic out through Azure VMs to external endpoints.
+ Azure Load Balancer opera a livello 4 (TCP, UDP) del modello OSI livello 7. Può essere configurato per il supporto TCP e UDP applicazione scenari in cui il traffico in ingresso alle macchine virtuali di Azure, nonché gli scenari in uscita in altri servizi di Azure sono attraversano il traffico TCP e UDP out macchine virtuali di Azure verso endpoint esterni.
 
-## Public vs. internal load balancers
+> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE2yBWo]
 
-An Azure Load Balancer can be either _public_ or _internal_ depending on the source of incoming requests.
+## <a name="public-vs-internal-load-balancers"></a>Pubblica e servizi di bilanciamento del carico interno
 
-A **public load balancer** handles client requests from outside of your Azure infrastructure. The public IP address of the load balancer is automatically configured as the load balancer's front end when you create the public IP and the load balancer resource. The following illustration shows a public load balancer.
+Azure Load Balancer può essere rappresentata _pubbliche_ o _interno_ a seconda dell'origine delle richieste in ingresso.
 
-![An illustration showing a public load balancer distributing client requests from the internet to three VMs on a virtual network.](../media-draft/2-public-load-balancer.png)
+Oggetto **servizio di bilanciamento del carico pubblico** gestisce le richieste client di fuori dell'infrastruttura di Azure. L'indirizzo IP pubblico del bilanciamento del carico viene configurato automaticamente come front-end di load balancer quando si crea l'indirizzo IP pubblico e la risorsa di bilanciamento del carico. La figura seguente illustra un servizio di bilanciamento del carico pubblico.
 
-An **internal load balancer** processes requests from within a virtual network (or through a VPN). It distributes requests to resources within that virtual network. The load balancer, front-end IP addresses, and virtual networks are not directly accessible from the internet. The following illustration shows an architecture containing both a public and internal load balancer. The public load balancer handles external requests while the internal load balancer forwards the requests to the internal VMs and databases for processing.
+![Un'illustrazione che mostra un servizio di bilanciamento del carico pubblico distribuire le richieste client da internet ai tre macchine virtuali in una rete virtuale.](../media/2-public-load-balancer.png)
 
-![An illustration showing a public load balancer forwarding client requests to an internal load balancer. The internal load balancer then distributes requests to a web tier subnet or database tier subnet based on the type of the request. Both the web tier subnet and the database tier subnet have multiple servers to handle requests.](../media-draft/2-internal-load-balancer.png)
+Un' **bilanciamento del carico interno** elabora richieste da all'interno di una rete virtuale (o tramite una VPN). Distribuisce le richieste alle risorse all'interno di tale rete virtuale. Il servizio di bilanciamento del carico, indirizzi IP front-end e le reti virtuali non sono direttamente accessibili da internet. La figura seguente mostra un'architettura che contiene sia un bilanciamento del carico interno e pubblico. Il servizio di bilanciamento del carico pubblico gestisce le richieste esterne mentre il servizio di bilanciamento del carico interno inoltra le richieste per le macchine virtuali interne e i database per l'elaborazione.
 
-## How does Azure Load Balancer work?
+![Un'illustrazione che mostra un bilanciamento del carico pubblico inoltrando le richieste client a un servizio di bilanciamento del carico interno. Il servizio di bilanciamento del carico interno distribuisce quindi le richieste a una subnet di livello web o una subnet di livello database in base al tipo della richiesta. Subnet del livello web sia nella subnet del livello di database dispone di più server per gestire le richieste.](../media/2-internal-load-balancer.png)
 
-Azure Load Balancer uses information configured in **rules** and **health probes** to determine how new inbound traffic that is received on a load balancer's **front end** is distributed to VM instances in a **back-end pool**.
+## <a name="how-does-azure-load-balancer-work"></a>Come funziona Azure Load Balancer?
 
-### Front end
+Azure Load Balancer Usa informazioni configurate nella **regole** e **probe di integrità** per determinare come nuovo traffico in ingresso che è stato ricevuto in un bilanciamento del carico **front-end** è quindi distribuite a istanze di macchina virtuale in un **pool back-end**.
 
-The load balancer front end is an IP configuration, containing one or more public IP addresses, that enables access to the load balancer and its applications over the Internet.
+### <a name="front-end"></a>Front-end
 
-### Back end address pool
+Il front-end del servizio di bilanciamento di carico è una configurazione IP, che contiene uno o più indirizzi IP pubblici, che consente l'accesso al servizio di bilanciamento del carico e delle relative applicazioni tramite Internet.
 
-Virtual machines connect to a load balancer using their virtual network interface card (vNIC). The back-end address pool contains the IP addresses of the vNICs that are connected to the load balancer. If you place all your VMs in an availability set, you can use this to easily add your VMs to a back-end pool when you're configuring the load balancer.
+### <a name="back-end-address-pool"></a>Pool di indirizzi back-end
 
-### Health probe
+Macchine virtuali di connettersi a un servizio di bilanciamento del carico usando la scheda di interfaccia di rete virtuale (vNIC). Il pool di indirizzi back-end contiene gli indirizzi IP scheda vnic connessi al servizio di bilanciamento del carico. Se si inseriscono tutte le VM nel set di disponibilità, è possibile usare per aggiungere facilmente le macchine virtuali a un pool di back-end quando si configura il bilanciamento del carico.
 
-Load balancers use _health probes_ to determine which virtual machines can service requests. The load balancer will only distribute traffic to VMs that are available and operational. 
+### <a name="health-probe"></a>Probe di integrità
 
-A health probe monitors specific ports on each VM. You can define what type of response corresponds to "health"; for example, you might require an `HTTP 200 Available` response from a web application. By default, a VM will be marked as "unavailable" after two consecutive failures at 15-second intervals.
+Uso di servizi di bilanciamento di carico _probe di integrità_ per determinare quali macchine virtuali possono soddisfare le richieste. Il servizio di bilanciamento del carico distribuirà solo il traffico alle macchine virtuali disponibili e operative. 
 
-### Load balancer rules
+Un probe di integrità monitora porte specifiche su ogni macchina virtuale. È possibile definire il tipo di risposta corrisponde a "integrità"; ad esempio, potrebbe richiedere un `HTTP 200 Available` risposta da un'applicazione web. Per impostazione predefinita, una macchina virtuale sarà essere contrassegnata come "non disponibile" dopo due errori consecutivi a intervalli di 15 secondi.
 
-Load balancer _rules_ define how traffic is distributed to backend VMs. The goal is to distribute requests fairly across the healthy VMs in the back-end pool.
+### <a name="load-balancer-rules"></a>Regole del servizio di bilanciamento del carico
 
-Azure Load Balancer uses a hash-based algorithm to rewrite the headers of inbound packets. By default, Load Balancer creates a hash from:
+Bilanciamento del carico _regole_ definiscono la distribuzione del traffico alle macchine virtuali di back-end. L'obiettivo è distribuire abbastanza le richieste tra le macchine virtuali integre nel pool di back-end.
 
-- Source IP addresses
-- Source ports
-- Destination IP addresses
-- Destination ports
-- IP protocol numbers
+Azure Load Balancer Usa un algoritmo basato su hash riscrivere le intestazioni dei pacchetti in ingresso. Per impostazione predefinita, bilanciamento del carico consente di creare un hash da:
 
-This mechanism ensures that all packets within a packet client flow are sent to the same backend VM instance. A new flow from a client will use a different randomly allocated source port. This mean that the hash will change, and the load balancer may send this flow to a different back-end endpoint.
+- Indirizzi IP di origine
+- Porte di origine
+- Indirizzi IP di destinazione
+- Porte di destinazione
+- Numeri di protocollo IP
 
-## Basic vs. Standard Load Balancer SKUs
+Questo meccanismo garantisce che tutti i pacchetti all'interno di un flusso dei pacchetti di client vengono inviati alla stessa istanza di macchina virtuale back-end. Un nuovo flusso da un client userà un diverso allocata in modo casuale la porta di origine. Questo significa che verrà modificato l'hash e il bilanciamento del carico può inviare questo flusso a un endpoint di back-end diverso.
 
-There are two versions of Azure Load Balancer: **Basic** and **Standard**. They differ in scale, features, and pricing. For example:
+## <a name="basic-vs-standard-load-balancer-skus"></a>Input della regola di base SKU di bilanciamento del carico standard
 
-- Standard supports HTTPS while Basic does not
-- Pool size can be much larger in Standard
-- Basic is no-cost while Standard is charged based on rules and throughput.
+Sono disponibili due versioni di Azure Load Balancer: **base** e **Standard**. Differenze di scalabilità, funzionalità e prezzo. Ad esempio:
 
-Standard is a superset of Basic, so any scenario suitable for Basic should also work on Standard. The Basic SKU is generally intended for prototyping and testing while Standard is recommended for production.
+- Mentre Basic non standard supporta il protocollo HTTPS
+- Dimensioni del pool possono essere molto più grandi nello Standard
+- Basic è gratuito, mentre Standard viene addebitato in base a regole e la velocità effettiva.
 
-## Start the deployment of a basic public load balancer
+Standard è un superset di base, pertanto qualsiasi scenario adatto per Basic dovrebbero funzionare anche sullo Standard. Lo SKU Basic è destinato a livello generale per la creazione di prototipi e test mentre Standard è consigliata per la produzione.
 
-To create a load-balanced VM system, you need to create the load balancer itself, create a virtual network to contain your virtual machines, and then add VMs to the virtual network.
+## <a name="start-the-deployment-of-a-basic-public-load-balancer"></a>Avviare la distribuzione di un servizio di bilanciamento del carico basic pubblico
 
-To create the load balancer using the Azure portal, you define the following:
+Per creare un sistema VM con bilanciamento del carico, è necessario creare il servizio di bilanciamento del carico stesso, creare una rete virtuale per contenere le macchine virtuali e quindi aggiungere le macchine virtuali alla rete virtuale.
 
-- Load balancer name
-- Type: public or internal
-- SKU: Basic or Standard
-- Public IP address: dynamic or static
-- Resource group and location
+Per creare il servizio di bilanciamento del carico usando il portale di Azure, è necessario definire i seguenti:
 
-Your back-end VMs will all be connected to the same virtual network, so you need to configure this resource next:
+- Nome del servizio di bilanciamento del carico
+- Tipo: pubblico o interno
+- SKU: Basic o Standard
+- Indirizzo IP pubblico: dinamico o statico
+- Percorso e il gruppo di risorse
 
-- Virtual network name
-- Address space to use, such as 172.20.0.0/16
-- Resource group
-- Name for the subnet to use
-- Address space for the subnet (must be within the main space), such as 172.20.0.0/24
+Le macchine virtuali di back-end verranno essere tutte connesse alla stessa rete virtuale, pertanto è necessario configurare successivamente la risorsa:
 
-You then need to create and deploy your backend VMs and configure them to use your virtual network. You should also place your VMs into the same availability set. Availability sets define the level of fault tolerance across a group of VMs, but for load balancing, they also help you assign your VMs to back-end pools.
+- Nome della rete virtuale
+- Spazio degli indirizzi da usare, ad esempio 172.20.0.0/16
+- Gruppo di risorse
+- Nome della subnet da usare
+- Spazio degli indirizzi per la subnet (deve essere all'interno dello spazio principale), ad esempio 172.20.0.0/24
 
-You have now seen how to use Azure Load Balancer as part of a high-availability solution. Next, you will use these steps to deploy your own load balancer.
+È quindi necessario creare e distribuire le VM back-end e configurare in modo che usino la rete virtuale. È anche necessario inserire le macchine virtuali nello stesso set di disponibilità. Set di disponibilità definiscono il livello di tolleranza di errore in un gruppo di macchine virtuali, ma per il bilanciamento del carico, sono anche utili per assegnare le macchine virtuali al pool back-end.
+
+A questo punto è stato illustrato come usare Azure Load Balancer come parte di una soluzione a disponibilità elevata. Successivamente, si utilizzeranno questi passaggi per distribuire il proprio servizio di bilanciamento del carico.

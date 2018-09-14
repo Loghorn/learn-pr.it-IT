@@ -1,48 +1,47 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-computer-vision-service.7-summary
-title: Summary and knowledge check
+title: Controllo di riepilogo e della Knowledge Base
 metadata:
-  title: Summary and knowledge check
-  description: Summary and knowledge check
+  title: Controllo di riepilogo e della Knowledge Base
+  description: Controllo di riepilogo e della Knowledge Base
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
+  author: AndrewJByrne
+  ms.author: marouill
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-durationInMinutes: 10
+durationInMinutes: 5
 content: |
   [!include[](includes/7-summary.md)]
 quiz:
-  title: 'Computer Vision quiz'
+  title: 'Verifica delle conoscenze: elaborazione delle immagini con il servizio visione artificiale'
   questions:
-  - content: "What kind of famous images won't be identified with Computer Vision?"
-    choices:
-    - content: 'Landmarks '
-      isCorrect: false
-    - content: 'Celebrities'
-      isCorrect: false
-    - content: 'Movies'
-      isCorrect: true
-  - content: 'Which visual features can we elect to receive when analyzing images?'
-    choices:
-    - content: 'Shapes'
-      isCorrect: true
-    - content: 'Image categorization'
-      isCorrect: false
-    - content: 'Tags'
-      isCorrect: false
-    - content: 'Textual description'
-      isCorrect: false
-    - content: 'Faces'
-      isCorrect: false
-    - content: 'Colors'
-      isCorrect: false
-    - content: 'Adult and suggestive content'
-      isCorrect: false
-  - content: 'What does smart cropping do?'
-    choices:
-    - content: 'Crops pictures from the top left'
-      isCorrect: false
-    - content: 'Crops pictures based on regions of interest (faces, objects in focus, others)'
-      isCorrect: true
+    - content: 'Quando si analizza un''immagine mediante l''API visione artificiale, è possibile specificare tipi di funzionalità di visual da restituire.  Quale delle seguenti è un tipo di funzionalità visual valida quando si chiama l''operazione ''analyze''?'
+      choices:
+        - content: 'Film '
+          isCorrect: false
+          incorrectExplanation: Film non è un tipo di funzionalità di visual valido.
+        - content: Animali
+          isCorrect: false
+          incorrectExplanation: Animali non è un tipo di funzionalità di visual valido.
+        - content: Celebrità
+          isCorrect: true
+          correctExplanation: I due tipi di funzionalità di visual che è possibile specificare sono celebrità e punti di riferimento.
+    - content: Quale delle seguenti viene descritto cosa *ritaglio intelligente* durante la generazione di un'immagine di anteprima con il `generateThumbnail` operazione?
+      choices:
+        - content: Ritagliata immagini nella parte superiore sinistra.
+          isCorrect: false
+          incorrectExplanation: 'Ritagliare un''immagine nella parte superiore sinistra può comportare la rimozione di una parte significativa dell''immagine, noto anche come area di interesse.'
+        - content: Si basa l'anteprima nella "area di interesse".
+          isCorrect: true
+          correctExplanation: 'Se il parametro ''smartCropping'' è true, l''API si applica il ritaglio intelligente per allineare al centro l''anteprima nel "area di interesse". In caso contrario, ritagliata solo al centro.'
+    - content: L'API visione artificiale si integra nella soluzione. Account di servizi per il servizio visione artificiale un cognitives è creato nell'area Stati Uniti orientali. Quale delle seguenti è l'indirizzo corretto per accedere al `ocr` operazione?
+      choices:
+        - content: eastus2.api.cognitive.microsoft.com/vision/v1.0/ocr
+          isCorrect: false
+          incorrectExplanation: 'È non è stato iscriversi per una chiave di accesso effettuare richieste da quest''area. Tenere presente che l''endpoint viene specificata l''area scelto durante l''iscrizione, l''URL del servizio e una risorsa usato nella richiesta.'
+        - content: eastus.api.cognitive.microsoft.com/vision/v1.0/describe
+          isCorrect: false
+          incorrectExplanation: Questo indirizzo invia una richiesta alla risorsa di entità.
+        - content: eastus.api.cognitive.microsoft.com/vision/v1.0/ocr
+          isCorrect: true
+          correctExplanation: 'L''endpoint viene specificata l''area che scelto durante l''iscrizione, l''URL del servizio e una risorsa usato nella richiesta.'

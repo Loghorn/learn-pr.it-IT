@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.design-for-performance-and-scalability.4-optimize-storage-performance
-title: Optimize storage performance
+title: Ottimizzare le prestazioni di archiviazione
 metadata:
-  title: Optimize storage performance
-  description: In this unit we'll discuss how to optimize storage performance for your architecture
+  title: Ottimizzare le prestazioni di archiviazione
+  description: In questa unità viene spiegato come ottimizzare le prestazioni di archiviazione per l'architettura
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
@@ -14,27 +13,27 @@ durationInMinutes: 5
 content: |
   [!include[](includes/4-optimize-storage-performance.md)]
 quiz:
-  title: 'Knowledge Check - Optimize storage performance'
+  title: Verifica delle conoscenze - Ottimizzare le prestazioni di archiviazione
   questions:
-  - content: 'What is polyglot persistence?'
-    choices:
-    - content: 'Using Azure SQL Database to store all of your data'
-      isCorrect: false
-      incorrectExplanation: 'Storing all data in a single technology is not the definition of polyglot persistence.'
-    - content: 'A way to keep connections alive for data transfers'
-      isCorrect: false
-      incorrectExplanation: 'Keepalives are methods of keeping connections alive for data transfers and are not related to polyglot persistence.'
-    - content: 'The usage of different data storage technologies for different purposes in your application'
-      isCorrect: true
-      correctExplanation: 'Polyglot persistence is the usage of different data storage technologies for different purposes.'
-    - content: 'An approach to deal with transient data faults'
-      isCorrect: false
-      incorrectExplanation: 'While dealing with transient data faults is beneficial in an application architecture, it is not related to polyglot persistence.'
-  - content: 'Redis Cache can be used to improve the performance of your application by storing a snapshot of data in memory.'
-    choices:
-    - content: 'True'
-      isCorrect: true
-      correctExplanation: 'Redis Cache will store application data in memory, leading to fast retrieval times and an improvement in application performance related to frequently accessed data.'
-    - content: 'False'
-      isCorrect: false
-      incorrectExplanation: 'Redis Cache will store application data in memory, leading to fast retrieval times and an improvement in application performance related to frequently accessed data.'
+    - content: Che cos'è la persistenza poliglotta?
+      choices:
+        - content: Usare il database SQL di Azure per archiviare tutti i dati
+          isCorrect: false
+          incorrectExplanation: Archiviare tutti i dati in una sola tecnologia non è la definizione di persistenza poliglotta.
+        - content: Un modo per mantenere attive le connessioni per i trasferimenti di dati
+          isCorrect: false
+          incorrectExplanation: I keep-alive sono metodi per mantenere attive le connessioni per i trasferimenti di dati e non sono correlati alla persistenza poliglotta.
+        - content: L'utilizzo di varie tecnologie di archiviazione dati per scopi diversi nell'applicazione
+          isCorrect: true
+          correctExplanation: La persistenza poliglotta è l'utilizzo di tecnologie di archiviazione dati diverse per scopi differenti.
+        - content: Un approccio per gestire gli errori di dati temporanei
+          isCorrect: false
+          incorrectExplanation: 'Anche se la gestione degli errori di dati temporanei è utile nell''architettura di un''applicazione, non è correlata alla persistenza poliglotta.'
+    - content: Cache Redis di Microsoft Azure è utilizzabile per migliorare le prestazioni dell'applicazione mediante l'archiviazione di uno snapshot dei dati in memoria.
+      choices:
+        - content: Vero
+          isCorrect: true
+          correctExplanation: 'Cache Redis archivierà i dati dell''applicazione in memoria, consentendo tempi di recupero rapidi e un miglioramento delle prestazioni dell''applicazione correlate ai dati usati di frequente.'
+        - content: Falso
+          isCorrect: false
+          incorrectExplanation: 'Cache Redis archivierà i dati dell''applicazione in memoria, consentendo tempi di recupero rapidi e un miglioramento delle prestazioni dell''applicazione correlate ai dati usati di frequente.'

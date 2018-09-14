@@ -1,68 +1,67 @@
-In the previous unit, you saw how a serverless function can facilitate the secure uploading of images to Blob storage from a web application. In this module, you create another serverless function to watch for uploaded images and create thumbnails from them.
+Nell'unità precedente si è visto come una funzione serverless possa facilitare il caricamento sicuro di immagini nell'archiviazione BLOB da un'applicazione Web. In questo modulo si creerà un'altra funzione serverless che controllerà il caricamento di immagini e creerà le relative anteprime.
 
-## Create a Blob storage container for thumbnails
+## <a name="create-a-blob-storage-container-for-thumbnails"></a>Creare un contenitore di archiviazione BLOB per le anteprime
 
-The full-size images are stored in a container named **images**. You need another container to store thumbnails of those images.
+Le immagini con le dimensioni originali vengono archiviate in un contenitore denominato **images**. È necessario un altro contenitore per memorizzare le anteprime di tali immagini.
 
-1. Ensure you're still signed in to Cloud Shell (Bash). If you aren't, select **Enter focus mode** to open a Cloud Shell window. 
+1. Verificare di essere ancora connessi a Cloud Shell (Bash). In caso contrario, selezionare **Enter focus mode** (Accedi a modalità messa a fuoco) per aprire una finestra di Cloud Shell. 
 
-1. Create a new container named **thumbnails** in your Storage account with public access to all blobs.
+1. Creare un nuovo contenitore denominato **thumbnails** nell'account di archiviazione con accesso pubblico a tutti i BLOB.
 
     ```azurecli
     az storage container create -n thumbnails --account-name <storage account name> --public-access blob
     ```
 
+## <a name="create-a-blob-triggered-serverless-function"></a>Creare una funzione serverless attivata dal BLOB
 
-## Create a blob-triggered serverless function
+Un trigger definisce come viene richiamata una funzione. La funzione che verrà creata ora viene attivata dal BLOB. La funzione viene richiamata automaticamente quando un BLOB (file immagine) viene caricato nel contenitore **images**. Una funzione deve avere un trigger. I trigger sono associati dati, che sono in genere il payload che ha attivato la funzione.
 
-A trigger defines how a function is invoked. The function you create next uses a blob trigger. The function is automatically invoked when a blob (image file) is uploaded to the **images** container. A function must have one trigger. Triggers have associated data, which are usually the payload that triggered the function.
+Le associazioni definiscono il modo in cui una funzione legge o scrive i dati in Azure o in servizi di terze parti. Questa funzione crea una versione di anteprima dell'immagine che la attiva e salva l'anteprima in un contenitore denominato *thumbnails*.
 
-Bindings define how a function reads or writes data in Azure or third-party services. This function creates a thumbnail version of the image that triggers it and saves the thumbnail in a *thumbnails* container.
+1. Aprire l'app per le funzioni nel [portale di Azure](https://portal.azure.com/?azure-portal=true).
 
-1. Open your Functions app in the [Azure portal](https://portal.azure.com/?azure-portal=true).
+1. Nella finestra dell'app Funzioni nel riquadro di spostamento a sinistra scegliere **Funzioni** e fare clic sul segno più (+) per creare una nuova funzione serverless. Se viene visualizzata una pagina della guida introduttiva, fare clic su **Funzione personalizzata** per visualizzare un elenco di modelli di funzione.
 
-1. In the Functions app window's left navigation, point to **Functions** and click the plus sign (+) to create a new serverless function. If a quickstart page appears, click **Custom function** to see a list of function templates.
+1. Individuare il modello **BlobTrigger** e selezionarlo.
 
-1. Find the **BlobTrigger** template and select it.
+1. Usare questi valori per creare una funzione che crea anteprime quando vengono caricate immagini:
 
-1. Use these values to create a function that creates thumbnails as images are uploaded:
-
-    | Setting      |  Suggested value   | Description                                        |
+    | Impostazione      |  Valore consigliato   | Descrizione                                        |
     | --- | --- | ---|
-    | **Language** | C# or JavaScript | Choose your preferred language. |
-    | **Name your function** | ResizeImage | Enter this name exactly as shown, so the application can discover the function. |
-    | **Path** | images/{name} | Execute the function when a file appears in the **images** container. |
-    | **Storage account information** | AZURE_STORAGE_CONNECTION_STRING | Use the environment variable previously created with the connection string. |
+    | **Linguaggio** | C# o JavaScript | Scegliere il linguaggio preferito. |
+    | **Assegnare un nome alla funzione** | ResizeImage | Immettere questo nome esattamente come illustrato in modo che l'applicazione possa individuare la funzione. |
+    | **Percorso** | images/{name} | Esegue la funzione quando viene visualizzato un file nel contenitore **images**. |
+    | **Informazioni account di archiviazione** | AZURE_STORAGE_CONNECTION_STRING | Usare la variabile di ambiente creata in precedenza con la stringa di connessione. |
 
-    ![Enter settings for the new function](../media/3-new-function.png)
+    ![Immettere le impostazioni per la nuova funzione](../media/3-new-function.png)
 
-1. Click **Create** to create the function.
+1. Fare clic su **Crea** per creare la funzione.
 
-1. When the function is created, click **Integrate** to view its trigger, input, and output bindings.
+1. Quando la funzione è stata creata, fare clic su **Integrazione** per visualizzarne le associazioni di trigger, input e output.
 
-1. Click **New output** to create a new output binding.
+1. Fare clic su **Nuovo output** per creare una nuova associazione di output.
 
-    ![Select New Output on the Integrate tab](../media/3-new-output.jpg)
+    ![Selezionare Nuovo output nella scheda Integrazione](../media/3-new-output.jpg)
 
-1. Select **Azure Blob Storage** and click **Select**. You may have to scroll down to see the **Select** button.
+1. Selezionare **Archiviazione BLOB di Azure** e fare clic su **Seleziona**. Può essere necessario scorrere verso il basso per vedere il pulsante **Seleziona**.
 
-    ![Select Azure Blob storage](../media/3-storage-output.jpg)
+    ![Selezionare Archiviazione BLOB di Azure](../media/3-storage-output.jpg)
 
-1. Enter the following values:
+1. Immettere i valori seguenti:
 
-    | Setting      |  Suggested value   | Description                                        |
+    | Impostazione      |  Valore consigliato   | Descrizione                                        |
     | --- | --- | ---|
-    | **Blob parameter name** | thumbnail | The function uses the parameter with this name to write the thumbnail. |
-    | **Use function return value** | No |  |
-    | **Path** | thumbnails/{name} | The thumbnails are written to a container named **thumbnails**. |
-    | **Storage account connection** | AZURE_STORAGE_CONNECTION_STRING | Use the environment variable previously created with the connection string. |
+    | **Nome del parametro del BLOB** | thumbnail | La funzione usa il parametro con questo nome per scrivere l'anteprima. |
+    | **Usa valore restituito della funzione** | No |  |
+    | **Percorso** | thumbnails/{name} | Le anteprime vengono scritte in un contenitore denominato **thumbnails**. |
+    | **Connessione dell'account di archiviazione** | AZURE_STORAGE_CONNECTION_STRING | Usare la variabile di ambiente creata in precedenza con la stringa di connessione. |
 
-    ![Enter settings for the blob output binding](../media/3-blob-output.png)
+    ![Immettere le impostazioni per l'associazione di output del BLOB](../media/3-blob-output.png)
 
 ::: zone pivot="javascript"
-1. (JavaScript) Click on **Advanced editor** in the top right corner of the window to reveal the JSON that represents the bindings.
+1. (JavaScript) Fare clic su **Editor avanzato** nell'angolo superiore destro della finestra per visualizzare il codice JSON che rappresenta le associazioni.
 
-1. (JavaScript) In the `blobTrigger` binding, add a property named `dataType` with a value of `binary`. This configures the binding to pass the blob contents to the function as binary data.
+1. (JavaScript) Nell'associazione `blobTrigger` aggiungere una proprietà denominata `dataType` con valore `binary`. In questo modo si configura l'associazione per il passaggio dei contenuti del BLOB alla funzione come dati binari.
 
 ```json
 {
@@ -77,64 +76,65 @@ Bindings define how a function reads or writes data in Azure or third-party serv
 
 ::: zone-end
 
-1. Click **Save** to create the new binding.
+1. Fare clic su **Salva** per creare la nuova associazione.
 
 ::: zone pivot="csharp"
-1. (C#) Select the **ResizeImage** function name in the left navigation to open the function's source code.
 
-1. (C#) The function requires a NuGet package called **ImageResizer** to generate the thumbnails. NuGet packages are added to C# functions using a **project.json** file. To create the file, click **View Files** on the right to reveal the files that make up the function.
+1. (C#) Selezionare il nome della funzione **ResizeImage** nel riquadro di spostamento di sinistra per aprire il codice sorgente della funzione.
 
-1. (C#) Click **Add** to add a new file named **project.json**.
+1. (C#) La funzione richiede un pacchetto NuGet chiamato **ImageResizer** per generare le anteprime. I pacchetti NuGet vengono aggiunti alle funzioni C# tramite un file **project.json**. Per creare il file, fare clic su **Visualizza file** a destra per visualizzare i file che costituiscono la funzione.
 
-1. (C#) Copy the contents of the [**/csharp/ResizeImage/project.json**](https://raw.githubusercontent.com/Azure-Samples/functions-first-serverless-web-application/master/csharp/ResizeImage/project.json) file into the newly created file. Save the file. Packages are automatically restored when the file is updated.
+1. (C#) Fare clic su **Aggiungi** per aggiungere un nuovo file denominato **project.json**.
 
-    ![project.json file with ImageResizer](../media/3-project-json.png)
+1. (C#) Copiare il contenuto del file [**/csharp/ResizeImage/project.json**](https://raw.githubusercontent.com/Azure-Samples/functions-first-serverless-web-application/master/csharp/ResizeImage/project.json) nel file appena creato. Salvare il file. I pacchetti vengono ripristinati automaticamente quando il file viene aggiornato.
 
-1. (C#) Under **View Files**, select **run.csx**. Replace its content with the content in the [**/csharp/ResizeImage/run.csx**](https://raw.githubusercontent.com/Azure-Samples/functions-first-serverless-web-application/master/csharp/ResizeImage/run.csx) file.
+    ![file project.json con ImageResizer](../media/3-project-json.png)
+
+1. (C#) Sotto **Visualizza file** selezionare **run.csx**. Sostituirne il contenuto con quello presente nel file [**/csharp/ResizeImage/run.csx**](https://raw.githubusercontent.com/Azure-Samples/functions-first-serverless-web-application/master/csharp/ResizeImage/run.csx).
 
 ::: zone-end
 
 ::: zone pivot="javascript"
-1. (JavaScript) This function requires the `jimp` package from npm to resize the photo. To install the npm package, click on the Functions app name on the left navigation and click **Platform features**.
 
-1. (JavaScript) Click **Console** to reveal a console window.
+1. (JavaScript) Questa funzione richiede il pacchetto `jimp` da npm per ridimensionare la foto. Per installare il pacchetto npm, fare clic sul nome dell'app Funzioni nel riquadro di spostamento di sinistra e fare clic su **Funzionalità della piattaforma**.
 
-1. (JavaScript) Run the command `npm install jimp` in the console. It may take a few minutes to complete the operation.
+1. (JavaScript) Fare clic su **Console** per visualizzare una finestra della console.
 
-1. (JavaScript) Click on the **ResizeImage** function name in the left navigation to reveal the function. Replace all the content in the **index.js** file with the content of the [**/javascript/ResizeImage/index.js**](https://raw.githubusercontent.com/Azure-Samples/functions-first-serverless-web-application/master/javascript/ResizeImage/index.js) file.
+1. (JavaScript) Eseguire il comando `npm install jimp` nella console. Il completamento dell'operazione potrebbe richiedere alcuni minuti.
+
+1. (JavaScript) Fare clic sulla funzione **ResizeImage** nel riquadro di spostamento a sinistra per visualizzare la funzione. Sostituire tutto il contenuto del file **index.js** con il contenuto del file [**javascript/ResizeImage/index.js**](https://raw.githubusercontent.com/Azure-Samples/functions-first-serverless-web-application/master/javascript/ResizeImage/index.js).
 
 ::: zone-end
 
-1. To expand the logs panel, click **Logs** below the code window.
+1. Fare clic su **Log** sotto la finestra del codice per espandere il pannello dei log.
 
-1. Click **Save**. Check the Logs panel to ensure the function is successfully saved and there are no errors.
+1. Fare clic su **Salva**. Verificare nel pannello dei log che la funzione sia stata salvata correttamente e che non vi siano errori.
 
+## <a name="test-the-serverless-function"></a>Testare la funzione serverless
 
-## Test the serverless function
+1. Aprire l'applicazione in un browser. Selezionare un file di immagine e caricarlo. Il file viene caricato ma, poiché non è stata ancora aggiunta la possibilità di visualizzare le immagini, la foto caricata non viene visualizzata nell'app.
 
-1. Open the application in a browser. Select an image file and upload it. The upload completes, but because we haven't added the ability to display images yet, the app doesn't show the uploaded photo.
-
-1. In Cloud Shell, confirm the image was uploaded to the **images** container.
+1. In Cloud Shell verificare che l'immagine sia stata caricata nel contenitore **images**.
 
     ```azurecli
     az storage blob list --account-name <storage account name> -c images -o table
     ```
 
-1. Confirm the thumbnail was created in a container named **thumbnails**.
+1. Verificare che sia stata creata l'anteprima in un contenitore denominato **thumbnails**.
 
     ```azurecli
     az storage blob list --account-name <storage account name> -c thumbnails -o table
     ```
 
-1. Get the URL for the thumbnail.
+1. Ottenere l'URL per l'anteprima.
 
     ```azurecli
     az storage blob url --account-name <storage account name> -c thumbnails -n <filename> --output tsv
     ```
 
-    Open the URL in a browser and confirm the thumbnail was properly created.
+    Aprire l'URL in un browser e verificare che l'anteprima sia stata creata correttamente.
 
-1. Before continuing to the next tutorial, delete all files in the **images** and **thumbnails** containers.
+1. Prima di passare all'esercitazione successiva, eliminare tutti i file nei contenitori **images** e **thumbnails**.
 
     ```azurecli
     az storage blob delete-batch -s images --account-name <storage account name>
@@ -144,6 +144,6 @@ Bindings define how a function reads or writes data in Azure or third-party serv
     az storage blob delete-batch -s thumbnails --account-name <storage account name>
     ```
 
-## Summary
+## <a name="summary"></a>Riepilogo
 
-In this unit, you created a serverless function to create a thumbnail when an image is uploaded to a Blob storage container. Next, you will learn how to use Azure Cosmos DB to store and list image metadata.
+In questa unità è stata creata una funzione serverless per creare un'anteprima ogni volta che viene caricata un'immagine in un contenitore di archiviazione BLOB. Successivamente, si apprenderà come usare Azure Cosmos DB per archiviare e i metadati delle immagini di elenco.

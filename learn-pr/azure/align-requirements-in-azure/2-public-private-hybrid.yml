@@ -1,56 +1,44 @@
 ### YamlMime:ModuleUnit
 uid: learn.align-requirements-in-azure.2-public-private-hybrid
-title: Informazioni sulle soluzioni di Azure per il cloud pubblico, privato e ibrido
+title: 'Soluzioni di Azure per il cloud pubblico, privato e ibrido'
 metadata:
-  title: Informazioni sulle soluzioni di Azure per il cloud pubblico, privato e ibrido
-  description: Informazioni sulle soluzioni di Azure per il cloud pubblico, privato e ibrido
+  title: 'Soluzioni di Azure per il cloud pubblico, privato e ibrido'
+  description: 'Soluzioni di Azure per il cloud pubblico, privato e ibrido'
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 0eec668a4ea8cb90fd2aa39fa2a944a635df0a57
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
-  ms.translationtype: HT
-  ms.contentlocale: it-IT
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44240701"
 durationInMinutes: 15
-content: >
+content: |
   [!include[](includes/2-public-private-hybrid.md)]
 quiz:
-  title: Soluzioni di Azure per il cloud pubblico, privato e ibrido
+  title: 'Soluzioni di Azure per il cloud pubblico, privato e ibrido'
   questions:
-  - content: Dato lo scenario seguente, qual è il modello di distribuzione del cloud migliore? È necessario un database di SQL Server per un progetto a breve termine. Il reparto IT non dispone di hardware che soddisfa i requisiti relativi alle prestazioni o le risorse per distribuirlo. Il progetto inizia tra pochi giorni. Al termine del progetto il database non è più necessario.
-    choices:
-    - content: Cloud pubblico
-      correctExplanation: Considerati l'urgenza e il ciclo di vita del database SQL. Il cloud pubblico è l'opzione migliore.
-      isCorrect: true
-    - content: Cloud privato
-      incorrectExplanation: Il reparto IT non ha le risorse per distribuire SQL Server.
-      isCorrect: false
-    - content: Cloud ibrido
-      incorrectExplanation: Il cloud ibrido potrebbe essere un'opzione. Tuttavia, la disponibilità di una connessione tra cloud privato e pubblico non è un requisito.
-      isCorrect: false
-  - content: Dato lo scenario seguente, qual è il modello di distribuzione del cloud migliore? Si creano varie macchine virtuali nel cloud. Le macchine virtuali sono collegate in rete tra loro tramite una rete virtuale. Le macchine virtuali hanno accesso ai file delle radiografie in uno spazio di archiviazione nel cloud. Una delle macchine virtuali è un server Web che ospita un sito Web esposto a Internet per consentire ai clienti di accedere ai loro record. È disponibile una VPN che connette la soluzione al data center locale per visualizzare informazioni sui clienti insieme ai file di immagine.
-    choices:
-    - content: Cloud pubblico
-      incorrectExplanation: Considerata la connessione al data center locale, questa non è una distribuzione di cloud pubblico.
-      isCorrect: false
-    - content: Cloud privato
-      incorrectExplanation: Considerate le macchine virtuali e la rete nel cloud pubblico, questa non è una distribuzione di cloud privato.
-      isCorrect: false
-    - content: Cloud ibrido
-      correctExplanation: Questo scenario usa sia un cloud pubblico che uno privato con una connessione tra i due. Pertanto, è una distribuzione di cloud ibrido.
-      isCorrect: true
-  - content: Dato lo scenario seguente, qual è il modello di distribuzione del cloud? Sono disponibili due data center nell'organizzazione. Un data center include un database che può risiedere soltanto in uno dei data center a causa di un requisito legale. Si vuole accedere al database dall'altro data center. Si crea una VPN tramite un provider di servizi cloud per la connessione dei due data center.
-    choices:
-    - content: Cloud pubblico
-      incorrectExplanation: Considerati i due data center privati, questa non è una distribuzione di cloud pubblico.
-      isCorrect: false
-    - content: Cloud privato
-      correctExplanation: La VPN è una risorsa del cloud pubblico. Tuttavia, dato che la connessione VPN è una connessione privata tra due data center privati, questa è una distribuzione di cloud privato.
-      isCorrect: true
-    - content: Cloud ibrido
-      correctExplanation: La VPN è una risorsa del cloud pubblico e i data center sono privati. Tuttavia, dato che la VPN connette solo due data center privati (non il cloud pubblico), non si tratta di una distribuzione di cloud ibrido.
-      isCorrect: false
+    - content: 'Quale modello di distribuzione cloud potrebbe essere la migliore corrispondenza per la situazione seguente? Per un progetto a breve termine, è necessario un database di SQL server. Il reparto IT non dispone di hardware che soddisfa i requisiti relativi alle prestazioni o le risorse per distribuirlo. Il progetto inizia tra pochi giorni. Al termine del progetto il database non è più necessario.'
+      choices:
+        - content: Cloud pubblico
+          correctExplanation: La necessità di una distribuzione rapida e il breve ciclo di vita del database SQL rendere cloud pubblica l'opzione migliore.
+          isCorrect: true
+        - content: Cloud privato
+          isCorrect: false
+        - content: Cloud ibrido
+          isCorrect: false
+    - content: Quale modello di distribuzione cloud è descritto nello scenario seguente? Si creano varie macchine virtuali nel cloud. Le macchine virtuali sono collegate in rete tra loro tramite una rete virtuale. Le macchine virtuali hanno accesso ai file delle radiografie in uno spazio di archiviazione nel cloud. Una delle macchine virtuali è un server Web che ospita un sito Web esposto a Internet per consentire ai clienti di accedere ai loro record. È disponibile una VPN che connette la soluzione al data center locale per visualizzare informazioni sui clienti insieme ai file di immagine.
+      choices:
+        - content: Cloud pubblico
+          isCorrect: false
+        - content: Cloud privato
+          isCorrect: false
+        - content: Cloud ibrido
+          correctExplanation: 'Questo scenario usa sia un cloud pubblico che uno privato con una connessione tra i due. Pertanto, è una distribuzione di cloud ibrido.'
+          isCorrect: true
+    - content: Quale modello di distribuzione cloud è descritto nello scenario seguente? Sono disponibili due data center nell'organizzazione. Un data center include un database che può risiedere soltanto in uno dei data center a causa di un requisito legale. Si vuole accedere al database dall'altro data center. Si crea una VPN tramite un provider di servizi cloud per la connessione dei due data center.
+      choices:
+        - content: Cloud pubblico
+          isCorrect: false
+        - content: Cloud privato
+          correctExplanation: 'La connessione VPN è una risorsa di cloud pubblico. Tuttavia, poiché la connessione VPN è una connessione privata tra due Data Center privato, questa è una distribuzione cloud privata.'
+          isCorrect: true
+        - content: Cloud ibrido
+          isCorrect: false

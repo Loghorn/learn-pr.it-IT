@@ -6,32 +6,35 @@ Di seguito verranno descritti i motivi per cui il database SQL di Azure è un si
 
 L'applicazione di logistica per i trasporti richiede stored procedure che eseguano operazioni CRUD (**create**, **read**, **update** e **delete**) di base. Si ha familiarità con SQL Server e altri database relazionali.
 
-Si prendono in considerazione due opzioni per il database:
+È possibile prendere in considerazione due opzioni per il database:
 
 1. Ospitare SQL Server in locale. Il team IT esegue un data center interno di piccole dimensioni per supportare il reparto finanziario e alcuni altri team. È possibile collaborare con il team IT per ospitare una distribuzione di SQL Server in questo data center.
+
 1. Ospitare il database SQL di Azure nel cloud. Il database SQL di Azure si basa su SQL Server e fornisce le funzionalità per i database relazionale necessarie.
 
 Poiché si è deciso di sviluppare i livelli Web e applicazione per l'app di logistica su Azure, è opportuno ospitare anche il database in Azure. Esistono tuttavia altri motivi per cui il database SQL di Azure rappresenta una scelta intelligente e per cui è ancora più semplice rispetto all'uso di macchine virtuali.
 
-* **Praticità**
+- **Praticità**
 
     Per la configurazione di SQL Server in una macchina virtuale o su hardware fisico, è necessario conoscere i requisiti hardware e software. È necessario comprendere le più recenti procedure consigliate di sicurezza e gestire periodicamente le patch per il sistema operativo e SQL Server. È infine necessario occuparsi autonomamente del backup e della conservazione dei dati.
 
     Con il database SQL di Azure, l'hardware, gli aggiornamenti software e le patch del sistema operativo vengono gestiti automaticamente. Tutto quello che occorre specificare sono il nome del database e alcune opzioni. Il database SQL sarà in esecuzione in pochi minuti.
 
     È possibile aprire e chiudere le istanze del database SQL di Azure in qualsiasi momento. Il database SQL di Azure è rapidamente accessibile e semplice da configurare. È possibile dedicare meno tempo alla configurazione del software, per concentrarsi sulle funzionalità dell'app.
-* **Costi**
+
+- **Costi**
 
     Poiché le operazioni vengono gestite automaticamente, non è necessario acquistare sistemi, alimentarli o provvedere alla relativa manutenzione.
 
     Il database SQL di Azure offre diverse opzioni di prezzo, che consentono di bilanciare prestazioni e costi. È possibile iniziare con una spesa mensile molto contenuta.
-* **Scalabilità**
- 
-    Si scopre che la quantità di dati logistici sui trasporti che è necessario archiviare raddoppia ogni anno. In caso di esecuzione in locale, quanta capacità in eccesso è necessario pianificare?
+
+- **Scalabilità**
+
+    La quantità di dati logistici sui trasporti che è necessario archiviare raddoppia ogni anno. In caso di esecuzione in locale, quanta capacità in eccesso è necessario pianificare?
 
     Con il database SQL di Azure è possibile regolare velocemente le prestazioni e le dimensioni del database quando cambiano le esigenze.
 
-* **Sicurezza**
+- **Sicurezza**
 
     Il database SQL di Azure viene fornito con un firewall configurato automaticamente per limitare le connessioni da Internet.
 

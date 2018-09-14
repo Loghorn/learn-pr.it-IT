@@ -1,64 +1,64 @@
-Azure Cosmos DB is Microsoft's serverless, globally distributed, multi-model database. In this module, you learn how to use Azure Functions to store and retrieve image metadata as JSON documents in Azure Cosmos DB.
+Azure Cosmos DB è il database di Microsoft multimodello, serverless, distribuito a livello globale. In questo modulo si vedrà come usare Funzioni di Azure per memorizzare e recuperare i metadati delle immagini come documenti JSON in Azure Cosmos DB.
 
-## Create an Azure Cosmos DB account, database, and collection
+## <a name="create-an-azure-cosmos-db-account-database-and-collection"></a>Creare un account, un database e una raccolta Azure Cosmos DB
 
-An Azure Cosmos DB account is an Azure resource that contains Azure Cosmos DB databases.
+Un account Azure Cosmos DB è una risorsa di Azure che contiene database Azure Cosmos DB.
 
-1. Ensure you're still signed into Cloud Shell. If you aren't, select **Enter focus mode** to open a Cloud Shell window. 
+1. Verificare di essere ancora connessi a Cloud Shell. In caso contrario, selezionare **Enter focus mode** (Accedi a modalità messa a fuoco) per aprire una finestra di Cloud Shell. 
 
-1. Create an Azure Cosmos DB account with a unique name in the same resource group as the other resources in this tutorial.
-
-    ```azurecli
-    az cosmosdb create -g first-serverless-app -n <cosmos db account name>
-    ```
-
-1. After the Azure Cosmos DB account is created, create a new database named **imagesdb** in the account.
+1. Creare un account Azure Cosmos DB con un nome univoco nello stesso gruppo di risorse delle altre risorse di questa esercitazione.
 
     ```azurecli
-    az cosmosdb database create -g first-serverless-app -n <cosmos db account name> --db-name imagesdb
+    az cosmosdb create -g <rgn>[Sandbox resource group name]</rgn> -n <cosmos db account name>
     ```
 
-1. After the database is created, create a new collection named **images** in the database with a throughput of 400 request units (RUs).
+1. Dopo avere creato l'account Azure Cosmos DB, creare un nuovo database denominato **imagesdb** nell'account.
 
     ```azurecli
-    az cosmosdb collection create -g first-serverless-app -n <cosmos db account name> --db-name imagesdb --collection-name images --throughput 400
+    az cosmosdb database create -g <rgn>[Sandbox resource group name]</rgn> -n <cosmos db account name> --db-name imagesdb
+    ```
+
+1. Dopo la creazione del database, creare una nuova raccolta denominata **images** nel database con una velocità effettiva di 400 unità richiesta (UR).
+
+    ```azurecli
+    az cosmosdb collection create -g <rgn>[Sandbox resource group name]</rgn> -n <cosmos db account name> --db-name imagesdb --collection-name images --throughput 400
     ```
 
 
-## Save a document to Azure Cosmos DB when a thumbnail is created
+## <a name="save-a-document-to-azure-cosmos-db-when-a-thumbnail-is-created"></a>Salvare un documento in Azure Cosmos DB quando viene creata un'anteprima
 
-The Azure Cosmos DB output binding lets you create documents in an Azure Cosmos DB collection from Azure Functions. In the following steps, you configure an Azure Cosmos DB output binding in the **ResizeImage** function and modify the function to return a document (object) to be saved.
+L'associazione di output di Azure Cosmos DB consente di creare documenti in una raccolta Azure Cosmos DB da Funzioni di Azure. Nei passaggi che seguono viene configurata un'associazione di output di Azure Cosmos DB nella funzione **ResizeImage** e viene modificata la funzione in modo che restituisca un documento (oggetto) da salvare.
 
-1. Open the function app in the [Azure portal](https://portal.azure.com/?azure-portal=true).
+1. Aprire l'app per le funzioni nel [portale di Azure](https://portal.azure.com/?azure-portal=true).
 
-1. In the left navigation, expand the **ResizeImage** function, and then select **Integrate**.
+1. Nel riquadro di spostamento di sinistra espandere la funzione **ResizeImage** e selezionare **Integrazione**.
 
-1. Under **Outputs**, click **New Output**.
+1. Sotto **Output** fare clic su **Nuovo output**.
 
-1. Find the **Azure Cosmos DB** item and select it. Then click **Select**.
+1. Individuare l'elemento **Azure Cosmos DB** e selezionarlo. Fare clic su **Seleziona**.
 
-    ![Select New Output](../media/4-new-output.jpg)
+    ![Selezionare Nuovo output](../media/4-new-output.jpg)
 
-1. Fill out the fields under **Azure Cosmos DB output** with the following values.
+1. Compilare i campi sotto **Azure Cosmos DB output** (Output Azure Cosmos DB) con i valori seguenti.
 
-    | Setting      |  Suggested value   | Description                                        |
+    | Impostazione      |  Valore consigliato   | Descrizione                                        |
     | --- | --- | ---|
-    | **Document parameter name** | Select **Use function return value**. | The value in the box is automatically set to **$return**. |
-    | **Database name** | imagesdb | Use the name of the database that you created. |
-    | **Collection name** | images | Use the name of the collection that you created. |
+    | **Nome del parametro del documento** | Selezionare **Usa valore restituito della funzione**. | Il valore della casella di testo viene impostato automaticamente su **$return**. |
+    | **Nome database** | imagesdb | Usare il nome del database creato in precedenza. |
+    | **Nome raccolta** | images | Usare il nome della raccolta creata in precedenza. |
 
-1. Next to **Azure Cosmos DB account connection**, click **new**. Select the Azure Cosmos DB account that you previously created.
+1. Accanto a **Connessione all'account Azure Cosmos DB** fare clic su **nuova**. Selezionare l'account Azure Cosmos DB creato in precedenza.
 
-    ![Enter settings for Azure Cosmos DB output binding](../media/4-cosmos-db-output.png)
+    ![Immettere le impostazioni per l'associazione di output di Azure Cosmos DB](../media/4-cosmos-db-output.png)
 
-1. Click **Save** to create the Azure Cosmos DB output binding.
+1. Fare clic su **Salva** per creare l'associazione di output di Azure Cosmos DB.
 
-1. Click on the **ResizeImage** function name on the left to open the function.
+1. Fare clic sul nome della funzione **ResizeImage** a sinistra per aprire la funzione.
 
 ::: zone pivot="csharp"
-1. (C#) Change the return type of the function from **void** to **object**.
+1. (C#) Cambiare il tipo restituito dalla funzione da **void** a **object**.
 
-1. (C#) At the end of the function, add the following code block to return the document to be saved:
+1. (C#) Alla fine della funzione, aggiungere il blocco di codice seguente per restituire il documento da salvare:
 
     ```csharp
     return new {
@@ -68,12 +68,12 @@ The Azure Cosmos DB output binding lets you create documents in an Azure Cosmos 
     };
     ```
 
-    ![run.csx for ResizeImages function after modifications](../media/4-update-function.png)
+    ![run.csx per la funzione ResizeImages dopo le modifiche](../media/4-update-function.png)
 
 ::: zone-end
 
 ::: zone pivot="javascript"
-1. (JavaScript) Change the `context.done()` statement in the `else` clause to return the document to be saved to Azure Cosmos DB.
+1. (JavaScript) Modificare l'istruzione `context.done()` nella clausola `else` per restituire il documento da salvare in Azure Cosmos DB.
 
     ```javascript
     if (error) {
@@ -90,78 +90,79 @@ The Azure Cosmos DB output binding lets you create documents in an Azure Cosmos 
 
 ::: zone-end
 
-1. Click **Logs** below the code window to expand the logs panel.
+1. Fare clic su **Log** sotto la finestra del codice per espandere il pannello dei log.
 
-1. Click **Save**. Check the logs panel to ensure the function is successfully saved and there are no errors.
+1. Fare clic su **Salva**. Verificare nel pannello dei log che la funzione sia stata salvata correttamente e che non vi siano errori.
 
+## <a name="create-a-function-to-list-images-from-azure-cosmos-db"></a>Creare una funzione per elencare le immagini da Azure Cosmos DB
 
-## Create a function to list images from Azure Cosmos DB
+L'applicazione Web richiede un'API per recuperare i metadati delle immagini da Azure Cosmos DB. Con la procedura seguente verrà creata una funzione attivata da HTTP che usa un'associazione di input di Azure Cosmos DB per eseguire una query sulla raccolta di database.
 
-The web application requires an API to retrieve image metadata from Azure Cosmos DB. In the following steps, you create an HTTP-triggered function that uses an Azure Cosmos DB input binding to query the database collection.
+1. Nell'app Funzioni passare il puntatore del mouse su **Funzioni** a sinistra e fare clic sul segno + per creare una nuova funzione.
 
-1. In your function app, point to **Functions** on the left and click the plus sign (+) to create a new function.
+1. Individuare il modello **HttpTrigger** e selezionarlo.
 
-1. Find the **HttpTrigger** template and select it.
+1. Usare questi valori per creare una funzione che genera un URL per ottenere le immagini:
 
-1. Use these values to create a function that generates a get images URL:
-
-    | Setting      |  Suggested value   | Description                                        |
+    | Impostazione      |  Valore consigliato   | Descrizione                                        |
     | --- | --- | ---|
-    | **Name your function** | GetImages | Enter this name exactly as shown, so the application can discover the function. |
-    | **Authorization level** | Anonymous | Allow the function to be accessed publicly. |
+    | **Assegnare un nome alla funzione** | GetImages | Immettere questo nome esattamente come illustrato in modo che l'applicazione possa individuare la funzione. |
+    | **Livello di autorizzazione** | Anonimo | Consente l'accesso pubblico alla funzione. |
 
-1. Click **Create**.
+1. Fare clic su **Crea**.
 
-1. When the new function is created, click **Integrate** under the function name on the left navigation.
+1. Dopo la creazione della nuova funzione, fare clic su **Integrazione** sotto il nome della funzione nel riquadro di spostamento di sinistra.
 
-1. Click **New Input** and select **Azure Cosmos DB**. 
+1. Fare clic su **Nuovo input** e selezionare **Azure Cosmos DB**. 
 
-    ![Select New Input](../media/4-new-input.jpg)
+    ![Selezionare Nuovo input](../media/4-new-input.jpg)
 
-1. Click **Select**.
+1. Fare clic su **Seleziona**.
 
-1. Fill out the following values:
+1. Inserire i valori seguenti:
 
-    | Setting      |  Suggested value   | Description                                        |
+    | Impostazione      |  Valore consigliato   | Descrizione                                        |
     | --- | --- | ---|
-    | **Document parameter name** | documents | Matches the parameter name in the function. |
-    | **Database name** | imagesdb |  |
-    | **Collection name** | images |  |
-    | **SQL query** | select * from c order by c._ts desc | Get documents, latest documents first. |
-    | **Azure Cosmos DB account connection** | Select existing the connection string. |  |
+    | **Nome del parametro del documento** | documents | Corrisponde al nome del parametro nella funzione. |
+    | **Nome database** | imagesdb |  |
+    | **Nome raccolta** | images |  |
+    | **SQL query** | select * from c order by c._ts desc | Ottiene i documenti, a cominciare dal più recente. |
+    | **Connessione all'account Azure Cosmos DB** | Selezionare la stringa di connessione esistente. |  |
 
-1. Click **Save** to create the input binding.
+1. Fare clic su **Salva** per creare l'associazione di input.
 
 ::: zone pivot="csharp"
-1. Click the function name to open the code window. Replace all of the **run.csx** file with the content in the [**/csharp/GetImages/run.csx**](https://raw.githubusercontent.com/Azure-Samples/functions-first-serverless-web-application/master/csharp/GetImages/run.csx) file.
+
+1. Fare clic sul nome della funzione per aprire la finestra del codice. Sostituire tutto il file **run.csx** con il contenuto del file [**/csharp/GetImages/run.csx**](https://raw.githubusercontent.com/Azure-Samples/functions-first-serverless-web-application/master/csharp/GetImages/run.csx).
 
 ::: zone-end
 
 ::: zone pivot="javascript"
-1. Click the function name to open the code window. Replace all of the **index.js** file with the content in the [**/javascript/GetImages/index.js**](https://raw.githubusercontent.com/Azure-Samples/functions-first-serverless-web-application/master/javascript/GetImages/index.js) file.
+
+1. Fare clic sul nome della funzione per aprire la finestra del codice. Sostituire tutto il file **index.js** con il contenuto del file [**/javascript/GetImages/index.js**](https://raw.githubusercontent.com/Azure-Samples/functions-first-serverless-web-application/master/javascript/GetImages/index.js).
 
 ::: zone-end
 
-1. Click **Logs** below the code window to expand the Logs panel.
+1. Fare clic su **Log** sotto la finestra del codice per espandere il pannello dei log.
 
-1. Click **Save**. Check the Logs panel to ensure the function is successfully saved and there are no errors.
+1. Fare clic su **Salva**. Verificare nel pannello dei log che la funzione sia stata salvata correttamente e che non vi siano errori.
 
-## Test the application
+## <a name="test-the-application"></a>Test dell'applicazione
 
-1. Open the application in a browser. Select an image file and upload it.
+1. Aprire l'applicazione in un browser. Selezionare un file di immagine e caricarlo.
 
-1. After a few seconds, the thumbnail of the new image appears on the page.
+1. Dopo alcuni secondi, nella pagina verrà visualizzata l'anteprima della nuova immagine.
 
-1. In the Azure portal, use the **Search** box to search for your Azure Cosmos DB account by name. Click on the name to open the account.
+1. Nel portale di Azure usare la casella **Cerca** per cercare l'account Azure Cosmos DB in base al nome. Fare clic sul nome per aprire l'account.
 
-1. Click **Data Explorer** on the left to browse collections and documents.
+1. Fare clic su **Esplora dati** a sinistra per sfogliare le raccolte e i documenti.
 
-1. Under the **imagesdb** database, select the **images** collection.
+1. Sotto il database **imagesdb** selezionare la raccolta **images**.
 
-1. Confirm that a document was created for the uploaded image.
+1. Verificare che sia stato creato un documento per l'immagine caricata.
 
-    ![Data Explorer showing a document for an uploaded image](../media/4-data-explorer.png)
+    ![Esplora dati con un documento per un'immagine caricata](../media/4-data-explorer.png)
 
-## Summary
+## <a name="summary"></a>Riepilogo
 
-In this unit, you learned how to create an Azure Cosmos DB account, database, and collection. You also learned how to use the Azure Cosmos DB bindings to save and retrieve image metadata in the Azure Cosmos DB collection. Next, you will learn how to automatically generate a caption for each uploaded image using Microsoft Cognitive Services.
+In questa unità è stato descritto come creare un account, un database e una raccolta di Azure Cosmos DB. Si è anche visto come usare le associazioni di Azure Cosmos DB per salvare e recuperare i metadati delle immagini nella raccolta di Azure Cosmos DB. Successivamente, si apprenderà come generare automaticamente una didascalia per ogni immagine caricata con servizi cognitivi Microsoft.

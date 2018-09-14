@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.make-your-virtual-machines-highly-available.4-configure-a-load-balancer-in-azure
-title: Configure a load balancer in Azure
+title: Configurare un bilanciamento del carico in Azure
 metadata:
-  title: Configure a load balancer in Azure
-  description: Configure a load balancer in Azure
+  title: Configurare un bilanciamento del carico in Azure
+  description: Configurare un bilanciamento del carico in Azure
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial

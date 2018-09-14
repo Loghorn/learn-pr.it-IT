@@ -1,152 +1,152 @@
-To integrate your on-premises environment with Azure, you need the ability to create an encrypted connection. You can connect over the Internet or over a dedicated link. Here, we'll look at Azure VPN Gateway, which provides an endpoint for incoming connections from on-premises environments.
+Per integrare l'ambiente locale con Azure, è necessario poter creare una connessione crittografata. È possibile connettersi tramite Internet o su un collegamento dedicato. In questo caso, verrà esaminato il Gateway VPN di Azure, che fornisce un endpoint per le connessioni in ingresso da ambienti locali.
 
-You have set up an Azure virtual network and need to ensure that any data transfers from Azure to your site and between Azure virtual networks are encrypted. You also need to know how to connect virtual networks between regions and subscriptions.
+È stata impostata una rete virtuale di Azure e necessario garantire che trasferisce tutti i dati da Azure al sito e tra Azure vengono crittografate le reti virtuali. È anche necessario conoscere in che modo connettere le reti virtuali tra aree e sottoscrizioni.
 
-## What is a VPN gateway?
+## <a name="what-is-a-vpn-gateway"></a>Che cos'è un gateway VPN?
 
-An Azure VPN gateway provides an endpoint for incoming encrypted connections from on-premises locations to Azure over the Internet. It can also send encrypted traffic between Azure virtual networks over Microsoft's dedicated network that links Azure datacenters in different regions. This configuration allows you to link virtual machines and services in different regions securely.
+Un gateway VPN di Azure fornisce un endpoint per le connessioni in ingresso crittografate da posizioni locali ad Azure tramite Internet. Anche possibile inviare traffico crittografato tra le reti virtuali di Azure tramite rete dedicata di Microsoft che collega i Data Center di Azure in aree diverse. Questa configurazione consente di collegare in modo sicuro macchine virtuali e servizi in aree diverse.
 
-Each virtual network can have only one VPN gateway. All connections to that VPN gateway share the available network bandwidth.
+Ogni rete virtuale può avere un solo gateway VPN e tutte le connessioni al gateway VPN condividono la larghezza di banda di rete disponibile.
 
-Within each virtual network gateway there are two or more virtual machines (VMs). These VMs have been deployed to a special subnet that you specify, called the _gateway subnet_. They contain routing tables for connections to other networks, along with specific gateway services. These VMs and the gateway subnet are similar to a hardened network device. You don't need to configure these VMs directly and should not deploy any additional resources into the gateway subnet.
+All'interno di ogni gateway di rete virtuale sono presenti due o più macchine virtuali (VM). Le macchine virtuali sono state distribuite in una subnet speciale definita dall'utente e denominata _subnet del gateway_. Contengono le tabelle di routing per le connessioni ad altre reti, nonché servizi gateway specifici. Le macchine virtuali e la subnet del gateway sono simili a un dispositivo di rete con protezione avanzata. Non è necessario configurare direttamente le macchine virtuali, né distribuire risorse aggiuntive nella subnet del gateway.
 
-Creating a virtual network gateway can take some time to complete, so it's vital that you plan appropriately. When you create a virtual network gateway, the provisioning process generates the gateway VMs and deploys them to the gateway subnet. These VMs will have the settings that you configure on the gateway.
+La creazione di un gateway di rete virtuale può richiedere diverso tempo, ed è quindi importante pianificare le attività in modo appropriato. Quando si crea un gateway di rete virtuale, il processo di provisioning genera le macchine virtuali del gateway e le distribuisce nella subnet del gateway. Le impostazioni delle macchine virtuali saranno quelle configurate nel gateway.
 
-A key setting is the **_gateway type_**, which for a VPN gateway will be of type "vpn". Options for VPN gateways include:
+Un'impostazione importante è il **_tipo di gateway_**, che per un gateway VPN sarà di tipo "vpn". Le opzioni per i gateway VPN includono:
 
-- Network-to-network connections over IPsec/IKE VPN tunneling, linking VPN gateways to other VPN gateways.
+- Connessioni di rete-a-network con VPN IPsec/IKE tunneling, collegando i gateway VPN ad altri gateway VPN.
 
-- Cross-premises IPsec/IKE VPN tunneling, for connecting on-premises networks to Azure through dedicated VPN devices to create site-to-site connections.
+- Tunneling VPN IPsec/IKE cross-premise, per la connessione di reti locali ad Azure tramite dispositivi VPN dedicati per la creazione di connessioni da sito a sito.
 
-- Point-to-site connections over IKEv2 or SSTP, to link client computers to resources in Azure.
+- Connessioni da punto a sito su IKEv2 o SSTP, per collegare i computer client alle risorse in Azure.
 
-Now, let's look at the factors you need to consider for planning your VPN gateway.
+Fattori da considerare per la pianificazione del gateway VPN.
 
-## Plan a VPN gateway
+## <a name="plan-a-vpn-gateway"></a>Pianificare un gateway VPN
 
-When you're planning a VPN gateway, there are three architectures to consider:
+Quando si prevede un gateway VPN, esistono tre architetture da considerare:
 
-- Point to site over the Internet
-- Site to site over the Internet
-- Site to site over a dedicated network, such as Azure ExpressRoute
+- Da punto a sito tramite Internet
+- Da sito a sito tramite Internet
+- Da sito a sito tramite una rete dedicata, ad esempio Azure ExpressRoute
 
-### Planning factors
+### <a name="planning-factors"></a>Fattori relativi alla pianificazione
 
-Factors that you need to cover during your planning process include:
+I fattori da tenere in considerazione durante il processo di pianificazione sono:
 
-- Throughput - Mbps or Gbps
-- Backbone - Internet or private?
-- Availability of a public (static) IP address
-- VPN device compatibility
-- Multiple client connections or a site-to-site link?
-- VPN gateway type
-- Azure VPN Gateway SKU
+- Velocità effettiva: Mbps o Gbps
+- Backbone: Internet o privato?
+- Disponibilità di un indirizzo IP (statico) pubblico
+- Compatibilità del dispositivo VPN
+- Più connessioni client o collegamento da sito a sito?
+- Tipo di gateway VPN
+- SKU del gateway VPN di Azure
 
-The following table summarizes some of these planning issues. The remainder are discussed later.
+La tabella seguente mostra un riepilogo delle problematiche di pianificazione. Le rimanenti verranno illustrate più avanti.
 
-|                           |  Point to site            | Site to site                          |  ExpressRoute                 |
+|                           |  Da punto a sito            | Sito a sito                          |  ExpressRoute                 |
 | -------------             | -------------             | -------------                         | ---------                     |
-| Azure supported services  | Cloud services and VMs    | Cloud services and VMs                | All supported services        |
-| Typical bandwidth         | Depends on VPN Gateway SKU    | Up to 1 Gbps with aggregation         | From 50 Mbps to 10 Gbps       |
-| Protocols supported       | SSTP and IPsec            | IPsec                                 | Direct connection, VLANs      |
-| Routing                   | RouteBased (dynamic)      | PolicyBased (static) and RouteBased   | BGP                           |
-| Connection resiliency     | Active-passive            | Active-passive or active-active       | Active-active                 |
-| Use case                  | Testing and prototyping   | Dev, test and small-scale production  | Enterprise/mission critical   |
+| Servizi supportati di Azure  | Servizi cloud e macchine virtuali    | Servizi cloud e macchine virtuali                | Tutti i servizi supportati        |
+| Larghezza di banda tipiche         | Dipende dalla SKU del Gateway VPN    | Fino a 1 Gbps con aggregazione         | Da 50 Mbps a 10 Gbps       |
+| Protocolli supportati       | IPsec e SSTP            | IPsec                                 | Connessione diretta, reti VLAN      |
+| Routing                   | RouteBased (dinamico)      | PolicyBased (statico) e RouteBased   | BGP                           |
+| Resilienza connessione     | Modello attivo/passivo            | attivo-passivo o attivo-attivo       | Modello attivo/attivo                 |
+| Caso d'uso                  | Testing e creazione prototipi   | Sviluppo, test e produzione su scala ridotta  | Enterprise/mission-critical   |
 
-### Gateway SKUs
+### <a name="gateway-skus"></a>SKU del gateway
 
-Azure offers the following SKUs for gateway services:
+Azure offre gli SKU seguenti per i servizi gateway:
 
-| SKU              |  S2S/network-to-network tunnels | P2S connections  |  Aggregate throughput benchmark   | Use for                         |
+| SKU              |  Tunnel S2S/network-a-network | Connessioni P2S  |  Benchmark della velocità effettiva aggregata   | Usare per                         |
 | -------------    | -------------             | -------------    | ---------                         | ---------                       |
-| Basic            | Max 10                    | Max 128          | 100 Mbps                          | Dev/test/POC                    |
-| VpnGw1           | Max 30                    | Max 128          | 650 Mbps                          | Production/critical workloads   |
-| VpnGw2           | Max 30                    | Max 128          | 1 Gbps                            | Production/critical workloads   |
-| VpnGw3           | Max 30                    | Max 128          | 1.25 Gbps                          | Production/critical workloads   |
+| Basic            | Max 10                    | Max 128          | 100 Mbps                          | Sviluppo/test/modello di verifica                    |
+| VpnGw1           | Max 30                    | Max 128          | 650 Mbps                          | Carichi di lavoro di produzione o critici   |
+| VpnGw2           | Max 30                    | Max 128          | 1 Gbps                            | Carichi di lavoro di produzione o critici   |
+| VpnGw3           | Max 30                    | Max 128          | 1,25 Gbps                          | Carichi di lavoro di produzione o critici   |
 
 > [!Note]
-> It's important that you choose the right SKU. If you have set up your VPN gateway with the wrong one, you'll have to take it down and rebuild the gateway, which can be time consuming.
+> È importante scegliere lo SKU corretto. Se è stato configurato il gateway VPN con quello errato, è possibile portarlo verso il basso e ricreare il gateway, che può richiedere tempi lunghe.
 
-## Workflow
+## <a name="workflow"></a>Flusso di lavoro
 
-When designing a cloud connectivity strategy using virtual private networking on Azure, you should apply the following workflow:
+Quando si progetta una strategia di connettività cloud con le reti private virtuali in Azure, è consigliabile adottare il flusso di lavoro seguente:
 
-1. Design your connectivity topology, listing the address spaces for all connecting networks.
+1. Progettare la topologia di connettività, elencando gli spazi indirizzi per tutte le reti da connettere.
 
-1. Create an Azure virtual network.
+1. Creare una rete virtuale di Azure.
 
-1. Create a VPN gateway for the virtual network.
+1. Creare un gateway VPN per la rete virtuale.
 
-1. Create and configure connections to on-premises networks or other virtual networks, as required.
+1. Creare e configurare le connessioni a reti locali o altre reti virtuali, in base alle esigenze.
 
-1. If required, create and configure a point-to-site connection for your Azure VPN gateway.
+1. Se necessario, creare e configurare una connessione da punto a sito per il gateway VPN di Azure.
 
-### Design considerations
+### <a name="design-considerations"></a>Considerazioni sulla progettazione
 
-When you design your VPN gateways to connect virtual networks, you must consider the following factors:
+Quando si progettano i gateway VPN per connettere le reti virtuali, è necessario tenere conto dei fattori seguenti:
 
-- Subnets cannot overlap
+- Subnet non possono sovrapporsi
 
-    It is vital that a subnet in one location does not contain the same address space as in another location.
+    È fondamentale che una subnet in una posizione non contenga lo stesso spazio degli indirizzi come in un'altra posizione.
 
-- IP addresses must be unique
+- Gli indirizzi IP devono essere univoci
 
-    You cannot have two hosts with the same IP address in different locations, as it will be impossible to route traffic between those two hosts and the network-to-network connection will fail.
+    È possibile avere due host con lo stesso indirizzo IP in posizioni diverse, come sarà Impossibile instradare il traffico tra i due host e la connessione di rete-a-network avrà esito negativo.
 
-- VPN gateways need a gateway subnet called **GatewaySubnet**
+- I gateway VPN è necessaria una subnet del gateway denominata **GatewaySubnet**
 
-    It must have this name for the gateway to work, and it should not contain any other resources.
+    Deve avere questo nome per il funzionamento del gateway e non deve contenere tutte le altre risorse.
 
-### Create an Azure virtual network
+### <a name="create-an-azure-virtual-network"></a>Creare una rete virtuale di Azure
 
-Before you create a VPN gateway, you need to create the Azure virtual network.
+Prima di creare un gateway VPN, è necessario creare la rete virtuale di Azure.
 
-### Create a VPN gateway
+### <a name="create-a-vpn-gateway"></a>Creare un gateway VPN
 
-The type of VPN gateway you create will depend on your architecture. Options are:
+Il tipo di gateway VPN che verrà creato dipende dall'architettura corrente. Le opzioni sono:
 
 - RouteBased
 
-    Route-based VPN devices use any-to-any (wildcard) traffic selectors, and let routing/forwarding tables direct traffic to different IPsec tunnels. Route-based connections are typically built on router platforms where each IPsec tunnel is modeled as a network interface or VTI (virtual tunnel interface).
+    Dispositivi VPN basati su route usano selettori di traffico any-to-any (jolly) e consentono il traffico diretto le tabelle di routing/inoltro tunnel IPsec diversi. Le connessioni basate su route vengono in genere create su piattaforme router in cui ogni tunnel IPsec è modellato come interfaccia di rete o interfaccia di tunnel virtuale.
 
 - PolicyBased
 
-    Policy-based VPN devices use the combinations of prefixes from both networks to define how traffic is encrypted/decrypted through IPsec tunnels. A policy-based connection is typically built on firewall devices that perform packet filtering. IPsec tunnel encryption and decryption are added to the packet filtering and processing engine.
+    Dispositivi VPN basati su criteri usano le combinazioni di prefissi di entrambe le reti per definire come il traffico è crittografati/decrittografati tramite tunnel IPsec. Una connessione basata su criteri viene in genere creata su dispositivi firewall che eseguono il filtro dei pacchetti. La crittografia e la decrittografia dei tunnel IPsec vengono aggiunte al filtro dei pacchetti e al motore di elaborazione.
 
-## Set up a VPN gateway
+## <a name="set-up-a-vpn-gateway"></a>Configurare un gateway VPN
 
-The steps you need to take will depend on the type of VPN gateway that you are installing. For example, to create a point-to-site VPN gateway by using the Azure portal, you would carry out the following steps:
+La procedura da eseguire dipende dal tipo di gateway VPN che viene installato. Ad esempio, per creare un gateway VPN da punto a sito usando il portale di Azure, potrebbe eseguire la procedura seguente:
 
-1. Create a virtual network
+1. Creare una rete virtuale
 
-2. Add a gateway subnet
+2. Aggiungere una subnet del gateway
 
-3. Specify a DNS server (optional)
+3. Specificare un server DNS (facoltativo)
 
-4. Create a virtual network gateway
+4. Creare un gateway di rete virtuale
 
-5. Generate certificates
+5. Generare i certificati
 
-6. Add the client address pool
+6. Aggiungere il pool di indirizzi client
 
-7. Configure the tunnel type
+7. Configurare il tipo di tunnel
 
-8. Configure the authentication type
+8. Configurare il tipo di autenticazione
 
-9. Upload the root certificate public certificate data
+9. Caricare i dati del certificato pubblico per il certificato radice
 
-10. Install an exported client certificate
+10. Installare un certificato client esportato
 
-11. Generate and install the VPN client configuration package
+11. Generare e installare il pacchetto di configurazione del client VPN
 
-12. Connect to Azure
+12. Connettersi ad Azure
 
-As there are several configuration paths with Azure VPN gateways, each with multiple options, it is not possible to cover every setup in this course. For more information, see the Additional Resources section.
+Poiché sono presenti più percorsi di configurazione con i gateway VPN di Azure, ognuno con più opzioni, non è possibile eseguire ogni programma di installazione in corso. Per altre informazioni, vedere la sezione Risorse aggiuntive.
 
-## Configure the gateway
+## <a name="configure-the-gateway"></a>Configurare il gateway
 
-Once your gateway is created, you'll need to configure it.  There are several configuration settings you will need to provide, such as the name, location, DNS server, etc. We will go into these in more detail in the exercise.
+Dopo aver creato il gateway, è necessario configurarlo.  Esistono diverse impostazioni di configurazione che si dovrà fornire, ad esempio nome, posizione, server DNS, e così via. Queste impostazioni verranno esaminate più in dettaglio nell'esercizio.
 
-## Summary
+## <a name="summary"></a>Riepilogo
 
-Azure VPN gateways are a component in Azure virtual networks that enable point-to-site, site-to-site, or network-to-network connections. Azure VPN gateways enable individual client computers to connect to resources in Azure, extend on-premises networks into Azure, or facilitate connections between virtual networks in different regions and subscriptions.
+I gateway VPN di Azure sono un componente in reti virtuali di Azure che consentono a point-to-site, site-to-site o connessioni di rete-a-network. I gateway VPN di Azure abilitare singoli computer client per connettersi alle risorse in Azure, estendere le reti locali ad Azure o facilitare le connessioni tra reti virtuali in diverse aree e sottoscrizioni.

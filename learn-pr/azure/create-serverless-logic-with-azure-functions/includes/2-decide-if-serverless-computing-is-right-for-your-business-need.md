@@ -2,7 +2,7 @@ Per stabilire se l'informatica serverless è adatta alle proprie esigenze, consi
 
 ## <a name="what-is-serverless-compute"></a>Che cos'è l'elaborazione serverless?
 
-L'elaborazione serverless usa le funzioni come servizio (FaaS). Le funzioni possono essere considerate come dei microservizi ospitati in una piattaforma cloud. La logica di business viene eseguita come funzioni e non è necessario eseguire manualmente il provisioning o ridimensionare l'infrastruttura. Il provider del cloud gestisce l'infrastruttura. L'app viene automaticamente ridimensionata o ridotta a seconda del carico. Azure offre diversi modi per compilare questo tipo di architettura. I due approcci più comuni sono le App per la logica di Azure e le Funzioni di Azure, che vengono trattate in questo modulo.
+L'elaborazione serverless usa le funzioni come servizio (FaaS). Le funzioni possono essere considerate come dei microservizi ospitati in una piattaforma cloud. La logica di business viene eseguita come funzioni e non è necessario eseguire manualmente il provisioning o ridimensionare l'infrastruttura. Il provider del cloud gestisce l'infrastruttura. L'app viene automaticamente ridimensionata o ridotta a seconda del carico. Azure offre diversi modi per compilare questo tipo di architettura. I due approcci più comuni sono le App per la logica di Azure e funzioni di Azure, viene esaminata in questo modulo.
 
 ## <a name="what-is-azure-functions"></a>Che cos'è Funzioni di Azure?
 
@@ -30,7 +30,7 @@ Le funzioni sono un componente fondamentale dell'elaborazione serverless, ma son
 
 ## <a name="drawbacks-of-a-serverless-compute-solution"></a>Svantaggi di una soluzione di calcolo serverless
 
-L'elaborazione serverless non è sempre la soluzione appropriata per l'hosting della logica di business. Di seguito vengono illustrate alcune caratteristiche di funzioni che possono influenzare la decisione di ospitare i servizi usando l'elaborazione serverless. 
+L'elaborazione serverless non è sempre la soluzione appropriata per l'hosting della logica di business. Di seguito vengono illustrate alcune caratteristiche di funzioni che possono influenzare la decisione di ospitare i servizi usando l'elaborazione serverless.
 
 ### <a name="execution-time"></a>Tempo di esecuzione
 

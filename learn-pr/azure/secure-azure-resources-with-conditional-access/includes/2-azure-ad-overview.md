@@ -18,4 +18,4 @@ I criteri di accesso condizionale sono costituiti da:
 
 ## <a name="summary"></a>Riepilogo
 
-In questa unità sono state esaminate le nozioni di base su Azure AD e sulle funzionalità disponibili per proteggere l'accesso alle applicazioni. Ora che si conoscono le informazioni di base, è possibile iniziare a usare Azure AD. Il resto di questo modulo contiene esercizi pratici che consentono di abilitare e verificare Multi-Factor Authentication usando l'accesso condizionale.
+In questa unità sono state esaminate le nozioni di base su Azure AD e sulle funzionalità disponibili per proteggere l'accesso alle applicazioni. Dopo aver creato le nozioni di base dall'area di lavoro, attività iniziali con Azure AD. Il resto di questo modulo contiene esercizi pratici che consentono di abilitare e verificare Multi-Factor Authentication usando l'accesso condizionale.

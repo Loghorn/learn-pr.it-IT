@@ -1,21 +1,21 @@
-AngularJS is a framework for creating clear and succinct dynamic web applications. You use HTML for your content template language, but extend your HTML with data-binding syntax. Using AngularJS for data-binding and dependency-injection helps eliminate much of the code you would otherwise have to write to manage content updates. The updating of your user's content happens within the browser, which allows AngularJS to pair with any server-side hosting technology.
+AngularJS è un framework per la creazione di applicazioni Web dinamiche chiare e concise. Per il linguaggio del modello di contenuto si usa HTML, che viene però esteso con la sintassi di data binding. L'uso di AngularJS per il data binding e l'inserimento delle dipendenze contribuisce a eliminare buona parte del codice che altrimenti sarebbe necessario scrivere per gestire gli aggiornamenti del contenuto. L'aggiornamento del contenuto dell'utente viene eseguito all'interno del browser, consentendo così di abbinare AngularJS a qualsiasi tecnologia di hosting sul lato server.
 
-## Angular.js information
+## <a name="angularjs-information"></a>Informazioni su Angular.js
 
-Because AngularJS is a front-end JavaScript framework, it only needs to be made available to the clients that access the application. This can be achieved in several ways:
+Essendo un framework JavaScript front-end, AngularJS deve semplicemente essere reso disponibile ai client che accedono all'applicazione. Ciò può essere ottenuto in diversi modi:
 
-- Reference AngularJS via a content delivery network (CDN).
-- Serve AngularJS from your hosted content as a Node.js package using npm as a package manager.
-- Serve AngularJS from your hosted content as a Bower package.
+- Fare riferimento ad AngularJS tramite una rete per la distribuzione di contenuti (CDN).
+- Servire AngularJS dal contenuto ospitato come pacchetto Node.js usando npm come strumento di gestione pacchetti.
+- Servire AngularJS dal contenuto ospitato come pacchetto Bower.
 
-We will be using AngularJS directly from a CDN for this module for simplicity. This passes the script file dependency to the CDN, instead of managing it on our server content directly. This can also improve download speeds based on the speed and geographical distribution of the CDN used for a given resource.
+Per semplicità, per questo modulo verrà usato AngularJS direttamente da una rete CDN. Tale funzione passa la dipendenza del file di script per la rete CDN, anziché gestire direttamente il contenuto di server. Può anche migliorare la velocità di download in base alla velocità e la distribuzione geografica della rete CDN usati per una determinata risorsa.
 
 > [!NOTE]
-> AngularJS is the predecessor to Angular, which was a complete rewrite of the web application platform. While many of the concepts are similar between the two versions, they are separate projects now. Angular will have versions of 2.x.y and higher, while AngularJS will have versions ending in 1.x.y. AngularJS is still commonly used for web application scenarios.
+> AngularJS è il predecessore di Angular, una riscrittura completa della piattaforma di applicazioni Web. Nonostante molti concetti siano simili tra le due versioni, si tratta di due progetti distinti. Angular sarà disponibile nelle versioni 2.x.y e successive, mentre AngularJS lo sarà nelle versioni che terminano con 1.x.y. AngularJS viene ancora comunemente usato per gli scenari di applicazioni Web.
 
-## How to install AngularJS via CDN
+## <a name="how-to-install-angularjs-via-cdn"></a>Come installare AngularJS tramite una rete CDN
 
-You don't really _install_ AngularJS. You just add a reference to the JavaScript file via a script tag in your HTML page. Since AngularJS is critical to any functionality of our web application, we include it within the `<head>` tag like this (as compared to later-loading of JavaScript files toward the end of the `<body>` tag).
+Non viene effettivamente eseguita l'_installazione_ di AngularJS. Viene semplicemente aggiunto un riferimento al file JavaScript tramite un tag di script nella pagina HTML. Poiché AngularJS è essenziale per qualsiasi funzionalità dell'applicazione Web, viene incluso nel tag `<head>` in questo modo, rispetto al caricamento successivo di file JavaScript verso la fine del tag `<body>`.
 
 ```html
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>

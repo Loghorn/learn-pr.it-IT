@@ -8,13 +8,8 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 793491d1cdae44e7f128cbaa0be25ac0765f2f07
-  ms.sourcegitcommit: 2e31e2186d3bd659d3582edaf79e3581f6b92423
-  ms.translationtype: HT
-  ms.contentlocale: it-IT
-  ms.lasthandoff: 09/12/2018
-  ms.locfileid: "44655646"
 title: Configurare l'account Cosmos DB
 durationInMinutes: 5
 interactive: bash
-content: '[!include[](includes/setup-cosmosdb.md)]'
+content: |
+  [!include[](includes/setup-cosmosdb.md)]

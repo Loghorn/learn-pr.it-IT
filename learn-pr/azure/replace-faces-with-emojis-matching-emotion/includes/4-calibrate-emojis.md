@@ -1,57 +1,64 @@
-We can’t pass an image of the emoji to the Face API to get it’s emotion because, well because it’s not human. So for each emoji, I needed a human proxy, me.
+Non possiamo passeremo un'immagine dell'emoji all'API viso per ottenere relative emozioni perché, anche perché non umano. In modo che per ogni emoji, avevo bisogno di un proxy risorse umane, me.
 
-I took pictures of myself _accurately_ mimicking each emoji, and used the _emotional point_ for that image as the proxy for the emoji. To keep things interesting I also chose people from my team and associated them with emojis as well, like so:
+Ho fornito le immagini di uso personale _accuratamente_ , che rispecchia ogni emoji e usato la _punto emotivo_ per quell'immagine come proxy per l'emoji. Per semplificare le operazioni interessanti anche scelto persone del mio team e li associato emoji anche, come illustrato di seguito:
 
 ![Team Moji](/media-drafts/team.jpg)
 
-For the emoji of love eyes (😍) I chose a picture of my wife ❤️. In memory of [Stephen Hawking](https://en.wikipedia.org/wiki/Stephen_Hawking) I picked a picture of him to represent 🤔.
+È possibile visualizzare l'elenco di immagini di proxy per ogni emoji nel `bin/proxy-images` cartella nel codice di esempio associato a questa esercitazione.
 
-You can see the list of proxy images for each emoji in the `bin/proxy-images` folder in the sample code associated with this tutorial.
+## <a name="goal"></a>Obiettivo
 
-In this chapter you will generate a key so you can use the Azure Face API and then use the Face API to calibrate all the emojies using proxied images of me.
+In questo capitolo è generare le chiavi di autenticazione necessari in modo che è possibile usare l'API viso di Azure e quindi usare l'API viso per calibrare tutti gli emoji usando immagini con proxy dell'utente corrente.
 
-## Generate an Azure Face API Key
+## <a name="learning-objectives"></a>Obiettivi di apprendimento
 
-<!-- To make calls to the Azure Face API we will need a special authorization key.
+- Come generare API le chiavi SSH per l'uso con servizi cognitivi.
+- Come eseguire le immagini tramite l'API viso ed estrarre le informazioni delle emozioni.
 
-We are going to create one using the `az` CLI. -->
+## <a name="generate-an-azure-face-api-key"></a>Generare una chiave API viso di Azure
 
-To use the Azure Face API we need a special authentication key, head over to https://azure.microsoft.com/try/cognitive-services/ and signup to trial the Face API.
+Per usare l'API viso di Azure, è necessaria una chiave di autenticazione.
 
-![Team Moji](/media-drafts/4.calibrating-emojis.get-face-api.png)
+Il modo più rapido per ottenere una chiave consiste nel passare a https://azure.microsoft.com/try/cognitive-services/?api=face-api e l'iscrizione alla versione di valutazione l'API viso.
 
-> TODO: Find az commands to create faceAPI and grab keys
+Dopo l'iscrizione è in questo caso sarà poche informazioni necessarie per l'archiviazione per in un secondo momento.
 
-<!-- > NOTE the Azure Face API doesn't return the emotion information by default, we need to switch on this behavior by setting some query parameters, like so:
-> https://westeurope.api.cognitive.microsoft.com/face/v1.0/detect?returnFaceId=false&returnFaceLandmarks=false&returnFaceAttributes=emotion -->
+1. Scarica la _endpoint_. Dovrebbe essere simile https://westcentralus.api.cognitive.microsoft.com/face/v1.0
 
-## Setup the environment variables
+2. Mostra le due chiavi API, archivio uno di essi per l'utilizzo in un secondo momento (non importa quale)
 
-The calibration script needs to know your Face API URL and Key in order to make the correct calls, rather than hardcoding these in the script we are going to use environment varialbes, run these commands in the terminal you expect to run the application in:
+## <a name="setup-the-environment-variables"></a>Configurare le variabili di ambiente
+
+Lo script di calibrazione deve conoscere l'URL dell'API viso e la chiave per eseguire le chiamate corrette, anziché impostare come hardcoded questi nello script che si intende usare le variabili di ambiente, eseguire questi comandi nel terminale si prevede di eseguire l'applicazione:
 
 ```bash
-FACE_API_URL=<the-face-api-url>
-FACE_API_KEY=<your-face-api-key>
+export FACE_API_URL=<the-face-api-url>
+export FACE_API_KEY=<your-face-api-key>
 ```
 
-<!-- > NOTE
-> Don't forget to add the query param returnFaceAttributes=emotion to ensure the Face API returns emotion as well -->
+Viene inoltre usato un pacchetto denominato `dotenv` nella nostra applicazione di nodo. Questo pacchetto è possibile usare archiviare le variabili di ambiente in locale in un file denominato `.env`. Il `dotenv` pacchetto Carica le variabili in questo file e li presenta come variabili di ambiente per l'applicazione.
 
-## Create some proxy images for emojis
+> **NOTA**
+>
+> Non archivia `.env` file nel controllo del codice sorgente.
 
-I've provided all the proxy images myself, but feel free to generate your own!
+Funzioni di Azure dispongono di un altro metodo per la gestione di variabili di ambiente tramite le `local.settings.json` file, più avanti.
 
-For each emoji in the `bin/proxy-images` folder, take a picture of yourself mimicking that emoji and replace the image with your image.
+## <a name="create-some-proxy-images-for-emojis"></a>Creare alcune immagini di proxy per emoji
 
-## Try it out
+Ho fornito tutte le immagini di proxy Me, ma è possibile generare il proprio.
 
-Now comes the fun part! We are going to run each of the images in the `bin/proxy-images` through the Face API to calculate an emotional point for that emoji in _emotional space_, run:
+Per ogni emoji nel `bin/proxy-images` cartella, acquisire un'immagine di se stessi, che rispecchia tale emoji e sostituire l'immagine con l'immagine.
+
+## <a name="try-it-out"></a>Provare il servizio
+
+Ora viene il bello parte! Si userà per eseguire ognuna delle immagini nel `bin/proxy-images` tramite l'API viso per calcolare un punto emotivo per tale emoji nel _spazio emotivo_, eseguire:
 
 ```bash
 node bin/calibrate.js
 ```
 
-The output of this command should look something like so:
+L'output di questo comando avrà un aspetto come segue:
 
 ```json
 ...
@@ -76,6 +83,6 @@ Processing 😆
 }
 ```
 
-It will first print out the emoji's it is processing and then finally print out to the console an array which defines the `EmotivePoint` of all the emoji's. This is the same format as the array in `shared/mojis.ts`.
+Stampato prima di tutto l'emoji è l'elaborazione e quindi infine stampare sulla console una matrice che definisce il `EmotivePoint` di tutte l'emoji. Questo è lo stesso formato di matrice in `shared/mojis.ts`.
 
-If you changed some of the proxied images then copy the output of this script to the relevant section of `mojis.ts`
+Se sono state modificate alcune delle immagini con proxy, quindi copiare l'output di questo script per la relativa sezione del `mojis.ts`

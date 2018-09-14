@@ -1,81 +1,83 @@
-As computing environments move from customer-controlled datacenters to cloud datacenters, the responsibility of security also shifts. Security is now a concern shared both by cloud providers and customers. For every application and solution, it's important to understand what your responsibility is and what Azure will handle for you. 
+Ora che gli ambienti informatici passano da data center controllati dal cliente a data center nel cloud, anche la responsabilità della sicurezza cambia. La sicurezza a questo punto è essenziale condivisi sia dai clienti e fornitori di servizi cloud. Per ogni applicazione e la soluzione, è importante comprendere che cos'è responsabilità del cliente e quali Azure gestirà automaticamente. 
 
-## Share security responsibility with Azure
+> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE2yEvj]
 
-The first shift is from on-premises datacenters to infrastructure as a service (IaaS). With IaaS, you are leveraging the lowest-level service and asking Azure to create virtual machines (VMs) and virtual networks. At this level, it's still your responsibility to patch and secure your operating systems and software, as well as configure your network to be secure. Contoso Shipping is taking advantage of IaaS when they start using Azure VMs instead of their on-premises physical servers. In addition to the operational advantages, they receive the security advantage of having outsourced concern over protecting the physical parts of the network.
+## <a name="share-security-responsibility-with-azure"></a>Condividono la responsabilità di sicurezza con Azure
 
-Moving to platform as a service (PaaS) outsources a lot of security concerns. At this level, Azure is taking care of the operating system and of most foundational software like database management systems. Everything is updated with the latest security patches and can be integrated with Azure Active Directory for access controls. PaaS also comes with a lot of operational advantages. Rather than building whole infrastructures and subnets for your environments by hand, you can "point and click" within the Azure portal or run automated scripts to bring complex, secured systems up and down, and scale them as needed. Contoso Shipping uses Azure Event Hubs for ingesting telemetry data from their trucks. They also use a web app with an Azure Cosmos DB back end with their mobile apps. Those services are all examples of PaaS.
+Lo spostamento prima è dai Data Center locale all'infrastruttura come servizio (IaaS). Con IaaS, sfruttando il servizio di livello più basso si che chiede di Azure per creare le reti virtuali e macchine virtuali (VM). A questo livello, è comunque responsabilità dell'utente per applicare patch e proteggere i sistemi operativi e software, nonché configurare la rete per essere protetti. Spedizioni di Contoso è sfruttando i vantaggi delle soluzioni IaaS quando si inizia a usare macchine virtuali di Azure anziché i server fisici in locale. Oltre ai vantaggi operativi, l'utente riceve il vantaggio di sicurezza di presenza in outsourcing problema tramite la protezione di parti della rete fisiche.
 
-With software as a service (SaaS), you outsource almost everything. SaaS is software that runs with an internet infrastructure. The code is controlled by the vendor, but configured to be used by the customer. Like so many companies, Contoso Shipping uses Office 365, which is a great example of SaaS!
+Passaggio alla piattaforma come servizio (PaaS) affida numerosi problemi di sicurezza. A questo livello, Azure si sta occupando del sistema operativo e del software fondamentale, ad esempio sistemi di gestione di database. Tutto ciò che viene aggiornato con le ultime patch di sicurezza e può essere integrato con Azure Active Directory per i controlli di accesso. PaaS include anche molti vantaggi operativi. Piuttosto che creare infrastrutture intere e le subnet per gli ambienti manualmente, è possibile "puntare e fare clic su" nel portale di Azure oppure esecuzione automatizzata degli script per portare i sistemi complessi e protetti e ridurre le prestazioni e ridimensionarli in base alle esigenze. Spedizioni di Contoso USA hub eventi di Azure per l'inserimento di dati di telemetria da loro Van. È anche possibile usare un'app web con un back-end di Azure Cosmos DB con le proprie App per dispositivi mobili. Tali servizi sono tutti esempi di PaaS.
+
+Con il software come servizio (SaaS), si affidano quasi tutti gli elementi. SaaS è un software che viene eseguito con un'infrastruttura internet. Il codice è controllato dal fornitore, ma configurato per essere usata dal cliente. Come molte aziende, Contoso Shipping Usa Office 365, che è un ottimo esempio delle soluzioni SaaS.
 
 <!--TODO: replace with final media which was submitted for Design-for-security-in-azure -->
 ![shared_responsibility.png](../media-COPIED-FROM-DESIGNFORSECURITY/shared_responsibilities.png)
 
-## A layered approach to security
+## <a name="a-layered-approach-to-security"></a>Approccio alla sicurezza strutturato su più livelli
 
-*Defense in depth* is a strategy that employs a series of mechanisms to slow the advance of an attack aimed at acquiring unauthorized access to information. Each layer provides protection so that if one layer is breached, a subsequent layer is already in place to prevent further exposure. Microsoft applies a layered approach to security, both in our physical datacenters and across Azure services. The objective of defense in depth is to protect and prevent information from being stolen by individuals who are not authorized to access it.
+*Difesa avanzata* è una strategia che impiega una serie di meccanismi per rallentare l'avanzamento di un attacco volto ad accedere a informazioni senza autorizzazione. Ogni livello offre protezione in modo che se un livello verrà violato, un livello successivo è già in grado di impedire ulteriori l'esposizione. Microsoft applica un approccio a livelli di sicurezza, nei nostri Data Center fisico e nei servizi di Azure. L'obiettivo di difesa in profondità consiste nel proteggere e impedire che informazioni prevenirne il furto da parte di individui che non sono autorizzati ad accedervi.
 
-Defense in depth can be visualized as a set of concentric rings, with the data to be secured at the center. Each ring adds an additional layer of security around the data. This approach removes reliance on any single layer of protection and acts to slow down an attack and provide alert telemetry that can be acted upon, either automatically or manually. Let's take a look at each of the layers.
+La difesa avanzata può essere considerata come una serie di anelli concentrici in cui i dati da proteggere stanno al centro. Ogni anello aggiunge un ulteriore livello di protezione ai dati. Questa strategia annulla la dipendenza da un qualsiasi singolo livello di protezione e opera rallentando l'attacco e fornendo dati di telemetria in base ai quali è possibile intervenire automaticamente o manualmente. Esaminiamo ciascuno di questi livelli.
 
 <!--TODO: replace with final media which was submitted for Design-for-security-in-azure -->
-![Defense in depth](../media-COPIED-FROM-DESIGNFORSECURITY/defense_in_depth_layers_small.PNG)
+![Difesa in profondità](../media-COPIED-FROM-DESIGNFORSECURITY/defense_in_depth_layers_small.PNG)
 
-### Data
+### <a name="data"></a>Dati
 
-In almost all cases, attackers are after data:
+Nella quasi totalità dei casi, gli utenti malintenzionati cercano:
 
-- Data stored in a database
-- Data stored on disk inside virtual machines
-- Data stored on an SaaS application such as Office 365
-- Data stored in cloud storage
+- Dati archiviati in un database
+- Dati archiviati su disco all'interno di macchine virtuali
+- Dati archiviati in un'applicazione SaaS come Office 365
+- Dati archiviati nel cloud
 
-It's the responsibility of those storing and controlling access to data to ensure that it's properly secured. Often, there are regulatory requirements that dictate the controls and processes that must be in place to ensure the confidentiality, integrity, and availability of the data.
+È responsabilità di chi archivia i dati e di chi ne controlla l'accesso assicurarsi che siano adeguatamente protetti. Spesso, esistono requisiti normativi che determinano i controlli e i processi che devono essere in grado di garantire la riservatezza, integrità e disponibilità dei dati.
 
-### Application
+### <a name="application"></a>Applicazione
 
-- Ensure applications are secure and free of vulnerabilities.
-- Store sensitive application secrets in a secure storage medium.
-- Make security a design requirement for all application development.
+- Verificare che le applicazioni siano protetti e privo di vulnerabilità.
+- Store i segreti sensibili dell'applicazione in un supporto di archiviazione sicura.
+- Prendere un requisito di progettazione per lo sviluppo di tutte le applicazioni di sicurezza.
 
-Integrating security into the application development life cycle will help reduce the number of vulnerabilities introduced in code. Encourage all development teams to ensure their applications are secure by default, and that they're making security requirements non-negotiable.
+L'integrazione della sicurezza nel ciclo di vita dello sviluppo dell'applicazione consentirà di ridurre il numero di vulnerabilità introdotte nel codice. Incoraggiare tutti i team di sviluppo per verificare le proprie applicazioni sono protette per impostazione predefinita e che si desidera apportare i requisiti di sicurezza non negoziabili.
 
-### Compute
+### <a name="compute"></a>Calcolo
 
-- Secure access to virtual machines.
-- Implement endpoint protection and keep systems patched and current.
+- Proteggere l'accesso alle macchine virtuali.
+- Implementazione di endpoint protection e mantenere i sistemi con patch e corrente.
 
-Malware, unpatched systems, and improperly secured systems open your environment to attacks. The focus in this layer is on making sure your compute resources are secure, and that you have the proper controls in place to minimize security issues.
+Malware, sistemi privi di patch e sistemi protetti in modo non corretto aprono l'ambiente agli attacchi. In questo livello è attiva assicurandosi che le risorse di calcolo sono sicure e di disporre i controlli appropriati in grado di ridurre al minimo i problemi di sicurezza.
 
-### Networking
+### <a name="networking"></a>Rete
 
-- Limit communication between resources.
-- Deny by default.
-- Restrict inbound internet access and limit outbound, where appropriate.
-- Implement secure connectivity to on-premises networks.
+- Limitazione delle comunicazioni tra le risorse.
+- Nega per impostazione predefinita.
+- Limitare l'accesso a internet in ingresso e in uscita, limite laddove appropriato.
+- Implementare una connettività sicura da reti locali.
 
-At this layer, the focus is on limiting the network connectivity across all your resources to allow only what is required. By limiting this communication, you reduce the risk of lateral movement throughout your network.
+A questo livello, lo stato attivo è sulla limitazione della connettività di rete in tutte le risorse per consentire solo ciò che è obbligatorio. Limitando queste comunicazioni, si riduce il rischio di movimento laterale in tutta la rete.
 
-### Perimeter
+### <a name="perimeter"></a>Perimetro
 
-- Use distributed denial of service (DDoS) protection to filter large-scale attacks before they can cause a denial of service for end users.
-- Use perimeter firewalls to identify and alert on malicious attacks against your network.
+- Usare distribuito protezione denial of service (DDoS) per filtrare gli attacchi su larga scala, prima che possano causare un attacco denial of service per gli utenti finali.
+- Usare firewall perimetrali per identificare e inviare un avviso per attacchi dannosi rispetto alla rete.
 
-At the network perimeter, it's about protecting from network-based attacks against your resources. Identifying these attacks, eliminating their impact, and alerting on them is important to keep your network secure.
+A livello di perimetro della rete, lo scopo è impedire gli attacchi di rete diretti alle risorse. Identificare gli attacchi, eliminarne l'impatto e segnalarli è importante per proteggere la rete.
 
-### Policies & access
+### <a name="policies--access"></a>Criteri e accesso
 
-- Control access to infrastructure and change control.
-- Use single sign-on and multi-factor authentication.
-- Audit events and changes.
+- Controllare l'accesso all'infrastruttura e controllo delle modifiche.
+- Usare l'autenticazione single sign-on e a più fattori.
+- Controllo degli eventi e le modifiche.
 
-The policy and access layer is all about ensuring identities are secure, access granted is only what is needed, and changes are logged.
+Il livello di accesso e criteri è tutto su come verificare che le identità sono sicure, l'accesso viene concesso solo degli elementi necessari e le modifiche vengono registrate.
 
-### Physical security
+### <a name="physical-security"></a>Sicurezza fisica
 
-- Physical building security and controlling access to computing hardware within the datacenter is the first line of defense.
+- La sicurezza fisica e controllo dell'accesso all'hardware nel Data Center è la prima linea di difesa.
 
-With physical security, the intent is to provide physical safeguards against access to assets. This ensures that other layers can't be bypassed, and loss or theft is handled appropriately.
+Sicurezza fisica, l'intento consiste nel fornire protezioni fisiche contro l'accesso agli asset. Ciò garantisce che non sia possibile superare gli altri livelli e che la perdita o il furto vengano gestiti in modo appropriato.
 
-We've seen here that Azure helps a lot with your security concerns. But security is still a **shared responsibility**. How much of that responsibility falls on us depends on which model we use with Azure.
+Abbiamo visto qui che Azure aiuta molto con le esigenze di protezione. Ma la sicurezza è comunque una **responsabilità condivise**. Quantità di tale responsabilità rientra in Stati Uniti dipende dal modello di cui è utilizzato con Azure.
 
-We use the *defense in depth* rings as a guideline for considering what protections are adequate for our data and environments.
+Usiamo il *difesa in profondità* anelli come linea guida per prendere in considerazione quali misure sono adeguati per i dati e gli ambienti.

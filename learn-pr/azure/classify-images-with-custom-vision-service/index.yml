@@ -1,38 +1,36 @@
 ### YamlMime:Module
 uid: learn.classify-images-with-custom-vision-services
 metadata:
-  title: Classify images with the Microsoft Custom Vision Service
-  description: Train the Microsoft Custom Vision Service with a collection of flower images, and it can tell you whether the next image includes a flower — or even what type of flower it is.
+  title: Classificare le immagini con il Servizio visione artificiale personalizzato
+  description: È possibile eseguire il training del Servizio visione artificiale personalizzato con una raccolta di immagini di fiori in modo che il servizio sia grado di determinare se l'immagine successiva include un fiore e addirittura il tipo di fiore.
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Classify images with the Microsoft Custom Vision Service
-summary: Train the Custom Vision Service with a collection of flower images, so it can tell you whether the next image includes a flower — or even what type of flower it is.
-abstract:  | 
-  In this module, you will:
-  - Create a Custom Vision Service project 
-  - Train a Custom Vision Service model with tagged images  
-  - Test a Custom Vision Service model 
-  - Create apps that leverage Custom Vision Service models by calling REST APIs
-prerequisites: None
-#TODO: Update icon URL with real image 
-iconUrl: http://via.placeholder.com/120x120
+title: Classificare le immagini con il Servizio visione artificiale personalizzato
+summary: 'Eseguire il training il servizio visione artificiale personalizzato con una raccolta di immagini fiore, pertanto possibile indicare se l''immagine successiva comprende un fiore, o addirittura quali al tipo del fiore.'
+abstract: |
+  In questo modulo verrà descritto come:
+  - Creare un progetto del Servizio visione artificiale personalizzato 
+  - Training di un modello del Servizio visione artificiale personalizzato con immagini con tag  
+  - Test di un modello del Servizio visione artificiale personalizzato 
+  - Creare app che sfruttano modelli del Servizio visione artificiale personalizzato tramite la chiamata di API REST
+prerequisites: Nessuno
+iconUrl: /learn/achievements/classify-images-with-custom-vision-service.svg
 levels:
-- beginner
+  - beginner
 roles:
-- developer
+  - developer
 products:
-- azure
+  - azure
 units:
-- learn.classify-images-with-custom-vision-services.0-introduction
-- learn.classify-images-with-custom-vision-services.1-create-custom-vision-service-project
-- learn.classify-images-with-custom-vision-services.2-upload-tagged-images
-- learn.classify-images-with-custom-vision-services.3-train-model
-- learn.classify-images-with-custom-vision-services.4-test-model
-- learn.classify-images-with-custom-vision-services.5-build-app
-- learn.classify-images-with-custom-vision-services.6-classify-images
-- learn.classify-images-with-custom-vision-services.7-knowledge-check
-achievement: learn.classify-images-with-custom-vision-services.badge 
+  - learn.classify-images-with-custom-vision-services.0-introduction
+  - learn.classify-images-with-custom-vision-services.1-create-custom-vision-service-project
+  - learn.classify-images-with-custom-vision-services.2-upload-tagged-images
+  - learn.classify-images-with-custom-vision-services.3-train-model
+  - learn.classify-images-with-custom-vision-services.4-test-model
+  - learn.classify-images-with-custom-vision-services.5-build-app
+  - learn.classify-images-with-custom-vision-services.6-classify-images
+  - learn.classify-images-with-custom-vision-services.7-knowledge-check
+achievement: learn.classify-images-with-custom-vision-services.badge

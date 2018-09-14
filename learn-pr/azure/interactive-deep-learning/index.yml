@@ -1,36 +1,34 @@
 ### YamlMime:Module
 uid: learn.interactive-deep-learning
 metadata:
-  title: Apprendimento avanzato interattivo con Jupyter, Docker e PyTorch su Data Science Virtual Machine.
-  description: Informazioni per il training di modelli di apprendimento avanzato con Juypter, PyTorch e Data Science Virtual Machine.
+  title: 'Apprendimento avanzato interattivo con Jupyter, Docker e PyTorch su Data Science Virtual Machine.'
+  description: 'Informazioni per il training di modelli di apprendimento avanzato con Juypter, PyTorch e Data Science Virtual Machine.'
   ms.date: 09/24/2018
-  ms.openlocfilehash: 4525fb11a8fc6e1d5a9aba1a832ad16e6cac7251
-  ms.sourcegitcommit: f6df5a988f64643099a0ffa283a522f8864c0070
-  ms.translationtype: HT
-  ms.contentlocale: it-IT
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43853929"
-title: Apprendimento avanzato interattivo con Jupyter, Docker e PyTorch su Data Science Virtual Machine.
-summary: Informazioni per il training di modelli di apprendimento avanzato con Juypter, PyTorch e Data Science Virtual Machine.
-abstract: >
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+title: 'Apprendimento avanzato interattivo con Jupyter, Docker e PyTorch su Data Science Virtual Machine.'
+summary: 'Informazioni per il training di modelli di apprendimento avanzato con Juypter, PyTorch e Data Science Virtual Machine.'
+abstract: |
   In questo modulo verrà descritto come:
-    - Analizzare il processo di configurazione di una Data Science Virtual Machine in Azure
-    - Eseguire un notebook Jupyter tramite Docker per consentire un'interazione senza problemi con gli ambienti di apprendimento avanzato personalizzati con PyTorch
+  - Analizzare il processo di configurazione di una Data Science Virtual Machine in Azure
+  - Eseguire un notebook Jupyter tramite Docker per consentire un'interazione senza problemi con gli ambienti di apprendimento avanzato personalizzati con PyTorch
 prerequisites: Nessuno
-iconUrl: http://via.placeholder.com/120x120
+iconUrl: /learn/achievements/interactive-deep-learning.svg
 levels:
-- intermediate
+  - intermediate
 roles:
-- developer
+  - developer
 products:
-- azure
+  - azure
 units:
-- learn.interactive-deep-learning.1-introduction
-- learn.interactive-deep-learning.2-deep-learning-101
-- learn.interactive-deep-learning.2q-deep-learning-101
-- learn.interactive-deep-learning.3-docker
-- learn.interactive-deep-learning.3q-docker
-- learn.interactive-deep-learning.4-configure-dsvm
-- learn.interactive-deep-learning.5-train-your-first-deep-learning-model
-- learn.interactive-deep-learning.6-cleanup
+  - learn.interactive-deep-learning.1-introduction
+  - learn.interactive-deep-learning.2-deep-learning-101
+  - learn.interactive-deep-learning.2q-deep-learning-101
+  - learn.interactive-deep-learning.3-docker
+  - learn.interactive-deep-learning.3q-docker
+  - learn.interactive-deep-learning.4-configure-dsvm
+  - learn.interactive-deep-learning.5-train-your-first-deep-learning-model
+  - learn.interactive-deep-learning.6-cleanup
 achievement: learn.interactive-deep-learning.badge

@@ -1,4 +1,4 @@
-Viene quindi valutata la velocità effettiva dei dati per il database in questione. È un elemento importante per garantire che sia possibile gestire il volume delle transazioni richiesto dalle esigenze aziendali. I requisiti relativi alla velocità effettiva non sono sempre uniformi. Si consideri ad esempio un sito Web per gli acquisti, che deve essere ridimensionato durante il periodo dei saldi o delle festività natalizie. È necessario stimare innanzitutto i requisiti di velocità effettiva del database in questione.
+Successivo si consideri i dati in tutto il database. Velocità effettiva sufficiente è importante assicurarsi che è possibile gestire il volume delle transazioni per le esigenze aziendali. I requisiti relativi alla velocità effettiva non sono sempre uniformi. Si consideri ad esempio un sito Web per gli acquisti, che deve essere ridimensionato durante il periodo dei saldi o delle festività natalizie. Si inizierà da learning sulle unità richiesta e su come stimare i requisiti di velocità effettiva.
 
 ## <a name="what-is-database-throughput"></a>Che cos'è la velocità effettiva del database? 
 
@@ -41,4 +41,4 @@ Quando si crea un account, nel portale è possibile eseguire il provisioning di 
 
 ## <a name="summary"></a>Riepilogo
 
-A questo punto si è compreso come usare le unità richiesta per stimare e definire la velocità effettiva di un database di Azure Cosmos DB. È possibile modificare le unità di richiesta in qualsiasi momento. Quando si crea un account, l'impostazione su 1.000 UR/sec aiuta a garantire che il database possa essere ridimensionato in un secondo momento.
+È capire come stimare e velocità effettiva di ambito per Azure Cosmos DB tramite unità di richiesta e di può effettuare una selezione appropriata quando si crea una nuova raccolta di Azure Cosmos DB. Unità di richiesta può essere modificata in qualsiasi momento, ma impostarli su 1000 UR/sec quando si crea un account consente di verificare che il database è pronto per la scalabilità in un secondo momento.

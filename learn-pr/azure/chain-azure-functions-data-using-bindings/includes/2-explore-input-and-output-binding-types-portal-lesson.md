@@ -1,59 +1,53 @@
-Accessing and processing data are key tasks in many software solutions. Consider some of these scenarios:
+L'accesso e l'elaborazione dei dati sono le attività principali in molte soluzioni software. Prendere in considerazione alcuni di questi scenari:
 
-* You've been asked to implement a way to move incoming data from blob storage to Azure Cosmos DB.
-* You want to post incoming messages to a queue for processing by another component in your enterprise.
-* Your service needs to grab gamer scores from a queue and update an online scoreboard.
+* È stato richiesto per implementare un modo per spostare i dati in ingresso dall'archivio blob di Azure Cosmos DB.
+* Si desidera registrare i messaggi in ingresso a una coda per l'elaborazione da un altro componente in ambito aziendale.
+* Il servizio deve ottenere punteggi ottenuti da una coda e aggiornare una tabella di stato online.
 
-All of these examples are about moving data. The data source and destinations differ from scenario to scenario, but the pattern is similar. You connect to a data source, you read and write data. Azure Functions helps you integrate with data and services using bindings. 
+Tutti questi esempi riguardano lo spostamento dei dati. L'origine dati e destinazioni diverso da uno scenario allo scenario, ma il modello è simile. Connettersi a un'origine dati, leggere e scrivere dati. Funzioni di Azure consente di integrare con i dati e servizi tramite associazioni. 
 
-## What is a binding?
+## <a name="what-is-a-binding"></a>Che cos'è un'associazione?
 
-In functions, bindings provide a declarative way to connect to data from within your code. They make it easier to integrate with data streams consistently in a function. A trigger defines how a function is invoked. You can only have one trigger, but you can have multiple bindings in a function. This is powerful because you can connect to your data sources without having to hard code the values, like for instance, the *connection string*.
+Nelle funzioni associazioni forniscono una modalità dichiarativa per connettersi ai dati dall'interno del codice. Rendono più facile da integrare con i flussi di dati in modo coerente in una funzione. Un trigger definisce come viene richiamata una funzione. È possibile avere solo un trigger, ma è possibile avere più associazioni in una funzione. Ciò risulta utile poiché è possibile connettersi alle origini dati senza la necessità per impostare come hardcoded i valori, come ad esempio, il *stringa di connessione*.
 
-### Two kinds of bindings
+### <a name="two-kinds-of-bindings"></a>Due tipi di associazioni
 
-There are two kinds of bindings you can use for your functions:
+Esistono due tipi di associazioni che è possibile usare per le funzioni:
 
-1. **Input binding**
-    An input binding is a connection to a data **source**. Our function reads data from this source.
+1. **Associazione di input** un'associazione di input è una connessione a una data **origine**. La funzione legge i dati dall'origine.
 
-1. **Output binding**
-    An output binding is a connection to a data **destination**. Our function writes data to this destination.
+1. **Associazione di output** un'associazione di output è una connessione a una data **destinazione**. La funzione scrive i dati a questa destinazione.
 
-### Types of supported bindings
+### <a name="types-of-supported-bindings"></a>Tipi di associazioni supportate
 
-The *type* of binding defines where we are reading or sending data. There is a binding to respond to web requests and a large selection of bindings to interact with storage.
+Il *tipo* di associazione definisce dove è corso la lettura o l'invio dei dati. È presente un'associazione per rispondere alle richieste web e un'ampia selezione di associazioni per interagire con l'archiviazione.
 
-Here's a list of commonly used bindings:
-- Blob
-- Queue
-- CosmosDB
-- Event Hubs
-- External Files
-- External Tables
+Ecco un elenco di associazioni di usate comune:
+- BLOB
+- Coda
+- Cosmos DB
+- Hub eventi
+- File esterni
+- Tabelle esterne
 - HTTP
 
-### Binding properties
+### <a name="binding-properties"></a>Proprietà di binding
 
-There are four properties that are required in all bindings. You may have to supply additional properties based on the type of binding and/or storage you are using.
+Esistono quattro proprietà che sono necessari in tutte le associazioni. È possibile specificare proprietà aggiuntive in base al tipo di associazione e/o di archiviazione in che uso.
 
-- **Name**
-    The `name` property defines the function parameter through which you access the data. For example, in a queue input binding, this is the name of the function parameter that receives the queue message content. 
+- **Nome** il `name` proprietà definisce il parametro della funzione attraverso il quale si accede ai dati. In un'associazione di input di coda, ad esempio, questo è il nome del parametro della funzione che riceve il contenuto del messaggio della coda. 
 
-- **Type**
-    The `type` property identifies the type of binding, i.e., the type of data or service we want to interact with.
+- **Tipo di** il `type` proprietà identifica il tipo di associazione, ad esempio, il tipo di dati o un servizio a cui si vuole interagire con.
 
-- **Direction**
-    The `direction` property identifies the direction data is flowing ie. is it an input or output binding?
+- **Direzione** il `direction` proprietà identifica la direzione flusso dei dati Internet Explorer. si tratta di un'associazione di input o output?
 
-- **Connection**
-    The `connection` property is the name of an app setting that contains the connection string, not the connection string itself. Bindings use connection strings stored in app settings to enforce the best practice that function.json does not contain service secrets.
+- **Connessione** il `connection` proprietà corrisponde al nome di un'impostazione app contenente la stringa di connessione, non la stringa di connessione. Le associazioni usano stringhe di connessione archiviate nelle impostazioni dell'app per applicare le procedure consigliate che Function. JSON non contiene segreti del servizio.
 
-## Create a binding
+## <a name="create-a-binding"></a>Creare un'associazione
 
-Bindings are defined in JSON. A binding is configured in your function's configuration file, which is named `function.json` and lives in the same folder as your function code.
+Le associazioni sono definite in JSON. È configurata un'associazione nel file di configurazione della funzione, chiamata ScriptHelpers `function.json` mentre si trova nella stessa cartella del codice della funzione.
 
- Let's examine a sample of an *input binding*:
+ Verrà ora esaminato un esempio di un' *associazione di input*:
 
 ```json
     ...
@@ -67,18 +61,18 @@ Bindings are defined in JSON. A binding is configured in your function's configu
     ...
 ```
 
-To create this binding we:
+Per creare questa associazione è:
 
-1. Create a binding in our `function.json` file.
+1. Creare un'associazione nel nostro `function.json` file.
 
-1. Provide the value for the `name` variable. In this example, the variable will hold the blob data.
+1. Specificare il valore per il `name` variabile. In questo esempio, la variabile conterrà i dati blob.
 
-1. Provide the storage `type`, in the preceding example, we are using Blob storage.
+1. Specificare lo spazio di archiviazione `type`, nell'esempio precedente, viene usato nell'archivio Blob.
 
-1. Provide the `path`, which specifies the container and the item name which goes in it. The `path` property is required for Blobs.
+1. Fornire il `path`, che consente di specificare il contenitore e il nome dell'elemento che si estende in esso. Il `path` proprietà è obbligatoria per i BLOB.
 
-1. Provide the `connection` string setting name defined in the application's settings file. It's used as a lookup to find the connection string to connect to your storage.
+1. Fornire il `connection` nome dell'impostazione stringa definita nel file di impostazioni dell'applicazione. Viene utilizzato come una ricerca per trovare la stringa di connessione per la connessione a risorsa di archiviazione.
 
-1. Define the `direction` as `in`, it will read data from the Blob.
+1. Definire le `direction` come `in`, lo leggerà i dati dal Blob.
 
-Bindings are used to connect to data into your function. In the example we looked at, we used an input binding to connect user images to be processed by our function as thumbnails.
+Le associazioni vengono utilizzate per connettersi ai dati alla funzione. Nell'esempio che è stata esaminata, abbiamo utilizzato un'associazione di input per la connessione deve essere elaborato tramite la funzione come le anteprime delle immagini dell'utente.

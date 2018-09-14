@@ -9,23 +9,16 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 00474301121987cab2098cdfa80cb15e98a4a36f
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
-  ms.translationtype: HT
-  ms.contentlocale: it-IT
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44245971"
 durationInMinutes: 10
-content: >
+content: |
   [!include[](includes/2-choose-whether-to-use-message-queues-or-events.md)]
 quiz:
-  title: Modelli di messaggistica
+  title: Verifica delle conoscenze
   questions:
-  - content: "In un'applicazione distribuita è disponibile un servizio Web che autentica gli utenti. Quando un utente accede, il servizio Web deve comunicare con un'applicazione desktop che viene eseguita nei computer di tutti gli utenti per visualizzare lo stato di tale utente come \"Online\". Vero o falso: questo è un esempio di un messaggio in un'applicazione distribuita."
-    choices:
-    - content: Vero
-      incorrectExplanation: Questo è un esempio di un evento in un'applicazione distribuita. La comunicazione viene indirizzata a tutti i sottoscrittori e il componente di pubblicazione non è a conoscenza o non ha preferenze per la modalità di gestione delle comunicazioni da un sottoscrittore e non sa nemmeno quanti sottoscrittori esistono eventualmente.
-      isCorrect: false
-    - content: Falso
-      correctExplanation: Corretto! Questa sarebbe una notifica degli eventi che attiva un'azione. Questo è un caso ideale per l'uso di un evento.
-      isCorrect: true
+    - content: 'Si supponga di che avrà un''applicazione distribuita con un servizio web che autentica gli utenti. Quando un utente accede, il servizio web comunica con tutte le applicazioni client per visualizzare lo stato di "Online". Vero o falso: questo è un esempio di un messaggio in un''applicazione distribuita.'
+      choices:
+        - content: Vero
+          isCorrect: false
+        - content: Falso
+          correctExplanation: 'I messaggi in genere contengono i dati non elaborati, ad esempio, un file multimediale. In questo caso, verrà inviata una semplice stringa di dati che rappresenta lo stato di un utente. I dati, inoltre, viene inviato in risposta a un''azione che è un caso ideale per l''uso di un evento.'
+          isCorrect: true

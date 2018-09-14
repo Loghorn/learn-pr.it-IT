@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.connect-app-to-azure-storage.7-connect-to-your-azure-storage-account
-title: Connect to your Azure storage account
+title: Connettersi all'account di archiviazione di Azure
 metadata:
-  title: Connect to your Azure storage account
-  description: Connect to your Azure storage account
+  title: Connettersi all'account di archiviazione di Azure
+  description: Connettersi all'account di archiviazione di Azure
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial

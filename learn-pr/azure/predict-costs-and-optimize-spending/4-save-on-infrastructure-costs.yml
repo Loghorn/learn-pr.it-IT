@@ -9,40 +9,34 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 7de7c9ebfe9743b18d01e4e2c298f97efa227efb
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
-  ms.translationtype: HT
-  ms.contentlocale: it-IT
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44244781"
 durationInMinutes: 10
-content: >
+content: |
   [!include[](includes/4-save-on-infrastructure-costs.md)]
 quiz:
   title: Risparmiare sui costi di infrastruttura
   questions:
-  - content: Quale di queste <b>non</b> è una soluzione di riduzione dei costi?
-    choices:
-    - content: Deallocare le macchine virtuali durante gli orari di minore attività.
-      incorrectExplanation: Usare le istanze di macchina virtuale riservate di Azure, deallocare le macchine virtuali in orari non lavorativi, eseguire il dimensionamento corretto delle macchine virtuali sottoutilizzate, eliminare le macchine virtuali inutilizzate e effettuare la migrazione a PaaS o SaaS sono tutti esempi di soluzioni di riduzione dei costi.
-      isCorrect: false
-    - content: Usare le istanze di macchina virtuale riservate.
-      incorrectExplanation: Usare le istanze di macchina virtuale riservate di Azure, deallocare le macchine virtuali in orari non lavorativi, eseguire il dimensionamento corretto delle macchine virtuali sottoutilizzate, eliminare le macchine virtuali inutilizzate e effettuare la migrazione a PaaS o SaaS sono tutti esempi di soluzioni di riduzione dei costi.
-      isCorrect: false
-    - content: Bilanciare il carico delle macchine virtuali per i messaggi in arrivo.
-      correctExplanation: Il bilanciamento del carico viene usato per l'ottimizzazione delle prestazioni. Usare le istanze di macchina virtuale riservate di Azure, deallocare le macchine virtuali in orari non lavorativi, eseguire il dimensionamento corretto delle macchine virtuali sottoutilizzate, eliminare le macchine virtuali inutilizzate e effettuare la migrazione a PaaS o SaaS sono tutti esempi di soluzioni di riduzione dei costi.
-      isCorrect: true
-    - content: Ridimensionare le macchine virtuali sottoutilizzate.
-      incorrectExplanation: Usare le istanze di macchina virtuale riservate di Azure, deallocare le macchine virtuali in orari non lavorativi, eseguire il dimensionamento corretto delle macchine virtuali sottoutilizzate, eliminare le macchine virtuali inutilizzate e effettuare la migrazione a PaaS o SaaS sono tutti esempi di soluzioni di riduzione dei costi.
-      isCorrect: false
-  - content: 'Il Centro architetture Azure è ________:'
-    choices:
-    - content: Il luogo ideale in cui ricavare idee per trasformare l'applicazione, nonché procedure consigliate in un'ampia gamma di architetture e servizi di Azure.
-      correctExplanation: Il centro architetture Azure offrirà suggerimenti sui modi per migliorare l'app e risparmiare denaro.
-      isCorrect: true
-    - content: Un edificio nel campus Microsoft Seattle in cui è possibile parlare di infrastruttura.
-      incorrectExplanation: Il centro architetture Azure è un prodotto software integrato in Azure che offre suggerimenti per migliorare l'app.
-      isCorrect: false
-    - content: Un museo basato sul cloud dedicato a Frank Lloyd Wright.
-      incorrectExplanation: Il centro architetture Azure è un prodotto software integrato in Azure che offre suggerimenti per migliorare l'app.
-      isCorrect: false
+    - content: Quale di queste <b>non</b> è una soluzione di riduzione dei costi?
+      choices:
+        - content: Deallocare le macchine virtuali durante gli orari di minore attività.
+          incorrectExplanation: 'Usare le istanze di macchina virtuale riservate di Azure, deallocare le macchine virtuali in orari non lavorativi, eseguire il dimensionamento corretto delle macchine virtuali sottoutilizzate, eliminare le macchine virtuali inutilizzate e effettuare la migrazione a PaaS o SaaS sono tutti esempi di soluzioni di riduzione dei costi.'
+          isCorrect: false
+        - content: Usare le istanze di macchina virtuale riservate.
+          incorrectExplanation: 'Usare le istanze di macchina virtuale riservate di Azure, deallocare le macchine virtuali in orari non lavorativi, eseguire il dimensionamento corretto delle macchine virtuali sottoutilizzate, eliminare le macchine virtuali inutilizzate e effettuare la migrazione a PaaS o SaaS sono tutti esempi di soluzioni di riduzione dei costi.'
+          isCorrect: false
+        - content: Bilanciare il carico delle macchine virtuali per i messaggi in arrivo.
+          correctExplanation: 'Il bilanciamento del carico viene usato per l''ottimizzazione delle prestazioni. Usare le istanze di macchina virtuale riservate di Azure, deallocare le macchine virtuali in orari non lavorativi, eseguire il dimensionamento corretto delle macchine virtuali sottoutilizzate, eliminare le macchine virtuali inutilizzate e effettuare la migrazione a PaaS o SaaS sono tutti esempi di soluzioni di riduzione dei costi.'
+          isCorrect: true
+        - content: Ridimensionare le macchine virtuali sottoutilizzate.
+          incorrectExplanation: 'Usare le istanze di macchina virtuale riservate di Azure, deallocare le macchine virtuali in orari non lavorativi, eseguire il dimensionamento corretto delle macchine virtuali sottoutilizzate, eliminare le macchine virtuali inutilizzate e effettuare la migrazione a PaaS o SaaS sono tutti esempi di soluzioni di riduzione dei costi.'
+          isCorrect: false
+    - content: 'Il Centro architetture Azure è ________:'
+      choices:
+        - content: 'Il luogo ideale in cui ricavare idee per trasformare l''applicazione, nonché procedure consigliate in un''ampia gamma di architetture e servizi di Azure.'
+          correctExplanation: Il centro architetture Azure offrirà suggerimenti sui modi per migliorare l'app e risparmiare denaro.
+          isCorrect: true
+        - content: Un edificio nel campus Microsoft Seattle in cui è possibile parlare di infrastruttura.
+          incorrectExplanation: Il centro architetture Azure è un prodotto software integrato in Azure che offre suggerimenti per migliorare l'app.
+          isCorrect: false
+        - content: Un museo basato sul cloud dedicato a Frank Lloyd Wright.
+          incorrectExplanation: Il centro architetture Azure è un prodotto software integrato in Azure che offre suggerimenti per migliorare l'app.
+          isCorrect: false

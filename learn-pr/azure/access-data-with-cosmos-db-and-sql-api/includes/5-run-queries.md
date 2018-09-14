@@ -1,6 +1,6 @@
 Ora che si è appreso quali tipi di query è possibile creare, si userà Esplora dati nel portale di Azure per recuperare e filtrare i dati dei prodotti.
 
-Si noti che per impostazione predefinita nella finestra di Esplora dati la query nella scheda **Documento** è impostata su `SELECT * FROM c`. La query predefinita recupera e visualizza tutti i documenti nella raccolta.
+Nella finestra di Esplora dati, si noti che per impostazione predefinita, la query nella **documento** scheda è impostata su `SELECT * FROM c` come illustrato nell'immagine seguente. La query predefinita recupera e visualizza tutti i documenti nella raccolta.
 
 ![La query predefinita in Esplora dati è SELECT * FROM c](../media/5-azure-cosmosdb-data-explorer-query.png)
 

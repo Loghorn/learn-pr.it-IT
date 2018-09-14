@@ -1,18 +1,18 @@
-In this unit, you will connect your bot to the QnA Maker knowledge base you built earlier so the bot can carry on an intelligent conversation. Connecting to the knowledge base involves retrieving some information from the QnA Maker portal, copying it into the Azure portal, updating the bot code, and then redeploying the bot to Azure.
+In questo unità si connetterà il bot alla knowledge base di QnA Maker creata in precedenza, in modo che possa svolgere una conversazione intelligente. Per la connessione alla knowledge base occorre recuperare alcune informazioni dal portale di QnA Maker, copiarle nel portale di Azure, aggiornare il codice del bot e quindi distribuire nuovamente il bot in Azure.
 
-1. Return to the [QnA Maker portal](https://www.qnamaker.ai/) and click your name in the upper-right corner. Select **Manage endpoint keys** from the menu that drops down. Click **Show** to show the primary endpoint key, and **Copy** to copy it to the clipboard. Then, paste it into a text file so you can easily retrieve it in a moment.
+1. Tornare al [portale di QnA Maker](https://www.qnamaker.ai/) e fare clic sul proprio nome nell'angolo superiore destro. Selezionare **Manage endpoint keys** (Gestisci chiavi endpoint) dal menu a discesa. Fare clic su **Show** (Mostra) per visualizzare la chiave endpoint primaria e su **Copy** (Copia) per copiarla negli Appunti. Incollarla quindi in un file di testo in modo da recuperarla facilmente più avanti.
 
-1. Click **My knowledge bases** in the menu at the top of the page. Then, click **View Code** for the knowledge base that you created earlier.
+1. Fare clic su **My knowledge bases** (Knowledge base personali) nel menu nella parte superiore della pagina. Fare quindi clic su **View Code** (Visualizza codice) per la knowledge base creata in precedenza.
 
-1. Copy the knowledge base ID from the first line and the host name from the second line. Paste them into a text file, as well. Then, close the dialog. **Do not** include the "https://" prefix in the host name that you copy.
+1. Copiare l'ID della knowledge base dalla prima riga e il nome host dalla seconda riga. Incollarli anche in un file di testo. Chiudere la finestra di dialogo. **Non** includere il prefisso "https://" nel nome host copiato.
 
-    ![Screenshot of the QnA Maker portal showing the Sample HTTP Request with the endpoint knowledge base ID and host name highlighted.](../media/6-copy-endpoint-info.png)
+    ![Screenshot del portale di QnA Maker che mostra la richiesta HTTP di esempio con il nome dell'endpoint della knowledge base host e ID evidenziato.](../media/6-copy-endpoint-info.png)
 
-1. Return to the web app bot in the Azure portal. Click **Application settings** in the menu on the left and scroll down until you find application settings named "QnAKnowledgebaseId," "QnAAuthKey," and "QnAEndpointHostName." Paste the knowledge base ID and host name obtained in Step 3 and the endpoint key obtained in Step 1 into these fields. Then, click **Save**.
+1. Tornare al bot app Web nel portale di Azure. Fare clic su **Impostazioni applicazione** nel menu a sinistra e scorrere verso il basso fino a individuare le impostazioni denominate "QnAKnowledgebaseId", "QnAAuthKey" e "QnAEndpointHostName." Incollare in questi campi l'ID della knowledge base e il nome host ottenuti nel passaggio 3 e la chiave endpoint ottenuta nel passaggio 1. Fare quindi clic su **Salva**.
 
-    ![Screenshot of the Azure portal showing the bot blade and Application Settings details with the Application Settings menu item and appropriate setting keys highlighting.](../media/6-enter-app-settings.png)
+    ![Screenshot del portale di Azure che mostra il bot pannello e i dettagli delle impostazioni dell'applicazione con la voce di menu di impostazioni dell'applicazione e le chiavi di impostazione appropriato l'evidenziazione.](../media/6-enter-app-settings.png)
 
-1. Return to Visual Studio Code and replace the contents of **app.js** with the code below. Then, save the file.
+1. Tornare a Visual Studio Code e sostituire il contenuto di **app.js** con il codice seguente. Salvare quindi il file.
 
     ```JavaScript
     var restify = require('restify');
@@ -61,10 +61,10 @@ In this unit, you will connect your bot to the QnA Maker knowledge base you buil
     ```
 
     > [!Note]
-    > The call to create a `QnAMakerDialog` instance on line 30. This creates a dialog that integrates a bot built with the Azure Bot Service with a knowledge base built Microsoft QnA Maker.
+    > La chiamata per creare un `QnAMakerDialog` istanza nella riga 30. Questa crea una finestra di dialogo che integra un bot compilato con il servizio Azure Bot con una knowledge base creata con Microsoft QnA Maker.
 
-1. Click the **Source Control** button in the activity bar in Visual Studio Code. Type "Connected to knowledge base" into the message box, and click the check mark to commit your changes. Then, click the ellipsis and use the **Publish Branch** command to push these changes to the remote repository (and therefore. to the Azure Web App).
+1. Fare clic sul pulsante **Controllo del codice sorgente** sulla barra delle attività di Visual Studio Code. Digitare "Connected to knowledge base" nella finestra di messaggio e fare clic sul segno di spunta per eseguire il commit delle modifiche. Fare quindi clic sui puntini di sospensione e usare il comando **Pubblica ramo** per effettuare il push di queste modifiche nel repository remoto (e dunque nell'app Web di Azure).
 
-1. Return to the web app bot in the Azure portal and click **Test in Web Chat** on the left to open the test console. Type "What's the most popular software programming language in the world?" into the box at the bottom of the chat window and press **Enter**. Confirm that the bot responds.
+1. Tornare al bot app Web nel portale di Azure e fare clic su **Test in Web Chat** (Testa nella chat Web) a sinistra per aprire la console di test. Digitare "What's the most popular software programming language in the world?" nella casella nella parte inferiore della finestra della chat e premere **INVIO**. Verificare che il bot risponda.
 
-Now that the bot is connected to the knowledge base, the final step is to test it in the wild. And what could be wilder than testing it with Skype?
+Ora che il bot è connesso alla knowledge base, il passaggio finale consiste nel testarlo in condizioni normali. Ad esempio, è possibile testarlo con Skype.

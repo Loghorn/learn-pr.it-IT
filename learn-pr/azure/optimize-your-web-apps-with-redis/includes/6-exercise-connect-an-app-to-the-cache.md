@@ -1,37 +1,37 @@
-Now that we have a Redis cache created in Azure, let's create an application to use it. Make sure you have your connection string information from the Azure portal.
+Ora che abbiamo una cache Redis creata in Azure, è possibile creare un'applicazione per usarla. Assicurarsi di avere le informazioni della stringa di connessione dal portale di Azure.
 
 > [!NOTE]
-> The integrated Cloud Shell is available on the right. You can use that command prompt to create and run the example code we are building here, or perform these steps locally if you have a development environment setup. If you decide to use the Cloud Shell, please select the Bash shell if you are prompted for a selection.
+> Cloud Shell integrata è disponibile sulla destra. È possibile usare il prompt dei comandi per creare ed eseguire qui il codice di esempio che stiamo creando o eseguire questi passaggi in locale se si dispone di una configurazione di ambiente di sviluppo. Se si decide di usare Cloud Shell, selezionare la shell Bash se viene richiesto per una selezione.
 
-## Create a Console Application
+## <a name="create-a-console-application"></a>Creare un'applicazione Console
 
-We'll use a simple Console Application so we can focus on the Redis implementation.
+Si userà una semplice applicazione Console in modo che sono tutti concentrati sull'implementazione di Redis.
 
-1. In the Cloud Shell, create a new .NET Core Console Application, name it "SportsStatsTracker"
+1. In Cloud Shell, creare una nuova applicazione Console di .NET Core, denominarla "SportsStatsTracker"
 
     ```bash
     dotnet new console --name SportsStatsTracker
     ```
     
-1. This will create a folder for the project, go ahead and change the current directory.
+1. Questo crea una cartella per il progetto, proseguire e modificare la directory corrente.
 
     ```bash
     cd SportsStatsTracker
     ```
     
-## Add the connection string
+## <a name="add-the-connection-string"></a>Aggiungere la stringa di connessione
 
-Let's add the connection string we got from the Azure portal into the code. Never store credentials like this in your source code. To keep this sample simple, we're going to use a configuration file. A better approach for a server-side application in Azure would be to use Azure Key Vault with certificates.
+Aggiungiamo la stringa di connessione che viene recuperate dal portale di Azure nel codice. Non archiviare mai le credenziali come segue nel codice sorgente. Per semplificare questo esempio, si userà un file di configurazione. Sarebbe un approccio migliore per un'applicazione lato server in Azure per usare Azure Key Vault con i certificati.
 
-1. Create a new **appsettings.json** file to add to the project.
+1. Creare una nuova **appSettings. JSON** file da aggiungere al progetto.
 
     ```bash
     touch appsettings.json
     ```
 
-1. Open the code editor by typing `code .` in the project folder. If you are working locally, we recommend using **Visual Studio Code**. The steps here will mostly align with it's usage.
+1. Aprire l'editor di codice digitando `code .` nella cartella del progetto. Se si lavora in locale, è consigliabile usare **Visual Studio Code**. La procedura seguente consente di allineare principalmente con relativo utilizzo.
 
-1. Select the **appsettings.json** file in the editor and add the following text. Paste your connection string into the **value** of the setting.
+1. Selezionare il **appSettings. JSON** file nell'editor e aggiungere il testo seguente. Incollare la stringa di connessione nel **valore** dell'impostazione.
 
     ```json
     {
@@ -39,9 +39,9 @@ Let's add the connection string we got from the Azure portal into the code. Neve
     }
     ```
 
-1. Save the file - in the online editor, there is a menu in the top right corner which has common file operations.
+1. Salvare il file, nell'editor online, è un menu nell'angolo superiore destro con operazioni su file comuni.
 
-1. Add the following configuration block to include the new file in the project and copy it to the output folder. This ensures that the app configuration file is placed in the output directory when the app is compiled/built.
+1. Aggiungere il seguente blocco di configurazione per includere il nuovo file nel progetto e copiarlo nella cartella di output. In questo modo, il file di configurazione dell'app viene inserito nella directory di output alla creazione/compilazione dell'app.
 
     ```xml
     <Project Sdk="Microsoft.NET.Sdk">
@@ -54,32 +54,32 @@ Let's add the connection string we got from the Azure portal into the code. Neve
     </Project>
     ```
 
-1. Save the file. (Make sure you do this or you will lose the change when you add the package below!)
+1. Salvare il file. (Assicurarsi che si esegue questa operazione oppure si perderà la modifica quando si aggiunge il pacchetto seguente).
 
-## Add support to read a JSON configuration file
+## <a name="add-support-to-read-a-json-configuration-file"></a>Aggiungere il supporto per la lettura di un file di configurazione JSON
 
-A .NET Core application requires additional NuGet packages to read a JSON configuration file.
+Un'applicazione .NET Core richiede altri pacchetti NuGet per leggere un file di configurazione JSON.
 
-1. In the command prompt section of the window, add a reference to the  **Microsoft.Extensions.Configuration.Json** NuGet package.
+1. Nella sezione della finestra del prompt dei comandi, aggiungere un riferimento per la **Microsoft.Extensions.Configuration.Json** pacchetto NuGet.
 
     ```bash
     dotnet add package Microsoft.Extensions.Configuration.Json
     ```
 
-## Add code to read the configuration file
+## <a name="add-code-to-read-the-configuration-file"></a>Aggiungere il codice per leggere il file di configurazione
 
-Now that we have added the required libraries to enable reading configuration, we need to enable that functionality within our console application.
+Ora che sono state aggiunte le librerie necessarie per permettere la lettura della configurazione, è necessario abilitare questa funzionalità nell'applicazione console.
 
-1. Select **Program.cs** in the editor.
+1. Selezionare **Program.cs** nell'editor.
 
-1. At the top of the file, a **using System;** line is present. Underneath that line, add the following lines of code:
+1. Nella parte superiore del file è presente la riga **using System;**. Al di sotto di questa riga aggiungere le righe di codice seguenti:
 
     ```csharp
     using Microsoft.Extensions.Configuration;
     using System.IO;
     ```
 
-1. Replace the contents of the **Main** method with the following code. This code initializes the configuration system to read from the **appsettings.json** file.
+1. Sostituire il contenuto del **Main** metodo con il codice seguente. Questo codice inizializza il sistema di configurazione per la lettura dal file **appsettings.json**.
 
     ```csharp
     var config = new ConfigurationBuilder()
@@ -88,7 +88,7 @@ Now that we have added the required libraries to enable reading configuration, w
         .Build();
     ```
 
-Your **Program.cs** file should now look like the following:
+Il file **Program.cs** avrà ora un aspetto simile al seguente:
 
 ```csharp
 using System;
@@ -110,42 +110,42 @@ namespace SportsStatsTracker
 }
 ```
 
-## Get the connection string from configuration
+## <a name="get-the-connection-string-from-configuration"></a>Ottenere la stringa di connessione dalla configurazione
 
-1. In **Program.cs**, at the end of the **Main** method, use the new **config** variable to retrieve the connection string and store it in a new variable named **connectionString**.
-    - The **config** variable has an indexer where you can pass in a string to retrieve from your **appSettings.json** file.
+1. Nella **Program.cs**, alla fine del **Main** metodo, usare il nuovo **config** variabile per recuperare la stringa di connessione e archiviarlo in una nuova variabile denominata  **connectionString**.
+    - Il **config** variabile ha un indicizzatore in cui è possibile passare una stringa da recuperare dalle **appSettings. JSON** file.
 
     ```csharp
     string connectionString = config["CacheConnection"];
     ```
     
-## Add support for the Redis cache .NET client
+## <a name="add-support-for-the-redis-cache-net-client"></a>Aggiungere il supporto per il client .NET di cache Redis
 
-Next, let's configure the console application to use the **StackExchange.Redis** client for .NET.
+Successivamente, è possibile configurare l'applicazione console per usare la **stackexchange. Redis** client per .NET.
 
-1. Add the **StackExchange.Redis** NuGet package to the project using the command prompt at the bottom of the Cloud Shell editor.
+1. Aggiungere il **stackexchange. Redis** pacchetto NuGet al progetto tramite il prompt dei comandi nella parte inferiore dell'editor di Cloud Shell.
 
     ```bash
     dotnet add package StackExchange.Redis
     ```
 
-1. Select **Program.cs** in the editor and add a `using` for the namespace **StackExchange.Redis**
+1. Selezionare **Program.cs** nell'editor e aggiungere un `using` dello spazio dei nomi **stackexchange. Redis**
 
     ```csharp
     using StackExchange.Redis;
     ```
     
-Once the installation is completed, the Redis cache client is available to use with your project.
+Al termine dell'installazione, il client della cache Redis è disponibile per l'uso con il progetto.
 
-## Connect to the cache
+## <a name="connect-to-the-cache"></a>Connettersi alla cache
 
-Let's add the code to connect to the cache.
+Aggiungere il codice per la connessione alla cache.
 
-1. Select **Program.cs** in the editor.
+1. Selezionare **Program.cs** nell'editor.
 
-1. Create a `ConnectionMultiplexer` using `ConnectionMultiplexer.Connect` by passing it your connection string. Name the returned value **cache**.
+1. Creare un `ConnectionMultiplexer` usando `ConnectionMultiplexer.Connect` passando la stringa di connessione. Nome del valore restituito **cache**.
 
-1. Since the created connection is _disposable_, wrap it in a `using` block. Your code should look something like:
+1. Poiché la connessione creata _disposable_, il wrapping in un `using` blocco. Il codice dovrebbe essere simile a:
 
     ```csharp
     string connectionString = config["CacheConnection"];
@@ -157,36 +157,36 @@ Let's add the code to connect to the cache.
     ```
 
 > [!NOTE] 
-> The connection to Azure Redis Cache is managed by the `ConnectionMultiplexer` class. This class should be shared and reused throughout your client application. We do _not_ want to create a new connection for each operation. Instead, we want to store it off as a field in our class and reuse it for each operation. Here we are only going to use it in the **Main** method, but in a production application, it should be stored in a class field, or a singleton.
+> La connessione a Cache Redis di Azure è gestita dal `ConnectionMultiplexer` classe. Questa classe deve essere condivisa e riutilizzata in tutta l'applicazione client. Facciamo _non_ per creare una nuova connessione per ogni operazione. Al contrario, vogliamo archiviarlo come campo nella classe e usarlo di nuovo per ogni operazione. In questo caso solo si intende usarlo nel **Main** (metodo), ma in un'applicazione di produzione devono essere archiviato in un campo della classe o un singleton.
 
-## Add a value to the cache
+## <a name="add-a-value-to-the-cache"></a>Aggiungere un valore nella cache
 
-Now that we have the connection, let's add a value to the cache.
+A questo punto è che la connessione, è possibile aggiungere un valore nella cache.
 
-1. Inside the `using` block after the connection has been created, use the `GetDatabase` method to retrieve an `IDatabase` instance.
+1. All'interno di `using` blocchi dopo la connessione è stata creata, usare il `GetDatabase` metodo per recuperare un `IDatabase` istanza.
 
-1. Call `StringSet` on the `IDatabase` object to set the key "test:key" to the value "some value".
-    - the return value from `StringSet` is a `bool` indicating whether the key was added.
+1. Chiamare `StringSet` nella `IDatabase` oggetto per impostare la chiave "chiave: test" al valore "un valore".
+    - il valore restituito da `StringSet` è un `bool` che indica se la chiave è stato aggiunto.
 
-1. Display the return value from `StringSet` onto the console.
+1. Visualizzare il valore restituito da `StringSet` alla console.
 
     ```csharp
     bool setValue = db.StringSet("test:key", "some value");
     Console.WriteLine($"SET: {setValue}");
     ```
     
-## Get a value from the cache
+## <a name="get-a-value-from-the-cache"></a>Ottenere un valore dalla cache
 
-1. Next, retrieve the value using `StringGet`. This takes the key to retrieve and returns the value.
+1. Successivamente, recuperare il valore usando `StringGet`. Si accetta la chiave per recuperare e restituisce il valore.
 
-1. Output the returned value.
+1. Il valore restituito di output.
 
     ```csharp
     string getValue = db.StringGet("test:key");
     Console.WriteLine($"GET: {getValue}");
     ```
     
-1. Your code should look like this:
+1. Il codice dovrebbe essere simile al seguente:
 
     ```csharp
     using System;
@@ -222,25 +222,25 @@ Now that we have the connection, let's add a value to the cache.
     }
     ```
     
-1. Run the application to see the result. Type `dotnet run` into the terminal window below the editor. Make sure you are in the project folder or it won't find your code to build and run.
+1. Eseguire l'applicazione per visualizzare il risultato. Tipo `dotnet run` nella finestra del terminale sotto l'editor. Assicurarsi che si è nella cartella del progetto o non troverà il codice per compilare ed eseguire.
     
     ```bash
     dotnet run
     ```
     
-## Use the async versions of the methods
+## <a name="use-the-async-versions-of-the-methods"></a>Usare le versioni asincrone dei metodi
 
-We have been able to get and set values from the cache, but we are using the older synchronous versions. In server-side applications, these are not an efficient use of our threads. Instead, we want to use the _asynchronous_ versions of the methods. You can easily spot them - they all end in **Async**.
+È stato in grado di ottenere e impostare i valori dalla cache, ma si sta usando le precedenti versioni sincrone. Nelle applicazioni lato server, questi non sono un uso efficiente dei nostri thread. Al contrario, si vuole usare il _asincrona_ versioni dei metodi. È possibile individuare più facilmente: tutti terminano **Async**.
 
-To make these methods easy to work with, we can use the C# `async` and `await` keywords. However, we will need to be using _at least_ C# 7.1 to be able to apply these keywords to our **Main** method.
+Per rendere più semplice da utilizzare questi metodi, è possibile usare il codice c# `async` e `await` parole chiave. Tuttavia, è necessario usare _almeno_ c# 7.1 per essere in grado di applicare queste parole chiave al nostro **Main** (metodo).
 
-### Switch to C# 7.1
+### <a name="switch-to-c-71"></a>Passare al linguaggio c# 7.1
 
-C#'s `async` and `await` keywords were not valid keywords in **Main** methods until C# 7.1. We can easily switch to that compiler through a flag in the **.csproj** file.
+# `async` e `await` parole chiave non sono parole chiave valide in **Main** metodi fino al linguaggio c# 7.1. È possibile passare facilmente alla tramite un flag nel compilatore il **file con estensione csproj** file.
 
-1. Open the **SportsStatsTracker.csproj** file in the editor.
+1. Aprire il **SportsStatsTracker.csproj** file nell'editor.
 
-1. Add `<LangVersion>7.1</LangVersion>` into the first `PropertyGroup` in the build file. It should look like the following when you are finished.
+1. Aggiungere `<LangVersion>7.1</LangVersion>` nella prima `PropertyGroup` nel file di compilazione. Dovrebbe essere simile al seguente al termine.
     
     ```xml
     <Project Sdk="Microsoft.NET.Sdk">
@@ -253,13 +253,13 @@ C#'s `async` and `await` keywords were not valid keywords in **Main** methods un
     ...
     ```
     
-### Apply the async keyword
+### <a name="apply-the-async-keyword"></a>Applicare la parola chiave async
 
-Next, apply the `async` keyword to the **Main** method. We will have to do three things.
+Successivamente, si applicano i `async` parola chiave per il **Main** (metodo). Sarà necessario eseguire tre operazioni.
 
-1. Add the `async` keyword onto the **Main** method signature.
-1. Change the return type from `void` to `Task`.
-1. Add a `using` statement to include `System.Threading.Tasks`.
+1. Aggiungere il `async` parola chiave nel **Main** firma del metodo.
+1. Modificare il tipo restituito da `void` a `Task`.
+1. Aggiungere un `using` istruzione includa `System.Threading.Tasks`.
 
 ```csharp
 using System;
@@ -277,13 +277,13 @@ namespace SportsStatsTracker
         ...
 ```
 
-### Get and set values asynchronously
+### <a name="get-and-set-values-asynchronously"></a>Ottenere e impostare i valori in modo asincrono
 
-1. Use the `StringSetAsync` and `StringGetAsync` methods to set and retrieve a key named "counter". Set the value to "100".
+1. Usare la `StringSetAsync` e `StringGetAsync` metodi per impostare e recuperare una chiave denominata "counter". Impostare il valore su "100".
 
-1. Apply the `await` keyword to get the results from each method.
+1. Applicare il `await` parola chiave per ottenere i risultati da ogni metodo.
 
-1. Output the results to the console window - just as you did with the synchronous versions.
+1. I risultati alla finestra della console - allo stesso modo con le versioni sincrone.
 
     ```csharp
     // Simple get and put of integral data types into the cache
@@ -294,27 +294,27 @@ namespace SportsStatsTracker
     Console.WriteLine($"GET: {getValue}");
     ```
     
-1. Run the application again - it should still work and now have two values.
+1. Eseguire nuovamente - l'applicazione dovrebbe continuano a funzionare e disporrà di due valori.
 
-#### Increment the value
+#### <a name="increment-the-value"></a>Incrementare il valore
 
-1. Use the `StringIncrementAsync` method to increment your **counter** value. Pass the number **50** to add to the counter.
-    - Notice that the method takes the key _and_ either a `long` or `double`.
-    - Depending on the parameters passed, it either returns a `long` or `double`.
+1. Usare la `StringIncrementAsync` metodo per incrementare le **contatore** valore. Passare il numero **50** per il contatore.
+    - Si noti che il metodo accetta la chiave _e_ sia un `long` o `double`.
+    - A seconda dei parametri passati, restituisce un `long` o `double`.
 
-1. Output the results of the method to the console.
+1. I risultati del metodo nella console.
 
     ```csharp
     long newValue = await db.StringIncrementAsync("counter", 50);
     Console.WriteLine($"INCR new value = {newValue}");
     ```
     
-## Other operations
+## <a name="other-operations"></a>Altre operazioni
 
-Finally, let's try executing a few additional methods with the `ExecuteAsync` support.
+Infine, è possibile provare a eseguire alcuni metodi aggiuntivi con il `ExecuteAsync` supportano.
 
-1. Execute "PING" to test the server connection. It should respond with "PONG".
-1. Execute "FLUSHDB" to clear the database values. It should respond with "OK".
+1. Eseguire il comando "PING" per testare la connessione al server. Deve rispondere con "PONG".
+1. Eseguire "FLUSHDB" per cancellare i valori del database. Deve rispondere con "OK".
 
 ```csharp
 var result = await db.ExecuteAsync("ping");
@@ -324,14 +324,14 @@ result = await db.ExecuteAsync("flushdb");
 Console.WriteLine($"FLUSHDB = {result.Type} : {result}");
 ```
 
-## Challenge
+## <a name="challenge"></a>Richiesta di verifica
 
-As a challenge, try serializing an object type to the cache. Here are the basic steps.
+Come un problema, provare a serializzare un tipo di oggetto nella cache. Ecco i passaggi di base.
 
-1. Create a new `class` with some public properties. You can invent one of your own ("Person" or "Car" are popular), or use the "GameStats" example given in the previous unit.
-1. Add support for the **Newtonsoft.Json** NuGet package using `dotnet add package`.
-1. Add a `using` for the `Newtonsoft.Json` namespace.
-1. Create one of your objects.
-1. Serialize it with `JsonConvert.SerializeObject` and use `StringSetAsync` to push it into the cache.
-1. Get it back from the cache with `StringGetAsync` and then deserialize it with `JsonConvert.DeserializeObject<T>`.
+1. Creare un nuovo `class` con alcune proprietà pubbliche. Poter inventare uno personalizzato ("Person" o "Automobile" sono più diffusi), oppure usare l'esempio "GameStats" espressa in unità di precedente.
+1. Aggiungere il supporto per la **newtonsoft. JSON** pacchetto NuGet con `dotnet add package`.
+1. Aggiungere un `using` per il `Newtonsoft.Json` dello spazio dei nomi.
+1. Creare uno degli oggetti.
+1. Eseguirne la serializzazione con `JsonConvert.SerializeObject` e usare `StringSetAsync` effettuarne il push nella cache.
+1. Recuperarlo dalla cache con `StringGetAsync` e quindi come deserializzare con `JsonConvert.DeserializeObject<T>`.
 

@@ -4,33 +4,38 @@ metadata:
   title: Creare un'app Web serverless
   description: Distribuire un'applicazione Web semplice che consente agli utenti di caricare immagini tramite un'interfaccia utente basata su HTML. L'app Web usa un back-end serverless per assegnare tag automaticamente e archiviare le didascalie che descrivono le immagini.
   ms.date: 09/24/2018
-  ms.openlocfilehash: 1f743dfafcd7b035e4d40024dc00a13e9f4b7478
-  ms.sourcegitcommit: 09425147d998035edf9d2d36006a54d85e3cf75d
-  ms.translationtype: HT
-  ms.contentlocale: it-IT
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43847589"
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
 title: Creare un'app Web serverless
 summary: Distribuire un'applicazione Web semplice che consente agli utenti di caricare immagini tramite un'interfaccia utente basata su HTML. L'app Web usa un back-end serverless per assegnare tag automaticamente e archiviare le didascalie che descrivono le immagini.
-abstract: "In questo modulo verrà descritto come:\n- Configurare l'archiviazione BLOB di Azure per ospitare un sito Web statico e le immagini caricate.\n- Caricare le immagini nell'archiviazione BLOB di Azure con Funzioni di Azure.\n- Ridimensionare le immagini con Funzioni di Azure.\n- Archiviare i metadati delle immagini in Azure Cosmos DB. \n- Usare l'API Visione artificiale di Servizi cognitivi per generare automaticamente le didascalie delle immagini.\n- Usare Azure Active Directory per proteggere l'app Web tramite l'autenticazione degli utenti.\n"
-prerequisites: Nessuna
-iconUrl: http://via.placeholder.com/120x120
+abstract: |
+  In questo modulo verrà descritto come:
+  - Configurare l'archiviazione Blob di Azure per ospitare un sito Web statico e le immagini caricate
+  - Caricare immagini nell'archiviazione Blob di Azure con funzioni di Azure
+  - Ridimensionare le immagini usando funzioni di Azure
+  - Metadati delle immagini Store in Azure Cosmos DB
+  - Usare l'API visione artificiale servizi cognitivi per generare automaticamente sottotitoli in lingua originale di immagine
+  - Usare Azure Active Directory per proteggere le app web tramite l'autenticazione degli utenti
+prerequisites: Nessuno
+iconUrl: /learn/achievements/build-a-serverless-web-app.svg
 levels:
-- intermediate
+  - intermediate
 roles:
-- developer
+  - developer
 products:
-- azure
-- azure-cosmos-db
-- azure-cloud-shell
-- azure-functions
-- azure-portal
+  - azure
+  - azure-cosmos-db
+  - azure-cloud-shell
+  - azure-functions
+  - azure-portal
 units:
-- learn.build-a-serverless-web-app.1-create-web-app-in-blob-storage
-- learn.build-a-serverless-web-app.2-upload-images-to-blob-storage
-- learn.build-a-serverless-web-app.3-resize-images-with-functions
-- learn.build-a-serverless-web-app.4-store-image-metadata-with-cosmos
-- learn.build-a-serverless-web-app.5-add-captions-with-computer-vision
-- learn.build-a-serverless-web-app.6-add-authentication
-- learn.build-a-serverless-web-app.7-test-and-cleanup
+  - learn.build-a-serverless-web-app.1-create-web-app-in-blob-storage
+  - learn.build-a-serverless-web-app.2-upload-images-to-blob-storage
+  - learn.build-a-serverless-web-app.3-resize-images-with-functions
+  - learn.build-a-serverless-web-app.4-store-image-metadata-with-cosmos
+  - learn.build-a-serverless-web-app.5-add-captions-with-computer-vision
+  - learn.build-a-serverless-web-app.6-add-authentication
+  - learn.build-a-serverless-web-app.7-test-and-cleanup
 achievement: learn.build-a-serverless-web-app.badge

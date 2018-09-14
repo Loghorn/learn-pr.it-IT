@@ -1,29 +1,29 @@
-Memory is the most critical resource for Redis because it's an in-memory database. You can run into problems when you begin adding data that exceeds the amount of memory available. Redis supports eviction policies, which indicate how data should be handled when you run out of memory.
+Memoria è la risorsa più critica per la Cache Redis di Azure, poiché si tratta di un database in memoria. Si verificano problemi quando si inizia aggiungendo i dati che superano la quantità di memoria disponibile. Cache Redis di Azure supporta i criteri di eliminazione, che indica come gestire i dati quando si esegue memoria insufficiente.
 
-Here, you'll set an eviction policy to determine what your data should do when you exceed the maximum amount of memory.
+In questo caso, impostare un criterio di rimozione per determinare cosa devono fare i dati quando si supera la quantità massima di memoria.
 
-## What is an eviction policy?
+## <a name="what-is-an-eviction-policy"></a>Che cos'è un criterio di rimozione?
 
-An eviction policy is a plan that determines how your data should be managed when you exceed the maximum amount of memory available. For example, using an eviction policy, you could tell Redis to delete a random key to make room for the new data being inserted.
+Un criterio di rimozione è un piano che determina come i dati devono essere gestiti quando si supera la quantità massima di memoria disponibile. Ad esempio, usando un criterio di rimozione, si potrebbe indicare Cache Redis di Azure per eliminare una chiave casuale per liberare spazio per i nuovi dati da inserire.
 
-### Types of eviction policies
+### <a name="types-of-eviction-policies"></a>Tipi di criteri di rimozione
 
-There are six different eviction policies provided by Redis. All of these values perform an action when you attempt to insert data when you're out of memory.
+Esistono sei i criteri di rimozione diversi forniti da Cache Redis di Azure. Tutti questi valori eseguire un'azione quando si tenta di inserire i dati quando si è esaurito la memoria.
 
-* **noeviction:** No eviction policy. Returns an error message if you attempt to insert data.
+* **noeviction:** alcun criterio di rimozione. Restituisce un messaggio di errore se si prova a inserire i dati.
 
-* **allkeys-lru:** Removes the least recently used key.
+* **AllKeys-lru:** rimuove la chiave usata meno di recente.
 
-* **allkeys-random:** Removes a random key.
+* **AllKeys-random:** rimuove una chiave casuale.
 
-* **volatile-lru:** Removes the least recently used key out of all the keys with an expiration set.
+* **volatile-lru:** rimuove la chiave usata meno di recente all'esterno di tutte le chiavi con un set di scadenza.
 
-* **volatile-ttl:** Removes the key with the shortest time to live based on the expiration set for it.
+* **volatile-ttl:** rimuove la chiave con il tempo più breve durata (TTL) in base allo scadere impostate per esso.
 
-* **volatile-random:** Removes a random key that has an expiration set.
+* **volatile-random:** rimuove una chiave casuale con una scadenza impostata.
 
-## How to set an eviction policy
+## <a name="how-to-set-an-eviction-policy"></a>Come impostare un criterio di rimozione
 
-Azure provides a simple drop-down menu to set the eviction policy for a Redis Cache. Select **Advanced Settings** and use the **maxmemory-policy** drop-down menu.
+Azure offre un semplice menu elenco a discesa per impostare i criteri di rimozione per Cache Redis di Azure. Selezionare **impostazioni avanzate**e utilizzare il **maxmemory-policy** dal menu a discesa.
 
-Since memory is critical to a Redis cache, there is support for eviction policies. An eviction policy determines what should be done with existing data when you're out of memory and attempt to insert new data.
+Poiché la memoria è fondamentale per Cache Redis di Azure, è supportata per i criteri di rimozione. Un criterio di rimozione determina le azioni da intraprendere con i dati esistenti quando si ha esaurito la memoria e tenta di inserire nuovi dati.

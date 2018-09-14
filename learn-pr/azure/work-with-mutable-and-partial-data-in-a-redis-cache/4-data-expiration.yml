@@ -1,9 +1,9 @@
 ### YamlMime:ModuleUnit
 uid: learn.work-with-mutable-and-partial-data-in-a-redis-cache.4-data-expiration
-title: Data expiration
+title: Scadenza dei dati
 metadata:
-  title: Data expiration
-  description: Data expiration
+  title: Scadenza dei dati
+  description: Scadenza dei dati
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark

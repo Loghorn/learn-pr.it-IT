@@ -22,15 +22,12 @@ Le stored procedure sono l'unico modo per ottenere transazioni atomiche all'inte
 
 L'esempio seguente è una semplice stored procedure HelloWorld che ottiene il contesto corrente e invia una risposta che visualizza "Hello, World". Si noti che la stored procedure contiene un valore ID, proprio come i documenti di Azure Cosmos DB.
 
-```java
-var helloWorldStoredProc = {
-    id: "helloWorld",
-    serverScript: function () {
-        var context = getContext();
-        var response = context.getResponse();
+```javascript
+function helloWorld() {
+    var context = getContext();
+    var response = context.getResponse();
 
-        response.setBody("Hello, World");
-    }
+    response.setBody("Hello, World");
 }
 ```
 
@@ -42,23 +39,21 @@ In uno scenario di e-commerce si potrebbe usare una funzione definita dall'utent
 
 ## <a name="user-defined-function-example"></a>Esempio di funzione definita dall'utente
 
-Nell'esempio seguente viene creata una funzione definita dall'utente per calcolare gli sconti in base al totale di un ordine, quindi viene restituito il totale dell'ordine modificato sulla base dello sconto:
+L'esempio seguente crea una funzione definita dall'utente per calcolare le imposte su un prodotto in una società fittizia basato il costo del prodotto:
 
-```java
-var discountUdf = {
-    id: "discount",
-    serverScript: function discount(orderTotal) {
+```javascript
+function producttax(price) {
+    if (price == undefined) 
+        throw 'no input';
 
-        if(orderTotal == undefined) 
-            throw 'no input';
+    var amount = parseFloat(price);
 
-        if (orderTotal < 50) 
-            return orderTotal * 0.9;
-        else if (orderTotal < 100) 
-            return orderTotal * 0.8;
-        else
-            return orderTotal * 0.7;
-    }
+    if (amount < 1000) 
+        return amount * 0.1;
+    else if (amount < 10000) 
+        return amount * 0.2;
+    else
+        return amount * 0.4;
 }
 ```
 
@@ -68,9 +63,7 @@ Verrà ora creata una nuova stored procedure nel portale. Il portale inserisce a
 
 1. In Esplora dati fare clic su **Nuova stored procedure**.
 
-    Esplora dati visualizza una nuova scheda con una stored procedure di esempio.
-
-  <!--TODO: Insert animated .gif of creating the stored procedure.-->
+    In Esplora dati viene visualizzata una nuova scheda con una stored procedure di esempio.
 
 2. Nella casella dell'**ID della stored procedure** immettere il nome *esempio*, fare clic su **Salva** e quindi su **Esegui**.
 
@@ -87,54 +80,56 @@ Ora si procederà alla creazione di una stored procedure che crea documenti.
 
 1. In Esplora dati fare clic su **Nuova stored procedure**. Assegnare a questa stored procedure il nome *createDocuments*, fare clic su **Salva** e quindi su **Esegui**.
 
-    ```java
-    var createDocumentStoredProc = {
-        id: "createMyDocument",
-        productid: "5"
-        serverScript: function createMyDocument(documentToCreate) {
-            var context = getContext();
-            var collection = context.getCollection();
-    
-            var accepted = collection.createDocument(collection.getSelfLink(),
-                  documentToCreate,
-                  function (err, documentCreated) {
-                      if (err) throw new Error('Error' + err.message);
-                      context.getResponse().setBody(documentCreated.id)
-                  });
-            if (!accepted) return;
-        }
-    }
-    ```
+```javascript
+function createMyDocument(id, productid, name, description, price) {
+    var context = getContext();
+    var collection = context.getCollection();
 
-<!--TODO: Need to fix code above.-->
+    var doc = {
+        "id": id,
+        "productId": productid,
+        "description": description,
+        "price": price    
+    };
 
-2. Immettere un valore di *3* per la chiave di partizione e quindi fare clic su **Esegui**.
+    var accepted = collection.createDocument(collection.getSelfLink(),
+        doc,
+        function (err, documentCreated) {
+            if (err) throw new Error('Error' + err.message);
+            context.getResponse().setBody(documentCreated)
+        });
+    if (!accepted) return;
+}
+```
 
-    Esplora dati visualizza il documento appena creato. 
+2. Nella casella dei parametri di Input, immettere un valore della chiave di partizione *999* e quindi fare clic su **aggiungere nuovo param** e immettere un valore per l'id, quindi premere **aggiungere nuovo param** nuovamente e immettere un valore per il productId. Eseguire la stessa operazione per il nome del nome dell'account, descrizione e prezzo, in questo ordine e quindi fare clic su **Execute**.
+
+    Esplora dati, verrà visualizzato il documento appena creato. 
 
 ## <a name="create-a-user-defined-function"></a>Creare una funzione definita dall'utente
 
 Ora si procederà alla creazione di una funzione definita dall'utente in Esplora dati.
 
-In Esplora dati fare clic su **Nuova funzione definita dall'utente**. Copiare il codice seguente nella finestra, assegnare alla funzione definita dall'utente il nome *tax* e quindi fare clic su **Salva**. La funzione definita dall'utente non può essere eseguita dal portale, ma verrà usata in un modulo successivo.
+In Esplora dati fare clic su **Nuova funzione definita dall'utente**. Copiare il codice seguente nella finestra di, denominare la UDF *producttax*, quindi fare clic su **salvare**.
 
-```java
-function userDefinedFunction(){
-    var taxUdf = {
-        id: "tax",
-        serverScript: function tax(income) {
+```javascript
+function producttax(price) {
+    if (price == undefined) 
+        throw 'no input';
 
-            if(income == undefined) 
-                throw 'no input';
+    var amount = parseFloat(price);
 
-            if (income < 1000) 
-                return income * 0.1;
-            else if (income < 10000) 
-                return income * 0.2;
-            else
-                return income * 0.4;
-        }
-    }
+    if (amount < 1000) 
+        return amount * 0.1;
+    else if (amount < 10000) 
+        return amount * 0.2;
+    else
+        return amount * 0.4;
 }
 ```
 
+Dopo aver definito la funzione definita dall'utente, quindi eseguirla nella raccolta, eseguire la query seguente:
+
+```sql
+SELECT c.id, c.productId, c.price, udf.producttax(c.price) AS producttax FROM c
+```

@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.design-for-availability-and-recoverability.3-disaster-recovery
-title: Develop a disaster recovery strategy
+title: Sviluppare una strategia di ripristino di emergenza
 metadata:
-  title: Develop a disaster recovery strategy
-  description: Develop a disaster recovery strategy
+  title: Sviluppare una strategia di ripristino di emergenza
+  description: Sviluppare una strategia di ripristino di emergenza
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
@@ -14,27 +13,27 @@ durationInMinutes: 20
 content: |
   [!include[](includes/3-disaster-recovery.md)]
 quiz:
-  title: 'Knowledge Check - Develop a disaster recovery strategy'
+  title: 'Verifica delle conoscenze: sviluppare una strategia di ripristino di emergenza'
   questions:
-  - content: 'Which of the following can be excluded from your recovery steps in your recovery plan?'
-    choices:
-    - content: 'How to restore backups'
-      isCorrect: false
-      incorrectExplanation: 'The steps needed to restore backups are a critical piece of a recovery plan.'
-    - content: 'How to fail over to replicated systems'
-      isCorrect: false
-      incorrectExplanation: 'The process to fail over to replicated systems is a critical piece of a recovery plan.'
-    - content: 'How to reestablish network connectivity to on-premises or external networks'
-      isCorrect: false
-      incorrectExplanation: 'Network connectivity to on-premises or external networks are often critical pieces of infrastructure. The steps to reestablish after failure are critical pieces of a recovery plan.'
-    - content: 'All of the above are important details to include in a recovery plan.'
-      isCorrect: true
-      correctExplanation: 'All of the above are important details to include in a recovery plan.'
-  - content: 'By storing data on Azure Blob storage, you are fully protected in the event of a disaster.'
-    choices:
-    - content: 'True'
-      isCorrect: false
-      incorrectExplanation: 'Blob storage replication can help you recover from Azure service-level issues, but it will not protect you from localized disasters, such as data loss or corruption.'
-    - content: 'False'
-      isCorrect: true
-      correctExplanation: 'Blob storage replication can help you recover from Azure service-level issues, but it will not protect you from localized disasters, such as data loss or corruption.'
+    - content: Quale delle seguenti operazioni può essere esclusa dalla procedura di ripristino nel piano di ripristino?
+      choices:
+        - content: Procedura di ripristino dei backup
+          isCorrect: false
+          incorrectExplanation: La procedura per il ripristino dei backup è un elemento fondamentale di un piano di ripristino.
+        - content: Procedura di failover nei sistemi replicati
+          isCorrect: false
+          incorrectExplanation: La procedura per il failover nei sistemi replicati è un elemento fondamentale di un piano di ripristino.
+        - content: Come ristabilire la connettività di rete per reti locali o esterne
+          isCorrect: false
+          incorrectExplanation: Connettività di rete per reti esterne o locali sono spesso componenti critici dell'infrastruttura. I passaggi per ristabilire dopo l'errore sono componenti critici di un piano di ripristino.
+        - content: Nessuna delle precedenti devono essere escluse in un piano di ripristino.
+          isCorrect: true
+          correctExplanation: Tutte le opzioni sopra indicate sono riportati importanti dettagli da includere in un piano di ripristino.
+    - content: 'Archiviando i dati in archiviazione Blob di Azure, sono completamente protette in caso di emergenza.'
+      choices:
+        - content: Vero
+          isCorrect: false
+          incorrectExplanation: 'Replica di archiviazione BLOB consente di risolvere rapidamente i problemi a livello di servizio di Azure, ma non offrirà protezione da emergenze localizzate, ad esempio la perdita di dati.'
+        - content: Falso
+          isCorrect: true
+          correctExplanation: 'Replica di archiviazione BLOB consente di risolvere rapidamente i problemi a livello di servizio di Azure, ma non offrirà protezione da emergenze localizzate, ad esempio la perdita di dati.'

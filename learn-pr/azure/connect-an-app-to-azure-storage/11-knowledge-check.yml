@@ -1,52 +1,48 @@
 ### YamlMime:ModuleUnit
 uid: learn.connect-app-to-azure-storage.11-knowledge-check
-title: Knowledge check
+title: Verifica delle conoscenze
 metadata:
-  title: Knowledge check
-  description: Knowledge check
+  title: Verifica delle conoscenze
+  description: Verifica delle conoscenze
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
 durationInMinutes: 3
 quiz:
-  title: "Connecting to Azure Storage"
+  title: Connessione ad Archiviazione di Azure
   questions:
-
-  - content: "How many access keys are provided for accessing your Azure storage account?"
-    choices:
-    - content: "1"
-      isCorrect: false
-    - content: "2"
-      isCorrect: true
-      correctExplanation: "Each storage account has two access keys. This lets you follow the best-practice guideline of periodically replacing the key used by your applications without incurring downtime."
-    - content: "3"
-      isCorrect: false
-    - content: "4"
-      isCorrect: false
-
-  - content: "You can use either the REST API or the Azure client library to programmatically access a storage account. What is the primary advantage of using the client library?"
-    choices:
-    - content: "Cost"
-      isCorrect: false
-    - content: "Availability"
-      isCorrect: false
-    - content: "Localization"
-      isCorrect: false
-    - content: "Convenience"
-      isCorrect: true
-      correctExplanation: "Code that uses the client library is generally much shorter and simpler than code that uses the REST API. The client library handles assembling requests and parsing responses for you."
-
-  - content: "Which of the following is a good analogy for the access keys of a storage account?"
-    choices:
-    - content: "IP Address"
-      isCorrect: false
-    - content: "REST Endpoint"
-      isCorrect: false
-    - content: "Username and password"
-      isCorrect: true
-      correctExplanation: "Possession of an access key identifies the account and grants you access. This is very similar to login credentials like a username and password."
-    - content: "Cryptographic algorithm"
-      isCorrect: false
+    - content: Quante chiavi di accesso vengono fornite per accedere all'account di archiviazione di Azure?
+      choices:
+        - content: '1'
+          isCorrect: false
+        - content: '2'
+          isCorrect: true
+          correctExplanation: Ogni account di archiviazione include due chiavi di accesso. Ciò consente di seguire le linee guida consigliate di sostituzione periodicamente la chiave usata dalle applicazioni senza ciò potrebbe comportare tempi di inattività.
+        - content: '3'
+          isCorrect: false
+        - content: '4'
+          isCorrect: false
+    - content: È possibile utilizzare l'API REST o la libreria client di Azure per accedere a livello di codice a un account di archiviazione. Che cos'è il vantaggio principale dell'uso della libreria client?
+      choices:
+        - content: Costi
+          isCorrect: false
+        - content: Disponibilità
+          isCorrect: false
+        - content: Localizzazione
+          isCorrect: false
+        - content: Praticità
+          isCorrect: true
+          correctExplanation: Codice che usa la libreria client è in genere molto più brevi e più semplice del codice che usa l'API REST. Il client della libreria gestisce assemblando le richieste e risposte di analisi per l'utente.
+    - content: Quale delle seguenti è una valida analogia per le chiavi di accesso di un account di archiviazione?
+      choices:
+        - content: Indirizzo IP
+          isCorrect: false
+        - content: Endpoint REST
+          isCorrect: false
+        - content: Nome utente e password
+          isCorrect: true
+          correctExplanation: 'Il possesso di una chiave di accesso identifica l''account e consente di che accedere. Ciò è molto simile alle credenziali di accesso, ad esempio un nome utente e password.'
+        - content: Algoritmo di crittografia
+          isCorrect: false

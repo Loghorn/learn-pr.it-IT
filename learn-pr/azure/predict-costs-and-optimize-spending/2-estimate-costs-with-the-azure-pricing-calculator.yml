@@ -9,31 +9,25 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 1d7c1fe08e193a2c03779ffa5ca7bada0e30384d
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
-  ms.translationtype: HT
-  ms.contentlocale: it-IT
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44244611"
 durationInMinutes: 20
-content: >
+content: |
   [!include[](includes/2-estimate-costs-with-the-azure-pricing-calculator.md)]
 quiz:
   title: Stimare i costi con il Calcolatore prezzi di Azure
   questions:
-  - content: In quale scheda del Calcolatore prezzi di Azure verrà formulata la stima?
-    choices:
-    - content: Estimate
-      isCorrect: false
-      incorrectExplanation: Questa scheda include tutte le stime salvate in precedenza.
-    - content: Prodotti
-      isCorrect: true
-      correctExplanation: Questa scheda contiene l'elenco di tutti i servizi di Azure ed è qui che si aggiungono o si rimuovono i servizi per formulare la stima.
-  - content: È possibile condividere la stima mediante un foglio di calcolo di Excel o mediante un URL.
-    choices:
-    - content: 'True '
-      isCorrect: true
-      correctExplanation: Facendo clic su <b>Esporta</b> in fondo alla stima verrà esportato un foglio di calcolo Excel da condividere, in alternativa è possibile fare clic su <b>Condividi</b> per ottenere un collegamento URL da condividere con il team.
-    - content: "False"
-      isCorrect: false
-      incorrectExplanation: Facendo clic su <b>Esporta</b> in fondo alla stima verrà esportato un foglio di calcolo Excel da condividere, in alternativa è possibile fare clic su <b>Condividi</b> per ottenere un collegamento URL da condividere con il team.
+    - content: In quale scheda del Calcolatore prezzi di Azure verrà formulata la stima?
+      choices:
+        - content: Estimate
+          isCorrect: false
+          incorrectExplanation: Questa scheda include tutte le stime salvate in precedenza.
+        - content: Prodotti
+          isCorrect: true
+          correctExplanation: Questa scheda contiene l'elenco di tutti i servizi di Azure ed è qui che si aggiungono o si rimuovono i servizi per formulare la stima.
+    - content: È possibile condividere la stima mediante un foglio di calcolo di Excel o mediante un URL.
+      choices:
+        - content: 'True '
+          isCorrect: true
+          correctExplanation: 'Facendo clic su <b>Esporta</b> in fondo alla stima verrà esportato un foglio di calcolo Excel da condividere, in alternativa è possibile fare clic su <b>Condividi</b> per ottenere un collegamento URL da condividere con il team.'
+        - content: 'False'
+          isCorrect: false
+          incorrectExplanation: 'Facendo clic su <b>Esporta</b> in fondo alla stima verrà esportato un foglio di calcolo Excel da condividere, in alternativa è possibile fare clic su <b>Condividi</b> per ottenere un collegamento URL da condividere con il team.'

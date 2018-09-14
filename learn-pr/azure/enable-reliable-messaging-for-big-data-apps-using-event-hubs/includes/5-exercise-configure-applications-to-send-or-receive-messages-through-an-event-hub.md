@@ -11,7 +11,7 @@ L'applicazione ricevitore Java, che verrà configurata in questa unità, archivi
 1. Creare un account di archiviazione (utilizzo generico V2) nel gruppo di risorse tramite il comando seguente:
 
     ```azurecli
-    az storage account create --name <storage account name> --resource-group <resource group name>  --location <location> --sku Standard_RAGRS --encryption blob
+    az storage account create --name <storage account name> --resource-group <rgn>[Sandbox resource group name]</rgn>  --location <location> --sku Standard_RAGRS --encryption blob
     ```
 
     |Parametro      |Descrizione|
@@ -23,7 +23,7 @@ L'applicazione ricevitore Java, che verrà configurata in questa unità, archivi
 1. Elencare tutte le chiavi di accesso associate all'account di archiviazione tramite il comando seguente:
 
     ```azurecli
-    az storage account keys list --account-name <storage account name> --resource-group <resource group name>
+    az storage account keys list --account-name <storage account name> --resource-group <rgn>[Sandbox resource group name]</rgn>
     ```
 
     |Parametro      |Descrizione|
@@ -36,7 +36,7 @@ L'applicazione ricevitore Java, che verrà configurata in questa unità, archivi
 1. Visualizzare la stringa di connessione per l'account di archiviazione tramite il comando seguente:
 
     ```azurecli
-    az storage account show-connection-string -n <storage account name> -g <resource group name>
+    az storage account show-connection-string -n <storage account name> -g <rgn>[Sandbox resource group name]</rgn>
     ```
 
     |Parametro      |Descrizione|
@@ -55,8 +55,6 @@ L'applicazione ricevitore Java, che verrà configurata in questa unità, archivi
 ## <a name="clone-the-event-hubs-github-repository"></a>Clonare il repository GitHub di Hub eventi
 
 Per clonare il repository GitHub di Hub eventi, eseguire la procedura seguente.
-
-1. Accedere ad Azure Cloud Shell (Bash).
 
 1. I file di origine per le applicazioni compilate in questa unità si trovano in un [repository GitHub](https://github.com/Azure/azure-event-hubs). Usare i comandi seguenti per assicurarsi di trovarsi all'interno della home directory in Cloud Shell e quindi per clonare questo repository:
 
