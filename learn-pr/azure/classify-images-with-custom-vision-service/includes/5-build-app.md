@@ -12,7 +12,7 @@ Il vero punto di forza del Servizio visione artificiale personalizzato Microsoft
 
 1. Usare il comando **Visualizza** > **Terminale integrato** per aprire una finestra del terminale integrato in Visual Studio Code. Eseguire quindi il comando seguente nel terminale integrato per caricare i pacchetti necessari per l'app:
 
-    ```
+    ```console
     npm install
     ```
 
@@ -50,7 +50,7 @@ Il vero punto di forza del Servizio visione artificiale personalizzato Microsoft
 
 1. Tornare al terminale integrato in Visual Studio Code ed eseguire il comando seguente per avviare l'app:
 
-    ```
+    ```console
     npm start
     ```
 

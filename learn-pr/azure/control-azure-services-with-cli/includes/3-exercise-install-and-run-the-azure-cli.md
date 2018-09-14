@@ -5,7 +5,7 @@ Verrà ora installata l'interfaccia della riga di comando di Azure nel computer 
 
 ::: zone pivot="linux"
 
-### <a name="linux"></a>Linux
+## <a name="linux"></a>Linux
 
 L'interfaccia della riga di comando di Azure verrà installata in **Ubuntu Linux** usando Advanced Packaging Tool (**apt**) e la riga di comando di Bash.
 
@@ -37,7 +37,7 @@ L'interfaccia della riga di comando di Azure verrà installata in **Ubuntu Linux
 
 ::: zone pivot="macos"
 
-### <a name="macos"></a>macOS
+## <a name="macos"></a>macOS
 
 Di seguito si installerà l'interfaccia della riga di comando di Azure in macOS tramite la gestione pacchetti Homebrew.
 
@@ -60,7 +60,7 @@ Di seguito si installerà l'interfaccia della riga di comando di Azure in macOS 
 
 ::: zone pivot="windows"
 
-### <a name="windows"></a>Windows
+## <a name="windows"></a>Windows
 
 Di seguito si installerà l'interfaccia della riga di comando di Azure in Windows tramite il programma di installazione MSI.
 

@@ -50,6 +50,9 @@ In tutti questi casi, i dati vengono letti (quando si consulta il meteo) o scrit
 
 In genere, i provider di servizi cloud offrono servizi in grado di gestire tutti questi tipi di dati. Ad esempio, se si vuole archiviare il testo, è possibile usare un file su disco oppure adottare un approccio più strutturato come l'uso di un database relazionale.
 
+    :::column-end:::
+:::row-end:::
+
 ## <a name="summary"></a>Riepilogo
 
 Ogni azienda ha esigenze e requisiti diversi. Il cloud computing è **flessibile** e **conveniente**, due aspetti molto utili per ogni azienda, sia che si tratti di una start-up di piccole dimensioni che di una grande impresa.
