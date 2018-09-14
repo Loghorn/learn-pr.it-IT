@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.create-linux-vm-in-azure.2-create-a-linux-virtual-machine
+title: <span data-ttu-id="ffa62-101">Creare una macchina virtuale Linux in Azure</span><span class="sxs-lookup"><span data-stu-id="ffa62-101">Create a Linux virtual Machine in Azure</span></span>
+metadata:
+  title: <span data-ttu-id="ffa62-102">Creare una macchina virtuale Linux in Azure</span><span class="sxs-lookup"><span data-stu-id="ffa62-102">Create a Linux virtual Machine in Azure</span></span>
+  description: <span data-ttu-id="ffa62-103">Creare una macchina virtuale Linux in Azure</span><span class="sxs-lookup"><span data-stu-id="ffa62-103">Create a Linux virtual Machine in Azure</span></span>
+  ms.openlocfilehash: 5eb7bcad5d7fdf5e4e0ab4226a7440585b762e4f
+  ms.sourcegitcommit: 1aec476e479e92851bc3b5b7795f1200740bc1e5
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/03/2018
+  ms.locfileid: "43498640"
+durationInMinutes: 10
+content: '[!include[](includes/2-create-a-linux-virtual-machine.md)]'

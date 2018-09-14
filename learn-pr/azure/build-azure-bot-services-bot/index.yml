@@ -1,0 +1,41 @@
+### YamlMime:Module
+uid: learn.build-azure-bot-services-bot
+metadata:
+  title: Creare un chatbot con il servizio Azure Bot
+  description: Il servizio Azure Bot combinato con Microsoft QnA Maker fornisce agli sviluppatori gli strumenti necessari per compilare e pubblicare bot intelligenti che interagiscono naturalmente con gli utenti usando un'ampia gamma di servizi.
+  ms.date: 09/24/2018
+  ms.openlocfilehash: 2f33212be9124d3882a2dd95d877e115ba4cb392
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43827063"
+title: Creare un chatbot con il servizio Azure Bot
+summary: Il servizio Azure Bot combinato con Microsoft QnA Maker fornisce agli sviluppatori gli strumenti necessari per compilare e pubblicare bot intelligenti che interagiscono naturalmente con gli utenti usando un'ampia gamma di servizi.
+abstract: >
+  In questo modulo verrà descritto come:
+    - Creare un bot app Web di Azure per ospitare un bot
+    - Creare una knowledge base, popolarla con i dati e connetterla a un bot
+    - Implementare bot nel codice ed eseguire il debug dei bot creati
+    - Pubblicare i bot e usare l'integrazione continua per mantenerli aggiornati
+    - Eseguire il debug dei bot in locale usando Visual Studio Code e Microsoft Bot Framework Emulator
+    - Collegare un bot a Skype e interagire con il bot nell'applicazione
+prerequisites: Nessuno
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- beginner
+roles:
+- developer
+products:
+- azure
+units:
+- learn.build-azure-bot-services-bot.1-introduction
+- learn.build-azure-bot-services-bot.2-create-web-app-bot
+- learn.build-azure-bot-services-bot.3-create-qna-maker
+- learn.build-azure-bot-services-bot.4-deploy-bot
+- learn.build-azure-bot-services-bot.5-debug-bot-locally
+- learn.build-azure-bot-services-bot.6-connect-to-knowledge-base
+- learn.build-azure-bot-services-bot.7-test-with-skype
+- learn.build-azure-bot-services-bot.8-knowledge-check
+- learn.build-azure-bot-services-bot.9-delete-env
+achievement: learn.build-azure-bot-services-bot.badge
