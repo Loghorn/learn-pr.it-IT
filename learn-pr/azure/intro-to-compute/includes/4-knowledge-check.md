@@ -1,1 +1,0 @@
-Per aiutare a ricordare quanto appreso, leggere i due scenari che coinvolgono il team di astronomia e rispondere alle domande associate.
