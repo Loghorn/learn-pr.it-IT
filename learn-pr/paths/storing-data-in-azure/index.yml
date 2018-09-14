@@ -1,0 +1,25 @@
+### YamlMime:LearningPath
+uid: learn.store-data-in-azure
+title: Archiviazione di dati in Azure
+summary: Azure offre un'ampia gamma di modelli di archiviazione dati disponibili per qualsiasi tipo di dati da archiviare nel cloud per scelta o per necessità. Informazioni sull'approccio più idoneo relativo ai dati e sui requisiti per l'uso delle diverse funzionalità di archiviazione.
+cardDescription: Azure offre un'ampia gamma di modelli di archiviazione dati disponibili per qualsiasi tipo di dati da archiviare nel cloud per scelta o per necessità. Informazioni sull'approccio più idoneo relativo ai dati e sui requisiti per l'uso delle diverse funzionalità di archiviazione.
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- beginner
+roles:
+- developer
+products:
+- Azure
+prerequisites: Nessuno
+metadata:
+  title: Archiviazione di dati in Azure
+  description: Azure offre un'ampia gamma di modelli di archiviazione dati disponibili per qualsiasi tipo di dati da archiviare nel cloud per scelta o per necessità. Informazioni sull'approccio più idoneo relativo ai dati e sui requisiti per l'uso delle diverse funzionalità di archiviazione.
+  ms.openlocfilehash: 172b3cf1051cd4455639dbfa3bba43b53bae2f91
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40448784"
+modules:
+- learn.store-app-data-with-azure-blob-storage
+achievement: learn.store-data-in-azure.trophy
