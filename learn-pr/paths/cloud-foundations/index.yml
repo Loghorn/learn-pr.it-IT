@@ -3,29 +3,36 @@ uid: learn.cloud-foundations
 metadata:
   title: Concetti fondamentali del cloud
   description: Si è interessati al cloud, ma non si sa bene cosa può fare per le proprie esigenze? Questo percorso di apprendimento è il punto di partenza. Informazioni sui vantaggi del cloud computing, le funzionalità di Azure che consentono di risparmiare tempo e denaro, le strategie di base per la transizione al cloud e altro ancora.
+  brand: azure
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 1d05fe55ca0240006910275a7fa7eb0a4977e7fb
-  ms.sourcegitcommit: 7de323416e472639edcff135bfc7d47bd5715256
+  ms.openlocfilehash: 9e3d2bc3bc0a795b3740e8f7eabf4faca7a78edc
+  ms.sourcegitcommit: 85169b96f980f61cf8558e3df6f32527973bfde4
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/11/2018
-  ms.locfileid: "44370982"
+  ms.lasthandoff: 09/13/2018
+  ms.locfileid: "45556326"
 title: Concetti fondamentali del cloud
 summary: Si è interessati al cloud, ma non si sa bene cosa può fare per le proprie esigenze? Questo percorso di apprendimento è il punto di partenza. Informazioni sui vantaggi del cloud computing, le funzionalità di Azure che consentono di risparmiare tempo e denaro, le strategie di base per la transizione al cloud e altro ancora.
 prerequisites: Nessuno
-iconUrl: http://via.placeholder.com/120x120
+iconUrl: /learn/achievements/cloud-foundations.svg
 levels:
 - beginner
 roles:
 - developer
 - solution-architect
 - administrator
+- business-analyst
+- business-user
 products:
 - azure
+- azure-portal
+- azure-resource-manager
+- azure-storage
+- azure-virtual-machines
 modules:
 - learn.principles-cloud-computing
 - learn.azure-services-features
