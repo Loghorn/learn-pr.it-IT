@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.the-mojifier.11-deploy-to-azure
+metadata:
+  title: Eseguire la distribuzione in Azure
+  description: Distribuire la funzione di Azure nel cloud e aggiornare la configurazione di Slack per usare la nuova versione di produzione del codice.
+  author: lnyswonger
+  ms.date: 09/24/2018
+  ms.author: luken
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: dc38c56faeecdd40d35ee306de2d303c8186283f
+  ms.sourcegitcommit: 96d1655afede9f3ff768c180405e318bff2123f7
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/12/2018
+  ms.locfileid: "44722538"
+title: Eseguire la distribuzione in Azure
+durationInMinutes: 8
+content: '[!include[](includes/11-deploy-to-azure.md)]'

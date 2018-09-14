@@ -1,0 +1,46 @@
+### YamlMime:ModuleUnit
+uid: learn.design-a-great-azure-architecture.2-pillars-of-a-great-azure-architecture
+title: Elementi principali per un'architettura ottimale di Azure
+metadata:
+  title: Elementi principali per un'architettura ottimale di Azure
+  description: Elementi principali per un'architettura ottimale di Azure
+  ms.openlocfilehash: c4176cffe883e5d023d0b57c2198b558ab71eab0
+  ms.sourcegitcommit: b97ed72bd7e3fb77b49de71e8ef35d3f70dfd636
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/05/2018
+  ms.locfileid: "43790523"
+durationInMinutes: 10
+content: >
+  [!include[](includes/2-pillars-of-a-great-azure-architecture.md)]
+quiz:
+  title: Verifica delle conoscenze - Elementi principali per un'architettura ottimale di Azure
+  questions:
+  - content: Quale tra i seguenti è un esempio di attività che è necessario tenere in considerazione per definire l'elemento principale dell'architettura relativo alla sicurezza?
+    choices:
+    - content: Definizione dei criteri per il backup delle macchine virtuali
+      isCorrect: false
+      incorrectExplanation: I criteri di backup per le macchine virtuali sono importanti, ma non rientrano nelle finalità dell'elemento principale dell'architettura relativo alla sicurezza.
+    - content: Abilitazione dell'autenticazione a più fattori per tutti gli account amministrativi
+      isCorrect: true
+      correctExplanation: L'abilitazione dell'autenticazione a più fattori è un ottimo esempio di attività da tenere in considerazione nella definizione dell'elemento principale dell'architettura relativo alla sicurezza.
+    - content: Valutazione della spesa per il cloud per identificare le aree di risparmio sui costi
+      isCorrect: false
+      incorrectExplanation: È importante identificare le aree in cui è possibile ridurre i costi, ma questa attività non rientra nelle finalità dell'elemento principale dell'architettura relativo alla sicurezza.
+    - content: Passaggio a un servizio di scalabilità automatica per gestire in modo dinamico le variazioni di carico
+      isCorrect: false
+      incorrectExplanation: L'uso della scalabilità automatica per gestire le variazioni di carico è un'ottima funzionalità, ma non rientra nelle finalità dell'elemento principale dell'architettura relativo alla sicurezza.
+  - content: Quale tra i seguenti è un esempio di attività che è necessario tenere in considerazione per definire l'elemento principale dell'architettura relativo a disponibilità e ripristinabilità?
+    choices:
+    - content: Definizione dei criteri per il backup delle macchine virtuali
+      isCorrect: true
+      correctExplanation: La definizione dei criteri per il backup delle macchine virtuali è un'attività basata sulla ripristinabilità e quindi rientra nelle finalità di questo elemento principale dell'architettura.
+    - content: Abilitazione dell'autenticazione a più fattori per tutti gli account amministrativi
+      isCorrect: false
+      incorrectExplanation: L'abilitazione dell'autenticazione a più fattori è un ottimo esempio di attività da tenere in considerazione nella definizione dell'elemento principale dell'architettura relativo alla sicurezza, ma non è rilevante per la definizione dell'elemento principale dell'architettura relativo a disponibilità e ripristinabilità.
+    - content: Valutazione della spesa per il cloud per identificare le aree di risparmio sui costi
+      isCorrect: false
+      incorrectExplanation: È importante identificare le aree in cui è possibile ridurre i costi, ma questa attività non rientra nelle finalità dell'elemento principale dell'architettura relativo a disponibilità e ripristinabilità.
+    - content: Passaggio a un servizio di scalabilità automatica per gestire in modo dinamico le variazioni di carico
+      isCorrect: false
+      incorrectExplanation: L'uso della scalabilità automatica per gestire le variazioni di carico è un'ottima funzionalità, ma non rientra nelle finalità dell'elemento principale dell'architettura relativo a disponibilità e ripristinabilità.

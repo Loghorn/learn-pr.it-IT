@@ -1,0 +1,39 @@
+### YamlMime:Module
+uid: learn.create-a-windows-vm-in-azure
+metadata:
+  title: Creare una macchina virtuale Windows in Azure
+  description: Le macchine virtuali (VM) di Azure permettono di creare in pochi minuti risorse di calcolo dedicate, che possono essere usate proprio come un computer desktop o un server fisico. Che la macchina virtuale sia un server a cui ci si connette per finalità amministrative o una workstation virtuale per un utente finale, il protocollo RDP offre la stessa esperienza di chi si siede davanti al terminale di un computer fisico locale.
+  ms.date: 09/24/2018
+  ms.openlocfilehash: 01f9a80860b570c8086d4987d75c5f69db793bb7
+  ms.sourcegitcommit: b97ed72bd7e3fb77b49de71e8ef35d3f70dfd636
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/05/2018
+  ms.locfileid: "43790064"
+title: Creare una macchina virtuale Windows in Azure
+summary: Le macchine virtuali (VM) di Azure permettono di creare in pochi minuti risorse di calcolo dedicate, che possono essere usate proprio come un computer desktop o un server fisico. Che la macchina virtuale sia un server a cui ci si connette per finalità amministrative o una workstation virtuale per un utente finale, il protocollo RDP offre la stessa esperienza di chi si siede davanti al terminale di un computer fisico locale.
+abstract: >
+  Contenuto del modulo:
+    - Creare una macchina virtuale Windows usando il portale di Azure
+    - Connettersi alla macchina virtuale Windows in esecuzione usando Desktop remoto
+    - Installare il software e modificare la configurazione di rete in una macchina virtuale usando il portale di Azure
+prerequisites: Nessuno
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- intermediate
+roles:
+- developer
+products:
+- azure
+- virtualMachines
+- azurePortal
+units:
+- learn.create-a-windows-vm-in-azure.1-introduction
+- learn.create-a-windows-vm-in-azure.2-create-a-windows-virtual-machine
+- learn.create-a-windows-vm-in-azure.3-exercise-create-a-vm
+- learn.create-a-windows-vm-in-azure.4-connect-to-a-windows-virtual-machine
+- learn.create-a-windows-vm-in-azure.5-exercise-connect-to-a-windows-vm-using-rdp
+- learn.create-a-windows-vm-in-azure.6-manage-vm
+- learn.create-a-windows-vm-in-azure.7-exercise-manage-vm
+- learn.create-a-windows-vm-in-azure.8-summary
+achievement: learn.create-a-windows-vm-in-azure.badge

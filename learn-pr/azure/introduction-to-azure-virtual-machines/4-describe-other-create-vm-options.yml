@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.introduction-to-azure-virtual-machines.4-describe-other-create-vm-options
+title: Descrizione delle opzioni disponibili per creare e gestire una macchina virtuale di Azure
+metadata:
+  title: Descrizione delle opzioni disponibili per creare e gestire una macchina virtuale di Azure
+  description: Descrizione delle opzioni disponibili per creare e gestire una macchina virtuale di Azure
+  ms.openlocfilehash: 5964514a9cea338764e7bfde2ea1f8f99e68febd
+  ms.sourcegitcommit: ee277f4207efa50a4f7c657b47725be7f8c45489
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/02/2018
+  ms.locfileid: "43475286"
+durationInMinutes: 10
+content: '[!include[](includes/4-describe-other-create-vm-options.md)]'

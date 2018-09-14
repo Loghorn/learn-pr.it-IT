@@ -1,0 +1,46 @@
+### YamlMime:ModuleUnit
+uid: learn.pillars-of-a-great-azure-architecture.5-design-for-availability-and-recoverability
+title: Progettare per la disponibilità e la possibilità di ripristino
+metadata:
+  title: Progettare per la disponibilità e la possibilità di ripristino
+  description: Progettare per la disponibilità e la possibilità di ripristino
+  ms.openlocfilehash: 619660710f31fce17927e494fa3594f27f4649ac
+  ms.sourcegitcommit: e90461bc6f88bca3b53183b476553633f93990a3
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "44045371"
+durationInMinutes: 10
+content: >
+  [!include[](includes/5-design-for-availability-and-recoverability.md)]
+quiz:
+  title: Verifica delle conoscenze - Progettare per la disponibilità e la possibilità di ripristino
+  questions:
+  - content: Quali degli elementi seguenti è necessario prendere in considerazione nel determinare il contratto di servizio che può essere offerto ai clienti?
+    choices:
+    - content: Contratto di servizio che può essere offerto per i servizi per i quali si è direttamente responsabili della gestione
+      isCorrect: false
+      incorrectExplanation: Si tratta di una considerazione importante nel determinare il contratto di servizio che si può offrire ai clienti, ma non è l'unica.
+    - content: Contratto di servizio per i servizi cloud utilizzati nell'architettura
+      isCorrect: false
+      incorrectExplanation: Si tratta di una considerazione importante nel determinare il contratto di servizio che si può offrire ai clienti, ma non è l'unica.
+    - content: Contratto di servizio per i servizi di rete per la connettività alle dipendenze nell'ambiente locale
+      isCorrect: false
+      incorrectExplanation: Si tratta di una considerazione importante nel determinare il contratto di servizio che si può offrire ai clienti, ma non è l'unica.
+    - content: È necessario prendere in considerazione tutti gli elementi precedenti nel determinare il contratto di servizio che può essere offerto ai clienti
+      isCorrect: true
+      correctExplanation: È necessario prendere in considerazione tutti gli elementi precedenti nel determinare il contratto di servizio che può essere offerto ai clienti
+  - content: Quale dei seguenti aspetti verrebbe influenzato dal valore RPO definito?
+    choices:
+    - content: Frequenza del backup dei database
+      isCorrect: true
+      correctExplanation: Poiché l'obiettivo del punto di recupero riguarda la perdita di dati tollerabile, la frequenza del backup deve essere compresa in questa finestra temporale ed è direttamente influenzata dal valore RPO definito.
+    - content: Numero di aree a cui vengono replicati i dati
+      isCorrect: false
+      incorrectExplanation: Il numero di aree in cui vengono replicati i dati è una considerazione importante, ma non influenzata dal valore RPO definito.
+    - content: Numero di istanze in un cluster di database
+      isCorrect: false
+      incorrectExplanation: Il numero di istanze in un cluster di database può essere una decisione importante, ma non influenzata dal valore RPO definito.
+    - content: Tecnologia di bilanciamento del carico usata nell'applicazione
+      isCorrect: false
+      incorrectExplanation: La tecnologia di bilanciamento del carico usata nell'applicazione può essere una decisione importante, ma non è influenzata dal valore RPO definito.

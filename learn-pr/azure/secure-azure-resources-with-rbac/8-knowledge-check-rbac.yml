@@ -1,0 +1,71 @@
+### YamlMime:ModuleUnit
+uid: learn.secure-azure-resources-with-rbac.8-knowledge-check-rbac
+metadata:
+  title: Verifica delle conoscenze - Usare Controllo degli accessi in base al ruolo
+  description: Verifica delle conoscenze - Usare Controllo degli accessi in base al ruolo
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: ef602766d1f775d59db158e0eb384830c08d0e69
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44235570"
+title: Verifica delle conoscenze - Usare Controllo degli accessi in base al ruolo
+durationInMinutes: 5
+quiz:
+  title: Verifica delle conoscenze - Usare Controllo degli accessi in base al ruolo
+  questions:
+  - content: Qual è il nome del panello nel portale di Azure dal quale si concede l'accesso?
+    choices:
+    - content: Risorse di Azure
+      isCorrect: false
+      correctExplanation: Non è possibile assegnare i ruoli nel pannello delle risorse di Azure, ma è possibile visualizzare i ruoli che vengono assegnati a se stessi o all'utente selezionato.
+    - content: Azure Active Directory
+      isCorrect: false
+      incorrectExplanation: Non è possibile assegnare i ruoli nel pannello Azure Active Directory, ma è possibile accedere alle funzionalità di Azure Active Directory in questo pannello.
+    - content: Tutti gli utenti
+      isCorrect: false
+      correctExplanation: Non è possibile assegnare i ruoli nel pannello Tutti gli utenti. Questo pannello elenca tutti gli utenti per la directory selezionata.
+    - content: Controllo di accesso (IAM)
+      isCorrect: true
+      correctExplanation: Corretto! Si assegnano ruoli nel pannello Controllo di accesso (IAM). Questo pannello viene visualizzato in diverse aree del portale.
+  - content: Per concedere a un utente l'accesso alle risorse di Azure, si crea un'assegnazione di ruolo.
+    choices:
+    - content: Vero
+      isCorrect: true
+      correctExplanation: Corretto! Un'assegnazione di ruolo è il processo di associazione di un ruolo a un'entità di sicurezza in un particolare ambito ai fini della concessione dell'accesso.
+    - content: Falso
+      isCorrect: false
+      incorrectExplanation: Un'assegnazione di ruolo è il processo di associazione di un ruolo a un'entità di sicurezza in un particolare ambito ai fini della concessione dell'accesso.
+  - content: Qual è il ruolo che consente di concedere l'accesso ad altri utenti?
+    choices:
+    - content: Collaboratore macchine virtuali
+      isCorrect: false
+      correctExplanation: Il ruolo Collaboratore macchina virtuale consente di gestire le macchine virtuali, ma non di concedere l'accesso ad altri utenti.
+    - content: Amministratore accessi utente
+      isCorrect: true
+      incorrectExplanation: Corretto! Il ruolo Amministratore accessi utente e il ruolo di proprietario consentono di concedere l'accesso ad altri utenti.
+    - content: Collaboratore
+      isCorrect: false
+      correctExplanation: Il ruolo Collaboratore consente di gestire le macchine virtuali, ma non di concedere l'accesso ad altri utenti.
+    - content: Lettore
+      isCorrect: false
+      correctExplanation: Il ruolo Lettore consente di leggere tutte le risorse, ma non di concedere l'accesso ad altri utenti.
+  - content: Uno sviluppatore deve avere accesso completo a un gruppo di risorse. Se si seguono le procedure consigliate con privilegi minimi, quale ambito si deve specificare?
+    choices:
+    - content: Gruppo di risorse
+      isCorrect: true
+      correctExplanation: Corretto! Seguendo le procedure consigliate con privilegi minimi, è possibile concedere l'accesso solo all'utente dovrà svolgere il lavoro. In questo caso, è necessario impostare l'ambito solo per il gruppo di risorse.
+    - content: Sottoscrizione
+      isCorrect: false
+      incorrectExplanation: Un ambito della sottoscrizione concede l'accesso agli sviluppatori, ma sarà più ampio rispetto a ciò di cui hanno bisogno.
+    - content: Risorsa
+      isCorrect: false
+      correctExplanation: Un ambito delle risorse non concede agli sviluppatori di l'accesso di cui hanno bisogno.
+    - content: Utente
+      isCorrect: false
+      correctExplanation: L'utente non è un ambito.
