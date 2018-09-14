@@ -2,7 +2,7 @@
 uid: learn.run-docker-containers-aci.3-restart-policy
 metadata:
   title: Controllare il comportamento di riavvio di Istanze di contenitore di Azure
-  description: Controllare il comportamento di riavvio di Istanze di contenitore.
+  description: Controllare il comportamento di riavvio delle istanze di contenitore.
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark

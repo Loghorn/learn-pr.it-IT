@@ -4,7 +4,7 @@ Abbiamo riscontrato questo problema nel nostro sistema: il portale Web chiama un
 
 ## <a name="what-is-azure-queue-storage"></a>Informazioni su Archiviazione code di Azure
 
-Archiviazione code di Azure è un servizio di Azure che implementa code basate sul cloud. Ogni coda gestisce un elenco di messaggi. I componenti delle applicazioni accedono a una coda usando un'API REST o una libreria client fornita da Azure. Generalmente sono presenti uno o più componenti _mittenti_ e uno o più componenti _destinatari_. I componenti mittenti aggiungono messaggi alla coda. I componenti destinatari recuperano i messaggi dall'inizio della coda per l'elaborazione. L'illustrazione seguente mostra più applicazioni mittenti che aggiungono messaggi alla coda di Azure e un'applicazione destinataria che li recupera.
+Archiviazione code di Azure è un servizio di Azure che implementa code basate sul cloud. Ogni coda gestisce un elenco di messaggi. I componenti delle applicazioni accedono a una coda usando un'API REST o una libreria client fornita da Azure. Generalmente sono presenti uno o più componenti _mittenti_ e uno o più componenti _destinatari_. I componenti mittenti aggiungono messaggi alla coda. I componenti destinatario recuperano i messaggi dall'inizio della coda per l'elaborazione. L'illustrazione seguente mostra più applicazioni mittente che aggiungono messaggi alla coda di Azure e un'applicazione destinataria che li recupera.
 
 ![Illustrazione di un'architettura generale di Archiviazione code di Azure](../media/2-queue-overview.png)
 
