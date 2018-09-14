@@ -1,0 +1,25 @@
+### YamlMime:LearningPath
+uid: learn.azure-architecture-foundations
+title: Concetti fondamentali dell'architettura di Azure
+summary: Vengono illustrati i concetti di base e le strategie usate dai progettisti di soluzioni per pianificare e progettare correttamente soluzioni sicure, scalabili ed efficienti nella piattaforma Azure.
+cardDescription: Vengono illustrati i concetti di base e le strategie usate dai progettisti di soluzioni per pianificare e progettare correttamente soluzioni sicure, scalabili ed efficienti nella piattaforma Azure.
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- beginner
+roles:
+- solutions-architect
+products:
+- Azure
+prerequisites: Nessuno
+metadata:
+  title: Concetti fondamentali dell'architettura di Azure
+  description: Vengono illustrati i concetti di base e le strategie usate dai progettisti di soluzioni per pianificare e progettare correttamente soluzioni sicure, scalabili ed efficienti nella piattaforma Azure.
+  ms.openlocfilehash: f72d4e4c7c8d3ddc2a56c907b92191a524450610
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40446659"
+modules:
+- learn.sample-module-cloudshell
+achievement: learn.azure-architecture-foundations.trophy
