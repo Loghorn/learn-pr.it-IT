@@ -1,20 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.build-azure-bot-services-bot.6-connect-to-knowledge-base
-title: <span data-ttu-id="945b5-101">Connettere il bot alla knowledge base</span><span class="sxs-lookup"><span data-stu-id="945b5-101">Connect the bot to the knowledge base</span></span>
+title: <span data-ttu-id="c0eb2-101">Connettere il bot alla knowledge base</span><span class="sxs-lookup"><span data-stu-id="c0eb2-101">Connect the bot to the knowledge base</span></span>
 metadata:
-  title: <span data-ttu-id="945b5-102">Connettere il bot alla knowledge base</span><span class="sxs-lookup"><span data-stu-id="945b5-102">Connect the bot to the knowledge base</span></span>
-  description: <span data-ttu-id="945b5-103">Connettere il bot alla knowledge base</span><span class="sxs-lookup"><span data-stu-id="945b5-103">Connect the bot to the knowledge base</span></span>
+  title: <span data-ttu-id="c0eb2-102">Connettere il bot alla knowledge base</span><span class="sxs-lookup"><span data-stu-id="c0eb2-102">Connect the bot to the knowledge base</span></span>
+  description: <span data-ttu-id="c0eb2-103">Connettere il bot alla knowledge base</span><span class="sxs-lookup"><span data-stu-id="c0eb2-103">Connect the bot to the knowledge base</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 0842689d22e1be0a3b7308eb1aa65f42f91f4ee9
-  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
+  ms.openlocfilehash: 1b1551ccd0f1cee66c75e357ba48ff10f1f115c6
+  ms.sourcegitcommit: 496e19edaa5bfde56b43c9e8792fcbe8d2ce9443
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/10/2018
-  ms.locfileid: "44307638"
-azureSandbox: true
+  ms.lasthandoff: 09/13/2018
+  ms.locfileid: "45524155"
+labId: 45995
 durationInMinutes: 10
-content: <span data-ttu-id="945b5-104">[!include[](includes/6-connect-to-knowledge-base.md)</span><span class="sxs-lookup"><span data-stu-id="945b5-104">[!include[](includes/6-connect-to-knowledge-base.md)</span></span>
+content: <span data-ttu-id="c0eb2-104">[!include[](includes/6-connect-to-knowledge-base.md)</span><span class="sxs-lookup"><span data-stu-id="c0eb2-104">[!include[](includes/6-connect-to-knowledge-base.md)</span></span>

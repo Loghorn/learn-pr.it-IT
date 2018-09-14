@@ -1,59 +1,54 @@
-<span data-ttu-id="d8885-101">In questa unità si installerà MongoDB nella macchina virtuale Ubuntu Linux in modo che funga da archivio dati per la nuova applicazione Web di esempio.</span><span class="sxs-lookup"><span data-stu-id="d8885-101">In this unit, you will install MongoDB on your Ubuntu Linux virtual machine to act as a data store for your upcoming sample web application.</span></span>
+<span data-ttu-id="5cc2a-101">In questa unità si installerà MongoDB nella macchina virtuale Ubuntu Linux in modo che funga da archivio dati per la nuova applicazione Web di esempio.</span><span class="sxs-lookup"><span data-stu-id="5cc2a-101">In this unit, you will install MongoDB on your Ubuntu Linux virtual machine to act as a data store for your upcoming sample web application.</span></span>
 
-## <a name="connect-to-the-vm"></a><span data-ttu-id="d8885-102">Connettersi alla macchina virtuale</span><span class="sxs-lookup"><span data-stu-id="d8885-102">Connect to the VM</span></span>
+## <a name="install-mongodb"></a><span data-ttu-id="5cc2a-102">Installare MongoDB</span><span class="sxs-lookup"><span data-stu-id="5cc2a-102">Install MongoDB</span></span>
 
-<span data-ttu-id="d8885-103">Per installare MongoDB, è necessario connettersi alla macchina virtuale mediante **ssh**.</span><span class="sxs-lookup"><span data-stu-id="d8885-103">In order to install MongoDB, you have to connect to the VM using **ssh**.</span></span> <span data-ttu-id="d8885-104">Sostituire i segnaposto `<vm-admin-username>` e `<vm-public-ip>` con il nome utente amministratore e l'indirizzo IP pubblico della macchina virtuale precedenti.</span><span class="sxs-lookup"><span data-stu-id="d8885-104">Substitute your admin username and your VM's public IP address from above for the `<vm-admin-username>` and `<vm-public-ip>` placeholders.</span></span>
+1. <span data-ttu-id="5cc2a-103">Da Cloud Shell, SSH alla macchina virtuale.</span><span class="sxs-lookup"><span data-stu-id="5cc2a-103">From Cloud Shell, SSH into your VM.</span></span>
 
-```bash
-ssh <vm-admin-username>@<vm-public-ip>
-```
+    ```bash
+    ssh <vm-admin-username>@<vm-public-ip>
+    ```
 
-## <a name="install-mongodb"></a><span data-ttu-id="d8885-105">Installare MongoDB</span><span class="sxs-lookup"><span data-stu-id="d8885-105">Install MongoDB</span></span>
-
-> [!Important]
-> <span data-ttu-id="d8885-106">Ubuntu fornisce un pacchetto non ufficiale denominato **mongodb**.</span><span class="sxs-lookup"><span data-stu-id="d8885-106">Ubuntu provides an unofficial package called **mongodb**.</span></span> <span data-ttu-id="d8885-107">Questo pacchetto non viene gestito da MongoDB Inc.</span><span class="sxs-lookup"><span data-stu-id="d8885-107">This package is not maintained by MongoDB Inc.</span></span>
-
-1. <span data-ttu-id="d8885-108">Importare la chiave di crittografia per il repository MongoDB.</span><span class="sxs-lookup"><span data-stu-id="d8885-108">Import the encryption key for the MongoDB repository.</span></span> <span data-ttu-id="d8885-109">Questo consente allo strumento di gestione pacchetti di verificare che i pacchetti mongodb da installare provengano da MongoDB Inc.</span><span class="sxs-lookup"><span data-stu-id="d8885-109">This will allow the package manager to verify that the mongodb packages you install are coming from MongoDB Inc.</span></span>
+1. <span data-ttu-id="5cc2a-104">Importare la chiave di crittografia per il repository MongoDB.</span><span class="sxs-lookup"><span data-stu-id="5cc2a-104">Import the encryption key for the MongoDB repository.</span></span> <span data-ttu-id="5cc2a-105">Questo consente allo strumento di gestione pacchetti di verificare che i pacchetti mongodb da installare provengano da MongoDB Inc.</span><span class="sxs-lookup"><span data-stu-id="5cc2a-105">This will allow the package manager to verify that the mongodb packages you install are coming from MongoDB Inc.</span></span>
 
     ```bash
     sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 9DA31620334BD75D9DCB49F368818C72E52529D4
     ```
 
-    <span data-ttu-id="d8885-110">Il comando **sudo** determina l'esecuzione del comando specificato con privilegi amministrativi.</span><span class="sxs-lookup"><span data-stu-id="d8885-110">The **sudo** command means that we want to run the specified command with administrative privileges.</span></span>
+    <span data-ttu-id="5cc2a-106">Il comando **sudo** determina l'esecuzione del comando specificato con privilegi amministrativi.</span><span class="sxs-lookup"><span data-stu-id="5cc2a-106">The **sudo** command means that we want to run the specified command with administrative privileges.</span></span>
 
-1. <span data-ttu-id="d8885-111">Registrare il repository Ubuntu di MongoDB in modo da consentire allo strumento di gestione pacchetti di individuare i pacchetti mongodb.</span><span class="sxs-lookup"><span data-stu-id="d8885-111">Register the MongoDB Ubuntu repository so the package manager can locate the mongodb packages.</span></span>
+1. <span data-ttu-id="5cc2a-107">Registrare il repository Ubuntu di MongoDB in modo da consentire allo strumento di gestione pacchetti di individuare i pacchetti mongodb.</span><span class="sxs-lookup"><span data-stu-id="5cc2a-107">Register the MongoDB Ubuntu repository so the package manager can locate the mongodb packages.</span></span>
 
     > [!NOTE]
-    > <span data-ttu-id="d8885-112">Questo comando varia a seconda delle versioni di Ubuntu.</span><span class="sxs-lookup"><span data-stu-id="d8885-112">This command is different for different versions of Ubuntu.</span></span> <span data-ttu-id="d8885-113">Per sapere qual è la versione di Ubuntu in uso, eseguire: `uname -v`.</span><span class="sxs-lookup"><span data-stu-id="d8885-113">To find out which version of Ubuntu you're using, run: `uname -v`.</span></span>
-    > <span data-ttu-id="d8885-114">Questo comando genererà un output simile a `#21~16.04.1-Ubuntu SMP Fri Aug 10 12:36:09 UTC 2018`.</span><span class="sxs-lookup"><span data-stu-id="d8885-114">This command will output something like this: `#21~16.04.1-Ubuntu SMP Fri Aug 10 12:36:09 UTC 2018`.</span></span>
+    > <span data-ttu-id="5cc2a-108">Questo comando varia a seconda delle versioni di Ubuntu.</span><span class="sxs-lookup"><span data-stu-id="5cc2a-108">This command is different for different versions of Ubuntu.</span></span> <span data-ttu-id="5cc2a-109">Per sapere qual è la versione di Ubuntu in uso, eseguire: `uname -v`.</span><span class="sxs-lookup"><span data-stu-id="5cc2a-109">To find out which version of Ubuntu you're using, run: `uname -v`.</span></span>
+    > <span data-ttu-id="5cc2a-110">Questo comando genererà un output simile a `#21~16.04.1-Ubuntu SMP Fri Aug 10 12:36:09 UTC 2018`.</span><span class="sxs-lookup"><span data-stu-id="5cc2a-110">This command will output something like this: `#21~16.04.1-Ubuntu SMP Fri Aug 10 12:36:09 UTC 2018`.</span></span>
     >
-    > <span data-ttu-id="d8885-115">Questo output indica che la versione di Ubuntu in esecuzione è la 16.04.1.</span><span class="sxs-lookup"><span data-stu-id="d8885-115">This output indicates that we're running Ubuntu version 16.04.1.</span></span>
-    > <span data-ttu-id="d8885-116">Vedere [Install MongoDB Community Edition on Ubuntu](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/) (Installare MongoDB Community Edition su Ubuntu) per ottenere il comando esatto per la versione in uso.</span><span class="sxs-lookup"><span data-stu-id="d8885-116">Refer to the [Install MongoDB Community Edition on Ubuntu](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/) documentation to get the exact command for your version.</span></span>
+    > <span data-ttu-id="5cc2a-111">Questo output indica che la versione di Ubuntu in esecuzione è la 16.04.1.</span><span class="sxs-lookup"><span data-stu-id="5cc2a-111">This output indicates that we're running Ubuntu version 16.04.1.</span></span>
+    > <span data-ttu-id="5cc2a-112">Vedere [Install MongoDB Community Edition on Ubuntu](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/) (Installare MongoDB Community Edition su Ubuntu) per ottenere il comando esatto per la versione in uso.</span><span class="sxs-lookup"><span data-stu-id="5cc2a-112">Refer to the [Install MongoDB Community Edition on Ubuntu](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/) documentation to get the exact command for your version.</span></span>
 
-    <span data-ttu-id="d8885-117">In Ubuntu 16.04 occorre eseguire questo comando:</span><span class="sxs-lookup"><span data-stu-id="d8885-117">On Ubuntu 16.04, we run this command:</span></span>
+    <span data-ttu-id="5cc2a-113">In Ubuntu 16.04 occorre eseguire questo comando:</span><span class="sxs-lookup"><span data-stu-id="5cc2a-113">On Ubuntu 16.04, we run this command:</span></span>
 
     ```bash
     echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.0.list
     ```
 
-1. <span data-ttu-id="d8885-118">Ricaricare il database del pacchetto in modo da avere le informazioni sul pacchetto più recenti.</span><span class="sxs-lookup"><span data-stu-id="d8885-118">Reload the package database so we have the latest package information.</span></span>
+1. <span data-ttu-id="5cc2a-114">Aggiornare il database del pacchetto in modo sono disponibili le informazioni più recenti del pacchetto.</span><span class="sxs-lookup"><span data-stu-id="5cc2a-114">Update the package database so we have the latest package information.</span></span>
 
     ```bash
     sudo apt-get update
     ```
 
-1. <span data-ttu-id="d8885-119">Installare il pacchetto MongoDB nella macchina virtuale.</span><span class="sxs-lookup"><span data-stu-id="d8885-119">Install the MongoDB package onto our VM.</span></span>
+1. <span data-ttu-id="5cc2a-115">Installare il pacchetto MongoDB nella macchina virtuale.</span><span class="sxs-lookup"><span data-stu-id="5cc2a-115">Install the MongoDB package onto our VM.</span></span>
 
     ```bash
     sudo apt-get install -y mongodb-org
     ```
 
-1. <span data-ttu-id="d8885-120">Avviare il servizio MongoDB per potersi connettere a esso successivamente.</span><span class="sxs-lookup"><span data-stu-id="d8885-120">Start the MongoDB service so you can connect to it later.</span></span>
+1. <span data-ttu-id="5cc2a-116">Avviare il servizio MongoDB per potersi connettere a esso successivamente.</span><span class="sxs-lookup"><span data-stu-id="5cc2a-116">Start the MongoDB service so you can connect to it later.</span></span>
 
     ```bash
     sudo service mongod start
     ```
 
-## <a name="summary"></a><span data-ttu-id="d8885-121">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="d8885-121">Summary</span></span>
+## <a name="summary"></a><span data-ttu-id="5cc2a-117">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="5cc2a-117">Summary</span></span>
 
-<span data-ttu-id="d8885-122">MongoDB è ora installato nella macchina virtuale Ubuntu Linux.</span><span class="sxs-lookup"><span data-stu-id="d8885-122">We now have MongoDB installed on our Ubuntu Linux VM.</span></span> <span data-ttu-id="d8885-123">Fungerà da archivio dati sottostante per le informazioni salvate e recuperate nell'applicazione Web.</span><span class="sxs-lookup"><span data-stu-id="d8885-123">MongoDB will serve as your backing data store for the information you save and retrieve in your web application.</span></span>
+<span data-ttu-id="5cc2a-118">MongoDB è ora installato nella macchina virtuale Ubuntu Linux.</span><span class="sxs-lookup"><span data-stu-id="5cc2a-118">We now have MongoDB installed on our Ubuntu Linux VM.</span></span> <span data-ttu-id="5cc2a-119">Fungerà da archivio dati sottostante per le informazioni salvate e recuperate nell'applicazione Web.</span><span class="sxs-lookup"><span data-stu-id="5cc2a-119">MongoDB will serve as your backing data store for the information you save and retrieve in your web application.</span></span>

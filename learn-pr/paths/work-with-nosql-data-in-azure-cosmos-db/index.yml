@@ -2,28 +2,34 @@
 uid: learn.work-with-nosql-data-in-azure-cosmos-db
 metadata:
   title: Usare i dati NoSQL in Azure Cosmos DB
-  description: NoSQL fornisce un modello di database alternativo per SQL a disponibilità elevata ed estremamente efficiente per determinati tipi di dati. Informazioni su come usare Azure Cosmos DB per archiviare i dati delle applicazioni, eseguirne la replica tra più istanze e ottimizzare l'accesso ai dati.
+  description: Dati NoSQL sono un modo efficiente per archiviare le informazioni che non eseguono il mapping ai requisiti di un database SQL relazionale.<br><br>I database per dati NoSQL consentono una maggiore flessibilità con semplificata con scalabilità orizzontale, tecniche e la possibilità di ottimizzare la disponibilità e requisiti di coerenza dei dati. Azure Cosmos DB offre tutti questi vantaggi e molto altro, fornendo gli strumenti e SDK per lavorare con i dati NoSQL.<br><br>Informazioni su come usare il portale di Azure, l'estensione di Azure Cosmos DB per Visual Studio Code e Azure Cosmos DB .NET Core SDK per lavorare con i dati NoSQL in cui si desidera e fornire agli utenti con la disponibilità elevata, ovunque si trovino in tutto il mondo.
+  brand: azure
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: df29cb5cfdefa35c106a2cf822856bf842fc74ac
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: bd7b740111bfef6cfbcd73ebd1f80e28af1e2beb
+  ms.sourcegitcommit: 58a90e44fa548614c6c14153ef64cf67c7e3e6ac
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44248198"
+  ms.lasthandoff: 09/13/2018
+  ms.locfileid: "45559528"
 title: Usare i dati NoSQL in Azure Cosmos DB
-summary: NoSQL fornisce un modello di database alternativo per SQL a disponibilità elevata ed estremamente efficiente per determinati tipi di dati. Scopri come usare Azure Cosmos DB per archiviare i dati delle applicazioni, eseguirne la replica tra più istanze e ottimizzare l'accesso ai dati.
+summary: Dati NoSQL sono un modo efficiente per archiviare le informazioni che non eseguono il mapping ai requisiti di un database SQL relazionale.<br><br>I database per dati NoSQL consentono una maggiore flessibilità con semplificata con scalabilità orizzontale, tecniche e la possibilità di ottimizzare la disponibilità e requisiti di coerenza dei dati. Azure Cosmos DB offre tutti questi vantaggi e molto altro, fornendo gli strumenti e SDK per lavorare con i dati NoSQL.<br><br>Informazioni su come usare il portale di Azure, l'estensione di Azure Cosmos DB per Visual Studio Code e Azure Cosmos DB .NET Core SDK per lavorare con i dati NoSQL in cui si desidera e fornire agli utenti con la disponibilità elevata, ovunque si trovino in tutto il mondo.
 prerequisites: Nessuno
-iconUrl: http://via.placeholder.com/120x120
+iconUrl: /learn/achievements/work-with-nosql-data-in-azure-cosmos-db.svg
 levels:
 - beginner
 roles:
 - developer
 products:
 - azure
+- azure-cosmos-db
+- vs
+- vs-code
+- azure-portal
+- azure-clis
 modules:
 - learn.create-cosmos-db-for-scale
 - learn.access-data-with-cosmos-db-and-sql-api

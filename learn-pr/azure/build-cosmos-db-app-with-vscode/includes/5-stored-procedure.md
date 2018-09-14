@@ -1,25 +1,25 @@
-<span data-ttu-id="ef941-101">Capita di frequente che più documenti nel database debbano essere aggiornati contemporaneamente.</span><span class="sxs-lookup"><span data-stu-id="ef941-101">Multiple documents in your database frequently need to be updated at the same time.</span></span> <span data-ttu-id="ef941-102">Questa unità illustra come creare, registrare ed eseguire stored procedure dall'applicazione console .NET.</span><span class="sxs-lookup"><span data-stu-id="ef941-102">This unit discusses how to create, register, and run stored procedures from your .NET console application.</span></span>
+<span data-ttu-id="32a53-101">Capita di frequente che più documenti nel database debbano essere aggiornati contemporaneamente.</span><span class="sxs-lookup"><span data-stu-id="32a53-101">Multiple documents in your database frequently need to be updated at the same time.</span></span> <span data-ttu-id="32a53-102">Questa unità illustra come creare, registrare ed eseguire stored procedure dall'applicazione console .NET.</span><span class="sxs-lookup"><span data-stu-id="32a53-102">This unit discusses how to create, register, and run stored procedures from your .NET console application.</span></span>
 
-## <a name="create-a-stored-procedure-in-your-app"></a><span data-ttu-id="ef941-103">Creare una stored procedure nell'app</span><span class="sxs-lookup"><span data-stu-id="ef941-103">Create a stored procedure in your app</span></span>
+## <a name="create-a-stored-procedure-in-your-app"></a><span data-ttu-id="32a53-103">Creare una stored procedure nell'app</span><span class="sxs-lookup"><span data-stu-id="32a53-103">Create a stored procedure in your app</span></span>
 
-<span data-ttu-id="ef941-104">In questa stored procedure OrderId, che contiene un elenco di tutti gli articoli nell'ordine, viene usato per calcolare il totale di un ordine.</span><span class="sxs-lookup"><span data-stu-id="ef941-104">In this stored procedure, the OrderId, which contains a list of all the items in the order, is used to calculate an order total.</span></span> <span data-ttu-id="ef941-105">Il totale degli ordini viene calcolato sommando gli articoli nell'ordine, sottraendo eventuali bonus (crediti) del cliente e tenendo conto di eventuali codici di coupon.</span><span class="sxs-lookup"><span data-stu-id="ef941-105">The order total is calculated from the sum of the items in the order, less any dividends (credits) the customer has, and takes any coupon codes into account.</span></span>
+<span data-ttu-id="32a53-104">In questa stored procedure OrderId, che contiene un elenco di tutti gli articoli nell'ordine, viene usato per calcolare il totale di un ordine.</span><span class="sxs-lookup"><span data-stu-id="32a53-104">In this stored procedure, the OrderId, which contains a list of all the items in the order, is used to calculate an order total.</span></span> <span data-ttu-id="32a53-105">Il totale degli ordini viene calcolato sommando gli articoli nell'ordine, sottraendo eventuali bonus (crediti) del cliente e tenendo conto di eventuali codici di coupon.</span><span class="sxs-lookup"><span data-stu-id="32a53-105">The order total is calculated from the sum of the items in the order, less any dividends (credits) the customer has, and takes any coupon codes into account.</span></span>
 
-1. <span data-ttu-id="ef941-106">Nella scheda Azure in Visual Studio Code espandere il **modulo di apprendimento (SQL)** > **Utenti** > **WebCustomers**, fare clic con il pulsante destro del mouse su **Stored procedure**, quindi fare clic su **Crea Stored Procedure**.</span><span class="sxs-lookup"><span data-stu-id="ef941-106">In Visual Studio Code, in the Azure tab, expand the **learning-module (SQL)** > **Users** > **WebCustomers** and then right-click **Stored Procedures** and then click **Create Stored Procedure**.</span></span>
+1. <span data-ttu-id="32a53-106">In Visual Studio Code nel **Azure: Cosmos DB** scheda, quindi espandere l'account Azure Cosmos DB > **Users** > **WebCustomers** e quindi fare doppio clic su  **Le stored procedure** e quindi fare clic su **Create Stored Procedure**.</span><span class="sxs-lookup"><span data-stu-id="32a53-106">In Visual Studio Code, in the **Azure: Cosmos DB** tab, expand your Azure Cosmos DB account > **Users** > **WebCustomers** and then right-click **Stored Procedures** and then click **Create Stored Procedure**.</span></span>
 
-1. <span data-ttu-id="ef941-107">Nella casella di testo nella parte superiore della schermata digitare *UpdateOrderTotal* e premere Invio per assegnare un nome alla stored procedure.</span><span class="sxs-lookup"><span data-stu-id="ef941-107">In the text box at the top of the screen, type *UpdateOrderTotal* and click Enter to give the stored procedure a name.</span></span>
+1. <span data-ttu-id="32a53-107">Nella casella di testo nella parte superiore della schermata digitare *UpdateOrderTotal* e premere Invio per assegnare un nome alla stored procedure.</span><span class="sxs-lookup"><span data-stu-id="32a53-107">In the text box at the top of the screen, type *UpdateOrderTotal* and click Enter to give the stored procedure a name.</span></span>
 
-1. <span data-ttu-id="ef941-108">Espandere **Stored procedure** e fare clic su **UpdateOrderTotal**.</span><span class="sxs-lookup"><span data-stu-id="ef941-108">Expand **Stored Procedures** and click **UpdateOrderTotal**.</span></span>
+1. <span data-ttu-id="32a53-108">Nel **Azure: Cosmos DB** scheda, quindi espandere **Stored procedure** e fare clic su **UpdateOrderTotal**.</span><span class="sxs-lookup"><span data-stu-id="32a53-108">In the **Azure: Cosmos DB** tab, expand **Stored Procedures** and click **UpdateOrderTotal**.</span></span>
 
-1. <span data-ttu-id="ef941-109">Per impostazione predefinita, viene offerta una stored procedure che recupera il primo elemento.</span><span class="sxs-lookup"><span data-stu-id="ef941-109">By default, a stored procedure that retrieves the first item is provided.</span></span>
+    <span data-ttu-id="32a53-109">Per impostazione predefinita, viene offerta una stored procedure che recupera il primo elemento.</span><span class="sxs-lookup"><span data-stu-id="32a53-109">By default, a stored procedure that retrieves the first item is provided.</span></span>
 
-1. <span data-ttu-id="ef941-110">Per eseguire questa stored procedure dall'applicazione, aggiungere il codice seguente al file Program.cs.</span><span class="sxs-lookup"><span data-stu-id="ef941-110">To run this stored procedure from your application, add the following code to the Program.cs file.</span></span>
+1. <span data-ttu-id="32a53-110">Per eseguire questa stored procedure dall'applicazione, aggiungere il codice seguente al file Program.cs.</span><span class="sxs-lookup"><span data-stu-id="32a53-110">To run this stored procedure from your application, add the following code to the Program.cs file.</span></span>
 
     ```csharp
     public async Task RunStoredProcedure(string databaseName, string collectionName, User user)
     {
         try
         {
-            await client.ExecuteStoredProcedureAsync<string>(UriFactory.CreateStoredProcedureUri(databaseName, collectionName, "sample"), new RequestOptions { PartitionKey = new PartitionKey(user.UserId) });
+            await client.ExecuteStoredProcedureAsync<string>(UriFactory.CreateStoredProcedureUri(databaseName, collectionName, "UpdateOrderTotal"), new RequestOptions { PartitionKey = new PartitionKey(user.UserId) });
             Console.WriteLine("Stored procedure complete");
         }
         catch (DocumentClientException de)
@@ -28,38 +28,22 @@
         }
     }
     ```
-    <!--TODO: Update sproc to take order total and check for available dividend, and use of summer coupon code, and provide updated total-->
 
-1. <span data-ttu-id="ef941-111">Copiare ora il codice seguente e incollarlo alla fine del metodo **BasicOperations**.</span><span class="sxs-lookup"><span data-stu-id="ef941-111">Now copy the following code and paste it into the end of the **BasicOperations** method.</span></span>
+1. <span data-ttu-id="32a53-111">A questo punto copiare il codice seguente e incollarlo prima la `await this.DeleteUserDocument("Users", "WebCustomers", yanhe);` riga nel **BasicOperations** (metodo).</span><span class="sxs-lookup"><span data-stu-id="32a53-111">Now copy the following code and paste it before the `await this.DeleteUserDocument("Users", "WebCustomers", yanhe);` line in the **BasicOperations** method.</span></span>
 
     ```
     await this.RunStoredProcedure("Users", "WebCustomers", yanhe);
     ```
 
-1. <span data-ttu-id="ef941-112">Eseguire il comando seguente nel terminale integrato per eseguire l'esempio con la stored procedure.</span><span class="sxs-lookup"><span data-stu-id="ef941-112">In the integrated terminal, run the following command to run the sample with the stored procedure.</span></span>
+1. <span data-ttu-id="32a53-112">Eseguire il comando seguente nel terminale integrato per eseguire l'esempio con la stored procedure.</span><span class="sxs-lookup"><span data-stu-id="32a53-112">In the integrated terminal, run the following command to run the sample with the stored procedure.</span></span>
 
     ```
     dotnet run
     ```
-    <span data-ttu-id="ef941-113">La console visualizza l'output indicando il completamento della stored procedure.</span><span class="sxs-lookup"><span data-stu-id="ef941-113">The console displays output indicating that the stored procedure was completed.</span></span>
+    <span data-ttu-id="32a53-113">La console visualizza l'output indicando il completamento della stored procedure.</span><span class="sxs-lookup"><span data-stu-id="32a53-113">The console displays output indicating that the stored procedure was completed.</span></span>
 
-## <a name="clean-up"></a><span data-ttu-id="ef941-114">Eseguire la pulizia</span><span class="sxs-lookup"><span data-stu-id="ef941-114">Clean up</span></span>
-<!---TODO: Update for sandbox?--->
+## <a name="summary"></a><span data-ttu-id="32a53-114">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="32a53-114">Summary</span></span>
 
-<span data-ttu-id="ef941-115">Se si prevede di continuare a utilizzare i moduli in questo percorso di apprendimento, ignorare il processo di pulizia, altrimenti usare la procedura seguente per eliminare le risorse per evitare di incorrere in addebiti per l'uso del servizio.</span><span class="sxs-lookup"><span data-stu-id="ef941-115">If you plan to continue working on the modules in this learning path, skip the clean-up process, or else use the following steps to delete your resources to avoid incurring charges for use of the service.</span></span>
+<span data-ttu-id="32a53-115">In questo modulo è stata creata un'applicazione console .NET Core che crea, aggiorna ed elimina i record utente, esegue query per gli utenti con SQL e LINQ ed esegue una stored procedure per eseguire query per gli elementi nel database.</span><span class="sxs-lookup"><span data-stu-id="32a53-115">In this module you've created a .NET Core console application that creates, updates, and deletes user records, queries the users by using SQL and LINQ, and runs a stored procedure to query items in the database.</span></span>
 
-1. <span data-ttu-id="ef941-116">Nel portale di Azure selezionare **Gruppi di risorse** all'estrema sinistra, quindi selezionare il gruppo di risorse creato.</span><span class="sxs-lookup"><span data-stu-id="ef941-116">In the Azure portal, select **Resource groups** on the far left, and then select the resource group you created.</span></span>  
-
-    <span data-ttu-id="ef941-117">Se il menu a sinistra è compresso, fare clic sul</span><span class="sxs-lookup"><span data-stu-id="ef941-117">If the left menu is collapsed, click</span></span> ![pulsante Espandi](../media/5-javascript-programming/expand.png) <span data-ttu-id="ef941-119">per espanderlo.</span><span class="sxs-lookup"><span data-stu-id="ef941-119">to expand it.</span></span>
-
-   ![Metriche nel portale di Azure](../media/5-javascript-programming/delete-resources-select.png)
-
-1. <span data-ttu-id="ef941-121">Nella nuova finestra selezionare il gruppo di risorse e fare clic su **Elimina gruppo di risorse**.</span><span class="sxs-lookup"><span data-stu-id="ef941-121">In the new window select the resource group, and then click **Delete resource group**.</span></span>
-
-   ![Metriche nel portale di Azure](../media/5-javascript-programming/delete-resources.png)
-
-1. <span data-ttu-id="ef941-123">Nella nuova finestra digitare il nome del gruppo di risorse da eliminare, quindi fai clic su **Elimina**.</span><span class="sxs-lookup"><span data-stu-id="ef941-123">In the new window, type the name of the resource group to delete, and then click **Delete**.</span></span>
-
-## <a name="summary"></a><span data-ttu-id="ef941-124">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="ef941-124">Summary</span></span>
-
-<span data-ttu-id="ef941-125">In questo modulo è stata creata un'applicazione console .NET Core che crea, aggiorna ed elimina i record utente, esegue query per gli utenti con SQL e LINQ ed esegue una stored procedure per eseguire query per gli elementi nel database.</span><span class="sxs-lookup"><span data-stu-id="ef941-125">In this module you've created a .NET Core console application that creates, updates, and deletes user records, queries the users by using SQL and LINQ, and runs a stored procedure to query items in the database.</span></span>
+[!include[](../../../includes/azure-sandbox-cleanup.md)]
