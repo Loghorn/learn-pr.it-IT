@@ -1,86 +1,85 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-neural-network-with-dsvm.5-knowledge-check
-title: <span data-ttu-id="20698-101">Verificare le proprie conoscenze</span><span class="sxs-lookup"><span data-stu-id="20698-101">Check your knowledge</span></span>
+title: <span data-ttu-id="b8dde-101">Verificare le proprie conoscenze</span><span class="sxs-lookup"><span data-stu-id="b8dde-101">Check your knowledge</span></span>
 metadata:
-  title: <span data-ttu-id="20698-102">Verificare le proprie conoscenze</span><span class="sxs-lookup"><span data-stu-id="20698-102">Check your knowledge</span></span>
-  description: <span data-ttu-id="20698-103">Confermare di aver compreso i passaggi necessari per creare reti neurali con Tensorflow e la Data Science Virtual Machine di Azure.</span><span class="sxs-lookup"><span data-stu-id="20698-103">Confirm that you understood the steps required to build neural networks with Tensorflow and the Azure Data Science Virtual Machine.</span></span>
+  title: <span data-ttu-id="b8dde-102">Verificare le proprie conoscenze</span><span class="sxs-lookup"><span data-stu-id="b8dde-102">Check your knowledge</span></span>
+  description: <span data-ttu-id="b8dde-103">Confermare di aver compreso i passaggi necessari per creare reti neurali con Tensorflow e la Data Science Virtual Machine di Azure.</span><span class="sxs-lookup"><span data-stu-id="b8dde-103">Confirm that you understood the steps required to build neural networks with Tensorflow and the Azure Data Science Virtual Machine.</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: c6fd7c34e6f3763615673bf29ef9682c39f30dea
-  ms.sourcegitcommit: 699f55eb41bace5e084604e16d6768633771b23c
+  ms.openlocfilehash: 19b0c3c51e12dfa73e21d2d23923f87088eebb0d
+  ms.sourcegitcommit: b7b4489eb7352bcc722ed6c2ff27b70dd212e9c5
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/13/2018
-  ms.locfileid: "45531369"
-labId: 45996
+  ms.lasthandoff: 09/14/2018
+  ms.locfileid: "45620390"
 durationInMinutes: 10
 quiz:
-  title: <span data-ttu-id="20698-104">Creazione di reti neurali con TensorFlow e la Data Science Virtual Machine di Azure</span><span class="sxs-lookup"><span data-stu-id="20698-104">Building Neural Networks with TensorFlow and the Azure Data Science Virtual Machine</span></span>
+  title: <span data-ttu-id="b8dde-104">Creazione di reti neurali con TensorFlow e la Data Science Virtual Machine di Azure</span><span class="sxs-lookup"><span data-stu-id="b8dde-104">Building Neural Networks with TensorFlow and the Azure Data Science Virtual Machine</span></span>
   questions:
-  - content: <span data-ttu-id="20698-105">È possibile creare una Data Science VM con un sistema operativo diverso da Linux?</span><span class="sxs-lookup"><span data-stu-id="20698-105">Can you create a Data Science VM with an operating system other than Linux?</span></span>
+  - content: <span data-ttu-id="b8dde-105">È possibile creare una Data Science VM con un sistema operativo diverso da Linux?</span><span class="sxs-lookup"><span data-stu-id="b8dde-105">Can you create a Data Science VM with an operating system other than Linux?</span></span>
     choices:
-    - content: <span data-ttu-id="20698-106">No</span><span class="sxs-lookup"><span data-stu-id="20698-106">No</span></span>
+    - content: <span data-ttu-id="b8dde-106">No</span><span class="sxs-lookup"><span data-stu-id="b8dde-106">No</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="20698-107">Esistono altre opzioni per i sistemi operativi per la Data Science VM.</span><span class="sxs-lookup"><span data-stu-id="20698-107">There are other options for operating systems for the Data Science VM.</span></span>
-    - content: <span data-ttu-id="20698-108">Sì</span><span class="sxs-lookup"><span data-stu-id="20698-108">Yes</span></span>
+      incorrectExplanation: <span data-ttu-id="b8dde-107">Esistono altre opzioni per i sistemi operativi per la Data Science VM.</span><span class="sxs-lookup"><span data-stu-id="b8dde-107">There are other options for operating systems for the Data Science VM.</span></span>
+    - content: <span data-ttu-id="b8dde-108">Sì</span><span class="sxs-lookup"><span data-stu-id="b8dde-108">Yes</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="20698-109">Corretto.</span><span class="sxs-lookup"><span data-stu-id="20698-109">Great!</span></span> <span data-ttu-id="20698-110">Passare alla parte successiva del lab.</span><span class="sxs-lookup"><span data-stu-id="20698-110">Proceed to the next part of the lab.</span></span>
-  - content: <span data-ttu-id="20698-111">Che cosa deve essere copiato nel portale di Azure da usare per connettersi alla Data Science VM con un client?</span><span class="sxs-lookup"><span data-stu-id="20698-111">What should be copied in the Azure Portal to use to connect to the Data Science VM with client?</span></span>
+      correctExplanation: <span data-ttu-id="b8dde-109">Corretto.</span><span class="sxs-lookup"><span data-stu-id="b8dde-109">Great!</span></span> <span data-ttu-id="b8dde-110">Passare alla parte successiva del lab.</span><span class="sxs-lookup"><span data-stu-id="b8dde-110">Proceed to the next part of the lab.</span></span>
+  - content: <span data-ttu-id="b8dde-111">Che cosa deve essere copiato nel portale di Azure da usare per connettersi alla Data Science VM con un client?</span><span class="sxs-lookup"><span data-stu-id="b8dde-111">What should be copied in the Azure Portal to use to connect to the Data Science VM with client?</span></span>
     choices:
-    - content: <span data-ttu-id="20698-112">Indirizzo IP</span><span class="sxs-lookup"><span data-stu-id="20698-112">IP Address</span></span>
+    - content: <span data-ttu-id="b8dde-112">Indirizzo IP</span><span class="sxs-lookup"><span data-stu-id="b8dde-112">IP Address</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="20698-113">Corretto.</span><span class="sxs-lookup"><span data-stu-id="20698-113">Great!</span></span> <span data-ttu-id="20698-114">Passare alla parte successiva del lab.</span><span class="sxs-lookup"><span data-stu-id="20698-114">Proceed to the next part of the lab.</span></span>
-    - content: <span data-ttu-id="20698-115">Nome della sottoscrizione</span><span class="sxs-lookup"><span data-stu-id="20698-115">Subscription name</span></span>
+      correctExplanation: <span data-ttu-id="b8dde-113">Corretto.</span><span class="sxs-lookup"><span data-stu-id="b8dde-113">Great!</span></span> <span data-ttu-id="b8dde-114">Passare alla parte successiva del lab.</span><span class="sxs-lookup"><span data-stu-id="b8dde-114">Proceed to the next part of the lab.</span></span>
+    - content: <span data-ttu-id="b8dde-115">Nome della sottoscrizione</span><span class="sxs-lookup"><span data-stu-id="b8dde-115">Subscription name</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="20698-116">Il nome della sottoscrizione non è necessario per connettersi alla macchina virtuale.</span><span class="sxs-lookup"><span data-stu-id="20698-116">The subscription name isn't needed to connect to the VM.</span></span>
-    - content: <span data-ttu-id="20698-117">Nome DNS</span><span class="sxs-lookup"><span data-stu-id="20698-117">DNS name</span></span>
+      incorrectExplanation: <span data-ttu-id="b8dde-116">Il nome della sottoscrizione non è necessario per connettersi alla macchina virtuale.</span><span class="sxs-lookup"><span data-stu-id="b8dde-116">The subscription name isn't needed to connect to the VM.</span></span>
+    - content: <span data-ttu-id="b8dde-117">Nome DNS</span><span class="sxs-lookup"><span data-stu-id="b8dde-117">DNS name</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="20698-118">Il nome DNS non è necessario per connettersi alla macchina virtuale.</span><span class="sxs-lookup"><span data-stu-id="20698-118">The DNS name isn't needed to connect to the VM.</span></span>
-    - content: <span data-ttu-id="20698-119">Rete virtuale/subnet</span><span class="sxs-lookup"><span data-stu-id="20698-119">Virtual network/subnet</span></span>
+      incorrectExplanation: <span data-ttu-id="b8dde-118">Il nome DNS non è necessario per connettersi alla macchina virtuale.</span><span class="sxs-lookup"><span data-stu-id="b8dde-118">The DNS name isn't needed to connect to the VM.</span></span>
+    - content: <span data-ttu-id="b8dde-119">Rete virtuale/subnet</span><span class="sxs-lookup"><span data-stu-id="b8dde-119">Virtual network/subnet</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="20698-120">La rete virtuale o la subnet non è necessaria per connettersi alla macchina virtuale.</span><span class="sxs-lookup"><span data-stu-id="20698-120">The Virtual network or subnet isn't needed to connect to the VM.</span></span>
-  - content: <span data-ttu-id="20698-121">Cosa è necessario per eseguire il transfer learning nella Data Science VM?</span><span class="sxs-lookup"><span data-stu-id="20698-121">What do you need to perform transfer learning on the Data Science VM?</span></span>
+      incorrectExplanation: <span data-ttu-id="b8dde-120">La rete virtuale o la subnet non è necessaria per connettersi alla macchina virtuale.</span><span class="sxs-lookup"><span data-stu-id="b8dde-120">The Virtual network or subnet isn't needed to connect to the VM.</span></span>
+  - content: <span data-ttu-id="b8dde-121">Cosa è necessario per eseguire il transfer learning nella Data Science VM?</span><span class="sxs-lookup"><span data-stu-id="b8dde-121">What do you need to perform transfer learning on the Data Science VM?</span></span>
     choices:
-    - content: <span data-ttu-id="20698-122">Accesso a una GPU di grandi dimensioni</span><span class="sxs-lookup"><span data-stu-id="20698-122">Access to a large GPU</span></span>
+    - content: <span data-ttu-id="b8dde-122">Accesso a una GPU di grandi dimensioni</span><span class="sxs-lookup"><span data-stu-id="b8dde-122">Access to a large GPU</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="20698-123">Anche se una GPU è utile per la ripetizione del training sulle immagini, non è obbligatoria e non è necessario che sia grande.</span><span class="sxs-lookup"><span data-stu-id="20698-123">While a GPU is great for retraining on images, it doesn't need to be large or required.</span></span>
-    - content: <span data-ttu-id="20698-124">Tensorflow installato</span><span class="sxs-lookup"><span data-stu-id="20698-124">Tensorflow installed</span></span>
+      incorrectExplanation: <span data-ttu-id="b8dde-123">Anche se una GPU è utile per la ripetizione del training sulle immagini, non è obbligatoria e non è necessario che sia grande.</span><span class="sxs-lookup"><span data-stu-id="b8dde-123">While a GPU is great for retraining on images, it doesn't need to be large or required.</span></span>
+    - content: <span data-ttu-id="b8dde-124">Tensorflow installato</span><span class="sxs-lookup"><span data-stu-id="b8dde-124">Tensorflow installed</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="20698-125">Tensorflow è già installato nella Data Science VM, quindi non è necessario installarlo di nuovo.</span><span class="sxs-lookup"><span data-stu-id="20698-125">Tensorflow is already installed in the Data Science VM so there's no need to install it again.</span></span>
-    - content: <span data-ttu-id="20698-126">Modello già sottoposto a training</span><span class="sxs-lookup"><span data-stu-id="20698-126">Pre-trained model</span></span>
+      incorrectExplanation: <span data-ttu-id="b8dde-125">Tensorflow è già installato nella Data Science VM, quindi non è necessario installarlo di nuovo.</span><span class="sxs-lookup"><span data-stu-id="b8dde-125">Tensorflow is already installed in the Data Science VM so there's no need to install it again.</span></span>
+    - content: <span data-ttu-id="b8dde-126">Modello già sottoposto a training</span><span class="sxs-lookup"><span data-stu-id="b8dde-126">Pre-trained model</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="20698-127">Corretto.</span><span class="sxs-lookup"><span data-stu-id="20698-127">Great!</span></span> <span data-ttu-id="20698-128">Passare alla parte successiva del lab.</span><span class="sxs-lookup"><span data-stu-id="20698-128">Proceed to the next part of the lab.</span></span>
-    - content: <span data-ttu-id="20698-129">Un set di dati molto grande</span><span class="sxs-lookup"><span data-stu-id="20698-129">A very large set of data</span></span>
+      correctExplanation: <span data-ttu-id="b8dde-127">Corretto.</span><span class="sxs-lookup"><span data-stu-id="b8dde-127">Great!</span></span> <span data-ttu-id="b8dde-128">Passare alla parte successiva del lab.</span><span class="sxs-lookup"><span data-stu-id="b8dde-128">Proceed to the next part of the lab.</span></span>
+    - content: <span data-ttu-id="b8dde-129">Un set di dati molto grande</span><span class="sxs-lookup"><span data-stu-id="b8dde-129">A very large set of data</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="20698-130">Non è necessario un set di dati di grandi dimensioni per usare modelli già sottoposti a training.</span><span class="sxs-lookup"><span data-stu-id="20698-130">You don't need a large data set to use pre-trained models.</span></span>
-  - content: <span data-ttu-id="20698-131">Qual è il nome dello strumento per visualizzare i modelli di Tensorflow?</span><span class="sxs-lookup"><span data-stu-id="20698-131">What is the name of the tool to visualize Tensorflow models?</span></span>
+      incorrectExplanation: <span data-ttu-id="b8dde-130">Non è necessario un set di dati di grandi dimensioni per usare modelli già sottoposti a training.</span><span class="sxs-lookup"><span data-stu-id="b8dde-130">You don't need a large data set to use pre-trained models.</span></span>
+  - content: <span data-ttu-id="b8dde-131">Qual è il nome dello strumento per visualizzare i modelli di Tensorflow?</span><span class="sxs-lookup"><span data-stu-id="b8dde-131">What is the name of the tool to visualize Tensorflow models?</span></span>
     choices:
-    - content: <span data-ttu-id="20698-132">Tensorview</span><span class="sxs-lookup"><span data-stu-id="20698-132">Tensorview</span></span>
+    - content: <span data-ttu-id="b8dde-132">Tensorview</span><span class="sxs-lookup"><span data-stu-id="b8dde-132">Tensorview</span></span>
       isCorrect: false
       incorrectExplanation: ''
-    - content: <span data-ttu-id="20698-133">Tensorvision</span><span class="sxs-lookup"><span data-stu-id="20698-133">Tensorvision</span></span>
+    - content: <span data-ttu-id="b8dde-133">Tensorvision</span><span class="sxs-lookup"><span data-stu-id="b8dde-133">Tensorvision</span></span>
       isCorrect: false
       incorrectExplanation: ''
-    - content: <span data-ttu-id="20698-134">Tensorpanel</span><span class="sxs-lookup"><span data-stu-id="20698-134">Tensorpanel</span></span>
+    - content: <span data-ttu-id="b8dde-134">Tensorpanel</span><span class="sxs-lookup"><span data-stu-id="b8dde-134">Tensorpanel</span></span>
       isCorrect: true
-      incorrectExplanation: <span data-ttu-id="20698-135">Corretto.</span><span class="sxs-lookup"><span data-stu-id="20698-135">Great!</span></span> <span data-ttu-id="20698-136">Passare alla parte successiva del lab.</span><span class="sxs-lookup"><span data-stu-id="20698-136">Proceed to the next part of the lab.</span></span>
-    - content: <span data-ttu-id="20698-137">TensorBoard</span><span class="sxs-lookup"><span data-stu-id="20698-137">Tensorboard</span></span>
+      incorrectExplanation: <span data-ttu-id="b8dde-135">Corretto.</span><span class="sxs-lookup"><span data-stu-id="b8dde-135">Great!</span></span> <span data-ttu-id="b8dde-136">Passare alla parte successiva del lab.</span><span class="sxs-lookup"><span data-stu-id="b8dde-136">Proceed to the next part of the lab.</span></span>
+    - content: <span data-ttu-id="b8dde-137">TensorBoard</span><span class="sxs-lookup"><span data-stu-id="b8dde-137">Tensorboard</span></span>
       isCorrect: false
       correctExplanation: ''
-  - content: <span data-ttu-id="20698-138">Quando si esegue il codice TkInter per un'interfaccia utente grafica per testare il modello, qual è il nome dello script Python che viene chiamato per ottenere i risultati dal modello?</span><span class="sxs-lookup"><span data-stu-id="20698-138">When executing the TkInter code for a GUI to test the model, what is the name of the Python script it calls to get results from the model?</span></span>
+  - content: <span data-ttu-id="b8dde-138">Quando si esegue il codice TkInter per un'interfaccia utente grafica per testare il modello, qual è il nome dello script Python che viene chiamato per ottenere i risultati dal modello?</span><span class="sxs-lookup"><span data-stu-id="b8dde-138">When executing the TkInter code for a GUI to test the model, what is the name of the Python script it calls to get results from the model?</span></span>
     choices:
-    - content: <span data-ttu-id="20698-139">retrain.py</span><span class="sxs-lookup"><span data-stu-id="20698-139">retrain.py</span></span>
+    - content: <span data-ttu-id="b8dde-139">retrain.py</span><span class="sxs-lookup"><span data-stu-id="b8dde-139">retrain.py</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="20698-140">Questo script è stato usato in precedenza per ripetere il training del modello con le proprie immagini.</span><span class="sxs-lookup"><span data-stu-id="20698-140">This script was used earlier to retrain the model with our own images.</span></span>
-    - content: <span data-ttu-id="20698-141">classify.py</span><span class="sxs-lookup"><span data-stu-id="20698-141">classify.py</span></span>
+      incorrectExplanation: <span data-ttu-id="b8dde-140">Questo script è stato usato in precedenza per ripetere il training del modello con le proprie immagini.</span><span class="sxs-lookup"><span data-stu-id="b8dde-140">This script was used earlier to retrain the model with our own images.</span></span>
+    - content: <span data-ttu-id="b8dde-141">classify.py</span><span class="sxs-lookup"><span data-stu-id="b8dde-141">classify.py</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="20698-142">Questo script è stato usato per inserire il codice TkInter e per eseguirlo.</span><span class="sxs-lookup"><span data-stu-id="20698-142">This script was used to put the TkInter code into and run from.</span></span>
-    - content: <span data-ttu-id="20698-143">label_image.py</span><span class="sxs-lookup"><span data-stu-id="20698-143">label_image.py</span></span>
+      incorrectExplanation: <span data-ttu-id="b8dde-142">Questo script è stato usato per inserire il codice TkInter e per eseguirlo.</span><span class="sxs-lookup"><span data-stu-id="b8dde-142">This script was used to put the TkInter code into and run from.</span></span>
+    - content: <span data-ttu-id="b8dde-143">label_image.py</span><span class="sxs-lookup"><span data-stu-id="b8dde-143">label_image.py</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="20698-144">Corretto.</span><span class="sxs-lookup"><span data-stu-id="20698-144">ThGreat!</span></span> <span data-ttu-id="20698-145">Passare alla parte successiva del lab.</span><span class="sxs-lookup"><span data-stu-id="20698-145">Proceed to the next part of the lab.</span></span>
-    - content: <span data-ttu-id="20698-146">results.py</span><span class="sxs-lookup"><span data-stu-id="20698-146">results.py</span></span>
+      correctExplanation: <span data-ttu-id="b8dde-144">Corretto.</span><span class="sxs-lookup"><span data-stu-id="b8dde-144">ThGreat!</span></span> <span data-ttu-id="b8dde-145">Passare alla parte successiva del lab.</span><span class="sxs-lookup"><span data-stu-id="b8dde-145">Proceed to the next part of the lab.</span></span>
+    - content: <span data-ttu-id="b8dde-146">results.py</span><span class="sxs-lookup"><span data-stu-id="b8dde-146">results.py</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="20698-147">Questo script non esiste e restituirà un errore.</span><span class="sxs-lookup"><span data-stu-id="20698-147">This script wouldn't exist and would result in an error.</span></span>
+      incorrectExplanation: <span data-ttu-id="b8dde-147">Questo script non esiste e restituirà un errore.</span><span class="sxs-lookup"><span data-stu-id="b8dde-147">This script wouldn't exist and would result in an error.</span></span>
