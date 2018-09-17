@@ -1,0 +1,48 @@
+### YamlMime:ModuleUnit
+uid: learn.create-computer-vision-service.7-summary
+title: <span data-ttu-id="f0502-101">Riepilogo e verifica delle conoscenze</span><span class="sxs-lookup"><span data-stu-id="f0502-101">Summary and knowledge check</span></span>
+metadata:
+  title: <span data-ttu-id="f0502-102">Riepilogo e verifica delle conoscenze</span><span class="sxs-lookup"><span data-stu-id="f0502-102">Summary and knowledge check</span></span>
+  description: <span data-ttu-id="f0502-103">Riepilogo e verifica delle conoscenze</span><span class="sxs-lookup"><span data-stu-id="f0502-103">Summary and knowledge check</span></span>
+  ms.openlocfilehash: c27d2230f4dd2325dd83c189737fc59e0e0368a4
+  ms.sourcegitcommit: e90461bc6f88bca3b53183b476553633f93990a3
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "44043628"
+durationInMinutes: 10
+content: >
+  [!include[](includes/7-summary.md)]
+quiz:
+  title: <span data-ttu-id="f0502-104">Test relativo alla Visione artificiale</span><span class="sxs-lookup"><span data-stu-id="f0502-104">Computer Vision quiz</span></span>
+  questions:
+  - content: <span data-ttu-id="f0502-105">Quali tipi di immagini famose non verranno identificate da Visione artificiale?</span><span class="sxs-lookup"><span data-stu-id="f0502-105">What kind of famous images won't be identified with Computer Vision?</span></span>
+    choices:
+    - content: '<span data-ttu-id="f0502-106">Punti di riferimento</span><span class="sxs-lookup"><span data-stu-id="f0502-106">Landmarks</span></span> '
+      isCorrect: false
+    - content: <span data-ttu-id="f0502-107">Celebrità</span><span class="sxs-lookup"><span data-stu-id="f0502-107">Celebrities</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="f0502-108">Film</span><span class="sxs-lookup"><span data-stu-id="f0502-108">Movies</span></span>
+      isCorrect: true
+  - content: <span data-ttu-id="f0502-109">Quali elementi visivi è possibile scegliere di ricevere durante l'analisi delle immagini?</span><span class="sxs-lookup"><span data-stu-id="f0502-109">Which visual features can we elect to receive when analyzing images?</span></span>
+    choices:
+    - content: <span data-ttu-id="f0502-110">Forme</span><span class="sxs-lookup"><span data-stu-id="f0502-110">Shapes</span></span>
+      isCorrect: true
+    - content: <span data-ttu-id="f0502-111">Classificazione delle immagini</span><span class="sxs-lookup"><span data-stu-id="f0502-111">Image categorization</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="f0502-112">Tag</span><span class="sxs-lookup"><span data-stu-id="f0502-112">Tags</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="f0502-113">Descrizione testuale</span><span class="sxs-lookup"><span data-stu-id="f0502-113">Textual description</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="f0502-114">Visi</span><span class="sxs-lookup"><span data-stu-id="f0502-114">Faces</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="f0502-115">Colori</span><span class="sxs-lookup"><span data-stu-id="f0502-115">Colors</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="f0502-116">Contenuto per adulti e allusivo</span><span class="sxs-lookup"><span data-stu-id="f0502-116">Adult and suggestive content</span></span>
+      isCorrect: false
+  - content: <span data-ttu-id="f0502-117">Qual è il risultato del ritaglio intelligente?</span><span class="sxs-lookup"><span data-stu-id="f0502-117">What does smart cropping do?</span></span>
+    choices:
+    - content: <span data-ttu-id="f0502-118">Ritaglio di immagini a partire dalla parte superiore a sinistra</span><span class="sxs-lookup"><span data-stu-id="f0502-118">Crops pictures from the top left</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="f0502-119">Ritaglio di immagini in base alle aree di interesse (visi, oggetti in primo piano, altro)</span><span class="sxs-lookup"><span data-stu-id="f0502-119">Crops pictures based on regions of interest (faces, objects in focus, others)</span></span>
+      isCorrect: true
