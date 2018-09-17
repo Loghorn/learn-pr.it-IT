@@ -8,12 +8,12 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: b7e26ef12e204676573c8672ed1230dc5e573d69
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: a69970c0ae30c6f6bb222d18fa6743fa980a91d6
+  ms.sourcegitcommit: 4d3d995e220b696d35237a19740a6d619134d6ca
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44230484"
+  ms.lasthandoff: 09/13/2018
+  ms.locfileid: "45536937"
 title: Preparare l'ambiente di sviluppo per lo sviluppo in Azure
 summary: Configurare l'ambiente di sviluppo locale con alcuni IDE comuni.
 abstract: >
@@ -27,7 +27,7 @@ abstract: >
 
   - Preparare tutti gli ambienti per lo sviluppo in Azure
 prerequisites: Nessuno
-iconUrl: http://via.placeholder.com/120x120
+iconUrl: /learn/achievements/prepare-your-dev-environment-for-azure-development.svg
 levels:
 - beginner
 roles:

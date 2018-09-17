@@ -1,19 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.implement-message-workflows-with-service-bus.3-exercise-implement-a-service-bus-topic-and-queue
-title: '<span data-ttu-id="4437b-101">Esercizio: implementare un argomento del bus di servizio e la coda</span><span class="sxs-lookup"><span data-stu-id="4437b-101">Exercise - Implement a Service Bus topic and queue</span></span>'
+title: '<span data-ttu-id="0d503-101">Esercizio: implementare un argomento del bus di servizio e la coda</span><span class="sxs-lookup"><span data-stu-id="0d503-101">Exercise - Implement a Service Bus topic and queue</span></span>'
 metadata:
-  title: '<span data-ttu-id="4437b-102">Esercizio: implementare un argomento del bus di servizio e la coda</span><span class="sxs-lookup"><span data-stu-id="4437b-102">Exercise - Implement a Service Bus topic and queue</span></span>'
-  description: '<span data-ttu-id="4437b-103">Esercizio: implementare un argomento del bus di servizio e la coda</span><span class="sxs-lookup"><span data-stu-id="4437b-103">Exercise - Implement a Service Bus topic and queue</span></span>'
+  title: '<span data-ttu-id="0d503-102">Esercizio: implementare un argomento del bus di servizio e la coda</span><span class="sxs-lookup"><span data-stu-id="0d503-102">Exercise - Implement a Service Bus topic and queue</span></span>'
+  description: '<span data-ttu-id="0d503-103">Esercizio: implementare un argomento del bus di servizio e la coda</span><span class="sxs-lookup"><span data-stu-id="0d503-103">Exercise - Implement a Service Bus topic and queue</span></span>'
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: a8c66a1143fba1f5f9b14e5c37d8eb43fa8f2869
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: 5339866c5234548d9f82b8a05efcf3f56ef09acb
+  ms.sourcegitcommit: 4dc3a7c7146ab87bafce63ebe81eab4a1e7b4d7a
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44242299"
+  ms.lasthandoff: 09/14/2018
+  ms.locfileid: "45584052"
+azureSandbox: true
 durationInMinutes: 10
 content: '[!include[](includes/3-exercise-implement-a-service-bus-topic-and-queue.md)]'
