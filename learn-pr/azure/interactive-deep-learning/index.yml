@@ -4,18 +4,24 @@ metadata:
   title: Apprendimento avanzato interattivo con Jupyter, Docker e PyTorch su Data Science Virtual Machine.
   description: Informazioni per il training di modelli di apprendimento avanzato con Juypter, PyTorch e Data Science Virtual Machine.
   ms.date: 09/24/2018
-  ms.openlocfilehash: 4525fb11a8fc6e1d5a9aba1a832ad16e6cac7251
-  ms.sourcegitcommit: f6df5a988f64643099a0ffa283a522f8864c0070
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: a5c41a6ca251dc97b9b98641d193ad514209b3dc
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43853929"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44231982"
 title: Apprendimento avanzato interattivo con Jupyter, Docker e PyTorch su Data Science Virtual Machine.
 summary: Informazioni per il training di modelli di apprendimento avanzato con Juypter, PyTorch e Data Science Virtual Machine.
 abstract: >
   In questo modulo verrà descritto come:
-    - Analizzare il processo di configurazione di una Data Science Virtual Machine in Azure
-    - Eseguire un notebook Jupyter tramite Docker per consentire un'interazione senza problemi con gli ambienti di apprendimento avanzato personalizzati con PyTorch
+
+  - Analizzare il processo di configurazione di una Data Science Virtual Machine in Azure
+
+  - Eseguire un notebook Jupyter tramite Docker per consentire un'interazione senza problemi con gli ambienti di apprendimento avanzato personalizzati con PyTorch
 prerequisites: Nessuno
 iconUrl: http://via.placeholder.com/120x120
 levels:

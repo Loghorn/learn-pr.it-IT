@@ -1,32 +1,37 @@
 ### YamlMime:Module
 uid: learn.intro-to-compute
-title: Introduzione a Calcolo di Azure
-summary: Calcolo di Azure offre risorse di calcolo che possono essere applicate in modo flessibile da un utente per elaborare grandi quantità di dati per varie attività, ad esempio l'elaborazione di modelli sugli effetti dei farmaci a livello molecolare, il data mining sulle informazioni di marketing, il rendering di video di fascia alta e l'analisi dei dati astronomici raccolti dai telescopi. Lo scopo di questo modulo è fornire una descrizione dettagliata del servizio di calcolo di Azure, le opzioni e suggerimenti su come è possibile usarlo per risolvere i problemi riscontrati d uno studente nel lavoro quotidiano.
+metadata:
+  title: Introduzione al calcolo di Azure
+  description: Esaminare i servizi di calcolo di Azure e il modo in cui si possono usare per risolvere esigenze aziendali comuni.
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: bed6648a4d16c2a7ceb952d186fd79d5c1cc2785
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44246430"
+title: Introduzione al calcolo di Azure
+summary: Esaminare i servizi di calcolo di Azure e il modo in cui si possono usare per risolvere esigenze aziendali comuni.
+abstract: >
+  In questo modulo verrà descritto come:
+
+  - Identificare le opzioni di calcolo di Azure
+
+  - Selezionare una o più opzioni di calcolo appropriate per le proprie esigenze aziendali
+prerequisites: Nessuno
 iconUrl: http://via.placeholder.com/120x120
 levels:
 - beginner
 roles:
 - developer
-- solutions-architect
+- solution-architect
 - administrator
 products:
-- Azure
-metadata:
-  title: Introduzione a Calcolo di Azure
-  description: Calcolo di Azure offre risorse di calcolo che possono essere applicate in modo flessibile da un utente per elaborare grandi quantità di dati per varie attività, ad esempio l'elaborazione di modelli sugli effetti dei farmaci a livello molecolare, il data mining sulle informazioni di marketing, il rendering di video di fascia alta e l'analisi dei dati astronomici raccolti dai telescopi. Lo scopo di questo modulo è offrire una descrizione dettagliata del servizio di calcolo di Azure, le relative opzioni e suggerimenti su come usarle per risolvere i problemi che gli studenti possono riscontrare nel lavoro quotidiano.
-  ms.date: 09/24/2018
-  ms.openlocfilehash: 691a9c92ac9192efabc3c045a9c89a5f1c68e6ad
-  ms.sourcegitcommit: bcd9fd78122da4fc1545c7923a5fc0cd0a8abe96
-  ms.translationtype: HT
-  ms.contentlocale: it-IT
-  ms.lasthandoff: 08/29/2018
-  ms.locfileid: "43152078"
-abstract: >
-  In questo modulo verrà descritto come:
-
-  - Identificare le opzioni nel calcolo di Azure
-
-  - Selezionare una o più opzioni di calcolo appropriate per la risoluzione dei problemi aziendali.
+- azure
 units:
 - learn.intro-to-compute.1-introduction
 - learn.intro-to-compute.2-essential-azure-compute-concepts

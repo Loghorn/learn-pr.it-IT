@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.configure-the-network-for-your-virtual-machines.5-exercise-create-azure-vpn-gateway
+title: <span data-ttu-id="12497-101">Esercizio - Creare un gateway VPN di Azure</span><span class="sxs-lookup"><span data-stu-id="12497-101">Exercise - Create an Azure VPN gateway</span></span>
+metadata:
+  title: <span data-ttu-id="12497-102">Esercizio - Creare un gateway VPN di Azure</span><span class="sxs-lookup"><span data-stu-id="12497-102">Exercise - Create an Azure VPN gateway</span></span>
+  description: <span data-ttu-id="12497-103">Esercizio - Creare un gateway VPN di Azure</span><span class="sxs-lookup"><span data-stu-id="12497-103">Exercise - Create an Azure VPN gateway</span></span>
+  ms.openlocfilehash: c954e0e8541f1c17864b3bf83d339db602f7f2d2
+  ms.sourcegitcommit: 09425147d998035edf9d2d36006a54d85e3cf75d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43847508"
+durationInMinutes: 10
+content: '[!include[](includes/5-exercise-create-azure-vpn-gateway.md)]'
