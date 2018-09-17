@@ -8,27 +8,31 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 57659ea3106318d4ab11dcd67c561cb4fcc5c425
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: 47423e278d086c6baa1c6a96bd6b3161e765bfd1
+  ms.sourcegitcommit: 85169b96f980f61cf8558e3df6f32527973bfde4
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44235754"
+  ms.lasthandoff: 09/13/2018
+  ms.locfileid: "45555592"
 title: Automatizzare le attività di Azure usando gli script con PowerShell
 summary: Installare Azure PowerShell in locale e usarlo per gestire le risorse di Azure.
 abstract: >
   In questo modulo verrà descritto come:
-    - Decidere se Azure PowerShell è lo strumento appropriato per le attività di amministrazione di Azure
-    - Installare Azure PowerShell in Linux, macOS e/o Windows
-    - Connettersi a una sottoscrizione di Azure usando Azure PowerShell
-    - Creare risorse di Azure con Azure PowerShell
+
+  - Stabilire se Azure PowerShell è lo strumento appropriato per le attività di amministrazione di Azure
+
+  - Installare Azure PowerShell in Linux, macOS e/o Windows
+
+  - Connettersi a una sottoscrizione di Azure tramite Azure PowerShell
+
+  - Creare risorse di Azure con Azure PowerShell
 prerequisites: >
   - Esperienza con un'interfaccia della riga di comando, ad esempio PowerShell o Bash
 
   - Conoscenza dei concetti di base di Azure, ad esempio i gruppi di risorse e le macchine virtuali
 
-  - Esperienza di amministrazione delle risorse di Azure con il portale di Azure
-iconUrl: http://via.placeholder.com/120x120
+  - Esperienza nell'amministrazione di risorse di Azure tramite il portale di Azure
+iconUrl: /learn/achievements/automate-azure-tasks-with-powershell.svg
 levels:
 - beginner
 roles:

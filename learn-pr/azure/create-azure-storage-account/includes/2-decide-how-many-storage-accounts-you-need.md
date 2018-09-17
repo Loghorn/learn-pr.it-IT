@@ -6,7 +6,7 @@ Azure offre diversi modi per archiviare i dati. Ci sono diverse opzioni di datab
 
 Azure ha selezionato quattro di questi servizi dati e li ha riuniti sotto il nome _Archiviazione di Azure_. I quattro servizi sono: BLOB di Azure, File di Azure, Code di Azure e Tabelle di Azure. L'illustrazione seguente mostra gli elementi di Archiviazione di Azure.
 
-![Illustrazione che elenca i servizi dati di Azure che fanno parte di Archiviazione di Azure.](../media-drafts/2-azure-storage.png)
+![Illustrazione che elenca i servizi dati di Azure che fanno parte di Archiviazione di Azure.](../media/2-azure-storage.png)
 
 A questi quattro servizi è stato riservato un trattamento speciale in quanto sono tutti servizi di archiviazione semplici basati sul cloud e sono spesso utilizzati insieme nella stessa applicazione.
 
@@ -14,17 +14,17 @@ A questi quattro servizi è stato riservato un trattamento speciale in quanto so
 
 Un _account di archiviazione_ è un contenitore che raggruppa un set di servizi di Archiviazione di Azure. Solo i servizi di dati di Archiviazione di Azure possono essere inclusi in un account di archiviazione (BLOB di Azure, File di Azure, Code di Azure e Tabelle di Azure). La figura seguente mostra un account di archiviazione che contiene diversi servizi dati.
 
-![Illustrazione di un account di archiviazione di Azure contenente una raccolta mista di servizi dati.](../media-drafts/2-what-is-a-storage-account.png)
+![Illustrazione di un account di archiviazione di Azure contenente una raccolta mista di servizi dati.](../media/2-what-is-a-storage-account.png)
 
 La combinazione di servizi di dati in un account di archiviazione consente di gestirli come gruppo. Le impostazioni specificate al momento della creazione dell'account, o quelle modificate dopo la creazione, vengono applicate a tutti gli elementi dell'account. L'eliminazione dell'account di archiviazione comporta l'eliminazione di tutti i dati archiviati al suo interno.
 
 Un account di archiviazione è una risorsa di Azure ed è incluso in un gruppo di risorse. La seguente illustrazione mostra una sottoscrizione di Azure contenente più gruppi di risorse in cui ogni gruppo contiene uno o più account di archiviazione.
 
-![Illustrazione di una sottoscrizione di Azure che contiene più gruppi di risorse e account di archiviazione.](../media-drafts/2-resource-groups-and-storage-accounts.png)
+![Illustrazione di una sottoscrizione di Azure che contiene più gruppi di risorse e account di archiviazione.](../media/2-resource-groups-and-storage-accounts.png)
 
 Altri servizi di dati di Azure come Azure SQL e Cosmos DB sono gestite come risorse di Azure indipendenti e non possono essere inclusi in un account di archiviazione. La figura seguente mostra una tipica disposizione: BLOB, File, Code e Tabelle si trovano all'interno degli account di archiviazione mentre gli altri servizi no.
 
-![Illustrazione di una sottoscrizione di Azure che mostra alcuni servizi dati che non possono essere inseriti in un account di archiviazione.](../media-drafts/2-typical-subscription-organization.png)
+![Illustrazione di una sottoscrizione di Azure che mostra alcuni servizi dati che non possono essere inseriti in un account di archiviazione.](../media/2-typical-subscription-organization.png)
 
 ## <a name="storage-account-settings"></a>Impostazioni account di archiviazione
 
@@ -50,7 +50,7 @@ Le impostazioni controllate da un account di archiviazione sono:
 
 Un account di archiviazione rappresenta un insieme di impostazioni quali posizione, strategia di replica, sottoscrizione, ecc. È necessario un account di archiviazione per ogni gruppo di impostazioni che si desidera applicare ai dati. La figura seguente mostra due account di archiviazione che si differenziano per una sola impostazione; ovvero una differenza sufficiente per richiedere account di archiviazione separati.
 
-![Illustrazione che mostra due account di archiviazione con impostazioni diverse.](../media-drafts/2-multiple-storage-accounts.png)
+![Illustrazione che mostra due account di archiviazione con impostazioni diverse.](../media/2-multiple-storage-accounts.png)
 
 Il numero di account di archiviazione necessari è in genere determinato dalla diversità dei dati, dalla sensibilità ai costi e dalla tolleranza per i costi di gestione.
 
