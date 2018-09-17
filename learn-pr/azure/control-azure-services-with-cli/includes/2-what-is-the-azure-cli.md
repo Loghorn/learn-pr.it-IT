@@ -9,6 +9,7 @@ L'interfaccia della riga di comando di Azure offre strumenti da riga di comando 
 ## <a name="how-to-install-azure-cli"></a>Come installare l'interfaccia della riga di comando di Azure
 
 In Linux e macOS, si usa uno strumento di gestione pacchetti per installare PowerShell Core. Lo strumento di gestione pacchetti consigliato è diverso in base al sistema operativo e alla distribuzione:
+
 - Linux: **apt-get** su Ubuntu, **yum** su Red Hat e **zypper** su OpenSUSE
 - Mac: **Homebrew**
 
@@ -20,18 +21,16 @@ Per installare l'interfaccia della riga di comando di Azure in Windows, occorre 
 
 Se si vogliono usare i comandi dell'interfaccia della riga di comando di Azure negli script, è necessario essere a conoscenza di eventuali problemi correlati alla "shell" o all'ambiente usato per l'esecuzione dello script. In una shell bash, ad esempio, viene usata la sintassi seguente per l'impostazione delle variabili:
 
- ```azurecli
- variable="value"
- variable=integer
- ```
+```azurecli
+variable="value"
+variable=integer
+```
 
 Se si usa un ambiente di PowerShell per eseguire gli script dell'interfaccia della riga di comando di Azure, è necessario usare questa sintassi per le variabili:
 
- ```powershell
- $variable="value"
- $variable=integer
- ```
+```powershell
+$variable="value"
+$variable=integer
+```
 
-## <a name="summary"></a>Riepilogo
-
-L'interfaccia della riga di comando di Azure deve essere installata prima di poterla usare per gestire le risorse di Azure da un computer locale. La procedura di installazione varia per Windows, Linux e macOS, ma dopo l'installazione i comandi sono comuni tra le piattaforme. 
+L'interfaccia della riga di comando di Azure deve essere installata prima di poterla usare per gestire le risorse di Azure da un computer locale. La procedura di installazione varia per Windows, Linux e macOS, ma dopo l'installazione i comandi sono comuni tra le piattaforme.

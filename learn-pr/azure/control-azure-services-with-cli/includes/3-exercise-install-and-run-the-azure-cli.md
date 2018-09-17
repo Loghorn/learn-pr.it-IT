@@ -1,4 +1,4 @@
-Verrà ora installata l'interfaccia della riga di comando di Azure nel computer locale e dopo verrà eseguito un semplice comando per verificare l'installazione. Il metodo usato per l'installazione dell'interfaccia della riga di comando di Azure dipende dal sistema operativo del computer in uso. Scegliere la procedura corretta per il sistema operativo.
+Ora si installerà l'interfaccia della riga di comando di Azure nel computer locale e poi si eseguirà eseguito un comando per verificare l'installazione. Il metodo usato per l'installazione dell'interfaccia della riga di comando di Azure dipende dal sistema operativo del computer in uso. Scegliere la procedura corretta per il sistema operativo.
 
 > [!NOTE]
 > Questo esercizio illustra tutte le operazioni necessarie per installare lo strumento dell'interfaccia della riga di comando di Azure in locale. Nella parte restante del modulo verrà usato Azure Cloud Shell in modo da sfruttare il supporto gratuito per la sottoscrizione in Microsoft Learn. Se si preferisce, è possibile considerare questo esercizio come un'attività facoltativa e limitarsi a leggere le istruzioni.
@@ -83,10 +83,8 @@ Per eseguire l'interfaccia della riga di comando di Azure, aprire una shell bash
 ::: zone pivot="windows"
 
 > [!TIP]
-> L'esecuzione dell'interfaccia della riga di comando di Azure da PowerShell presenta alcuni vantaggi rispetto all'esecuzione dal prompt dei comandi di Windows. PowerShell offre altre funzionalità di completamento con il tasto TAB oltre a quelle disponibili dal prompt dei comandi. 
+> L'esecuzione dell'interfaccia della riga di comando di Azure da PowerShell presenta alcuni vantaggi rispetto all'esecuzione dal prompt dei comandi di Windows. PowerShell offre altre funzionalità di completamento con il tasto TAB oltre a quelle disponibili dal prompt dei comandi.
 
 ::: zone-end
-
-## <a name="summary"></a>Riepilogo
 
 I computer locali sono stati configurati per amministrare le risorse di Azure con l'interfaccia della riga di comando di Azure. È ora possibile usare l'interfaccia della riga di comando di Azure in locale per immettere comandi o eseguire script. L'interfaccia della riga di comando di Azure inoltrerà i comandi ai data center di Azure dove verranno eseguiti all'interno della sottoscrizione di Azure.

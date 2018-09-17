@@ -1,7 +1,7 @@
 Questo modulo ha illustrato come creare un account Cosmos DB di Azure da utilizzare potenzialmente in scenari reali, quali, ad esempio, le app per la vendita al dettaglio online. Mediante la creazione di un database con una chiave di partizione intelligente, sarai in grado di scalare orizzontalmente man mano che aumenta la necessità di archiviazione dei dati. Sono state fornite informazioni anche sulle esigenze dell'unità richiesta rispetto all'applicazione e su come impostarla durante la creazione degli account in modo da aumentare la velocità effettiva in un secondo momento, quando aumentano le richieste degli utenti.
 
-## <a name="clean-up-your-resources"></a>Pulire le risorse
-<!---TODO: Do we need to include cleanup for the free education tier?--->
+## <a name="clean-up"></a>Eseguire la pulizia
+<!---TODO: Update for sandbox?--->
 
 Se si prevede di continuare a usare i moduli di questo percorso di apprendimento, ignorare il processo di pulizia. In caso contrario, usa la procedura seguente per eliminare le risorse al fine di evitare di incorrere in addebiti per l'uso del servizio:
 

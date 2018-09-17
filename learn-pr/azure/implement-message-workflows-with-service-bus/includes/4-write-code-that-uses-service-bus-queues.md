@@ -18,7 +18,7 @@ La classe più importante di questa libreria è la classe `QueueClient`. Per ini
 
 I componenti di origine e di destinazione hanno entrambi bisogno di due elementi per connettersi a una coda in uno spazio dei nomi del bus di servizio:
 
-- La posizione dello spazio dei nomi del bus di servizio, nota anche come **endpoint**. La posizione viene specificata come nome di dominio completo all'interno del dominio **servicebus.windows.net**, ad esempio **pizzaService.servicebus.windows.net**.
+- La posizione dello spazio dei nomi del bus di servizio, conosciuta anche come **endpoint**. La posizione viene specificata come nome di dominio completo all'interno del dominio **servicebus.windows.net**, ad esempio **pizzaService.servicebus.windows.net**.
 - Una chiave di accesso. Il bus di servizio limita l'accesso a code, argomenti e inoltri richiedendo una chiave di accesso.
 
 Entrambi questi elementi vengono forniti all'oggetto `QueueClient` sotto forma di stringa di connessione. È possibile ottenere la stringa di connessione corretta per lo spazio dei nomi dal portale di Azure.
@@ -29,41 +29,41 @@ La coda di Azure può trovarsi a migliaia di chilometri dai componenti di invio 
 
 Quando si invia un messaggio a una coda, ad esempio, usare il metodo `QueueClient.SendAsync()` con la parola chiave `await`.
 
-## <a name="write-code-that-sends-to-queues"></a>Scrivere il codice che invia messaggi alle code 
+## <a name="write-code-that-sends-to-queues"></a>Scrivere codice che invia messaggi alle code 
 
-In un componente di invio o di ricezione è necessario aggiungere quanto segue usando le istruzioni in qualsiasi file di codice che chiama una coda del bus di servizio:
+In qualsiasi componente di invio o di ricezione è necessario aggiungere le istruzioni `using` seguenti a qualsiasi file di codice che chiama una coda del bus di servizio:
 
-    ```C#
-    using System.Threading;
-    using System.Threading.Tasks;
-    using Microsoft.Azure.ServiceBus;
-    ```
+```C#
+using System.Threading;
+using System.Threading.Tasks;
+using Microsoft.Azure.ServiceBus;
+```
 
 Creare quindi un nuovo oggetto `QueueClient` e passarvi la stringa di connessione e il nome della coda:
 
-    ```C#
-    queueClient = new QueueClient(TextAppConnectionString, "PrivateMessageQueue");
-    ```
+```C#
+queueClient = new QueueClient(TextAppConnectionString, "PrivateMessageQueue");
+```
 
-Per inviare un messaggio alla coda, è possibile chiamare il metodo `QueueClient.SendAsync()` e passare il messaggio sotto forma di stringa con codifica UTF8:
+Per inviare un messaggio alla coda, è possibile chiamare il metodo `QueueClient.SendAsync()` e passare il messaggio sotto forma di stringa con codifica UTF-8:
 
-    ```C#
-    string message = "Sure would like a large pepperoni!";
-    var encodedMessage = new Message(Encoding.UTF8.GetBytes(message));
-    await queueClient.SendAsync(encodedMessage);
-    ```
+```C#
+string message = "Sure would like a large pepperoni!";
+var encodedMessage = new Message(Encoding.UTF8.GetBytes(message));
+await queueClient.SendAsync(encodedMessage);
+```
 
 ## <a name="receive-messages-from-queue"></a>Ricevere messaggi dalla coda
 
 Per ricevere i messaggi, è prima necessario registrare un gestore di messaggi. Si tratta del metodo nel codice che verrà richiamato quando nella coda è presente un messaggio.
 
-    ```C#
-    queueClient.RegisterMessageHandler(MessageHandler, messageHandlerOptions);
-    ```
+```C#
+queueClient.RegisterMessageHandler(MessageHandler, messageHandlerOptions);
+```
 
 Eseguire l'elaborazione. Nel gestore di messaggi chiamare il metodo `QueueClient.CompleteAsync()` per rimuovere il messaggio dalla coda:
 
-    ```C#
-    await queueClient.CompleteAsync(message.SystemProperties.LockToken);
-    ```
+```C#
+await queueClient.CompleteAsync(message.SystemProperties.LockToken);
+```
     

@@ -2,7 +2,8 @@ In questo modulo si è appreso come creare una macchina virtuale Windows usando 
 
 Si è inoltre appreso che mentre RDP consente di interagire con il sistema operativo e con il software della macchina virtuale, il portale permette di configurare l'hardware virtuale e la connettività. È anche possibile usare PowerShell o l'interfaccia della riga di comando di Azure, se si preferisce un ambiente gestibile tramite script o riga di comando.
 
-## <a name="clean-up-the-resources"></a>Pulire le risorse
+## <a name="clean-up"></a>Eseguire la pulizia
+<!---TODO: Update for sandbox?--->
 
 Sono previsti addebiti per le macchine virtuali in esecuzione e per l'archiviazione in base alla quantità di spazio usato. Arrestare e deallocare sempre le macchine virtuali quando non sono in uso. Quando le risorse non sono più necessarie, è una buona idea eliminarle. Per rimuovere tutte le risorse create, è possibile eliminarle una per volta oppure eliminare l'intero gruppo di risorse.
 

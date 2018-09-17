@@ -22,7 +22,6 @@ Usare la procedura seguente per vedere cosa accade quando un'applicazione invia 
     cd ~
     cd azure-event-hubs/samples/Java/Basic/SimpleSend
     java -jar ./target/simplesend-1.0.0-jar-with-dependencies.jar
-    ENTER
     ```
 
 1. Quando viene visualizzato il messaggio **Invio completato...** premere INVIO.
@@ -43,7 +42,6 @@ Attendere almeno cinque minuti.
     cd ~
     cd azure-event-hubs/samples/Java/Basic/EventProcessorSample
     java -jar ./target/eventprocessorsample-1.0.0-jar-with-dependencies.jar
-    ENTER
     ```
 
 1. Quando non vengono più visualizzati messaggi nella console, premere INVIO.

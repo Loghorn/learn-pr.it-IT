@@ -2,22 +2,30 @@
 uid: learn.secure-your-azure-virtual-machine-disks
 metadata:
   title: Proteggere i dischi delle macchine virtuali di Azure
-  description: In questo modulo verranno esplorate le opzioni di Azure per la crittografia dei dati inattivi e verranno confrontate le funzionalità Crittografia dischi di Azure e di crittografia del servizio di archiviazione. Usare il portale di Azure nonché comandi e script PowerShell per crittografare i dischi del sistema operativo e dei dati in macchine virtuali esistenti. Usare i modelli di Azure Resource Manager (ARM) per assicurarsi che le nuove macchine virtuali distribuite vengano crittografate automaticamente.
+  description: In questo modulo verranno esplorate le opzioni di Azure per la crittografia dei dati inattivi e verranno confrontate le funzionalità Crittografia dischi di Azure e di crittografia del servizio di archiviazione. Usare il portale di Azure nonché comandi e script PowerShell per crittografare i dischi del sistema operativo e dei dati in macchine virtuali esistenti. Usare i modelli di Azure Resource Manager per assicurarsi che le nuove macchine virtuali distribuite vengano crittografate automaticamente.
   ms.date: 09/24/2018
-  ms.openlocfilehash: a99f3a48f6f464da0925da7b970784df24a5511e
-  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 15f2470a3447740cdf8e774c449baecfd88f4709
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43827420"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44240885"
 title: Proteggere i dischi delle macchine virtuali di Azure
 summary: Crittografia dischi di Azure consente di crittografare i dischi del sistema operativo e dei dati in macchine virtuali nuove ed esistenti.
 abstract: >
   Contenuto del modulo:
-    - Determinare il metodo di crittografia più adatto per la macchina virtuale
-    - Crittografare i dischi delle macchine virtuali esistenti usando il portale di Azure
-    - Crittografare i dischi delle macchine virtuali esistenti usando PowerShell
-    - Modificare i modelli ARM per automatizzare la crittografia dei dischi nelle nuove macchine virtuali
+
+  - Determinare il metodo di crittografia più adatto per la macchina virtuale
+
+  - Crittografare i dischi delle macchine virtuali esistenti usando il portale di Azure
+
+  - Crittografare i dischi delle macchine virtuali esistenti usando PowerShell
+
+  - Modificare i modelli Azure Resource Manager per automatizzare la crittografia dei dischi nelle nuove macchine virtuali
 prerequisites: Nessuno
 iconUrl: http://via.placeholder.com/120x120
 levels:

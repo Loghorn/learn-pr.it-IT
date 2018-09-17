@@ -93,7 +93,7 @@ Per completare il componente che invia messaggi sull'andamento delle vendite, se
     // Close the connection to the topic here
     ```
 
-1. Per chiudere la connessione del bus di servizio, sostituire la riga di codice con il codice seguente:
+1. Per chiudere la connessione al bus di servizio, sostituire la riga di codice con il codice seguente:
 
     ```C#
     await topicClient.CloseAsync();
@@ -113,7 +113,7 @@ Per eseguire il componente che invia un messaggio su una vendita, seguire questa
 
 1. Accedere al portale di Azure.
 
-1. Se il bus di servizio non viene visualizzato, nella home page fare clic su **Tutte le risorse** e quindi sullo spazio dei nomi del bus di servizio creato in precedenza.
+1. Se lo spazio dei nomi Bus di servizio non viene visualizzato, nella home page fare clic su **Tutte le risorse** e quindi sullo spazio dei nomi del bus di servizio creato in precedenza.
 
 1. Nel pannello **Spazio dei nomi del bus di servizio** fare clic su **Argomenti** in **ENTITÀ** e quindi sull'argomento **salesperformancemessages**. Nell'elenco delle sottoscrizioni verrà visualizzato un messaggio nelle sottoscrizioni **Americhe** ed **Europa**.
 
@@ -128,7 +128,7 @@ Per completare il componente che recupera messaggi sull'andamento delle vendite,
 1. All'interno di questo metodo individuare la riga di codice seguente:
 
     ```C#
-    // Create a Subscription Client here
+    // Create a subscription client here
     ```
 
 1. Per creare un client di sottoscrizione, sostituire la riga con il codice seguente:
@@ -197,6 +197,6 @@ Per eseguire il componente che recupera un messaggio sull'andamento delle vendit
 
 1. Accedere al portale di Azure.
 
-1. Se il bus di servizio non viene visualizzato, nella home page fare clic su **Tutte le risorse** e quindi sullo spazio dei nomi del bus di servizio creato in precedenza.
+1. Se lo spazio dei nomi Bus di servizio non viene visualizzato, nella home page fare clic su **Tutte le risorse** e quindi sullo spazio dei nomi del bus di servizio creato in precedenza.
 
 1. Nel pannello **Spazio dei nomi del bus di servizio** fare clic su **Argomenti** in **ENTITÀ** e quindi sull'argomento **salesperformancemessages**. Nell'elenco delle sottoscrizioni non verranno visualizzati messaggi nella sottoscrizione **Americhe** perché l'applicazione ha elaborato e rimosso l'unico messaggio presente. Si noti che il messaggio è ancora presente nella sottoscrizione **Europa**.

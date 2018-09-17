@@ -4,26 +4,30 @@ metadata:
   title: Eseguire contenitori Docker con Istanze di contenitore di Azure
   description: Informazioni su come eseguire app in contenitori usando contenitori Docker con Istanze di contenitore di Azure.
   ms.date: 09/24/2018
-  ms.openlocfilehash: af358ec98831ef92257ef0c30648cee5fc25f404
-  ms.sourcegitcommit: 09425147d998035edf9d2d36006a54d85e3cf75d
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: cc3b70b98927a404474b8ea31798bb3a94d72733
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43847436"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44246379"
 title: Eseguire contenitori Docker con Istanze di contenitore di Azure
 summary: Informazioni su come eseguire app in contenitori usando contenitori Docker con Istanze di contenitore di Azure.
 abstract: >
   Contenuto del modulo:
 
-  - Eseguire un contenitore in Istanze di contenitore di Azure.
+  - Eseguire contenitori in Istanze di contenitore di Azure
 
-  - Gestire il comportamento di riavvio dei contenitori.
+  - Gestire il comportamento di riavvio dei contenitori
 
-  - Usare una variabile di ambiente nei contenitori.
+  - Usare la variabile di ambiente nei contenitori
 
-  - Collegare volumi di dati a un'istanza di contenitore di Azure.
+  - Allegare volumi di dati a un'istanza di contenitore di Azure
 
-  - Acquisire informazioni sulla risoluzione dei problemi per Istanze di contenitore di Azure.
+  - Informazioni sulla risoluzione dei problemi per Istanze di contenitore di Azure
 prerequisites: Nessuno
 iconUrl: http://via.placeholder.com/120x120
 levels:

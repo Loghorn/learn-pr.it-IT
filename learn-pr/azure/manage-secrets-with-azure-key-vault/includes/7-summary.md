@@ -1,7 +1,7 @@
-In questo modulo, è stata protetta la configurazione segreta di un'applicazione in Azure Key Vault. Il codice dell'app esegue l'autenticazione nell'insieme di credenziali con l'identità del servizio gestita e carica automaticamente all'avvio i segreti dall'insieme di credenziali nel sistema di configurazione di ASP.NET Core.
+In questo modulo è stata attivata la protezione della configurazione segreta di un'applicazione in Azure Key Vault. Il codice dell'app esegue l'autenticazione nell'insieme di credenziali con un'identità gestita e carica automaticamente all'avvio i segreti dall'insieme di credenziali nel sistema di configurazione di ASP.NET Core.
 
 ## <a name="clean-up"></a>Eseguire la pulizia
-<!---TODO: Do we need to include cleanup for the free education tier?--->
+<!---TODO: Update for sandbox?--->
 
 Per eseguire la pulizia della sottoscrizione di Azure, eseguire in Azure Cloud Shell il comando seguente che consente di eliminare il gruppo di risorse contenente tutte le risorse create in questo modulo.
 
@@ -26,5 +26,5 @@ Se si trattasse di una vera app, che cosa succederebbe dopo?
 
 - [Documentazione su Key Vault](https://docs.microsoft.com/azure/key-vault/)
 - [Informazioni su AddAzureKeyVault e le relative opzioni avanzate](https://docs.microsoft.com/aspnet/core/security/key-vault-configuration?view=aspnetcore-2.1&tabs=aspnetcore2x)
-- [Questa esercitazione](https://docs.microsoft.com/azure/key-vault/key-vault-use-from-web-application) illustra l'uso di `KeyVaultClient`, incluse le informazioni sull'autenticazione manuale ad Azure Active Directory tramite un segreto client anziché Identità del servizio gestito.
-- [Documentazione del servizio token MSI](https://docs.microsoft.com/azure/app-service/app-service-managed-service-identity#using-the-rest-protocol), per implementare personalmente il flusso di lavoro dell'autenticazione
+- [Questa esercitazione](https://docs.microsoft.com/azure/key-vault/key-vault-use-from-web-application) illustra l'uso di `KeyVaultClient`, incluse le informazioni sull'autenticazione manuale ad Azure Active Directory tramite un segreto client anziché un'identità gestita.
+- [Identità gestite per la documentazione del servizio token delle risorse di Azure](https://docs.microsoft.com/azure/app-service/app-service-managed-service-identity#using-the-rest-protocol), per implementare personalmente il flusso di lavoro dell'autenticazione.

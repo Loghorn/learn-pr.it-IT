@@ -3,6 +3,7 @@ In questo modulo è stata completata la creazione di uno spazio dei nomi, una co
 Le code e gli argomenti del bus di servizio sono strumenti eccellenti che consentono di aumentare la resilienza delle comunicazioni in un'applicazione distribuita. Fungendo da posizione di archiviazione temporanea, rendono superflua la comunicazione diretta tra i componenti e gestiscono senza problemi i picchi della domanda. È consigliabile usarli quando è presente un componente che può comunicare con un altro componente in una configurazione ad accoppiamento debole.
 
 ## <a name="clean-up"></a>Eseguire la pulizia
+<!---TODO: Update for sandbox?--->
 
 Le code e gli argomenti del bus di servizio nella sottoscrizione di Azure comportano un costo, anche se è probabile che si tratti di un costo ridotto se sono presenti pochi messaggi di piccole dimensioni. Il modo più semplice per pulire la sottoscrizione di Azure consiste nel rimuovere il gruppo di risorse creato durante il primo esercizio. Verranno eliminati anche tutti gli argomenti, tutte le code, tutti gli spazi dei nomi e tutte le altre risorse del gruppo. Al termine del modulo, seguire questa procedura:
 

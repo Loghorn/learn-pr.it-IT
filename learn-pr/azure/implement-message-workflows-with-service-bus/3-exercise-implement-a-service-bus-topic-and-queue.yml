@@ -1,14 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.implement-message-workflows-with-service-bus.3-exercise-implement-a-service-bus-topic-and-queue
-title: Esercizio - Implementare un argomento del bus di servizio e la coda
+title: 'Esercizio: implementare un argomento del bus di servizio e la coda'
 metadata:
-  title: Esercizio - Implementare un argomento del bus di servizio e la coda
-  description: Esercizio - Implementare un argomento del bus di servizio e la coda
-  ms.openlocfilehash: 31134f61de4dc4d45a4e5adb513ada70986b12b1
-  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  title: 'Esercizio: implementare un argomento del bus di servizio e la coda'
+  description: 'Esercizio: implementare un argomento del bus di servizio e la coda'
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: a8c66a1143fba1f5f9b14e5c37d8eb43fa8f2869
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43834566"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44242299"
 durationInMinutes: 10
 content: '[!include[](includes/3-exercise-implement-a-service-bus-topic-and-queue.md)]'

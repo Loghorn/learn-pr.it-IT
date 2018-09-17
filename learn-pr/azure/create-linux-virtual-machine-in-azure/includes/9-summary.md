@@ -2,9 +2,10 @@ In questo modulo si è appreso come creare una macchina virtuale Linux usando il
 
 Si è inoltre appreso che mentre SSH consente di interagire con il sistema operativo e con il software della macchina virtuale, il portale permette di configurare l'hardware virtuale e la connettività. È anche possibile usare PowerShell o l'interfaccia della riga di comando di Azure, se si preferisce un ambiente gestibile tramite script o riga di comando.
 
-## <a name="clean-up-the-resources"></a>Pulire le risorse
+## <a name="clean-up"></a>Eseguire la pulizia
+<!---TODO: Update for sandbox?--->
 
-Sono previsti addebiti per le macchine virtuali in esecuzione e per l'archiviazione in base alla quantità di spazio usato. Arrestare e deallocare sempre le macchine virtuali quando non sono in uso. Quando le risorse non sono più necessarie, è una buona idea eliminarle. Per rimuovere tutte le risorse create, è possibile eliminarle una per una oppure eliminare il gruppo di risorse.
+Sono previsti addebiti per le macchine virtuali in esecuzione e per l'archiviazione in base alla quantità di spazio usato. Arrestare e deallocare sempre le macchine virtuali quando non sono in uso. Quando le risorse non sono più necessarie, è una buona idea eliminarle. Per rimuovere tutte le risorse create, è possibile eliminarle una per una oppure eliminare il gruppo di risorse:
 
 1. Accedere al portale di Azure.
 

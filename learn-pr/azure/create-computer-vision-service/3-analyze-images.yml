@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.create-computer-vision-service.3-analyze-images
+interactive: bash
+title: Analisi delle immagini con Visione artificiale
+metadata:
+  title: Analisi delle immagini con Visione artificiale
+  description: Analisi delle immagini con Visione artificiale
+  ms.openlocfilehash: e72ec55bac15ec000be4674f7d0eaad80d802a7c
+  ms.sourcegitcommit: e90461bc6f88bca3b53183b476553633f93990a3
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "44044053"
+durationInMinutes: 10
+content: '[!include[](includes/3-analyze-images.md)]'
