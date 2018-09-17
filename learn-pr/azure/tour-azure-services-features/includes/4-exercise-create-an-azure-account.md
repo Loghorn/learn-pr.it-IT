@@ -1,0 +1,36 @@
+<span data-ttu-id="a125c-101">Per creare e usare i servizi di Azure è necessario un account.</span><span class="sxs-lookup"><span data-stu-id="a125c-101">To create and use Azure services, you will eventually need an account.</span></span> <span data-ttu-id="a125c-102">Se si ha già un account Azure, è possibile ignorare questa unità e passare a quella successiva in cui si inizierà a esplorare il portale di Azure.</span><span class="sxs-lookup"><span data-stu-id="a125c-102">If you already have an Azure account, you can skip this unit and move onto the next one where we will begin to explore the Azure Portal.</span></span>
+
+<span data-ttu-id="a125c-103">Se non si ha ancora un account, questa unità illustra la procedura per creare un account Azure gratuito.</span><span class="sxs-lookup"><span data-stu-id="a125c-103">If you don't have an account, we will walk through creating a free Azure account now.</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="a125c-104">È necessaria una carta di credito valida per la verifica di età e identità.</span><span class="sxs-lookup"><span data-stu-id="a125c-104">You need a valid credit card for age and identity validation.</span></span> <span data-ttu-id="a125c-105">Sulla carta _non verrà addebitato_ alcun costo fino a quando non si decide di aggiornare l'account gratuito o la versione di valutazione a una sottoscrizione completa.</span><span class="sxs-lookup"><span data-stu-id="a125c-105">Your card will _not be charged_ until you decide to upgrade the trial / free account to a full subscription.</span></span>
+
+## <a name="sign-up-for-a-free-account"></a><span data-ttu-id="a125c-106">Sottoscrivere un account gratuito</span><span class="sxs-lookup"><span data-stu-id="a125c-106">Sign up for a free account</span></span>
+
+1. <span data-ttu-id="a125c-107">In un Web browser passare a [azure.microsoft.com](https://azure.microsoft.com?azure-portal=true) e fare clic su **Inizia gratuitamente**.</span><span class="sxs-lookup"><span data-stu-id="a125c-107">In a web browser, navigate to [azure.microsoft.com](https://azure.microsoft.com?azure-portal=true), and click **Start for free**.</span></span>
+
+1. <span data-ttu-id="a125c-108">Nella pagina **Crea subito il tuo account Azure gratuito** fare clic sul pulsante **Inizia gratuitamente**.</span><span class="sxs-lookup"><span data-stu-id="a125c-108">On the **Create your Azure free account today** page, click **Start free >** button.</span></span> 
+
+1. <span data-ttu-id="a125c-109">Verrà richiesto di accedere con il proprio account Microsoft.</span><span class="sxs-lookup"><span data-stu-id="a125c-109">You'll be prompted to sign in with your Microsoft account.</span></span> <span data-ttu-id="a125c-110">Accedere con le credenziali Microsoft o creare un nuovo account Microsoft gratuito.</span><span class="sxs-lookup"><span data-stu-id="a125c-110">Sign in with your Microsoft credentials or create a new free Microsoft account.</span></span>
+
+1. <span data-ttu-id="a125c-111">Nella pagina **Informazioni personali** selezionare il proprio paese o area geografica e quindi immettere il nome, il cognome, il numero di telefono e l'indirizzo di posta elettronica.</span><span class="sxs-lookup"><span data-stu-id="a125c-111">On the **About you** page, select your correct country or region, and then enter your first and last names, along with your email address and phone number.</span></span> <span data-ttu-id="a125c-112">A seconda del paese, è possibile che vengano visualizzati altri campi, ad esempio il numero di partita IVA.</span><span class="sxs-lookup"><span data-stu-id="a125c-112">Depending on your country, you may see additional fields, such as VAT number.</span></span> <span data-ttu-id="a125c-113">Fare clic su **Avanti** per continuare.</span><span class="sxs-lookup"><span data-stu-id="a125c-113">Click **Next** to continue.</span></span>
+
+   ![Nuovo account 1](../media-draft/4-new-account-1.png)
+
+1. <span data-ttu-id="a125c-115">Nella schermata **Verifica dell'identità mediante telefono** selezionare il prefisso internazionale e digitare il numero di un telefono a cui si può accedere immediatamente.</span><span class="sxs-lookup"><span data-stu-id="a125c-115">On the **Identity verification by phone** screen, select your country code, and type the number of a telephone to which you have immediate access.</span></span>
+
+   ![Nuovo account 2](../media-draft/4-new-account-2.png)
+
+1. <span data-ttu-id="a125c-117">È possibile scegliere di ricevere un messaggio di testo o una chiamata per ottenere un codice di verifica.</span><span class="sxs-lookup"><span data-stu-id="a125c-117">You have the option of text or callback to obtain a verification code.</span></span> <span data-ttu-id="a125c-118">Fare clic sul pulsante pertinente, digitare il codice nella casella **Codice di verifica** e fare clic su **Verifica codice**.</span><span class="sxs-lookup"><span data-stu-id="a125c-118">Click the relevant button, type the code in the **Verification code** box, and click **Verify code**.</span></span>
+
+   ![Nuovo account 3](../media-draft/4-new-account-3.png)
+
+1. <span data-ttu-id="a125c-120">Se il codice di verifica è corretto, verrà chiesto di immettere i dati di una carta di credito valida.</span><span class="sxs-lookup"><span data-stu-id="a125c-120">If the verification code is correct, you will now be asked to enter details of a valid credit card.</span></span> <span data-ttu-id="a125c-121">Immettere il numero della carta, la data di scadenza, il numero CVV, il nome riportato sulla carta, l'indirizzo dell'intestatario della carta, insieme al codice postale, e quindi fare clic su **Avanti**.</span><span class="sxs-lookup"><span data-stu-id="a125c-121">Enter the card number, the expiration date, the CVV number, your name as it is written on the card, the address to which the card is registered, along with the postal or ZIP code, and then click **Next**.</span></span>
+
+   ![Nuovo account 4](../media-draft/4-new-account-4.png)
+
+1. <span data-ttu-id="a125c-123">Selezionare infine la casella per accettare il contratto di sottoscrizione, l'informativa sulla privacy e i criteri relativi alle comunicazioni.</span><span class="sxs-lookup"><span data-stu-id="a125c-123">Finally, check the box to accept the subscription agreement, privacy statement, and communications policy.</span></span> <span data-ttu-id="a125c-124">La seconda casella di controllo è facoltativa.</span><span class="sxs-lookup"><span data-stu-id="a125c-124">The second checkbox is optional.</span></span> <span data-ttu-id="a125c-125">Fare clic su **Iscrizione**.</span><span class="sxs-lookup"><span data-stu-id="a125c-125">Now click **Sign up**.</span></span>
+
+   ![Nuovo account 5](../media-draft/4-new-account-5.png)
+
+<span data-ttu-id="a125c-127">È stato configurato un account gratuito e si verrà indirizzati alla home page del portale di Azure.</span><span class="sxs-lookup"><span data-stu-id="a125c-127">You have now successfully set up a free account, and you will be taken to the Azure portal home page.</span></span> <span data-ttu-id="a125c-128">Questo è il prossimo elemento che verrà esaminato.</span><span class="sxs-lookup"><span data-stu-id="a125c-128">Let's explore that next.</span></span>
