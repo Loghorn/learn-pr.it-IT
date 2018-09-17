@@ -12,11 +12,11 @@ Le istanze riservate vengono acquistate per periodi di uno o tre anni, con pagam
 
 Come indicato in precedenza, Gestione costi di Azure e Azure Advisor potrebbero consigliare di ridimensionare o arrestare le VM. Il ridimensionamento di una macchina virtuale è il processo che consente di portarla a una dimensione appropriata. Si supponga di avere un server in esecuzione come controller di dominio con le dimensioni di uno **Standard_D4sv3**, ma che la VM sia inattiva al 90% nella maggior parte dei casi. Ridimensionando la VM a uno **Standard_D2sv3_v3**, i costi di elaborazione si riducono del 50%. I costi sono lineari e raddoppiati per ogni dimensione maggiore nella stessa serie. In questo caso, potrebbe addirittura risultare vantaggioso modificare la serie di istanze in una serie di VM meno costosa. La figura seguente mostra come è possibile ottenere un risparmio del 50% riducendo la VM di una dimensione all'interno della stessa serie.
 
-![Una figura che illustra i risparmi ottenuti riducendo le dimensioni di una macchina virtuale sottoutilizzata.](../media-drafts/4-vm-resize.png)
+![Figura che illustra i risparmi ottenuti riducendo le dimensioni di una macchina virtuale sottoutilizzata.](../media-drafts/4-vm-resize.png)
 
-Le macchine virtuali sovradimensionate costituiscono una spesa superflua comune in Azure, tuttavia facilmente risolvibile. È possibile modificare la dimensione di una VM mediante il portale di Azure, Azure PowerShell o l'interfaccia della riga di comando di Azure.
+Le macchine virtuali sovradimensionate costituiscono una spesa superflua comune in Azure, tuttavia facilmente risolvibile. È possibile modificare le dimensioni di una VM mediante il portale di Azure, Azure PowerShell o l'interfaccia della riga di comando di Azure.
 
-> [!NOTE]
+> [!TIP]
 > Per ridimensionare una VM, è necessario arrestarla, ridimensionarla e riavviarla. Questa operazione potrebbe richiedere qualche minuto, a seconda del volume della modifica. Pianificare un'interruzione del servizio o spostare il traffico in un'altra istanza mentre si esegue questa attività.
 
 ## <a name="deallocate-virtual-machines-in-off-hours"></a>Deallocare le macchine virtuali durante gli orari di minore attività
