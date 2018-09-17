@@ -38,7 +38,7 @@ Questo comando crea una nuova macchina virtuale Linux **Debian** chiamata `Sampl
 
 Se si esaminano le risposte dettagliate, si vedrà anche come viene usato il nome `SampleVM` per denominare diverse dipendenze per la macchina virtuale.
 
-```
+```output
 Succeeded: SampleVMNSG (Microsoft.Network/networkSecurityGroups)
 Accepted: SampleVMVNET (Microsoft.Network/virtualNetworks)
 Succeeded: SampleVMPublicIP (Microsoft.Network/publicIPAddresses)

@@ -8,12 +8,12 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 75b32405e5c5ae80daf3a1b7726a2b17add97a78
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: b81dd92ad5a4e0619c9129521bf2f275e3f30b01
+  ms.sourcegitcommit: 4d3d995e220b696d35237a19740a6d619134d6ca
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44242605"
+  ms.lasthandoff: 09/13/2018
+  ms.locfileid: "45537334"
 title: Creare una macchina virtuale Linux in Azure
 summary: Questo modulo illustra come creare una macchina virtuale Linux usando il portale di Azure.
 abstract: >
@@ -23,7 +23,7 @@ abstract: >
     - Connettersi a una macchina virtuale Linux in esecuzione usando SSH
     - Installare il software e modificare la configurazione di rete in una macchina virtuale usando il portale di Azure
 prerequisites: Nessuno
-iconUrl: http://via.placeholder.com/120x120
+iconUrl: /learn/achievements/create-linux-virtual-machine-in-azure.svg
 levels:
 - beginner
 roles:
@@ -31,6 +31,7 @@ roles:
 - developer
 products:
 - azure
+- azure-portal
 - azure-virtual-machines
 units:
 - learn.create-linux-vm-in-azure.1-introduction

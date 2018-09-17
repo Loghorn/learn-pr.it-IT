@@ -29,7 +29,7 @@ La coda di Azure può trovarsi a migliaia di chilometri dai componenti di invio 
 
 Quando si invia un messaggio a una coda, ad esempio, usare il metodo `QueueClient.SendAsync()` con la parola chiave `await`.
 
-## <a name="write-code-that-sends-to-queues"></a>Scrivere codice che invia messaggi alle code 
+## <a name="write-code-that-sends-to-queues"></a>Scrivere codice che invia messaggi alle code
 
 In qualsiasi componente di invio o di ricezione è necessario aggiungere le istruzioni `using` seguenti a qualsiasi file di codice che chiama una coda del bus di servizio:
 
@@ -66,4 +66,3 @@ Eseguire l'elaborazione. Nel gestore di messaggi chiamare il metodo `QueueClient
 ```C#
 await queueClient.CompleteAsync(message.SystemProperties.LockToken);
 ```
-    
