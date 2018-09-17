@@ -8,10 +8,10 @@ Visual Studio include una pratica estensione per Azure Cosmos DB in modo da pote
 
 In questo modulo verrà descritto come:  
 
-- Creare un'applicazione per archiviare i dati ed eseguire query in Azure Cosmos DB.
-- Usare il terminale integrato in Visual Studio Code per creare rapidamente un'applicazione console.
-- Aggiungere la funzionalità Azure Cosmos DB con l'aiuto dell'estensione di Azure Cosmos DB per Visual Studio Code.
+- Creare un'applicazione per archiviare dati ed eseguire query in Azure Cosmos DB
+- Usare il terminale integrato in Visual Studio Code per creare rapidamente un'applicazione console
+- Aggiungere la funzionalità Azure Cosmos DB con l'aiuto dell'estensione Azure Cosmos DB per Visual Studio Code
 
 ## <a name="prerequisites"></a>Prerequisiti
 
-- È necessario aver installato [Visual Studio Code](https://code.visualstudio.com/).
+- È necessario aver installato [Visual Studio Code](https://code.visualstudio.com/)

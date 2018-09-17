@@ -1,0 +1,40 @@
+### YamlMime:ModuleUnit
+uid: learn.configure-the-network-for-your-virtual-machines.7-knowledge-check-azure-expressroute
+title: Verifica delle conoscenze
+metadata:
+  title: Verifica delle conoscenze
+  description: Verifica delle conoscenze
+  ms.openlocfilehash: ba308f82b6c53c8590654e5d3e01627b00db57e6
+  ms.sourcegitcommit: 09425147d998035edf9d2d36006a54d85e3cf75d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43847141"
+durationInMinutes: 3
+quiz:
+  title: Verifica delle conoscenze - Azure ExpressRoute
+  questions:
+  - content: Quale dei protocolli seguenti fornisce il routing dinamico per Azure ExpressRoute?
+    choices:
+    - content: IPVPN
+      isCorrect: false
+    - content: PPTP
+      isCorrect: false
+    - content: IPsec
+      isCorrect: false
+    - content: BCP
+      isCorrect: true
+    - content: S-key
+      isCorrect: false
+  - content: Quale tipo di peering supporta le connessioni alle offerte SaaS basate sul cloud?
+    choices:
+    - content: Privato di Azure
+      isCorrect: false
+    - content: Pubblico di Azure
+      isCorrect: false
+    - content: Microsoft
+      isCorrect: true
+    - content: Office 365
+      isCorrect: false
+    - content: Dinamico
+      isCorrect: false

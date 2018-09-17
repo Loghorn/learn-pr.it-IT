@@ -2,11 +2,9 @@ Per risolvere il problema dell'archiviazione per il portale di formazione online
 
 ## <a name="what-is-azure-storage"></a>Che cos'è Archiviazione di Azure?
 
-Archiviazione di Azure è una soluzione di archiviazione basata sul cloud che offre livelli elevati di sicurezza e scalabilità in grado di soddisfare le attuali esigenze aziendali. Le funzionalità avanzate disponibili rispondono a tutte le sfide che presenta l'archiviazione cloud, offrendo una soluzione di archiviazione affidabile e durevole.
+Archiviazione di Azure è una soluzione di archiviazione basata sul cloud che offre livelli elevati di sicurezza e scalabilità in grado di soddisfare le attuali esigenze aziendali. Le funzionalità disponibili rispondono alle principali sfide poste dall'archiviazione cloud, offrendo una soluzione di archiviazione affidabile e durevole.
 
 ## <a name="benefits-of-using-azure-to-store-data"></a>Vantaggi dell'uso di Azure per archiviare i dati
-
-![Vantaggi](../media-draft/Benefits.png)
 
 Di seguito sono riportati alcuni dei vantaggi di Archiviazione di Azure:
 
@@ -17,4 +15,4 @@ Di seguito sono riportati alcuni dei vantaggi di Archiviazione di Azure:
 - **Supporto per più tipi di dati**: Azure può archiviare quasi tutti i tipi di dati richiesti dagli utenti. Può gestire file video, file di testo e persino file binari di grandi dimensioni, ad esempio dischi rigidi virtuali. Sono inoltre disponibili molte opzioni per i dati relazionali e NoSQL.
 - **Supporto per i dati strutturati/non strutturati**: le funzionalità Archiviazione BLOB di Azure e Azure Cosmos DB offrono la possibilità di archiviare dati strutturati e non.
 - **Archiviazione dei dati in dischi virtuali**: Azure offre anche la possibilità di archiviare fino a 8 TB di dati nei dischi virtuali. Questa è una funzionalità importante quando si archiviano quantità di dati elevate, ad esempio video e simulazioni.
-- **Livelli di archiviazione**: Archiviazione di Azure offre livelli di archiviazione per stabilire la priorità di accesso ai dati in base alla frequenza d'uso delle informazioni. Questa caratteristica ha l'effetto di migliorare in modo significativo l'esperienza utente.
+- **Livelli di archiviazione**: Archiviazione di Azure offre livelli di archiviazione per stabilire la priorità di accesso ai dati in base alla frequenza d'uso delle informazioni.

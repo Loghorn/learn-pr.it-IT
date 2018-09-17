@@ -60,7 +60,7 @@ Le organizzazioni spesso generano dati che variano a seconda di dove vengono con
 
 1. Si dispone di dati specifici per un paese o una regione? In tal caso, per motivi di prestazioni o conformità, potrebbe essere opportuno collocarlo in un Data Center del paese in questione. È necessario un account di archiviazione per ogni posizione.
 
-1. Si dispone di dati proprietari e di dati di consumo pubblico? In questo caso, è possibile abilitare le reti virtuali per i dati proprietari ed evitarla per i dati pubblici. Ciò richiederà anche account di archiviazione separati.
+1. Si dispone di dati proprietari e di dati di consumo pubblico? In questo caso, è possibile abilitare le reti virtuali per i dati proprietari e non per i dati pubblici. Ciò richiederà anche account di archiviazione separati.
 
 In generale, una maggiore diversità indica la necessità di un maggior numero di account di archiviazione.
 
@@ -72,7 +72,7 @@ Un account di archiviazione di per sé non ha alcun costo finanziario, tuttavia,
 
 ### <a name="tolerance-for-management-overhead"></a>Tolleranza per il sovraccarico di gestione
 
-Ogni account di archiviazione richiede tempo e attenzione da parte di un amministratore per la creazione e la manutenzione. Ciò aumenta anche la complessità per gli utenti che aggiungono i dati nell'archiviazione cloud; tutti gli utenti in questo ruolo devono capire lo scopo di ogni account di archiviazione in modo da aggiungere nuovi servizi all’account corretto.
+Ogni account di archiviazione richiede tempo e attenzione da parte di un amministratore per la creazione e la manutenzione. Ciò aumenta anche la complessità per gli utenti che aggiungono i dati nell'archiviazione cloud; tutti gli utenti in questo ruolo devono capire lo scopo di ogni account di archiviazione in modo da aggiungere nuovi dati all’account corretto.
 
 ## <a name="summary"></a>Riepilogo
 
