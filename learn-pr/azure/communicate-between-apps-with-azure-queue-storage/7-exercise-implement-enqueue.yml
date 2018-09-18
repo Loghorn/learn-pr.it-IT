@@ -1,20 +1,21 @@
 ### YamlMime:ModuleUnit
 uid: learn.communicate-between-applications-with-azure-queue-storage.7-exercise-implement-enqueue
-title: <span data-ttu-id="b8f06-101">Aggiungere un messaggio alla coda</span><span class="sxs-lookup"><span data-stu-id="b8f06-101">Add a message to the queue</span></span>
+title: <span data-ttu-id="ea964-101">Aggiungere un messaggio alla coda</span><span class="sxs-lookup"><span data-stu-id="ea964-101">Add a message to the queue</span></span>
 metadata:
-  title: <span data-ttu-id="b8f06-102">Aggiungere un messaggio alla coda</span><span class="sxs-lookup"><span data-stu-id="b8f06-102">Add a message to the queue</span></span>
-  description: <span data-ttu-id="b8f06-103">Aggiungere un messaggio alla coda</span><span class="sxs-lookup"><span data-stu-id="b8f06-103">Add a message to the queue</span></span>
+  title: <span data-ttu-id="ea964-102">Aggiungere un messaggio alla coda</span><span class="sxs-lookup"><span data-stu-id="ea964-102">Add a message to the queue</span></span>
+  description: <span data-ttu-id="ea964-103">Aggiungere un messaggio alla coda</span><span class="sxs-lookup"><span data-stu-id="ea964-103">Add a message to the queue</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: faf2ae1c8b6acc84940fdbd9fab4d3fe2bc7b69c
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: 1b966cf97c68cbe439a37bbab66d02865e7e1de9
+  ms.sourcegitcommit: b6f5aa15bae13cb0f53667fba1d404b7bec76f67
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44242265"
+  ms.lasthandoff: 09/17/2018
+  ms.locfileid: "45759129"
 interactive: bash-editor
+azureSandbox: true
 durationInMinutes: 10
 content: '[!include[](includes/7-exercise-implement-enqueue.md)]'
