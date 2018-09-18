@@ -1,8 +1,8 @@
 Prima di connettere il database all'app, è necessario controllare che sia possibile connettersi, aggiungere una tabella di base e lavorare con dati di esempio.
 
-L'infrastruttura, gli aggiornamenti software e le patch per il database SQL di Azure sono gestiti da Microsoft. A parte questo, è possibile gestire il database SQL di Azure come qualsiasi altra installazione di SQL Server. È ad esempio possibile usare Visual Studio, SQL Server Management Studio o altri strumenti per gestire il database SQL di Azure.
+L'infrastruttura, gli aggiornamenti software e le patch per il database SQL di Azure sono gestiti da Microsoft. A parte questo, è possibile gestire il database SQL di Azure come qualsiasi altra installazione di SQL Server. È ad esempio possibile usare Visual Studio, SQL Server Management Studio, SQL Server Operations Studio o altri strumenti per gestire il database SQL di Azure.
 
-È possibile scegliere come accedere al database e connetterlo all'app. Tuttavia, per acquisire familiarità con il database, verrà descritto come connettersi direttamente al database dal portale, creare una tabella ed eseguire alcune operazioni CRUD di base. Si apprenderà:
+È l'utente che deve scegliere come accedere al database e connetterlo all'app. Tuttavia, per acquisire familiarità con il database, verrà descritto come connettersi direttamente al database dal portale, creare una tabella ed eseguire alcune operazioni CRUD di base. Si apprenderà:
 
 - Che cos'è Cloud Shell e come accedervi dal portale.
 - Come accedere alle informazioni sul database dall'interfaccia della riga di comando di Azure, incluse le stringhe di connessione.
@@ -31,8 +31,6 @@ In questo caso, si aprirà Cloud Shell e si userà l'utilità `az` per elencare 
 
 1. Nel portale fare clic su **Cloud Shell** nella parte superiore.
 
-    ![Apertura di Cloud Shell](../media-draft/open-cloud-shell.png)
-
 1. I comandi `az` da eseguire richiedono il nome del gruppo di risorse e il nome del server logico SQL di Azure. Per evitare di digitarli, eseguire questo comando `azure configure` per specificare i valori come valori predefiniti.
     Sostituire `contoso-logistics` con il nome del server logico SQL di Azure.
 
@@ -45,7 +43,7 @@ In questo caso, si aprirà Cloud Shell e si userà l'utilità `az` per elencare 
     ```azurecli
     az sql db list
     ```
-    Si noterà un blocco di codice JSON di grandi dimensioni come output. 
+    Si noterà un blocco di codice JSON di grandi dimensioni come output.
 
 1. Poiché si è interessati solo ai nomi dei database, eseguire il comando una seconda volta. Questa volta, inviare tramite pipe l'output a `jq` per visualizzare solo i campi del nome.
     ```azurecli
@@ -136,14 +134,14 @@ CRUD è l'acronimo di **create**, **read**, **update** e **delete**, ovvero le o
     name
     --------------------------------------------------------------------------------------------------------------------------------
     Drivers
-    
+
     (1 rows affected)
     ```
 
 1. Eseguire questa istruzione T-SQL `INSERT` per aggiungere una riga di esempio per la tabella. Questa è l'operazione **create**.
 
     ```sql
-    INSERT INTO Drivers (DriverID, LastName, FirstName, OriginCity) VALUES (123, 'Orton', 'Erick', 'Springfield');
+    INSERT INTO Drivers (DriverID, LastName, FirstName, OriginCity) VALUES (123, 'Zirne', 'Laura', 'Springfield');
     GO
     ```
 
@@ -166,14 +164,14 @@ CRUD è l'acronimo di **create**, **read**, **update** e **delete**, ovvero le o
     DriverID
     -----------
             123
-    
+
     (1 rows affected)
     ```
 
 1. Eseguire questa istruzione T-SQL `UPDATE` per modificare la città di origine da "Springfield" in "Springfield, OR" per l'autista con un valore `DriverID` pari a 123. Questa è l'operazione **update**.
 
     ```sql
-    UPDATE Drivers SET OriginCity='Springfield, OR' WHERE DriverID=123;
+    UPDATE Drivers SET OriginCity='Springfield, AK' WHERE DriverID=123;
     GO
     ```
 
@@ -189,7 +187,7 @@ CRUD è l'acronimo di **create**, **read**, **update** e **delete**, ovvero le o
     DELETE FROM Drivers WHERE DriverID=123;
     GO
     ```
-    
+
     ```console
     (1 rows affected)
     ```
@@ -206,7 +204,7 @@ CRUD è l'acronimo di **create**, **read**, **update** e **delete**, ovvero le o
     ```console
     -----------
               0
-    
+
     (1 rows affected)
     ```
 

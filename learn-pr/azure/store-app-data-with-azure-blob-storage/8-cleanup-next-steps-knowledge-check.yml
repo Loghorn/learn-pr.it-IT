@@ -4,57 +4,51 @@ title: Pulizia e verifica delle conoscenze
 metadata:
   title: Pulizia e verifica delle conoscenze
   description: Pulizia e verifica delle conoscenze
-  ms.openlocfilehash: a638c0207bea93fa344291c7dc13c741a92c1e98
-  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: b24af53e601f69f0d8fedbe55cbeb8d3f4ab9926
+  ms.sourcegitcommit: 5130ac6e16956e1cd182c3d5f2721b881a186c63
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43825618"
+  ms.lasthandoff: 09/12/2018
+  ms.locfileid: "44503258"
 durationInMinutes: 2
 content: >
   [!include[](includes/8-cleanup-next-steps-knowledge-check.md)]
 quiz:
-  title: 'Verifica delle conoscenze: archiviazione BLOB'
+  title: Verifica delle conoscenze
   questions:
-  - content: Quale delle seguenti affermazioni meglio descrive una buona strategia per la creazione di account di archiviazione e contenitori BLOB per l'app?
+  - content: Quale delle seguenti affermazioni meglio descrive una buona strategia per la creazione di account di archiviazione e contenitori BLOB per l'applicazione?
     choices:
-    - content: I contenitori e gli account di archiviazione devono essere creati manualmente nel portale di Azure o con gli script prima di distribuire l'app.
+    - content: Creare account di archiviazione e contenitori di Azure anticipatamente, prima di distribuire l'applicazione.
       isCorrect: false
-      incorrectExplanation: Gli account di archiviazione devono essere creati anticipatamente, prima della distribuzione dell'app, invece i contenitori vengono in genere creati dalle applicazioni in tempo reale.
-    - content: L'app ha bisogno degli account di archiviazione, ma il processo di distribuzione deve creare anticipatamente tutti i contenitori necessari all'app.
+    - content: Anche se è possibile creare gli account di Archiviazione di Azure quando è necessario per l'applicazione, il processo di distribuzione deve poter creare anticipatamente tutti i contenitori necessari.
       isCorrect: false
-      incorrectExplanation: La creazione degli account di archiviazione è un'attività di gestione che, in genere, non deve essere eseguita dalle applicazioni.
-    - content: È necessario creare anticipatamente gli account di archiviazione dell'app, prima di distribuirla, e consentire all'app di creare i contenitori di cui ha bisogno.
+    - content: Creare anticipatamente gli account di archiviazione dell'app, prima di distribuirla, e consentire all'app di creare i contenitori di cui ha bisogno.
       isCorrect: true
-      correctExplanation: La creazione dei contenitori è una attività comune per l'app. Le applicazioni possono creare i contenitori di cui hanno bisogno in tempo reale.
-    - content: Un'app configurata correttamente deve creare autonomamente tutti gli account e i contenitori di archiviazione di cui ha bisogno.
-      isCorrect: false
-      incorrectExplanation: La creazione degli account di archiviazione è un'attività di gestione che, in genere, non deve essere eseguita dalle applicazioni.
-  - content: Quale tipo di configurazione viene in genere utilizzato per inizializzare la libreria client dell'archiviazione BLOB all'interno di un'app?
+      correctExplanation: La creazione di un account di Archiviazione di Azure è un'attività amministrativa e può essere eseguita prima della distribuzione dell'applicazione. Il contenitore è rapido da creare e leggero da caricare e costituisce un'attività ottimale da eseguire nell'applicazione.
+  - content: Quale tipo di configurazione viene in genere usato per inizializzare la libreria client dell'archiviazione BLOB all'interno di un'applicazione?
     choices:
     - content: Un nome utente e una password di Azure.
       isCorrect: false
-      incorrectExplanation: I nomi utente e le password non sono un meccanismo di autenticazione per l'archiviazione di Azure.
-    - content: La stringa di connessione dell'account di archiviazione.
+    - content: La stringa di connessione dell'account di Archiviazione di Azure.
       isCorrect: true
       correctExplanation: Una stringa di connessione dell'account di archiviazione contiene tutte le informazioni necessarie a un'applicazione per connettersi all'archiviazione BLOB, in particolar modo il nome e la chiave dell'account.
     - content: Un identificatore univoco globale (GUID) che rappresenta l'applicazione.
       isCorrect: false
-      incorrectExplanation: I GUID non sono un meccanismo di autenticazione per l'archiviazione di Azure.
-    - content: Il data center dell'account di archiviazione e gli identificatori di posizione.
+    - content: Il data center dell'account di Archiviazione di Azure e gli identificatori di posizione.
       isCorrect: false
-      incorrectExplanation: L'applicazione non ha bisogno di conoscere le informazioni sul data center e sulla posizione di un account di archiviazione per accedervi.
   - content: Cosa accade quando si chiama `GetBlockBlobReference` con il nome di un BLOB?
     choices:
     - content: Viene creato un nuovo BLOB in blocchi nell'archiviazione.
       isCorrect: false
-      incorrectExplanation: Ottenere un riferimento al BLOB non comporta di per sé la creazione di un BLOB, ma solo se si usa il riferimento per caricare i dati e il BLOB di destinazione non esiste già.
-    - content: Viene creato un oggetto `CloudBlockBlob` in locale. Non vengono effettuate chiamate di rete.
+    - content: Viene creato un oggetto `CloudBlockBlob` in locale. Non vengono eseguite chiamate di rete.
       isCorrect: true
-      correctExplanation: Ottenere un riferimento al BLOB non comporta alcuna chiamata all'archiviazione di Azure; viene semplicemente creato un oggetto locale che può essere usato per lavorare con un BLOB archiviato.
+      correctExplanation: Ottenere un riferimento al BLOB non comporta alcuna chiamata ad Archiviazione di Azure; viene semplicemente creato un oggetto locale che viene usato per lavorare con un BLOB archiviato.
     - content: Se il BLOB non esiste nell'archiviazione, viene generata un'eccezione.
       isCorrect: false
-      incorrectExplanation: Ottenere un riferimento al BLOB non comporta la verifica dell'effettiva esistenza del BLOB nell'archiviazione.
     - content: Il contenuto del BLOB denominato viene scaricato.
       isCorrect: false
-      incorrectExplanation: Ottenere un riferimento al BLOB non comporta di per sé il download dei dati. Tuttavia, dopo aver ottenuto un riferimento, può essere usato per scaricare i dati dal blob di destinazione.

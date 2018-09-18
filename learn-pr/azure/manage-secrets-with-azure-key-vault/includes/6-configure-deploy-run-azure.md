@@ -1,4 +1,4 @@
-A questo punto è possibile eseguire l'app in Azure. È necessario creare un'app del Servizio app di Azure, configurarla con l'identità del servizio gestita e la configurazione dell'insieme di credenziali e quindi distribuire il codice.
+A questo punto è possibile eseguire l'app in Azure. È necessario creare un'app del Servizio app di Azure, configurarla con un'identità gestita e la configurazione dell'insieme di credenziali e quindi distribuire il codice.
 
 ## <a name="create-the-app-service-plan-and-app"></a>Creare l'app e il piano di servizio app
 
@@ -21,9 +21,9 @@ Per la distribuzione in Azure, si seguirà la procedura consigliata del servizio
 az webapp config appsettings set --name <your-unique-app-name> --resource-group keyvault-exercise-group --settings VaultName=<your-unique-vault-name>
 ```
 
-## <a name="enable-msi"></a>Abilitare l'identità del servizio gestita
+## <a name="enable-managed-identity"></a>Abilitare l'identità gestita
 
-Abilitazione dell'identità del servizio gestita in un'app è una singola riga di codice:
+L'abilitazione dell'identità gestita in un'app richiede una singola riga di codice:
 
 ```azurecli
 az webapp identity assign --name <your-unique-app-name> --resource-group keyvault-exercise-group
@@ -36,7 +36,7 @@ Nell'output JSON risultante, copiare il valore **principalId**. Proprietà Princ
 A questo punto è necessario concedere all'app le autorizzazioni di identità per ottenere ed elencare i segreti dall'insieme di credenziali di ambiente di produzione. Usare la **principalId** copiata nel passaggio precedente come valore per **id dell'oggetto** nel comando seguente.
 
 ```azurecli
-az keyvault set-policy --name <your-unique-vault-name> --object-id <your-msi-principleid> --secret-permissions get list
+az keyvault set-policy --name <your-unique-vault-name> --object-id <your-managed-identity-principleid> --secret-permissions get list
 ```
 
 ## <a name="deploy-the-app-and-try-it-out"></a>Distribuire l'app e provarla

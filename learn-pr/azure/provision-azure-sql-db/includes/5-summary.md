@@ -8,9 +8,11 @@ Tenere presente che ogni server logico SQL di Azure contiene uno o più database
 
 Se si sta iniziando o si vuole un'opzione di acquisto semplice e preconfigurata, scegliere il modello DTU. Se si vuole maggiore controllo sulle risorse di calcolo e archiviazione create e per cui vengono effettuati pagamenti, scegliere il modello vCore.
 
-Azure Cloud Shell rende più semplice iniziare a lavorare con i database. Da Cloud Shell è possibile accedere all'interfaccia della riga di comando di Azure, che consente di ottenere informazioni sulle risorse di Azure. Cloud Shell fornisce anche molte altre utilità comuni, come `sqlcmd`, che consentono di iniziare subito a lavorare con il nuovo database.
+Azure Cloud Shell rende più semplice iniziare a lavorare con i database. Da Cloud Shell è possibile accedere all'interfaccia della riga di comando di Azure, che consente di ottenere informazioni sulle risorse di Azure. Cloud Shell offre anche molte altre utilità comuni, come `sqlcmd`, che consentono di iniziare subito a lavorare con il nuovo database.
 
-## <a name="cleanup"></a>Pulizia
+## <a name="clean-up"></a>Eseguire la pulizia
+
+<!---TODO: Update for sandbox?--->
 
 È possibile sperimentare le varie funzionalità con l'installazione del database SQL di Azure. Al termine, il modo più semplice per eliminare il database consiste nell'eliminare il gruppo di risorse padre.
 
@@ -19,8 +21,6 @@ Azure Cloud Shell rende più semplice iniziare a lavorare con i database. Da Clo
 1. Selezionare **logistics-db-rg**.
 
 1. Fare clic su **Elimina gruppo di risorse**.
-
-    ![Eliminazione del gruppo di risorse](../media-draft/delete-rg.png)
 
 1. Al prompt, digitare "logistics-db-rg" e fare clic su **Elimina**.
 

@@ -20,7 +20,7 @@ In questa unità si stabilirà una connessione remota al desktop di Ubuntu nella
 
     ![Avvio di una nuova sessione](../media-draft/2-new-session-2.png)
 
-1. Immettere la password specificata in [Esercizio 1](#Exercise1) e quindi fare clic sul pulsante **OK**. Se viene richiesto se si considera attendibile la chiave host, rispondere **Yes** (Sì). Ignorare inoltre eventuali messaggi di errore che segnalano che non è stato possibile avviare il daemon SSH.
+1. Immettere la password specificata nell'ultima unità e quindi fare clic sul pulsante **OK**. Se viene richiesto se si considera attendibile la chiave host, rispondere **Yes** (Sì). Ignorare inoltre eventuali messaggi di errore che segnalano che non è stato possibile avviare il daemon SSH.
 
     ![Accesso alla macchina virtuale](../media-draft/2-new-session-3.png)
 

@@ -2,7 +2,7 @@
 
 La Data Science Virtual Machine per Linux è un'immagine di macchina virtuale che semplifica l'uso della tecnologia Data Science. Molti strumenti sono già stati compilati, installati e configurati per consentire all'utente di essere subito operativo. Sono inoltre inclusi il driver NVIDIA GPU, [NVIDIA CUDA](https://developer.nvidia.com/cuda-downloads) e la libreria [NVIDIA CUDA Deep Neural Network](https://developer.nvidia.com/cudnn) (cuDNN), così come [Jupyter](http://jupyter.org/), vari notebook Jupyter di esempio e [TensorFlow](https://www.tensorflow.org/). Tutti i framework preinstallati sono abilitati per la GPU, ma funzionano anche su CPU. In questa unità verrà creata un'istanza di Data Science Virtual Machine (DSVM) per Linux in Azure.
 
-1. Aprire il [portale di Azure](https://portal.azure.com/?azure-portal=true) nel browser. Se viene richiesto di accedere, usare l'account Microsoft.
+1. Aprire il [portale di Azure](https://portal.azure.com/?azure-portal=true) nel browser.
 
 1. Fare clic su **Crea una risorsa** nel menu sul lato sinistro del portale e quindi digitare "data science" (senza virgolette) nella casella di ricerca. Selezionare **Data Science Virtual Machine for Linux (Ubuntu)** nell'elenco dei risultati.
 
@@ -18,9 +18,7 @@ La Data Science Virtual Machine per Linux è un'immagine di macchina virtuale ch
 
     ![Scelta della dimensione della macchina virtuale](../media-draft/1-create-data-science-vm-2.png)
 
-1. Nel pannello **Impostazioni** selezionare **SSH (22)** nell'elenco delle porte in ingresso, in modo che i client possano connettersi alla macchina virtuale usando il protocollo [Secure Shell](https://en.wikipedia.org/wiki/Secure_Shell) (SSH) sulla porta 22. Fare quindi clic su **OK**.
-
-    ![Creazione della macchina virtuale](../media-draft/1-create-data-science-vm-3.png)
+1. Nel pannello **Impostazioni** confermare le impostazioni predefinite e fare clic sul pulsante **OK**.
 
 1. Nel pannello **Crea** dedicare qualche istante alla verifica delle opzioni selezionate per la macchina virtuale e fare clic su **Crea** per avviare il processo di creazione della macchina virtuale.
 

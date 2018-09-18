@@ -53,7 +53,7 @@ Esaminiamo velocemente il significato delle regole di confronto predefinite **SQ
 - **Latin1_General** si riferisce alla famiglia di lingue dell'Europa occidentale.
 - **CP1** fa riferimento alla tabella codici 1252, una codifica dei caratteri dell'alfabeto latino molto diffusa.
 - **CI** indica che nei confronti non viene fatta distinzione tra maiuscole e minuscole. Ad esempio, "HELLO" viene confrontato in modo equivalente a "hello".
-*- **AS** indica che nei confronti viene fatta distinzione tra le lettere accentate. Ad esempio, "résumé" non viene confrontato in modo equivalente a "resume".
+- **AS** indica che nei confronti viene fatta distinzione tra le lettere accentate. Ad esempio, "résumé" non viene confrontato in modo equivalente a "resume".
 
 Poiché non esistono requisiti specifici per la modalità di ordinamento e confronto dei dati, è possibile scegliere le regole di confronto predefinite.
 
@@ -61,13 +61,16 @@ Poiché non esistono requisiti specifici per la modalità di ordinamento e confr
 
 A questo punto, è possibile eseguire la configurazione del database, che include la creazione del server logico. Si sceglieranno impostazioni che supportano l'applicazione di logistica per i trasporti. Nella pratica, sarebbe necessario scegliere le impostazioni che supportano il tipo di app da creare.
 
-1. [Accedere al portale di Azure](https://portal.azure.com?azure-portal=true).
+Se nel corso del tempo ci si rende conto che la domanda richiede un incremento della potenza di calcolo, è possibile modificare le opzioni relative alle prestazioni o passare dal modello di prestazioni DTU al modello vCore e viceversa. 
+
+1. Accedere al [portale di Azure](https://portal.azure.com?azure-portal=true).
+
 
 1. Nell'angolo superiore sinistro del portale fare clic su **Crea una risorsa**. Selezionare **Database**, quindi selezionare **Database SQL**.
 
-   ![Creazione del database SQL di Azure dal portale](../media-draft/create-db.png)
+   ![Screenshot del portale di Azure con il pannello Crea una risorsa, la sezione Database selezionata e i pulsanti Crea una risorsa, Database, e Database SQL evidenziati.](../media-draft/create-db.png)
 
-1. In **Server** fare clic su **Configurare le impostazioni necessarie**, compilare il modulo, quindi fare clic su **Seleziona**. Ecco altre informazioni su come compilare il modulo:
+1. In **Server** fare clic su **Configura impostazioni necessarie**, compilare il modulo, quindi fare clic su **Seleziona**. Ecco altre informazioni su come compilare il modulo:
 
     | Impostazione      | Valore |
     | ------------ | ----- |
@@ -84,10 +87,10 @@ A questo punto, è possibile eseguire la configurazione del database, che includ
 
     | Impostazione      | Valore |
     | ------------ | ----- |
-    | **Nome database** | **Logistics** | 
+    | **Nome database** | **Logistics** |
     | **Sottoscrizione** | Sottoscrizione in uso |
-    | **Gruppo di risorse** | **logistics-db-rg** | 
-    | **Seleziona origine** | **Database vuoto** | 
+    | **Gruppo di risorse** | **logistics-db-rg** |
+    | **Seleziona origine** | **Database vuoto** |
     | **Usare il pool elastico SQL?** | **Non ora** |
     | **Regole di confronto** | **SQL_Latin1_General_CP1_CI_AS** |
 
@@ -95,33 +98,28 @@ A questo punto, è possibile eseguire la configurazione del database, che includ
 
 1. Nella barra degli strumenti fare clic su **Notifiche** per monitorare il processo di distribuzione.
 
-   ![Monitoraggio del processo di distribuzione](../media-draft/notifications-progress.png)
-
 Al termine del processo, fare clic su **Aggiungi al dashboard** per aggiungere il server di database al dashboard, in modo da potervi accedere rapidamente in un secondo momento.
-   ![Aggiunta del server al dashboard](../media-draft/notifications-complete.png)
+
+   ![Screenshot del portale di Azure che visualizza il menu Notifiche e il pulsante Aggiungi al dashboard evidenziato per un messaggio di distribuzione recente riuscita.](../media-draft/notifications-complete.png)
 
 ## <a name="set-the-server-firewall"></a>Impostare il firewall del server
 
 A questo punto, il database SQL di Azure è operativo. Sono disponibili numerose opzioni per configurare, proteggere, monitorare e risolvere i problemi del nuovo database.
 
-Si supponga ad esempio che nel corso del tempo si renda necessario aumentare la potenza di calcolo per soddisfare le richieste. È possibile modificare le opzioni relative alle prestazioni o perfino passare dal modello di prestazioni DTU a vCore o viceversa.
-
-È inoltre possibile specificare i sistemi che possono accedere al database attraverso il firewall. Inizialmente, il firewall impedisce qualsiasi accesso al server di database dall'esterno di Azure.
+È anche possibile specificare i sistemi che possono accedere al database attraverso il firewall. Inizialmente, il firewall impedisce qualsiasi accesso al server di database dall'esterno di Azure.
 
 Per il prototipo, è sufficiente accedere al database dal proprio portatile. In seguito, sarà possibile consentire altri sistemi, ad esempio l'app per dispositivi mobili.
 
 Vediamo come abilitare il computer di sviluppo per l'accesso al database attraverso il firewall.
 
-1. Passare al pannello Panoramica del database Logistics. Se il database è stato aggiunto al dashboard, è possibile fare clic sul riquadro **Logistics** nel dashboard per accedervi.
-
-    ![Riquadro Logistics](../media-draft/logistics-tile.png)
+1. Passare al pannello Panoramica del database Logistics. Se il database è stato aggiunto al dashboard, è possibile fare clic sul riquadro **Logistica** nel dashboard per accedervi.
 
 1. Fare clic su **Imposta firewall server**.
 
-    ![Impostazione del firewall del server](../media-draft/set-server-firewall.png)
+    ![Screenshot del portale di Azure che visualizza un pannello di panoramica del database SQL con il pulsante Imposta firewall server evidenziato.](../media-draft/set-server-firewall.png)
 
 1. Fare clic su **Aggiungi IP client** e fare clic su **Salva**.
 
-    ![Aggiunta dell'indirizzo IP del client](../media-draft/add-client-ip.png)
+    ![Screenshot del portale di Azure con la scheda Impostazioni firewall di un database SQL e il pulsante Aggiungi IP client evidenziato.](../media-draft/add-client-ip.png)
 
 Nella parte successiva si eseguiranno alcune esercitazioni pratiche con il nuovo database e con Azure Cloud Shell. Verrà descritto come connettersi al database, creare una tabella, aggiungere alcuni dati di esempio ed eseguire alcune istruzioni SQL.

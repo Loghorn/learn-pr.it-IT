@@ -2,7 +2,7 @@ La funzione di scalabilità dei database è fondamentale per soddisfare i requis
 
 Si supponga di lavorare per un rivenditore online e che il database debba essere ridimensionato per gestire un catalogo di prodotti in continua espansione. Anche la clientela globale è in crescita e i clienti si aspettano risposte rapide alle query, nonché aggiornamenti immediati in merito alla disponibilità del prodotto.
 
-Il database deve aumentare automaticamente per poter ospitare nuovi prodotti e utenti, inoltre deve avere una velocità effettiva elevata e una bassa latenza per rimanere al passo con le aspettative dei clienti.
+Il database deve aumentare automaticamente per poter ospitare nuovi prodotti, oltre ad avere una velocità effettiva elevata e una bassa latenza per rimanere al passo con le aspettative dei clienti.
 
 ## <a name="learning-objectives"></a>Obiettivi di apprendimento
 

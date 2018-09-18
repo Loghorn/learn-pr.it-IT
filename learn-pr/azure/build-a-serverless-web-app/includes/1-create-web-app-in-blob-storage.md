@@ -1,29 +1,21 @@
-In questo modulo verrà distribuita un'applicazione Web semplice che presenta un'interfaccia utente basata su HTML. Un back-end serverless consente all'applicazione di caricare le immagini e ottenere automaticamente le didascalie relative.
+In questo modulo verrà distribuita un'applicazione Web semplice che presenta un'interfaccia utente basata su HTML. Un back-end serverless consente all'applicazione di caricare le immagini e generare automaticamente le didascalie relative.
 
 ![Esecuzione dell'app Web](../media/0-app-screenshot-finished.png)
 
 Il diagramma seguente illustra i servizi di Azure usati dall'applicazione.
 
+![Diagramma dell'architettura della soluzione](../media/0-architecture.jpg)
+
 1. Archiviazione BLOB di Azure gestisce il contenuto Web statico (HTML, CSS o JS) e archivia le immagini.
 2. Funzioni di Azure gestisce i caricamenti delle immagini, il ridimensionamento e l'archiviazione dei metadati.
 3. Azure Cosmos DB archivia i metadati delle immagini.
-4. App per la logica di Azure ottiene le didascalie delle immagini dall'API Visione artificiale di Servizi cognitivi.
+4. App per la logica di Azure recupera le didascalie delle immagini dall'API Visione artificiale di Servizi cognitivi.
 5. Azure Active Directory gestisce l'autenticazione degli utenti.
 
-![Diagramma dell'architettura della soluzione](../media/0-architecture.jpg)
-
-In questa unità si apprenderà come:
-> [!div class="checklist"]
-> * Configurare l'archiviazione BLOB di Azure per ospitare un sito Web statico e le immagini caricate.
-> * Caricare le immagini nell'archiviazione BLOB di Azure con Funzioni di Azure.
-> * Ridimensionare le immagini con Funzioni di Azure.
-> * Archiviare i metadati delle immagini in Azure Cosmos DB.
-> * Usare l'API Visione artificiale di Servizi cognitivi per generare automaticamente le didascalie delle immagini.
-> * Usare Azure Active Directory per proteggere l'app Web tramite l'autenticazione degli utenti.
-
-Archiviazione BLOB di Azure è un servizio economico e altamente scalabile che può essere usato per ospitare file statici. Per questa esercitazione è possibile usarlo per gestire il contenuto statico, come ad esempio HTML, JavaScript, CSS, per l'app Web che si compila.
+Archiviazione BLOB di Azure è un servizio economico e altamente scalabile che può essere usato per ospitare file statici. In questo modulo l'archiviazione BLOB verrà usata per gestire contenuti statici, ad esempio HTML, JavaScript o CSS, per l'app Web che verrà compilata.
 
 ## <a name="create-an-azure-storage-account"></a>Creare un account di Archiviazione di Azure
+<!---TODO: Update for sandbox?--->
 
 Un account di Archiviazione di Azure è una risorsa di Azure che consente di archiviare tabelle, code, file, BLOB (oggetti) e dischi delle macchine virtuali.
 
@@ -35,7 +27,7 @@ Un account di Archiviazione di Azure è una risorsa di Azure che consente di arc
     az group create -n first-serverless-app -l westcentralus
     ```
 
-1. Il contenuto statico, come ad esempio file HTML, CSS e JavaScript, per questa esercitazione è ospitato nell'archiviazione BLOB. L'archiviazione BLOB richiede un account di archiviazione. Creare un account di archiviazione (utilizzo generico V2) nel gruppo di risorse. Sostituire `<storage account name>` con un nome univoco.
+1. Il contenuto statico, come ad esempio file HTML, CSS e JavaScript, per questa esercitazione è ospitato nell'archiviazione BLOB. L'archiviazione BLOB richiede un account di archiviazione. Creare un account di archiviazione di uso generico v2 (GPv2) nel gruppo di risorse. Sostituire `<storage account name>` con un nome univoco.
 
     ```azurecli
     az storage account create -n <storage account name> -g first-serverless-app --kind StorageV2 -l westcentralus --https-only true --sku Standard_LRS
@@ -54,7 +46,7 @@ Un account di Archiviazione di Azure è una risorsa di Azure che consente di arc
 
 ## <a name="upload-the-web-application"></a>Caricare l'applicazione Web
 
-1. I file di origine per l'applicazione che si compila in questa esercitazione si trovano in un [repository GitHub](https://github.com/Azure-Samples/functions-first-serverless-web-application). Assicurarsi di trovarsi all'interno della home directory in Cloud Shell e clonare il repository.
+1. I file di origine per l'applicazione che si compila in questa esercitazione si trovano in un [repository GitHub](https://github.com/Azure-Samples/functions-first-serverless-web-application). Passare alla home directory in Cloud Shell e clonare il repository.
 
     ```azurecli
     cd ~
@@ -63,7 +55,7 @@ Un account di Archiviazione di Azure è una risorsa di Azure che consente di arc
 
     Il repository viene clonato in `/home/<username>/functions-first-serverless-web-application`.
 
-1. L'applicazione Web sul lato client si trova nella cartella **www** e viene compilata con il framework JavaScript Vue.js. Passare a tale cartella ed eseguire i comandi **npm** per installare le dipendenze dell'applicazione e compilare l'applicazione. Il completamento dell'ultimo di questi comandi potrebbe richiedere alcuni minuti.
+1. L'applicazione Web sul lato client si trova nella cartella **www** e viene compilata con il framework JavaScript Vue.js. Aprire la cartella **www** ed eseguire i comandi **npm** per installare le dipendenze dell'applicazione e compilarla. Il completamento dell'ultimo di questi comandi potrebbe richiedere alcuni minuti.
 
     ```azurecli
     cd ~/functions-first-serverless-web-application/www
@@ -80,7 +72,7 @@ Un account di Archiviazione di Azure è una risorsa di Azure che consente di arc
     az storage blob upload-batch -s . -d \$web --account-name <storage account name>
     ```
 
-1. Per visualizzare l'applicazione, aprire l'URL dell'endpoint primario dei siti Web statici di archiviazione in un Web browser.
+1. Per visualizzare l'applicazione, aprire l'URL dell'endpoint primario dei siti Web statici in un Web browser.
 
     ![Home page della prima app Web serverless](../media/1-app-screenshot-new.png)
 

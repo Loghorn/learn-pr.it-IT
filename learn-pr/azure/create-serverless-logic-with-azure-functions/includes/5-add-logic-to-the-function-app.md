@@ -1,6 +1,7 @@
 Qui di seguito si proseguirà con l'esempio della trasmissione a ingranaggi aggiungendo la logica per il servizio relativo alla temperatura. In particolare, si riceveranno dati da una richiesta HTTP.
 
 ## <a name="function-requirements"></a>Requisiti della funzione
+
 Innanzitutto, definire i requisiti per la logica:
 
 - Le temperature tra 0 e 25 dovranno essere contrassegnate come **OK**.
@@ -13,29 +14,27 @@ Come descritto nell'unità precedente, Azure offre modelli che consentono di cre
 
 1. Accedere al [portale di Azure](https://portal.azure.com?azure-portal=true) con il proprio account Azure.
 
-1. Selezionare il gruppo di risorse creato nel primo esercizio scegliendo **Tutte le risorse** dal menu a sinistra e selezionando **escalator-functions-group**.
+2. Selezionare il gruppo di risorse creato nel primo esercizio scegliendo **Tutte le risorse** dal menu a sinistra e selezionando **escalator-functions-group**.
 
-1. Verranno quindi visualizzate le risorse del gruppo. Accedere all'app per le funzioni creata nell'esercizio precedente selezionando l'elemento **escalator-functions-xxxxxxx**, contrassegnato anche con l'icona a forma di fulmine.
+3. Verranno quindi visualizzate le risorse del gruppo. Fare clic sul nome dell'app per le funzioni creata nell'esercizio precedente selezionando l'elemento **escalator-functions-xxxxxxx**, contrassegnato anche con l'icona Funzione a forma di fulmine.
 
-  ![Screenshot di Tutte le risorse nel portale, in cui è evidenziato escalator-functions-group e l'app per le funzioni creata.](../media-draft/5-access-function-app.png)
+  ![Screenshot del portale di Azure che visualizza il pannello Tutte le risorse evidenziato e l'app per le funzioni escalator che è stata creata.](../media/5-access-function-app.png)
 
-1. Nel menu a sinistra vengono visualizzati il nome dell'app per le funzioni e un sottomenu contenente tre elementi: *Funzioni*, *Proxy* e *Slot*.  Per creare la prima funzione, spostare il mouse su **Funzioni** nell'albero di spostamento e fare clic sul pulsante **+** visualizzato.
+4. Nel menu a sinistra vengono visualizzati il nome dell'app per le funzioni e un sottomenu contenente tre elementi: *Funzioni*, *Proxy* e *Slot*.  Per iniziare a creare la prima funzione, selezionare **Funzioni** e fare clic su **Nuova funzione** nella parte superiore della pagina visualizzata.
 
-  ![Screenshot del segno di addizione visualizzato al passaggio del mouse sulla voce di menu Funzioni che, se selezionata, avvia la procedura di creazione della funzione.](../media-draft/5-function-add-button.png)
+  ![Screenshot del portale di Azure che visualizza l'elenco Funzioni dell'app per le funzioni, con la voce di menu Funzioni e il pulsante Nuova funzione evidenziato.](../media/5-function-add-button.png)
 
-1. Nella schermata Avvio rapido selezionare il collegamento **Funzione personalizzata** nella sezione **Iniziare da zero**, come illustrato nello screenshot seguente.
- 
-  ![Screenshot della schermata Avvio rapido con il pulsante "Funzione personalizzata" evidenziato.](../media-draft/5-custom-function.png)
+5. Nella schermata Avvio rapido selezionare il collegamento **Funzione personalizzata** nella sezione **Iniziare da zero**, come illustrato nello screenshot seguente. Se non viene visualizzata la schermata di avvio rapido, fare clic sul collegamento **passare all'Avvio rapido** nella parte superiore della pagina.
 
-1. Dall'elenco dei modelli visualizzati nella schermata, selezionare l'implementazione JavaScript del modello di trigger HTTP, come illustrato nello screenshot seguente.
+  ![Screenshot del portale di Azure che visualizza il pannello Avvio rapido con il pulsante Funzione personalizzata evidenziato nella sezione Iniziare da zero.](../media/5-custom-function.png)
 
-  ![Screenshot dell'elenco di modelli, con il trigger HTTP e l'opzione JavaScript evidenziati.](../media-draft/5-httptrigger-template.png)
+6. Dall'elenco dei modelli visualizzati nella schermata, selezionare l'implementazione **JavaScript** del modello di **trigger HTTP**, come illustrato nello screenshot seguente.
 
-1.  Immettere **DriveGearTemperatureService** nel campo relativo al nome all'interno della finestra di dialogo **Nuova funzione** visualizzata. Lasciare il livello Autorizzazione impostato su "Funzione" e premere il pulsante **Crea** per creare la funzione.
+7. Immettere **DriveGearTemperatureService** nel campo relativo al nome all'interno della finestra di dialogo **Nuova funzione** visualizzata. Lasciare il livello Autorizzazione impostato su "Funzione" e premere il pulsante **Crea** per creare la funzione.
 
-  ![Screenshot del modulo Nuova funzione, con il campo Nome evidenziato e il valore "DriveGearTemperatureService" impostato](../media-draft/5-create-httptrigger-form.png)
+  ![Screenshot del portale di Azure che visualizza le opzioni della nuova funzione trigger HTTP con il campo del linguaggio impostato su JavaScript e il nome impostato su DriveGearTemperatureService.](../media/5-create-httptrigger-form.png)
 
-1. Quando la creazione della funzione viene completata, si aprirà l'editor di codice con il contenuto del file di codice *index. js*. Nel frammento di codice seguente viene elencato il codice predefinito che il modello ha generato automaticamente.
+8. Quando la creazione della funzione viene completata si apre l'editor di codice con il contenuto del file di codice *index.js*. Nel frammento di codice seguente viene elencato il codice predefinito che il modello ha generato automaticamente.
 
 ```javascript
 module.exports = function (context, req) {
@@ -59,7 +58,7 @@ module.exports = function (context, req) {
 
 La funzione prevede il passaggio di un nome tramite la stringa della query di richiesta HTTP o come parte del corpo della richiesta. La funzione risponde restituendo il messaggio **Salve, {nome}** e ripetendo il nome che è stato inviato nella richiesta.
 
-Sul lato destro della visualizzazione del codice sorgente saranno presenti due schede. Nel **file di visualizzazione** vengono elencati il codice e il file di configurazione per la funzione.  Selezionare **function.json** per visualizzare la configurazione della funzione, che dovrebbe essere simile alla seguente: 
+Sul lato destro della visualizzazione del codice sorgente sono presenti due schede. La scheda **Visualizza file** elenca il codice e il file di configurazione per la funzione.  Selezionare **function.json** per visualizzare la configurazione della funzione, che è simile alla seguente:
 
 ```javascript
 {
@@ -90,20 +89,21 @@ Con questa configurazione si dichiara che la funzione viene eseguita quando rice
 >- <https://en.wikipedia.org/wiki/CURL>
 >- <https://curl.haxx.se/docs/>
 
-Per testare la funzione, è possibile inviare una richiesta HTTP all'URL della funzione usando cURL dalla riga di comando. Per trovare l'URL dell'endpoint della funzione, tornare al codice della funzione e selezionare il collegamento **Recupera URL della funzione**, come illustrato nello screenshot seguente. Salvare temporaneamente questo collegamento.  
+Per testare la funzione, è possibile inviare una richiesta HTTP all'URL della funzione usando cURL dalla riga di comando. Per trovare l'URL dell'endpoint della funzione, tornare al codice della funzione e selezionare il collegamento **Recupera URL della funzione** come illustrato nello screenshot seguente. Salvare temporaneamente questo collegamento.
 
- ![Screenshot dell'editor di codice nella sezione App per le funzioni del portale. Il comando "Recupera URL della funzione" viene evidenziato in alto a destra.](../media-draft/5-get-function-url.png)
+ ![Screenshot del portale di Azure che visualizza l'editor delle funzioni con il pulsante Recupera URL della funzione evidenziato.](../media/5-get-function-url.png)
 
 ### <a name="securing-http-triggers"></a>Protezione dei trigger HTTP
-I trigger HTTP consentono di usare le chiavi API per bloccare i chiamanti sconosciuti, richiedendo che la chiave sia presente in ogni richiesta. Quando si crea una funzione, si seleziona il _livello di autorizzazione_. Per impostazione predefinita è impostato su "Funzione", che richiede una chiave API specifica della funzione, ma è possibile impostarlo anche su "Amministratore" per usare una chiave "master" globale o "Anonimo" per indicare che non sono richieste chiavi. Il livello di autorizzazione può essere modificato anche tramite le proprietà di funzione dopo la creazione.
+
+I trigger HTTP consentono di usare le chiavi API per bloccare i chiamanti sconosciuti, richiedendo che la chiave sia presente in ogni richiesta. Quando si crea una funzione si seleziona il _livello di autorizzazione_. Per impostazione predefinita il livello è impostato su "Funzione", che richiede una chiave API specifica della funzione, ma è possibile impostarlo anche su "Amministratore" per usare una chiave "master" globale o su "Anonimo" per indicare che non è richiesta una chiave. Il livello di autorizzazione può essere modificato anche tramite le proprietà di funzione dopo la creazione.
 
 Poiché è stato specificato "Funzione" durante la creazione di questa funzione, è necessario specificare la chiave quando si invia la richiesta HTTP. È possibile inviarla come parametro della stringa di query denominato `code`, oppure come un'intestazione HTTP (scelta consigliata) denominata `x-functions-key`.
 
-Le chiavi di funzione e master sono disponibili nella sezione **Gestisci** quando si espande la funzione. Per impostazione predefinita sono nascoste ed è necessario mostrarle.
+Le chiavi di funzione e master sono disponibili nella sezione **Gestisci** quando si espande la funzione. Per impostazione predefinita sono nascoste ed è necessario visualizzarle.
 
-1. Espandere la funzione e scegliere la sezione **Gestisci**, mostrare la Chiave di funzione predefinita e copiarla negli Appunti.
+1. Espandere la funzione e selezionare la sezione **Gestisci**, visualizzare la chiave di funzione predefinita e copiarla negli Appunti.
 
-![Pannello per ottenere la chiave di funzione dal portale di Azure](../media-draft/5-get-function-key.png)
+![Screenshot del portale di Azure che visualizza il pannello Gestisci con la chiave di funzione evidenziata.](../media/5-get-function-key.png)
 
 1. Formattare quindi un comando cURL con l'URL per la funzione e la chiave di funzione.
 
@@ -112,9 +112,9 @@ Le chiavi di funzione e master sono disponibili nella sezione **Gestisci** quand
     - Assicurarsi di sostituire l'URL qui sotto con il proprio.
     - Passare la chiave di funzione come valore dell'intestazione `x-functions-key`.
 
-```bash
-curl --header "Content-Type: application/json" --header "x-functions-key: VCWjWkBTvWBsnvw0TlbIbtsav3P3J80m/PKe8WclH0C3RSmvG4Sy8w==" --request POST --data "{\"name\": \"Azure Function\"}" https://<your-url-here>/api/DriveGearTemperatureService
-```
+    ```bash
+    curl --header "Content-Type: application/json" --header "x-functions-key: <your-function-key>" --request POST --data "{\"name\": \"Azure Function\"}" https://<your-url-here>/api/DriveGearTemperatureService
+    ```
 
 La funzione risponderà con il testo `"Hello Azure Function"`.
 
@@ -124,7 +124,7 @@ La funzione risponderà con il testo `"Hello Azure Function"`.
 
 La funzione prevede una matrice di letture della temperatura. Il frammento JSON seguente costituisce un esempio di corpo della richiesta che sarà inviata alla funzione. Ogni elemento `reading` possiede un ID, un timestamp e una temperatura.
 
-```javascript
+```json
 {
     "readings": [
         {
@@ -146,7 +146,7 @@ La funzione prevede una matrice di letture della temperatura. Il frammento JSON 
 }
 ```
 
-Il codice predefinito della funzione sarà poi sostituito con il codice seguente, che implementa la logica di business. 
+Il codice predefinito della funzione sarà poi sostituito con il codice seguente, che implementa la logica di business.
 
 1. Aprire il file **index.js** e sostituirlo con il codice seguente.
 
@@ -155,7 +155,7 @@ module.exports = function (context, req) {
     context.log('Drive Gear Temperature Service triggered');
     if (req.body && req.body.readings) {
         req.body.readings.forEach(function(reading) {
-            
+
             if(reading.temperature<=25) {
                 reading.status = 'OK';
             } else if (reading.temperature<=50) {
@@ -193,14 +193,36 @@ In questo caso si userà il riquadro **Test** nel portale per testare la funzion
 
 1. Aprire la finestra **Test** dal menu a comparsa a destra.
 
-1. Incollare la richiesta di esempio dall'esempio precedente nella casella di testo del corpo della richiesta. 
+1. Incollare la richiesta di esempio nella casella di testo del corpo della richiesta.
+
+    ```json
+    {
+        "readings": [
+            {
+                "driveGearId": 1,
+                "timestamp": 1534263995,
+                "temperature": 23
+            },
+            {
+                "driveGearId": 3,
+                "timestamp": 1534264048,
+                "temperature": 45
+            },
+            {
+                "driveGearId": 18,
+                "timestamp": 1534264050,
+                "temperature": 55
+            }
+        ]
+    }
+    ```
 
 1. Selezionare **Esegui** e visualizzare la risposta nel riquadro di output. Per visualizzare i messaggi di log, aprire la scheda **Log** nel riquadro a comparsa nella parte inferiore della pagina. Lo screenshot seguente illustra un esempio di risposta nel riquadro di output e i messaggi nel riquadro **Log**.
 
-![Screenshot delle schede "Test" e "Log" nell'interfaccia delle funzioni all'interno del portale. Nel riquadro di output della scheda "Test" è visualizzato un esempio di risposta inviata dalla funzione.](../media-draft/5-portal-testing.png)
+![Screenshot del portale di Azure che visualizza il pannello dell'editor di funzioni con le schede Test e Log visualizzate. Nel riquadro di output è visualizzato un esempio di risposta inviata dalla funzione.](../media/5-portal-testing.png)
 
 Nel riquadro di output è possibile osservare che il campo relativo allo stato è stato aggiunto correttamente per ogni lettura.
 
 Passare al dashboard **Monitoraggio** per verificare se la richiesta è stata registrata in Application Insights.
 
-![Screenshot della parte del dashboard "Monitoraggio" che illustra un messaggio di conferma dalla funzione.](../media-draft/5-app-insights.png)
+![Screenshot del portale di Azure che visualizza l'esito positivo del test precedente nel dashboard Monitoraggio della funzione.](../media/5-app-insights.png)

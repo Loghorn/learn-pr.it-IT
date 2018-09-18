@@ -1,4 +1,4 @@
-In questa unità verrà creata una funzione di Azure che accetta una richiesta HTTP con un'unica stringa. La funzione restituisce una stringa al chiamante per indicare l'esito positivo o negativo.
+In questa unità verrà creata una funzione di Azure che accetta una richiesta HTTP con un'unica stringa. La funzione restituisce una stringa al chiamante per indicare l'esito positivo o negativo. Continueremo a usare le funzioni partendo dall'esercizio precedente.
 
 ## <a name="create-an-http-trigger"></a>Creare un trigger HTTP
 
@@ -6,13 +6,11 @@ In questa unità verrà creata una funzione di Azure che accetta una richiesta H
 
 1. Accedere al [portale di Azure](https://portal.azure.com?azure-portal=true).
 
-1. Selezionare **Funzioni**, quindi l'icona del segno più (+).
+1. Selezionare **Funzioni** e quindi l'icona del segno più (+).
 
-    ![Selezionare Funzioni, quindi il segno più (+) al passaggio del mouse](../media-drafts/4-hover-function.png)
+1. Selezionare **HTTP trigger** (Trigger HTTP).
 
-1. Selezionare **Trigger HTTP**.
-
-1. Selezionare il linguaggio di programmazione **C#**. 
+1. Selezionare il linguaggio di programmazione **C#**.
 
 1. Lasciare **Nome** impostato sul valore predefinito.
 
@@ -47,7 +45,6 @@ L'URL della funzione è stato copiato negli Appunti. È possibile inviare una ri
 1. Premere INVIO per inviare la richiesta.
 
 ## <a name="clean-up"></a>Eseguire la pulizia
+<!---TODO: Update for sandbox?--->
 
-Per assicurarsi che non sono previsti costi per questa funzione, selezionare **Sospendi** sopra la finestra del log.
-
-![Sospendi](../media-drafts/4-pause-timer.png)
+Per assicurarsi che non siano previsti costi per questa funzione, selezionare **Sospendi** sopra la finestra del log.

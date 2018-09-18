@@ -44,6 +44,4 @@ Se si scompone questo concetto in due parti, si ottiene *samples-workitems* e *{
 
 L'ultima parte di informazioni significative all'interno di questo concetto è il testo *name*. *name* rappresenta un parametro nella funzione di Azure che riceve il nome del file aggiunto. Ad esempio, se si carica un file denominato *resume.txt*, la funzione di Azure riceve il valore sotto forma di stringa tramite un parametro denominato *name*.
 
-## <a name="summary"></a>Riepilogo
-
 Un trigger del BLOB richiama una funzione di Azure quando rileva attività in una posizione specifica nell'account BLOB di Archiviazione di Azure. Per impostare il percorso da monitorare, modificare il valore **Percorso** nel portale di Azure.

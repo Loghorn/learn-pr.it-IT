@@ -1,4 +1,4 @@
-In questa unità si creerà una funzione di Azure per visualizzare il nome e le dimensioni di un BLOB quando viene creato o aggiornato. 
+In questa unità si creerà una funzione di Azure per visualizzare il nome e le dimensioni di un BLOB quando viene creato o aggiornato.
 
 ## <a name="create-a-blob-trigger"></a>Creare un trigger BLOB
 
@@ -6,13 +6,11 @@ Anche in questo caso, continuiamo a usare l'applicazione Funzioni di Azure esist
 
 1. Accedere al [portale di Azure](https://portal.azure.com?azure-portal=true).
 
-1. Selezionare **Funzioni**, quindi l'icona del segno più (+).
-
-    ![Selezionare Funzioni, quindi il segno più](../media-drafts/4-hover-function.png)
+1. Selezionare **Funzioni** e quindi l'icona del segno più (+).
 
 1. Selezionare **Funzione personalizzata** e quindi **Trigger BLOB**.
 
-1. Selezionare il linguaggio di programmazione **C#**. 
+1. Selezionare il linguaggio di programmazione **C#**.
 
 1. Lasciare **Nome** impostato sul valore predefinito.
 
@@ -60,10 +58,4 @@ Il trigger del blob è ora attivo e in ascolto per l'attività. È possibile cre
 
 1. Selezionare **Carica**.
 
-1. Tornare alla scheda Funzione di Azure e cercare nei log di output un messaggio che visualizza il file caricato.
-
-## <a name="pause-the-function"></a>Sospendere la funzione
-
-Per assicurarsi che non verranno applicati costi per richieste aggiuntive, è possibile fare clic su **Sospendi** sopra la finestra del log.
-
-![Sospendere la funzione](../media-drafts/4-pause-timer.png)
+1. Tornare alla scheda Funzioni di Azure e cercare nei log di output un messaggio che visualizza il file caricato.

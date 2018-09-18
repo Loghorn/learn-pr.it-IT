@@ -1,8 +1,8 @@
-In questa unità si crea una funzione di Azure che verrà richiamata ogni 20 secondi con un trigger timer.
+In questa unità viene creata un'app per le funzioni di Azure che verrà richiamata ogni 20 secondi con un trigger timer.
 
-## <a name="create-an-azure-function"></a>Creare una funzione di Azure
+## <a name="create-an-azure-function-app"></a>Creare un'app per le funzioni di Azure
 
-Per iniziare, creare una funzione di Azure nel portale.
+Per iniziare, creare un'app per le funzioni di Azure nel portale.
 
 1. Accedere al [portale di Azure](https://portal.azure.com?azure-portal=true).
 
@@ -12,9 +12,9 @@ Per iniziare, creare una funzione di Azure nel portale.
 
 1. Individuare e selezionare **App per le funzioni**. Facoltativamente, è anche possibile usare la barra di ricerca per individuare il modello.
 
-    ![Selezionare App per le funzioni](../media-drafts/4-click-function-app.png)
+    ![Screenshot del portale di Azure che illustra il pannello Crea una risorsa con App per le funzioni evidenziato.](../media/4-click-function-app.png)
 
-1. Immettere un **nome dell'app** univoco.
+1. Scegliere un **Nome dell'app** globalmente univoco.
 
 1. Selezionare una **sottoscrizione**.
 
@@ -34,15 +34,15 @@ Per iniziare, creare una funzione di Azure nel portale.
 
 ## <a name="create-a-timer-trigger"></a>Creare un trigger timer
 
-Verrà ora creato un trigger timer all'interno della funzione di Azure.
+Verrà ora creato un trigger timer all'interno della funzione.
 
-1. Al termine della creazione della funzione di Azure, selezionare **Tutte le risorse** nel riquadro di spostamento a sinistra.
+1. Una volta creata la funzione, selezionare **Tutte le risorse** nel riquadro di spostamento a sinistra.
 
-1. Individuare e selezionare la funzione di Azure.
+1. Individuare e selezionare la funzione.
 
 1. Nel nuovo pannello scegliere **Funzioni** e selezionare l'icona con il segno più (+).
 
-    ![Selezionare Funzioni, quindi il segno più](../media-drafts/4-hover-function.png)
+    ![Screenshot del portale di Azure che illustra un pannello App per le funzioni con il pulsante (+) del sottomenu Funzioni evidenziato.](../media/4-hover-function.png)
 
 1. Selezionare **Timer**.
 
@@ -52,13 +52,13 @@ Verrà ora creato un trigger timer all'interno della funzione di Azure.
 
 ## <a name="configure-the-timer-trigger"></a>Configurare il trigger timer
 
-Si ha una funzione di Azure la cui logica stampa un messaggio nella finestra di log. Si imposterà la pianificazione del timer per l'esecuzione ogni 20 secondi.
+Si ha un'app per le funzioni di Azure la cui logica stampa un messaggio nella finestra di log. Ora verrà impostata la pianificazione del timer per l'esecuzione ogni 20 secondi.
 
 1. Selezionare **Integrazione**.
 
 1. Immettere il valore seguente nella casella **Pianifica**:
 
-    ```
+    ```log
     */20 * * * * *
     ```
 
@@ -68,17 +68,18 @@ Si ha una funzione di Azure la cui logica stampa un messaggio nella finestra di 
 
 Dopo aver configurato il timer, è possibile avviarlo.
 
-1. Selezionare **TimerTriggerCSharp1**. 
+1. Selezionare **TimerTriggerCSharp1**.
 
     > [!NOTE]
     > **TimerTriggerCSharp1** è un nome predefinito. Viene selezionato automaticamente quando si crea il trigger.
 
-1. Selezionare **Esegui**. 
+1. Selezionare **Esegui**.
 
 A questo punto, nella finestra di log dovrebbe essere visualizzato un messaggio ogni 20 secondi.
 
 ## <a name="clean-up"></a>Eseguire la pulizia
+<!---TODO: Update for sandbox?--->
 
 Per evitare che vengano addebitati costi per questa funzione, selezionare **Sospendi** sopra la finestra di log per arrestare il timer.
 
-![Sospensione](../media-drafts/4-pause-timer.png)
+![Screenshot del portale di Azure che illustra un pannello di output dei log delle app per le funzioni di Azure con il pulsante Sospendi evidenziato.](../media/4-pause-timer.png)

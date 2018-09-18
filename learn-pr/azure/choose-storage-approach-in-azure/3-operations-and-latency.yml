@@ -1,20 +1,25 @@
 ### YamlMime:ModuleUnit
 uid: learn.choose-storage-approach-in-azure.3-operations-and-latency
 metadata:
-  title: Operazioni e latenza
-  description: Operazioni e latenza
-  ms.openlocfilehash: 27c0f598fbb80ee732a1c83b899cdfdffc0ef35d
-  ms.sourcegitcommit: 1663afb13d55c1fce5f2dc4c0f78ef2d74902c33
+  title: Determinare le esigenze operative
+  description: Determinare le esigenze operative
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 48af5a1e1f4b3d757272f84a089f9964d5a0581e
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 08/31/2018
-  ms.locfileid: "43363004"
-title: Operazioni e latenza
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44232201"
+title: Determinare le esigenze operative
 durationInMinutes: 10
 content: >
   [!include[](includes/3-operations-and-latency.md)]
 quiz:
-  title: Operazioni e latenza
+  title: Verifica delle conoscenze
   questions:
   - content: Classificazione delle esigenze operative di un database in cui sono archiviati i dati utente per l'applicazione di vendita online. Il set di dati contiene le preferenze di spedizione, gli ordini precedenti e le informazioni del profilo da visualizzare nelle recensioni dei prodotti.
     choices:

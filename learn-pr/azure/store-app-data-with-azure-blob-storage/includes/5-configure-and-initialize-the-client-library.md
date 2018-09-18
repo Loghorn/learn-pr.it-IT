@@ -8,7 +8,7 @@ Di seguito è riportato il flusso di lavoro tipico per le app che usano l'archiv
 
 ## <a name="configure-your-connection-string"></a>Configurare la stringa di connessione
 
-Prima di scrivere qualsiasi codice, è necessario avere la stringa di connessione per l'account di archiviazione che verrà usato.
+Prima di eseguire l'applicazione, è necessario avere la stringa di connessione per l'account di archiviazione che verrà usato. È possibile usare qualsiasi interfaccia di gestione di Azure, tra cui il portale di Azure, l'interfaccia della riga di comando di Azure e Azure PowerShell. Quando si configura l'app Web per eseguire il nostro codice verso la fine di questo modulo, si userà l'interfaccia della riga di comando di Azure per ottenere la stringa di connessione per l'account di archiviazione creato in precedenza.
 
 Le stringhe di connessione dell'account di archiviazione includono la chiave dell'account. La chiave dell'account viene considerata un segreto e deve essere archiviata in modo sicuro. In questo caso la stringa di connessione verrà archiviata in un'impostazione dell'applicazione del servizio app. Un'impostazione dell'applicazione del servizio app è una posizione sicura per i segreti dell'applicazione, ma non supporta lo sviluppo locale e non è una soluzione affidabile end-to-end di per sé.
 
@@ -49,15 +49,13 @@ La chiamata di `CreateIfNotExistsAsync` su un `CloudBlobContainer` è il modo mi
 
 Prima di tutto, è possibile clonare l'app iniziale da GitHub. Nel terminale Cloud Shell eseguire il comando seguente per ottenere una copia del codice sorgente e aprirla nell'editor:
 
-**Aggiornamento TODO a URL archivio finale**
-
 ```console
-git clone https://github.com/nickwalkmsft/FileUploader.git
-cd FileUploader
+git clone https://github.com/MicrosoftDocs/mslearn-store-data-in-azure.git
+cd mslearn-store-data-in-azure/store-app-data-with-azure-blob-storage/src/start
 code .
 ```
 
-Aprire il file `Controllers/FilesController.cs`. Non vi è alcuna operazione da eseguire in questo passaggio, ma è necessario verificare il funzionamento dell'app.
+Aprire il file `Controllers/FilesController.cs` nell'editor. Non vi è alcuna operazione da eseguire in questo passaggio, ma è necessario verificare il funzionamento dell'app.
 
 Questo controller implementa un'API con tre azioni:
 
@@ -80,13 +78,13 @@ Ciò ci consentirà di sapere che stiamo usando la versione più recente della l
 
 ### <a name="configure"></a>Configurare
 
-I valori di configurazione necessari per eseguire l'app sono la stringa di connessione dell'account di archiviazione e il nome del contenitore dell'app che verrà usata per archiviare i file. In questa unità verrà eseguita l'app solo nel Servizio app di Azure e quindi verrà seguita la procedura consigliata del servizio app e verranno archiviati i valori nelle impostazioni applicazione del servizio app. Questa operazione verrà eseguita quando verrà creata l'istanza del servizio app, non in questo momento.
+I valori di configurazione necessari sono la stringa di connessione dell'account di archiviazione e il nome del contenitore dell'app che verrà usata per archiviare i file. In questo modulo verrà eseguita l'app solo nel Servizio app di Azure e quindi verrà seguita la procedura consigliata del servizio app e verranno archiviati i valori nelle impostazioni applicazione del servizio app. Questa operazione verrà eseguita quando verrà creata l'istanza del servizio app, non in questo momento.
 
 Quando sarà il momento di *usare* la configurazione, l'app iniziale includerà già le operazioni di base necessarie. Il parametro del costruttore `IOptions<AzureStorageConfig>` in `BlobStorage` ha due proprietà: la stringa di connessione dell'account di archiviazione e il nome del contenitore in cui l'app archivierà i BLOB. Nel metodo `ConfigureServices` di `Startup.cs` è presente un codice che carica i valori dalla configurazione all'avvio dell'app.
 
 ### <a name="initialize"></a>Inizializzare
 
-Aprire `Models/BlobStorage.cs`. Aggiungere le istruzioni `using` seguenti all'inizio del file per eseguire la preparazione al codice che si vuole aggiungere durante l'esercizio.
+Aprire `Models/BlobStorage.cs` nell'editor. Aggiungere le istruzioni `using` seguenti all'inizio del file per eseguire la preparazione al codice che si vuole aggiungere durante l'esercizio.
 
 ```csharp
 using System.Linq;

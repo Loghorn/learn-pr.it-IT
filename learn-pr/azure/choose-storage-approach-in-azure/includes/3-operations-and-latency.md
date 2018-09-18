@@ -1,31 +1,38 @@
-Dopo l'identificazione del tipo di dati disponibili (strutturati, semistrutturati o non strutturati), l'altro passaggio importante consiste nel determinare come si useranno i dati. L'obiettivo di un rivenditore online, ad esempio, potrebbe essere quello di consentire ai clienti di accedere rapidamente ai dati dei prodotti e agli utenti aziendali di eseguire query analitiche complesse. Iniziando a esaminare questi requisiti e a prendere in considerazione la classificazione dei dati, è possibile iniziare a delineare un approccio all'archiviazione dei dati.
+Dopo l'identificazione del tipo di dati da gestire (strutturati, semistrutturati o non strutturati), il passaggio successivo consiste nel determinare come si useranno i dati. Un rivenditore online, ad esempio, sa che i clienti devono poter accedere rapidamente ai dati dei prodotti e che gli utenti aziendali devono eseguire query analitiche complesse. Durante l'esame di questi requisiti, tenendo conto della classificazione dei dati, si può iniziare a pianificare una soluzione di archiviazione dei dati.
 
-Di seguito sono illustrate alcune domande che è necessario porsi per determinare come verranno usati i dati.
+Di seguito sono illustrate alcune domande da porsi al momento di determinare come verranno usati i dati.
 
 ## <a name="operations-and-latency"></a>Operazioni e latenza
 
 Quali sono le principali operazioni che verranno eseguite su ogni tipo di dati e quali sono i requisiti relativi alle prestazioni?
 
-In particolare, verranno eseguite ricerche semplici in base a un ID? È necessario eseguire query sul database per uno o più campi? Quante operazioni di creazione, aggiornamento ed eliminazione si prevede che verranno eseguite? È necessario eseguire query analitiche complesse? Con che velocità devono essere completate queste operazioni?
+Le domande da porsi sono:
+* Verranno eseguite semplici ricerche usando un ID? 
+* È necessario eseguire query sul database per uno o più campi? 
+* Quante operazioni di creazione, aggiornamento ed eliminazione si prevede che verranno eseguite? 
+* È necessario eseguire query analitiche complesse? 
+* Con quale velocità devono essere completate queste operazioni?
 
-Verranno ora analizzati i singoli set di dati e i requisiti.
+Tenendo a mente queste domande verranno ora analizzati i singoli set di dati e discussi i requisiti.
 
-### <a name="product-catalog-data"></a>Dati del catalogo prodotti
+## <a name="product-catalog-data"></a>Dati del catalogo prodotti
 
-In uno scenario di vendita online, la massima priorità degli utenti riguarderà i dati del catalogo prodotti. Gli utenti dovranno eseguire query sul catalogo prodotti per trovare, ad esempio, tutte le scarpe da uomo in saldo e quindi le scarpe da uomo in saldo di una misura specifica. Si potrebbe quindi stabilire che le esigenze dei clienti richiedono numerose operazioni di lettura, con la possibilità di eseguire query su determinati campi.
+Per i dati del catalogo prodotti nello scenario di vendita online, le esigenze del cliente costituiscono la massima priorità. I clienti vorranno eseguire query sul catalogo prodotti per trovare, ad esempio, tutte le scarpe da uomo, quindi tutte le scarpe da uomo in saldo e infine le scarpe da uomo in saldo di una misura specifica. Per soddisfare le esigenze del cliente possono quindi essere necessarie numerose operazioni di lettura, con la possibilità di eseguire query su alcuni campi.
 
-Quando i clienti effettuano gli ordini, inoltre, l'applicazione deve aggiornare le quantità dei prodotti. Tali operazioni di aggiornamento devono avvenire alla stessa velocità delle operazioni di lettura, affinché gli utenti non possano inserire articoli nel carrello quando il prodotto è appena stato esaurito. Non solo sono quindi necessarie numerose operazioni di lettura, ma anche numerose operazioni di scrittura per i dati nel catalogo prodotti. Assicurarsi di determinare le priorità di tutti gli utenti del database, non solo di quelli principali.
+Quando i clienti effettuano gli ordini, inoltre, l'applicazione deve aggiornare le quantità del prodotto. Le operazioni di aggiornamento devono essere rapide quanto le operazioni di lettura, in modo tale che gli utenti non possano inserire nel carrello un articolo appena esaurito. Non solo sono quindi necessarie numerose operazioni di lettura, ma anche numerose operazioni di scrittura per i dati del catalogo prodotti. Assicurarsi di determinare le priorità di tutti gli utenti del database, non solo di quelli principali.
 
-### <a name="photos-and-videos"></a>Foto e video
+## <a name="photos-and-videos"></a>Foto e video
 
-Le foto e i video visualizzati nelle pagine dei prodotti hanno tuttavia requisiti diversi. Richiedono tempi di recupero rapidi per la visualizzazione nel sito, ma non devono essere sottoposti a query in modo indipendente. È invece possibile fare affidamento sulla query sul prodotto e impostare solo l'ID o l'URL del video come proprietà dei dati del prodotto. Pertanto, le query su foto e video non saranno basate su altri elementi oltre all'ID.
+Le foto e i video visualizzati nelle pagine dei prodotti hanno requisiti diversi. Necessitano di tempi di recupero rapidi in modo che siano visualizzati nel sito contemporaneamente ai dati del catalogo prodotti, ma non è necessario poter eseguire query indipendenti su di essi. È invece possibile fare affidamento sui risultati della query del prodotto e includere l'ID o l'URL del video come proprietà nei dati del prodotto. Foto e video devono quindi essere solo recuperati in base all'ID.
 
-Gli utenti non apporteranno inoltre aggiornamenti alle foto o ai video esistenti. È tuttavia possibile che gli utenti aggiungano nuove foto per le recensioni dei prodotti. Potrebbero quindi caricare un'immagine per mostrare le loro nuove scarpe. È anche necessario caricare ed eliminare le foto dei prodotti del fornitore, ma non è necessario che tale aggiornamento venga eseguito alla stessa velocità degli altri aggiornamenti dei dati dei prodotti. Riepilogando, quindi, le query su foto e video devono essere eseguite solo in base all'ID per restituire l'intero file, mentre le operazioni di creazione e aggiornamento saranno meno frequenti e avranno una priorità inferiore.  
+Gli utenti non apporteranno inoltre aggiornamenti alle foto o ai video esistenti. È tuttavia possibile che aggiungano nuove foto per le recensioni dei prodotti. Un utente potrebbe ad esempio caricare una foto in cui indossa le nuove scarpe. I dipendenti, inoltre, caricano ed eliminano le foto dei prodotti messe a disposizione dal fornitore, ma questo tipo di aggiornamento non richiede la stessa velocità degli aggiornamenti di altri dati dei prodotti. 
 
-### <a name="business-data"></a>Dati aziendali
+In sintesi, è possibile eseguire query su foto e video in base all'ID per recuperare l'intero file, ma le operazioni di creazione e aggiornamento saranno meno frequenti e avranno una priorità inferiore.  
 
-Per i di business, le analisi vengono eseguite sui dati cronologici. I dati originali non vengono aggiornati in base all'analisi. I dati di business sono quindi di sola lettura e gli utenti non si aspettano che le loro analisi complesse vengano eseguite immediatamente, quindi una certa latenza nei risultati è tollerabile. I dati di business verranno inoltre archiviati in più set di dati, in modo che gli utenti abbiano livelli di accesso diversi per la scrittura in ogni set di dati, mentre i business analyst potranno leggere in tutti i database.
+## <a name="business-data"></a>Dati di business
+
+Per i dati di business, le analisi vengono eseguite sui dati cronologici. I dati originali non vengono aggiornati in base all'analisi, quindi i dati di business sono di sola lettura. Gli utenti non si aspettano che le analisi complesse vengano eseguite istantaneamente, quindi una certa latenza nei risultati è tollerabile. I dati di business verranno inoltre archiviati in più set di dati poiché gli utenti avranno livelli di accesso diversi per scrivere in ogni set di dati. I business analyst avranno tuttavia l'accesso in lettura a tutti i database.
 
 ## <a name="summary"></a>Riepilogo
 
-Per scegliere la soluzione di archiviazione da usare, è necessario pensare a come verranno usati i dati. Con che frequenza verrà eseguito l'accesso ai dati? I dati sono di sola lettura? Il tempo di query è importante? Le risposte a queste domande aiuteranno a scegliere la soluzione di archiviazione più adatta per i dati.
+Quando si decide quale soluzione di archiviazione usare, riflettere su come verranno usati i dati. Con quale frequenza verranno usati i dati? I dati sono di sola lettura? Il tempo di query è importante? Le risposte a queste domande aiuteranno a scegliere la soluzione di archiviazione più adatta per i dati.

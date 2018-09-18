@@ -12,9 +12,8 @@ La perdita di una stringa di connessione al database, di una chiave API o di una
 
 ## <a name="learning-objectives"></a>Obiettivi di apprendimento
 
-In questo modulo verrà descritto come:
-
-- Comprendere i tipi di informazioni che si possono archiviare in Azure Key Vault.
-- Creare un archivio di Azure Key Vault.
-- Eseguire l'autenticazione con Azure Key Vault.
-- Accedere ai segreti in un'istanza di Azure Key Vault.
+  In questo modulo verrà descritto come:
+    - Esplorare i tipi di informazioni che si possono archiviare in Azure Key Vault.
+    - Creare un Azure Key Vault e usarlo per archiviare i valori di configurazione dei segreti
+    - Consentire l'accesso in sicurezza all'insieme di credenziali da un'app Web di Servizio app di Azure con le identità gestite per le risorse di Azure
+    - Implementare un'applicazione che consente di recuperare i segreti dall'insieme di credenziali
