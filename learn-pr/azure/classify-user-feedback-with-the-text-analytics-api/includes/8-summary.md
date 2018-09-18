@@ -1,66 +1,66 @@
-Microsoft Cognitive Services is a rich suite of intelligent services that we can use to enrich our apps. We explored a small part of the Text Analytics API service to find out higher-level information about text. We used the service to analyze text feedback from customers for sentiment. We created a solution hosted in Azure Functions to sort these text messages into different buckets, or queues, for further processing.
+Servizi cognitivi Microsoft è una suite completa di servizi intelligenti utilizzabili per arricchire le app. È stata presa in esame una piccola parte del servizio API Analisi del testo per ottenere informazioni più generali sul testo. Il servizio è stato usato per analizzare il sentiment del feedback di testo dei clienti. È stata creata una soluzione ospitata in Funzioni di Azure per ordinare questi messaggi di testo in diversi bucket, o code, per un'ulteriore elaborazione.
 
-Once you know how to call a REST API, then you can easily integrate these intelligent services into your solutions. They all follow a similar pattern:
+Ora che si hanno le competenze per chiamare un'API REST, è possibile integrare facilmente questi servizi intelligenti nelle soluzioni in uso. Seguono tutti un modello simile:
 
-- Sign up for an access key
-- Explore in the API testing console
-- Formulate requests using the access key and the correct region.
-- POST requests from your solution and parse the responses for insights.
+- Iscriversi per una chiave di accesso
+- Esplorare la console di test dell'API
+- Formulare richieste usando la chiave di accesso e l'area corretta.
+- Inviare richieste POST dalla soluzione e analizzare le risposte per informazioni dettagliate.
 
-We added this intelligence to serverless logic created in Azure Functions. You can easily call these services from other types of apps. There are many client libraries, tutorials and,  quickstarts to get you started.
+Questa funzionalità di intelligence è stata aggiunta alla logica serverless creata in Funzioni di Azure. È possibile chiamare facilmente questi servizi da altri tipi di app. Sono disponibili numerose librerie client, esercitazioni e guide introduttive per iniziare.
 
-## Suggestions for further enhancement of our solution
+## <a name="suggestions-for-further-enhancement-of-our-solution"></a>Suggerimenti per un ulteriore miglioramento della soluzione
 
-Here are some ideas for you to consider if you want to take what we did further. 
+Di seguito sono riportati alcuni spunti da prendere in considerazione per proseguire. 
 
-- Test the solution with more text examples and decide whether the thresholds we set to categorize sentiment scores into positive, negative, and neutral are appropriate. 
-- Consider adding another function into your function app that reads messages from the [!INCLUDE [negative-q](./q-name-negative.md)] queue and calls the Text Analytics API to find key phrases in the text.
-- Our input queue contains raw text feedback. In the real-world, we would associate feedback with some form of user ID such as email address, account number, and so on. So, enhance the input queue items to be JSON documents containing and ID field and the text. Then use that ID when working with the text message.
- - Currently our solution is "hard coded" to English. Think about what changes you would do to make it capable or handling text in all languages supported by the Text Analytics API.  
+- Testare la soluzione con altri esempi di testo e decidere se le soglie impostate per classificare i punteggi del sentiment in positivi, negativi e neutrali sono appropriate. 
+- È consigliabile aggiungere un'altra funzione nell'app per le funzioni per leggere i messaggi dalla coda [!INCLUDE [negative-q](./q-name-negative.md)] e chiamare l'API Analisi del testo per trovare frasi chiave nel testo.
+- La coda di input contiene feedback di testo non elaborato. In uno scenario reale è necessario associare i commenti a uno specifico ID utente come indirizzo di posta elettronica, numero di account e così via. Pertanto, ottimizzare gli elementi della coda di input trasformandoli in documenti JSON contenenti un campo ID e del testo. Usare quindi tale ID quando si lavora sul messaggio di testo.
+ - Attualmente la soluzione è "hardcoded" per l'inglese. Valutare le modifiche da apportare per fare in modo che sia in grado di gestire il testo in tutte le lingue supportate dall'API Analisi del testo.  
 
-Now that you know how to call one of these Cognitive Services APIs, take a look at some of the other services and think about how you might use them in your solutions. 
+Ora che si hanno le competenze per chiamare una di queste API Servizi cognitivi, è il momento di esaminare alcuni degli altri servizi e pensare a come usarli nelle soluzioni adottate. 
 
-## Further reading
+## <a name="further-reading"></a>Altre informazioni
 
-- [Text Analytics overview](https://docs.microsoft.com/azure/cognitive-services/text-analytics/overview)
-- [How to detect sentiment in Text Analytics](https://docs.microsoft.com/azure/cognitive-services/text-analytics/how-tos/text-analytics-how-to-sentiment-analysis)
-- [Cognitive Services Documentation](https://docs.microsoft.com/azure/cognitive-services/)
+- [Panoramica di Analisi del testo](https://docs.microsoft.com/azure/cognitive-services/text-analytics/overview)
+- [Come rilevare il sentiment in Analisi del testo](https://docs.microsoft.com/azure/cognitive-services/text-analytics/how-tos/text-analytics-how-to-sentiment-analysis)
+- [Documentazione dei servizi cognitivi](https://docs.microsoft.com/azure/cognitive-services/)
 
-## Clean up resources
+## <a name="clean-up-resources"></a>Pulire le risorse
 
-*Resources* in Azure refer to function apps, functions, storage accounts, and so forth. They are grouped into *resource groups*, and you can delete everything in a group by deleting the group.
+Il termine *risorse* in Azure si riferisce ad app per le funzioni, funzioni, account di archiviazione e così via. Le risorse sono raggruppate in *gruppi di risorse* ed è possibile eliminare tutti gli elementi in un gruppo eliminando il gruppo.
 
-You created resources to complete this module. You may be billed for these resources, depending on your [account status](https://azure.microsoft.com/account/) and [service pricing](https://azure.microsoft.com/pricing/). If you don't need the resources anymore, here's how to delete them:
+Per completare questo modulo sono state create risorse. Per tali risorse potrebbero venire addebitati costi, a seconda dello [stato dell'account](https://azure.microsoft.com/account/) e dei [prezzi dei servizi](https://azure.microsoft.com/pricing/). Se le risorse non sono più necessarie, ecco come eliminarle:
 
-1. In the Azure portal, go to the **Resource group** page.
+1. Nel portale di Azure passare alla pagina **Gruppo di risorse**.
 
-   To get to that page from the function app page, select the **Overview** tab and then select the link under **Resource group**.
+   Per visualizzare tale pagina dalla pagina dell'app per le funzioni, selezionare la scheda **Panoramica** e quindi selezionare il collegamento sotto **Gruppo di risorse**.
 
-   To get to that page from the dashboard, select **Resource groups**, and then select the resource group that you used for this module. 
+   Per visualizzare tale pagina dal dashboard, selezionare **Gruppi di risorse** e quindi selezionare il gruppo di risorse usato per questo modulo. 
 
 > [!NOTE]
-> The default name of the resource group we suggested for this module was [!INCLUDE [resource-group-name](./rg-name.md)] but it is possible that you used another name.
+> Il nome predefinito del gruppo di risorse suggerito per questo modulo è [!INCLUDE [resource-group-name](./rg-name.md)], ma è possibile che sia stato usato un altro nome.
 
-2. In the **Resource group** page, review the list of included resources, and verify that they are the ones you want to delete.
+2. Nella pagina **Gruppo di risorse** esaminare l'elenco delle risorse incluse e verificare che siano quelle da eliminare.
 
-3. Select **Delete resource group**, and follow the instructions.
+3. Selezionare **Elimina gruppo di risorse** e seguire le istruzioni.
 
-   Deletion may take a couple of minutes. When it's done, a notification appears for a few seconds. You can also select the bell icon at the top of the page to view the notification.
+   L'eliminazione potrebbe richiedere alcuni minuti. Al termine, viene visualizzata una notifica per pochi secondi. È anche possibile selezionare l'icona a forma di campana nella parte superiore della pagina per visualizzare la notifica.
 
-## Further Reading
+## <a name="further-reading"></a>Altre informazioni
 
-While this is not intended to be an exhaustive list, the following are some resources related to the topics covered in this module that you might find interesting.
+Anche se questo non vuole essere un elenco completo, di seguito sono riportate alcune risorse correlate agli argomenti trattati in questo modulo che potrebbero risultare interessanti.
 
- * [Azure Functions documentation](https://docs.microsoft.com/azure/azure-functions/)
+ * [Documentazione di Funzioni di Azure](https://docs.microsoft.com/azure/azure-functions/)
 
-* [The Azure Functions Challenge](https://aka.ms/afc)
+* [Azure Functions Challenge](https://aka.ms/afc) (Sfida di Funzioni di Azure)
 
-* [Azure Serverless Computing Cookbook](https://azure.microsoft.com/resources/azure-serverless-computing-cookbook/)
+* [Azure Serverless Computing Cookbook](https://azure.microsoft.com/resources/azure-serverless-computing-cookbook/) (Guida di riferimento dettagliata all'elaborazione serverless in Azure)
 
- * [How to use Queue storage from Node.js](https://docs.microsoft.com/azure/storage/queues/storage-nodejs-how-to-use-queues)
+ * [Come usare l'archiviazione di accodamento da Node.js](https://docs.microsoft.com/azure/storage/queues/storage-nodejs-how-to-use-queues)
 
- * [Introduction to Azure Cosmos DB: SQL API](https://docs.microsoft.com/azure/cosmos-db/sql-api-introduction)
+ * [Introduzione ad Azure Cosmos DB: API SQL](https://docs.microsoft.com/azure/cosmos-db/sql-api-introduction)
 
-* [A technical overview of Azure Cosmos DB](https://azure.microsoft.com/blog/a-technical-overview-of-azure-cosmos-db/)
+* [Panoramica tecnica di Azure Cosmos DB](https://azure.microsoft.com/blog/a-technical-overview-of-azure-cosmos-db/)
 
-* [Azure Cosmos DB documentation](https://docs.microsoft.com/azure/cosmos-db/)
+* [Documentazione di Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/)

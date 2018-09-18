@@ -1,18 +1,18 @@
-Security is currently top-of-mind for most people working in IT, and this is especially true when it comes to software. It seems we are constantly hearing about companies and governments that we entrusted our private data to, being compromised. When this happens - either maliciously or accidentally, it costs them customers and, ultimately money.
+Oggi la sicurezza è la preoccupazione principale per le persone che lavorano in ambiente IT, in particolar modo quando si ha a che fare con il software. Sono all'ordine del giorno gli attacchi ad aziende ed enti della pubblica amministrazione a cui molti hanno affidato i propri dati privati. Quando si verificano eventi simili, che siano accidentali o orchestrati da utenti malintenzionati, possono causare perdite di clienti e, in ultima analisi, di denaro.
 
-Did you know that the most common cause of data breaches is poor security in software? It's true.  This means that the pressure is on for software developers to be more diligent than ever. But where do they start? This module is the start of your journey into the world of application security, with the top five defenses for web applications. Learn how to secure your web applications on Azure and protect your apps against the most common and dangerous web application attacks.
+La causa più comune delle violazioni di dati è il livello di sicurezza insufficiente nel software. È una verità assodata.  Di conseguenza, gli sviluppatori di software vivono sotto la costante pressione di essere più diligenti che mai. Ma da dove iniziare? Questo modulo è il punto di partenza di un viaggio nel mondo della sicurezza delle applicazioni, con le cinque difese principali per le applicazioni Web. Vedremo come proteggere le applicazioni Web in Azure e come proteggere le app dagli attacchi più comuni e pericolosi.
 
-## Learning objectives
+## <a name="learning-objectives"></a>Obiettivi di apprendimento
 
-In this module, you will:
+In questo modulo verrà descritto come:
 
-* Use Azure Security Center
-* Verify your application's inputs and outputs
-* Store your secrets into Key Vault
-* Ensure you are using the latest version of your framework, and its security features
-* Validate that your program dependencies and libraries are safe to use
+* Usare il Centro sicurezza di Azure
+* Verificare gli input e gli output dell'applicazione
+* Archiviare i segreti in Key Vault
+* Verificare di usare la versione più recente del framework e le relative funzionalità di sicurezza
+* Verificare che le dipendenze e le librerie del programma siano sicure
 
-## Prerequisites
+## <a name="prerequisites"></a>Prerequisiti
 
-* Learners should be experienced web developers.
-* Learners should have access to Azure.
+* È opportuno essere sviluppatori Web esperti.
+* È necessario avere accesso ad Azure.

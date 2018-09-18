@@ -11,6 +11,7 @@ Di seguito viene illustrato come gestire questi tipi di requisiti aziendali tram
 ## <a name="learning-objectives"></a>Obiettivi di apprendimento
 
 In questo modulo verrà descritto come:
- - Decidere quanti account di archiviazione siano necessari per il progetto
- - Determinare le impostazioni appropriate per ogni account di archiviazione
- - Creare un account di archiviazione usando il portale di Azure
+
+ - Decidere quanti account di archiviazione siano necessari per il progetto.
+ - Determinare le impostazioni appropriate per ogni account di archiviazione.
+ - Creare un account di archiviazione usando il portale di Azure.

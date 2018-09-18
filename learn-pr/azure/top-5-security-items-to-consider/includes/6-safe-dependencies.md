@@ -1,30 +1,30 @@
-A large percentage of code present in modern applications are the libraries and dependencies chosen by you: the developer. This is a common practice that saves time and money. However, the downside is that you are now responsible for this code, even though others wrote it, because you used it in your project. If a researcher (or worse, a hacker) discovers a vulnerability in one of these 3rd party libraries, then the same flaw will likely also be present in your app.
+Una buona parte del codice presente nelle applicazioni moderne è costituito dalle librerie e dalle dipendenze scelte dallo sviluppatore. È una pratica comune che consente di risparmiare tempo e denaro. Ma c'è un rovescio della medaglia: lo sviluppatore che usa questo codice nel suo progetto ne è infatti interamente responsabile, anche se è stato scritto da altri. Se un ricercatore (o peggio, un pirata informatico) individua una vulnerabilità in una di queste librerie di terze parti, la stessa vulnerabilità sarà probabilmente presente anche nell'app sviluppata con questa libreria.
 
-Using components with known vulnerabilities is a huge problem in our industry. It is so problematic that is has made the [OWASP top ten list](https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project) of worst web application vulnerabilities, holding at #9 for several years.
+L'uso di componenti con vulnerabilità note rappresenta un problema enorme nel settore IT. Lo è a tal punto che da diversi anni occupa la nona posizione nella [Top 10 OWASP](https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project) delle peggiori vulnerabilità delle applicazioni Web.
 
-## Track known security vulnerabilities
+## <a name="track-known-security-vulnerabilities"></a>Tenere traccia delle vulnerabilità della sicurezza note
 
-The problem we have is knowing when an issue is discovered. Keeping our libraries and dependencies updated (#4 in our list!) will of course help, but it's a good idea to keep track of identified vulnerabilities that might impact your application.
+Il nocciolo del problema è sapere quando viene individuata una vulnerabilità. Mantenere aggiornate le librerie e le dipendenze (posizione numero 4 nella Top 10) è sicuramente utile, ma è sempre consigliabile tenere traccia delle vulnerabilità identificate che potrebbero avere un impatto negativo sull'applicazione.
 
 > [!IMPORTANT]
-> When a system has a known vulnerability, it is much more likely also to have exploits available, code that people can use to attack those systems. If an exploit is made public, it is crucial that any affected systems are updated immediately.
+> Quando un sistema ha una vulnerabilità nota, aumentano anche le probabilità che siano disponibili exploit, ossia codice che persone malintenzionate possono usare per attaccare il sistema. Se un exploit viene reso pubblico, è fondamentale che i sistemi interessati vengano aggiornati immediatamente.
 
-**Mitre** is a non-profit organization that maintains the [Common Vulnerabilities and Exposures list](https://cve.mitre.org). This list is a publicly searchable set of known cybersecurity vulnerabilities in apps, libraries, and frameworks. **If you find a library or component in the CVE database, it has known vulnerabilities**.
+**Mitre** è un'organizzazione no profit che gestisce il [Common Vulnerabilities and Exposures (CVE)](https://cve.mitre.org), ossia l'elenco delle vulnerabilità ed esposizioni comuni. Si tratta di un elenco, consultabile pubblicamente, delle vulnerabilità a livello di sicurezza informatica in app, librerie e framework. **Se si trova una libreria o un componente nel database CVE, significa che contiene vulnerabilità note**.
 
-Issues are submitted by the security community when a security flaw is found in a product or component. Each published issue is assigned an ID and contains the date discovered, a description of the vulnerability, and references to published workarounds or vendor statements about the issue.
+Quando in un prodotto o un componente viene rilevata una falla nella sicurezza, il problema viene inviato alla community dedicata alla sicurezza. Ogni problema pubblicato è identificato da un ID e contiene la data dell'individuazione, una descrizione della vulnerabilità e riferimenti a soluzioni alternative pubblicate o istruzioni del fornitore relative al problema.
 
-### How to verify if you have known vulnerabilities in your 3rd party components
+### <a name="how-to-verify-if-you-have-known-vulnerabilities-in-your-3rd-party-components"></a>Come verificare se i componenti di terze parti in uso contengono vulnerabilità
 
-You could put a daily task into your phone to go and check this list, but luckily for us, many tools exist to allow us to verify if our dependencies are vulnerable. You can run these tools against your codebase, or better yet, add them to your CI/CD pipeline to automatically check for issues as part of the development process.
+Si potrebbe impostare un'attività giornaliera sul telefono per controllare questo elenco, ma fortunatamente esistono diversi strumenti che consentono di verificare se le dipendenze in uso sono vulnerabili. È possibile eseguire questi strumenti sulla codebase o, meglio ancora, aggiungerli alla pipeline CI/CD per verificare automaticamente la presenza di problemi durante il processo di sviluppo.
 
-- [OWASP Dependency Check](https://www.owasp.org/index.php/OWASP_Dependency_Check), which has a [Jenkins plugin](https://wiki.jenkins.io/display/JENKINS/OWASP+Dependency-Check+Plugin)
+- [OWASP Dependency Check](https://www.owasp.org/index.php/OWASP_Dependency_Check), che dispone di un [plug-in Jenkins](https://wiki.jenkins.io/display/JENKINS/OWASP+Dependency-Check+Plugin)
 - [OWASP SonarQube](https://www.owasp.org/index.php/OWASP_SonarQube_Project)
-- [Synk](https://snyk.io), which is free for open source repositories in GitHub
-- [Black Duck](https://www.blackducksoftware.com) which is used by many enterprises
-- [RubySec](https://rubysec.com) an advisory database just for Ruby
-- [Retire.js](https://github.com/retirejs/retire.js/) a tool for verifying if your JavaScript libraries are out of date; can be used as a plugin for various tools, including [Burp Suite](https://www.portswigger.net)
+- [Synk](https://snyk.io), gratuito per i repository open source in GitHub
+- [Black Duck](https://www.blackducksoftware.com), usato da numerose aziende
+- [RubySec](https://rubysec.com), un database di consulenza riservato a Ruby
+- [Retire.js](https://github.com/retirejs/retire.js/), uno strumento che consente di verificare se le librerie JavaScript in uso non sono aggiornate e può essere usato come plug-in per diversi strumenti, incluso [Burp Suite](https://www.portswigger.net)
 
-Some tools made specifically for static code analysis can be used for this as well.
+Possono essere usati allo scopo anche alcuni strumenti sviluppati specificamente per l'analisi di codice statico.
 
 - [Roslyn Security Guard](https://dotnet-security-guard.github.io)
 - [Puma Scan](https://pumascan.com)
@@ -35,10 +35,10 @@ Some tools made specifically for static code analysis can be used for this as we
 - [Node Security Platform](https://nodesecurity.io)
 - [WhiteSource](https://www.whitesourcesoftware.com/what-is-whitesource/)
 - [Hdiv](https://hdivsecurity.com)
-- [And many more...](https://www.owasp.org/index.php/Source_Code_Analysis_Tools)
+- [E molti altri ancora...](https://www.owasp.org/index.php/Source_Code_Analysis_Tools)
 
-For more information on the risks involved in using vulnerable components visit the [OWASP page](https://www.owasp.org/index.php/Top_10-2017_A9-Using_Components_with_Known_Vulnerabilities) dedicated to this topic.
+Per altre informazioni sui rischi impliciti nell'uso di componenti vulnerabili, visitare la [pagina di OWASP](https://www.owasp.org/index.php/Top_10-2017_A9-Using_Components_with_Known_Vulnerabilities) dedicata a questo argomento.
 
-## Summary
+## <a name="summary"></a>Riepilogo
 
-When you use libraries or other 3rd party components as part of your application you are also taking on any risks they may have. The best way to reduce this risk is to ensure that you are only using components that have no known vulnerabilities associated with them.
+Quando si usano librerie o altri componenti di terze parti per lo sviluppo della propria applicazione, si accettano anche gli eventuali rischi che possono comportare. Il modo migliore per ridurre questi rischi è assicurarsi di usare solo componenti a cui non siano associate vulnerabilità note.

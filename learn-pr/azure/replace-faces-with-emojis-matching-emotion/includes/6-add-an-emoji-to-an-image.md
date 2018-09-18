@@ -1,43 +1,41 @@
-At this point in the flow of the application we know:
+A questo punto del flusso dell'applicazione, ecco che cosa è possibile determinare:
 
-1.  The list of faces in the image (if any).
-2.  The emoji to use for each face.
-3.  The bounding rectangle of each face in the image.
+1.  L'elenco dei visi nell'immagine (se presenti).
+2.  Le emoji da usare per ogni viso.
+3.  Il rettangolo di delimitazione di ogni viso nell'immagine.
 
-So for each face discovered in the image, we need to layer an emoji over the face, resizing the emoji to fit the face.
+Per ogni viso individuato nell'immagine, è necessario sovrapporre un'emoji sul viso, ridimensionandola per adattarla alle dimensioni del viso.
 
-To implement this functionality, we will use the open source image manipulation library [Jimp](https://www.npmjs.com/package/jimp).
+Per implementare questa funzionalità, si userà la libreria di modifica di immagini open source [Jimp](https://www.npmjs.com/package/jimp).
 
-The goal of this lecture is to learn how to use the `Jimp` library to manipulate images and specifically to learn how to layer an emoji over a face and save that image back out to disk.
+L'obiettivo di questa lezione è descrivere come usare la libreria `Jimp` per modificare le immagini e in particolare come sovrapporre un'emoji su un viso e salvare l'immagine di nuovo nel disco.
 
-We are going to expand on the `bin/mojify.ts` script we started in the previous lecture by fleshing out the `createMojifiedImage` function.
+Si elaborerà lo script `bin/mojify.ts` iniziato nella lezione precedente elaborando la funzione `createMojifiedImage`.
 
-> NOTE
-> We will be re-using all the code from this script when we create the Slack command and Azure Function in later lectures. It's not wasted effort!
+> NOTA Tutto il codice di questo script verrà usato di nuovo per creare il comando di Slack e la funzione di Azure nelle prossime lezioni. Non sarà stato uno sforzo vano!
 
-## Steps
+## <a name="steps"></a>Passaggi
 
-### Required Imports
+### <a name="required-imports"></a>Importazioni necessarie
 
-To play around with Jimp and manipulate files on our filesystem we need to import a few packages at the top
+Per esercitarsi con Jimp e modificare i file nel file system, è necessario importare alcuni pacchetti
 
 ```typescript
 import * as Jimp from "jimp";
 import * as path from "path";
 ```
 
-> NOTE
-> `path` is needed because we want to load files from disk
+> NOTA È necessario usare `path` perché i file devono essere caricati dal disco
 
-### Basic Use Case
+### <a name="basic-use-case"></a>Caso d'uso di base
 
-Let's strip away a lot of the complexity and ask what it would take to:
+Per eliminare molti fattori di complessità, determinare che cosa è necessario per:
 
-1. Load up an image
-2. Place the 😕 emoji in the top right corner (resized to 50x50px)
-3. Save the image
+1. Caricare un'immagine
+2. Posizionare l'emoji 😕 nell'angolo in alto a destra (ridimensionata a 50 x 50 pixel)
+3. Salvare l'immagine
 
-We can implement all the functionality above in 6 lines of code, like so:
+È possibile implementare tutte le funzionalità indicate sopra in 6 righe di codice, come in questo esempio:
 
 ```typescript
 async function createMojifiedImage(imageUrl) {
@@ -53,50 +51,50 @@ async function createMojifiedImage(imageUrl) {
 }
 ```
 
-We'll break it down step by step.
+La procedura verrà suddivisa in singoli passaggi.
 
-To load an image using `Jimp` we use the `Jimp.read` function, like so:
+Per caricare un'immagine usando `Jimp`, è necessario usare la funzione `Jimp.read` in questo modo:
 
 ```typescript
 let sourceImage = await Jimp.read(imageUrl);
 ```
 
-We have a directory of png files for each emoji in `shared/emojis`. Each emoji png is named as <emoji>.png, so `😕.png` is a file that contains a png of the 😕 emoji.
+È disponibile una directory di file PNG per ogni emoji in `shared/emojis`. Poiché ogni file PNG di un'emoji ha come nome <emoji>.png, `😕.png` è un file che contiene un'immagine PNG dell'emoji 😕.
 
-We load up `😕.png` like so:
+Caricare `😕.png`, come in questo esempio:
 
 ```typescript
 let mojiPath = path.resolve(__dirname, "../shared/emojis/😕.png");
 let emojiImage = await Jimp.read(mojiPath);
 ```
 
-Next up we need to resize the emojiImage to 50 pixels width x 50 pixels height, we can do that by using the resize function like so:
+È quindi necessario ridimensionare l'immagine dell'emoji a 50 pixel di larghezza x 50 pixel di altezza, usando a questo scopo la funzione di ridimensionamento in questo modo:
 
 ```typescript
 emojiImage.resize(50, 50);
 ```
 
-The `emojiImage` has now been resized to fit in a 50x50 px space.
+L'elemento `emojiImage` è stato ora ridimensionato in modo da occupare uno spazio di 50 x 50 pixel.
 
-We now need to _place_ the emojiImage over the sourceImage in the top left corner, like so:
+È necessario _posizionare_ emojiImage su sourceImage nell'angolo in alto a sinistra, in questo modo:
 
 ```typescript
 sourceImage = sourceImage.composite(emojiImage, 0, 0);
 ```
 
-We use the `composite` function, which places `emojiImage` ontop of `sourceImage` 0 pixels from the top and 0 pixels down. The `composite` fucntion doesn't alter `sourceImage` in place, instead it returns a copy of `sourceImage` with the `emojiImage` placed on top.
+Usare la funzione `composite`, che posiziona `emojiImage` su `sourceImage` a 0 pixel dall'alto e 0 pixel dal basso. La funzione `composite` non modifica `sourceImage`, ma restituisce una copia di `sourceImage` con `emojiImage` posizionato sopra.
 
-Finally we save the output image to disk like so:
+È infine necessario salvare l'immagine di output sul disco in questo modo:
 
 ```typescript
 sourceImage.write(path.join(__dirname, "..", "mojified.jpg"));
 ```
 
-### Full Use Case
+### <a name="full-use-case"></a>Caso d'uso completo
 
-Hopefully by now you have a good understanding of how `Jimp` works and how we can use it to composite images. So now when we go through the full code for the `createMojifiedImage` function it should make a lot more sense.
+A questo punto, si dovrebbe avere una buona comprensione del funzionamento di `Jimp` e di come usarlo per comporre immagini. Quando verrà esaminato il codice completo della funzione `createMojifiedImage`, sarà tutto più chiaro.
 
-Copy and paste the bellow code into your `createMojifiedImage` function in `bin/mojify.ts`.
+Copiare e incollare il codice seguente nella funzione `createMojifiedImage` in `bin/mojify.ts`.
 
 ```typescript
 async function createMojifiedImage(imageUrl) {
@@ -127,9 +125,9 @@ async function createMojifiedImage(imageUrl) {
 }
 ```
 
-The above code is very similar to the base case we just went through, rather than hardcoding an emoji and poisition however we are deciding which emoji to composite and where to place it based on the array of faces passed in.
+Il codice precedente è molto simile al caso d'uso di base appena descritto: invece di impostare come hardcoded un'emoji e posizionarla, si sceglie quale emoji comporre e dove posizionarla in base alla matrice di visi passati.
 
-The array of faces comes from the `getFaces` function we fleshed out in the last lecture, it's all connected up together in the main function, like so:
+La matrice dei visi viene restituita dalla funzione `getFaces` elaborata nell'ultima lezione ed è tutto collegato insieme nella funzione principale, in questo modo:
 
 ```typescript
 async function main() {
@@ -141,17 +139,17 @@ async function main() {
 main();
 ```
 
-We call `getFaces` with the passed in `imageUrl` to get the array of `Face` instances.
-We pass this array to the `createMojifiedImage` function along with the original image, this function composites emojis on peoples faces and saves the resulting file to the project root folder as `mojified.jpg`
+Chiamare `getFaces` con l'elemento `imageUrl` passato per ottenere la matrice di istanze di `Face`.
+Passare la matrice alla funzione `createMojifiedImage` insieme all'immagine originale. Questa funzione compone le emoji sui visi delle persone e salva il file risultante nella cartella radice del progetto come `mojified.jpg`
 
-### Try it out
+### <a name="try-it-out"></a>Provare questa operazione
 
-Try this code out yourself, like so:
+Provare personalmente il codice, come in questo esempio:
 
 ```bash
 node bin/mojify.js <url>
 ```
 
-If this worked then a mojified version of the source fil should be stored in the project root called `mojified.jpg`.
+Se funziona, una versione trasformata in emoji del file di origine verrà archiviata nella radice del progetto, denominata `mojified.jpg`.
 
-Try it out with different images!
+Provare il codice con immagini diverse.

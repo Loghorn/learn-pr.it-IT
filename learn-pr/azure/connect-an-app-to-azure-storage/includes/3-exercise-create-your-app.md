@@ -1,20 +1,20 @@
-Recall that we are working on a photo-sharing application that will use Azure Storage to manage pictures and other bits of data we store on behalf of our users.
+Stiamo lavorando su un'applicazione di condivisione foto che userà Archiviazione di Azure per gestire le immagini e gli altri dati archiviati per conto degli utenti.
 
 ::: zone pivot="csharp"
 
-To simplify our scenario so that we can focus on the Storage APIs, we will create a new .NET Core Console application. We will also assume it always has network connectivity. However, you should always harden your app to ensure network failures will not impact the user experience, or result in a failure of the application itself.
+Per semplificare questo scenario, in modo da potersi concentrare sulle API di archiviazione, si creerà una nuova applicazione console .NET Core. Si presupporrà anche che l'applicazione disponga sempre di connettività di rete. Tuttavia, è sempre necessario rafforzare l'app per assicurarsi che gli errori di rete non incidano sull'esperienza utente e non risultino in un errore dell'applicazione stessa.
 
-## Create a .NET Core application
+## <a name="create-a-net-core-application"></a>Creare un'applicazione .NET Core
 
-.NET Core is a cross-platform version of .NET that runs on macOS, Windows, and Linux. You can install the tools locally, or use the Cloud Shell on the right side of the window to execute the below steps. 
+.NET Core è una versione multipiattaforma di .NET che è possibile eseguire in Windows, macOS e Linux. Si possono installare gli strumenti in locale o in alternativa si può usare Cloud Shell sul lato destro della finestra per eseguire i passaggi seguenti. 
 
-1. Sign into the Cloud Shell or open a command line session and create a new .NET Core Console application with the name "PhotoSharingApp". You can add the `-o` or `--output` flag to create the app in a specific folder.
+1. Accedere a Cloud Shell o aprire una sessione della riga di comando e creare una nuova applicazione console .NET Core denominata "PhotoSharingApp". È possibile aggiungere il flag `-o` o `--output` per creare l'app in una cartella specifica.
 
     ```bash
     dotnet new console --name PhotoSharingApp
     ```
 
-1. Run the app to make sure it builds and executes correctly. It should display "Hello, World!" to the console.
+1. Eseguire l'app per assicurarsi che venga compilata e funzioni correttamente. Dovrebbe visualizzare "Hello, World!" sulla console.
 
     ```bash
     cd PhotoSharingApp
@@ -25,36 +25,36 @@ To simplify our scenario so that we can focus on the Storage APIs, we will creat
 
 ::: zone pivot="javascript"
 
-To simplify our scenario so that we can focus on the Storage APIs, we will create a new Node.js application that can run from the console. We will also assume it always has network connectivity. However, you should always harden your app to ensure network failures will not impact the user experience, or result in a failure of the application itself.
+Per semplificare questo scenario, in modo da potersi concentrare sulle API di archiviazione, si creerà una nuova applicazione Node.js eseguibile dalla console. Si presupporrà anche che l'applicazione disponga sempre di connettività di rete. Tuttavia, è sempre necessario rafforzare l'app per assicurarsi che gli errori di rete non incidano sull'esperienza utente e non risultino in un errore dell'applicazione stessa.
 
-## Create a Node.js application
+## <a name="create-a-nodejs-application"></a>Creare un'applicazione Node.js
 
-Node.js is a popular framework for running JavaScript apps. It is most commonly used for web apps, but you can use it to run logic from the command line as well. If you have the tools installed locally, you can run the following steps from a command line. Alternatively, you can use the Cloud Shell on the right side of the window to execute the below steps.
+Node.js è un framework diffuso per l'esecuzione di app JavaScript. Viene in genere usato per le app Web, ma si può anche usare per eseguire logica dalla riga di comando. Con gli strumenti installati in locale, è possibile eseguire i passaggi seguenti da una riga di comando. In alternativa, è possibile usare Cloud Shell sul lato destro della finestra.
 
-1. Sign into the Cloud Shell or open a command line session and create a new folder named "PhotoSharingApp".
+1. Accedere a Cloud Shell o aprire una sessione della riga di comando e creare una nuova cartella denominata "PhotoSharingApp".
 
     ```bash
     mkdir PhotoSharingApp
     ```
 
-1. Change into the new folder and create a **package.json** file with the Node Package Manager (NPM) that will describe our new app.
-    - Name it "PhotoSharingApp".
-    - You can take defaults for all the other prompts.
+1. Passare alla nuova cartella e creare con Node Package Manager (NPM) un file **package.JSON** che descriverà la nuova app.
+    - Assegnare il nome "PhotoSharingApp".
+    - Per tutte le altre richieste, è possibile accettare le impostazioni predefinite.
 
     ```bash
     cd PhotoSharingApp
     npm init
     ```
 
-1. Create a new source file **index.js** which will be where our code will go.
+1. Creare un nuovo file di origine **index.js** in cui verrà salvato il codice.
 
     ```bash
     touch index.js
     ```
 
-1. Open the **index.js** file with an editor. If you are using the Cloud Shell, you can type `code .` to open an editor.
+1. Aprire il file **index.js** con un editor. Se si usa Cloud Shell, è possibile digitare `code .` per aprire un editor.
 
-1. Put the following program into the **index.js** file.
+1. Inserire il programma seguente nel file **index.js**.
 
     ```javascript
     #!/usr/bin/env node
@@ -65,9 +65,9 @@ Node.js is a popular framework for running JavaScript apps. It is most commonly 
     
     main();
     ```
-1. Save the file - you can use the "..." menu on the top right corner of the Cloud Shell editor.
+1. Salvare il file. Si può usare il menu "..." nell'angolo superiore destro dell'editor di Cloud Shell.
 
-1. Run the app to make sure it executes correctly. It should display "Hello, World!" to the console.
+1. Eseguire l'app per assicurarsi che funzioni correttamente. Dovrebbe visualizzare "Hello, World!" sulla console.
 
     ```bash
     node index.js

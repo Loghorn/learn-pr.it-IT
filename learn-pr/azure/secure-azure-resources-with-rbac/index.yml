@@ -1,30 +1,37 @@
 ### YamlMime:Module
 uid: learn.secure-azure-resources-with-rbac
 metadata:
-  title: Secure your Azure resources with role-based access control (RBAC)
-  description: Role-based access control (RBAC) is a system that provides fine-grained access management of resources in Azure. Using RBAC, you can segregate duties within your team and grant only the amount of access to users that they need to perform their jobs. This module shows you how to use RBAC to manage access to resources in Azure.
+  title: Proteggere le risorse di Azure con il controllo degli accessi in base al ruolo
+  description: Il controllo degli accessi in base al ruolo è un sistema che garantisce una gestione degli accessi con granularità fine delle risorse in Azure. Usando il Controllo degli accessi in base al ruolo, è possibile separare i compiti all'interno del team e concedere agli utenti solo la quantità di accesso di cui hanno bisogno per svolgere il proprio lavoro. Questo modulo mostra come usare il controllo degli accessi in base al ruolo per gestire l'accesso alle risorse in Azure.
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Secure your Azure resources with role-based access control (RBAC)
-summary: Learn how to use RBAC to manage access to resources in Azure.
-abstract: |
-  In this module, you will:
-  - Verify access to resources for yourself and others
-  - Grant access to resources
-  - View activity logs of RBAC changes
-prerequisites: |
-  - Knowledge of basic Azure concepts, such as the Azure portal and resource groups
-#TODO: Update icon URL with real image 
+  ms.openlocfilehash: 42288a93878ebcffe236cdeef8e4078265d9e231
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44244662"
+title: Proteggere le risorse di Azure con il controllo degli accessi in base al ruolo
+summary: Informazioni sull'uso del controllo degli accessi in base al ruolo per gestire l'accesso alle risorse in Azure.
+abstract: >
+  In questo modulo verrà descritto come:
+
+  - Verificare l'accesso alle risorse per se stessi e altri utenti
+
+  - Concedere l'accesso alle risorse
+
+  - Visualizzare i log attività delle modifiche apportate al controllo degli accessi in base al ruolo
+prerequisites: >
+  - Conoscenza dei concetti di base di Azure, ad esempio il portale di Azure e i gruppi di risorse
 iconUrl: http://via.placeholder.com/120x120
-levels: 
+levels:
 - beginner
-roles: 
+roles:
 - administrator
-products: 
+products:
 - azure
 units:
 - learn.secure-azure-resources-with-rbac.1-introduction
@@ -32,7 +39,8 @@ units:
 - learn.secure-azure-resources-with-rbac.3-knowledge-check-rbac-overview
 - learn.secure-azure-resources-with-rbac.4-list-access
 - learn.secure-azure-resources-with-rbac.5-grant-access
-- learn.secure-azure-resources-with-rbac.6-view-activity-logs
-- learn.secure-azure-resources-with-rbac.7-knowledge-check-rbac
-- learn.secure-azure-resources-with-rbac.8-summary
+- learn.secure-azure-resources-with-rbac.6-grant-access-powershell
+- learn.secure-azure-resources-with-rbac.7-view-activity-logs
+- learn.secure-azure-resources-with-rbac.8-knowledge-check-rbac
+- learn.secure-azure-resources-with-rbac.9-summary
 achievement: learn.secure-azure-resources-with-rbac.badge

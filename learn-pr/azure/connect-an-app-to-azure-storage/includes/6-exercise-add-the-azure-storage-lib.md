@@ -1,55 +1,54 @@
-::: zone pivot="csharp"
-Let's integrate the Azure Storage client library into your .NET Core console application.
+::: zone pivot="csharp" In questa unità si integrerà la libreria client di Archiviazione di Azure nell'applicazione console .NET Core.
 
-The Azure storage client library for .NET is distributed with NuGet. You will want to add the **WindowsAzure.Storage** package to your .NET or .NET Core applications.
+La libreria client di Archiviazione di Azure per .NET viene distribuita con NuGet. Occorrerà aggiungere il pacchetto **WindowsAzure.Storage** alle applicazioni .NET o .NET Core.
 
-## Add the Azure Storage NuGet package
+## <a name="add-the-azure-storage-nuget-package"></a>Aggiungere il pacchetto NuGet per Archiviazione di Azure
 
-1. Switch to the correct folder if you are using the Cloud Shell.
+1. Se si usa Cloud Shell, passare alla cartella corretta.
 
-1. Add the **WindowsAzure.Storage** package to the application.
+1. Aggiungere il pacchetto **WindowsAzure.Storage** all'applicazione.
 
     ```bash
     dotnet add package WindowsAzure.Storage
     ```
 
-1. This should result in some console activity while the client library and all the required dependencies are downloaded. Once it's done, go ahead and build and run the app again to make sure everything is ready to go.
+1. Questo dovrebbe tradursi in alcune attività della console durante il download della libreria client e di tutte le dipendenze necessarie. Al termine, compilare ed eseguire di nuovo l'applicazione per assicurarsi che sia tutto pronto.
 
     ```bash
     dotnet run
     ```
 
-1. As before, it should output "Hello, World!".
+1. Come prima, dovrebbe restituire l'output "Hello, World!".
 
 ::: zone-end
 
 ::: zone-pivot="javascript"
 
-Let's integrate the **Microsoft Azure Storage Client Library for Node.js and JavaScript** into your application.
+Ora si integrerà la **libreria client di Archiviazione di Microsoft Azure per Node.js e JavaScript** nell'applicazione.
 
-The client library for Node.js is available through the Node Package manager (NPM). You will want to add the **azure-storage** package to your **packages.json** file.
+La libreria client per Node.js è disponibile tramite Node Package manager (NPM). Occorrerà aggiungere il pacchetto **azure-storage** al file **packages.json**.
 
 > [!NOTE]
-> The **Microsoft Azure Storage Client Library for Node.js and JavaScript** is intended for server applications. If you are doing client-side JavaScript, you will want to use the **Azure Storage Client Library for JavaScript** which provides the same functionality but is tailored to running in a browser.
+> La **libreria client di Archiviazione di Microsoft Azure per Node.js e JavaScript** è destinata alle applicazioni server. Se si sta creando codice JavaScript lato client, è consigliabile usare la **libreria client di Archiviazione di Azure per JavaScript**, che offre le stesse funzionalità ma è stata sviluppata specificamente per l'esecuzione in un browser.
 
-## Add the Azure Storage package
+## <a name="add-the-azure-storage-package"></a>Aggiungere il pacchetto di Archiviazione di Azure
 
-1. Switch to the correct folder if you are using the Cloud Shell.
+1. Se si usa Cloud Shell, passare alla cartella corretta.
 
-1. Add the **azure-storage** package to the application. Make sure to supply the `--save` option so it persists to **packages.json**.
+1. Aggiungere il pacchetto **azure-storage** all'applicazione. Assicurarsi di specificare l'opzione `--save`, per salvarlo in modo permanente in **packages.json**.
 
     ```bash
     npm install azure-storage --save
     ```
 
-1. This should result in some console activity while the client library and all the required dependencies are downloaded. Once it's done, go ahead and build and run the app again to make sure everything is ready to go.
+1. Questo dovrebbe tradursi in alcune attività della console durante il download della libreria client e di tutte le dipendenze necessarie. Al termine, compilare ed eseguire di nuovo l'applicazione per assicurarsi che sia tutto pronto.
 
     ```bash
     node index.js
     ```
 
-1. As before, it should output "Hello, World!".
+1. Come prima, dovrebbe restituire l'output "Hello, World!".
 
 ::: zone-end
 
-Now that we have the necessary libraries in place, let's look at the common tasks you'll do in your code to work with Azure storage.
+Ora che sono disponibili le librerie necessarie, è possibile esaminare le attività comuni da eseguire nel codice per usare Archiviazione di Azure.

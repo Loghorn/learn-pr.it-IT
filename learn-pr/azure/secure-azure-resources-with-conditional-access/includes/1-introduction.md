@@ -7,11 +7,10 @@ In questo modulo si apprenderà come usare l'accesso condizionale insieme ad Azu
 ## <a name="learning-objectives"></a>Obiettivi di apprendimento
 
 In questo modulo verrà descritto come:
-- Creare un utente di test e un gruppo utenti
-- Abilitare criteri di accesso condizionale che richiedono l'autenticazione a più fattori
+
+- Creare un utente di test e un gruppo utenti.
+- Abilitare criteri di accesso condizionale che richiedono MFA (Multi-Factor Authentication).
 
 ## <a name="prerequisites"></a>Prerequisiti
 
-- Conoscenza dei concetti di base di Azure, ad esempio i gruppi di risorse e le sottoscrizioni
-- Accesso a una sottoscrizione di Azure
-- Autorizzazioni per creare una directory
+- Conoscenza dei concetti di base di Azure, ad esempio i gruppi di risorse e le sottoscrizioni.

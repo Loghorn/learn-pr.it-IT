@@ -18,7 +18,7 @@ Facoltativamente, è possibile configurare le reti virtuali e la ridondanza geog
 
 1. Accedere al [portale di Azure](https://portal.azure.com?azure-portal=true).
 
-1. Fare clic su **Crea una risorsa** > **Database** > **Azure Cosmos DB**.
+1. Fare clic su **Crea una risorsa** > **Database** > **Cosmos DB**.
    
    ![Riquadro Database nel portale di Azure](../media-draft/2-create-nosql-db-databases-json-tutorial.png)
 

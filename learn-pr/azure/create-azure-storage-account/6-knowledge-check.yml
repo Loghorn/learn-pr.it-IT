@@ -5,12 +5,17 @@ durationInMinutes: 3
 metadata:
   title: 'Verifica delle conoscenze: creare un account di archiviazione'
   description: Domande sulle proprietà e sulla creazione dell'account di archiviazione.
-  ms.openlocfilehash: ab689dd2ef9802ce036ec683909b291c3b342370
-  ms.sourcegitcommit: c07e11980180ae35cb3485548f81e16152d77781
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: e406c0e7cf2b81a7cae86ee7ea4ef715994e3c29
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/02/2018
-  ms.locfileid: "43471845"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44237029"
 quiz:
   title: 'Verifica delle conoscenze: creare un account di archiviazione'
   questions:
@@ -27,7 +32,7 @@ quiz:
       isCorrect: false
     - content: Univoco all'interno della sottoscrizione di Azure.
       isCorrect: false
-    - content: Univoco a livello globale
+    - content: Univoco a livello globale.
       isCorrect: true
       correctExplanation: Il nome dell'account di archiviazione viene usato come parte dell'URI usato per l'accesso all'API, quindi deve essere univoco a livello globale.
   - content: In un progetto tipico, quando vengono creati gli account di archiviazione?

@@ -1,21 +1,21 @@
-Azure Storage provides a Representational State Transfer (REST) based web API to work with the containers and data stored in each account. There are independent APIs available to work with each type of data you can store. Recall that we have four specific data types:
+Archiviazione di Azure offre un'API Web basata su REST (Representational State Transfer, trasferimento di stato rappresentativo) da usare con i contenitori e i dati archiviati in ogni account. Sono disponibili API indipendenti da usare con ogni tipo di dati che è possibile archiviare. È importante ricordare che sono disponibili quattro tipi di dati specifici:
 
-- **Blobs** for unstructured data such as binary and text files.
-- **Queues** for persistent messaging.
-- **Tables** for structured storage of key/values.
-- **Files** for traditional SMB file shares.
+- **BLOB** per i dati non strutturati, ad esempio file binari e file di testo.
+- **Code** per la messaggistica persistente.
+- **Tabelle** per l'archiviazione strutturata di chiavi/valori.
+- **File** per le condivisioni file SMB tradizionali.
 
-## Using the REST API
+## <a name="using-the-rest-api"></a>Uso dell'API REST
 
-The Storage REST APIs are accessible from services running in Azure over a virtual network, or over the Internet from any application that can send an HTTP/HTTPS request and receive an HTTP/HTTPS response.
+Le API REST di archiviazione sono accessibili dai servizi in esecuzione in Azure tramite una rete virtuale oppure tramite Internet da qualsiasi applicazione in grado di inviare una richiesta HTTP/HTTPS e ricevere una risposta HTTP/HTTPS.
 
-For example, if you wanted to list all the blobs in a container, you would send something like:
+Ad esempio, per elencare tutti i BLOB in un contenitore, si potrebbe inviare una richiesta simile alla seguente:
 
 ```http
 GET https://[url-for-service-account]/?comp=list&include=metadata
 ```
 
-This would return an XML block with data specific to the account:
+Questa restituirebbe un blocco XML con i dati specifici per l'account:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>  
@@ -65,27 +65,20 @@ This would return an XML block with data specific to the account:
 </EnumerationResults>  
 ```
 
-However, this approach requires a lot of manual parsing and creation of HTTP packets to work with each API. For this reason, Azure provides pre-built _client libraries_ that make working with the service easier for common languages and frameworks.
+Tuttavia, questo approccio richiede molta analisi manuale e la creazione di pacchetti HTTP per ogni API. Per questo motivo, Azure offre _librerie client_ precompilate che semplificano l'uso del servizio per i linguaggi e i framework più diffusi.
 
-## Using a client library
+## <a name="using-a-client-library"></a>Uso di una libreria client
 
-Client libraries can save a significant amount of work for application developers because the API is tested and it often provides nicer wrappers around the data models sent and received by the REST API.
+Le librerie client possono far risparmiare una notevole quantità di lavoro agli sviluppatori di applicazioni, perché l'API viene testato e spesso fornisce wrapper migliori per i modelli di dati inviati e ricevuti dall'API REST.
 
 :::row:::
     :::column:::
-        Microsoft has Azure client libraries that support a number of languages and frameworks including:
-        - .NET
-        - Java
-        - Python
-        - Node.js
-        - Go
-    :::column-end::::
-    :::column:::
-        <br> ![Sample logos of supported frameworks you can use with Azure](../media/4-common-tools.png)
+        Microsoft offre librerie client di Azure che supportano numerosi linguaggi e framework tra cui: .NET, Java Python, Node.js e Go :::column-end:::: :::column:::
+        <br> ![Logo di esempio dei framework supportati che è possibile usare con Azure](../media/4-common-tools.png)
     :::column-end:::
 :::row-end:::
 
-For example, to retrieve the same list of blobs in C#, we could use the following code snippet:
+Ad esempio, per recuperare lo stesso elenco di BLOB in C# si può usare il frammento di codice seguente:
 
 ```csharp
 CloudBlobDirectory directory = ...;
@@ -97,7 +90,7 @@ foreach (IEnumerable<IListBlobItem> blob in directory.ListBlobs(
 }
 ```
 
-Or in JavaScript:
+O in JavaScript:
 
 ```javascript
 const containerName = "...";
@@ -113,6 +106,6 @@ blobService.listBlobsSegmented(containerName, null, function (error, results) {
 ```
 
 > [!NOTE]
-> The client libraries are just thin _wrappers_ over the REST API. They are doing exactly what you would do if you used the web services directly. These libraries are also open source making them very transparent. Look for them on GitHub.
+> Le librerie client sono semplicemente _wrapper_ leggeri per l'API REST. Fanno esattamente ciò che si farebbe usando i servizi Web direttamente. Queste librerie sono anche open source e dunque sono molto trasparenti. Sono reperibili su GitHub.
 
-Let's add the client library support for our application.
+È il momento di aggiungere all'applicazione il supporto delle librerie client.

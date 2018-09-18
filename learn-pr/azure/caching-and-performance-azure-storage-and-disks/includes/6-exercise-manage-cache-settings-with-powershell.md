@@ -1,28 +1,28 @@
 
-In the previous exercise, we performed the following tasks using the Azure portal:
+Nell'esercizio precedente sono state eseguite le attività seguenti tramite il portale di Azure.
 
-- View OS disk cache status
-- Change the cache settings of the OS disk
-- Add a data disk to the VM
-- Change caching type on a new data disk
+- Visualizzare lo stato della cache del disco del sistema operativo
+- Modificare le impostazioni della cache del disco del sistema operativo
+- Aggiungere un disco dati alla macchina virtuale
+- Modificare il tipo di memorizzazione nella cache in un nuovo disco dati
 
-Let's practice these operations using Azure PowerShell. We're going to use the VM we created in the previous exercise. The operations in this lab assume:
+Ora si farà pratica con queste operazioni in Azure PowerShell. Verrà usata la macchina virtuale creata nell'esercizio precedente. Per le operazioni in questo lab si presuppone che:
 
-- Our VM exists and is called **fotoshareVM**
-- Our VM lives in a resource group called **fotoshare-rg**
+- La macchina virtuale esista già e sia chiamata **fotoshareVM**
+- La macchina virtuale si trovi in un gruppo di risorse denominato **fotoshare-rg**
 
-If you've gone with a different set of names, just replace these values with yours. 
+Se i nomi effettivi sono diversi, sostituire questi valori con i propri. 
 
-Here's the current state of our VM disks from the last exercise:
+Di seguito è riportato lo stato corrente dei dischi della macchina virtuale dall'ultimo esercizio. 
 
-![Screenshot of our OS and data disks, both set to Read-only caching.](../media-draft/disks-final-config-portal.PNG)
+![Screenshot dei dischi dati e del sistema operativo, entrambi impostati per la memorizzazione nella cache di sola lettura.](../media-draft/disks-final-config-portal.PNG)
 
-We used the portal to set the **HOST CACHING** field for both the OS and data disks. Keep this initial state in mind as we work through the following steps. 
+È stato usato il portale per impostare il campo ***MEMORIZZAZIONE NELLA CACHE DELL'HOST** per i dischi dati e del sistema operativo. Tenere presente questo stato iniziale mentre si esegue la procedura seguente. 
 
-### Set up some variables
-First, let's  store some resource names so we can use them later.
+### <a name="set-up-some-variables"></a>Impostare alcune variabili
+Per prima cosa, occorre archiviare alcuni nomi di risorse per poterli riusare in seguito.
 
-Use the Azure Cloud Shell terminal on the right to run the following PowerShell commands:
+Usare il terminale Azure Cloud Shell a destra per eseguire i comandi di PowerShell seguenti. 
 
 ```powershell
 $myRgName = "fotoshare-rg"
@@ -30,114 +30,114 @@ $myVMName = "fotoshareVM"
 ```
 
 > [!TIP]
-> You'll have to set these variables again if your Cloud Shell session times out. So, if possible, work through this entire lab in a single session. 
+> Sarà necessario reimpostare queste variabili se la sessione di Cloud Shell scade. Pertanto, se possibile, eseguire interamente questo lab in una sola sessione. 
 
-### Get info about our VM
+### <a name="get-info-about-our-vm"></a>Ottenere informazioni sulla macchina virtuale
 
-Run the following command to get back the properties of our VM:
+Eseguire il comando seguente per ottenere le proprietà della macchina virtuale.
  
 ```powershell
 $myVM = Get-AzureRmVM -ResourceGroupName $myRgName -VMName $myVMName
 ```
-We store the response in our `$myVM` variable. We can run the following command to just show us the properties we specify here:
+La risposta sarà archiviata nella variabile `$myVM`. È possibile eseguire il comando seguente per visualizzare le proprietà specificate.
 
 ```powershell
 $myVM | select-object -property ResourceGroupName, Name, Type, Location
 ```
 
-As the following screenshot shows, this VM is indeed the VM we're after. So, let's move on. 
+Come illustrato nello screenshot seguente, questa macchina virtuale è effettivamente quella richiesta. Pertanto è possibile cominciare. 
 
-![PowerShell console showing results of last 4 commands that we ran.](../media-draft/ps-commands-1.PNG)
+![Console di PowerShell che mostra i risultati degli ultimi quattro comandi eseguiti.](../media-draft/ps-commands-1.PNG)
 
-### View OS disk cache status
+### <a name="view-os-disk-cache-status"></a>Visualizzare lo stato della cache del disco del sistema operativo
 
-We can check the caching  setting through  the `StorageProfile` object, as follows:
+È possibile controllare l'impostazione di memorizzazione nella cache tramite l'oggetto `StorageProfile` come indicato di seguito.
 
 ```powershell
 $myVM.StorageProfile.OsDisk.Caching
 ```
-In this example, the current value is `None`. Let's change it back to the default for an OS disk.
+In questo esempio il valore corrente è **Nessuna**. Verrà ripristinato il valore predefinito per un disco del sistema operativo.
 
-![PowerShell console showing our OS disk having a caching value of "None".](../media-draft/ps-oscaching-none.PNG)
+![Console di PowerShell che mostra il disco del sistema operativo con un valore di memorizzazione nella cache uguale a "Nessuna".](../media-draft/ps-oscaching-none.PNG)
 
-### Change the cache settings of the OS disk
+### <a name="change-the-cache-settings-of-the-os-disk"></a>Modificare le impostazioni della cache del disco del sistema operativo
 
-We can set the value for the cache type using the same `StorageProfile` object, as follows:
+È possibile impostare il valore per il tipo di cache usando lo stesso oggetto StorageProfile` come indicato di seguito.
  
 ```powershell
 $myVM.StorageProfile.OsDisk.Caching = "ReadWrite"
 ```
 
-This command runs fast, which should tell you it's doing something locally. The command just changes the property on the `myVM` object. As the following screenshot shows, if you refresh the `$myVM` variable,  the caching value won't have changed on the VM:
+Questo comando viene eseguito rapidamente, il che significa che esegue un'operazione in locale. Il comando modifica semplicemente la proprietà dell'oggetto myVM. Come indicato nello screenshot seguente, se si aggiorna la variabile `$myVM`, il valore di memorizzazione nella cache non risulterà modificato nella macchina virtuale.
 
-![PowerShell console showing that refreshing our "myVM" object resets the caching to "none" because we didn't actually update the VM.](../media-draft/ps-commands-2.PNG)
+![Console di PowerShell che mostra che l'aggiornamento dell'oggetto "myVM" reimposta la memorizzazione nella cache su "nessuna" dal momento che la macchina virtuale non è stata effettivamente aggiornata.](../media-draft/ps-commands-2.PNG)
 
-To  make the change on the VM itself, call `Update-AzureRmVM`, as follows:
+Per apportare la modifica nella macchina virtuale stessa, chiamare `Update-AzureRmVM` come indicato di seguito.
 
 ```powershell
 Update-AzureRmVM -ResourceGroupName $myRGName -VM $myVM
 ```
 
-Notice that this call takes a while to complete. That's because we're updating the actual VM, and Azure restarts the VM  to make the change.
+Si noti che questa chiamata richiede alcuni minuti per il completamento. Ciò avviene perché è in corso l'aggiornamento della macchina virtuale effettiva e Azure riavvia la macchina virtuale per apportare la modifica.
 
-![PowerShell console showing our OS disk having a caching value of "None".](../media-draft/ps-oscaching-rw.PNG)
+![Console di PowerShell che mostra il disco del sistema operativo con un valore di memorizzazione nella cache uguale a "Nessuna".](../media-draft/ps-oscaching-rw.PNG)
 
-If you refresh the `$myVM` variable again, you'll see the change on the object. Looking at the disk in the portal, you'd also see the change there. Let's move on to creating a new data disk.  
+Se si aggiorna nuovamente la variabile `$myVM`, si noterà la modifica nell'oggetto. Anche esaminando il disco nel portale, la modifica sarà visibile. Si passerà ora alla creazione di un nuovo disco dati.  
 
-### List data disk info
+### <a name="list-data-disk-info"></a>Elencare le informazioni del disco dati
 
-To see what data disks we have on our VM, run the following command: 
+Per visualizzare i dischi dati disponibili nella macchina virtuale, eseguire il comando seguente. 
 
 ```powershell
 $myVM.StorageProfile.DataDisks
 ```
 
-We have only one data disk at the moment. The `Lun` field is important. It's the unique **L**ogical **U**nit **N**umber. When we add another data disk, we'll give it a unique `Lun` value. 
+Al momento è presente un solo disco dati. Il campo `Lun` è importante. È il numero di unità logica (**L****U****N**) univoco. Quando si aggiunge un altro disco dati, viene assegnato un valore `Lun` univoco. 
 
-### Add a new data disk to our VM 
+### <a name="add-a-new-data-disk-to-our-vm"></a>Aggiungere un nuovo disco dati alla macchina virtuale 
 
-For convenience, we'll store our new disk name:
+Per praticità, verrà archiviato il nuovo nome del disco.
 
 ```powershell
 $newDiskName = "fotoshareVM-data2"
 ```
 
-Run the following `Add-AzureRmVMDataDisk` command to define a new disk:
+Eseguire il comando `Add-AzureRmVMDataDisk` seguente per definire un nuovo disco. 
 
 ```powershell
 Add-AzureRmVMDataDisk -VM $myVM -Name $newDiskName  -LUN 1  -DiskSizeinGB 1 -CreateOption Empty
 ```
 
-We've given this disk a `Lun` value of `1` because it's not taken. We defined the disk we want to create, so it's time to run `Update-AzureRmVM` to make the actual change: 
+A questo disco è stato assegnato un valore LUN uguale a 1, non essendo ancora preso. È stato definito il disco che si vuole creare, pertanto è il momento di eseguire `Update-AzureRmVM` per apportare la modifica effettiva. 
 
 ```powershell
 Update-AzureRmVM -ResourceGroupName $myRGName -VM $myVM
 ```
 
-Let's look at our data disk info again:
+Esaminare nuovamente le informazioni sul disco dati.
 
 ```powershell
 $myVM.StorageProfile.DataDisks
 ```
 
-![PowerShell console showing our two data disks.](../media-draft/2-data-disks-part1.png)
+![Console di PowerShell che mostra i due dischi dati.](../media-draft/2-data-disks-part1.png)
 
-We now have two disks. Our new disk has a `Lun` of `1` and the default value for `Caching` is `None`. Let's change that value.
+Sono ora disponibili due dischi. Il nuovo disco ha un valore **LUN** pari a 1 e il valore predefinito per **Memorizzazione nella cache** è **Nessuna**. Questo valore verrà ora modificato.
 
-### Change cache settings of new data disk
+### <a name="change-cache-settings-of-new-data-disk"></a>Modificare le impostazioni della cache del nuovo disco dati
 
-We modify properties of a virtual machine data disk with the `Set-AzureRmVMDataDisk` cmdlet, as follows:
+Le proprietà di un disco dati della macchina virtuale possono essere modificate con il cmdlet `Set-AzureRmVMDataDisk`, come illustrato di seguito.
 
 ```powershell
 Set-AzureRmVMDataDisk -Lun "1" -Caching ReadWrite
 ```
 
-As always, commit the changes with `Update-AzureRmVM`:
+Come sempre, eseguire il commit delle modifiche con `Update-AzureRmVM`.
 
 ```powershell
 Update-AzureRmVM -ResourceGroupName $myRGName -VM $myVM
 ```
 
-Here's a view from the portal of what we've accomplished in this exercise. Our VM now has two data disks, and we've adjusted all **HOST CACHING** settings. We did all of that with just a few commands. That's the power of Azure PowerShell.
+Ecco una visualizzazione dal portale delle operazioni che sono state eseguite in questo esercizio. La macchina virtuale ha ora due dischi dati e sono state modificate tutte le impostazioni di **Memorizzazione nella cache dell'host**. Tutte queste operazioni sono state eseguite con pochi semplici comandi, direttamente da Azure PowerShell.
 
-![Azure portal showing our two data disks.](../media-draft/disks-final-config-portal2.png)
+![Console di PowerShell che mostra i due dischi dati.](../media-draft/disks-final-config-portal2.png)

@@ -52,7 +52,7 @@ var blockBlobs = resultSegment.Results.OfType<CloudBlockBlob();
 
 Una delle funzionalità dell'app richiede il recupero di un elenco di BLOB dall'API. Si userà il modello illustrato sopra per elencare tutti i BLOB nel contenitore. Elaborando l'elenco, si ottiene il nome di ogni BLOB.
 
-Aprire `BlobStorage.cs` nell'editor, sostituire `GetNames` con il codice seguente e salvare le modifiche.
+Usando l'editor, sostituire `GetNames` in `BlobStorage.cs` con il codice seguente e salvare le modifiche.
 
 ```csharp
 public async Task<IEnumerable<string>> GetNames()

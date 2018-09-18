@@ -9,9 +9,9 @@ Esistono due approcci che è possibile usare per autenticare una connessione SSH
 > [!TIP]
 > Sebbene SSH fornisca una connessione crittografata, se si usano password con le connessioni SSH la macchina virtuale rimane vulnerabile agli attacchi di forza bruta o di individuazione delle password. Un metodo più sicuro e preferito per la connessione a una macchina virtuale Linux tramite SSH è con una coppia di chiavi pubblica e privata, dette anche chiavi SSH.
 
-Con una coppia di chiavi SSH, è possibile accedere a macchine virtuali di Azure basate su Linux senza una password. Si tratta di un approccio più sicuro, se si intende accedere solo da pochi computer. Se è necessario essere in grado di accedere alla macchina virtuale Linux da svariate posizioni, una combinazione di nome utente e password potrebbe essere un approccio migliore. Esistono due parti di una coppia di chiavi SSH: una chiave pubblica e una chiave privata.
+Con una coppia di chiavi SSH, è possibile accedere a macchine virtuali di Azure basate su Linux senza una password. Si tratta di un approccio più sicuro, se si intende accedere alla macchina virtuale solo da pochi computer. Se è necessario essere in grado di accedere alla macchina virtuale Linux da svariate posizioni, una combinazione di nome utente e password potrebbe essere un approccio migliore. Esistono due parti di una coppia di chiavi SSH: una chiave pubblica e una chiave privata.
 
-- La **chiave pubblica** viene posizionata nella macchina virtuale Linux o in qualsiasi altro servizio che si vuole usare con la crittografia a chiave pubblica. Questa chiave può essere condivisa con chiunque.
+* La chiave pubblica viene posizionata nella macchina virtuale Linux o in qualsiasi altro servizio che si vuole usare con la crittografia a chiave pubblica. Questa chiave può essere condivisa con chiunque.
 
 - La **chiave privata** è quella che si presenta alla macchina virtuale Linux quando ci si connette a SSH, per verificare la propria identità. Considerare questa chiave un'informazione riservata e proteggerla come nel caso di una password o altri dati privati.
 
@@ -21,15 +21,15 @@ Con una coppia di chiavi SSH, è possibile accedere a macchine virtuali di Azure
 
 In Linux, Windows 10 e MacOS è possibile usare il comando `ssh-keygen` predefinito per generare i file di chiave pubblica e privata SSH. 
 
-> [!TIP]
+> [!TIP]  
 > Windows 10 include un client SSH con **Fall Creators Update**. Le versioni precedenti di Windows richiedono software aggiuntivo per usare SSH. [Vedere la documentazione per i dettagli completi](https://docs.microsoft.com/azure/virtual-machines/linux/ssh-from-windows). In alternativa, è possibile installare il sottosistema Linux per Windows e ottenere la stessa funzionalità.
 
-> [!NOTE]
+> [!NOTE]  
 > Si userà Azure Cloud Shell che archivierà le chiavi generate in Azure nell'account di archiviazione privato. È anche possibile digitare questi comandi direttamente nella shell locale se si preferisce. Sarà necessario adattare le istruzioni in tutto il modulo a una sessione locale, se si adotta questo approccio.
 
 Ecco il comando minimo necessario per generare la coppia di chiavi per una macchina virtuale di Azure. Verrà creata una coppia di chiavi pubblica-privata RSA SSH-2 con una lunghezza di 2048 bit (la lunghezza minima). 
 
-Digitare questo comando in Cloud Shell.
+Digitare questo comando in Cloud Shell:
 
 ```bash
 ssh-keygen -t rsa -b 2048
@@ -43,10 +43,10 @@ Lo strumento richiederà i nomi per i file e una passphrase facoltativa. Accetta
 
 Quando si aggiunge una passphrase alla chiave SSH, la chiave privata viene crittografata con AES a 128 bit, in modo che sia inutilizzabile senza la passphrase per decrittografarla. 
 
-> [!IMPORTANT]
+> [!IMPORTANT]  
 > È **vivamente** consigliabile aggiungere una passphrase. Se un utente malintenzionato ruba una chiave privata priva di passphrase, può usarla per accedere ai server che hanno la chiave pubblica corrispondente. Se una chiave privata è protetta da una passphrase, non può essere usata da utenti malintenzionati e rappresenta un livello di sicurezza aggiuntivo per l'infrastruttura in Azure.
 
-Ecco un esempio che mostra come impostare la passphrase. Non è necessario eseguire questo comando (sebbene sia possibile).
+Ecco un esempio che mostra come impostare la passphrase. Non è necessario eseguire questo comando (sebbene sia possibile):
 
 ```bash
 ssh-keygen -t rsa -b 4096 \
@@ -67,7 +67,7 @@ ssh-keygen -t rsa -b 4096 \
 
 Dopo aver generato la coppia di chiavi, è possibile usarla con una macchina virtuale Linux in Azure. È possibile fornire la chiave pubblica durante la creazione della macchina virtuale o aggiungerla dopo aver creato la macchina virtuale. 
 
-È possibile visualizzare i contenuti del file in Azure Cloud Shell con il comando seguente.
+È possibile visualizzare i contenuti del file in Azure Cloud Shell con il comando seguente: 
 
 ```bash
 cat ~/.ssh/id_rsa.pub
@@ -89,10 +89,10 @@ Per applicare la chiave SSH durante la creazione di una nuova macchina virtuale 
 
 Se è già stata creata una macchina virtuale, è possibile installare la chiave pubblica nella macchina virtuale Linux con il comando `ssh-copy-id`. Una volta autorizzata per SSH, la chiave concede l'accesso al server senza una password.
 
-Passare il file di chiave pubblica e il nome utente da associare alla chiave.
+Passare il file di chiave pubblica e il nome utente da associare alla chiave:
 
 ```bash
 ssh-copy-id -i ~/.ssh/id_rsa.pub azureuser@myserver
 ```
 
-Ora che è disponibile la chiave pubblica è possibile passare al portale di Azure e creare una macchina virtuale Linux.
+Ora che è disponibile la chiave pubblica, è possibile passare al portale di Azure e creare una macchina virtuale Linux.

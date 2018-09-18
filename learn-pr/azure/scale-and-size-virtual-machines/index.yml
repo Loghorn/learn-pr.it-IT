@@ -1,20 +1,31 @@
 ### YamlMime:Module
 uid: learn.scale-and-size-virtual-machines
 metadata:
-  title: Scale and size virtual machines
-  description: You can change the CPU and memory resources of your virtual machines as needed to handle demand and control costs. Manual adjustment can work when demand is predictable and changes infrequently. An automated solution is better when your workload changes unpredictably or frequently. Here, you will see how to control the power of your virtual machines by modifying the size of individual servers or changing the number of available machines. We'll cover how to do this both manually and with scale sets and AutoScaling.
+  title: Scalare e ridimensionare le macchine virtuali
+  description: È possibile modificare le risorse di CPU e memoria delle macchine virtuali in base alle esigenze per gestire la domanda e controllare i costi. La modifica manuale può essere usata quando la domanda è stimabile e cambia raramente. Una soluzione automatizzata è preferibile quando il carico di lavoro cambia in modo imprevedibile o di frequente. In questo modulo verrà illustrato come controllare la potenza delle macchine virtuali modificando le dimensioni dei singoli server o il numero dei computer disponibili. Verrà inoltre illustrato come eseguire queste operazioni manualmente o con dei set di scalabilità e la scalabilità automatica.
   ms.date: 09/24/2018
-title: Scale and size virtual machines
-summary: Adjust your virtual machine compute and storage power manually or using AutoScale.
-abstract: |
-  In this module, you will:
-  - Vertically scale virtual machines by resizing
-  - Horizontally scale virtual machines using scale sets
-  - Configure autoscaling
-prerequisites: |
-  - Experience with a command-line interface such as PowerShell or Bash
-  - Knowledge of basic Azure concepts such as resource groups and virtual machines
-  - Experience administering Azure resources using the Azure portal
+  ms.openlocfilehash: 9fc53319159149702ab7ab831ec54694aa6f5e2c
+  ms.sourcegitcommit: 4d2d6d8c52fa24ae1c5c06cf4cb3afa09d8c8363
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44256058"
+title: Scalare e ridimensionare le macchine virtuali
+summary: Modificare la potenza di calcolo e di archiviazione della macchina virtuale manualmente o usando la scalabilità automatica.
+abstract: >
+  In questo modulo verrà descritto come:
+
+  - Scalare verticalmente le macchine virtuali tramite il ridimensionamento
+
+  - Scalare orizzontalmente le macchine virtuali tramite i set di scalabilità
+
+  - Configurare la scalabilità automatica
+prerequisites: >
+  - Esperienza con un'interfaccia della riga di comando, ad esempio PowerShell o Bash
+
+  - Conoscenza dei concetti di base di Azure, ad esempio i gruppi di risorse e le macchine virtuali
+
+  - Esperienza di amministrazione delle risorse di Azure tramite il portale di Azure
 iconUrl: http://via.placeholder.com/120x120
 levels:
 - intermediate

@@ -1,6 +1,7 @@
 È stata creata un'app per dispositivi mobili multipiattaforma usando Xamarin ed è stata creata una funzione di Azure con un'associazione a Twilio.
 
-## <a name="clean-up-resources"></a>Pulire le risorse
+## <a name="clean-up"></a>Eseguire la pulizia
+<!---TODO: Update for sandbox?--->
 
 Dopo avere usato questa applicazione di Funzioni di Azure, è possibile eliminare nel portale di Azure tutte le risorse create durante l'esercitazione.
 
@@ -25,6 +26,7 @@ Dopo avere usato questa applicazione di Funzioni di Azure, è possibile eliminar
 ## <a name="summary"></a>Riepilogo
 
 In questo modulo si è appreso come:
+
 - Creare un'app Xamarin.Forms multipiattaforma che usa Xamarin.Essentials.
 - Creare un'interfaccia utente multipiattaforma usando XAML con la logica dell'applicazione in un elemento ViewModel, nonché associare le proprietà nel ViewModel all'interfaccia utente.
 - Rilevare la posizione dell'utente.

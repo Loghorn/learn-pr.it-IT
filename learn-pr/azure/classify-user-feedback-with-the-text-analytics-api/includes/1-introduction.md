@@ -1,13 +1,13 @@
-If I showed you text written in ALL CAPITAL LETTERS, what emotions would it convey? If a book review I wrote claims that "the ending was unpredictable", is that statement a good or bad thing? How can I find out programmatically what language an email was written in? Text Analytics is about understanding and analyzing unstructured text to answer these kinds of questions. It covers sentiment analysis, key phrase extraction, language detection and more.  
+Quali emozioni dovrebbe trasmettere un testo scritto TUTTO IN LETTERE MAIUSCOLE? Se la recensione di un libro afferma che "il finale era imprevedibile", è un giudizio positivo o negativo? A livello di codice, come è possibile capire in che linguaggio è stato scritto un messaggio di posta elettronica? Analisi del testo consente di capire e analizzare il testo non strutturato per rispondere a questo tipo di domande. Si applica all'analisi del sentiment, all'estrazione frasi chiave, al rilevamento lingua e ad altro ancora.  
 
- In this module, we're going to focus our attention on sentiment analysis. We'll learn about the Text Analytics API. This cloud-based service from Microsoft provides advanced natural language processing over raw text. When you've completed the module, you'll have built a solution with Azure Functions that sorts text feedback based on sentiment.
+ In questo modulo si approfondirà l'analisi del sentiment. Verrà illustrata l'API Analisi del testo. Questo servizio basato su cloud di Microsoft fornisce l'elaborazione avanzata in linguaggio naturale su testo non elaborato. Al termine del modulo sarà stata creata una soluzione con Funzioni di Azure che ordina i feedback di testo in base alla valutazione.
 
-### What you'll learn
+### <a name="what-youll-learn"></a>Contenuto dell'esercitazione
 
-- Learn about Text Analytics API
-- Sign up for a Text Analytics API key
-- Design and build a service with Azure Functions that uses the Text Analytics API to sort text feedback
-- Read and write Azure Queue storage messages in a function app with the help of bindings
+- Ottenere informazioni sull'API Analisi del testo
+- Eseguire la registrazione per una chiave API Analisi del testo
+- Progettare e creare un servizio con Funzioni di Azure che usa l'API Analisi del testo per ordinare i feedback di testo
+- Leggere e scrivere i messaggi di Archiviazione code di Azure in un'app per le funzioni con l'aiuto delle associazioni
 
 
 [!INCLUDE [resource-group-note](./rg-notice.md)]

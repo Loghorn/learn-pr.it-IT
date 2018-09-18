@@ -1,16 +1,16 @@
-Azure is a cloud platform that provides the compute, storage, and networking resources needed to build cloud-hosted applications. As a new user, the Azure Portal is likely to be the primary way you will interact with Azure. The Azure Portal lets you create and manage all your Azure resources. For example, you can set up a new database, increase the compute power of your virtual machines, and monitor your monthly costs. It's also a great learning tool since you can survey all available resources and use guided wizards to create the ones you need.
+Azure è una piattaforma cloud che offre le risorse di calcolo, archiviazione e di rete necessarie per creare applicazioni ospitate nel cloud. Il portale di Azure è in genere l'interfaccia principale con cui i nuovi utenti interagiscono con Azure. Il portale di Azure consente di creare e gestire tutte le risorse di Azure. È ad esempio possibile configurare un nuovo database, aumentare la potenza di calcolo delle macchine virtuali e monitorare i costi mensili. È anche uno strumento di apprendimento efficace poiché consente di esaminare tutte le risorse disponibili e offre procedure guidate per creare le risorse desiderate.
 
-Here you will learn how to create an Azure account, sign in to the portal, and navigate the portal interface. You will customize the dashboard, so it is convenient to locate and monitor your most essential services.
+In questo modulo si apprenderà come creare un account Azure, accedere al portale ed esplorarne l'interfaccia. Il dashboard verrà personalizzato in modo da individuare e monitorare con facilità i servizi più importanti.
 
-## Learning objectives
+## <a name="learning-objectives"></a>Obiettivi di apprendimento
 
-In this module, you will:
+In questo modulo verrà descritto come:
 
-- Create an Azure account
-- Navigate the Azure portal
-- Customize the dashboard
+- Creare un account Azure
+- Esplorare il portale di Azure
+- Personalizzare il dashboard
 
-## Prerequisites
+## <a name="prerequisites"></a>Prerequisiti
 
-- Knowledge of basic cloud computing terms and concepts
-- A valid credit card to register with Azure
+- Conoscenza dei termini e concetti di base relativi al cloud computing
+- Una carta di credito valida per la registrazione ad Azure

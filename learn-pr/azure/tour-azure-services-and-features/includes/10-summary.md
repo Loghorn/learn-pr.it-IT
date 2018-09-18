@@ -1,11 +1,11 @@
-We have covered a lot of ground in this module. 
+In questo modulo sono stati trattati diversi argomenti. 
 
 > [!div class="checklist"]
-> * You have seen some of the core products in Azure across the main service pillars.
-> * You have learned how to create a free account for Microsoft Azure and how to sign in using that account. 
-> * You reviewed the features of the Azure portal and its customization options. 
-> * You created, customized, and shared a dashboard.
+> * Sono stati esaminati alcuni dei prodotti principali di Azure in relazione agli aspetti fondamentali del servizio.
+> * Si è appreso come creare un account gratuito di Microsoft Azure e come eseguire l'accesso con tale account. 
+> * Si sono esaminate le funzionalità del portale di Azure e le relative opzioni di personalizzazione. 
+> * Si è creato, personalizzato e condiviso un dashboard.
 
-However, this is just the beginning. Azure has so much to offer you, no matter what role you plan in your organization. If you are a developer, Azure provides an easy way to test new platforms and build sophisticated apps. If you are an administrator, you will use the Azure portal, Azure CLI, or Azure PowerShell tools to administer your cloud-based infrastructure. If you are an architect, you can use Azure to test out new architecture ideas quickly.
+Questo, però, è solo l'inizio. Azure ha molto da offrire, indipendentemente dal ruolo che si ricopre all'interno dell'organizzazione. Agli sviluppatori Azure offre un modo semplice di testare nuove piattaforme e compilare app avanzate. Gli amministratori possono usare il portale di Azure, l'interfaccia della riga di comando di Azure o gli strumenti di Azure PowerShell per gestire l'infrastruttura basata sul cloud. I progettisti possono usare Azure per testare rapidamente l'efficacia di nuove idee per l'architettura.
 
-Keep exploring Azure by selecting one or more paths through the content that's structured specifically for what you want to learn.
+Continuare a esplorare Azure selezionando uno o più percorsi di contenuti strutturati specificamente per l'area di apprendimento di interesse.

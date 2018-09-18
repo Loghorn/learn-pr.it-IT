@@ -1,22 +1,28 @@
 ### YamlMime:Module
 uid: learn.top-5-security-items-to-consider
 metadata:
-  title: Top 5 Security Items To Consider Before Pushing To Production
-  description: Organizations big and small have started to realize just how crucial system and application reliability is to their business. They’ve also learned just how difficult it is to maintain that reliability while iterating at the speed demanded by the marketplace. Site Reliability Engineering (SRE) is a proven approach to this challenge. In this module you will gain an understanding of SRE and why it matters.
+  title: 5 elementi di sicurezza da considerare prima di passare in produzione
+  description: Le organizzazioni, grandi o piccole che siano, hanno iniziato a rendersi conto dell'importanza fondamentale che l'affidabilità di sistemi e applicazioni riveste per il loro business. Hanno anche compreso quanto sia difficile mantenere questa affidabilità restando al passo con l'evoluzione del mercato. Site Reliability Engineering (SRE) è un approccio collaudato a questa problematica. In questo modulo illustreremo l'approccio SRE e la sua importanza.
   author: lnyswonger
   ms.date: 09/24/2018
   ms.author: luken
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Top 5 Security Items To Consider Before Pushing To Production
-summary: In this module you will learn how to secure your web applications on Azure and protect your apps against the most common and dangerous web application attacks.
-abstract: | 
- In this module, you will:
-  - Use Azure Security Center
-  - Verify your application's inputs and outputs
-  - Store your secrets into Key Vault
-  - Ensure you are using the latest version of your framework, and its security features
-  - Validate that your program dependencies and libraries are safe to use
+  ms.openlocfilehash: 990f2db8fae4ecc6c1780c71ff5522a8432018cd
+  ms.sourcegitcommit: 4d2d6d8c52fa24ae1c5c06cf4cb3afa09d8c8363
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44255509"
+title: 5 elementi di sicurezza da considerare prima di passare in produzione
+summary: In questo modulo verrà illustrato come proteggere le applicazioni Web in Azure e come proteggere le app dagli attacchi più comuni e pericolosi.
+abstract: >
+  In questo modulo verrà descritto come:
+   - Usare il Centro sicurezza di Azure
+   - Verificare gli input e gli output dell'applicazione
+   - Archiviare i segreti in Key Vault
+   - Verificare di usare la versione più recente del framework e le relative funzionalità di sicurezza
+   - Verificare che le dipendenze e le librerie del programma siano sicure
 iconUrl: http://via.placeholder.com/120x120
 levels:
 - beginner

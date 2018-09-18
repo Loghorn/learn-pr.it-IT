@@ -1,31 +1,31 @@
-The most prevalent security weakness of applications today is to not correctly process input received from external sources, particularly _user input_. You should always take a close look at any input to make sure it has been validated before it is used. Failing to do this can result in data loss or exposure, escalation of privilege, or even execution of malicious code on other users' computers!
+Il punto debole più comune nelle applicazioni moderne, a livello di sicurezza, è la non corretta elaborazione dell'input ricevuto da origini esterne, in particolare l'_input dell'utente_. È importante esaminare sempre attentamente qualsiasi input per assicurarsi che sia stato convalidato prima di usarlo. In caso contrario, le conseguenze potrebbero essere l'esposizione o perdita di dati, l'escalation di privilegi o persino l'esecuzione di malware nei computer di altri utenti.
 
-The tragic thing is that this is an easy problem to solve. Here we will cover how to treat data; when it’s received, when it’s displayed on the screen, and when it's stored for later use.
+L'aspetto tragico è che questo problema è in realtà facile da risolvere. In questa unità verrà illustrato come trattare i dati, quando vengono ricevuti, quando vengono visualizzati sullo schermo e quando vengono archiviati per uso futuro.
 
-## Why do we need to validate our input?
+## <a name="why-do-we-need-to-validate-our-input"></a>Perché è necessario convalidare l'input?
 
-Imagine that you are building an interface to allow a user to create an account on your website. Our profile data includes a name, email, and a nickname that we will display to everyone who visits the site. What if a new user creates a profile and enters a nickname that includes some SQL commands? For example - what if our bad user enters something like:
+Immaginiamo di voler compilare un'interfaccia che consenta a un utente di creare un account sul sito Web. I dati del profilo includono un nome, un indirizzo di posta elettronica e un nome alternativo che saranno visibili a chiunque visiti il sito. Supponiamo che un nuovo utente crei un profilo e immetta un nome alternativo che include alcuni comandi SQL. Un utente malintenzionato potrebbe ad esempio immettere qualcosa di simile a questo:
 
 ```output
 Eve'); DROP TABLE Users;--
 ```
 
-If we just blindly insert this value into a database, it could potentially alter the SQL statement to execute commands we absolutely don't want to run! This is referred to as a "SQL Injection" attack and is one of the _many_ types of exploits that can potentially be done when you don't properly handle inputs. So, what can we do to fix this? This unit will teach you when to sanitize input, how to encode output, and how to create parameterized queries (which solves the above exploit!). These are the three main defense techniques against malicious input being entered into your applications.
+Se si inserisse ciecamente questo valore in un database, potrebbe alterare l'istruzione SQL in modo da eseguire comandi potenzialmente dannosi. Questo comportamento è detto "attacco SQL injection" ed è uno dei _numerosi_ tipi di exploit possibili quando non si gestiscono correttamente gli input. Come si può risolvere questo problema? In questa unità verrà illustrato come purificare l'input, codificare l'output e creare query con parametri (risolvendo l'exploit descritto sopra). Queste sono le principali tecniche di difesa dagli input dannosi che vengono immessi nelle applicazioni.
 
-## When do I need to validate input?
+## <a name="when-do-i-need-to-validate-input"></a>Quando è necessario convalidare l'input?
 
-The answer is _always_. You must validate **every** input for your application. This includes parameters in the URL, input from the user, data from the database, data from an API and anything that is passed in the clear that a user could potentially manipulate. Always use a whitelist approach, which means you only accept "known good" input, instead of a blacklist (where you specifically look for bad input) because it's impossible to think of a complete list of potentially dangerous input.  Do this work on the server, not the client-side (or in addition to the client-side), to ensure that your defenses cannot be circumvented. Treat **ALL** data as untrusted and you will protect yourself from most of the common web app vulnerabilities.
+La risposta è _sempre_. Occorre convalidare **ogni** input per l'applicazione. Sono inclusi i parametri nell'URL, l'input dell'utente, i dati del database, i dati di un'API e qualsiasi elemento passato in formato non crittografato che potrebbe essere modificato da un utente. Adottare sempre un approccio in base a cui accettare solo input notoriamente valido, invece di cercare specificamente l'input non valido, in quanto è impossibile avere un elenco completo di input potenzialmente pericolosi.  Fare tutto questo sul lato server, non sul lato client (oppure su entrambi i lati), per assicurarsi che le difese non vengano aggirate. Considerare **TUTTI** i dati come non attendibili per proteggersi dalle più comuni vulnerabilità per le app Web.
 
-If you are using ASP.NET, the framework provides [great support for validating input](https://docs.microsoft.com/aspnet/web-pages/overview/ui-layouts-and-themes/validating-user-input-in-aspnet-web-pages-sites) on both the client and server side.
+Se si usa ASP.NET, il framework offre un [ottimo supporto per la convalida dell'input](https://docs.microsoft.com/aspnet/web-pages/overview/ui-layouts-and-themes/validating-user-input-in-aspnet-web-pages-sites) sia sul lato client che sul lato server.
 
-If you are using another web framework, there are some great techniques for doing input validation available on the [OWASP Input Validation Cheatsheet](https://www.owasp.org/index.php/Input_Validation_Cheat_Sheet).
+Se si usa un altro framework Web, sul sito [OWASP](https://www.owasp.org/index.php/Input_Validation_Cheat_Sheet) sono descritte alcune ottime tecniche di convalida dell'input.
 
 
-## Always use parameterized queries
+## <a name="always-use-parameterized-queries"></a>Usare sempre query con parametri
 
-SQL databases are commonly used to store data - we might be storing our profile information in SQL Server for example.  Never create inline SQL or other database queries "on the fly" in your code and send it directly to the database, this is a recipe for disaster, as we saw above.
+I database SQL vengono generalmente usati per archiviare dati. Si potrebbe ad esempio archiviare le informazioni sul profilo in SQL Server.  Evitare sempre di creare SQL inline o altre query di database "sul momento" nel codice e di inviarlo direttamente al database, in quanto è una strada sicura verso il disastro, come abbiamo visto prima.
 
-For example, **do not do this** (known as inline SQL):
+Ad esempio, **non fare questo** (noto come SQL inline):
 
 ```csharp
 string userName = ... // receive input from the user BEWARE!
@@ -33,7 +33,7 @@ string userName = ... // receive input from the user BEWARE!
 string query = "SELECT *  FROM  [dbo].[users] WHERE userName = '" + userName + "'";
 ```
 
-Here we concatenate text strings together to create the query, taking the input from the user and generating a dynamic SQL query to lookup the user. Again, if an evil user realized we were doing this, or just _tried_ different input styles to see if there was a vulnerability, we could end up with a major disaster. Instead, prefer to use parameterized SQL statements, or even better - stored procedures:
+In questo esempio vengono concatenate più stringhe di testo per creare la query, recuperando l'input dall'utente e generando una query SQL dinamica per cercare l'utente. Anche in questo caso, se un utente malintenzionato capisse quale azione si sta eseguendo o anche solo _provasse_ diversi stili di input per rilevare eventuali vulnerabilità, le conseguenze potrebbero essere estremamente gravi. È invece preferibile usare istruzioni SQL con parametri o, meglio ancora, stored procedure:
 
 ```sql
 -- Lookup a user
@@ -45,14 +45,35 @@ CREATE PROCEDURE sp_findUser
 SELECT *  FROM  [dbo].[users] WHERE userName = @UserName
 ```
 
-Then you can invoke the procedure from your code safely, passing it the `userName` string without worrying about it being treated as part of the SQL statement.
+Si può quindi richiamare la stored procedure dal codice in tutta sicurezza, passandole la stringa `userName` senza preoccuparsi che sia considerata parte dell'istruzione SQL.
 
-## Always encode your output
+## <a name="always-encode-your-output"></a>Codificare sempre l'output
 
-Any output you present visually or in files should always be encoded and escaped. This can protect you in case something was missed in the sanitization pass, or the code accidentally generates something that can be used maliciously. This will make sure that everything is displayed as _output_ and not inadvertently interpreted as something that should be executed. This is another very common attack technique referred to as "Cross-Site Scripting" (XSS).
+Qualsiasi output presentato visivamente o in file deve sempre essere codificato e preceduto da un carattere di escape. In questo modo ci si protegge in caso di omissioni nel processo di purificazione o qualora il codice generi accidentalmente un elemento che può essere usato per fare danni. Ci si assicura così che ogni elemento venga visualizzato come _output_ e non venga inavvertitamente interpretato come qualcosa che deve essere eseguito. Questa è un'altra tecnica di attacco molto comune nota come XSS (Cross-Site Scripting), ossia un attacco tramite script da altri siti.
 
-Since this is such as common requirement, this is another areas where ASP.NET will do the work for you. By default, [all output is already encoded](https://docs.microsoft.com/en-us/aspnet/core/security/cross-site-scripting?view=aspnetcore-2.1). If you are using another web framework, you can verify your options for output encoding on websites with the [OWASP XSS Prevention Cheatsheet](https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet).
+Essendo un requisito molto comune, questa è un'altra area in cui ASP.NET può agire automaticamente. Per impostazione predefinita, [tutto l'output è già codificato](https://docs.microsoft.com/en-us/aspnet/core/security/cross-site-scripting?view=aspnetcore-2.1). Se si usa un altro framework Web, è possibile verificare le opzioni impostate per la codifica dell'output nei siti Web usando le informazioni di riferimento sulla prevenzione degli attacchi XSS sul sito [OWASP](https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet).
 
-## Summary
+## <a name="summary"></a>Riepilogo
 
-Santizing and validating your input is a necessary requirement to ensure your input is valid and safe to use and store. Most modern web frameworks offer built-in features which can automate some of this work - make sure to check your preferred framework's documentation and see what features it offers. Also, keep in mind that while the most common place this occurs is in web applications, other types of applications can have similar issues - so don't think you're safe if you are writing that cool desktop app! You still need to properly handle user input to ensure someone doesn't use your app to corrupt your data, or damage your company's reputation.
+La purificazione e la convalida dell'input sono un requisito necessario per assicurarsi che l'input sia valido e possa essere usato e archiviato in tutta sicurezza. I framework Web più moderni offrono funzionalità incorporate che consentono di automatizzare parte di questo lavoro. Consultare la documentazione del framework preferito per sapere quali funzionalità offre. Tenere anche presente che, benché questo discorso valga soprattutto per le applicazioni Web, anche altri tipi di applicazioni possono avere problemi simili, quindi non basta scrivere app desktop sicure perché sia sicuro tutto l'ambiente. È comunque necessario gestire correttamente l'input dell'utente per assicurare che nessuno possa usare l'app per danneggiare i dati o, peggio ancora, la reputazione dell'azienda.
+
+
+## <a name="knowledge-check"></a>Verifica delle conoscenze
+
+Quali delle origini dati seguenti devono essere purificate?
+* Dati di un'API di terze parti
+* Dati del parametro URL
+* Dati raccolti dall'utente tramite un campo di input
+* Tutte le risposte precedenti (risposta corretta)
+
+Quali dei dati seguenti devono essere codificati prima dell'output?
+* Dati salvati nel database
+* Dati da visualizzare sullo schermo (risposta corretta)
+* Dati inviati a un'API di terze parti
+* Dati nei parametri URL
+
+Le query con parametri (stored procedure in SQL) sono sempre una scelta più sicura per comunicare con il database perché:
+* Sono più organizzate dei comandi di database inline e quindi generano meno confusione negli utenti.
+* La stored procedure presenta una chiara struttura dello script, assicurando una maggiore visibilità.
+* I pirati informatici non sono capaci di programmare in SQL.
+* Le query con parametri sostituiscono le variabili prima di eseguire le query, impedendo così agli utenti malintenzionati di inserire codice dannoso al posto di una variabile. (risposta corretta)

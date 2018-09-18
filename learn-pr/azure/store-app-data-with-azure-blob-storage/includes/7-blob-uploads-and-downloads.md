@@ -22,7 +22,7 @@ Un consiglio comune quando si lavora con oggetti dati di grandi dimensioni consi
 
 Per caricare un blob, verrà implementato il metodo `BlobStorage.Save` che usa `GetBlockBlobReference` per ottenere un `CloudBlockBlob` dal contenitore. `FilesController.Upload` passa il flusso di file a `Save`, quindi è possibile usare `UploadFromStreamAsync` per eseguire il caricamento per la massima efficienza.
 
-Aprire `BlobStorage.cs` nell'editor e sostituire `Save` con il codice seguente:
+Nell'editor sostituire `Save` in `BlobStorage.cs` con il codice seguente:
 
 ```csharp
 public Task Save(Stream fileStream, string name)
@@ -36,7 +36,7 @@ public Task Save(Stream fileStream, string name)
 ```
 
 > [!NOTE]
-> Il codice di caricamento basato sul flusso illustrato di seguito è più efficiente rispetto alla lettura del file in una matrice di byte prima dell'invio all'archivio BLOB di Azure. Tuttavia, la tecnica ASP.NET Core `IFormFile` usata per ottenere il file dal client non è una vera implementazione di flusso end-to-end ed è adatta solo per la gestione di caricamenti di file di piccole dimensioni. Vedere la sezione Altre informazioni, alla fine di questo modulo, sui caricamenti di file con flusso completo.
+> Il codice di caricamento basato sul flusso illustrato di seguito è più efficiente rispetto alla lettura del file in una matrice di byte prima dell'invio all'archiviazione BLOB di Azure. Tuttavia, la tecnica ASP.NET Core `IFormFile` usata per ottenere il file dal client non è una vera implementazione di flusso end-to-end ed è adatta solo per la gestione di caricamenti di file di piccole dimensioni. Vedere la sezione Altre informazioni, alla fine di questo modulo, sui caricamenti di file con flusso completo.
 
 ### <a name="download"></a>Download
 
@@ -70,7 +70,7 @@ az webapp config appsettings set --name <your-unique-app-name> --resource-group 
 A questo punto l'app viene distribuita. I comandi seguenti pubblicheranno il sito nella cartella `pub`, la comprimeranno in `site.zip` e quindi distribuiranno il file con estensione zip nel servizio app.
 
 > [!NOTE]
-> Verificare che la shell sia nella directory `FileUploader` per i comandi seguenti.
+> Verificare che la shell sia ancora nella directory `mslearn-store-data-in-azure/store-app-data-with-azure-blob-storage/src/start` prima di eseguire i comandi seguenti.
 
 ```azurecli
 dotnet publish -o pub

@@ -12,10 +12,10 @@ Dopo avere appreso il modo in cui le unità richiesta vengono usate per determin
 
     Impostazione | Valore consigliato | DESCRIZIONE
     --------|-----------------|-------------
-    ID database      | Utenti         | Immettere *Utenti* come nome del nuovo database. I nomi dei database devono avere una lunghezza compresa tra 1 e 255 caratteri e non possono contenere /, \\, #, ? o spazi finali.
-    ID raccolta    | WebCustomers  | Immettere *WebCustomers* come nome della nuova raccolta. Gli ID delle raccolte prevedono gli stessi requisiti relativi ai caratteri dei nomi di database.
+    ID database      | Prodotti         | Immettere *Products* come nome del nuovo database. I nomi dei database devono avere una lunghezza compresa tra 1 e 255 caratteri e non possono contenere /, \\, #, ? o spazi finali.
+    ID raccolta    | Clothing  | Immettere *Clothing* come nome della nuova raccolta. Gli ID delle raccolte prevedono gli stessi requisiti relativi ai caratteri dei nomi di database.
     Capacità di archiviazione | Illimitato     | Usare il valore predefinito **Illimitato**. Questo valore è la capacità di archiviazione del database e consente al database di ridimensionarsi in base alle esigenze.
-    Chiave di partizione    | UserId        | L'ID utente è una buona chiave di partizione per uno scenario di vendita online. Molte domande si basano infatti sull'ID cliente.
+    Chiave di partizione    | productId        | L'ID prodotto è una buona chiave di partizione per uno scenario di vendita online. Molte domande si basano infatti sull'ID prodotto.
     Velocità effettiva       |1000 UR        | Modificare la velocità effettiva in 1000 unità richiesta al secondo (UR/sec). 1000 è il valore di UR/s minimo che è possibile impostare per abilitare la scalabilità automatica.
     
     Per il momento, non selezionare l'opzione **Provision database throughput** (Velocità effettiva di provisioning del database) e non aggiungere chiavi univoche alla raccolta.

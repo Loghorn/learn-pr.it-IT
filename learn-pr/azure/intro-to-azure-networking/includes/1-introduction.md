@@ -6,10 +6,10 @@ Si decide allora di spostare il sito di e-commerce nel cloud per ridurre i costi
 
 La gestione delle reti in Azure non è totalmente diversa dalla gestione di reti locali. 
 
-## <a name="learing-objectives"></a>Obiettivi di apprendimento
+## <a name="learning-objectives"></a>Obiettivi di apprendimento
 
-In questo modulo si apprenderà:
+In questo modulo verrà descritto come:
 
-- Come una rete virtuale di Azure offra una comunicazione di rete sicura tra le risorse, ad esempio macchine virtuali e altre reti
-- Il significato di disponibilità elevata e resilienza e come Azure Load Balancer possa aumentare la resilienza all'interno di una singola area geografica
-- Cos'è la latenza e come Gestione traffico possa contribuire a ridurre la latenza di rete e offra resilienza nelle diverse posizioni geografiche
+- Una rete virtuale di Azure offre una comunicazione di rete sicura tra le risorse, ad esempio macchine virtuali e altre reti
+- Il significato di disponibilità elevata e resilienza e come Azure Load Balancer può aumentare la resilienza all'interno di una singola area geografica
+- Cos'è la latenza e come Gestione traffico può contribuire a ridurre la latenza di rete e offre resilienza nelle diverse posizioni geografiche

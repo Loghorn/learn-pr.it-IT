@@ -1,73 +1,73 @@
-Every function must have one, and only one, trigger binding. It defines how our code is triggered to run. In addition to a trigger, we can define bindings that connect us to data sources. If you remember from our diagram of the solution, we want to send messages to three queues. So, we'll define those connections as output bindings in our function. We could create those bindings through the **Output binding** UI. However, to save time, we'll edit the config file directly.
+Ogni funzione deve avere solo un'associazione di trigger, che definisce in che modo il codice viene attivato per l'esecuzione. Oltre a un trigger, è possibile definire associazioni per la connessione alle origini dati. Come illustrato nel diagramma della soluzione, si vogliono inviare messaggi a tre code. Pertanto, si definiranno tali connessioni come associazioni di output nella funzione. È possibile creare queste associazioni tramite l'interfaccia utente di **Associazione di output**. Tuttavia, per risparmiare tempo, il file config verrà modificato direttamente.
 
-1. Select our function, [!INCLUDE [func-name-discover](./func-name-discover.md)], in the Function Apps portal.
+1. Selezionare la funzione [!INCLUDE [func-name-discover](./func-name-discover.md)] nel portale delle app per le funzioni.
 
-1. Expand the **View files** menu on the right of the screen.
+1. Espandere il menu **Visualizza file** a destra della schermata.
 
-1. Under the **View files** tab, select **function.json** to open the config file in the editor.
+1. Nella scheda **Visualizza file** selezionare **function.json** per aprire il file config nell'editor.
 
-1. Replace the entire content of the config file with the following JSON. 
+1. Sostituire l'intero contenuto del file config con il codice JSON seguente. 
 
 [!code-json[](../code/function.json)]
 
-We've added three new bindings to the config.
+Sono state aggiunte tre nuove associazioni al file config.
 
-- Each new binding is of type `queue`. These bindings are for the three queues that we'll populate with our feedback messages to once we know the sentiment of the feedback.
-- Each binding has a direction defined as `out`, since we'll post messages to these queues.
-- Each binding uses the same connection to our storage account.
-- Each binding has a unique `queueName` and `name`.
+- Ogni nuova associazione è di tipo `queue`. Queste associazioni sono per le tre code che saranno popolate con i messaggi di feedback quando se ne conoscerà il sentiment.
+- Ogni associazione ha una direzione definita come `out`, dal momento che i messaggi verranno pubblicati in queste code.
+- Ogni associazione usa la stessa connessione all'account di archiviazione.
+- Ogni associazione ha un valore univoco `queueName` e `name`.
 
-Posting a message to a queue is as easy as saying, for example,  `context.bindings.negativeFeedbackQueueItem = "<message>"`.
+Inviare un messaggio a una coda è estremamente semplice, ad esempio `context.bindings.negativeFeedbackQueueItem = "<message>"`.
 
-## Update implementation to sort feedback into queues based on sentiment score
+## <a name="update-implementation-to-sort-feedback-into-queues-based-on-sentiment-score"></a>Aggiornare l'implementazione per ordinare il feedback nelle code in base al punteggio del sentiment
 
-The goal of our feedback sorter is to sort feedback into three buckets, positive, neutral, and negative. So far, we have our input queue, our code to call Text Analytics API, and we've defined our output queues. In this section, we'll add the logic to move messages into those queues based on sentiment.
+L'obiettivo della soluzione per l'ordinamento del feedback è quello di ordinare i commenti in tre bucket, positivi, neutrali e negativi. Finora si dispone di una coda di input e del codice per chiamare l'API Analisi del testo e sono state definite le code di output. In questa sezione verrà aggiunta la logica per spostare i messaggi in tali code in base al sentiment.
 
-1. Navigate to our function, [!INCLUDE [func-name-discover](./func-name-discover.md)], and  open `index.js` in the code editor again.
+1. Passare alla funzione [!INCLUDE [func-name-discover](./func-name-discover.md)] e aprire nuovamente `index.js` nell'editor di codice.
 
-1. Replace the implementation with the following update.
+1. Sostituire l'implementazione con l'aggiornamento seguente.
 [!code-javascript[](../code/discover-sentiment+sort.js?highlight=25-48)]
 
-We've added the highlighted code to our implementation. The code parses the response from the Text Analytics API cognitive service. Based on the sentiment score, the message is forwarded to one of or three output queues. The code to post the message is just setting the correct binding parameter.
+Il codice evidenziato è stato aggiunto all'implementazione. Il codice analizza la risposta dal servizio cognitivo dell'API Analisi del testo. In base al punteggio del sentiment, il messaggio viene inoltrato a una delle tre code di output. Il codice per inviare il messaggio viene visualizzato semplicemente impostando il parametro di associazione corretto.
 
-## Try it out
+## <a name="try-it-out"></a>Provare questa operazione
 
-To test the updated implementation, we'll head back to the Storage Explorer. 
+Per testare l'implementazione aggiornata, è necessario tornare in Storage Explorer. 
 
-1. Navigate to your resource group in the **Resource Groups** section of the portal.
+1. Passare al gruppo di risorse nella sezione **Gruppi di risorse** del portale.
 
-1. Select the resource group used in this lesson.
+1. Selezionare il gruppo di risorse usato in questa lezione.
 
-1. In the **Resource group** panel that opens, locate the Storage Account entry and select it.
-![Screenshot storage account selected in the Resource Group window.](../media-draft/select-storage-account.png)
+1. Nel pannello **Gruppo di risorse** che si apre individuare la voce Account di archiviazione e selezionarla.
+![Screenshot dell'account di archiviazione selezionato nella finestra Gruppo di risorse.](../media-draft/select-storage-account.png)
 
-1. Select **Storage Explorer (preview)** from the left menu of the Storage Account main window.  This action opens the Azure Storage Explorer inside the portal. Your screen should look like the following screenshot at this stage.
-![Screenshot of storage explorer showing our storage account, with one queue currently.](../media-draft/storage-explorer-menu-inputq.png)
+1. Selezionare **Storage Explorer (anteprima)** dal menu a sinistra della finestra principale di Account di archiviazione.  Questa azione apre Azure Storage Explorer all'interno del portale. La schermata dovrebbe essere simile allo screenshot seguente in questa fase.
+![Screenshot di Storage Explorer con l'account di archiviazione, attualmente con una coda.](../media-draft/storage-explorer-menu-inputq.png)
 
-We have one queue listed under the **Queues** collection. This queue is [!INCLUDE [input-q](./q-name-input.md)],  the input queue we defined in the preceding test section of the module.
+Nella raccolta **Code** è elencata una coda. Si tratta di [!INCLUDE [input-q](./q-name-input.md)], la coda di input definita nella sezione di test precedente del modulo.
 
-1. Select [!INCLUDE [input-q](./q-name-input.md)] in the left-hand menu to see the data explorer for this queue. As expected, the queue had no data. Let's add a message to the queue using the **Add Message** command at the top of the window. 
+1. Selezionare [!INCLUDE [input-q](./q-name-input.md)] nel menu a sinistra per visualizzare Esplora dati per questa coda. Come previsto, la coda non contiene dati. Aggiungere un messaggio alla coda usando il comando **Aggiungi messaggio** nella parte superiore della finestra. 
 
-1. In the **Add Message** dialog, enter "I'm having fun with this exercise!" into the **Message text** field and click **OK** at the bottom of the dialog. 
+1. Nella finestra di dialogo **Aggiungi messaggio** immettere il messaggio "Mi sono divertito con questo esercizio!" nel campo **Testo del messaggio** e fare clic su **OK** nella parte inferiore della finestra di dialogo. 
 
-1. The message is displayed in the data window for [!INCLUDE [input-q](./q-name-input.md)]. After a few seconds, click **Refresh** at the top of the data view to refresh the view of the queue. Observe that the message disappears after a while. So, where did it go?
+1. Il messaggio viene visualizzato nella finestra Dati per [!INCLUDE [input-q](./q-name-input.md)]. Dopo alcuni secondi, fare clic su **Aggiorna** nella parte superiore della visualizzazione Dati per aggiornare la visualizzazione della coda. Si noti che il messaggio scomparirà dopo alcuni secondi. Dove è andato a finire?
 
-1. Right-click on the **QUEUES** collection in the left-hand menu. Observe that a *new* queue has appeared.
-![Screenshot of Storage Explorer with showing a new queue has been created in the collection. The queue has one message.](../media-draft/sa-new-output-q.png)
+1. Fare clic con il pulsante destro del mouse sulla raccolta **CODE** nel menu a sinistra. Si osservi che è apparsa una *nuova* coda.
+![Screenshot di Storage Explorer che mostra che nella raccolta è stata creata una nuova coda. La coda contiene un messaggio.](../media-draft/sa-new-output-q.png)
 
-The queue [!INCLUDE [positive-q](./q-name-positive.md)] was automatically created when a message was posted to it for the first time. With Azure Functions queue output bindings, you don't have to manually create the output queue before posting to it! Now that we see an incoming message has been sorted by our function into [!INCLUDE [positive-q](./q-name-positive.md)], let's see where the following messages land.
+La coda [!INCLUDE [positive-q](./q-name-positive.md)] è stata creata automaticamente quando è stato inserito un messaggio per la prima volta. Con le associazioni di output della coda di Funzioni di Azure, non è necessario creare manualmente la coda di output prima di inserirvi dei messaggi. Ora che il messaggio in arrivo è stato ordinato dalla funzione in [!INCLUDE [positive-q](./q-name-positive.md)], è il momento di vedere dove vanno a finire i messaggi seguenti.
 
-5. Using the same steps as above, add the following messages to [!INCLUDE [input-q](./q-name-input.md)].
+5. Usando la stessa procedura precedentemente illustrata, aggiungere i messaggi seguenti a [!INCLUDE [input-q](./q-name-input.md)].
 
-- "I like broccoli!"
-- "Microsoft is a company"
+- "Mi piacciono i broccoli!"
+- "Microsoft è un'azienda"
 
-6. Click **Refresh** until [!INCLUDE [input-q](./q-name-input.md)] is empty once again. This process might take a few moments and require several refreshes.
+6. Fare clic su **Aggiorna** finché [!INCLUDE [input-q](./q-name-input.md)] non è nuovamente vuoto. Questo processo potrebbe richiedere alcuni istanti e diversi aggiornamenti.
 
-1. Right-click on the **QUEUES** collection and observe two more queues appearing. The queues are named [!INCLUDE [neutral-q](./q-name-neutral.md)] and [!INCLUDE [negative-q](./q-name-negative.md)]. This might take a few seconds, so continue refreshing the **QUEUES** collection until new queues. When complete, your queue list should look like the following.
+1. Fare clic con il pulsante destro del mouse sulla raccolta **CODE** e osservare le due nuove code visualizzate. Le code sono denominate [!INCLUDE [neutral-q](./q-name-neutral.md)] e [!INCLUDE [negative-q](./q-name-negative.md)]. Questa operazione potrebbe richiedere alcuni secondi, pertanto continuare ad aggiornare la raccolta **CODE** fino a visualizzare le nuove code. Al termine, l'elenco delle code dovrebbe essere analogo al seguente.
 
-![Screenshot of Storage Explorer menu showing four queues in the QUEUES collection.](../media-draft/sa-final-q-list.png)
+![Screenshot del menu di Storage Explorer che mostra quattro code nella raccolta CODE.](../media-draft/sa-final-q-list.png)
 
-Click on each queue in the list to see whether they have messages. If you added the suggested messages, you should see one message in [!INCLUDE [positive-q](./q-name-positive.md)], [!INCLUDE [neutral-q](./q-name-neutral.md)], and [!INCLUDE [negative-q](./q-name-negative.md)].
+Fare clic su ogni coda nell'elenco per verificare se sono presenti messaggi. Se sono stati aggiunti i messaggi suggeriti, si noterà un messaggio in [!INCLUDE [positive-q](./q-name-positive.md)], [!INCLUDE [neutral-q](./q-name-neutral.md)] e [!INCLUDE [negative-q](./q-name-negative.md)].
 
-Congratulations! We now have a working feedback sorter! As messages arrive in the input queue, our function uses the Text Analytics API service to get a sentiment score. Based on that score, the function forwards the messages to the appropriate queue. While it seems like the function processes only one queue item at a time, the Azure Functions runtime will actually read batches of queue items and spin up other instances of our function to process them in parallel. 
+La procedura è stata completata. Ora si dispone di una soluzione funzionante per l'ordinamento del feedback. Quando i messaggi arrivano nella coda di input, la funzione usa il servizio API Analisi del testo per ottenere un punteggio del sentiment. In base a tale punteggio, la funzione inoltra i messaggi alla coda appropriata. Anche se sembra che la funzione elabori un solo elemento della coda alla volta, il runtime di Funzioni di Azure leggerà effettivamente i batch degli elementi della coda e avvierà altre istanze della funzione per l'elaborazione in parallelo. 

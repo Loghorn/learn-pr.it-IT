@@ -1,168 +1,168 @@
-The Azure Portal has a lot of features and services available; let's look at some of the more common areas you'll tend to use:
+Nel portale di Azure sono disponibili molti servizi e funzionalità. Di seguito vengono illustrate le aree più comuni che si tenderà a usare:
 
-- [Services blade](#services-blade)
-- [Notifications blade](#notifications-blade)
+- [Pannello Servizi](#services-blade)
+- [Pannello Notifiche](#notifications-blade)
 - [Azure Cloud Shell](#cloud-shell)
-- [Settings](#settings-blade)
-- [Feedback blade](#feedback-blade)
-- [Help blade](#help-blade)
-- [Directory + subscription blade](#subscriptions-blade)
-- [Profile settings](#profile-blade)
+- [Impostazioni](#settings-blade)
+- [Pannello Commenti e suggerimenti](#feedback-blade)
+- [Pannello Guida](#help-blade)
+- [Pannello Directory e sottoscrizione](#subscriptions-blade)
+- [Impostazioni del profilo](#profile-blade)
 
 <a name="services-blade"></a>
 
-## Services blade
+## <a name="services-blade"></a>Pannello Servizi
 
-1. In the left-hand pane, click **All services**. Take a couple of minutes to scroll down the list to see how many services Azure offers.
+1. Nel pannello a sinistra fare clic su **Tutti i servizi**. Scorrere verso il basso l'elenco per visualizzare i numerosi servizi offerti da Azure.
 
-1. Click **Virtual machines**. The **Virtual Machines** blade appears. There is nothing currently showing because you have not defined any virtual machines.
+1. Fare clic su **Macchine virtuali**. Viene visualizzato il pannello **Macchine virtuali**. Attualmente non viene visualizzato alcun elemento perché non sono state definite macchine virtuali.
 
-1. Click the **+ Add** button. The **Compute** blade appears, as in the previous exercise.
+1. Fare clic sul pulsante **+ Aggiungi**. Viene visualizzato il pannello **Calcolo**, come nell'esercizio precedente.
 
-1. Click the **X** in the top right-hand corner to close the **Compute** blade.
+1. Fare clic sulla **X** nell'angolo superiore destro per chiudere il pannello **Calcolo**.
 
-1. Click the **X** in the top right-hand corner to close the **Virtual machines** blade. You should now be back at the dashboard page.
+1. Fare clic sulla **X** nell'angolo superiore destro per chiudere il pannello **Macchine virtuali**. A questo punto si tornerà alla pagina del dashboard.
 
 <a name="notifications-blade"></a>
 
-## Notifications blade
+## <a name="notifications-blade"></a>Pannello Notifiche
 
-1. On the top menu on the right side, click the bell icon. You can now see any notifications.
+1. Nel menu in alto a destra fare clic sull'icona a forma di campanello. È ora possibile vedere le notifiche.
 
-1. If any notifications appear, on one of them, hover your mouse, and then Click the **X** to dismiss that notification.
+1. Se vengono visualizzate notifiche, posizionare il mouse su una di esse e fare clic sulla **X** per ignorarla.
 
-1. To the right of **Dismiss**, click **All**. You should have no notifications showing.
+1. A destra del pulsante **Ignora**, fare clic su **Tutte**. Non saranno visualizzate altre notifiche.
 
-1. Click the **X** in the top right-hand corner to close the **Notifications** pane.
+1. Fare clic sulla **X** nell'angolo superiore destro per chiudere il riquadro **Notifiche**.
 
 <a name="cloud-shell"></a>
 
-## Azure Cloud Shell
+## <a name="azure-cloud-shell"></a>Azure Cloud Shell
 
-1. Click the **Cloud Shell** icon (>_) to create a Cloud Shell session.
+1. Fare clic sull'icona di **Cloud Shell** (>_) per creare una sessione di Cloud Shell.
 
-1. Click **Bash (Linux)** or **PowerShell (Linux)**, depending on your personal preferences.
+1. Fare clic su **Bash (Linux)** o **PowerShell (Linux)**, in base alle proprie preferenze.
 
-1. In the **You have no storage mounted** screen, click **Create storage**. The Cloud Shell window appears at the bottom of the screen.
+1. Nella schermata **You have no storage mounted** (Nessuna risorsa di archiviazione montata) fare clic su **Create storage** (Crea archiviazione). Nella parte inferiore della schermata verrà visualizzata la finestra di Cloud Shell.
 
-1. In the prompt, type *AZ Help*, and press Enter.
+1. Al prompt, digitare *AZ Help* e premere INVIO.
 
-1. Click the language drop-down on the left of the bar, and change the scripting language from PowerShell to Bash or from Bash to PowerShell, depending on which option you selected. Click **Restart** when prompted. The screen displays **Restarting your Cloud Shell**.
+1. Fare clic sull'elenco a discesa relativo al linguaggio a sinistra della barra e modificare il linguaggio di scripting da PowerShell a Bash o da Bash a PowerShell, a seconda dell'opzione selezionata. Fare clic su **Restart** (Riavvia) quando richiesto. Verrà visualizzata la schermata **Restarting your Cloud Shell** (Riavvio di Cloud Shell).
 
-1. In the restarted shell, type *AZ Help* and press Enter.
+1. Nella shell riavviata digitare *AZ Help* e premere INVIO.
 
-1. In the Cloud Shell window, click the **Settings** (cog) icon. Note that you can change the text size and the font.
+1. Nella finestra di Cloud Shell fare clic sull'icona **Impostazioni** (ingranaggio). Si noti che è possibile modificare le dimensioni del testo e il carattere.
 
-1. Click the **X** in the top right-hand corner to close the **Cloud Shell** pane.
+1. Fare clic sulla **X** nell'angolo superiore destro per chiudere il riquadro **Cloud Shell**.
 
 <a name="settings-blade"></a>
 
-## Settings
+## <a name="settings"></a>Impostazioni
 
-1. Click the **cog** icon to open the **Portal settings** pane.
+1. Scegliere l'icona a forma di **ingranaggio** per aprire il riquadro **Impostazioni del portale**.
 
-1. Drop down the **Log me out when inactive** setting, and select **After one hour**.
+1. Nell'elenco a discesa dell'impostazione **Disconnetti in caso di inattività** selezionare **Dopo 1 ora**.
 
-1. Under **Choose a theme**, select the different themes and choose the one you like the best.
+1. In **Scegliere un tema** selezionare i diversi temi disponibili e scegliere quello preferito.
 
-1. Under **High contrast theme**, try the three different options.
+1. In **Tema a contrasto elevato** provare le tre diverse opzioni.
 
-1. Disable Toast notifications.
+1. Disabilitare gli avvisi popup.
 
-1. Note the double-click to change the dashboard theme setting.
+1. Si noti l'impostazione con doppio clic per modificare il tema del dashboard.
 
-1. Click **Apply** to accept your changes.
+1. Fare clic su **Applica** per accettare le modifiche.
 
-1. Under **Language**, select **Español**, and then click the **Refresh** button. If a **Translate this page** dialog box appears, close the box. Note that the whole portal is now in Spanish.
+1. In **Lingua** selezionare **Español** e quindi fare clic sul pulsante **Aggiorna**. Se viene visualizzata la finestra di dialogo **Traduci questa pagina**, chiuderla. Si noti che ora l'intero portale viene visualizzato in lingua spagnola.
 
-1. Click the **cog** icon in the top menu bar and, under **Language**, select **English**. Click the **Actualizar** button. The portal returns to English.
+1. Fare clic sull'icona a forma di **ingranaggio** nella barra dei menu principale e in **Idioma** selezionare **Italiano**. Fare clic sul pulsante **Actualizar**. Il portale viene nuovamente visualizzato in lingua italiana.
 
 <a name="feedback-blade"></a>
 
-## Feedback blade
+## <a name="feedback-blade"></a>Pannello Commenti e suggerimenti
 
-1. Click the **smiley face** icon to open the **Send us feedback** blade.
+1. Scegliere l'icona a forma di **faccina sorridente** per aprire il pannello **Inviare commenti e suggerimenti**.
 
-1. Type your impressions of Azure in the **Tell us about your experience** box, click the box that says **Microsoft can email you about your feedback**, and click **Submit Feedback**.
+1. Digitare le impressioni relative ad Azure nel riquadro **Fornire informazioni sull'esperienza utente**, selezionare la casella **Microsoft potrà inviare un messaggio di posta elettronica in merito ai commenti inviati** e fare clic su **Invia commenti e suggerimenti**.
 
-1. A **Feedback sent** message will appear, and then close. You should now be back at the dashboard.
+1. Verrà visualizzato il messaggio **I commenti e suggerimenti sono stati inviati**. Chiudere il pannello. A questo punto si tornerà al dashboard.
 
 <a name="help-blade"></a>
 
-## Help blade
+## <a name="help-blade"></a>Pannello Guida e supporto
 
-1. Click the question mark to show the **Help** blade.
+1. Fare clic sul punto interrogativo per visualizzare il pannello **Guida e supporto**.
 
-1. Click the **Help and Support** button.
+1. Fare clic sul pulsante **Guida e supporto**.
 
-1. In the **Help + Support** blade, under **Support**, click **New support request**.
+1. Nel pannello **Guida e supporto**, in **Supporto**, fare clic su **Nuova richiesta di supporto**.
 
-1. In the Basics blade, under **Issue type**, select **Technical**.
+1. Nel pannello Informazioni di base, in **Tipo di problema**, selezionare **Tecnico**.
 
-1. Under **Subscription**, click your subscription name.
+1. In **Sottoscrizione** fare clic sul nome della propria sottoscrizione.
 
-1. Under **Service**, select **Virtual Machine running Windows**.
+1. In **Servizio** selezionare **Macchina virtuale che esegue Windows**.
 
-1. Because you do not have a paid support plan, there are limited support options. Under **Upgrade your support plan**, click **Choose a plan**.
+1. Poiché non si dispone di un piano di supporto a pagamento, sono disponibili opzioni di supporto limitate. In **Aggiornare il piano di supporto** fare clic su **Scegli un piano**.
 
-1. In the **Support Plans** blade, there are four available plans - Basic, Developer, Standard, and Professional Direct. Compare the options offered by each plan, and then Click the **X** at the top right to close the **Support Plans** blade.
+1. Nel pannello **Piani di supporto** sono disponibili quattro piani: Basic, Developer, Standard e Professional Direct. Confrontare le opzioni offerte da ogni piano e fare clic sulla **X** nella parte superiore destra per chiudere il pannello **Piani di supporto**.
 
-1. Close the **Support options** blade.
+1. Chiudere il pannello **Opzioni di supporto**.
 
-1. Close the **Basics** blade.
+1. Chiudere il pannello **Informazioni di base**.
 
-1. Close the **New support request** blade.
+1. Chiudere il pannello **Nuova richiesta di supporto**.
 
-1. Close the **Help and Support** blade.
+1. Chiudere il pannello **Guida e supporto**.
 
-1. Click the **Help** icon again.
+1. Fare di nuovo clic sull'icona **?**.
 
-1. Click **What's new** to see what features have recently been released. Also note the other help options:
+1. Fare clic su **Novità** per visualizzare le funzionalità rilasciate di recente. Tenere presenti anche le altre opzioni della guida:
 
-- Azure roadmap
-- Launch guided tour
-- Keyboard shortcuts
-- Show diagnostics
-- Privacy + terms
+- Roadmap per Azure
+- Avvia presentazione guidata
+- Scelte rapide da tastiera
+- Visualizza diagnostica
+- Privacy e condizioni
 
-11. Click the **X** in the top right-hand corner to close the **Help** blade.
+11. Fare clic sulla **X** nell'angolo superiore destro per chiudere il pannello**Guida**.
 
-11. Close the **What's new** blade. You should now be back to the dashboard.
+11. Chiudere il pannello **Novità**. A questo punto si tornerà al dashboard.
 
 <a name="subscription-blade"></a>
 
-## Directory and subscription
+## <a name="directory-and-subscription"></a>Directory e sottoscrizione
 
-1. Click the **Book and Filter** icon to show the **Directory + subscription** blade.  This is where you can switch between multiple directories if you have more than one. Because you do not have additional directories, you will not be able to switch directories.
+1. Fare clic sull'icona a forma di **libro e filtro** per visualizzare il pannello **Directory e sottoscrizione**.  Se si hanno più directory, questo è il pannello in cui è possibile passare da una all'altra. Poiché non si hanno altre directory, non sarà possibile cambiare directory.
 
-1. Click the **X** in the top right-hand corner to close the **Directory + subscription** blade.
+1. Fare clic sulla **X** nell'angolo superiore destro per chiudere il pannello **Directory e sottoscrizione**.
 
 <a name="profile-blade"></a>
 
-## Profile settings
+## <a name="profile-settings"></a>Impostazioni del profilo
 
-1. Click on your name in the top right-hand corner of the portal. Options include:
+1. Fare clic sul nome nell'angolo superiore destro del portale. Le opzioni includono:
 
-    - Sign out of Azure
-    - Change password
-    - Change contact information
-    - View permissions
-    - Submit an idea to the Azure team
-    - View your bill
-    - Switch directory (shows the **Directory + subscription** blade as in the previous section)
+    - Disconnetti da Azure
+    - Cambia password
+    - Modifica informazioni di contatto
+    - Visualizza autorizzazioni
+    - Invia un'idea al team di Azure
+    - Visualizzare la fattura
+    - Cambia directory (viene visualizzato il pannello **Directory e sottoscrizione** come nella sezione precedente)
 
-1. Click **View my bill** takes you to the **Cost Management + Billing - Invoices** page, which helps you analyze where Azure is generating costs.
+1. Fare clic su **Visualizza fattura** per visualizzare la pagina **Gestione dei costi e fatturazione - Fatture** che consente di analizzare i costi generati da Azure.
 
-1. Under **Subscription or reserved instance**, select your subscription.
+1. In **Sottoscrizione o istanza riservata** selezionare la sottoscrizione.
 
-1. Click a billing period.
+1. Selezionare un periodo di fatturazione.
 
-1. Note the service costs. These should be minimal with your current subscription.
+1. Si osservino i costi del servizio. Dovrebbero essere minimi con la sottoscrizione corrente.
 
-1. Click the **X** in the top right-hand corner to close the **Costs by service** blade.
+1. Fare clic sulla **X** nell'angolo superiore destro per chiudere il pannello **Costi per servizio**.
 
-1. Click the **X** in the top right-hand corner to close the **Cost Management + Billing - Invoices** page.
+1. Fare clic sulla **X** nell'angolo superiore destro per chiudere la pagina **Gestione dei costi e fatturazione - Fatture**.
 
-1. You should now be back at the dashboard.
+1. A questo punto si tornerà al dashboard.
 
-Now that we've explored all the main areas of the Azure portal, let's look at one of the most useful features - Dashboards.
+Dopo aver illustrato tutte le aree principali del portale di Azure, è ora possibile esaminare una delle funzionalità più utili, vale a dire i dashboard.

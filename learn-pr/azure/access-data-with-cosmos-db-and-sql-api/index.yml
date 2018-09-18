@@ -1,22 +1,26 @@
 ### YamlMime:Module
 uid: learn.access-data-with-cosmos-db-and-sql-api
 metadata:
-  title: Insert and query data in your Azure Cosmos DB database
-  description: Learn how to add data and query data in your Azure Cosmos DB database.
+  title: Inserire ed eseguire query sui dati nel database di Azure Cosmos DB
+  description: Informazioni su come aggiungere dati ed eseguire query sui dati nel database di Azure Cosmos DB.
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Insert and query data in your Azure Cosmos DB database
-summary: Learn how to add data to your database and query data in Azure Cosmos DB. 
-abstract: |
-  In this module, you will:
-    - Create product catalog documents in the Data Explorer
-    - Perform Azure Cosmos DB queries
-    - Create and run operations on your documents by using stored procedures
-#TODO: Update icon URL with real image.
+  ms.openlocfilehash: f8f9903a46e4c6aa423d0268afa272878793c7fc
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44239862"
+title: Inserire ed eseguire query sui dati nel database di Azure Cosmos DB
+summary: Informazioni su come aggiungere dati al database ed eseguire query sui dati in Azure Cosmos DB.
+abstract: >
+  In questo modulo verrà descritto come:
+    - Creare documenti del catalogo prodotti in Esplora dati
+    - Eseguire query in Azure Cosmos DB
+    - Creare ed eseguire operazioni sui documenti tramite stored procedure
 iconUrl: http://via.placeholder.com/120x120
 levels:
 - beginner

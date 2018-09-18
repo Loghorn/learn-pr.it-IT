@@ -11,9 +11,9 @@ In questo esercizio si creerà uno spazio dei nomi del bus di servizio, che cont
 
 Nel bus di servizio di Azure uno spazio dei nomi è un contenitore, con un nome di dominio completo univoco, per code, argomenti e inoltri. È necessario iniziare creando lo spazio dei nomi.
 
-Ogni spazio dei nomi include anche le chiavi di crittografia di firma di accesso condiviso (SAS, Shared Access Signature) primaria e secondaria. Un componente mittente o destinatario deve fornire queste chiavi quando si connette per ottenere l'accesso agli oggetti nello spazio dei nomi.
+Ogni spazio dei nomi include anche le chiavi di crittografia di firma di accesso condiviso primaria e secondaria. Un componente mittente o destinatario deve fornire queste chiavi quando si connette per ottenere l'accesso agli oggetti nello spazio dei nomi.
 
-Per creare uno spazio dei nomi del bus di servizio usando il portale di Azure, eseguire questa procedura:
+Per creare uno spazio dei nomi del bus di servizio usando il portale di Azure, seguire questa procedura:
 
 1. In un browser passare al [portale di Azure](https://portal.azure.com/) e accedere con le proprie credenziali dell'account di Azure.
 
@@ -25,7 +25,7 @@ Per creare uno spazio dei nomi del bus di servizio usando il portale di Azure, e
 
 1. In alto a sinistra nel pannello **Bus di servizio** fare clic su **Aggiungi**.
 
-1. Nella casella di testo **Nome** digitare un nome univoco per lo spazio dei nomi. Ad esempio "salesteamapp" + *iniziali del nome* + *data corrente*
+1. Nella casella di testo **Nome** digitare un nome univoco per lo spazio dei nomi. Ad esempio "salesteamapp" + *iniziali del nome* + *data corrente*.
 
 1. Nell'elenco a discesa **Piano tariffario** selezionare **Standard**.
 

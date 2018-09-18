@@ -1,25 +1,33 @@
 ### YamlMime:Module
 uid: learn.azure-services-features
 metadata:
-  title: Tour Azure services and features
-  description: "The first step to using Azure is to create an account. Your account holds the Azure services you provision and handles your personal settings like identity, billing, and preferences. After you create an account, you can use the Azure portal to tour the available services and create the ones you need for your application. This module guides you through the onboarding process: you will create your Azure account, login to the portal, and practice creating a few common resources."
+  title: Esplorare i servizi e le funzionalità di Azure
+  description: "Il primo passo per usare Azure è creare un account. L'account contiene i servizi di Azure di cui si esegue il provisioning e gestisce le impostazioni personali, come identità, fatturazione e preferenze. Dopo aver creato un account, è possibile usare il portale di Azure per esplorare i servizi disponibili e creare quelli necessari per l'applicazione. Questo modulo illustra questo processo di onboarding: si creerà l'account Azure, si accederà al portale e si sperimenterà la creazione di alcune risorse comuni."
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Tour Azure services and features
-summary: Create an Azure account, tour available services, and customize the portal.
-abstract: |
-  In this module, you will:
-  - Create an Azure account
-  - Navigate the Azure portal
-  - Customize the dashboard
-prerequisites: |
-  - Knowledge of basic cloud computing terms and concepts
-  - A valid credit card to register with Azure
-#TODO: Update icon URL with real image 
+  ms.openlocfilehash: a5c3a2241db3defb45ea95ac5f249893687e90eb
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44243064"
+title: Esplorare i servizi e le funzionalità di Azure
+summary: Creare un account Azure, esplorare i servizi disponibili e personalizzare il portale.
+abstract: >
+  In questo modulo verrà descritto come:
+
+  - Creare un account Azure
+
+  - Esplorare il portale di Azure
+
+  - Personalizzare il dashboard
+prerequisites: >
+  - Conoscenza dei termini e concetti di base relativi al cloud computing
+
+  - Una carta di credito valida per la registrazione ad Azure
 iconUrl: http://via.placeholder.com/120x120
 levels:
 - intermediate
@@ -29,7 +37,6 @@ products:
 - azure
 - azure-portal
 units:
-#TODO: None of these units have a knowledge task or task validation component (need to add somewhere so users don't get marked complete solely by viewing the pages).
 - learn.azure-services-features.1-introduction
 - learn.azure-services-features.2-tour-of-azure-services
 - learn.azure-services-features.3-create-an-azure-account

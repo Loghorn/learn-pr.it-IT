@@ -1,83 +1,82 @@
-Let's update our function implementation to call the Text Analytics API service and get back a sentiment score.
+Si procederà ora ad aggiornare l'implementazione della funzione per chiamare il servizio API Analisi del testo e ottenere un punteggio del sentiment.
 
-1. Select our function, [!INCLUDE [func-name-discover](./func-name-discover.md)], in the Function Apps portal.
+1. Selezionare la funzione [!INCLUDE [func-name-discover](./func-name-discover.md)] nel portale delle app per le funzioni.
 
-1. Expand the **View files** menu on the right of the screen.
+1. Espandere il menu **Visualizza file** a destra della schermata.
 
-1. Under the **View files** tab, select **index.js** to open the code file in the editor.
+1. Nella scheda **Visualizza file** selezionare **index.js** per aprire il file di codice nell'editor.
 
-1. Replace the entire content of the code file with the following JavaScript.
+1. Sostituire l'intero contenuto del file di codice con il codice JavaScript seguente.
 
 [!code-javascript[](../code/discover-sentiment-sort.js?highlight=7)]
 
-Let's look at what's happening in this code:
+Osservare cosa avviene nel codice:
 
-- To call the text analytics service, set `accessKey`, highlighted in the code snippet, to the key you saved earlier.
-- Update `uri` to the region from which you obtained your access key, if that region is different than *westus* shown in this example.
-- At the bottom of the code file, we've defined a `documents` array. This array is the payload we send to the Text Analytics service. 
-- The `documents` array has a single entry in this case, which is the queue message that triggered our function. Although we only have one document in our array, it doesn't mean that our solution can only handle one message at a time. The Azure Functions runtime retrieves and processes messages in batches, calling several instances of our function *in parallel*. Currently, the default batch size is 16 and the maximum batch size is 32.
-- The `id` must be unique within the array. The `language` property specifies the language of the document text.  
-- We then call our method `get_sentiments`, which uses the HTTPS module to make the call to Text Analytics API. Notice that we pass our subscription, or access, key in the header of every request.
-- When the service returns, our `response_handler` is called and we log the response to the console using `context.log` 
+- Per chiamare il servizio di analisi del testo, impostare `accessKey`, evidenziato nel frammento di codice, sulla chiave salvata in precedenza.
+- Aggiornare `uri` impostandolo sull'area da cui è stata ottenuta la chiave di accesso, se diversa da *westus* (Stati Uniti occidentali) come riportato in questo esempio.
+- Alla fine del file di codice è stata definita una matrice `documents`. Questa matrice è il payload che viene inviato al servizio Analisi del testo. 
+- La matrice `documents` dispone di una singola entità in questo caso, ovvero il messaggio della coda che ha attivato la funzione. Anche se si ha solo un documento nella matrice, questo non significa che la soluzione sia in grado di gestire solo uno messaggio alla volta. Il runtime di Funzioni di Azure recupera ed elabora i messaggi in batch, chiamando diverse istanze della funzione *in parallelo*. Attualmente, le dimensioni predefinite del batch sono pari a 16, mentre quelle massime sono di 32.
+- `id` deve essere univoco nella matrice. La proprietà `language` la lingua del testo del documento.  
+- Viene quindi chiamato il metodo `get_sentiments`, che usa il modulo HTTPS per eseguire la chiamata all'API Analisi del testo. Si noti che nell'intestazione di ogni richiesta viene passata la chiave di sottoscrizione, o di accesso.
+- Al termine del servizio, viene chiamato `response_handler` e la risposta viene registrata nella console tramite `context.log` 
 
-## Try it out
+## <a name="try-it-out"></a>Provare questa operazione
 
-Before we look at sorting into queues, let's take what we have for a test run. 
+Prima di esaminare l'ordinamento nelle code, si procederà a un'esecuzione dei test. 
 
-1.  With our function, [!INCLUDE [func-name-discover](./func-name-discover.md)], selected in the Function Apps portal, click on the Test menu item on the far left to expand it.
+1.  Con la funzione [!INCLUDE [func-name-discover](./func-name-discover.md)] selezionata nel portale delle app per le funzioni, fare clic sulla voce di menu Test all'estrema sinistra per espanderla.
 
-2. Select the **Test** menu item and verify that you have the test panel open. The following screenshot shows what it should look like. 
+2. Selezionare la voce di menu **Test** e verificare che il pannello Test sia aperto. Lo screenshot seguente riporta quello che si dovrebbe vedere. 
 
-![Screenshot showing the function Test Panel expanded.](../media-draft/test-panel-open-small.png)
+![Screenshot che mostra il pannello Test della funzione espanso.](../media-draft/test-panel-open-small.png)
 
-3. Add a string of text into the request body as shown in the screenshot. 
+3. Aggiungere una stringa di testo nel corpo della richiesta, come illustrato nello screenshot. 
 
-1.  Click **Run** at the bottom of the test panel.
+1.  Fare clic su **Esegui** nella parte inferiore del pannello Test.
 
-1. Make sure the **Logs** tab is expanded at the bottom left of the main screen, under the code editor. 
+1. Assicurarsi che la scheda **Log** sia espansa nell'angolo in basso a sinistra della schermata principale, in corrispondenza dell'editor di codice. 
 
-1. Verify that the **Logs** tab displays log information that the function completed. The window will also display the response from the Text Analytics API call. 
+1. Verificare che la scheda **Log** visualizzi le informazioni dei log che la funzione ha completato. Nella finestra sarà inoltre visualizzata la risposta dalla chiamata all'API Analisi del testo. 
 
-![Screenshot showing Test Panel and result of a successful test.](../media-draft/sentiment-response-log1.png)
+![Screenshot che mostra il pannello Test e il risultato di un test con esito positivo.](../media-draft/sentiment-response-log1.png)
 
-Congratulations! The [!INCLUDE [func-name-discover](./func-name-discover.md)] works as designed. In  this example, we passed in a very upbeat message and received a score of over 0.98. Try changing the message to something less optimistic, rerun the test and note the response.
+La procedura è stata completata. [!INCLUDE [func-name-discover](./func-name-discover.md)] funziona come previsto. In questo esempio è stato passato un messaggio molto positivo e si è ottenuto un punteggio di oltre 0,98. Provare a modificare il messaggio rendendolo meno ottimistico, eseguire nuovamente il test e osservare la risposta.
 
-## Try it out again (optional)
+## <a name="try-it-out-again-optional"></a>Provare nuovamente questa operazione (facoltativo)
 
-Let's repeat the test. This time, instead of using the Test window of the portal, we'll actually place a message into the input queue and watch what happens. 
+È possibile ripetere il test. Questa volta, invece di usare la finestra Test del portale, si inserirà effettivamente un messaggio nella coda di input e si osserverà cosa accade. 
 
-1. Navigate to your resource group in the **Resource Groups** section of the portal.
+1. Passare al gruppo di risorse nella sezione **Gruppi di risorse** del portale.
 
-1. Select the resource group used in this lesson.
+1. Selezionare il gruppo di risorse usato in questa lezione.
 
-1. In the **Resource group** panel that appears, locate the Storage 
-Account entry and select it.
+1. Nel pannello **Gruppo di risorse** che viene visualizzato individuare la voce Account di archiviazione e selezionarla.
 
-![Screenshot storage account selected in the Resource Group window.](../media-draft/select-storage-account.png)
+![Screenshot dell'account di archiviazione selezionato nella finestra Gruppo di risorse.](../media-draft/select-storage-account.png)
 
-1. Select **Storage Explorer (preview)** from the left menu of the Storage Account main window.  This action opens the Azure Storage Explorer inside the portal. Your screen should look like the following screenshot at this stage. 
+1. Selezionare **Storage Explorer (anteprima)** dal menu a sinistra della finestra principale di Account di archiviazione.  Questa azione apre Azure Storage Explorer all'interno del portale. La schermata dovrebbe essere simile allo screenshot seguente in questa fase. 
 
-![Screenshot of storage explorer showing our storage account, with no queues currently.](../media-draft/sa-no-queue.png)
+![Screenshot di Storage Explorer con l'account di archiviazione, attualmente senza code.](../media-draft/sa-no-queue.png)
 
-As you can see, we don't have any queues in this storage account yet, so let's fix that.
+Come si può notare, in questo account di archiviazione non ci sono ancora code.
 
-1. If you remember from earlier in this lesson, we named the queue associated with our trigger **new-feedback-q**. Right-click on the **Queues** item in the storage explorer and select *Create Queue*.
+1. Più indietro in questa lezione la coda associata al trigger è stata denominata **new-feedback-q**. Fare clic con il pulsante destro del mouse sull'elemento **Code** in Storage Explorer e scegliere *Crea coda*.
 
-1. In the dialog that opens, enter **new-feedback-q** and click **OK**. We now have our input queue. 
+1. Nella finestra di dialogo visualizzata immettere **new-feedback-q** e fare clic su **OK**. È ora disponibile una coda di input. 
 
-1. Select the new queue in the left-hand menu to see the data explorer for this queue. As expected, the queue is empty. Let's add a message to the queue using the **Add Message** command at the top of the window.
+1. Selezionare la nuova coda nel menu a sinistra per visualizzare Esplora dati per questa coda. Come previsto, la coda è vuota. Aggiungere un messaggio alla coda usando il comando **Aggiungi messaggio** nella parte superiore della finestra.
 
-1. In the **Add Message** dialog, enter "This message came from our input queue, new-feedback-q" into the **Message text** field and click **OK** at the bottom of the dialog. 
+1. Nella finestra di dialogo **Aggiungi messaggio** immettere un messaggio che indica che "Il messaggio proviene dalla coda di input new-feedback-q" nel campo **Testo del messaggio** e fare clic su **OK** nella parte inferiore della finestra di dialogo. 
 
-1. Observe the message, similar to the message in the following screenshot, in the data explorer.
-![Screenshot of storage explorer showing our storage account, with the message we created in the queue.](../media-draft/message-in-input-queue.png)
+1. Osservare il messaggio, simile a quello dello screenshot seguente, in Esplora dati.
+![Screenshot di Storage Explorer con l'account di archiviazione, con il messaggio creato nella coda.](../media-draft/message-in-input-queue.png)
 
-1. After a few seconds, click **Refresh** to refresh the view of the queue. Observe that the queue is empty once again. Something must have read the message from the queue. 
+1. Dopo alcuni secondi, fare clic su **Aggiorna** per aggiornare la visualizzazione della coda. Si osservi che la coda è ancora una volta vuota. Il messaggio deve essere stato letto dalla coda. 
 
-1. Navigate back to our function in the portal and open the **Monitor** tab. Select the newest message and in the list. Observe that our function processed the queue message we had posted to the new-feedback-q.
+1. Tornare alla funzione nel portale e aprire la scheda **Monitoraggio**. Selezionare il messaggio più recente nell'elenco. Si noti che la funzione ha elaborato il messaggio della coda inserito in new-feedback-q.
 
-![Screenshot of Monitor dashboard showing an entry that tells us that our function processed the queue message that we posted to new-feedback-q.](../media-draft/message-in-monitor.png)
+![Screenshot del dashboard di monitoraggio che mostra una voce che indica che la funzione ha elaborato il messaggio della coda inserito in new-feedback-q.](../media-draft/message-in-monitor.png)
 
-In this test, we did a complete round trip of posting something into our queue and then seeing the function process it.
+In questo test è stato eseguito un round trip completo di inserimento di un elemento nella coda e successiva elaborazione da parte della funzione.
 
-We're making progress with our solution! Our function is now doing something useful. It's receiving text from our input queue and then calling out to the Text Analytics API service to get a sentiment score.  We've also learned how to test our function through the Azure portal and the Storage Explorer. In the next exercise, we'll see how easy it is to write to queues using output bindings.
+La soluzione creata è in continua evoluzione e ora la funzione sta eseguendo nuove funzionalità utili. Riceve testo dalla coda di input e quindi chiama il servizio API Analisi del testo per ottenere un punteggio del sentiment.  Si è inoltre appreso come testare la funzione tramite il portale di Azure e Storage Explorer. Nel prossimo esercizio si vedrà come è facile scrivere nelle code tramite le associazioni di output.

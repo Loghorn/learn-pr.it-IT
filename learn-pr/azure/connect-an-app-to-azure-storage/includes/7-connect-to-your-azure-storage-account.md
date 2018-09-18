@@ -1,40 +1,40 @@
-You have added the required client libraries to your application and are ready to connect to your Azure storage account.
+Sono state aggiunte le librerie client necessarie all'applicazione ed è ora possibile connettersi all'account di archiviazione di Azure.
 
-To work with data in a storage account, your app will need two pieces of data:
+Per lavorare con i dati in un account di archiviazione, l'applicazione richiede due dati:
 
-1. [An access key](#access-key)
-1. [The REST API endpoint](#rest-endpoint)
+1. [Una chiave di accesso](#access-key)
+1. [L'endpoint dell'API REST](#rest-endpoint)
 
 <a name="access-key"></a>
 
-## Security access keys
+## <a name="security-access-keys"></a>Chiavi di accesso di sicurezza
 
-Each storage account has two unique _access keys_ that are used to secure the storage account. If your app needs to connect to multiple storage accounts, then your app will require an access key for each storage account.
+Ogni account di archiviazione ha due _chiavi di accesso_ univoche, usate a scopi di protezione. Se l'app deve connettersi a più account di archiviazione, dovrà avere chiavi di accesso per ogni account.
 
-![An illustration showing an application connected to two different storage accounts in the cloud. Each storage account is accessible with a unique key.](..\media\6-multiple-accounts.png)
+![Illustrazione che mostra un'applicazione connessa a due diversi account di archiviazione nel cloud. Ogni account di archiviazione è accessibile con una chiave univoca.](..\media\6-multiple-accounts.png)
 
 <a name="rest-endpoint"></a>
 
-## REST API endpoint
+## <a name="rest-api-endpoint"></a>Endpoint API REST
 
-In addition to access keys for authentication to storage accounts, your app will need to know the storage service endpoints to issue the REST requests. 
+Oltre alle chiavi di accesso per l'autenticazione negli account di archiviazione, l'app dovrà conoscere gli endpoint del servizio di archiviazione per inviare le richieste REST. 
 
-The REST endpoint is a combination of your storage account _name_, the data type, and a known domain. For example:
+L'endpoint REST è una combinazione di _nome_ dell'account di archiviazione, tipo di dati e un dominio noto. Ad esempio:
 
-| Data type | Example endpoint |
+| Tipo di dati | Endpoint di esempio |
 |-----------|------------------|
-| Blobs     | `https://[name].blob.core.windows.net/` |
-| Queues    | `https://[name].queue.core.windows.net/` |
-| Table     | `https://[name].table.core.windows.net/` |
-| Files     | `https://[name].file.core.windows.net/` |
+| BLOB     | `https://[name].blob.core.windows.net/` |
+| Code    | `https://[name].queue.core.windows.net/` |
+| Tabella     | `https://[name].table.core.windows.net/` |
+| File     | `https://[name].file.core.windows.net/` |
 
-If you have a custom domain tied to Azure, then you can also create a custom domain URL for the endpoint.
+Se si ha un dominio personalizzato associato ad Azure, è anche possibile creare un URL di dominio personalizzato per l'endpoint.
 
-## Connection strings
+## <a name="connection-strings"></a>Stringhe di connessione
 
-The simplest way to handle this information is to use a **storage account connection string** A connection string provides all needed connectivity information in a single text string.
+Il metodo più semplice per gestire queste informazioni consiste nell'usare una **stringa di connessione dell'account di archiviazione**, che contiene tutte le informazioni di connettività necessarie in un'unica stringa di testo.
 
-Azure Storage connection strings look similar to the example below but with the access key and account name of your specific storage account:
+Le stringhe di connessione di Archiviazione di Azure hanno un aspetto simile a quelle mostrate nell'esempio seguente, ma con la chiave di accesso e il nome dell'account di archiviazione specifico in uso:
 
 ```
 DefaultEndpointsProtocol=https;AccountName={your-storage};
@@ -42,29 +42,29 @@ DefaultEndpointsProtocol=https;AccountName={your-storage};
    EndpointSuffix=core.windows.net
 ```
 
-## Security
+## <a name="security"></a>Sicurezza
 
-Access keys are critical to providing access to your storage account and as a result, should not be given to any system or person that you do not wish to have access to your storage account. Access keys are the equivalent of a username and password to access your computer.
+Le chiavi di accesso sono fondamentali per permettere l'accesso all'account di archiviazione e di conseguenza non devono essere fornite ad alcun sistema o utente che non deve avere accesso all'account di archiviazione. Le chiavi di accesso sono l'equivalente di un nome utente e una password per accedere al computer.
 
-Typically, storage account connectivity information is stored within an environment variable, database, or configuration file.
+In genere, le informazioni di connettività dell'account di archiviazione sono archiviate all'interno di una variabile di ambiente, un database o un file di configurazione.
 
 > [!IMPORTANT]
-> It is important to note that storing this information in a configuration file can be dangerous if you include that file in source control and store it in a public repository. This is a common mistake and means that anyone can browse your source code in the public repository and see your storage account connection information.
+> È importante notare che l'archiviazione di queste informazioni in un file di configurazione può essere pericolosa se il file viene incluso nel controllo del codice sorgente e salvato in un archivio pubblico. Questo è un errore comune e fa sì che chiunque possa esplorare il codice sorgente nell'archivio pubblico e prendere visione delle informazioni di connessione dell'account di archiviazione.
 
-Each storage account has two access keys. The reason for this is to allow keys to be rotated (regenerated) periodically as part of security best practice in keeping your storage account secure. This process can be done from the Azure portal or the Azure CLI / PowerShell command line tool.
+Ogni account di archiviazione include due chiavi di accesso. Il motivo di questo approccio è consentire la rotazione (rigenerazione) periodica delle chiavi nell'ambito delle procedure consigliate per la sicurezza per proteggere l'account di archiviazione. Questo processo può essere eseguito dal portale di Azure o dall'interfaccia della riga di comando di Azure o dalla riga di comando di PowerShell.
 
-Rotating a key will invalidate the original key value immediately and will revoke access to anyone who obtained the key inappropriately. With support for two keys, you can rotate keys without causing downtime in your applications that use them. Your app can switch to using the alternate access key, while the other key is regenerated. If you have multiple apps using this storage account, they should all use the same key to support this technique. Here's the basic idea:
+La rotazione di una chiave annulla immediatamente la validità del valore della chiave originale e revoca l'accesso a chiunque abbia ottenuto la chiave in modo inappropriato. Con il supporto per due chiavi, è possibile ruotare le chiavi senza causare tempo di inattività nelle applicazioni che le usano. L'app può passare a usare la chiave di accesso alternativa mentre viene rigenerata l'altra chiave. Se più app usano questo account di archiviazione, devono usare tutte la stessa chiave per poter supportare questa tecnica. Ecco l'idea di base:
 
-1. Update the connection strings in your application code to reference the secondary access key of the storage account.
-2. Regenerate the primary access key for your storage account using the Azure portal or command line tool.
-3. Update the connection strings in your code to reference the new primary access key.
-4. Regenerate the secondary access key in the same manner.
+1. Aggiornare le stringhe di connessione nel codice dell'applicazione in modo che facciano riferimento alla chiave di accesso secondaria dell'account di archiviazione.
+2. Rigenerare la chiave di accesso primaria per l'account di archiviazione tramite lo strumento da riga di comando o il portale di Azure.
+3. Aggiornare le stringhe di connessione nel codice in modo che facciano riferimento alla nuova chiave di accesso primaria.
+4. Rigenerare la chiave di accesso secondaria nello stesso modo.
 
 > [!TIP]
-> It's highly recommended that you periodically rotate your access keys to ensure they remain private - just like changing your passwords. If you are using the key in a server application, you can use an **Azure Key Vault** to store the access key for you. Key Vaults include support to synchronize directly to the Storage Account and automatically rotate the keys periodically. Using a Key Vault provides an additional layer of security so your app never has to work directly with an access key.
+> Come si fa per le password, è consigliabile ruotare periodicamente le chiavi di accesso per garantire che rimangano private. Se si usa la chiave di accesso in un'applicazione server, è possibile usare un'istanza di **Azure Key Vault** per archiviarla. Azure Key Vault include il supporto per la sincronizzazione diretta con l'account di archiviazione e la rotazione automatica periodica delle chiavi. L'uso di un insieme di credenziali delle chiavi offre un ulteriore livello di sicurezza, in modo che l'app non debba mai utilizzare direttamente una chiave di accesso.
 
-### Shared access signatures (SAS)
+### <a name="shared-access-signatures-sas"></a>Firme di accesso condiviso
 
-Access keys are the easiest approach to authenticating access to a storage account, however they provide full access to anything in the storage account - similar to a root password on a computer. 
+Le chiavi di accesso sono l'approccio più semplice per autenticare l'accesso a un account di archiviazione, ma forniscono accesso completo a tutto ciò che contiene, come la password radice in un computer. 
 
-Storage accounts offer a separate authentication mechanism called _shared access signatures_ that support expiration and limited permissions for scenarios where you need to grant limited access. You should use this approach when you are allowing other users to read and write data to your storage account. There are links to our documentation on this advanced topic at the end of the module.
+Gli account di archiviazione offrono un meccanismo di autenticazione separato denominato _firme di accesso condiviso_ che supporta la scadenza e autorizzazioni limitate per scenari in cui è necessario concedere accesso con restrizioni. È consigliabile usare questo approccio quando si consente ad altri utenti di leggere e scrivere dati nell'account di archiviazione. Al termine del modulo sono disponibili collegamenti alla documentazione su questo argomento avanzato.

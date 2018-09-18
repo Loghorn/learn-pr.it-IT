@@ -1,55 +1,55 @@
-With a free Azure account, you can build, test, and deploy enterprise applications, create custom web and mobile experiences, and gain insights from your data through machine learning and powerful analytics.
+Con un account Azure gratuito è possibile compilare, testare e distribuire applicazioni aziendali, creare esperienze personalizzate per il Web e per i dispositivi mobili e ricavare informazioni dettagliate dai dati grazie al Machine Learning e a potenti strumenti di analisi.
 
-## What is an Azure account?
+## <a name="what-is-an-azure-account"></a>Che cos'è un account Azure?
 
-An _Azure account_ is tied to a specific identity and holds information like:
+Un _account Azure_ è associato a un'identità specifica e contiene informazioni come:
 
-- Name, email, and contact preferences
-- Billing information such as a credit card
+- Nome, indirizzo di posta elettronica e preferenze di contatto
+- Informazioni di fatturazione, ad esempio una carta di credito
 
-An Azure account is associated with one more  _subscriptions_.
+Un account Azure è associato a una o più _sottoscrizioni_.
 
-## What is an Azure subscription?
+## <a name="what-is-an-azure-subscription"></a>Che cos'è una sottoscrizione di Azure?
 
-An _Azure subscription_ is a logical container used to provision resources in Microsoft Azure. It holds the details of all your resources like virtual machines, databases, etc. It also has a trust relationship to a single Azure AD _tenant_ which is used to authenticate users and roles for the resources held in the subscription.
+Una _sottoscrizione di Azure_ è un contenitore logico usato per il provisioning delle risorse in Microsoft Azure. Contiene i dettagli relativi a tutte le risorse, ad esempio macchine virtuali, database e così via. Ha anche una relazione di trust con un singolo _tenant_ di Azure AD che viene usato per autenticare utenti e ruoli per le risorse contenute nella sottoscrizione.
 
-Billing occurs at the subscription level. You can set spending limits on each subscription to ensure you aren't surprised at the end of the month. 
+La fatturazione avviene al livello della sottoscrizione. È possibile impostare limiti di spesa su ogni sottoscrizione per evitare brutte sorprese alla fine del mese. 
 
-## What is an Azure AD tenant?
+## <a name="what-is-an-azure-ad-tenant"></a>Che cos'è un tenant di Azure AD?
 
-Azure AD (Azure Active Directory) is a modern identity provider that supports multiple authentication protocols to secure applications and services in the cloud. It's _not_ the same as Windows Active Directory, which is focused on securing Windows desktops and servers. Instead, Azure AD is all about web-based authentication standards such as OpenID and OAuth.
+Azure AD (Azure Active Directory) è un provider di identità moderno che supporta più protocolli di autenticazione per la protezione di applicazioni e servizi nel cloud. _Non_ corrisponde a Active Directory di Windows, il cui scopo principale è proteggere i desktop e i server Windows. Azure AD si basa invece sugli standard dell'autenticazione basata sul Web, come OpenID e OAuth.
 
-A single tenant represents a logical organization and allows multiple identities to access and utilize resources protected by that tenant. An Azure subscription always has a trust relationship with a _single_ Azure AD tenant, but _multiple_ subscriptions can share a single tenant. This structure allows the organization to manage multiple subscriptions and set security rules across all the resources contained within them.
+Un singolo tenant rappresenta un'organizzazione logica e consente a più identità di accedere a e utilizzare risorse protette da tale tenant. Una sottoscrizione di Azure ha sempre una relazione di trust con un _singolo_ tenant di Azure AD, ma _più_ sottoscrizioni possono condividere un singolo tenant. Questa struttura consente all'organizzazione di gestire più sottoscrizioni e di impostare regole di sicurezza per tutte le risorse in esse contenute.
 
-Here's a simple representation of accounts, subscriptions, tenants, and resources.
+Ecco una semplice rappresentazione di account, sottoscrizioni, tenant e risorse.
 
-![Diagram of how accounts, tenants, subscriptions, and resources work together](../media/3-azure-ad-tenant.png)
+![Diagramma che mostra l'interazione tra account, tenant, sottoscrizioni e risorse](../media/3-azure-ad-tenant.png)
 
-Notice that each Azure AD tenant has an _account owner_. This is the original Azure account that is responsible for billing. You can add additional users to the tenant, and even invite guests from other Azure AD tenants to access resources in subscriptions.
+Ogni tenant di Azure AD ha un _proprietario dell'account_, che corrisponde all'account Azure originale responsabile della fatturazione. È possibile aggiungere altri utenti al tenant e persino invitare guest di altri tenant di Azure AD ad accedere alle risorse contenute nelle sottoscrizioni.
 
-## Azure account types
+## <a name="azure-account-types"></a>Tipi di account Azure
 
-Azure has several account types that cater to different customer types. The most commonly used accounts are:
+Azure offre diversi tipi di account adatti ai diversi tipi di clienti. Gli account usati più di frequente sono:
 
-- Free
-- Pay-As-You-Go
-- Enterprise Agreement
+- Gratuito
+- Pagamento in base al consumo
+- Contratto Enterprise
 
-### Azure free account
+### <a name="azure-free-account"></a>Account Azure gratuito
 
-An Azure free account includes a **$200 credit** to spend for the first 30 days, free access to the most popular Azure products for 12 months, and access to more than 25 products that are always free. This is an excellent way for new users to get started. To set up a free account, you need a phone number, a credit card, and a Microsoft account.
+Un account Azure gratuito include **€ 170 di credito** da spendere nei primi 30 giorni, l'accesso gratuito ai prodotti di Azure più diffusi per 12 mesi e l'accesso a più di 25 prodotti che sono sempre gratuiti. Questo account offre un'ottima soluzione per i nuovi utenti che vogliono iniziare a usare Azure. Per configurare un account gratuito sono necessari un numero di telefono, una carta di credito e un account Microsoft.
 
 > [!NOTE]
-> Credit card information is used for identity verification only. You won’t be charged for any services until you upgrade.
+> I dati della carta di credito vengono usati esclusivamente a scopo di verifica dell'identità. Non verrà addebitato alcun servizio finché non si esegue l'aggiornamento.
 
-### Azure Pay-As-You-Go account
+### <a name="azure-pay-as-you-go-account"></a>Account Azure con pagamento in base al consumo
 
-A Pay-As-You-Go (PAYG) account bills you monthly for the services you used. This account type is appropriate for a wide range of users, from individuals to small businesses and many large organizations as well.
+Un account con pagamento in base al consumo (PAYG) prevede la fatturazione mensile per i servizi usati. Questo tipo di account è adatto a un'ampia gamma di utenti, dai singoli utenti alle aziende di piccole dimensioni fino alle organizzazioni molto grandi.
 
-### Azure Enterprise Agreement
+### <a name="azure-enterprise-agreement"></a>Contratto Enterprise per Azure
 
-An Enterprise Agreement provides flexibility to buy cloud services and software licenses under one agreement, with discounts for new licenses and Software Assurance. It is targeted at enterprise-scale organizations.
+Un contratto Enterprise offre la flessibilità necessaria per acquistare servizi cloud e licenze software in base a un unico contratto con sconti per nuove licenze e Software Assurance. È destinato alle organizzazioni di livello aziendale.
 
-## Summary
+## <a name="summary"></a>Riepilogo
 
-Whether you are an individual, a small business, or an enterprise, you need an account to use Azure services. The typical sequence is to start with a free account so that you can evaluate Azure services. When your trial period expires, you will convert from the free account to Pay-As-You-Go.
+Singoli utenti, aziende di piccole dimensioni o grandi organizzazioni, devono tutti disporre di un account per poter usare i servizi di Azure. La procedura standard è quella di iniziare con un account gratuito per poter valutare i servizi di Azure. Al termine del periodo di valutazione, si convertirà l'account gratuito in un account con pagamento in base al consumo.

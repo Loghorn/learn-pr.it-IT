@@ -1,103 +1,103 @@
-In this exercise, you will use the Azure portal to create a virtual machine scale set with rules for autoscaling.
+In questo esercizio si userà il portale di Azure per creare un set di scalabilità di macchine virtuali con regole per la scalabilità automatica.
 
-## Create a virtual machine scale set
+## <a name="create-a-virtual-machine-scale-set"></a>Creare un set di scalabilità di macchine virtuali
 
-1. In the Azure portal, click **Create a resource**.
+1. Nel portale di Azure fare clic su **Crea una risorsa**.
 
-1. In the search box, type **scale set** and press ENTER. In the **Results** blade, click **Virtual machine scale set**, and in the **Virtual machine scale set** blade, click **Create**.
+1. Nella casella di ricerca digitare **set di scalabilità** e premere INVIO. Nel pannello **Risultati** fare clic su **Set di scalabilità di macchine virtuali**, quindi nel pannello **Set di scalabilità di macchine virtuali** fare clic su **Crea**.
 
-1. In the **Create virtual machine scale set** blade, enter the following values (replacing `<your initials>`, `<date>`, and `<time>` with relevant data), and then click **Create**.
+1. Nel pannello **Crea set di scalabilità di macchine virtuali** immettere i valori seguenti (sostituendo `<your initials>`, `<date>` e `<time>` con i dati pertinenti), quindi fare clic su **Crea**.
 
-    |Setting|Value|
+    |Impostazione|Valore|
     |---|---|
-    |Virtual machine scale set name|WebServerSS|
-    |Resource group|Use existing - ExerciseRG|
-    |Username|LocalAdmin|
-    |Password and Confirm password|Adm1nPa$$word|
-    |Instance count|2|
-    |Instance size|D2s_v3|
-    |Choose load balancing options|Load balancer|
-    |Public IP address name|WebServerPubIP|
-    |Domain name label|`<your initials><date><time>` (for example ja0904181202)|
+    |Nome del set di scalabilità di macchine virtuali|WebServerSS|
+    |Gruppo di risorse|Usa esistente - ExerciseRG|
+    |Nome utente|LocalAdmin|
+    |Password e Conferma password|Adm1nPa$$word|
+    |Numero di istanze|2|
+    |Dimensioni istanza|D2s_v3|
+    |Scegliere le opzioni di bilanciamento del carico|Bilanciamento del carico|
+    |Nome indirizzo IP pubblico|WebServerPubIP|
+    |Etichetta del nome di dominio|`<your initials><date><time>` (ad esempio ja0904181202)|
 
-1. Wait for the scale set to be created.
+1. Attendere che il set di scalabilità venga creato.
 
-1. Navigate to the **ExerciseRG** resource group. In the **ExerciseRG** blade, click the **WebServerSS** object, and in the **WebServerSS** blade, click **Instances**. Note the two virtual machine instances running within the scale set.
+1. Passare al gruppo di risorse **ExerciseRG**. Nel pannello **ExerciseRG** fare clic sull'oggetto**WebServerSS**, quindi nel pannello **WebServerSS** fare clic su **Istanze**. Notare le due istanze di macchina virtuale in esecuzione nel set di scalabilità.
 
-## Create and apply autoscale rules
+## <a name="create-and-apply-autoscale-rules"></a>Creare e applicare regole di scalabilità automatica
 
-1. In the **WebServerSS** blade, click **Scaling**. On the **WebServerSS - Scaling** blade, click **Enable autoscale**.
+1. Nel pannello **WebServerSS** fare clic su **Scalabilità**. Nel pannello **WebServerSS - Scalabilità** fare clic su **Abilita scalabilità automatica**.
 
-1. On the **WebServerSS - Scaling** blade, click **Add a rule**.
+1. Nel pannello **WebServerSS - Scalabilità** fare clic su **Aggiungi una regola**.
 
-1. In the Scale rule blade, enter the following information to create a rule to scale out an extra two virtual machines when average CPU usage is more than 75% over a five-minute period, and then click **Add**.
+1. Nel pannello Regola scalabilità immettere le informazioni seguenti per creare una regola che aggiunga altre due macchine virtuali quando l'utilizzo medio della CPU supera il 75% in un periodo di cinque minuti, quindi fare clic su **Aggiungi**.
 
-    |Setting|Value|
+    |Impostazione|Valore|
     |---|---|
-    |Time aggregation|Average|
-    |Metric name|Percentage CPU|
-    |Time grain statistic|Average|
-    |Operator|Greater than|
-    |Threshold|75|
-    |Duration (in minutes)|5|
-    |Operation|Increase count by|
-    |Instance count|2|
-    |Cool down (minutes)|5|
+    |Aggregazione temporale|Media|
+    |Nome metrica|Percentuale CPU|
+    |Statistica intervallo di tempo|Media|
+    |Operatore|Maggiore di|
+    |Soglia|75|
+    |Durata (in minuti)|5|
+    |Operazione|Aumenta numero di|
+    |Numero di istanze|2|
+    |Disattiva regole dopo (minuti)|5|
 
-1. On the **WebServerSS - Scaling** blade, click **Add a rule**.
+1. Nel pannello **WebServerSS - Scalabilità** fare clic su **Aggiungi una regola**.
 
-1. In the Scale rule blade, enter the following information to create a rule to scale in one server at a time when average CPU usage is below 30% over a five-minute period, and then click **Add**.
+1. Nel pannello Regola scalabilità immettere le informazioni seguenti per creare una regola che elimini un server alla volta quando l'utilizzo medio della CPU scende sotto il 30% in un periodo di cinque minuti, quindi fare clic su **Aggiungi**.
 
-    |Setting|Value|
+    |Impostazione|Valore|
     |---|---|
-    |Time aggregation|Average|
-    |Metric name|Percentage CPU|
-    |Time grain statistic|Average|
-    |Operator|Less than|
-    |Threshold|30|
-    |Duration (in minutes)|5|
-    |Operation|Decrease count by|
-    |Instance count|1|
-    |Cool down (minutes)|5|
+    |Aggregazione temporale|Media|
+    |Nome metrica|Percentuale CPU|
+    |Statistica intervallo di tempo|Media|
+    |Operatore|Minore di|
+    |Soglia|30|
+    |Durata (in minuti)|5|
+    |Operazione|Riduci numero di|
+    |Numero di istanze|1|
+    |Disattiva regole dopo (minuti)|5|
 
-1. On the **WebServerSS - Scaling** blade, in the **Autoscale setting name** box, type **WebAutoscaleSetting**. Next to **Instance limits**, set the following values and then click **Save**.
+1. Nel pannello **WebServerSS - Scalabilità** digitare **WebAutoscaleSetting** nella casella **Nome impostazione di scalabilità automatica**. Accanto a **Limiti per le istanze** impostare i valori seguenti e fare clic su **Salva**.
 
-    |Setting|Value|
+    |Impostazione|Valore|
     |---|---|
-    |Minimum|2|
-    |Maximum|8|
-    |Default|2|
+    |Minimo|2|
+    |Massimo|8|
+    |Predefinito|2|
 
-## Generate load to demonstrate autoscaling
+## <a name="generate-load-to-demonstrate-autoscaling"></a>Generare il carico per dimostrare la scalabilità automatica
 
-Now you will use the CPUStress.exe tool to generate load on the virtual machines in the scale set and demonstrate automatic scaling out.
+A questo punto si userà lo strumento CPUStress.exe per generare il carico sulle macchine virtuali nel set di scalabilità ed eseguire una dimostrazione della scalabilità orizzontale automatica.
 
-1. To determine the public IP address to connect to, browse to the **ExerciseRG** resource group. In the **ExerciseRG** blade, click the **WebServerSSlb** object.
+1. Per determinare l'indirizzo IP pubblico a cui connettersi, passare al gruppo di risorse **ExerciseRG**. Nel pannello **ExerciseRG** fare clic sull'oggetto **WebServerSSlb**.
 
-1. On the **WebServerSSlb** blade, click Frontend IP configuration and make a note of the public IP address shown. Close the **LoadBalancerFrontEnd** blade.
+1. Nel pannello **WebServerSSlb** fare clic su Configurazione IP front-end e prendere nota dell'indirizzo IP pubblico visualizzato. Chiudere il pannello **LoadBalancerFrontEnd**.
 
-1. To determine the port number to connect to, on the **WebServerSSlb** blade, click **Inbound NAT rules**. Note down the custom port number in the Service column for each virtual machine.
+1. Per determinare il numero di porta a cui connettersi, nel pannello **WebServerSSlb** fare clic su **Regole NAT in ingresso**. Prendere nota del numero di porta personalizzato nella colonna Servizio di ogni macchina virtuale.
 
-1. On your local computer, start the **Remote Desktop Connection**. In the **Computer** box, type the public IP address of the load balancer, followed by a colon and then the port number value for Instance 0, (for example, 40.67.191.221:50000) and then click Connect.
+1. Nel computer locale avviare **Connessione Desktop remoto**. Nella casella **Computer** digitare l'indirizzo IP pubblico del servizio di bilanciamento del carico, seguito da un segno di due punti e dal valore del numero di porta dell'istanza 0 (ad esempio 40.67.191.221:50000), quindi fare clic su Connetti.
 
-1. In the **Windows Security** dialog box, click **More choices**, click **Use a different account**, in the **User name** box type **LocalAdmin**, in the **Password** box type **Adm1nPa$$word**, and then click **OK**.
+1. Nella finestra di dialogo **Sicurezza di Windows** fare clic su **Altre opzioni** e quindi su **Usa un altro account**. Nella casella **Nome utente** digitare **LocalAdmin**, nella casella **Password** digitare **Adm1nPa$$word** e quindi fare clic su **OK**.
 
-1. In the **Remote Desktop Connection** dialog box, click **Yes**.
+1. Nella finestra di dialogo **Connessione Desktop remoto** fare clic su **Sì**.
 
-1. In the virtual machine remote desktop, open Internet Explorer, and in the **Set up Internet Explorer** dialog box, click **OK**.
+1. Nel desktop remoto della macchina virtuale aprire Internet Explorer, quindi nella finestra di dialogo **Installa Internet Explorer** fare clic su **OK**.
 
-1. In **Internet Explorer**, in the address bar, type **http://download.sysinternals.com/files/CPUSTRES.zip** and press ENTER. In the **Internet Explorer** dialog box, click **Add**. In the **Trusted Sites** dialog box, click **Add** and then click **Close**.
+1. In **Internet Explorer** digitare **http://download.sysinternals.com/files/CPUSTRES.zip** nella barra degli indirizzi e premere INVIO. Nella finestra di dialogo **Internet Explorer** fare clic su **Aggiungi**. Nella finestra di dialogo **Siti attendibili** fare clic su **Aggiungi** e quindi su **Chiudi**.
 
-1. If the download prompt does not appear automatically, you may need to enter the URL again and press ENTER. In the **Internet Explorer** dialog box, click **Save**. Once the download is complete, click **Open folder**.
+1. Se la richiesta di conferma del download non viene visualizzata automaticamente, potrebbe essere necessario immettere di nuovo l'URL e premere INVIO. Nella finestra di dialogo **Internet Explorer** fare clic su **Salva**. Al termine del download, fare clic su **Apri cartella**.
 
-1. In the **Downloads** folder, double-click **CPUSTRES**, and then double-click the **CPUSTRES** application. In the **Compressed (zipped) folders** dialog box, click **Run**.
+1. Nella cartella **Download** fare doppio clic su **CPUSTRES** e quindi di nuovo doppio clic sull'applicazione **CPUSTRES**. Nella finestra di dialogo **Cartelle compresse** fare clic su **Esegui**.
 
-1. In the **CPU Stress** window, under **Thread 1**, in the **Activity** drop-down, select **Maximum**. Under **Thread 2**, click the **Active** checkbox, and in the **Activity** drop-down, select **Maximum**.
+1. Nella finestra **CPU Stress**, in **Thread 1**, selezionare **Maximum** nell'elenco a discesa **Activity**. In **Thread 2** fare clic sulla casella di controllo **Active**, quindi nell'elenco a discesa **Activity** selezionare **Maximum**.
 
-1. Click the Start button, then click **Task Manager**. In Task Manager, click **More details**, and confirm that the CPU is over 75%.
+1. Fare clic sul pulsante Start e quindi su **Gestione attività**. In Gestione attività fare clic su **Più dettagli** e verificare che il valore per la CPU sia superiore al 75%.
 
-1. Repeat the installation and launch of **CPUSTRES** on the other virtual machine in the scale set and then wait for five minutes.
+1. Ripetere l'installazione e l'avvio di **CPUSTRES** nell'altra macchina virtuale del set di scalabilità e quindi attendere cinque minuti.
 
-1. In the Azure portal, browse to the **ExerciseRG** resource group, and in the **ExerciseRG** blade, click the **WebServerSS** object, and in the **WebServerSS** blade, click **Instances**. Note how many virtual machine instances are displayed within the scale set and the status.
+1. Nel portale di Azure passare al gruppo di risorse **ExerciseRG**, quindi nel pannello **ExerciseRG** fare clic sull'oggetto **WebServerSS** e nel pannello **WebServerSS** fare clic su **Istanze**. Osservare il numero di istanze di macchina virtuale all'interno del set di scalabilità e lo stato.
 
-Here, you created a virtual machine scale set with two virtual machines. You then created rules to automatically scale out and scale in the scale set and added the rules to an autoscale profile.
+In questo esercizio è stato creato un set di scalabilità di macchine virtuali con due macchine virtuali. Sono quindi state create regole per aumentare e ridurre automaticamente le dimensioni del set di scalabilità e tali regole sono state aggiunte a un profilo di scalabilità automatica.

@@ -1,6 +1,9 @@
 Esistono tre modelli di distribuzione cloud diversi. Un modello di distribuzione cloud definisce dove vengono archiviati i dati e come i clienti interagiscono con i dati, ovvero come vi accedono e dove vengono eseguite le applicazioni. Il modello dipende anche dalle parti dell'infrastruttura che si vuole o è necessario gestire.
 
-In questo caso, si esamineranno i diversi tipi di metodi di distribuzione per le risorse di cloud computing.
+In questo caso, si esamineranno i diversi tipi di metodi di distribuzione per le risorse di cloud computing
+
+<!-- TODO: Verify video -->
+> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE2yEv7]
 
 :::row:::
     :::column:::

@@ -1,5 +1,5 @@
-Pick from one of these locations available to the Azure Sandbox:
+Scegliere una delle aree disponibili per il sandbox di Azure:
 
-- Region A
-- Region B
-- Region C
+- Area A
+- Area B
+- Area C

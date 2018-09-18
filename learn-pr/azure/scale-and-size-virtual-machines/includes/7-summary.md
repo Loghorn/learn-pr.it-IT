@@ -1,11 +1,11 @@
-You saw two ways to meet demand using Virtual Machines. If your load is predictable you can use the portal or scripts to manually resize your VMs. For unpredictable demand patterns, a better approach is to use scale sets with autoscale to automatically add and remove instances as demand changes. Multiple VMs have the added benefit of increasing the availability of your system since a failed VM will not disrupt your service.
+Sono stati descritti due modi per soddisfare la richiesta usando le macchine virtuali. Se il carico è prevedibile, è possibile usare il portale o gli script per ridimensionare manualmente le macchine virtuali. Per i modelli di domanda imprevedibile, un approccio migliore consiste nell'usare dei set di scalabilità con la scalabilità automatica per aggiungere e rimuovere automaticamente le istanze in base alle fluttuazioni della domanda. Più macchine virtuali offrono il vantaggio di aumentare la disponibilità del sistema dato che una macchina virtuale non funzionante non interromperà il servizio.
 
-## Cleanup
+## <a name="cleanup"></a>Pulizia
 
-While a VM is provisioned and running, it incurs costs against your subscription. Because you create all the VMs in the same resource group, the easiest way to clean up your Azure subscription is to remove the resource group, which will remove all its contents. Please run the following PowerShell cmdlet when you are finished with the exercise:
+L'esecuzione e il provisioning di una macchina virtuale comportano l'addebito di costi per la sottoscrizione. Poiché tutte le macchine virtuali sono state create nello stesso gruppo di risorse, il modo più semplice per pulire la sottoscrizione di Azure consiste nel rimuovere il gruppo di risorse. Verranno così eliminati tutti i contenuti. Al termine dell'esercizio eseguire questo cmdlet di PowerShell:
 
    ```powershell
    Remove-AzureRmResourceGroup -Name ExerciseRG
    ```
 
-When you are asked to confirm the delete, answer **Yes**. The command may take several minutes to complete as resources are deleted.
+Quando viene richiesto di confermare l'eliminazione, rispondere **Sì**. Il completamento di questo comando può richiedere alcuni minuti mentre vengono eliminate le risorse.

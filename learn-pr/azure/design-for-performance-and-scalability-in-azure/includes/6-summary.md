@@ -1,28 +1,28 @@
-Congratulations, you have completed the module on Performance and Scalability. Let's recap what we have covered:
+Congratulazioni, il modulo sulle prestazioni e la scalabilità è stato completato. Qui di seguito sono indicati gli argomenti trattati:
 
-## Scaling up and scaling out
+## <a name="scaling-up-and-scaling-out"></a>Aumento delle prestazioni e aumento del numero di istanze
 
-- The difference between scaling up/down (the level of resource provisioned on an instance) and scaling in/out (increasing or decreasing the number of available instances). We also discussed examples in Azure of each.
-- The considerations to be made when scaling in/out around state management and application startup times.
-- Autoscale, and how it can help you scale the number of instances based on a schedule or the demand of an application.
-- Discussed alternate technologies that may help with scalability, including serverless and containers.
+- Differenza tra scalabilità verticale e orizzontale (il livello di risorsa su cui è stato eseguito il provisioning su un'istanza) e aumento/diminuzione del numero di istanze disponibili. Sono inoltre stati fatti alcuni esempi in relazione ad Azure.
+- Considerazioni da fare durante l'aumento/diminuzione del numero di istanze disponibili in relazione ai tempi di avvio delle applicazioni e alla gestione dello stato.
+- Scalabilità automatica e possibilità di ridimensionare il numero di istanze in base a una pianificazione o alla richiesta di un'applicazione.
+- Tecnologie alternative per il supporto della scalabilità, inclusi l'elaborazione serverless e i contenitori.
 
-## Optimize network performance
+## <a name="optimize-network-performance"></a>Ottimizzare le prestazioni di rete
 
-- Network latency is a measure in delay of data being sent from a sender to a receiver.
-- In a cloud environment, chattier applications may see a performance impact compared to on-premises as resources are no longer immediately co-located.
-- Co-locating APIs near to a database write endpoint could provide a performance benefit, as we are reducing the network latency between the two resources.
-- Azure Traffic Manager could be used to route users to the deployed instance with the lowest network latency.
-- Azure Content Delivery Networks (CDN) could be used to offload compute from the main application and speed up application load times by caching content on a CDN edge node near to a user.
+- La latenza di rete misura il ritardo dei dati inviati da un mittente a un destinatario.
+- In un ambiente cloud le applicazioni con interazioni frequenti potrebbero subire una riduzione delle prestazioni rispetto alle applicazioni locali poiché le risorse non vengono più condivise immediatamente.
+- La condivisione delle API nelle vicinanze di un endpoint di scrittura database può migliorare le prestazioni poiché la latenza di rete tra le due risorse viene ridotta.
+- Gestione traffico di Azure può essere usato per instradare gli utenti all'istanza distribuita con una latenza di rete minima.
+- Le reti di distribuzione dei contenuti di Azure (CDN) possono essere usate ai fini del calcolo offload dall'applicazione principale e dell'accelerazione dei tempi di caricamento delle applicazioni tramite memorizzazione dei contenuti nella cache su un nodo perimetrale CDN nelle vicinanze di un utente.
 
-## Optimize storage performance
+## <a name="optimize-storage-performance"></a>Ottimizzare le prestazioni di archiviazione
 
-- There are three main types of disks available for IaaS deployments. Standard HDD disks (inconsistent latency and lower levels of throughput), Standard SSD disks (consistent latency and lower levels of throughput), and Premium SSD disks (consistent latency and high levels of throughput).
-- Caching could be used in the application layer to improve the load times of an application. Frequently requested information could be stored in a cache in front of the database, which could then optimize for data load times of the most requested information.
-- Using the appropriate back-end data store for the job (polyglot persistence) should be considered when building out your solution.
+- Esistono tre tipi principali di dischi disponibili per le distribuzioni IaaS. Dischi HDD Standard (latenza incoerente e velocità effettiva inferiore), dischi SSD Standard (latenza coerente e velocità effettiva inferiore) e dischi SSD Premium (latenza coerente e velocità effettiva elevata).
+- La memorizzazione nella cache può essere usata a livello dell'applicazione per migliorare i tempi di caricamento di un'applicazione. Le informazioni richieste di frequente possono essere archiviate in una cache davanti al database, che può quindi ottimizzare i tempi di caricamento delle informazioni più richieste.
+- Considerare l'uso di un archivio dati di back-end appropriato per il processo (persistenza poliglotta) durante lo compilazione della soluzione.
 
-## Identify performance bottlenecks
+## <a name="identify-performance-bottlenecks"></a>Identificare i colli di bottiglia in termini di prestazioni
 
-- Importance of understanding the expectations of the application before architecting or building any operations.
-- Understanding how effective DevOps strategies can help build more robust and well-performing applications.
-- Summarized the monitoring options available in Azure, including Azure Monitor (pane of glass for monitoring on Azure), Azure Log Analytics (log ingestion and IaaS monitoring), and Application Insights (application performance monitoring including availability, performance, and exception information).
+- Importanza di comprendere le aspettative dell'applicazione prima di architettare o compilare un'operazione.
+- Informazioni sulle strategie DevOps e sulla loro efficacia in termini di compilazione di applicazioni più robuste e prestanti.
+- Riepilogo delle opzioni di monitoraggio disponibili in Azure, tra cui il Monitoraggio di Azure (pannello di controllo per il monitoraggio in Azure), Log Analytics di Azure (inserimento di log e monitoraggio IaaS) e Application Insights (monitoraggio delle prestazioni dell'applicazione incluse disponibilità, prestazioni e informazioni di eccezione).

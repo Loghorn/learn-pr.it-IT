@@ -49,7 +49,7 @@ Razor è una sintassi ASP.NET che viene usata per creare pagine Web dinamiche co
 
 Razor usa direttive `@` per indicare ad ASP.NET come elaborare una pagina.
 
-Vediamo ad esempio il codice nella pagina `Contact.cshtml`.
+Vediamo ad esempio il codice nella pagina `Contact.cshtml`:
 
 ```aspx-csharp
 @page
@@ -62,11 +62,10 @@ Vediamo ad esempio il codice nella pagina `Contact.cshtml`.
 ...
 ```
 
-Ad esempio, la direttiva `@page` indica ad ASP.NET di elaborare questo file come una pagina Razor.
-La direttiva `@model` indica ad ASP.NET di collegare questa pagina Razor a una classe C# denominata `ContactModel`.
+- La direttiva `@page` indica ad ASP.NET di elaborare questo file come una pagina Razor.
+- La direttiva `@model` indica ad ASP.NET di collegare questa pagina Razor a una classe C# denominata `ContactModel`.
 
-Razor usa anche il simbolo `@` per eseguire la transizione tra il codice e HTML.
-Si noti ad esempio la parte `@{ ... }` nel frammento di codice riportato sopra. È un **blocco di codice Razor**. È codice che viene _eseguito, ma senza rendering_.
+Razor usa anche il simbolo `@` per eseguire la transizione tra il codice e HTML. Si noti la parte `@{ ... }` nel frammento di codice riportato sopra. È un **blocco di codice Razor**. È codice che viene _eseguito, ma senza rendering_.
 
 Per eseguire il rendering dell'output di un'istruzione di codice, si usa `@` davanti a un'espressione C#. Ne abbiamo due esempi nel blocco di codice riportato sopra nei tag `<h2>` e `<h3>`.
 
@@ -76,7 +75,7 @@ Dopo aver apportato le modifiche al sito Web, è possibile pubblicarle in Azure.
 
 1. In Esplora soluzioni fare clic con il pulsante destro del mouse sul progetto.
 
-1. Dovrebbe essere visualizzato il nome del sito Web seguito da Distribuzione Web. Ad esempio, se si è assegnato al sito Web il nome AlpineSkiHouse42, si dovrebbe vedere **AlpineSkiHouse42 - Distribuzione Web** nelle opzioni disponibili. Selezionare questo nome per aggiornare il sito in Azure.
+1. Dovrebbe essere visualizzato il nome del sito Web seguito da Distribuzione Web. Se si è assegnato al sito Web il nome AlpineSkiHouse42, si dovrebbe vedere **AlpineSkiHouse42 - Distribuzione Web** nelle opzioni disponibili. Selezionare questo nome per aggiornare il sito in Azure.
 
 ## <a name="summary"></a>Riepilogo
 

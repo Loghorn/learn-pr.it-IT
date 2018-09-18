@@ -1,185 +1,185 @@
-Dashboards are a flexible tool for managing different aspects of Azure services through the Portal. They make it convenient to monitor the state of your services. Because they are shareable, they help ensure that everyone on your team sees the same data and stays aware of the state of your critical components. Let's create a new dashboard and add some tiles to it.
+I dashboard rappresentano uno strumento flessibile per gestire diversi aspetti dei servizi di Azure tramite il portale. Facilitano il monitoraggio dello stato dei servizi. Poiché sono condivisibili, consentono di assicurarsi che tutti i membri del team visualizzino gli stessi dati e conoscano lo stato dei componenti critici. Verrà creato un nuovo dashboard e vi verranno aggiunti alcuni riquadri.
 
-## Create a new dashboard
+## <a name="create-a-new-dashboard"></a>Creare un nuovo dashboard
 
-1. In the Azure portal, click the **New Dashboard** button.
+1. Nel portale di Azure fare clic sul pulsante **Nuovo dashboard**.
 
-1. In the box saying **My Dashboard**, change the name to **Customer Dashboard**.
+1. Nella casella denominata **My Dashboard** (Dashboard) modificare il nome in **Customer Dashboard**  (Dashboard cliente).
 
-## Add and configure the Clock Tile
+## <a name="add-and-configure-the-clock-tile"></a>Aggiungere e configurare il riquadro dell'orologio
 
-1. In the tile gallery, drag the clock onto the workspace. Place it on the top right of the available space.
+1. Nella raccolta riquadri trascinare l'orologio nell'area di lavoro. Posizionarlo nella parte superiore destra dello spazio disponibile.
 
-1. On the **Edit clock** blade, change the Location to **Pacific Time (US & Canada)**.
+1. Nel pannello **Modifica orologio** modificare la località in **Pacifico (USA e Canada)**.
 
-1. Under **Time format**, click **24 hour**.
+1. In **Formato ora** fare clic su **24 ore**.
 
-1. Click **Done**.
+1. Fare clic su **Fatto**.
 
-1. Repeat the preceding four steps, except select **Eastern Time (US & Canada)**. You should now have two clocks, one showing the time on the West Coast, the other on the East Coast.
+1. Ripetere i quattro passaggi precedenti, ad eccezione della selezione di **Fuso orientale (USA e Canada)**. Dovrebbero essere ora presenti due orologi, uno che indica l'ora della costa occidentale, l'altro quella della costa orientale.
 
-## Resize a tile
+## <a name="resize-a-tile"></a>Ridimensionare un riquadro
 
-1. In the **Tile Gallery** pane, click **All resources**, and then drop the tile onto the top left-hand side of the new dashboard workspace.
+1. Nel riquadro **Raccolta riquadri** fare clic su **Tutte le risorse** e rilasciare il riquadro in alto a sinistra nella nuova area di lavoro del dashboard.
 
-1. Click the tile, right-click the ellipsis, and then click **6x6**.
+1. Fare clic sul riquadro, fare clic con il pulsante destro del mouse sui puntini di sospensione e quindi selezionare **6x6**.
 
-1. Click the gray corner on the bottom right-hand side of the tile, and resize the tile to 3.5 vertically by six horizontally. Note that when you finish resizing, it adjusts to 4x6.
+1. Fare clic sull'angolo grigio nella parte inferiore destra del riquadro e ridimensionare il riquadro su 3,5 in senso verticale e su 6 in senso orizzontale. Si noti che al termine del ridimensionamento, l'impostazione sarà 4x6.
 
-1. In the Tile Gallery, click the **Resource Groups** tile, and drag it onto the workspace. Place it underneath the **All resources** tile.
+1. In Raccolta riquadri fare clic sul riquadro **Gruppi di risorse** e trascinarlo nell'area di lavoro. Inserirlo sotto il riquadro **Tutte le risorse**.
 
-1. In the Tile Gallery, click the **Service Health** tile, and drag it onto the workspace. Place it to the right of the **All resources** tile.
+1. In Raccolta riquadri fare clic sul riquadro **Integrità del servizio** e trascinarlo nell'area di lavoro. Inserirlo a destra del riquadro **Tutte le risorse**.
 
-1. Continue to add the following tiles, rearranging them to fit:
+1. Continuare ad aggiungere i riquadri seguenti, ridisporli per adattarli:
 
-    - Help + Support
-    - Quick Tasks
+    - Guida + supporto
+    - Attività rapide
     - Marketplace
-    - What's New
+    - Novità
 
-1. When you have added these tiles, click **Done customizing**. The **Customer Dashboard** dashboard should appear.
+1. Dopo aver aggiunto questi riquadri, fare clic su **Fatto**. Viene visualizzato il dashboard **Dashboard cliente**.
 
-## Clone a dashboard
+## <a name="clone-a-dashboard"></a>Clonare un dashboard
 
-You now want to create a very similar dashboard for some other customers.
+Ora si vuole creare un dashboard molto simile per altri clienti.
 
-1. Click the **Clone** button.
+1. Fare clic sul pulsante **Clona**.
 
-1. Rename the dashboard from **Clone of Customer Dashboard** to **Azure AD Admin Dashboard**.
+1. Rinominare il dashboard da **Clone of Customer Dashboard** (Clone del dashboard cliente) in **Azure AD Admin Dashboard** (Dashboard di amministrazione di Azure AD).
 
-1. On the **Resource Groups** tile, click the dustbin icon to delete this tile.
+1. Nel riquadro **Gruppi di risorse** fare clic sull'icona della pattumiera per eliminare questo riquadro.
 
-1. From the Tile Gallery, add the following tiles:
+1. Da Raccolta riquadri aggiungere i seguenti riquadri:
 
-    - Organization Identity
-    - Users and Groups
-    - User Activity Summary
-    - Welcome to the Azure AD Admin Center
+    - Identità dell'organizzazione
+    - Utenti e gruppi
+    - User Activity Summary (Riepilogo attività dell'utente)
+    - Welcome to the Azure AD Admin Center (Benvenuti al centro di amministrazione di Azure AD)
 
-1. Reposition the tiles as necessary, and then click **Done customizing**.
+1. Riposizionare i riquadri in base alle esigenze e fare clic su **Fatto**.
 
-## Share a dashboard
+## <a name="share-a-dashboard"></a>Condividere un dashboard
 
-You now want to make this dashboard available to other users. To do this, carry out the following steps:
+Ora si vuole rendere disponibile questo dashboard per altri utenti. Per eseguire questa operazione, seguire la procedura riportata:
 
-1. Ensure that the Azure Active Directory (Azure AD) Admin dashboard is selected, and then click **Share**.
+1. Assicurarsi che il dashboard Azure Active Directory (Azure AD) Admin (Dashboard di amministrazione di Azure AD) sia selezionato e fare clic su **Condividi**.
 
-1. On the **Sharing and access control** blade, ensure that **Publish to the 'dashboards' resource group** is selected.
+1. Nel pannello **Condivisione e controllo dell'accesso** assicurarsi che **Esegue la pubblicazione nel gruppo di risorse "dashboard"** sia selezionato.
 
-1. Set the **Location** to one that is appropriate for your geography. Typically, this value defaults to your nearest data center.
+1. Impostare la **Località** appropriata per l'area geografica. In genere, questo valore viene impostato automaticamente sul centro dati più vicino.
 
-1. Click **Publish**, and then close the **Sharing + access control** blade.
+1. Fare clic su **Pubblica** e chiudere il pannello **Condivisione e controllo di accesso**.
 
-1. Click **Azure AD Admin Dashboard**, and then select **Customer Dashboard**.
+1. Fare clic su **Azure AD Admin Dashboard** (Dashboard di amministrazione di Azure AD) e selezionare **Customer Dashboard** (Dashboard clienti).
 
-    Note that in **All resources**, a Shared dashboard resource has appeared, and that in **Resource groups**, a dashboards resource group has also appeared.
+    In **Tutte le risorse** è presente una risorsa del dashboard condiviso e in **Gruppi di risorse** è presente anche un gruppo di risorse dei dashboard.
 
-1. Repeat steps 1 to 3 to share the Customer Dashboard.
+1. Ripetere i passaggi da 1 a 3 per condividere il Customer Dashboard (Dashboard cliente).
 
-## Edit a dashboard.json file
+## <a name="edit-a-dashboardjson-file"></a>Modificare il file con estensione json di un dashboard
 
-To show how you can download and edit a dashboard file, carry out the following steps:
+Per illustrare il modo in cui è possibile scaricare e modificare un file dashboard, attenersi alla procedura seguente:
 
-1. Click **Download**.
+1. Fare clic su **Scarica**.
 
-1. Open Windows Explorer, and navigate to your Downloads folder.
+1. Aprire Esplora risorse e passare alla cartella Download.
 
-1. Find the *Customer Dashboard.json* file and double-click it.
+1. Trovare il file *Customer Dashboard.json* e fare doppio clic su di esso.
 
-1. In your file editor, look for the text *ClockPart*.
+1. Nell'editor di file cercare il testo *ClockPart*.
 
-1. On the first occurrence of ClockPart, change the previous **rowSpan** value to 1.
+1. Nella prima occorrenza di ClockPart modificare il valore **rowSpan** precedente su 1.
 
-1. On the second occurrence of Clockpart, also change the previous **rowSpan** value to 1.
+1. Anche nella seconda occorrenza di ClockPart modificare il valore **rowSpan** precedente su 1.
 
-1. On the second occurrence of Clockpart, change the Y value from 2 to 1.
+1. Nella seconda occorrenza di Clockpart modificare il valore Y da 2 a 1.
 
-1. Save the *Customer Dashboard.json* file and close your code editor.
+1. Salvare il file *Customer Dashboard.json* e chiudere l'editor di codice.
 
-1. On the Azure dashboard, click **Upload**.
+1. Nel dashboard di Azure fare clic su **Carica**.
 
-1. In the **Open** dialog box, browse to the Downloads folder, and double-click *Customer Dashboard.json*.
+1. Nella finestra di dialogo **Apri** individuare la cartella Download e fare doppio clic su *Customer Dashboard.json*.
 
-    Note that the clocks have resized to one row high, and the bottom clock has moved up one row.
+    Gli orologi si sono ridimensionati in una riga in alto e l'orologio inferiore è stato spostato in alto di una riga.
 
-## Select a shared dashboard
+## <a name="select-a-shared-dashboard"></a>Selezionare un dashboard condiviso
 
-You've realized that you don't like the smaller clocks, and you want to return to the earlier shared version of the Customer Dashboard. You can do that either by editing the file and uploading it again or by accessing the shared version. To do that, carry out the following steps:
+Si è valutato che gli orologi di dimensioni inferiori non sono adatti e si vuole ripristinare la versione precedente condivisa del Customer Dashboard (Dashboard cliente). È possibile farlo modificando il file e caricandolo nuovamente o accedendo alla versione condivisa. Per eseguire questa operazione, seguire questa procedura:
 
-1. Click the down arrow next to **Customer Dashboard**.
+1. Fare clic sulla freccia in giù accanto a **Customer Dashboard** (Dashboard cliente).
 
-1. Click **Browse all dashboards**.
+1. Fare clic su **Esplora tutti i dashboard**.
 
-1. On the **All dashboards** blade, under **TYPE**, select **Shared dashboards**.
+1. Nel pannello **Tutti i dashboard** in **TIPO** selezionare **Dashboard condivisi**.
 
-1. Click **Customer Dashboard**.
+1. Fare clic su **Customer Dashboard** (Dashboard cliente).
 
-1. Close the **All dashboards** blade.
+1. Chiudere il pannello **Tutti i dashboard**.
 
-    Note that the clocks have returned to their original size.
+    Gli orologi sono ritornati alle dimensioni originali.
 
-## Switch to full screen
+## <a name="switch-to-full-screen"></a>Passare alla modalità schermo intero
 
-1. Click the down arrow next to **Customer Dashboard**. 
+1. Fare clic sulla freccia in giù accanto a **Customer Dashboard** (Dashboard cliente). 
 
-    Note that there is another Customer Dashboard, without the shared symbol next to it. Click that version of Customer Dashboard, and the clocks become small again.
+    È presente un altro Customer Dashboard (Dashboard cliente), senza il simbolo condiviso accanto a esso. Fare clic sulla versione del Customer Dashboard (Dashboard cliente) e le dimensioni degli orologi si ridimensionano nuovamente.
 
-1. Switch back to the shared Customer Dashboard.
+1. Tornare al Customer Dashboard (Dashboard cliente) condiviso.
 
-1. Click the **Full Screen** button. 
+1. Fare clic sul pulsante **Schermo intero**. 
 
-    Note that the browser menus and bars have all disappeared.
+    I menu e le barre del browser non vengono più visualizzati.
 
-1. Click the **Exit Full Screen** to return to the standard screen.
+1. Fare clic su **Chiudi la visualizzazione schermo intero** per tornare allo schermo normale.
 
-## Unshare a dashboard
+## <a name="unshare-a-dashboard"></a>Annullare la condivisione del dashboard
 
-If you want to prevent a shared dashboard from being available for selection, you can _unshare_ it. To unshare a dashboard, carry out the following steps:
+Se si vuole impedire che un dashboard condiviso sia disponibile per la selezione, è possibile _annullarne la condivisione_. Per annullare la condivisione di un dashboard, seguire questa procedura:
 
-1. Click the **Unshare** button. The **Sharing + access control** blade appears.
+1. Fare clic sul pulsante **Annulla la condivisione**. Viene visualizzato il pannello **Condivisione + Controllo dell'accesso**.
 
-1. Click the **Unpublish** button.
+1. Fare clic sul pulsante **Annulla pubblicazione**.
 
-1. In the confirmation message box, click **OK**.
+1. Nel messaggio di conferma fare clic su **OK** .
 
-1. Click the down arrow next to **Customer Dashboard**.
+1. Fare clic sulla freccia in giù accanto a **Customer Dashboard** (Dashboard cliente).
 
-1. Click **Browse all dashboards**.
+1. Fare clic su **Esplora tutti i dashboard**.
 
-1. On the **All dashboards** blade, under **TYPE**, select **Shared dashboards**.
+1. Nel pannello **Tutti i dashboard** in **TIPO** selezionare **Dashboard condivisi**.
 
-    Note that **Customer Dashboard** no longer appears in the list of available dashboards.
+    Il **Customer Dashboard** (Dashboard cliente) non viene più visualizzato nell'elenco dei dashboard disponibili.
 
-1. Close the **All dashboards** blade.
+1. Chiudere il pannello **Tutti i dashboard**.
 
-## Delete a dashboard
+## <a name="delete-a-dashboard"></a>Eliminare un dashboard
 
-1. Ensure that the **Azure AD Admin** dashboard is selected.
+1. Assicurarsi che il dashboard **Azure AD Admin** (Dashboard di amministrazione di Azure AD) sia selezionato.
 
-1. Click the **Delete** button.
+1. Fare clic sul pulsante **Elimina**.
 
-1. In the **Confirmation** message box, select the checkbox to confirm that this dashboard will no longer be visible, and then click **OK**.
+1. Nella finestra di messaggio **Conferma** selezionare la casella di controllo per confermare che questo dashboard non sia più visibile e fare clic su **OK**.
 
-## Reset a dashboard
+## <a name="reset-a-dashboard"></a>Reimpostare un dashboard
 
-1. Ensure that **Customer Dashboard** is selected.
+1. Assicurarsi che **Customer Dashboard** (Dashboard cliente) sia selezionato.
 
-1. Click **Edit**.
+1. Fare clic su **Modifica**.
 
-1. Right-click on the workspace, and click **Reset to default state**.
+1. Fare clic con il pulsante destro del mouse sull'area di lavoro e fare clic su **Ripristina valori predefiniti**.
 
-1. In the **Reset dashboard to default state** message box, click **Yes**.
+1. Nella finestra di messaggio **Reset dashboard to default state** (Ripristina lo stato predefinito del dashboard) fare clic su **Sì**.
 
-    Note that the Customer Dashboard has reset to its default tiles.
+    Sono stati ripristinati i riquadri predefiniti del Customer Dashboard (Dashboard cliente).
 
-1. Click **Done customizing**.
+1. Fare clic su **Fatto**.
 
-1. Click your name at the top right of the portal.
+1. Fare clic sul nome in alto a destra nel portale.
 
-1. Click **Sign out**.
+1. Fare clic su **Esci**.
 
-1. Close your browser.
+1. Chiudere il browser.
 
-## Summary
+## <a name="summary"></a>Riepilogo
 
-You have now created and edited dashboards, shared them, altered them as **.JSON** files, unshared and finally, reset them to the default state. You should now be able to see what powerful tools dashboards can be and how you can use them to create efficient interfaces for differing roles within an organization.
+In questo esercizio sono stati creati e modificati dashboard, sono stati condivisi, alterati come file con estensione **json**, è stata annullata la relativa condivisione e infine è stato ripristinato lo stato predefinito. A questo punto è facile comprendere quali potenti strumenti siano i dashboard e come è possibile usarli per creare interfacce efficaci per i diversi ruoli all'interno dell'organizzazione.
