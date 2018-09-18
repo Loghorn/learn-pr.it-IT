@@ -2,8 +2,4 @@ Una funzione di Azure non funzionerà finché un elemento esplicito non indicher
 
 I trigger timer sono molto utili quando è necessario eseguire una funzione durante un arco di tempo sempre costante. I trigger HTTP consentono di eseguire la logica quando si ricevono i dati da un'origine esterna. I trigger dei blob consentono di rispondere ai dati archiviati o aggiornati nel cloud.
 
-## <a name="cleanup"></a>Pulizia
-
-Per eliminare completamente la funzione, è possibile eliminare il gruppo di risorse o la funzione stessa dalla barra degli strumenti.
-
-![Screenshot del portale di Azure che mostra una barra degli strumenti App per le funzioni con il pulsante Elimina evidenziato.](../media/6-delete-function.png)
+[!include[](../../../includes/azure-sandbox-cleanup.md)]

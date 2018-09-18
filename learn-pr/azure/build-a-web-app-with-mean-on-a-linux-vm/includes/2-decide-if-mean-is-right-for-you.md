@@ -6,7 +6,7 @@ Tutti i componenti dello stack MEAN sono affidabili, ben noti e open source, ma 
 
 Uno dei motivi principali per scegliere lo stack MEAN dipende dalla propria conoscenza di JavaScript. Tutti i singoli componenti sono stati sviluppati con JavaScript, dalle attività DevOps del runtime di hosting Web e di configurazione dei database alle attività di sviluppo del codice delle applicazioni Web e degli script lato client.
 
-Inoltre, tuti i componenti dello stack MEAN sono attualmente ben noti. La documentazione e le esercitazioni aggiornate per lo sviluppo di MongoDB, Express, AngularJS e Node.js sono facilmente reperibili. E i componenti dello stack MEAN sono compatibili con i sistemi operativi moderni come Windows, macOS e Linux. 
+Inoltre, tuti i componenti dello stack MEAN sono attualmente ben noti. La documentazione e le esercitazioni aggiornate per lo sviluppo di MongoDB, Express, AngularJS e Node.js sono facilmente reperibili. E i componenti dello stack MEAN sono compatibili con i sistemi operativi moderni come Windows, macOS e Linux.
 
 ## <a name="why-might-mean-not-be-right-for-me"></a>Perché MEAN potrebbe non essere adatto?
 
