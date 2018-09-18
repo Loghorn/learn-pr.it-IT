@@ -9,12 +9,12 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: b1f1fd5afaa153340eee740bd0071fc8295c63e6
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: 2de603cd1ad3f12b84e27c922d0f04aab19fce07
+  ms.sourcegitcommit: b7b4489eb7352bcc722ed6c2ff27b70dd212e9c5
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44245716"
+  ms.lasthandoff: 09/14/2018
+  ms.locfileid: "45621835"
 durationInMinutes: 10
 content: >
   [!include[](includes/3-design-for-security.md)]
@@ -28,24 +28,24 @@ quiz:
       incorrectExplanation: Benché sia importante applicare misure di protezione per la sicurezza appropriate a questi dati, questa non è l'unica scelta corretta.
     - content: Dati finanziari a supporto delle operazioni aziendali
       isCorrect: false
-      incorrectExplanation: Benché sia importante applicare misure di protezione per la sicurezza appropriate a questi dati, questa non è l'unica scelta corretta.
-    - content: Dati contenenti proprietà intellettuale
+      incorrectExplanation: Benché sia importante applicare a questi dati misure di protezione per la sicurezza appropriate, questa non è l'unica scelta corretta.
+    - content: Proprietà intellettuale
       isCorrect: false
-      incorrectExplanation: Benché sia importante applicare misure di protezione per la sicurezza appropriate a questi dati, questa non è l'unica scelta corretta.
+      incorrectExplanation: Benché sia importante applicare a questi dati misure di protezione per la sicurezza appropriate, questa non è l'unica scelta corretta.
     - content: A tutti i tipi di dati indicati sopra può essere necessario applicare misure di protezione per la sicurezza
       isCorrect: true
       correctExplanation: Tutti i tipi di dati indicati sopra possono meritare misure di protezione per la sicurezza aggiuntive.
-  - content: Quale tra i seguenti è un esempio di attacco che è possibile riscontrare nel livello perimetrale?
+  - content: Quale tra i seguenti è un esempio di attacco che è possibile riscontrare nel livello criteri e accesso?
     choices:
     - content: Credenziali esposte pubblicate online
-      isCorrect: false
-      incorrectExplanation: Le credenziali esposte pongono un rischio elevato per un'organizzazione, ma non costituiscono un attacco del livello perimetrale.
-    - content: Attacco flood SYN
       isCorrect: true
-      correctExplanation: Gli attacchi flood SYN sono un tipo di attacco Denial of Service osservato comunemente nella rete perimetrale.
-    - content: Progettazione di ingressi per penetrare nel data center
+      correctExplanation: Le credenziali esposte rappresentano un rischio importante per un'organizzazione e sono un attacco del livello criteri e accesso.
+    - content: Attacco flood SYN
       isCorrect: false
-      incorrectExplanation: La progettazione di ingressi è un attacco del livello fisico.
-    - content: Ransomware per la crittografia dei dischi di una macchina virtuale
+      incorrectExplanation: Gli attacchi flood SYN sono attacchi di tipo Denial of Service osservati comunemente nel perimetro della rete.
+    - content: Seguire un dipendente all'interno di un data center senza presentare credenziali
+      isCorrect: false
+      incorrectExplanation: Il fatto di seguire un dipendente all'interno di un data Center è un attacco di livello fisico.
+    - content: Ransomware che esegue la crittografia dei dischi di una macchina virtuale
       isCorrect: false
       incorrectExplanation: Gli attacchi tramite ransomware sono attacchi del livello di calcolo/della macchina virtuale.

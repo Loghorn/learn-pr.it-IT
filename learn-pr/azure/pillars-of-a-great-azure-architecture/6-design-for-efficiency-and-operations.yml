@@ -9,32 +9,29 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 0e23092765f5c8509c27ac2f8be67d6a57961520
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: b91e5a702d1b8de587d04a35546fb6717ee672a6
+  ms.sourcegitcommit: b7b4489eb7352bcc722ed6c2ff27b70dd212e9c5
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44239528"
+  ms.lasthandoff: 09/14/2018
+  ms.locfileid: "45620917"
 durationInMinutes: 10
 content: >
   [!include[](includes/6-design-for-efficiency-and-operations.md)]
 quiz:
   title: Verifica delle conoscenze - Progettare per l'efficienza e le operazioni
   questions:
-  - content: Quali sono i vantaggi di un modello di costo con pagamento in base al consumo?
+  - content: Si supponga di aver spostato di recente l'applicazione nel cloud e di ricevere una fattura mensile maggiore del previsto. Il livello di utilizzo della macchina virtuale è abbastanza elevato da sconsigliare a priori il downsizing. Quale potrebbe essere un passo successivo ottimale per rilevare le inefficienze?
     choices:
-    - content: Completa trasparenza sui costi delle risorse
+    - content: Attendere un mese e controllare di nuovo la fattura
       isCorrect: false
-      incorrectExplanation: È uno dei vantaggi offerti da un modello di costo con pagamento in base al consumo, ma non è l'unica scelta corretta.
-    - content: Flessibilità che consente di adattare le risorse e i costi alle richieste
+      incorrectExplanation: Questo approccio aiuterà a localizzare i costi ma non a determinare il livello di efficienza dei componenti del sistema.
+    - content: Aumentare la quantità di test dell'applicazione prima di ogni rilascio
       isCorrect: false
-      incorrectExplanation: È uno dei vantaggi offerti da un modello di costo con pagamento in base al consumo, ma non è l'unica scelta corretta.
-    - content: Minori rischi durante la valutazione di nuovi strumenti e tecnologie
-      isCorrect: false
-      incorrectExplanation: È uno dei vantaggi offerti da un modello di costo con pagamento in base al consumo, ma non è l'unica scelta corretta.
-    - content: Tutte le voci elencate sopra sono vantaggi offerti da un modello di costo con pagamento in base al consumo
+      incorrectExplanation: Questo approccio può migliorare la qualità dell'applicazione, ma in genere non consente di identificare le inefficienze dell'infrastruttura.
+    - content: Aggiungere monitoraggio e strumentazione
       isCorrect: true
-      correctExplanation: Tutte le voci elencate sopra sono vantaggi offerti da un modello di costo con pagamento in base al consumo
+      correctExplanation: Il monitoraggio continuo produrrà i dati necessari per determinare i risparmi sui costi. Ad esempio, è possibile che si rilevi che la domanda è estremamente variabile e che più macchine virtuali di piccole dimensioni con scalabilità automatica possono costare meno della grande macchina virtuale singola attualmente in uso.
   - content: Quale dei seguenti è un esempio di miglioramento dell'efficienza operativa?
     choices:
     - content: Automazione della distribuzione dell'infrastruttura
@@ -42,10 +39,10 @@ quiz:
       correctExplanation: L'automazione della distribuzione dell'infrastruttura è un ottimo esempio di miglioramento dell'efficienza operativa.
     - content: Spostamento dei servizi da PaaS a IaaS
       isCorrect: false
-      incorrectExplanation: Lo spostamento dei servizi da PaaS a IaaS può essere visto come un passo indietro nel miglioramento dell'efficienza operativa, in quanto i servizi PaaS generalmente contribuiscono a ridurre i costi operativi.
+      incorrectExplanation: Lo spostamento dei servizi da PaaS a IaaS è di fatto un passo indietro nel miglioramento dell'efficienza operativa, in quanto i servizi PaaS generalmente hanno costi operativi inferiori.
     - content: Documentazione dei passaggi manuali per la distribuzione dell'infrastruttura
       isCorrect: false
       incorrectExplanation: La documentazione è importante per qualsiasi architettura, ma il miglioramento dell'efficienza operativa si ottiene automatizzando le attività manuali e non semplicemente documentandole.
     - content: Implementazione di più sistemi di registrazione
       isCorrect: false
-      incorrectExplanation: L'implementazione di più sistemi di registrazione aumenta il sovraccarico operativo e riduce la capacità di correlare eventi e metriche tra i vari sistemi di registrazione. La centralizzazione su un unico sistema di registrazione può invece migliorare l'efficienza operativa.
+      incorrectExplanation: L'implementazione di più sistemi di registrazione aumenta il sovraccarico operativo e riduce la capacità di correlare eventi e metriche tra i vari sistemi di registrazione. La centralizzazione in un unico sistema di registrazione può invece migliorare l'efficienza operativa.

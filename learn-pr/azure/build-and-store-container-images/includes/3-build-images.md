@@ -10,11 +10,15 @@ Per fornire le istruzioni di compilazione viene usato un Dockerfile standard. Az
 
 Per l'esempio verrà usato un nuovo Dockerfile. 
 
-Il primo passaggio consiste nel creare un nuovo file denominato `Dockerfile`. È possibile usare qualsiasi editor di testo per modificare il file. Per questo esempio verrà usato Visual Studio Code.
+<!-- Activate the sandbox -->
+[!include[](../../../includes/azure-sandbox-activate.md)]
+
+Il primo passaggio consiste nel creare un nuovo file denominato `Dockerfile`. È possibile usare qualsiasi editor di testo per modificare il file. Per questo esempio si userà l'editor di Cloud Shell. Immettere il comando
 
 ```bash
-code Dockerfile
+code
 ```
+nella finestra di Cloud Shell per aprire l'editor. 
 
 Copiare i contenuti seguenti nel nuovo Dockerfile. Assicurarsi di salvare il file. 
 
@@ -26,6 +30,8 @@ RUN     npm install
 EXPOSE  80
 CMD     ["node", "server.js"]
 ```
+
+Per salvarlo, usare la combinazione di tasti `ctrl+s`. Quando viene richiesto, assegnare al file il nome `Dockerfile`.
 
 Questa configurazione aggiunge un'applicazione Node.js all'immagine `node:9-alpine`. Configura quindi il contenitore in modo che gestisca l'applicazione sulla porta 80 tramite l'istruzione *EXPOSE*.
 

@@ -1,26 +1,21 @@
 In questa unità si creerà un registro contenitori di Azure usando l'interfaccia della riga di comando di Azure.
 
+<!-- Activate the sandbox -->
+[!include[](../../../includes/azure-sandbox-activate.md)]
+ 
 ## <a name="create-an-azure-container-registry"></a>Creare un registro contenitori di Azure
 
-Prima di creare il registro contenitori di Azure, è necessario un *gruppo di risorse* in cui eseguirne la distribuzione. Un gruppo di risorse è una raccolta logica in cui vengono distribuite e gestite tutte le risorse di Azure.
+Si lavorerà nell'ambiente sandbox gratuito, pertanto non occorre creare un gruppo di risorse. Creare un registro contenitori di Azure con il comando `az acr create`. Il nome del registro contenitori deve essere univoco in Azure e contenere tra 5 e 50 caratteri alfanumerici. Sostituire `<acrName>` con un nome univoco per il registro.
 
-Creare un gruppo di risorse con il comando `az group create`. Nell'esempio seguente viene creato un gruppo di risorse denominato *myResourceGroup* nell'area *eastus*:
-
-```azurecli
-az group create --name myResourceGroup --location eastus
-```
-
-Dopo aver creato il gruppo di risorse, creare un registro contenitori di Azure con il comando `az acr create`. Il nome del registro contenitori deve essere univoco in Azure e contenere da tra 5 e 50 caratteri alfanumerici. Sostituire `<acrName>` con un nome univoco per il registro.
-
-Per questo esempio viene distribuito uno SKU del registro Premium. Lo SKU Premium è obbligatorio per la replica geografica. Per altre informazioni sugli SKU del Registro contenitori di Azure, vedere [SKU del Registro contenitori di Azure](https://docs.microsoft.com/azure/container-registry/container-registry-skus)
+Per questo esempio viene distribuito uno SKU del registro Premium. Lo SKU Premium è obbligatorio per la replica geografica. Digitare questo comando nell'editor di Cloud Shell.
 
 ```azurecli
-az acr create --resource-group myResourceGroup --name <acrName> --sku Premium
+az acr create --resource-group <rgn>[Sandbox resource group name]</rgn> --name <acrName> --sku Premium
 ```
 
 Di seguito è riportato l'output di esempio per un nuovo registro contenitori di Azure:
 
-```console
+```output
 {
   "adminUserEnabled": false,
   "creationDate": "2018-08-15T19:19:07.042178+00:00",

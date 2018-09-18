@@ -1,8 +1,6 @@
-Il cloud computing è il noleggio di risorse come ad esempio lo spazio di archiviazione o i cicli di CPU nei computer di un'altra società, pagando solo per le risorse usate. La società che eroga questi servizi viene definita provider di servizi cloud come ad esempio Microsoft, Amazon e Google.
+Il cloud computing è il noleggio di risorse come ad esempio lo spazio di archiviazione o i cicli di CPU nei computer di un'altra società, pagando solo per le risorse usate. La società che eroga questi servizi viene definita provider di servizi cloud, come ad esempio Microsoft, Amazon e Google.
 
-![Immagine dei provider di servizi cloud](../media/2-cloud-providers.png)
-
-Il provider di servizi cloud è responsabile dell'hardware fisico necessario per eseguire il lavoro e per mantenerlo aggiornato. In genere, i servizi di calcolo offerti variano in base al provider di servizi cloud. Tuttavia, in genere includono:
+Il provider di servizi cloud è responsabile dell'hardware fisico necessario per eseguire il lavoro e dell'aggiornamento di tale hardware. In genere, i servizi di calcolo offerti variano in base al provider di servizi cloud. Tuttavia, in genere includono:
 
 - Potenza di calcolo come ad esempio le macchine virtuali Windows e Linux
 - Archiviazione come ad esempio l'archiviazione di oggetti
