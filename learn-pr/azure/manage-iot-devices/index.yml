@@ -1,0 +1,36 @@
+### YamlMime:Module
+uid: learn.manage-iot-devices
+metadata:
+  title: Informazioni su come gestire i dispositivi IoT come amministratore IT
+  description: Con l'aumento dell'adozione delle tecnologie IoT, ecco gli strumenti che Microsoft offre ai team delle operazioni per distribuire, gestire e proteggere una vasta gamma di dispositivi.
+  author: lnyswonger
+  ms.date: 09/24/2018
+  ms.author: luken
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 56a1028a077962887b146684c62319921269b401
+  ms.sourcegitcommit: 46c8d35790efaafa6a4637f7688482e3a754d7f3
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44258163"
+title: Informazioni su come gestire i dispositivi IoT come amministratore IT
+summary: Con l'aumento dell'adozione delle tecnologie IoT, ecco gli strumenti che Microsoft offre ai team delle operazioni per distribuire, gestire e proteggere una vasta gamma di dispositivi.
+abstract: >
+  In questo modulo verrà descritto come:
+   - Da definire
+   - Da definire
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- beginner
+roles:
+- administrator
+products:
+- azure
+units:
+- learn.manage-iot-devices.1-intro-to-ops-in-iot
+- learn.manage-iot-devices.2-raspberry-pi-emulator
+- learn.manage-iot-devices.3-connect-device
+- learn.manage-iot-devices.4-provision-iot-device
+- learn.manage-iot-devices.5-summary
+achievement: learn.manage-iot-devices.badge

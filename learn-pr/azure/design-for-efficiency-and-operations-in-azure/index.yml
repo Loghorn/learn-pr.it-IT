@@ -1,0 +1,43 @@
+### YamlMime:Module
+uid: learn.design-for-efficiency-and-operations
+metadata:
+  title: Progettare per l'efficienza e le operazioni in Azure
+  description: Quanto è efficiente l'ambiente cloud? Si vuole ottimizzare l'uso della spesa per il cloud e ridurre al minimo gli sprechi? Se si verifica un evento nell'ambiente, si hanno a disposizione visibilità e avvisi, per poter intervenire? Quanto è avanzata l'automazione e quante operazioni manuali vengono eseguite dall'organizzazione? In questo modulo, che illustra i principi di progettazione per l'efficienza e le operazioni, si risponderà a tutte queste domande.
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 85f95b7dcf0cbb4ace35a9b912b8ea243c8dc1df
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44233357"
+title: Progettare per l'efficienza e le operazioni nell'infrastruttura cloud
+summary: Quanto è efficiente l'ambiente cloud? Si vuole ottimizzare l'uso della spesa per il cloud e ridurre al minimo gli sprechi? Se si verifica un evento nell'ambiente, si hanno a disposizione visibilità e avvisi, per poter intervenire? Quanto è avanzata l'automazione e quante operazioni manuali vengono eseguite dall'organizzazione? In questo modulo, che illustra i principi di progettazione per l'efficienza e le operazioni, si risponderà a tutte queste domande.
+abstract: >
+  In questo modulo verrà descritto come:
+    - Ottimizzare l'efficienza dell'ambiente cloud
+    - Usare il monitoraggio e l'analisi per ottenere informazioni operative
+    - Usare l'automazione per ridurre il lavoro richiesto e gli errori
+prerequisites: Nessuno
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- intermediate
+roles:
+- solution-architect
+products:
+- azure
+- azure-cost-management
+- azure-advisor
+- azure-monitor
+- azure-application-insights
+- azure-log-analytics
+units:
+- learn.design-for-efficiency-and-operations.1-introduction
+- learn.design-for-efficiency-and-operations.2-maximize-efficiency-of-cloud-spend
+- learn.design-for-efficiency-and-operations.3-use-monitoring-and-analytics-to-gain-operational-insights
+- learn.design-for-efficiency-and-operations.4-use-automation-to-reduce-effort-and-error
+- learn.design-for-efficiency-and-operations.5-summary
+achievement: learn.design-for-efficiency-and-operations.badge

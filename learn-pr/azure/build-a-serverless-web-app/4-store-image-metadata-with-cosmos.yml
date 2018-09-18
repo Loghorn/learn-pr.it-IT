@@ -1,15 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.build-a-serverless-web-app.4-store-image-metadata-with-cosmos
-title: <span data-ttu-id="8870e-101">Archiviare i metadati delle immagini con Azure Cosmos DB</span><span class="sxs-lookup"><span data-stu-id="8870e-101">Store image metadata with Azure Cosmos DB</span></span>
+title: <span data-ttu-id="8b8f2-101">Archiviare i metadati delle immagini con Azure Cosmos DB</span><span class="sxs-lookup"><span data-stu-id="8b8f2-101">Store image metadata with Azure Cosmos DB</span></span>
 metadata:
-  title: <span data-ttu-id="8870e-102">Archiviare i metadati delle immagini con Azure Cosmos DB</span><span class="sxs-lookup"><span data-stu-id="8870e-102">Store image metadata with Azure Cosmos DB</span></span>
-  description: <span data-ttu-id="8870e-103">Archiviare i metadati delle immagini con Azure Cosmos DB.</span><span class="sxs-lookup"><span data-stu-id="8870e-103">Store image metadata with Azure Cosmos DB.</span></span>
-  ms.openlocfilehash: c69988d3b56f260a65ad89ffa498fa0b64b574f2
-  ms.sourcegitcommit: b97ed72bd7e3fb77b49de71e8ef35d3f70dfd636
+  title: <span data-ttu-id="8b8f2-102">Archiviare i metadati delle immagini con Azure Cosmos DB</span><span class="sxs-lookup"><span data-stu-id="8b8f2-102">Store image metadata with Azure Cosmos DB</span></span>
+  description: <span data-ttu-id="8b8f2-103">Archiviare i metadati delle immagini con Azure Cosmos DB</span><span class="sxs-lookup"><span data-stu-id="8b8f2-103">Store image metadata with Azure Cosmos DB</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 527cba9fe056686cf98f36dc8c9c901c2600a1bc
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/05/2018
-  ms.locfileid: "43790982"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44239749"
 durationInMinutes: 11
 interactive: bash-editor
 content: '[!include[](includes/4-store-image-metadata-with-cosmos.md)]'

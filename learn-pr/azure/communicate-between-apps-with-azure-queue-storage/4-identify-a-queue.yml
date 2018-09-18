@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.communicate-between-applications-with-azure-queue-storage.4-identify-a-queue
+title: <span data-ttu-id="94900-101">Identificare una coda - Parte 1</span><span class="sxs-lookup"><span data-stu-id="94900-101">Identify a queue - Part 1</span></span>
+metadata:
+  title: <span data-ttu-id="94900-102">Identificare una coda - Parte 2</span><span class="sxs-lookup"><span data-stu-id="94900-102">Identify a queue - Part 2</span></span>
+  description: <span data-ttu-id="94900-103">Identificare una coda</span><span class="sxs-lookup"><span data-stu-id="94900-103">Identify a queue</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 46843c302b1b10e07d544c4c2c195fc2552414e1
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44237114"
+durationInMinutes: 5
+content: '[!include[](includes/4-identify-a-queue.md)]'

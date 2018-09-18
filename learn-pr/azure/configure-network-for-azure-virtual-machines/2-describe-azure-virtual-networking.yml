@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.configure-the-network-for-your-virtual-machines.2-describe-azure-virtual-networking
+title: <span data-ttu-id="3fb96-101">Descrivere le reti virtuali di Azure</span><span class="sxs-lookup"><span data-stu-id="3fb96-101">Describe Azure virtual networking</span></span>
+metadata:
+  title: <span data-ttu-id="3fb96-102">Descrivere le reti virtuali di Azure</span><span class="sxs-lookup"><span data-stu-id="3fb96-102">Describe Azure virtual networking</span></span>
+  description: <span data-ttu-id="3fb96-103">Descrivere le reti virtuali di Azure</span><span class="sxs-lookup"><span data-stu-id="3fb96-103">Describe Azure virtual networking</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 0a3aca3b7659f7cc7bf8a906c6ac58ee0f45b2f1
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44233238"
+durationInMinutes: 10
+content: '[!include[](includes/2-describe-azure-virtual-networking.md)]'

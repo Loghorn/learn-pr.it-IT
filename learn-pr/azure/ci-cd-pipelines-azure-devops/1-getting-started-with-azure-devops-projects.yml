@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.ci-cd-pipelines-azure-devops.1-getting-started-with-azure-devops-projects
+title: <span data-ttu-id="29b67-101">Creare un progetto Azure DevOps</span><span class="sxs-lookup"><span data-stu-id="29b67-101">Create an Azure DevOps project</span></span>
+metadata:
+  title: <span data-ttu-id="29b67-102">Creare un progetto Azure DevOps</span><span class="sxs-lookup"><span data-stu-id="29b67-102">Create an Azure DevOps project</span></span>
+  description: <span data-ttu-id="29b67-103">Creare un progetto Azure DevOps usando il linguaggio preferito</span><span class="sxs-lookup"><span data-stu-id="29b67-103">Create an Azure DevOps project in the language of your choice</span></span>
+  ms.openlocfilehash: ffd5a440a3162b0a95c722f97c6e7947d6cb3fc1
+  ms.sourcegitcommit: 4d2d6d8c52fa24ae1c5c06cf4cb3afa09d8c8363
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44256055"
+durationInMinutes: 20
+content: '[!include[](includes/1-getting-started-with-azure-devops-projects.md)]'

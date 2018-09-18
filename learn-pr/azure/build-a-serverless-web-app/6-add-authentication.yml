@@ -1,15 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.build-a-serverless-web-app.6-add-authentication
-title: <span data-ttu-id="c0d00-101">Aggiungere l'autenticazione</span><span class="sxs-lookup"><span data-stu-id="c0d00-101">Add authentication</span></span>
+title: <span data-ttu-id="dc5d7-101">Aggiungere l'autenticazione</span><span class="sxs-lookup"><span data-stu-id="dc5d7-101">Add authentication</span></span>
 metadata:
-  title: <span data-ttu-id="c0d00-102">Aggiungere l'autenticazione</span><span class="sxs-lookup"><span data-stu-id="c0d00-102">Add authentication</span></span>
-  description: <span data-ttu-id="c0d00-103">Aggiungere l'autenticazione.</span><span class="sxs-lookup"><span data-stu-id="c0d00-103">Add authentication.</span></span>
-  ms.openlocfilehash: ebcd5728f6df37347f072f652abf801cf2962f4e
-  ms.sourcegitcommit: b97ed72bd7e3fb77b49de71e8ef35d3f70dfd636
+  title: <span data-ttu-id="dc5d7-102">Aggiungere l'autenticazione</span><span class="sxs-lookup"><span data-stu-id="dc5d7-102">Add authentication</span></span>
+  description: <span data-ttu-id="dc5d7-103">Aggiungere l'autenticazione</span><span class="sxs-lookup"><span data-stu-id="dc5d7-103">Add authentication</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 61441811fa207ba1392581e11222702b4cde2447
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/05/2018
-  ms.locfileid: "43790659"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44239766"
 durationInMinutes: 8
 interactive: bash-editor
 content: '[!include[](includes/6-add-authentication.md)]'

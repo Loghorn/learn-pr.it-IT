@@ -1,0 +1,71 @@
+### YamlMime:ModuleUnit
+uid: learn.monitor-manage-device-with-iotcentral.6-knowledge-check
+metadata:
+  title: <span data-ttu-id="d5d67-101">Verifica delle conoscenze</span><span class="sxs-lookup"><span data-stu-id="d5d67-101">Knowledge check</span></span>
+  description: <span data-ttu-id="d5d67-102">In questa sezione vengono verificate le conoscenze relative all'esercitazione su Azure IoT Central</span><span class="sxs-lookup"><span data-stu-id="d5d67-102">This is a knowledge check of the Azure IoT Central tutorial</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 5ce0369f1953aa5cde23ae268c69653acff17acf
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44232813"
+title: <span data-ttu-id="d5d67-103">Verifica delle conoscenze per l'esercitazione su Azure IoT Central</span><span class="sxs-lookup"><span data-stu-id="d5d67-103">Knowledge check of the Azure IoT Central tutorial</span></span>
+durationInMinutes: 11
+content: >
+  [!include[](includes/6-knowledge-check.md)]
+quiz:
+  title: <span data-ttu-id="d5d67-104">Verifica delle conoscenze per l'esercitazione su Azure IoT Central</span><span class="sxs-lookup"><span data-stu-id="d5d67-104">Knowledge check for the Azure IoT Central tutorial</span></span>
+  questions:
+  - content: <span data-ttu-id="d5d67-105">Dove si definisce la telemetria in IoT Central?</span><span class="sxs-lookup"><span data-stu-id="d5d67-105">Where do you define telemetry in IoT Central?</span></span>
+    choices:
+    - content: <span data-ttu-id="d5d67-106">Impostazioni</span><span class="sxs-lookup"><span data-stu-id="d5d67-106">Settings</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="d5d67-107">Proprietà</span><span class="sxs-lookup"><span data-stu-id="d5d67-107">Properties</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="d5d67-108">Misure</span><span class="sxs-lookup"><span data-stu-id="d5d67-108">Measurements</span></span>
+      isCorrect: true
+    - content: <span data-ttu-id="d5d67-109">Dashboard</span><span class="sxs-lookup"><span data-stu-id="d5d67-109">Dashboard</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="d5d67-110">Regole</span><span class="sxs-lookup"><span data-stu-id="d5d67-110">Rules</span></span>
+      isCorrect: false
+  - content: <span data-ttu-id="d5d67-111">Quali sono le azioni disponibili quando si configurano le regole?</span><span class="sxs-lookup"><span data-stu-id="d5d67-111">What are the actions available when configuring rules?</span></span>
+    choices:
+    - content: <span data-ttu-id="d5d67-112">Posta elettronica</span><span class="sxs-lookup"><span data-stu-id="d5d67-112">Email</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="d5d67-113">Microsoft Flow</span><span class="sxs-lookup"><span data-stu-id="d5d67-113">Microsoft Flow</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="d5d67-114">Webhook</span><span class="sxs-lookup"><span data-stu-id="d5d67-114">Webhook</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="d5d67-115">Tutte le precedenti</span><span class="sxs-lookup"><span data-stu-id="d5d67-115">All of the above</span></span>
+      isCorrect: true
+    - content: <span data-ttu-id="d5d67-116">Nessuna delle opzioni precedenti</span><span class="sxs-lookup"><span data-stu-id="d5d67-116">None of the above</span></span>
+      isCorrect: false
+  - content: <span data-ttu-id="d5d67-117">Dove si aggiunge il firmware del dispositivo?</span><span class="sxs-lookup"><span data-stu-id="d5d67-117">Where do you add the firmware of your device?</span></span>
+    choices:
+    - content: <span data-ttu-id="d5d67-118">Misure</span><span class="sxs-lookup"><span data-stu-id="d5d67-118">Measurements</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="d5d67-119">Impostazioni</span><span class="sxs-lookup"><span data-stu-id="d5d67-119">Settings</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="d5d67-120">Proprietà</span><span class="sxs-lookup"><span data-stu-id="d5d67-120">Properties</span></span>
+      isCorrect: true
+    - content: <span data-ttu-id="d5d67-121">Regole</span><span class="sxs-lookup"><span data-stu-id="d5d67-121">Rules</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="d5d67-122">Dashboard</span><span class="sxs-lookup"><span data-stu-id="d5d67-122">Dashboard</span></span>
+      isCorrect: false
+  - content: <span data-ttu-id="d5d67-123">Come si ottiene la stringa di connessione per connettere il dispositivo a IoT Central?</span><span class="sxs-lookup"><span data-stu-id="d5d67-123">How do you obtain the connection string to connect your device to IoT Central?</span></span>
+    choices:
+    - content: <span data-ttu-id="d5d67-124">Aggiungendo un dispositivo in IoT Central</span><span class="sxs-lookup"><span data-stu-id="d5d67-124">By adding a device in IoT Central</span></span>
+      isCorrect: true
+    - content: <span data-ttu-id="d5d67-125">Fornendo l'indirizzo MAC del firmware</span><span class="sxs-lookup"><span data-stu-id="d5d67-125">By providing the firmware MAC address</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="d5d67-126">Personalizzandola e registrandola con IoT Central</span><span class="sxs-lookup"><span data-stu-id="d5d67-126">Customizing it on your own and registering it with IoT Central</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="d5d67-127">Tutte le precedenti</span><span class="sxs-lookup"><span data-stu-id="d5d67-127">All of the above</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="d5d67-128">Nessuna delle opzioni precedenti</span><span class="sxs-lookup"><span data-stu-id="d5d67-128">None of the above</span></span>
+      isCorrect: false

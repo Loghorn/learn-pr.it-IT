@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.ci-cd-pipelines-azure-devops.3-customizing-your-ci-cd-pipelines
+title: <span data-ttu-id="71bcd-101">Personalizzare le pipeline CI/CD</span><span class="sxs-lookup"><span data-stu-id="71bcd-101">Customize your CI/CD pipelines</span></span>
+metadata:
+  title: <span data-ttu-id="71bcd-102">Personalizzare le pipeline CI/CD</span><span class="sxs-lookup"><span data-stu-id="71bcd-102">Customize your CI/CD pipelines</span></span>
+  description: <span data-ttu-id="71bcd-103">Modificare le pipeline CI/CD predefinite da un progetto Azure DevOps per creare un'esperienza di pipeline CI/CD personalizzata.</span><span class="sxs-lookup"><span data-stu-id="71bcd-103">Modify the out of the box CI/CD pipelines from an Azure DevOps project to create a customized CI/CD pipeline experience.</span></span>
+  ms.openlocfilehash: 8585e0fcd84c1d0a7e7c097e9192d33c9ca3eb42
+  ms.sourcegitcommit: 4d2d6d8c52fa24ae1c5c06cf4cb3afa09d8c8363
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44256231"
+durationInMinutes: 10
+content: '[!include[](includes/3-customizing-your-ci-cd-pipelines.md)]'

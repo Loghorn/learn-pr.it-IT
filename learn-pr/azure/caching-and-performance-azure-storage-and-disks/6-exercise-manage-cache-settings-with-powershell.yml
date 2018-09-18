@@ -1,19 +1,21 @@
 ### YamlMime:ModuleUnit
 uid: learn.caching-and-performance-azure-storage-and-disks.6-exercise-manage-cache-settings-with-powershell
-title: <span data-ttu-id="df26a-101">Esercizio - Gestire le impostazioni della cache con PowerShell</span><span class="sxs-lookup"><span data-stu-id="df26a-101">Exercise - Manage cache settings with PowerShell</span></span>
+title: <span data-ttu-id="e06ac-101">Esercizio - Gestire le impostazioni della cache con PowerShell</span><span class="sxs-lookup"><span data-stu-id="e06ac-101">Exercise - Manage cache settings with PowerShell</span></span>
 metadata:
-  title: <span data-ttu-id="df26a-102">Esercizio - Gestire le impostazioni della cache con PowerShell</span><span class="sxs-lookup"><span data-stu-id="df26a-102">Exercise - Manage cache settings with PowerShell</span></span>
-  description: <span data-ttu-id="df26a-103">Esercizio - Gestire le impostazioni della cache con PowerShell</span><span class="sxs-lookup"><span data-stu-id="df26a-103">Exercise - Manage cache settings with PowerShell</span></span>
+  title: <span data-ttu-id="e06ac-102">Esercizio - Gestire le impostazioni della cache con PowerShell</span><span class="sxs-lookup"><span data-stu-id="e06ac-102">Exercise - Manage cache settings with PowerShell</span></span>
+  description: <span data-ttu-id="e06ac-103">Esercizio - Gestire le impostazioni della cache con PowerShell</span><span class="sxs-lookup"><span data-stu-id="e06ac-103">Exercise - Manage cache settings with PowerShell</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 9ef6bdfc2fd168245857ba74e86667e790bb4e0b
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: 7bb787e2ea32d2ccc5a912c10d2a7c348b656633
+  ms.sourcegitcommit: b6f5aa15bae13cb0f53667fba1d404b7bec76f67
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44231232"
+  ms.lasthandoff: 09/17/2018
+  ms.locfileid: "45769772"
+interactive: powershell
+azureSandbox: true
 durationInMinutes: 10
 content: '[!include[](includes/6-exercise-manage-cache-settings-with-powershell.md)]'

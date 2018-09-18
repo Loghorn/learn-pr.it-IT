@@ -1,0 +1,51 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-security.3-identity-management
+title: <span data-ttu-id="a2eb3-101">Gestione delle identità</span><span class="sxs-lookup"><span data-stu-id="a2eb3-101">Identity management</span></span>
+metadata:
+  title: <span data-ttu-id="a2eb3-102">Gestione delle identità</span><span class="sxs-lookup"><span data-stu-id="a2eb3-102">Identity management</span></span>
+  description: <span data-ttu-id="a2eb3-103">In questa unità viene spiegato come proteggere le identità</span><span class="sxs-lookup"><span data-stu-id="a2eb3-103">In this unit we'll discuss how to protect your identities</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 1a89d586446a028b7544c5a974b94057a6ee1b24
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44232478"
+durationInMinutes: 5
+content: >
+  [!include[](includes/3-identity-management.md)]
+quiz:
+  title: <span data-ttu-id="a2eb3-104">Verifica delle conoscenze - Gestione delle identità</span><span class="sxs-lookup"><span data-stu-id="a2eb3-104">Knowledge Check - Identity management</span></span>
+  questions:
+  - content: <span data-ttu-id="a2eb3-105">Quale dei seguenti non è un fattore nell'autenticazione a più fattori?</span><span class="sxs-lookup"><span data-stu-id="a2eb3-105">Which of the following is not a factor in multi-factor authentication?</span></span>
+    choices:
+    - content: <span data-ttu-id="a2eb3-106">Uno scanner di impronte digitali in un dispositivo mobile</span><span class="sxs-lookup"><span data-stu-id="a2eb3-106">A thumbprint scanner on a mobile device</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="a2eb3-107">Elementi biometrici come le scansioni di impronte digitali possono essere usati come fattori nell'autenticazione a più fattori.</span><span class="sxs-lookup"><span data-stu-id="a2eb3-107">Biometric elements such as thumbprint scans can be used as factors in multi-factor authentication.</span></span>
+    - content: <span data-ttu-id="a2eb3-108">Un token generato dall'applicazione Azure Authenticator</span><span class="sxs-lookup"><span data-stu-id="a2eb3-108">A token generated from the Azure Authenticator application</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="a2eb3-109">I token generati da applicazioni e token hardware possono essere usati come fattori nell'autenticazione a più fattori.</span><span class="sxs-lookup"><span data-stu-id="a2eb3-109">Tokens generated from applications and keyfobs can be used as factors in multi-factor authentication.</span></span>
+    - content: <span data-ttu-id="a2eb3-110">Una password</span><span class="sxs-lookup"><span data-stu-id="a2eb3-110">A password</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="a2eb3-111">Le password possono essere usate come fattori nell'autenticazione a più fattori.</span><span class="sxs-lookup"><span data-stu-id="a2eb3-111">Passwords can be used as factors in multi-factor authentication.</span></span>
+    - content: <span data-ttu-id="a2eb3-112">Il numero di scarpe</span><span class="sxs-lookup"><span data-stu-id="a2eb3-112">Your shoe size</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="a2eb3-113">Il numero di scarpe non è un elemento che può essere usato nell'autenticazione a più fattori.</span><span class="sxs-lookup"><span data-stu-id="a2eb3-113">Your shoe size is not something that can be used in multi-factor authentication.</span></span>
+  - content: <span data-ttu-id="a2eb3-114">Quale dei seguenti NON è un vantaggio offerto dal Single Sign-On?</span><span class="sxs-lookup"><span data-stu-id="a2eb3-114">Which of the following is NOT a benefit SSO provides?</span></span>
+    choices:
+    - content: <span data-ttu-id="a2eb3-115">Aumento della complessità nell'assegnazione delle autorizzazioni agli utenti</span><span class="sxs-lookup"><span data-stu-id="a2eb3-115">Increased complexity assigning permissions to users</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="a2eb3-116">Il Single Sign-On può ridurre la complessità necessaria per assegnare le autorizzazioni agli utenti.</span><span class="sxs-lookup"><span data-stu-id="a2eb3-116">SSO can reduce the complexity needed to assign permissions to users.</span></span>
+    - content: <span data-ttu-id="a2eb3-117">Meno ID e password da ricordare per gli utenti</span><span class="sxs-lookup"><span data-stu-id="a2eb3-117">Fewer IDs and passwords for users to remember</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="a2eb3-118">La riduzione degli ID e delle password che gli utenti devono ricordare è un vantaggio chiave del Single Sign-On.</span><span class="sxs-lookup"><span data-stu-id="a2eb3-118">Fewer IDs and passwords for users to remember is a key benefit of SSO.</span></span>
+    - content: <span data-ttu-id="a2eb3-119">Meno lavoro amministrativo richiesto quando gli utenti cambiano ruolo o lasciano l'azienda</span><span class="sxs-lookup"><span data-stu-id="a2eb3-119">Lower adminmistration effort when users change roles or leave an organization</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="a2eb3-120">Il Single Sign-On consente di ridurre il lavoro amministrativo richiesto per aggiornare o disabilitare l'accesso quando gli utenti cambiano ruolo o lasciano l'azienda.</span><span class="sxs-lookup"><span data-stu-id="a2eb3-120">SSO reduces the amount of administration required to update or disable access when users change roles or leave an organization.</span></span> <span data-ttu-id="a2eb3-121">Questo è un vantaggio chiave del Single Sign-On.</span><span class="sxs-lookup"><span data-stu-id="a2eb3-121">This is a key benefit of SSO.</span></span>
+    - content: <span data-ttu-id="a2eb3-122">Assicura criteri password coerenti tra le applicazioni</span><span class="sxs-lookup"><span data-stu-id="a2eb3-122">Ensures a consistent password policy across applications</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="a2eb3-123">Con il Single Sign-On, gli utenti hanno un unico criterio password per tutti gli account.</span><span class="sxs-lookup"><span data-stu-id="a2eb3-123">By using SSO, users have a single password policy for all accounts.</span></span> <span data-ttu-id="a2eb3-124">Questo è un vantaggio chiave del Single Sign-On.</span><span class="sxs-lookup"><span data-stu-id="a2eb3-124">This is a key benefit of SSO.</span></span>

@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-azure-storage-account.4-choose-an-account-creation-tool
-title: <span data-ttu-id="21222-101">Scegliere uno strumento di creazione di account</span><span class="sxs-lookup"><span data-stu-id="21222-101">Choose an account creation tool</span></span>
+title: <span data-ttu-id="b6059-101">Scegliere uno strumento di creazione di account</span><span class="sxs-lookup"><span data-stu-id="b6059-101">Choose an account creation tool</span></span>
 metadata:
-  title: <span data-ttu-id="21222-102">Scegliere uno strumento di creazione di account</span><span class="sxs-lookup"><span data-stu-id="21222-102">Choose an account creation tool</span></span>
-  description: <span data-ttu-id="21222-103">Scegliere uno strumento di creazione di account</span><span class="sxs-lookup"><span data-stu-id="21222-103">Choose an account creation tool</span></span>
+  title: <span data-ttu-id="b6059-102">Scegliere uno strumento di creazione di account</span><span class="sxs-lookup"><span data-stu-id="b6059-102">Choose an account creation tool</span></span>
+  description: <span data-ttu-id="b6059-103">Scegliere uno strumento di creazione di account</span><span class="sxs-lookup"><span data-stu-id="b6059-103">Choose an account creation tool</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: b281727e430d11a0e8bedf15835321b72920e842
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: c9fac999d6d00a7ca2382e7bab976db4f1b9d55d
+  ms.sourcegitcommit: b6f5aa15bae13cb0f53667fba1d404b7bec76f67
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44245240"
-durationInMinutes: 7
+  ms.lasthandoff: 09/17/2018
+  ms.locfileid: "45753961"
+durationInMinutes: 3
 content: '[!include[](includes/4-choose-an-account-creation-tool.md)]'

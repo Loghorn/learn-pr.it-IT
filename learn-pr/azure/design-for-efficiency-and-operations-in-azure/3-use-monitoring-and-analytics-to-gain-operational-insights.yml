@@ -1,0 +1,51 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-efficiency-and-operations.3-use-monitoring-and-analytics-to-gain-operational-insights
+title: <span data-ttu-id="f5064-101">Usare il monitoraggio e l'analisi per ottenere informazioni operative</span><span class="sxs-lookup"><span data-stu-id="f5064-101">Use monitoring and analytics to gain operational insights</span></span>
+metadata:
+  title: <span data-ttu-id="f5064-102">Usare il monitoraggio e l'analisi per ottenere informazioni operative</span><span class="sxs-lookup"><span data-stu-id="f5064-102">Use monitoring and analytics to gain operational insights</span></span>
+  description: <span data-ttu-id="f5064-103">In questa unità verrà illustrato come usare il monitoraggio e l'analisi per ottenere informazioni operative</span><span class="sxs-lookup"><span data-stu-id="f5064-103">In this unit, we'll discuss how to use monitoring and analytics to gain operational insights</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: ea067302b66dcb00c9fb9b67e30de95dc68e758a
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44230662"
+durationInMinutes: 8
+content: >
+  [!include[](includes/3-use-monitoring-and-analytics-to-gain-operational-insights.md)]
+quiz:
+  title: <span data-ttu-id="f5064-104">Verifica delle conoscenze - Usare il monitoraggio e l'analisi per ottenere informazioni operative</span><span class="sxs-lookup"><span data-stu-id="f5064-104">Knowledge check - Use monitoring and analytics to gain operational insights</span></span>
+  questions:
+  - content: <span data-ttu-id="f5064-105">Quale dei servizi seguenti si deve usare per risolvere i problemi relativi alle eccezioni di runtime nell'applicazione?</span><span class="sxs-lookup"><span data-stu-id="f5064-105">Which of the following would you use to troubleshoot run-time exceptions in your application?</span></span>
+    choices:
+    - content: <span data-ttu-id="f5064-106">Integrità dei servizi</span><span class="sxs-lookup"><span data-stu-id="f5064-106">Service Health</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="f5064-107">Integrità dei servizi di Azure fornisce informazioni dettagliate sull'integrità dei servizi di Azure, ma non sull'applicazione.</span><span class="sxs-lookup"><span data-stu-id="f5064-107">Azure Service Health will give you insight into the health of Azure services, but will not provide insight into your application.</span></span>
+    - content: <span data-ttu-id="f5064-108">Network Watcher</span><span class="sxs-lookup"><span data-stu-id="f5064-108">Network Watcher</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="f5064-109">Azure Network Watcher consente di risolvere i problemi relativi alle prestazioni di rete, ma non fornisce informazioni dettagliate sull'applicazione.</span><span class="sxs-lookup"><span data-stu-id="f5064-109">Azure Network Watcher will help you troubleshoot network performance issues, but will not provide insight into your application.</span></span>
+    - content: <span data-ttu-id="f5064-110">Log attività</span><span class="sxs-lookup"><span data-stu-id="f5064-110">Activity Log</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="f5064-111">Log attività di Azure registra gli eventi che sono stati eseguiti sulle risorse nella piattaforma Azure, ma non fornisce informazioni dettagliate sull'applicazione.</span><span class="sxs-lookup"><span data-stu-id="f5064-111">Azure Activity Log will log events that have been performed on your resources on the Azure platform, but will not provide insight into your application.</span></span>
+    - content: <span data-ttu-id="f5064-112">Application Insights</span><span class="sxs-lookup"><span data-stu-id="f5064-112">Application Insights</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="f5064-113">Application Insights consente di rilevare e diagnosticare problemi, nonché di comprendere l'utilizzo di servizi e app Web, incluse le eccezioni di runtime.</span><span class="sxs-lookup"><span data-stu-id="f5064-113">Application Insights will help you detect & diagnose issues and understand usage for your web apps and services, including run-time exceptions.</span></span>
+  - content: <span data-ttu-id="f5064-114">Quale dei seguenti servizi si deve usare per identificare che ha eliminato una macchina virtuale?</span><span class="sxs-lookup"><span data-stu-id="f5064-114">Which of the following services would you use to identify who deleted a virtual machine?</span></span>
+    choices:
+    - content: <span data-ttu-id="f5064-115">Integrità dei servizi</span><span class="sxs-lookup"><span data-stu-id="f5064-115">Service Health</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="f5064-116">Integrità dei servizi di Azure fornisce informazioni dettagliate sull'integrità dei servizi di Azure, ma non sulle azioni eseguite sulle risorse.</span><span class="sxs-lookup"><span data-stu-id="f5064-116">Azure Service Health will give you insight into the health of Azure services, but will not provide insight into actions performed on your resources.</span></span>
+    - content: <span data-ttu-id="f5064-117">Network Watcher</span><span class="sxs-lookup"><span data-stu-id="f5064-117">Network Watcher</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="f5064-118">Azure Network Watcher consente di risolvere i problemi relativi alle prestazioni di rete, ma non fornisce informazioni dettagliate sulle azioni eseguite sulle risorse.</span><span class="sxs-lookup"><span data-stu-id="f5064-118">Azure Network Watcher will help you troubleshoot network performance issues, but will not provide insight into actions performed on your resources.</span></span>
+    - content: <span data-ttu-id="f5064-119">Log attività</span><span class="sxs-lookup"><span data-stu-id="f5064-119">Activity Log</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="f5064-120">Log attività di Azure registra gli eventi che sono stati eseguiti sulle risorse nella piattaforma Azure, inclusa l'eliminazione di risorse.</span><span class="sxs-lookup"><span data-stu-id="f5064-120">Azure Activity Log will log events that have been performed on your resources on the Azure platform, including deletion of resources.</span></span>
+    - content: <span data-ttu-id="f5064-121">Application Insights</span><span class="sxs-lookup"><span data-stu-id="f5064-121">Application Insights</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="f5064-122">Application Insights consente di rilevare e diagnosticare problemi, nonché di comprendere l'utilizzo di servizi e app Web, ma non fornisce informazioni dettagliate sulle azioni eseguite sulle risorse.</span><span class="sxs-lookup"><span data-stu-id="f5064-122">Application Insights will help you detect & diagnose issues and understand usage for your web apps and services, but will not provide insight into actions performed on your resources.</span></span>

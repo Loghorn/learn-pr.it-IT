@@ -1,0 +1,2 @@
+> [!NOTE]
+> <span data-ttu-id="3bcba-101">Se non si ha una sottoscrizione di Azure, creare un [account gratuito](https://azure.microsoft.com/free/?azure-portal=true) prima di iniziare.</span><span class="sxs-lookup"><span data-stu-id="3bcba-101">If you don't have an Azure subscription, create a [free account](https://azure.microsoft.com/free/?azure-portal=true) before you begin.</span></span>
