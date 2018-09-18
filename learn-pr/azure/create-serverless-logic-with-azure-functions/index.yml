@@ -4,20 +4,28 @@ metadata:
   title: Creare logica serverless con Funzioni di Azure
   description: Funzioni di Azure consente di ospitare logica di business che potrà essere eseguita senza occuparsi della gestione o del provisioning dell'infrastruttura server
   ms.date: 09/24/2018
-  ms.openlocfilehash: 387fe825e62a786f88e0846e6929f0b732a4b916
-  ms.sourcegitcommit: 09425147d998035edf9d2d36006a54d85e3cf75d
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: efba8ba4651d1d3ab8f4b74c4adba3fe450daefc
+  ms.sourcegitcommit: c99f7e4ac79611b51dfb48196b4f3d810e4ed2c6
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43847538"
+  ms.lasthandoff: 09/11/2018
+  ms.locfileid: "44386894"
 title: Creare logica serverless con Funzioni di Azure
 summary: Funzioni di Azure consente agli sviluppatori di ospitare logica di business che può essere eseguita senza preoccuparsi della gestione o del provisioning dell'infrastruttura.
 abstract: >
   In questo modulo verrà descritto come:
-    - Decidere se l'elaborazione serverless è adatta alle esigenze aziendali
-    - Creare un'app per le funzioni di Azure nel portale di Azure
-    - Eseguire una funzione con i trigger
-    - Monitorare e testare la funzione di Azure nel portale di Azure
+
+  - Decidere se l'elaborazione serverless è adatta alle esigenze aziendali
+
+  - Creare un'app per le funzioni di Azure nel portale di Azure
+
+  - Eseguire una funzione con i trigger
+
+  - Monitorare e testare la funzione di Azure nel portale di Azure
 prerequisites: Nessuno
 iconUrl: http://via.placeholder.com/120x120
 levels:
