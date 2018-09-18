@@ -1,0 +1,21 @@
+### YamlMime:ModuleUnit
+uid: learn.manage-vms-with-azure-cli-data.5-sizing-vms
+title: <span data-ttu-id="4a0c6-101">Dimensionamento corretto delle VM</span><span class="sxs-lookup"><span data-stu-id="4a0c6-101">Sizing VMs properly</span></span>
+metadata:
+  title: <span data-ttu-id="4a0c6-102">Dimensionamento corretto delle VM</span><span class="sxs-lookup"><span data-stu-id="4a0c6-102">Sizing VMs properly</span></span>
+  description: <span data-ttu-id="4a0c6-103">Informazioni su come dimensionare la VM in base al carico di lavoro assegnato</span><span class="sxs-lookup"><span data-stu-id="4a0c6-103">Learn how to size the VM to the assigned workload</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 5c37b51dd06dd3c9c0e1f8c8c3fa9983e9d75823
+  ms.sourcegitcommit: 971ffb73ca599659813c3d5d56ae1cd23f350f7e
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/18/2018
+  ms.locfileid: "45978604"
+interactive: bash
+azureSandbox: true
+durationInMinutes: 10
+content: '[!include[](includes/5-sizing-vms.md)]'

@@ -1,20 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.secure-azure-resources-with-rbac.6-view-activity-logs
 metadata:
-  title: <span data-ttu-id="1be25-101">Visualizzare i log attività delle modifiche apportate al controllo degli accessi in base al ruolo</span><span class="sxs-lookup"><span data-stu-id="1be25-101">View activity logs for RBAC changes</span></span>
-  description: <span data-ttu-id="1be25-102">Informazioni su come usare il log attività di Azure per elencare le modifiche apportate al controllo degli accessi in base al ruolo nel portale e generare un report semplice.</span><span class="sxs-lookup"><span data-stu-id="1be25-102">Learn how to use Azure Activity Log to list RBAC changes in the portal and generate a simple report.</span></span>
+  title: <span data-ttu-id="e9dfd-101">Visualizzare i log attività delle modifiche apportate al controllo degli accessi in base al ruolo</span><span class="sxs-lookup"><span data-stu-id="e9dfd-101">View activity logs for RBAC changes</span></span>
+  description: <span data-ttu-id="e9dfd-102">Informazioni su come usare il log attività di Azure per elencare le modifiche apportate al controllo degli accessi in base al ruolo nel portale e generare un report semplice.</span><span class="sxs-lookup"><span data-stu-id="e9dfd-102">Learn how to use Azure Activity Log to list RBAC changes in the portal and generate a simple report.</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 1d410e26b11d205996db301ee6daa93cab8f417c
-  ms.sourcegitcommit: 699f55eb41bace5e084604e16d6768633771b23c
+  ms.sourcegitcommit: b6f5aa15bae13cb0f53667fba1d404b7bec76f67
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/13/2018
-  ms.locfileid: "45530647"
-title: <span data-ttu-id="1be25-103">Visualizzare i log attività delle modifiche apportate al controllo degli accessi in base al ruolo</span><span class="sxs-lookup"><span data-stu-id="1be25-103">View activity logs for RBAC changes</span></span>
+  ms.lasthandoff: 09/17/2018
+  ms.locfileid: "45785054"
+title: <span data-ttu-id="e9dfd-103">Visualizzare i log attività delle modifiche apportate al controllo degli accessi in base al ruolo</span><span class="sxs-lookup"><span data-stu-id="e9dfd-103">View activity logs for RBAC changes</span></span>
 labId: 45985
 durationInMinutes: 5
 content: '[!include[](includes/6-view-activity-logs.md)]'

@@ -1,20 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.run-docker-containers-aci.5-use-data-volumes
 metadata:
-  title: <span data-ttu-id="401a0-101">Usare volumi di dati</span><span class="sxs-lookup"><span data-stu-id="401a0-101">Use data volumes</span></span>
-  description: <span data-ttu-id="401a0-102">Usare volumi di dati con istanze di contenitore di Azure (ACI).</span><span class="sxs-lookup"><span data-stu-id="401a0-102">Use data volumes with Azure Container Instances (ACI).</span></span>
+  title: <span data-ttu-id="aad65-101">Usare volumi di dati</span><span class="sxs-lookup"><span data-stu-id="aad65-101">Use data volumes</span></span>
+  description: <span data-ttu-id="aad65-102">Usare volumi di dati con istanze di contenitore di Azure (ACI).</span><span class="sxs-lookup"><span data-stu-id="aad65-102">Use data volumes with Azure Container Instances (ACI).</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 2470c218c0809747653a0732d854b85e7c90f3b4
-  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
+  ms.sourcegitcommit: b6f5aa15bae13cb0f53667fba1d404b7bec76f67
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/10/2018
-  ms.locfileid: "44311038"
-title: <span data-ttu-id="401a0-103">Usare volumi di dati</span><span class="sxs-lookup"><span data-stu-id="401a0-103">Use data volumes</span></span>
+  ms.lasthandoff: 09/17/2018
+  ms.locfileid: "45771376"
+title: <span data-ttu-id="aad65-103">Usare volumi di dati</span><span class="sxs-lookup"><span data-stu-id="aad65-103">Use data volumes</span></span>
 interactive: bash
 azureSandbox: true
 durationInMinutes: 10

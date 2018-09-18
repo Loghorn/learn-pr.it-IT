@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-serverless-logic-with-functions.4-creating-and-executing-an-azure-function
-title: <span data-ttu-id="5b2da-101">Creazione ed esecuzione di una funzione di Azure</span><span class="sxs-lookup"><span data-stu-id="5b2da-101">Creating and executing an Azure Function</span></span>
+title: <span data-ttu-id="f7fc9-101">Creazione ed esecuzione di una funzione di Azure</span><span class="sxs-lookup"><span data-stu-id="f7fc9-101">Creating and executing an Azure Function</span></span>
 metadata:
-  title: <span data-ttu-id="5b2da-102">Creazione ed esecuzione di una funzione di Azure</span><span class="sxs-lookup"><span data-stu-id="5b2da-102">Creating and executing an Azure Function</span></span>
-  description: <span data-ttu-id="5b2da-103">Creazione ed esecuzione di una funzione di Azure</span><span class="sxs-lookup"><span data-stu-id="5b2da-103">Creating and executing an Azure Function</span></span>
+  title: <span data-ttu-id="f7fc9-102">Creazione ed esecuzione di una funzione di Azure</span><span class="sxs-lookup"><span data-stu-id="f7fc9-102">Creating and executing an Azure Function</span></span>
+  description: <span data-ttu-id="f7fc9-103">Creazione ed esecuzione di una funzione di Azure</span><span class="sxs-lookup"><span data-stu-id="f7fc9-103">Creating and executing an Azure Function</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: e94bd0f1d3f8cc3ff18396e12a58a0f0fc09a47d
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.sourcegitcommit: b6f5aa15bae13cb0f53667fba1d404b7bec76f67
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44231266"
+  ms.lasthandoff: 09/17/2018
+  ms.locfileid: "45781357"
 durationInMinutes: 10
 content: '[!include[](includes/4-creating-and-executing-an-azure-function.md)]'
