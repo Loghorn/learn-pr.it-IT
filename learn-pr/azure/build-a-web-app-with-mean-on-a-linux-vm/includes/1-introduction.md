@@ -3,6 +3,7 @@ Si vuole creare un nuovo sito Web autonomo rivolto ai clienti della propria atti
 In questo modulo si creerà un host dello stack di applicazioni Web MEAN (MongoDB, Express, AngularJS e Node.js) in una macchina virtuale Linux ospitata in Azure.
 
 ## <a name="learning-objectives"></a>Obiettivi di apprendimento
+
 In questo modulo verrà descritto come:
 
 - Decidere se lo stack Web MEAN è adatto alle proprie esigenze
