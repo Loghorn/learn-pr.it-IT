@@ -2,24 +2,35 @@
 uid: learn.secure-access-azure-ad-multi-factor-authentication
 metadata:
   title: Proteggere le risorse di Azure con l'accesso condizionale
-  description: Informazioni su come usare l'accesso condizionale con Azure Active Directory.
-  ms.openlocfilehash: 0fa3e6ecc210bd779fd7c06354cce805e453b9b7
-  ms.sourcegitcommit: 40481ae733648a8b13402bf276d7acfd4da440f6
+  description: Molte organizzazioni vogliono migliorare il livello di sicurezza compensando questo requisito con la facilità di accesso per gli utenti. Con l'accesso condizionale, Azure AD fornisce uno strumento per supportare questa richiesta. In determinate circostanze le organizzazioni possono richiedere dei controlli di compensazione come Azure Multi-Factor Authentication (MFA). Informazioni su come usare l'accesso condizionale con Azure Active Directory.
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 0abf0fe8d2cb4f78a1d69996359da8cc2dfaef80
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/03/2018
-  ms.locfileid: "43476955"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44244187"
 title: Proteggere le risorse di Azure con l'accesso condizionale
-summary: Come amministratore voglio proteggere l'accesso ad applicazioni specifiche come il portale di Azure.
-abstract: Molte organizzazioni vogliono migliorare il livello di sicurezza compensando questo requisito con la facilità di accesso per gli utenti. Con l'accesso condizionale, Azure AD fornisce uno strumento per supportare questa richiesta. In determinate circostanze le organizzazioni possono richiedere dei controlli di compensazione come Azure Multi-Factor Authentication (MFA). Ad esempio, quando si accede ad applicazioni riservate, quando si usa un indirizzo IP non attendibile o in particolari condizioni di rischio.
-cardDescription: Informazioni su come proteggere l'accesso ad applicazioni specifiche, come il portale di Azure, usando l'accesso condizionale.
+summary: Molte organizzazioni vogliono migliorare il livello di sicurezza compensando questo requisito con la facilità di accesso per gli utenti. Con l'accesso condizionale, Azure AD fornisce uno strumento per supportare questa richiesta. In determinate circostanze le organizzazioni possono richiedere dei controlli di compensazione come Azure Multi-Factor Authentication (MFA). Informazioni su come usare l'accesso condizionale con Azure Active Directory.
+abstract: >
+  In questo modulo verrà descritto come:
+
+  - Creare un utente di test e un gruppo utenti
+
+  - Abilitare criteri di accesso condizionale che richiedono MFA (Multi-Factor Authentication)
+prerequisites: >
+  - Conoscenza dei concetti di base di Azure, ad esempio i gruppi di risorse e le sottoscrizioni
 iconUrl: http://via.placeholder.com/120x120
 levels:
 - intermediate
 roles:
 - administrator
 products:
-- Azure Active Directory
+- azure-active-directory
 units:
 - learn.secure-access-azure-ad-multi-factor-authentication.1-introduction
 - learn.secure-access-azure-ad-multi-factor-authentication.2-azure-ad-overview

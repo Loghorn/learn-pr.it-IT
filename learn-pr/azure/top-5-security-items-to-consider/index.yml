@@ -1,0 +1,42 @@
+### YamlMime:Module
+uid: learn.top-5-security-items-to-consider
+metadata:
+  title: 5 elementi di sicurezza da considerare prima di passare in produzione
+  description: Le organizzazioni, grandi o piccole che siano, hanno iniziato a rendersi conto dell'importanza fondamentale che l'affidabilità di sistemi e applicazioni riveste per il loro business. Hanno anche compreso quanto sia difficile mantenere questa affidabilità restando al passo con l'evoluzione del mercato. Site Reliability Engineering (SRE) è un approccio collaudato a questa problematica. In questo modulo illustreremo l'approccio SRE e la sua importanza.
+  author: lnyswonger
+  ms.date: 09/24/2018
+  ms.author: luken
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 990f2db8fae4ecc6c1780c71ff5522a8432018cd
+  ms.sourcegitcommit: 4d2d6d8c52fa24ae1c5c06cf4cb3afa09d8c8363
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44255509"
+title: 5 elementi di sicurezza da considerare prima di passare in produzione
+summary: In questo modulo verrà illustrato come proteggere le applicazioni Web in Azure e come proteggere le app dagli attacchi più comuni e pericolosi.
+abstract: >
+  In questo modulo verrà descritto come:
+   - Usare il Centro sicurezza di Azure
+   - Verificare gli input e gli output dell'applicazione
+   - Archiviare i segreti in Key Vault
+   - Verificare di usare la versione più recente del framework e le relative funzionalità di sicurezza
+   - Verificare che le dipendenze e le librerie del programma siano sicure
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- beginner
+- intermediate
+roles:
+- administrator
+products:
+- azure
+units:
+- learn.top-5-security-items-to-consider.1-introduction
+- learn.top-5-security-items-to-consider.2-azure-security-center
+- learn.top-5-security-items-to-consider.3-inputs-and-outputs
+- learn.top-5-security-items-to-consider.4-secrets-in-key-vault
+- learn.top-5-security-items-to-consider.5-framework-updates
+- learn.top-5-security-items-to-consider.6-safe-dependencies
+- learn.top-5-security-items-to-consider.7-conclusion
+achievement: learn.top-5-security-items-to-consider.badge

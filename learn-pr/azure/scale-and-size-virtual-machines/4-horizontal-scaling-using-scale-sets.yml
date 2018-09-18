@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.scale-and-size-virtual-machines.4-horizontal-scaling-using-scale-sets
+title: <span data-ttu-id="4bb59-101">Scalabilità orizzontale con i set di scalabilità</span><span class="sxs-lookup"><span data-stu-id="4bb59-101">Horizontal scaling using scale sets</span></span>
+metadata:
+  title: <span data-ttu-id="4bb59-102">Scalabilità orizzontale con i set di scalabilità</span><span class="sxs-lookup"><span data-stu-id="4bb59-102">Horizontal scaling using scale sets</span></span>
+  description: <span data-ttu-id="4bb59-103">Scalabilità orizzontale con i set di scalabilità</span><span class="sxs-lookup"><span data-stu-id="4bb59-103">Horizontal scaling using scale sets</span></span>
+  ms.openlocfilehash: 529f5c9b7497fd4c347d387163442c7afe25caa9
+  ms.sourcegitcommit: 4d2d6d8c52fa24ae1c5c06cf4cb3afa09d8c8363
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44256202"
+durationInMinutes: 5
+content: '[!include[](includes/4-horizontal-scaling-using-scale-sets.md)]'

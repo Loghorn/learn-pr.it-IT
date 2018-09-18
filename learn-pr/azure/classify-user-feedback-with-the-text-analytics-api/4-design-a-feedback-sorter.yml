@@ -1,0 +1,16 @@
+### YamlMime:ModuleUnit
+uid: learn.classify-user-feedback-with-the-text-analytics-api.4-design-a-feedback-sorter
+metadata:
+  title: <span data-ttu-id="73171-101">Progettare una soluzione di ordinamento feedback</span><span class="sxs-lookup"><span data-stu-id="73171-101">Design a feedback sorter</span></span>
+  description: <span data-ttu-id="73171-102">Si consideri uno scenario reale in cui l'analisi del sentiment potrebbe essere utile.</span><span class="sxs-lookup"><span data-stu-id="73171-102">Let's consider a real-world scenario for when sentiment analysis might come in handy.</span></span> <span data-ttu-id="73171-103">Verrà descritto lo scenario e il modo in cui implementarlo usando Funzioni di Azure e l'API Analisi del testo.</span><span class="sxs-lookup"><span data-stu-id="73171-103">Here we talk about the scenario and how to implement it using Azure Functions and the Text Analytics API.</span></span>
+  displayType: two-column
+  interactive: azure-portal
+  ms.openlocfilehash: ead4c1577028d4805f5be3ac8e85b3d899671ff4
+  ms.sourcegitcommit: 46c8d35790efaafa6a4637f7688482e3a754d7f3
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44258515"
+title: <span data-ttu-id="73171-104">Progettare una soluzione di ordinamento feedback</span><span class="sxs-lookup"><span data-stu-id="73171-104">Design a feedback sorter</span></span>
+durationInMinutes: 6
+content: '[!include[](includes/4-design-a-feedback-sorter.md)]'
