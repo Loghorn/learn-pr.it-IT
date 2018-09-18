@@ -1,27 +1,27 @@
-Managing the infrastructure of any type of workload involves configuration tasks. This configuration can be done manually, but manual steps can be labor-intensive, error prone, and inefficient. What if you are assigned to lead a project that required the deployment of hundreds of systems on Azure? How would you build and configure these resources? How long would this take? Could you ensure that each system was configured properly, with no variance between them? By using automation in your architecture design, you can work past these challenges. Let's take a look at some of the ways you can automate on Azure.
+La gestione dell'infrastruttura di qualsiasi tipo di carico di lavoro comporta attività di configurazione. Questa configurazione può essere eseguita manualmente, ma i passaggi manuali possono richiedere molto personale ed essere soggetti a errori e inefficienti. E se si venisse assegnati alla gestione di un progetto che ha richiesto la distribuzione di centinaia di sistemi in Azure? Come si compilerebbero e configurerebbero queste risorse? Quanto tempo servirebbe? Sarebbe possibile fare in modo che ogni sistema venisse configurato correttamente, senza varianze tra di essi? Usando l'automazione nella progettazione dell'architettura, è possibile superare queste difficoltà. Verranno ora illustrati alcuni modi per automatizzare i passaggi in Azure.
 
-## Infrastructure as code
+## <a name="infrastructure-as-code"></a>Infrastruttura come codice
 
-When automating the deployment of services and infrastructure, there are two different approaches you can take: imperative and declarative. In an imperative approach, you explicitly state the commands that are executed to produce the outcome you are looking for. With a declarative approach, you specify what you want the outcome to be instead of specifying how you want it done. Both approaches are valuable, so there's no wrong choice. What do these different approaches look like on Azure, and how do you use them?
+Quando si automatizzano la distribuzione dei servizi e l'infrastruttura, esistono due diversi approcci che è possibile adottare: quello imperativo e quello dichiarativo. In un approccio imperativo si determinano in modo esplicito i comandi che vengono eseguiti per ottenere il risultato desiderato. Con un approccio dichiarativo, si specifica quale deve essere il risultato e non come ottenerlo. Entrambi gli approcci sono validi, quindi nessuna scelta è sbagliata. Questi diversi approcci come appaiono in Azure e come li si usa?
 
-### Imperative automation
+### <a name="imperative-automation"></a>Automazione imperativa
 
-Let's start with imperative automation. With imperative automation, we're specifying _how_ things are to be done. This is typically done programmatically through a scripting language or SDK. For Azure resources, we could use the Azure CLI or Azure PowerShell. Let's take a look at an example that uses the Azure CLI to create a storage account.
+Si inizierà con l'automazione imperativa. Con l'automazione imperativa, si specifica _come_ eseguire i passaggi. Questa operazione viene in genere eseguita a livello di codice tramite un linguaggio di scripting o un SDK. Per le risorse di Azure, è possibile usare l'interfaccia della riga di comando di Azure o Azure PowerShell. Verrà ora esaminato un esempio che usa l'interfaccia della riga di comando di Azure per creare un account di archiviazione.
 
 ```azure-cli
 az group create --name storage-resource-group --location westus
 az storage account create --resource-group storage-resource-group --name mystorageaccount --kind BlobStorage --access-tier hot
 ```
 
-In this example, we're specifying how to create these resources. Execute a command to create a resource group. Execute another command to create a storage account. We're explicitly telling Azure what commands to run to produce the output we need.
+In questo esempio verrà specificato come creare queste risorse. Eseguire un comando per creare un gruppo di risorse. Eseguire un altro comando per creare un account di archiviazione. Verrà indicato in modo esplicito ad Azure quali comandi eseguire per produrre l'output necessario.
 
-With this approach, we're able to fully automate our infrastructure. We can provide areas for input and output, and can ensure that the same commands are executed every time. By automating our resources, we've taken the manual steps out of the process, making resource administration operationally more efficient. There are some downsides to this approach though. Scripts to create resources can quickly become complex as the architecture becomes more complex. Error handling and input validation may need to be added to ensure full execution. Commands may change, requiring ongoing maintenance of the scripts.
+Con questo approccio, è possibile automatizzare completamente l'infrastruttura. È possibile fornire aree per l'input e l'output e assicurarsi che vengano eseguiti ogni volta gli stessi comandi. Automatizzando le risorse, i passaggi manuali sono stati eliminati dal processo, rendendo l'amministrazione delle risorse più efficiente dal punto di vista operativo. Esistono tuttavia alcuni svantaggi in questo approccio. Se l'architettura diventa più complessa, anche gli script per creare le risorse lo diventano rapidamente. Potrebbe essere necessario aggiungere la gestione degli errori e la convalida dell'input per garantire l'esecuzione completa. I comandi potrebbero essere modificati e richiedere quindi la manutenzione degli script.
 
-### Declarative automation
+### <a name="declarative-automation"></a>Automazione dichiarativa
 
-With declarative automation, we're specifying _what_ we want our result to be, leaving the details of how it's done to the system we're using. On Azure, declarative automation is done through the use of Azure Resource Manager templates.
+Con l'automazione dichiarativa, si specifica _quale_ deve essere il risultato, affidando al sistema in uso la procedura per ottenerlo. In Azure l'automazione dichiarativa viene eseguita tramite l'uso di modelli di Azure Resource Manager.
 
-Resource Manager templates are JSON-structured files that specify what we want created. In the example below, we're telling Azure to create a storage account with the names and properties that we specify. The actual steps that are executed to create this storage account are left to Azure. Templates have four sections: parameters, variables, resources, and outputs. Parameters handle input to be used within the template. Variables provide a way to store values for use throughout the template. Resources are the things that are being created, and outputs are a way to provide details to the user of what was created.
+I modelli di Resource Manager sono file con struttura JSON che specificano ciò che si vuole creare. Nell'esempio seguente viene indicato ad Azure di creare un account di archiviazione con i nomi e le proprietà specificati. I passaggi veri e propri eseguiti per creare questo account di archiviazione vengono effettuati da Azure. I modelli hanno quattro sezioni: parametri, variabili, risorse e output. I parametri gestiscono l'input da usare nel modello. Le variabili consentono di archiviare i valori da usare nell'intero modello. Le risorse sono ciò che viene creato e gli output consentono di fornire all'utente i dettagli di ciò che è stato creato.
 
 ```json
 {
@@ -88,60 +88,60 @@ Resource Manager templates are JSON-structured files that specify what we want c
 }
 ```
 
-Templates can be used to create and manipulate every service on Azure. They can be stored in code repositories and source controlled, and shared across environments to ensure that the infrastructure being developed against matches what's actually in production. They are a great way to automate deployments and help ensure consistency, eliminate deployment misconfigurations, and can increase operational speed.
+I modelli possono essere usati per creare e modificare ogni servizio in Azure. Possono essere archiviati in repository di codice, inclusi nel controllo del codice sorgente e condivisi tra gli ambienti per garantire che l'infrastruttura in fase di sviluppo corrisponda a quella effettivamente in produzione. Sono un ottimo modo per automatizzare le distribuzioni e garantire la coerenza, eliminano gli errori di configurazione delle distribuzioni e possono aumentare la velocità operativa.
 
-Automating your infrastructure deployment is a great first step, but when deploying virtual machines, there's still more work to do. Let's take a look at a couple of approaches to automating configuration post deployment.
+L'automazione della distribuzione dell'infrastruttura è una valida opzione per iniziare, ma per la distribuzione delle macchine virtuali sono necessarie altre operazioni. Verranno ora esaminati due approcci per automatizzare la configurazione dopo la distribuzione.
 
-## VM customization: images vs. post-deployment configuration
+## <a name="vm-customization-images-vs-post-deployment-configuration"></a>Personalizzazione della VM: immagini e configurazione post-distribuzione
 
-For many virtual machine deployments, the job isn't done when the machine is running. It's likely there's additional configuration that's needed before the VM can actually serve its intended purpose. Additional disks might need formatting, the VM might need to be joined to a domain, maybe an agent for a management software needs to be installed, and most likely the actual workload requires installation and configuration as well.
+In molte distribuzioni di macchine virtuali, il processo non viene eseguito quando il computer è in esecuzione. È probabile che siano necessarie altre operazioni di configurazione prima la VM possa effettivamente essere usata per lo scopo designato. Potrebbe essere necessario formattare altri dischi, aggiungere a un dominio la VM, installare un agente per un software di gestione e anche installare e configurare il carico di lavoro effettivo.
 
-There are two common strategies applied for the configuration work considered to be part the configuration of the VM itself, both of which have advantages and disadvantages:
+Sono due le strategie comunemente applicate per le operazioni di configurazione, considerate parte della configurazione della VM stessa, che presentano entrambe vantaggi e svantaggi:
 
-- Custom images
-- Post-deployment scripting
+- Immagini personalizzate
+- Scripting post-distribuzione
 
-Custom images are generated by deploying a virtual machine and then configuring or installing software on that running instance. When everything is configured correctly, the machine can be shut down, and an image is created from the VM. The image can then be used as a base for other new virtual machines. Working with custom images can speed up the overall time of your deployment as once the virtual machine is deployed and running, no additional configuration would be needed. If deployment speed is an important factor, custom images are definitely worth exploring.
+Le immagini personalizzate vengono generate distribuendo una macchina virtuale e quindi configurando o installando il software in tale istanza in esecuzione. Quando tutto è configurato correttamente, il computer può essere arrestato e viene creata un'immagine dalla VM. Da tale immagine possono quindi essere create altre nuove macchine virtuali. L'uso di immagini personalizzate può ridurre il tempo complessivo richiesto dalla distribuzione perché, quando la macchina virtuale è distribuita e in esecuzione, non sarà necessaria alcuna configurazione aggiuntiva. Se la velocità di distribuzione è un fattore importante, è sicuramente opportuno prendere in considerazione le immagini personalizzate.
 
-Post-deployment scripting typically leverages a basic base image, then relies on scripting or a configuration management platform to do configuration after the VM is deployed. The post-deployment scripting could be done by executing a script on the VM through the Azure Script Extension or by leveraging a more robust solution such as Azure Automation Desired State Configuration (DSC).
+Lo scripting post-distribuzione in genere sfrutta un'immagine di base e quindi usa lo scripting o una piattaforma di gestione della configurazione per eseguire la configurazione dopo che la VM è stata distribuita. Lo scripting post-distribuzione può essere realizzato eseguendo uno script nella VM tramite l'estensione script di Azure o sfruttando una soluzione più affidabile, ad esempio Automation DSC (Desired State Configuration) per Azure.
 
-Each approach has some considerations to keep in mind. When using images, you'll need to ensure there's a process to handle image updates, security patches, and inventory management of the images themselves. With post-deployment scripting, build times can be extended since the VM can't be added to live workloads until the build is complete. This may not be a significant issue for standalone systems, but when using services that autoscale (such as virtual machine scale sets), this extended build time can impact how quickly you can scale. With both approaches, you'll want to ensure you address configuration drift; as new configuration is rolled out, you'll need to ensure that existing systems are updated accordingly.
+Per ogni approccio è bene ricordare alcune considerazioni. Quando si usano le immagini, assicurarsi che esista un processo per gestire gli aggiornamenti delle immagini, le patch di sicurezza e la gestione dell'inventario delle immagini stesse. Con lo scripting post-distribuzione, i tempi di compilazione possono aumentare perché la VM non può essere aggiunta ai carichi di lavoro in tempo reale fino al completamento della compilazione. Questo potrebbe non essere un problema significativo per i sistemi autonomi, ma, quando si usano servizi che vengono ridimensionati automaticamente (ad esempio, i set di scalabilità di macchine virtuali), i tempi di compilazione estesi possono comprometta la velocità di ridimensionamento. Con entrambi gli approcci, è importante correggere eventuali deviazioni della configurazione. Non appena la nuova configurazione viene implementata, è necessario assicurarsi che i sistemi esistenti vengano aggiornati di conseguenza.
 
-Automating resource deployment can be a massive benefit to your environment. The amount of time saved, and error reduced can move your operational capabilities to another level.
+L'automazione della distribuzione delle risorse può rappresentare un enorme vantaggio per l'ambiente. Il risparmio di tempo e la riduzione degli errori possono portare le funzionalità operative a un altro livello.
 
-## Automation of operational tasks
+## <a name="automation-of-operational-tasks"></a>Automazione delle attività operative
 
-Once your solutions are up and running, there are ongoing operational activities that can also be automated. Automating these tasks with Azure Automation reduces manual workloads, enables configuration and update management of compute resources, centralizes shared resources such as schedules, credentials, and certificates, and provides a framework for running any type of Azure task.
+Quando le soluzioni sono operative, è possibile automatizzare anche le attività operative continuative. L'automazione di queste attività con Automazione di Azure riduce i carichi di lavoro manuali, abilita la gestione della configurazione e degli aggiornamenti delle risorse di calcolo, centralizza le risorse condivise, ad esempio pianificazioni, credenziali e certificati, e fornisce un framework per l'esecuzione di qualsiasi tipo di attività di Azure.
 
-For your Lamna Healthcare work, this might include:
+Per le operazioni relative a Lamna Healthcare, sono incluse:
 
-- Periodically searching for orphaned disks.
-- Installing the latest security patches on VMs.
-- Searching for and shutting down virtual machines in off-hours.
-- Running daily reports and producing a dashboard to report to senior management.
+- Ricerca periodica di dischi orfani.
+- Installazione delle patch di sicurezza più recenti nelle VM.
+- Ricerca e arresto delle macchine virtuali durante gli orari di minore attività.
+- Esecuzione di report giornalieri e generazione di un dashboard per inviare i report ai dirigenti.
 
-As a concrete example, suppose you want to run a virtual machine only during business hours. You can write a script to start the VM in the morning and shut it down in the evening. You can configure Azure Automation to run the script at set times. The following illustration shows the role of Azure Automation in this process.
+Ad esempio, si supponga di voler eseguire una macchina virtuale solo durante l'orario lavorativo. È possibile scrivere uno script per avviare la macchina virtuale la mattina e spegnerla la sera. È possibile configurare Automazione di Azure per eseguire lo script a orari definiti. L'illustrazione seguente mostra il ruolo di Automazione di Azure in questo processo.
 
-![An illustration showing the role of Azure Automation in managing a repetitive business process.](../media/automation-vm-power-state.png)
+![Illustrazione che mostra il ruolo di Automazione di Azure nella gestione di un processo aziendale ripetitivo.](../media/automation-vm-power-state.png)
 
-## Automating development environments
+## <a name="automating-development-environments"></a>Automazione degli ambienti di sviluppo
 
-At the other end of the pipeline of your cloud infrastructure are the development machines used by developers to write the applications and services that are the core of your business. You can use Azure DevTest Labs to stamp out VMs with all of the correct tools and repositories that they need. Developers working on multiple services can switch between development environments without having to provision a new machine themselves. These development environments can be shut down when not in use and restarted when they are required again.
+All'altra estremità della pipeline dell'infrastruttura cloud si trovano i computer di sviluppo usati dagli sviluppatori per scrivere le applicazioni e i servizi che sono alla base dell'azienda. È possibile usare Azure DevTest Labs per identificare le VM con tutti gli strumenti corretti e i repository necessari. Gli sviluppatori che usano più servizi possono passare da un ambiente di sviluppo a un altro senza dover effettuare manualmente il provisioning di un nuovo computer. Questi ambienti di sviluppo possono essere arrestati quando non sono in uso e riavviati quando sono di nuovo necessari.
 
-## Automation at Lamna Healthcare
+## <a name="automation-at-lamna-healthcare"></a>Automazione in Lamna Healthcare
 
-Let's take a look at how Lamna Healthcare has improved by using automation. When you started your journey, infrastructure deployment and server builds were entirely manual. Engineers were deploying everything through the portal. This was introducing variance and errors between test and production environments, and the differences were hindering their ability to detect problems before code hit production.
+Verrà ora illustrato come Lamna Healthcare abbia registrato un miglioramento grazie all'automazione. All'inizio, la distribuzione dell'infrastruttura e le compilazioni dei server erano interamente manuali. I tecnici distribuivano tutto tramite il portale. In questo modo venivano introdotti varianze ed errori tra gli ambienti di test e di produzione e le differenze impedivano di rilevare i problemi prima che il codice venisse usato nell'ambiente di produzione.
 
-They now deploy all their infrastructure through Resource Manager templates. These templates are checked into a GitHub repository, and a code review happens before they are released for deployment. They're also able to build the same infrastructure between dev, test, and production, ensuring they have validated their configuration across all environments.
+L'intera infrastruttura viene ora distribuita tramite modelli di Resource Manager. Questi modelli sono archiviati in un repository GitHub e, prima del rilascio per la distribuzione, viene eseguita una revisione del codice. Viene inoltre creata la stessa infrastruttura negli ambienti di sviluppo, test e produzione, per garantire la convalida della configurazione in tutti gli ambienti.
 
-For most services using virtual machines, they have a standard base image and use DSC to configure the systems post deployment. For web farms where they need the scalability of virtual machine scale sets, they have a fully automated process to check in code and build a new image with all required configuration built in before making it available in their scale sets.
+Per la maggior parte dei servizi che usano macchine virtuali, è disponibile un'immagine di base standard e viene usato DSC per configurare i sistemi dopo la distribuzione. Per le Web farm in cui è necessaria la scalabilità dei set di scalabilità di macchine virtuali, è disponibile un processo completamente automatizzato per archiviare il codice e compilare una nuova immagine con tutta la configurazione richiesta predefinita prima di renderla disponibile nei set di scalabilità.
 
-They have an Automation job to shut down identified virtual machines in off-hours to reduce costs and have automated their VM patching as well.
+È disponibile un processo di Automazione per arrestare durante gli orari di minore attività le macchine virtuali identificate per poter ridurre i costi. È stata anche automatizzata l'applicazione di patch alle VM.
 
-Developers now have a self-service environment in DevTest Labs where they can develop against the latest images and configuration, ensuring that what they develop against matches the configuration in production.
+Gli sviluppatori hanno ora un ambiente self-service in DevTest Labs in cui possono sviluppare con le immagini e la configurazione più recenti, assicurandosi che gli elementi usati per lo sviluppo corrispondano alla configurazione usata nell'ambiente di produzione.
 
-All of this took some up-front effort, but the benefits have paid off in the long run. They've dramatically reduced error and the effort required by their operations teams to maintain their environments. Developers love that they can easily go provision resources to develop against, eliminating the back and forth to get environments created.
+Tutto ciò ha richiesto uno sforzo iniziale, ma ne sono derivati vantaggi a lungo termine. Sono stati ridotti drasticamente gli errori e lo sforzo richiesto ai team operativi per gestire gli ambienti. Per gli sviluppatori è un vantaggio poter passare facilmente al provisioning delle risorse per lo sviluppo, eliminando tutte le operazioni necessarie per creare gli ambienti.
 
-## Summary
+## <a name="summary"></a>Riepilogo
 
-We've taken a look at a number of ways to bring automation capabilities into your architecture. From deploying infrastructure as code, to improving developer productivity with lab environments, there's a ton of benefit from taking time to automate your environment. Reducing error, reducing variance, and saving operational costs can be a significant benefit to your organization and help take your cloud environment to the next level.
+Sono stati illustrati alcuni modi per introdurre le funzionalità di automazione nell'architettura. Dedicando tempo all'automazione dell'ambiente si ottengono numerosissimi vantaggi, dalla distribuzione dell'infrastruttura come codice al miglioramento della produttività degli sviluppatori con gli ambienti lab. La riduzione degli errori e della varianza e il risparmio sui costi operativi possono essere un vantaggio significativo per l'organizzazione e consentono di portare l'ambiente cloud al livello successivo.

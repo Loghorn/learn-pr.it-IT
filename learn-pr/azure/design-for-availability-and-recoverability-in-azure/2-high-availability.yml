@@ -1,46 +1,51 @@
 ### YamlMime:ModuleUnit
 uid: learn.design-for-availability-and-recoverability.2-high-availability
-title: Build a highly available architecture
+title: Creare un'architettura a disponibilità elevata
 metadata:
-  title: Build a highly available architecture
-  description: Build a highly available architecture
+  title: Creare un'architettura a disponibilità elevata
+  description: Creare un'architettura a disponibilità elevata
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
+  ms.openlocfilehash: e79f3bce5e25dd0f92602b9880cb6d6df99b8fa0
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44247688"
 durationInMinutes: 20
-content: |
+content: >
   [!include[](includes/2-high-availability.md)]
 quiz:
-  title: 'Knowledge Check - Build a highly available architecture'
+  title: "Verifica delle conoscenze: creare un'architettura a disponibilità elevata"
   questions:
-  - content: 'An SLA is important to define for your service because:'
+  - content: È importante definire un contratto di servizio per un servizio perché
     choices:
-    - content: 'It helps you determine your backup retention requirements.'
+    - content: Consente di determinare i requisiti di conservazione dei backup
       isCorrect: false
-      incorrectExplanation: 'Backup retention is important to define, but it is not driven by SLA.'
-    - content: 'It helps you determine the availability of your service that you will commit to your customers.'
+      incorrectExplanation: La conservazione dei backup è importante da definire, ma non dipende dal contratto di servizio.
+    - content: Consente di determinare il livello di disponibilità del servizio per cui ci si impegna nei confronti dei clienti
       isCorrect: true
-      correctExplanation: 'Service level agreement is a commitment you are making to your customers for the availability of your service.'
-    - content: 'You can use it to convince your manager to automate virtual machine creation.'
+      correctExplanation: Il contratto di servizio rappresenta un impegno nei confronti dei clienti rispetto alla disponibilità del servizio.
+    - content: È possibile usarlo per convincere un manager ad automatizzare la creazione delle macchine virtuali
       isCorrect: false
-      incorrectExplanation: 'While this is a good discussion to have, your SLA will likely not have any impact on the outcome.'
-    - content: 'You use it to define the RBAC settings for your resources.'
+      incorrectExplanation: Anche se può trattarsi di una discussione interessante, il contratto di servizio probabilmente non avrà alcun impatto sul risultato.
+    - content: È possibile usarlo per definire le impostazioni del controllo degli accessi in base al ruolo per le risorse
       isCorrect: false
-      incorrectExplanation: 'RBAC settings are important, but they are not related to the SLA of your application.'
-  - content: 'Which of the following is not used in a highly available architecture?'
+      incorrectExplanation: Le impostazioni del controllo degli accessi in base al ruolo sono importanti, ma non sono correlate al contratto di servizio dell'applicazione.
+  - content: Quali dei seguenti elementi non viene usato in un'architettura a disponibilità elevata?
     choices:
-    - content: 'Load balancing'
+    - content: Bilanciamento del carico.
       isCorrect: false
-      incorrectExplanation: 'Load balancing is typically used in a highly available architecture to distribute load to available systems and remove failed systems from load.'
-    - content: 'Availability zones'
+      incorrectExplanation: Il bilanciamento del carico in genere viene usato in un'architettura a disponibilità elevata per distribuire il carico ai sistemi disponibili e rimuovere dal carico i sistemi che presentano problemi.
+    - content: Zone di disponibilità
       isCorrect: false
-      incorrectExplanation: 'Availability zones are used in a highly available architecture to distribute systems across multiple datacenters within a region.'
-    - content: 'Availability sets'
+      incorrectExplanation: Le zone di disponibilità vengono usate in un'architettura a disponibilità elevata per distribuire i sistemi tra più data center in un'area.
+    - content: Set di disponibilità
       isCorrect: false
-      incorrectExplanation: 'Availability sets are used in a highly available architecture to minimize the impact from localized failures and maintenance events.'
-    - content: 'A recovery service vault'
+      incorrectExplanation: I set di disponibilità vengono usati in un'architettura a disponibilità elevata per ridurre al minimo l'impatto generato da problemi localizzati ed eventi di manutenzione.
+    - content: Insieme di credenziali di Servizi di ripristino
       isCorrect: true
-      correctExplanation: 'Recovery service vaults provide a destination for backups, but they are not part of a highly available architecture.'
+      correctExplanation: Gli insiemi di credenziali di Servizi di ripristino forniscono una destinazione per i backup, ma non fanno parte di un'architettura a disponibilità elevata.

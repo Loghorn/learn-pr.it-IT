@@ -1,20 +1,20 @@
-The [Azure Bot Service](https://azure.microsoft.com/en*us/services/bot*service/), combined with [Microsoft QnA Maker](https://www.qnamaker.ai/), provide the tools developers need to build and publish intelligent bots that interact naturally with users using a range of services. In this module, you will create a bot using the Azure Bot Service and connect it to a knowledge base built with QnA Maker. Then, you will interact with the bot using Skype — one of many popular services with which bots built with the Azure Bot Service can integrate.
+Il [servizio Azure Bot](https://azure.microsoft.com/en*us/services/bot*service/) combinato con [Microsoft QnA Maker](https://www.qnamaker.ai/) fornisce agli sviluppatori gli strumenti necessari per compilare e pubblicare bot intelligenti che interagiscono naturalmente con gli utenti usando un'ampia gamma di servizi. In questo modulo si creerà un bot tramite il servizio Azure Bot e si connetterà il bot a una knowledge base creata con QnA Maker. Quindi si interagirà con il bot tramite Skype, uno dei numerosi servizi noti con cui è possibile integrare bot compilati con il servizio Azure Bot.
 
-## Learning objectives
+## <a name="learning-objectives"></a>Obiettivi di apprendimento
 
-In this module, you will:
+In questo modulo verrà descritto come:
 
-- Create an Azure web app bot to host a bot.
-- Create a knowledge base, populate it with data, and connect it to a bot.
-- Implement bots in code and debug the bots that you build.
-- Publish bots and use continuous integration to keep them up-to-date.
-- Debug bots locally using Visual Studio Code and the Microsoft Bot Framework Emulator.
-- Plug a bot into Skype and interact with it there.
+- Creare un bot app Web di Azure per ospitare un bot.
+- Creare una knowledge base, popolarla con i dati e connetterla a un bot.
+- Implementare bot nel codice ed eseguire il debug dei bot creati.
+- Pubblicare i bot e usare l'integrazione continua per mantenerli aggiornati.
+- Eseguire il debug dei bot in locale usando Visual Studio Code e Microsoft Bot Framework Emulator.
+- Collegare un bot a Skype e interagire con il bot nell'applicazione.
 
-## Prerequisites
+## <a name="prerequisites"></a>Prerequisiti
 
-- Install [Visual Studio Code](http://code.visualstudio.com).
-- Install [Git](https://git-scm.com).
-- Install [Microsoft Bot Framework Emulator](https://emulator.botframework.com/).
-- Install [Node.js](https://nodejs.org).
-- Install [Skype](https://www.skype.com/en/download-skype/skype-for-computer/).
+- Installare [Visual Studio Code](http://code.visualstudio.com).
+- Installare [Git](https://git-scm.com).
+- Installare [Microsoft Bot Framework Emulator](https://emulator.botframework.com/).
+- Installare [Node.js](https://nodejs.org).
+- Installare [Skype](https://www.skype.com/en/download-skype/skype-for-computer/).

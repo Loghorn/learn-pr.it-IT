@@ -1,52 +1,57 @@
 ### YamlMime:ModuleUnit
 uid: learn.azure-container-registry.knowledge-check
-title: Knowledge check
+title: Verifica delle conoscenze
 metadata:
-  title: Knowledge check
-  description: Azure Container Registry knowledge check.
+  title: Verifica delle conoscenze
+  description: Verifica delle conoscenze sul Registro contenitori di Azure.
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
+  ms.openlocfilehash: bccb45bd020a40f3e4c0246668630a6a150fc81b
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44244645"
 durationInMinutes: 5
 quiz:
-  title: 'Knowledge check'
+  title: Verifica delle conoscenze
   questions:
-  - content: 'Which of the following is not a benefit of using Azure Container Registry?'
+  - content: Quale dei seguenti non è un vantaggio offerto dall'uso del Registro contenitori di Azure?
     choices:
-    - content: Replicate container images to many Azure datacenters.
-      incorrectExplanation: The Azure Container Registry geo-replication feature enables this.
+    - content: Replicare le immagini del contenitore in più data center di Azure.
+      incorrectExplanation: La funzionalità di replica geografica del servizio Registro contenitori di Azure consente di eseguire questa operazione.
       isCorrect: false
-    - content: Pull container images from Container Registry using any Docker container-related technology.
+    - content: Eseguire il pull delle immagini del contenitore da Registro contenitori usando una delle tecnologie relative al contenitore Docker.
       isCorrect: false
-      incorrectExplanation: Container Registry can be used with all Docker-related technology.
-    - content: Make container images publicly available for pull operations.
+      incorrectExplanation: Registro contenitori può essere usato con tutte le tecnologie relative a Docker.
+    - content: Rendere le immagini del contenitore disponibili pubblicamente per le operazioni pull.
       isCorrect: true
-      correctExplanation: Container Registry is a private registry. Images stored in Container Registry cannot be accessed without authentication.
-    - content: Build container images without the need for locally installed Docker tools.
+      correctExplanation: Container Registry è un registro privato. Senza autenticazione non è possibile accedere alle immagini archiviate nel Container Registry.
+    - content: Creare immagini del contenitore senza bisogno di installare strumenti Docker locali.
       isCorrect: false
-      incorrectExplanation: Container images can be built in the cloud using Azure Container Registry Build.
-  - content: 'What is the recommended authentication method for Azure Container Registry?'
+      incorrectExplanation: Con Azure Container Registry Build è possibile compilare immagini del contenitore sul cloud.
+  - content: Qual è il metodo di autenticazione consigliato per il Registro contenitori di Azure?
     choices:
-    - content: Admin account.
-      incorrectExplanation: Although an admin account can be created for Azure Container Registry, this is not the recommended authentication method.
+    - content: Account amministratore.
+      incorrectExplanation: Anche se è possibile creare un account amministratore per il Registro contenitori di Azure, questo non è il metodo di autenticazione consigliato.
       isCorrect: false
-    - content: User name and password.
-      incorrectExplanation: An Azure container registry can be admin-account enabled, which provides a user name and password. However, this is not the recommended authentication method.
+    - content: Nome utente e password.
+      incorrectExplanation: Un registro contenitori di Azure può essere abilitato all'account amministratore e di conseguenza vengono forniti un nome utente e una password. Questo tuttavia non è il metodo di autenticazione consigliato.
       isCorrect: false
-    - content: Azure service principal.
+    - content: Entità servizio di Azure.
       isCorrect: true
-      correctExplanation: Azure service principals provide granular access to container images in Azure Container Registry. Using a service principal, read-only and full access can be provided to the container registry.
-    - content: No authentication.
-      incorrectExplanation: Azure Container Registry is a private registry and cannot be accessed without authentication..
+      correctExplanation: Le entità servizio di Azure forniscono l'accesso granulare alle immagini del contenitore nel Registro contenitori di Azure. Usando un'entità servizio, è possibile concedere le autorizzazioni di sola lettura e di accesso completo a Registro contenitori.
+    - content: Nessuna autenticazione.
+      incorrectExplanation: Il Registro contenitori di Azure è un registro privato a cui non è possibile accedere senza autenticazione.
       isCorrect: false
-  - content: 'Geo-replication is available in the Container Registry Standard SKU.'
+  - content: La replica geografica è disponibile nello SKU Standard di Container Registry.
     choices:
-    - content: True.
-      incorrectExplanation: Geo-replication is only available in the Premium SKU.
+    - content: Vero.
+      incorrectExplanation: La replica geografica è disponibile solo nello SKU Premium.
       isCorrect: false
-    - content: False.
+    - content: Falso.
       isCorrect: true
-      correctExplanation: Geo-replication is only available in the Premium SKU.
+      correctExplanation: La replica geografica è disponibile solo nello SKU Premium.

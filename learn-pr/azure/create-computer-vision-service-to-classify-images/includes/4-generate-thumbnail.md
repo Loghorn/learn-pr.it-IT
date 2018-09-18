@@ -1,37 +1,37 @@
-In this unit, you will generate thumbnails from a source image with the Computer Vision API service that we created previously.
+In questa unità verranno generate le anteprime da un'immagine di origine con il servizio API Visione artificiale creato in precedenza.
 
-# Generate a thumbnail from an image with Computer Vision API
+# <a name="generate-a-thumbnail-from-an-image-with-computer-vision-api"></a>Generare un'anteprima da un'immagine con l'API Visione artificiale
 
-Execute the `az cognitiveservices account keys list` command to retrieve a key used to authenticate against the API. Store the output of that command within the `key` variable.
+Eseguire il comando `az cognitiveservices account keys list` per recuperare una chiave usata per l'autenticazione nell'API. Archiviare l'output del comando nella variabile `key`.
 
-```output
+```azurecli
 key=$(az cognitiveservices account keys list -g ComputerVisionRG --name ComputerVisionService --query key1 -o tsv)
 ```
 
-Execute a `curl` command to do an HTTP request against the Computer Vision API and reuse the previously declared variable `key`.
+Eseguire un comando `curl` per effettuare una richiesta HTTP all'API Visione artificiale e riutilizzare la variabile `key` dichiarata in precedenza.
 
-Different parameters can be provided to the API to generate the proper thumbnail for your needs. `width` and `height` are required and will tell the API which size you need for a specific image. Finally, the `smartCropping` parameter generates smarter cropping by analyzing the region of interest in your image to keep it within the thumbnail. As an example, with smart cropping enabled, a cropped profile picture would keep someone's face within the picture frame even when the picture isn't in the same ratio as the one that we asked.
+È possibile fornire all'API parametri diversi per generare l'anteprima corretta in base alle esigenze. `width` e `height` sono obbligatori e indicano all'API le dimensioni necessarie per un'immagine specifica. Infine, il parametro `smartCropping` genera un ritaglio più intelligente analizzando l'area di interesse nell'immagine per mantenerla nell'anteprima. Ad esempio, con il ritaglio intelligente abilitato, l'immagine ritagliata del profilo mantiene il viso della persona all'interno della cornice anche quando le proporzioni dell'immagine sono diverse rispetto a quelle richieste.
 
-```bash
-curl -H "Ocp-Apim-Subscription-Key: $key" -H "Content-Type: application/json" "https://westus2.api.cognitive.microsoft.com/vision/v1.0/generateThumbnail?width=100&height=100&smartCropping=true" -d "{\"url\":\"https://docs.microsoft.com/en-us/learn/modules/create-computer-vision-service/media/mountains.jpg\"}" -o clouddrive/thumbnail.jpg
+```azurecli
+curl -H "Ocp-Apim-Subscription-Key: $key" -H "Content-Type: application/json" "https://westus2.api.cognitive.microsoft.com/vision/v1.0/generateThumbnail?width=100&height=100&smartCropping=true" -d "{\"url\":\"https://docs.microsoft.com/en-us/learn/modules/create-computer-vision-service/mountains.jpg\"}" -o clouddrive/thumbnail.jpg
 ```
 
-# Downloading the thumbnail
+# <a name="downloading-the-thumbnail"></a>Download dell'anteprima
 
-The generated thumbnail will be found in your Azure Cloud Shell storage account within a resource group named `cloud-shell-storage-<region>`.
+L'anteprima generata sarà disponibile nell'account di archiviazione di Azure Cloud Shell, in un gruppo di risorse denominato `cloud-shell-storage-<region>`.
 
-1. Get into the automatically generated storage account.
+1. Accedere all'account di archiviazione generato automaticamente.
 
-    ![Screenshot of the generated storage account](../media/4-storage-account.png)
+![immagine](../images/storage-account.png)
 
-2. Click on the files section.
+2. Fare clic sulla sezione File.
 
-    ![Screenshot of the storage account with the files section circled](../media/4-storage-account-click-on-files.png)
+![immagine](../images/storage-account-click-on-files.png)
 
-3. You will find the thumbnail at the root of the container.
+3. L'anteprima verrà visualizzata nella radice del contenitore.
 
-    ![Screenshot of the storage account with the thumbnail circled](../media/4-storage-account-thumbnail.png)
+![immagine](../images/storage-account-thumbnail.png)
 
-4. Click on the file, and then download it.
+4. Fare clic sul file e quindi scaricarlo.
 
-From within your download folder, you can open the `100x100`-pixels image with any image viewer.
+Dalla cartella di download aprire l'immagine da `100x100` pixel con qualsiasi visualizzatore di immagini.

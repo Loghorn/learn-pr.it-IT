@@ -3,7 +3,7 @@ Si supponga di lavorare per un operatore sanitario. Cosa occorre fare per convin
 Una solida architettura aiuta a progettare, compilare e migliorare continuamente nel tempo un'applicazione sicura, affidabile ed efficiente. In questo modulo verranno illustrati i fondamenti e i principi essenziali per un'architettura di Azure ottimale.
 
 > [!NOTE]
-> I concetti illustrati in questo modulo non coprono tutti gli argomenti, ma rappresentano alcune importanti considerazioni quando si compila una soluzione nel cloud. Microsoft pubblica un'ampia gamma di modelli, linee guida ed esempi per la progettazione di applicazioni in Azure. È consigliabile esaminare il contenuto del [Centro architetture di Azure](https://docs.microsoft.com/azure/architecture/) quando si inizia a pianificare e progettare un'architettura.
+> I concetti illustrati in questo modulo non coprono tutti gli argomenti, ma rappresentano alcune importanti considerazioni quando si compila una soluzione nel cloud. Microsoft pubblica un'ampia gamma di modelli, linee guida ed esempi per la progettazione delle applicazioni in Azure. È consigliabile esaminare il contenuto del [Centro architetture di Azure](https://docs.microsoft.com/azure/architecture/) quando si inizia a pianificare e progettare un'architettura.
 
 ## <a name="learning-objectives"></a>Obiettivi di apprendimento
 

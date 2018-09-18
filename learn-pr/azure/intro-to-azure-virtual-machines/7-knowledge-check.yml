@@ -1,36 +1,41 @@
 ### YamlMime:ModuleUnit
 uid: learn.introduction-to-azure-virtual-machines.7-knowledge-check
-title: Knowledge check
+title: Verifica delle conoscenze
 metadata:
-  title: Knowledge check
-  description: Knowledge check
+  title: Verifica delle conoscenze
+  description: Verifica delle conoscenze
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
+  ms.openlocfilehash: 54ce7dfa4c2f3a2d7b7d2d4c112f79aad7d2eb9c
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44236468"
 durationInMinutes: 3
 quiz:
-  title: 'Azure Virtual Machine'
+  title: Macchina virtuale di Azure
   questions:
-  - content: 'Suppose you want to run a network appliance on a virtual machine. Which workload option will you choose?'
+  - content: Si supponga di voler eseguire un'appliance di rete in una macchina virtuale. Quale opzione di carico di lavoro si sceglierà?
     choices:
-    - content: General purpose
+    - content: Utilizzo generico
       isCorrect: false
-    - content: Compute optimized
+    - content: Con ottimizzazione per il calcolo
       isCorrect: true
-    - content: Memory optimized
+    - content: Ottimizzate per la memoria
       isCorrect: false
-    - content: Storage optimized
+    - content: Con ottimizzazione per l'archiviazione
       isCorrect: false
-  - content: 'Assume you want to deploy a copy of an existing Azure virtual machine. Which option will you choose to complete the job?'
+  - content: Si supponga di voler distribuire una copia di una macchina virtuale di Azure esistente. Quale opzione si sceglierà per completare il processo?
     choices:
     - content: PowerShell
       isCorrect: false
-    - content: Resource Manager Templates
+    - content: Modelli di Resource Manager
       isCorrect: true
-    - content: Azure CLI
+    - content: Interfaccia della riga di comando di Azure
       isCorrect: false
-    - content: Azure Client SDK
+    - content: SDK per client Azure
       isCorrect: false

@@ -1,28 +1,41 @@
 ### YamlMime:Module
 uid: learn.make-your-virtual-machines-highly-available
 metadata:
-  title: Make your virtual machines highly available
-  description: Use Azure Load Balancer as a public load balancer to distribute public inbound traffic across multiple Azure virtual machines. Understand the purpose of a load balancer. Work with Azure Load Balancer in the portal, identify a VM scale set to route traffic to, and monitor your traffic.
+  title: Garantire la disponibilità elevata delle macchine virtuali
+  description: Usare Azure Load Balancer come servizio di bilanciamento del carico pubblico per distribuire il traffico in ingresso pubblico tra più macchine virtuali di Azure. Comprendere lo scopo di un servizio di bilanciamento del carico. Usare Azure Load Balancer nel portale, identificare un set di scalabilità di macchine virtuali a cui indirizzare il traffico e monitorare il traffico.
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Make your virtual machines highly available
-summary: Distribute public inbound traffic across multiple virtual machines with Load Balancer.
-abstract: |
-  In this module, you will:
-  - Decide when to use a load balancer
-  - Identify the differences between the basic and standard load balancer editions
-  - Create a new load balancer
-  - Create virtual networks associated with a load balancer
-  - Configure load balancer rules
-  - Configure a load balancer health probe
-prerequisites: |
-  - Experience administering Azure resources using the Azure portal
-  - Experience with Azure Virtual Machines
-  - Some knowledge of virtual-machine networking and public IP addresses
+  ms.openlocfilehash: 44610f9c9a3f6e1b651d68d1dbfa52cfb5e29c5f
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44232174"
+title: Garantire la disponibilità elevata delle macchine virtuali
+summary: Distribuire il traffico in ingresso pubblico tra più macchine virtuali con Load Balancer.
+abstract: >
+  In questo modulo verrà descritto come:
+
+  - Decidere quando usare un servizio di bilanciamento del carico
+
+  - Identificare le differenze tra le edizioni Load Balancer Standard e Load Balancer Basic
+
+  - Creare un nuovo servizio di bilanciamento del carico
+
+  - Creare le reti virtuali associate a un servizio di bilanciamento del carico
+
+  - Configurare le regole del servizio di bilanciamento del carico
+
+  - Configurare un probe di integrità per il servizio di bilanciamento del carico
+prerequisites: >
+  - Esperienza di amministrazione delle risorse di Azure con il portale di Azure
+
+  - Esperienza con Macchine virtuali di Azure
+
+  - Conoscenza di base delle reti e degli indirizzi IP pubblici delle macchine virtuali
 iconUrl: http://via.placeholder.com/120x120
 levels:
 - intermediate

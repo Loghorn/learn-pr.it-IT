@@ -1,20 +1,19 @@
-In this module, you've seen what Azure Database for PostgreSQL offering looks like. You saw how to create an Azure Database for PostgreSQL using the Azure portal as well as Azure CLI.
+In questo modulo sono state acquisite informazioni sull'offerta Database di Azure per PostgreSQL. È stato illustrato come creare un database di Azure per PostgreSQL usando il portale di Azure, nonché l'interfaccia della riga di comando di Azure.
 
-You looked at the configuration options available to configure a PostgreSQL server-level firewall rule and enforce SSL connections. Finally, you saw how to connect to an Azure Database for PostgreSQL server using _psql_ in Azure Cloud Shell
+Sono state esaminate le opzioni di configurazione disponibili per configurare una regola del firewall a livello del server PostgreSQL e imporre le connessioni SSL. Infine, è stato mostrato come connettersi a server di database di Azure per PostgreSQL tramite _psql_ in Azure Cloud Shell
 
-## Clean up
-
+## <a name="clean-up"></a>Eseguire la pulizia
 <!---TODO: Update for sandbox?--->
 
-All that is left now is for you to clean up the resources you created in the labs. Remember the server will generate a monthly charge even though you may not use it. If you create resources for testing purposes, an easy way to get rid of them all is to delete the Resource Group they are part of.
+A questo punto, rimane solo da eseguire la pulizia delle risorse create nei lab. Tenere presente che il server genererà un addebito mensile anche per le risorse che non vengono usate. Se si creano risorse a scopo di test, è possibile rimuoverle tutte facilmente eliminando il gruppo di risorse di cui fanno parte.
 
 > [!NOTE]
-> Recall, a resource group is a collection of resources that share the same lifecycle, permissions, and policies. These actions will delete all resources allocated within this resource group, including all data you may have added to the databases on the server you created.
+> Ricordare che un gruppo di risorse è una raccolta di risorse che condividono il ciclo di vita, le autorizzazioni e i criteri. Queste azioni elimineranno tutte le risorse allocate in questo gruppo di risorse, inclusi tutti i dati eventualmente aggiunti ai database nel server creato.
 
-- Sign in to the [Azure portal](https://portal.azure.com?azure-portal=true).
+- Accedere al [portale di Azure](https://portal.azure.com?azure-portal=true).
 
-- In the left menu, select **Resource groups** to view all resource groups currently in use for your account.
+- Nel menu a sinistra selezionare **Gruppi di risorse** per visualizzare tutti i gruppi di risorse attualmente in uso per l'account.
 
-- Click on the name of the resource group you created and click on the **Delete resource group** button in the toolbar near the top.
+- Fare clic sul nome del gruppo di risorse creato e quindi sul pulsante **Elimina gruppo di risorse** nella barra degli strumenti nella parte superiore.
 
-- You'll a dialog box titled **Are you sure you want to delete `<resource_group_name>`** prompting you to type in the name of the resource group to confirm deletion. Confirm the resource group name and click the Delete button at the bottom.
+- Verrà visualizzata una finestra di dialogo con il titolo **Eliminare `<resource_group_name>`** in cui viene richiesto di digitare il nome del gruppo di risorse per confermarne l'eliminazione. Confermare il nome del gruppo di risorse e fare clic sul pulsante Elimina nella parte inferiore.

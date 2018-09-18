@@ -1,19 +1,19 @@
-Imagine you work for a major news organization that reports breaking news alerts. Our company employs a worldwide network of journalists that are constantly sending updates through a web portal and a mobile app. A middle tier web service layer then takes those alert updates and publishes them online through several channels.
+Si supponga di lavorare per un'agenzia di stampa che diffonde avvisi di notizie in tempo reale. L'azienda si avvale di una rete mondiale di giornalisti che inviano costantemente aggiornamenti attraverso un portale Web e un'app per dispositivi mobili. Un servizio Web di livello intermedio accetta gli aggiornamenti e li pubblica online tramite diversi canali.
 
-However, it's been noticed the system is missing alerts when globally significant events occur. This is a _huge_ problem because we're being "scooped" by our competition! You've been hand-selected as the company's top developer to identify and fix the problem.
+Si è rilevato che il sistema non registra alcuni avvisi corrispondenti a eventi di importanza globale. Si tratta di un problema _serio_, perché la concorrenza ottiene un vantaggio competitivo determinante. L'utente è stato selezionato come principale sviluppatore dell'azienda per identificare e risolvere il problema.
 
-The middle tier provides plenty of capacity to handle normal loads. However, a look at the server logs revealed the system was overloaded when several journalists tried to upload larger breaking stories at the same time. Some writers complained the portal became unresponsive, and others said they lost their stories altogether. You've spotted a direct correlation between the reported issues and the spike in demand on the middle tier servers.
+Il livello intermedio fornisce capacità più che sufficiente per la gestione di carichi normali. Tuttavia un esame dei log dei server rivela che il sistema ha registrato un overload quando più giornalisti hanno provato a caricare contemporaneamente articoli di rilievo. Alcuni autori hanno segnalato che il portale si bloccava e altri hanno detto che i loro articoli sono andati perduti. Lo sviluppatore ha rilevato una correlazione diretta tra i problemi segnalati e il picco della domanda per i server di livello intermedio.
 
-Clearly, you need a way to handle these unexpected peaks. You don't want to add more instances of the website and middle tier web service because they're expensive and, under normal conditions, redundant. We could dynamically spin up instances, but this takes time and we'd have the issue waiting for new servers to come online.
+Ovviamente è necessario un approccio per la gestione di questi picchi imprevisti. Non si vuole aggiungere altre istanze del sito Web e del servizio Web di livello intermedio, perché sono soluzioni costose e ridondanti in condizioni normali. È possibile eseguire lo spin up dinamico delle istanze, ma questa soluzione richiede tempo e lo stesso problema può ripetersi con i nuovi server quando vengono messi online.
 
-You can solve this problem by using Azure Queue storage. A storage queue is a high-performance message buffer that can act as a broker between the front-end components (the "producers") and the middle tier (the "consumer"). 
+Il problema può essere risolto usando l'archiviazione code di Azure. Una coda di archiviazione è un buffer di messaggi ad alte prestazioni che può fare da broker tra i componenti front end ("producer") e il livello intermedio ("consumer"). 
 
-Our front-end components place a message for each new alert into a queue. The middle tier then retrieves these messages one at a time from the queue for processing. At times of high-demand, the queue may grow in length, but no stories will be lost, and the application will remain responsive. When demand drops back to normal levels, the web service will catch up by working through the queue backlog.
+I componenti front end inseriscono un messaggio per ogni nuovo avviso in una coda. Quindi il livello intermedio recupera i messaggi dalla coda uno alla volta per l'elaborazione. In fasi di elaborazione intensiva la lunghezza della coda può crescere, ma nessun articolo va perduto e l'applicazione rimane reattiva. Quando la richiesta torna a livelli normali, il servizio Web recupera ed elabora il backlog della coda.
 
-Let's learn how to use Azure Queue storage to handle high demand and improve resilience in your distributed applications.
+Le informazioni seguenti illustrano come usare l'Archiviazione code di Azure per gestire i picchi di domanda e migliorare la resilienza delle applicazioni distribuite.
 
-## Learning objectives
+## <a name="learning-objectives"></a>Obiettivi di apprendimento
 
-- Create an Azure Storage account that supports queues.
-- Create a queue using C# and the Azure Storage Client Library for .NET.
-- Add, retrieve, and remove messages from a queue using C# and the Azure Storage Client Library for .NET.
+- Creare un account di Archiviazione di Azure che supporta le code.
+- Creare una coda usando C# e la libreria client di Archiviazione di Azure per .NET.
+- Aggiungere, recuperare e rimuovere messaggi da una coda usando C# e la libreria client di Archiviazione di Azure per .NET.

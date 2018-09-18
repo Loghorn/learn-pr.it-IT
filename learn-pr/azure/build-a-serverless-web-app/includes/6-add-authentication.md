@@ -1,82 +1,80 @@
-Azure App Service authentication enables turn-key authentication support in an Azure Functions app. It integrates seamlessly with Facebook, Twitter, Microsoft accounts, Google, and Azure Active Directory. You'll add App Service authentication to protect the back-end APIs of your web app.
+L'autenticazione del servizio app di Azure abilita il supporto dell'autenticazione chiavi in mano nell'app Funzioni di Azure. Si integra perfettamente con Facebook, Twitter, account Microsoft, Google e Azure Active Directory. È possibile aggiungere l'autenticazione del servizio app per proteggere le API back-end dell'app Web.
 
-## Enable App Service authentication
+## <a name="enable-app-service-authentication"></a>Abilitare l'autenticazione del servizio app
 
-1. Open the function app in the [Azure portal](https://portal.azure.com/?azure-portal=true).
+1. Aprire l'app per le funzioni nel [portale di Azure](https://portal.azure.com/?azure-portal=true).
 
-1. Under **Platform features**, select **Authentication/Authorization**.
+1. In **Funzionalità della piattaforma** selezionare **Autenticazione/Autorizzazione**.
 
-    ![Select Authentication and Authorization](../media/6-authorization.jpg)
+    ![Selezionare Autenticazione e Autorizzazione](../media/6-authorization.jpg)
 
-1. Select the following values:
+1. Selezionare i valori seguenti:
     
-    | Setting      |  Suggested value   | Description                                        |
+    | Impostazione      |  Valore consigliato   | Descrizione                                        |
     | --- | --- | ---|
-    | **App Service Authentication** | On | Enable authentication. |
-    | **Action when request is not authenticated** | Sign in with Azure Active Directory. | Select a configured authentication method (See below). |
-    | **Authentication Providers** | See below. | See below. |
-    | **Token store** | On | Allow App Service to store and manage tokens. |
-    | **Allowed external redirect URLs** | The URL of your application, for example https://firstserverlessweb.z4.web.core.windows.net/. | URLs that App Service is allowed to redirect to, after a user is authenticated. |
+    | **Autenticazione servizio app** | Attivato | Abilitare l'autenticazione. |
+    | **Azione da eseguire quando la richiesta non è autenticata** | Accedere con Azure Active Directory. | Selezionare un metodo di autenticazione configurato (vedere qui di seguito). |
+    | **Provider di autenticazione** | Vedere qui di seguito. | Vedere qui di seguito. |
+    | **Archivio token** | Attivato | Consente al servizio app di archiviare e gestire i token. |
+    | **URL di reindirizzamento esterni consentiti** | L'URL dell'applicazione, ad esempio https://firstserverlessweb.z4.web.core.windows.net/. | URL a cui può essere reindirizzato il servizio app dopo l'autenticazione di un utente. |
 
-1. Select **Azure Active Directory** to reveal **Azure Active Directory Settings**.
+1. Selezionare **Azure Active Directory** per visualizzare **Impostazioni di Azure Active Directory**.
 
-    1. Select **Express** as the **Management Mode** and fill in the following information.
+    1. Selezionare **Rapida** come **Modalità di gestione** e inserire le informazioni seguenti.
     
-        | Setting      |  Suggested value   | Description                                        |
+        | Impostazione      |  Valore consigliato   | Descrizione                                        |
         | --- | --- | ---|
-        | **Management mode** | Express, Create new AD app | Automatically set up a service principal and Azure Active Directory authentication. |
-        | **Create app** | my-serverless-webapp | Enter a unique application name. |
+        | **Modalità di gestione** | Rapida, Crea nuova app AD | Configurare automaticamente un'entità servizio e l'autenticazione di Azure Active Directory. |
+        | **Creare un'app** | my-serverless-webapp | Immettere un nome applicazione univoco. |
     
-    1. Click **OK** to save the Azure Active Directory settings.
+    1. Fare clic su **OK** per salvare le impostazioni di Azure Active Directory.
 
-    ![Authentication and Authorization and Azure Active Directory settings](../media/6-create-aad.png)
-
-
-1. Click **Save**.
+    ![Impostazioni di Autenticazione, Autorizzazione e Azure Active Directory](../media/6-create-aad.png)
 
 
-## Modify the web app to enable authentication
+1. Fare clic su **Salva**.
 
-1. In Cloud Shell, ensure that the current directory is the **www/dist** folder.
+
+## <a name="modify-the-web-app-to-enable-authentication"></a>Modificare l'app Web per abilitare l'autenticazione
+
+1. In Cloud Shell assicurarsi che la directory corrente sia la cartella **www/dist**.
 
     ```azurecli
     cd ~/functions-first-serverless-web-application/www/dist
     ```
 
-1. You enable authentication in your function app by modifying **settings.js**. Open the file in Cloud Shell Editor.
+1. Per abilitare l'autenticazione nell'app per le funzioni, aggiungere la riga di codice seguente al file **settings.js**:
+
+    `window.authEnabled = true`
+
+    Effettuare la modifica e visualizzare il risultato eseguendo i comandi seguenti o usando un editor da riga di comando come VIM.
 
     ```azurecli
-    code settings.js
+    echo "window.authEnabled = true" >> settings.js
     ```
 
-1. Append the following line to the file.
-
-    ```azurecli
-    window.authEnabled = true
-    ```
-
-1. Confirm the change was made to the file.
+    Verificare che la modifica sia stata effettuata nel file.
 
     ```azurecli
     cat settings.js
     ```
 
-1. Upload the file to Blob storage.
+1. Caricare il file nell'archivio BLOB.
 
     ```azurecli
     az storage blob upload -c \$web --account-name <storage account name> -f settings.js -n settings.js
     ```
 
 
-## Test the application
+## <a name="test-the-application"></a>Test dell'applicazione
 
-1. Open the application in a browser. Click **Log in** and log in.
+1. Aprire l'applicazione in un browser. Fare clic su **Accedi** ed eseguire l'accesso.
 
-1. Select an image file and upload it.
+1. Selezionare un file di immagine e caricarlo.
 
-    ![Sign in page](../media/6-aad-auth.png)
+    ![Pagina di accesso](../media/6-aad-auth.png)
     
 
-## Summary
+## <a name="summary"></a>Riepilogo
 
-In this unit, you learned how to add authentication to the application using Azure App Service authentication.
+In questa unità è stato descritto come aggiungere l'autenticazione all'applicazione usando l'autenticazione del servizio app di Azure.

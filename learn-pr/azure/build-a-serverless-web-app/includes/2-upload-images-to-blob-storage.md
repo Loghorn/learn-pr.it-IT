@@ -1,4 +1,4 @@
-L'applicazione che si sta creando è una raccolta di foto che usa JavaScript lato client per chiamare API per caricare e visualizzare immagini. In questo modulo si creerà un'API usando una funzione serverless che genera un URL temporaneo per caricare un'immagine. L'applicazione Web usa l'URL generato per caricare un'immagine nell'archiviazione BLOB usando l'[API REST dell'archiviazione BLOB](https://docs.microsoft.com/rest/api/storageservices/blob-service-rest-api).
+L'applicazione che si sta creando è una raccolta di foto che usa JavaScript lato client per chiamare API per caricare e visualizzare immagini. In questa unità si creerà un'API usando una funzione serverless che genera un URL temporaneo per caricare un'immagine. L'applicazione Web usa l'URL generato per caricare un'immagine nell'archiviazione BLOB usando l'[API REST dell'archiviazione BLOB](https://docs.microsoft.com/rest/api/storageservices/blob-service-rest-api).
 
 ## <a name="create-a-blob-storage-container-for-images"></a>Creare un contenitore di archiviazione BLOB per le immagini
 
@@ -6,7 +6,7 @@ L'applicazione richiede un contenitore di archiviazione separato per caricare e 
 
 1. Verificare di essere ancora connessi a Azure Cloud Shell (Bash). In caso contrario, selezionare **Enter focus mode** (Accedi a modalità messa a fuoco) per aprire una finestra di Cloud Shell.
 
-1.  Creare un nuovo contenitore denominato **images** nel proprio account di archiviazione con accesso pubblico a tutti i BLOB.
+1.  Creare un nuovo contenitore denominato **images** nell'account di archiviazione con accesso pubblico a tutti i BLOB.
 
     ```azurecli
     az storage container create -n images --account-name <storage account name> --public-access blob
@@ -18,7 +18,7 @@ Funzioni di Azure è un servizio per l'esecuzione di funzioni serverless. Una fu
 
 Un'app Funzioni di Azure è un contenitore per una o più funzioni serverless.
 
-- Creare una nuova app Funzioni con un nome univoco nel gruppo di risorse **first-serverless-app** creato precedentemente. Le app Funzioni richiedono un account di archiviazione. In questa esercitazione viene usato l'account di archiviazione esistente.
+- Creare una nuova app Funzioni con un nome univoco nel gruppo di risorse **first-serverless-app** creato precedentemente. Le app Funzioni richiedono un account di archiviazione. In questa unità si userà l'account di archiviazione esistente creato nell'ultima unità.
 
     ```azurecli
     az functionapp create -n <function app name> -g first-serverless-app -s <storage account name> -c westcentralus
@@ -28,10 +28,9 @@ Un'app Funzioni di Azure è un contenitore per una o più funzioni serverless.
 
 Per caricare un'immagine in modo sicuro nell'archiviazione BLOB, l'applicazione Web della raccolta foto invia alla funzione serverless una richiesta HTTP di generazione di un URL temporaneo. La funzione viene attivata da una richiesta HTTP e usa Azure Storage SDK per generare e restituire l'URL protetto.
 
-1. Dopo che l'app Funzioni di Azure è stata creata, cercarla nel portale di Azure usando la casella **Cerca**. Fare clic sull'app e aprirla.
+1. Dopo che è stata creata, cercare l'app Funzioni di Azure nel [portale di Azure](https://portal.azure.com/?azure-portal=true) usando la casella **Cerca**. Fare clic sull'app per aprirla.
 
     ![Aprire l'app Funzioni](../media/2-search-function-app.png)
-
 
 1. Nella finestra dell'app Funzioni nel riquadro di spostamento a sinistra scegliere **Funzioni** e fare clic sul segno più (+) per creare una nuova funzione serverless.
 
@@ -39,7 +38,7 @@ Per caricare un'immagine in modo sicuro nell'archiviazione BLOB, l'applicazione 
 
 1. Fare clic su **Funzione personalizzata** per visualizzare un elenco di modelli di funzione.
 
-1. Individuare il modello **HttpTrigger** e fare clic sul linguaggio da usare (C# o JavaScript).
+1. Individuare il modello **HttpTrigger** e fare clic su C# o JavaScript.
 
 1. Usare i valori seguenti per creare una funzione che genera un URL di caricamento BLOB:
 
@@ -47,37 +46,33 @@ Per caricare un'immagine in modo sicuro nell'archiviazione BLOB, l'applicazione 
     | --- | --- | ---|
     | **Linguaggio** | C# o JavaScript | Selezionare il linguaggio che si vuole usare. |
     | **Assegnare un nome alla funzione** | GetUploadUrl | Immettere questo nome esattamente come illustrato in modo che l'applicazione possa individuare la funzione. |
-    | **Livello di autorizzazione** | Anonimo | Consente l'accesso pubblico alla funzione. |
+    | **Livello di autorizzazione** | Anonimo | Permette l'accesso pubblico alla funzione. |
 
-    ![Inserire le impostazioni per una nuova funzione attivata da HTTP](../media/2-new-function-httptrigger.png)
+    ![Immettere le impostazioni per una nuova funzione attivata da HTTP](../media/2-new-function-httptrigger.png)
 
 1. Fare clic su **Crea** per creare la funzione.
 
 ::: zone pivot="csharp"
-1. **C#** 
-
-    Quando viene visualizzato il codice sorgente della funzione, sostituire l'intero contenuto del file **run.csx** con il contenuto del file [**csharp/GetUploadUrl/run.csx**](https://raw.githubusercontent.com/Azure-Samples/functions-first-serverless-web-application/master/csharp/GetUploadUrl/run.csx).
+1. (C#) Quando viene visualizzato il codice sorgente della funzione, sostituire l'intero contenuto del file **run.csx** con il contenuto del file [**csharp/GetUploadUrl/run.csx**](https://raw.githubusercontent.com/Azure-Samples/functions-first-serverless-web-application/master/csharp/GetUploadUrl/run.csx).
 
 ::: zone-end
 
 ::: zone pivot="javascript"
-1. **JavaScript** 
+1. (JavaScript) Questa funzione richiede il pacchetto `azure-storage` di npm. Il pacchetto genera il token di firma di accesso condiviso (SAS) necessario per compilare l'URL protetto. Per installare il pacchetto npm, fare clic sull'app Funzioni nel riquadro di spostamento di sinistra e fare clic su **Funzionalità della piattaforma**.
 
-    1. (JavaScript) Questa funzione richiede il pacchetto `azure-storage` da npm. Il pacchetto genera il token di firma di accesso condiviso (SAS) necessario per compilare l'URL protetto. Per installare il pacchetto npm, fare clic sull'app Funzioni nel riquadro di spostamento di sinistra e fare clic su **Funzionalità della piattaforma**.
+1. (JavaScript) Fare clic su **Console** per visualizzare una finestra della console.
 
-    1. (JavaScript) Fare clic su **Console** per visualizzare una finestra della console.
+    ![Aprire una finestra della console](../media/2-open-console.jpg)
 
-        ![Aprire una finestra della console](../media/2-open-console.jpg)
+1. (JavaScript) Assicurarsi che la directory corrente sia **d:\home\site\wwwroot** eseguendo il comando `cd d:\home\site\wwwroot`.
 
-    1. (JavaScript) Assicurarsi che la directory corrente sia **d:\home\site\wwwroot** eseguendo il comando `cd d:\home\site\wwwroot`.
+1. (JavaScript) Eseguire il comando `npm init -y` per creare un file **package.json** vuoto.
 
-    1. (JavaScript) Eseguire il comando `npm init -y` per creare un file **package.json** vuoto.
+1. (JavaScript) Eseguire il comando `npm install --save azure-storage` nella console per installare il pacchetto. Salvare il pacchetto come **package.json**. Il completamento dell'operazione potrebbe richiedere alcuni minuti.
 
-    1. (JavaScript) Eseguire il comando `npm install --save azure-storage` nella console per installare il pacchetto. Salvare il pacchetto come **package.json**. Il completamento dell'operazione potrebbe richiedere alcuni minuti.
+1. (JavaScript) Fare clic sulla funzione (**GetUploadUrl**) nel riquadro di spostamento a sinistra per visualizzare la funzione. Sostituire tutto il contenuto del file **index.js** con il contenuto del file [**javascript/GetUploadUrl/index.js**](https://raw.githubusercontent.com/Azure-Samples/functions-first-serverless-web-application/master/javascript/GetUploadUrl/index.js).
 
-    1. (JavaScript) Fare clic sulla funzione (**GetUploadUrl**) nel riquadro di spostamento a sinistra per visualizzare la funzione. Sostituire tutto il contenuto del file **index.js** con il contenuto del file [**javascript/GetUploadUrl/index.js**](https://raw.githubusercontent.com/Azure-Samples/functions-first-serverless-web-application/master/javascript/GetUploadUrl/index.js).
-    
-        ![Contenuto di index.js dopo l'aggiornamento](../media/2-paste-js.jpg)
+    ![Contenuto di index.js dopo l'aggiornamento](../media/2-paste-js.jpg)
 
 ::: zone-end
 
@@ -85,7 +80,7 @@ Per caricare un'immagine in modo sicuro nell'archiviazione BLOB, l'applicazione 
 
 1. Fare clic su **Salva**. Verificare nel pannello dei log che la funzione sia stata compilata correttamente.
 
-La funzione genera un cosiddetto URL di firma di accesso condiviso (SAS), che consente di caricare un file nell'archivio BLOB. L'URL di firma di accesso condiviso è valido per un breve periodo di tempo e consente il caricamento di un solo file. Vedere la documentazione dell'archiviazione BLOB per altre informazioni sull'[uso delle firme di accesso condiviso](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1).
+La funzione genera un URL di firma di accesso condiviso, usato per caricare un file nell'archiviazione BLOB. L'URL di firma di accesso condiviso è valido per un breve periodo di tempo e permette il caricamento di un solo file. Vedere la documentazione dell'archiviazione BLOB per altre informazioni sull'[uso di firme di accesso condiviso](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1).
 
 
 ## <a name="add-an-environment-variable-for-the-storage-connection-string"></a>Aggiungere una variabile di ambiente per la stringa di connessione di archiviazione
@@ -146,23 +141,24 @@ Poiché il front-end della funzione è ospitato nell'archiviazione BLOB, ha un n
 
     ![Selezionare CORS](../media/2-open-cors.jpg)
 
-1. Aggiungere un'origine consentita per l'URL dell'applicazione dal modulo precedente, omettendo il carattere finale (/). Ad esempio, `https://firstserverlessweb.z4.web.core.windows.net`.
+1. Aggiungere un'origine consentita per l'URL dell'applicazione dal modulo precedente, omettendo la barra finale (/). Ad esempio: `https://firstserverlessweb.z4.web.core.windows.net`.
 
-    ![Impostazioni CORS con l'aggiunta dell'URL dell'applicazione Web serverless](../media/2-add-cors.png)
+    ![Impostazioni CORS che mostrano l'aggiunta dell'URL dell'app Web serverless](../media/2-add-cors.png)
 
 1. Fare clic su **Salva**.
 
-1. **C#**:
+::: zone pivot="csharp"
+1. (C#) Tornare alla funzione `GetUploadUrl` e selezionare la scheda **Integrazione**.
 
-   1. (C#) Tornare alla funzione `GetUploadUrl` e selezionare la scheda **Integrazione**.
+1. (C#) In **Metodi HTTP selezionati** selezionare **OPTIONS**.
 
-   1. (C#) In **Metodi HTTP selezionati** selezionare **OPTIONS**.
+    **GET**, **POST** e **OPTIONS** devono essere tutti selezionati. CORS usa il metodo **OPTIONS**, che non è selezionato per impostazione predefinita per le funzioni C#.  
 
-      **GET**, **POST** e **OPTIONS** devono essere tutti selezionati. CORS usa il metodo **OPTIONS**, che non è selezionato per impostazione predefinita per le funzioni C#.  
+1. (C#) Fare clic su **Salva**.
 
-   1. (C#) Fare clic su **Salva**.
+::: zone-end
 
-1. Sempre nel portale di Azure passare all'app Funzioni. Selezionare la scheda **Panoramica**. Fare clic su **Riavvia** per assicurarsi che le modifiche per CORS abbiano effetto.
+1. Sempre nel portale di Azure, passare all'app Funzioni. Selezionare la scheda **Panoramica**. Fare clic su **Riavvia** per assicurarsi che le modifiche per CORS abbiano effetto.
 
 ## <a name="configure-cors-in-the-storage-account"></a>Configurare CORS nell'account di archiviazione
 
@@ -268,7 +264,6 @@ A questo punto, l'applicazione della raccolta può caricare un'immagine nell'arc
     az storage blob delete-batch -s images --account-name <storage account name>
     ```
 
-
 ## <a name="summary"></a>Riepilogo
 
-In questa unità è stata creata un'app Funzioni di Azure ed è stato illustrato come usare una funzione serverless per consentire a un'applicazione Web di caricare immagini nell'archivio BLOB. Si vedrà ora come creare anteprime per le immagini caricate usando una funzione serverless attivata dal BLOB.
+In questa unità è stata creata un'app Funzioni di Azure ed è stato descritto come usare una funzione serverless per consentire a un'applicazione Web di caricare immagini nell'archiviazione BLOB. Si osserverà ora come creare anteprime per le immagini caricate usando una funzione serverless attivata dal BLOB.

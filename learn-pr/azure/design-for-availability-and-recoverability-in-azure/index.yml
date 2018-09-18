@@ -1,28 +1,32 @@
 ### YamlMime:Module
 uid: learn.design-for-availability-and-recoverability
 metadata:
-  title: Design for availability and recoverability in Azure
-  description: Make your Azure architecture highly available and able to recover from failures
+  title: Progettare per la disponibilità e la possibilità di ripristino in Azure
+  description: Rendere l'architettura di Azure a disponibilità elevata e in grado di eseguire il ripristino dagli errori
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Design for availability and recoverability
-summary: If you were to lose one or more components of your infrastructure, could your architecture handle it? If you experience a loss of data or identify data corruption, could you recover the data? Do you know what your requirements are to your customers for system availability and disaster recovery? Learn how to incorporate availability and recoverability into your architecture.
-abstract: |
-  In this module, you will:
-    - Leverage Azure services to design a highly available application
-    - Incorporate Azure disaster recovery capabilities into your architecture
-    - Back up and restore on Azure to protect your application from data loss or corruption
-prerequisites: None
+  ms.openlocfilehash: 2ce61bcbbcae0eb7b518122c280580176850e6dd
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44236434"
+title: Progettare per la disponibilità e la possibilità di ripristino
+summary: Se si dovesse subire la perdita di uno o più componenti dell'infrastruttura, l'architettura riuscirebbe a gestire il problema? In seguito a una perdita o un danneggiamento dei dati, sarebbe possibile eseguirne il ripristino? Si conoscono i requisiti relativamente ai clienti per la disponibilità del sistema e il ripristino di emergenza? Di seguito verrà illustrato come incorporare la disponibilità e la possibilità di ripristino nell'architettura.
+abstract: >
+  In questo modulo verrà descritto come:
+    - Sfruttare i servizi di Azure per progettare un'applicazione a disponibilità elevata
+    - Incorporare le funzionalità di ripristino di emergenza di Azure nell'architettura
+    - Eseguire il backup e il ripristino in Azure per proteggere l'applicazione della perdita e dal danneggiamento dei dati
+prerequisites: Nessuno
 iconUrl: http://via.placeholder.com/120x120
 levels:
 - intermediate
 roles:
 - solution-architect
-#TODO: Update achievement
 achievement: learn.placeholder.badge
 products:
 - azure

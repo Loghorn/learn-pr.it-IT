@@ -1,21 +1,21 @@
-We've covered a lot of topics in this module, but rightfully so, as security is such an important part of any architecture. Let's review what we've covered.
+In questo modulo sono stati trattati molti argomenti, ma giustamente, poiché la sicurezza rappresenta una parte importante di qualsiasi architettura. Vediamo quanto è stato trattato.
 
-### Defense in depth
+### <a name="defense-in-depth"></a>Difesa avanzata
 
-We've talked through how to approach security in your architecture through defense in depth. Looking only at firewalls or antimalware alone isn't enough to slow down attackers. Use a layered approach and address security at each layer.
+Si è parlato di come gestire la sicurezza nell'architettura tramite la difesa avanzata. Concentrarsi unicamente sui firewall o l'antimalware non è sufficiente per rallentare gli attacchi. È necessario usare un approccio su più livelli e considerare la sicurezza per ogni livello.
 
-### Identity management
+### <a name="identity-management"></a>Gestione delle identità
 
-We've talked through identity management, and how identity becomes an integral piece of the architectural puzzle. Azure AD has a number of features and capabilities to improve the identity security story for your environment.
+Abbiamo parlato della gestione delle identità e come l'identità sia una parte integrante del puzzle dell'architettura. Azure AD dispone di varie caratteristiche e funzionalità che consentono di migliorare la storia di sicurezza delle identità per l'ambiente.
 
-### Infrastructure protection
+### <a name="infrastructure-protection"></a>Protezione dell'infrastruttura
 
-Protecting the access to your infrastructure ensures that the resources you create are administered by only those who should be administering them.
+La protezione dell'accesso all'infrastruttura assicura che le risorse create vengano amministrate solo dagli utenti preposti a farlo.
 
-### Encryption
+### <a name="encryption"></a>Crittografia
 
-Encryption is often the last layer of defense against access to your data. By using encryption, you make your data unreadable to anyone without the decryption keys. You should identify and classify your data, then align with encryption requirements from your business and any regulations your organization must adhere to.
+La crittografia è spesso l'ultimo livello di difesa contro l'accesso ai dati. Tramite la crittografia è possibile rendere i dati illeggibili per chiunque non possegga le chiavi di decrittografia. È necessario identificare e classificare i dati, quindi conformarsi ai requisiti di crittografia dell'azienda e a tutte le norme che l'organizzazione deve rispettare.
 
-### Network security
+### <a name="network-security"></a>Sicurezza di rete
 
-Finally, we talked through securing your network. We looked at ways to secure traffic flow between applications and the internet. We described some ways to secure traffic flow amongst applications. And we wrapped up by looking at how to secure traffic flow between users and an application.
+Infine, abbiamo parlato di come proteggere la rete. Abbiamo valutato modi per proteggere il flusso del traffico tra le applicazioni e Internet. Sono stati indicati alcuni modi per proteggere il flusso del traffico tra le applicazioni. Abbiamo concluso esaminando come proteggere il flusso del traffico tra utenti e un'applicazione.

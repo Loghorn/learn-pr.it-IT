@@ -1,23 +1,23 @@
-Suppose you work in an IT department of a drug research company. You administer a group of servers that run all the company infrastructure from web servers to databases. However, the hardware is getting older and is struggling to keep up with some of the new data analysis applications being deployed to it.
+Si supponga di lavorare nel reparto IT di una società di ricerca farmaceutica e di amministrare un gruppo di server che eseguono tutta l'infrastruttura aziendale, dai server Web ai database. L'hardware sta tuttavia diventando vecchio e non riesce a tenere il passo con alcune delle nuove applicazioni di analisi dei dati che sono state distribuite.
 
-You could upgrade all the hardware, but that's not appealing for several reasons:
+Si potrebbe aggiornare tutto l'hardware, ma questa soluzione non sembra appropriata per diversi motivi:
 
-1. The servers are physically scattered all around the world with minimal staff in each location. We'd like to centralize the upgrade to our home office.
+1. I server sono fisicamente dislocati in tutto il mondo con poco personale in ogni sede. Si vuole centralizzare l'aggiornamento nella sede centrale.
 
-1. The company runs custom data analysis software on several versions and flavors of Windows and Linux, sometimes set up with odd configurations that aren't entirely understood. We need a way to test our deployments completely and try different configurations to make sure everything is working before we transition the work.
+1. La società usa un software di analisi dei dati personalizzato in diverse versioni di Windows e Linux, in alcuni casi con configurazioni particolari non del tutto chiare. Serve un modo per testare le distribuzioni in modo esaustivo e provare configurazioni diverse al fine di verificare che tutto funzioni correttamente prima della transizione.
 
-1. Business is booming, and the company is growing fast. It's likely that the load on the internal servers, particularly the databases, will continue to grow, requiring us to either buy for the future or come up with a scaling plan to handle the growth.
+1. L'attività è in forte espansione e la società sta crescendo rapidamente. È probabile che il carico sui server interni, in particolare sui database, continui a crescere rendendo necessario l'acquisto di soluzioni per il futuro o la definizione di un piano di scalabilità per gestire la crescita.
 
-For these reasons, you decide that it's time to explore the cloud to see if it can help solve the load and scale problem. Since you have a bunch of mixed servers and custom software, it makes sense to look at trying to move servers one at a time into Azure using Azure Virtual Machines (VMs).
+Per questi motivi, si decide che è il momento di esaminare il cloud per verificare se può aiutare a risolvere il problema relativo al carico e alla scalabilità. In presenza di un gruppo di server misti e software personalizzato, si può esplorare la possibilità di spostare i server uno alla volta in Azure usando macchine virtuali di Azure.
 
-Azure VMs are one of several types of on-demand, scalable computing resources that Azure offers. With VMs, you have total control over the configuration and can install anything you need to perform the work. You don't need to purchase physical hardware when you need to scale or extend your datacenter. Finally, Azure provides additional services to monitor, secure, and manage updates and patches to the OS.
+Le macchine virtuali di Azure sono uno dei vari tipi di risorse di calcolo scalabili e su richiesta offerti da Azure. Con le macchine virtuali, si ha il controllo totale sulla configurazione e si può installare tutto il necessario per la propria attività. Se occorre scalare o estendere il data center, non è necessario acquistare hardware fisico. Azure offre infine servizi aggiuntivi per monitorare, proteggere e gestire aggiornamenti e patch del sistema operativo.
 
-We're going to look at the decisions made before creating a VM, the options to create and manage the VM, and the extensions and services you use to manage your VM.
+Verranno ora esaminate le decisioni prese prima di creare una VM, le opzioni per creare e gestire la macchina virtuale e le estensioni e i servizi usati per gestirla.
 
-## Learning objectives
+## <a name="learning-objectives"></a>Obiettivi di apprendimento
 
-In this module, you will:
+Questo modulo descrive:
 
-- Compile a checklist for creating a virtual machine
-- Describe the options to create and manage virtual machines
-- Describe the additional services available to administer virtual machines
+- Compilare un elenco di controllo per creare una macchina virtuale
+- Descrivere le opzioni per creare e gestire le macchine virtuali
+- I servizi aggiuntivi disponibili per amministrare le macchine virtuali

@@ -1,48 +1,53 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-computer-vision-service.7-summary
-title: Summary and knowledge check
+title: Riepilogo e verifica delle conoscenze
 metadata:
-  title: Summary and knowledge check
-  description: Summary and knowledge check
+  title: Riepilogo e verifica delle conoscenze
+  description: Riepilogo e verifica delle conoscenze
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
+  ms.openlocfilehash: 4bfc9a1aa36edd1bc613b0fdaef7f89d2e2c35fc
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44238066"
 durationInMinutes: 10
-content: |
+content: >
   [!include[](includes/7-summary.md)]
 quiz:
-  title: 'Computer Vision quiz'
+  title: Test relativo a Visione artificiale
   questions:
-  - content: "What kind of famous images won't be identified with Computer Vision?"
+  - content: Quali tipi di immagini famose non verranno identificate da Visione artificiale?
     choices:
-    - content: 'Landmarks '
+    - content: 'Punti di riferimento '
       isCorrect: false
-    - content: 'Celebrities'
+    - content: Celebrità
       isCorrect: false
-    - content: 'Movies'
+    - content: Film
       isCorrect: true
-  - content: 'Which visual features can we elect to receive when analyzing images?'
+  - content: Quali elementi visivi è possibile scegliere di ricevere durante l'analisi delle immagini?
     choices:
-    - content: 'Shapes'
+    - content: Forme
       isCorrect: true
-    - content: 'Image categorization'
+    - content: Classificazione delle immagini
       isCorrect: false
-    - content: 'Tags'
+    - content: Tag
       isCorrect: false
-    - content: 'Textual description'
+    - content: Descrizione testuale
       isCorrect: false
-    - content: 'Faces'
+    - content: Visi
       isCorrect: false
-    - content: 'Colors'
+    - content: Colori
       isCorrect: false
-    - content: 'Adult and suggestive content'
+    - content: Contenuto per adulti e allusivo
       isCorrect: false
-  - content: 'What does smart cropping do?'
+  - content: Qual è il risultato del ritaglio intelligente?
     choices:
-    - content: 'Crops pictures from the top left'
+    - content: Ritaglio di immagini a partire dalla parte superiore a sinistra
       isCorrect: false
-    - content: 'Crops pictures based on regions of interest (faces, objects in focus, others)'
+    - content: Ritaglio di immagini in base alle aree di interesse (visi, oggetti in primo piano, altro)
       isCorrect: true

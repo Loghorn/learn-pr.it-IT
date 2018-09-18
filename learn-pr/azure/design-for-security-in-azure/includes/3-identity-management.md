@@ -1,111 +1,111 @@
-Lamna Healthcare hosts a legacy internal application and web portal for its clinicians to manage patient health data. The organization has received many requests for this application to be available to caregivers who are often on-site with patients and therefore outside of the network. 
+Lamna Healthcare ospita un'applicazione legacy interna e un portale Web in cui gli specialisti possono gestire i dati sanitari dei pazienti. L'organizzazione ha ricevuto numerose richieste perché l'applicazione sia resa disponibile agli operatori sanitari che sono spesso fuori sede, presso i pazienti, e quindi all'esterno della rete. 
 
-A recent data leak by malicious agents has forced the company to tighten its password policies. They are now requiring users to change their passwords more frequently and use longer, more complex passwords. This has led to the unwanted side-effect of users recording complex passwords insecurely as they struggle to remember multiple sets of credentials created for different administrative roles. 
+Una recente perdita di dati causata da criminali informatici ha costretto la società a rafforzare i criteri di gestione delle password. Ora gli utenti devono usare password più lunghe e complesse e modificarle più di frequente. Questo ha creato un effetto collaterale indesiderato: gli utenti registrano le password complesse in modo non sicuro, perché hanno difficoltà a ricordare i vari set di credenziali creati per i diversi ruoli amministrativi. 
 
-Here, we'll discuss identity as a security layer for internal and external applications, the benefits of single sign-on (SSO) and multi-factor authentication (MFA) to provide identity security, and why to consider replicating on-premises identities to Azure Active Directory.
+Si illustrerà qui l'uso dell'identità come livello di sicurezza per le applicazioni interne ed esterne, i vantaggi del Single Sign-On (SSO) e dell'autenticazione a più fattori (MFA) per la protezione delle identità e il motivo per cui è consigliabile replicare le identità locali in Azure Active Directory.
 
-## Identity as a layer of security
+## <a name="identity-as-a-layer-of-security"></a>Identità come livello di sicurezza
 
-Digital identities are an integral part of today's business and social interactions on-premises and online. In the past, identity and access services were restricted to operating within a company's internal network, using protocols such as Kerberos and LDAP that were designed for this purpose. More recently, mobile devices have become the primary way people interact with digital services. Customers and employees alike expect to be able to access services from anywhere at any time, which has driven the development of identity protocols that can work at internet scale across many disparate devices and operating systems.
+Oggi le identità digitali sono parte integrante delle interazioni sociali e di business, in locale e online. In passato, le identità e i servizi di accesso operavano solo entro i confini della rete aziendale e venivano usati protocolli progettati allo scopo, ad esempio Kerberos e LDAP. Più di recente, i dispositivi mobili sono diventati lo strumento principale con cui le persone interagiscono con servizi digitali. Clienti e dipendenti si aspettano di poter accedere ai servizi ovunque in qualsiasi momento e questo ha portato allo sviluppo di protocolli di identità in grado di funzionare su scala Internet e con molti tipi di dispositivi e sistemi operativi.
 
-As they evaluate the capabilities their architecture has around identity, Lamna Healthcare is looking at ways they can bring the following capabilities into their application:
+Lamna Healthcare sta valutando le capacità della propria architettura in termini di identità e cercando modi per implementare nell'applicazione le capacità seguenti:
 
-- Provide single-sign on to application users
-- Enhance the legacy application to use modern authentication with minimal effort
-- Enforce multi-factor authentication for all logins outside the company's network
-- Develop an application to allow patients to enroll and securely manage their account data
+- Offrire il Single Sign-On agli utenti dell'applicazione
+- Migliorare l'applicazione legacy in modo che usi l'autenticazione moderna con il minimo lavoro richiesto
+- Imporre l'autenticazione a più fattori per tutti gli accessi esterni alla rete aziendale
+- Sviluppare un'applicazione per consentire i pazienti di registrarsi e gestire in modo sicuro i dati dell'account
 
-## Single sign-on
+## <a name="single-sign-on"></a>Single Sign-On
 
-The more identities a user has to manage, the greater the risk of a credential-related security incident. More identities mean more passwords to remember and change. Password policies can vary between applications, and as complexity requirements increase, it makes it more difficult for users to remember them.
+Maggiore è il numero di identità che un utente deve gestire, maggiore sarà il rischio di un incidente di sicurezza correlato alle credenziali. Più identità vuol dire più password da tenere a mente e modificare. I criteri delle password possono variare tra le applicazioni e all'aumentare dei requisiti di complessità, per gli utenti diventa sempre più difficile ricordarle.
 
-On the other side is the management required for all those identities. Additional strain is placed on help desks as they deal with account lockouts and password reset requests. If a user leaves an organization, tracking down all those identities and ensuring they are disabled can be challenging. If an identity is overlooked, this could allow access when it should have been eliminated.
+Occorre anche considerare la gestione necessaria per tutte queste identità. Aumenta il carico di lavoro dell'help desk, che si occupa dei blocchi degli account e delle richieste di reimpostazione della password. Se un utente abbandona un'organizzazione, può essere difficile tenere traccia di tutte le identità e garantire che siano state disabilitate. Se un'identità da eliminare viene tralasciata, potrebbe consentire un accesso indesiderato.
 
-With single sign-on, users only need to remember one ID and one password. Access across applications is granted to a single identity tied to a user, simplifying the security model. As users change roles or leave an organization, access modifications are tied to the single identity, greatly reducing the effort needed to change or disable accounts. Using single sign-on for accounts will make it easier for users to manage their identities, and will increase the security capabilities in your environment.
+Con il Single Sign-On, gli utenti devono ricordare solo un ID e una password. L'accesso alle varie applicazioni viene concesso a una singola identità associata a un utente, semplificando il modello di sicurezza. Quando gli utenti cambiano ruolo o lasciano l'azienda, le modifiche all'accesso sono legate alla singola identità, riducendo significativamente l'impegno necessario per modificare o disabilitare gli account. L'uso del Single Sign-On per gli account renderà più semplice la gestione delle identità da parte degli utenti e aumenterà le funzionalità di sicurezza nell'ambiente.
 
-### SSO with Azure Active Directory
+### <a name="sso-with-azure-active-directory"></a>SSO con Azure Active Directory
 
-Azure Active Directory (AD) is a cloud-based identity service. It has built in support for synchronizing with your existing on-premises Active Directory or can be used stand-alone.
+Azure Active Directory (Azure AD) è un servizio di gestione delle identità basato sul cloud. Offre supporto integrato per la sincronizzazione con l'implementazione locale di Active Directory esistente oppure può essere usato autonomamente.
 
-This means that all your applications, whether on-premises, in the cloud (including Office 365), or even mobile can share the same credentials. 
+Questo vuol dire che tutte le applicazioni, locali, nel cloud (compreso Office 365) o persino per dispositivi mobili possono condividere le stesse credenziali. 
 
-Administrators and developers can control access to data and applications using centralized rules and policies configured in Azure AD.
+Amministratori e sviluppatori possono controllare l'accesso ai dati e alle applicazioni usando regole e criteri centralizzati configurati in Azure AD.
 
-In addition, Microsoft is uniquely positioned to combine multiple data sources into an intelligent security graph that can provide threat analysis and real-time identity protection to all accounts in Azure Active Directory (even accounts that are synchronized from your on-premises AD).
+Inoltre, Microsoft è in posizione ideale per combinare più origini dati in un grafico della sicurezza intelligente, che può fornire analisi delle minacce e protezione in tempo reale dell'identità per tutti gli account in Azure Active Directory, compresi quelli sincronizzati dall'istanza di AD locale.
 
-### Synchronize directories with AD Connect
+### <a name="synchronize-directories-with-ad-connect"></a>Sincronizzare le directory con Azure AD Connect
 
-Azure AD Connect will integrate your on-premises directories with Azure Active Directory. Azure AD Connect provides the newest capabilities and replaces older versions of identity integration tools such as DirSync and Azure AD Sync.
+Azure AD Connect integra le directory locali con Azure Active Directory. Azure AD Connect offre le funzionalità più recenti e sostituisce le versioni precedenti di strumenti di integrazione delle identità, quali DirSync e Azure AD Sync.
 
-It's a single tool to provide an easy deployment experience for synchronization and sign in.
+Si tratta di un unico strumento che offre un'esperienza di distribuzione semplificata per la sincronizzazione e l'accesso.
 
 ![AAD Connect](../media-draft/AADCONNECTxprs_960.jpg)
 
-Lamna Healthcare requires that authentication occurs primarily against on-premises DCs, but also requires cloud authentication in a disaster recovery scenario. They don't have any requirements not already supported by Azure AD.
+Lamna Healthcare richiede che l'autenticazione avvenga principalmente sui controller di dominio locali, ma richiede anche l'autenticazione cloud in uno scenario di ripristino di emergenza. Tutti i suoi requisiti sono già supportati da Azure AD.
 
-Lamna Healthcare has made the decision to move forward with the following configuration:
+Lamna Healthcare ha preso la decisione di procedere con la configurazione seguente:
 
-- Use Azure AD Connect to synchronize groups, user accounts, and password hashes stored in their on-premises Active Directory to Azure AD
-  - This can be used as a back-up if pass-through authentication is unavailable
-- Configure pass-through authentication using an on-premises authentication agent installed on an on-premises Windows Server
-- Use the seamless single sign-on feature of Azure AD to automatically sign in users from on-premises domain-joined PCs
-  - Reduces user friction by suppressing multiple authentication requests
+- Usare Azure AD Connect per sincronizzare i gruppi, gli account utente e gli hash delle password archiviati nell'istanza di Active Directory locale con Azure AD
+  - Questo può essere usato come backup se l'autenticazione pass-through non è disponibile
+- Configurare l'autenticazione pass-through usando un agente di autenticazione locale installato in un'istanza di Windows Server locale
+- Usare la semplice funzionalità di Single Sign-On di Azure Active Directory per l'accesso automatico degli utenti dai PC aggiunti al dominio locale
+  - Questo consente di ridurre i fastidi degli utenti eliminando le richieste di autenticazione multiple
 
-## Authentication & access
+## <a name="authentication--access"></a>Autenticazione e accesso
 
-Lamna Healthcare's security policy requires that all logins occurring outside the company's perimeter network are authenticated with an additional factor of authentication. This requirement combines two aspects of the Azure AD service: multi-factor authentication and conditional access policies.
+I criteri di sicurezza di Lamna Healthcare richiedono che tutti gli accessi eseguiti all'esterno delle rete perimetrale dell'azienda vengano autenticati con un fattore di autenticazione aggiuntivo. Questo requisito combina due aspetti del servizio Azure AD: l'autenticazione a più fattori e i criteri di accesso condizionale.
 
-### Multi-factor authentication
+### <a name="multi-factor-authentication"></a>Autenticazione a più fattori
 
-Multi-factor authentication (MFA) provides additional security for your identities by requiring two or more elements for full authentication. These elements fall into three categories:
+L'autenticazione a più fattori (MFA) offre sicurezza aggiuntiva per le identità, richiedendo due o più elementi per l'autenticazione completa. Questi elementi sono suddivisi in tre categorie:
 
-- *something you know*
-- *something you possess*
-- *something you are*
+- *un'informazione nota*
+- *un oggetto fisico*
+- *una caratteristica fisica*
 
-**Something you know** would be a password, or the answer to a security question. **Something you possess** could be a mobile app that receives a notification or a token generating device. **Something you are** is typically some sort of biometric property such as a fingerprint or face scan used on many mobile devices.
+L'**informazione nota** è in genere una password o la risposta a una domanda di sicurezza. L'**oggetto fisico** può essere un dispositivo mobile con un'app che riceve una notifica o un dispositivo per la generazione di token. La **caratteristica fisica** è in genere un dato biometrico, ad esempio un'impronta digitale o una scansione del viso, usate in molti dispositivi mobili.
 
-Using multi-factor authentication increases security of your identity by limiting the impact of credential exposure. An attacker who has a user's password would also need to have possession of their phone or their face in order to fully authenticate. Authentication with only a single factor verified is insufficient and the attacker would be unable to use those credentials to authenticate. The benefits this brings to security are huge, and it can't be repeated enough to enable MFA wherever possible.
+L'uso dell'autenticazione a più fattori aumenta la protezione delle identità, limitando l'impatto di un'esposizione delle credenziali. Un utente malintenzionato che ha la password di un utente dovrà essere in possesso anche del suo telefono o avere il suo stesso viso per completamente l'autenticazione. L'autenticazione con un solo fattore verificato è insufficiente e l'utente malintenzionato non sarebbe in grado di usare le credenziali per l'autenticazione. I vantaggi per la sicurezza sono immensi ed è consigliabile abilitare l'autenticazione a più fattori ovunque sia possibile.
 
-Azure AD has MFA capabilities built in, and will integrate with other third-party MFA providers. It's provided free of charge to any user who has the Global Administrators role in Azure AD, as these are highly sensitive accounts. All other accounts can have MFA enabled by purchasing licenses with this capability and assigning a license to the account.
+Azure AD offre funzionalità MFA incorporate e si integrerà con altri provider di autenticazione a più fattori di terze parti. L'autenticazione a più fattori viene fornita gratuitamente a qualsiasi utente con il ruolo di amministratore globale in Azure AD, poiché si tratta di account altamente sensibili. Per tutti gli altri account è possibile abilitare MFA acquistando una licenza con questa funzionalità e assegnandola all'account in questione.
 
-### Conditional access policies
+### <a name="conditional-access-policies"></a>Criteri di accesso condizionale
 
-Along with MFA, ensuring that additional requirements are met before granting access can add another layer of protection. Blocking logins from a suspicious IP address, or denying access from devices without malware protection could limit access from risky sign ins.
+In aggiunta all'autenticazione a più fattori, la richiesta che siano soddisfatti altri requisiti per concedere l'accesso consente di aggiungere un ulteriore livello di protezione. Bloccare gli accessi da un indirizzo IP sospetto o negare l'accesso da dispositivi privi di protezione contro il malware consente di limitare gli accessi a rischio.
 
-Azure Active Directory provides a conditional access policies (CAP) feature that includes support for access policies based on group, location, or device state. The location feature allows Lamna to differentiate IP addresses that don't belong to their network, and satisfies their security policy to require multi-factor authentication from all such locations.
+Azure Active Directory fornisce la funzionalità dei criteri di accesso condizionale, che include il supporto per criteri di accesso in base al gruppo, alla posizione o allo stato del dispositivo. Il controllo della posizione consente a Lamna di distinguere gli indirizzi IP che non appartengono alla propria rete e soddisfa i criteri di sicurezza aziendali che richiedono l'autenticazione a più fattori da tutte le posizioni esterne.
 
-Lamna Healthcare has created a [conditional access policy](https://docs.microsoft.com/azure/active-directory/conditional-access/overview) that requires users accessing the application from an IP address outside of the company network to be challenged with MFA.
+Lamna Healthcare ha creato [criteri di accesso condizionale](https://docs.microsoft.com/azure/active-directory/conditional-access/overview) in base a cui gli utenti che accedono all'applicazione da un indirizzo IP esterno alla rete aziendale devono completare l'autenticazione a più fattori.
 
-![conditional access](../media-draft/conditional-access.png)
+![accesso condizionale](../media-draft/conditional-access.png)
 
-## Securing legacy applications
+## <a name="securing-legacy-applications"></a>Protezione delle applicazioni legacy
 
-Lamna Healthcare employees require secure remote access to their administrative application hosted on-premises. Users currently authenticate to the application using Windows Integrated Authentication (WIA) from their domain-joined machines, behind the corporate firewall. Although a project to incorporate modern authentication mechanisms into the application has been planned, there's considerable business pressure to enable remote access capabilities as soon as possible. Azure Application Proxy can quickly, easily, and securely allow the application to be accessed remotely without any code changes.
+I dipendenti di Lamna Healthcare hanno bisogno di accesso remoto sicuro all'applicazione amministrativa ospitata in locale. Attualmente gli utenti eseguono l'autenticazione all'applicazione usando l'autenticazione integrata di Windows dai propri computer aggiunti al dominio, dietro il firewall aziendale. Nonostante sia stato pianificato un progetto per incorporare meccanismi di autenticazione moderni nell'applicazione, c'è una notevole pressione da parte dell'amministrazione aziendale perché siano abilitate al più presto funzionalità di accesso remoto. Azure Active Directory Application Proxy consente di abilitare l'accesso remoto all'applicazione in modo rapido, semplice e sicuro, senza apportare modifiche al codice.
 
-Azure AD Application Proxy is:
+Azure Active Directory Application Proxy è:
 
-- Simple
-  - You don't need to change or update your applications to work with Application Proxy.
-  - Your users get a consistent authentication experience. They can use the MyApps portal to get single sign-on to both SaaS apps in the cloud and your apps on-premises.
-- Secure
-  - When you publish your apps using Azure AD Application Proxy, you can take advantage of the rich authorization controls and security analytics in Azure. You get cloud-scale security and Azure security features like conditional access and two-step verification.
-  - You don't have to open any inbound connections through your firewall to give your users remote access.
-- Cost-effective
-  - Application Proxy works in the cloud, so you can save time and money. On-premises solutions typically require you to set up and maintain DMZs, edge servers, or other complex infrastructures.
+- Semplice
+  - Non è necessario modificare o aggiornare le applicazioni per usare AD Application Proxy.
+  - Offre agli utenti un'esperienza di autenticazione coerente. Possono usare il portale App personali per ottenere l'accesso Single Sign-On sia alle app SaaS nel cloud, sia alle app locali.
+- Sicuro
+  - Quando si pubblicano le app usando Azure Active Directory Application Proxy, è possibile sfruttare l'analisi della sicurezza e i controlli di autorizzazione avanzati in Azure. Si ottengono sicurezza a livello di cloud e funzionalità di sicurezza di Azure come l'accesso condizionale e la verifica in due passaggi.
+  - Non è necessario aprire connessioni in ingresso attraverso il firewall per consentire agli utenti l'accesso remoto.
+- Conveniente
+  - AD Application Proxy opera nel cloud, facendo risparmiare tempo e denaro. Le soluzioni locali richiedono generalmente di configurare e gestire reti perimetrali, server perimetrali o altre infrastrutture complesse.
 
-Azure AD Application Proxy is comprised of two components: a connector agent that sits on a Windows server within your corporate network and an external endpoint, either the MyApps portal or an external URL. When a user navigates to the endpoint, they authenticate with Azure AD and are routed to the on-premises application via the connector agent.
+Azure AD Application Proxy è costituito da due componenti: un agente connettore che risiede in un server Windows all'interno della rete aziendale e un endpoint esterno, rappresentato dal portale App personali o da un URL esterno. Quando un utente passa all'endpoint, esegue l'autenticazione con Azure AD e viene instradato all'applicazione locale tramite l'agente connettore.
 
-## Working with consumer identities
+## <a name="working-with-consumer-identities"></a>Uso delle identità degli utenti
 
-Since integrating modern authentication with their existing application, Lamna Healthcare has quickly acknowledged the power a managed identity system such as Azure AD can bring to their organization. The leadership team is now interested in exploring other ways Microsoft identity services can add business value. They have now focused their attention on external customers and how modernization of existing customer interactions could provide tight integration with third-party identity providers such as Google, Facebook, and LinkedIn.
+Dopo l'integrazione di sistemi di autenticazione moderni nella propria applicazione esistente, Lamna Healthcare ha compreso rapidamente i vantaggi che un sistema con identità gestite come Azure AD può apportare all'organizzazione. Ora la dirigenza è interessata a esplorare altri modi in cui i servizi di identità Microsoft possono aggiungere valore aziendale. L'attenzione si è concentrata sui clienti esterni e su come la modernizzazione delle interazioni esistenti con i clienti possa fornire una stretta integrazione con provider di identità di terze parti come Google, Facebook e LinkedIn.
 
-Azure AD B2C is an identity management service built on the solid foundations of Azure Active Directory that enables you to customize and control how customers sign up, sign in, and manage their profiles when using your applications. This includes applications developed for iOS, Android, and .NET, among others. Azure AD B2C provides a social identity login experience, while at the same time protecting your customer identity profile information. Azure AD B2C directories are distinct from standard Azure AD directories and can be created in the Azure portal.
+Azure AD B2C è un servizio di gestione delle identità basato sulle solide fondamenta di Azure Active Directory, che consente di personalizzare e controllare il modo in cui i clienti si iscrivono, accedono e gestiscono i loro profili quando usano le applicazioni dell'azienda, incluse ad esempio le applicazioni sviluppate per iOS, Android e .NET. Azure AD B2C offre un'esperienza di accesso basata sull'identità sui social network, proteggendo allo stesso tempo le informazioni sul profilo dell'identità dei clienti. Le directory di Azure AD B2C sono diverse dalle directory standard di Azure AD e possono essere create nel portale di Azure.
 
-## Identity management at Lamna Healthcare
+## <a name="identity-management-at-lamna-healthcare"></a>Gestione delle identità in Lamna Healthcare
 
-We've seen here how Lamna Healthcare has used identity management solutions on Azure to improve the security of their environment. They've started by providing users a single sign-on experience to minimize the accounts users have to deal with, and reduce the operational complexity that excess accounts bring. They have enforced MFA for access to their application and have updated a legacy application to use modern authentication with minimal effort. They've also learned how they can improve their ability to work with consumer identities, improving the application usability for their patients.
+Abbiamo visto come Lamna Healthcare ha usato soluzioni di gestione delle identità in Azure per migliorare la sicurezza del proprio ambiente. La società ha iniziato fornendo un'esperienza di Single Sign-On per ridurre al minimo gli account che gli utenti devono gestire e ridurre la complessità operativa associata a un numero eccessivo di account. Ha applicato l'autenticazione a più fattori per l'accesso all'applicazione interna e ha aggiornato un'applicazione legacy per l'uso dell'autenticazione moderna con un lavoro richiesto minimo. Ha inoltre appreso come potenziare le proprie capacità di usare le identità degli utenti, migliorando l'usabilità dell'applicazione per i pazienti.
 
-## Summary
+## <a name="summary"></a>Riepilogo
 
-In this unit, we have seen how a number of Azure Active Directory features can be combined to provide a solid identity solution for securing access to applications, regardless of their location. Identity is a critical layer of security. When designed well and included in your architecture, you can ensure your environment is secure.
+In questa unità è stato illustrato come si può combinare una serie di funzionalità di Azure Active Directory per fornire una solida soluzione di gestione delle identità, per proteggere l'accesso alle applicazioni, indipendentemente dalla loro posizione. L'identità è un livello di sicurezza critico. Quando è ben progettata e inclusa nell'architettura, è possibile garantire che l'ambiente sia sicuro.

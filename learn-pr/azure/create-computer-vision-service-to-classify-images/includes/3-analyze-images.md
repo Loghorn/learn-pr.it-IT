@@ -1,29 +1,29 @@
-In this unit, you will analyze images with the Computer Vision API service that we created in the previous step.
+In questa unità verranno analizzate le immagini con il servizio API Visione artificiale creato nel passaggio precedente.
 
-# Analyzing an image with Computer Vision API
+# <a name="analyzing-an-image-with-computer-vision-api"></a>Analisi di un'immagine con l'API Visione artificiale
 
-Execute the `az cognitiveservices account keys list` command to retrieve a key used to authenticate against the API. Store the output of that command within the `key` variable.
+Eseguire il comando `az cognitiveservices account keys list` per recuperare una chiave usata per l'autenticazione nell'API. Archiviare l'output del comando nella variabile `key`.
 
 ```azurecli
 key=$(az cognitiveservices account keys list -g ComputerVisionRG --name ComputerVisionService --query key1 -o tsv)
 ```
 
-Execute a `curl` command to do an HTTP request against the Computer Vision API and reuse the previously declared variable `key`.
+Eseguire un comando `curl` per effettuare una richiesta HTTP all'API Visione artificiale e riutilizzare la variabile `key` dichiarata in precedenza.
 
-The parameters that are sent to the service are `visualFeatures`, `details`, and `languages`. While without them, the service will still work, it provides hints to the service on the content of the images. As an example, `details` can be set to `Landmarks` or `Celebrities` to help you identify landmarks or celebrities. `visualFeatures` identify what kind of information you want the service to return you. The `Categories` option will categorize the content of the images like trees, buildings, and more. `Faces` will identify people's faces and give you their gender and age.
+I parametri inviati al servizio sono `visualFeatures`, `details` e `languages`. Anche se il servizio funziona ugualmente senza, questi parametri forniscono al servizio informazioni sul contenuto delle immagini. Ad esempio, è possibile impostare `details` su `Landmarks` o `Celebrities` per identificare luoghi di interesse o celebrità. `visualFeatures` identifica la tipologia di informazioni che deve essere restituita dal servizio. L'opzione `Categories` classifica il contenuto delle immagini, ad esempio alberi, edifici e così via. `Faces` identifica i visi delle persone e fornisce indicazioni su sesso ed età.
 
-More details can be found in [the documentation](https://westus.dev.cognitive.microsoft.com/docs/services/56f91f2d778daf23d8ec6739/operations/56f91f2e778daf14a499e1fa).
+Per informazioni dettagliate, vedere la [documentazione](https://westus.dev.cognitive.microsoft.com/docs/services/56f91f2d778daf23d8ec6739/operations/56f91f2e778daf14a499e1fa).
 
-For now, let's identify landmarks and have the service return us `Categories` and `Description`.
-
-```azurecli
-curl -H "Ocp-Apim-Subscription-Key: $key" -H "Content-Type: application/json" "https://westus2.api.cognitive.microsoft.com/vision/v1.0/analyze?visualFeatures=Categories,Description&details=Landmarks" -d "{\"url\":\"https://docs.microsoft.com/en-us/learn/modules/create-computer-vision-service/media/mountains.jpg\"}"
-```
-
-The result of the request is the raw JSON describing the picture in the `url`. We can also add ` | jq '.'` at the end to prettify the JSON output.
+Per adesso, verranno identificati i luoghi di interesse e verrà richiesto al servizio di restituire `Categories` e `Description`.
 
 ```azurecli
-curl -H "Ocp-Apim-Subscription-Key: $key" -H "Content-Type: application/json" "https://westus2.api.cognitive.microsoft.com/vision/v1.0/analyze?visualFeatures=Categories,Description&details=Landmarks&language=en" -d "{\"url\":\"https://docs.microsoft.com/en-us/learn/modules/create-computer-vision-service/media/mountains.jpg\"}" | jq '.'
+curl -H "Ocp-Apim-Subscription-Key: $key" -H "Content-Type: application/json" "https://westus2.api.cognitive.microsoft.com/vision/v1.0/analyze?visualFeatures=Categories,Description&details=Landmarks" -d "{\"url\":\"https://docs.microsoft.com/en-us/learn/modules/create-computer-vision-service/mountains.jpg\"}"
 ```
 
-Copy the link to any other images found online, and try it with the service by replacing the URL in the above commands.
+Il risultato della richiesta è costituito dal file JSON non elaborato che descrive l'immagine in `url`. È anche possibile aggiungere ` | jq '.'` alla fine per migliorare l'output del file JSON.
+
+```azurecli
+curl -H "Ocp-Apim-Subscription-Key: $key" -H "Content-Type: application/json" "https://westus2.api.cognitive.microsoft.com/vision/v1.0/analyze?visualFeatures=Categories,Description&details=Landmarks&language=en" -d "{\"url\":\"https://docs.microsoft.com/en-us/learn/modules/create-computer-vision-service/mountains.jpg\"}" | jq '.'
+```
+
+Copiare il collegamento ad altre immagini trovate online e provare il servizio sostituendo l'URL nei comandi precedenti.

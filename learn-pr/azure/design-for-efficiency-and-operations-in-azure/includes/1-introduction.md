@@ -1,16 +1,16 @@
-How efficient is your cloud environment? Are you maximizing your resources and minimizing your cloud spend? Are you able to assess the health of your infrastructure? Are adverse events visible and actionable? Are you provisioning resources manually, or have you automated them to reduce risk and increase efficiency? Here, you will learn how to answer these questions to improve the efficiency of your Azure cloud deployments.
+Quanto è efficiente l'ambiente cloud? Si stanno ottimizzando le risorse e riducendo al minimo la spesa per il cloud? Si è in grado di valutare l'integrità dell'infrastruttura? Gli eventi collaterali sono visibili e correggibili? Il provisioning delle risorse è manuale o è stato automatizzato per ridurre il rischio e migliorare l'efficienza? Ora sarà possibile rispondere a queste domande e verrà illustrato come migliorare l'efficienza delle distribuzioni cloud di Azure.
 
-As we learn about improving operational efficiency, we'll see how one fictional Azure customer puts these principles to work. Lamna Healthcare is a national healthcare provider with several thousand physicians and clinicians across multiple facilities throughout the country. Their IT organization has recently undertaken an effort to reduce their datacenter footprint and move the majority of their IT systems to Azure. They have a mixture of in-house developed applications, open source, and off-the-shelf applications, with varying architectures and technology platforms. They want to make their journey to the cloud successful and would like to learn what they need to focus on to help make it possible.
+Dopo aver appreso come migliorare l'efficienza operativa, si vedrà come un cliente fittizio di Azure può mettere in pratica tali principi. Lamna Healthcare è un operatore sanitario nazionale con diverse migliaia di medici e specialisti che operano in più strutture in tutto il paese. L'organizzazione IT di recente si è impegnata per ridurre il footprint del datacenter e spostare la maggior parte dei sistemi IT in Azure. Hanno una combinazione di applicazioni sviluppate internamente, open source e preconfigurate, con diverse architetture e piattaforme tecnologiche. Vogliono passare al cloud senza problemi e capire su che cosa concentrarsi per poterlo fare.
 
 > [!NOTE]
-> The concepts discussed in this module are not all-inclusive, but represent some of the important considerations when building a solution on the cloud. Microsoft publishes a broad set of patterns, guidelines, and examples on designing applications on Azure. It is highly recommended that you look through the content in the [Azure Architecture Center](https://docs.microsoft.com/azure/architecture/) as you start planning and designing your architecture.
+> I concetti illustrati in questo modulo non coprono tutti gli argomenti, ma rappresentano alcune importanti considerazioni quando si compila una soluzione nel cloud. Microsoft pubblica un'ampia gamma di modelli, linee guida ed esempi per la progettazione di applicazioni in Azure. È consigliabile consultare il contenuto del [Centro architetture di Azure](https://docs.microsoft.com/azure/architecture/) quando si inizia a pianificare e progettare un'architettura.
 
-## Learning objectives
+## <a name="learning-objectives"></a>Obiettivi di apprendimento
 
-In this module, you will:
+In questo modulo verrà descritto come:
 
-- Learn how to maximize the efficiency of your cloud environment.
-- Learn how to use monitoring and analytics to gain operational insights.
-- Learn how to use automation to reduce effort and error.
+- Ottimizzare l'efficienza dell'ambiente cloud.
+- Usare il monitoraggio e l'analisi per ottenere informazioni operative.
+- Usare l'automazione per ridurre il lavoro richiesto e gli errori.
 
-Let's get started!
+Ecco come procedere.

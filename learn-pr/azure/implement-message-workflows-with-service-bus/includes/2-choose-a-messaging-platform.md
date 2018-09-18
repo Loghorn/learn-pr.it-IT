@@ -8,7 +8,7 @@ In questo modulo si apprenderanno informazioni sulle piattaforme di comunicazion
 
 ## <a name="decide-between-messages-and-events"></a>Scegliere tra messaggi ed eventi
 
-Messaggi ed eventi sono entrambi **datagrammi**: pacchetti di dati inviati da un componente a un altro. Le differenze tra di essi a prima vista possono sembrare minime, ma possono determinare differenze significative nella progettazione dell'applicazione. 
+Messaggi ed eventi sono entrambi **datagrammi**: pacchetti di dati inviati da un componente a un altro. Le differenze tra di essi a prima vista possono sembrare minime, ma possono determinare differenze significative nella progettazione dell'applicazione.
 
 ### <a name="messages"></a>Messaggi
 
@@ -23,13 +23,14 @@ Nella nuova architettura di Contoso Slices, quando viene immesso un ordine per u
 Un evento attiva una notifica indicante che si è verificato qualcosa. Gli eventi sono più "leggeri" rispetto ai messaggi e vengono più spesso usati per le comunicazioni broadcast.
 
 Gli eventi hanno le caratteristiche seguenti:
+
 * L'evento può essere inviato a più destinatari o a nessuno
 * Gli eventi sono spesso destinati a una distribuzione estesa, ovvero hanno un numero elevato di sottoscrittori per ogni origine di pubblicazione
 * Il componente di pubblicazione dell'evento non ha aspettative sull'azione eseguita da un componente destinatario
 
 La catena di pizzerie userebbe probabilmente gli eventi per inviare notifiche agli utenti relative alle modifiche di stato. Gli eventi di modifica dello stato possono essere inviati a Griglia di eventi di Azure, quindi a Funzioni di Azure e a Hub di notifica di Azure, per una soluzione completamente _serverless_.
 
-Questa differenza tra eventi e messaggi è fondamentale perché le piattaforme di comunicazione sono in genere progettate per gestire uno o l'altro elemento. Il bus di servizio è progettato per gestire i messaggi. Se si vuole inviare eventi, scegliere Griglia di eventi. 
+Questa differenza tra eventi e messaggi è fondamentale perché le piattaforme di comunicazione sono in genere progettate per gestire uno o l'altro elemento. Il bus di servizio è progettato per gestire i messaggi. Se si vuole inviare eventi, scegliere Griglia di eventi.
 
 Azure offre anche Hub eventi di Azure, che tuttavia viene usato più spesso per un tipo specifico di streaming con flusso elevato di comunicazioni in ambito di analisi. Se, ad esempio, i forni delle pizze avessero sensori connessi in rete, si potrebbe usare Hub eventi con Analisi di flusso di Azure per esaminare i modelli di variazione della temperatura che potrebbero indicare un incendio indesiderato o l'usura di un componente.
 
@@ -41,11 +42,11 @@ Il bus di servizio di Azure è in grado di scambiare messaggi in tre modi divers
 
 Una **coda** è una semplice posizione di archiviazione temporanea per i messaggi. Un componente mittente aggiunge un messaggio alla coda. Un componente di destinazione preleva il messaggio all'inizio della coda. In circostanze normali, ogni messaggio viene ricevuto da un solo destinatario.
 
-![Coda del bus di servizio di Azure](../media-draft/2-service-bus-queue.png)
+![Coda del bus di servizio di Azure](../media/2-service-bus-queue.png)
 
 Le code disaccoppiano i componenti di origine e di destinazione per isolare i componenti di destinazione in caso di domanda elevata. 
 
-Durante i periodi di picco, i messaggi possono venire inviati a una velocità maggiore di quella con cui i componenti di destinazione possono gestirli. Poiché i componenti di origine non hanno alcuna connessione diretta con la destinazione, ciò non ha alcun effetto sull'origine e la lunghezza della coda aumenta. I componenti di destinazione rimuoveranno i messaggi dalla coda man mano che sono in grado di gestirli. Quando la domanda diminuisce, i componenti di destinazione possono recuperare e la lunghezza della coda si riduce. 
+Durante i periodi di picco, i messaggi possono venire inviati a una velocità maggiore di quella con cui i componenti di destinazione possono gestirli. Poiché i componenti di origine non hanno alcuna connessione diretta con la destinazione, ciò non ha alcun effetto sull'origine e la lunghezza della coda aumenta. I componenti di destinazione rimuoveranno i messaggi dalla coda man mano che sono in grado di gestirli. Quando la domanda diminuisce, i componenti di destinazione possono recuperare e la lunghezza della coda si riduce.
 
 Una coda risponde a una situazione di domanda elevata di questo tipo senza che sia necessario aggiungere risorse al sistema. Tuttavia, per i messaggi che devono essere gestiti in modo relativamente rapido, l'aggiunta di altre istanze del componente di destinazione può consentire la condivisione del carico. Ogni messaggio viene gestito da una sola istanza. Si tratta di un metodo efficace per ridimensionare l'intera applicazione aggiungendo solo le risorse per i componenti che ne hanno effettivamente bisogno.
 
@@ -55,7 +56,7 @@ Un **argomento** è simile a una coda ma può avere più sottoscrizioni. Ciò si
 
 Gli argomenti non sono supportati nel piano tariffario Basic.
 
-![Argomento del bus di servizio di Azure](../media-draft/2-service-bus-topic.png)
+![Argomento del bus di servizio di Azure](../media/2-service-bus-topic.png)
 
 ### <a name="what-is-a-relay"></a>Che cos'è un inoltro?
 
@@ -96,20 +97,21 @@ Se si decide che è necessaria una coda:
 
 #### <a name="choose-service-bus-queues-if"></a>Scegliere le code del bus di servizio se:
 
-- È necessaria una garanzia di recapito At-Most-Once
-- È necessaria una garanzia FIFO
-- È necessario raggruppare i messaggi in transazioni
-- Si vuole ricevere i messaggi senza eseguire il polling della coda
-- È necessario fornire accesso basato sui ruoli alle code
-- È necessario gestire messaggi di dimensioni superiori a 64 KB, ma inferiori a 256 KB
-- Le dimensioni della coda non supereranno gli 80 GB
-- Si vuole poter pubblicare e usare batch di messaggi
+* È necessaria una garanzia di recapito At-Most-Once
+* È necessaria una garanzia FIFO
+* È necessario raggruppare i messaggi in transazioni
+* Si vuole ricevere i messaggi senza eseguire il polling della coda
+* È necessario fornire accesso basato sui ruoli alle code
+* È necessario gestire messaggi di dimensioni superiori a 64 KB, ma inferiori a 256 KB
+* Le dimensioni della coda non supereranno gli 80 GB
+* Si vuole poter pubblicare e usare batch di messaggi
 
 #### <a name="choose-queue-storage-if"></a>Scegliere l'archivio code se:
-- È necessaria una coda semplice senza particolari requisiti aggiuntivi
-- È necessario un audit trail di tutti i messaggi che passano attraverso la coda
-- Si prevede che le dimensioni della coda possano superare gli 80 GB
-- Si vuole tenere traccia dello stato di elaborazione di un messaggio all'interno della coda
+
+* È necessaria una coda semplice senza particolari requisiti aggiuntivi
+* È necessario un audit trail di tutti i messaggi che passano attraverso la coda
+* Si prevede che le dimensioni della coda possano superare gli 80 GB
+* Si vuole tenere traccia dello stato di elaborazione di un messaggio all'interno della coda
 
 Anche se i componenti di un'applicazione distribuita possono comunicare direttamente, è spesso possibile migliorare l'affidabilità delle comunicazioni usando una piattaforma di comunicazione intermedia come Griglia di eventi Di Azure o il bus di servizio di Azure.
 

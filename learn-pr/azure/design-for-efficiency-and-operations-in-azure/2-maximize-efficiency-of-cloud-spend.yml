@@ -1,40 +1,45 @@
 ### YamlMime:ModuleUnit
 uid: learn.design-for-efficiency-and-operations.2-maximize-efficiency-of-cloud-spend
-title: Maximize efficiency of cloud spend
+title: Ottimizzare l'efficienza della spesa per il cloud
 metadata:
-  title: Maximize efficiency of cloud spend
-  description: In this unit, we'll discuss how to maximize the efficiency of your cloud expenditures
+  title: Ottimizzare l'efficienza della spesa per il cloud
+  description: In questa unità verrà illustrato come ottimizzare l'efficienza delle spese per il cloud
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
+  ms.openlocfilehash: 7644faa213e2ea6331e697f016633ae58ff26c47
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44230892"
 durationInMinutes: 15
-content: |
+content: >
   [!include[](includes/2-maximize-efficiency-of-cloud-spend.md)]
 quiz:
-  title: 'Knowledge check - Maximize efficiency of cloud spend'
+  title: Verifica delle conoscenze - Ottimizzare l'efficienza della spesa per il cloud
   questions:
-  - content: 'Which of the following is the best candidate for a reserved instance?'
+  - content: Quale delle seguenti è la scelta ideale per un'istanza riservata?
     choices:
-    - content: 'A web application deployed on Azure App Service.'
+    - content: Un'applicazione Web distribuita in Servizio app di Azure.
       isCorrect: false
-      incorrectExplanation: 'Azure App Service is a PaaS service, reserved instances can only be used for virtual machines.'
-    - content: 'A non-production virtual machine that is automatically shut down in off-hours when not in use.'
+      incorrectExplanation: Servizio app di Azure è un servizio PaaS e le istanze riservate possono essere usate solo per le macchine virtuali.
+    - content: Una macchina virtuale non di produzione che viene automaticamente arrestata negli orari di minore attività quando non è in uso.
       isCorrect: false
-      incorrectExplanation: 'Since this virtual machine will not be running the majority of the time it will not fully utilize the instance reservation, and is not a good candidate for a reserved instance.'
-    - content: 'An Azure SQL Database instance.'
+      incorrectExplanation: Dal momento che questa macchina virtuale non verrà eseguita per la maggior parte del tempo, non utilizzerà completamente la prenotazione di istanza e non è un candidato ideale per un'istanza riservata.
+    - content: Un'istanza di database SQL di Azure.
       isCorrect: false
-      incorrectExplanation: 'Azure SQL Database is a PaaS service, reserved instances can only be used for virtual machines.'
-    - content: 'A database server for an HR system for a global business.'
+      incorrectExplanation: Il database SQL di Azure è un servizio PaaS e le istanze riservate possono essere usate solo per le macchine virtuali.
+    - content: Un server di database per un sistema HR per un'azienda globale.
       isCorrect: true
-      correctExplanation: 'Because of the criticality and global nature of this system, it is likely that it would be running the majority of the time, making it a great candidate for a reserved instance.'
-  - content: 'Compute costs associated with a VM stop accruing when:'
+      correctExplanation: In considerazione della criticità e della natura globale di questo sistema, è probabile che sia in esecuzione per la maggior parte del tempo, di conseguenza è un candidato ideale per un'istanza riservata.
+  - content: 'Gli addebiti dei costi di calcolo associati a una VM vengono interrotti quando:'
     choices:
-    - content: 'You shut the virtual machine down from inside the OS.'
+    - content: Si arresta la macchina virtuale dall'interno del sistema operativo.
       isCorrect: false
-      incorrectExplanation: 'If you shut down the OS of the virtual machine, it is still allocated on the Azure platform and will continue to accrue compute costs.'
-    - content: 'You click the Stop button in the Azure portal.'
+      incorrectExplanation: Se si arresta il sistema operativo della macchina virtuale, questo rimane comunque allocato nella piattaforma Azure e continuerà a comportare costi di calcolo.
+    - content: Si fa clic sul pulsante Arresta nel portale di Azure.
       isCorrect: true
-      correctExplanation: 'Clicking the Stop button will deallocate the virtual machine from the Azure platform and will no longer accrue compute costs.'
+      correctExplanation: Facendo clic sul pulsante Arresta, la macchina virtuale verrà deallocata dalla piattaforma Azure e non comporterà ulteriori costi di calcolo.

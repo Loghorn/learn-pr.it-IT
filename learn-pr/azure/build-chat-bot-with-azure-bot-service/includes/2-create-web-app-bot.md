@@ -1,22 +1,22 @@
-The first step in creating a bot is to provide a location for the bot to be hosted in Azure. The [Web Apps](https://azure.microsoft.com/services/app-service/web/) feature of Azure App Service is perfect for hosting bot applications, and the Azure Bot Service is designed to provision them for you. In this unit, you will use the Azure portal to provision an Azure web app bot.
+Il primo passaggio nella creazione di un bot è fornire un percorso per l'hosting del bot in Azure. La funzionalità [App Web](https://azure.microsoft.com/services/app-service/web/) del servizio app di Azure è ideale per ospitare applicazioni bot e il servizio Azure Bot è progettato per effettuarne automaticamente il provisioning. In questa unità si userà il portale di Azure per effettuare il provisioning di un bot app Web di Azure.
 
 <!---TODO: Update for sandbox?--->
-1. Open the [Azure portal](https://portal.azure.com/?azure-portal=true) in your browser. If you are asked to sign in, do so using your Microsoft account.
+1. Aprire il [portale di Azure](https://portal.azure.com/?azure-portal=true) nel browser. Se viene richiesto di accedere, usare l'account Microsoft.
 
-1. Click **+ Create a resource**, followed by **AI + Machine Learning**, and then **Web App Bot**.
+1. Fare clic su **+ Crea una risorsa**, su **Intelligenza artificiale e Machine Learning** e quindi su **Web App Bot** (Bot app Web).
 
-    ![Screenshot of the Azure portal showing the Create a resource blade with the Web App Bot resource type highlighted.](../media/2-new-bot-service.png)
+    ![Screenshot del portale di Azure che mostra il pannello Crea una risorsa con il tipo di risorsa Web App Bot (Bot app Web) evidenziato.](../media/2-new-bot-service.png)
 
-1. Enter a name, such as "qa-factbot", into the **App name** box. *This name must be unique within Azure, so make sure a green check mark appears next to it.* Select **Create new** under **Resource group** and enter the resource group name "factbot-rg." Select the location nearest you and select the free **F0** pricing tier. Then, click **Bot template**.
+1. Immettere un nome nella casella **Nome dell'app**, ad esempio "qa-factbot". *Questo nome deve essere univoco all'interno di Azure, dunque assicurarsi che accanto a esso compaia un segno di spunta verde.* In **Gruppo di risorse** selezionare **Crea nuovo** e immettere il nome gruppo di risorse "factbot-rg". Selezionare la località più vicina e il piano tariffario gratuito **F0**. Quindi fare clic su **Bot template** (Modello bot).
 
-1. Select **Node.js** as the SDK language and **Question and Answer** as the template type. Then, click **Select** at the bottom of the blade.
+1. Selezionare **Node.js** come linguaggio dell'SDK e **Domanda e risposta** come tipo di modello. Fare quindi clic su **Seleziona** nella parte inferiore del pannello.
 
-    ![Screenshot of the Azure portal showing the Bot template blade of the bot creation process with the Node.js SDK language and Question and Answer template options highlighted.](../media/2-portal-select-template.png)
+    ![Screenshot del portale di Azure che mostra il pannello Bot template (Modello bot) del processo di creazione del bot con il linguaggio Node.js SDK e le opzioni del modello Domanda e risposta evidenziati.](../media/2-portal-select-template.png)
 
-1. Now, click **App service plan/Location**, followed by **Create New**, and then create an App Service plan named "qa-factbot-service-plan" or something similar in the same region that you selected in Step 3. Once that's done, click **Create** at the bottom of the "Web App Bot" blade to start the deployment.
+1. A questo punto, fare clic su **Piano di servizio app/Località**, su **Crea nuovo** e quindi creare un piano di servizio app denominato "qa-factbot-service-plan" o con un nome simile nella stessa area selezionata nel passaggio 3. Al termine, fare clic su **Crea** nella parte inferiore del pannello "Web App Bot" (Bot app Web) per avviare la distribuzione.
 
-    ![Screenshot of the Azure portal showing a sample configuration blade for a new Web App Bot.](../media/2-portal-start-bot-creation.png)
+    ![Screenshot del portale di Azure che mostra un pannello di configurazione di esempio per un nuovo bot app Web.](../media/2-portal-start-bot-creation.png)
 
-1. Click **Resource groups** in the ribbon on the left side of the portal. Then, click **factbot-rg** to open the resource group created for the Azure web app bot. Wait until "Deploying" changes to "Succeeded" at the top of the blade, which indicates that the Azure web app bot was successfully deployed. Deployment generally requires two minutes or less. Periodically click **Refresh** at the top of the blade to refresh the deployment status.
+1. Fare clic su **Gruppi di risorse** sulla barra multifunzione sul lato sinistro del portale. Quindi fare clic su **factbot-rg** per aprire il gruppo di risorse creato per il bot app Web di Azure. Attendere finché "Distribuzione in corso" non cambia in "Operazione completata" nella parte superiore del pannello, indicando che il bot app Web di Azure è stato distribuito correttamente. La distribuzione richiede in genere due minuti o meno. Fare periodicamente clic su **Aggiorna** nella parte superiore del pannello per aggiornare lo stato di distribuzione.
 
-Behind the scenes, a lot happened when the Azure web app bot was deployed. A bot was created and registered, an [Azure web app](https://azure.microsoft.com/services/app-service/web/) was created to host it, and the bot was configured to work with [Microsoft QnA Maker](https://www.qnamaker.ai/). The next step is to use QnA Maker to create a knowledge base of questions and answers to infuse the bot with intelligence.
+Quando è stato distribuito il bot app Web di Azure, sono state eseguite numerose operazioni in background. È stato creato e registrato un bot, è stata creata un'[app Web di Azure](https://azure.microsoft.com/services/app-service/web/) per ospitarlo e il bot è stato configurato per l'uso di [Microsoft QnA Maker](https://www.qnamaker.ai/). Il passaggio successivo consiste nell'usare QnA Maker per creare una knowledge base di domande e risposte per integrare intelligenza nel bot.

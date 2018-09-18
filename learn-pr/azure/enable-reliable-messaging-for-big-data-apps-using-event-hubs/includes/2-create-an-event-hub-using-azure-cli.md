@@ -6,9 +6,9 @@ Un hub eventi è una risorsa di Azure, quindi il primo passaggio consiste nel cr
 
 Hub eventi di Azure è un servizio di elaborazione di eventi basato sul cloud, in grado di ricevere ed elaborare milioni di eventi al secondo. Hub eventi opera come una porta principale per una pipeline di eventi, poiché riceve i dati in ingresso e li archivia finché non sono disponibili le risorse di elaborazione.
 
-Un'entità che invia dati a Hub eventi è denominata *autore*, mentre un'entità che legge i dati da Hub eventi è denominata *consumer* o *sottoscrittore*. Hub eventi di Azure è posizionato tra queste due entità per suddividere la produzione (dall'autore) e l'uso (verso il sottoscrittore) di un flusso di eventi. Questa separazione consente di gestire scenari in cui il tasso di produzione di eventi è notevolmente superiore all'uso.
+Un'entità che invia dati a Hub eventi è denominata *autore*, mentre un'entità che legge i dati da Hub eventi è denominata *consumer* o *sottoscrittore*. Hub eventi di Azure è posizionato tra queste due entità per suddividere la produzione (dall'autore) e l'uso (verso il sottoscrittore) di un flusso di eventi. Questa separazione consente di gestire scenari in cui il tasso di produzione di eventi è notevolmente superiore al consumo. L'illustrazione seguente mostra il ruolo di un hub eventi.
 
-![Gli autori inviano più eventi a un singolo hub eventi e rendono disponibili i dati ai sottoscrittori](../media-draft/2-event-hub-overview.png "Panoramica di Hub eventi")
+![Illustrazione che mostra un hub eventi di Azure posizionato tra quattro server di pubblicazione e due sottoscrittori. L'hub eventi riceve diversi eventi dai server di pubblicazione, serializza gli eventi in flussi di dati e rende disponibili i flussi di dati ai sottoscrittori.](../media-draft/2-event-hub-overview.png)
 
 ### <a name="events"></a>Eventi
 
@@ -18,7 +18,7 @@ Al contrario, nell'accodamento dei messaggi (nel bus di servizio di Azure) il **
 
 ### <a name="publishers-and-subscribers"></a>Autori e sottoscrittori
 
-Un autore di eventi è qualsiasi applicazione o dispositivo che può inviare dati di eventi tramite HTTPS o Advance Message Queueing Protocol (AQMP) 1.0. 
+Un autore di eventi è qualsiasi applicazione o dispositivo che può inviare dati di eventi tramite HTTPS o Advance Message Queueing Protocol (AMQP) 1.0. 
 
 Per gli autori che inviano dati di frequente, AMQP offre le migliori prestazioni. Tuttavia, presenta un maggiore sovraccarico iniziale per le sessioni, perché è prima necessario configurare un socket bidirezionale persistente e TLS (Transport Layer Security) o SSL/TLS. 
 

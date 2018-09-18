@@ -3,6 +3,7 @@ Si supponga di lavorare presso una società che sviluppa una suite di strumenti 
 Per mantenere queste macchine virtuali separate dalle macchine virtuali usate nell'azienda per i test interni, verrà creato un gruppo di risorse dedicato per ospitarle. Poiché è necessario un solo gruppo di risorse, l'uso di Azure PowerShell in modalità interattiva rappresenta una scelta ragionevole per questa attività.
 
 ## <a name="steps-to-create-a-resource-group"></a>Procedura per creare un gruppo di risorse
+<!---TODO: Update for sandbox.--->
 
 1. Avviare PowerShell.
 
@@ -30,11 +31,11 @@ Per mantenere queste macchine virtuali separate dalle macchine virtuali usate ne
     Get-AzureRmResource | Format-Table
     ```
 
-Un altro modo per verificare se il gruppo di risorse è stato creato correttamente è usare il portale di Azure. A tale scopo, accedere al portale e passare alla sezione **Gruppi di risorse** (vedere di seguito). Il nuovo gruppo di risorse dovrebbe essere visualizzato nell'elenco.
+Un altro modo per verificare se il gruppo di risorse è stato creato correttamente è usare il portale di Azure. A questo scopo, accedere al portale e passare alla sezione **Gruppi di risorse** (vedere di seguito). Il nuovo gruppo di risorse dovrebbe essere visualizzato nell'elenco.
 
 Lo screenshot seguente mostra la posizione della categoria Gruppi di risorse nel portale di Azure.
 
-![Screenshot del pannello Preferiti del portale di Azure con la categoria Gruppo di risorse evidenziata.](../media/6-listing-resource-groups.png)
+![Screenshot del pannello Preferiti del portale di Azure con la categoria Gruppi di risorse evidenziata.](../media/6-listing-resource-groups.png)
 
 ## <a name="summary"></a>Riepilogo
 In questo esercizio viene illustrato un modello comune per una sessione di PowerShell interattiva. Sono stati usati un cmdlet standard per importare il modulo AzureRM, quindi i cmdlet di Azure PowerShell per eseguire un'attività specifica. A questo punto, è disponibile un gruppo di risorse nella sottoscrizione e si è pronti per creare le macchine virtuali.

@@ -1,12 +1,12 @@
-Here, you learned how to use a load balancer as part of a solution for delivering high availability for virtual machines hosted in Azure. This included the load balancer itself, the associated virtual networks, rules to control the balancing algorithm, and health probes that identify which virtual machines are running correctly.
+È stato illustrato come usare un servizio di bilanciamento del carico nell'ambito di una soluzione per garantire la disponibilità elevata delle macchine virtuali ospitate in Azure. Sono stati esaminati il servizio di bilanciamento del carico, le reti virtuali associate, le regole per controllare l'algoritmo di bilanciamento e i probe di integrità che identificano le macchine virtuali correttamente in esecuzione.
 
-## Clean up
+## <a name="clean-up"></a>Eseguire la pulizia
 <!---TODO: Update for sandbox?--->
 
-Running virtual machines and scale sets incurs costs against your subscription. You should remove unneeded resources to avoid unnecessary charges. The easiest way to clean up your Azure subscription is to remove the resource group; this will also delete all the resources in the group. When you are finished with this module, please run the following Azure PowerShell cmdlet:
+L'esecuzione di macchine virtuali e set di scalabilità comporta costi per la sottoscrizione. È consigliabile rimuovere le risorse non necessarie per evitare addebiti superflui. Il modo più semplice per eseguire la pulizia della sottoscrizione di Azure consiste nel rimuovere il gruppo di risorse, rimuovendo così tutte le risorse nel gruppo. Dopo aver completato questo modulo, eseguire questo cmdlet di Azure PowerShell:
 
 ```powershell
 Remove-AzureRmResourceGroup -Name woodgrove-RG
 ```
 
-When you are asked to confirm the delete, answer **Yes**. The command may take several minutes to complete as resources are deleted.
+Quando viene richiesto di confermare l'eliminazione, rispondere **Yes**. Il completamento di questo comando può richiedere alcuni minuti mentre vengono eliminate le risorse.

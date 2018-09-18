@@ -1,40 +1,45 @@
 ### YamlMime:ModuleUnit
 uid: learn.design-for-security.4-infrastructure-protection
-title: Infrastructure protection
+title: Protezione dell'infrastruttura
 metadata:
-  title: Infrastructure protection
-  description: In this unit we'll discuss how to protect access to your infrastructure
+  title: Protezione dell'infrastruttura
+  description: In questa unità viene spiegato come proteggere l'accesso all'infrastruttura
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
+  ms.openlocfilehash: 7e3ae661daa936a8a31deb39e64638df7f34d1b3
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44241245"
 durationInMinutes: 5
-content: |
+content: >
   [!include[](includes/4-infrastructure-protection.md)]
 quiz:
-  title: 'Knowledge Check - Infrastructure protection'
+  title: "Verifica delle conoscenze: Protezione dell'infrastruttura"
   questions:
-  - content: 'Role-based access control can be applied to all but which of the following scopes?'
+  - content: Tra tutti gli ambiti seguenti, a quale non può essere applicato il controllo degli accessi in base al ruolo?
     choices:
-    - content: 'Subscription'
+    - content: Sottoscrizione
       isCorrect: false
-      incorrectExplanation: 'RBAC can be applied to the subscription scope.'
-    - content: 'Resource group'
+      incorrectExplanation: Il controllo degli accessi in base al ruolo può essere applicato all'ambito della sottoscrizione.
+    - content: Gruppo di risorse
       isCorrect: false
-      incorrectExplanation: 'RBAC can be applied to the resource group scope.'
-    - content: 'Linux filesystem'
+      incorrectExplanation: Il controllo degli accessi in base al ruolo può essere applicato all'ambito del gruppo di risorse.
+    - content: File system Linux
       isCorrect: true
-      correctExplanation: 'RBAC can only be applied to Azure resources. Linux filesystems are not within the scope that can be secured with Azure RBAC.'
-    - content: 'Resource'
+      correctExplanation: Il controllo degli accessi in base al ruolo può essere applicato solo alle risorse di Azure. I file system Linux non rientrano nell'ambito che può essere protette con il controllo degli accessi in base al ruolo di Azure.
+    - content: Risorsa
       isCorrect: false
-      incorrectExplanation: 'RBAC can be applied directly to resources.'
-  - content: 'A managed service identity could be assigned to a virtual machine to give it rights to start and stop other virtual machines.'
+      incorrectExplanation: Il controllo degli accessi in base al ruolo può essere applicato direttamente alle risorse.
+  - content: È possibile assegnare un'identità del servizio gestita a una macchina virtuale per concederle il diritto di avviare e interrompere altre macchine virtuali.
     choices:
-    - content: 'True'
+    - content: Vero
       isCorrect: true
-      correctExplanation: 'Managed service identity is a method of assigning an identity to services. Through this assignment, RBAC acces can be granted to manage Azure services, such as starting and stopping virtual machines.'
-    - content: 'False'
+      correctExplanation: L'identità del servizio gestita è un metodo per assegnare un'identità ai servizi. Tramite questa assegnazione, è possibile concedere l'accesso al controllo degli accessi in base al ruolo per la gestione di servizi di Azure, come l'avvio e l'arresto di macchine virtuali.
+    - content: Falso
       isCorrect: false
-      incorrectExplanation: 'Managed service identity is a method of assigning an identity to services. Through this assignment, RBAC acces can be granted to manage Azure services, such as starting and stopping virtual machines.'
+      incorrectExplanation: L'identità del servizio gestita è un metodo per assegnare un'identità ai servizi. Tramite questa assegnazione, è possibile concedere l'accesso al controllo degli accessi in base al ruolo per la gestione di servizi di Azure, come l'avvio e l'arresto di macchine virtuali.

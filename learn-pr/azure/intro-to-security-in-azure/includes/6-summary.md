@@ -1,9 +1,9 @@
-In this module, we discussed the basic concepts for protecting your infrastructure and data when you work in the cloud.
+In questo modulo sono stati illustrati i concetti di base per la protezione dei dati e dell'infrastruttura quando si opera nel cloud.
 
-**Defense in depth** is the overriding theme - thinking about security as a multi-layer, multi-vector concern. Threats come from places we don't expect, and they can come with strength that will surprise us.
+**Difesa avanzata** è il tema fondamentale. Pensiamo alla sicurezza come a una preoccupazione su più livelli e multivettore. Le minacce provengono da fonti inaspettate e con una forza sorprendente.
 
-Azure has out-of-the-box help for a great deal of the security issues we face. One of the first steps we should take is assessing how much help from Azure we can use based on whether we're leveraging IaaS, PaaS, or SaaS.
+Azure offre soluzioni predefinite per la maggior parte dei problemi di sicurezza riscontrati. Uno dei primi passaggi da effettuare prevede la valutazione delle soluzioni di Azure che si possono usare a seconda dell'ambiente in uso, ad esempio IaaS, PaaS o SaaS.
 
-Azure Security Center centralizes much of the help Azure has to offer. It provides a single dashboard, with a view into many of your services, and helps make sure you are following best practices. Continuously updated machine learning algorithms help identify whether the latest threats are aimed at your resources. And it helps your organization mitigate threats.
+Centro sicurezza di Azure centralizza la maggior parte delle soluzioni offerte da Azure. Fornisce un dashboard centralizzato con la visualizzazione dettagliata di numerosi servizi per assicurarsi che siano state seguite le procedure consigliate. Gli algoritmi di Machine Learning sono costantemente aggiornate per aiutare a stabilire se le minacce più recenti possono avere effetti sulle risorse correnti e agevola l'organizzazione nell'attenuazione delle minacce.
 
-Of course, this module is introductory. Security is a deep and complex topic, so whatever your cloud approach, an ongoing security education is necessary. But this module should get you started in the right direction, so you know what you need to learn next.
+Ovviamente, questo è un modulo introduttivo. La sicurezza è un argomento ampio e complesso, di conseguenza, indipendentemente dall'approccio cloud usato, richiede una formazione continua. Questo modulo permette tuttavia di iniziare nella direzione corretta e di conoscere gli argomenti da approfondire in seguito.

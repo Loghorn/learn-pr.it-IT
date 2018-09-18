@@ -1,67 +1,66 @@
-The Azure portal allows you to manage, and scale PostgreSQL database servers. You decide to create an Azure Database for PostgreSQL server to store runner performance data. Based on historic captured data volumes, you know your server storage requirements should be set at 10 GB. To support your processing requirements, you need compute Gen 5 support with 1 vCore. You also know that you typically store backups for 25 days.
+Il portale di Azure consente di gestire e ridimensionare i server di database PostgreSQL. Si decide di creare un server di Database di Azure per PostgreSQL per archiviare i dati sulle prestazioni dei runner. In base ai volumi di dati cronologici acquisiti si sa che i requisiti di archiviazione del server devono essere impostati su 10 GB. Per supportare i requisiti di elaborazione è necessario il supporto di una risorsa di calcolo Gen 5 con 1 vCore. Si sa anche che in genere si archiviano backup per 25 giorni.
 
 > [!TIP]
-> All of the exercises you do in Microsoft Learn are free, but once you start exploring on your own, you will need an Azure subscription. If you don't have one yet, take a couple of minutes and create a [free account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+> Tutti gli esercizi di Microsoft Learn sono gratuiti, ma quando si inizia a esplorare per proprio conto, è necessario procurarsi una sottoscrizione di Azure. Se non si dispone di una sottoscrizione, creare un account [gratuito](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) in pochi minuti.
 
-Sign in to [the Azure portal](https://portal.azure.com?azure-portal=true). You'll see Azure resource creation and management menu on your left and the dashboard filling the rest of the screen.
+Accedere al [portale di Azure](https://portal.azure.com?azure-portal=true). Si noterà il menu per la creazione di risorse e la gestione di Azure sulla sinistra, mentre il dashboard riempirà il resto della schermata.
 
-## Create an Azure Database for PostgreSQL server
+## <a name="create-an-azure-database-for-postgresql-server"></a>Creare un server di Database di Azure per PostgreSQL
 
-Once signed in you'll see the default Dashboard displayed. You have a couple of options available to you to create an Azure Database for PostgreSQL server. From the Dashboard, you can either:
+Dopo l'accesso verrà visualizzato il Dashboard predefinito. Sono disponibili due opzioni per creare un server di Database di Azure per PostgreSQL. Nel dashboard è possibile:
 
-- Select the **All services** option and then search for the **Azure Database for PostgreSQL server** option. This screen will display any configured servers already in your account. From here, you select **Add**, which will take you to the new server creation blade.
+- Selezionare l'opzione **Tutti i servizi** e quindi cercare l'opzione **Database di Azure per il server PostgreSQL**. In questa schermata verranno visualizzati tutti i server configurati già presenti nell'account. Selezionare quindi **Aggiungi** per visualizzare il nuovo pannello per la creazione del server.
 
-or
+oppure
 
-- Select the **Create a resource** option, which will present you with Azure Marketplace resource options. From here, you select the Databases option and choose **Azure Database for PostgreSQL**.
+- Selezionare l'opzione **Crea una risorsa** per visualizzare le opzioni per le risorse di Azure Marketplace. Selezionare quindi l'opzione Database e scegliere **Database di Azure per PostgreSQL**.
 
-### Configure the server
+### <a name="configure-the-server"></a>Configurare il server
 
-You'll now see the PostgreSQL server create blade, similar to the following illustration.
+Verrà visualizzato ora il pannello per la creazione del server PostgreSQL simile a quello della figura seguente.
 
-![Screenshot of the Azure portal showing the creation blade for a new PostgreSQL database.](../media-draft/4-create-blade.png)
+![Pannello dell'interfaccia utente per la creazione del server PostgreSQL nel portale di Azure](../media-draft/4-create-blade.png)
 
 > [!NOTE]
-> You'll need to remember or write down some details as you create the PostgreSQL server. For example the username and password to access the server. You'll use this information to connect to your server later.
+> È necessario ricordare o annotare alcuni dettagli quando si crea il server PostgreSQL. Ad esempio, il nome utente e la password per accedere al server. Queste informazioni verranno usate in seguito per connettersi al server.
 
-1. Choose a unique name for the server. Recall, that then name must be all lowercase and can have numbers and hyphens.
+1. Scegliere un nome univoco per il server. Il nome del server deve essere composto solo da lettere minuscole e può contenere numeri e trattini.
 
-1. Select a subscription, check to be sure this field is set to the subscription you want to use.
+1. Selezionare una sottoscrizione, verificare che questo campo sia impostato sulla sottoscrizione da usare.
 
-1. You now have the option to create or reuse an existing resource. To create a new resource, select the **Create new** radio button and enter a name for the new resource group. You'll use this group for the rest of this module. Name the resource something descriptive so that it's easy to delete the resource later.
+1. È ora possibile creare o riusare una risorsa esistente. Per creare un nuova risorsa, selezionare il pulsante di opzione **Crea nuovo** e immettere un nome per il nuovo gruppo di risorse. Questo gruppo verrà usato per il resto del modulo. Assegnare alla risorsa un nome descrittivo in modo che in seguito risulti semplice eliminare la risorsa.
 
-1. Select the source of your new server. For this lab, you'll leave the option at _Blank_. Recall, you can change the option to _Back up_ if you want to restore and existing server backup.
+1. Selezionare l'origine del nuovo server. Per questo lab lasciare l'opzione impostata su _Vuoto_. È possibile impostare l'opzione su _Backup_ se si vuole ripristinare un backup del server esistente.
 
-1. Choose a login name to use as an administrator login for the new server. Recall, the admin login name can't be azure_superuser, azure_pg_admin, admin, administrator, root, guest, or public. It can't start with pg_. Remember or write down the name for future use.
+1. Scegliere un nome di accesso da usare come account di accesso dell'amministratore per il nuovo server. Il nome di accesso dell'amministratore non può essere azure_superuser, azure_pg_admin, admin, administrator, root, guest o public. Non può iniziare con pg_. Ricordare o annotare il nome per un uso futuro.
 
-1. Choose a password to use with the above administrator login name. Recall, our password must include characters from three of the following categories: English uppercase letters, English lowercase letters, numbers (0 through 9), and non-alphanumeric characters (!, $, #, %, etc.). Remember or write down the password for future use.
+1. Scegliere una password da usare con il nome di accesso dell'amministratore. La password deve contenere caratteri di tre delle categorie seguenti: lettere maiuscole, lettere minuscole, numeri (da 0 a 9) e caratteri non alfanumerici (!, $, #, % e così via). Ricordare o annotare la password per un uso futuro.
 
-1. Retype the password to confirm your password.
+1. Ridigitare la password per conferma.
 
-1. Choose a location for your server. You'll want to choose a location closest to you.
+1. Scegliere una località per il server. È opportuno scegliere una località più vicina all'utente.
 
-1. You'll now select the version of for your server. Select the latest version of PostgreSQL.
+1. Selezionare ora la versione del server. Selezionare la versione più recente di PostgreSQL.
 
-1. As the second last step, select the **Pricing tier** option.
+1. Come secondo e ultimo passaggio selezionare l'opzione **Piano tariffario**.
 
-    Recall that you need to configure your server with specific storage and compute options.
+    È necessario configurare il server con opzioni di calcolo e archiviazione specifiche.
 
-    - 10 GB of disc storage
-    - Compute Generation 5 support
-    - Retention period of 25 days
+    - 10 GB di spazio di archiviazione su disco
+    - Supporto di calcolo Generazione 5
+    - Periodo di conservazione di 25 giorni
 
-    Click **Pricing tier** to access the pricing tier blade and make the following changes.
+    Fare clic su **Piano tariffario** per accedere al pannello del piano tariffario e apportare le modifiche seguenti: ![Pulsante del piano tariffario](../media-draft/4-azure-db-pricing-tier-button.png)
 
-    - Choose the **Basic** option tab.
-    - Choose the **Gen 5 Computation Generation** option.
-    - Choose 1 vCore from the **vCore** slider. Notice how the changes in the slider affect the **Price Summary**.
-    - Choose 10 GB from the **Storage** slider. If you're having trouble sliding to exactly 10 GB, you can use your keyboard's left and right cursor keys to get a precise value.
-    - Choose 25 Days from the **Backup Retention Period** slider.
+    - Scegliere la scheda **Basic**.
+    - Scegliere l'opzione **Generazione calcolo Gen 5**.
+    - Scegliere 1 vCore dal dispositivo di scorrimento **vCore**. Si noti come le modifiche nel dispositivo di scorrimento influiscano sul **Riepilogo prezzi**.
+    - Scegliere 10 GB dal dispositivo di scorrimento **Archiviazione**. Se si ha difficoltà a selezionare esattamente 10 GB, è possibile usare i tasti di direzione destro e sinistro della tastiera per ottenere il valore preciso.
+    - Scegliere 25 giorni dal dispositivo di scorrimento **Periodo di conservazione backup**.
 
-        ![Screenshot of the Azure portal showing the database pricing tier for a new PostgreSQL database.](../media-draft/4-azure-db-pricing-tier.png)
+    ![Piano tariffario](../media-draft/4-azure-db-pricing-tier.png)
+    - Fare clic su **OK** dopo aver completato le selezioni per confermarle e chiudere le opzioni del piano tariffario.
 
-    - Click **OK** once you're satisfied with your selection to commit your selections and close the pricing tier options.
+1. A questo punto, rimane solo da controllare i valori immessi e fare clic su **Crea**. La creazione può richiedere alcuni minuti. È possibile selezionare l'icona delle notifiche (un campanello) nella parte superiore della schermata del portale di Azure per monitorare lo stato di avanzamento.
 
-1. All that is left now, is to review the values you entered and click **Create**. Creation can take several minutes. You can select the Notifications icon (a bell) at the top of the Azure portal screen to monitor progress.
-
-You now have a PostgreSQL server available. In the next unit, you'll see how to create the same server using the Azure CLI.
+È ora disponibile un server PostgreSQL. Nell'unità successiva verrà illustrato come creare lo stesso server tramite l'interfaccia della riga di comando di Azure.

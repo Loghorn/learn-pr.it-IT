@@ -1,31 +1,12 @@
 <!--Video script: It began with Personal Digital Assistants, then smartphones and now everything from smart watches to smart thermostats are connecting people with more information than ever before. Once limited to just PCs, the Internet now allows anything that has valuable information to go online. How does this trend have the potential to impact all aspects of IT professional’s role? More importantly, how can IT professionals prepare for the Internet of Things?-->
 
-Improving your hard skills is just one of the steps necessary for success in
-this changing technological landscape. Gone are the days of getting years
-between new product releases as the Internet of Things allows for sweeping
-changes across industries. IT professionals will be required to possibly prepare
-quarterly, if not more frequent, updates to all company assets connected to
-their network.
+Il miglioramento delle proprie competenze tecniche è solo uno dei passaggi necessari per avere successo in questo mondo tecnologico in continua evoluzione. I tempi in cui passavano anni tra una versione e l'altra di un prodotto sono un lontano ricordo e Internet delle cose ha introdotto cambiamenti radicali in tutti i settori. Ogni trimestre, se non con maggiore frequenza, ai professionisti IT verrà richiesto di preparare gli aggiornamenti a tutti gli asset aziendali connessi alla rete.
 
-The amount of data that the Internet of Things can capture will create a unique
-opportunity for IT Operations. Businesses will be looking to IT Ops to help them
-understand what data to collect and help them unleash the full potential of that
-data. As an example, IoT can be harnessed to capture and run predictive
-analytics on data from heart monitors alerting users when they’re at risk of a
-heart episode. These same heart monitors could possibly collect information
-enabling doctors to make more informed treatment plans for their patients.
+La quantità di dati che Internet delle cose può acquisire creerà un'opportunità straordinaria per i team delle operazioni IT. Le aziende si rivolgeranno ai team delle operazioni IT al fine di ottenere il supporto necessario per individuare i dati da raccogliere per sviluppare l'intero potenziale offerto dai dati. Ad esempio, è possibile usare la tecnologia IoT per acquisire i dati ed eseguire analisi predittive dai cardiofrequenzimetri per avvisare gli utenti di eventuali rischi cardiaci. Questi stessi cardiofrequenzimetri possono raccogliere informazioni per consentire ai medici di approntare piani di cura più informati per i pazienti.
 
-The greatest IoT opportunity for IT Operations is data security. Taking the time
-to update your network security knowledge and skills could enable your
-organization to understand the IT Operations role in addressing potential
-security breaches. Security positions are already in high demand and the need
-for experienced data security professionals will increase more companies deploy
-Internet of Things solutions.
+La più grande opportunità offerta dalla tecnologia IoT per i team delle operazioni IT è legata alla sicurezza dei dati. Prendersi il tempo necessario per aggiornare le proprie conoscenze e competenze sulla sicurezza di rete può consentire alle organizzazioni di comprendere l'importanza del ruolo delle operazioni IT nella risoluzione delle potenziali violazioni della sicurezza. La domanda per le posizioni nel settore della sicurezza è molto elevata e la richiesta di professionisti esperti nella sicurezza dei dati aumenterà man mano che un numero sempre crescente di aziende distribuisce soluzioni Internet delle cose.
 
-Internet of Things has created virtually unlimited possibilities across all
-industries, not just a select few. IoT will lead to unprecedented opportunities
-for any IT professional willing to embrace the technology and become an
-authority in it.
+Internet delle cose ha creato possibilità virtualmente illimitate in tutti i settori, non solo in alcuni. IoT genererà opportunità senza precedenti per qualsiasi professionista IT disposto ad approfondire questa tecnologia e a diventare un'autorità in materia.
 
 <!--Reference links: 
 

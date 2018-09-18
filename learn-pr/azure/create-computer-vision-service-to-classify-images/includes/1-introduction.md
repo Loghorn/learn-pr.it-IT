@@ -1,13 +1,13 @@
-End users often post content that may be inappropriate for work in their personal online interactions. As a lead developer at Contoso Beverage Distribution, you are responsible for building and maintaining a line-of-business app that lets your frontline distributors scan and upload images of store shelves where they are restocking. 
+Spesso gli utenti finali pubblicano contenuti nelle proprie interazioni online personali che potrebbero non essere appropriati per il lavoro. In qualità di sviluppatore di lead presso Contoso Beverage Distribution, l'utente è responsabile per la creazione e gestione di un'app line-of-business che consente ai distributori di scansionare e caricare le immagini degli scaffali dell'archivio. 
 
-You need to validate that any images posted by users respect the content rules set by your company. Your goals are clear; the company doesn't want inappropriate content posted to company sites. Given the advancements in Artificial Intelligence, you decide that rewriting this app to include Computer Vision will proactively prevent these types of incidents from occurring. The service you create will identify images and provide many other functionalities to fulfill your company's needs.
+È necessario verificare che le immagini postate dagli utenti rispettino le regole di contenuto aziendali stabilite. Gli obiettivi sono chiari: l'azienda non vuole che nei siti aziendali vengano postati contenuti inappropriati. Dati i miglioramenti apportati all'intelligenza artificiale, l'utente può decidere che la riscrittura dell'app per includere Visione artificiale impedisca questo tipo di eventi in modo proattivo. Il servizio creato identificherà le immagini e fornirà molte altre funzionalità per soddisfare le esigenze aziendali.
 
-## Learning objectives
+## <a name="learning-objectives"></a>Obiettivi di apprendimento
 
-In this module, you will:
+In questo modulo verrà descritto come:
 
-- Create a Computer Vision API service
-- Analyze an image and identify its content
-- Generate thumbnails
-- Extract printed text
-- Convert handwritten words into text
+- Creare un servizio API Visione artificiale
+- Analizzare un'immagine e identificarne il contenuto
+- Generare anteprime
+- Estrarre il testo stampato
+- Convertire parole scritte a mano in testo

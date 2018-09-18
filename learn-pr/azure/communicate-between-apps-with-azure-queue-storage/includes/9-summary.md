@@ -1,12 +1,12 @@
-In this module, you've seen how queues in Azure storage accounts are used to pass messages between components in a distributed application. Using queues in this way can help to make a distributed application more reliable and resilient to failures and periods of high demand. If you use the Microsoft Azure Storage Client Library for .NET, you can easily write C# or VB.NET code that creates queues, adds messages, or retrieves and removes messages from queues.
+In questo modulo si è visto come le code negli account di archiviazione di Azure vengono usate per passare messaggi tra i componenti in un'applicazione distribuita. L'uso delle code in questo modo può contribuire a rendere un'applicazione distribuita più affidabile e resiliente agli errori e ai periodi di domanda elevata. Se si usa la libreria client di Archiviazione di Microsoft Azure per .NET, è possibile scrivere facilmente codice C# o VB.NET per creare code, aggiungere messaggi o recuperare e rimuovere i messaggi nelle code.
 
 <!-- Cleanup sandbox -->
 [!include[](../../../includes/azure-sandbox-cleanup.md)]
 
-When you are working in your own subscription, you can execute the following Azure CLI command to delete the resource group and all associated resources.
+Quando si usa la propria sottoscrizione, è possibile eseguire il comando seguente dell'interfaccia della riga di comando di Azure per eliminare il gruppo di risorse e tutte le risorse associate.
 
 ```azurecli
 az group delete --name [resource-group-name] --yes --no-wait
 ```
 
-The optional `--no-wait` option tells the shell to not wait for Azure to complete the operation.
+L'opzione facoltativa `--no-wait` indica alla shell di non attendere che Azure completi l'operazione.

@@ -8,12 +8,12 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 5629bb883bb9b7bd4b0b74398976ddad6a1beffc
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: cd272cc82342297622b986694773c293881e748c
+  ms.sourcegitcommit: b6f5aa15bae13cb0f53667fba1d404b7bec76f67
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44234292"
+  ms.lasthandoff: 09/17/2018
+  ms.locfileid: "45783847"
 title: Implementare flussi di lavoro di comunicazione basati sui messaggi con il bus di servizio di Azure
 summary: Scrivere codice C# in un'applicazione personalizzata che invia e riceve messaggi tramite code e argomenti del bus di servizio di Azure.
 abstract: >
@@ -27,13 +27,14 @@ abstract: >
 
   - Creare una coda del bus di servizio e usarla per inviare e ricevere messaggi
 prerequisites: Nessuno
-iconUrl: http://via.placeholder.com/120x120
+iconUrl: /learn/achievements/implement-message-workflows-with-service-bus.svg
 levels:
 - intermediate
 roles:
 - developer
 products:
 - azure
+- azure-service-bus
 units:
 - learn.implement-message-workflows-with-service-bus.1-introduction
 - learn.implement-message-workflows-with-service-bus.2-choose-a-messaging-platform

@@ -1,40 +1,40 @@
-Before you run a container or container-integrated application in Azure, you'll most likely work in a local development environment like your laptop. This unit helps you prepare your system for container development with Docker.
+Prima di eseguire un contenitore o un'applicazione integrata nel contenitore in Azure, molto probabilmente si lavorerà in un ambiente di sviluppo locale, ad esempio un portatile. Questa unità consente di preparare il sistema per lo sviluppo di contenitori con Docker.
 
-## Docker for Windows and Mac
+## <a name="docker-for-windows-and-mac"></a>Docker per Windows e Mac
 
-Docker, Inc. has published two applications to install and configure local container development environments. Essentially, each application prepares your system with Docker tooling, such as the necessary CLI and automation tools. A virtual machine is also created that hosts the Docker platform. The environment is configured such that Docker commands are passed through to the virtual machine. Each of these applications is similar in functionality and includes the following features:
+Docker, Inc. ha pubblicato due applicazioni per installare e configurare ambienti di sviluppo contenitori locali. Essenzialmente, ogni applicazione prepara il sistema con gli strumenti Docker, ad esempio gli strumenti di automazione e dell'interfaccia della riga di comando necessari. Viene anche creata una macchina virtuale che ospita la piattaforma Docker. L'ambiente è configurato in modo che i comandi di Docker vengano passati alla macchina virtuale. Ognuna di queste applicazioni presenta un funzionamento simile e include le funzionalità seguenti.
 
-- **Docker platform:** The core components necessary to create and run containers.
-- **Docker CLI:** The command-line interface for interacting with Docker containers.
-- **Docker Compose:** Automation tooling for defining and running multi-container applications.
+- **Piattaforma Docker**: componenti di base necessari per creare ed eseguire i contenitori.
+- **Interfaccia della riga di comando di Docker**: interfaccia della riga di comando per l'interazione con i contenitori Docker.
+- **Docker Compose**: strumenti di automazione per definire ed eseguire applicazioni multicontenitore.
 
-Open the appropriate link below in a new tab to install Docker on your operating system. 
+Aprire il collegamento seguente appropriato in una nuova scheda per installare Docker nel sistema operativo in uso. 
 
-- [Docker for Windows](https://www.docker.com/docker-windows)
-- [Docker for Mac](https://www.docker.com/docker-mac)
+- [Docker per Windows](https://www.docker.com/docker-windows)
+- [Docker per Mac](https://www.docker.com/docker-mac)
 
-## Docker for Windows environments
+## <a name="docker-for-windows-environments"></a>Docker per ambienti Windows
 
-When you use Docker for Windows, two environments are available: Linux and Windows. Using the Linux environment allows you to run Linux containers on your Windows system. You can select an environment by right-clicking on the Docker task bar icon, selecting **Switch to Linux containers**, and following the on-screen prompts.
+Quando si usa Docker per Windows, sono disponibili due ambienti: Linux e Windows. Se si usa l'ambiente Linux, è possibile eseguire i contenitori Linux nel sistema Windows. Per selezionare un ambiente, fare clic con il pulsante destro del mouse sull'icona della barra delle applicazioni di Docker, scegliere **Switch to Linux containers** (Passa a contenitori Linux) e seguire i prompt visualizzati.
 
-![Docker for Windows, switch to Linux containers](../media-draft/2-docker-linux.png)
+![Docker per Windows, passaggio ai contenitori Linux](../media-draft/2-docker-linux.png)
 
 > [!NOTE]
-> The steps in this tutorial assume that your system is configured to work with Linux containers.
+> I passaggi descritti in questa esercitazione presuppongono che il sistema sia configurato per funzionare con i contenitori Linux.
 
-## Docker on Linux
+## <a name="docker-on-linux"></a>Docker in Linux
 
-If you're working on a Linux-based system, the Docker server components and CLI tools can be manually installed. Follow the instructions found on [About Docker CE](https://docs.docker.com/install/#server) for your specific Linux distribution.
+Se si usa un sistema basato su Linux, i componenti server e gli strumenti dell'interfaccia della riga di comando di Docker possono essere installati manualmente. Seguire le istruzioni riportate in [About Docker CE](https://docs.docker.com/install/#server) (Informazioni su Docker CE) per la distribuzione di Linux specifica.
 
-## Validate configuration
+## <a name="validate-configuration"></a>Convalidare la configurazione
 
-To validate that Docker has been successfully installed and configured, open a terminal and run the following command:
+Per convalidare l'installazione e la configurazione di Docker, aprire un terminale ed eseguire questo comando:
 
 ```bash
 docker search nginx
 ```
 
-If you see output similar to the following, your environment is ready for the next unit.
+Se viene visualizzato un output simile al seguente, l'ambiente è pronto per l'unità successiva.
 
 ```output
 NAME                                                   DESCRIPTION                                     STARS               OFFICIAL            AUTOMATED
@@ -65,6 +65,6 @@ ansibleplaybookbundle/nginx-apb                        An APB to deploy NGINX   
 mailu/nginx                                            Mailu nginx frontend                            0                                       [OK]
 ```
 
-## Summary
+## <a name="summary"></a>Riepilogo
 
-In this unit, you prepared a local container development environment. In the next unit, you will learn about some basic Docker operations.
+In questa unità è stato preparato un ambiente di sviluppo del contenitore locale. Nell'unità successiva verranno fornite informazioni su alcune operazioni di Docker di base.

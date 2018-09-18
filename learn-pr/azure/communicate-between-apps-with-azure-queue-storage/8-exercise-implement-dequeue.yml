@@ -1,17 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.communicate-between-applications-with-azure-queue-storage.8-exercise-implement-dequeue
-title: Retrieve a message from the queue
+title: Recuperare un messaggio dalla coda
 metadata:
-  title: Retrieve a message from the queue
-  description: Retrieve a message from the queue
+  title: Recuperare un messaggio dalla coda
+  description: Recuperare un messaggio dalla coda
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
+  ms.openlocfilehash: b682c525a01c48028184518b34704547d7bdf33b
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44239511"
 interactive: bash-editor
-azureSandbox: true
 durationInMinutes: 10
-content: |
-  [!include[](includes/8-exercise-implement-dequeue.md)]
+content: '[!include[](includes/8-exercise-implement-dequeue.md)]'

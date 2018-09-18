@@ -1,156 +1,156 @@
-Performing a migration of on-premises servers to Azure requires planning and care. You can move them all at once, or more likely, in small batches or even individually. Before you create a single VM, you should sit down and sketch out your current infrastructure model and see how it might map to the cloud.
+La migrazione di server locali ad Azure richiede pianificazione e attenzione. Si possono spostare tutti contemporaneamente oppure, con maggiore probabilità, in piccoli batch o anche singolarmente. Prima di creare una singola VM, è consigliabile esaminare il modello di infrastruttura attuale e definirne il mapping nel cloud.
 
-Let's walk through a checklist of things to think about.
+Di seguito verrà presentato un elenco di controllo degli aspetti da considerare.
 
-- [Start with the network](#Network)
-- [Name the VM](#Name_VM)
-- [Decide the location for the VM](#VM_Location)
-- [Determine the size of the VM](#VM_Size)
-- [Understanding the pricing model](#VM_Cost)
-- [Storage for the VM](#VM_Storage)
-- [Select an operating system](#VM_OS)
+- [Iniziare dalla rete](#Network)
+- [Assegnare un nome alla VM](#Name_VM)
+- [Scegliere la località della VM](#VM_Location)
+- [Determinare la dimensione della VM](#VM_Size)
+- [Informazioni sul modello di determinazione prezzi](#VM_Cost)
+- [Spazio di archiviazione per la VM](#VM_Storage)
+- [Selezionare un sistema operativo](#VM_OS)
 
 <a name="Network" />
 
-## Start with the network
+## <a name="start-with-the-network"></a>Iniziare dalla rete
 
-The first thing you should think about isn't the virtual machine at all - it's the network.
+Il primo elemento da considerare non è la macchina virtuale, ma la rete.
 
-Virtual networks (VNets) are used in Azure to provide private connectivity between Azure Virtual Machines and other Azure services. VMs and services that are part of the same virtual network can access one another. By default, services outside the virtual network cannot connect to services within the virtual network. You can, however, configure the network to allow access to the external service, including your on-premises servers.
+Le reti virtuali vengono usate in Azure per offrire connettività privata tra Macchine virtuali di Azure e altri servizi di Azure. Le VM e i servizi che fanno parte della stessa rete virtuale possono accedere l'uno all'altro. Per impostazione predefinita, i servizi all'esterno della rete virtuale non possono connettersi ai servizi all'interno. È tuttavia possibile configurare la rete in modo da consentire l'accesso al servizio esterno, includendo i server locali.
 
-This latter point is why you should spend some time thinking about your network configuration. Network addresses and subnets are not trivial to change once you have them set up, and if you plan to connect your private company network to the Azure services, you will want to make sure you consider the topology before putting any VMs into place.
+Questo ultimo punto è il motivo per cui è consigliabile dedicare tempo a valutare la propria configurazione di rete. Modificare le subnet e gli indirizzi di rete dopo che sono stati configurati non è semplice. Se si prevede di connettere la rete aziendale privata ai servizi di Azure, sarà opportuno considerare la topologia prima di implementare qualsiasi VM.
 
-When you set up a virtual network, you specify the available address spaces, subnets, and security. If the VNet will be connected to other VNets, you must select address ranges that are not overlapping. This is the range of private addresses that the VMs and services in your network can use. You can use unrouteable IP addresses such as 10.0.0.0/8, 172.16.0.0/12, or 192.168.0.0/16, or define your own range. Azure will treat any address range as part of the private VNet IP address space if it is only reachable within the VNet, within interconnected VNets, and from your on-premises location. If someone else is responsible for the internal networks, you should work with that person before selecting your address space to make sure there is no overlap and to let them know what space you want to use, so they don’t try to use the same range of IP addresses.
+Quando si configura una rete virtuale, si specificano gli spazi indirizzi disponibili, le subnet e la sicurezza. Se la rete virtuale verrà connessa ad altre reti virtuali, è necessario selezionare intervalli di indirizzi che non si sovrappongano. Si tratta dell'intervallo di indirizzi privati che può essere usato dalle VM e dai servizi nella rete. È possibile usare indirizzi IP non instradabili come 10.0.0.0/8, 172.16.0.0/12 o 192.168.0.0/16 oppure definire un proprio intervallo. Qualsiasi intervallo di indirizzi raggiungibile solo all'interno della rete virtuale, nelle reti virtuali interconnesse e dal percorso locale verrà considerato da Azure come parte dello spazio indirizzi IP privato della rete virtuale. Se un altro utente è responsabile delle reti interne, è necessario contattare questa persona prima di selezionare lo spazio indirizzi per assicurarsi che non si verifichino sovrapposizioni e per comunicare lo spazio che si intende specificare, in modo da non usare lo stesso intervallo di indirizzi IP.
 
-### Segregate your network
+### <a name="segregate-your-network"></a>Separare la rete
 
-After deciding the virtual network address space(s), you can create one or more subnets for your virtual network. You do this to break up your network into more manageable sections. For example, you might assign 10.1.0.0 to VMs, 10.2.0.0 to back-end services, and 10.3.0.0 to SQL Server VMs.
+Dopo aver scelto gli spazi indirizzi della rete virtuale, è possibile creare una o più subnet per la rete virtuale. Questa operazione viene eseguita per suddividere la rete in sezioni più gestibili. Ad esempio, è possibile assegnare 10.1.0.0 alle VM, 10.2.0.0 ai servizi back-end e 10.3.0.0 alle VM di SQL Server.
 
 > [!NOTE]
-> Azure reserves the first four addresses and the last address in each subnet for its use.
+> Azure riserva i primi quattro indirizzi e l'ultimo di ogni subnet per uso interno.
 
-### Secure the network
+### <a name="secure-the-network"></a>Proteggere la rete
 
-By default, there is no security boundary between subnets, so services in each of these subnets can talk to one another. However, you can set up Network Security Groups (NSGs), which allow you to control the traffic flow to and from subnets and to and from VMs. NSGs act as software firewalls, applying custom rules to each inbound or outbound request at the network interface and subnet level. This allows you to fully control every network request coming in or out of the VM.
+Per impostazione predefinita non esistono limiti di sicurezza tra le subnet e i servizi in ognuna di esse possono quindi comunicare tra loro. È tuttavia possibile configurare gruppi di sicurezza di rete (NSG) che consentono di controllare il flusso di traffico da e verso le subnet e da e verso le VM. I gruppi di sicurezza di rete fungono da firewall software, applicando regole personalizzate a ogni richiesta in ingresso o in uscita a livello di interfaccia di rete e di subnet. In questo modo è possibile ottenere il controllo completo su ogni richiesta di rete in ingresso e in uscita nella VM.
 
-## Plan each VM deployment
+## <a name="plan-each-vm-deployment"></a>Pianificare ogni distribuzione di VM
 
-Once you have mapped out your communication and network requirements, you can start thinking about the VMs you want to create. A good plan is to select a server and take an inventory:
+Al termine del mapping dei requisiti di comunicazione e di rete, si può iniziare considerare le VM da creare. Un buon piano consiste nel selezionare un server e completare un inventario:
 
-- What does the server communicate with?
-- What ports are open?
-- What OS is used?
-- How much disk space is in use?
-- What kind of data does this use? Are there restrictions (legal or otherwise) with not having it on-premises?
-- What sort of CPU, memory, and disk I/O load does the server have? Is there burst traffic to account for?
+- Con quali risorse comunica il server?
+- Quali porte sono aperte?
+- Quale sistema operativo viene usato?
+- Quanto spazio su disco viene usato?
+- Che tipo di dati viene usato? Sono previste restrizioni, legali o di altro tipo, se il server non è in locale?
+- Qual è il carico di CPU, memoria e I/O dei dischi del server? È necessario tenere conto di picchi di traffico?
 
-We can then start to answer some of the questions Azure will have for a new virtual machine.
+Rispondendo a queste domande si potranno fornire alcune delle informazioni che verranno richieste da Azure per una nuova macchina virtuale.
 
 <a name="Name_VM" />
 
-### Name the VM
+### <a name="name-the-vm"></a>Assegnare un nome alla VM
 
-One piece of information people often don't put much thought into is the **name** of the VM. The VM name is used as the computer name, which is configured as part of the operating system. You can specify a name of up to 15 characters on a Windows VM and 64 characters on a Linux VM.
+Un'informazione a cui di solito non viene prestata molta attenzione è il **nome** della VM. Il nome della VM viene usato come nome computer, configurato nell'ambito del sistema operativo. Il nome specificato può contenere fino a 15 caratteri per una VM Windows e 64 caratteri per una VM Linux.
 
-This name also defines a manageable **Azure resource**, and it's not trivial to change later. That means you should choose names that are meaningful and consistent, so you can easily identify what the VM does. A good convention is to include the following information in the name:
+Questo nome definisce anche una **risorsa di Azure** gestibile e modificarlo in un secondo momento non è semplice. È quindi consigliabile scegliere nomi significativi e coerenti per poter identificare facilmente la funzione svolta dalla VM. È buona pratica includere nel nome le informazioni seguenti:
 
-| Element | Example | Notes |
+| Elemento | Esempio | Note |
 | --- | --- | --- |
-| Environment |dev, prod, QA |Identifies the environment for the resource |
-| Location |uw (US West), ue (US East) |Identifies the region into which the resource is deployed |
-| Instance |01, 02 |For resources that have more than one named instance (web servers, etc.) |
-| Product or Service |service |Identifies the product, application, or service that the resource supports |
-| Role |sql, web, messaging |Identifies the role of the associated resource | 
+| Ambiente |dev, prod, QA |Identifica l'ambiente per la risorsa |
+| Località |usOcc (Stati Uniti occidentali), usOr (Stati Uniti orientali) |Identifica l'area in cui la risorsa viene distribuita. |
+| Istanza |01, 02 |Per le risorse con più istanze denominate (server Web e così via) |
+| Prodotto o servizio |service |Identifica il prodotto, l'applicazione o il servizio supportato dalla risorsa |
+| Ruolo |sql, web, messaggistica |Identifica il ruolo della risorsa associata | 
 
-For example, `devusc-webvm01` might represent the first development web server hosted in the US South Central location. 
+Ad esempio, `devusc-webvm01` potrebbe rappresentare il primo server Web di sviluppo ospitato nella località Stati Uniti centro-meridionali. 
 
-#### What is an Azure resource?
+#### <a name="what-is-an-azure-resource"></a>Informazioni sulle risorse di Azure
 
-An **Azure resource** is a manageable item in Azure. Just like a physical computer in your datacenter, VMs have several elements that are needed to do their job:
+Una **risorsa di Azure** è un elemento gestibile in Azure. Così come per un computer fisico in un data center, affinché le VM svolgano la propria funzione sono necessari diversi elementi:
 
-- The VM itself
-- Storage account for the disks
-- Virtual network (shared with other VMs and services)
-- Network interface to communicate on the network
-- Network Security Group(s) to secure the network traffic
-- Public Internet address (optional)
+- VM
+- Account di archiviazione per i dischi
+- Rete virtuale, condivisa con altri servizi e VM
+- Interfaccia di rete per la comunicazione sulla rete
+- Gruppi di sicurezza di rete per proteggere il traffico di rete
+- Indirizzo Internet pubblico (facoltativo)
 
-Azure will create all of these resources if necessary, or you can supply existing ones as part of the deployment process. Each resource needs a name that will be used to identify it. If Azure creates the resource, it will use the VM name to generate a resource name - another reason to be very consistent with your VM names!
+Azure creerà tutte queste risorse in base alle esigenze. In alternativa, è possibile specificare risorse esistenti nell'ambito del processo di distribuzione. Ogni risorsa deve avere un nome che verrà usato per identificarla. Se Azure crea la risorsa, userà il nome della VM per generare un nome di risorsa. Questo è un altro motivo per cui è opportuno mantenere la massima coerenza nei nomi di VM.
 
 <a name="VM_Location" />
 
-### Decide the location for the VM
+### <a name="decide-the-location-for-the-vm"></a>Scegliere la località della VM
 
-Azure has datacenters all over the world filled with servers and disks. These datacenters are grouped into geographic _regions_ ('West US', 'North Europe', 'Southeast Asia', etc.) to provide redundancy and availability.
+Azure ha data center con server e dischi in tutto il mondo. Questi data center sono raggruppati in _aree_ geografiche, come "Stati Uniti occidentali", "Europa settentrionale", "Asia sud-orientale" e così via, per garantire ridondanza e disponibilità.
 
-When you create and deploy a virtual machine, you must select a region where you want the resources (CPU, storage, etc.) to be allocated. This lets you place your VMs as close as possible to your users to improve performance and to meet any legal, compliance, or tax requirements.
+Quando si crea e si distribuisce una macchina virtuale, è necessario selezionare un'area in cui si vogliono allocare le risorse (CPU, spazio di archiviazione e così via). Ciò consente di posizionare le VM il più vicino possibile agli utenti per migliorare le prestazioni e rispettare qualsiasi requisito legale, di conformità o fiscale.
 
 <a name="VM_Size" />
 
-### Determine the size of the VM
+### <a name="determine-the-size-of-the-vm"></a>Determinare la dimensione della VM
 
-Once you have the name and location set, you need to decide on the size of your VM. Rather than specify processing power, memory, and storage capacity independently, Azure provides different _VM sizes_ that offer variations of these elements in different sizes. Azure provides a wide range of VM size options allowing you to select the appropriate mix of compute, memory, and storage for what you want to do.
+Dopo aver impostato il nome e la località, è necessario scegliere la dimensione della VM. Invece di specificare potenza di elaborazione, memoria e capacità di archiviazione in modo indipendente, Azure offre diverse _dimensioni di VM_, che forniscono varianti di questi elementi in diverse dimensioni. Azure offre una vasta gamma di opzioni in termini di dimensioni di VM e consente di selezionare la combinazione di calcolo, memoria e spazio di archiviazione appropriata in base alle specifiche esigenze.
 
-The best way to determine the appropriate VM size is to consider the type of workload your VM needs to run. Based on the workload, you're able to choose from a subset of available VM sizes. Workload options are classified as follows on Azure:
+Il modo migliore per determinare la dimensione di VM appropriata consiste nel considerare il tipo di carico di lavoro che la VM dovrà eseguire. In base al carico di lavoro, si può scegliere tra un subset delle dimensioni di VM disponibili. In Azure, le opzioni di carico di lavoro sono classificate come segue:
 
-| Option              | Description |
+| Opzione              | Descrizione |
 |---------------------|-------------|
-| **General purpose** | General-purpose VMs are designed to have a balanced CPU-to-memory ratio. Ideal for testing and development, small to medium databases, and low to medium traffic web servers. |
-| **Compute optimized** | Compute optimized VMs are designed to have a high CPU-to-memory ratio. Suitable for medium traffic web servers, network appliances, batch processes, and application servers. |
-| **Memory optimized** | Memory optimized VMs are designed to have a high memory-to-CPU ratio. Great for relational database servers, medium to large caches, and in-memory analytics. |
-| **Storage optimized** | Storage optimized VMs are designed to have high disk throughput and IO. Ideal for VMs running databases. |
-| **GPU** | GPU VMs are specialized virtual machines targeted for heavy graphics rendering and video editing. These VMs are ideal options for model training and inferencing with deep learning. |
-| **High performance computes** | High performance compute is the fastest and most powerful CPU virtual machines with optional high-throughput network interfaces. |
+| **Utilizzo generico** | Le VM per utilizzo generico sono progettate per offrire un rapporto CPU-memoria equilibrato. Sono ideali per test e sviluppo, database medio-piccoli e server Web con traffico da medio a ridotto. |
+| **Con ottimizzazione per il calcolo** | Le VM con ottimizzazione per il calcolo sono progettate per offrire un rapporto CPU-memoria elevato. Sono idonee per server Web con traffico medio, appliance di rete, processi batch e server applicazioni. |
+| **Ottimizzato per la memoria** | Le VM con ottimizzazione per la memoria sono progettate per offrire un rapporto memoria-CPU elevato. Sono eccellenti per server di database relazionali, cache medio-grandi e analisi in memoria. |
+| **Con ottimizzazione per l'archiviazione** | Le VM con ottimizzazione per l'archiviazione sono progettate per offrire livelli elevati di I/O e velocità effettiva dei dischi. Sono ideali per le VM che eseguono database. |
+| **GPU** | Le VM GPU sono macchine virtuali specializzate destinate a carichi intensivi di rendering della grafica e modifica di video. Queste VM sono opzioni ideali per l'inferenza e il training di modelli con l'apprendimento profondo. |
+| **High Performance Computing** | Le VM con High Performance Computing sono le macchine virtuali con le CPU più veloci e potenti e con interfacce di rete facoltative a velocità effettiva elevata. |
 
-You're able to filter on the workload type when you configure the VM size in the Azure. The size you choose directly affects the cost of your service. The more CPU, memory, and GPU you need, the higher the price point.
+È possibile filtrare il tipo di carico di lavoro quando si configura la dimensione della VM in Azure. La dimensione scelta influisce direttamente sul costo del servizio. Maggiore è la capacità di memoria, CPU e GPU necessaria, maggiore sarà il prezzo.
 
 <a name="VM_Cost" />
 
-### Understanding the pricing model
+### <a name="understanding-the-pricing-model"></a>Informazioni sul modello di determinazione prezzi
 
-There are two separate costs the subscription will be charged for every VM: compute and storage.
+Per ogni VM, alla sottoscrizione verranno addebitati due costi separati: calcolo e archiviazione.
 
-**Compute costs** - Compute expenses are priced on a per-hour basis but billed on a per-minute basis. For example, you are only charged for 55 minutes of usage if the VM is deployed for 55 minutes. You are not charged for compute capacity if you stop and deallocate the VM since this releases the hardware. The hourly price varies based on the VM size and OS you select. The cost for a VM includes the charge for the Windows operating system. Linux-based instances are cheaper because there is no operating system license charge.
+**Costi di calcolo**: il prezzo viene determinato su base oraria, ma le spese di calcolo vengono fatturate al minuto. Se la VM viene distribuita per 55 minuti, ad esempio, vengono addebitati solo 55 minuti di utilizzo. Non vengono addebitati costi per la capacità di calcolo in caso di arresto e deallocazione della VM, perché in questo modo viene rilasciato l'hardware. La tariffa oraria varia in base alla dimensione di VM e al sistema operativo selezionati. Il costo per una VM include l'addebito per il sistema operativo Windows. Le istanze basate su Linux sono più economiche perché non sono previsti costi di licenza per il sistema operativo.
 
 > [!TIP]
-> You might be able to save money by reusing existing licenses for Windows with the **Azure Hybrid benefit**.
+> È possibile risparmiare riusando licenze esistenti per Windows con il **Vantaggio Azure Hybrid**.
 
-**Storage costs** - You are charged separately for the storage the VM uses. The status of the VM has no relation to the storage charges that will be incurred; even if the VM is stopped/deallocated and you aren’t billed for the running VM, you will be charged for the storage used by the disks.
+**Costi di archiviazione**: il costo per lo spazio di archiviazione usato dalla VM viene addebitato separatamente. Lo stato della VM non influisce sulle spese di archiviazione sostenute. Anche se la VM viene arrestata/deallocata e non vengono fatturati costi per la VM in esecuzione, verrà addebitato il costo per lo spazio di archiviazione usato dai dischi.
 
-You're able to choose from two payment options for compute costs.
+Per i costi di calcolo è possibile scegliere tra due opzioni di pagamento.
 
-| Option | Description |
+| Opzione | Descrizione |
 |--------|-------------|
-| **Pay as you go** | With the **pay-as-you-go** option, you pay for compute capacity by the second, with no long-term commitment or upfront payments. You're able to increase or decrease compute capacity on demand as well as start or stop at any time. Prefer this option if you run applications with short-term or unpredictable workloads that cannot be interrupted. For example, if you are doing a quick test, or developing an app in a VM, this would be the appropriate option. |
-| **Reserved Virtual Machine Instances** | The Reserved Virtual Machine Instances (RI) option is an advance purchase of a virtual machine for one or three years in a specified region. The commitment is made up front, and in return, you get up to 72% price savings compared to pay-as-you-go pricing. **RIs** are flexible and can easily be exchanged or returned for an early termination fee. Prefer this option if the VM has to run continuously, or you need budget predictability, **and** you can commit to using the VM for at least a year. |
+| **Pagamento in base al consumo** | Con l'opzione del **pagamento in base al consumo**, si paga la capacità di calcolo al secondo, senza alcun impegno a lungo termine o pagamento anticipato. È possibile aumentare o ridurre la capacità di calcolo su richiesta, nonché eseguire l'avvio o l'arresto in qualsiasi momento. Preferire questa opzione se si eseguono applicazioni con carichi di lavoro a breve termine o imprevedibili che non possono essere interrotti. È l'opzione appropriata, ad esempio, per eseguire un rapido test o sviluppare un'app in una VM. |
+| **Istanze di macchina virtuale riservate** | L'opzione delle istanze di macchina virtuale riservate consiste nell'acquisto anticipato di una macchina virtuale per uno o tre anni in un'area specificata. Si fissa un impegno anticipato e in cambio si ottiene un risparmio del 72% sul prezzo con pagamento in base al consumo. Le **istanze riservate** sono flessibili e possono essere facilmente scambiate o restituite pagando un corrispettivo per la risoluzione anticipata. Preferire questa opzione se la VM deve essere eseguita in modo continuo o si desidera un budget prevedibile **ed** è possibile impegnarsi a usare la VM per almeno un anno. |
 
 <a name="VM_Storage" />
 
-### Storage for the VM
+### <a name="storage-for-the-vm"></a>Spazio di archiviazione per la VM
 
-All Azure virtual machines will have at least two virtual hard disks (VHDs). The first disk stores the operating system, and the second is used as temporary storage. You can add additional disks to store application data; the maximum number is determined by the VM size selection (typically two per CPU). It's common to create one or more data disks, particularly since the OS disk tends to be quite small. Also, separating out the data to different VHDs allows you to manage the security, reliability, and performance of the disk independently.
+Tutte le macchine virtuali di Azure hanno almeno due dischi rigidi virtuali. Il primo disco contiene il sistema operativo, mentre il secondo viene usato come risorsa di archiviazione temporanea. È possibile aggiungere altri dischi per archiviare i dati delle applicazioni. Il numero massimo è determinato dalla dimensione di VM selezionata e corrisponde in genere a due per CPU. Vengono comunemente creati uno o più dischi dati, in particolare perché il disco del sistema operativo tende a essere di dimensioni ridotte. La separazione dei dati su dischi rigidi virtuali diversi, inoltre, consente di gestire in modo indipendente la sicurezza, l'affidabilità e le prestazioni del disco.
 
-The data for each VHD is held in **Azure Storage** as page blobs, which allows Azure to allocate space only for the storage you use. It's also how your storage cost is measured; you pay for the storage you are consuming.
+I dati per ogni disco rigido virtuale sono contenuti in **Archiviazione di Azure** come BLOB di pagine, in modo da consentire ad Azure di allocare solo lo spazio effettivamente usato. Il costo di archiviazione viene infatti misurato in questo modo, ossia in base allo spazio di archiviazione utilizzato.
 
-#### What is Azure Storage?
+#### <a name="what-is-azure-storage"></a>Informazioni su Archiviazione di Azure
 
-Azure Storage is Microsoft's cloud-based data storage solution. It supports almost any type of data and provides security, redundancy, and scalable access to the stored data. A storage account provides access to objects in Azure Storage for a specific subscription. VMs always have one or more storage accounts to hold each attached virtual disk.
+Archiviazione di Azure è la soluzione di archiviazione dati basata sul cloud di Microsoft. Supporta quasi tutti i tipi di dati e offre sicurezza, ridondanza e accesso scalabile ai dati archiviati. Un account di archiviazione consente di accedere agli oggetti in Archiviazione di Azure per una sottoscrizione specifica. Le VM hanno sempre uno o più account di archiviazione che includono ogni disco virtuale collegato.
 
-Virtual disks can be backed by either **Standard** or **Premium** Storage accounts. Azure Premium Storage leverages solid-state drives (SSDs) to enable high performance and low latency for VMs running I/O-intensive workloads. Use Azure Premium Storage for production workloads, especially those that are sensitive to performance variations or are I/O intensive. For development or testing, Standard storage is fine.
+I dischi virtuali possono essere basati su account di archiviazione **Standard** o **Premium**. Archiviazione Premium di Azure sfrutta unità SSD per supportare prestazioni elevate e bassa latenza nelle VM che eseguono carichi di lavoro con I/O elevato. Usare Archiviazione Premium di Azure per carichi di lavoro di produzione, soprattutto se sensibili alle variazioni nelle prestazioni o con I/O elevato. L'archiviazione Standard è appropriata per lo sviluppo o i test.
 
-When you create disks, you will have two options for managing the relationship between the storage account and each VHD. You can choose either **unmanaged disks** or **managed disks**.
+Quando si creano i dischi, sono disponibili due opzioni per gestire la relazione tra l'account di archiviazione e ogni disco rigido virtuale. È possibile scegliere **dischi non gestiti** oppure **dischi gestiti**.
 
-| Option | Description |
+| Opzione | Descrizione |
 |--------|-------------|
-| **Unmanaged disks** | With unmanaged disks, you are responsible for the storage accounts that are used to hold the VHDs that correspond to your VM disks. You pay the storage account rates for the amount of space you use. A single storage account has a fixed-rate limit of 20,000 I/O operations/sec. This means that a storage account is capable of supporting 40 standard virtual hard disks at full utilization. If you need to scale out with more disks, then you'll need more storage accounts, which can get complicated. |
-| **Managed disks** | Managed disks are the **newer and recommended disk storage model**. They elegantly solve this complexity by putting the burden of managing the storage accounts onto Azure. You specify the size of the disk, up to 4 TB, and Azure creates and manages both the disk _and_ the storage. You don't have to worry about storage account limits, which makes managed disks easier to scale out. |
+| **Dischi non gestiti** | Con i dischi non gestiti si è responsabili degli account di archiviazione usati per i dischi rigidi virtuali corrispondenti ai dischi delle VM. Vengono addebitate le tariffe degli account di archiviazione per la quantità di spazio usata. Un singolo account di archiviazione prevede un limite di velocità fissa di 20.000 operazioni di I/O al secondo, ossia può supportare 40 dischi rigidi virtuali standard con utilizzo massimo. Se si deve aumentare il numero di istanze con altri dischi, saranno necessari più account di archiviazione e ciò può risultare complicato. |
+| **Dischi gestiti** | I dischi gestiti sono il **modello di archiviazione su disco più recente e consigliato**. Consentono infatti di risolvere queste complicazioni delegando ad Azure la gestione degli account di archiviazione. Si specificano le dimensioni del disco, fino a 4 TB, e Azure crea e gestisce sia il disco _che_ lo spazio di archiviazione. Non è necessario preoccuparsi dei limiti dell'account di archiviazione ed è così possibile aumentare più facilmente il numero di istanze di dischi gestiti. |
 
 <a name="VM_OS" />
 
-### Select an operating system
+### <a name="select-an-operating-system"></a>Selezionare un sistema operativo
 
-Azure provides a variety of OS images that you can install into the VM, including several versions of Windows and flavors of Linux. As mentioned earlier, the choice of OS will influence your hourly compute pricing as Azure bundles the cost of the OS license into the price.
+Azure offre un'ampia gamma di immagini del sistema operativo installabili nella VM, tra cui diverse versioni di Windows e diversi tipi di Linux. Come indicato in precedenza, la scelta del sistema operativo influirà sulle tariffe orarie di calcolo perché Azure include nel prezzo il costo della licenza del sistema operativo.
 
-If you are looking for more than just base OS images, you can search the Azure Marketplace for more sophisticated install images that include the OS and popular software tools installed for specific scenarios. For example, if you needed a new WordPress site, the standard technology stack would consist of a Linux server, Apache web server, a MySQL database, and PHP. Instead of setting up and configuring each component, you can leverage a Marketplace image and install the entire stack all at once.
+Se si preferisce non limitarsi a immagini del sistema operativo di base, è possibile cercare in Azure Marketplace immagini di installazione più sofisticate che includono il sistema operativo e gli strumenti software più diffusi installati per scenari specifici. Se è necessario un nuovo un sito WordPress, ad esempio, lo stack di tecnologie standard è costituito da un server Linux, un server Web Apache, un database MySQL e PHP. Invece di installare e configurare ogni singolo componente, è possibile sfruttare un'immagine del Marketplace e installare l'intero stack in una sola operazione.
 
-Finally, if you can't find a suitable OS image, you can create your disk image with what you need, upload it to Azure storage, and use it to create an Azure VM. Keep in mind that Azure only supports 64-bit operating systems.
+Se non si riesce a trovare un'immagine del sistema operativo adeguata, infine, è possibile creare un'immagine del disco personalizzata inserendo gli elementi necessari, caricarla nell'archivio di Azure e usarla per creare una VM di Azure. Tenere presente che Azure supporta solo sistemi operativi a 64 bit.

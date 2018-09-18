@@ -1,11 +1,11 @@
-Once deployed, bots can be connected to channels such as Skype, Slack, Microsoft Teams, and Facebook Messenger, where you can interact with them the way you would with a person. In this unit, you will add the bot to your Skype contacts and carry on a conversation with it in Skype.
+Al termine della distribuzione, i bot possono essere connessi a canali come Skype, Slack, Microsoft Teams e Facebook Messenger, in cui è possibile interagire con i bot come con una persona. In questa unità si aggiungerà il bot ai contatti Skype e si avvierà una conversazione con il bot in Skype.
 
-1. If Skype isn't already installed on your computer, please install it now. You can [download Skype](https://www.skype.com/en/download-skype/skype-for-computer/) for Windows, macOS, or Linux.
+1. Se Skype non è già installato nel computer, installarlo ora. È possibile [scaricare Skype](https://www.skype.com/en/download-skype/skype-for-computer/) per Windows, macOS o Linux.
 
-1. Return to your web app bot in the Azure portal and click **Channels** in the menu on the left. Click the **Skype** icon. Then, click **Cancel** at the bottom of the blade.
+1. Tornare al bot app Web nel portale di Azure e fare clic su **Canali** nel menu a sinistra. Fare clic sull'icona **Skype**. Fare quindi clic su **Annulla** nella parte inferiore del pannello.
 
-1. Click **Skype**. Then, click **Add to Contacts** to add the bot as a Skype contact and launch Skype.
+1. Fare clic su **Skype**. Fare quindi clic su **Aggiungi ai contatti** per aggiungere il bot come contatto Skype e avviare Skype.
 
-1. Start a conversation with by typing "hi" into the Skype window. Then, converse with the bot by asking it questions and seeing how it responds. Refer to the **Factbot.tsv** file that you used to populate the knowledge base in [Exercise 2](#Exercise2) for examples of questions to ask.
+1. Avviare una conversazione digitando "hi" nella finestra di Skype. Quindi comunicare con il bot ponendo domande e osservando come risponde. Fare riferimento al file **Factbot.tsv** usato per popolare la knowledge base nell'[esercizio 2](#Exercise2) per esempi di domande da porre.
 
-You now have a fully functional bot created with the Azure Bot Service, infused with intelligence by Microsoft QnA Maker, and available for anyone in the world to interact with. Feel free to plug your bot into other channels and test it in different scenarios. And if you would like to make the bot smarter, consider expanding the knowledge base with additional questions and answers. For example, you could use the [online FAQ](https://docs.microsoft.com/azure/bot-service/bot-service-resources-bot-framework-faq?view=azure-bot-service-3.0) for the Bot Framework to train the bot to answer questions about the framework itself.
+È stato ora creato un bot perfettamente funzionante con il servizio Azure Bot, con intelligenza fornita da Microsoft QnA Maker e disponibile per l'interazione con utenti in tutto il mondo. È possibile collegare il bot altri canali e testarlo in scenari diversi. Se si vuole rendere il bot più intelligente, provare a espandere la knowledge base con altre domande e risposte. Ad esempio, è possibile usare le [domande frequenti online](https://docs.microsoft.com/azure/bot-service/bot-service-resources-bot-framework-faq?view=azure-bot-service-3.0) su Bot Framework per eseguire il training del bot in modo che risponda alle domande sul framework stesso.

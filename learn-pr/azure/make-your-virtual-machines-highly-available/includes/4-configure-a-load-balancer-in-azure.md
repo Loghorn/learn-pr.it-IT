@@ -1,28 +1,28 @@
-Before the load balancer will function correctly, you must configure settings that control the load balancer's behavior. Here, you will look at configuring the network, health probe, security rules, load-balancing rules, and server pool.
+Per il funzionamento corretto del servizio di bilanciamento del carico, è prima necessario configurare le impostazioni che ne controllano il comportamento. Di seguito verrà illustrata la configurazione della rete, del probe di integrità, delle regole di sicurezza, delle regole di bilanciamento del carico e del pool di server.
 
-## Steps for configuring a basic public load balancer
+## <a name="steps-to-configure-a-basic-public-load-balancer"></a>Passaggi per la configurazione di un servizio di bilanciamento del carico pubblico Basic
 
-The following is an overview of the main configuration steps for a basic public load balancer. The steps for a standard load balancer and for an internal load balancer will be similar.
+Di seguito è riportata una panoramica dei principali passaggi di configurazione per un servizio di bilanciamento del carico pubblico Basic. I passaggi per un servizio di bilanciamento del carico Standard e per un servizio di bilanciamento del carico interno saranno simili.
 
-### Backend servers
+### <a name="backend-servers"></a>Server back-end
 
-First, you need to configure your backend VM pool. The VMs should be in the same availability set and have their own public IP address (although this will not actually be used by your public endpoints).
+Per prima cosa, è necessario configurare il pool di VM back-end. Le VM devono essere incluse nello stesso set di disponibilità e avere un proprio indirizzo IP pubblico, nonostante questo non venga effettivamente usato dagli endpoint pubblici.
 
-You must create a new virtual network and define a subnet for the VM pool to use.
+È necessario creare una nuova rete virtuale e definire una subnet da usare per il pool di VM.
 
- When you have multiple VMs providing the same services, you should use a **network security group (NSG)** to ensure that the same firewall rules are in place across the VM pool (although this is not part of the actual load-balancing process). For example, for VMs hosting web applications, you will need to create inbound security rules on port 80 for HTTP or port 8080 for HTTPS.
+Anche se non fa direttamente parte del bilanciamento del carico, in presenza di più VM che offrono gli stessi servizi è consigliabile usare un **gruppo di sicurezza di rete (NSG)** per garantire che nell'intero pool di VM vengano applicate le stesse regole del firewall. Per le VM che ospitano applicazioni Web, ad esempio, sarà necessario creare regole di sicurezza in ingresso sulla porta 80 per HTTP o sulla porta 8080 per HTTPS.
 
-### Public IP address
+### <a name="public-ip-address"></a>Indirizzo IP pubblico
 
-When you create a public basic load balancer using the portal, the **public IP address** is automatically configured as the load balancer's front end.
+Quando si crea un servizio di bilanciamento del carico pubblico Basic usando il portale, l'**indirizzo IP pubblico** viene configurato automaticamente come front-end del servizio di bilanciamento del carico.
 
-Part of the configuration of the load balancer is the **back-end address pool**, containing the IP addresses of each VM's virtual NICs that are connected to the load balancer and used to distribute traffic to the VMs. 
+La configurazione del servizio di bilanciamento del carico include il **pool di indirizzi back-end**, che contiene gli indirizzi IP delle schede di interfaccia di rete virtuali di ogni VM che sono connesse al servizio di bilanciamento del carico e vengono usate per distribuire il traffico alle VM. 
 
-### Health probe
+### <a name="health-probe"></a>Probe di integrità
 
-The health probe dynamically adds or removes VMs from the load balancer rotation based on their response to health checks.
-By default, there are 15 seconds between probe attempts. After two consecutive probe failures, a VM is considered unhealthy.
+Il probe di integrità aggiunge o rimuove in modo dinamico le VM nella rotazione del servizio di bilanciamento del carico in base alla rispettiva risposta ai controlli di integrità.
+Per impostazione predefinita, l'intervallo tra i tentativi di probe è di 15 secondi e una VM viene considerata non integra dopo due errori di probe consecutivi.
 
-### Rules
+### <a name="rules"></a>Regole
 
-The load balancer rule specifies the port that the front end is listening on, and the port used to send traffic to the backend.
+La regola del servizio di bilanciamento del carico specifica la porta su cui è in ascolto il front-end e la porta usata per inviare il traffico al back-end.

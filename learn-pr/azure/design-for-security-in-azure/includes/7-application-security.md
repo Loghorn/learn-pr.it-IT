@@ -1,72 +1,72 @@
-Hosting applications on a cloud platform provides a number of advantages when compared to traditional on-premises deployments. The cloud's shared-responsibility model moves security at the physical network, building, and host levels under the control of the cloud provider. An attacker trying to compromise the platform at this level would see diminishing returns versus the considerable investment and insight providers make in securing and monitoring their infrastructure.
+L'hosting delle applicazioni in una piattaforma cloud offre numerosi vantaggi rispetto alle tradizionali distribuzioni locali. Il modello di responsabilità condivisa del cloud porta la sicurezza a livello di rete fisica, edificio e host sotto il controllo del provider di servizi cloud. Un utente malintenzionato che tentasse di compromettere la piattaforma a questo livello vedrebbe rendimenti decrescenti, considerati i notevoli investimenti e studi approfonditi messi in campo dai provider per proteggere e monitorare la propria infrastruttura.
 
-It's therefore far more effective for attackers to pursue vulnerabilities introduced at the application level by cloud-platform customers. Furthermore, by adopting Platform as a Service (PaaS) to host their applications, customers are able to free resources from managing operating system security and deploy them to harden application code and monitor the identity perimeter around the application. In this unit we will discuss some of the ways application security can be improved through design.
+Per gli utenti malintenzionati è quindi molto più conveniente approfittare delle vulnerabilità introdotte a livello di applicazione da parte dei clienti della piattaforma cloud. Inoltre, adottando una piattaforma distribuita come servizio (PaaS) per ospitare le proprie applicazioni, i clienti possono liberare le risorse impegnate nella gestione della sicurezza dei sistemi operativi per destinarle al rafforzamento del codice delle applicazioni e al monitoraggio del perimetro di identità attorno alle applicazioni. In questa unità verranno illustrati alcuni dei modi per migliorare la sicurezza delle applicazioni in fase di progettazione.
 
-## Scenario
+## <a name="scenario"></a>Scenario
 
-Lamna Healthcare customers require access to their personal medical records through an online web portal. Compliance with the Health Insurance Portability and Accountability Act (HIPAA) is mandatory and puts the company at significant risk of financial penalties if a breach of personal data occurs; therefore, securing the application and personal data it interacts with is paramount.
+I clienti di Lamna Healthcare devono accedere alle proprie cartelle cliniche personali tramite un portale Web online. La conformità alla normativa HIPAA (Health Insurance Portability e Accountability Act) è obbligatoria e pone l'azienda a serio rischio di sanzioni pecuniarie in caso di violazione dei dati personali, quindi proteggere l'applicazione e i dati personali che gestisce è un requisito prioritario.
 
-The primary areas that concern customer applications are:
+Le aree principali che riguardano le applicazioni dei clienti sono:
 
-- Secure application design
-- Data security
-- Identity and access management
-- Endpoint security
+- Progettazione sicura dell'applicazione
+- Sicurezza dei dati
+- Gestione delle identità e dell'accesso
+- Sicurezza degli endpoint
 
-## Security Development Lifecycle
+## <a name="security-development-lifecycle"></a>Security Development Lifecycle
 
-Microsoft's [Security Development Lifecycle](https://www.microsoft.com/sdl) (SDL) process can be used during the application design stage to ensure security concerns are incorporated in the software development lifecycle. Security and compliance issues are far easier to address when designing an application and can mitigate many common errors that can lead to security flaws in the final product. Fixing issues early in the software development journey is also far less costly. The typical sequence of SDL steps a software project can use are as follows:
+Durante la fase di progettazione delle applicazioni può essere usato il processo [Security Development Lifecycle](https://www.microsoft.com/sdl) (SDL) di Microsoft per assicurarsi che nel ciclo di sviluppo del software vengano incorporate misure di sicurezza. I problemi di sicurezza e conformità sono molto più semplici da risolvere in fase di progettazione di un'applicazione. Inoltre, in questo modo, è possibile evitare molti errori comuni che possono introdurre vulnerabilità nel prodotto finale. La risoluzione dei problemi nelle prime fasi di sviluppo del software è anche molto meno costosa. La sequenza tipica delle fasi di un progetto software basato sul processo SDL è la seguente:
 
-1. Training
+1. Formazione
 
-    - Core security training
+    - Formazione di base in materia di sicurezza
 
-1. Requirements
+1. Requisiti
 
-    - Define requirements and quality gates
-    - Analyze security and privacy risks
+    - Definire i requisiti e i controlli di qualità
+    - Analizzare i rischi di sicurezza e privacy
  
-1. Design
+1. Progettazione
 
-    - Attack surface analysis
-    - Threat modeling
+    - Analisi delle superfici di attacco
+    - Modellazione delle minacce
  
-1. Implementation
+1. Implementazione
 
-    - Specify tools to ensure code quality can be measured
-    - Enforce banned APIs and functions
-    - Perform static code analysis
-    - Scan repositories for stored secrets
+    - Specificare gli strumenti che consentono di misurare la qualità del codice
+    - Definire API e funzioni vietate
+    - Eseguire l'analisi statica del codice
+    - Analizzare i repository per individuare segreti archiviati
  
-1. Verification
+1. Verifica
 
-    - Dynamic/Fuzz testing
-    - Verify threat models/attack surface
+    - Test dinamici/con dati casuali
+    - Verificare i modelli delle minacce/la superficie di attacco
  
-1. Release
+1. Rilascio
 
-    - Form security response plan
-    - Perform a final security review
-    - Release archive
+    - Definire il piano di risposta di sicurezza
+    - Eseguire un esame finale della sicurezza
+    - Rilasciare l'archivio
  
-1. Response 
+1. Risposta 
 
-    - Execute threat response execution
+    - Eseguire la risposta alle minacce
 
-![Security development lifecycle](../media/sdl.png)
+![Security Development Lifecycle](../media/sdl.png)
 
-The SDL is as much a cultural aspect as it is a process or set of tools. Building a culture where security is a primary focus and requirement of any application development can make great strides in evolving an organization's capabilities around security.
+Il processo SDL non è solo un processo o un set di strumenti, ma porta con sé anche un aspetto culturale. Creare una cultura in cui la sicurezza è considerata un obiettivo primario e un requisito base dello sviluppo di qualsiasi applicazione può far evolvere enormemente la capacità delle aziende di gestire la sicurezza.
 
 <!-- Bear in mind that the migration of un-modified applications (especially COTS procured software systems) will not be able to perform many of the steps listed above.
  -->
 
-## Operational security assessment
+## <a name="operational-security-assessment"></a>Valutazione della sicurezza operativa
 
-Once an application has been deployed, it's essential to continually evaluate its security posture, determine how to mitigate any issues that are discovered, and feed the knowledge back into the software development cycle. The depth to which this is performed is a factor of the maturity level of the software development and operational teams as well as the data privacy requirements.
+Dopo aver distribuito un'applicazione, è essenziale valutarne continuamente il comportamento di sicurezza, stabilire come attenuare gli eventuali problemi individuati e reintrodurre le informazioni acquisite nel ciclo di sviluppo del software. La profondità a cui questa operazione viene eseguita dipende dal livello di maturità dei team operativi e di sviluppo software, nonché dai requisiti di privacy dei dati.
 
-Security vulnerability scanning software services are available to help automate this process and assess security concerns on a regular cadence, without burdening teams with costly manual processes, such as penetration testing.
+Per automatizzare questo processo e valutare i problemi di sicurezza con cadenza regolare sono disponibili servizi software per l'analisi delle vulnerabilità, che evitano inoltre di sovraccaricare i team con laboriosi processi manuali, ad esempio i test di penetrazione.
 
-Azure Security Center is a free service, now enabled by default for all Azure subscriptions, that is tightly integrated with other Azure application level services, such as Azure Application Gateway and Azure Web Application Firewall. By analyzing logs from these services, ASC can report on known vulnerabilities in real time, recommend responses to mitigate them, and even be configured to automatically execute playbooks in response to attacks.
+Il Centro sicurezza di Azure è un servizio gratuito, ora abilitato per impostazione predefinita per tutte le sottoscrizioni di Azure, che è strettamente integrato con altri servizi a livello di applicazione di Azure, ad esempio gateway applicazione di Azure e Web application firewall di Azure. Analizzando i log creati da questi servizi, il Centro sicurezza di Azure può segnalare le vulnerabilità note in tempo reale, consigliare interventi per ridurre i rischi e persino essere configurato per eseguire automaticamente dei playbook in risposta agli attacchi.
 
 <!-- SDL culture
 Key Vault / MSI
@@ -75,23 +75,23 @@ Mention approach of code scanning & SDL
 Scanning for passwords - Git
  -->
 
-## Identity as the perimeter
+## <a name="identity-as-the-perimeter"></a>Identità come perimetro
 
-Identity validation is becoming the first line in defense for applications. Restricting access to a web application by authenticating and authorizing sessions can drastically reduce the attack surface area. Azure AD and Azure AD B2C offer an effective way to offload the responsibility of identity and access to a fully managed service. Azure AD conditional access policies, privileged identity management, and Identity Protection controls further enhance a customer's ability to prevent unauthorized access and audit changes.
+La convalida dell'identità sta diventando la prima linea di difesa per le applicazioni. Limitare l'accesso a un'applicazione Web tramite l'autenticazione e l'autorizzazione delle sessioni può ridurre drasticamente la superficie di attacco. Azure AD e Azure AD B2C rappresentano un metodo efficace per affidare la responsabilità del controllo dell'identità e dell'accesso a un servizio completamente gestito. I criteri di accesso condizionale di Azure AD, la gestione delle identità con privilegi e i controlli di Identity Protection migliorano ulteriormente la capacità dei clienti di impedire accessi non autorizzati e controllare le modifiche.
 
-## Data protection
+## <a name="data-protection"></a>Protezione dati
 
-Customer data is the target for most, if not all attacks against web applications. The secure storage and transport of data between an application and its data storage layer is paramount.
+I dati dei clienti sono il bersaglio della maggior parte, se non di tutti, gli attacchi alle applicazioni Web. Mettere in sicurezza l'archiviazione e il trasporto dei dati tra un'applicazione e il suo livello di archiviazione dati è un requisito prioritario.
 
-Lamna Healthcare stores and accesses particularly sensitive patient medical record data. HIPAA, enacted by the United States Congress in 1996, among other controls, defines the national standards for electronic healthcare transactions by healthcare providers and employers. Lamna must ensure patients and authorized parties, such as their physicians, have secure access to medical data.
+Lamna Healthcare archivia e gestisce dati clinici particolarmente sensibili relativi ai pazienti. La normativa HIPAA, adottata dal Congresso degli Stati Uniti nel 1996, definisce, insieme ad altri controlli, gli standard nazionali per le transazioni elettroniche in ambito sanitario da parte degli operatori sanitari e dei datori di lavoro. Lamna deve garantire ai pazienti e ad altre parti autorizzate, ad esempio i medici, un accesso protetto ai dati clinici.
 
-To comply with these requirements, Lamna Healthcare has modified their applications to encrypt all patient data at rest and in transit. For example, Transport Layer Security (TLS) is used to encrypt data exchanged between the web application and back-end SQL databases. Data is also encrypted at rest in SQL Server using Transparent Data Encryption (TDE), ensuring that even if the environment is compromised, data is effectively useless to anyone without the correct decryption keys.
+Per garantire la conformità a questi requisiti, Lamna Healthcare ha modificato le proprie applicazioni, che ora crittografano tutti i dati dei pazienti, inattivi e in transito. Ad esempio, viene usato il protocollo Transport Layer Security (TLS) per crittografare i dati scambiati tra l'applicazione Web e i database SQL back-end. Vengono crittografati anche i dati inattivi in SQL Server tramite la tecnologia Transparent Data Encryption (TDE) per garantire che, se l'ambiente viene compromesso, i dati risultino inutilizzabili per chiunque non possieda le chiavi di decrittografia corrette.
 
-To encrypt data stored in blob storage, client-side encryption can be used to encrypt the data in memory before it's written to the storage service. Libraries supporting this encryption are available for .NET, Java, and Python, and enable the integration of data encryption directly into applications to enhance data integrity.
+Per crittografare i dati archiviati in archivi BLOB, è possibile usare la crittografia lato client per crittografare i dati in memoria prima che vengano scritti nel servizio di archiviazione. Sono disponibili librerie che supportano questo tipo di crittografia per .NET, Java e Python e consentono l'integrazione della crittografia dei dati direttamente nelle applicazioni, per migliorare l'integrità dei dati.
 
-### Secure key and secret storage
+### <a name="secure-key-and-secret-storage"></a>Chiavi di sicurezza e archiviazione segreta
 
-Separating application secrets (connection strings, passwords, etc.) and encryption keys from the application used to access data is vital. Encryption keys and application secrets should never be stored in the application code of configuration files. Instead, a secure store such as Azure Key Vault should be used. Access to this sensitive data can then be limited to application identities through Managed Service Identities, and keys can be rotated on a regular basis to limit exposure in the case of encryption key leakage. Customers can also choose to use their own encryption keys generated by on-premises Hardware Security Modules (HSM) and even mandate that Azure Key Vault instances are implemented in single-tenant, discrete HSMs.
+È essenziale separare i segreti dell'applicazione (stringhe di connessione, password e così via) e le chiavi di crittografia dall'applicazione usata per accedere ai dati. Le chiavi di crittografia e i segreti dell'applicazione non devono mai essere scritti nel codice dell'applicazione dei file di configurazione. Bisogna usare invece un archivio protetto, ad esempio Azure Key Vault. L'accesso ai dati sensibili può quindi essere limitato alle identità dell'applicazione tramite le identità del servizio gestito e le chiavi possano essere ruotate a intervalli regolari per limitare l'esposizione nel caso di divulgazione delle chiavi di crittografia. I clienti possono anche scegliere di usare chiavi di crittografia proprie, generate da moduli di protezione hardware locali, e persino decidere che le istanze di Azure Key Vault siano implementate in moduli di protezione hardware discreti a tenant singolo.
 
 <!-- ### Secure and immutable file storage
 

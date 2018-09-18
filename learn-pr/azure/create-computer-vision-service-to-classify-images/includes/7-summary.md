@@ -1,7 +1,7 @@
-## Summary
+## <a name="summary"></a>Riepilogo
 
-In this module, you have learned how to analyze images with the Computer Vision API service.
+In questo modulo è stato descritto come analizzare le immagini con il servizio API Visione artificiale.
 
-You analyzed images to know what they are, as well as generated thumbnails. Then, you performed Optical Character Recognition (OCR) on printed text and converted handwriting into printed characters.
+Oltre ad analizzare le immagini per identificare a cosa si riferiscono, sono state generate anche le anteprime. È stato quindi eseguito il riconoscimento ottico dei caratteri (OCR) sul testo stampato e la grafia è stata convertita in caratteri stampati.
 
-This module provides the basis for integrating visual Cognitive Services within an application written in any language.
+Questo modulo offre le basi per l'integrazione di Servizi cognitivi visivi all'interno di un'applicazione scritta in qualsiasi linguaggio.
