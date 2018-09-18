@@ -1,20 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.run-docker-containers-aci.4-use-environment-variables
 metadata:
-  title: <span data-ttu-id="5fba5-101">Impostare le variabili di ambiente</span><span class="sxs-lookup"><span data-stu-id="5fba5-101">Set environment variables</span></span>
-  description: <span data-ttu-id="5fba5-102">Impostare le variabili di ambiente in Istanze di contenitore di Azure.</span><span class="sxs-lookup"><span data-stu-id="5fba5-102">Set environment variables in Azure Container Instances.</span></span>
+  title: <span data-ttu-id="6e50a-101">Impostare le variabili di ambiente</span><span class="sxs-lookup"><span data-stu-id="6e50a-101">Set environment variables</span></span>
+  description: <span data-ttu-id="6e50a-102">Impostare le variabili di ambiente in Istanze di contenitore di Azure.</span><span class="sxs-lookup"><span data-stu-id="6e50a-102">Set environment variables in Azure Container Instances.</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 121d22c224c33875cf10038d9c63596882a3b1f4
-  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
+  ms.sourcegitcommit: b6f5aa15bae13cb0f53667fba1d404b7bec76f67
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/10/2018
-  ms.locfileid: "44308216"
-title: <span data-ttu-id="5fba5-103">Impostare le variabili di ambiente</span><span class="sxs-lookup"><span data-stu-id="5fba5-103">Set environment variables</span></span>
+  ms.lasthandoff: 09/17/2018
+  ms.locfileid: "45760742"
+title: <span data-ttu-id="6e50a-103">Impostare le variabili di ambiente</span><span class="sxs-lookup"><span data-stu-id="6e50a-103">Set environment variables</span></span>
 interactive: bash
 azureSandbox: true
 durationInMinutes: 10

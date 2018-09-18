@@ -10,11 +10,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: d39a1a6c851f2073272ca3c3419b9a1ce291f3bf
-  ms.sourcegitcommit: 85169b96f980f61cf8558e3df6f32527973bfde4
+  ms.sourcegitcommit: b6f5aa15bae13cb0f53667fba1d404b7bec76f67
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/13/2018
-  ms.locfileid: "45555425"
+  ms.lasthandoff: 09/17/2018
+  ms.locfileid: "45758392"
 title: Creare applicazioni serverless
 summary: Funzioni di Azure consente la creazione di sistemi di calcolo on demand basati su eventi che possono essere attivati da vari eventi esterni. Scopri come sfruttare le funzioni per eseguire la logica lato server e la compilazione di architetture senza server.
 prerequisites: Nessuno

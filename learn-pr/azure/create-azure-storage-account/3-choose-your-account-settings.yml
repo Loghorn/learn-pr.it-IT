@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-azure-storage-account.3-choose-your-account-settings
-title: <span data-ttu-id="8bce6-101">Scegliere le impostazioni dell'account</span><span class="sxs-lookup"><span data-stu-id="8bce6-101">Choose your account settings</span></span>
+title: <span data-ttu-id="866e8-101">Scegliere le impostazioni dell'account</span><span class="sxs-lookup"><span data-stu-id="866e8-101">Choose your account settings</span></span>
 metadata:
-  title: <span data-ttu-id="8bce6-102">Scegliere le impostazioni dell'account</span><span class="sxs-lookup"><span data-stu-id="8bce6-102">Choose your account settings</span></span>
-  description: <span data-ttu-id="8bce6-103">Scegliere le impostazioni dell'account</span><span class="sxs-lookup"><span data-stu-id="8bce6-103">Choose your account settings</span></span>
+  title: <span data-ttu-id="866e8-102">Scegliere le impostazioni dell'account</span><span class="sxs-lookup"><span data-stu-id="866e8-102">Choose your account settings</span></span>
+  description: <span data-ttu-id="866e8-103">Scegliere le impostazioni dell'account</span><span class="sxs-lookup"><span data-stu-id="866e8-103">Choose your account settings</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 78eb3c50e696cd1e6badd052fd1782d0f8b1c9fc
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: 86463780f25a2aa164342d6539d35ec5586984af
+  ms.sourcegitcommit: b6f5aa15bae13cb0f53667fba1d404b7bec76f67
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44236519"
-durationInMinutes: 7
+  ms.lasthandoff: 09/17/2018
+  ms.locfileid: "45753992"
+durationInMinutes: 5
 content: '[!include[](includes/3-choose-your-account-settings.md)]'
