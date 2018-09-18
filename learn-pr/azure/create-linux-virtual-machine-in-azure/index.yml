@@ -9,11 +9,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: b81dd92ad5a4e0619c9129521bf2f275e3f30b01
-  ms.sourcegitcommit: 4d3d995e220b696d35237a19740a6d619134d6ca
+  ms.sourcegitcommit: b6f5aa15bae13cb0f53667fba1d404b7bec76f67
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/13/2018
-  ms.locfileid: "45537334"
+  ms.lasthandoff: 09/17/2018
+  ms.locfileid: "45778950"
 title: Creare una macchina virtuale Linux in Azure
 summary: Questo modulo illustra come creare una macchina virtuale Linux usando il portale di Azure.
 abstract: >

@@ -9,11 +9,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 41b8c2d92b0f75dbf8d29898ba54aeca80707a8f
-  ms.sourcegitcommit: 4d3d995e220b696d35237a19740a6d619134d6ca
+  ms.sourcegitcommit: b6f5aa15bae13cb0f53667fba1d404b7bec76f67
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/13/2018
-  ms.locfileid: "45538082"
+  ms.lasthandoff: 09/17/2018
+  ms.locfileid: "45774873"
 title: Creare una macchina virtuale Windows in Azure
 summary: Le macchine virtuali (VM) di Azure permettono di creare in pochi minuti risorse di calcolo dedicate, che possono essere usate proprio come un computer desktop o un server fisico. Che la macchina virtuale sia un server a cui ci si connette per finalità amministrative o una workstation virtuale per un utente finale, il protocollo RDP offre la stessa esperienza di chi si siede davanti al terminale di un computer fisico locale.
 abstract: >

@@ -4,7 +4,7 @@ In questo esercizio si eliminerà il gruppo di risorse creato nell'esercizio 1 d
 
 1. Tornare al pannello per il gruppo di risorse creato nell'esercizio 1. Fare quindi clic sul pulsante **Elimina gruppo di risorse** nella parte superiore del pannello.
 
-    ![Eliminazione del gruppo di risorse](../media-draft/6-delete-resource-group.png)
+    ![Eliminazione del gruppo di risorse](../media/6-delete-resource-group.png)
 
 1. Per motivi di sicurezza verrà richiesto di digitare il nome del gruppo di risorse. Una volta eliminato, infatti, un gruppo di risorse non può essere recuperato. Digitare il nome del gruppo di risorse. Fare clic sul pulsante **Elimina** per rimuovere tutte le tracce di questo modulo dalla sottoscrizione di Azure.
 
