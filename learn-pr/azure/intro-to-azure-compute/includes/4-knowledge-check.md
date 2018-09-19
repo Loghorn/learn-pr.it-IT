@@ -1,1 +1,0 @@
-<span data-ttu-id="76020-101">Per aiutare a ricordare quanto appreso, leggere i due scenari che coinvolgono il team di astronomia e rispondere alle domande associate.</span><span class="sxs-lookup"><span data-stu-id="76020-101">To help you remember what you've learned, read the two scenarios involving the astronomy team and answer the associated questions.</span></span>

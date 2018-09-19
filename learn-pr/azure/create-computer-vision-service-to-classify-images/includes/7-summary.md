@@ -1,7 +1,0 @@
-## <a name="summary"></a><span data-ttu-id="f147d-101">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="f147d-101">Summary</span></span>
-
-<span data-ttu-id="f147d-102">In questo modulo è stato descritto come analizzare le immagini con il servizio API Visione artificiale.</span><span class="sxs-lookup"><span data-stu-id="f147d-102">In this module, you have learned how to analyze images with the Computer Vision API service.</span></span>
-
-<span data-ttu-id="f147d-103">Oltre ad analizzare le immagini per identificare a cosa si riferiscono, sono state generate anche le anteprime.</span><span class="sxs-lookup"><span data-stu-id="f147d-103">You analyzed images to know what they are, as well as generated thumbnails.</span></span> <span data-ttu-id="f147d-104">È stato quindi eseguito il riconoscimento ottico dei caratteri (OCR) sul testo stampato e la grafia è stata convertita in caratteri stampati.</span><span class="sxs-lookup"><span data-stu-id="f147d-104">Then, you performed Optical Character Recognition (OCR) on printed text and converted handwriting into printed characters.</span></span>
-
-<span data-ttu-id="f147d-105">Questo modulo offre le basi per l'integrazione di Servizi cognitivi visivi all'interno di un'applicazione scritta in qualsiasi linguaggio.</span><span class="sxs-lookup"><span data-stu-id="f147d-105">This module provides the basis for integrating visual Cognitive Services within an application written in any language.</span></span>
