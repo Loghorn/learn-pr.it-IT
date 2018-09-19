@@ -1,0 +1,3 @@
+È stato illustrato come usare Funzioni di Azure per ospitare servizi con logica di business nel cloud. È un ottimo modo per aggiungere alla soluzione servizi ospitati scalabili ed espandibili in base alle esigenze dell'azienda. È possibile concentrarsi sul codice usando il linguaggio di propria scelta lasciando che Azure gestisca l'infrastruttura. Le funzioni si possono integrare con altri servizi, come Griglia di eventi, GitHub, Twilio, Microsoft Graph e App per la logica per creare flussi di lavoro senza server complessi e affidabili in modo semplice e rapido.
+
+[!include[](../../../includes/azure-sandbox-cleanup.md)]

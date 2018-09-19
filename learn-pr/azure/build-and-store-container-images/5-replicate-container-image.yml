@@ -1,0 +1,21 @@
+### YamlMime:ModuleUnit
+uid: learn.azure-container-registry.image-replication
+metadata:
+  title: Replicare un'immagine del contenitore in diverse aree di Azure
+  description: Replicare un'immagine del contenitore in diverse aree di Azure
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 4b220d2a6229518ae4e2d30689e91080cc59c235
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46341066"
+title: Replicare un'immagine del contenitore in diverse aree di Azure
+interactive: bash
+azureSandbox: true
+durationInMinutes: 5
+content: '[!include[](includes/5-image-replication.md)]'

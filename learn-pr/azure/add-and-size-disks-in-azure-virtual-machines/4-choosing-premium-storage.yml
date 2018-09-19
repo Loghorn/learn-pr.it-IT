@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.add-and-size-disks-in-azure-virtual-machines.4-choosing-premium-storage
+title: Determinare se usare Archiviazione Premium
+metadata:
+  title: Determinare se usare Archiviazione Premium
+  description: Determinare se usare Archiviazione Premium
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 305e6abdc79e0d984595d98f56d0931462dd4c48
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46341510"
+durationInMinutes: 10
+content: '[!include[](includes/4-choosing-premium-storage.md)]'

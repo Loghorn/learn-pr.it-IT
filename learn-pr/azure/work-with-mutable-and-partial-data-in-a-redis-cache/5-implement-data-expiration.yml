@@ -1,0 +1,21 @@
+### YamlMime:ModuleUnit
+uid: learn.work-with-mutable-and-partial-data-in-a-redis-cache.5-implement-data-expiration
+title: Implementare la scadenza dei dati
+metadata:
+  title: Implementare la scadenza dei dati
+  description: Implementare la scadenza dei dati
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 842ffb57e0db894b608d9e10d090751dce0f3cb4
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46352924"
+interactive: bash
+azureSandbox: true
+durationInMinutes: 10
+content: '[!include[](includes/5-implement-data-expiration.md)]'

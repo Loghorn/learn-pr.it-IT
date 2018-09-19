@@ -1,0 +1,49 @@
+### YamlMime:Module
+uid: learn.choose-messaging-model
+metadata:
+  title: Scegliere un modello di messaggistica in Azure per la connessione efficiente dei servizi
+  description: In presenza di un'applicazione che include componenti eseguiti in computer, server e dispositivi mobili diversi, le comunicazioni tra questi componenti possono essere difficili e inaffidabili. Azure offre numerose tecnologie che è possibile usare per comunicare in modo più affidabile, tra cui le code di archiviazione, Hub eventi, Griglia di eventi e il bus di servizio. Questo modulo mostra come scegliere la migliore tecnologia per l'attività di comunicazione.
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 458ad6aa856d2a81682b6e70d3c8f16e5fb039ee
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46354045"
+title: Scegliere un modello di messaggistica in Azure per la connessione efficiente dei servizi
+summary: In presenza di un'applicazione che include componenti eseguiti in computer, server e dispositivi mobili diversi, le comunicazioni tra questi componenti possono essere difficili e inaffidabili. Azure offre numerose tecnologie che è possibile usare per comunicare in modo più affidabile, tra cui le code di archiviazione, Hub eventi, Griglia di eventi e il bus di servizio. Questo modulo mostra come scegliere la migliore tecnologia per l'attività di comunicazione.
+abstract: >
+  In questo modulo verrà descritto come:
+
+  - Descrivere gli eventi e i messaggi e indicare per quali scenari è possibile usarli in un'applicazione distribuita
+
+  - Identificare gli scenari in cui una coda di archiviazione è la tecnologia di messaggistica ottimale per un'applicazione
+
+  - Identificare gli scenari in cui Griglia di eventi è la tecnologia di messaggistica ottimale per un'applicazione
+
+  - Identificare gli scenari in cui Hub eventi è la tecnologia di messaggistica ottimale per un'applicazione
+
+  - Identificare gli scenari in cui il bus di servizio è la tecnologia di messaggistica ottimale per un'applicazione
+prerequisites: Nessuno
+iconUrl: /learn/achievements/choose-a-messaging-model-in-azure-to-connect-your-services.svg
+levels:
+- beginner
+roles:
+- developer
+products:
+- azure
+- azure-service-bus
+- azure-event-grid
+- azure-event-hubs
+units:
+- learn.choose-messaging-model.1-introduction
+- learn.choose-messaging-model.2-choose-whether-to-use-message-queues-or-events
+- learn.choose-messaging-model.3-choose-azure-storage-queues
+- learn.choose-messaging-model.4-choose-event-grid
+- learn.choose-messaging-model.5-choose-azure-event-hubs
+- learn.choose-messaging-model.6-summary
+achievement: learn.choose-messaging-model.badge

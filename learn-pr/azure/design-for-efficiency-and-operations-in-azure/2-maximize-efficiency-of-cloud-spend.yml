@@ -1,0 +1,45 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-efficiency-and-operations.2-maximize-efficiency-of-cloud-spend
+title: Ottimizzare l'efficienza della spesa per il cloud
+metadata:
+  title: Ottimizzare l'efficienza della spesa per il cloud
+  description: In questa unità verrà illustrato come ottimizzare l'efficienza delle spese per il cloud
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: ea453333ad187c43baaf352c74e346a77405d8b4
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46340994"
+durationInMinutes: 15
+content: >
+  [!include[](includes/2-maximize-efficiency-of-cloud-spend.md)]
+quiz:
+  title: Verificare le proprie conoscenze
+  questions:
+  - content: Quale delle seguenti è la scelta ideale per un'istanza riservata?
+    choices:
+    - content: Un'applicazione Web distribuita in Servizio app di Azure.
+      isCorrect: false
+      incorrectExplanation: Servizio app di Azure è un servizio PaaS e le istanze riservate possono essere usate solo per le macchine virtuali.
+    - content: Una macchina virtuale non di produzione che viene automaticamente arrestata negli orari di minore attività quando non è in uso.
+      isCorrect: false
+      incorrectExplanation: Dato che questa macchina virtuale non verrà eseguita per la maggior parte del tempo, non userà completamente la prenotazione di istanza e non è un candidato ideale per un'istanza riservata.
+    - content: Un'istanza di database SQL di Azure.
+      isCorrect: false
+      incorrectExplanation: Il database SQL di Azure è un servizio PaaS. Le istanze riservate possono essere usate solo per le macchine virtuali.
+    - content: Un server di database per un sistema HR di un'azienda globale.
+      isCorrect: true
+      correctExplanation: Data la sua criticità e la sua natura globale è probabile che questo sistema sia in esecuzione per la maggior parte del tempo, di conseguenza è un candidato ideale per un'istanza riservata.
+  - content: Quanto vengono interrotti gli addebiti dei costi di calcolo associati a una VM?
+    choices:
+    - content: Quando si arresta la macchina virtuale dall'interno del sistema operativo.
+      isCorrect: false
+      incorrectExplanation: Se si arresta il sistema operativo della macchina virtuale, questo rimane comunque allocato nella piattaforma Azure e continuerà a comportare costi di calcolo.
+    - content: Quando si fa clic sul pulsante Arresta nel portale di Azure.
+      isCorrect: true
+      correctExplanation: Se si fa clic sul pulsante Arresta, la macchina virtuale viene deallocata dalla piattaforma Azure e non comporterà ulteriori costi di calcolo.
