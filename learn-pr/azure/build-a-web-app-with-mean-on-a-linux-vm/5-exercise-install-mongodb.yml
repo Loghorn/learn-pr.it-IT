@@ -1,0 +1,21 @@
+### YamlMime:ModuleUnit
+uid: learn.build-and-run-a-web-application-with-the-mean-stack-on-an-azure-linux-vm.5-exercise-install-mongodb
+title: <span data-ttu-id="341f4-101">Esercizio - Installare MongoDB</span><span class="sxs-lookup"><span data-stu-id="341f4-101">Exercise - Install MongoDB</span></span>
+metadata:
+  title: <span data-ttu-id="341f4-102">Esercizio - Installare MongoDB</span><span class="sxs-lookup"><span data-stu-id="341f4-102">Exercise - Install MongoDB</span></span>
+  description: <span data-ttu-id="341f4-103">Esercizio - Installare MongoDB</span><span class="sxs-lookup"><span data-stu-id="341f4-103">Exercise - Install MongoDB</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 2c44f8e2100536c86eb4e0553ebd980d402c2fd2
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46342030"
+interactive: bash
+azureSandbox: true
+durationInMinutes: 10
+content: '[!include[](includes/5-exercise-install-mongodb.md)]'

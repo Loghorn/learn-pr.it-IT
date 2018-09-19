@@ -1,0 +1,21 @@
+### YamlMime:ModuleUnit
+uid: learn.implement-message-workflows-with-service-bus.7-exercise-write-code-that-uses-service-bus-topics
+title: <span data-ttu-id="20d7a-101">Esercizio - Scrivere codice che usa gli argomenti del bus di servizio</span><span class="sxs-lookup"><span data-stu-id="20d7a-101">Exercise - Write code that uses Service Bus topics</span></span>
+metadata:
+  title: <span data-ttu-id="20d7a-102">Esercizio - Scrivere codice che usa gli argomenti del bus di servizio</span><span class="sxs-lookup"><span data-stu-id="20d7a-102">Exercise - Write code that uses Service Bus topics</span></span>
+  description: <span data-ttu-id="20d7a-103">Esercizio - Scrivere codice che usa gli argomenti del bus di servizio</span><span class="sxs-lookup"><span data-stu-id="20d7a-103">Exercise - Write code that uses Service Bus topics</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 44860e57a6c6dce04d64e2177d6ef3e600d9c452
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46339835"
+interactive: bash-editor
+azureSandbox: true
+durationInMinutes: 10
+content: '[!include[](includes/7-exercise-write-code-that-uses-service-bus-topics.md)]'

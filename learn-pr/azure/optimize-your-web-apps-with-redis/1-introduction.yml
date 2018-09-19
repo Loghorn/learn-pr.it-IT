@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.optimize-web-app-with-redis.1-introduction
+title: <span data-ttu-id="1f6a0-101">Introduzione</span><span class="sxs-lookup"><span data-stu-id="1f6a0-101">Introduction</span></span>
+metadata:
+  title: <span data-ttu-id="1f6a0-102">Introduzione</span><span class="sxs-lookup"><span data-stu-id="1f6a0-102">Introduction</span></span>
+  description: <span data-ttu-id="1f6a0-103">Introduzione</span><span class="sxs-lookup"><span data-stu-id="1f6a0-103">Introduction</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: cc02f2a221750b5b8faf1a8955c48b97d421728d
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46340210"
+durationInMinutes: 3
+content: '[!include[](includes/1-introduction.md)]'

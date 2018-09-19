@@ -1,0 +1,122 @@
+<span data-ttu-id="0b2b6-101">A questo punto la macchina virtuale Linux è stata distribuita ed è in esecuzione, ma non è configurata per eseguire alcuna operazione.</span><span class="sxs-lookup"><span data-stu-id="0b2b6-101">We have our Linux VM deployed and running, but it's not configured to do any work.</span></span> <span data-ttu-id="0b2b6-102">Di seguito verrà descritto come connettersi alla macchina virtuale con SSH e configurare Apache, in modo da avere un server Web in esecuzione.</span><span class="sxs-lookup"><span data-stu-id="0b2b6-102">Let's connect to it with SSH and configure Apache, so we have a running web server.</span></span>
+
+## <a name="connect-to-the-vm-with-ssh"></a><span data-ttu-id="0b2b6-103">Connettersi alla macchina virtuale con SSH</span><span class="sxs-lookup"><span data-stu-id="0b2b6-103">Connect to the VM with SSH</span></span>
+
+<span data-ttu-id="0b2b6-104">Per connettersi a una macchina virtuale di Azure con un client SSH, è necessario:</span><span class="sxs-lookup"><span data-stu-id="0b2b6-104">To connect to an Azure VM with an SSH client, you will need:</span></span>
+
+- <span data-ttu-id="0b2b6-105">Software client SSH (presente nella maggior parte dei sistemi operativi più recenti)</span><span class="sxs-lookup"><span data-stu-id="0b2b6-105">SSH client software (present on most modern operating systems)</span></span>
+- <span data-ttu-id="0b2b6-106">L'indirizzo IP pubblico della macchina virtuale (o privato se la macchina virtuale è configurata per connettersi alla rete)</span><span class="sxs-lookup"><span data-stu-id="0b2b6-106">The public IP address of the VM (or private if the VM is configured to connect to your network)</span></span>
+
+### <a name="get-the-public-ip-address"></a><span data-ttu-id="0b2b6-107">Ottenere l'indirizzo IP pubblico</span><span class="sxs-lookup"><span data-stu-id="0b2b6-107">Get the public IP address</span></span>
+
+1. <span data-ttu-id="0b2b6-108">Nel [portale di Azure](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true) verificare che il pannello **Panoramica** per la macchina virtuale creata in precedenza sia aperto.</span><span class="sxs-lookup"><span data-stu-id="0b2b6-108">In the [Azure portal](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true), ensure the **Overview** panel for the virtual machine that you created earlier is open.</span></span> <span data-ttu-id="0b2b6-109">La macchina virtuale è disponibile in **Tutte le risorse** se è necessario aprirla.</span><span class="sxs-lookup"><span data-stu-id="0b2b6-109">You can find the VM under **All Resources** if you need to open it.</span></span> <span data-ttu-id="0b2b6-110">Il pannello di panoramica presenta numerose informazioni sulla macchina virtuale.</span><span class="sxs-lookup"><span data-stu-id="0b2b6-110">The overview panel has a lot of information about the VM.</span></span>
+
+    - <span data-ttu-id="0b2b6-111">È possibile vedere se la macchina virtuale è in esecuzione</span><span class="sxs-lookup"><span data-stu-id="0b2b6-111">You can see whether the VM is running</span></span>
+    - <span data-ttu-id="0b2b6-112">Arrestarla o riavviarla</span><span class="sxs-lookup"><span data-stu-id="0b2b6-112">Stop or restart it</span></span>
+    - <span data-ttu-id="0b2b6-113">Ottenere l'indirizzo IP pubblico per connettersi alla macchina virtuale</span><span class="sxs-lookup"><span data-stu-id="0b2b6-113">Get the public IP address to connect to the VM</span></span>
+    - <span data-ttu-id="0b2b6-114">Visualizzare l'attività di CPU, disco e rete</span><span class="sxs-lookup"><span data-stu-id="0b2b6-114">See the activity of the CPU, disk, and network</span></span>
+
+1. <span data-ttu-id="0b2b6-115">Fare clic sul pulsante **Connetti** nella parte superiore del riquadro.</span><span class="sxs-lookup"><span data-stu-id="0b2b6-115">Click the **Connect** button at the top of the pane.</span></span>
+
+1. <span data-ttu-id="0b2b6-116">Nel pannello **Connect to virtual machine** (Connetti a macchina virtuale) notare le impostazioni **Indirizzo IP** e **Numero di porta**.</span><span class="sxs-lookup"><span data-stu-id="0b2b6-116">In the **Connect to virtual machine** blade, note the **IP address** and **Port number** settings.</span></span> <span data-ttu-id="0b2b6-117">Nella scheda **SSH** è anche disponibile il comando che è necessario eseguire in locale per connettersi alla macchina virtuale.</span><span class="sxs-lookup"><span data-stu-id="0b2b6-117">On the **SSH** tab, you will also find the command you need to execute locally to connect to the VM.</span></span> <span data-ttu-id="0b2b6-118">Copiarlo negli Appunti.</span><span class="sxs-lookup"><span data-stu-id="0b2b6-118">Copy this to the clipboard.</span></span>
+
+## <a name="connect-with-ssh"></a><span data-ttu-id="0b2b6-119">Connettersi tramite SSH</span><span class="sxs-lookup"><span data-stu-id="0b2b6-119">Connect with SSH</span></span>
+
+1. <span data-ttu-id="0b2b6-120">Incollare la riga di comando copiata dalla scheda SSH in Azure Cloud Shell.</span><span class="sxs-lookup"><span data-stu-id="0b2b6-120">Paste the command line you got from the SSH tab into Azure Cloud Shell.</span></span> <span data-ttu-id="0b2b6-121">Il risultato dovrebbe essere simile al seguente, anche se l'indirizzo IP sarà diverso e probabilmente anche il nome utente se non è stato usato il nome **jim**:</span><span class="sxs-lookup"><span data-stu-id="0b2b6-121">It should look something like this; however, it will have a different IP address (and perhaps a different username if you didn't use **jim**!):</span></span>
+
+    ```bash
+    ssh jim@137.117.101.249
+    ```
+
+1. <span data-ttu-id="0b2b6-122">Questo comando aprirà una connessione Secure Shell e un prompt dei comandi della shell tradizionale per Linux.</span><span class="sxs-lookup"><span data-stu-id="0b2b6-122">This command will open a Secure Shell connection and place you at a traditional shell command prompt for Linux.</span></span>
+
+1. <span data-ttu-id="0b2b6-123">Provare a eseguire alcuni comandi di Linux</span><span class="sxs-lookup"><span data-stu-id="0b2b6-123">Try executing a few Linux commands</span></span>
+    - <span data-ttu-id="0b2b6-124">`ls -la /` per visualizzare la radice del disco</span><span class="sxs-lookup"><span data-stu-id="0b2b6-124">`ls -la /` to show the root of the disk</span></span>
+    - <span data-ttu-id="0b2b6-125">`ps -l` per visualizzare tutti i processi in esecuzione</span><span class="sxs-lookup"><span data-stu-id="0b2b6-125">`ps -l` to show all the running processes</span></span>
+    - <span data-ttu-id="0b2b6-126">`dmesg` per elencare tutti i messaggi del kernel</span><span class="sxs-lookup"><span data-stu-id="0b2b6-126">`dmesg` to list all the kernel messages</span></span>
+    - <span data-ttu-id="0b2b6-127">`lsblk` per elencare tutti i dispositivi a blocchi: qui verranno visualizzate le unità</span><span class="sxs-lookup"><span data-stu-id="0b2b6-127">`lsblk` to list all the block devices - here you will see your drives</span></span>
+
+<span data-ttu-id="0b2b6-128">L'aspetto più interessante da osservare nell'elenco delle unità è cosa _manca_.</span><span class="sxs-lookup"><span data-stu-id="0b2b6-128">The more interesting thing to observe in the list of drives is what is _missing_.</span></span> <span data-ttu-id="0b2b6-129">Si noti che l'unità **Dati** (`sdc`) è presente ma non montata nel file system.</span><span class="sxs-lookup"><span data-stu-id="0b2b6-129">Notice that our **Data** drive (`sdc`) is present but not mounted into the file system.</span></span> <span data-ttu-id="0b2b6-130">Azure ha aggiunto un disco rigido virtuale, ma non l'ha inizializzato.</span><span class="sxs-lookup"><span data-stu-id="0b2b6-130">Azure added a VHD but didn't initialize it.</span></span>
+
+## <a name="initialize-data-disks"></a><span data-ttu-id="0b2b6-131">Inizializzare i dischi dati</span><span class="sxs-lookup"><span data-stu-id="0b2b6-131">Initialize data disks</span></span>
+
+<span data-ttu-id="0b2b6-132">Tutte le unità aggiuntive create da zero dovranno essere inizializzate e formattate.</span><span class="sxs-lookup"><span data-stu-id="0b2b6-132">Any additional drives you create from scratch will need to be initialized and formatted.</span></span> <span data-ttu-id="0b2b6-133">Il processo per eseguire questa operazione è identico a quello valido per un disco fisico:</span><span class="sxs-lookup"><span data-stu-id="0b2b6-133">The process for doing this is identical to a physical disk:</span></span>
+
+1. <span data-ttu-id="0b2b6-134">Prima di tutto identificare il disco.</span><span class="sxs-lookup"><span data-stu-id="0b2b6-134">First, identify the disk.</span></span> <span data-ttu-id="0b2b6-135">Questo passaggio è già stato eseguito.</span><span class="sxs-lookup"><span data-stu-id="0b2b6-135">We did that above.</span></span> <span data-ttu-id="0b2b6-136">Si potrebbe anche usare `dmesg | grep SCSI`, che elencherà tutti i messaggi dal kernel per i dispositivi SCSI.</span><span class="sxs-lookup"><span data-stu-id="0b2b6-136">You could also use `dmesg | grep SCSI`, which will list all the messages from the kernel for SCSI devices.</span></span>
+
+1. <span data-ttu-id="0b2b6-137">Dopo aver identificato l'unità (`sdc`) è necessario inizializzarla ed è possibile usare `fdisk` a tale scopo.</span><span class="sxs-lookup"><span data-stu-id="0b2b6-137">Once you know the drive (`sdc`) you need to initialize, you can use `fdisk` to do that.</span></span> <span data-ttu-id="0b2b6-138">Sarà necessario eseguire il comando con `sudo` e specificare il disco da partizionare.</span><span class="sxs-lookup"><span data-stu-id="0b2b6-138">You will need to run the command with `sudo` and supply the disk you want to partition.</span></span> <span data-ttu-id="0b2b6-139">Useremo il comando seguente per creare una nuova partizione primaria:</span><span class="sxs-lookup"><span data-stu-id="0b2b6-139">We can use the following command to create a new primary partition:</span></span>
+
+    ```bash
+    (echo n; echo p; echo 1; echo ; echo ; echo w) | sudo fdisk /dev/sdc
+    ```
+
+1. <span data-ttu-id="0b2b6-140">A questo punto, è necessario scrivere un file system nella partizione con il comando `mkfs`.</span><span class="sxs-lookup"><span data-stu-id="0b2b6-140">Next, we need to write a file system to the partition with the `mkfs` command.</span></span>
+
+    ```bash
+    sudo mkfs -t ext4 /dev/sdc1
+    ```
+
+1. <span data-ttu-id="0b2b6-141">Infine, è necessario montare l'unità nel file system.</span><span class="sxs-lookup"><span data-stu-id="0b2b6-141">Finally, we need to mount the drive to the file system.</span></span> <span data-ttu-id="0b2b6-142">Si supponga di avere una cartella `data`.</span><span class="sxs-lookup"><span data-stu-id="0b2b6-142">Let's assume we will have a `data` folder.</span></span> <span data-ttu-id="0b2b6-143">Creiamo la cartella del punto di montaggio e montiamo l'unità.</span><span class="sxs-lookup"><span data-stu-id="0b2b6-143">Let's create the mount point folder and mount the drive.</span></span>
+
+    ```bash
+    sudo mkdir /data & sudo mount /dev/sdc1 /data
+    ```
+
+    > [!TIP]
+    > <span data-ttu-id="0b2b6-144">Il disco è stato inizializzato e montato.</span><span class="sxs-lookup"><span data-stu-id="0b2b6-144">We initialized the disk and mounted it.</span></span> <span data-ttu-id="0b2b6-145">Per ulteriori dettagli su questo processo, consultare il modulo **Aggiungere e ridimensionare i dischi di macchine virtuali di Azure**.</span><span class="sxs-lookup"><span data-stu-id="0b2b6-145">If you are interested in more details on this process go through the **Add and size disks in Azure virtual machines** module.</span></span> <span data-ttu-id="0b2b6-146">Questa attività viene trattata in maggior dettaglio in questo modulo.</span><span class="sxs-lookup"><span data-stu-id="0b2b6-146">This task is covered in more detail there.</span></span>
+
+## <a name="install-software-onto-the-vm"></a><span data-ttu-id="0b2b6-147">Installare software nella macchina virtuale</span><span class="sxs-lookup"><span data-stu-id="0b2b6-147">Install software onto the VM</span></span>
+
+<span data-ttu-id="0b2b6-148">Come si può notare, SSH consente di usare una macchina virtuale Linux come un computer locale.</span><span class="sxs-lookup"><span data-stu-id="0b2b6-148">As you can see, SSH allows you to work with the Linux VM just like a local computer.</span></span> <span data-ttu-id="0b2b6-149">È possibile amministrare questa macchina virtuale come qualsiasi altro computer Linux: installare software, configurare ruoli, mettere a punto le funzionalità ed eseguire altre attività quotidiane.</span><span class="sxs-lookup"><span data-stu-id="0b2b6-149">You can administer this VM as you would any other Linux computer: installing software, configuring roles, adjusting features, and other everyday tasks.</span></span> <span data-ttu-id="0b2b6-150">Concentriamoci sull'installazione di software.</span><span class="sxs-lookup"><span data-stu-id="0b2b6-150">Let's focus on installing software for a moment.</span></span>
+
+<span data-ttu-id="0b2b6-151">Sono disponibili diverse opzioni per installare software nella macchina virtuale.</span><span class="sxs-lookup"><span data-stu-id="0b2b6-151">You have several options to install software onto the VM.</span></span> <span data-ttu-id="0b2b6-152">Prima di tutto, come già accennato, è possibile usare `scp` per copiare i file locali dal computer alla macchina virtuale.</span><span class="sxs-lookup"><span data-stu-id="0b2b6-152">First, as mentioned, you can use `scp` to copy local files from your machine to the VM.</span></span> <span data-ttu-id="0b2b6-153">Ciò consente di copiare i dati o le applicazioni personalizzate da eseguire.</span><span class="sxs-lookup"><span data-stu-id="0b2b6-153">This lets you copy over data or custom applications you want to run.</span></span>
+
+<span data-ttu-id="0b2b6-154">È anche possibile installare software tramite Secure Shell.</span><span class="sxs-lookup"><span data-stu-id="0b2b6-154">You can also install software through Secure Shell.</span></span> <span data-ttu-id="0b2b6-155">Le macchine di Azure sono connesse a Internet per impostazione predefinita.</span><span class="sxs-lookup"><span data-stu-id="0b2b6-155">Azure machines are, by default, internet connected.</span></span> <span data-ttu-id="0b2b6-156">È possibile usare i comandi standard per installare i pacchetti software più diffusi direttamente dai repository standard.</span><span class="sxs-lookup"><span data-stu-id="0b2b6-156">You can use standard commands to install popular software packages directly from standard repositories.</span></span> <span data-ttu-id="0b2b6-157">Questo è l'approccio che verrà usato per installare Apache.</span><span class="sxs-lookup"><span data-stu-id="0b2b6-157">Let's use this approach to install Apache.</span></span>
+
+### <a name="install-the-apache-web-server"></a><span data-ttu-id="0b2b6-158">Installare il server Web Apache</span><span class="sxs-lookup"><span data-stu-id="0b2b6-158">Install the Apache web server</span></span>
+
+<span data-ttu-id="0b2b6-159">Apache è disponibile all'interno dei repository software predefiniti di Ubuntu, quindi verrà installato usando gli strumenti di gestione dei pacchetti convenzionali:</span><span class="sxs-lookup"><span data-stu-id="0b2b6-159">Apache is available within Ubuntu's default software repositories, so we will install it using conventional package management tools:</span></span>
+
+1. <span data-ttu-id="0b2b6-160">Per iniziare, aggiornare l'indice dei pacchetti locali in modo che rispecchi le modifiche upstream più recenti:</span><span class="sxs-lookup"><span data-stu-id="0b2b6-160">Start by updating the local package index to reflect the latest upstream changes:</span></span>
+
+    ```bash
+    sudo apt-get update
+    ```
+    
+1. <span data-ttu-id="0b2b6-161">Successivamente, installare Apache:</span><span class="sxs-lookup"><span data-stu-id="0b2b6-161">Next, install Apache:</span></span>
+
+    ```bash
+    sudo apt-get install apache2 -y
+    ```
+
+1. <span data-ttu-id="0b2b6-162">L'operazione dovrebbe essere avviata automaticamente ed è possibile controllare lo stato usando `systemctl`:</span><span class="sxs-lookup"><span data-stu-id="0b2b6-162">It should start automatically - we can check the status using `systemctl`:</span></span>
+
+    ```bash
+    sudo systemctl status apache2 --no-pager
+    ```
+
+    <span data-ttu-id="0b2b6-163">Questo comando dovrebbe restituire informazioni simili alle seguenti:</span><span class="sxs-lookup"><span data-stu-id="0b2b6-163">This should return something like:</span></span>
+
+    ```output
+    apache2.service - The Apache HTTP Server
+       Loaded: loaded (/lib/systemd/system/apache2.service; enabled; vendor preset: enabled)
+      Drop-In: /lib/systemd/system/apache2.service.d
+               └─apache2-systemd.conf
+       Active: active (running) since Mon 2018-09-03 21:00:03 UTC; 1min 34s ago
+     Main PID: 11156 (apache2)
+        Tasks: 55 (limit: 4915)
+       CGroup: /system.slice/apache2.service
+               ├─11156 /usr/sbin/apache2 -k start
+               ├─11158 /usr/sbin/apache2 -k start
+               └─11159 /usr/sbin/apache2 -k start
+
+    test-web-eus-vm1 systemd[1]: Starting The Apache HTTP Server...
+    test-web-eus-vm1 apachectl[11129]: AH00558: apache2: Could not reliably determine the server's fully qua
+    test-web-eus-vm1 systemd[1]: Started The Apache HTTP Server.
+    ```
+    > [!NOTE]
+    > <span data-ttu-id="0b2b6-164">Questi comandi sono di banale esecuzione, ma si tratta, tuttavia, di processi manuali. Se è necessario installare sempre alcuni software, valutare la possibilità di automatizzare il processo tramite scripting.</span><span class="sxs-lookup"><span data-stu-id="0b2b6-164">It's trivial to execute commands like this, however it's a manual process - if we always need to install some software, you might consider automating the process using scripting.</span></span>
+    
+1. <span data-ttu-id="0b2b6-165">Infine, è possibile provare a recuperare la pagina predefinita tramite l'indirizzo IP pubblico.</span><span class="sxs-lookup"><span data-stu-id="0b2b6-165">Finally, we can try retrieving the default page through the public IP address.</span></span> <span data-ttu-id="0b2b6-166">Tuttavia, anche se il server Web è in esecuzione nella macchina virtuale, non si otterrà una connessione o una risposta valida.</span><span class="sxs-lookup"><span data-stu-id="0b2b6-166">However, even though the web server is running on the VM, you won't get a valid connection or response.</span></span> <span data-ttu-id="0b2b6-167">Perché?</span><span class="sxs-lookup"><span data-stu-id="0b2b6-167">Do you know why?</span></span>
+
+<span data-ttu-id="0b2b6-168">È necessario eseguire un altro passaggio per poter interagire con il server Web.</span><span class="sxs-lookup"><span data-stu-id="0b2b6-168">We need to perform one more step to be able to interact with the web server.</span></span> <span data-ttu-id="0b2b6-169">La rete virtuale sta bloccando la richiesta in ingresso: si tratta del comportamento predefinito.</span><span class="sxs-lookup"><span data-stu-id="0b2b6-169">Our virtual network is blocking the inbound request - this is the default behavior.</span></span> <span data-ttu-id="0b2b6-170">È possibile cambiare questo comportamento tramite la configurazione.</span><span class="sxs-lookup"><span data-stu-id="0b2b6-170">We can change that through configuration.</span></span> <span data-ttu-id="0b2b6-171">Questo aspetto verrà esaminato più avanti.</span><span class="sxs-lookup"><span data-stu-id="0b2b6-171">Let's look at that next.</span></span>

@@ -1,0 +1,38 @@
+### YamlMime:LearningPath
+uid: learn.create-serverless-applications
+metadata:
+  title: Creare applicazioni senza server
+  description: Funzioni di Azure consente la creazione di sistemi di calcolo on demand basati su eventi che possono essere attivati da vari eventi esterni. Informazioni su come sfruttare le funzioni per eseguire la logica lato server e creare architetture serverless.
+  brand: azure
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 4ca449f4cf586411a57454c186ef0887562c46a4
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46342450"
+title: Creare applicazioni serverless
+summary: Funzioni di Azure consente la creazione di sistemi di calcolo on demand basati su eventi che possono essere attivati da vari eventi esterni. Scopri come sfruttare le funzioni per eseguire la logica lato server e la compilazione di architetture senza server.
+prerequisites: Nessuno
+iconUrl: /learn/achievements/create-serverless-applications.svg
+levels:
+- beginner
+- intermediate
+roles:
+- developer
+products:
+- azure
+- azure-functions
+- azure-portal
+- azure-cosmos-db
+- azure-storage
+- azure-cloud-shell
+modules:
+- learn.create-serverless-logic-with-functions
+- learn.chain-azure-functions-data-using-input-output-bindings
+- learn.build-a-serverless-web-app
+achievement: learn.create-serverless-applications.trophy

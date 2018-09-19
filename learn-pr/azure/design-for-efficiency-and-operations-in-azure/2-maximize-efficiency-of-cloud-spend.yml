@@ -1,0 +1,45 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-efficiency-and-operations.2-maximize-efficiency-of-cloud-spend
+title: <span data-ttu-id="963e8-101">Ottimizzare l'efficienza della spesa per il cloud</span><span class="sxs-lookup"><span data-stu-id="963e8-101">Maximize efficiency of cloud spend</span></span>
+metadata:
+  title: <span data-ttu-id="963e8-102">Ottimizzare l'efficienza della spesa per il cloud</span><span class="sxs-lookup"><span data-stu-id="963e8-102">Maximize efficiency of cloud spend</span></span>
+  description: <span data-ttu-id="963e8-103">In questa unità verrà illustrato come ottimizzare l'efficienza delle spese per il cloud</span><span class="sxs-lookup"><span data-stu-id="963e8-103">In this unit, we'll discuss how to maximize the efficiency of your cloud expenditures</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: ea453333ad187c43baaf352c74e346a77405d8b4
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46340994"
+durationInMinutes: 15
+content: >
+  [!include[](includes/2-maximize-efficiency-of-cloud-spend.md)]
+quiz:
+  title: <span data-ttu-id="963e8-104">Verificare le proprie conoscenze</span><span class="sxs-lookup"><span data-stu-id="963e8-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="963e8-105">Quale delle seguenti è la scelta ideale per un'istanza riservata?</span><span class="sxs-lookup"><span data-stu-id="963e8-105">Which of the following is the best candidate for a reserved instance?</span></span>
+    choices:
+    - content: <span data-ttu-id="963e8-106">Un'applicazione Web distribuita in Servizio app di Azure.</span><span class="sxs-lookup"><span data-stu-id="963e8-106">A web application deployed on Azure App Service.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="963e8-107">Servizio app di Azure è un servizio PaaS e le istanze riservate possono essere usate solo per le macchine virtuali.</span><span class="sxs-lookup"><span data-stu-id="963e8-107">Azure App Service is a PaaS service, reserved instances can only be used for virtual machines.</span></span>
+    - content: <span data-ttu-id="963e8-108">Una macchina virtuale non di produzione che viene automaticamente arrestata negli orari di minore attività quando non è in uso.</span><span class="sxs-lookup"><span data-stu-id="963e8-108">A non-production virtual machine that is automatically shut down in off-hours when not in use.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="963e8-109">Dato che questa macchina virtuale non verrà eseguita per la maggior parte del tempo, non userà completamente la prenotazione di istanza e non è un candidato ideale per un'istanza riservata.</span><span class="sxs-lookup"><span data-stu-id="963e8-109">Since this virtual machine will not be running the majority of the time it will not fully utilize the instance reservation, and is not a good candidate for a reserved instance.</span></span>
+    - content: <span data-ttu-id="963e8-110">Un'istanza di database SQL di Azure.</span><span class="sxs-lookup"><span data-stu-id="963e8-110">An Azure SQL database instance.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="963e8-111">Il database SQL di Azure è un servizio PaaS. Le istanze riservate possono essere usate solo per le macchine virtuali.</span><span class="sxs-lookup"><span data-stu-id="963e8-111">Azure SQL database is a PaaS service, reserved instances can only be used for virtual machines.</span></span>
+    - content: <span data-ttu-id="963e8-112">Un server di database per un sistema HR di un'azienda globale.</span><span class="sxs-lookup"><span data-stu-id="963e8-112">A database server for an HR system for a global business.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="963e8-113">Data la sua criticità e la sua natura globale è probabile che questo sistema sia in esecuzione per la maggior parte del tempo, di conseguenza è un candidato ideale per un'istanza riservata.</span><span class="sxs-lookup"><span data-stu-id="963e8-113">Because of the criticality and global nature of this system, it is likely that it would be running the majority of the time, making it a great candidate for a reserved instance.</span></span>
+  - content: <span data-ttu-id="963e8-114">Quanto vengono interrotti gli addebiti dei costi di calcolo associati a una VM?</span><span class="sxs-lookup"><span data-stu-id="963e8-114">When do compute costs associated with a VM stop accruing?</span></span>
+    choices:
+    - content: <span data-ttu-id="963e8-115">Quando si arresta la macchina virtuale dall'interno del sistema operativo.</span><span class="sxs-lookup"><span data-stu-id="963e8-115">When you shut down the virtual machine from inside the OS.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="963e8-116">Se si arresta il sistema operativo della macchina virtuale, questo rimane comunque allocato nella piattaforma Azure e continuerà a comportare costi di calcolo.</span><span class="sxs-lookup"><span data-stu-id="963e8-116">If you shut down the OS of the virtual machine, it is still allocated on the Azure platform and will continue to accrue compute costs.</span></span>
+    - content: <span data-ttu-id="963e8-117">Quando si fa clic sul pulsante Arresta nel portale di Azure.</span><span class="sxs-lookup"><span data-stu-id="963e8-117">When you click the Stop button in the Azure portal.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="963e8-118">Se si fa clic sul pulsante Arresta, la macchina virtuale viene deallocata dalla piattaforma Azure e non comporterà ulteriori costi di calcolo.</span><span class="sxs-lookup"><span data-stu-id="963e8-118">Clicking the Stop button will deallocate the virtual machine from the Azure platform and it will no longer accrue compute costs.</span></span>

@@ -1,0 +1,20 @@
+<span data-ttu-id="d40dd-101">Si vuole creare un nuovo sito Web autonomo rivolto ai clienti della propria attività.</span><span class="sxs-lookup"><span data-stu-id="d40dd-101">You're building a new stand-alone customer-facing website for your business.</span></span> <span data-ttu-id="d40dd-102">Le esigenze esatte di questo sito Web non sono state ancora definite, ma si sarà responsabili della creazione del sito in tutte le sue fasi.</span><span class="sxs-lookup"><span data-stu-id="d40dd-102">The exact needs of this website haven't been defined yet, but you'll be responsible for creating the site from start to finish.</span></span> <span data-ttu-id="d40dd-103">Si ha una significativa familiarità con JavaScript e di conseguenza si vuole trovare una soluzione che permetta di sfruttare al meglio le proprie competenze.</span><span class="sxs-lookup"><span data-stu-id="d40dd-103">You have substantial experience in JavaScript, so you want to find a solution that will play well to your strengths.</span></span>
+
+<span data-ttu-id="d40dd-104">In questo modulo si creerà un host dello stack di applicazioni Web MEAN (MongoDB, Express, AngularJS e Node.js) in una macchina virtuale Linux ospitata in Azure.</span><span class="sxs-lookup"><span data-stu-id="d40dd-104">In this module, you will create a MEAN (MongoDB, Express, AngularJS, and Node.js) web application stack host on a Linux virtual machine hosted in Azure.</span></span>
+
+## <a name="learning-objectives"></a><span data-ttu-id="d40dd-105">Obiettivi di apprendimento</span><span class="sxs-lookup"><span data-stu-id="d40dd-105">Learning objectives</span></span>
+
+<span data-ttu-id="d40dd-106">In questo modulo verrà descritto come:</span><span class="sxs-lookup"><span data-stu-id="d40dd-106">In this module, you will:</span></span>
+
+- <span data-ttu-id="d40dd-107">Decidere se lo stack Web MEAN è adatto alle proprie esigenze</span><span class="sxs-lookup"><span data-stu-id="d40dd-107">Decide if the MEAN web stack is right for you</span></span>
+- <span data-ttu-id="d40dd-108">Creare una macchina virtuale Ubuntu Linux in cui ospitare l'app Web</span><span class="sxs-lookup"><span data-stu-id="d40dd-108">Create an Ubuntu Linux VM to host your web app</span></span>
+- <span data-ttu-id="d40dd-109">Aggiungere MongoDB come archivio dati per l'app Web</span><span class="sxs-lookup"><span data-stu-id="d40dd-109">Add MongoDB as a data store for your web app</span></span>
+- <span data-ttu-id="d40dd-110">Aggiungere Node.js come runtime host dell'app Web</span><span class="sxs-lookup"><span data-stu-id="d40dd-110">Add Node.js as a host runtime for your web app</span></span>
+- <span data-ttu-id="d40dd-111">Aggiungere Express come framework Web di Node.js</span><span class="sxs-lookup"><span data-stu-id="d40dd-111">Add Express as a Node.js web framework</span></span>
+- <span data-ttu-id="d40dd-112">Aggiungere mongooseJS per la modellazione oggetti dei dati MongoDB</span><span class="sxs-lookup"><span data-stu-id="d40dd-112">Add mongooseJS for object modeling of your MongoDB data</span></span>
+- <span data-ttu-id="d40dd-113">Creare una semplice app Web ospitata nello stack MEAN</span><span class="sxs-lookup"><span data-stu-id="d40dd-113">Create a simple web app hosted on the MEAN stack</span></span>
+- <span data-ttu-id="d40dd-114">Rendere l'applicazione Web pubblicamente disponibile dalla macchina virtuale</span><span class="sxs-lookup"><span data-stu-id="d40dd-114">Make the web application publicly available from your VM</span></span>
+
+## <a name="prerequisites"></a><span data-ttu-id="d40dd-115">Prerequisiti</span><span class="sxs-lookup"><span data-stu-id="d40dd-115">Prerequisites</span></span>
+
+- <span data-ttu-id="d40dd-116">Conoscenza dell'interfaccia della riga di comando Bash</span><span class="sxs-lookup"><span data-stu-id="d40dd-116">Experience with the Bash command-line interface</span></span>
