@@ -1,1 +1,0 @@
-In questo modulo è stato preparato l'ambiente di sviluppo installando un ambiente di sviluppo integrato (IDE, Integrated Development Environment) per le proprie esigenze. All'interno di tale ambiente IDE è stato inoltre installat il toolkit Azure per semplificare la pubblicazione di contenuti direttamente sui vari servizi di Azure.
