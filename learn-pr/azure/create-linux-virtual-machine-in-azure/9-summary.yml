@@ -1,0 +1,20 @@
+### YamlMime:ModuleUnit
+uid: learn.create-linux-vm-in-azure.9-summary
+title: Riepilogo
+metadata:
+  title: Riepilogo
+  description: Riepilogo
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: cf143961dad057732128d694543f4890f1bbefee
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46353115"
+azureSandbox: true
+durationInMinutes: 3
+content: '[!include[](includes/9-summary.md)]'
