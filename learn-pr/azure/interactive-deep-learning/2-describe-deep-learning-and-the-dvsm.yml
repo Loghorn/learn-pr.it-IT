@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.interactive-deep-learning.2-describe-deep-learning-and-the-dvsm
+title: <span data-ttu-id="7bb3a-101">Descrivere la macchina virtuale per l'apprendimento avanzato e la Data Science Virtual Machine</span><span class="sxs-lookup"><span data-stu-id="7bb3a-101">Describe Deep Learning and the Azure Data Science Virtual Machine</span></span>
+metadata:
+  title: <span data-ttu-id="7bb3a-102">Descrivere la macchina virtuale per l'apprendimento avanzato e la Data Science Virtual Machine</span><span class="sxs-lookup"><span data-stu-id="7bb3a-102">Describe Deep Learning and the Azure Data Science Virtual Machine</span></span>
+  description: <span data-ttu-id="7bb3a-103">Descrivere la macchina virtuale per l'apprendimento avanzato e la Data Science Virtual Machine</span><span class="sxs-lookup"><span data-stu-id="7bb3a-103">Describe Deep Learning and the Azure Data Science Virtual Machine</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 0ddd92898a2d6d0abe89ec2fe48eda71e2cf5d48
+  ms.sourcegitcommit: 13f3e790ebb0807e6f2c670bbfffd87ab6dbabdb
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/20/2018
+  ms.locfileid: "46483960"
+durationInMinutes: 2
+content: '[!include[](includes/2-describe-deep-learning-and-the-dvsm.md)]'
