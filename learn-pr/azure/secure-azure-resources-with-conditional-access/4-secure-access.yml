@@ -1,0 +1,20 @@
+### YamlMime:ModuleUnit
+uid: learn.secure-access-azure-ad-multi-factor-authentication.4-secure-access
+metadata:
+  title: <span data-ttu-id="2cecc-101">Proteggere l'accesso alle risorse</span><span class="sxs-lookup"><span data-stu-id="2cecc-101">Secure access to resources</span></span>
+  description: <span data-ttu-id="2cecc-102">Informazioni su come creare una regola di accesso condizionale per richiedere agli utenti di eseguire l'autenticazione a più fattori quando accedono al portale di Azure.</span><span class="sxs-lookup"><span data-stu-id="2cecc-102">Learn how to create a conditional access rule to require users to perform multi-factor authentication when they access the Azure portal.</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 3a681bae9aa2389dbf85cee033cf371fb050ae6b
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46339883"
+title: <span data-ttu-id="2cecc-103">Proteggere l'accesso alle risorse</span><span class="sxs-lookup"><span data-stu-id="2cecc-103">Secure access to resources</span></span>
+labId: 46071
+durationInMinutes: 3
+content: '[!include[](includes/4-secure-access.md)]'
