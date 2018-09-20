@@ -1,0 +1,42 @@
+### YamlMime:ModuleUnit
+uid: learn.secure-access-azure-ad-multi-factor-authentication.6-summary
+metadata:
+  title: Riepilogo
+  description: Riepilogo
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: d974b53f5c6b22b7a5b4a11fa588d59a38be2560
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46341050"
+title: Riepilogo
+durationInMinutes: 5
+content: >
+  [!include[](includes/6-summary.md)]
+quiz:
+  title: Verificare le proprie conoscenze
+  questions:
+  - content: Azure AD è essenzialmente un controller di dominio di Active Directory Domain Services in esecuzione in Azure.
+    choices:
+    - content: Vero
+      isCorrect: false
+      incorrectExplanation: Anche se esegue molte delle stesse funzioni del tradizionale Active Directory Domain Services, Azure Active Directory è un servizio per la gestione delle identità e delle directory multi-tenant basato sul cloud.
+    - content: Falso
+      isCorrect: true
+      correctExplanation: Active Directory Domain Services è un ruolo del server in Windows Server. Azure AD è un servizio directory pubblico a più clienti basato su cloud.
+  - content: Quali sono i tre elementi necessari per un criterio di accesso condizionale completo?
+    choices:
+    - content: Utente o gruppo, applicazione, ora del giorno
+      isCorrect: false
+      correctExplanation: L'opzione ora del giorno non è disponibile nelle regole di accesso condizionale.
+    - content: Utente o gruppo, applicazione, controllo da applicare
+      isCorrect: true
+      incorrectExplanation: Selezionando questi tre elementi, verranno create delle regole di accesso condizionale funzionali e complete.
+    - content: Utente o gruppo, sistema operativo Linux, controllo da applicare
+      isCorrect: false
+      correctExplanation: Anche se è possibile scegliere alcune piattaforme del dispositivo, Linux non è attualmente supportato.
