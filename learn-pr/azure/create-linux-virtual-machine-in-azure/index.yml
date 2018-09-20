@@ -1,0 +1,46 @@
+### YamlMime:Module
+uid: learn.create-linux-vm-in-azure
+metadata:
+  title: Creare una macchina virtuale Linux in Azure
+  description: Questo modulo illustra come creare una macchina virtuale Linux usando il portale di Azure.
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: b81dd92ad5a4e0619c9129521bf2f275e3f30b01
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46338843"
+title: Creare una macchina virtuale Linux in Azure
+summary: Questo modulo illustra come creare una macchina virtuale Linux usando il portale di Azure.
+abstract: >
+  Contenuto del modulo:
+    - Comprendere le opzioni disponibili per le macchine virtuali in Azure
+    - Creare una macchina virtuale Linux usando il portale di Azure
+    - Connettersi a una macchina virtuale Linux in esecuzione usando SSH
+    - Installare il software e modificare la configurazione di rete in una macchina virtuale usando il portale di Azure
+prerequisites: Nessuno
+iconUrl: /learn/achievements/create-linux-virtual-machine-in-azure.svg
+levels:
+- beginner
+roles:
+- administrator
+- developer
+products:
+- azure
+- azure-portal
+- azure-virtual-machines
+units:
+- learn.create-linux-vm-in-azure.1-introduction
+- learn.create-linux-vm-in-azure.2-create-a-linux-virtual-machine
+- learn.create-linux-vm-in-azure.3-exercise-generate-ssh-key
+- learn.create-linux-vm-in-azure.4-exercise-create-a-vm
+- learn.create-linux-vm-in-azure.5-connect-to-a-linux-virtual-machine
+- learn.create-linux-vm-in-azure.6-exercise-connect-to-a-linux-vm-using-ssh
+- learn.create-linux-vm-in-azure.7-manage-vm
+- learn.create-linux-vm-in-azure.8-exercise-manage-vm
+- learn.create-linux-vm-in-azure.9-summary
+achievement: learn.create-linux-vm-in-azure.badge
