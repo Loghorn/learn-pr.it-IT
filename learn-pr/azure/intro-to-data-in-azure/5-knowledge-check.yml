@@ -1,0 +1,43 @@
+### YamlMime:ModuleUnit
+uid: learn.intro-to-data-in-azure.5-knowledge-check
+metadata:
+  title: Verifica delle conoscenze
+  description: Verifica delle conoscenze
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: e0cdcd2cc0ea3995d0c3d6eb90d920b61e498ab2
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46353405"
+title: Verifica delle conoscenze
+durationInMinutes: 5
+quiz:
+  title: Verificare le proprie conoscenze
+  questions:
+  - content: Si supponga di lavorare in una startup con fondi limitati. Per quale motivo è preferibile l'archiviazione dati di Azure rispetto a una soluzione in locale?
+    choices:
+    - content: Per assicurarsi di usare una specifica marca di hardware che consentirà di attivare una collaborazione commerciale con il fornitore di tale hardware.
+      isCorrect: false
+      incorrectExplanation: Con Azure non occorre anticipare ingenti spese in conto capitale (CapEx). Si effettuano pagamenti mensili solo per i servizi usati (OpEx).
+    - content: Il modello di fatturazione con pagamento a consumo di Azure consente di evitare l'acquisto di hardware costoso.
+      isCorrect: true
+      correctExplanation: Con Azure non occorre anticipare ingenti spese in conto capitale (CapEx). Si effettuano pagamenti mensili per solo i servizi è usare (OpEx).
+    - content: Per ottenere il controllo totale sulla posizione dell'archivio dati.
+      isCorrect: false
+      incorrectExplanation: Con Azure non occorre anticipare ingenti spese in conto capitale (CapEx). Si effettuano pagamenti mensili solo per i servizi usati (OpEx).
+  - content: Quale delle situazioni seguenti trarrebbe il massimo vantaggio dalla migrazione di un archivio dati locale in Azure?
+    choices:
+    - content: Domanda di archiviazione imprevedibile che aumenta o diminuisce più volte nel corso dell'anno.
+      isCorrect: true
+      correctExplanation: L'archiviazione dei dati di Azure è flessibile. È possibile aggiungere o rimuovere capacità in modo veloce e semplice. È possibile aumentare le prestazioni per gestire i picchi di carico o ridurre le prestazioni per diminuire i costi. In tutti i casi, si paga solo in base al consumo effettivo.
+    - content: Una crescita costante e a lungo termine della domanda di archiviazione.
+      isCorrect: false
+      incorrectExplanation: L'archiviazione dei dati di Azure è flessibile. È possibile aggiungere o rimuovere capacità in modo veloce e semplice. È possibile aumentare le prestazioni per gestire i picchi di carico o ridurre le prestazioni per diminuire i costi. In tutti i casi, si paga solo in base al consumo effettivo.
+    - content: Domanda di archiviazione uniforme e invariata.
+      isCorrect: false
+      incorrectExplanation: L'archiviazione dei dati di Azure è flessibile. È possibile aggiungere o rimuovere capacità in modo veloce e semplice. È possibile aumentare le prestazioni per gestire i picchi di carico o ridurre le prestazioni per diminuire i costi. In tutti i casi, si paga solo in base al consumo effettivo.

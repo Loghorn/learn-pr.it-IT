@@ -1,0 +1,45 @@
+### YamlMime:ModuleUnit
+uid: learn.access-data-with-cosmos-db-and-sql-api.4-query-types
+metadata:
+  title: Tipi di query
+  description: Informazioni sui tipi di query che possono essere usati in Azure Cosmos DB per recuperare i dati.
+  ms.date: 09/24/2018
+  author: mimig1
+  ms.author: mimig
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 7fc9ea37fb83060d26c5f9e7cf4ee76dab6180e7
+  ms.sourcegitcommit: 13f3e790ebb0807e6f2c670bbfffd87ab6dbabdb
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/20/2018
+  ms.locfileid: "46483859"
+title: Tipi di query
+durationInMinutes: 5
+content: >
+  [!include[](includes/4-query-types.md)]
+quiz:
+  title: Verificare le proprie conoscenze
+  questions:
+  - content: Qual è l'unica clausola obbligatoria in una query SQL?
+    choices:
+    - content: SELECT
+      isCorrect: true
+      correctExplanation: SELECT è l'unica clausola obbligatoria in una query.
+    - content: FROM
+      isCorrect: false
+      incorrectExplanation: FROM è una clausola facoltativa in una query SQL.
+    - content: WHERE
+      isCorrect: false
+      incorrectExplanation: WHERE è una clausola facoltativa in una query SQL.
+  - content: Quale query consente di ottenere un elenco ordinato di ID prodotto e descrizioni, in ordine decrescente di ID prodotto?
+    choices:
+    - content: SELECT p.productId FROM Products p ORDER BY p.productId ASC
+      isCorrect: false
+      incorrectExplanation: Questa query restituirebbe solo gli ID prodotto in ordine crescente.
+    - content: SELECT p.id FROM Products p ORDER BY p.productId DESC
+      isCorrect: false
+      incorrectExplanation: Questa query restituirebbe solo gli ID in ordine decrescente.
+    - content: SELECT p.productId, p.description FROM Products p ORDER BY p.productId DESC
+      isCorrect: true
+      incorrectExplanation: Questa query restituirebbe sia l'ID prodotto che la descrizione, ma in ordine crescente.
