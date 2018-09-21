@@ -1,0 +1,54 @@
+### YamlMime:ModuleUnit
+uid: learn.interactive-deep-learning.2q-describe-deep-learning-and-the-dvsm
+title: <span data-ttu-id="55234-101">Verificare le proprie conoscenze</span><span class="sxs-lookup"><span data-stu-id="55234-101">Check your knowledge</span></span>
+metadata:
+  title: <span data-ttu-id="55234-102">Verificare le proprie conoscenze</span><span class="sxs-lookup"><span data-stu-id="55234-102">Check your knowledge</span></span>
+  description: <span data-ttu-id="55234-103">Verificare le proprie conoscenze</span><span class="sxs-lookup"><span data-stu-id="55234-103">Check your knowledge</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: a3b3b0539c2f89a4a1c93f48ba3084555483a216
+  ms.sourcegitcommit: 13f3e790ebb0807e6f2c670bbfffd87ab6dbabdb
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/20/2018
+  ms.locfileid: "46483800"
+durationInMinutes: 2
+quiz:
+  title: <span data-ttu-id="55234-104">Verificare le proprie conoscenze</span><span class="sxs-lookup"><span data-stu-id="55234-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="55234-105">Quale delle risposte seguenti descrive meglio la differenza tra apprendimento automatico tradizionale e apprendimento avanzato?</span><span class="sxs-lookup"><span data-stu-id="55234-105">Which of the following best describes the difference between traditional machine learning and deep learning?</span></span>
+    choices:
+    - content: <span data-ttu-id="55234-106">Nell'apprendimento automatico tradizionale si usano tutti i tipi di modelli, ovvero grafico, algebrico e probabilistico.</span><span class="sxs-lookup"><span data-stu-id="55234-106">In traditonal machine learning we use all kinds of models - graph, algebraic and probablistic.</span></span> <span data-ttu-id="55234-107">Nell'apprendimento avanzato si usano solo modelli lineari.</span><span class="sxs-lookup"><span data-stu-id="55234-107">In deep learning, we only use linear models.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="55234-108">L'apprendimento avanzato consente di trovare la manipolazione matematica corretta per trasformare l'input nell'output, sia in caso di relazione lineare che non lineare.</span><span class="sxs-lookup"><span data-stu-id="55234-108">Deep learning finds the correct mathematical manipulation to turn the input into the output, whether it's a linear relationship or a non-linear relationship.</span></span>
+    - content: <span data-ttu-id="55234-109">Nell'apprendimento automatico tradizionale le funzionalità vengono implementate manualmente.</span><span class="sxs-lookup"><span data-stu-id="55234-109">In traditional machine learning, features are handcrafted.</span></span> <span data-ttu-id="55234-110">Nell'apprendimento avanzato le funzionalità vengono apprese.</span><span class="sxs-lookup"><span data-stu-id="55234-110">In deep learning, they're learned.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="55234-111">Nell'apprendimento avanzato il processo di estrazione delle funzioni viene appreso tramite la rappresentazione degli input come vettori e la loro trasformazione, con una serie di operazioni algebriche lineari intelligenti, in un determinato output.</span><span class="sxs-lookup"><span data-stu-id="55234-111">In Deep Learning (DL), the process of feature extraction is learned through representing inputs as vectors and transforming them, with a series of clever linear algebra operations, into a given output.</span></span>
+    - content: <span data-ttu-id="55234-112">Nell'apprendimento automatico tradizionale gli algoritmi sono modellati in base a un approccio istintivo.</span><span class="sxs-lookup"><span data-stu-id="55234-112">In traditional machine learning, the algorithms are modeled after the heart.</span></span> <span data-ttu-id="55234-113">L'apprendimento avanzato è modellato in base a un approccio razionale.</span><span class="sxs-lookup"><span data-stu-id="55234-113">Deep learning is modeled after the brain.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="55234-114">L'apprendimento avanzato si basa su algoritmi che imitano la struttura e il funzionamento del cervello, denominati reti neurali artificiali.</span><span class="sxs-lookup"><span data-stu-id="55234-114">Deep learning is concerned with algorithms inspired by the structure and function of the brain called artificial neural networks.</span></span> <span data-ttu-id="55234-115">L'apprendimento automatico, tuttavia, non è modellato in base a un approccio istintivo.</span><span class="sxs-lookup"><span data-stu-id="55234-115">However, machine learning is not modeled after the heart.</span></span>
+  - content: <span data-ttu-id="55234-116">Cosa accade se si distribuisce l'immagine DSVM (Data Science Virtual Machine) in una macchina virtuale di Azure basata su CPU?</span><span class="sxs-lookup"><span data-stu-id="55234-116">What happens if you deploy the Data Science Virtual Machine (DSVM) image to a CPU-based Azure VM?</span></span>
+    choices:
+    - content: <span data-ttu-id="55234-117">Il funzionamento si interrompe, perché è possibile distribuire l'immagine DSVM solo in una macchina virtuale di Azure basata su GPU.</span><span class="sxs-lookup"><span data-stu-id="55234-117">Everything breaks, because you can only deploy the DSVM to a GPU-based Azure VM.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="55234-118">L'immagine DSVM funziona in modo corretto con entrambe le macchine virtuali, sia basate su CPU che su GPU.</span><span class="sxs-lookup"><span data-stu-id="55234-118">The DSVM works seamlessley with both GPU- and CPU-based VMs.</span></span>
+    - content: <span data-ttu-id="55234-119">Il funzionamento è corretto perché i framework di apprendimento avanzato eseguono il fallback alla modalità CPU.</span><span class="sxs-lookup"><span data-stu-id="55234-119">Everything works fine because the deep learning frameworks will fallback to CPU mode.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="55234-120">L'immagine DSVM funziona in modo corretto con entrambe le macchine virtuali, sia basate su CPU che su GPU.</span><span class="sxs-lookup"><span data-stu-id="55234-120">The DSVM works seamlessley with both GPU- and CPU-based VMs.</span></span>
+    - content: <span data-ttu-id="55234-121">È necessario aggiornare i framework di apprendimento avanzato preinstallati per l'esecuzione su CPU.</span><span class="sxs-lookup"><span data-stu-id="55234-121">You need to update the pre-installed deep learning frameworks to run on the CPU.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="55234-122">L'immagine DSVM funziona in modo corretto con entrambe le macchine virtuali, sia basate su CPU che su GPU.</span><span class="sxs-lookup"><span data-stu-id="55234-122">The DSVM works seamlessley with both GPU- and CPU-based VMs.</span></span>
+  - content: <span data-ttu-id="55234-123">Perché le GPU vengono spesso usate per l'apprendimento avanzato?</span><span class="sxs-lookup"><span data-stu-id="55234-123">Why are GPUs often used for deep learning?</span></span>
+    choices:
+    - content: <span data-ttu-id="55234-124">Nell'apprendimento avanzato l'algebra di matrice richiede una quantità notevole di calcolo parallelo e le GPU sono particolarmente adatte a tale tipo di calcolo.</span><span class="sxs-lookup"><span data-stu-id="55234-124">The matrix algebra in deep learning requires lots of parallel computation and GPUs are very well suited to that kind of computation.</span></span>
+      correctExplanation: <span data-ttu-id="55234-125">La serie di operazioni di matrice che vengono calcolate come parte del componente algebrico lineare tende a essere costosa dal punto di vista del calcolo e spesso consente un livello elevato di parallelizzazione. Sono quindi necessari strumenti specialistici, ad esempio unità di elaborazione grafica (GPU), per eseguire il calcolo in modo efficiente.</span><span class="sxs-lookup"><span data-stu-id="55234-125">The series of matrix operations that we compute as part of the linear algebra component tend to be computationally expensive and are often heavily parallelizable, requiring specialized compute such as Graphics Processing Units GPUs to compute efficiently.</span></span>
+      isCorrect: true
+    - content: <span data-ttu-id="55234-126">Le GPU determinano la convergenza dei modelli di apprendimento avanzato durante la discesa del gradiente.</span><span class="sxs-lookup"><span data-stu-id="55234-126">GPUs make deep learning models converge during gradient decent.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="55234-127">La convergenza di un modello di apprendimento avanzato durante la discesa del gradiente è indipendente dall'unità di elaborazione usata.</span><span class="sxs-lookup"><span data-stu-id="55234-127">Convergence of a deep learning model during gradient descent is independent of the processing unit that is used.</span></span>
+    - content: <span data-ttu-id="55234-128">Le GPU sono necessarie per valutare una funzione di perdita.</span><span class="sxs-lookup"><span data-stu-id="55234-128">GPUs are needed to evaluate a loss function.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="55234-129">Le GPU non sono necessarie per valutare una funzione di perdita.</span><span class="sxs-lookup"><span data-stu-id="55234-129">GPUs are not needed to evaluate a loss function.</span></span>

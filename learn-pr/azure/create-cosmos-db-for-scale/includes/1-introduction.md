@@ -1,0 +1,14 @@
+<span data-ttu-id="3e2c9-101">La funzione di scalabilità dei database è fondamentale per soddisfare i requisiti di volume e velocità dei dati del pubblico globale.</span><span class="sxs-lookup"><span data-stu-id="3e2c9-101">Databases need to scale to meet both the data velocity and volume demands created by global audiences.</span></span>
+
+<span data-ttu-id="3e2c9-102">Si supponga di lavorare per un rivenditore online e che il database debba essere ridimensionato per gestire un catalogo di prodotti in continua espansione.</span><span class="sxs-lookup"><span data-stu-id="3e2c9-102">Suppose you work for an online retailer and your database needs to scale to accommodate an expanding product catalog.</span></span> <span data-ttu-id="3e2c9-103">Anche la clientela globale è in crescita e i clienti si aspettano risposte rapide alle query, nonché aggiornamenti immediati in merito alla disponibilità del prodotto.</span><span class="sxs-lookup"><span data-stu-id="3e2c9-103">You also have a growing global customer base, and your customers expect quick responses to their queries and immediate updates to product availability.</span></span>
+
+<span data-ttu-id="3e2c9-104">Il database deve aumentare automaticamente per poter ospitare nuovi prodotti, oltre ad avere una velocità effettiva elevata e una bassa latenza per rimanere al passo con le aspettative dei clienti.</span><span class="sxs-lookup"><span data-stu-id="3e2c9-104">Your database should scale automatically to account for new products, and it should have high throughput and low latency to keep pace with your customers' expectations.</span></span>
+
+## <a name="learning-objectives"></a><span data-ttu-id="3e2c9-105">Obiettivi di apprendimento</span><span class="sxs-lookup"><span data-stu-id="3e2c9-105">Learning objectives</span></span>
+
+<span data-ttu-id="3e2c9-106">In questo modulo verrà descritto come:</span><span class="sxs-lookup"><span data-stu-id="3e2c9-106">In this module, you will:</span></span>
+
+- <span data-ttu-id="3e2c9-107">Creare un account Azure Cosmos DB</span><span class="sxs-lookup"><span data-stu-id="3e2c9-107">Create an Azure Cosmos DB account</span></span>
+- <span data-ttu-id="3e2c9-108">Impostare il volume di velocità effettiva iniziale per il database usando le unità richiesta</span><span class="sxs-lookup"><span data-stu-id="3e2c9-108">Set the initial throughput volume for your database using request units</span></span>
+- <span data-ttu-id="3e2c9-109">Scegliere una chiave di partizione</span><span class="sxs-lookup"><span data-stu-id="3e2c9-109">Choose a partition key</span></span>
+- <span data-ttu-id="3e2c9-110">Creare un database e una raccolta per i dati NoSQL in Azure Cosmos DB</span><span class="sxs-lookup"><span data-stu-id="3e2c9-110">Create a database and collection for NoSQL data in Azure Cosmos DB</span></span>

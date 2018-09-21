@@ -1,0 +1,49 @@
+### YamlMime:ModuleUnit
+uid: learn.distribute-data-globally-with-cosmos-db.5-data-consistency-levels
+metadata:
+  title: <span data-ttu-id="daa57-101">Scegliere un livello di coerenza</span><span class="sxs-lookup"><span data-stu-id="daa57-101">Choose a consistency level</span></span>
+  description: <span data-ttu-id="daa57-102">Informazioni sul modo in cui è possibile usare i livelli di coerenza in Azure Cosmos DB per ottimizzare la disponibilità elevata, ridurre la latenza e determinare il livello di coerenza corretto per l'applicazione.</span><span class="sxs-lookup"><span data-stu-id="daa57-102">Learn how consistency levels in Azure Cosmos DB can be used to maximize high-availability and minimize latency, and determine the correct consistency level for your application.</span></span>
+  displayType: one-column
+  ms.openlocfilehash: e90f3d4f444418309010d7c6443cfc1d8138ed93
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46340594"
+title: <span data-ttu-id="daa57-103">Scegliere un livello di coerenza</span><span class="sxs-lookup"><span data-stu-id="daa57-103">Choose a consistency level</span></span>
+durationInMinutes: 10
+content: >
+  [!include[](includes/5-data-consistency-levels.md)]
+quiz:
+  title: <span data-ttu-id="daa57-104">Verifica delle conoscenze</span><span class="sxs-lookup"><span data-stu-id="daa57-104">Knowledge check</span></span>
+  questions:
+  - content: <span data-ttu-id="daa57-105">Quale livello di coerenza è più appropriato per i dati utente in un database di e-commerce?</span><span class="sxs-lookup"><span data-stu-id="daa57-105">Which consistency level is most appropriate for the user data in an e-commerce database?</span></span> <span data-ttu-id="daa57-106">Gli utenti devono verificare che gli ordini contengano tutti gli articoli inseriti nel carrello.</span><span class="sxs-lookup"><span data-stu-id="daa57-106">Users need to ensure that their orders contain all the items they placed in their basket.</span></span>
+    choices:
+    - content: <span data-ttu-id="daa57-107">Assoluta</span><span class="sxs-lookup"><span data-stu-id="daa57-107">Strong</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="daa57-108">La coerenza assoluta non è disponibile per i database replicati in più aree.</span><span class="sxs-lookup"><span data-stu-id="daa57-108">Strong consistency is not available for databases replicated in multiple regions.</span></span>
+    - content: <span data-ttu-id="daa57-109">Decadimento ristretto</span><span class="sxs-lookup"><span data-stu-id="daa57-109">Bounded Staleness</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="daa57-110">Il decadimento ristretto può comportare che solo alcuni articoli dell'utente vengano visualizzati nel carrello.</span><span class="sxs-lookup"><span data-stu-id="daa57-110">Bounded Staleness may result in only some of the users items being displayed in their basket.</span></span>
+    - content: <span data-ttu-id="daa57-111">Sessione</span><span class="sxs-lookup"><span data-stu-id="daa57-111">Session</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="daa57-112">Corretto. Sessione è la migliore impostazione di coerenza per i dati utente che contengono le informazioni del carrello acquisti.</span><span class="sxs-lookup"><span data-stu-id="daa57-112">Correct, Session is the best consistency setting for user data that contains shopping basket information.</span></span> <span data-ttu-id="daa57-113">La coerenza a livello di sessione garantisce che ogni articolo inserito nel carrello dall'utente venga visualizzato durante la verifica.</span><span class="sxs-lookup"><span data-stu-id="daa57-113">Session consistency will ensure that every item the user put in their basket is displayed when they review their basket.</span></span>
+    - content: <span data-ttu-id="daa57-114">Prefisso coerente</span><span class="sxs-lookup"><span data-stu-id="daa57-114">Consistent Prefix</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="daa57-115">Il livello basato su prefisso coerente può comportare che solo alcuni articoli dell'utente vengano visualizzati nel carrello.</span><span class="sxs-lookup"><span data-stu-id="daa57-115">Consistent Prefix could result in only some of the users items being displayed in their basket.</span></span>
+    - content: <span data-ttu-id="daa57-116">Finale</span><span class="sxs-lookup"><span data-stu-id="daa57-116">Eventual</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="daa57-117">La coerenza finale potrebbe causare una situazione in cui in un carrello degli acquisti non vengono visualizzati tutti gli articoli inseriti dall'utente.</span><span class="sxs-lookup"><span data-stu-id="daa57-117">Eventual consistency might result in a situation in which a shopping basket didn't display all the items the user had placed in it.</span></span>
+  - content: <span data-ttu-id="daa57-118">Quale livello di coerenza usa il minor numero di unità richieste per ogni operazione?</span><span class="sxs-lookup"><span data-stu-id="daa57-118">Which consistency level consumes the least amount of request units per operation?</span></span>
+    choices:
+    - content: <span data-ttu-id="daa57-119">Assoluta</span><span class="sxs-lookup"><span data-stu-id="daa57-119">Strong</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="daa57-120">Decadimento ristretto</span><span class="sxs-lookup"><span data-stu-id="daa57-120">Bounded Staleness</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="daa57-121">Sessione</span><span class="sxs-lookup"><span data-stu-id="daa57-121">Session</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="daa57-122">Prefisso coerente</span><span class="sxs-lookup"><span data-stu-id="daa57-122">Consistent Prefix</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="daa57-123">Finale</span><span class="sxs-lookup"><span data-stu-id="daa57-123">Eventual</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="daa57-124">Il costo di un'operazione di lettura con coerenza finale precede l'uso del minor numero di unità richieste al secondo.</span><span class="sxs-lookup"><span data-stu-id="daa57-124">The cost of a read operation with eventual consistency consumes the least number of request units per seconds.</span></span>

@@ -1,0 +1,11 @@
+- <span data-ttu-id="591c1-101">Stati Uniti occidentali 2</span><span class="sxs-lookup"><span data-stu-id="591c1-101">West US 2</span></span>
+- <span data-ttu-id="591c1-102">Stati Uniti centro-occidentali</span><span class="sxs-lookup"><span data-stu-id="591c1-102">West Central US</span></span>
+- <span data-ttu-id="591c1-103">Stati Uniti centro-meridionali</span><span class="sxs-lookup"><span data-stu-id="591c1-103">South Central US</span></span>
+- <span data-ttu-id="591c1-104">Stati Uniti centrali</span><span class="sxs-lookup"><span data-stu-id="591c1-104">Central US</span></span>
+- <span data-ttu-id="591c1-105">Stati Uniti orientali</span><span class="sxs-lookup"><span data-stu-id="591c1-105">East US</span></span>
+- <span data-ttu-id="591c1-106">Europa occidentale</span><span class="sxs-lookup"><span data-stu-id="591c1-106">West Europe</span></span>
+- <span data-ttu-id="591c1-107">Asia sud-orientale</span><span class="sxs-lookup"><span data-stu-id="591c1-107">Southeast Asia</span></span>
+- <span data-ttu-id="591c1-108">Giappone orientale</span><span class="sxs-lookup"><span data-stu-id="591c1-108">Japan East</span></span>
+- <span data-ttu-id="591c1-109">Brasile meridionale</span><span class="sxs-lookup"><span data-stu-id="591c1-109">Brazil South</span></span>
+- <span data-ttu-id="591c1-110">Australia sud-orientale</span><span class="sxs-lookup"><span data-stu-id="591c1-110">Australia Southeast</span></span>
+- <span data-ttu-id="591c1-111">India centrale</span><span class="sxs-lookup"><span data-stu-id="591c1-111">Central India</span></span>

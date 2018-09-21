@@ -1,0 +1,48 @@
+### YamlMime:ModuleUnit
+uid: learn.pillars-of-a-great-azure-architecture.5-design-for-availability-and-recoverability
+title: <span data-ttu-id="b0ec0-101">Progettare per la disponibilità e la possibilità di ripristino</span><span class="sxs-lookup"><span data-stu-id="b0ec0-101">Design for availability and recoverability</span></span>
+metadata:
+  title: <span data-ttu-id="b0ec0-102">Progettare per la disponibilità e la possibilità di ripristino</span><span class="sxs-lookup"><span data-stu-id="b0ec0-102">Design for availability and recoverability</span></span>
+  description: <span data-ttu-id="b0ec0-103">Progettare per la disponibilità e la possibilità di ripristino</span><span class="sxs-lookup"><span data-stu-id="b0ec0-103">Design for availability and recoverability</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: ce3457feab12a45bbc103e154affbcd13f4a3923
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46340267"
+durationInMinutes: 10
+content: >
+  [!include[](includes/5-design-for-availability-and-recoverability.md)]
+quiz:
+  title: <span data-ttu-id="b0ec0-104">Verificare le proprie conoscenze</span><span class="sxs-lookup"><span data-stu-id="b0ec0-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="b0ec0-105">Si supponga di voler aumentare la disponibilità del sistema per offrire un contratto di servizio (SLA) migliore ai clienti.</span><span class="sxs-lookup"><span data-stu-id="b0ec0-105">Suppose you would like to increase the availability of your system to provide a better service-level agreement (SLA) to your customers.</span></span> <span data-ttu-id="b0ec0-106">Quale delle seguenti affermazioni è un principio che è possibile usare come guida?</span><span class="sxs-lookup"><span data-stu-id="b0ec0-106">Which of the following is a guiding principle you can use?</span></span>
+    choices:
+    - content: <span data-ttu-id="b0ec0-107">Ridurre l'obiettivo di durata massima accettabile della perdita di dati.</span><span class="sxs-lookup"><span data-stu-id="b0ec0-107">Reduce your target for maximum duration of acceptable data loss.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="b0ec0-108">Questo può aumentare la recuperabilità, ma non la disponibilità.</span><span class="sxs-lookup"><span data-stu-id="b0ec0-108">This can increase recoverability, not availability.</span></span>
+    - content: <span data-ttu-id="b0ec0-109">Crittografare tutti i dati inattivi</span><span class="sxs-lookup"><span data-stu-id="b0ec0-109">Encrypt all data at rest</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="b0ec0-110">Questo può aumentare la sicurezza, ma non la disponibilità.</span><span class="sxs-lookup"><span data-stu-id="b0ec0-110">This can increase security, not availability.</span></span>
+    - content: <span data-ttu-id="b0ec0-111">Eliminare i singoli punti di guasto</span><span class="sxs-lookup"><span data-stu-id="b0ec0-111">Eliminate single point of failure</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="b0ec0-112">La progettazione della disponibilità è incentrata sul mantenimento del servizio nonostante condizioni temporanee e problemi localizzati.</span><span class="sxs-lookup"><span data-stu-id="b0ec0-112">Designing for availability focuses on maintaining service despite temporary conditions and localized failures.</span></span> <span data-ttu-id="b0ec0-113">L'aggiunta della ridondanza per evitare singoli punti di guasto è una strategia essenziale per migliorare la disponibilità.</span><span class="sxs-lookup"><span data-stu-id="b0ec0-113">Adding redundancy to eliminate single points of failure is a core strategy for improving availability.</span></span>
+  - content: <span data-ttu-id="b0ec0-114">Quale dei seguenti aspetti verrebbe influenzato dal valore Obiettivo del punto di ripristino (RPO) definito?</span><span class="sxs-lookup"><span data-stu-id="b0ec0-114">Which of the following would be impacted by your defined Recovery Point Objective (RPO)?</span></span>
+    choices:
+    - content: <span data-ttu-id="b0ec0-115">Frequenza del backup dei database</span><span class="sxs-lookup"><span data-stu-id="b0ec0-115">The frequency of database backups</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="b0ec0-116">Poiché l'obiettivo del punto di recupero riguarda la perdita di dati tollerabile, la frequenza del backup deve essere compresa in questa finestra temporale ed è direttamente influenzata dal valore RPO definito.</span><span class="sxs-lookup"><span data-stu-id="b0ec0-116">Since the recovery point objective is concerned with the amount of data loss that is tolerable, the frequency of backups needs to be within this time window and is directly impacted by your defined RPO.</span></span>
+    - content: <span data-ttu-id="b0ec0-117">Numero di aree a cui vengono replicati i dati</span><span class="sxs-lookup"><span data-stu-id="b0ec0-117">The number of regions that data is replicated to</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="b0ec0-118">Il numero di aree in cui vengono replicati i dati è una considerazione importante, ma non influenzata dal valore RPO definito.</span><span class="sxs-lookup"><span data-stu-id="b0ec0-118">The number of regions that data is replicated to is an important consideration, but is not impacted by your defined RPO.</span></span>
+    - content: <span data-ttu-id="b0ec0-119">Numero di istanze in un cluster di database</span><span class="sxs-lookup"><span data-stu-id="b0ec0-119">The number of instances in a database cluster</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="b0ec0-120">Il numero di istanze in un cluster di database può essere una decisione importante, ma non influenzata dal valore RPO definito.</span><span class="sxs-lookup"><span data-stu-id="b0ec0-120">The number of instances in a database cluster can be an important decision, but is not impacted by your defined RPO.</span></span>
+    - content: <span data-ttu-id="b0ec0-121">Tecnologia di bilanciamento del carico usata nell'applicazione</span><span class="sxs-lookup"><span data-stu-id="b0ec0-121">The type of load-balancing technology used in your application</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="b0ec0-122">La tecnologia di bilanciamento del carico usata nell'applicazione può essere una decisione importante, ma non è influenzata dal valore RPO definito.</span><span class="sxs-lookup"><span data-stu-id="b0ec0-122">The type of load-balancing technology used in your application can be an important decision, but is not impacted by your defined RPO.</span></span>

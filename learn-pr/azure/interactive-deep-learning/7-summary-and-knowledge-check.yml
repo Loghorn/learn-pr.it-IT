@@ -1,0 +1,45 @@
+### YamlMime:ModuleUnit
+uid: learn.interactive-deep-learning.7-summary-and-knowledge-check
+title: <span data-ttu-id="04941-101">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="04941-101">Summary</span></span>
+metadata:
+  title: <span data-ttu-id="04941-102">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="04941-102">Summary</span></span>
+  description: <span data-ttu-id="04941-103">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="04941-103">Summary</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 2a6f770fc032421778d9b8865ddc2324b1b481e7
+  ms.sourcegitcommit: 13f3e790ebb0807e6f2c670bbfffd87ab6dbabdb
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/20/2018
+  ms.locfileid: "46484039"
+durationInMinutes: 1
+content: >
+  [!include[](includes/7-summary-and-knowledge-check.md)]
+quiz:
+  title: <span data-ttu-id="04941-104">Verificare le proprie conoscenze</span><span class="sxs-lookup"><span data-stu-id="04941-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="04941-105">Quale delle definizioni seguenti descrive meglio le problematiche di dipendenza quando si usa DSVM per l'apprendimento avanzato?</span><span class="sxs-lookup"><span data-stu-id="04941-105">Which of the following best describes the dependency challenges faced when using the DSVM for deep learning?</span></span>
+    choices:
+    - content: <span data-ttu-id="04941-106">La macchina virtuale DSVM viene eseguita in modalità sandbox e non offre il supporto diretto per l'installazione di nuovi pacchetti.</span><span class="sxs-lookup"><span data-stu-id="04941-106">The DSVM is sandboxed and doesn't provide direct support for installing new packages.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="04941-107">DSVM è una macchina virtuale.</span><span class="sxs-lookup"><span data-stu-id="04941-107">The DSVM is a virtual machine.</span></span> <span data-ttu-id="04941-108">È dotata di un numero elevato di componenti software preinstallati per facilitare la creazione di progetti di data science e di intelligenza artificiale, ma è possibile installarla in base alle esigenze.</span><span class="sxs-lookup"><span data-stu-id="04941-108">It comes with lots of pre-installed software to help with data science and AI project, but you are free to install whatever you want.</span></span>
+    - content: <span data-ttu-id="04941-109">La macchina virtuale DSVM supporta solo le dipendenze CNTK e dei servizi cognitivi.</span><span class="sxs-lookup"><span data-stu-id="04941-109">The DSVM only supports CNTK and Cognitive Service dependencies.</span></span>
+      incorrectExplanation: <span data-ttu-id="04941-110">Le macchine virtuali DSVM offrono opzioni predefinite di supporto per diversi framework molto diffusi, ad esempio PyTorch, Chainer e Tensorflow.</span><span class="sxs-lookup"><span data-stu-id="04941-110">DSVMs provide out of the box support for many popular frameworks such as PyTorch, Chainer, and Tensorflow.</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="04941-111">Alcuni pacchetti e framework per l'apprendimento avanzato richiedono diversi ambienti, driver GPU pacchetti binari</span><span class="sxs-lookup"><span data-stu-id="04941-111">Certain deep learning frameworks and packages require different enviorments, GPU drivers and binary packages</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="04941-112">La gestione delle dipendenze tra tutti i framework in uso per l'apprendimento avanzato può costituire un problema.</span><span class="sxs-lookup"><span data-stu-id="04941-112">Managing the dependencies between all the frameworks you are using for deep learning can be a challenge.</span></span> <span data-ttu-id="04941-113">L'esecuzione di un contenitore Docker per raggruppare e isolare tali dipendenze può contribuire a risolvere questo problema.</span><span class="sxs-lookup"><span data-stu-id="04941-113">Running a Docker container to group and isolate these dependencies can help with this challenge.</span></span>
+  - content: <span data-ttu-id="04941-114">Si supponga di eseguire una prova di apprendimento avanzato in un contenitore Docker.</span><span class="sxs-lookup"><span data-stu-id="04941-114">Suppose you've been experimenting with deep learning in a Docker container.</span></span> <span data-ttu-id="04941-115">La macchina virtuale DSVM è in esecuzione in una macchina virtuale Linux che dispone anche di GPU.</span><span class="sxs-lookup"><span data-stu-id="04941-115">Your DSVM is running on a Linux virtual machine that also has GPUs.</span></span> <span data-ttu-id="04941-116">Quale dei comandi seguenti deve essere eseguito per eseguire il provisioning di un contenitore con i componenti necessari per eseguire codice nella GPU?</span><span class="sxs-lookup"><span data-stu-id="04941-116">Which of the followign commands to you run to provision a container with the necessary components to execute code on the GPU.</span></span>
+    choices:
+    - content: <span data-ttu-id="04941-117">docker run --useGPU</span><span class="sxs-lookup"><span data-stu-id="04941-117">docker run --useGPU</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="04941-118">Il comando docker run non dispone di un parametro denominato --useGPU</span><span class="sxs-lookup"><span data-stu-id="04941-118">The docker run command does not have a parameter called --useGPU</span></span>
+    - content: <span data-ttu-id="04941-119">nvidia-docker run</span><span class="sxs-lookup"><span data-stu-id="04941-119">nvidia-docker run</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="04941-120">Questo comando può essere usato per eseguire un contenitore che usa le GPU.</span><span class="sxs-lookup"><span data-stu-id="04941-120">This command can be used to execute a container that uses GPUs.</span></span>
+    - content: <span data-ttu-id="04941-121">docker-nvidia run</span><span class="sxs-lookup"><span data-stu-id="04941-121">docker-nvidia run</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="04941-122">Questo comando non esiste.</span><span class="sxs-lookup"><span data-stu-id="04941-122">This command doesn't exist.</span></span>
