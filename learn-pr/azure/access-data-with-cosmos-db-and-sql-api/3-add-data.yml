@@ -1,0 +1,20 @@
+### YamlMime:ModuleUnit
+uid: learn.access-data-with-cosmos-db-and-sql-api.3-add-data
+metadata:
+  title: <span data-ttu-id="58dba-101">Aggiungere dati mediante il portale</span><span class="sxs-lookup"><span data-stu-id="58dba-101">Add data using the portal</span></span>
+  description: <span data-ttu-id="58dba-102">Informazioni su come aggiungere dati ad Azure Cosmos DB mediante il portale di Azure</span><span class="sxs-lookup"><span data-stu-id="58dba-102">Learn how to add data to Azure Cosmos DB by using the Azure portal</span></span>
+  ms.date: 09/24/2018
+  author: mimig1
+  ms.author: mimig
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 791f6e69aafd06c011beb88347176a66f442e602
+  ms.sourcegitcommit: 13f3e790ebb0807e6f2c670bbfffd87ab6dbabdb
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/20/2018
+  ms.locfileid: "46483988"
+azureSandbox: true
+title: <span data-ttu-id="58dba-103">Aggiungere dati mediante il portale</span><span class="sxs-lookup"><span data-stu-id="58dba-103">Add data using the portal</span></span>
+durationInMinutes: 5
+content: '[!include[](includes/3-add-data.md)]'

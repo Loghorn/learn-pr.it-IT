@@ -1,0 +1,43 @@
+### YamlMime:ModuleUnit
+uid: learn.intro-to-data-in-azure.5-knowledge-check
+metadata:
+  title: <span data-ttu-id="c96ba-101">Verifica delle conoscenze</span><span class="sxs-lookup"><span data-stu-id="c96ba-101">Knowledge check</span></span>
+  description: <span data-ttu-id="c96ba-102">Verifica delle conoscenze</span><span class="sxs-lookup"><span data-stu-id="c96ba-102">Knowledge check</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: e0cdcd2cc0ea3995d0c3d6eb90d920b61e498ab2
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46353405"
+title: <span data-ttu-id="c96ba-103">Verifica delle conoscenze</span><span class="sxs-lookup"><span data-stu-id="c96ba-103">Knowledge check</span></span>
+durationInMinutes: 5
+quiz:
+  title: <span data-ttu-id="c96ba-104">Verificare le proprie conoscenze</span><span class="sxs-lookup"><span data-stu-id="c96ba-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="c96ba-105">Si supponga di lavorare in una startup con fondi limitati.</span><span class="sxs-lookup"><span data-stu-id="c96ba-105">Suppose you work at a startup with limited funding.</span></span> <span data-ttu-id="c96ba-106">Per quale motivo è preferibile l'archiviazione dati di Azure rispetto a una soluzione in locale?</span><span class="sxs-lookup"><span data-stu-id="c96ba-106">Why might you prefer Azure data storage over an on-premises solution?</span></span>
+    choices:
+    - content: <span data-ttu-id="c96ba-107">Per assicurarsi di usare una specifica marca di hardware che consentirà di attivare una collaborazione commerciale con il fornitore di tale hardware.</span><span class="sxs-lookup"><span data-stu-id="c96ba-107">To ensure you run on a specific brand of hardware which will let you to form a marketing partnership with that hardware vendor.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="c96ba-108">Con Azure non occorre anticipare ingenti spese in conto capitale (CapEx).</span><span class="sxs-lookup"><span data-stu-id="c96ba-108">There are no large, up-front capital expenditures (CapEx) with Azure.</span></span> <span data-ttu-id="c96ba-109">Si effettuano pagamenti mensili solo per i servizi usati (OpEx).</span><span class="sxs-lookup"><span data-stu-id="c96ba-109">You pay monthly for only the services you use (OpEx).</span></span>
+    - content: <span data-ttu-id="c96ba-110">Il modello di fatturazione con pagamento a consumo di Azure consente di evitare l'acquisto di hardware costoso.</span><span class="sxs-lookup"><span data-stu-id="c96ba-110">The Azure pay-as-you-go billing model lets you avoid buying expensive hardware.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="c96ba-111">Con Azure non occorre anticipare ingenti spese in conto capitale (CapEx).</span><span class="sxs-lookup"><span data-stu-id="c96ba-111">There are no large, up-front capital expenditures (CapEx) with Azure.</span></span> <span data-ttu-id="c96ba-112">Si effettuano pagamenti mensili per solo i servizi è usare (OpEx).</span><span class="sxs-lookup"><span data-stu-id="c96ba-112">You pay monthly for only the services you use (OpEx).</span></span>
+    - content: <span data-ttu-id="c96ba-113">Per ottenere il controllo totale sulla posizione dell'archivio dati.</span><span class="sxs-lookup"><span data-stu-id="c96ba-113">To get exact control over the location of your data store.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="c96ba-114">Con Azure non occorre anticipare ingenti spese in conto capitale (CapEx).</span><span class="sxs-lookup"><span data-stu-id="c96ba-114">There are no large, up-front capital expenditures (CapEx) with Azure.</span></span> <span data-ttu-id="c96ba-115">Si effettuano pagamenti mensili solo per i servizi usati (OpEx).</span><span class="sxs-lookup"><span data-stu-id="c96ba-115">You pay monthly for only the services you use (OpEx).</span></span>
+  - content: <span data-ttu-id="c96ba-116">Quale delle situazioni seguenti trarrebbe il massimo vantaggio dalla migrazione di un archivio dati locale in Azure?</span><span class="sxs-lookup"><span data-stu-id="c96ba-116">Which of the following situations would yield the most benefits from relocating an on-premise data store to Azure?</span></span>
+    choices:
+    - content: <span data-ttu-id="c96ba-117">Domanda di archiviazione imprevedibile che aumenta o diminuisce più volte nel corso dell'anno.</span><span class="sxs-lookup"><span data-stu-id="c96ba-117">Unpredictable storage demand that increases and decreases multiple times throughout the year.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="c96ba-118">L'archiviazione dei dati di Azure è flessibile.</span><span class="sxs-lookup"><span data-stu-id="c96ba-118">Azure data storage is flexible.</span></span> <span data-ttu-id="c96ba-119">È possibile aggiungere o rimuovere capacità in modo veloce e semplice.</span><span class="sxs-lookup"><span data-stu-id="c96ba-119">You can quickly and easily add or remove capacity.</span></span> <span data-ttu-id="c96ba-120">È possibile aumentare le prestazioni per gestire i picchi di carico o ridurre le prestazioni per diminuire i costi.</span><span class="sxs-lookup"><span data-stu-id="c96ba-120">You can increase performance to handle spikes in load or decrease performance to reduce costs.</span></span> <span data-ttu-id="c96ba-121">In tutti i casi, si paga solo in base al consumo effettivo.</span><span class="sxs-lookup"><span data-stu-id="c96ba-121">In all cases, you pay for only what you use.</span></span>
+    - content: <span data-ttu-id="c96ba-122">Una crescita costante e a lungo termine della domanda di archiviazione.</span><span class="sxs-lookup"><span data-stu-id="c96ba-122">Long-term, steady growth in storage demand.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="c96ba-123">L'archiviazione dei dati di Azure è flessibile.</span><span class="sxs-lookup"><span data-stu-id="c96ba-123">Azure data storage is flexible.</span></span> <span data-ttu-id="c96ba-124">È possibile aggiungere o rimuovere capacità in modo veloce e semplice.</span><span class="sxs-lookup"><span data-stu-id="c96ba-124">You can quickly and easily add or remove capacity.</span></span> <span data-ttu-id="c96ba-125">È possibile aumentare le prestazioni per gestire i picchi di carico o ridurre le prestazioni per diminuire i costi.</span><span class="sxs-lookup"><span data-stu-id="c96ba-125">You can increase performance to handle spikes in load or decrease performance to reduce costs.</span></span> <span data-ttu-id="c96ba-126">In tutti i casi, si paga solo in base al consumo effettivo.</span><span class="sxs-lookup"><span data-stu-id="c96ba-126">In all cases, you pay for only what you use.</span></span>
+    - content: <span data-ttu-id="c96ba-127">Domanda di archiviazione uniforme e invariata.</span><span class="sxs-lookup"><span data-stu-id="c96ba-127">Consistent, unchanging storage demand.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="c96ba-128">L'archiviazione dei dati di Azure è flessibile.</span><span class="sxs-lookup"><span data-stu-id="c96ba-128">Azure data storage is flexible.</span></span> <span data-ttu-id="c96ba-129">È possibile aggiungere o rimuovere capacità in modo veloce e semplice.</span><span class="sxs-lookup"><span data-stu-id="c96ba-129">You can quickly and easily add or remove capacity.</span></span> <span data-ttu-id="c96ba-130">È possibile aumentare le prestazioni per gestire i picchi di carico o ridurre le prestazioni per diminuire i costi.</span><span class="sxs-lookup"><span data-stu-id="c96ba-130">You can increase performance to handle spikes in load or decrease performance to reduce costs.</span></span> <span data-ttu-id="c96ba-131">In tutti i casi, si paga solo in base al consumo effettivo.</span><span class="sxs-lookup"><span data-stu-id="c96ba-131">In all cases, you pay for only what you use.</span></span>
