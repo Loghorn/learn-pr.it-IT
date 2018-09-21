@@ -1,0 +1,21 @@
+### YamlMime:ModuleUnit
+uid: learn.distribute-data-globally-with-cosmos-db.2-global-distribution
+metadata:
+  title: Distribuire i dati a livello globale
+  description: Informazioni su come usare Azure Cosmos DB per replicare i dati in più aree geografiche in tutto il mondo.
+  displayType: one-column
+  ms.date: 09/24/2018
+  author: mimig1
+  ms.author: mimig
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 8e0c6fcd6657ee6547340203540d476145c64b2d
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46341900"
+title: Distribuire i dati a livello globale
+azureSandbox: true
+durationInMinutes: 8
+content: '[!include[](includes/2-global-distribution.md)]'

@@ -1,0 +1,49 @@
+### YamlMime:ModuleUnit
+uid: learn.distribute-data-globally-with-cosmos-db.5-data-consistency-levels
+metadata:
+  title: Scegliere un livello di coerenza
+  description: Informazioni sul modo in cui è possibile usare i livelli di coerenza in Azure Cosmos DB per ottimizzare la disponibilità elevata, ridurre la latenza e determinare il livello di coerenza corretto per l'applicazione.
+  displayType: one-column
+  ms.openlocfilehash: e90f3d4f444418309010d7c6443cfc1d8138ed93
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46340594"
+title: Scegliere un livello di coerenza
+durationInMinutes: 10
+content: >
+  [!include[](includes/5-data-consistency-levels.md)]
+quiz:
+  title: Verifica delle conoscenze
+  questions:
+  - content: Quale livello di coerenza è più appropriato per i dati utente in un database di e-commerce? Gli utenti devono verificare che gli ordini contengano tutti gli articoli inseriti nel carrello.
+    choices:
+    - content: Assoluta
+      isCorrect: false
+      incorrectExplanation: La coerenza assoluta non è disponibile per i database replicati in più aree.
+    - content: Decadimento ristretto
+      isCorrect: false
+      incorrectExplanation: Il decadimento ristretto può comportare che solo alcuni articoli dell'utente vengano visualizzati nel carrello.
+    - content: Sessione
+      isCorrect: true
+      correctExplanation: Corretto. Sessione è la migliore impostazione di coerenza per i dati utente che contengono le informazioni del carrello acquisti. La coerenza a livello di sessione garantisce che ogni articolo inserito nel carrello dall'utente venga visualizzato durante la verifica.
+    - content: Prefisso coerente
+      isCorrect: false
+      incorrectExplanation: Il livello basato su prefisso coerente può comportare che solo alcuni articoli dell'utente vengano visualizzati nel carrello.
+    - content: Finale
+      isCorrect: false
+      incorrectExplanation: La coerenza finale potrebbe causare una situazione in cui in un carrello degli acquisti non vengono visualizzati tutti gli articoli inseriti dall'utente.
+  - content: Quale livello di coerenza usa il minor numero di unità richieste per ogni operazione?
+    choices:
+    - content: Assoluta
+      isCorrect: false
+    - content: Decadimento ristretto
+      isCorrect: false
+    - content: Sessione
+      isCorrect: false
+    - content: Prefisso coerente
+      isCorrect: false
+    - content: Finale
+      isCorrect: true
+      correctExplanation: Il costo di un'operazione di lettura con coerenza finale precede l'uso del minor numero di unità richieste al secondo.

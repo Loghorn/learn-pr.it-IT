@@ -1,0 +1,54 @@
+### YamlMime:ModuleUnit
+uid: learn.interactive-deep-learning.2q-describe-deep-learning-and-the-dvsm
+title: Verificare le proprie conoscenze
+metadata:
+  title: Verificare le proprie conoscenze
+  description: Verificare le proprie conoscenze
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: a3b3b0539c2f89a4a1c93f48ba3084555483a216
+  ms.sourcegitcommit: 13f3e790ebb0807e6f2c670bbfffd87ab6dbabdb
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/20/2018
+  ms.locfileid: "46483800"
+durationInMinutes: 2
+quiz:
+  title: Verificare le proprie conoscenze
+  questions:
+  - content: Quale delle risposte seguenti descrive meglio la differenza tra apprendimento automatico tradizionale e apprendimento avanzato?
+    choices:
+    - content: Nell'apprendimento automatico tradizionale si usano tutti i tipi di modelli, ovvero grafico, algebrico e probabilistico. Nell'apprendimento avanzato si usano solo modelli lineari.
+      isCorrect: false
+      incorrectExplanation: L'apprendimento avanzato consente di trovare la manipolazione matematica corretta per trasformare l'input nell'output, sia in caso di relazione lineare che non lineare.
+    - content: Nell'apprendimento automatico tradizionale le funzionalità vengono implementate manualmente. Nell'apprendimento avanzato le funzionalità vengono apprese.
+      isCorrect: true
+      correctExplanation: Nell'apprendimento avanzato il processo di estrazione delle funzioni viene appreso tramite la rappresentazione degli input come vettori e la loro trasformazione, con una serie di operazioni algebriche lineari intelligenti, in un determinato output.
+    - content: Nell'apprendimento automatico tradizionale gli algoritmi sono modellati in base a un approccio istintivo. L'apprendimento avanzato è modellato in base a un approccio razionale.
+      isCorrect: false
+      incorrectExplanation: L'apprendimento avanzato si basa su algoritmi che imitano la struttura e il funzionamento del cervello, denominati reti neurali artificiali. L'apprendimento automatico, tuttavia, non è modellato in base a un approccio istintivo.
+  - content: Cosa accade se si distribuisce l'immagine DSVM (Data Science Virtual Machine) in una macchina virtuale di Azure basata su CPU?
+    choices:
+    - content: Il funzionamento si interrompe, perché è possibile distribuire l'immagine DSVM solo in una macchina virtuale di Azure basata su GPU.
+      isCorrect: false
+      incorrectExplanation: L'immagine DSVM funziona in modo corretto con entrambe le macchine virtuali, sia basate su CPU che su GPU.
+    - content: Il funzionamento è corretto perché i framework di apprendimento avanzato eseguono il fallback alla modalità CPU.
+      isCorrect: true
+      correctExplanation: L'immagine DSVM funziona in modo corretto con entrambe le macchine virtuali, sia basate su CPU che su GPU.
+    - content: È necessario aggiornare i framework di apprendimento avanzato preinstallati per l'esecuzione su CPU.
+      isCorrect: false
+      incorrectExplanation: L'immagine DSVM funziona in modo corretto con entrambe le macchine virtuali, sia basate su CPU che su GPU.
+  - content: Perché le GPU vengono spesso usate per l'apprendimento avanzato?
+    choices:
+    - content: Nell'apprendimento avanzato l'algebra di matrice richiede una quantità notevole di calcolo parallelo e le GPU sono particolarmente adatte a tale tipo di calcolo.
+      correctExplanation: La serie di operazioni di matrice che vengono calcolate come parte del componente algebrico lineare tende a essere costosa dal punto di vista del calcolo e spesso consente un livello elevato di parallelizzazione. Sono quindi necessari strumenti specialistici, ad esempio unità di elaborazione grafica (GPU), per eseguire il calcolo in modo efficiente.
+      isCorrect: true
+    - content: Le GPU determinano la convergenza dei modelli di apprendimento avanzato durante la discesa del gradiente.
+      isCorrect: false
+      incorrectExplanation: La convergenza di un modello di apprendimento avanzato durante la discesa del gradiente è indipendente dall'unità di elaborazione usata.
+    - content: Le GPU sono necessarie per valutare una funzione di perdita.
+      isCorrect: false
+      incorrectExplanation: Le GPU non sono necessarie per valutare una funzione di perdita.

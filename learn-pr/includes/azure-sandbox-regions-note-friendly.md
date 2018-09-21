@@ -1,0 +1,11 @@
+- Stati Uniti occidentali 2
+- Stati Uniti centro-occidentali
+- Stati Uniti centro-meridionali
+- Stati Uniti centrali
+- Stati Uniti orientali
+- Europa occidentale
+- Asia sud-orientale
+- Giappone orientale
+- Brasile meridionale
+- Australia sud-orientale
+- India centrale

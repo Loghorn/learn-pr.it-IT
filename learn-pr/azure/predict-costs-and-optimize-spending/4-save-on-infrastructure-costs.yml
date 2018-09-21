@@ -1,0 +1,45 @@
+### YamlMime:ModuleUnit
+uid: learn.predict-costs-and-optimize-spending.4-save-on-infrastructure-costs
+title: Risparmiare sui costi di infrastruttura
+metadata:
+  title: Risparmiare sui costi di infrastruttura
+  description: In questa unità illustreremo come risparmiare sui costi di infrastruttura
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 94f37d9b74bc6b3b3e5bfed8f97300b5fc5eff1e
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46338794"
+durationInMinutes: 10
+content: >
+  [!include[](includes/4-save-on-infrastructure-costs.md)]
+quiz:
+  title: Verificare le proprie conoscenze
+  questions:
+  - content: Quale di queste *non* è una soluzione di riduzione dei costi?
+    choices:
+    - content: Deallocare le macchine virtuali durante gli orari di minore attività.
+      isCorrect: false
+      incorrectExplanation: La quantità di utilizzo fatturata al proprio account è minore e si risparmia così sui costi.
+    - content: Usare le istanze di macchina virtuale riservate di Azure.
+      isCorrect: false
+      incorrectExplanation: Questa soluzione è meno dispendiosa rispetto al pagamento a consumo in presenza di carichi di lavoro uniformi per le macchine virtuali e può richiedere un contratto di servizio a lungo termine.
+    - content: Bilanciare il carico delle macchine virtuali per i messaggi in arrivo.
+      isCorrect: true
+      correctExplanation: Il bilanciamento del carico viene usato per ottimizzare le prestazioni, non per risparmiare sui costi.
+    - content: Ridimensionare le macchine virtuali sottoutilizzate.
+      isCorrect: false
+      incorrectExplanation: Il ridimensionamento di una macchina virtuale ridurrà i costi.
+  - content: 'Vero o falso: il modello PaaS è in genere meno dispendioso del modello IaaS.'
+    choices:
+    - content: Vero
+      isCorrect: true
+      correctExplanation: Il modello IaaS richiede che Azure preveda risorse dedicate, mentre il modello PaaS offre ad Azure una maggiore flessibilità nell'erogazione dei servizi. Questo significa che Azure può inserire e usare hardware in modo efficiente e offrire quindi i servizi PaaS a prezzi più vantaggiosi rispetto al modello IaaS.
+    - content: Falso
+      isCorrect: false
+      incorrectExplanation: Il contratto per un servizio PaaS è in genere meno dispendioso rispetto alle risorse IaaS.

@@ -1,0 +1,45 @@
+### YamlMime:ModuleUnit
+uid: learn.interactive-deep-learning.7-summary-and-knowledge-check
+title: Riepilogo
+metadata:
+  title: Riepilogo
+  description: Riepilogo
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 2a6f770fc032421778d9b8865ddc2324b1b481e7
+  ms.sourcegitcommit: 13f3e790ebb0807e6f2c670bbfffd87ab6dbabdb
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/20/2018
+  ms.locfileid: "46484039"
+durationInMinutes: 1
+content: >
+  [!include[](includes/7-summary-and-knowledge-check.md)]
+quiz:
+  title: Verificare le proprie conoscenze
+  questions:
+  - content: Quale delle definizioni seguenti descrive meglio le problematiche di dipendenza quando si usa DSVM per l'apprendimento avanzato?
+    choices:
+    - content: La macchina virtuale DSVM viene eseguita in modalità sandbox e non offre il supporto diretto per l'installazione di nuovi pacchetti.
+      isCorrect: false
+      incorrectExplanation: DSVM è una macchina virtuale. È dotata di un numero elevato di componenti software preinstallati per facilitare la creazione di progetti di data science e di intelligenza artificiale, ma è possibile installarla in base alle esigenze.
+    - content: La macchina virtuale DSVM supporta solo le dipendenze CNTK e dei servizi cognitivi.
+      incorrectExplanation: Le macchine virtuali DSVM offrono opzioni predefinite di supporto per diversi framework molto diffusi, ad esempio PyTorch, Chainer e Tensorflow.
+      isCorrect: false
+    - content: Alcuni pacchetti e framework per l'apprendimento avanzato richiedono diversi ambienti, driver GPU pacchetti binari
+      isCorrect: true
+      correctExplanation: La gestione delle dipendenze tra tutti i framework in uso per l'apprendimento avanzato può costituire un problema. L'esecuzione di un contenitore Docker per raggruppare e isolare tali dipendenze può contribuire a risolvere questo problema.
+  - content: Si supponga di eseguire una prova di apprendimento avanzato in un contenitore Docker. La macchina virtuale DSVM è in esecuzione in una macchina virtuale Linux che dispone anche di GPU. Quale dei comandi seguenti deve essere eseguito per eseguire il provisioning di un contenitore con i componenti necessari per eseguire codice nella GPU?
+    choices:
+    - content: docker run --useGPU
+      isCorrect: false
+      incorrectExplanation: Il comando docker run non dispone di un parametro denominato --useGPU
+    - content: nvidia-docker run
+      isCorrect: true
+      correctExplanation: Questo comando può essere usato per eseguire un contenitore che usa le GPU.
+    - content: docker-nvidia run
+      isCorrect: false
+      incorrectExplanation: Questo comando non esiste.

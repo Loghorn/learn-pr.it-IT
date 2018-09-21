@@ -1,0 +1,54 @@
+### YamlMime:ModuleUnit
+uid: learn.interactive-deep-learning.4q-benefits-of-running-deep-learning-experiments-in-docker
+title: Verificare le proprie conoscenze
+metadata:
+  title: Verificare le proprie conoscenze
+  description: Verificare le proprie conoscenze
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: fab76bfb0f9de183a37f1d8aba022b434294ce85
+  ms.sourcegitcommit: 13f3e790ebb0807e6f2c670bbfffd87ab6dbabdb
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/20/2018
+  ms.locfileid: "46483862"
+durationInMinutes: 2
+quiz:
+  title: Verificare le proprie conoscenze
+  questions:
+  - content: Quale delle definizioni seguenti descrive CUDA?
+    choices:
+    - content: CUDA è un'API e una piattaforma di calcolo parallela.
+      isCorrect: true
+      correctExplanation: CUDA è un modello di API (Application Programming Interface) e di piattaforma di calcolo parallela creato da NVIDIA. La piattaforma CUDA è un livello di software che fornisce accesso diretto al set di istruzioni virtuali e agli elementi di calcolo paralleli della GPU per l'esecuzione di kernel di calcolo.
+    - content: Si tratta di una CPU estremamente potente.
+      isCorrect: false
+      incorrectExplanation: CUDA è un livello di software progettato per le GPU.
+    - content: Si tratta di un modello di apprendimento avanzato usato per la classificazione delle immagini.
+      isCorrect: false
+      incorrectExplanation: Le GPU abilitate per CUDA sono in grado di migliorare notevolmente le prestazioni di calcolo nel training delle reti neurali, ma questo è solo uno dei possibili usi.
+  - content: Quale delle definizioni seguenti descrive Docker?
+    choices:
+    - content: Docker è un componente hardware specializzato per il training delle reti neurali.
+      isCorrect: false
+      incorrectExplanation: Docker è un software che esegue una virtualizzazione a livello di sistema operativo, nota anche come "containerizzazione".
+    - content: Docker è una piattaforma aperta per applicazioni distribuite.
+      isCorrect: true
+      correctExplanation: Docker è una piattaforma aperta concepita per sviluppatori e amministratori di sistema che intendono compilare, distribuire ed eseguire applicazioni distribuite su computer portatili, macchine virtuali data center o cloud. È un programma per computer che esegue la virtualizzazione a livello di sistema operativo, nota anche come "containerizzazione".
+    - content: Docker è una libreria per le app Web.
+      isCorrect: false
+      incorrectExplanation: Docker è una piattaforma software, ma non è una libreria per creare app Web.
+  - content: Qual è il vantaggio principale di usare NVIDIA Docker?
+    choices:
+    - content: Consente di compilare ed eseguire contenitori Docker in Windows.
+      isCorrect: false
+      incorrectExplanation: NVIDIA Docker viene eseguito solo in Linux.
+    - content: Consente di compilare ed eseguire i contenitori Docker che sfruttano le GPU NVIDIA.
+      isCorrect: true
+      correctExplanation: Il progetto nvidia-docker per sviluppatori NVIDIA è un progetto open source che supporta un'immagine CUDA indipendente dai driver e si comporta come wrapper da riga di comando Docker in grado di montare i componenti GPU corretti nel contenitore al momento dell'avvio.
+    - content: Consente di inserire in un contenitore applicazioni con accelerazione della CPU.
+      isCorrect: false
+      incorrectExplanation: NVIDIA Docker consente di inserire in un contenitore app con accelerazione della GPU.
