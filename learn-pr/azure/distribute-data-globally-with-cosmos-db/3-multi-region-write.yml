@@ -1,0 +1,35 @@
+### YamlMime:ModuleUnit
+uid: learn.distribute-data-globally-with-cosmos-db.3-multi-region-write
+metadata:
+  title: <span data-ttu-id="8f722-101">Scrivere i dati in più aree</span><span class="sxs-lookup"><span data-stu-id="8f722-101">Write to multiple regions</span></span>
+  description: <span data-ttu-id="8f722-102">Informazioni su come usare Azure Cosmos DB per scrivere i dati in più aree contemporaneamente.</span><span class="sxs-lookup"><span data-stu-id="8f722-102">Learn how to use Azure Cosmos DB to write your data to multiple regions at the same time.</span></span>
+  displayType: one-column
+  ms.openlocfilehash: 516e1abccb14f0cb217689fd1d510c5060e86290
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46341950"
+title: <span data-ttu-id="8f722-103">Scrivere i dati in più aree</span><span class="sxs-lookup"><span data-stu-id="8f722-103">Write to multiple regions</span></span>
+durationInMinutes: 5
+content: >
+  [!include[](includes/3-multi-region-write.md)]
+quiz:
+  title: <span data-ttu-id="8f722-104">Verifica delle conoscenze</span><span class="sxs-lookup"><span data-stu-id="8f722-104">Knowledge check</span></span>
+  questions:
+  - content: '<span data-ttu-id="8f722-105">Vero o falso: i vantaggi di scrivere i dati in più aree sono la riduzione della latenza, il potenziale di scalabilità illimitato e la disponibilità migliorata.</span><span class="sxs-lookup"><span data-stu-id="8f722-105">True or false: the benefits of writing to multiple regions are decreased latency, unlimited scaling potential, and improved availability.</span></span>'
+    choices:
+    - content: <span data-ttu-id="8f722-106">Vero</span><span class="sxs-lookup"><span data-stu-id="8f722-106">True</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="8f722-107">La scrittura dei dati in più aree offre molti vantaggi nelle prestazioni.</span><span class="sxs-lookup"><span data-stu-id="8f722-107">Writing to multiple regions has many peformance benefits.</span></span> <span data-ttu-id="8f722-108">La latenza per le operazioni di scrittura ad esempio è inferiore a quella negli account non multimaster.</span><span class="sxs-lookup"><span data-stu-id="8f722-108">For example, the latency for write operations is less than in non-multi-master accounts.</span></span>
+    - content: <span data-ttu-id="8f722-109">Falso</span><span class="sxs-lookup"><span data-stu-id="8f722-109">False</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="8f722-110">La scrittura dei dati in più aree offre molti vantaggi nelle prestazioni.</span><span class="sxs-lookup"><span data-stu-id="8f722-110">Writing to multiple regions has many peformance benefits.</span></span> <span data-ttu-id="8f722-111">Ad esempio, la latenza per le operazioni di scrittura è inferiore a quella negli account diversi dal tipo multimaster.</span><span class="sxs-lookup"><span data-stu-id="8f722-111">For example, the latency for write operations is less than in non-multi-master accounts.</span></span>
+  - content: <span data-ttu-id="8f722-112">Quali sono i criteri di risoluzione dei conflitti predefiniti in un account multimaster?</span><span class="sxs-lookup"><span data-stu-id="8f722-112">What is the default conflict-resolution policy in a multi-master account?</span></span>
+    choices:
+    - content: <span data-ttu-id="8f722-113">Prevale la versione dell'ultimo utente</span><span class="sxs-lookup"><span data-stu-id="8f722-113">Last-Writer-Wins</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="8f722-114">La risoluzione dei conflitti è integrata in Cosmos DB e viene eseguita nel server, all'interno del motore di database.</span><span class="sxs-lookup"><span data-stu-id="8f722-114">Conflict resolution is built-in to Cosmos DB and is performed on the server, inside the database engine.</span></span> <span data-ttu-id="8f722-115">La priorità della versione dell'ultimo utente rappresenta i criteri predefiniti.</span><span class="sxs-lookup"><span data-stu-id="8f722-115">Last-Writer-Wins is the default policy.</span></span>
+    - content: <span data-ttu-id="8f722-116">Procedura personalizzata definita dall'utente</span><span class="sxs-lookup"><span data-stu-id="8f722-116">A custom user-defined procedure</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="8f722-117">Le procedure definite dall'utente sono supportate, ma non sono il meccanismo predefinito per la gestione dei conflitti.</span><span class="sxs-lookup"><span data-stu-id="8f722-117">User-defined procedures are supported, but they are not the default mechanism for handling conflicts.</span></span>
