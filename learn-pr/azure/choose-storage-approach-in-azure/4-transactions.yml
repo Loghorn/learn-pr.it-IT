@@ -1,0 +1,42 @@
+### YamlMime:ModuleUnit
+uid: learn.choose-storage-approach-in-azure.4-transactions
+metadata:
+  title: Raggruppare più operazioni in una transazione
+  description: Raggruppare più operazioni in una transazione
+  ms.date: 09/24/2018
+  author: mimig1
+  ms.author: mimig
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 898422fb6f083d12691d5488ef3ea9b6ef596384
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46344129"
+title: Raggruppare più operazioni in una transazione
+durationInMinutes: 5
+content: >
+  [!include[](includes/4-transactions.md)]
+quiz:
+  title: Verificare le proprie conoscenze
+  questions:
+  - content: Quale tipo di sistema di database transazionale sarebbe più adatto ai dati di prodotto?
+    choices:
+    - content: OLAP
+      isCorrect: false
+      incorrectExplanation: I sistemi OLTP supportano numerosi utenti, hanno tempi di risposta rapidi, gestiscono volumi elevati di dati, offrono disponibilità elevata e sono ottimi per gestire transazioni di piccole dimensioni o relativamente semplici.
+    - content: OLTP
+      isCorrect: true
+      correctExplanation: I sistemi OLTP supportano numerosi utenti, hanno tempi di risposta rapidi, gestiscono volumi elevati di dati, offrono disponibilità elevata e sono ottimi per gestire transazioni di piccole dimensioni o relativamente semplici.
+  - content: Si supponga che le operazioni per aggiornare l'inventario ed elaborare i pagamenti siano nella stessa transazione. Un utente tenta di applicare il credito del punto vendita per l'intero importo e ha inviato lo stesso esatto ordine per telefono e tramite portatile nello stesso momento. Se il database sottostante è un database conforme ad ACID, che cosa accade?
+    choices:
+    - content: Entrambi gli ordini vengono elaborati e usano il credito del punto vendita.
+      isCorrect: false
+      incorrectExplanation: Dopo che il secondo ordine ha determinato che il credito del punto vendita è già stato usato, esegue il rollback della transazione.
+    - content: Un ordine viene elaborato e usa il credito del punto vendita, mentre l'altro ordine comporta l'aggiornamento dell'inventario rimanente per gli articoli nel carrello, ma non viene completato.
+      isCorrect: false
+      incorrectExplanation: Dopo che il secondo ordine ha determinato che il credito del punto vendita è già stato usato, esegue il rollback della transazione.
+    - content: Un ordine viene elaborato e usa il credito del punto vendita, mentre l'altro ordine non viene elaborato.
+      isCorrect: true
+      correctExplanation: Dopo che il secondo ordine ha determinato che il credito del punto vendita è già stato usato, esegue il rollback della transazione.

@@ -1,0 +1,35 @@
+### YamlMime:ModuleUnit
+uid: learn.distribute-data-globally-with-cosmos-db.3-multi-region-write
+metadata:
+  title: Scrivere i dati in più aree
+  description: Informazioni su come usare Azure Cosmos DB per scrivere i dati in più aree contemporaneamente.
+  displayType: one-column
+  ms.openlocfilehash: 516e1abccb14f0cb217689fd1d510c5060e86290
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46341950"
+title: Scrivere i dati in più aree
+durationInMinutes: 5
+content: >
+  [!include[](includes/3-multi-region-write.md)]
+quiz:
+  title: Verifica delle conoscenze
+  questions:
+  - content: 'Vero o falso: i vantaggi di scrivere i dati in più aree sono la riduzione della latenza, il potenziale di scalabilità illimitato e la disponibilità migliorata.'
+    choices:
+    - content: Vero
+      isCorrect: true
+      correctExplanation: La scrittura dei dati in più aree offre molti vantaggi nelle prestazioni. La latenza per le operazioni di scrittura ad esempio è inferiore a quella negli account non multimaster.
+    - content: Falso
+      isCorrect: false
+      incorrectExplanation: La scrittura dei dati in più aree offre molti vantaggi nelle prestazioni. Ad esempio, la latenza per le operazioni di scrittura è inferiore a quella negli account diversi dal tipo multimaster.
+  - content: Quali sono i criteri di risoluzione dei conflitti predefiniti in un account multimaster?
+    choices:
+    - content: Prevale la versione dell'ultimo utente
+      isCorrect: true
+      correctExplanation: La risoluzione dei conflitti è integrata in Cosmos DB e viene eseguita nel server, all'interno del motore di database. La priorità della versione dell'ultimo utente rappresenta i criteri predefiniti.
+    - content: Procedura personalizzata definita dall'utente
+      isCorrect: false
+      incorrectExplanation: Le procedure definite dall'utente sono supportate, ma non sono il meccanismo predefinito per la gestione dei conflitti.

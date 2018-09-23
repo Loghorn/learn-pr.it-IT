@@ -1,0 +1,53 @@
+### YamlMime:ZonePivotGroups
+groups:
+- id: platform
+  title: Piattaforma
+  prompt: Scegliere la piattaforma
+  pivots:
+  - id: linux
+    title: Linux
+  - id: macos
+    title: Mac
+  - id: windows
+    title: Windows
+- id: platform-windows-mac
+  title: Piattaforma
+  prompt: Scegliere la piattaforma
+  pivots:
+  - id: macos
+    title: Mac
+  - id: windows
+    title: Windows
+- id: azure-interface
+  title: Shell
+  prompt: Scegliere la shell
+  pivots:
+  - id: bash
+    title: Bash
+  - id: powershell
+    title: PowerShell
+  - id: portal
+    title: Portale di Azure
+- id: dev-lang-csharp-javascript
+  title: Linguaggio di sviluppo
+  prompt: Scegliere il linguaggio di sviluppo
+  pivots:
+  - id: csharp
+    title: C#
+  - id: javascript
+    title: JavaScript
+- id: platform-cloud
+  title: Piattaforma
+  prompt: Scegliere la piattaforma da eseguire nel cloud
+  pivots:
+  - id: windows-cloud
+    title: Windows
+  - id: linux-cloud
+    title: Linux
+metadata:
+  ms.openlocfilehash: b7417f5c96bb8628028ac0ff399223c0d996c3c8
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46343719"

@@ -1,0 +1,39 @@
+### YamlMime:Module
+uid: learn.welcome-to-azure
+metadata:
+  title: Introduzione ad Azure
+  description: Iniziare a usare Azure creando la prima macchina virtuale nel cloud.
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 27e05266630f205e571db332c8942d7cb215d6c6
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46354154"
+title: Introduzione ad Azure
+summary: Iniziare a usare Azure creando e configurando la prima macchina virtuale nel cloud.
+abstract: "In questo modulo verrà descritto come:\n- Scoprire cos'è Microsoft Azure e in che modo è in relazione con il cloud computing.\n- Scoprire quanto è facile avviare la prima macchina virtuale, aggiungere un server Web e aumentare le prestazioni del server quando è necessaria maggiore potenza.\n- Iniziare a sviluppare le competenze di base necessarie per fare spazio al mondo del futuro o trovare il lavoro dei propri sogni. \n"
+prerequisites: Nessuno
+iconUrl: /learn/achievements/welcome-to-azure.svg
+levels:
+- beginner
+roles:
+- administrator
+- developer
+- solution-architect
+products:
+- azure
+- azure-clis
+- azure-virtual-machines
+units:
+- learn.welcome-to-azure.1-introduction
+- learn.welcome-to-azure.2-what-is-azure
+- learn.welcome-to-azure.3-create-a-vm
+- learn.welcome-to-azure.4-add-web-server
+- learn.welcome-to-azure.5-scale-up
+- learn.welcome-to-azure.6-summary
+achievement: learn.welcome-to-azure.badge
