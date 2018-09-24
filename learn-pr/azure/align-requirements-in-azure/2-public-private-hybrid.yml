@@ -1,0 +1,56 @@
+### YamlMime:ModuleUnit
+uid: learn.align-requirements-in-azure.2-public-private-hybrid
+title: <span data-ttu-id="dd675-101">Soluzioni di Azure per il cloud pubblico, privato e ibrido</span><span class="sxs-lookup"><span data-stu-id="dd675-101">Azure solutions for public, private, and hybrid cloud</span></span>
+metadata:
+  title: <span data-ttu-id="dd675-102">Soluzioni di Azure per il cloud pubblico, privato e ibrido</span><span class="sxs-lookup"><span data-stu-id="dd675-102">Azure solutions for public, private, and hybrid cloud</span></span>
+  description: <span data-ttu-id="dd675-103">Soluzioni di Azure per il cloud pubblico, privato e ibrido</span><span class="sxs-lookup"><span data-stu-id="dd675-103">Azure solutions for public, private, and hybrid cloud</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: bbea3817769d1592c24bbab4b03cf3dfcde3c267
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46352984"
+durationInMinutes: 15
+content: >
+  [!include[](includes/2-public-private-hybrid.md)]
+quiz:
+  title: <span data-ttu-id="dd675-104">Verificare le proprie conoscenze</span><span class="sxs-lookup"><span data-stu-id="dd675-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="dd675-105">Quale modello di distribuzione cloud è più appropriato per la situazione seguente?</span><span class="sxs-lookup"><span data-stu-id="dd675-105">Which cloud deployment model would be the best match for the following situation?</span></span> <span data-ttu-id="dd675-106">Per un progetto a breve termine è necessario un database di SQL Server.</span><span class="sxs-lookup"><span data-stu-id="dd675-106">A SQL server database is needed for a short-term project.</span></span> <span data-ttu-id="dd675-107">Il reparto IT non dispone di componenti hardware in grado di soddisfare i requisiti relativi alle prestazioni o delle risorse per distribuirli.</span><span class="sxs-lookup"><span data-stu-id="dd675-107">The IT department does not have available hardware that meets the performance requirements or resources to deploy it.</span></span> <span data-ttu-id="dd675-108">Il progetto inizia tra pochi giorni.</span><span class="sxs-lookup"><span data-stu-id="dd675-108">The project starts next week.</span></span> <span data-ttu-id="dd675-109">Al termine del progetto il database non è più necessario.</span><span class="sxs-lookup"><span data-stu-id="dd675-109">Once the project is over, the database is no longer needed.</span></span>
+    choices:
+    - content: <span data-ttu-id="dd675-110">Cloud pubblico</span><span class="sxs-lookup"><span data-stu-id="dd675-110">Public cloud</span></span>
+      correctExplanation: <span data-ttu-id="dd675-111">Considerando la necessità di una distribuzione rapida e il breve ciclo di vita del database SQL, il cloud pubblico risulta l'opzione migliore.</span><span class="sxs-lookup"><span data-stu-id="dd675-111">The need for a quick deployment and the short lifecycle of the SQL database make public cloud the best option.</span></span>
+      isCorrect: true
+    - content: <span data-ttu-id="dd675-112">Cloud privato</span><span class="sxs-lookup"><span data-stu-id="dd675-112">Private cloud</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="dd675-113">Considerando la necessità di una distribuzione rapida e il breve ciclo di vita del database SQL, il cloud pubblico risulta l'opzione migliore.</span><span class="sxs-lookup"><span data-stu-id="dd675-113">The need for a quick deployment and the short lifecycle of the SQL database make public cloud the best option.</span></span>
+    - content: <span data-ttu-id="dd675-114">Cloud ibrido</span><span class="sxs-lookup"><span data-stu-id="dd675-114">Hybrid cloud</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="dd675-115">Considerando la necessità di una distribuzione rapida e il breve ciclo di vita del database SQL, il cloud pubblico risulta l'opzione migliore.</span><span class="sxs-lookup"><span data-stu-id="dd675-115">The need for a quick deployment and the short lifecycle of the SQL database make public cloud the best option.</span></span>
+  - content: <span data-ttu-id="dd675-116">Qual è il modello di distribuzione cloud descritto nello scenario seguente?</span><span class="sxs-lookup"><span data-stu-id="dd675-116">Which cloud deployment model is described in the following scenario?</span></span> <span data-ttu-id="dd675-117">Si creano varie macchine virtuali nel cloud.</span><span class="sxs-lookup"><span data-stu-id="dd675-117">You create several virtual machines in the cloud.</span></span> <span data-ttu-id="dd675-118">Le macchine virtuali sono collegate in rete tra loro tramite una rete virtuale.</span><span class="sxs-lookup"><span data-stu-id="dd675-118">The VMs are networked together using a virtual network.</span></span> <span data-ttu-id="dd675-119">Le macchine virtuali hanno accesso ai file delle radiografie in uno spazio di archiviazione nel cloud.</span><span class="sxs-lookup"><span data-stu-id="dd675-119">The VMs have access to x-ray image files in cloud storage.</span></span> <span data-ttu-id="dd675-120">Una delle macchine virtuali è un server Web che ospita un sito Web esposto a Internet per consentire ai clienti di accedere ai loro record.</span><span class="sxs-lookup"><span data-stu-id="dd675-120">One of the VMs is a web server that host a website exposed to the Internet for customers to access their records.</span></span> <span data-ttu-id="dd675-121">È disponibile una VPN che connette la soluzione al data center locale per visualizzare informazioni sui clienti insieme ai file di immagine.</span><span class="sxs-lookup"><span data-stu-id="dd675-121">There is a VPN that connects the solution to your on-premises datacenter for customer information to display with the image files.</span></span>
+    choices:
+    - content: <span data-ttu-id="dd675-122">Cloud pubblico</span><span class="sxs-lookup"><span data-stu-id="dd675-122">Public cloud</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="dd675-123">Questo scenario usa sia un cloud pubblico che uno privato con una connessione tra i due.</span><span class="sxs-lookup"><span data-stu-id="dd675-123">This scenario uses both public and private cloud with a connection between the two.</span></span> <span data-ttu-id="dd675-124">Pertanto, è una distribuzione di cloud ibrido.</span><span class="sxs-lookup"><span data-stu-id="dd675-124">Therefore, it is a hybrid cloud deployment.</span></span>
+    - content: <span data-ttu-id="dd675-125">Cloud privato</span><span class="sxs-lookup"><span data-stu-id="dd675-125">Private cloud</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="dd675-126">Questo scenario usa sia un cloud pubblico che uno privato con una connessione tra i due.</span><span class="sxs-lookup"><span data-stu-id="dd675-126">This scenario uses both public and private cloud with a connection between the two.</span></span> <span data-ttu-id="dd675-127">Pertanto, è una distribuzione di cloud ibrido.</span><span class="sxs-lookup"><span data-stu-id="dd675-127">Therefore, it is a hybrid cloud deployment.</span></span>
+    - content: <span data-ttu-id="dd675-128">Cloud ibrido</span><span class="sxs-lookup"><span data-stu-id="dd675-128">Hybrid cloud</span></span>
+      correctExplanation: <span data-ttu-id="dd675-129">Questo scenario usa sia un cloud pubblico che uno privato con una connessione tra i due.</span><span class="sxs-lookup"><span data-stu-id="dd675-129">This scenario uses both public and private cloud with a connection between the two.</span></span> <span data-ttu-id="dd675-130">Pertanto, è una distribuzione di cloud ibrido.</span><span class="sxs-lookup"><span data-stu-id="dd675-130">Therefore, it is a hybrid cloud deployment.</span></span>
+      isCorrect: true
+  - content: <span data-ttu-id="dd675-131">Qual è il modello di distribuzione cloud descritto nello scenario seguente?</span><span class="sxs-lookup"><span data-stu-id="dd675-131">Which cloud deployment model is described in the following scenario?</span></span> <span data-ttu-id="dd675-132">Sono disponibili due data center nell'organizzazione.</span><span class="sxs-lookup"><span data-stu-id="dd675-132">You have two datacenters in your organization.</span></span> <span data-ttu-id="dd675-133">Un data center include un database che può risiedere soltanto in uno dei data center a causa di un requisito legale.</span><span class="sxs-lookup"><span data-stu-id="dd675-133">One datacenter has a database that can only reside in one of the datacenters because of a regulatory requirement.</span></span> <span data-ttu-id="dd675-134">Si vuole accedere al database dall'altro data center.</span><span class="sxs-lookup"><span data-stu-id="dd675-134">You want to access the database from the other datacenter.</span></span> <span data-ttu-id="dd675-135">Si crea una VPN tramite un provider di servizi cloud per la connessione dei due data center.</span><span class="sxs-lookup"><span data-stu-id="dd675-135">You create a VPN using a cloud provider to connect the two datacenters.</span></span>
+    choices:
+    - content: <span data-ttu-id="dd675-136">Cloud pubblico</span><span class="sxs-lookup"><span data-stu-id="dd675-136">Public cloud</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="dd675-137">La VPN è una risorsa del cloud pubblico. Tuttavia, dato che la connessione VPN è una connessione privata tra due data center privati, questa è una distribuzione di cloud privato.</span><span class="sxs-lookup"><span data-stu-id="dd675-137">The VPN is a public cloud resource; however, because the VPN is a private connection between two private datacenters, this is a private cloud deployment.</span></span>
+    - content: <span data-ttu-id="dd675-138">Cloud privato</span><span class="sxs-lookup"><span data-stu-id="dd675-138">Private cloud</span></span>
+      correctExplanation: <span data-ttu-id="dd675-139">La VPN è una risorsa del cloud pubblico. Tuttavia, dato che la connessione VPN è una connessione privata tra due data center privati, questa è una distribuzione di cloud privato.</span><span class="sxs-lookup"><span data-stu-id="dd675-139">The VPN is a public cloud resource; however, because the VPN is a private connection between two private datacenters, this is a private cloud deployment.</span></span>
+      isCorrect: true
+    - content: <span data-ttu-id="dd675-140">Cloud ibrido</span><span class="sxs-lookup"><span data-stu-id="dd675-140">Hybrid cloud</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="dd675-141">La VPN è una risorsa del cloud pubblico. Tuttavia, dato che la connessione VPN è una connessione privata tra due data center privati, questa è una distribuzione di cloud privato.</span><span class="sxs-lookup"><span data-stu-id="dd675-141">The VPN is a public cloud resource; however, because the VPN is a private connection between two private datacenters, this is a private cloud deployment.</span></span>

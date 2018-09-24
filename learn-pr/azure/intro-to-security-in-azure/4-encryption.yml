@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.introduction-to-security.4-encryption
+title: <span data-ttu-id="6f4bc-101">Crittografia</span><span class="sxs-lookup"><span data-stu-id="6f4bc-101">Encryption</span></span>
+metadata:
+  title: <span data-ttu-id="6f4bc-102">Crittografia</span><span class="sxs-lookup"><span data-stu-id="6f4bc-102">Encryption</span></span>
+  description: <span data-ttu-id="6f4bc-103">In questa unità viene spiegato come usare la crittografia per proteggere i dati.</span><span class="sxs-lookup"><span data-stu-id="6f4bc-103">In this unit, we'll discuss how to use encryption to secure your data.</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 199a92a1e365547f75cb7d1d556bab67691d6daf
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46341359"
+durationInMinutes: 8
+content: '[!include[](includes/4-encryption.md)]'

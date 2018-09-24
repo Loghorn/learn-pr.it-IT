@@ -1,0 +1,10 @@
+![Un contenitore vuoto connesso all'archiviazione di Azure su una mappa del mondo che rappresenta la necessità di una soluzione di archiviazione](../media/6-heading.png)
+
+<span data-ttu-id="5360a-102">In questo modulo sono stati illustrati i vantaggi offerti dall'uso di Azure per archiviare i dati.</span><span class="sxs-lookup"><span data-stu-id="5360a-102">In this module, you explored the benefits of using Azure to store your data.</span></span> <span data-ttu-id="5360a-103">Azure offre le funzionalità seguenti:</span><span class="sxs-lookup"><span data-stu-id="5360a-103">Azure provides the following features:</span></span>
+
+- <span data-ttu-id="5360a-104">Archiviazione di dati strutturati e non strutturati.</span><span class="sxs-lookup"><span data-stu-id="5360a-104">Storage of both structured and unstructured data.</span></span>
+- <span data-ttu-id="5360a-105">Sicurezza elevata che supporta gli standard di conformità globali.</span><span class="sxs-lookup"><span data-stu-id="5360a-105">High security that supports global compliance standards.</span></span>
+- <span data-ttu-id="5360a-106">Funzionalità per bilanciamento del carico, disponibilità elevata e ridondanza.</span><span class="sxs-lookup"><span data-stu-id="5360a-106">Load balancing, high availability, and redundancy capabilities.</span></span>
+- <span data-ttu-id="5360a-107">La possibilità di archiviare grandi volumi di dati direttamente nel browser tramite funzionalità quali Archiviazione BLOB di Azure.</span><span class="sxs-lookup"><span data-stu-id="5360a-107">The ability to store large volumes of data directly to the browser using features such as Azure Blob storage.</span></span>
+
+<span data-ttu-id="5360a-108">Infine, grazie alle capacità di archiviazione dei dati, Azure è la piattaforma ideale per l'hosting di qualsiasi applicazione o portale globale di grandi dimensioni.</span><span class="sxs-lookup"><span data-stu-id="5360a-108">Ultimately, the capabilities of Azure data storage make it an ideal platform for hosting any large global application or portal.</span></span>

@@ -1,0 +1,39 @@
+### YamlMime:ModuleUnit
+uid: learn.create-cosmos-db-for-scale.4-how-to-choose-a-partition-key
+metadata:
+  title: <span data-ttu-id="e1a87-101">Scelta di una chiave di partizione in Azure Cosmos DB</span><span class="sxs-lookup"><span data-stu-id="e1a87-101">Choosing a partition key in Azure Cosmos DB?</span></span>
+  description: <span data-ttu-id="e1a87-102">Informazioni su come creare una raccolta con una chiave di partizione che consentirà di ridimensionare il database in caso di maggiori esigenze.</span><span class="sxs-lookup"><span data-stu-id="e1a87-102">Learn how to create a collection with a partition key that will enable your database to scale as your needs grow.</span></span>
+  ms.date: 09/24/2018
+  author: mimig1
+  ms.author: mimig
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: d4fb07bb85e7e7cb2dda9bdd8fe80880babb65b1
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46338539"
+title: <span data-ttu-id="e1a87-103">Scelta di una chiave di partizione</span><span class="sxs-lookup"><span data-stu-id="e1a87-103">Choosing a partition key</span></span>
+durationInMinutes: 6
+content: >
+  [!include[](includes/4-how-to-choose-a-partition-key.md)]
+quiz:
+  title: <span data-ttu-id="e1a87-104">Verificare le proprie conoscenze</span><span class="sxs-lookup"><span data-stu-id="e1a87-104">Check your knowledge</span></span>
+  questions:
+  - content: '<span data-ttu-id="e1a87-105">Vero o falso: è possibile **aggiungere** una chiave di partizione a una raccolta di Azure Cosmos DB dopo che è stata creata?</span><span class="sxs-lookup"><span data-stu-id="e1a87-105">True or false: You can **add** a partition key to an Azure Cosmos DB collection after it has been created?</span></span>'
+    choices:
+    - content: <span data-ttu-id="e1a87-106">Vero</span><span class="sxs-lookup"><span data-stu-id="e1a87-106">True</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="e1a87-107">È possibile impostare la chiave di partizione solo quando viene creata la raccolta.</span><span class="sxs-lookup"><span data-stu-id="e1a87-107">You can set the partition key only when the collection is created.</span></span>
+    - content: <span data-ttu-id="e1a87-108">Falso</span><span class="sxs-lookup"><span data-stu-id="e1a87-108">False</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="e1a87-109">È possibile impostare la chiave di partizione solo quando viene creata la raccolta.</span><span class="sxs-lookup"><span data-stu-id="e1a87-109">You can set the partition key only when the collection is created.</span></span>
+  - content: '<span data-ttu-id="e1a87-110">Vero o falso: è possibile **modificare** la chiave di partizione dopo aver creato la raccolta di Azure Cosmos DB?</span><span class="sxs-lookup"><span data-stu-id="e1a87-110">True or false: You can you **change** the partition key after the Azure Cosmos DB collection has been created?</span></span>'
+    choices:
+    - content: <span data-ttu-id="e1a87-111">Vero</span><span class="sxs-lookup"><span data-stu-id="e1a87-111">True</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="e1a87-112">Le chiavi di partizione non possono essere modificate dopo la creazione della raccolta.</span><span class="sxs-lookup"><span data-stu-id="e1a87-112">Partition keys cannot be modified after the collection is created.</span></span>
+    - content: <span data-ttu-id="e1a87-113">Falso</span><span class="sxs-lookup"><span data-stu-id="e1a87-113">False</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="e1a87-114">Le chiavi di partizione non possono essere modificate dopo la creazione della raccolta.</span><span class="sxs-lookup"><span data-stu-id="e1a87-114">Partition keys cannot be modified after the collection is created.</span></span>

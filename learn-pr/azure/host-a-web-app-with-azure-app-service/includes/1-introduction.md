@@ -1,0 +1,17 @@
+<span data-ttu-id="bb6a4-101">Si supponga di creare un sito Web per una nuova attività o di eseguire un'app Web esistente in un server locale obsoleto.</span><span class="sxs-lookup"><span data-stu-id="bb6a4-101">Imagine you're building a website for a new business, or you're running an existing web app on an aging on-premises server.</span></span> <span data-ttu-id="bb6a4-102">La configurazione di un nuovo server può risultare complessa.</span><span class="sxs-lookup"><span data-stu-id="bb6a4-102">Setting up a new server can be challenging.</span></span> <span data-ttu-id="bb6a4-103">È necessario l'hardware appropriato, ad esempio un sistema operativo di livello server, e uno stack di hosting Web.</span><span class="sxs-lookup"><span data-stu-id="bb6a4-103">You need appropriate hardware, likely a server-level operating system, and a web hosting stack.</span></span>
+
+<span data-ttu-id="bb6a4-104">Quando poi il server è in esecuzione, è necessario gestirlo.</span><span class="sxs-lookup"><span data-stu-id="bb6a4-104">And once it's running, you need to maintain the server.</span></span> <span data-ttu-id="bb6a4-105">Che cosa accade se il traffico dei siti Web aumenta?</span><span class="sxs-lookup"><span data-stu-id="bb6a4-105">And what happens if your website traffic increases?</span></span> <span data-ttu-id="bb6a4-106">Potrebbe essere necessario investire in hardware aggiuntivo.</span><span class="sxs-lookup"><span data-stu-id="bb6a4-106">You may need to invest in additional hardware.</span></span>
+
+<span data-ttu-id="bb6a4-107">L'hosting dell'applicazione Web con Servizio app di Azure rende la distribuzione e la gestione di un'app Web molto più semplici rispetto alla gestione di un server fisico.</span><span class="sxs-lookup"><span data-stu-id="bb6a4-107">Hosting your web application using Azure App Service makes deploying and managing a web app much easier when compared to managing a physical server.</span></span> <span data-ttu-id="bb6a4-108">Questo modulo illustra come distribuire un'app Web .NET Core in Servizio app di Azure.</span><span class="sxs-lookup"><span data-stu-id="bb6a4-108">In this module, we'll deploy a .NET Core web app to Azure App Service.</span></span>
+
+## <a name="learning-objectives"></a><span data-ttu-id="bb6a4-109">Obiettivi di apprendimento</span><span class="sxs-lookup"><span data-stu-id="bb6a4-109">Learning objectives</span></span>
+
+<span data-ttu-id="bb6a4-110">In questo modulo verrà descritto come:</span><span class="sxs-lookup"><span data-stu-id="bb6a4-110">In this module, you will:</span></span>
+
+- <span data-ttu-id="bb6a4-111">Usare il portale di Azure per creare un'app Web in Servizio app di Azure</span><span class="sxs-lookup"><span data-stu-id="bb6a4-111">Use the Azure portal to create a web app in Azure App Service</span></span>
+- <span data-ttu-id="bb6a4-112">Creare un'app Web ASP.NET Core usando Bash</span><span class="sxs-lookup"><span data-stu-id="bb6a4-112">Create an ASP.NET Core web app using bash</span></span>
+- <span data-ttu-id="bb6a4-113">Caricare il codice in Servizio app di Azure tramite Git</span><span class="sxs-lookup"><span data-stu-id="bb6a4-113">Upload your code to Azure App Service using Git</span></span>
+
+## <a name="prerequisites"></a><span data-ttu-id="bb6a4-114">Prerequisiti</span><span class="sxs-lookup"><span data-stu-id="bb6a4-114">Prerequisites</span></span>  
+
+<span data-ttu-id="bb6a4-115">Nessuno</span><span class="sxs-lookup"><span data-stu-id="bb6a4-115">None</span></span>

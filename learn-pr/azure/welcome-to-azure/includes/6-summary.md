@@ -1,0 +1,13 @@
+<span data-ttu-id="f6902-101">Dopo aver preparato la</span><span class="sxs-lookup"><span data-stu-id="f6902-101">Nice work!</span></span> <span data-ttu-id="f6902-102">prima macchina virtuale ci sì è probabilmente fatti un'idea di come funziona Azure e di quanto sia facile attivare un sistema, configurare il software necessario e rimuovere tutto quando non serve più.</span><span class="sxs-lookup"><span data-stu-id="f6902-102">With your first virtual machine under your belt, you now have a sense of how Azure works and how easy it is to bring up a system, configure some software, and tear everything down when it's no longer needed.</span></span>
+
+<span data-ttu-id="f6902-103">Azure offre servizi utili per trasformare il modo in cui l'organizzazione offre nuove funzionalità agli utenti in modi che semplicemente non sono possibili senza le potenzialità del cloud.</span><span class="sxs-lookup"><span data-stu-id="f6902-103">Azure provides services that can help transform the way your organization delivers new features to your users in ways you simply can't do without the power of the cloud.</span></span>
+
+![Un tocco accademico che rappresenta l'inizio positivo del percorso formativo](../media/6-heading.png)
+
+[!include[](../../../includes/azure-sandbox-cleanup.md)]
+
+## <a name="continue-your-azure-journey"></a><span data-ttu-id="f6902-105">Continuare il viaggio nel mondo di Azure</span><span class="sxs-lookup"><span data-stu-id="f6902-105">Continue your Azure journey</span></span>
+
+<span data-ttu-id="f6902-106">Microsoft Learn offre percorsi di apprendimento basati sui propri ruoli e interessi.</span><span class="sxs-lookup"><span data-stu-id="f6902-106">Microsoft Learn provides learning paths based on your role and interests.</span></span>
+
+<span data-ttu-id="f6902-107">Per proseguire, il percorso di apprendimento [Concetti fondamentali su Azure](/learn/paths/azure-fundamentals/) può essere una buona scelta.</span><span class="sxs-lookup"><span data-stu-id="f6902-107">A good next step is to check out the [Azure fundamentals](/learn/paths/azure-fundamentals/) learning path.</span></span> <span data-ttu-id="f6902-108">Si impareranno i concetti fondamentali del cloud computing e si scoprirà come i servizi di Azure, ad esempio calcolo, archiviazione, rete e sicurezza, consentano di sfruttare al meglio le potenzialità del cloud e di dare spazio alla creatività.</span><span class="sxs-lookup"><span data-stu-id="f6902-108">You'll learn the fundamental concepts behind cloud computing and how Azure services such as compute, storage, networking, and security can help you unlock the power of the cloud and create that next great breakthrough idea.</span></span>

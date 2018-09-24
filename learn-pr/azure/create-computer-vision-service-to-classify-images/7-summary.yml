@@ -1,0 +1,53 @@
+### YamlMime:ModuleUnit
+uid: learn.create-computer-vision-service.7-summary
+title: <span data-ttu-id="54663-101">Riepilogo e verifica delle conoscenze</span><span class="sxs-lookup"><span data-stu-id="54663-101">Summary and knowledge check</span></span>
+metadata:
+  title: <span data-ttu-id="54663-102">Riepilogo e verifica delle conoscenze</span><span class="sxs-lookup"><span data-stu-id="54663-102">Summary and knowledge check</span></span>
+  description: <span data-ttu-id="54663-103">Riepilogo e verifica delle conoscenze</span><span class="sxs-lookup"><span data-stu-id="54663-103">Summary and knowledge check</span></span>
+  ms.date: 09/24/2018
+  author: AndrewJByrne
+  ms.author: marouill
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 931c47e93c694b823427af0464937d07a5411945
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46339786"
+durationInMinutes: 5
+content: >
+  [!include[](includes/7-summary.md)]
+quiz:
+  title: <span data-ttu-id="54663-104">Verificare le proprie conoscenze</span><span class="sxs-lookup"><span data-stu-id="54663-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="54663-105">Quando si analizza un'immagine con l'API Visione artificiale, è possibile specificare i tipi di caratteristiche visive da restituire.</span><span class="sxs-lookup"><span data-stu-id="54663-105">When analyzing an image using the Computer Vision API, you can specify visual feature types to return.</span></span>  <span data-ttu-id="54663-106">Quale dei seguenti è un tipo di caratteristica visiva valido quando si chiama l'operazione "analyze"?</span><span class="sxs-lookup"><span data-stu-id="54663-106">Which of the following is a valid visual feature type when calling the 'analyze' operation?</span></span>
+    choices:
+    - content: '<span data-ttu-id="54663-107">Film</span><span class="sxs-lookup"><span data-stu-id="54663-107">Movies</span></span> '
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="54663-108">I film non sono un tipo di caratteristica visiva valido.</span><span class="sxs-lookup"><span data-stu-id="54663-108">Movies is not a valid visual feature type.</span></span>
+    - content: <span data-ttu-id="54663-109">Animali</span><span class="sxs-lookup"><span data-stu-id="54663-109">Animals</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="54663-110">Gli animali non sono un tipo di caratteristica visiva valido.</span><span class="sxs-lookup"><span data-stu-id="54663-110">Animals is not a valid visual feature type.</span></span>
+    - content: <span data-ttu-id="54663-111">Celebrità</span><span class="sxs-lookup"><span data-stu-id="54663-111">Celebrities</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="54663-112">I due tipi di caratteristiche visive che è possibile specificare sono Celebrità e Punti di riferimento.</span><span class="sxs-lookup"><span data-stu-id="54663-112">The two visual feature types you can specify are Celebrities and Landmarks.</span></span>
+  - content: <span data-ttu-id="54663-113">Quale delle affermazioni seguenti descrive che cosa fa il *ritaglio intelligente* quando si genera un'anteprima con l'operazione `generateThumbnail`?</span><span class="sxs-lookup"><span data-stu-id="54663-113">Which of the following describes what *smart cropping* does when generating a thumbnail with the `generateThumbnail` operation?</span></span>
+    choices:
+    - content: <span data-ttu-id="54663-114">Ritaglia le immagini a partire dalla parte superiore a sinistra.</span><span class="sxs-lookup"><span data-stu-id="54663-114">It crops images from the top left.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="54663-115">Se si ritaglia un'immagine a partire dalla parte superiore sinistra, si potrebbe rimuovere una parte significativa dell'immagine, ovvero l'area di interesse.</span><span class="sxs-lookup"><span data-stu-id="54663-115">Cropping an image from the top left may result in you removing a significant part of the image, also known as the region of interest.</span></span>
+    - content: <span data-ttu-id="54663-116">Posiziona al centro dell'anteprima l'"area di interesse".</span><span class="sxs-lookup"><span data-stu-id="54663-116">It centers the thumbnail on the "region of interest".</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="54663-117">Se il parametro "smartCropping" è true, l'API applica il ritaglio intelligente per posizionare al centro dell'anteprima l'"area di interesse".</span><span class="sxs-lookup"><span data-stu-id="54663-117">If the parameter 'smartCropping' is true, the API applies smart cropping to center the thumbnail on the 'region of interest'.</span></span> <span data-ttu-id="54663-118">In caso contrario, ritaglia a partire dal centro.</span><span class="sxs-lookup"><span data-stu-id="54663-118">Otherwise, it crops to the center.</span></span>
+  - content: <span data-ttu-id="54663-119">Si sta integrando l'API Visione artificiale nella soluzione.</span><span class="sxs-lookup"><span data-stu-id="54663-119">You're integrating the Computer Vision API into your solution.</span></span> <span data-ttu-id="54663-120">Si è creato un account di Servizi Cognitivi per il servizio Visione artificiale nell'area eastus.</span><span class="sxs-lookup"><span data-stu-id="54663-120">You created a cognitive services account for the Computer Vision service in the eastus region.</span></span> <span data-ttu-id="54663-121">Quale dei seguenti è l'indirizzo corretto per poter accedere all'operazione `ocr`?</span><span class="sxs-lookup"><span data-stu-id="54663-121">Which of the following is the correct address for you to access the `ocr` operation?</span></span>
+    choices:
+    - content: <span data-ttu-id="54663-122">eastus2.api.cognitive.microsoft.com/vision/v2.0/ocr</span><span class="sxs-lookup"><span data-stu-id="54663-122">eastus2.api.cognitive.microsoft.com/vision/v2.0/ocr</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="54663-123">Non ci si è iscritti per una chiave di accesso per effettuare richieste da quest'area.</span><span class="sxs-lookup"><span data-stu-id="54663-123">You did not sign up for an access key to make requests from this region.</span></span> <span data-ttu-id="54663-124">L'endpoint specifica l'area scelta durante l'iscrizione, l'URL del servizio e una risorsa usata nella richiesta.</span><span class="sxs-lookup"><span data-stu-id="54663-124">Remember, the endpoint specifies the region you chose during sign up, the service URL, and a resource used on the request.</span></span>
+    - content: <span data-ttu-id="54663-125">eastus.api.cognitive.microsoft.com/vision/v2.0/describe</span><span class="sxs-lookup"><span data-stu-id="54663-125">eastus.api.cognitive.microsoft.com/vision/v2.0/describe</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="54663-126">Questo indirizzo invia una richiesta alla risorsa delle entità.</span><span class="sxs-lookup"><span data-stu-id="54663-126">This address sends a request to the entities resource.</span></span>
+    - content: <span data-ttu-id="54663-127">eastus.api.cognitive.microsoft.com/vision/v2.0/ocr</span><span class="sxs-lookup"><span data-stu-id="54663-127">eastus.api.cognitive.microsoft.com/vision/v2.0/ocr</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="54663-128">L'endpoint specifica l'area scelta durante l'iscrizione, l'URL del servizio e una risorsa usata nella richiesta.</span><span class="sxs-lookup"><span data-stu-id="54663-128">The endpoint specifies the region you chose during sign up, the service URL, and a resource used on the request.</span></span>

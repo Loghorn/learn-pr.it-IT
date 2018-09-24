@@ -1,0 +1,5 @@
+<span data-ttu-id="4cb07-101">È stata creata e distribuita un'applicazione Web completa in Servizio app di Azure.</span><span class="sxs-lookup"><span data-stu-id="4cb07-101">You've successfully created and deployed a full-featured web application to Azure App Service.</span></span>
+
+<span data-ttu-id="4cb07-102">Servizio app semplifica la gestione e il controllo dell'app Web rispetto alle opzioni di hosting tradizionali.</span><span class="sxs-lookup"><span data-stu-id="4cb07-102">App Service simplifies managing and controlling your web app in comparison to traditional hosting options.</span></span> <span data-ttu-id="4cb07-103">Servizio app consente di ridurre il tempo e l'impegno dedicati all'esecuzione e alla gestione dell'app Web e offre funzionalità cloud avanzate, ad esempio la scalabilità automatica e l'integrazione di Git.</span><span class="sxs-lookup"><span data-stu-id="4cb07-103">App Service can help you reduce the time and effort spent running and managing your web app, and provide advanced cloud features such as auto scaling and Git integration.</span></span>
+
+[!include[](../../../includes/azure-sandbox-cleanup.md)]

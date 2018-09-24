@@ -1,0 +1,31 @@
+### YamlMime:ModuleUnit
+uid: learn.choose-messaging-model.2-choose-whether-to-use-message-queues-or-events
+title: <span data-ttu-id="2f57c-101">Scegliere se usare i messaggi o gli eventi</span><span class="sxs-lookup"><span data-stu-id="2f57c-101">Choose whether to use messages or events</span></span>
+metadata:
+  title: <span data-ttu-id="2f57c-102">Scegliere se usare i messaggi o gli eventi</span><span class="sxs-lookup"><span data-stu-id="2f57c-102">Choose whether to use messages or events</span></span>
+  description: <span data-ttu-id="2f57c-103">Scegliere se usare i messaggi o gli eventi</span><span class="sxs-lookup"><span data-stu-id="2f57c-103">Choose whether to use messages or events</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 048a3ce0646b3adf5d5124911c1c8093de2180d1
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46341889"
+durationInMinutes: 10
+content: >
+  [!include[](includes/2-choose-whether-to-use-message-queues-or-events.md)]
+quiz:
+  title: <span data-ttu-id="2f57c-104">Verificare le proprie conoscenze</span><span class="sxs-lookup"><span data-stu-id="2f57c-104">Check your knowledge</span></span>
+  questions:
+  - content: "<span data-ttu-id=\"2f57c-105\">Si supponga di avere un'applicazione distribuita con un servizio Web che autentica gli utenti.</span><span class=\"sxs-lookup\"><span data-stu-id=\"2f57c-105\">Suppose you have a distributed application with a web service that authenticates users.</span></span> <span data-ttu-id=\"2f57c-106\">Quando un utente accede, il servizio Web comunica con tutte le applicazioni client perché venga visualizzato lo stato \"Online\".</span><span class=\"sxs-lookup\"><span data-stu-id=\"2f57c-106\">When a user logs on, the web service communicates with all of the client applications to display the status of \"Online\".</span></span> <span data-ttu-id=\"2f57c-107\">Vero o falso: questo è un esempio di un messaggio in un'applicazione distribuita.</span><span class=\"sxs-lookup\"><span data-stu-id=\"2f57c-107\">True or false: This is an example of a message in a distributed application.</span></span>"
+    choices:
+    - content: <span data-ttu-id="2f57c-108">Vero</span><span class="sxs-lookup"><span data-stu-id="2f57c-108">True</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="2f57c-109">I messaggi contengono in genere dati non elaborati, ad esempio un file multimediale.</span><span class="sxs-lookup"><span data-stu-id="2f57c-109">Messages typically contain the raw data itself, for example, a media file.</span></span> <span data-ttu-id="2f57c-110">In questa situazione, si invierà una semplice stringa di dati che rappresenta lo stato di un utente e,</span><span class="sxs-lookup"><span data-stu-id="2f57c-110">In this situation, we're sending a simple piece of data that represents the status of a user.</span></span> <span data-ttu-id="2f57c-111">in seguito, si invieranno i dati in risposta a un'azione. Questo è un caso ideale per l'uso di un evento.</span><span class="sxs-lookup"><span data-stu-id="2f57c-111">Also, we're sending the data in response to an action, which is a perfect case for using an event.</span></span>
+    - content: <span data-ttu-id="2f57c-112">Falso</span><span class="sxs-lookup"><span data-stu-id="2f57c-112">False</span></span>
+      correctExplanation: <span data-ttu-id="2f57c-113">I messaggi contengono in genere dati non elaborati, ad esempio un file multimediale.</span><span class="sxs-lookup"><span data-stu-id="2f57c-113">Messages typically contain the raw data itself, for example, a media file.</span></span> <span data-ttu-id="2f57c-114">In questa situazione, si invierà una semplice stringa di dati che rappresenta lo stato di un utente e,</span><span class="sxs-lookup"><span data-stu-id="2f57c-114">In this situation, we're sending a simple piece of data that represents the status of a user.</span></span> <span data-ttu-id="2f57c-115">in seguito, si invieranno i dati in risposta a un'azione. Questo è un caso ideale per l'uso di un evento.</span><span class="sxs-lookup"><span data-stu-id="2f57c-115">Also, we're sending the data in response to an action, which is a perfect case for using an event.</span></span>
+      isCorrect: true

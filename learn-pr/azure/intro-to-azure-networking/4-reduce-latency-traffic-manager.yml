@@ -1,0 +1,42 @@
+### YamlMime:ModuleUnit
+uid: learn.intro-to-azure-networking.4-reduce-latency-traffic-manager
+title: <span data-ttu-id="3f613-101">Ridurre la latenza con Gestione traffico di Azure</span><span class="sxs-lookup"><span data-stu-id="3f613-101">Reduce latency with Azure Traffic Manager</span></span>
+metadata:
+  title: <span data-ttu-id="3f613-102">Ridurre la latenza con Gestione traffico di Azure</span><span class="sxs-lookup"><span data-stu-id="3f613-102">Reduce latency with Azure Traffic Manager</span></span>
+  description: <span data-ttu-id="3f613-103">Informazioni su come Gestione traffico consente di ridurre la latenza e creare resilienza in più aree geografiche.</span><span class="sxs-lookup"><span data-stu-id="3f613-103">Learn how Traffic Manager can reduce latency and create resiliency across geographic regions.</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 613ac9817c513c55153429983ab65b679eea183e
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46354035"
+durationInMinutes: 7
+content: >
+  [!include[](includes/4-reduce-latency-traffic-manager.md)]
+quiz:
+  title: <span data-ttu-id="3f613-104">Verificare le proprie conoscenze</span><span class="sxs-lookup"><span data-stu-id="3f613-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="3f613-105">In che modo Gestione traffico di Microsoft Azure riduce la latenza?</span><span class="sxs-lookup"><span data-stu-id="3f613-105">How does Azure Traffic Manager reduce latency?</span></span>
+    choices:
+    - content: <span data-ttu-id="3f613-106">Sceglie solo le reti più veloci tra endpoint.</span><span class="sxs-lookup"><span data-stu-id="3f613-106">It chooses only the fastest networks between endpoints.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="3f613-107">Scegliere il server che si trova più vicino all'utente è un buon modo per ridurre la latenza.</span><span class="sxs-lookup"><span data-stu-id="3f613-107">Choosing the server that's closest to the user is a good way to reduce latency.</span></span>
+    - content: <span data-ttu-id="3f613-108">Sceglie l'endpoint più vicino al server DNS dell'utente.</span><span class="sxs-lookup"><span data-stu-id="3f613-108">It chooses the endpoint that's closest to the user's DNS server.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="3f613-109">Scegliere il server che si trova più vicino all'utente è un buon modo per ridurre la latenza.</span><span class="sxs-lookup"><span data-stu-id="3f613-109">Choosing the server that's closest to the user is a good way to reduce latency.</span></span>
+    - content: <span data-ttu-id="3f613-110">I contenuti vengono memorizzati nella cache, in modo simile a quanto avviene nelle reti per la distribuzione di contenuti.</span><span class="sxs-lookup"><span data-stu-id="3f613-110">It caches content, similar to how content delivery networks work.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="3f613-111">Scegliere il server che si trova più vicino all'utente è un buon modo per ridurre la latenza.</span><span class="sxs-lookup"><span data-stu-id="3f613-111">Choosing the server that's closest to the user is a good way to reduce latency.</span></span>
+  - content: <span data-ttu-id="3f613-112">Si supponga che l'utente viva Inghilterra, ma che il server DNS si trovi in Italia.</span><span class="sxs-lookup"><span data-stu-id="3f613-112">Suppose you live in England, but your DNS server is in Italy.</span></span> <span data-ttu-id="3f613-113">In che modo Gestione traffico indirizza il traffico?</span><span class="sxs-lookup"><span data-stu-id="3f613-113">How does Traffic Manager direct traffic?</span></span>
+    choices:
+    - content: <span data-ttu-id="3f613-114">Sceglie il servizio più vicino all'Inghilterra.</span><span class="sxs-lookup"><span data-stu-id="3f613-114">It chooses the service that's closest to England.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="3f613-115">Per indirizzare il traffico, Gestione traffico usa il _server DNS_ più vicino all'utente.</span><span class="sxs-lookup"><span data-stu-id="3f613-115">Traffic Manager uses the _DNS server_ that's closest to the user, to direct traffic.</span></span>
+    - content: <span data-ttu-id="3f613-116">Sceglie il servizio più vicino all'Italia.</span><span class="sxs-lookup"><span data-stu-id="3f613-116">It chooses the service that's closest to Italy.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="3f613-117">Per indirizzare il traffico, Gestione traffico usa il _server DNS_ più vicino all'utente.</span><span class="sxs-lookup"><span data-stu-id="3f613-117">Traffic Manager uses the _DNS server_ that's closest to the user, to direct traffic.</span></span>

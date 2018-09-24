@@ -1,0 +1,33 @@
+<span data-ttu-id="93f5c-101">Si supponga di aver scelto Azure PowerShell come soluzione di automazione.</span><span class="sxs-lookup"><span data-stu-id="93f5c-101">Suppose you have chosen Azure PowerShell as your automation solution.</span></span> <span data-ttu-id="93f5c-102">Gli amministratori preferiscono eseguire gli script in locale anziché in Azure Cloud Shell.</span><span class="sxs-lookup"><span data-stu-id="93f5c-102">Your administrators prefer to run their scripts locally rather than in the Azure Cloud Shell.</span></span> <span data-ttu-id="93f5c-103">Il team usa computer che eseguono Linux, macOS e Windows.</span><span class="sxs-lookup"><span data-stu-id="93f5c-103">The team uses machines that run Linux, macOS, and Windows.</span></span> <span data-ttu-id="93f5c-104">È necessario fare in modo che Azure PowerShell sia disponibile e funzionante in tutti i dispositivi.</span><span class="sxs-lookup"><span data-stu-id="93f5c-104">You need to get Azure PowerShell working on all their devices.</span></span> 
+
+## <a name="what-must-be-installed"></a><span data-ttu-id="93f5c-105">Che cosa è necessario installare?</span><span class="sxs-lookup"><span data-stu-id="93f5c-105">What must be installed?</span></span>
+<span data-ttu-id="93f5c-106">Le effettive istruzioni di installazione verranno descritte nell'unità successiva. Ora verranno esaminati i due componenti che costituiscono Azure PowerShell.</span><span class="sxs-lookup"><span data-stu-id="93f5c-106">We'll go through the actual installation instructions in the next unit, but let's look at the two components which make up Azure PowerShell.</span></span>
+
+- <span data-ttu-id="93f5c-107">**Il prodotto PowerShell di base**. È disponibile in due varianti: PowerShell in Windows e PowerShell Core in macOS e Linux.</span><span class="sxs-lookup"><span data-stu-id="93f5c-107">**The base PowerShell product** This comes in two variants: PowerShell on Windows, and PowerShell Core on macOS and Linux.</span></span>
+- <span data-ttu-id="93f5c-108">**Il modulo di Azure PowerShell**. Questo modulo aggiuntivo deve essere installato per aggiungere i comandi specifici di Azure a PowerShell.</span><span class="sxs-lookup"><span data-stu-id="93f5c-108">**The Azure PowerShell module** This extra module must be installed to add the Azure-specific commands to PowerShell.</span></span>
+
+> [!TIP]
+> <span data-ttu-id="93f5c-109">PowerShell è incluso in Windows, ma potrebbe essere disponibile un aggiornamento.</span><span class="sxs-lookup"><span data-stu-id="93f5c-109">PowerShell is included with Windows (but might have an update available).</span></span> <span data-ttu-id="93f5c-110">In Linux e macOS è necessario installare PowerShell Core.</span><span class="sxs-lookup"><span data-stu-id="93f5c-110">You will need to install PowerShell Core on Linux and macOS.</span></span>
+
+<span data-ttu-id="93f5c-111">Dopo aver installato il prodotto di base, aggiungere il modulo di Azure PowerShell all'installazione.</span><span class="sxs-lookup"><span data-stu-id="93f5c-111">Once the base product is installed, you then add the Azure PowerShell module to your installation.</span></span>
+
+## <a name="how-to-install-powershell-core"></a><span data-ttu-id="93f5c-112">Come installare PowerShell Core</span><span class="sxs-lookup"><span data-stu-id="93f5c-112">How to install PowerShell Core</span></span>
+<span data-ttu-id="93f5c-113">In Linux e macOS, si usa uno strumento di gestione pacchetti per installare PowerShell Core.</span><span class="sxs-lookup"><span data-stu-id="93f5c-113">On both Linux and macOS, you use a package manager to install PowerShell Core.</span></span> <span data-ttu-id="93f5c-114">Lo strumento di gestione pacchetti consigliato è diverso in base al sistema operativo e alla distribuzione.</span><span class="sxs-lookup"><span data-stu-id="93f5c-114">The recommended package manager differs by OS and distribution.</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="93f5c-115">PowerShell Core è disponibile nel repository Microsoft, quindi è prima necessario aggiungere tale repository allo strumento di gestione pacchetti.</span><span class="sxs-lookup"><span data-stu-id="93f5c-115">PowerShell Core is available in the Microsoft repository, so you'll first need to add that repository to your package manager.</span></span>
+
+### <a name="linux"></a><span data-ttu-id="93f5c-116">Linux</span><span class="sxs-lookup"><span data-stu-id="93f5c-116">Linux</span></span>
+<span data-ttu-id="93f5c-117">In Linux, lo strumento di gestione pacchetti cambia a seconda della distribuzione di Linux scelta.</span><span class="sxs-lookup"><span data-stu-id="93f5c-117">On Linux, the package manager will change based on the Linux distribution you choose.</span></span>
+
+| <span data-ttu-id="93f5c-118">Distribuzione</span><span class="sxs-lookup"><span data-stu-id="93f5c-118">Distribution(s)</span></span>  | <span data-ttu-id="93f5c-119">Strumento di gestione pacchetti</span><span class="sxs-lookup"><span data-stu-id="93f5c-119">Package manager</span></span> |
+|------------------|-----------------|
+| <span data-ttu-id="93f5c-120">Ubuntu, Debian</span><span class="sxs-lookup"><span data-stu-id="93f5c-120">Ubuntu, Debian</span></span>   | `apt-get`       |
+| <span data-ttu-id="93f5c-121">Red Hat, CentOS</span><span class="sxs-lookup"><span data-stu-id="93f5c-121">Red Hat, CentOS</span></span>  | `yum`           |
+| <span data-ttu-id="93f5c-122">OpenSUSE</span><span class="sxs-lookup"><span data-stu-id="93f5c-122">OpenSUSE</span></span>         | `zypper`        |
+| <span data-ttu-id="93f5c-123">Fedora</span><span class="sxs-lookup"><span data-stu-id="93f5c-123">Fedora</span></span>           | `dnf`           |
+
+### <a name="mac"></a><span data-ttu-id="93f5c-124">Mac</span><span class="sxs-lookup"><span data-stu-id="93f5c-124">Mac</span></span>
+<span data-ttu-id="93f5c-125">In macOS, si userà `Homebrew` per installare PowerShell Core.</span><span class="sxs-lookup"><span data-stu-id="93f5c-125">On macOS, you will use `Homebrew` to install PowerShell Core.</span></span>
+
+<span data-ttu-id="93f5c-126">Nella sezione successiva verrà descritta la procedura di installazione dettagliata per alcune piattaforme comuni.</span><span class="sxs-lookup"><span data-stu-id="93f5c-126">In the next section, you will go through the detailed installation steps for some common platforms.</span></span>

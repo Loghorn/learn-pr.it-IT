@@ -1,0 +1,45 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-security.5-encryption
+title: <span data-ttu-id="ebcb4-101">Crittografia</span><span class="sxs-lookup"><span data-stu-id="ebcb4-101">Encryption</span></span>
+metadata:
+  title: <span data-ttu-id="ebcb4-102">Crittografia</span><span class="sxs-lookup"><span data-stu-id="ebcb4-102">Encryption</span></span>
+  description: <span data-ttu-id="ebcb4-103">In questa unità viene spiegato come usare la crittografia per proteggere l'architettura</span><span class="sxs-lookup"><span data-stu-id="ebcb4-103">In this unit we'll discuss how to use encryption to secure your architecture</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 41ffa78955aa8c93dfb26a840bcdc01c0c8d8b17
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46340955"
+durationInMinutes: 10
+content: >
+  [!include[](includes/5-encryption.md)]
+quiz:
+  title: <span data-ttu-id="ebcb4-104">Verificare le proprie conoscenze</span><span class="sxs-lookup"><span data-stu-id="ebcb4-104">Check your knowledge</span></span>
+  questions:
+  - content: '<span data-ttu-id="ebcb4-105">Vero o falso: solo le macchine virtuali Windows possono usare Crittografia dischi di Azure</span><span class="sxs-lookup"><span data-stu-id="ebcb4-105">True or false: only Windows virtual machines can use Azure Disk Encryption</span></span>'
+    choices:
+    - content: <span data-ttu-id="ebcb4-106">Vero</span><span class="sxs-lookup"><span data-stu-id="ebcb4-106">True</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="ebcb4-107">Crittografia dischi di Azure è disponibile per le macchine virtuali sia Windows che Linux.</span><span class="sxs-lookup"><span data-stu-id="ebcb4-107">Azure Disk Encryption is available for both Windows and Linux virtual machines.</span></span>
+    - content: <span data-ttu-id="ebcb4-108">Falso</span><span class="sxs-lookup"><span data-stu-id="ebcb4-108">False</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="ebcb4-109">Crittografia dischi di Azure è disponibile per le macchine virtuali sia Windows che Linux.</span><span class="sxs-lookup"><span data-stu-id="ebcb4-109">Azure Disk Encryption is available for both Windows and Linux virtual machines.</span></span>
+  - content: <span data-ttu-id="ebcb4-110">Quando si classificano i dati, quale dei seguenti aspetti è un fattore?</span><span class="sxs-lookup"><span data-stu-id="ebcb4-110">When classifying data, which of the following is a factor?</span></span>
+    choices:
+    - content: <span data-ttu-id="ebcb4-111">Livello di rischio posto ai clienti se divulgati</span><span class="sxs-lookup"><span data-stu-id="ebcb4-111">Level of risk posed to customers if exposed</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="ebcb4-112">La classificazione dei dati da crittografare si basa normalmente sull'impatto che l'eventuale divulgazione può determinare sui clienti.</span><span class="sxs-lookup"><span data-stu-id="ebcb4-112">Classifying data that should be encrypted is commonly based on the impact it can have to customers if it is exposed.</span></span>
+    - content: <span data-ttu-id="ebcb4-113">Metodo di trasporto dei dati</span><span class="sxs-lookup"><span data-stu-id="ebcb4-113">Method of data transport</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="ebcb4-114">La classificazione dei dati da crittografare si basa normalmente sull'impatto che l'eventuale esposizione può determinare sui clienti.</span><span class="sxs-lookup"><span data-stu-id="ebcb4-114">Classifying data that should be encrypted is commonly based on the impact it can have to customers if it is exposed.</span></span>
+    - content: <span data-ttu-id="ebcb4-115">Se i dati sono archiviati in macchine virtuali o in un database</span><span class="sxs-lookup"><span data-stu-id="ebcb4-115">Whether the data is stored on virtual machines or in a database</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="ebcb4-116">La classificazione dei dati da crittografare si basa normalmente sull'impatto che l'eventuale esposizione può determinare sui clienti.</span><span class="sxs-lookup"><span data-stu-id="ebcb4-116">Classifying data that should be encrypted is commonly based on the impact it can have to customers if it is exposed.</span></span>
+    - content: <span data-ttu-id="ebcb4-117">Quantità di dati archiviati</span><span class="sxs-lookup"><span data-stu-id="ebcb4-117">The amount of data stored</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="ebcb4-118">La classificazione dei dati da crittografare si basa normalmente sull'impatto che l'eventuale esposizione può determinare sui clienti.</span><span class="sxs-lookup"><span data-stu-id="ebcb4-118">Classifying data that should be encrypted is commonly based on the impact it can have to customers if it is exposed.</span></span>

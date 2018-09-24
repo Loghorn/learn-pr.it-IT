@@ -1,0 +1,20 @@
+### YamlMime:ModuleUnit
+uid: learn.manage-iot-devices.3-connect-device
+metadata:
+  title: <span data-ttu-id="5299e-101">Configurazione di un hub IoT e connessione del primo dispositivo</span><span class="sxs-lookup"><span data-stu-id="5299e-101">Setting up IoT Hub and connecting your first device</span></span>
+  description: <span data-ttu-id="5299e-102">Configurazione di un hub IoT e connessione del primo dispositivo.</span><span class="sxs-lookup"><span data-stu-id="5299e-102">Setting up IoT Hub and connecting your first device.</span></span>
+  author: lnyswonger
+  ms.date: 09/24/2018
+  ms.author: luken
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 75482c0f41a444035f60308c5415786a6b106c62
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46340602"
+azureSandbox: true
+title: <span data-ttu-id="5299e-103">Configurazione di un hub IoT e connessione del primo dispositivo</span><span class="sxs-lookup"><span data-stu-id="5299e-103">Setting up IoT Hub and connecting your first device</span></span>
+durationInMinutes: 20
+content: '[!include[](includes/3-connect-device.md)]'

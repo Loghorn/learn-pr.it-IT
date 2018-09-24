@@ -1,0 +1,62 @@
+### YamlMime:ModuleUnit
+uid: learn.top-5-security-items-to-consider.3-inputs-and-outputs
+title: <span data-ttu-id="3fa6d-101">Input e output</span><span class="sxs-lookup"><span data-stu-id="3fa6d-101">Inputs and Outputs</span></span>
+metadata:
+  title: <span data-ttu-id="3fa6d-102">Input e output</span><span class="sxs-lookup"><span data-stu-id="3fa6d-102">Inputs and Outputs</span></span>
+  description: <span data-ttu-id="3fa6d-103">Input e output</span><span class="sxs-lookup"><span data-stu-id="3fa6d-103">Inputs and Outputs</span></span>
+  author: lnyswonger
+  ms.date: 09/24/2018
+  ms.author: luken
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 6549bf1ac4fb034b3d0e8a4720364725c36d1f12
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46340667"
+durationInMinutes: 10
+content: >
+  [!include[](includes/3-inputs-and-outputs.md)]
+quiz:
+  title: <span data-ttu-id="3fa6d-104">Verificare le proprie conoscenze</span><span class="sxs-lookup"><span data-stu-id="3fa6d-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="3fa6d-105">Quali delle origini dati seguenti devono essere convalidate?</span><span class="sxs-lookup"><span data-stu-id="3fa6d-105">Which of the following data sources need to be validated?</span></span>
+    choices:
+    - content: <span data-ttu-id="3fa6d-106">Dati di un'API di terze parti</span><span class="sxs-lookup"><span data-stu-id="3fa6d-106">Data from a 3rd party API</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="3fa6d-107">Questa è solo una delle molte origini da convalidare.</span><span class="sxs-lookup"><span data-stu-id="3fa6d-107">This is just one of many sources that needs to be validated.</span></span>
+    - content: <span data-ttu-id="3fa6d-108">Dati del parametro URL</span><span class="sxs-lookup"><span data-stu-id="3fa6d-108">Data from the URL parameter</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="3fa6d-109">Questa è solo una delle molte origini da convalidare</span><span class="sxs-lookup"><span data-stu-id="3fa6d-109">This is just one of many sources that needs to be validated</span></span>
+    - content: <span data-ttu-id="3fa6d-110">Dati raccolti dall'utente tramite un campo di input</span><span class="sxs-lookup"><span data-stu-id="3fa6d-110">Data collected from the user via an input field</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="3fa6d-111">Questa è solo una delle molte origini da convalidare.</span><span class="sxs-lookup"><span data-stu-id="3fa6d-111">This is just one of many sources that needs to be validated.</span></span>
+    - content: <span data-ttu-id="3fa6d-112">Tutte le precedenti</span><span class="sxs-lookup"><span data-stu-id="3fa6d-112">All of the above</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="3fa6d-113">Tutte queste origini dati devono essere convalidate.</span><span class="sxs-lookup"><span data-stu-id="3fa6d-113">All these sources of data need to be validated.</span></span> <span data-ttu-id="3fa6d-114">Non considerare mai attendibili dati che possono essere stati modificati.</span><span class="sxs-lookup"><span data-stu-id="3fa6d-114">Never trust any data that could have been modified.</span></span>
+  - content: <span data-ttu-id="3fa6d-115">Le query con parametri (stored procedure in SQL) rappresentano un modo sicuro per comunicare con il database perché:</span><span class="sxs-lookup"><span data-stu-id="3fa6d-115">Parameterized queries (stored procedures in SQL) are a secure way to talk to the database because:</span></span>
+    choices:
+    - content: <span data-ttu-id="3fa6d-116">Sono più organizzate dei comandi di database inline e quindi generano meno confusione negli utenti.</span><span class="sxs-lookup"><span data-stu-id="3fa6d-116">They are more organized than inline database commands, and therefore less confusing for users.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="3fa6d-117">L'organizzazione del codice non è il motivo per cui le query con parametri sono più sicure rispetto al codice SQL inline.</span><span class="sxs-lookup"><span data-stu-id="3fa6d-117">Organization of the code is not the reason that parameterized queries are more secure than inline SQL.</span></span>
+    - content: <span data-ttu-id="3fa6d-118">La stored procedure presenta una chiara struttura dello script, assicurando una maggiore visibilità.</span><span class="sxs-lookup"><span data-stu-id="3fa6d-118">There is a clear outline of the script in the stored procedure, ensuring better visibility.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="3fa6d-119">La struttura chiara del codice non è il motivo per cui le query con parametri sono più sicure rispetto al codice SQL inline.</span><span class="sxs-lookup"><span data-stu-id="3fa6d-119">Clear outline of the script is not the reason that parameterized queries are more secure than inline SQL.</span></span>
+    - content: <span data-ttu-id="3fa6d-120">Le query con parametri sostituiscono le variabili prima di eseguire le query, impedendo così agli utenti malintenzionati di inserire codice dannoso al posto di una variabile.</span><span class="sxs-lookup"><span data-stu-id="3fa6d-120">Parameterized queries substitute variables before running queries, meaning it avoids the opportunity for code to be submitted in place of a variable.</span></span>
+      isCorrect: true
+  - content: <span data-ttu-id="3fa6d-121">Quali dei dati seguenti devono essere codificati prima dell'output?</span><span class="sxs-lookup"><span data-stu-id="3fa6d-121">Which of the following data needs to be output encoded?</span></span>
+    choices:
+    - content: <span data-ttu-id="3fa6d-122">Dati salvati nel database</span><span class="sxs-lookup"><span data-stu-id="3fa6d-122">Data saved to the database</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="3fa6d-123">Anche se i dati salvati nel database devono essere convalidati per assicurarsi che siano validi, non è necessario codificarli per l'output.</span><span class="sxs-lookup"><span data-stu-id="3fa6d-123">Although data saved to the database needs to be validated to ensure the data is good, we do not need to encode it for output.</span></span>
+    - content: <span data-ttu-id="3fa6d-124">Dati da visualizzare sullo schermo</span><span class="sxs-lookup"><span data-stu-id="3fa6d-124">Data to be output to the screen</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="3fa6d-125">I dati da visualizzare sullo schermo devono essere codificati per assicurarsi che vengano interpretati come codice.</span><span class="sxs-lookup"><span data-stu-id="3fa6d-125">Data sent to the screen needs to be output encoded to ensure it is never interpreted as code.</span></span>
+    - content: <span data-ttu-id="3fa6d-126">Dati inviati a un'API di terze parti</span><span class="sxs-lookup"><span data-stu-id="3fa6d-126">Data sent to a 3rd party API</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="3fa6d-127">Anche se i dati inviati a un'API di terze parti devono essere convalidati per assicurarsi che siano validi, non è necessario codificarli per l'output.</span><span class="sxs-lookup"><span data-stu-id="3fa6d-127">Although data sent to a 3rd party API needs to be validated to ensure the data is good, we do not need to encode it for output.</span></span>
+    - content: <span data-ttu-id="3fa6d-128">Dati nei parametri URL</span><span class="sxs-lookup"><span data-stu-id="3fa6d-128">Data in the URL parameters</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="3fa6d-129">Anche se i dati nei parametri URL devono essere convalidati prima dell'uso nell'applicazione, non è necessario codificarli per l'output.</span><span class="sxs-lookup"><span data-stu-id="3fa6d-129">Although data from URL Parameters needs to be validated before it is used in our application, we do not need to encode it for output.</span></span>
+      correctExplanation: <span data-ttu-id="3fa6d-130">I campi dei parametri usati nelle query con parametri vengono trattati come dati, non come codice, offrendo protezione dalle vulnerabilità agli attacchi di tipo injection.</span><span class="sxs-lookup"><span data-stu-id="3fa6d-130">Parameter fields used in parameterized queries are treated as data, not code, protecting against injection vulnerabilities.</span></span> <span data-ttu-id="3fa6d-131">Per altre informazioni su come implementare le query con parametri, vedere la [scheda di riferimento rapido OWASP sulla parametrizzazione delle query]( https://www.owasp.org/index.php/Query_Parameterization_Cheat_Sheet).</span><span class="sxs-lookup"><span data-stu-id="3fa6d-131">For more information on how to implement parameterized queries please see the [OWASP Query Parameterization Cheat Sheet]( https://www.owasp.org/index.php/Query_Parameterization_Cheat_Sheet).</span></span>

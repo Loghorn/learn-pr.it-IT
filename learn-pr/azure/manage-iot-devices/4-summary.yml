@@ -1,0 +1,49 @@
+### YamlMime:ModuleUnit
+uid: learn.manage-iot-devices.4-summary
+metadata:
+  title: <span data-ttu-id="da2aa-101">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="da2aa-101">Summary</span></span>
+  description: <span data-ttu-id="da2aa-102">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="da2aa-102">Summary</span></span>
+  author: lnyswonger
+  ms.date: 09/24/2018
+  ms.author: luken
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 266c371394a46c9fc98e164e2a8700ae830e2ea7
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46343300"
+title: <span data-ttu-id="da2aa-103">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="da2aa-103">Summary</span></span>
+durationInMinutes: 7
+content: >
+  [!include[](includes/4-summary.md)]
+quiz:
+  title: <span data-ttu-id="da2aa-104">Verificare le proprie conoscenze</span><span class="sxs-lookup"><span data-stu-id="da2aa-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="da2aa-105">L'hub IoT è un servizio di Azure che consente di acquisire volumi elevati di dati di telemetria dai dispositivi IoT nel cloud per l'archiviazione o l'elaborazione.</span><span class="sxs-lookup"><span data-stu-id="da2aa-105">IoT Hub is an Azure service that enables you to ingest high volumes of telemetry from your IoT devices into the cloud for storage or processing.</span></span>
+    choices:
+    - content: <span data-ttu-id="da2aa-106">Vero</span><span class="sxs-lookup"><span data-stu-id="da2aa-106">True</span></span>
+      isCorrect: true
+    - content: <span data-ttu-id="da2aa-107">Falso</span><span class="sxs-lookup"><span data-stu-id="da2aa-107">False</span></span>
+      isCorrect: false
+  - content: "<span data-ttu-id=\"da2aa-108\">È possibile usare il livello gratuito F1 per configurare l'hub IoT, tuttavia è consigliabile solo per attività di test.</span><span class=\"sxs-lookup\"><span data-stu-id=\"da2aa-108\">You can use the F1: Free Tier to setup IoT Hub, however it is only recommended for testing.</span></span>"
+    choices:
+    - content: <span data-ttu-id="da2aa-109">Vero</span><span class="sxs-lookup"><span data-stu-id="da2aa-109">True</span></span>
+      isCorrect: true
+    - content: <span data-ttu-id="da2aa-110">Falso</span><span class="sxs-lookup"><span data-stu-id="da2aa-110">False</span></span>
+      isCorrect: false
+  - content: <span data-ttu-id="da2aa-111">Quale dei criteri di accesso condiviso non viene creato per impostazione predefinita?</span><span class="sxs-lookup"><span data-stu-id="da2aa-111">Which one of the shared access policies is not created by default?</span></span>
+    choices:
+    - content: <span data-ttu-id="da2aa-112">iothubowner</span><span class="sxs-lookup"><span data-stu-id="da2aa-112">iothubowner</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="da2aa-113">Questo criterio viene creato per impostazione predefinita.</span><span class="sxs-lookup"><span data-stu-id="da2aa-113">This policy is created by default.</span></span>
+    - content: <span data-ttu-id="da2aa-114">service</span><span class="sxs-lookup"><span data-stu-id="da2aa-114">service</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="da2aa-115">Questo criterio viene creato per impostazione predefinita.</span><span class="sxs-lookup"><span data-stu-id="da2aa-115">This policy is created by default.</span></span>
+    - content: <span data-ttu-id="da2aa-116">device</span><span class="sxs-lookup"><span data-stu-id="da2aa-116">device</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="da2aa-117">Questo criterio viene creato per impostazione predefinita.</span><span class="sxs-lookup"><span data-stu-id="da2aa-117">This policy is created by default.</span></span>
+    - content: <span data-ttu-id="da2aa-118">registryWrite</span><span class="sxs-lookup"><span data-stu-id="da2aa-118">registryWrite</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="da2aa-119">Non esiste un criterio registryWrite.</span><span class="sxs-lookup"><span data-stu-id="da2aa-119">There is no such policy as registryWrite.</span></span>

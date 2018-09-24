@@ -1,0 +1,41 @@
+### YamlMime:Module
+uid: learn.design-for-availability-and-recoverability
+metadata:
+  title: Progettare per la disponibilità e la capacità di ripristino in Azure
+  description: Informazioni su come gestire i problemi dell'infrastruttura e dei servizi, recuperare i dati perduti e ripristinare il sistema da un'emergenza progettando un'architettura con disponibilità e capacità di ripristino.
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: e63afa0e4f48102e1e324ae7e96fa8e9cd9a3e63
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46339771"
+title: Progettare per la disponibilità e la capacità di ripristino in Azure
+summary: Informazioni su come gestire i problemi dell'infrastruttura e dei servizi, recuperare i dati perduti e ripristinare il sistema da un'emergenza progettando un'architettura con disponibilità e capacità di ripristino.
+abstract: >
+  In questo modulo verrà descritto come:
+    - Sfruttare i servizi di Azure per progettare un'applicazione a disponibilità elevata
+    - Integrare funzionalità di ripristino di emergenza di Azure nell'architettura
+    - Eseguire il backup e il ripristino in Azure per proteggere l'applicazione dalla perdita e dal danneggiamento dei dati
+prerequisites: Nessuno
+iconUrl: /learn/achievements/design-for-availability-and-recoverability-in-azure.svg
+levels:
+- intermediate
+roles:
+- solution-architect
+products:
+- azure
+- azure-storage
+- azure-sql-database
+- azure-cosmos-db
+units:
+- learn.design-for-availability-and-recoverability.1-introduction
+- learn.design-for-availability-and-recoverability.2-high-availability
+- learn.design-for-availability-and-recoverability.3-disaster-recovery
+- learn.design-for-availability-and-recoverability.4-backup-and-restore
+- learn.design-for-availability-and-recoverability.5-summary
+achievement: learn.design-for-availability-and-recoverability.badge
