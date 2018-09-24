@@ -1,0 +1,57 @@
+### YamlMime:ModuleUnit
+uid: learn.create-serverless-logic-with-functions.6-summary
+title: Riepilogo
+metadata:
+  title: Riepilogo
+  description: Riepilogo
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: aae90b81a478b5f1ece9708dc528bdae43b8748b
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46339266"
+azureSandbox: true
+durationInMinutes: 3
+content: >
+  [!include[](includes/6-summary.md)]
+quiz:
+  title: Verificare le proprie conoscenze
+  questions:
+  - content: Quale delle seguenti definizioni descrive meglio la logica serverless?
+    choices:
+    - content: Codice scritto che non viene eseguito in alcun server.
+      isCorrect: false
+      incorrectExplanation: Con l'espressione "serverless" non si intende assenza di server, ma che lo sviluppatore non deve preoccuparsi dei server. La gestione dei server è affidata invece a un provider di servizi cloud come Azure.
+    - content: Codice scritto che viene eseguito solo nei server gestiti dall'utente.
+      isCorrect: false
+      incorrectExplanation: Con l'espressione "serverless" non si intende assenza di server, ma che lo sviluppatore non deve preoccuparsi dei server. La gestione dei server è affidata invece a un provider di servizi cloud come Azure.
+    - content: Codice scritto che viene eseguito solo nei server gestiti da un provider di servizi cloud.
+      isCorrect: true
+      correctExplanation: Con l'espressione "serverless" non si intende assenza di server, ma che lo sviluppatore non deve preoccuparsi dei server. La gestione dei server è affidata invece a un provider di servizi cloud come Azure.
+  - content: Come viene chiamato il contenitore che raggruppa le funzioni in un'unità logica per semplificare la gestione, distribuzione e la condivisione delle risorse?
+    choices:
+    - content: Gruppo di risorse
+      isCorrect: false
+      incorrectExplanation: Un'app per le funzioni rappresenta un modo per organizzare e gestire collettivamente le funzioni. Un'app per le funzioni è costituita da una o più funzioni singole gestite insieme dal Servizio app di Azure. Tutte le funzioni incluse in un'app per le funzioni condividono lo stesso piano tariffario, la stessa distribuzione continua e la stessa versione di runtime.
+    - content: App per le funzioni
+      isCorrect: true
+      correctExplanation: Un'app per le funzioni rappresenta un modo per organizzare e gestire collettivamente le funzioni. Un'app per le funzioni è costituita da una o più funzioni singole gestite insieme dal Servizio app di Azure. Tutte le funzioni incluse in un'app per le funzioni condividono lo stesso piano tariffario, la stessa distribuzione continua e la stessa versione di runtime.
+    - content: Raccolta di funzioni
+      isCorrect: false
+      incorrectExplanation: Un'app per le funzioni rappresenta un modo per organizzare e gestire collettivamente le funzioni. Un'app per le funzioni è costituita da una o più funzioni singole gestite insieme dal Servizio app di Azure. Tutte le funzioni incluse in un'app per le funzioni condividono lo stesso piano tariffario, la stessa distribuzione continua e la stessa versione di runtime.
+  - content: Una funzione è stata protetta da chiamanti HTTP sconosciuti richiedendo che con ogni chiamata venga passata una chiave API specifica della funzione. In quale delle seguenti intestazioni di nome nelle richieste HTTP deve essere contenuta la chiave?
+    choices:
+    - content: x-functions-key
+      isCorrect: true
+      correctExplanation: L'API può essere inclusa in una variabile della stringa di query denominata "code" oppure in un'intestazione HTTP x-functions-key.
+    - content: x-requested-with
+      isCorrect: false
+      incorrectExplanation: L'API può essere inclusa in una variabile della stringa di query denominata "code" oppure in un'intestazione HTTP x-functions-key.
+    - content: x-csrf-token
+      isCorrect: false
+      incorrectExplanation: L'API può essere inclusa in una variabile della stringa di query denominata "code" oppure in un'intestazione HTTP x-functions-key.

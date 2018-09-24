@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.create-azure-db-for-postgresql.creating-postgresql-db-server-via-azure-portal
+title: Creare un server di Database di Azure per PostgreSQL usando il portale di Azure
+metadata:
+  title: Creare un server di Database di Azure per PostgreSQL usando il portale di Azure
+  description: Il portale di Azure consente di eseguire, gestire e ridimensionare i server di database PostgreSQL. Le conoscenze su come configurare tale servizio sono essenziali per la corretta implementazione del database PostgreSQL.
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 2c5e7d9d0d3eb458be7cb3de7439ab406f70a5fb
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46352195"
+durationInMinutes: 7
+content: '[!include[](includes/3-creating-postgresql-db-server-via-azure-portal.md)]'

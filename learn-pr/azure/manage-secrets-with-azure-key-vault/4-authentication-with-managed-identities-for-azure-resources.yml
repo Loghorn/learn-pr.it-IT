@@ -1,0 +1,48 @@
+### YamlMime:ModuleUnit
+uid: learn.manage-secrets-with-azure-key-vault.4-authentication-with-managed-identities-for-azure-resources
+title: Autenticazione nell'insieme di credenziali con le identità gestite per le risorse di Azure
+metadata:
+  title: Autenticazione nell'insieme di credenziali con le identità gestite per le risorse di Azure
+  description: Autenticazione nell'insieme di credenziali con le identità gestite per le risorse di Azure
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 1b51584d19c9a0caeac0aa28e994ef32c91a9cfd
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46340659"
+durationInMinutes: 4
+content: >
+  [!include[](includes/4-authentication-with-managed-identities-for-azure-resources.md)]
+quiz:
+  title: Verificare le proprie conoscenze
+  questions:
+  - content: In che modo l'utilizzo delle identità gestite per le risorse di Azure può modificare il modo in cui un'app esegue l'autenticazione ad Azure Key Vault?
+    choices:
+    - content: Per l'autenticazione, l'app usa un certificato anziché un segreto.
+      isCorrect: false
+      incorrectExplanation: Quando si abilita l'identità gestita nell'app Web, Azure attiva un servizio REST separato per la concessione di token appositamente per l'app. L'app richiederà i token a questo servizio anziché ad Azure Active Directory.
+    - content: Tutti gli utenti dell'app devono immettere una password.
+      isCorrect: false
+      incorrectExplanation: Quando si abilita l'identità gestita nell'app Web, Azure attiva un servizio REST separato per la concessione di token appositamente per l'app. L'app richiederà i token a questo servizio anziché ad Azure Active Directory.
+    - content: L'app ottiene i token da un servizio token invece che da Azure Active Directory.
+      isCorrect: true
+      correctExplanation: Quando si abilita l'identità gestita nell'app Web, Azure attiva un servizio REST separato per la concessione di token appositamente per l'app. L'app richiederà i token a questo servizio anziché ad Azure Active Directory.
+    - content: Le identità gestite vengono automaticamente riconosciute e autenticate da Azure Key Vault.
+      isCorrect: false
+      incorrectExplanation: Quando si abilita l'identità gestita nell'app Web, Azure attiva un servizio REST separato per la concessione di token appositamente per l'app. L'app richiederà i token a questo servizio anziché ad Azure Active Directory.
+  - content: Quali di queste affermazioni descrive uno dei vantaggi principali dell'uso delle identità gestite per autenticare un'app in Key Vault?
+    choices:
+    - content: L'uso delle identità gestite migliora le prestazioni dell'applicazione.
+      isCorrect: false
+      incorrectExplanation: L'app esegue l'autenticazione al servizio token delle identità gestite con un segreto inserito nelle relative variabili di ambiente in fase di esecuzione. Questo elimina la necessità di archiviare i segreti durante la configurazione.
+    - content: L'uso di identità gestite elimina la necessità di gestire i segreti durante la configurazione.
+      isCorrect: true
+      correctExplanation: L'app esegue l'autenticazione al servizio token delle identità gestite con un segreto inserito nelle relative variabili di ambiente in fase di esecuzione. Questo elimina la necessità di archiviare i segreti durante la configurazione.
+    - content: Le identità gestite possono concedere automaticamente le autorizzazioni di Azure Key Vault.
+      isCorrect: false
+      incorrectExplanation: L'app esegue l'autenticazione al servizio token delle identità gestite con un segreto inserito nelle relative variabili di ambiente in fase di esecuzione. Questo elimina la necessità di archiviare i segreti durante la configurazione.

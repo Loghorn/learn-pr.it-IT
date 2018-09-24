@@ -1,0 +1,31 @@
+### YamlMime:ModuleUnit
+uid: learn.choose-messaging-model.2-choose-whether-to-use-message-queues-or-events
+title: Scegliere se usare i messaggi o gli eventi
+metadata:
+  title: Scegliere se usare i messaggi o gli eventi
+  description: Scegliere se usare i messaggi o gli eventi
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 048a3ce0646b3adf5d5124911c1c8093de2180d1
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46341889"
+durationInMinutes: 10
+content: >
+  [!include[](includes/2-choose-whether-to-use-message-queues-or-events.md)]
+quiz:
+  title: Verificare le proprie conoscenze
+  questions:
+  - content: "Si supponga di avere un'applicazione distribuita con un servizio Web che autentica gli utenti. Quando un utente accede, il servizio Web comunica con tutte le applicazioni client perché venga visualizzato lo stato \"Online\". Vero o falso: questo è un esempio di un messaggio in un'applicazione distribuita."
+    choices:
+    - content: Vero
+      isCorrect: false
+      incorrectExplanation: I messaggi contengono in genere dati non elaborati, ad esempio un file multimediale. In questa situazione, si invierà una semplice stringa di dati che rappresenta lo stato di un utente e, in seguito, si invieranno i dati in risposta a un'azione. Questo è un caso ideale per l'uso di un evento.
+    - content: Falso
+      correctExplanation: I messaggi contengono in genere dati non elaborati, ad esempio un file multimediale. In questa situazione, si invierà una semplice stringa di dati che rappresenta lo stato di un utente e, in seguito, si invieranno i dati in risposta a un'azione. Questo è un caso ideale per l'uso di un evento.
+      isCorrect: true

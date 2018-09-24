@@ -1,0 +1,31 @@
+### YamlMime:ModuleUnit
+uid: learn.welcome-to-azure.3-create-a-vm
+title: Creare una macchina virtuale
+metadata:
+  title: Creare una macchina virtuale
+  description: Indipendentemente dai propri interessi, è possibile iniziare l'esperienza con il cloud creando la prima macchina virtuale.
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  zone_pivot_groups: platform-cloud
+  ms.openlocfilehash: 9d69aad8a411847d6b534b252019b6a986aa229a
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46339538"
+interactive: bash
+azureSandbox: true
+durationInMinutes: 7
+content: >
+  [!include[](includes/3-create-a-vm.md)]
+tasks:
+- action: exists
+  environment: azure
+  azure:
+    resource:
+      type: Microsoft.Compute/virtualMachines
+      name: myVM
+  hint: Eseguire il comando `az vm create` come illustrato di seguito per creare la macchina virtuale.

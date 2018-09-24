@@ -1,0 +1,49 @@
+### YamlMime:ModuleUnit
+uid: learn.manage-iot-devices.4-summary
+metadata:
+  title: Riepilogo
+  description: Riepilogo
+  author: lnyswonger
+  ms.date: 09/24/2018
+  ms.author: luken
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 266c371394a46c9fc98e164e2a8700ae830e2ea7
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46343300"
+title: Riepilogo
+durationInMinutes: 7
+content: >
+  [!include[](includes/4-summary.md)]
+quiz:
+  title: Verificare le proprie conoscenze
+  questions:
+  - content: L'hub IoT è un servizio di Azure che consente di acquisire volumi elevati di dati di telemetria dai dispositivi IoT nel cloud per l'archiviazione o l'elaborazione.
+    choices:
+    - content: Vero
+      isCorrect: true
+    - content: Falso
+      isCorrect: false
+  - content: È possibile usare il livello gratuito F1 per configurare l'hub IoT, tuttavia è consigliabile solo per attività di test.
+    choices:
+    - content: Vero
+      isCorrect: true
+    - content: Falso
+      isCorrect: false
+  - content: Quale dei criteri di accesso condiviso non viene creato per impostazione predefinita?
+    choices:
+    - content: iothubowner
+      isCorrect: false
+      incorrectExplanation: Questo criterio viene creato per impostazione predefinita.
+    - content: service
+      isCorrect: false
+      incorrectExplanation: Questo criterio viene creato per impostazione predefinita.
+    - content: device
+      isCorrect: false
+      incorrectExplanation: Questo criterio viene creato per impostazione predefinita.
+    - content: registryWrite
+      isCorrect: true
+      correctExplanation: Non esiste un criterio registryWrite.

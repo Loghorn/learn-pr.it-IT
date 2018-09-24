@@ -1,0 +1,45 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-availability-and-recoverability.3-disaster-recovery
+title: Sviluppare una strategia di ripristino di emergenza
+metadata:
+  title: Sviluppare una strategia di ripristino di emergenza
+  description: Sviluppare una strategia di ripristino di emergenza
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 3955af1f310742bdb6912d5da07f5004d40287f1
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46338723"
+durationInMinutes: 20
+content: >
+  [!include[](includes/3-disaster-recovery.md)]
+quiz:
+  title: Verificare le proprie conoscenze
+  questions:
+  - content: Quale delle seguenti operazioni può essere esclusa dalla procedura di ripristino nel piano di ripristino?
+    choices:
+    - content: Procedura di ripristino dei backup
+      isCorrect: false
+      incorrectExplanation: La procedura per il ripristino dei backup è un elemento fondamentale di un piano di ripristino.
+    - content: Procedura di failover nei sistemi replicati
+      isCorrect: false
+      incorrectExplanation: La procedura per il failover nei sistemi replicati è un elemento fondamentale di un piano di ripristino.
+    - content: Procedura di ripristino della connettività di rete per reti locali o esterne
+      isCorrect: false
+      incorrectExplanation: La connettività di rete per reti locali o esterne è in genere un componente critico dell'architettura. I passaggi per ripristinare l'ambiente dopo un guasto sono parti critiche di un piano di ripristino.
+    - content: Nessuna delle operazioni precedenti deve essere esclusa da un piano di ripristino.
+      isCorrect: true
+      correctExplanation: Tutte queste procedure sono necessarie in un piano di ripristino.
+  - content: 'Vero o falso: La replica dei dati e il backup dei dati si equivalgono.'
+    choices:
+    - content: Vero
+      isCorrect: false
+      incorrectExplanation: La replica dei dati e il backup dei dati eseguono entrambi copie dei dati, ma la frequenza e l'utilizzo delle copie sono talmente diversi da farne due concetti diversi.
+    - content: Falso
+      isCorrect: true
+      correctExplanation: La replica crea copie in tempo reale o quasi in tempo reale di dati live da usare per il failover durante l'esecuzione. Il backup crea snapshot di sola lettura e di lunga durata dei dati da usare per il ripristino.

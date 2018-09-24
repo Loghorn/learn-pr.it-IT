@@ -1,0 +1,51 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-availability-and-recoverability.2-high-availability
+title: Creare un'architettura a disponibilità elevata
+metadata:
+  title: Creare un'architettura a disponibilità elevata
+  description: Creare un'architettura a disponibilità elevata
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: b0cd30d8b1c28165b125a42b06656b76d354a41c
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46343610"
+durationInMinutes: 20
+content: >
+  [!include[](includes/2-high-availability.md)]
+quiz:
+  title: Verificare le proprie conoscenze
+  questions:
+  - content: 'È importante definire un contratto di servizio per un servizio per questi motivi:'
+    choices:
+    - content: Consente di determinare i requisiti di conservazione dei backup.
+      isCorrect: false
+      incorrectExplanation: La conservazione dei backup è un aspetto importante da definire, ma non dipende dal contratto di servizio.
+    - content: Consente di determinare il livello di disponibilità del servizio per cui ci si impegna nei confronti dei clienti.
+      isCorrect: true
+      correctExplanation: Il contratto di servizio rappresenta un impegno nei confronti dei clienti rispetto alla disponibilità del servizio.
+    - content: È possibile usarlo per convincere un responsabile ad automatizzare la creazione delle macchine virtuali.
+      isCorrect: false
+      incorrectExplanation: Anche se può essere utile valutare questo aspetto, il contratto di servizio probabilmente non avrà alcun impatto sul risultato.
+    - content: È possibile usarlo per definire le impostazioni di controllo di accesso per le risorse.
+      isCorrect: false
+      incorrectExplanation: Le impostazioni di controllo di accesso sono importanti, ma non sono correlate al contratto di servizio dell'applicazione.
+  - content: Quali dei seguenti elementi non viene usato in un'architettura a disponibilità elevata?
+    choices:
+    - content: Bilanciamento del carico.
+      isCorrect: false
+      incorrectExplanation: Il bilanciamento del carico in genere viene usato in un'architettura a disponibilità elevata per distribuire il carico ai sistemi disponibili e rimuovere dal carico i sistemi che presentano problemi.
+    - content: Zone di disponibilità
+      isCorrect: false
+      incorrectExplanation: Le zone di disponibilità vengono usate in un'architettura a disponibilità elevata per distribuire i sistemi tra più data center in un'area.
+    - content: Set di disponibilità
+      isCorrect: false
+      incorrectExplanation: I set di disponibilità vengono usati in un'architettura a disponibilità elevata per ridurre al minimo l'impatto di problemi localizzati e di eventi di manutenzione.
+    - content: Insieme di credenziali di Servizi di ripristino
+      isCorrect: true
+      correctExplanation: Gli insiemi di credenziali di Servizi di ripristino forniscono una destinazione per i backup, ma non fanno parte di un'architettura a disponibilità elevata.

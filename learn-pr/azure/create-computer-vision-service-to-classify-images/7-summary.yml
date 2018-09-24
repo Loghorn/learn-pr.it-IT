@@ -1,0 +1,53 @@
+### YamlMime:ModuleUnit
+uid: learn.create-computer-vision-service.7-summary
+title: Riepilogo e verifica delle conoscenze
+metadata:
+  title: Riepilogo e verifica delle conoscenze
+  description: Riepilogo e verifica delle conoscenze
+  ms.date: 09/24/2018
+  author: AndrewJByrne
+  ms.author: marouill
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 931c47e93c694b823427af0464937d07a5411945
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46339786"
+durationInMinutes: 5
+content: >
+  [!include[](includes/7-summary.md)]
+quiz:
+  title: Verificare le proprie conoscenze
+  questions:
+  - content: Quando si analizza un'immagine con l'API Visione artificiale, è possibile specificare i tipi di caratteristiche visive da restituire.  Quale dei seguenti è un tipo di caratteristica visiva valido quando si chiama l'operazione "analyze"?
+    choices:
+    - content: 'Film '
+      isCorrect: false
+      incorrectExplanation: I film non sono un tipo di caratteristica visiva valido.
+    - content: Animali
+      isCorrect: false
+      incorrectExplanation: Gli animali non sono un tipo di caratteristica visiva valido.
+    - content: Celebrità
+      isCorrect: true
+      correctExplanation: I due tipi di caratteristiche visive che è possibile specificare sono Celebrità e Punti di riferimento.
+  - content: Quale delle affermazioni seguenti descrive che cosa fa il *ritaglio intelligente* quando si genera un'anteprima con l'operazione `generateThumbnail`?
+    choices:
+    - content: Ritaglia le immagini a partire dalla parte superiore a sinistra.
+      isCorrect: false
+      incorrectExplanation: Se si ritaglia un'immagine a partire dalla parte superiore sinistra, si potrebbe rimuovere una parte significativa dell'immagine, ovvero l'area di interesse.
+    - content: Posiziona al centro dell'anteprima l'"area di interesse".
+      isCorrect: true
+      correctExplanation: Se il parametro "smartCropping" è true, l'API applica il ritaglio intelligente per posizionare al centro dell'anteprima l'"area di interesse". In caso contrario, ritaglia a partire dal centro.
+  - content: Si sta integrando l'API Visione artificiale nella soluzione. Si è creato un account di Servizi Cognitivi per il servizio Visione artificiale nell'area eastus. Quale dei seguenti è l'indirizzo corretto per poter accedere all'operazione `ocr`?
+    choices:
+    - content: eastus2.api.cognitive.microsoft.com/vision/v2.0/ocr
+      isCorrect: false
+      incorrectExplanation: Non ci si è iscritti per una chiave di accesso per effettuare richieste da quest'area. L'endpoint specifica l'area scelta durante l'iscrizione, l'URL del servizio e una risorsa usata nella richiesta.
+    - content: eastus.api.cognitive.microsoft.com/vision/v2.0/describe
+      isCorrect: false
+      incorrectExplanation: Questo indirizzo invia una richiesta alla risorsa delle entità.
+    - content: eastus.api.cognitive.microsoft.com/vision/v2.0/ocr
+      isCorrect: true
+      correctExplanation: L'endpoint specifica l'area scelta durante l'iscrizione, l'URL del servizio e una risorsa usata nella richiesta.

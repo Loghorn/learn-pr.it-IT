@@ -1,0 +1,39 @@
+### YamlMime:ModuleUnit
+uid: learn.create-cosmos-db-for-scale.4-how-to-choose-a-partition-key
+metadata:
+  title: Scelta di una chiave di partizione in Azure Cosmos DB
+  description: Informazioni su come creare una raccolta con una chiave di partizione che consentirà di ridimensionare il database in caso di maggiori esigenze.
+  ms.date: 09/24/2018
+  author: mimig1
+  ms.author: mimig
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: d4fb07bb85e7e7cb2dda9bdd8fe80880babb65b1
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46338539"
+title: Scelta di una chiave di partizione
+durationInMinutes: 6
+content: >
+  [!include[](includes/4-how-to-choose-a-partition-key.md)]
+quiz:
+  title: Verificare le proprie conoscenze
+  questions:
+  - content: 'Vero o falso: è possibile **aggiungere** una chiave di partizione a una raccolta di Azure Cosmos DB dopo che è stata creata?'
+    choices:
+    - content: Vero
+      isCorrect: false
+      incorrectExplanation: È possibile impostare la chiave di partizione solo quando viene creata la raccolta.
+    - content: Falso
+      isCorrect: true
+      correctExplanation: È possibile impostare la chiave di partizione solo quando viene creata la raccolta.
+  - content: 'Vero o falso: è possibile **modificare** la chiave di partizione dopo aver creato la raccolta di Azure Cosmos DB?'
+    choices:
+    - content: Vero
+      isCorrect: false
+      incorrectExplanation: Le chiavi di partizione non possono essere modificate dopo la creazione della raccolta.
+    - content: Falso
+      isCorrect: true
+      correctExplanation: Le chiavi di partizione non possono essere modificate dopo la creazione della raccolta.

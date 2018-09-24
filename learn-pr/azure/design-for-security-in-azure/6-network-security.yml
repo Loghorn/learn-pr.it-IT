@@ -1,0 +1,51 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-security.6-network-security
+title: Sicurezza di rete
+metadata:
+  title: Sicurezza di rete
+  description: In questa unità viene spiegato come proteggere l'infrastruttura di rete
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: cc35a096e064136f7d56fc05c4ce856fd1918641
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46343009"
+durationInMinutes: 10
+content: >
+  [!include[](includes/6-network-security.md)]
+quiz:
+  title: Verificare le proprie conoscenze
+  questions:
+  - content: I gruppi di sicurezza di rete di Azure possono essere usati per proteggere quali di queste comunicazioni?
+    choices:
+    - content: Macchine virtuali e Internet
+      isCorrect: false
+      incorrectExplanation: I gruppi di sicurezza di rete sono completamente personalizzabili e permettono di bloccare del tutto la comunicazione di rete da e verso le macchine virtuali.
+    - content: Macchine virtuali all'interno di una rete virtuale
+      isCorrect: false
+      incorrectExplanation: I gruppi di sicurezza di rete sono completamente personalizzabili e permettono di bloccare del tutto la comunicazione di rete da e verso le macchine virtuali.
+    - content: Sistemi in una rete locale
+      isCorrect: false
+      incorrectExplanation: I gruppi di sicurezza di rete sono completamente personalizzabili e permettono di bloccare del tutto la comunicazione di rete da e verso le macchine virtuali.
+    - content: Tutte le precedenti
+      isCorrect: true
+      correctExplanation: I gruppi di sicurezza di rete sono completamente personalizzabili e permettono di bloccare del tutto la comunicazione di rete da e verso le macchine virtuali.
+  - content: Quale dei seguenti non è un metodo di protezione da attacchi di rete per servizi con connessione Internet?
+    choices:
+    - content: Azure DDoS
+      isCorrect: false
+      incorrectExplanation: Crittografia dischi di Azure protegge i dischi rigidi virtuali delle macchine virtuali dall'esposizione, ma non protegge da attacchi basati sulla rete.
+    - content: WAF del gateway applicazione di Azure
+      isCorrect: false
+      incorrectExplanation: Crittografia dischi di Azure protegge i dischi rigidi virtuali delle macchine virtuali dall'esposizione, ma non protegge da attacchi basati sulla rete.
+    - content: Crittografia dischi di Azure
+      isCorrect: true
+      correctExplanation: Crittografia dischi di Azure protegge i dischi rigidi virtuali delle macchine virtuali dall'esposizione, ma non protegge da attacchi basati sulla rete.
+    - content: Un'appliance virtuale di rete
+      isCorrect: false
+      incorrectExplanation: Crittografia dischi di Azure protegge i dischi rigidi virtuali delle macchine virtuali dall'esposizione, ma non protegge da attacchi basati sulla rete.

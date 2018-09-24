@@ -1,0 +1,39 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-security.2-defense-in-depth
+title: Difesa avanzata
+metadata:
+  title: Difesa avanzata
+  description: In questa unità viene spiegato come applicare la difesa avanzata
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 23e9c8c1afa4a2872c1131864cc228ad386dc57b
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46339907"
+durationInMinutes: 10
+content: >
+  [!include[](includes/2-defense-in-depth.md)]
+quiz:
+  title: Verificare le proprie conoscenze
+  questions:
+  - content: 'Vero o falso: La *difesa avanzata* è una strategia mirata alla protezione contro attacchi che tentano di accedere alle informazioni.'
+    choices:
+    - content: Vero
+      isCorrect: true
+      correctExplanation: La *difesa avanzata* è un sistema a più livelli che fornisce protezione da accessi non autorizzati. Se un livello viene violato, è disponibile un altro livello per evitare un'ulteriore esposizione.
+    - content: Falso
+      isCorrect: false
+      incorrectExplanation: La *difesa avanzata* è un sistema a più livelli che fornisce protezione da accessi non autorizzati. Se un livello viene violato, è disponibile un altro livello per evitare un'ulteriore esposizione.
+  - content: "Vero o falso: Con il passaggio al cloud, l'architettura è completamente sicura ed è possibile delegare al provider dei servizi cloud tutte le responsabilità legate alla sicurezza."
+    choices:
+    - content: Vero
+      isCorrect: false
+      incorrectExplanation: Anche se il passaggio al cloud trasferisce alcune responsabilità al provider di servizi cloud, rimane tuttavia in essere un modello di responsabilità condivisa.
+    - content: Falso
+      isCorrect: true
+      correctExplanation: Anche se il passaggio al cloud trasferisce alcune responsabilità al provider di servizi cloud, rimane tuttavia in essere un modello di responsabilità condivisa.

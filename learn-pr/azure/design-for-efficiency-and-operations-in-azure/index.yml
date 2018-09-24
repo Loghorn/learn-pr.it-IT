@@ -1,0 +1,43 @@
+### YamlMime:Module
+uid: learn.design-for-efficiency-and-operations
+metadata:
+  title: Progettare per l'efficienza e le operazioni in Azure
+  description: Informazioni su come progettare un'architettura di Azure che sia efficiente in termini di costi e di operazioni, eliminando gli sprechi e ottenendo visibilità completa su ciò che accade nell'ambiente.
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 21c66977bd96e0c7d4674ed2144ee53b6f44db31
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46342929"
+title: Progettare per l'efficienza e le operazioni in Azure
+summary: Informazioni su come progettare un'architettura di Azure che sia efficiente in termini di costi e di operazioni, eliminando gli sprechi e ottenendo visibilità completa su ciò che accade nell'ambiente.
+abstract: >
+  In questo modulo verrà descritto come:
+    - Ottimizzare l'efficienza dell'ambiente cloud
+    - Usare il monitoraggio e l'analisi per ottenere informazioni dettagliate operative
+    - Usare l'automazione per ridurre il lavoro richiesto e gli errori
+prerequisites: Nessuno
+iconUrl: /learn/achievements/design-for-efficiency-and-operations-in-azure.svg
+levels:
+- intermediate
+roles:
+- solution-architect
+products:
+- azure
+- azure-cost-management
+- azure-advisor
+- azure-monitor
+- azure-application-insights
+- azure-log-analytics
+units:
+- learn.design-for-efficiency-and-operations.1-introduction
+- learn.design-for-efficiency-and-operations.2-maximize-efficiency-of-cloud-spend
+- learn.design-for-efficiency-and-operations.3-use-monitoring-and-analytics-to-gain-operational-insights
+- learn.design-for-efficiency-and-operations.4-use-automation-to-reduce-effort-and-error
+- learn.design-for-efficiency-and-operations.5-summary
+achievement: learn.design-for-efficiency-and-operations.badge

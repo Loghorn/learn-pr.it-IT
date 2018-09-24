@@ -1,0 +1,65 @@
+### YamlMime:ModuleUnit
+uid: learn.work-with-mutable-and-partial-data-in-a-redis-cache.8-summary
+title: Riepilogo
+metadata:
+  title: Riepilogo
+  description: Riepilogo
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 38c0ff8600be568ed7a37ff841cecaee2bb70fed
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46352515"
+durationInMinutes: 3
+content: >
+  [!include[](includes/8-summary.md)]
+quiz:
+  title: Verificare le proprie conoscenze
+  questions:
+  - content: Cosa accade se un comando in una transazione Redis ha esito negativo?
+    choices:
+    - content: Se un comando viene accodato con una sintassi non corretta, la transazione viene automaticamente rimossa, se si prova a eseguirla. Se un comando ha esito negativo durante l'esecuzione, la transazione viene completata normalmente.
+      isCorrect: true
+      correctExplanation: In Redis i comandi che hanno esito negativo durante l'esecuzione non causano l'arresto di una transazione. I comandi in coda con sintassi non corretta impediscono l'esecuzione della transazione.
+    - content: I comandi precedenti a quello non corretto vengono comunque eseguiti, ma quelli successivi no.
+      isCorrect: false
+      incorrectExplanation: Un comando con esito negativo in una transazione non impedisce l'esecuzione dei comandi successivi.
+    - content: Viene eseguito il rollback dell'intera transazione.
+      isCorrect: false
+      incorrectExplanation: Redis non supporta i rollback delle transazioni.
+    - content: La connessione viene interrotta.
+      isCorrect: false
+      incorrectExplanation: I comandi con esito negativo non causano l'interruzione di una connessione Redis.
+  - content: Quale dei seguenti è un comando di Redis per la gestione della scadenza dei dati?
+    choices:
+    - content: DEL
+      isCorrect: false
+      incorrectExplanation: DEL è un comando usato per eliminare le chiavi.
+    - content: DISCARD
+      isCorrect: false
+      incorrectExplanation: DISCARD è un comando usato per annullare una transazione prima della sua esecuzione.
+    - content: TIMEOUT
+      isCorrect: false
+      incorrectExplanation: TIMEOUT non è un comando Redis valido.
+    - content: EXPIRE
+      isCorrect: true
+      correctExplanation: EXPIRE è un comando usato per impostare il timeout di scadenza di una chiave in secondi.
+  - content: La cache Redis è configurata con i criteri di rimozione **volatile-ttl**. Se si esaurisce la memoria e si prova a inserire una nuova chiave, quale chiave esistente viene rimossa?
+    choices:
+    - content: La chiave usata meno di recente.
+      isCorrect: false
+      incorrectExplanation: Questo è il comportamento dei criteri di rimozione **allkeys-lru**.
+    - content: Una chiave casuale.
+      isCorrect: false
+      incorrectExplanation: Questo è il comportamento dei criteri di rimozione **alkeys-random**.
+    - content: La chiave che scadrà per prima.
+      isCorrect: true
+      correctExplanation: '**volatile-ttl** rimuove la chiave con la durata più breve.'
+    - content: Una chiave casuale, selezionata tra le chiavi configurate con una scadenza.
+      isCorrect: false
+      incorrectExplanation: Questo è il comportamento dei criteri di rimozione **volatile-random**.

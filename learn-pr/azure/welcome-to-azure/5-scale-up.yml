@@ -1,0 +1,48 @@
+### YamlMime:ModuleUnit
+uid: learn.welcome-to-azure.5-scale-up
+title: Aumentare le prestazioni
+metadata:
+  title: Aumentare le prestazioni
+  description: Aumentare le prestazioni della macchina virtuale per fornire più potenza di calcolo e memoria.
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  zone_pivot_groups: platform-cloud
+  ms.openlocfilehash: 9f6ec458cb233fe0d035d73d99d46a5de91ce569
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46340691"
+interactive: bash
+azureSandbox: true
+durationInMinutes: 4
+content: >
+  [!include[](includes/5-scale-up.md)]
+quiz:
+  title: Verificare le proprie conoscenze
+  questions:
+  - content: 'Azure è:'
+    choices:
+    - content: La piattaforma di cloud computing Microsoft che fornisce potenza di calcolo, risorse di archiviazione e servizi tramite Internet usando un modello di prezzi con pagamento in base al consumo.
+      isCorrect: true
+      correctExplanation: Con Azure, è possibile accedere a potenza di calcolo e risorse di archiviazione, oltre che a servizi che aiutano a esplorare nuovi paradigmi software, ad esempio i bot intelligenti e la realtà mista.
+    - content: Un singolo data center che si trova a Redmond, Washington.
+      isCorrect: false
+      incorrectExplanation: Azure è costituito da data center distribuiti in tutto il mondo.
+    - content: Solo "una posizione diversa dove eseguire le macchine virtuali".
+      isCorrect: false
+      incorrectExplanation: Sebbene Azure offra potenza di calcolo, ad esempio le macchine virtuali, fornisce anche molti servizi che aiutano a esplorare nuovi paradigmi software, ad esempio bot intelligenti e realtà mista.
+  - content: Quando è consigliabile applicare la _scalabilità orizzontale_ per la distribuzione?
+    choices:
+    - content: Quando l'applicazione o il servizio richiede una CPU più potente o più memoria per un'esecuzione più veloce.
+      isCorrect: false
+      incorrectExplanation: In questo caso, è possibile scegliere la _scalabilità verticale_, spostando l'applicazione o il servizio in hardware più potente.
+    - content: Quando è possibile aggiungere altre macchine virtuali per rendere più veloce l'applicazione.
+      isCorrect: true
+      correctExplanation: Scalabilità orizzontale indica l'aggiunta di ulteriori sistemi, ad esempio macchine virtuali. Ad esempio, si potrebbero creare molte macchine virtuali configurate esattamente allo stesso modo e usare il bilanciamento del carico per distribuire il lavoro tra di esse.
+    - content: Quando si usa capacità in eccesso non necessaria.
+      isCorrect: false
+      incorrectExplanation: In questo caso, è possibile scegliere di _ridurre il numero di istanze_ rimuovendo i sistemi non necessari.

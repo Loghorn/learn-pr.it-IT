@@ -1,0 +1,45 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-security.5-encryption
+title: Crittografia
+metadata:
+  title: Crittografia
+  description: In questa unità viene spiegato come usare la crittografia per proteggere l'architettura
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 41ffa78955aa8c93dfb26a840bcdc01c0c8d8b17
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46340955"
+durationInMinutes: 10
+content: >
+  [!include[](includes/5-encryption.md)]
+quiz:
+  title: Verificare le proprie conoscenze
+  questions:
+  - content: 'Vero o falso: solo le macchine virtuali Windows possono usare Crittografia dischi di Azure'
+    choices:
+    - content: Vero
+      isCorrect: false
+      incorrectExplanation: Crittografia dischi di Azure è disponibile per le macchine virtuali sia Windows che Linux.
+    - content: Falso
+      isCorrect: true
+      correctExplanation: Crittografia dischi di Azure è disponibile per le macchine virtuali sia Windows che Linux.
+  - content: Quando si classificano i dati, quale dei seguenti aspetti è un fattore?
+    choices:
+    - content: Livello di rischio posto ai clienti se divulgati
+      isCorrect: true
+      correctExplanation: La classificazione dei dati da crittografare si basa normalmente sull'impatto che l'eventuale divulgazione può determinare sui clienti.
+    - content: Metodo di trasporto dei dati
+      isCorrect: false
+      incorrectExplanation: La classificazione dei dati da crittografare si basa normalmente sull'impatto che l'eventuale esposizione può determinare sui clienti.
+    - content: Se i dati sono archiviati in macchine virtuali o in un database
+      isCorrect: false
+      incorrectExplanation: La classificazione dei dati da crittografare si basa normalmente sull'impatto che l'eventuale esposizione può determinare sui clienti.
+    - content: Quantità di dati archiviati
+      isCorrect: false
+      incorrectExplanation: La classificazione dei dati da crittografare si basa normalmente sull'impatto che l'eventuale esposizione può determinare sui clienti.

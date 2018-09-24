@@ -1,0 +1,4 @@
+Nel modulo si è visto come Cache Redis di Azure può aiutare a migliorare le prestazioni dell'applicazione in molti modi. Prima di tutto, si è visto come usare le transazioni per garantire che più operazioni vengano richiamate insieme senza interruzioni. Si è quindi visto come usare la scadenza dei dati per rimuovere i dati non più in uso. È comunque possibile che a volte si presentino problemi di memoria quando si usa una cache e si è visto come usare i criteri di rimozione per fare spazio ai nuovi dati. Infine, è stato presentato il modello cache-aside per assicurarsi che i dati più comuni siano archiviati in una cache così da poter essere recuperati in meno tempo.
+
+<!-- Cleanup sandbox -->
+[!include[](../../../includes/azure-sandbox-cleanup.md)]

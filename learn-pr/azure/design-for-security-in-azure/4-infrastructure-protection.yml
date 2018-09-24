@@ -1,0 +1,45 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-security.4-infrastructure-protection
+title: Protezione dell'infrastruttura
+metadata:
+  title: Protezione dell'infrastruttura
+  description: In questa unità viene spiegato come proteggere l'accesso all'infrastruttura
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 0a765eaf5c91cc055266d283760bf94f6ba1efa7
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46340995"
+durationInMinutes: 10
+content: >
+  [!include[](includes/4-infrastructure-protection.md)]
+quiz:
+  title: Verificare le proprie conoscenze
+  questions:
+  - content: Tra tutti gli ambiti seguenti a quale non può essere applicato il controllo degli accessi in base al ruolo?
+    choices:
+    - content: Sottoscrizione
+      isCorrect: false
+      incorrectExplanation: Il controllo degli accessi in base al ruolo può essere applicato solo a risorse di Azure.
+    - content: Gruppo di risorse
+      isCorrect: false
+      incorrectExplanation: Il controllo degli accessi in base al ruolo può essere applicato solo a risorse di Azure.
+    - content: File system Linux
+      isCorrect: true
+      correctExplanation: Il controllo degli accessi in base al ruolo può essere applicato solo a risorse di Azure.
+    - content: Risorsa
+      isCorrect: false
+      incorrectExplanation: Il controllo degli accessi in base al ruolo può essere applicato solo a risorse di Azure.
+  - content: "Vero o falso: È possibile assegnare a una macchina virtuale un'identità gestita per risorse di Azure cui concedere il diritto di avviare e arrestare altre macchine virtuali."
+    choices:
+    - content: Vero
+      isCorrect: true
+      correctExplanation: Le identità gestite per risorse di Azure sono un metodo per assegnare un'identità ai servizi. Tramite questa assegnazione, è possibile concedere il controllo degli accessi in base al ruolo per la gestione dei servizi di Azure, come l'avvio e l'arresto di macchine virtuali.
+    - content: Falso
+      isCorrect: false
+      incorrectExplanation: Le identità gestite per risorse di Azure sono un metodo per assegnare un'identità ai servizi. Tramite questa assegnazione, è possibile concedere il controllo degli accessi in base al ruolo per la gestione dei servizi di Azure, come l'avvio e l'arresto di macchine virtuali.

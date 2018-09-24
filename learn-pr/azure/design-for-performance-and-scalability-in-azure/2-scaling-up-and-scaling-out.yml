@@ -1,0 +1,65 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-performance-and-scalability.2-scaling-up-and-scaling-out
+title: Aumento delle prestazioni e aumento del numero di istanze
+metadata:
+  title: Aumento delle prestazioni e aumento del numero di istanze
+  description: In questa unità viene illustrato come sfruttare l'aumento delle prestazioni e l'aumento del numero di istanze nell'architettura
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 5686d5ab64b46b7ea17bd9c541234975d2a809e6
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46352995"
+durationInMinutes: 15
+content: >
+  [!include[](includes/2-scaling-up-and-scaling-out.md)]
+quiz:
+  title: Verificare le proprie conoscenze
+  questions:
+  - content: Qual è la descrizione più accurata del concetto di aumento del numero di istanze?
+    choices:
+    - content: Aumento della quantità di risorse allocate a un'istanza
+      isCorrect: false
+      incorrectExplanation: L'aumento della quantità di risorse di una singola istanza è una descrizione appropriata del concetto di aumento delle prestazioni
+    - content: Aumento del numero di istanze che servono le richieste
+      isCorrect: true
+      correctExplanation: L'aumento del numero di istanze indica l'aumento del numero di istanze che servono le richieste.
+    - content: Aggiunta di ulteriore spazio di archiviazione a una macchina virtuale
+      isCorrect: false
+      incorrectExplanation: L'aggiunta di ulteriore spazio di archiviazione non è un esempio di aumento del numero di istanze.
+    - content: Raggiungimento del massimo livello di scalabilità per l'applicazione
+      isCorrect: false
+      incorrectExplanation: Il raggiungimento del massimo livello di scalabilità per l'applicazione può essere risolto con l'aumento del numero di istanze, ma non è una descrizione accurata dell'aumento del numero di istanze.
+  - content: Qual è la descrizione più accurata di riduzione delle prestazioni?
+    choices:
+    - content: Riduzione del numero di istanze che servono le richieste
+      isCorrect: false
+      incorrectExplanation: La riduzione del numero di istanze che servono le richieste rappresenta un ridimensionamento con riduzione del numero di istanze
+    - content: Acquisizione della proprietà delle modalità di scalabilità dell'applicazione
+      isCorrect: false
+      incorrectExplanation: L'acquisizione della proprietà delle modalità di scalabilità dell'applicazione non corrisponde al concetto di riduzione delle prestazioni.
+    - content: Riduzione della quantità di risorse allocate a un'istanza
+      isCorrect: true
+      correctExplanation: La riduzione delle prestazioni indica la riduzione delle risorse disponibili in una singola istanza.
+    - content: Raggiungimento del massimo livello di scalabilità per l'applicazione
+      isCorrect: false
+      incorrectExplanation: Questa non è una descrizione del concetto di riduzione delle prestazioni.
+  - content: Quale dei seguenti NON è un aspetto da prendere in considerazione quando si integra una strategia di scalabilità in un'applicazione?
+    choices:
+    - content: Criteri di conservazione dei backup per le istanze
+      isCorrect: true
+      correctExplanation: Sebbene sia importante definire i criteri di conservazione dei backup, questi non sono correlati alla possibilità di ridimensionare un'applicazione.
+    - content: Gestione dello stato dell'applicazione
+      isCorrect: false
+      incorrectExplanation: Quando si crea una strategia di ridimensionamento, è importante prendere in considerazione la gestione dello stato. Ai fini del ridimensionamento è necessario archiviare lo stato utente esternamente a singole istanze per garantire che l'esperienza utente non venga interrotta durante l'aggiunta o la rimozione di istanze.
+    - content: Tempo di avvio delle istanze
+      isCorrect: false
+      incorrectExplanation: Il tempo di avvio è un aspetto importante in una strategia di ridimensionamento. Quanto più diminuisce il tempo necessario per avviare un'istanza, più rapidamente l'applicazione sarà in grado di rispondere a una maggiore domanda.
+    - content: Automazione del ridimensionamento delle istanze in base a una metrica o a una pianificazione
+      isCorrect: false
+      incorrectExplanation: L'automazione del ridimensionamento è un componente essenziale della strategia di ridimensionamento. Quanto più si automatizzano le funzionalità di ridimensionamento, maggiore sarà la possibilità di gestire le fluttuazioni del carico utente senza intervento manuale e senza che si traducano in un'esperienza utente poco soddisfacente.

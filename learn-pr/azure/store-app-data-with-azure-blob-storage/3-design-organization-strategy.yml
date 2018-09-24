@@ -1,0 +1,51 @@
+### YamlMime:ModuleUnit
+uid: learn.store-app-data-with-azure-blob-storage.3-design-organization-strategy
+title: Progettare una strategia di archiviazione dell'organizzazione
+metadata:
+  title: Progettare una strategia di archiviazione dell'organizzazione
+  description: Progettare una strategia di archiviazione dell'organizzazione
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 8da3a8080f571b71fee0dab03a0b1cf2ac26f443
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46339042"
+durationInMinutes: 7
+content: >
+  [!include[](includes/3-design-organization-strategy.md)]
+quiz:
+  title: Verificare le proprie conoscenze
+  questions:
+  - content: Quale tipo di BLOB è la soluzione ottimale per la maggior parte degli scenari di archiviazione?
+    choices:
+    - content: BLOB di byte
+      isCorrect: false
+      incorrectExplanation: I BLOB in blocchi possono essere caricati e scaricati rapidamente grazie alla loro struttura basata su blocchi.
+    - content: BLOB di pagine
+      isCorrect: false
+      incorrectExplanation: I BLOB in blocchi possono essere caricati e scaricati rapidamente grazie alla loro struttura basata su blocchi.
+    - content: BLOB in blocchi
+      isCorrect: true
+      correctExplanation: I BLOB in blocchi possono essere caricati e scaricati rapidamente grazie alla loro struttura basata su blocchi.
+    - content: BLOB di accodamento
+      isCorrect: false
+      incorrectExplanation: I BLOB in blocchi possono essere caricati e scaricati rapidamente grazie alla loro struttura basata su blocchi.
+  - content: I BLOB consentono l'archiviazione di dati *non strutturati*. Che cosa significa *non strutturati*?
+    choices:
+    - content: I BLOB non possono essere organizzati o denominati, sono semplici raccolte di byte.
+      isCorrect: false
+      incorrectExplanation: I BLOB non impongono alcun tipo di struttura per i dati e le applicazioni possono quindi archiviare nei BLOB qualsiasi tipo di dati.
+    - content: Non esistono restrizioni in merito ai tipi di dati che è possibile archiviare nei BLOB.
+      isCorrect: true
+      correctExplanation: I BLOB non impongono alcun tipo di struttura per i dati e le applicazioni possono quindi archiviare nei BLOB qualsiasi tipo di dati.
+    - content: I BLOB non possono contenere dati strutturati come dati JSON o XML.
+      isCorrect: false
+      incorrectExplanation: I BLOB non impongono alcun tipo di struttura per i dati e le applicazioni possono quindi archiviare nei BLOB qualsiasi tipo di dati.
+    - content: I dati scaricati dai BLOB vengono organizzati in modo casuale e per analizzarli è necessaria una libreria client.
+      isCorrect: false
+      incorrectExplanation: I BLOB non impongono alcun tipo di struttura per i dati e le applicazioni possono quindi archiviare nei BLOB qualsiasi tipo di dati.

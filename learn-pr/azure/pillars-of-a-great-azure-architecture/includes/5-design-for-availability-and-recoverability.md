@@ -1,0 +1,30 @@
+Gli operatori sanitari che lavorano a Lamna Healthcare non hanno molta tolleranza per i tempi di inattività. Devono avere accesso ai sistemi IT clinici 24 ore al giorno per garantire un'assistenza della massima qualità in qualsiasi momento. Per soddisfare i requisiti di disponibilità continua, le applicazioni di Lamna Healthcare devono essere in grado di gestire gli errori con un impatto minimo per gli utenti. Come si garantisce che le applicazioni rimangano operative, sia per eventi imprevisti locali che per emergenze su larga scala?
+
+In questo caso verranno fornite istruzioni su come includere la disponibilità e la possibilità di ripristino nella progettazione dell'architettura.
+
+## <a name="availability-and-recoverability"></a>Disponibilità e possibilità di ripristino
+
+In un'applicazione complessa possono verificarsi numerosi imprevisti di qualsiasi portata. Possono verificarsi errori di singoli server e dischi rigidi. Un problema di distribuzione può provocare l'involontaria eliminazione di tutte le tabelle di un database. Interi data center possono diventare irraggiungibili. Un ransomware può crittografare in modo malevolo tutti i dati.
+
+La progettazione per la *disponibilità* è finalizzata al mantenimento del tempo di attività in caso di eventi imprevisti su piccola scala e condizioni temporanee come interruzioni parziali della rete. È possibile garantire che l'applicazione sia in grado di gestire errori localizzati integrando la disponibilità elevata in ogni componente di un'applicazione ed eliminando i singoli punti di guasto. Un progetto di questo tipo riduce anche al minimo l'impatto della manutenzione dell'infrastruttura. Le progettazioni a disponibilità elevata in genere mirano a eliminare l'impatto degli eventi imprevisti rapidamente e automaticamente e ad assicurare che il sistema possa continuare a elaborare le richieste senza alcun impatto.
+
+La progettazione per la *possibilità di ripristino* è incentrata sul ripristino in caso di perdita dei dati ed emergenze su larga scala. Il ripristino da questi tipi di eventi imprevisti spesso comporta interventi attivi, anche se i passaggi di recupero automatico possono ridurre il tempo necessario per ripristinare. Questi tipi di eventi imprevisti potrebbero causare tempi di inattività o la perdita definitiva di dati. Per il ripristino di emergenza sono necessarie tanto una pianificazione accurata quanto una corretta esecuzione.
+
+Includendo la disponibilità elevata e la possibilità di ripristino nella progettazione dell'architettura si protegge l'azienda dalle perdite finanziarie derivanti da tempi di inattività e perdita di dati. La reputazione dell'azienda non verrà compromessa dalla perdita di fiducia da parte dei clienti.
+
+## <a name="architecting-for-availability-and-recoverability"></a>Progettare l'architettura per la disponibilità e la possibilità di ripristino
+
+La progettazione dell'architettura per la disponibilità e la possibilità di ripristino assicura che l'applicazione possa mantenere gli impegni presi con i clienti.
+
+Per la disponibilità, identificare il contratto di servizio da offrire ai clienti. Esaminare le potenziali capacità di disponibilità elevata dell'applicazione rispetto al contratto di servizio e identificare le aree in cui si ha una copertura adeguata e quelle in cui è necessario apportare miglioramenti. L'obiettivo è aggiungere ridondanza ai componenti dell'architettura per ridurre le probabilità che si verifichi un'interruzione. Esempi di componenti di progettazione a disponibilità elevata sono il clustering e il bilanciamento del carico. Il clustering sostituisce una singola macchina virtuale con una serie di macchine virtuali coordinate. In caso di errore o irraggiungibilità di una macchina virtuale, verrà eseguito il failover dei servizi a un'altra macchina virtuale in grado di soddisfare le richieste. Il bilanciamento del carico distribuisce le richieste su molte istanze di un servizio, rilevando le istanze con errori e impedendo che le richieste vengano indirizzate a tali istanze.
+
+Per la possibilità di ripristino, eseguire un'analisi per esaminare i possibili scenari di perdita di dati e i principali scenari di tempi di inattività. L'analisi deve comprendere l'esame delle strategie di ripristino e del compromesso costi-benefici per ciascuna di esse. Questo esercizio offrirà una visione approfondita delle priorità dell'organizzazione e contribuirà a chiarire il ruolo dell'applicazione. I risultati devono includere l'obiettivo del punto di ripristino (RPO) e l'obiettivo del tempo di ripristino (RTO) dell'applicazione.
+
+* **Obiettivo del punto di ripristino**: la durata massima di perdita dei dati accettabile. L'obiettivo RPO viene misurato in unità di tempo, non di volume: "30 minuti di dati", "quattro ore di dati" e così via. L'obiettivo RPO riguarda la limitazione e il ripristino in seguito a una *perdita* di dati, non a un *furto* di dati.
+* **Obiettivo del tempo di ripristino**: la durata massima di tempo di inattività accettabile, dove "tempo di inattività" deve essere definito dalle proprie specifiche. Ad esempio, se la durata di tempo di inattività accettabile è otto ore in caso di un'emergenza, l'obiettivo RPO è di otto ore.
+
+Definendo RPO e RTO è possibile progettare funzionalità di backup, ripristino, replica e recupero nell'architettura per soddisfare questi obiettivi.
+
+Ogni provider di servizi cloud offre una suite di servizi e funzionalità che può essere usata per migliorare la disponibilità e la possibilità di ripristino delle applicazioni. Quando possibile, usare i servizi e le procedure consigliate esistenti ed evitare di crearne altri.
+
+I dischi rigidi possono danneggiarsi, i data center possono diventare irraggiungibili e gli hacker possono sferrare attacchi. È importante mantenere una buona reputazione presso i clienti grazie alla disponibilità e alla possibilità di ripristino. La disponibilità si concentra sul mantenimento dei tempi di attività in situazioni come le interruzioni di rete, mentre la possibilità di ripristino è finalizzata al recupero dei dati dopo un evento imprevisto grave.

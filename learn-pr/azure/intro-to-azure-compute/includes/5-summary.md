@@ -1,0 +1,3 @@
+![Il concetto di calcolo al centro del nostro sistema solare](../media/5-heading.png)
+
+Azure offre più servizi per eseguire operazioni di calcolo sul cloud, ma la scelta del servizio adatto dipende dalle esigenze aziendali. Tenere presente che vi sono alcune sovrapposizioni nelle funzionalità. Ad esempio, si potrebbero usare sia contenitori di Azure che Funzioni di Azure nell'ambito di un'architettura serverless. In ultima analisi, tuttavia, la decisione giusta dipenderà sia dalle funzionalità del servizio, sia dalle capacità del team di sviluppo.

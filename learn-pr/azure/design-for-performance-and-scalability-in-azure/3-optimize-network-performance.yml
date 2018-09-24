@@ -1,0 +1,51 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-performance-and-scalability.3-optimize-network-performance
+title: Ottimizzare le prestazioni di rete
+metadata:
+  title: Ottimizzare le prestazioni di rete
+  description: In questa unità viene spiegato come ottimizzare le prestazioni di rete per la propria architettura
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 4cb23a0d62bc62d7dea8842fa6110b1932694feb
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46339827"
+durationInMinutes: 10
+content: >
+  [!include[](includes/3-optimize-network-performance.md)]
+quiz:
+  title: Verificare le proprie conoscenze
+  questions:
+  - content: Quale delle seguenti è la definizione corretta del termine latenza di rete?
+    choices:
+    - content: Quantità di velocità effettiva disponibile nella rete
+      isCorrect: false
+      incorrectExplanation: La velocità effettiva della rete è una misura della capacità di rete.
+    - content: Quantità di tempo necessaria per inviare le informazioni da un'origine a una destinazione
+      isCorrect: true
+      correctExplanation: La latenza è una misura del tempo di trasferimento di rete.
+    - content: Valore TTL di un asset in una rete per la distribuzione di contenuti
+      isCorrect: false
+      incorrectExplanation: Il valore TTL di un asset in una rete per la distribuzione di contenuti è correlato alla frequenza di aggiornamento rispetto all'origine.
+    - content: Circuito privato tra una rete locale e Azure
+      isCorrect: false
+      incorrectExplanation: ExpressRoute è un circuito privato tra una rete locale e Azure e sebbene possa migliorare la latenza, non è una definizione del termine.
+  - content: Si supponga che l'applicazione Web sia ospitata negli Stati Uniti orientali. Quale delle opzioni seguenti è quella più efficace per ottimizzare la latenza di rete per utenti ubicati in tutto il mondo?
+    choices:
+    - content: Distribuire ExpressRoute a ciascuno degli utenti
+      isCorrect: false
+      incorrectExplanation: Il provisioning di ExpressRoute viene effettuato per percorso di rete, non per utente.
+    - content: Usare una rete per la distribuzione di contenuti per collocare le risorse e il contenuto più vicino agli utenti
+      isCorrect: true
+      correctExplanation: Usando una rete per la distribuzione di contenuti, gli asset vengono memorizzati nella cache in posizioni che si trovano fisicamente più vicino agli utenti finali riducendo la quantità di tempo per caricarli. Ciò migliorerà in modo conveniente la latenza di rete per gli utenti in tutto il mondo.
+    - content: Usare Gestione traffico in modalità di routing Prestazioni
+      isCorrect: false
+      incorrectExplanation: Gestione traffico è un servizio di bilanciamento del carico DNS che contribuisce a migliorare il tempo necessario per connettersi alle risorse, ma richiede anche l'individuazione di servizi Web in più posizioni e non è il modo più economico per risolvere questo problema.
+    - content: Distribuire più istanze negli Stati Uniti orientali per offrire un server per il carico aggiuntivo degli utenti
+      isCorrect: false
+      incorrectExplanation: Se si aggiungono più istanze si aumenterà la quantità di carico che può essere gestita dal servizio nell'area Stati Uniti orientali, ma non si risolverà la latenza di rete per gli utenti distribuiti a livello globale.

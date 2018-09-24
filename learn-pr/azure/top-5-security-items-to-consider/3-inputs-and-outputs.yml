@@ -1,0 +1,62 @@
+### YamlMime:ModuleUnit
+uid: learn.top-5-security-items-to-consider.3-inputs-and-outputs
+title: Input e output
+metadata:
+  title: Input e output
+  description: Input e output
+  author: lnyswonger
+  ms.date: 09/24/2018
+  ms.author: luken
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 6549bf1ac4fb034b3d0e8a4720364725c36d1f12
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46340667"
+durationInMinutes: 10
+content: >
+  [!include[](includes/3-inputs-and-outputs.md)]
+quiz:
+  title: Verificare le proprie conoscenze
+  questions:
+  - content: Quali delle origini dati seguenti devono essere convalidate?
+    choices:
+    - content: Dati di un'API di terze parti
+      isCorrect: false
+      incorrectExplanation: Questa è solo una delle molte origini da convalidare.
+    - content: Dati del parametro URL
+      isCorrect: false
+      incorrectExplanation: Questa è solo una delle molte origini da convalidare
+    - content: Dati raccolti dall'utente tramite un campo di input
+      isCorrect: false
+      incorrectExplanation: Questa è solo una delle molte origini da convalidare.
+    - content: Tutte le precedenti
+      isCorrect: true
+      correctExplanation: Tutte queste origini dati devono essere convalidate. Non considerare mai attendibili dati che possono essere stati modificati.
+  - content: 'Le query con parametri (stored procedure in SQL) rappresentano un modo sicuro per comunicare con il database perché:'
+    choices:
+    - content: Sono più organizzate dei comandi di database inline e quindi generano meno confusione negli utenti.
+      isCorrect: false
+      incorrectExplanation: L'organizzazione del codice non è il motivo per cui le query con parametri sono più sicure rispetto al codice SQL inline.
+    - content: La stored procedure presenta una chiara struttura dello script, assicurando una maggiore visibilità.
+      isCorrect: false
+      incorrectExplanation: La struttura chiara del codice non è il motivo per cui le query con parametri sono più sicure rispetto al codice SQL inline.
+    - content: Le query con parametri sostituiscono le variabili prima di eseguire le query, impedendo così agli utenti malintenzionati di inserire codice dannoso al posto di una variabile.
+      isCorrect: true
+  - content: Quali dei dati seguenti devono essere codificati prima dell'output?
+    choices:
+    - content: Dati salvati nel database
+      isCorrect: false
+      incorrectExplanation: Anche se i dati salvati nel database devono essere convalidati per assicurarsi che siano validi, non è necessario codificarli per l'output.
+    - content: Dati da visualizzare sullo schermo
+      isCorrect: true
+      correctExplanation: I dati da visualizzare sullo schermo devono essere codificati per assicurarsi che vengano interpretati come codice.
+    - content: Dati inviati a un'API di terze parti
+      isCorrect: false
+      incorrectExplanation: Anche se i dati inviati a un'API di terze parti devono essere convalidati per assicurarsi che siano validi, non è necessario codificarli per l'output.
+    - content: Dati nei parametri URL
+      isCorrect: false
+      incorrectExplanation: Anche se i dati nei parametri URL devono essere convalidati prima dell'uso nell'applicazione, non è necessario codificarli per l'output.
+      correctExplanation: I campi dei parametri usati nelle query con parametri vengono trattati come dati, non come codice, offrendo protezione dalle vulnerabilità agli attacchi di tipo injection. Per altre informazioni su come implementare le query con parametri, vedere la [scheda di riferimento rapido OWASP sulla parametrizzazione delle query]( https://www.owasp.org/index.php/Query_Parameterization_Cheat_Sheet).

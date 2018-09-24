@@ -1,0 +1,42 @@
+### YamlMime:Module
+uid: learn.secure-access-azure-ad-multi-factor-authentication
+metadata:
+  title: Proteggere le risorse di Azure con l'accesso condizionale
+  description: È necessario trovare il giusto compromesso tra sicurezza e accessibilità. La funzionalità di accesso condizionale di Azure Active Directory offre un buon compromesso tra le due. Per maggiore sicurezza in determinate circostanze è possibile richiedere dei controlli di compensazione come Azure Multi-Factor Authentication (MFA). Di seguito verrà illustrato come implementare i criteri di accesso condizionale usando Azure Active Directory.
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 7cd15f35aa3d15b525edd915b368f454520aa6f6
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46339035"
+title: Proteggere le risorse di Azure con l'accesso condizionale
+summary: È necessario trovare il giusto compromesso tra sicurezza e accessibilità. La funzionalità di accesso condizionale di Azure Active Directory offre un buon compromesso tra le due. Informazioni su come implementare i criteri di accesso condizionale usando Azure Active Directory.
+abstract: >
+  In questo modulo verrà descritto come:
+
+  - Creare un utente di test e un gruppo utenti
+
+  - Abilitare criteri di accesso condizionale che richiedono MFA (Multi-Factor Authentication)
+prerequisites: >
+  - Conoscenza dei concetti di base di Azure, ad esempio i gruppi di risorse e le sottoscrizioni
+iconUrl: /learn/achievements/secure-azure-resources-with-conditional-access.svg
+levels:
+- intermediate
+roles:
+- administrator
+products:
+- azure
+- azure-active-directory
+units:
+- learn.secure-access-azure-ad-multi-factor-authentication.1-introduction
+- learn.secure-access-azure-ad-multi-factor-authentication.2-azure-ad-overview
+- learn.secure-access-azure-ad-multi-factor-authentication.3-build-azure-ad
+- learn.secure-access-azure-ad-multi-factor-authentication.4-secure-access
+- learn.secure-access-azure-ad-multi-factor-authentication.5-test-access
+- learn.secure-access-azure-ad-multi-factor-authentication.6-summary
+achievement: learn.secure-access-azure-ad-multi-factor-authentication.badge

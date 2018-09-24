@@ -1,0 +1,45 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-performance-and-scalability.5-identify-performance-bottlenecks-in-your-application
+title: Identificare i colli di bottiglia relativi alle prestazioni nell'applicazione
+metadata:
+  title: Identificare i colli di bottiglia relativi alle prestazioni nell'applicazione
+  description: In questa unità viene spiegato come identificare i colli di bottiglia relativi alle prestazioni nell'applicazione
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: c7d8f1f8564a139f58fb17efc300af92e96cf906
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46339819"
+durationInMinutes: 9
+content: >
+  [!include[](includes/5-identify-performance-bottlenecks-in-your-application.md)]
+quiz:
+  title: Verificare le proprie conoscenze
+  questions:
+  - content: Quale delle seguenti affermazioni descrive meglio Application Insights?
+    choices:
+    - content: Un'unica visualizzazione per tutte le esigenze di monitoraggio in Azure
+      isCorrect: false
+      incorrectExplanation: Application Insights può fornire un'ampia gamma di dati sulle prestazioni delle applicazioni, ma non costituisce una soluzione di monitoraggio completa di Azure.
+    - content: Un'implementazione del modello di monitoraggio dell'integrità dell'endpoint
+      isCorrect: false
+      incorrectExplanation: Il modello di monitoraggio dell'integrità dell'endpoint è incentrato sul monitoraggio degli endpoint esposti dall'applicazione per l'integrità complessiva.
+    - content: Un'area di lavoro che permette la raccolta dei log tra applicazioni e infrastruttura
+      isCorrect: false
+      incorrectExplanation: Log Analytics è un'area di lavoro che permette la raccolta dei log tra applicazioni e infrastruttura.
+    - content: Un servizio per monitorare la disponibilità, le prestazioni e l'uso delle applicazioni Web
+      isCorrect: true
+      correctExplanation: Application Insights è un servizio per monitorare la disponibilità, le prestazioni e l'uso delle applicazioni Web.
+  - content: 'Vero o falso: Log Analytics tiene traccia di metriche e log personalizzati.'
+    choices:
+    - content: Vero
+      isCorrect: true
+      correctExplanation: Per le metriche e i log personalizzati è possibile usare l'API di raccolta dati HTTP per scrivere dati in Log Analytics da qualsiasi client dell'API REST oppure un'app per la logica di Azure per scrivere i dati di un flusso di lavoro personalizzato.
+    - content: Falso
+      isCorrect: false
+      incorrectExplanation: Per le metriche e i log personalizzati è possibile usare l'API di raccolta dati HTTP per scrivere dati in Log Analytics da qualsiasi client dell'API REST oppure un'app per la logica di Azure per scrivere i dati di un flusso di lavoro personalizzato.

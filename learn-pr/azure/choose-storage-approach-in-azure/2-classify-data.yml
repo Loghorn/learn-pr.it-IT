@@ -1,0 +1,45 @@
+### YamlMime:ModuleUnit
+uid: learn.choose-storage-approach-in-azure.2-classify-data
+metadata:
+  title: Verifica delle conoscenze
+  description: Verifica delle conoscenze
+  ms.date: 09/24/2018
+  author: mimig1
+  ms.author: mimig
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: a353b13f282c1a40b5650cdcb30470570e9f24d2
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46354085"
+title: Classificare i dati
+durationInMinutes: 10
+content: >
+  [!include[](includes/2-classify-data.md)]
+quiz:
+  title: Verificare le proprie conoscenze
+  questions:
+  - content: Un file JSON è un esempio di quale tipo di dati?
+    choices:
+    - content: Dati strutturati
+      isCorrect: false
+      incorrectExplanation: I dati semistrutturati contengono tag che ne evidenziano l'organizzazione e la gerarchia.
+    - content: Dati semistrutturati
+      isCorrect: true
+      correctExplanation: I dati semistrutturati contengono tag che ne evidenziano l'organizzazione e la gerarchia.
+    - content: Dati non strutturati
+      isCorrect: false
+      incorrectExplanation: I dati semistrutturati contengono tag che ne evidenziano l'organizzazione e la gerarchia.
+  - content: Un video è un esempio di quale tipo di dati?
+    choices:
+    - content: Dati strutturati
+      isCorrect: false
+      incorrectExplanation: I dati non strutturati vengono spesso inviati in file. Un video può avere una struttura nel suo complesso, ma i dati che compongono il video stesso sono non strutturati.
+    - content: Dati semistrutturati
+      isCorrect: false
+      incorrectExplanation: I dati non strutturati vengono spesso inviati in file. Un video può avere una struttura nel suo complesso, ma i dati che compongono il video stesso sono non strutturati.
+    - content: Dati non strutturati
+      isCorrect: true
+      correctExplanation: I dati non strutturati vengono spesso inviati in file. Un video può avere una struttura nel suo complesso, ma i dati che compongono il video stesso sono non strutturati.

@@ -1,0 +1,43 @@
+### YamlMime:ModuleUnit
+uid: learn.introduction-to-azure-virtual-machines.7-knowledge-check
+title: Verifica delle conoscenze
+metadata:
+  title: Verifica delle conoscenze
+  description: Verifica delle conoscenze
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: c3d74041711d08f746273cbeb87da9f272ca4453
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46352935"
+durationInMinutes: 1
+quiz:
+  title: Verificare le proprie conoscenze
+  questions:
+  - content: Si supponga di voler eseguire un'appliance di rete in una macchina virtuale. Quale opzione di carico di lavoro è ottimale?
+    choices:
+    - content: Utilizzo generico
+      isCorrect: false
+      incorrectExplanation: Le macchine virtuali con ottimizzazione per il calcolo sono progettate per offrire un rapporto CPU-memoria elevato. Sono idonee per server Web con traffico medio, appliance di rete, processi batch e server applicazioni.
+    - content: Con ottimizzazione per il calcolo
+      isCorrect: true
+      correctExplanation: Le macchine virtuali con ottimizzazione per il calcolo sono progettate per offrire un rapporto CPU-memoria elevato. Sono idonee per server Web con traffico medio, appliance di rete, processi batch e server applicazioni.
+    - content: Con ottimizzazione per la memoria
+      isCorrect: false
+      incorrectExplanation: Le macchine virtuali con ottimizzazione per il calcolo sono progettate per offrire un rapporto CPU-memoria elevato. Sono idonee per server Web con traffico medio, appliance di rete, processi batch e server applicazioni.
+    - content: Con ottimizzazione per l'archiviazione
+      isCorrect: false
+      incorrectExplanation: Le macchine virtuali con ottimizzazione per il calcolo sono progettate per offrire un rapporto CPU-memoria elevato. Sono idonee per server Web con traffico medio, appliance di rete, processi batch e server applicazioni.
+  - content: 'Vero o falso: i modelli di Resource Manager sono file JSON?'
+    choices:
+    - content: Vero
+      isCorrect: true
+      correctExplanation: I modelli di Resource Manager sono file con estensione JSON che definiscono le risorse da distribuire per la soluzione. Il modello può quindi essere usato per ricreare facilmente più versioni dell'infrastruttura, ad esempio la gestione temporanea e la produzione.
+    - content: Falso
+      isCorrect: false
+      incorrectExplanation: I modelli di Resource Manager sono file JSON che definiscono le risorse da distribuire per la soluzione. Il modello può quindi essere usato per ricreare facilmente più versioni dell'infrastruttura, ad esempio la gestione temporanea e la produzione.
