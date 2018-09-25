@@ -41,7 +41,7 @@ SampleVM          168.61.54.62         10.0.0.4
 È possibile ottenere informazioni più dettagliate su una macchina virtuale specifica in base al nome o all'ID usando il comando `vm show`.
 
 ```azurecli
-az vm show --resource-group <rgn>[Sandbox resource group name]</rgn> --name SampleVM
+az vm show --resource-group <rgn>[sandbox resource group name]</rgn> --name SampleVM
 ```
 
 Questo comando restituirà un blocco JSON piuttosto esteso con tutti i tipi di informazioni sulla VM, tra cui i dispositivi di archiviazione collegati, le interfacce di rete e tutti gli ID oggetto per le risorse a cui la VM è connessa. Anche in questo caso si può passare a un formato di tabella, ma in tale formato vengono omessi quasi tutti i dati interessanti. Si può invece usare un linguaggio di query predefinito per JSON denominato [JMESPath](http://jmespath.org/).
@@ -115,19 +115,19 @@ JMESPath offre diverse altre interessanti funzionalità di query. Quando si ha t
 Con una conoscenza di base delle query JMES, è possibile aggiungere filtri ai dati restituiti da query come il comando `vm show`. Ad esempio, si può recuperare il nome utente amministratore:
 
 ```azurecli
-az vm show --resource-group <rgn>[Sandbox resource group name]</rgn> --name SampleVM --query "osProfile.adminUsername"
+az vm show --resource-group <rgn>[sandbox resource group name]</rgn> --name SampleVM --query "osProfile.adminUsername"
 ```
 
 È possibile ottenere la dimensione assegnata alla VM:
 
 ```azurecli
-az vm show --resource-group <rgn>[Sandbox resource group name]</rgn> --name SampleVM --query hardwareProfile.vmSize
+az vm show --resource-group <rgn>[sandbox resource group name]</rgn> --name SampleVM --query hardwareProfile.vmSize
 ```
 
 Per recuperare tutti gli ID delle interfacce di rete, invece, si può usare la query seguente:
 
 ```azurecli
-az vm show --resource-group <rgn>[Sandbox resource group name]</rgn> --name SampleVM --query "networkProfile.networkInterfaces[].id"
+az vm show --resource-group <rgn>[sandbox resource group name]</rgn> --name SampleVM --query "networkProfile.networkInterfaces[].id"
 ```
 
 Questa tecnica di query funziona con qualsiasi comando dell'interfaccia della riga di comando di Azure e può essere usata per estrarre dati specifici nella riga di comando. È utile anche per gli script. È ad esempio possibile estrarre un valore dall'account Azure e archiviarlo in una variabile di ambiente o di script. Se si decide di usarla in questo modo, un flag utile da aggiungere è il parametro `--output tsv`, abbreviabile in `-o tsv`. In questo modo, i risultati vengono restituiti in valori delimitati da tabulazioni e includono solo i valori di dati effettivi con tabulazioni come separatori.
@@ -135,7 +135,7 @@ Questa tecnica di query funziona con qualsiasi comando dell'interfaccia della ri
 Ad esempio:
 
 ```azurecli
-az vm show --resource-group <rgn>[Sandbox resource group name]</rgn> --name SampleVM --query "networkProfile.networkInterfaces[].id" -o tsv
+az vm show --resource-group <rgn>[sandbox resource group name]</rgn> --name SampleVM --query "networkProfile.networkInterfaces[].id" -o tsv
 ```
 
 Restituisce il testo: `/subscriptions/20f4b944-fc7a-4d38-b02c-900c8223c3a0/resourceGroups/2568d0d0-efe3-4d04-a08f-df7f009f822a/providers/Microsoft.Network/networkInterfaces/SampleVMVMNic`

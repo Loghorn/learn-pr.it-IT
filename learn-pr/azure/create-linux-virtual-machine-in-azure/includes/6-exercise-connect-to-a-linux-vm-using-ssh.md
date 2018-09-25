@@ -9,7 +9,7 @@ Per connettersi a una macchina virtuale di Azure con un client SSH, è necessari
 
 ### <a name="get-the-public-ip-address"></a>Ottenere l'indirizzo IP pubblico
 
-1. Nel [portale di Azure](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true) verificare che il pannello **Panoramica** per la macchina virtuale creata in precedenza sia aperto. La macchina virtuale è disponibile in **Tutte le risorse** se è necessario aprirla. Il pannello di panoramica presenta numerose informazioni sulla macchina virtuale.
+1. Nel [portale di Azure](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) verificare che il pannello **Panoramica** per la macchina virtuale creata in precedenza sia aperto. La macchina virtuale è disponibile in **Tutte le risorse** se è necessario aprirla. Il pannello di panoramica presenta numerose informazioni sulla macchina virtuale.
 
     - È possibile vedere se la macchina virtuale è in esecuzione
     - Arrestarla o riavviarla
@@ -82,7 +82,7 @@ Apache è disponibile all'interno dei repository software predefiniti di Ubuntu,
     ```bash
     sudo apt-get update
     ```
-    
+
 1. Successivamente, installare Apache:
 
     ```bash
@@ -116,7 +116,7 @@ Apache è disponibile all'interno dei repository software predefiniti di Ubuntu,
     ```
     > [!NOTE]
     > Questi comandi sono di banale esecuzione, ma si tratta, tuttavia, di processi manuali. Se è necessario installare sempre alcuni software, valutare la possibilità di automatizzare il processo tramite scripting.
-    
+
 1. Infine, è possibile provare a recuperare la pagina predefinita tramite l'indirizzo IP pubblico. Tuttavia, anche se il server Web è in esecuzione nella macchina virtuale, non si otterrà una connessione o una risposta valida. Perché?
 
 È necessario eseguire un altro passaggio per poter interagire con il server Web. La rete virtuale sta bloccando la richiesta in ingresso: si tratta del comportamento predefinito. È possibile cambiare questo comportamento tramite la configurazione. Questo aspetto verrà esaminato più avanti.

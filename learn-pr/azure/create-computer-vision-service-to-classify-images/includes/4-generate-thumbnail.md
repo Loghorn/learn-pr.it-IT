@@ -16,7 +16,7 @@ L'operazione `generateThumbnail` crea un'immagine di anteprima con la larghezza 
 
 ## <a name="generate-a-thumbnail"></a>Generare un'anteprima
 
-Per questo esempio si userà l'immagine seguente, ma è possibile provare lo stesso comando con URL corrispondenti ad altre immagini. 
+Per questo esempio si userà l'immagine seguente, ma è possibile provare lo stesso comando con URL corrispondenti ad altre immagini.
 
 ![Immagine di un cane bianco su un prato verde.](../media/4-dog.png)
 
@@ -37,7 +37,7 @@ In questo esempio si richiede al servizio di creare un'anteprima con dimensioni 
 
 ## <a name="view-the-generated-thumbnail"></a>Visualizzare l'anteprima generata
 
-L'anteprima generata sarà disponibile nell'account di archiviazione di Azure Cloud Shell. Il nome del file è **thumbnail.jpg**. 
+L'anteprima generata sarà disponibile nell'account di archiviazione di Azure Cloud Shell. Il nome del file è **thumbnail.jpg**.
 
 Cloud Shell in Microsoft Learn non può scaricare file, ma è possibile seguire queste istruzioni per scaricare l'anteprima tramite il portale di Azure.
 
@@ -48,15 +48,15 @@ Cloud Shell in Microsoft Learn non può scaricare file, ma è possibile seguire 
     ls -l
     ```
 
-    
+
 
 1. Eseguire il comando seguente per spostare `thumbnail.jpg` nella cartella clouddrive.
 
     ```azurecli
     mv ~/thumbnail.jpg ~/clouddrive
     ```
-1. Accedere al [portale di Azure](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true) usando lo stesso account con cui è stato attivato l'ambiente sandbox.
-1. Nel pannello **Tutte le risorse** del dashboard del portale selezionare l'account di archiviazione il cui nome inizia con `cloudshell`. 
+1. Accedere al [portale di Azure](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) usando lo stesso account con cui è stato attivato l'ambiente sandbox.
+1. Nel pannello **Tutte le risorse** del dashboard del portale selezionare l'account di archiviazione il cui nome inizia con `cloudshell`.
 1. Nel pannello Account di archiviazione selezionare **Storage Explorer**, quindi **CONDIVISIONI FILE** e infine la condivisione file nella raccolta il cui nome inizia con **cloudshellfiles***.
 1. Selezionare il file *thunbnail.jpg* e quindi **Scarica** nel menu in alto per visualizzare l'immagine.
 

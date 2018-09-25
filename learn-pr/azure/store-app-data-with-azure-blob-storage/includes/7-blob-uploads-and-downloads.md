@@ -61,10 +61,10 @@ L'app è stata completata &mdash; è possibile distribuirla e visualizzarne il f
 Il nome dell'app deve essere globalmente univoco, quindi è necessario sceglierne uno per riempire `<your-unique-app-name>`.
 
 ```azurecli
-az appservice plan create --name blob-exercise-plan --resource-group <rgn>[Sandbox resource group name]</rgn>
-az webapp create --name <your-unique-app-name> --plan blob-exercise-plan --resource-group <rgn>[Sandbox resource group name]</rgn>
+az appservice plan create --name blob-exercise-plan --resource-group <rgn>[sandbox resource group name]</rgn>
+az webapp create --name <your-unique-app-name> --plan blob-exercise-plan --resource-group <rgn>[sandbox resource group name]</rgn>
 CONNECTIONSTRING=$(az storage account show-connection-string --name <your-unique-storage-account-name> --output tsv)
-az webapp config appsettings set --name <your-unique-app-name> --resource-group <rgn>[Sandbox resource group name]</rgn> --settings AzureStorageConfig:ConnectionString=$CONNECTIONSTRING AzureStorageConfig:FileContainerName=files
+az webapp config appsettings set --name <your-unique-app-name> --resource-group <rgn>[sandbox resource group name]</rgn> --settings AzureStorageConfig:ConnectionString=$CONNECTIONSTRING AzureStorageConfig:FileContainerName=files
 ```
 
 A questo punto l'app viene distribuita. I comandi seguenti pubblicheranno il sito nella cartella `pub`, la comprimeranno in `site.zip` e quindi distribuiranno il file con estensione zip nel servizio app.
@@ -76,7 +76,7 @@ A questo punto l'app viene distribuita. I comandi seguenti pubblicheranno il sit
 dotnet publish -o pub
 cd pub
 zip -r ../site.zip *
-az webapp deployment source config-zip --src ../site.zip --name <your-unique-app-name> --resource-group <rgn>[Sandbox resource group name]</rgn>
+az webapp deployment source config-zip --src ../site.zip --name <your-unique-app-name> --resource-group <rgn>[sandbox resource group name]</rgn>
 ```
 
 Aprire `https://<your-unique-app-name>.azurewebsites.net` in un browser per visualizzare l'app in esecuzione. L'aspetto dovrebbe essere simile a quanto riportato di seguito.

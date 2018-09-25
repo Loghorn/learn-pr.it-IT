@@ -2,7 +2,7 @@ In questa unità l'applicazione ASP.NET Core verrà caricata in Servizio app di 
 
 ## <a name="create-a-staging-deployment-slot"></a>Creare uno slot di distribuzione di staging
 
-1. Tornare al [portale di Azure](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true).
+1. Tornare al [portale di Azure](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true).
 
 1. Aprire la risorsa Servizio app (l'app Web) creata in precedenza. È possibile ritrovarla cercando l'app in **Tutte le risorse** oppure cercando il gruppo di risorse che la contiene in **Gruppi di risorse**.
 

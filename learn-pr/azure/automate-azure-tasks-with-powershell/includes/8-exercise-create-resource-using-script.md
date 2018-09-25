@@ -87,7 +87,7 @@ Chiudere l'editor usando il menu di scelta rapida "...".
 1. Eseguire lo script.
 
     ```powershell
-    .\ConferenceDailyReset.ps1 <rgn>[Sandbox resource group name]</rgn>
+    .\ConferenceDailyReset.ps1 <rgn>[sandbox resource group name]</rgn>
     ```
     
 Il completamento dello script può richiedere alcuni minuti. Al termine, verificare se è stato eseguito correttamente esaminando le risorse che ora sono disponibili nel gruppo di risorse:

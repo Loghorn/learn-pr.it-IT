@@ -89,7 +89,7 @@ Al termine, eseguire il comando seguente per vedere quanti messaggi si trovano n
 
 ```azurecli
 az servicebus topic subscription show \
-    --resource-group <rgn>[Sandbox resource group name]</rgn> \
+    --resource-group <rgn>[sandbox resource group name]</rgn> \
     --namespace-name <namespace-name> \
     --topic-name salesperformancemessages \
     --name Americas \
@@ -176,7 +176,7 @@ Quando il programma interrompe la stampa delle notifiche relative alla ricezione
 
 ```azurecli
 az servicebus topic subscription show \
-    --resource-group <rgn>[Sandbox resource group name]</rgn> \
+    --resource-group <rgn>[sandbox resource group name]</rgn> \
     --namespace-name <namespace-name> \
     --topic-name salesperformancemessages \
     --name Americas \

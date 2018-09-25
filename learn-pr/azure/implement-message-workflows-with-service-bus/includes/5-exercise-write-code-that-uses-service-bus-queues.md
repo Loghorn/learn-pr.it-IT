@@ -36,7 +36,7 @@ Per accedere a uno spazio dei nomi del bus di servizio e usare una coda, è nece
 
     ```azurecli
     az servicebus namespace authorization-rule keys list \
-        --resource-group <rgn>[Sandbox resource group name]</rgn> \
+        --resource-group <rgn>[sandbox resource group name]</rgn> \
         --namespace-name <namespace-name> \
         --name RootManageSharedAccessKey \
         --query primaryConnectionString \
@@ -131,7 +131,7 @@ Al termine, eseguire il comando seguente per vedere quanti messaggi si trovano n
 
 ```azurecli
 az servicebus queue show \
-    --resource-group <rgn>[Sandbox resource group name]</rgn> \
+    --resource-group <rgn>[sandbox resource group name]</rgn> \
     --namespace-name <namespace-name> \
     --name salesmessages \
     --query messageCount
@@ -213,7 +213,7 @@ Quando si nota che il messaggio è stato ricevuto e viene visualizzato nella con
 
 ```azurecli
 az servicebus queue show \
-    --resource-group <rgn>[Sandbox resource group name]</rgn> \
+    --resource-group <rgn>[sandbox resource group name]</rgn> \
     --namespace-name <namespace-name> \
     --name salesmessages \
     --query messageCount

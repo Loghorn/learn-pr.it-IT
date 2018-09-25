@@ -21,7 +21,7 @@ Per connettersi a una macchina virtuale di Azure con un client RDP, sono necessa
 
 ### <a name="download-the-rdp-file"></a>Scaricare il file RDP
 
-1. Nel [portale di Azure](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true) verificare che il pannello **Panoramica** per la macchina virtuale creata in precedenza sia aperto. La macchina virtuale è disponibile in **Tutte le risorse** se è necessario aprirla. Il pannello di panoramica presenta numerose informazioni sulla macchina virtuale.
+1. Nel [portale di Azure](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) verificare che il pannello **Panoramica** per la macchina virtuale creata in precedenza sia aperto. La macchina virtuale è disponibile in **Tutte le risorse** se è necessario aprirla. Il pannello di panoramica presenta numerose informazioni sulla macchina virtuale.
 
     - È possibile vedere se la macchina virtuale è in esecuzione.
     - Arrestarla o riavviarla.

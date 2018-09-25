@@ -33,7 +33,7 @@ Azure Cloud Shell verrà usato con l'interfaccia della riga di comando di Azure 
 Eseguire il comando seguente per creare l'account di archiviazione. 
 
 ```azurecli
-az storage account create --name <your-unique-storage-account-name> --resource-group <rgn>[Sandbox resource group name]</rgn> --location eastus --kind StorageV2
+az storage account create --name <your-unique-storage-account-name> --resource-group <rgn>[sandbox resource group name]</rgn> --location eastus --kind StorageV2
 ```
 
 > [!NOTE]

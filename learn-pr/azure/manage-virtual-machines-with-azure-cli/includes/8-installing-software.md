@@ -31,7 +31,7 @@ Non verrà completata perché la macchina virtuale Linux non espone la porta 80 
 1. Per aprire la porta 80 in Cloud Shell, digitare quanto segue:
 
 ```azurecli
-az vm open-port --port 80 --resource-group <rgn>[Sandbox resource group name]</rgn> --name SampleVM
+az vm open-port --port 80 --resource-group <rgn>[sandbox resource group name]</rgn> --name SampleVM
 ```
 
 L'aggiunta della regola della rete e l'apertura della porta nel firewall richiederanno alcuni minuti. Provare `curl` di nuovo. Questa volta dovrebbe restituire i dati. È possibile vedere la pagina anche in un browser.

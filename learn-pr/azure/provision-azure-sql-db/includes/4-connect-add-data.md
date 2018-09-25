@@ -33,7 +33,7 @@ In questo caso si userà l'utilità `az` per elencare i database e visualizzare 
     Sostituire `<server-name>` con il nome del server logico SQL di Azure. Si noti che, a seconda del pannello in cui ci si trova nel portale, questo potrebbe essere visualizzato come un nome di dominio completo (nomeserver.database.windows.net), ma è necessario solo il nome logico senza il suffisso database.windows.net.
 
     ```azurecli
-    az configure --defaults group=<rgn>[Sandbox resource group name]</rgn> sql-server=<server-name>
+    az configure --defaults group=<rgn>[sandbox resource group name]</rgn> sql-server=<server-name>
     ```
 
 1. Per elencare tutti i database nel server logico SQL di Azure, eseguire `az sql db list`.

@@ -30,7 +30,7 @@ Si creerà un'applicazione .NET Core che è possibile eseguire su Linux, macOS o
 È anche possibile recuperarla tramite gli strumenti dell'interfaccia della riga di comando di Azure o PowerShell. Qui viene usata l'interfaccia della riga di comando di Azure. Ricordare di sostituire `<name>` con il nome specifico dell'account di archiviazione creato. È possibile usare `az storage account list` se è necessario un promemoria.
 
 ```azurecli
-az storage account show-connection-string --name <name> --resource-group <rgn>[Sandbox resource group name]</rgn>
+az storage account show-connection-string --name <name> --resource-group <rgn>[sandbox resource group name]</rgn>
 ```
 
 Questo comando restituirà un blocco JSON con la stringa di connessione. Includerà il nome e la chiave dell'account di archiviazione:

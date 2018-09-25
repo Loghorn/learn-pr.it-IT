@@ -1,0 +1,20 @@
+### YamlMime:ModuleUnit
+uid: learn.prepare-azure-dev-environment.5-exercise-set-up-visual-studio
+title: Configurare Visual Studio in Windows o macOS
+metadata:
+  title: Configurare Visual Studio in Windows o macOS
+  description: Configurare Visual Studio in Windows o macOS
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  zone_pivot_groups: platform-windows-mac
+  ms.openlocfilehash: f8c42dfdf5023b73eebbea9a2e625bcf2b32b87c
+  ms.sourcegitcommit: 8a009788ee73c5d7caa6cd4f1105260c5cc9b846
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/22/2018
+  ms.locfileid: "46570628"
+durationInMinutes: 15
+content: '[!include[](includes/5-exercise-set-up-visual-studio.md)]'

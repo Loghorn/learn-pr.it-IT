@@ -2,7 +2,7 @@ In questa unità si userà il portale di Azure per verificare che l'hub eventi f
 
 ## <a name="view-event-hub-activity"></a>Visualizzare l'attività dell'hub eventi
 
-1. Accedere al [portale di Azure](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true) usando lo stesso account con cui è stato attivato l'ambiente sandbox.
+1. Accedere al [portale di Azure](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) usando lo stesso account con cui è stato attivato l'ambiente sandbox.
 
 1. Trovare l'hub eventi usando la barra di ricerca e aprirlo.
 

@@ -1,0 +1,3 @@
+Sono stati descritti due modi per soddisfare la richiesta usando le macchine virtuali. Se il carico è prevedibile, è possibile usare il portale o gli script per ridimensionare manualmente le macchine virtuali. Per modelli di domanda imprevedibile, è preferibile usare set di scalabilità con scalabilità automatica in modo da poter aggiungere e rimuovere automaticamente le istanze in base alle fluttuazioni della domanda. Più macchine virtuali offrono il vantaggio di aumentare la disponibilità del sistema dato che una macchina virtuale non funzionante non interromperà il servizio.
+
+[!include[](../../../includes/azure-sandbox-cleanup.md)]

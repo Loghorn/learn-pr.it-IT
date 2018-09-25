@@ -1,0 +1,20 @@
+### YamlMime:ModuleUnit
+uid: learn.execute-azure-function-with-triggers.8-create-blob-trigger
+title: Creare un trigger BLOB
+metadata:
+  title: Creare un trigger BLOB
+  description: Creare un trigger BLOB ed eseguire una funzione di Azure quando viene creato un BLOB
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 63ba806cded9a27ddc67910106b359bf413ae17f
+  ms.sourcegitcommit: 58e9d7fbb111af9b27ed819e4b79ba4a4e6e8a9c
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/21/2018
+  ms.locfileid: "46512455"
+azureSandbox: true
+durationInMinutes: 15
+content: '[!include[](includes/8-create-blob-trigger.md)]'

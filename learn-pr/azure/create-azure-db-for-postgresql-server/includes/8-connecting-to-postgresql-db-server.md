@@ -14,7 +14,7 @@ Sarà anche necessario disabilitare l'opzione **Imponi connessione SSL**.
 
 ### <a name="create-a-firewall-rule"></a>Creare una regola del firewall
 
-1. Accedere al [portale di Azure](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true) usando lo stesso account con cui si è attivata la sandbox. 
+1. Accedere al [portale di Azure](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) usando lo stesso account con cui si è attivata la sandbox.
 
 1. Passare alla risorsa server per la quale si vuole creare una regola del firewall.
 
@@ -48,8 +48,8 @@ In alternativa, è possibile aggiungere una regola del firewall per consentire l
     ```bash
     psql --host=<server-name>.postgres.database.azure.com --username=<admin-user>@<server-name> --dbname=postgres
     ```
-    
-    Usare i valori scelti per `server-name` e `admin-user`. 
+
+    Usare i valori scelti per `server-name` e `admin-user`.
 
 1. **postgres** è il database di gestione predefinito con cui viene creato ogni server PostgreSQL. Verrà richiesto di immettere la stessa password specificata quando è stato creato il server.
 

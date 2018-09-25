@@ -4,7 +4,7 @@ Ora si applicherà alla rete un gruppo di sicurezza di rete, in modo che sul ser
 
 Azure dovrebbe aver creato un gruppo di sicurezza, perché si era indicato di volere l'accesso SSH. Tuttavia ora si crea un nuovo gruppo di sicurezza, in modo da documentare l'intero processo. Questa procedura è particolarmente importante se si decide di creare la rete virtuale _prima_ delle macchine virtuali. Come indicato in precedenza, i gruppi di sicurezza sono _facoltativi_ e non vengono necessariamente creati con la rete.
 
-1. Nel [portale di Azure](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true) fare clic sul pulsante **Crea una risorsa** sulla barra laterale nell'angolo a sinistra per avviare la creazione di una nuova risorsa.
+1. Nel [portale di Azure](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) fare clic sul pulsante **Crea una risorsa** sulla barra laterale nell'angolo a sinistra per avviare la creazione di una nuova risorsa.
 
 1. Digitare **Gruppo di sicurezza di rete** nella casella del filtro e selezionare l'elemento corrispondente nell'elenco.
 
@@ -30,14 +30,14 @@ La distribuzione verrà completata rapidamente. Al termine è possibile aggiunge
 
     - Tutto il traffico in ingresso da una rete virtuale a un'altra è consentito. In questo modo le risorse della rete virtuale possono comunicare tra loro.
     - Il **probe** di Azure Load Balancer richiede di verificare che la macchina virtuale sia attiva.
-    - Tutto il traffico in ingresso rimanente viene rifiutato.  
+    - Tutto il traffico in ingresso rimanente viene rifiutato.
 
-    Sul lato in uscita:  
+    Sul lato in uscita:
     - Tutto il traffico nella rete virtuale è consentito.
     - Tutto il traffico in uscita verso Internet è consentito.
     - Tutto il traffico in uscita di altro tipo viene rifiutato.
 
-    > [!NOTE]  
+    > [!NOTE]
     > Queste regole predefinite vengono impostate con valori di priorità elevata e quindi vengono valutate per _ultime_. Non possono essere modificate o eliminate, ma è possibile eseguirne l'_override_ creando regole più specifiche per il traffico con un valore di priorità più basso.
 
 1. Fare clic sulla sezione **Regole di sicurezza in ingresso** nel pannello **Impostazioni** del gruppo di sicurezza.
@@ -126,5 +126,5 @@ Ora si procede a convalidare la modifica:
 
 Le regole di sicurezza sono difficili da configurare correttamente. È stato commesso un errore quando si è applicato questo nuovo gruppo di sicurezza: si è perso l'accesso SSH. Per risolvere questo problema, è possibile aggiungere un'altra regola al gruppo di sicurezza applicato alla subnet per consentire l'accesso SSH. Assicurarsi di limitare gli indirizzi TCP/IP in ingresso per la regola a quelli di cui si è proprietari.
 
-> [!WARNING]  
+> [!WARNING]
 > Assicurarsi sempre di bloccare le porte usate per l'accesso amministrativo. Un approccio ancora migliore consiste nel creare una VPN per collegare la rete virtuale alla rete privata e consentire solo le richieste RDP o SSH da tale intervallo di indirizzi. È anche possibile sostituire la porta usata da SSH con una diversa da quella predefinita. Tenere presente che la sostituzione della porta non è sufficiente ad arrestare gli attacchi. L'unico effetto che ottiene è rendere più difficile il rilevamento della porta.

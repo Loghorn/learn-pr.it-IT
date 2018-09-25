@@ -11,13 +11,13 @@ In Azure Cloud Shell eseguire il comando seguente:
 ```azurecli
 az appservice plan create \
     --name keyvault-exercise-plan \
-    --resource-group <rgn>[Sandbox resource group name]</rgn>
+    --resource-group <rgn>[sandbox resource group name]</rgn>
     --location eastus
 
 az webapp create \
     --name <your-unique-app-name> \
     --plan keyvault-exercise-plan \
-    --resource-group <rgn>[Sandbox resource group name]</rgn>
+    --resource-group <rgn>[sandbox resource group name]</rgn>
 ```
 
 ## <a name="add-configuration-to-the-app"></a>Aggiungere una configurazione per l'app
@@ -27,7 +27,7 @@ Per la distribuzione in Azure si seguirà la procedura consigliata del servizio 
 ```azurecli
 az webapp config appsettings set \
     --name <your-unique-app-name> \
-    --resource-group <rgn>[Sandbox resource group name]</rgn> \
+    --resource-group <rgn>[sandbox resource group name]</rgn> \
     --settings VaultName=<your-unique-vault-name>
 ```
 
@@ -38,7 +38,7 @@ L'abilitazione dell'identità gestita in un'app è una singola riga di codice &m
 ```azurecli
 az webapp identity assign \
     --name <your-unique-app-name> \
-    --resource-group <rgn>[Sandbox resource group name]</rgn>
+    --resource-group <rgn>[sandbox resource group name]</rgn>
 ```
 
 Nell'output JSON risultante copiare il valore di **principalId**. Proprietà PrincipalId è l'ID univoco della nuova identità dell'app in Azure Active Directory e dobbiamo usarlo nel passaggio successivo.
@@ -68,7 +68,7 @@ zip -j site.zip pub/*
 az webapp deployment source config-zip \
     --src site.zip \
     --name <your-unique-app-name> \
-    --resource-group <rgn>[Sandbox resource group name]</rgn>
+    --resource-group <rgn>[sandbox resource group name]</rgn>
 ```
 
 Dopo aver ottenuto un risultato che indica che il sito è stato distribuito, aprire `https://<your-unique-app-name>.azurewebsites.net/api/SecretTest` in un browser. Il valore del segreto, **reindeer_flotilla** dovrebbe essere visualizzato.
