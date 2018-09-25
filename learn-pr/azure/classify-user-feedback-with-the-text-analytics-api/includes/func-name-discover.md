@@ -1,0 +1,1 @@
+<span data-ttu-id="be5e0-101">**discover-sentiment-function**</span><span class="sxs-lookup"><span data-stu-id="be5e0-101">**discover-sentiment-function**</span></span>

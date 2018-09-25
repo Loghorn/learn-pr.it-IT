@@ -1,0 +1,20 @@
+### YamlMime:ModuleUnit
+uid: learn.classify-user-feedback-with-the-text-analytics-api.3-exercise-call-the-text-analytics-api-using-the-api-testing-console
+metadata:
+  title: <span data-ttu-id="5a3c0-101">Esercizio - Chiamare l'API Analisi del testo dalla console di test online</span><span class="sxs-lookup"><span data-stu-id="5a3c0-101">Exercise - Call the Text Analytics API from the online testing console</span></span>
+  description: <span data-ttu-id="5a3c0-102">In questa unità verranno eseguite delle chiamate reali all'endpoint del sentiment dell'API Analisi del testo senza scrivere alcun codice grazie alla console di test dell'API online.</span><span class="sxs-lookup"><span data-stu-id="5a3c0-102">In this unit, we'll make real calls to the sentiment endpoint of the Text Analytics API without writing a line of code, thanks to the online API testing console.</span></span>
+  ms.date: 09/24/2018
+  author: AndrewJByrne
+  ms.author: anbyrne
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 33d03b80bc6bc5a4f39041ce543e425f00773584
+  ms.sourcegitcommit: 58e9d7fbb111af9b27ed819e4b79ba4a4e6e8a9c
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/21/2018
+  ms.locfileid: "46512260"
+title: <span data-ttu-id="5a3c0-103">Esercizio - Chiamare l'API Analisi del testo dalla console di test online</span><span class="sxs-lookup"><span data-stu-id="5a3c0-103">Exercise - Call the Text Analytics API from the online testing console</span></span>
+azureSandbox: true
+durationInMinutes: 10
+content: '[!include[](includes/3-exercise-call-the-text-analytics-api-using-the-api-testing-console.md)]'

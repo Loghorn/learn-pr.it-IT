@@ -1,20 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.chain-azure-functions-data-using-input-output-bindings.7-write-data-with-output-bindings-portal-lab
 metadata:
-  title: <span data-ttu-id="574a4-101">Esercitazione - Scrivere dati con associazioni di output</span><span class="sxs-lookup"><span data-stu-id="574a4-101">Exercise - Write data with output bindings</span></span>
-  description: <span data-ttu-id="574a4-102">In questa unità pratica si vedrà come scrivere dati dalla funzione di Azure in Azure Cosmos DB con l'aiuto di un'associazione di output.</span><span class="sxs-lookup"><span data-stu-id="574a4-102">In this hands-on unit, we'll write data from our Azure function to Azure Cosmos DB with the help of an output binding.</span></span>
+  title: <span data-ttu-id="05203-101">Esercitazione - Scrivere dati con associazioni di output</span><span class="sxs-lookup"><span data-stu-id="05203-101">Exercise - Write data with output bindings</span></span>
+  description: <span data-ttu-id="05203-102">In questa unità pratica si vedrà come scrivere dati dalla funzione di Azure in Azure Cosmos DB con l'aiuto di un'associazione di output.</span><span class="sxs-lookup"><span data-stu-id="05203-102">In this hands-on unit, we'll write data from our Azure function to Azure Cosmos DB with the help of an output binding.</span></span>
   ms.date: 09/24/2018
   author: andrewjbyrne
   ms.author: anbyrne
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 33cd65ab88fcbc1111503fd0219829e3ed337e9e
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.openlocfilehash: 3256cdea30929faa1eddb397b90003f153c00e11
+  ms.sourcegitcommit: 8a009788ee73c5d7caa6cd4f1105260c5cc9b846
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46340890"
-title: <span data-ttu-id="574a4-103">Esercitazione - Scrivere dati con associazioni di output</span><span class="sxs-lookup"><span data-stu-id="574a4-103">Exercise - Write data with output bindings</span></span>
+  ms.lasthandoff: 09/22/2018
+  ms.locfileid: "46567365"
+title: <span data-ttu-id="05203-103">Esercitazione - Scrivere dati con associazioni di output</span><span class="sxs-lookup"><span data-stu-id="05203-103">Exercise - Write data with output bindings</span></span>
 azureSandbox: true
-durationInMinutes: 10
+durationInMinutes: 15
 content: '[!include[](includes/7-write-data-with-output-bindings-portal-lab.md)]'
