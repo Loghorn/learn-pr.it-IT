@@ -1,0 +1,52 @@
+### YamlMime:ModuleUnit
+uid: learn.send-location-over-sms-from-mobile-using-azure-functions-twilio.10-knowledge-check
+title: Verifica delle conoscenze
+metadata:
+  title: Riepilogo e pulizia
+  description: Verifica delle conoscenze
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: fb8021f1b3e30929c1ed44ed71123eb31d660d90
+  ms.sourcegitcommit: a8799fdd6ae2096cef12e66b142b138db8aba56d
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/23/2018
+  ms.locfileid: "46704475"
+durationInMinutes: 2
+content: >
+  [!include[](includes/10-knowledge-check.md)]
+quiz:
+  title: Verifica delle conoscenze
+  questions:
+  - content: Quale tipo di trigger di Funzioni di Azure consente a una richiesta HTTP di richiamare la funzione?
+    choices:
+    - content: Trigger HTTP
+      isCorrect: true
+      correctExplanation: I trigger HTTP vengono usati per richiamare le funzioni dalle richieste HTTP.
+    - content: Trigger di hub eventi
+      isCorrect: false
+      incorrectExplanation: I trigger HTTP vengono usati per richiamare le funzioni dalle richieste HTTP.
+    - content: Trigger di coda
+      isCorrect: false
+      incorrectExplanation: I trigger HTTP vengono usati per richiamare le funzioni dalle richieste HTTP.
+  - content: Come si associa la funzione a Twilio per inviare messaggi SMS?
+    choices:
+    - content: Tramite la restituzione di messaggi SMS come valore restituito della funzione
+      isCorrect: false
+    - content: Parametro di funzione
+      isCorrect: true
+      correctExplanation: I messaggi SMS vengono aggiunti a una raccolta passata alla funzione come parametro decorato con l'attributo `[TwilioSms]`. Il runtime della funzione invia tali messaggi a Twilio dopo l'esecuzione della funzione.
+    - content: Chiamata diretta all'API Twilio
+      isCorrect: false
+  - content: Dove vengono definiti l'ID di sicurezza e il token di autenticazione dell'account Twilio quando la funzione viene eseguita in locale?
+    choices:
+    - content: Nel file `local.settings.json`.
+      isCorrect: true
+      correctExplanation: Il file `local.settings.json` viene usato per archiviare le impostazioni locali che vengono usate solo quando l'esecuzione avviene in locale, non quando vengono pubblicate in Azure. Prestare attenzione a non selezionare questa opzione nel controllo del codice sorgente se contiene le chiavi private e il repository è pubblico.
+    - content: Nell'attributo `[TwilioSms]`
+      isCorrect: false
+    - content: Impostazioni dell'applicazione pubblicate in Azure
+      isCorrect: false

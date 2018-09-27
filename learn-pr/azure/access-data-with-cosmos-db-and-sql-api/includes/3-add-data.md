@@ -5,15 +5,15 @@ Esplora dati di Azure Cosmos DB è uno strumento incorporato nel portale di Azur
 
 ## <a name="add-data-using-the-data-explorer"></a>Aggiungere dati con Esplora dati
 
-1. Accedere al [portale di Azure per sandbox](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true) usando lo stesso account con cui è stato attivato l'ambiente sandbox.
+1. Accedere al [portale di Azure per sandbox](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) usando lo stesso account con cui è stato attivato l'ambiente sandbox.
 
     > [!IMPORTANT]
     > Accedere al portale di Azure e alla sandbox con lo stesso account.
-    > 
+    >
     > Accedere al portale di Azure usando il collegamento precedente per assicurarsi di connettersi alla sandbox, che fornisce l'accesso a una sottoscrizione Concierge.
 
 1. Fare clic su **Tutti i servizi** > **Database** > **Azure Cosmos DB**. Selezionare ora l'account, fare clic su **Esplora dati** e quindi su **Apri a schermo intero**.
- 
+
    ![Creare nuovi documenti in Esplora dati nel portale di Azure](../media/3-azure-cosmosdb-data-explorer-full-screen.png)
 
 2. Nella casella **Apri a schermo intero** fare clic su **Apri**.
@@ -74,4 +74,4 @@ Esplora dati di Azure Cosmos DB è uno strumento incorporato nel portale di Azur
 
     In Esplora dati i due documenti vengono visualizzati nella scheda **Documenti**.
 
-In questa unità tramite Esplora dati sono stati aggiunti al database due documenti, ognuno dei quali rappresenta un prodotto nel catalogo. Esplora dati è un buon metodo per creare e modificare documenti, oltre che per iniziare a usare Azure Cosmos DB.  
+In questa unità tramite Esplora dati sono stati aggiunti al database due documenti, ognuno dei quali rappresenta un prodotto nel catalogo. Esplora dati è un buon metodo per creare e modificare documenti, oltre che per iniziare a usare Azure Cosmos DB.

@@ -31,11 +31,11 @@ In questa unità si vedrà come installare l'estensione Azure Cosmos DB per Visu
 
 1. Nella casella di testo nella parte superiore della schermata, immettere un nome univoco per l'account di Azure Cosmos DB e quindi premere INVIO. Il nome dell'account può contenere solo lettere minuscole, numeri e il carattere '-' e deve avere una lunghezza compresa tra 3 e 31 caratteri.
 
-1. Selezionare quindi **SQL (DocumentDB)** > **<rgn>[nome gruppo di risorse sandbox]</rgn>** e quindi selezionare una località.
+1. Selezionare **SQL (DocumentDB)** > **<rgn>[Nome gruppo di risorse sandbox]</rgn>** e quindi selezionare una località.
 
     [!include[](../../../includes/azure-sandbox-regions-first-mention-note-friendly.md)]
 
-    La scheda di output in Visual Studio Code visualizza lo stato di avanzamento della creazione dell'account, operazione che richiede alcuni minuti per il completamento.
+    La scheda di output in Visual Studio Code visualizza lo stato di avanzamento della creazione dell'account, operazione il cui completamento richiede alcuni minuti.
 
 1. Dopo aver creato l'account, espandere la sottoscrizione di Azure nel riquadro **Azure: Cosmos DB** e l'estensione visualizza il nuovo account di Azure Cosmos DB. Nell'immagine seguente, il nuovo account è denominato **learning-modules**.
 

@@ -53,7 +53,7 @@ Ecco una risposta abbreviata per `eastus`:
 Al momento della creazione della macchina virtuale non è stata specificata una dimensione. Azure ha pertanto selezionato automaticamente una dimensione predefinita per utilizzo generico, ovvero `Standard_DS1_v2`. È tuttavia possibile specificare la dimensione come parte del comando `vm create` usando il parametro `--size`. Per creare una macchina virtuale con 16 core, ad esempio, è possibile usare il comando seguente:
 
 ```azurecli
-az vm create --resource-group <rgn>[Sandbox resource group name]</rgn> --name SampleVM2 \
+az vm create --resource-group <rgn>[sandbox resource group name]</rgn> --name SampleVM2 \
   --image Debian --admin-username aldis --generate-ssh-keys --verbose \
   --size "Standard_DS5_v2"
 ```
@@ -65,10 +65,10 @@ az vm create --resource-group <rgn>[Sandbox resource group name]</rgn> --name Sa
 È anche possibile ridimensionare una macchina virtuale esistente se si verifica una variazione del carico di lavoro o se non è stata definita la dimensione corretta in fase di creazione. Prima di richiedere un ridimensionamento, è necessario verificare se la dimensione desiderata è disponibile nel cluster di cui fa parte la macchina virtuale. A questo scopo, usare il comando `vm list-vm-resize-options`:
 
 ```azurecli
-az vm list-vm-resize-options --resource-group <rgn>[Sandbox resource group name]</rgn> --name SampleVM --output table
+az vm list-vm-resize-options --resource-group <rgn>[sandbox resource group name]</rgn> --name SampleVM --output table
 ```
 
-Verrà restituito l'elenco di tutte le possibili configurazioni di dimensione che sono disponibili nel gruppo di risorse. Se la dimensione desiderata non è disponibile nel cluster, ma _è_ disponibile nell'area, è possibile [deallocare la macchina virtuale](https://docs.microsoft.com/cli/azure/vm?view=azure-cli-latest#az-vm-deallocate). Questo comando arresta la macchina virtuale in esecuzione e la rimuove dal cluster corrente senza che si verifichi alcuna perdita di risorse. È quindi possibile ridimensionarla, creando nuovamente la macchina virtuale in un altro cluster in cui è disponibile la configurazione di dimensione desiderata.
+Verrà restituito l'elenco di tutte le possibili configurazioni di dimensione che sono disponibili nel gruppo di risorse. Se la dimensione desiderata non è disponibile nel cluster, ma _è_ disponibile nell'area, è possibile [deallocare la macchina virtuale](https://docs.microsoft.com/cli/azure/vm?view=azure-cli-latest#az-vm-deallocate). Questo comando arresta la macchina virtuale in esecuzione e la rimuove dal cluster corrente senza che si verifichi alcuna perdita di risorse. È quindi possibile ridimensionarla, creando nuovamente la macchina virtuale in un altro cluster in cui è disponibile la configurazione delle dimensioni.
 
 > [!NOTE]
 > L'ambiente sandbox di Azure è limitato ad alcune dimensioni di macchina virtuale. La maggior parte delle possibilità non è consentita nella sottoscrizione di Microsoft Learn gratuita.
@@ -76,7 +76,7 @@ Verrà restituito l'elenco di tutte le possibili configurazioni di dimensione ch
 Per ridimensionare una macchina virtuale si usa il comando `vm resize`. Se ad esempio si riscontra che la macchina virtuale è sottostimata per l'attività che deve eseguire, la si può incrementare di alcuni livelli, fino a un livello DS3_v2 in cui ha 4 vCore e 14 GB di memoria. Digitare questo comando in Cloud Shell:
 
 ```azurecli
-az vm resize --resource-group <rgn>[Sandbox resource group name]</rgn> --name SampleVM --size Standard_DS3_v2
+az vm resize --resource-group <rgn>[sandbox resource group name]</rgn> --name SampleVM --size Standard_DS3_v2
 ```
 
 Il comando impiegherà alcuni minuti per ridurre le risorse della macchina virtuale e al termine dell'esecuzione restituirà una nuova configurazione JSON.

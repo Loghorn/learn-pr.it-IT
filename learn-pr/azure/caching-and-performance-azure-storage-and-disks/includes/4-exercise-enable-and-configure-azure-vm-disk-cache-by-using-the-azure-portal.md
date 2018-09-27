@@ -18,10 +18,10 @@ In questo passaggio si creerà una macchina virtuale con le proprietà seguenti:
 |-----------------|---------|
 | Immagine           | **Windows Server 2016 Datacenter** |
 | Nome            | **fotoshareVM** |
-| Gruppo di risorse  |   **<rgn>[Nome gruppo di risorse sandbox]</rgn>** |
+| Gruppo di risorse  |   **<rgn>[nome gruppo di risorse sandbox]</rgn>** |
 | Località        | Vedere qui di seguito. |
 
-1. Accedere al [portale di Azure](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true) usando lo stesso account con cui è stata attivata la sandbox.
+1. Accedere al [portale di Azure](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) usando lo stesso account con cui è stata attivata la sandbox.
 
 1. Selezionare **Creare una risorsa** nel menu sulla barra laterale a sinistra.
 
@@ -31,7 +31,7 @@ In questo passaggio si creerà una macchina virtuale con le proprietà seguenti:
 
 1. Nel pannello **Informazioni di base** verificare che la sottoscrizione selezionata in **Sottoscrizione** sia _Concierge Subscription_ (Sottoscrizione Concierge).
 
-1. In **Gruppo di risorse** selezionare **Utilizza esistente** e scegliere _<rgn>[Nome gruppo di risorse sandbox]</rgn>_.
+1. In **Gruppo di risorse** selezionare **Usa esistente** e scegliere _<rgn>[nome gruppo di risorse sandbox]</rgn>_.
 
 1. Nella casella **Nome macchina virtuale** immettere _fotoshareVM_.
 
@@ -83,7 +83,7 @@ Dopo avere distribuito la macchina virtuale, è possibile verificare lo stato di
 
 1. Nella casella **Nome** nel riquadro **Crea disco gestito** digitare **fotosharesVM-data**.
 
-1. In **Gruppo di risorse** selezionare **Utilizza esistente** e scegliere _<rgn>[Nome gruppo di risorse sandbox]</rgn>_.
+1. In **Gruppo di risorse** selezionare **Utilizza esistente** e scegliere _<rgn>[nome gruppo di risorse sandbox]</rgn>_.
 
 1. Osservare le impostazioni predefinite per gli altri campi:
     - SSD Premium
@@ -92,7 +92,7 @@ Dopo avere distribuito la macchina virtuale, è possibile verificare lo stato di
     - Limite per operazioni di I/O al secondo: 5000
     - Limite per velocità effettiva (MB/s): 200
 
-1. Fare clic su **Crea** nella parte inferiore della schermata. 
+1. Fare clic su **Crea** nella parte inferiore della schermata.
 
     Attendere il completamento della creazione del disco prima di continuare.
 

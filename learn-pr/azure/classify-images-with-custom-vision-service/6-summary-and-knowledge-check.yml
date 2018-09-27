@@ -1,0 +1,56 @@
+### YamlMime:ModuleUnit
+uid: learn.classify-images-with-custom-vision-services.6-summary-and-knowledge-check
+title: Riepilogo e verifica delle conoscenze
+metadata:
+  title: Riepilogo e verifica delle conoscenze
+  description: Verificare di aver compreso i passaggi necessari per classificare immagini con il Servizio visione artificiale personalizzato Microsoft.
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: f731756c3af095f12e9787a73f1b4237e967a7a8
+  ms.sourcegitcommit: 58e9d7fbb111af9b27ed819e4b79ba4a4e6e8a9c
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/21/2018
+  ms.locfileid: "46513900"
+content: >
+  [!include[](includes/6-summary.md)]
+durationInMinutes: 10
+quiz:
+  title: Verifica delle conoscenze
+  questions:
+  - content: Quando si crea un nuovo progetto del Servizio visione artificiale personalizzato, per che cosa viene usato un dominio?
+    choices:
+    - content: Aiuta a decidere il nome da assegnare al progetto.
+      isCorrect: false
+      incorrectExplanation: È possibile assegnare al progetto qualsiasi nome si voglia. Il dominio non influenza il nome.
+    - content: Aiuta a decidere come strutturare il progetto.
+      isCorrect: false
+      incorrectExplanation: I progetti hanno la stessa struttura per quanto riguarda immagini di training e stime; la struttura non varia in base al dominio scelto.
+    - content: Consente di ottimizzare il classificatore per un tipo di immagine specifico.
+      isCorrect: true
+      correctExplanation: Il dominio offre al classificatore più informazioni sul contenuto previsto delle immagini.
+  - content: Perché è consigliabile aggiungere un tag dopo il caricamento di immagini?
+    choices:
+    - content: Per semplificare l'organizzazione delle immagini nel progetto per l'uso successivo
+      isCorrect: false
+      incorrectExplanation: Anche se i tag aiutano a organizzare le immagini, questo non è lo scopo principale dei tag.
+    - content: Per inserire le immagini in una categoria per il training
+      isCorrect: true
+      correctExplanation: I tag indicano al classificatore le caratteristiche da applicare a un'immagine. Per il corretto funzionamento della classificazione delle immagini, è necessario aggiungere almeno un tag.
+    - content: Per generare una nuvola di parole dopo il training
+      isCorrect: false
+      incorrectExplanation: Il Servizio visione artificiale personalizzato non crea nuvole di parole.
+  - content: Quali sono i due valori che è necessario conoscere per eseguire una chiamata all'API per le stime dal codice client?
+    choices:
+    - content: URL e chiave per le stime
+      isCorrect: true
+      correctExplanation: L'URL identifica l'endpoint per la connessione e la chiave per le stime autorizza l'app ad accedere al servizio.
+    - content: Nome del servizio e token di autenticazione
+      isCorrect: false
+      incorrectExplanation: Nessuno di questi valori è correlato all'API per le stime.
+    - content: Segreto client e URI di reindirizzamento
+      isCorrect: false
+      incorrectExplanation: Nessuno di questi valori è correlato all'API per le stime.

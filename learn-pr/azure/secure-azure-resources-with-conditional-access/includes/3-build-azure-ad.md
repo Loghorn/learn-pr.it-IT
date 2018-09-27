@@ -1,10 +1,11 @@
 Si decide di distribuire Azure AD e usare i criteri di accesso condizionale in modo che Azure richieda Multi-Factor Authentication quando qualcuno accede al portale di Azure. È necessario creare una directory e avere a disposizione licenze temporanee.
 
-## <a name="launch-lab-and-sign-in-to-the-azure-portal"></a>Avviare lab e accedere al portale di Azure
+## <a name="launch-lab-and-sign-in-to-the-azure-portal"></a>Avviare il lab e accedere al portale di Azure
 
-1. Per avviare la scheda, fare clic sul collegamento precedente **Avvia modalità macchina virtuale**.
+1. Per avviare il lab, fare clic sul collegamento **Launch Lab** (Avvia lab) riportato sopra.
 
-1. Accedere al portale di Azure come LabAdmin-<XXXXXXX>@triplecrownlabsoutlook.onmicrosoft.com. Il nome utente e la password sono disponibili nella scheda Risorse nella parte superiore della finestra delle istruzioni.
+> [!NOTE]
+> Dopo l'avvio del lab, il nome utente e la password necessari per eseguire l'accesso sono disponibili nella scheda **Risorse** accanto alle istruzioni.
 
 ## <a name="create-a-directory"></a>Creare una directory
 
@@ -12,14 +13,14 @@ Si creerà una nuova directory per First Up Consultants in cui è possibile eseg
 
 1. Accedere al [portale di Azure](https://portal.azure.com?azure-portal=true).
 
-1. Nel riquadro di navigazione a sinistra fare clic su **Crea una risorsa** > **Identità** > **Azure Active Directory**.
+2. Nel riquadro di navigazione a sinistra fare clic su **Crea una risorsa** > **Identità** > **Azure Active Directory**.
 
-1. Nel pannello **Crea directory** specificare i valori seguenti per **Nome organizzazione** e **Nome di dominio iniziale**:
+3. Nel pannello **Crea directory** specificare i valori seguenti per **Nome organizzazione** e **Nome di dominio iniziale**:
 
    1. Nome organizzazione: `First Up Consultants`.
-   1. Nome di dominio iniziale: `firstupconsultants<XXXXXXX>` in cui <XXXXXXX> è il numero che segue il nome utente nella scheda **Risorse** nella parte superiore della finestra delle istruzioni.
+   2. Nome di dominio iniziale: `firstupconsultants<XXXXXXX>` in cui <XXXXXXX> è il numero che segue il nome utente nella scheda **Risorse** nella parte superiore della finestra delle istruzioni.
 
-1. Attendere che la directory venga creata. Fare clic sul collegamento per passare alla nuova directory oppure fare clic su **Filtro per directory e sottoscrizione** nella parte superiore della finestra e quindi scegliere la directory appena creata.
+4. Attendere che la directory venga creata. Fare clic sul collegamento per passare alla nuova directory oppure fare clic su **Filtro per directory e sottoscrizione** nella parte superiore della finestra e quindi scegliere la directory appena creata.
 
 ## <a name="get-trial-licenses"></a>Ottenere le licenze per la versione di valutazione
 

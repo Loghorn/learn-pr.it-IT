@@ -4,7 +4,7 @@ In questa unità si userà il portale di Azure per creare un'app Web.
 
 ## <a name="create-a-web-app"></a>Creare un'app Web
 
-Accedere al [portale di Azure](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true) usando lo stesso account con cui è stato attivato l'ambiente sandbox.
+Accedere al [portale di Azure](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) usando lo stesso account con cui è stato attivato l'ambiente sandbox.
 
 1. Fare clic sul collegamento **Crea una risorsa** nella parte superiore del riquadro di spostamento a sinistra. Tutti gli oggetti creati in Azure sono risorse.
 
@@ -24,7 +24,7 @@ Accedere al [portale di Azure](https://portal.azure.com/triplecrownlabs.onmicros
 
 ## <a name="use-the-sandbox-resource-group"></a>Usare il gruppo di risorse sandbox
 
-Un'app Web di Azure deve far parte di un gruppo di risorse. Selezionare **Usa esistente** e scegliere <rgn>[nome gruppo di risorse sandbox]</rgn>.
+Un'app Web di Azure deve far parte di un gruppo di risorse. Selezionare **Usa esistente** e scegliere <rgn>[Nome gruppo di risorse sandbox]</rgn>.
 
 ## <a name="create-an-app-service-plan"></a>Creare un piano di servizio app
 

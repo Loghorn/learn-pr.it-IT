@@ -290,13 +290,9 @@ Prima di tutto verranno creati i file di codice, script e HTML per l'applicazion
 
 1. Testare il funzionamento dell'applicazione.
 
-    Aprire il browser preferito e passare all'indirizzo IP pubblico della macchina virtuale Azure come URL.
+    Aprire il browser preferito e passare all'indirizzo IP pubblico della macchina virtuale di Azure come URL ([http://X.X.X.X](http://X.X.X.X)).
 
-    ```bash
-    http://<vm-public-ip>
-    ```
-
-    Se tutto è in ordine, dovrebbe essere visualizzata una schermata simile alla seguente:
+    Se tutto è in ordine, deve apparire una schermata simile alla seguente:
 
     Lo screenshot seguente mostra l'interfaccia utente per l'inserimento dei dettagli sui libri da archiviare nel database MongoDB.
 

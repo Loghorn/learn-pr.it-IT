@@ -1,0 +1,3 @@
+È stato illustrato come usare un servizio di bilanciamento del carico nell'ambito di una soluzione per garantire la disponibilità elevata delle macchine virtuali ospitate in Azure. Sono stati esaminati il servizio di bilanciamento del carico, le reti virtuali associate, le regole per controllare l'algoritmo di bilanciamento e i probe di integrità che identificano le macchine virtuali correttamente in esecuzione.
+
+[!include[](../../../includes/azure-sandbox-cleanup.md)]

@@ -17,13 +17,13 @@ Tenere presente che le dimensioni di archiviazione del server devono essere impo
     
 2. Provare a creare il comando e a completare i parametri senza guardare la soluzione riportata di seguito. Ecco alcuni suggerimenti.
     - Sostituire `<values>` con i propri valori: 
-    - Tenere presente che il nome del server deve essere costituito da lettere in minuscolo comprese tra a e z, numeri da 0 a 9 e dal segno meno
-    - Usare <rgn>[nome gruppo di risorse sandbox]</rgn> come gruppo di risorse.
+    - Tenere presente che il nome del server deve essere costituito da lettere in minuscolo comprese tra a e z, numeri da 0 a 9 e dal segno meno.
+    - Usare <rgn>[Nome gruppo di risorse sandbox]</rgn> come gruppo di risorse.
     - Usare una posizione inclusa nell'elenco seguente: [!include[](../../../includes/azure-sandbox-regions-note.md)]
     
 ```bash
 az postgres server create --name <unique_server_name> \
-    --resource-group <rgn>[Sandbox resource group name]</rgn> \ 
+    --resource-group <rgn>[sandbox resource group name]</rgn> \ 
     --location eastus \
     --sku-name B_Gen5_1 \
     --storage-size 20480 \
@@ -44,10 +44,10 @@ Verrà visualizzato un oggetto JSON simile al seguente:
   "administratorLogin": "azureuser",
   "earliestRestoreDate": "2018-09-17T00:35:50.170000+00:00",
   "fullyQualifiedDomainName": "secondserver8.postgres.database.azure.com",
-  "id": "/subscriptions/xxxxx/resourceGroups/<rgn>[Sandbox Resource Group]</rgn>/providers/Microsoft.DBforPostgreSQL/servers/secondserver8",
+  "id": "/subscriptions/xxxxx/resourceGroups/<rgn>[sandbox Resource Group]</rgn>/providers/Microsoft.DBforPostgreSQL/servers/secondserver8",
   "location": "eastus",
   "name": "secondserver8",
-  "resourceGroup": "<rgn>[Sandbox Resource Group]</rgn>",
+  "resourceGroup": "<rgn>[sandbox Resource Group]</rgn>",
   "sku": {
     "capacity": 1,
     "family": "Gen5",

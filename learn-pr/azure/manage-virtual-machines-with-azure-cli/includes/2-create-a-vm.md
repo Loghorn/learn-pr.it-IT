@@ -32,7 +32,7 @@ Si inizia dal primo: `az vm create`. Questo comando viene usato per creare una m
 > [!div class="mx-tableFixed"]
 > | Parametro | Descrizione |
 > |-----------|-------------|
-> | `resource-group` | Il gruppo di risorse in cui si trova la macchina virtuale. Usare **<rgn>[gruppo di risorse sandbox]</rgn>**. |
+> | `resource-group` | Il gruppo di risorse proprietario della macchina virtuale. Usare **<rgn>[gruppo di risorse sandbox]</rgn>**. |
 > | `name` | Il nome della macchina virtuale deve essere univoco all'interno del gruppo di risorse. |
 > | `image` | L'immagine del sistema operativo da usare per creare la macchina virtuale. |
 > | `location` | L'area in cui inserire la macchina virtuale. In genere tale area è vicina all'utente della macchina virtuale. In questo esercizio scegliere una località nelle vicinanze nell'elenco seguente. |
@@ -47,7 +47,7 @@ Si inizia dal primo: `az vm create`. Questo comando viene usato per creare una m
 Verrà ora illustrato come creare una nuova macchina virtuale Linux. Eseguire questo comando in Azure Cloud Shell per creare una macchina Linux Debian nell'area "West US". Modificare la località se quella scelta non è nelle vicinanze.
 
 ```azurecli
-az vm create --resource-group <rgn>[Sandbox resource group name]</rgn> --name SampleVM --image Debian --admin-username aldis --generate-ssh-keys --location westus --verbose 
+az vm create --resource-group <rgn>[sandbox resource group name]</rgn> --name SampleVM --image Debian --admin-username aldis --generate-ssh-keys --location westus --verbose 
 ```
 
 [!include[](../../../includes/azure-cloudshell-copy-paste-tip.md)]

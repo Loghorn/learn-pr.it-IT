@@ -4,7 +4,7 @@ Tenere presente che l'obiettivo è spostare un server Linux esistente che esegue
 
 È possibile creare macchine virtuali Linux con il portale di Azure, l'interfaccia della riga di comando di Azure o Azure PowerShell. L'approccio più semplice quando si inizia a usare Azure prevede l'uso del portale, perché richiede le informazioni necessarie in sequenza e fornisce suggerimenti e messaggi utili durante la creazione:
 
-1. Accedere al [portale di Azure](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true) usando lo stesso account con cui è stato attivato l'ambiente sandbox.
+1. Accedere al [portale di Azure](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) usando lo stesso account con cui è stato attivato l'ambiente sandbox.
 
 1. Fare clic su **Crea una risorsa** nell'angolo in alto a sinistra del portale di Azure.
 
@@ -24,9 +24,9 @@ Si inizierà con la sezione **Informazioni di base**.
 
 ### <a name="configure-basic-vm-settings"></a>Configurare le impostazioni di base della macchina virtuale
 
-1. Per **Sottoscrizione** dovrebbe essere selezionata per impostazione predefinita la sottoscrizione del sandbox.
+1. Per **sottoscrizione** dovrebbe essere selezionata per impostazione predefinita la sottoscrizione del sandbox.
 
-1. Per **Gruppo di risorse** dovrebbe essere selezionato per impostazione predefinita il gruppo **<rgn>[Nome gruppo di risorse sandbox]</rgn>**.
+1. Per **Gruppo di risorse** dovrebbe essere selezionato per impostazione predefinita il gruppo **<rgn>[nome gruppo di risorse sandbox]</rgn>**.
 
 1. Nella sezione **DETTAGLI ISTANZA** immettere un nome per la macchina virtuale del server Web, ad esempio **test-web-eus-vm1**. Questo nome indica l'ambiente (**test**), il ruolo (**web**), la località (**eus** ossia Stati Uniti orientali), il servizio (**vm**) e il numero di istanza (**1**).
     - È consigliabile standardizzare i nomi delle risorse per poterne identificare rapidamente lo scopo. I nomi di macchine virtuali Linux devono avere una lunghezza compresa tra 1 e 64 caratteri ed essere composti da numeri, lettere e trattini.

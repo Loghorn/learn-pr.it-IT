@@ -1,0 +1,1 @@
+In questo modulo, si è preparato il proprio ambiente di sviluppo per la creazione di applicazioni in Azure. Sono stati installati gli IDE appropriati per il sistema operativo e i requisiti di sviluppo. Inoltre, è stata aggiunta anche l'integrazione di Azure per semplificare la pubblicazione di contenuti direttamente nei servizi di Azure.

@@ -2,7 +2,7 @@ Il portale di Azure consente di gestire e ridimensionare i server di database Po
 
 [!include[](../../../includes/azure-sandbox-activate.md)]
 
-Accedere al [portale di Azure](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true) usando lo stesso account con cui è stata attivata la sandbox. 
+Accedere al [portale di Azure](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) usando lo stesso account con cui è stata attivata la sandbox.
 
 Il menu per la creazione e la gestione delle risorse di Azure verrà visualizzato sulla sinistra, mentre il resto della schermata sarà occupato dal dashboard.
 
@@ -29,7 +29,7 @@ Verrà visualizzato ora il pannello per la creazione del server PostgreSQL simil
 
 1. Selezionare una sottoscrizione. Verificare che questo campo sia impostato sulla sottoscrizione da usare.
 
-1. È ora possibile creare o riutilizzare un gruppo di risorse esistente. Selezionare **Usa esistente** e scegliere "<rgn>[nome gruppo di risorse sandbox]</rgn>" nell'elenco a discesa. Questo gruppo verrà usato per il resto del modulo.
+1. È ora possibile creare o usare di nuovo un gruppo di risorse esistente. Selezionare **Usa esistente** e scegliere "<rgn>[Nome gruppo di risorse sandbox]</rgn>" nell'elenco a discesa. Questo gruppo verrà usato per il resto del modulo.
 
 1. Selezionare l'origine del nuovo server. Per questo lab lasciare l'opzione impostata su _Vuoto_. È possibile impostare l'opzione su _Backup_ se si vuole ripristinare un backup del server esistente.
 

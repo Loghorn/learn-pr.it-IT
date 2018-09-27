@@ -10,7 +10,7 @@ Si creerà una funzione che verrà avviata alla ricezione di una richiesta HTTP 
 
 Verrà ora creata un'app per le funzioni da usare in tutto questo modulo. Un'app per le funzioni consente di raggruppare le funzioni come un'unità logica per semplificare la gestione, la distribuzione e la condivisione delle risorse.
 
-1. Accedere al [portale di Azure](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true) usando lo stesso account con cui è stata attivata la sandbox.
+1. Accedere al [portale di Azure](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) usando lo stesso account con cui è stata attivata la sandbox.
 
 1. Selezionare il pulsante **Crea una risorsa** nell'angolo in alto a sinistra del portale di Azure, quindi selezionare **Calcolo** > **App per le funzioni**.
 
@@ -18,14 +18,14 @@ Verrà ora creata un'app per le funzioni da usare in tutto questo modulo. Un'app
 
     | Proprietà     | Valore consigliato  | Descrizione  |
     |--------------|------------------|--------------|
-    | **Nome app** | Nome globalmente univoco | Nome che identifica la nuova app per le funzioni. I caratteri validi sono `a-z`, `0-9` e `-`.  | 
-    | **Sottoscrizione** | Sottoscrizione in uso | Sottoscrizione in cui viene creata questa nuova app per le funzioni. | 
-    | **Gruppo di risorse**|  Selezionare **Usa esistente** e scegliere _<rgn>[nome gruppo di risorse sandbox]</rgn>_ | Nome del gruppo di risorse in cui creare l'app per le funzioni. | 
+    | **Nome app** | Nome globalmente univoco | Nome che identifica la nuova app per le funzioni. I caratteri validi sono `a-z`, `0-9` e `-`.  |
+    | **Sottoscrizione** | Sottoscrizione in uso | Sottoscrizione in cui viene creata questa nuova app per le funzioni. |
+    | **Gruppo di risorse**|  Selezionare **Usa esistente** e scegliere _<rgn>[Nome gruppo di risorse sandbox]</rgn>_ | Nome del gruppo di risorse in cui creare l'app per le funzioni. |
     | **Sistema operativo** | Windows | Il sistema operativo che ospita l'app per le funzioni.  |
     | **Hosting** |   Piano a consumo | Piano di hosting che definisce come vengono allocate le risorse all'app per le funzioni. Nel **piano a consumo** predefinito le risorse vengono aggiunte in modo dinamico come richiesto dalle funzioni. In questo modello di hosting serverless si paga solo per il periodo in cui le funzioni sono in esecuzione.   |
     | **Account di archiviazione** |  Nome globalmente univoco |  Nome del nuovo account di archiviazione usato dall'app per le funzioni. I nomi degli account di archiviazione devono avere una lunghezza compresa tra 3 e 24 caratteri e possono contenere solo numeri e lettere minuscole. In questa finestra di dialogo il campo è popolato con un nome univoco derivato dal nome assegnato all'app. Tuttavia, è possibile usare un nome diverso o perfino un account esistente. |
     | **Località** | Selezionarla dall'elenco | Selezionare la località più vicina tra quelle disponibili elencate di seguito. |
-    
+
     [!include[](../../../includes/azure-sandbox-regions-first-mention-note-friendly.md)]
 
 1. Per effettuare il provisioning dell'app per le funzioni e distribuirla, selezionare **Crea**.
@@ -42,7 +42,7 @@ Verrà ora creata un'app per le funzioni da usare in tutto questo modulo. Un'app
 
     >[!TIP]
     >In caso di problemi nel trovare le app per le funzioni nel portale, vedere come [aggiungere le app per le funzioni ai preferiti nel portale](https://docs.microsoft.com/azure/azure-functions/functions-how-to-use-azure-function-app-settings#favorite).
-    
+
 ## <a name="create-a-function"></a>Creare una funzione
 
 Ora che si dispone di un'app per le funzioni, è il momento di creare una funzione. Una funzione viene attivata tramite un trigger. In questo modulo si userà un trigger HTTP.
@@ -63,7 +63,7 @@ Ora che si dispone di un'app per le funzioni, è il momento di creare una funzio
 
 1. Incollare l'URL della funzione copiato nella barra degli indirizzi di una nuova scheda del browser.
 
-1. Aggiungere il valore della stringa di query `&name=Azure` alla fine dell'URL e premere il tasto Invio per eseguire la richiesta. Verrà visualizzata una risposta simile alla seguente, restituita dalla funzione visualizzata nel browser.  
+1. Aggiungere il valore della stringa di query `&name=Azure` alla fine dell'URL e premere il tasto Invio per eseguire la richiesta. Verrà visualizzata una risposta simile alla seguente, restituita dalla funzione visualizzata nel browser.
 
     ```output
     <string xmlns="http://schemas.microsoft.com/2003/10/Serialization/">Hello Azure</string>
@@ -97,7 +97,7 @@ Tutto il codice si trova nel file **index.js** nella cartella di questa funzione
 Come si può osservare, questa funzione ha un'associazione di trigger denominata **req** di tipo `httpTrigger` e un'associazione di output denominata **res** di tipo `HTTP`. Nel codice precedente per la funzione si è visto come è stato eseguito l'accesso al payload della richiesta HTTP in ingresso tramite il parametro **req**. Analogamente, è stata inviata una risposta HTTP semplicemente impostando il parametro **res**. Le associazioni risultano davvero utili in questi casi.
 
 >[!TIP]
->È possibile visualizzare i file **index.js** e **function.json** espandendo il menu **Visualizza file** a destra del pannello della funzione nel portale di Azure.  
+>È possibile visualizzare i file **index.js** e **function.json** espandendo il menu **Visualizza file** a destra del pannello della funzione nel portale di Azure.
 
 ### <a name="explore-binding-types"></a>Esplorare i tipi di associazioni
 

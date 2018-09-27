@@ -20,8 +20,6 @@ Si immagini di eseguire un'applicazione Web che si connette a un database. Si us
 
 Per configurare queste subnet, verrà creata una rete virtuale e quindi la rete verrà suddivisa in subnet. L'applicazione Web opererà in una subnet e il database in un'altra. Ogni subnet avrà regole specifiche per la comunicazione da e verso l'altra rete. Queste regole consentono di limitare l'accesso dal database all'applicazione Web.
 
-La creazione di una rete virtuale non rientra nell'ambito di questo modulo. Se sono necessarie altre informazioni, esplorare gli altri moduli di apprendimento correlati alle reti virtuali.
-
 ### <a name="what-is-a-firewall"></a>Che cos'è un firewall?
 
 Un firewall è un servizio che concede ai server l'accesso in base all'indirizzo IP di origine di ogni richiesta. È possibile creare regole del firewall che specificano gli intervalli di indirizzi IP. Solo i client di questi indirizzi IP concessi potranno accedere al server. In generale, le regole del firewall includono anche informazioni specifiche sul protocollo di rete e sulla porta. Ad esempio, un server PostgreSQL per impostazione predefinita è in ascolto delle richieste TCP sulla porta 5432.
@@ -34,13 +32,13 @@ Il firewall del server di Database di Azure per PostgreSQL impedisce qualsiasi a
 
 ### <a name="azure-database-for-postgresql-server-ssl-connections"></a>Connessioni SSL del server di Database di Azure per PostgreSQL
 
-Database di Azure per PostgreSQL preferisce che le applicazioni client vengano connesse al servizio PostgreSQL usando la connettività SSL (Secure Sockets Layer). L'applicazione delle connessioni SSL tra il server di database e le applicazioni client aiuta a proteggersi dagli attacchi "man in the middle" e da altri attacchi simili crittografando i dati tra il server e il client. L'abilitazione di SSL richiede lo scambio di chiavi e un'autenticazione più restrittiva tra client e server affinché la connessione funzioni. Le informazioni dettagliate sull'utilizzo di SSL non rientrano nell'ambito di questo modulo di apprendimento. Se sono necessarie altre informazioni, esplorare gli altri moduli di apprendimento correlati a SSL.
+Database di Azure per PostgreSQL preferisce che le applicazioni client vengano connesse al servizio PostgreSQL usando la connettività SSL (Secure Sockets Layer). L'applicazione delle connessioni SSL tra il server di database e le applicazioni client aiuta a proteggersi dagli attacchi "man in the middle" e da altri attacchi simili crittografando i dati tra il server e il client. L'abilitazione di SSL richiede lo scambio di chiavi e un'autenticazione più restrittiva tra client e server affinché la connessione funzioni. Le informazioni dettagliate sull'uso di SSL non rientrano nell'ambito di questo modulo di apprendimento.
 
 ## <a name="configure-connection-security"></a>Configurare la sicurezza della connessione
 
 Esaminiamo le decisioni e passaggi da effettuare per configurare un firewall del server di Database di Azure per PostgreSQL. Verrà anche illustrato come connettersi al server creato in precedenza.
 
-Accedere al [portale di Azure](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true) usando lo stesso account con cui è stata attivata la sandbox. Passare alla risorsa server per la quale si vuole creare una regola del firewall.
+Accedere al [portale di Azure](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) usando lo stesso account con cui è stata attivata la sandbox. Passare alla risorsa server per la quale si vuole creare una regola del firewall.
 
 Selezionare quindi l'opzione **Sicurezza connessione** per aprire il pannello Sicurezza connessione a destra.
 
@@ -92,7 +90,7 @@ Fare clic sull'icona **Salva** sopra i campi di immissione per confermare l'elim
 
 ```azurecli
 az postgres server firewall-rule create \
-  --resource-group <rgn>[Sandbox resource group name]</rgn> \
+  --resource-group <rgn>[sandbox resource group name]</rgn> \
   --server <server-name> \
   --name AllowAll \
   --start-ip-address 0.0.0.0 \
@@ -104,7 +102,7 @@ az postgres server firewall-rule create \
 ```azurecli
 az postgres server firewall-rule delete \
   --name AllowAll \
-  --resource-group <rgn>[Sandbox resource group name]</rgn> \
+  --resource-group <rgn>[sandbox resource group name]</rgn> \
   --server-name <server-name>
 ```
 
@@ -129,7 +127,7 @@ Il comando completo è il seguente:
 
 ```bash
 psql --host=<server-name>.postgres.database.azure.com
-      --username=<admin-user>@<server-name> 
+      --username=<admin-user>@<server-name>
       --dbname=<database>
 ```
 

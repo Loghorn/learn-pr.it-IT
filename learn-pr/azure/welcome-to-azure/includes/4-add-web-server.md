@@ -38,7 +38,7 @@ In questo caso si userà l'estensione per script personalizzati per configurare 
 
     ```azurecli
     az vm extension set \
-      --resource-group <rgn>[Sandbox resource group name]</rgn> \
+      --resource-group <rgn>[sandbox resource group name]</rgn> \
       --vm-name myVM \
       --name CustomScriptExtension \
       --publisher Microsoft.Compute \
@@ -46,7 +46,7 @@ In questo caso si userà l'estensione per script personalizzati per configurare 
       --protected-settings '{"commandToExecute": "powershell -ExecutionPolicy Unrestricted -File configure-iis.ps1"}'
     ```
 
-    Il processo di configurazione di Nginx, impostazione dei contenuti della home page e avvio del servizio richiede un paio di minuti per il completamento.
+    Il processo di configurazione di IIS, impostazione dei contenuti della home page e avvio del servizio richiede un paio di minuti per il completamento.
 
     Nel frattempo è possibile [esaminare lo script di PowerShell](https://gist.githubusercontent.com/tpetchel/26f9dab2628a80bf87a33caeed1b6ded/raw/69e5d9250b9dcd7e7eece4b0ea3c3a8cd1b4fcd7/configure-iis.ps1?azure-portal=true) in una scheda separata del browser. Lo script installa IIS e configura la home page per visualizzare un messaggio di benvenuto insieme al nome computer della macchina virtuale, "myVM".
 
@@ -55,7 +55,7 @@ In questo caso si userà l'estensione per script personalizzati per configurare 
     ```azurecli
     az vm open-port \
       --name myVM \
-      --resource-group <rgn>[Sandbox resource group name]</rgn> \
+      --resource-group <rgn>[sandbox resource group name]</rgn> \
       --port 80
     ```
 
@@ -68,7 +68,7 @@ Ora che IIS è configurato, verificare che sia in esecuzione.
     ```azurecli
     az vm list-ip-addresses \
       --name myVM \
-      --resource-group <rgn>[Sandbox resource group name]</rgn> \
+      --resource-group <rgn>[sandbox resource group name]</rgn> \
       --query "[].virtualMachine.network.publicIpAddresses[0].ipAddress" \
       --output tsv
     ```
@@ -110,7 +110,7 @@ In questo caso si userà l'estensione per script personalizzati per configurare 
 
     ```azurecli
     az vm extension set \
-      --resource-group <rgn>[Sandbox resource group name]</rgn> \
+      --resource-group <rgn>[sandbox resource group name]</rgn> \
       --vm-name myVM \
       --name customScript \
       --publisher Microsoft.Azure.Extensions \
@@ -118,7 +118,7 @@ In questo caso si userà l'estensione per script personalizzati per configurare 
       --protected-settings '{"commandToExecute": "./configure-nginx.sh"}'
     ```
 
-    Il processo di configurazione di IIS, impostazione dei contenuti della home page e avvio del servizio richiede un paio di minuti per il completamento.
+    Il processo di configurazione di Nginx, impostazione dei contenuti della home page e avvio del servizio richiede un paio di minuti per il completamento.
 
     Nel frattempo è possibile [esaminare lo script Bash](https://gist.githubusercontent.com/tpetchel/26f9dab2628a80bf87a33caeed1b6ded/raw/69e5d9250b9dcd7e7eece4b0ea3c3a8cd1b4fcd7/configure-nginx.sh?azure-portal=true) in una scheda separata del browser. Lo script installa Nginx e configura la home page per visualizzare un messaggio di benvenuto insieme al nome computer della macchina virtuale, "myVM".
 
@@ -127,7 +127,7 @@ In questo caso si userà l'estensione per script personalizzati per configurare 
     ```azurecli
     az vm open-port \
       --name myVM \
-      --resource-group <rgn>[Sandbox resource group name]</rgn> \
+      --resource-group <rgn>[sandbox resource group name]</rgn> \
       --port 80
     ```
 
@@ -140,7 +140,7 @@ Ora che Nginx è configurato, verificare che sia in esecuzione.
     ```azurecli
     az vm list-ip-addresses \
       --name myVM \
-      --resource-group <rgn>[Sandbox resource group name]</rgn> \
+      --resource-group <rgn>[sandbox resource group name]</rgn> \
       --query "[].virtualMachine.network.publicIpAddresses[0].ipAddress" \
       --output tsv
     ```

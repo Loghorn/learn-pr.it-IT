@@ -1,0 +1,53 @@
+### YamlMime:ModuleUnit
+uid: learn.monitor-manage-device-with-iotcentral.6-knowledge-check
+metadata:
+  title: Verifica delle conoscenze
+  description: Verifica delle conoscenze
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 52f6c98fc185520a51d13dc2b059f4ce17b05c35
+  ms.sourcegitcommit: 8a009788ee73c5d7caa6cd4f1105260c5cc9b846
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/22/2018
+  ms.locfileid: "46570757"
+title: Verifica delle conoscenze
+durationInMinutes: 11
+content: >
+  [!include[](includes/6-knowledge-check.md)]
+quiz:
+  title: Verifica delle conoscenze
+  questions:
+  - content: Quale delle affermazioni seguenti descrive meglio le informazioni contenute in un modello di dispositivo?
+    choices:
+    - content: La specifica di hardware di un dispositivo connesso all'applicazione.
+      isCorrect: false
+      incorrectExplanation: I dettagli sull'hardware non vengono acquisiti da un modello di dispositivo.
+    - content: I dati e i comandi di un dispositivo possono essere condivisi con l'applicazione.
+      isCorrect: true
+      correctExplanation: Il modello è una specifica che acquisisce tutte le informazioni e i comandi che possono essere potenzialmente scambiati tra il codice e il dispositivo fisico.
+    - content: Il protocollo di rete usato per comunicare con un dispositivo.
+      isCorrect: false
+      incorrectExplanation: Il protocollo di comunicazione non fa parte di un modello di dispositivo.
+  - content: "Vero o falso: è necessario avere un dispositivo fisico per testare l'applicazione IoT Central."
+    choices:
+    - content: Vero
+      isCorrect: false
+      incorrectExplanation: È possibile usare dispositivi simulati per il test.
+    - content: Falso
+      isCorrect: true
+      correctExplanation: Quando viene creato un modello di dispositivo, IoT Central crea automaticamente un dispositivo simulato. È anche possibile codificare le simulazioni di software personalizzato. Queste opzioni consentono di testare accuratamente l'applicazione prima di connettere un dispositivo fisico.
+  - content: Si supponga di che avere cinque dispositivi fisici che comunicano con IoT Central. Quante stringhe di connessione ci sarebbero?
+    choices:
+    - content: 'Una: la stringa di connessione è condivisa da tutti i dispositivi connessi.'
+      isCorrect: false
+      incorrectExplanation: Le stringhe di connessione condivise non consentirebbero a IoT Central di identificare in modo univoco ogni dispositivo.
+    - content: 'Due: una attivamente in uso e una di backup nel caso in cui quella principale sia compromessa.'
+      isCorrect: false
+      incorrectExplanation: Le stringhe di connessione condivise non consentirebbero a IoT Central di identificare in modo univoco ogni dispositivo.
+    - content: 'Cinque: ogni dispositivo deve avere una stringa di connessione univoca.'
+      isCorrect: true
+      correctExplanation: La stringa di connessione identifica il dispositivo in IoT Central, quindi ogni dispositivo deve averne una.

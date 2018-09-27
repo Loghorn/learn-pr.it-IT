@@ -65,7 +65,7 @@ A questo punto, è possibile eseguire la configurazione del database, che includ
 
 Se nel corso del tempo ci si rende conto che la domanda richiede un incremento della potenza di calcolo, è possibile modificare le opzioni relative alle prestazioni o passare dal modello di prestazioni DTU al modello vCore e viceversa.
 
-1. Accedere al [portale di Azure](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true) usando lo stesso account con cui è stato attivato l'ambiente sandbox.
+1. Accedere al [portale di Azure](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) usando lo stesso account con cui è stato attivato l'ambiente sandbox.
 
 1. Nell'angolo superiore sinistro del portale fare clic su **Crea una risorsa**. Selezionare **Database**, quindi selezionare **Database SQL**.
 
@@ -90,7 +90,7 @@ Se nel corso del tempo ci si rende conto che la domanda richiede un incremento d
     | ------------ | ----- |
     | **Nome database** | **Logistics** |
     | **Sottoscrizione** | Sottoscrizione in uso |
-    | **Gruppo di risorse** |  Usare il gruppo esistente <rgn>[nome gruppo di risorse sandbox]</rgn> |
+    | **Gruppo di risorse** |  Usare il gruppo esistente <rgn>[Nome gruppo di risorse sandbox]</rgn> |
     | **Seleziona origine** | **Database vuoto** |
     | **Usare il pool elastico SQL?** | **Non ora** |
     | **Regole di confronto** | **SQL_Latin1_General_CP1_CI_AS** |

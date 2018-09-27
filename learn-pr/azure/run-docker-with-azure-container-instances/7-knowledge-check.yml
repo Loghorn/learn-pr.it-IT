@@ -1,0 +1,51 @@
+### YamlMime:ModuleUnit
+uid: learn.run-docker-containers-aci.7-knowledge-check
+title: Verifica delle conoscenze
+metadata:
+  title: Verifica delle conoscenze
+  description: Verifica delle conoscenze
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 7a426d51049087dfa1f95baced2caf88ad49ebf8
+  ms.sourcegitcommit: 8a009788ee73c5d7caa6cd4f1105260c5cc9b846
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/22/2018
+  ms.locfileid: "46570820"
+durationInMinutes: 5
+quiz:
+  title: Verifica delle conoscenze
+  questions:
+  - content: Quale criterio di riavvio è in genere la scelta migliore per le attività con esecuzione prolungata richieste dal servizio?
+    choices:
+    - content: Always
+      isCorrect: true
+      correctExplanation: Il criterio di riavvio **Always** assicura che i processi necessari continuino a essere disponibili anche se è richiesto un riavvio.
+    - content: Never
+      isCorrect: false
+      incorrectExplanation: Il criterio di riavvio **Always** assicura che i processi necessari continuino a essere disponibili anche se è richiesto un riavvio.
+    - content: OnFailure
+      isCorrect: false
+      incorrectExplanation: Il criterio di riavvio **Always** assicura che i processi necessari continuino a essere disponibili anche se è richiesto un riavvio.
+  - content: "Vero o falso: per impostazione predefinita, i valori di una variabile di ambiente possono essere visualizzati nel portale di Azure e nell'output dell'interfaccia della riga di comando di Azure."
+    choices:
+    - content: Vero
+      isCorrect: true
+      correctExplanation: Le variabili di ambiente non sono protette per impostazione predefinita e i valori possono essere visualizzati nel portale di Azure e nell'output dell'interfaccia della riga di comando di Azure.
+    - content: Falso
+      isCorrect: false
+      incorrectExplanation: Le variabili di ambiente non sono protette per impostazione predefinita e i valori possono essere visualizzati nel portale di Azure e nell'output dell'interfaccia della riga di comando di Azure.
+  - content: Quale comando per la risoluzione dei problemi può essere usato per visualizzare gli eventi di avvio del contenitore?
+    choices:
+    - content: az container logs
+      isCorrect: false
+      incorrectExplanation: Il comando `az container logs` esamina i log per un contenitore in un gruppo di contenitori.
+    - content: az container attach
+      isCorrect: true
+      correctExplanation: Il comando `az container attach` mostra gli eventi e i log del contenitore. `az container logs` invece mostra solo i log e non gli eventi di avvio.
+    - content: az container exec
+      isCorrect: false
+      incorrectExplanation: Il comando `az container exec` esegue un comando all'interno di un contenitore in esecuzione, facente parte di un gruppo di contenitori.

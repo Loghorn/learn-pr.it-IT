@@ -10,7 +10,7 @@ Si lavorerà in un ambiente sandbox gratuito, pertanto non occorre creare un gru
 Per questo esempio viene distribuito uno SKU del registro Premium. Lo SKU Premium è obbligatorio per la replica geografica. Immettere il comando seguente nell'editor di Cloud Shell.
 
 ```azurecli
-az acr create --resource-group <rgn>[Sandbox resource group name]</rgn> --name <acrName> --sku Premium
+az acr create --resource-group <rgn>[sandbox resource group name]</rgn> --name <acrName> --sku Premium
 ```
 
 Di seguito è riportato l'output di esempio per un nuovo registro contenitori di Azure:

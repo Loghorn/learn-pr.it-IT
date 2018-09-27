@@ -53,7 +53,7 @@ La tabella seguente mostra come le query LINQ vengono convertite in SQL.
     }
     ```
 
-1. Copiare e incollare il codice seguente nel metodo **BasicOperations**, prima della riga `await this.DeleteUserDocument("Users", "WebCustomers", "1");`.
+1. Copiare e incollare il codice seguente nel metodo **BasicOperations**, prima della riga `await this.DeleteUserDocument("Users", "WebCustomers", yanhe);`.
 
     ```csharp
     this.ExecuteSimpleQuery("Users", "WebCustomers");

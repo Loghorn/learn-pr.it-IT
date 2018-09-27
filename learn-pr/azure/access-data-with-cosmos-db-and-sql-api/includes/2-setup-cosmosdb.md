@@ -40,7 +40,7 @@ La sandbox di Azure ha già selezionato automaticamente la sottoscrizione Concie
 1. Impostare il gruppo di risorse per usare il gruppo di risorse Sandbox esistente.
 
     ```azurecli
-    export RESOURCE_GROUP="<rgn>[Sandbox resource group name]</rgn>"
+    export RESOURCE_GROUP="<rgn>[sandbox resource group name]</rgn>"
     ```
 
 1. Selezionare l'area più vicina e impostare la variabile di ambiente, ad esempio `export LOCATION="EastUS"`.

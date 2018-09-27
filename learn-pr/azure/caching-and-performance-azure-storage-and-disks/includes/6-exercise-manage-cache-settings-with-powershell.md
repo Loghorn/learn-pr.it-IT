@@ -12,8 +12,8 @@ Ora si farà pratica con queste operazioni in Azure PowerShell.
 
 Verrà usata la macchina virtuale creata nell'esercizio precedente. Per le operazioni in questo lab si presuppone che:
 
-- La macchina virtuale esista già e sia chiamata **fotoshareVM**
-- La macchina virtuale sia inserita in un gruppo di risorse denominato **<rgn>[nome gruppo di risorse sandbox]</rgn>**
+- La macchina virtuale esista già e sia denominata **fotoshareVM**
+- La macchina virtuale sia inserita in un gruppo di risorse denominato **<rgn>[Nome gruppo di risorse sandbox]</rgn>**
 
 Se i nomi effettivi sono diversi, sostituire questi valori con i propri.
 
@@ -33,7 +33,7 @@ Per prima cosa, occorre archiviare alcuni nomi di risorse per poterli riusare in
     > Passare la sessione di Cloud Shell su **PowerShell** prima di provare questi comandi, se necessario.
     
     ```powershell
-    $myRgName = "<rgn>[Sandbox resource group name]</rgn>"
+    $myRgName = "<rgn>[sandbox resource group name]</rgn>"
     $myVMName = "fotoshareVM"
     ```
     
@@ -59,7 +59,7 @@ Per prima cosa, occorre archiviare alcuni nomi di risorse per poterli riusare in
     ```output
     ResourceGroupName Name        Type                              Location
     ----------------- ----        ----                              --------
-    <rgn>[Sandbox resource group name]</rgn> fotoshareVM Microsoft.Compute/virtualMachines eastus
+    <rgn>[sandbox resource group name]</rgn> fotoshareVM Microsoft.Compute/virtualMachines eastus
     ```
     
 ### <a name="view-os-disk-cache-status"></a>Visualizzare lo stato della cache del disco del sistema operativo
@@ -148,7 +148,7 @@ Al momento è presente un solo disco dati. Il campo `Lun` è importante. È il n
 
     ```output
     ResourceGroupName  : xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx
-    Id                 : /subscriptions/xxxxxxxx-xxxx-xxxx-xxx-xxxxxxx/resourceGroups/<rgn>[Sandbox resource group name]</rgn>/providers/Microsoft.Compute/virtualMachines/fotoshareVM
+    Id                 : /subscriptions/xxxxxxxx-xxxx-xxxx-xxx-xxxxxxx/resourceGroups/<rgn>[sandbox resource group name]</rgn>/providers/Microsoft.Compute/virtualMachines/fotoshareVM
     VmId               : xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx
     Name               : fotoshareVM
     Type               : Microsoft.Compute/virtualMachines

@@ -11,7 +11,7 @@ Si inizierà fornendo alcuni valori predefiniti per l'interfaccia della riga di 
 Digitare quindi il comando seguente nell'interfaccia della riga di comando di Azure, assicurandosi di sostituire la località con una nelle vicinanze.
 
 ```azurecli
-az configure --defaults group=<rgn>[Sandbox Resource Group]</rgn> location=westus2
+az configure --defaults group=<rgn>[sandbox Resource Group]</rgn> location=westus2
 ```
 
 ## <a name="create-an-event-hubs-namespace"></a>Creare uno spazio dei nomi di Hub eventi
@@ -24,7 +24,7 @@ Usare la procedura seguente per creare uno spazio dei nomi di Hub eventi usando 
     > |Parametro      |Descrizione|
     > |---------------|-----------|
     > |--name (obbligatorio)      |Immettere un nome univoco con una lunghezza compresa tra 6 e 50 caratteri per lo spazio dei nomi di Hub eventi. Il nome deve contenere solo lettere, numeri e trattini. Deve iniziare con una lettera e terminare con una lettera o un numero.|
-    > |--resource-group (obbligatorio) | Si tratta del gruppo di risorse sandbox di Azure creato in precedenza specificato tra i valori predefiniti. |
+    > |--resource-group (obbligatorio) | Si tratta del gruppo di risorse sandbox di Azure creato in precedenza, tratto dai valori predefiniti. |
     > |--l (facoltativo)     |Immettere la posizione del data center di Azure più vicino. Verrà usata l'impostazione predefinita.|
     > |--sku (facoltativo) | Piano tariffario per lo spazio dei nomi [Basic | Standard]. L'impostazione predefinita è _Standard_. Determina le connessioni e le soglie di consumer. |
 
@@ -40,20 +40,20 @@ Usare la procedura seguente per creare uno spazio dei nomi di Hub eventi usando 
     az eventhubs namespace create --name $NS_NAME
     ```
 
-    > [!NOTE] 
+    > [!NOTE]
     > In Azure i requisiti relativi al nome sono molto rigidi e l'interfaccia della riga di comando restituisce **Richiesta non valida** se il nome esiste già o non è valido. Provare a usare un altro nome modificando la variabile di ambiente e rieseguendo il comando.
 
 
 1. Recuperare la stringa di connessione per lo spazio dei nomi di Hub eventi usando il comando seguente. Sarà necessaria per configurare le applicazioni per inviare e ricevere messaggi tramite l'hub eventi.
 
     ```azurecli
-    az eventhubs namespace authorization-rule keys list --name RootManageSharedAccessKey --namespace-name $NS_NAME 
+    az eventhubs namespace authorization-rule keys list --name RootManageSharedAccessKey --namespace-name $NS_NAME
     ```
 
     > [!div class="mx-tableFixed"]
     > |Parametro      |Descrizione|
     > |---------------|-----------|
-    > |--resource-group (obbligatorio)  | Si tratta del gruppo di risorse sandbox di Azure creato in precedenza specificato tra i valori predefiniti. |
+    > |--resource-group (obbligatorio)  | Si tratta del gruppo di risorse sandbox di Azure creato in precedenza, tratto dai valori predefiniti. |
     > |--namespace-name (obbligatorio)  | Immettere il nome dello spazio dei nomi creato. |
 
     Questo comando restituisce un blocco JSON con la stringa di connessione per lo spazio dei nomi di Hub eventi che si userà in un secondo momento per configurare le applicazioni di pubblicazione e consumer. Salvare il valore delle chiavi seguenti per un uso successivo.
@@ -99,9 +99,9 @@ Per creare il nuovo hub eventi, seguire questa procedura:
 
 ## <a name="view-the-event-hub-in-the-azure-portal"></a>Visualizzare l'hub eventi nel portale di Azure
 
-Si osserverà ora il risultato nel portale di Azure. 
+Si osserverà ora il risultato nel portale di Azure.
 
-1. Accedere al [portale di Azure](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true) usando lo stesso account con cui è stato attivato l'ambiente sandbox.
+1. Accedere al [portale di Azure](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) usando lo stesso account con cui è stato attivato l'ambiente sandbox.
 
 1. Trovare lo spazio dei nomi di Hub eventi usando la barra di ricerca nella parte superiore del portale.
 

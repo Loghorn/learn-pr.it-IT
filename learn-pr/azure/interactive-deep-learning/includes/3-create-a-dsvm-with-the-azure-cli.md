@@ -63,7 +63,7 @@ Si creerà una VM con un modello di Azure Resource Manager. Il modello definisce
 ## <a name="create-a-resource-group"></a>Creare un gruppo di risorse 
 
 > [!IMPORTANT]
-> In genere si crea un gruppo di risorse in un'area a propria scelta. Tuttavia, la sessione sandbox in cui ci si trova fornisce un gruppo di risorse disponibili per l'uso. Il gruppo di risorse per questa sessione è **<rgn>[nome gruppo di risorse sandbox]</rgn>**.
+> In genere si crea un gruppo di risorse in un'area a propria scelta. La sessione sandbox in cui ci si trova, tuttavia, offre un gruppo di risorse disponibili per l'uso. Il gruppo di risorse per questa sessione è **<rgn>[nome gruppo di risorse sandbox]</rgn>**.
 
 ## <a name="deploy-the-dsvm-to-your-resource-group"></a>Distribuire la DSVM nel gruppo di risorse
 
@@ -73,7 +73,7 @@ Si è scelto un gruppo di risorse e sono stati definiti parametri per il modello
 
     ```azurecli
     az group deployment create \
-    --resource-group  <rgn>[Sandbox resource group name]</rgn> \
+    --resource-group  <rgn>[sandbox resource group name]</rgn> \
     --template-uri https://raw.githubusercontent.com/Azure/DataScienceVM/master/Scripts/CreateDSVM/Ubuntu/azuredeploy.json \
     --parameters parameter_file.json
     ```
@@ -90,7 +90,7 @@ Si è scelto un gruppo di risorse e sono stati definiti parametri per il modello
     ```azurecli
     az vm get-instance-view \
     --name <HOSTNAME> \
-    --resource-group <rgn>[Sandbox resource group name]</rgn> \
+    --resource-group <rgn>[sandbox resource group name]</rgn> \
     --query instanceView.statuses[1] \
     --output table
     ```
@@ -107,7 +107,7 @@ Per impostazione predefinita, la macchina virtuale non ha alcuna porta aperta. L
 
     ```azurecli
     az vm open-port \
-    -g <rgn>[Sandbox resource group name]</rgn> \
+    -g <rgn>[sandbox resource group name]</rgn> \
     -n <HOSTNAME> \
     --port 22 \
     --priority 900
@@ -123,7 +123,7 @@ Come accennato in precedenza, l'immagine della DSVM include software, strumenti 
 
     ```azurecli
     az vm open-port \
-    -g <rgn>[Sandbox resource group name]</rgn> \
+    -g <rgn>[sandbox resource group name]</rgn> \
     -n <HOSTNAME> \
     --port 8888 \
     --priority 901
@@ -137,7 +137,7 @@ Anche questa volta, il comando può richiedere fino a un minuto. Al termine, il 
 
     ```azurecli
     az vm list-ip-addresses \
-    -g <rgn>[Sandbox resource group name]</rgn> \
+    -g <rgn>[sandbox resource group name]</rgn> \
     -n <HOSTNAME> \
     --output table
     ```

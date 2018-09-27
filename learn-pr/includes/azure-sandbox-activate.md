@@ -1,2 +1,2 @@
 > [!NOTE]
-> Assicurarsi di aver attivato il sandbox prima di procedere con queste istruzioni.
+> Prima di procedere con queste istruzioni, assicurarsi di aver attivato l'ambiente sandbox.

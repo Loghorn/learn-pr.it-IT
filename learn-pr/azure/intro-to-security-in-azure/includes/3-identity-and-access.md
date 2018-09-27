@@ -84,7 +84,6 @@ Le identità vengono mappate ai ruoli direttamente o tramite l'appartenenza a gr
 
 I ruoli possono essere concessi a livello di singola istanza del servizio, ma vengono propagati verso il basso nella gerarchia di Azure Resource Manager. I ruoli assegnati in un ambito più elevato, ad esempio un'intera sottoscrizione, vengono ereditati dagli ambiti figlio, come le istanze del servizio. 
 
-<!--TODO: replace with final media which was submitted for Design-for-security-in-azure -->
 ![Gruppi di gestione](../media/3-role-assignment-scope.png)
 
 :::row:::
@@ -93,9 +92,8 @@ I ruoli possono essere concessi a livello di singola istanza del servizio, ma ve
   :::column-end:::
     :::column span="3"::: **Privileged Identity Management**
 
-Oltre alla gestione dell'accesso alle risorse di Azure tramite il controllo degli accessi in base al ruolo, per un approccio completo alla protezione dell'infrastruttura è consigliabile includere il controllo continuativo dei membri dei ruoli man mano che l'organizzazione cambia e si evolve. Azure AD Privileged Identity Management (PIM) è un'offerta a pagamento aggiuntiva che fornisce supervisione delle assegnazioni di ruolo, funzionalità self-service, attivazione dei ruoli JIT e verifiche di accesso alle risorse di Azure AD e Azure.
+Oltre alla gestione dell'accesso alle risorse di Azure tramite il controllo degli accessi in base al ruolo, per un approccio completo alla protezione dell'infrastruttura è consigliabile includere il controllo continuativo dei membri dei ruoli man mano che l'organizzazione cambia e si evolve. Azure AD Privileged Identity Management (PIM) è un'offerta a pagamento aggiuntiva che offre supervisione delle assegnazioni dei ruoli, funzionalità self-service, attivazione di ruoli JIT e verifiche di accesso alle risorse di Azure AD e Azure.
 
-<!--TODO: replace with final media which was submitted for Design-for-security-in-azure -->
 ![Privileged Identity Management](../media/PIM_Dashboard.png)
 
   :::column-end:::

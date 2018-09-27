@@ -17,10 +17,10 @@ Il Centro sicurezza di Azure fa parte delle raccomandazioni del [Center for Inte
 
 Il Centro sicurezza di Azure fornisce la gestione unificata della sicurezza e la protezione avanzata dalle minacce per carichi di lavoro cloud ibridi ed è disponibile in due livelli: Gratuito e Standard. Il livello gratuito fornisce criteri di sicurezza, valutazioni e raccomandazioni, mentre il livello Standard offre un solido set di funzionalità, tra cui intelligence per le minacce.
 
-Considerati i vantaggi del Centro sicurezza di Azure, il team responsabile della sicurezza dell'azienda ha deciso di attivarlo per tutte le sottoscrizioni dell'ufficio. È quindi stato comunicato per posta elettronica che si deve attivare il Centro sicurezza di Azure per le proprie applicazioni. Di seguito verrà illustrato come eseguire questa operazione.
+Considerati i vantaggi del Centro sicurezza di Azure, il team responsabile della sicurezza dell'azienda ha deciso di attivarlo per tutte le sottoscrizioni dell'ufficio. È stato comunicato tramite posta elettronica che si deve attivare il Centro sicurezza di Azure per le proprie applicazioni. Di seguito verrà illustrato come eseguire questa operazione.
 
 > [!IMPORTANT]
-> Il Centro sicurezza di Azure non è supportato nel sandbox gratuito di Azure. È possibile eseguire questi passaggi nella propria sottoscrizione o semplicemente leggere la procedura per capire come attivare il Centro sicurezza di Azure.
+> Il Centro sicurezza di Azure non è supportato nell'ambiente sandbox di Azure gratuito. È possibile eseguire questi passaggi nella propria sottoscrizione o semplicemente leggere la procedura per capire come attivare il Centro sicurezza di Azure.
 
 1. Aprire il [portale di Azure](https://portal.azure.com?azure-portal=true) e selezionare **Centro sicurezza di Azure** nel menu a sinistra. Se non è visualizzato in tale posizione, è possibile selezionare **Tutti i servizi** e trovare **Centro sicurezza** nella sezione Sicurezza, come illustrato di seguito.
 

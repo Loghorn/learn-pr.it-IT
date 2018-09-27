@@ -94,9 +94,9 @@ Cloud Shell offre due esperienze tra cui scegliere: Bash e PowerShell. Entrambe 
 
 ## <a name="creating-resources-in-azure"></a>Creazione di risorse in Azure
 
-In genere, per prima cosa si crea un _gruppo di risorse_ per contenere tutto ciò che è necessario creare. In questo modo è possibile gestire le macchine virtuali, i dischi, le interfacce di rete e gli altri elementi che costituiscono la soluzione come un'unità. È possibile usare l'interfaccia della riga di comando di Azure per creare un gruppo di risorse con il comando `az group create`. Sono necessari un parametro `--name` per assegnare un nome univoco al gruppo nella sottoscrizione e un parametro `--location` per indicare ad Azure l'area del mondo in cui si vuole collocare le risorse per impostazione predefinita.
+In genere, per prima cosa si crea un _gruppo di risorse_ per contenere tutto ciò che è necessario creare. In questo modo è possibile gestire le macchine virtuali, i dischi, le interfacce di rete e gli altri elementi che costituiscono la soluzione come un'unità. È possibile usare l'interfaccia della riga di comando di Azure per creare un gruppo di risorse con il comando `az group create`. Sono necessari un parametro `--name` per assegnare un nome univoco al gruppo nella sottoscrizione e un parametro `--location` per indicare ad Azure l'area del mondo in cui si vogliono posizionare le risorse per impostazione predefinita.
 
-Poiché si sta usando l'ambiente sandbox di Azure gratuito, non è necessario eseguire questo passaggio, ma si userà il gruppo di risorse creato in precedenza, **<rgn>[Nome gruppo di risorse]</rgn>**.
+Poiché si sta usando l'ambiente sandbox di Azure gratuito, non è necessario eseguire questo passaggio, ma si userà il gruppo di risorse creato in precedenza, **<rgn>[nome gruppo di risorse]</rgn>**.
 
 ## <a name="choosing-a-location"></a>Scelta di una località
 
@@ -114,7 +114,7 @@ Si vedrà ora come preparare ed eseguire una macchina virtuale Windows.
     ```azurecli
     az vm create \
       --name myVM \
-      --resource-group <rgn>[Sandbox resource group name]</rgn> \
+      --resource-group <rgn>[sandbox resource group name]</rgn> \
       --image Win2016Datacenter \
       --size Standard_DS2_v2 \
       --location eastus \
@@ -130,8 +130,8 @@ Si vedrà ora come preparare ed eseguire una macchina virtuale Windows.
 Durante l'attesa è possibile esaminare il comando appena eseguito.
 
 * Il nome della macchina virtuale è **myVM**. Questo nome identifica la macchina virtuale in Azure. Diventa anche il nome host interno, o nome computer, della macchina virtuale.
-* Il gruppo di risorse, ovvero il contenitore logico della macchina virtuale, è denominato **<rgn>[Nome gruppo di risorse sandbox]</rgn>**.
-* **Win2016Datacenter** specifica l'immagine di macchina virtuale Windows Server 2016.
+* Il gruppo di risorse, ovvero il contenitore logico della macchina virtuale, è denominato **<rgn>[nome gruppo di risorse sandbox]</rgn>**.
+* **Win2016Datacenter** specifica l'immagine della macchina virtuale Windows Server 2016.
 * **Standard_DS2_v2** indica le dimensioni della macchina virtuale. Queste dimensioni includono due CPU virtuali e 7 GB di memoria.
 * Il nome utente e la password consentono di connettersi alla macchina virtuale in un secondo momento. Ad esempio, è possibile connettersi tramite Desktop remoto o Gestione remota Windows per usare e configurare il sistema.
 
@@ -172,7 +172,7 @@ Si vedrà ora come preparare ed eseguire una macchina virtuale Linux.
     ```azurecli
     az vm create \
       --name myVM \
-      --resource-group <rgn>[Sandbox resource group name]</rgn> \
+      --resource-group <rgn>[sandbox resource group name]</rgn> \
       --image UbuntuLTS \
       --location eastus \
       --size Standard_DS2_v2 \
@@ -186,8 +186,8 @@ Si vedrà ora come preparare ed eseguire una macchina virtuale Linux.
 Durante l'attesa è possibile esaminare il comando appena eseguito.
 
 * Il nome della macchina virtuale è **myVM**. Questo nome identifica la macchina virtuale in Azure. Diventa anche il nome host interno, o nome computer, della macchina virtuale.
-* Il gruppo di risorse, ovvero il contenitore logico della macchina virtuale, è denominato **<rgn>[Nome gruppo di risorse sandbox]</rgn>**.
-* **UbuntuLTS** specifica l'immagine di macchina virtuale Ubuntu 16.04 LTS.
+* Il gruppo di risorse, ovvero il contenitore logico della macchina virtuale, è denominato **<rgn>[nome gruppo di risorse sandbox]</rgn>**.
+* **UbuntuLTS** specifica l'immagine della macchina virtuale Ubuntu 16.04 LTS.
 * **Standard_DS2_v2** indica le dimensioni della macchina virtuale. Queste dimensioni includono due CPU virtuali e 7 GB di memoria.
 * L'opzione `--generate-ssh-keys` crea una coppia di chiavi SSH per consentire l'accesso alla macchina virtuale.
 

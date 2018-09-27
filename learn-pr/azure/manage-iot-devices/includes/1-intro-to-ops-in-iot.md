@@ -10,7 +10,7 @@ Internet delle cose ha creato possibilità virtualmente illimitate in tutti i se
 
  Nel resto del modulo queste importanti conoscenze sulla tecnologia IoT verranno applicate a uno scenario reale. Si interagirà con un simulatore Raspberry Pi online per acquisire dati meteo simulati tramite l'hub IoT di Azure.
 
- ##<a name="learning-objectives"></a>Obiettivi di apprendimento
+ ## <a name="learning-objectives"></a>Obiettivi di apprendimento
  In questo modulo verrà descritto come:
   - Ottenere un'introduzione a IoT
   - Interagire con un simulatore Raspberry Pi

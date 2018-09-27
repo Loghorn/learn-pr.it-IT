@@ -12,9 +12,9 @@ Innanzitutto, definire i requisiti per la logica:
 
 Come descritto nell'unità precedente, Azure offre modelli che consentono di creare funzioni. In questa unità si userà il modello `HttpTrigger` per implementare il servizio relativo alla temperatura.
 
-1. Accedere al [portale di Azure](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true).
+1. Accedere al [portale di Azure](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true).
 
-1. Selezionare il gruppo di risorse creato nel primo esercizio scegliendo **Tutte le risorse** dal menu a sinistra e selezionando "**<rgn>[nome gruppo di risorse sandbox]</rgn>**".
+1. Selezionare il gruppo di risorse creato nel primo esercizio scegliendo **Tutte le risorse** dal menu a sinistra e selezionando "**<rgn>[Nome gruppo di risorse sandbox]</rgn>**".
 
 1. Verranno quindi visualizzate le risorse del gruppo. Fare clic sul nome dell'app per le funzioni creata nell'esercizio precedente selezionando l'elemento **escalator-functions-xxxxxxx**, contrassegnato anche con l'icona Funzione a forma di fulmine.
 

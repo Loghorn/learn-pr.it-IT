@@ -22,7 +22,6 @@ Esistono un paio di modi per garantire la protezione in ingresso sul perimetro:
 
 Per qualsiasi risorsa esposta a Internet, esiste il rischio di subire attacchi Denial of Service. Questi tipi di attacchi provano a sovraccaricare una risorsa di rete inviando talmente tante richieste da rallentare o addirittura bloccare la risorsa. Per mitigare questi attacchi, Protezione DDoS di Azure fornisce una protezione di base per tutti i servizi di Azure e una protezione avanzata ulteriormente personalizzabile per le proprie risorse. Protezione DDoS di Azure blocca il traffico degli attacchi e inoltra il traffico rimanente alla destinazione prevista. Entro pochi minuti dal rilevamento degli attacchi, si riceve una notifica in base alle metriche di Monitoraggio di Azure.
 
-<!--TODO: replace with final media which was submitted for Design-for-security-in-azure -->
 ![DDoS](../media/ddos.png)
 
  :::column-end:::

@@ -17,7 +17,7 @@ Ogni spazio dei nomi include anche le chiavi di crittografia di firma di accesso
 
 Per creare uno spazio dei nomi del bus di servizio usando il portale di Azure, seguire questa procedura:
 
-1. Accedere al [portale di Azure](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true).
+1. Accedere al [portale di Azure](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true).
 
 1. Nel riquadro di spostamento a sinistra fare clic su **Tutti i servizi**.
 

@@ -26,7 +26,7 @@ L'obiettivo dell'esercizio è creare una macchina virtuale Linux e collegare un 
 1. Impostare il valore del gruppo di risorse predefinito sul gruppo di risorse preconfigurato creato per l'ambiente sandbox di Azure: **<rgn>[gruppo di risorse sandbox]</rgn>**
 
     ```azurecli
-    az configure --defaults group="<rgn>[Sandbox Resource Group]</rgn>"
+    az configure --defaults group="<rgn>[sandbox Resource Group]</rgn>"
     ```
 
 1. Usare poi il comando `vm create` per creare una nuova macchina virtuale Ubuntu Linux.
@@ -51,13 +51,13 @@ L'obiettivo dell'esercizio è creare una macchina virtuale Linux e collegare un 
     ```json
     {
         "fqdns": "",
-        "id": "/subscriptions/xxx/resourceGroups/<rgn>[Sandbox resource group]</rgn>/providers/Microsoft.Compute/virtualMachines/support-web-vm01",
+        "id": "/subscriptions/xxx/resourceGroups/<rgn>[sandbox resource group]</rgn>/providers/Microsoft.Compute/virtualMachines/support-web-vm01",
         "location": "eastus",
         "macAddress": "00-0D-3A-18-DE-B4",
         "powerState": "VM running",
         "privateIpAddress": "10.0.0.4",
         "publicIpAddress": "40.76.193.249",
-        "resourceGroup": "<rgn>[Sandbox resource group]</rgn>",
+        "resourceGroup": "<rgn>[sandbox resource group]</rgn>",
         "zones": ""
     }
     ```

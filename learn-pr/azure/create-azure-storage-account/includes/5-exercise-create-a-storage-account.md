@@ -12,7 +12,7 @@ Per soddisfare questi requisiti, si opta per memorizzare nel buffer il contenuto
 
 ## <a name="use-the-azure-portal-to-create-a-storage-account"></a>Usare il portale di Azure per creare un account
 
-1. Accedere al [portale di Azure](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true) usando lo stesso account con cui è stata attivata la sandbox.
+1. Accedere al [portale di Azure](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) usando lo stesso account con cui è stata attivata la sandbox.
 
 1. In alto a sinistra nel portale di Azure selezionare **Crea una risorsa**.
 
@@ -33,13 +33,13 @@ In **DETTAGLI PROGETTO**:
 1. Selezionare il gruppo di risorse esistente ("**<rgn>[nome gruppo di risorse sandbox]</rgn>**") nell'elenco a discesa.
 
     > [!NOTE]
-    > Questo gruppo di risorse gratuito è stato fornito da Microsoft come parte dell'esperienza di apprendimento. Quando si crea un account per un'applicazione reale, è consigliabile creare un nuovo gruppo di risorse nella sottoscrizione per contenere tutte le risorse per l'app.
+    > Questo gruppo di risorse gratuito è stato reso disponibile da Microsoft nell'ambito dell'esperienza di apprendimento. Quando si crea un account per un'applicazione reale, è consigliabile creare un nuovo gruppo di risorse nella sottoscrizione per contenere tutte le risorse per l'app.
 
 In **DETTAGLI ISTANZA**:
 
 1. Immettere un **nome dell'account di archiviazione**. Il nome verrà usato per generare l'URL pubblico necessario per accedere ai dati nell'account. Questo nome deve essere univoco in tutti i nomi di account di archiviazione esistenti in Azure. I nomi devono avere una lunghezza compresa tra 3 e 24 caratteri e possono contenere solo lettere minuscole e numeri.
 
-1. Selezionare dall'elenco precedente una **località** nelle vicinanze. 
+1. Selezionare dall'elenco precedente una **località** nelle vicinanze.
 
 1. Lasciare _Resource Manager_ come **modello di distribuzione**. Questo è il modello preferito per tutte le distribuzioni di risorse in Azure e consente di raggruppare tutte le risorse correlate per l'app in un _gruppo di risorse_ per una gestione più semplice.
 
@@ -59,7 +59,7 @@ Lo screenshot seguente mostra le impostazioni compilate per la scheda **Informaz
 
 1. Fare clic sul pulsante **Next: Advanced >** (Avanti: Avanzate >) per passare alla scheda **Avanzate** o selezionare la scheda **Avanzate** nella parte superiore della schermata.
 
-1. Impostare **Trasferimento sicuro obbligatorio** su _Abilitato_. L'impostazione **Trasferimento sicuro obbligatorio** determina se **HTTP** può essere usato per le API REST usate per accedere ai dati nell'account di archiviazione. Impostando questa opzione su _Abilitato_, tutti i client dovranno usare SSL (**HTTPS**). È quasi sempre opportuno impostarla su _Abilitato_ perché usare HTTPS in rete è la procedura consigliata. 
+1. Impostare **Trasferimento sicuro obbligatorio** su _Abilitato_. L'impostazione **Trasferimento sicuro obbligatorio** determina se **HTTP** può essere usato per le API REST usate per accedere ai dati nell'account di archiviazione. Impostando questa opzione su _Abilitato_, tutti i client dovranno usare SSL (**HTTPS**). È quasi sempre opportuno impostarla su _Abilitato_ perché usare HTTPS in rete è la procedura consigliata.
 
     > [!WARNING]
     > Se questa opzione è abilitata, applicherà alcune restrizioni aggiuntive. Le connessioni del servizio File di Azure senza crittografia avranno esito negativo, inclusi gli scenari che usano SMB 2.1 o 3.0 in Linux. Poiché Archiviazione di Azure non supporta SSL per i nomi di dominio personalizzati, l'opzione non può essere usata con un nome di dominio personalizzato.

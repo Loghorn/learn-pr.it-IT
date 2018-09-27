@@ -1,14 +1,14 @@
 Si supponga che l'azienda faccia uso di immagini del contenitore per gestire i carichi di lavoro di calcolo. Per compilare le immagini del contenitore vengono usati gli strumenti Docker locali.
 
-È ora possibile usare Azure Container Registry Build per creare tali contenitori. Container Registry Build consente anche l'integrazione del processo DevOps con compilazione automatica al commit del codice sorgente.
+È ora possibile usare Azure Container Registry Tasks per creare tali contenitori. Container Registry Tasks consente anche l'integrazione del processo DevOps con compilazione automatica al commit del codice sorgente.
 
-È ora possibile automatizzare la creazione di un'immagine del contenitore usando Azure Container Registry Build.
+È ora possibile automatizzare la creazione di un'immagine del contenitore usando Azure Container Registry Tasks.
 
-## <a name="create-a-container-image-with-azure-container-registry-build"></a>Creare un'immagine del contenitore con Azure Container Registry Build
+## <a name="create-a-container-image-with-azure-container-registry-tasks"></a>Creare un'immagine del contenitore con Azure Container Registry Tasks
 
-Per fornire le istruzioni di compilazione viene usato un Dockerfile standard. Azure Container Registry Build consente di riutilizzare qualsiasi Dockerfile attualmente disponibile nell'ambiente, incluse le compilazioni in più fasi.
+Per fornire le istruzioni di compilazione viene usato un Dockerfile standard. Azure Container Registry Tasks consente di riutilizzare qualsiasi Dockerfile attualmente disponibile nell'ambiente, incluse le compilazioni in più fasi.
 
-Per l'esempio verrà usato un nuovo Dockerfile. 
+Per l'esempio verrà usato un nuovo Dockerfile.
 
 <!-- Activate the sandbox -->
 [!include[](../../../includes/azure-sandbox-activate.md)]
@@ -19,7 +19,7 @@ Il primo passaggio consiste nel creare un nuovo file denominato `Dockerfile`. È
 code
 ```
 
-Copiare i contenuti seguenti nel nuovo Dockerfile. Assicurarsi di salvare il file. 
+Copiare i contenuti seguenti nel nuovo Dockerfile. Assicurarsi di salvare il file.
 
 ```bash
 FROM    node:9-alpine
@@ -37,7 +37,7 @@ Questa configurazione aggiunge un'applicazione Node.js all'immagine `node:9-alpi
 Eseguire ora il comando dell'interfaccia della riga di comando di Azure `az acr build` per compilare l'immagine del contenitore da Dockerfile.
 
 ```azurecli
-az acr build --registry <acrName> --image helloacrbuild:v1 .
+az acr build --registry <acrName> --image helloacrtasks:v1 .
 ```
 
 Verrà mostrata la creazione dell'immagine e ne verrà eseguito il push nel registro contenitori durante l'esecuzione del comando.
@@ -55,7 +55,7 @@ L'output dovrebbe essere simile al seguente:
 ```console
 Result
 -------------
-helloacrbuild
+helloacrtasks
 ```
 
 L'immagine `helloacrbuild` è ora pronta per l'uso.

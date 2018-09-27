@@ -21,7 +21,7 @@ az group create --name <resource-group-name> --location <resource-group-location
 
     ```azurecli
     az vm create \
-        --resource-group <rgn>[Sandbox resource group name]</rgn> \
+        --resource-group <rgn>[sandbox resource group name]</rgn> \
         --name MeanDemo \
         --image UbuntuLTS \
         --admin-username <vm-admin-username> \
@@ -42,7 +42,7 @@ az group create --name <resource-group-name> --location <resource-group-location
         "powerState": "VM running",
         "privateIpAddress": "10.0.0.4",
         "publicIpAddress": "<the public IP address of the newly created machine>",
-        "resourceGroup": "<rgn>[Sandbox resource group name]</rgn>",
+        "resourceGroup": "<rgn>[sandbox resource group name]</rgn>",
         "zones": ""
     }
     ```
@@ -63,8 +63,8 @@ az group create --name <resource-group-name> --location <resource-group-location
 
 1. Aprire la porta 80 nella macchina virtuale per consentire il traffico HTTP in ingresso verso la nuova applicazione Web che verrà creata.
 
-    ``` bash
-    az vm open-port --port 80 --resource-group <rgn>[Sandbox resource group name]</rgn> --name MeanDemo
+    ```azurecli
+    az vm open-port --port 80 --resource-group <rgn>[sandbox resource group name]</rgn> --name MeanDemo
     ```
 
     Il comando aprirà la porta HTTP nella macchina virtuale denominata "MeanDemo" al momento della creazione.

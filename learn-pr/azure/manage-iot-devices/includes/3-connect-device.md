@@ -9,7 +9,7 @@ L'hub IoT di Azure fornisce le funzionalità e un modello di estendibilità che 
 
 Per iniziare a raccogliere i dati dal simulatore Raspberry Pi, prima è necessario creare un hub IoT.
 
-1. Accedere al [portale di Azure](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true) usando lo stesso account con cui è stata attivata la sandbox.
+1. Accedere al [portale di Azure](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) usando lo stesso account con cui è stata attivata la sandbox.
 
 2. Scegliere **Crea una risorsa** nell'angolo superiore sinistro del portale di Azure.
 
@@ -18,7 +18,7 @@ Per iniziare a raccogliere i dati dal simulatore Raspberry Pi, prima è necessar
 ![Screenshot della selezione dell'hub IoT nel portale di Azure](../media/fa40d1bc51bc4490f657e3c1a8371b5b.png)
 
 4. Nel riquadro **Hub IoT** immettere le informazioni seguenti per l'hub IoT:
-   
+
    - **Sottoscrizione**: usare la sottoscrizione predefinita per questo esempio.
    - **Gruppo di risorse**: usare il gruppo di risorse esistente. Inserendo tutte le risorse correlate nello stesso gruppo, è possibile gestirle tutte insieme. Ad esempio, con l'eliminazione del gruppo di risorse vengono eliminate tutte le risorse contenute in quel gruppo.
    - **Nome**: creare un nome univoco per l'hub IoT. Se il nome immesso è disponibile, viene visualizzato un segno di spunta verde.
@@ -28,7 +28,7 @@ Per iniziare a raccogliere i dati dal simulatore Raspberry Pi, prima è necessar
 
     > [!IMPORTANT]
     > L'hub IoT sarà individuabile pubblicamente come endpoint DNS, quindi evitare di indicare informazioni riservate nell'assegnazione del nome.
-    
+
     ![Finestra delle informazioni di base dell'hub IoT](./../media/dbb7319388673b8ee0e0b407536156c0.png)
 
 1. Selezionare **Avanti: Dimensioni e piano** per continuare a creare l'hub IoT.
@@ -61,7 +61,7 @@ Now that you have created an IoT hub, it's time to locate the important informat
 
     > [!IMPORTANT]
     > L'ID dispositivo può essere visibile nei log raccolti per il supporto tecnico e la risoluzione dei problemi, quindi evitare di indicare informazioni riservate nell'assegnazione del nome.
-    
+
 3. Fare clic su **Salva**.
 4. Dopo la creazione del dispositivo, aprirlo nel riquadro **Dispositivi IoT**.
 5. Copiare il valore di **Stringa di connessione---Chiave primaria** dell'hub IoT per usarlo in seguito.
@@ -73,7 +73,7 @@ Now that you have created an IoT hub, it's time to locate the important informat
 1. Aprire il [simulatore Raspberry Pi di Azure IoT](https://azure-samples.github.io/raspberry-pi-web-simulator?azure-portal=true).
 1. Sostituire il segnaposto nella riga 15 con la stringa di connessione del dispositivo dell'hub IoT di Azure copiata.
 1. Fare clic sul pulsante `Run` o digitare `npm start` nella finestra della console per eseguire l'applicazione.
-   
+
     ![Sostituire la stringa di connessione del dispositivo](../media/Line15.png)
 
 1. Dovrebbe essere visibile l'output seguente che mostra i dati del sensore e i messaggi inviati all'hub IoT.
@@ -82,7 +82,7 @@ Now that you have created an IoT hub, it's time to locate the important informat
 
 ## <a name="read-the-telemetry-from-your-hub"></a>Leggere i dati di telemetria dell'hub
 Che cosa sta succedendo? L'hub IoT sta ricevendo i messaggi da dispositivo a cloud inviati dal dispositivo simulato. Per verificarlo, esaminiamo rapidamente come l'hub IoT di Azure sta elaborando i dati in ingresso. Nell'hub IoT, in **Monitoraggio** selezionare **Metrica**. La visualizzazione dei dati nell'immagine richiede alcuni minuti.
-   
+
 ![Metriche di hub IoT](../media/HubMetrics.png)
 
 

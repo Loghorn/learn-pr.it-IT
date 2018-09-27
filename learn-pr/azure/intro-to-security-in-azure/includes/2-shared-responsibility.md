@@ -16,7 +16,6 @@ Il passaggio a una soluzione PaaS (Platform-as-a-Service) esternalizza molti pro
 
 Con una soluzione SaaS (Software-as-a-Service), si esternalizza quasi tutto. SaaS è il software che viene eseguito con un'infrastruttura Internet. Il codice viene controllato dal fornitore, ma è configurato per poter essere usato dal cliente. Come molte aziende, Contoso Shipping usa Office 365, che è un perfetto esempio di SaaS.
 
-<!--TODO: replace with final media which was submitted for Design-for-security-in-azure -->
 ![shared_responsibility.png](../media/shared_responsibilities.png)
 
 ## <a name="a-layered-approach-to-security"></a>Approccio alla sicurezza strutturato su più livelli
@@ -25,7 +24,6 @@ Con una soluzione SaaS (Software-as-a-Service), si esternalizza quasi tutto. Saa
 
 La difesa avanzata può essere visualizzata come una serie di anelli concentrici, al cui centro si trovano i dati da proteggere. Ogni anello aggiunge un livello di protezione attorno ai dati. Questa strategia consente di evitare la dipendenza da un singolo livello di protezione e opera rallentando l'attacco e generando avvisi con dati di telemetria, in base ai quali è possibile intervenire automaticamente o manualmente. Esaminiamo ciascuno di questi livelli.
 
-<!--TODO: replace with final media which was submitted for Design-for-security-in-azure -->
 ![Difesa avanzata](../media/defense_in_depth_layers_small.PNG)
 
 :::row:::

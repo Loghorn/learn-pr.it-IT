@@ -51,7 +51,7 @@ Con questo metodo, è possibile quindi richiamare la stored procedure dal codice
 
 Qualsiasi output presentato visivamente o all'interno di un documento deve sempre essere codificato e preceduto da un carattere di escape. In questo modo ci si protegge in caso di omissioni nel processo di purificazione o qualora il codice generi accidentalmente un elemento che può essere usato in modo dannoso. Ci si assicura così che ogni elemento venga visualizzato come _output_ e non venga inavvertitamente interpretato come qualcosa che deve essere eseguito. Questa è un'altra tecnica di attacco molto comune nota come XSS (Cross-Site Scripting), ossia un attacco tramite script da altri siti.
 
-Essendo un requisito comune, questa è un'altra area in cui ASP.NET può agire automaticamente. Per impostazione predefinita, [tutto l'output è già codificato](https://docs.microsoft.com/aspnet/core/security/cross-site-scripting?view=aspnetcore-2.1). Se si usa un altro framework Web, è possibile verificare le opzioni impostate per la codifica dell'output nei siti Web usando le informazioni di riferimento sulla prevenzione degli attacchi XSS sul sito [OWASP](https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet).
+Essendo un requisito comune, questa è un'altra area in cui ASP.NET può agire automaticamente. Per impostazione predefinita, tutto l'output è già codificato. Se si usa un altro framework Web, è possibile verificare le opzioni impostate per la codifica dell'output nei siti Web usando le [informazioni di riferimento sulla prevenzione degli attacchi XSS sul sito OWASP](https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet).
 
 ## <a name="summary"></a>Riepilogo
 

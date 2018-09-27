@@ -7,7 +7,7 @@
 
 È possibile creare macchine virtuali Windows con il portale di Azure, l'interfaccia della riga di comando di Azure o Azure PowerShell. L'approccio più semplice consiste nell'usare il portale, perché offre tutte le informazioni dettagliate necessarie e fornisce suggerimenti e messaggi utili durante la creazione della macchina virtuale.
 
-1. Accedere al [portale di Azure](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true) usando lo stesso account con cui è stato attivato l'ambiente sandbox.
+1. Accedere al [portale di Azure](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) usando lo stesso account con cui è stato attivato l'ambiente sandbox.
 
 1. Fare clic su **Crea una risorsa** nell'angolo in alto a sinistra del portale di Azure.
 
@@ -27,14 +27,14 @@ Si inizierà con la sezione **Informazioni di base**.
 
 ### <a name="configure-basic-vm-settings"></a>Configurare le impostazioni di base della macchina virtuale
 
-> [!NOTE]  
+> [!NOTE]
 > Quando si modificano le impostazioni e si esce da ogni campo di testo libero, Azure convalida automaticamente ogni valore e visualizza un segno di spunta verde accanto se è corretto. È possibile passare il mouse sopra gli indicatori di errore per ottenere altre informazioni sui problemi individuati.
 
 1. Selezionare la **sottoscrizione** per cui devono essere fatturate le ore della macchina virtuale.
 
-1. Per **Gruppo di risorse** selezionare "**<rgn>[Nome gruppo di risorse sandbox]</rgn>**".
+1. Per **Gruppo di risorse** selezionare "**<rgn>[nome gruppo di risorse sandbox]</rgn>**".
 
-1. Nella sezione **DETTAGLI ISTANZA** immettere un nome per la macchina virtuale, ad esempio **vm2-pv-test** per "Test Video Processor VM #2".
+1. Nella sezione **DETTAGLI ISTANZA** immettere un nome per la macchina virtuale, ad esempio **test-vp-vm2** per "Test Video Processor VM #2".
     - È consigliabile standardizzare i nomi delle risorse in modo da poterne identificare rapidamente lo scopo. I nomi delle macchine virtuali Windows devono essere composti da 1-15 caratteri, non possono contenere caratteri speciali o non ASCII e devono essere univoci nel gruppo di risorse corrente.
 
 1. Selezionare un'area nelle vicinanze dall'elenco seguente.

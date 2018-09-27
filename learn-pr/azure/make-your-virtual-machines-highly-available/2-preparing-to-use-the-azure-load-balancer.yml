@@ -1,0 +1,49 @@
+### YamlMime:ModuleUnit
+uid: learn.make-your-virtual-machines-highly-available.2-preparing-to-use-the-azure-load-balancer
+title: Preparazione per l'uso di Azure Load Balancer
+metadata:
+  title: Preparazione per l'uso di Azure Load Balancer
+  description: Preparazione per l'uso di Azure Load Balancer
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: d7aca1982234b34ec8ab8f293d5c15fb15e9c8d0
+  ms.sourcegitcommit: 58e9d7fbb111af9b27ed819e4b79ba4a4e6e8a9c
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/21/2018
+  ms.locfileid: "46513240"
+durationInMinutes: 5
+content: >
+  [!include[](includes/2-preparing-to-use-the-azure-load-balancer.md)]
+quiz:
+  title: Verifica delle conoscenze
+  questions:
+  - content: Vero o Falso. Azure Load Balancer assicura che tutti i pacchetti di un client vengano inviati alla stessa istanza di macchina virtuale back-end.
+    choices:
+    - content: Vero
+      isCorrect: true
+      correctExplanation: Azure Load Balancer usa un hash per identificare il client dall'indirizzo IP e dalla porta di origine e di destinazione.
+    - content: Falso
+      isCorrect: false
+      incorrectExplanation: Azure Load Balancer usa un hash per identificare il client dall'indirizzo IP e dalla porta di origine e di destinazione.
+  - content: 'Uno dei motivi per scegliere lo SKU Standard rispetto allo SKU Basic:'
+    choices:
+    - content: A differenza dello SKU Basic, lo SKU standard può indirizzare il traffico a un set di disponibilità della macchina virtuale.
+      isCorrect: false
+      incorrectExplanation: Sebbene entrambi gli SKU Basic e Standard supportino l'indirizzamento del traffico a un set di disponibilità, gli SKU Standard possono utilizzare più set di disponibilità.
+    - content: Lo SKU Standard supporta il traffico protetto (HTTPS).
+      isCorrect: true
+      correctExplanation: Lo SKU Basic consente di proteggere solo il traffico TCP e HTTP, mentre lo SKU Standard aggiunge il supporto HTTPS.
+    - content: A differenza dello SKU Basic, lo SKU Standard supporta il monitoraggio dei probe di integrità dei server delle macchine virtuali back-end.
+      isCorrect: false
+      incorrectExplanation: I probe di integrità vengono usati in entrambi gli SKU e sono un requisito per la configurazione di Azure Load Balancer.
+  - content: Vero o Falso. Azure Load Balancer può essere usato per i servizi pubblici o per i servizi interni di Azure usati su una rete VPN.
+    choices:
+    - content: Vero
+      isCorrect: true
+      incorrectExplanation: Azure Load Balancer supporta le configurazioni pubbliche e interne.
+    - content: Falso
+      isCorrect: false

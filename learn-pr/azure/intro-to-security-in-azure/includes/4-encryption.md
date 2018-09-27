@@ -22,7 +22,6 @@ I dati in transito sono dati che vengono spostati attivamente da una posizione a
 
 La crittografia dei dati in transito consente di proteggere i dati da osservatori esterni e fornisce un meccanismo per trasmettere dati limitando il rischio di esposizione. 
 
-<!--TODO: replace with final media which was submitted for Design-for-security-in-azure -->
 ![Crittografia in transito](../media/encryption-in-transit.png)
 
 
@@ -32,7 +31,6 @@ I dati inattivi sono dati archiviati su un supporto fisico. Può trattarsi di da
 
 I dati effettivi che vengono crittografati possono variare nel contenuto, nell'uso e nell'importanza per l'organizzazione. Potrebbe trattarsi di informazioni finanziarie fondamentali per il business, proprietà intellettuale sviluppata dall'azienda, dati personali archiviati dall'azienda relativi a clienti o dipendenti e anche di chiavi e segreti usati per la crittografia dei dati stessi.
 
-<!--TODO: replace with final media which was submitted for Design-for-security-in-azure -->
 ![Crittografia di dati inattivi](../media/encryption-at-rest.png)
 
 ## <a name="encryption-on-azure"></a>Crittografia in Azure

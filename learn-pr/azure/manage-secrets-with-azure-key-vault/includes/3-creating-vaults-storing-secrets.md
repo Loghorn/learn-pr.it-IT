@@ -40,7 +40,7 @@ In Cloud Shell eseguire questo comando per creare l'insieme di credenziali. È p
 ```azurecli
 az keyvault create \
     --name <your-unique-vault-name> \
-    --resource-group <rgn>[Sandbox resource group name]</rgn> \
+    --resource-group <rgn>[sandbox resource group name]</rgn> \
     --location eastus
 ```
 

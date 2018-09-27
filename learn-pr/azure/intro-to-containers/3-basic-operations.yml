@@ -1,0 +1,21 @@
+### YamlMime:ModuleUnit
+uid: learn.intro-to-containers.3-basic-operations
+metadata:
+  title: Eseguire operazioni di base sui contenitori
+  description: Eseguire operazioni di base sui contenitori.
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: d37a7669fffb44dc6fd768dbe13e0177b23fa480
+  ms.sourcegitcommit: 8a009788ee73c5d7caa6cd4f1105260c5cc9b846
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/22/2018
+  ms.locfileid: "46570612"
+title: Eseguire operazioni di base sui contenitori
+interactive: bash
+azureSandbox: true
+durationInMinutes: 7
+content: '[!include[](includes/3-basic-operations.md)]'

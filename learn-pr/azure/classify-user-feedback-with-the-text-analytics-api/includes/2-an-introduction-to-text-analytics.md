@@ -1,0 +1,19 @@
+Tutti vogliono sapere quello che pensano i clienti di uno specifico marchio, prodotto e messaggio. Come cambia la loro opinione nel corso del tempo? Rilevare il sentiment in quello che scrivono può offrire alcune indicazioni utili. L'analisi del sentiment consente di rispondere alla domanda *Cosa vogliono realmente i clienti?* Viene usata per analizzare i tweet e altri contenuti sui social media, oltre alle recensioni dei clienti e ai messaggi di posta elettronica.
+
+![Sentiment estratto dal testo e visualizzazione su un misuratore da negativo a positivo.](../media/sentiment-analysis.png)
+
+ Un approccio comune all'analisi del sentiment consiste nell'eseguire il training di modelli di Machine Learning che rilevano il sentiment. Tale processo è tuttavia complesso. Implica infatti che i dati di training disponibili siano etichettati e di buona qualità, che si creino funzionalità da tali dati, che venga eseguito il training di un classificatore e che quindi il classificatore sia usato per prevedere il sentiment dei nuovi testi. Non tutte le aziende hanno il budget e le competenze per investire nella realizzazione di soluzioni di intelligenza artificiale da zero. Fortunatamente, Microsoft e altre aziende sono in grado di investire nella ricerca più all'avanguardia in queste aree. Tutti gli sviluppatori traggono enorme vantaggio dalle loro scoperte, grazie alle API, agli SDK e alle piattaforme che mettono a disposizione. Servizi cognitivi Microsoft è una di queste offerte.
+
+## <a name="azure-cognitive-services"></a>Servizi cognitivi di Azure
+
+Servizi cognitivi Microsoft è costituito da un set di API, SDK e servizi. L'obiettivo è quello di aiutare gli sviluppatori a rendere le app più intelligenti, coinvolgenti e individuabili.
+
+Servizi cognitivi di Azure offre algoritmi intelligenti per quel che riguarda visione artificiale, sintesi vocale, linguaggio, conoscenza e ricerca. Per vedere i servizi disponibili, fare riferimento alla [Directory di Servizi cognitivi](https://azure.microsoft.com/services/cognitive-services/directory/). È possibile provare gratuitamente ogni servizio. Quando si decide di integrare uno o più di questi servizi nelle proprie applicazioni, è necessario registrarsi per una sottoscrizione a pagamento. Il servizio che sarà usato in questo modulo è l'API Analisi del testo, che verrà quindi illustrata in dettaglio.
+
+## <a name="text-analytics-api"></a>API Analisi del testo
+
+L'API Analisi del testo è un servizio cognitivo progettato per estrarre informazioni dal testo. Consente di identificare la lingua, rilevare il sentiment, estrarre frasi chiave e individuare le entità note nel testo. 
+
+In questa lezione sarà illustrato in particolare il componente di questa API che si occupa dell'analisi del sentiment. Dietro le quinte, il servizio usa un algoritmo di classificazione basato sull'apprendimento automatico per generare un punteggio del sentiment compreso tra 0 e 1. I punteggi più vicini a 1 indicano un sentiment positivo, mentre quelli più vicini allo 0 indicano un sentiment negativo. Un punteggio vicino a 0,5 indica l'assenza di sentiment o una frase neutrale. Non è necessario preoccuparsi dei dettagli di implementazione dell'algoritmo. Ci si concentrerà su come usare il servizio effettuando chiamate direttamente dall'app. Come si vedrà a breve, si struttura una richiesta **POST**, la si invia all'endpoint `/sentiment` e si riceve una risposta JSON che indica un *punteggio del sentiment*.
+
+Per prima cosa si proverà a usare l'API Analisi del testo tramite una console di test dell'API online. Una volta acquisita familiarità con l'API, verrà usata in uno scenario per rilevare il sentiment nei messaggi in modo da poterli ordinare per un'ulteriore elaborazione.

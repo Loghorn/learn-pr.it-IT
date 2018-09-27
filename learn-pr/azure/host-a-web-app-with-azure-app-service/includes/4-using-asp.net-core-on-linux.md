@@ -10,7 +10,7 @@ ASP.NET Core è l'evoluzione più recente del famoso framework Web ASP.NET di Mi
 
 Le applicazioni ASP.NET Core possono essere scritte per avere come destinazione .NET Core Framework o la versione esistente e completa .NET Framework.
 
-Poiché si tratta di un framework open source e multipiattaforma, è possibile compilare le app ASP.NET Core su una vasta gamma di piattaforme, tra cui Windows, macOS e Linux. Microsoft offre l'ambiente di sviluppo integrato di Visual Studio per gli ambienti Windows e macOS. Inoltre, l'editor di Visual Studio Code è multipiattaforma e compatibile con essi, oltre che con Linux.
+Poiché si tratta di un framework open source e multipiattaforma, è possibile compilare le app ASP.NET Core su una vasta gamma di piattaforme, tra cui Windows, macOS e Linux. Microsoft offre l'ambiente di sviluppo integrato di Visual Studio per gli ambienti Windows e macOS. Inoltre, l'editor Visual Studio Code è multipiattaforma e compatibile con essi, oltre che con Linux.
 
 >Per supportare la creazione di applicazioni ASP.NET Core su diverse piattaforme, Microsoft ha introdotto gli strumenti della riga di comando .NET Core che consentono di compilare, testare e pubblicare le applicazioni usando un set completo, coerente e multipiattaforma di API.
 

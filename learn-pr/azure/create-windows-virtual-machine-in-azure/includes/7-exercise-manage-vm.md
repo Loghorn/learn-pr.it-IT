@@ -7,7 +7,7 @@ Azure dovrebbe aver creato un gruppo di sicurezza perché si era indicato di vol
 > [!NOTE]
 > Poiché si _presume_ che questa sia la seconda macchina virtuale, sarà già disponibile un gruppo di sicurezza da applicare alla rete, ma si supponga per un momento che non sia così o che le regole per questa macchina virtuale siano diverse.
 
-1. Nel [portale di Azure](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true) fare clic sul pulsante **Crea una risorsa** nella barra laterale nell'angolo a sinistra per avviare la creazione di una nuova risorsa.
+1. Nel [portale di Azure](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) fare clic sul pulsante **Crea una risorsa** nella barra laterale nell'angolo a sinistra per avviare la creazione di una nuova risorsa.
 
 1. Digitare "Gruppo di sicurezza di rete" nella casella del filtro e selezionare l'elemento corrispondente nell'elenco.
 
@@ -15,7 +15,7 @@ Azure dovrebbe aver creato un gruppo di sicurezza perché si era indicato di vol
 
 1. Fornire un **nome** per il gruppo di sicurezza. Anche in questo caso, sono utili le convenzioni di denominazione. Si userà "test-vp-nsg2" per "Test Video Processor Network Security Group #2".
 
-1. Selezionare la **sottoscrizione** appropriata e usare il **gruppo di risorse** esistente, "<rgn>[Nome gruppo risorse sandbox]</rgn>".
+1. Selezionare la **sottoscrizione** appropriata e usare il **gruppo di risorse** esistente, "<rgn>[nome gruppo risorse sandbox]</rgn>".
 
 1. Inserirlo infine nella stessa **località** della macchina virtuale/rete virtuale. Questa operazione è importante perché non sarà possibile applicare questa risorsa se si trova in una località diversa.
 
@@ -34,7 +34,7 @@ La distribuzione verrà completata rapidamente.
     - Tutto il traffico in ingresso da una rete virtuale a un'altra è consentito. In questo modo le risorse nella rete virtuale possono comunicare tra di esse.
     - Il "probe" di Azure Load Balancer richiede di verificare che la macchina virtuale sia attiva
     - Tutto il traffico in ingresso viene rifiutato.
-    
+
     Sul lato in uscita:
     - Tutto il traffico nella rete virtuale è consentito.
     - Tutto il traffico in uscita verso Internet è consentito.

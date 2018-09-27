@@ -106,7 +106,7 @@ az cognitiveservices account create \
 --kind ComputerVision \
 --name ComputerVisionService \
 --sku S1 \
---resource-group <rgn>[Sandbox resource group name]</rgn> \
+--resource-group <rgn>[sandbox resource group name]</rgn> \
 --location [location]
 ```
 
@@ -126,7 +126,7 @@ Dopo aver creato l'account, è possibile recuperare le chiavi della sottoscrizio
     ```azurecli
     az cognitiveservices account keys list \
     --name ComputerVisionService \
-    --resource-group <rgn>[Sandbox resource group name]</rgn>
+    --resource-group <rgn>[sandbox resource group name]</rgn>
     ```
     
     Il comando precedente restituisce le chiavi associate all'account Servizi Cognitivi denominato **ComputerVisionService**, di proprietà del gruppo di risorse specificato. Restituisce due chiavi, una delle quali è una chiave di riserva. Poiché è difficile ricordare le chiavi, la prima chiave verrà archiviata in una variabile da usare per tutte le chiamate all'API.
@@ -136,7 +136,7 @@ Dopo aver creato l'account, è possibile recuperare le chiavi della sottoscrizio
     ```azurecli
     key=$(az cognitiveservices account keys list \
     --name ComputerVisionService \
-    --resource-group <rgn>[Sandbox resource group name]</rgn> \
+    --resource-group <rgn>[sandbox resource group name]</rgn> \
     --query key1 -o tsv)
     ```
     

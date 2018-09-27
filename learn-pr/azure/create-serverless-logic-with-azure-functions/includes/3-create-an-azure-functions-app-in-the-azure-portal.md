@@ -20,7 +20,7 @@ Quando si crea un'app per le funzioni, è necessario collegarla a un account di 
 
 Ora verrà creata un'app per le funzioni nel portale di Azure.
 
-1. Accedere al [portale di Azure](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true) usando lo stesso account con cui è stato attivato l'ambiente sandbox.
+1. Accedere al [portale di Azure](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) usando lo stesso account con cui è stato attivato l'ambiente sandbox.
 
 1. Selezionare il pulsante **Crea una risorsa** visualizzato nell'angolo superiore sinistro del portale di Azure, quindi selezionare **Inizia subito > Serverless Function App** (App per le funzioni serverless) per aprire il pannello *Crea* dell'app per le funzioni. In alternativa, è possibile usare l'opzione **Calcolo > App per le funzioni** che apre lo stesso pannello.
 
@@ -30,7 +30,7 @@ Ora verrà creata un'app per le funzioni nel portale di Azure.
 
 1. Selezionare la sottoscrizione di Azure in cui ospitare l'app per le funzioni.
 
-1. Selezionare il gruppo di risorse esistente denominato "**<rgn>[Nome gruppo di risorse sandbox]</rgn>**".
+1. Selezionare il gruppo di risorse esistente denominato "**<rgn>[nome gruppo di risorse sandbox]</rgn>**".
 
 1. Selezionare **Windows** come sistema operativo.
 
@@ -51,11 +51,11 @@ Ora verrà creata un'app per le funzioni nel portale di Azure.
 
 ## <a name="verify-your-azure-function-app"></a>Verificare l'app per le funzioni di Azure
 
-1. Nel menu a sinistra del portale di Azure selezionare **Gruppi di risorse**. Nell'elenco dei gruppi disponibili dovrebbe essere visualizzato il gruppo di risorse denominato **<rgn>[Nome gruppo di risorse sandbox]</rgn>**.
+1. Nel menu a sinistra del portale di Azure selezionare **Gruppi di risorse**. Nell'elenco dei gruppi disponibili viene quindi visualizzato il gruppo di risorse **<rgn>[nome gruppo di risorse sandbox]</rgn>**.
 
-  ![Screenshot del portale di Azure che illustra il pannello Gruppi di risorse con la voce di menu Gruppi di risorse e l'elemento di elenco <rgn>[Nome gruppo di risorse sandbox]</rgn> evidenziati.](../media/3-resource-group.png)
+  ![Screenshot del portale di Azure che illustra il pannello Gruppi di risorse con la voce di menu Gruppi di risorse e l'elemento elenco <rgn>[nome gruppo di risorse sandbox]</rgn> evidenziati.](../media/3-resource-group.png)
 
-1. Selezionare il gruppo di risorse **<rgn>[Nome gruppo di risorse sandbox]</rgn>**. Viene visualizzato un elenco di risorse simile al seguente.
+1. Selezionare il gruppo di risorse **<rgn>[nome gruppo di risorse sandbox]</rgn>**. Viene visualizzato un elenco di risorse simile al seguente.
 
   ![Screenshot del portale di Azure che illustra tutte le risorse contenute nel gruppo <rgn>[nome gruppo di risorse sandbox]</rgn>, tra cui le voci per un piano di servizio app, un account di archiviazione, una risorsa di Application Insights e un servizio app.](../media/3-resource-list.png)
 

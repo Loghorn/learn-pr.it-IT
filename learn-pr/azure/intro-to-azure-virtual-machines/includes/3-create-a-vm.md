@@ -21,7 +21,7 @@ Dopo aver eseguito l'accesso, vengono visualizzate due aree principali. La prima
 
 Si supponga di che voler creare una macchina virtuale che esegue un sito Web WordPress. La configurazione di un sito non è difficile, ma ci sono un paio di aspetti da tenere presenti. È necessario installare e configurare un sistema operativo, configurare un sito Web, installare un database e occuparsi di aspetti come i firewall. Nei moduli successivi ci si occuperà in modo approfondito della creazione di macchine virtuali, ma ora ne verrà creata una per dimostrare quanto sia facile. Non verranno prese in considerazione tutte le opzioni. Consultare uno dei moduli **Creare una macchina virtuale** per ottenere informazioni dettagliate su ogni opzione.
 
-1. Accedere al [portale di Azure](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true) usando lo stesso account con cui è stato attivato l'ambiente sandbox. 
+1. Accedere al [portale di Azure](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) usando lo stesso account con cui è stato attivato l'ambiente sandbox.
 
 1. Il menu per la creazione e la gestione delle risorse di Azure verrà visualizzato sulla sinistra, mentre il resto della schermata sarà occupato dal dashboard.
 
@@ -48,9 +48,9 @@ Si supponga di che voler creare una macchina virtuale che esegue un sito Web Wor
 È necessario configurare i parametri di base della macchina virtuale WordPress. È normale che, a questo punto, alcune opzioni non siano ancora chiare. Tutte queste opzioni verranno illustrate in un modulo futuro. È consigliabile copiare i valori usati qui.
 
 1. Usare i valori seguenti nella scheda **Base**.
-    - La sottoscrizione deve essere impostata su _Concierge Subscription_.
-    - Selezionare **Usa esistente** per l'area e quindi selezionare <rgn>[Nome gruppo di risorse sandbox]</rgn> nell'elenco a discesa.
-    - Immettere un **nome** per la macchina virtuale. Usare _test-wp1-eus-vm_.
+    - La sottoscrizione deve essere impostata su _Concierge Subscription_ (Sottoscrizione Concierge).
+    - Selezionare **Usa esistente** per l'area e quindi selezionare <rgn>[nome gruppo di risorse sandbox]</rgn> nell'elenco a discesa.
+    - Immettere un **Nome** per la macchina virtuale. Usare _test-wp1-eus-vm_.
     - Selezionare un'**area** nelle vicinanze dall'elenco seguente.
         [!include[](../../../includes/azure-sandbox-regions-note-friendly.md)]
     - Scegliere _Nessuna_ per **Opzioni di disponibilità**. Questa impostazione è relativa alla disponibilità elevata.

@@ -33,7 +33,7 @@ Si userà il comando `az redis create` per creare una nuova cache Redis. Questo 
 
     az redis create \
         --name "$REDIS_NAME" \
-        --resource-group <rgn>[Sandbox resource group name]</rgn> \
+        --resource-group <rgn>[sandbox resource group name]</rgn> \
         --location eastus \
         --vm-size C0 \
         --sku Basic \
@@ -85,7 +85,7 @@ Usare il comando `az redis list-keys` per ottenere le chiavi di accesso. Eseguir
 ```azurecli
 REDIS_KEY=$(az redis list-keys \
     --name "$REDIS_NAME" \
-    --resource-group <rgn>[Sandbox resource group name]</rgn> \
+    --resource-group <rgn>[sandbox resource group name]</rgn> \
     --query primaryKey \
     --output tsv)
 
@@ -164,7 +164,7 @@ Infine, verranno aggiunti i dati in Cache Redis di Azure.
     ```azcli
     az redis show \
         --name "$REDIS_NAME" \
-        --resource-group <rgn>[Sandbox resource group name]</rgn> \
+        --resource-group <rgn>[sandbox resource group name]</rgn> \
         --query provisioningState
     ```
 
@@ -180,7 +180,7 @@ Infine, verranno aggiunti i dati in Cache Redis di Azure.
 
 Per concludere, è possibile verificare che i dati siano stati aggiunti in Cache Redis di Azure.
 
-1. Accedere al [portale di Azure](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true) usando lo stesso account con cui è stato attivato l'ambiente sandbox.
+1. Accedere al [portale di Azure](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) usando lo stesso account con cui è stato attivato l'ambiente sandbox.
 
 1. Individuare l'istanza di Cache Redis di Azure selezionando **Tutte le risorse** nella barra laterale sinistra e usando la casella di filtro a sinistra per selezionare le istanze di Cache Redis di Azure. In alternativa, è possibile usare la casella di ricerca nella parte superiore e digitare il nome della cache.
 

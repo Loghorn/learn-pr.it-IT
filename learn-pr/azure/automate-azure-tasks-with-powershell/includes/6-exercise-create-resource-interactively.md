@@ -7,14 +7,14 @@ Si proveranno ora i comandi da usare per creare una macchina virtuale.
 
 ## <a name="create-a-linux-vm-with-azure-powershell"></a>Creare una macchina virtuale Linux con Azure PowerShell
 
-Poiché si sta usando l'ambiente sandbox di Azure, non è necessario creare un gruppo di risorse. Usare invece il gruppo di risorse **<rgn>[nome gruppo di risorse sandbox]</rgn>**. Tenere anche presenti le restrizioni per la posizione.
+Poiché si sta usando l'ambiente sandbox di Azure, non è necessario creare un gruppo di risorse. Usare invece il gruppo di risorse **<rgn>[Nome gruppo di risorse sandbox]</rgn>**. Tenere anche presenti le restrizioni per la posizione.
 
 È possibile creare una nuova macchina virtuale di Azure con PowerShell.
 
 1. Usare il cmdlet `New-AzureRmVm` per creare una macchina virtuale.
-    - Usare il gruppo di risorse **<rgn>[nome gruppo di risorse sandbox]</rgn>**.
-    - Assegnare un nome alla macchina virtuale: in genere si usa un nome significativo che identifichi gli scopi della macchina virtuale, la posizione e il numero di istanza (se ne esistono più di una). Si userà "testvm-eus-01" per "Test VM in East US, instance 1". Scegliere un nome appropriato in base a dove è stata posizionata la macchina virtuale.
-    - Selezionare una località vicina dall'elenco seguente disponibile nella sandbox di Azure. Assicurarsi di modificare il valore nel comando di esempio seguente, se si usa Copia e incolla.
+    - Usare il gruppo di risorse **<rgn>[Nome gruppo di risorse sandbox]</rgn>**.
+    - Assegnare un nome alla macchina virtuale: in genere si usa un nome significativo che identifichi gli scopi della macchina virtuale, la posizione e il numero di istanza (se ne esiste più di una). Si userà "testvm-eus-01" per "Test VM in East US, instance 1". Scegliere un nome appropriato in base a dove è stata posizionata la macchina virtuale.
+    - Selezionare una località vicina dall'elenco seguente, disponibile nella sandbox di Azure. Assicurarsi di modificare il valore nel comando di esempio seguente, se si usa Copia e incolla.
 
         [!include[](../../../includes/azure-sandbox-regions-note.md)]
 
@@ -23,7 +23,7 @@ Poiché si sta usando l'ambiente sandbox di Azure, non è necessario creare un g
     - Aggiungere il parametro `-OpenPorts` e passare "22" come porta. In questo modo sarà possibile connettersi con SSH alla macchina.
  
     ```powershell
-    New-AzureRmVm -ResourceGroupName <rgn>[Sandbox resource group name]</rgn> -Name "testvm-eus-01" -Credential (Get-Credential) -Location "East US" -Image UbuntuLTS -OpenPorts 22
+    New-AzureRmVm -ResourceGroupName <rgn>[sandbox resource group name]</rgn> -Name "testvm-eus-01" -Credential (Get-Credential) -Location "East US" -Image UbuntuLTS -OpenPorts 22
     ```
 
     [!include[](../../../includes/azure-cloudshell-copy-paste-tip.md)]
@@ -31,7 +31,7 @@ Poiché si sta usando l'ambiente sandbox di Azure, non è necessario creare un g
 1. Questa operazione richiederà qualche minuto. Al termine, è possibile eseguire una query e assegnare l'oggetto macchina virtuale a una variabile (`$vm`).
 
     ```powershell
-    $vm = Get-AzureRmVM -Name "testvm-eus-01" -ResourceGroupName <rgn>[Sandbox resource group name]</rgn>
+    $vm = Get-AzureRmVM -Name "testvm-eus-01" -ResourceGroupName <rgn>[sandbox resource group name]</rgn>
     ```
     
 1. Eseguire quindi una query per ottenere il valore per eseguire il dump delle informazioni relative alla macchina virtuale:
@@ -43,8 +43,8 @@ Poiché si sta usando l'ambiente sandbox di Azure, non è necessario creare un g
     L'output dovrebbe essere simile al seguente:
 
     ```output
-    ResourceGroupName : <rgn>[Sandbox resource group name]</rgn>
-    Id                : /subscriptions/xxxxxxxx-xxxx-aaaa-bbbb-cccccccccccc/resourceGroups/<rgn>[Sandbox resource group name]</rgn>/providers/Microsoft.Compute/virtualMachines/testvm-eus-01
+    ResourceGroupName : <rgn>[sandbox resource group name]</rgn>
+    Id                : /subscriptions/xxxxxxxx-xxxx-aaaa-bbbb-cccccccccccc/resourceGroups/<rgn>[sandbox resource group name]</rgn>/providers/Microsoft.Compute/virtualMachines/testvm-eus-01
     VmId              : xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
     Name              : testvm-eus-01
     Type              : Microsoft.Compute/virtualMachines
@@ -75,11 +75,14 @@ Poiché si sta usando l'ambiente sandbox di Azure, non è necessario creare un g
     $vm | Get-AzureRmPublicIpAddress
     ```
 
-1. Con l'indirizzo IP è possibile connettersi alla macchina virtuale con SSH. Ad esempio, se è stato usato il nome utente "bob" e l'indirizzo IP è "205.22.16.5", questo comando permetterebbe di connettersi alla macchina Linux:
+1. Con l'indirizzo IP è possibile connettersi alla macchina virtuale con SSH. Ad esempio, se è stato usato il nome utente "bob" e l'indirizzo IP è "205.22.16.5", questo comando consente alla macchina Linux di connettersi:
 
-```powershell
-ssh bob@205.22.16.5
-```
+    ```powershell
+    ssh bob@205.22.16.5
+    ```
+
+    Disconnettersi quindi digitando `exit`.
+
 
 ## <a name="delete-a-vm"></a>Eliminare una macchina virtuale
 

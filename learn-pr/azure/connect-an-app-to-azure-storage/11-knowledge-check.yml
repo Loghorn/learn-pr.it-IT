@@ -1,0 +1,63 @@
+### YamlMime:ModuleUnit
+uid: learn.connect-app-to-azure-storage.11-knowledge-check
+title: Verifica delle conoscenze
+metadata:
+  title: Verifica delle conoscenze
+  description: Verifica delle conoscenze
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 02ccb3234d9a6b89ac6ddbc34f3e4e23b1d1d514
+  ms.sourcegitcommit: 58e9d7fbb111af9b27ed819e4b79ba4a4e6e8a9c
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/21/2018
+  ms.locfileid: "46512419"
+durationInMinutes: 3
+quiz:
+  title: Verificare le proprie conoscenze
+  questions:
+  - content: Quante chiavi di accesso vengono fornite per accedere all'account di archiviazione di Azure?
+    choices:
+    - content: "1"
+      isCorrect: false
+      incorrectExplanation: Ogni account di archiviazione include due chiavi di accesso. Ciò consente di osservare le linee guida consigliate per la sostituzione periodica della chiave usata dalle applicazioni, senza che ciò comporti tempi di inattività.
+    - content: "2"
+      isCorrect: true
+      correctExplanation: Ogni account di archiviazione include due chiavi di accesso. Ciò consente di osservare le linee guida consigliate per la sostituzione periodica della chiave usata dalle applicazioni, senza che ciò comporti tempi di inattività.
+    - content: "3"
+      isCorrect: false
+      incorrectExplanation: Ogni account di archiviazione include due chiavi di accesso. Ciò consente di osservare le linee guida consigliate per la sostituzione periodica della chiave usata dalle applicazioni, senza che ciò comporti tempi di inattività.
+    - content: "4"
+      isCorrect: false
+      incorrectExplanation: Ogni account di archiviazione include due chiavi di accesso. Ciò consente di osservare le linee guida consigliate per la sostituzione periodica della chiave usata dalle applicazioni, senza che ciò comporti tempi di inattività.
+  - content: È possibile usare l'API REST o la libreria client di Azure per accedere a livello programmatico a un account di archiviazione. Qual è il vantaggio principale dell'uso della libreria client?
+    choices:
+    - content: Costo
+      isCorrect: false
+      incorrectExplanation: Il codice che usa la libreria client è in genere molto più breve e semplice del codice che usa l'API REST. La libreria client gestisce l'assemblaggio delle richieste e l'analisi delle risposte per conto dell'utente.
+    - content: Disponibilità
+      isCorrect: false
+      incorrectExplanation: Il codice che usa la libreria client è in genere molto più breve e semplice del codice che usa l'API REST. La libreria client gestisce l'assemblaggio delle richieste e l'analisi delle risposte per conto dell'utente.
+    - content: Localizzazione
+      isCorrect: false
+      incorrectExplanation: Il codice che usa la libreria client è in genere molto più breve e semplice del codice che usa l'API REST. La libreria client gestisce l'assemblaggio delle richieste e l'analisi delle risposte per conto dell'utente.
+    - content: Praticità
+      isCorrect: true
+      correctExplanation: Il codice che usa la libreria client è in genere molto più breve e semplice del codice che usa l'API REST. La libreria client gestisce l'assemblaggio delle richieste e l'analisi delle risposte per conto dell'utente.
+  - content: Quale delle seguenti è un'analogia valida per le chiavi di accesso di un account di archiviazione?
+    choices:
+    - content: Indirizzo IP
+      isCorrect: false
+      incorrectExplanation: Il possesso di una chiave di accesso identifica l'account e consente all'utente di accedere. Questa caratteristica è molto simile alle credenziali di accesso, come un nome utente e una password.
+    - content: Endpoint REST
+      isCorrect: false
+      incorrectExplanation: Il possesso di una chiave di accesso identifica l'account e consente all'utente di accedere. Questa caratteristica è molto simile alle credenziali di accesso, come un nome utente e una password.
+    - content: Nome utente e password
+      isCorrect: true
+      correctExplanation: Il possesso di una chiave di accesso identifica l'account e consente all'utente di accedere. Questa caratteristica è molto simile alle credenziali di accesso, come un nome utente e una password.
+    - content: Algoritmo di crittografia
+      isCorrect: false
+      incorrectExplanation: Il possesso di una chiave di accesso identifica l'account e consente all'utente di accedere. Questa caratteristica è molto simile alle credenziali di accesso, come un nome utente e una password.

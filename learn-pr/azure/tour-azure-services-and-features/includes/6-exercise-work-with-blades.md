@@ -1,8 +1,8 @@
-In questa unità si apprenderà come usare i pannelli nell'interfaccia utente del portale di Azure. È possibile usare il proprio account (se se ne ha o ne è stato creato uno) oppure l'ambiente sandbox gratuito di Azure.
+In questa unità si apprenderà come usare i pannelli nell'interfaccia utente del portale di Azure. È possibile usare il proprio account, se l'utente ne ha uno o ne ha creato uno, oppure l'ambiente sandbox gratuito di Azure.
 
 Se si ha o si è creato un account, accedere al [portale di Azure](https://portal.azure.com?azure-portal=true) usando le relative credenziali
 
-In alternativa **attivare l'ambiente sandbox di Azure** e accedere al [portale di Azure per sandbox](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true) usando lo stesso account con cui è stato attivato il sandbox.
+In alternativa **attivare l'ambiente sandbox di Azure** e accedere al [portale di Azure per sandbox](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) usando lo stesso account con cui è stato attivato il sandbox.
 
 ## <a name="working-with-blades"></a>Uso dei pannelli
 

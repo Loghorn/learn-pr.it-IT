@@ -1,4 +1,4 @@
-L'ambiente sandbox gratuito consente di creare risorse in un subset di aree globali di Azure. Selezionare una regione dall'elenco seguente durante la creazione le risorse:
+L'ambiente sandbox gratuito consente di creare risorse in un subset di aree globali di Azure. Selezionare un'area nell'elenco seguente durante la creazione delle risorse:
 
 :::row:::
     :::column:::

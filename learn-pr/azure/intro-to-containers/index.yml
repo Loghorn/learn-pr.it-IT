@@ -1,0 +1,44 @@
+### YamlMime:Module
+uid: learn.intro-to-containers
+metadata:
+  title: Introduzione ai contenitori
+  description: Informazioni sulla creazione e l'uso dei contenitori Docker.
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 03b59331fb27812cd4f54e14b8ac5124a221995b
+  ms.sourcegitcommit: 8a009788ee73c5d7caa6cd4f1105260c5cc9b846
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/22/2018
+  ms.locfileid: "46570533"
+title: Introduzione ai contenitori
+summary: Informazioni sulla creazione e l'uso dei contenitori Docker.
+abstract: >
+  In questo modulo verrà descritto come:
+
+  - Ospitare un server web in esecuzione in un contenitore Docker
+
+  - Praticare modi comuni per eseguire, elencare e cancellare i contenitori
+
+  - Creare la propria immagine del contenitore e pubblicarla in Docker Hub
+prerequisites: Nessuno
+iconUrl: /learn/achievements/intro-to-containers.svg
+levels:
+- beginner
+roles:
+- developer
+products:
+- azure
+- azure-container-instances
+- azure-container-registry
+units:
+- learn.intro-to-containers.1-introduction
+- learn.intro-to-containers.2-create-a-container
+- learn.intro-to-containers.3-basic-operations
+- learn.intro-to-containers.4-container-images
+- learn.intro-to-containers.5-knowledge-check
+- learn.intro-to-containers.6-summary
+achievement: learn.intro-to-containers.badge

@@ -1,0 +1,56 @@
+### YamlMime:ModuleUnit
+uid: learn.classify-user-feedback-with-the-text-analytics-api.8-summary
+title: Riepilogo
+metadata:
+  title: Riepilogo
+  description: Riepilogo
+  ms.date: 09/24/2018
+  author: AndrewJByrne
+  ms.author: anbyrne
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: beddca2005b899f622f0368461a3a56016d6d830
+  ms.sourcegitcommit: 58e9d7fbb111af9b27ed819e4b79ba4a4e6e8a9c
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/21/2018
+  ms.locfileid: "46513003"
+durationInMinutes: 2
+content: >
+  [!include[](includes/8-summary.md)]
+quiz:
+  title: Verificare le proprie conoscenze
+  questions:
+  - content: Si sta integrando l'API Analisi del testo nella soluzione. È stato eseguito l'accesso al portale ed è stata richiesta una chiave di sottoscrizione per l'area Stati Uniti orientali. Quale dei seguenti è l'URL di richiesta corretto per l'accesso alla risorsa `sentiment`?
+    choices:
+    - content: eastus2.api.cognitive.microsoft.com/text/analytics/v2.0/sentiment
+      isCorrect: false
+      incorrectExplanation: Non è stata richiesta una chiave di accesso per eseguire richieste da quest'area. L'endpoint specifica l'area scelta durante l'iscrizione, l'URL del servizio e una risorsa usata nella richiesta.
+    - content: eastus.api.cognitive.microsoft.com/text/analytics/v2.0/entities
+      isCorrect: false
+      incorrectExplanation: Questo URL invia una richiesta alla risorsa delle entità.
+    - content: eastus.api.cognitive.microsoft.com/text/analytics/v2.0/sentiment
+      isCorrect: true
+      correctExplanation: L'endpoint specifica l'area scelta durante l'iscrizione, l'URL del servizio e una risorsa usata nella richiesta.
+  - content: Quale delle seguenti è l'impostazione `direction` corretta per una definizione di associazione di coda per l'invio dei messaggi alla coda?
+    choices:
+    - content: in uscita
+      isCorrect: true
+      correctExplanation: Quando il messaggio viene inviato dalla funzione alla coda, la direzione è in uscita.
+    - content: in ingresso
+      isCorrect: false
+      incorrectExplanation: Quando la funzione accetta il messaggio come input, la direzione è in ingresso.
+    - content: nord
+      isCorrect: false
+      incorrectExplanation: Il valore "nord" non è valido per la proprietà direzione in un'associazione.
+  - content: Se si invia una richiesta all'API Analisi del testo con testo e la risposta restituisce un punteggio del sentiment pari a 0,03, qual è il sentiment principale del testo?
+    choices:
+    - content: neutrale
+      isCorrect: false
+      incorrectExplanation: L'API restituisce un punteggio del sentiment compreso tra 0 e 1 per ogni documento, dove 1 è il risultato più positivo.
+    - content: negativo
+      isCorrect: true
+      correctExplanation: L'API restituisce un punteggio del sentiment compreso tra 0 e 1 per ogni documento, dove 1 è il risultato più positivo. Il punteggio pari a 0,03 è vicino a 0 e, pertanto, negativo.
+    - content: positivo
+      isCorrect: false
+      incorrectExplanation: L'API restituisce un punteggio del sentiment compreso tra 0 e 1 per ogni documento, dove 1 è il risultato più positivo.
