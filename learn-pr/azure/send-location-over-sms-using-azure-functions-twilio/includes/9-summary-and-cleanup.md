@@ -1,0 +1,15 @@
+<span data-ttu-id="45853-101">È stata creata un'app per dispositivi mobili multipiattaforma usando Xamarin ed è stata creata una funzione di Azure con un'associazione a Twilio.</span><span class="sxs-lookup"><span data-stu-id="45853-101">You've successfully created a cross-platform mobile app using Xamarin and an Azure function with a Twilio binding.</span></span>
+
+<span data-ttu-id="45853-102">In questo modulo si è appreso come:</span><span class="sxs-lookup"><span data-stu-id="45853-102">In this module, you learned how to:</span></span>
+
+- <span data-ttu-id="45853-103">Creare un'app Xamarin.Forms multipiattaforma che usa Xamarin.Essentials.</span><span class="sxs-lookup"><span data-stu-id="45853-103">Create a cross-platform Xamarin.Forms app that uses Xamarin.Essentials.</span></span>
+- <span data-ttu-id="45853-104">Creare un'interfaccia utente multipiattaforma usando XAML con la logica dell'applicazione in un elemento ViewModel, nonché associare le proprietà nel ViewModel all'interfaccia utente.</span><span class="sxs-lookup"><span data-stu-id="45853-104">Create a cross-platform UI using XAML with application logic in a ViewModel, as well as bind properties in a ViewModel to the UI.</span></span>
+- <span data-ttu-id="45853-105">Rilevare la posizione dell'utente.</span><span class="sxs-lookup"><span data-stu-id="45853-105">Detect the user's location.</span></span>
+- <span data-ttu-id="45853-106">Creare una funzione di Azure con un trigger HTTP ed eseguirla in locale.</span><span class="sxs-lookup"><span data-stu-id="45853-106">Create an Azure Function with an HTTP trigger and run it locally.</span></span>
+- <span data-ttu-id="45853-107">Chiamare una funzione di Azure da un'app per dispositivi mobili, passando i dati come JSON.</span><span class="sxs-lookup"><span data-stu-id="45853-107">Call an Azure Function from a mobile app, passing data as JSON.</span></span>
+- <span data-ttu-id="45853-108">Associare una funzione di Azure a Twilio per inviare un messaggio SMS.</span><span class="sxs-lookup"><span data-stu-id="45853-108">Bind an Azure Function to Twilio to send an SMS message.</span></span>
+- <span data-ttu-id="45853-109">Pubblicare una funzione di Azure in Azure.</span><span class="sxs-lookup"><span data-stu-id="45853-109">Publish an Azure Function to Azure.</span></span>
+
+## <a name="clean-up"></a><span data-ttu-id="45853-110">Eseguire la pulizia</span><span class="sxs-lookup"><span data-stu-id="45853-110">Clean up</span></span>
+
+<span data-ttu-id="45853-111">In questo modulo è stato utilizzato un lab di macchine virtuali con un account Azure.</span><span class="sxs-lookup"><span data-stu-id="45853-111">In this module, we used a VM lab and were provided an Azure account.</span></span> <span data-ttu-id="45853-112">Non è necessario eseguire la pulizia delle risorse perché verranno pulite automaticamente al termine del modulo.</span><span class="sxs-lookup"><span data-stu-id="45853-112">You don't need to clean up the resources - they'll be automatically cleaned up at the end of the module.</span></span>

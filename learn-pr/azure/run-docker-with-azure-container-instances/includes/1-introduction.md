@@ -1,0 +1,11 @@
+<span data-ttu-id="f08c6-101">I contenitori offrono un modo standardizzato e ripetibile per creare un pacchetto, distribuire e gestire le applicazioni cloud.</span><span class="sxs-lookup"><span data-stu-id="f08c6-101">Containers offer a standardized and repeatable way to package, deploy and manage cloud applications.</span></span> <span data-ttu-id="f08c6-102">Istanze di contenitore di Azure consente di eseguire un contenitore in Azure senza la gestione delle macchine virtuali e senza un servizio di livello superiore.</span><span class="sxs-lookup"><span data-stu-id="f08c6-102">Azure Container Instances let you run a container in Azure without managing virtual machines and without a higher-level service.</span></span>
+
+## <a name="learning-objectives"></a><span data-ttu-id="f08c6-103">Obiettivi di apprendimento</span><span class="sxs-lookup"><span data-stu-id="f08c6-103">Learning objectives</span></span>  
+
+<span data-ttu-id="f08c6-104">In questo modulo verrà descritto come:</span><span class="sxs-lookup"><span data-stu-id="f08c6-104">In this module, you will:</span></span>
+
+- <span data-ttu-id="f08c6-105">Eseguire un contenitore in Istanze di contenitore di Azure</span><span class="sxs-lookup"><span data-stu-id="f08c6-105">Run a container in Azure Container Instances</span></span>
+- <span data-ttu-id="f08c6-106">Gestire il comportamento di riavvio dei contenitori</span><span class="sxs-lookup"><span data-stu-id="f08c6-106">Control container restart behavior</span></span>
+- <span data-ttu-id="f08c6-107">Usare variabili di ambiente nei contenitori</span><span class="sxs-lookup"><span data-stu-id="f08c6-107">Use environment variables in your containers</span></span>
+- <span data-ttu-id="f08c6-108">Collegare volumi di dati a Istanze di contenitore di Azure</span><span class="sxs-lookup"><span data-stu-id="f08c6-108">Attach data volumes to Azure Container Instances</span></span>
+- <span data-ttu-id="f08c6-109">Risolvere i problemi relativi a Istanze di contenitore di Azure</span><span class="sxs-lookup"><span data-stu-id="f08c6-109">Troubleshoot Azure Container Instances</span></span>
