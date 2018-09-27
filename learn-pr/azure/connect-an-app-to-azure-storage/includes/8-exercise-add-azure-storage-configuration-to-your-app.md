@@ -1,4 +1,5 @@
-::: zone pivot="csharp" In questo esercizio si aggiunge all'applicazione .NET core il supporto per recuperare una stringa di connessione da un file di configurazione. Per iniziare si aggiungeranno i componenti di base necessari per gestire la configurazione in un file JSON.
+::: zone pivot="csharp"
+In questo esercizio si aggiunge all'applicazione .NET core il supporto per recuperare una stringa di connessione da un file di configurazione. Per iniziare si aggiungeranno i componenti di base necessari per gestire la configurazione in un file JSON.
 
 ## <a name="create-a-json-configuration-file"></a>Creare un file di configurazione JSON
 
