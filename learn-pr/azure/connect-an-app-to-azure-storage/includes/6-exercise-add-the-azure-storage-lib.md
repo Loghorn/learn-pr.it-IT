@@ -1,4 +1,5 @@
-::: zone pivot="csharp" In questa unità si integrerà la libreria client di Archiviazione di Azure nell'applicazione console .NET Core.
+::: zone pivot="csharp"
+In questa unità si integrerà la libreria client di Archiviazione di Azure nell'applicazione console .NET Core.
 
 La libreria client di Archiviazione di Azure per .NET viene distribuita con NuGet. Occorrerà aggiungere il pacchetto **WindowsAzure.Storage** alle applicazioni .NET o .NET Core.
 
