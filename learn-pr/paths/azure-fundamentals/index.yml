@@ -10,11 +10,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 1582682c81c83811a475b8e9849f7606c36182b5
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46341131"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47137532"
 title: Concetti fondamentali su Azure
 summary: Si è interessati al cloud, ma non si sa bene cosa può fare per le proprie esigenze? Questo percorso di apprendimento è il punto di partenza. Informazioni sui vantaggi del cloud computing, le funzionalità di Azure che consentono di risparmiare tempo e denaro, le strategie di base per la transizione al cloud e altro ancora.
 prerequisites: Nessuno

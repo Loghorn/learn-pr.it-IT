@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.introduction-to-security.5-network-security
-title: <span data-ttu-id="4d370-101">Proteggere la rete</span><span class="sxs-lookup"><span data-stu-id="4d370-101">Protect your network</span></span>
+title: <span data-ttu-id="2d6e5-101">Proteggere la rete</span><span class="sxs-lookup"><span data-stu-id="2d6e5-101">Protect your network</span></span>
 metadata:
-  title: <span data-ttu-id="4d370-102">Proteggere la rete</span><span class="sxs-lookup"><span data-stu-id="4d370-102">Protect your network</span></span>
-  description: <span data-ttu-id="4d370-103">In questa unità viene spiegato come proteggere l'infrastruttura di rete.</span><span class="sxs-lookup"><span data-stu-id="4d370-103">In this unit, we'll discuss how to secure your network infrastructure.</span></span>
+  title: <span data-ttu-id="2d6e5-102">Proteggere la rete</span><span class="sxs-lookup"><span data-stu-id="2d6e5-102">Protect your network</span></span>
+  description: <span data-ttu-id="2d6e5-103">In questa unità viene spiegato come proteggere l'infrastruttura di rete.</span><span class="sxs-lookup"><span data-stu-id="2d6e5-103">In this unit, we'll discuss how to secure your network infrastructure.</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 434584c1861f5b8031069c787b878c654a8ba848
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46352755"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47137127"
 durationInMinutes: 5
 content: '[!include[](includes/5-network-security.md)]'

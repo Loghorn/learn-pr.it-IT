@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.introduction-to-azure-virtual-machines.6-backup-services
-title: <span data-ttu-id="b9d0d-101">Eseguire il backup delle macchine virtuali</span><span class="sxs-lookup"><span data-stu-id="b9d0d-101">Back up your virtual machines</span></span>
+title: <span data-ttu-id="2214c-101">Eseguire il backup delle macchine virtuali</span><span class="sxs-lookup"><span data-stu-id="2214c-101">Back up your virtual machines</span></span>
 metadata:
-  title: <span data-ttu-id="b9d0d-102">Eseguire il backup delle macchine virtuali</span><span class="sxs-lookup"><span data-stu-id="b9d0d-102">Back up your virtual machines</span></span>
-  description: <span data-ttu-id="b9d0d-103">Eseguire il backup delle macchine virtuali</span><span class="sxs-lookup"><span data-stu-id="b9d0d-103">Back up your virtual machines</span></span>
+  title: <span data-ttu-id="2214c-102">Eseguire il backup delle macchine virtuali</span><span class="sxs-lookup"><span data-stu-id="2214c-102">Back up your virtual machines</span></span>
+  description: <span data-ttu-id="2214c-103">Eseguire il backup delle macchine virtuali</span><span class="sxs-lookup"><span data-stu-id="2214c-103">Back up your virtual machines</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: b8435c04f0ce74562754b635deb42095814f89f0
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46338426"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47138065"
 durationInMinutes: 7
 content: '[!include[](includes/6-backup-services.md)]'

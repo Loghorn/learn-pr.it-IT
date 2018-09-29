@@ -1,34 +1,34 @@
 ### YamlMime:ModuleUnit
 uid: learn.intro-to-azure-networking.3-scale-load-balancer
-title: <span data-ttu-id="c809e-101">Ridimensionare con Azure Load Balancer</span><span class="sxs-lookup"><span data-stu-id="c809e-101">Scale with Azure Load Balancer</span></span>
+title: <span data-ttu-id="399dc-101">Ridimensionare con Azure Load Balancer</span><span class="sxs-lookup"><span data-stu-id="399dc-101">Scale with Azure Load Balancer</span></span>
 metadata:
-  title: <span data-ttu-id="c809e-102">Ridimensionare con Azure Load Balancer</span><span class="sxs-lookup"><span data-stu-id="c809e-102">Scale with Azure Load Balancer</span></span>
-  description: <span data-ttu-id="c809e-103">Informazioni su come Azure Load Balancer consente di ottenere la scalabilità e la resilienza all'interno di un'area geografica.</span><span class="sxs-lookup"><span data-stu-id="c809e-103">Learn how Azure Load Balancer helps achieve scale and resiliency within a geographic region.</span></span>
+  title: <span data-ttu-id="399dc-102">Ridimensionare con Azure Load Balancer</span><span class="sxs-lookup"><span data-stu-id="399dc-102">Scale with Azure Load Balancer</span></span>
+  description: <span data-ttu-id="399dc-103">Informazioni su come Azure Load Balancer consente di ottenere la scalabilità e la resilienza all'interno di un'area geografica.</span><span class="sxs-lookup"><span data-stu-id="399dc-103">Learn how Azure Load Balancer helps achieve scale and resiliency within a geographic region.</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 749fae4e396cf551df9b15c3a7434e5bcbfdf640
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46354005"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47137732"
 durationInMinutes: 7
 content: >
   [!include[](includes/3-scale-load-balancer.md)]
 quiz:
-  title: <span data-ttu-id="c809e-104">Verificare le proprie conoscenze</span><span class="sxs-lookup"><span data-stu-id="c809e-104">Check your knowledge</span></span>
+  title: <span data-ttu-id="399dc-104">Verificare le proprie conoscenze</span><span class="sxs-lookup"><span data-stu-id="399dc-104">Check your knowledge</span></span>
   questions:
-  - content: <span data-ttu-id="c809e-105">Quale delle seguenti informazioni su Azure Load Balancer è vera?</span><span class="sxs-lookup"><span data-stu-id="c809e-105">Which is true about Azure Load Balancer?</span></span>
+  - content: <span data-ttu-id="399dc-105">Quale delle seguenti informazioni su Azure Load Balancer è vera?</span><span class="sxs-lookup"><span data-stu-id="399dc-105">Which is true about Azure Load Balancer?</span></span>
     choices:
-    - content: <span data-ttu-id="c809e-106">È necessario usare Azure Load Balancer per distribuire il traffico tra le macchine virtuali in esecuzione in Azure.</span><span class="sxs-lookup"><span data-stu-id="c809e-106">You must use Azure Load Balancer if you want to distribute traffic among your virtual machines running in Azure.</span></span>
+    - content: <span data-ttu-id="399dc-106">È necessario usare Azure Load Balancer per distribuire il traffico tra le macchine virtuali in esecuzione in Azure.</span><span class="sxs-lookup"><span data-stu-id="399dc-106">You must use Azure Load Balancer if you want to distribute traffic among your virtual machines running in Azure.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="c809e-107">Se un sistema non è disponibile, Azure Load Balancer smette di inviargli il traffico</span><span class="sxs-lookup"><span data-stu-id="c809e-107">If one system is unavailable, Azure Load Balancer stops sending traffic to it.</span></span> <span data-ttu-id="c809e-108">e lo indirizza a uno dei server reattivi.</span><span class="sxs-lookup"><span data-stu-id="c809e-108">It then directs traffic to one of the responsive servers.</span></span>
-    - content: <span data-ttu-id="c809e-109">Azure Load Balancer funziona solo con il traffico con connessione Internet.</span><span class="sxs-lookup"><span data-stu-id="c809e-109">Azure Load Balancer works with internet-facing traffic only.</span></span>
+      incorrectExplanation: <span data-ttu-id="399dc-107">Se un sistema non è disponibile, Azure Load Balancer smette di inviargli il traffico</span><span class="sxs-lookup"><span data-stu-id="399dc-107">If one system is unavailable, Azure Load Balancer stops sending traffic to it.</span></span> <span data-ttu-id="399dc-108">e lo indirizza a uno dei server reattivi.</span><span class="sxs-lookup"><span data-stu-id="399dc-108">It then directs traffic to one of the responsive servers.</span></span>
+    - content: <span data-ttu-id="399dc-109">Azure Load Balancer funziona solo con il traffico con connessione Internet.</span><span class="sxs-lookup"><span data-stu-id="399dc-109">Azure Load Balancer works with internet-facing traffic only.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="c809e-110">Se un sistema non è disponibile, Azure Load Balancer smette di inviargli il traffico</span><span class="sxs-lookup"><span data-stu-id="c809e-110">If one system is unavailable, Azure Load Balancer stops sending traffic to it.</span></span> <span data-ttu-id="c809e-111">e lo indirizza a uno dei server reattivi.</span><span class="sxs-lookup"><span data-stu-id="c809e-111">It then directs traffic to one of the responsive servers.</span></span>
-    - content: <span data-ttu-id="c809e-112">Azure Load Balancer distribuisce il traffico tra sistemi simili per rendere i servizi a disponibilità più elevata.</span><span class="sxs-lookup"><span data-stu-id="c809e-112">Azure Load Balancer distributes traffic among similar systems, making your services more highly available.</span></span>
+      incorrectExplanation: <span data-ttu-id="399dc-110">Se un sistema non è disponibile, Azure Load Balancer smette di inviargli il traffico</span><span class="sxs-lookup"><span data-stu-id="399dc-110">If one system is unavailable, Azure Load Balancer stops sending traffic to it.</span></span> <span data-ttu-id="399dc-111">e lo indirizza a uno dei server reattivi.</span><span class="sxs-lookup"><span data-stu-id="399dc-111">It then directs traffic to one of the responsive servers.</span></span>
+    - content: <span data-ttu-id="399dc-112">Azure Load Balancer distribuisce il traffico tra sistemi simili per rendere i servizi a disponibilità più elevata.</span><span class="sxs-lookup"><span data-stu-id="399dc-112">Azure Load Balancer distributes traffic among similar systems, making your services more highly available.</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="c809e-113">Se un sistema non è disponibile, Azure Load Balancer smette di inviargli il traffico</span><span class="sxs-lookup"><span data-stu-id="c809e-113">If one system is unavailable, Azure Load Balancer stops sending traffic to it.</span></span> <span data-ttu-id="c809e-114">e lo indirizza a uno dei server reattivi.</span><span class="sxs-lookup"><span data-stu-id="c809e-114">It then directs traffic to one of the responsive servers.</span></span>
+      correctExplanation: <span data-ttu-id="399dc-113">Se un sistema non è disponibile, Azure Load Balancer smette di inviargli il traffico</span><span class="sxs-lookup"><span data-stu-id="399dc-113">If one system is unavailable, Azure Load Balancer stops sending traffic to it.</span></span> <span data-ttu-id="399dc-114">e lo indirizza a uno dei server reattivi.</span><span class="sxs-lookup"><span data-stu-id="399dc-114">It then directs traffic to one of the responsive servers.</span></span>

@@ -1,20 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.manage-vms-with-azure-cli-data.7-managing-vms
-title: <span data-ttu-id="ca963-101">Avviare e arrestare la macchina virtuale con l'interfaccia della riga di comando di Azure</span><span class="sxs-lookup"><span data-stu-id="ca963-101">Start and stop your VM with the Azure CLI</span></span>
+title: <span data-ttu-id="e6ec5-101">Avviare e arrestare la macchina virtuale con l'interfaccia della riga di comando di Azure</span><span class="sxs-lookup"><span data-stu-id="e6ec5-101">Start and stop your VM with the Azure CLI</span></span>
 metadata:
-  title: <span data-ttu-id="ca963-102">Avviare e arrestare la macchina virtuale con l'interfaccia della riga di comando di Azure</span><span class="sxs-lookup"><span data-stu-id="ca963-102">Start and stop your VM with the Azure CLI</span></span>
-  description: <span data-ttu-id="ca963-103">Informazioni su come usare l'interfaccia della riga di comando di Azure per avviare e arrestare una macchina virtuale</span><span class="sxs-lookup"><span data-stu-id="ca963-103">Learn how to use the Azure CLI to start and stop a virtual machine</span></span>
+  title: <span data-ttu-id="e6ec5-102">Avviare e arrestare la macchina virtuale con l'interfaccia della riga di comando di Azure</span><span class="sxs-lookup"><span data-stu-id="e6ec5-102">Start and stop your VM with the Azure CLI</span></span>
+  description: <span data-ttu-id="e6ec5-103">Informazioni su come usare l'interfaccia della riga di comando di Azure per avviare e arrestare una macchina virtuale</span><span class="sxs-lookup"><span data-stu-id="e6ec5-103">Learn how to use the Azure CLI to start and stop a virtual machine</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 691aaafbc17106c82a6e0551c7c17a04e12e2d1b
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46352424"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47136575"
 interactive: bash
 azureSandbox: true
 durationInMinutes: 5

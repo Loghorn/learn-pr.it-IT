@@ -1,20 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.scale-and-size-virtual-machines.5-exercise-create-a-scale-set-and-configure-autoscaling
-title: <span data-ttu-id="6d169-101">Esercizio - Creare un set di scalabilità e configurare la scalabilità automatica</span><span class="sxs-lookup"><span data-stu-id="6d169-101">Exercise - Create a scale set and configure autoscaling</span></span>
+title: <span data-ttu-id="b0ac2-101">Esercizio - Creare un set di scalabilità e configurare la scalabilità automatica</span><span class="sxs-lookup"><span data-stu-id="b0ac2-101">Exercise - Create a scale set and configure autoscaling</span></span>
 metadata:
-  title: <span data-ttu-id="6d169-102">Esercizio - Creare un set di scalabilità e configurare la scalabilità automatica</span><span class="sxs-lookup"><span data-stu-id="6d169-102">Exercise - Create a scale set and configure autoscaling</span></span>
-  description: <span data-ttu-id="6d169-103">Esercizio - Creare un set di scalabilità e configurare la scalabilità automatica</span><span class="sxs-lookup"><span data-stu-id="6d169-103">Exercise - Create a scale set and configure autoscaling</span></span>
+  title: <span data-ttu-id="b0ac2-102">Esercizio - Creare un set di scalabilità e configurare la scalabilità automatica</span><span class="sxs-lookup"><span data-stu-id="b0ac2-102">Exercise - Create a scale set and configure autoscaling</span></span>
+  description: <span data-ttu-id="b0ac2-103">Esercizio - Creare un set di scalabilità e configurare la scalabilità automatica</span><span class="sxs-lookup"><span data-stu-id="b0ac2-103">Exercise - Create a scale set and configure autoscaling</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: a0c8a51ea1f53b0ad09a2e6e1ee76cd7bbebc9a6
-  ms.sourcegitcommit: 58e9d7fbb111af9b27ed819e4b79ba4a4e6e8a9c
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/21/2018
-  ms.locfileid: "46513115"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47136767"
 azureSandbox: true
 durationInMinutes: 20
 content: '[!include[](includes/5-exercise-create-a-scale-set-and-configure-autoscaling.md)]'

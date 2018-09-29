@@ -1,56 +1,56 @@
 ### YamlMime:ModuleUnit
 uid: learn.manage-secrets-with-azure-key-vault.7-summary
-title: <span data-ttu-id="94f9b-101">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="94f9b-101">Summary</span></span>
+title: <span data-ttu-id="100e9-101">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="100e9-101">Summary</span></span>
 metadata:
-  title: <span data-ttu-id="94f9b-102">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="94f9b-102">Summary</span></span>
-  description: <span data-ttu-id="94f9b-103">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="94f9b-103">Summary</span></span>
+  title: <span data-ttu-id="100e9-102">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="100e9-102">Summary</span></span>
+  description: <span data-ttu-id="100e9-103">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="100e9-103">Summary</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 87634f7fe2239916c3988825ce31307de5a545a0
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46339218"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47136692"
 durationInMinutes: 3
 content: >
   [!include[](includes/7-summary.md)]
 quiz:
-  title: <span data-ttu-id="94f9b-104">Verificare le proprie conoscenze</span><span class="sxs-lookup"><span data-stu-id="94f9b-104">Check your knowledge</span></span>
+  title: <span data-ttu-id="100e9-104">Verificare le proprie conoscenze</span><span class="sxs-lookup"><span data-stu-id="100e9-104">Check your knowledge</span></span>
   questions:
-  - content: <span data-ttu-id="94f9b-105">Quale dei seguenti **non** è un vantaggio di Azure Key Vault?</span><span class="sxs-lookup"><span data-stu-id="94f9b-105">Which of the following is **not** a benefit of Azure Key Vault?</span></span>
+  - content: <span data-ttu-id="100e9-105">Quale dei seguenti **non** è un vantaggio di Azure Key Vault?</span><span class="sxs-lookup"><span data-stu-id="100e9-105">Which of the following is **not** a benefit of Azure Key Vault?</span></span>
     choices:
-    - content: <span data-ttu-id="94f9b-106">Archiviazione protetta delle informazioni personali dell'utente.</span><span class="sxs-lookup"><span data-stu-id="94f9b-106">Secure storage of private user information.</span></span>
+    - content: <span data-ttu-id="100e9-106">Archiviazione protetta delle informazioni personali dell'utente.</span><span class="sxs-lookup"><span data-stu-id="100e9-106">Secure storage of private user information.</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="94f9b-107">Key Vault è progettato per l'archiviazione dei segreti dell'applicazione, non dei segreti dell'utente.</span><span class="sxs-lookup"><span data-stu-id="94f9b-107">Key Vault is intended for storing application secrets, not user secrets.</span></span>
-    - content: <span data-ttu-id="94f9b-108">Sincronizzazione dei segreti dell'applicazione tra più istanze di un'applicazione.</span><span class="sxs-lookup"><span data-stu-id="94f9b-108">Synchronizing application secrets among multiple instances of an application.</span></span>
+      correctExplanation: <span data-ttu-id="100e9-107">Key Vault è progettato per l'archiviazione dei segreti dell'applicazione, non dei segreti dell'utente.</span><span class="sxs-lookup"><span data-stu-id="100e9-107">Key Vault is intended for storing application secrets, not user secrets.</span></span>
+    - content: <span data-ttu-id="100e9-108">Sincronizzazione dei segreti dell'applicazione tra più istanze di un'applicazione.</span><span class="sxs-lookup"><span data-stu-id="100e9-108">Synchronizing application secrets among multiple instances of an application.</span></span>
       isCorrect: false
-    - content: <span data-ttu-id="94f9b-109">Minore necessità da parte degli sviluppatori di applicazioni di gestire direttamente i segreti dell'applicazione.</span><span class="sxs-lookup"><span data-stu-id="94f9b-109">Reducing the need for application developers to directly handle application secrets.</span></span>
+    - content: <span data-ttu-id="100e9-109">Minore necessità da parte degli sviluppatori di applicazioni di gestire direttamente i segreti dell'applicazione.</span><span class="sxs-lookup"><span data-stu-id="100e9-109">Reducing the need for application developers to directly handle application secrets.</span></span>
       isCorrect: false
-    - content: <span data-ttu-id="94f9b-110">Controllo dell'accesso ai segreti dell'applicazione con autorizzazioni assegnabili.</span><span class="sxs-lookup"><span data-stu-id="94f9b-110">Controlling access to application secrets with assignable permissions.</span></span>
+    - content: <span data-ttu-id="100e9-110">Controllo dell'accesso ai segreti dell'applicazione con autorizzazioni assegnabili.</span><span class="sxs-lookup"><span data-stu-id="100e9-110">Controlling access to application secrets with assignable permissions.</span></span>
       isCorrect: false
-  - content: <span data-ttu-id="94f9b-111">Quali di queste affermazioni descrive al meglio il processo di autenticazione e autorizzazione di Azure Key Vault?</span><span class="sxs-lookup"><span data-stu-id="94f9b-111">Which of these statements best describes Azure Key Vault's authentication and authorization process?</span></span>
+  - content: <span data-ttu-id="100e9-111">Quali di queste affermazioni descrive al meglio il processo di autenticazione e autorizzazione di Azure Key Vault?</span><span class="sxs-lookup"><span data-stu-id="100e9-111">Which of these statements best describes Azure Key Vault's authentication and authorization process?</span></span>
     choices:
-    - content: <span data-ttu-id="94f9b-112">Le applicazioni eseguono l'autenticazione a un insieme di credenziali con il nome utente e la password dello sviluppatore responsabile e hanno accesso completo a tutti i segreti nell'insieme.</span><span class="sxs-lookup"><span data-stu-id="94f9b-112">Applications authenticate to a vault with the username and password of the lead developer and have full access to all secrets in the vault.</span></span>
+    - content: <span data-ttu-id="100e9-112">Le applicazioni eseguono l'autenticazione a un insieme di credenziali con il nome utente e la password dello sviluppatore responsabile e hanno accesso completo a tutti i segreti nell'insieme.</span><span class="sxs-lookup"><span data-stu-id="100e9-112">Applications authenticate to a vault with the username and password of the lead developer and have full access to all secrets in the vault.</span></span>
       isCorrect: false
-    - content: <span data-ttu-id="94f9b-113">Le applicazioni e gli utenti eseguono l'autenticazione a un insieme di credenziali con un account Microsoft e sono autorizzati ad accedere a segreti specifici.</span><span class="sxs-lookup"><span data-stu-id="94f9b-113">Applications and users authenticate to a vault with a Microsoft account and are authorized to access specific secrets.</span></span>
+    - content: <span data-ttu-id="100e9-113">Le applicazioni e gli utenti eseguono l'autenticazione a un insieme di credenziali con un account Microsoft e sono autorizzati ad accedere a segreti specifici.</span><span class="sxs-lookup"><span data-stu-id="100e9-113">Applications and users authenticate to a vault with a Microsoft account and are authorized to access specific secrets.</span></span>
       isCorrect: false
-    - content: <span data-ttu-id="94f9b-114">Le applicazioni e gli utenti eseguono l'autenticazione a un insieme di credenziali con le proprie identità di Azure Active Directory e sono autorizzati a eseguire azioni su tutti i segreti nell'insieme.</span><span class="sxs-lookup"><span data-stu-id="94f9b-114">Applications and users authenticate to a vault with their Azure Active Directory identities and are authorized to perform actions on all secrets in the vault.</span></span>
+    - content: <span data-ttu-id="100e9-114">Le applicazioni e gli utenti eseguono l'autenticazione a un insieme di credenziali con le proprie identità di Azure Active Directory e sono autorizzati a eseguire azioni su tutti i segreti nell'insieme.</span><span class="sxs-lookup"><span data-stu-id="100e9-114">Applications and users authenticate to a vault with their Azure Active Directory identities and are authorized to perform actions on all secrets in the vault.</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="94f9b-115">L'autenticazione in Key Vault usa identità di Azure Active Directory.</span><span class="sxs-lookup"><span data-stu-id="94f9b-115">Authentication to Key Vault uses Azure Active Directory identities.</span></span> <span data-ttu-id="94f9b-116">Vengono usati criteri di accesso per fornire l'autorizzazione per le azioni che si applicano a ogni segreto nell'insieme di credenziali.</span><span class="sxs-lookup"><span data-stu-id="94f9b-116">Access policies are used to provide authorization for actions that apply to every secret in the vault.</span></span>
-    - content: <span data-ttu-id="94f9b-117">Le applicazioni eseguono l'autenticazione a un insieme di credenziali con il nome utente e la password di un utente che esegue l'accesso all'app Web e a cui viene concesso l'accesso ai segreti di proprietà di tale utente.</span><span class="sxs-lookup"><span data-stu-id="94f9b-117">Applications authenticate to a vault with the username and password of a user that signs in to the web app, and is granted access to secrets owned by that user.</span></span>
+      correctExplanation: <span data-ttu-id="100e9-115">L'autenticazione in Key Vault usa identità di Azure Active Directory.</span><span class="sxs-lookup"><span data-stu-id="100e9-115">Authentication to Key Vault uses Azure Active Directory identities.</span></span> <span data-ttu-id="100e9-116">Vengono usati criteri di accesso per fornire l'autorizzazione per le azioni che si applicano a ogni segreto nell'insieme di credenziali.</span><span class="sxs-lookup"><span data-stu-id="100e9-116">Access policies are used to provide authorization for actions that apply to every secret in the vault.</span></span>
+    - content: <span data-ttu-id="100e9-117">Le applicazioni eseguono l'autenticazione a un insieme di credenziali con il nome utente e la password di un utente che esegue l'accesso all'app Web e a cui viene concesso l'accesso ai segreti di proprietà di tale utente.</span><span class="sxs-lookup"><span data-stu-id="100e9-117">Applications authenticate to a vault with the username and password of a user that signs in to the web app, and is granted access to secrets owned by that user.</span></span>
       isCorrect: false
-  - content: <span data-ttu-id="94f9b-118">In che modo Azure Key Vault consente di proteggere i segreti dopo che sono stati caricati dall'app?</span><span class="sxs-lookup"><span data-stu-id="94f9b-118">How does Azure Key Vault help protect your secrets after they have been loaded by your app?</span></span>
+  - content: <span data-ttu-id="100e9-118">In che modo Azure Key Vault consente di proteggere i segreti dopo che sono stati caricati dall'app?</span><span class="sxs-lookup"><span data-stu-id="100e9-118">How does Azure Key Vault help protect your secrets after they have been loaded by your app?</span></span>
     choices:
-    - content: <span data-ttu-id="94f9b-119">Azure Key Vault genera automaticamente un nuovo segreto dopo ogni uso.</span><span class="sxs-lookup"><span data-stu-id="94f9b-119">Azure Key Vault automatically generates a new secret after every use.</span></span>
+    - content: <span data-ttu-id="100e9-119">Azure Key Vault genera automaticamente un nuovo segreto dopo ogni uso.</span><span class="sxs-lookup"><span data-stu-id="100e9-119">Azure Key Vault automatically generates a new secret after every use.</span></span>
       isCorrect: false
-    - content: <span data-ttu-id="94f9b-120">La libreria client di Azure Key Vault protegge le aree di memoria usate dall'applicazione per evitare l'esposizione accidentale dei segreti.</span><span class="sxs-lookup"><span data-stu-id="94f9b-120">The Azure Key Vault client library protects regions of memory used by your application to prevent accidental secret exposure.</span></span>
+    - content: <span data-ttu-id="100e9-120">La libreria client di Azure Key Vault protegge le aree di memoria usate dall'applicazione per evitare l'esposizione accidentale dei segreti.</span><span class="sxs-lookup"><span data-stu-id="100e9-120">The Azure Key Vault client library protects regions of memory used by your application to prevent accidental secret exposure.</span></span>
       isCorrect: false
-    - content: <span data-ttu-id="94f9b-121">Azure Key Vault applica una doppia crittografia ai segreti, la quale richiede la decrittografia dei file in locale da parte dell'app ogni volta che vengono usati.</span><span class="sxs-lookup"><span data-stu-id="94f9b-121">Azure Key Vault double-encrypts secrets, requiring your app to decrypt them locally every time they're used.</span></span>
+    - content: <span data-ttu-id="100e9-121">Azure Key Vault applica una doppia crittografia ai segreti, la quale richiede la decrittografia dei file in locale da parte dell'app ogni volta che vengono usati.</span><span class="sxs-lookup"><span data-stu-id="100e9-121">Azure Key Vault double-encrypts secrets, requiring your app to decrypt them locally every time they're used.</span></span>
       isCorrect: false
-    - content: <span data-ttu-id="94f9b-122">Non protegge i segreti.</span><span class="sxs-lookup"><span data-stu-id="94f9b-122">It doesn't protect your secrets.</span></span> <span data-ttu-id="94f9b-123">I segreti non sono protetti quando vengono caricati dall'applicazione.</span><span class="sxs-lookup"><span data-stu-id="94f9b-123">Secrets are unprotected once they're loaded by your application.</span></span>
+    - content: <span data-ttu-id="100e9-122">Non protegge i segreti.</span><span class="sxs-lookup"><span data-stu-id="100e9-122">It doesn't protect your secrets.</span></span> <span data-ttu-id="100e9-123">I segreti non sono protetti quando vengono caricati dall'applicazione.</span><span class="sxs-lookup"><span data-stu-id="100e9-123">Secrets are unprotected once they're loaded by your application.</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="94f9b-124">I segreti caricati da un'app non sono protetti.</span><span class="sxs-lookup"><span data-stu-id="94f9b-124">Once secrets have been loaded by an app, they are unprotected.</span></span> <span data-ttu-id="94f9b-125">Assicurarsi di non registrarli, archiviarli o restituirli nelle risposte client.</span><span class="sxs-lookup"><span data-stu-id="94f9b-125">Make sure to not log them, store them, or return them in client responses.</span></span>
+      correctExplanation: <span data-ttu-id="100e9-124">I segreti caricati da un'app non sono protetti.</span><span class="sxs-lookup"><span data-stu-id="100e9-124">Once secrets have been loaded by an app, they are unprotected.</span></span> <span data-ttu-id="100e9-125">Assicurarsi di non registrarli, archiviarli o restituirli nelle risposte client.</span><span class="sxs-lookup"><span data-stu-id="100e9-125">Make sure to not log them, store them, or return them in client responses.</span></span>
