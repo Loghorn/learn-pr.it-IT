@@ -1,51 +1,51 @@
 ### YamlMime:ModuleUnit
 uid: learn.design-for-availability-and-recoverability.2-high-availability
-title: <span data-ttu-id="0e34d-101">Creare un'architettura a disponibilità elevata</span><span class="sxs-lookup"><span data-stu-id="0e34d-101">Build a highly available architecture</span></span>
+title: <span data-ttu-id="9eb63-101">Creare un'architettura a disponibilità elevata</span><span class="sxs-lookup"><span data-stu-id="9eb63-101">Build a highly available architecture</span></span>
 metadata:
-  title: <span data-ttu-id="0e34d-102">Creare un'architettura a disponibilità elevata</span><span class="sxs-lookup"><span data-stu-id="0e34d-102">Build a highly available architecture</span></span>
-  description: <span data-ttu-id="0e34d-103">Creare un'architettura a disponibilità elevata</span><span class="sxs-lookup"><span data-stu-id="0e34d-103">Build a highly available architecture</span></span>
+  title: <span data-ttu-id="9eb63-102">Creare un'architettura a disponibilità elevata</span><span class="sxs-lookup"><span data-stu-id="9eb63-102">Build a highly available architecture</span></span>
+  description: <span data-ttu-id="9eb63-103">Creare un'architettura a disponibilità elevata</span><span class="sxs-lookup"><span data-stu-id="9eb63-103">Build a highly available architecture</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: b0cd30d8b1c28165b125a42b06656b76d354a41c
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46343610"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47138577"
 durationInMinutes: 20
 content: >
   [!include[](includes/2-high-availability.md)]
 quiz:
-  title: <span data-ttu-id="0e34d-104">Verificare le proprie conoscenze</span><span class="sxs-lookup"><span data-stu-id="0e34d-104">Check your knowledge</span></span>
+  title: <span data-ttu-id="9eb63-104">Verificare le proprie conoscenze</span><span class="sxs-lookup"><span data-stu-id="9eb63-104">Check your knowledge</span></span>
   questions:
-  - content: <span data-ttu-id="0e34d-105">È importante definire un contratto di servizio per un servizio per questi motivi:</span><span class="sxs-lookup"><span data-stu-id="0e34d-105">An SLA is important to define for your service because:</span></span>
+  - content: <span data-ttu-id="9eb63-105">È importante definire un contratto di servizio per un servizio per questi motivi:</span><span class="sxs-lookup"><span data-stu-id="9eb63-105">An SLA is important to define for your service because:</span></span>
     choices:
-    - content: <span data-ttu-id="0e34d-106">Consente di determinare i requisiti di conservazione dei backup.</span><span class="sxs-lookup"><span data-stu-id="0e34d-106">It helps you determine your backup retention requirements.</span></span>
+    - content: <span data-ttu-id="9eb63-106">Consente di determinare i requisiti di conservazione dei backup.</span><span class="sxs-lookup"><span data-stu-id="9eb63-106">It helps you determine your backup retention requirements.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="0e34d-107">La conservazione dei backup è un aspetto importante da definire, ma non dipende dal contratto di servizio.</span><span class="sxs-lookup"><span data-stu-id="0e34d-107">Backup retention is important to define, but it is not driven by SLA.</span></span>
-    - content: <span data-ttu-id="0e34d-108">Consente di determinare il livello di disponibilità del servizio per cui ci si impegna nei confronti dei clienti.</span><span class="sxs-lookup"><span data-stu-id="0e34d-108">It helps you determine the availability of your service that you will commit to for your customers.</span></span>
+      incorrectExplanation: <span data-ttu-id="9eb63-107">La conservazione dei backup è un aspetto importante da definire, ma non dipende dal contratto di servizio.</span><span class="sxs-lookup"><span data-stu-id="9eb63-107">Backup retention is important to define, but it is not driven by SLA.</span></span>
+    - content: <span data-ttu-id="9eb63-108">Consente di determinare il livello di disponibilità del servizio per cui ci si impegna nei confronti dei clienti.</span><span class="sxs-lookup"><span data-stu-id="9eb63-108">It helps you determine the availability of your service that you will commit to for your customers.</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="0e34d-109">Il contratto di servizio rappresenta un impegno nei confronti dei clienti rispetto alla disponibilità del servizio.</span><span class="sxs-lookup"><span data-stu-id="0e34d-109">Service level agreement is a commitment you are making to your customers for the availability of your service.</span></span>
-    - content: <span data-ttu-id="0e34d-110">È possibile usarlo per convincere un responsabile ad automatizzare la creazione delle macchine virtuali.</span><span class="sxs-lookup"><span data-stu-id="0e34d-110">You can use it to convince your manager to automate virtual-machine creation.</span></span>
+      correctExplanation: <span data-ttu-id="9eb63-109">Il contratto di servizio rappresenta un impegno nei confronti dei clienti rispetto alla disponibilità del servizio.</span><span class="sxs-lookup"><span data-stu-id="9eb63-109">Service level agreement is a commitment you are making to your customers for the availability of your service.</span></span>
+    - content: <span data-ttu-id="9eb63-110">È possibile usarlo per convincere un responsabile ad automatizzare la creazione delle macchine virtuali.</span><span class="sxs-lookup"><span data-stu-id="9eb63-110">You can use it to convince your manager to automate virtual-machine creation.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="0e34d-111">Anche se può essere utile valutare questo aspetto, il contratto di servizio probabilmente non avrà alcun impatto sul risultato.</span><span class="sxs-lookup"><span data-stu-id="0e34d-111">While this is a good discussion to have, your SLA will likely not have any impact on the outcome.</span></span>
-    - content: <span data-ttu-id="0e34d-112">È possibile usarlo per definire le impostazioni di controllo di accesso per le risorse.</span><span class="sxs-lookup"><span data-stu-id="0e34d-112">You use it to define the access control settings for your resources.</span></span>
+      incorrectExplanation: <span data-ttu-id="9eb63-111">Anche se può essere utile valutare questo aspetto, il contratto di servizio probabilmente non avrà alcun impatto sul risultato.</span><span class="sxs-lookup"><span data-stu-id="9eb63-111">While this is a good discussion to have, your SLA will likely not have any impact on the outcome.</span></span>
+    - content: <span data-ttu-id="9eb63-112">È possibile usarlo per definire le impostazioni di controllo di accesso per le risorse.</span><span class="sxs-lookup"><span data-stu-id="9eb63-112">You use it to define the access control settings for your resources.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="0e34d-113">Le impostazioni di controllo di accesso sono importanti, ma non sono correlate al contratto di servizio dell'applicazione.</span><span class="sxs-lookup"><span data-stu-id="0e34d-113">Access control settings are important, but they are not related to the SLA of your application.</span></span>
-  - content: <span data-ttu-id="0e34d-114">Quali dei seguenti elementi non viene usato in un'architettura a disponibilità elevata?</span><span class="sxs-lookup"><span data-stu-id="0e34d-114">Which of the following is not used in a highly available architecture?</span></span>
+      incorrectExplanation: <span data-ttu-id="9eb63-113">Le impostazioni di controllo di accesso sono importanti, ma non sono correlate al contratto di servizio dell'applicazione.</span><span class="sxs-lookup"><span data-stu-id="9eb63-113">Access control settings are important, but they are not related to the SLA of your application.</span></span>
+  - content: <span data-ttu-id="9eb63-114">Quali dei seguenti elementi non viene usato in un'architettura a disponibilità elevata?</span><span class="sxs-lookup"><span data-stu-id="9eb63-114">Which of the following is not used in a highly available architecture?</span></span>
     choices:
-    - content: <span data-ttu-id="0e34d-115">Bilanciamento del carico.</span><span class="sxs-lookup"><span data-stu-id="0e34d-115">Load balancing</span></span>
+    - content: <span data-ttu-id="9eb63-115">Bilanciamento del carico.</span><span class="sxs-lookup"><span data-stu-id="9eb63-115">Load balancing</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="0e34d-116">Il bilanciamento del carico in genere viene usato in un'architettura a disponibilità elevata per distribuire il carico ai sistemi disponibili e rimuovere dal carico i sistemi che presentano problemi.</span><span class="sxs-lookup"><span data-stu-id="0e34d-116">Load balancing is typically used in a highly available architecture to distribute load to available systems and remove failed systems from load.</span></span>
-    - content: <span data-ttu-id="0e34d-117">Zone di disponibilità</span><span class="sxs-lookup"><span data-stu-id="0e34d-117">Availability zones</span></span>
+      incorrectExplanation: <span data-ttu-id="9eb63-116">Il bilanciamento del carico in genere viene usato in un'architettura a disponibilità elevata per distribuire il carico ai sistemi disponibili e rimuovere dal carico i sistemi che presentano problemi.</span><span class="sxs-lookup"><span data-stu-id="9eb63-116">Load balancing is typically used in a highly available architecture to distribute load to available systems and remove failed systems from load.</span></span>
+    - content: <span data-ttu-id="9eb63-117">Zone di disponibilità</span><span class="sxs-lookup"><span data-stu-id="9eb63-117">Availability zones</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="0e34d-118">Le zone di disponibilità vengono usate in un'architettura a disponibilità elevata per distribuire i sistemi tra più data center in un'area.</span><span class="sxs-lookup"><span data-stu-id="0e34d-118">Availability zones are used in a highly available architecture to distribute systems across multiple datacenters within a region.</span></span>
-    - content: <span data-ttu-id="0e34d-119">Set di disponibilità</span><span class="sxs-lookup"><span data-stu-id="0e34d-119">Availability sets</span></span>
+      incorrectExplanation: <span data-ttu-id="9eb63-118">Le zone di disponibilità vengono usate in un'architettura a disponibilità elevata per distribuire i sistemi tra più data center in un'area.</span><span class="sxs-lookup"><span data-stu-id="9eb63-118">Availability zones are used in a highly available architecture to distribute systems across multiple datacenters within a region.</span></span>
+    - content: <span data-ttu-id="9eb63-119">Set di disponibilità</span><span class="sxs-lookup"><span data-stu-id="9eb63-119">Availability sets</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="0e34d-120">I set di disponibilità vengono usati in un'architettura a disponibilità elevata per ridurre al minimo l'impatto di problemi localizzati e di eventi di manutenzione.</span><span class="sxs-lookup"><span data-stu-id="0e34d-120">Availability sets are used in a highly available architecture to minimize the impact from localized failures and maintenance events.</span></span>
-    - content: <span data-ttu-id="0e34d-121">Insieme di credenziali di Servizi di ripristino</span><span class="sxs-lookup"><span data-stu-id="0e34d-121">A recovery service vault</span></span>
+      incorrectExplanation: <span data-ttu-id="9eb63-120">I set di disponibilità vengono usati in un'architettura a disponibilità elevata per ridurre al minimo l'impatto di problemi localizzati e di eventi di manutenzione.</span><span class="sxs-lookup"><span data-stu-id="9eb63-120">Availability sets are used in a highly available architecture to minimize the impact from localized failures and maintenance events.</span></span>
+    - content: <span data-ttu-id="9eb63-121">Insieme di credenziali di Servizi di ripristino</span><span class="sxs-lookup"><span data-stu-id="9eb63-121">A recovery service vault</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="0e34d-122">Gli insiemi di credenziali di Servizi di ripristino forniscono una destinazione per i backup, ma non fanno parte di un'architettura a disponibilità elevata.</span><span class="sxs-lookup"><span data-stu-id="0e34d-122">Recovery service vaults provide a destination for backups, but they are not part of a highly available architecture.</span></span>
+      correctExplanation: <span data-ttu-id="9eb63-122">Gli insiemi di credenziali di Servizi di ripristino forniscono una destinazione per i backup, ma non fanno parte di un'architettura a disponibilità elevata.</span><span class="sxs-lookup"><span data-stu-id="9eb63-122">Recovery service vaults provide a destination for backups, but they are not part of a highly available architecture.</span></span>

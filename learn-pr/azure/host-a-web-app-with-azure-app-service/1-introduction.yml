@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.host-a-web-application-with-azure-web-apps.1-introduction
-title: <span data-ttu-id="4b084-101">Introduzione</span><span class="sxs-lookup"><span data-stu-id="4b084-101">Introduction</span></span>
+title: <span data-ttu-id="f239a-101">Introduzione</span><span class="sxs-lookup"><span data-stu-id="f239a-101">Introduction</span></span>
 metadata:
-  title: <span data-ttu-id="4b084-102">Introduzione</span><span class="sxs-lookup"><span data-stu-id="4b084-102">Introduction</span></span>
-  description: <span data-ttu-id="4b084-103">Introduzione</span><span class="sxs-lookup"><span data-stu-id="4b084-103">Introduction</span></span>
+  title: <span data-ttu-id="f239a-102">Introduzione</span><span class="sxs-lookup"><span data-stu-id="f239a-102">Introduction</span></span>
+  description: <span data-ttu-id="f239a-103">Introduzione</span><span class="sxs-lookup"><span data-stu-id="f239a-103">Introduction</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: d098ad85124dee31a221ef840e0e0c3367435bb5
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46340411"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47139436"
 durationInMinutes: 3
 content: '[!include[](includes/1-introduction.md)]'

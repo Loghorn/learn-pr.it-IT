@@ -1,0 +1,47 @@
+### YamlMime:Module
+uid: learn.secure-azure-resources-with-rbac
+metadata:
+  title: Proteggere le risorse di Azure con il controllo degli accessi in base al ruolo
+  description: Il controllo degli accessi in base al ruolo è un sistema che garantisce una gestione degli accessi con granularità fine delle risorse in Azure. Usando il Controllo degli accessi in base al ruolo, è possibile separare i compiti all'interno del team e concedere agli utenti solo la quantità di accesso di cui hanno bisogno per svolgere il proprio lavoro. Questo modulo mostra come usare il controllo degli accessi in base al ruolo per gestire l'accesso alle risorse in Azure.
+  ms.date: 09/26/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: b52748fdfa8c7d2aa5c92ece468cd5ffe6b2da1e
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47439306"
+title: Proteggere le risorse di Azure con il controllo degli accessi in base al ruolo
+summary: Informazioni sull'uso del controllo degli accessi in base al ruolo per gestire l'accesso alle risorse in Azure.
+abstract: >
+  In questo modulo verrà descritto come:
+
+  - Verificare l'accesso alle risorse per se stessi e altri utenti
+
+  - Concedere l'accesso alle risorse
+
+  - Visualizzare i log attività delle modifiche apportate al controllo degli accessi in base al ruolo
+prerequisites: >
+  - Conoscenza dei concetti di base di Azure, ad esempio il portale di Azure e i gruppi di risorse
+iconUrl: /learn/achievements/secure-azure-resources-with-rbac.svg
+levels:
+- beginner
+roles:
+- administrator
+products:
+- azure
+- azure-portal
+- azure-active-directory
+units:
+- learn.secure-azure-resources-with-rbac.1-introduction
+- learn.secure-azure-resources-with-rbac.2-rbac-overview
+- learn.secure-azure-resources-with-rbac.3-knowledge-check-rbac-overview
+- learn.secure-azure-resources-with-rbac.4-list-access
+- learn.secure-azure-resources-with-rbac.5-grant-access
+- learn.secure-azure-resources-with-rbac.6-view-activity-logs
+- learn.secure-azure-resources-with-rbac.7-knowledge-check-rbac
+- learn.secure-azure-resources-with-rbac.8-summary
+achievement: learn.secure-azure-resources-with-rbac.badge

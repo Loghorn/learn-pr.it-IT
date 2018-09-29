@@ -1,0 +1,68 @@
+### YamlMime:ModuleUnit
+uid: learn.secure-azure-resources-with-rbac.7-knowledge-check-rbac
+metadata:
+  title: <span data-ttu-id="e5f66-101">Verifica delle conoscenze - Usare Controllo degli accessi in base al ruolo</span><span class="sxs-lookup"><span data-stu-id="e5f66-101">Knowledge check - Using RBAC</span></span>
+  description: <span data-ttu-id="e5f66-102">Verifica delle conoscenze - Usare Controllo degli accessi in base al ruolo</span><span class="sxs-lookup"><span data-stu-id="e5f66-102">Knowledge check - Using RBAC</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 94bc59b81d0dda1e57c9c8a7fc515a2527a05543
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47439917"
+title: <span data-ttu-id="e5f66-103">Verifica delle conoscenze - Usare Controllo degli accessi in base al ruolo</span><span class="sxs-lookup"><span data-stu-id="e5f66-103">Knowledge check - Using RBAC</span></span>
+durationInMinutes: 3
+quiz:
+  title: <span data-ttu-id="e5f66-104">Verificare le proprie conoscenze</span><span class="sxs-lookup"><span data-stu-id="e5f66-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="e5f66-105">Qual è il nome del panello nel portale di Azure dal quale si concede l'accesso?</span><span class="sxs-lookup"><span data-stu-id="e5f66-105">What is the name of the blade in the Azure portal where you grant access?</span></span>
+    choices:
+    - content: <span data-ttu-id="e5f66-106">Risorse di Azure</span><span class="sxs-lookup"><span data-stu-id="e5f66-106">Azure resources</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="e5f66-107">Questo pannello mostra quali ruoli sono assegnati all'utente selezionato.</span><span class="sxs-lookup"><span data-stu-id="e5f66-107">This blade shows you which roles are assigned to yourself or the selected user.</span></span>
+    - content: <span data-ttu-id="e5f66-108">Azure Active Directory</span><span class="sxs-lookup"><span data-stu-id="e5f66-108">Azure Active Directory</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="e5f66-109">Questo pannello consente di accedere alle funzionalità di Azure Active Directory.</span><span class="sxs-lookup"><span data-stu-id="e5f66-109">This blade lets you access the Azure Active Directory features.</span></span>
+    - content: <span data-ttu-id="e5f66-110">Tutti gli utenti</span><span class="sxs-lookup"><span data-stu-id="e5f66-110">All users</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="e5f66-111">Questo pannello elenca tutti gli utenti per la directory selezionata.</span><span class="sxs-lookup"><span data-stu-id="e5f66-111">This blade lists all the users for the selected directory.</span></span>
+    - content: <span data-ttu-id="e5f66-112">Controllo di accesso (IAM)</span><span class="sxs-lookup"><span data-stu-id="e5f66-112">Access control (IAM)</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="e5f66-113">I ruoli vengono assegnati nel pannello Controllo di accesso (IAM).</span><span class="sxs-lookup"><span data-stu-id="e5f66-113">You assign roles on the Access control (IAM) blade.</span></span> <span data-ttu-id="e5f66-114">Questo pannello viene visualizzato in diverse aree del portale.</span><span class="sxs-lookup"><span data-stu-id="e5f66-114">This blade appears in several areas in the portal.</span></span>
+  - content: "<span data-ttu-id=\"e5f66-115\">Vero o falso: Per concedere a un utente l'accesso alle risorse di Azure, si crea un'assegnazione di ruolo.</span><span class=\"sxs-lookup\"><span data-stu-id=\"e5f66-115\">True or false: To grant a user access to Azure resources, you create a role assignment.</span></span>"
+    choices:
+    - content: <span data-ttu-id="e5f66-116">Vero</span><span class="sxs-lookup"><span data-stu-id="e5f66-116">True</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="e5f66-117">Un'assegnazione di ruolo è il processo di associazione di un ruolo a un'entità di sicurezza in un particolare ambito ai fini della concessione dell'accesso.</span><span class="sxs-lookup"><span data-stu-id="e5f66-117">A role assignment is the process of binding a role to a security principal at a particular scope for the purpose of granting access.</span></span>
+    - content: <span data-ttu-id="e5f66-118">Falso</span><span class="sxs-lookup"><span data-stu-id="e5f66-118">False</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="e5f66-119">Un'assegnazione di ruolo è il processo di associazione di un ruolo a un'entità di sicurezza in un particolare ambito ai fini della concessione dell'accesso.</span><span class="sxs-lookup"><span data-stu-id="e5f66-119">A role assignment is the process of binding a role to a security principal at a particular scope for the purpose of granting access.</span></span>
+  - content: <span data-ttu-id="e5f66-120">Qual è il ruolo che consente di concedere l'accesso ad altri utenti?</span><span class="sxs-lookup"><span data-stu-id="e5f66-120">What role enables you to grant access to others?</span></span>
+    choices:
+    - content: <span data-ttu-id="e5f66-121">Collaboratore macchine virtuali</span><span class="sxs-lookup"><span data-stu-id="e5f66-121">Virtual Machine Contributor</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="e5f66-122">Questo ruolo consente di gestire le macchine virtuali, ma non di concedere l'accesso ad altri utenti.</span><span class="sxs-lookup"><span data-stu-id="e5f66-122">This role allows you to manage virtual machines, but you can't grant access to others.</span></span>
+    - content: <span data-ttu-id="e5f66-123">Amministratore accessi utente</span><span class="sxs-lookup"><span data-stu-id="e5f66-123">User Access Administrator</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="e5f66-124">Questo ruolo e il ruolo di proprietario consentono di concedere l'accesso ad altri utenti.</span><span class="sxs-lookup"><span data-stu-id="e5f66-124">This role and the Owner role allow you to grant access to others.</span></span>
+    - content: <span data-ttu-id="e5f66-125">Collaboratore</span><span class="sxs-lookup"><span data-stu-id="e5f66-125">Contributor</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="e5f66-126">Questo ruolo consente di gestire tutte le risorse, ma non di concedere l'accesso ad altri utenti.</span><span class="sxs-lookup"><span data-stu-id="e5f66-126">This role allows you to manage all resources, but you can't grant access to others.</span></span>
+    - content: <span data-ttu-id="e5f66-127">Lettore</span><span class="sxs-lookup"><span data-stu-id="e5f66-127">Reader</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="e5f66-128">Questo ruolo consente di leggere tutte le risorse, ma non di concedere l'accesso ad altri utenti.</span><span class="sxs-lookup"><span data-stu-id="e5f66-128">This role allows you to read all resources, but you can't grant access to others.</span></span>
+  - content: <span data-ttu-id="e5f66-129">Si supponga che uno sviluppatore debba avere accesso completo a un gruppo di risorse.</span><span class="sxs-lookup"><span data-stu-id="e5f66-129">Suppose a developer needs full access to a resource group.</span></span> <span data-ttu-id="e5f66-130">Se si seguono le procedure consigliate con privilegi minimi, quale ambito si deve specificare?</span><span class="sxs-lookup"><span data-stu-id="e5f66-130">If you are following least-privilege best practices, what scope should you specify?</span></span>
+    choices:
+    - content: <span data-ttu-id="e5f66-131">Risorsa</span><span class="sxs-lookup"><span data-stu-id="e5f66-131">Resource</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="e5f66-132">Un ambito delle risorse è inferiore rispetto all'ambito necessario.</span><span class="sxs-lookup"><span data-stu-id="e5f66-132">A resource scope is narrower than what is needed.</span></span>
+    - content: <span data-ttu-id="e5f66-133">Gruppo di risorse</span><span class="sxs-lookup"><span data-stu-id="e5f66-133">Resource group</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="e5f66-134">Con le procedure consigliate con privilegi minimi si concede l'accesso solo all'utente che dovrà svolgere il lavoro.</span><span class="sxs-lookup"><span data-stu-id="e5f66-134">Following least-privilege best practices, you grant only the access the user needs to do their job.</span></span> <span data-ttu-id="e5f66-135">In questo caso, è consigliabile impostare l'ambito sul gruppo di risorse.</span><span class="sxs-lookup"><span data-stu-id="e5f66-135">In this case, you should set the scope to the resource group.</span></span>
+    - content: <span data-ttu-id="e5f66-136">Sottoscrizione</span><span class="sxs-lookup"><span data-stu-id="e5f66-136">Subscription</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="e5f66-137">L'ambito della sottoscrizione è più ampio rispetto all'ambito necessario.</span><span class="sxs-lookup"><span data-stu-id="e5f66-137">A subscription scope is broader than what is needed.</span></span>
