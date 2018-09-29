@@ -9,11 +9,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 3e0eb03a0737fd9ba6bd938e4715fa17e33a3386
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46354104"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47135423"
 title: Creare un database di Azure Cosmos DB per la scalabilità
 summary: Informazioni su come creare un account Azure Cosmos DB, un database e una raccolta per scalare man mano che l'applicazione cresce.
 abstract: >

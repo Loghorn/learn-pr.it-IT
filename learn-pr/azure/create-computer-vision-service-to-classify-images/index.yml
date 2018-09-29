@@ -9,11 +9,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 764c30034b5ff2f01c2c0650efc984204e2711c6
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46338635"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47132253"
 title: Elaborare le immagini con il servizio Visione artificiale
 summary: Usare l'API Visione artificiale per analizzare le immagini per ottenere informazioni dettagliate, estrarre testo dalle immagini e generare anteprime di qualità elevata.
 abstract: >

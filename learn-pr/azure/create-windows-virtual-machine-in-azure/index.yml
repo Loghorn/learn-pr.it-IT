@@ -9,11 +9,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 8a8c3fc958b073b3e28367201627835a7d319d5a
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46338514"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47131765"
 title: Creare una macchina virtuale Windows in Azure
 summary: Le macchine virtuali di Azure permettono di creare in pochi minuti risorse di calcolo dedicate, che possono essere usate proprio come un computer desktop o un server fisico.
 abstract: >
