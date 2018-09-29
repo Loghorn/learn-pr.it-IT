@@ -8,11 +8,11 @@ Le associazioni per Funzioni di Azure create in Visual Studio vengono definite u
 
 L'invio di SMS messaggi tramite Twilio richiede un'associazione di output che viene configurata con l'ID sottoscrizione dell'account (SID) e il Token di autenticazione.
 
-1. Se il runtime di Funzioni di Azure locale è ancora in esecuzione dall'unità precedente, arrestarlo.
+1. Arrestare il runtime locale di Funzioni di Azure se è ancora in esecuzione dall'unità precedente.
 
-1. Aggiungere il pacchetto NuGet "Microsoft.Azure.WebJobs.Extensions.Twilio" versione 3.0.0-rc1 al progetto `ImHere.Functions`. **Usare la versione 3.0.0-rc1, NON la versione 3.0.0, a causa di un bug nella versione stabile con le associazioni di Twilio**. Questo pacchetto NuGet contiene le classi pertinenti per l'associazione.
+2. Aggiungere il pacchetto "Microsoft.Azure.WebJobs.Extensions.Twilio" NuGet al progetto `ImHere.Functions`. Questo pacchetto NuGet contiene le classi pertinenti per l'associazione.
 
-1. Aggiungere un nuovo parametro per il metodo `Run` statico sulla classe statica `SendLocation` denominata `messages`. Questo parametro sarà di tipo `ICollector<CreateMessageOptions>`. È necessario aggiungere una direttiva `using` per lo spazio dei nomi `Twilio.Rest.Api.V2010.Account`.
+3. Aggiungere un nuovo parametro per il metodo `Run` statico sulla classe statica `SendLocation` denominata `messages`. Questo parametro sarà di tipo `ICollector<CreateMessageOptions>`. È necessario aggiungere una direttiva `using` per lo spazio dei nomi `Twilio.Rest.Api.V2010.Account`.
 
     ```cs
     [FunctionName("SendLocation")]
@@ -21,7 +21,7 @@ L'invio di SMS messaggi tramite Twilio richiede un'associazione di output che vi
                                                 ILogger log)
     ```
 
-1. Decorare il nuovo parametro `messages` con l'attributo `TwilioSms` come segue: 
+4. Decorare il nuovo parametro `messages` con l'attributo `TwilioSms` come segue: 
 
       ```cs
     [TwilioSms(AccountSidSetting = "TwilioAccountSid",AuthTokenSetting = "TwilioAuthToken", From = "+1xxxxxxxxx")]ICollector<CreateMessageOptions> messages,
@@ -43,8 +43,7 @@ L'invio di SMS messaggi tramite Twilio richiede un'associazione di output che vi
     > [!IMPORTANT]
     > Assicurarsi di rimuovere tutti gli spazi dal numero di telefono.
 
-
-1. Le impostazioni dell'app per le funzioni possono essere configurate in locale all'interno del file `local.settings.json`. Aggiungere il SID dell'account Twilio e il Token di autenticazione a questo file JSON usando i nomi delle impostazioni passate all'attributo `TwilioSMS`.
+5. Le impostazioni dell'app per le funzioni possono essere configurate in locale all'interno del file `local.settings.json`. Aggiungere il SID dell'account Twilio e il Token di autenticazione a questo file JSON usando i nomi delle impostazioni passate all'attributo `TwilioSMS`.
 
     ```json
     {
@@ -63,9 +62,8 @@ L'invio di SMS messaggi tramite Twilio richiede un'associazione di output che vi
     > [!NOTE]
     > Queste impostazioni locali verranno usate solo per l'esecuzione in locale. In un'app di produzione questi valori sarebbero le credenziali dell'account di sviluppo o di test locale. Dopo aver distribuito la funzione di Azure in Azure, sarà possibile configurare i valori di produzione.
 
-     > [!NOTE]
+    > [!NOTE]
     > Se si archivia il codice nel controllo codice sorgente verranno archiviati anche questi valori di impostazione dell'applicazione locale, quindi prestare attenzione a non archiviare nessun valore effettivo in questi file se il codice è open source o pubblico in qualsiasi forma.
-    
 
 ## <a name="create-the-sms-messages"></a>Creare messaggi SMS
 

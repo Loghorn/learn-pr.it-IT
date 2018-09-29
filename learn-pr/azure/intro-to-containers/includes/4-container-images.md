@@ -320,13 +320,13 @@ Per pubblicare un'immagine nell'hub Docker è necessario disporre di un account.
     1. Questo esempio estrae l'immagine più recente dall'hub Docker.
 
         ```bash
-        docker pull my_docker_account/python-dockerfile
+        docker pull $docker_account/python-dockerfile
         ```
 
     1. Questo esempio esegue il contenitore.
 
         ```bash
-        docker run my_docker_account/python-dockerfile
+        docker run $docker_account/python-dockerfile
         ```
 
 1. Eseguire il test del contenitore.

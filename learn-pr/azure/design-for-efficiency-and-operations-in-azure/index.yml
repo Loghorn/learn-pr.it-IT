@@ -9,17 +9,17 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 21c66977bd96e0c7d4674ed2144ee53b6f44db31
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46342929"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47139257"
 title: Progettare per l'efficienza e le operazioni in Azure
 summary: Informazioni su come progettare un'architettura di Azure che sia efficiente in termini di costi e di operazioni, eliminando gli sprechi e ottenendo visibilità completa su ciò che accade nell'ambiente.
 abstract: >
   In questo modulo verrà descritto come:
     - Ottimizzare l'efficienza dell'ambiente cloud
-    - Usare il monitoraggio e l'analisi per ottenere informazioni dettagliate operative
+    - Usare il monitoraggio e l'analisi per ottenere informazioni operative
     - Usare l'automazione per ridurre il lavoro richiesto e gli errori
 prerequisites: Nessuno
 iconUrl: /learn/achievements/design-for-efficiency-and-operations-in-azure.svg

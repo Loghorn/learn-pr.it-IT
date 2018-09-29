@@ -1,0 +1,21 @@
+### YamlMime:ModuleUnit
+uid: learn.secure-azure-resources-with-rbac.4-list-access
+metadata:
+  title: Elencare l'accesso usando il controllo degli accessi in base al ruolo e il portale di Azure
+  description: Informazioni su come elencare le assegnazioni di ruolo per se stessi e in ambiti diversi nel portale di Azure.
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: ab1c83902f85680e021d2617c7469c2e79d8211b
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47439216"
+title: Elencare l'accesso usando il controllo degli accessi in base al ruolo e il portale di Azure
+labId: 46468
+labModal: true
+durationInMinutes: 8
+content: '[!include[](includes/4-list-access.md)]'

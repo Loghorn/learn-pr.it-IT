@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.secure-azure-resources-with-rbac.2-rbac-overview
+metadata:
+  title: Che cos'è il controllo degli accessi in base al ruolo?
+  description: Informazioni sul controllo degli accessi in base al ruolo e sul suo funzionamento.
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: d49d05ba4ef54cd037ae16acf503d0e203323fe7
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47439270"
+title: Che cos'è il controllo degli accessi in base al ruolo?
+durationInMinutes: 8
+content: '[!include[](includes/2-rbac-overview.md)]'
