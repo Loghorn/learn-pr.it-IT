@@ -10,11 +10,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 3dd52035d9da3ec2c199c9092009935efd4ce4e2
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46343659"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47138420"
 title: Collegare i servizi tra loro
 summary: 'Azure consente di creare applicazioni costituite da diversi componenti: front-end del sito Web, servizi di back-end e funzioni attivate che eseguono servizi di calcolo on demand. Azure include anche diverse strategie di comunicazione che consentono ai vari componenti di passarsi i dati tra di loro. Informazioni su come usare questi servizi di comunicazione per creare delle soluzioni scalabili ed efficienti dai componenti testabili.'
 prerequisites: Nessuno

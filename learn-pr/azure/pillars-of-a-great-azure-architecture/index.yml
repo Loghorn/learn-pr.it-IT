@@ -9,11 +9,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 505be4c547e38d613e750f042f3c10db26ccbe22
-  ms.sourcegitcommit: 8a009788ee73c5d7caa6cd4f1105260c5cc9b846
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/22/2018
-  ms.locfileid: "46567314"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47138241"
 title: Elementi principali per un'architettura ottimale di Azure
 summary: Si vuole sfruttare Azure al meglio ma non si sa da che parte cominciare? Applicando alcuni principi chiave indipendentemente dalla tecnologia scelta, si potrà facilmente progettare e compilare la propria architettura e migliorarla continuamente.
 abstract: >

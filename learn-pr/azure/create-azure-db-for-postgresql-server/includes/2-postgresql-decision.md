@@ -1,4 +1,4 @@
-Gli utenti di PostgreSQL probabilmente conoscono già i vantaggi di PostgreSQL. Si intende usare il servizio **Database di Azure per PostgreSQL** e prima di passare al cloud si vuole verificare che si potrà continuare a usufruire degli stessi vantaggi che si avevano con il server locale.
+In qualità di utente di PostgreSQL probabilmente si conoscono già i vantaggi di PostgreSQL. Si intende usare il servizio **Database di Azure per PostgreSQL** e prima di passare al cloud si vuole verificare che si potrà continuare a usufruire degli stessi vantaggi che si avevano con il server locale.
 
 Database di Azure per PostgreSQL è un servizio di database relazionale nel cloud Microsoft. Il software del server si basa sulla versione community del motore di database PostgreSQL open source. La familiarità con gli strumenti e le competenze con PostgreSQL sono utili quando si usa il Database di Azure per PostgreSQL.
 

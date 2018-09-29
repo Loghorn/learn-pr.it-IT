@@ -9,11 +9,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: e2c7f3f112c4cde8b9d4081a90a25a89ed69810d
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46341138"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47137612"
 title: Memorizzazione nella cache e prestazioni dei dischi di archiviazione di Azure
 summary: Per le aziende è utile spostare i dati nel più breve tempo possibile. Informazioni sulle prestazioni del disco in Azure, su come la memorizzazione nella cache consenta di ottimizzare l'accesso in lettura e scrittura all'archiviazione e su come abilitare la memorizzazione nella cache per ottimizzare le prestazioni dei dischi di macchine virtuali di Azure.
 abstract: >

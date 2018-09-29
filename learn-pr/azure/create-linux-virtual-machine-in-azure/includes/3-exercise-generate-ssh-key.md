@@ -12,11 +12,11 @@ Per autenticare una connessione SSH è possibile usare due approcci: **nome uten
 > [!TIP]
 > Anche se SSH assicura una connessione crittografata, l'uso di password con le connessioni SSH rende vulnerabile la macchina virtuale agli attacchi di forza bruta delle password. Un metodo più sicuro e preferito per la connessione a una macchina virtuale Linux tramite SSH è l'uso di una coppia di chiavi pubblica-privata, anche note come chiavi SSH.
 
-Con una coppia di chiavi SSH, è possibile accedere a macchine virtuali di Azure basate su Linux senza una password. Si tratta di un approccio più sicuro, se si intende accedere alla macchina virtuale solo da pochi computer. Se è necessario essere in grado di accedere alla macchina virtuale Linux da svariate posizioni, una combinazione di nome utente e password potrebbe essere un approccio migliore. Esistono due parti di una coppia di chiavi SSH: una chiave pubblica e una chiave privata.
+Con una coppia di chiavi SSH è possibile accedere alle macchine virtuali di Azure basate su Linux senza una password. Si tratta di un approccio più sicuro, se si intende accedere alla macchina virtuale solo da pochi computer. Se è necessario essere in grado di accedere alla macchina virtuale Linux da svariate posizioni, una combinazione di nome utente e password potrebbe essere un approccio migliore. Esistono due parti di una coppia di chiavi SSH: una chiave pubblica e una chiave privata.
 
 * La chiave pubblica viene posizionata nella macchina virtuale Linux o in qualsiasi altro servizio che si vuole usare con la crittografia a chiave pubblica. Questa chiave può essere condivisa con chiunque.
 
-* La **chiave privata** è quella che si presenta per verificare la propria identità alla macchina virtuale Linux quando si crea una connessione SSH. Considerare questa chiave come un'informazione riservata e proteggerla come si farebbe con una password o altri dati privati.
+* La **chiave privata** è quella che si presenta per verificare la propria identità alla macchina virtuale Linux quando si stabilisce una connessione SSH. Considerare questa chiave come un'informazione riservata e proteggerla come si farebbe con una password o altri dati privati.
 
 È possibile usare la stessa singola coppia di chiavi pubblica e privata per accedere a più macchine virtuali e servizi di Azure.
 
@@ -40,7 +40,7 @@ Digitare questo comando in Cloud Shell:
 ssh-keygen -t rsa -b 2048
 ```
 
-Lo strumento chiederà i nomi dei file e una passphrase facoltativa. Accettare i valori predefiniti. Verranno creati due file, `id_rsa` e `id_rsa.pub`, nella directory `~/.ssh`. I file verranno sovrascritti, se esistono. Sono disponibili diverse opzioni che è possibile usare per specificare il nome del file o una passphrase ed evitare la richiesta.
+Lo strumento richiederà i nomi dei file e una passphrase facoltativa. Accettare i valori predefiniti. Verranno creati due file, `id_rsa` e `id_rsa.pub`, nella directory `~/.ssh`. I file verranno sovrascritti, se esistono. Sono disponibili diverse opzioni che è possibile usare per specificare il nome del file o una passphrase ed evitare la richiesta.
 
 ### <a name="private-key-passphrase"></a>Passphrase per la chiave privata
 
@@ -49,7 +49,7 @@ Lo strumento chiederà i nomi dei file e una passphrase facoltativa. Accettare i
 Quando si aggiunge una passphrase alla chiave SSH, la chiave privata viene crittografata con AES a 128 bit in modo che sia inutilizzabile senza la passphrase per decrittografarla.
 
 > [!IMPORTANT]
-> L'aggiunta di una passphrase è **fortemente** consigliata. Se un utente malintenzionato rubasse una chiave privata priva di passphrase, potrebbe usarla per accedere ai server che hanno la chiave pubblica corrispondente. Se la chiave privata è protetta da una passphrase, l'utente malintenzionato non potrà usarla. Ciò offre un livello di sicurezza aggiuntivo all'infrastruttura in Azure.
+> L'aggiunta di una passphrase è **fortemente** consigliata. Se un utente malintenzionato rubasse una chiave privata priva di passphrase, potrebbe usarla per accedere ai server che hanno la chiave pubblica corrispondente. Se la chiave privata è protetta da una passphrase, l'utente malintenzionato non potrà usarla. Si tratta di un livello di sicurezza aggiuntivo per l'infrastruttura in Azure.
 
 L'esempio seguente illustra come impostare la passphrase. Non è necessario eseguire questo comando (sebbene sia possibile):
 
