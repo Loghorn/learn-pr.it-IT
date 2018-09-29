@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-azure-db-for-postgresql.creating-postgresql-db-server-via-azure-cli
-title: <span data-ttu-id="f773b-101">Creare un server di Database di Azure per PostgreSQL usando l'interfaccia della riga di comando di Azure</span><span class="sxs-lookup"><span data-stu-id="f773b-101">Create an Azure Database for PostgreSQL server using the Azure CLI</span></span>
+title: <span data-ttu-id="4a30c-101">Creare un server di Database di Azure per PostgreSQL usando l'interfaccia della riga di comando di Azure</span><span class="sxs-lookup"><span data-stu-id="4a30c-101">Create an Azure Database for PostgreSQL server using the Azure CLI</span></span>
 metadata:
-  title: <span data-ttu-id="f773b-102">Creare un server di Database di Azure per PostgreSQL usando l'interfaccia della riga di comando di Azure</span><span class="sxs-lookup"><span data-stu-id="f773b-102">Create an Azure Database for PostgreSQL server using the Azure CLI</span></span>
-  description: <span data-ttu-id="f773b-103">La creazione di un singolo server di Database di Azure per PostgreSQL tramite il portale di Azure è semplice.</span><span class="sxs-lookup"><span data-stu-id="f773b-103">Creating a single Azure Database for PostgreSQL server using the Azure portal is easy.</span></span> <span data-ttu-id="f773b-104">La creazione di più database e l'esecuzione delle operazioni di manutenzione usando solo il portale potrebbero risultare noiose.</span><span class="sxs-lookup"><span data-stu-id="f773b-104">Creating multiple databases and running ongoing maintenance using only the portal may become tedious.</span></span> <span data-ttu-id="f773b-105">Per automatizzare le attività di gestione verrà usata l'interfaccia della riga di comando di Azure.</span><span class="sxs-lookup"><span data-stu-id="f773b-105">You'll use the Azure CLI when you want to automate management tasks.</span></span>
+  title: <span data-ttu-id="4a30c-102">Creare un server di Database di Azure per PostgreSQL usando l'interfaccia della riga di comando di Azure</span><span class="sxs-lookup"><span data-stu-id="4a30c-102">Create an Azure Database for PostgreSQL server using the Azure CLI</span></span>
+  description: <span data-ttu-id="4a30c-103">La creazione di un singolo server di Database di Azure per PostgreSQL tramite il portale di Azure è semplice.</span><span class="sxs-lookup"><span data-stu-id="4a30c-103">Creating a single Azure Database for PostgreSQL server using the Azure portal is easy.</span></span> <span data-ttu-id="4a30c-104">La creazione di più database e l'esecuzione delle operazioni di manutenzione usando solo il portale potrebbero risultare noiose.</span><span class="sxs-lookup"><span data-stu-id="4a30c-104">Creating multiple databases and running ongoing maintenance using only the portal may become tedious.</span></span> <span data-ttu-id="4a30c-105">Per automatizzare le attività di gestione verrà usata l'interfaccia della riga di comando di Azure.</span><span class="sxs-lookup"><span data-stu-id="4a30c-105">You'll use the Azure CLI when you want to automate management tasks.</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: ef13f91bd2b6d6b97d2f0e553f7da7dd786bc0d2
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46343220"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47133416"
 durationInMinutes: 7
 content: '[!include[](includes/5-creating-postgresql-db-server-via-azure-cli.md)]'

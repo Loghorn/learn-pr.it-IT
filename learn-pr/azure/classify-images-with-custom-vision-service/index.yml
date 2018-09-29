@@ -9,11 +9,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: e18c910278d54d4c63d1eebc2c4da2bac5af869e
-  ms.sourcegitcommit: 58e9d7fbb111af9b27ed819e4b79ba4a4e6e8a9c
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/21/2018
-  ms.locfileid: "46513435"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47135993"
 title: Classificare le immagini con il Servizio visione artificiale personalizzato Microsoft
 summary: Creare, eseguire il training e il test di un modello di classificazione delle immagini personalizzate usando il Servizio visione artificiale personalizzato per identificare in modo accurato i dipinti di artisti famosi.
 abstract: "In questo modulo verrà descritto come:\n- Creare un progetto del Servizio visione artificiale personalizzato\n- Training di un modello del Servizio visione artificiale personalizzato con immagini con tag\n- Test di un modello del Servizio visione artificiale personalizzato\n- Chiamare l'endpoint di stima del modello personalizzato tramite HTTP \n"

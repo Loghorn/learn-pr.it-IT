@@ -9,11 +9,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: b0b4a1951f2dbcfa12ffd0c726e9e8930b44259f
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46338490"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47132040"
 title: Allineare i requisiti ai tipi di cloud e ai modelli di servizio in Azure
 summary: 'Azure supporta tre approcci alla distribuzione delle risorse cloud: cloud pubblico, privato e ibrido. La selezione di una di queste opzioni cambia vari fattori dei servizi trasferiti in Azure, tra cui costi, requisiti di manutenzione e protezione. In questo modulo verranno illustrati i tre tipi per prendere una decisione consapevole sul tipo da usare per i propri servizi. Verranno anche illustrati i modelli di servizio supportati da Azure che consentono di determinare con quali servizi iniziare quando si pianifica una distribuzione di Azure.'
 abstract: >

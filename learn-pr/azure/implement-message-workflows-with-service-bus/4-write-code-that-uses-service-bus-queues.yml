@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.implement-message-workflows-with-service-bus.4-write-code-that-uses-service-bus-queues
-title: <span data-ttu-id="11253-101">Scrivere codice che usa le code del bus di servizio</span><span class="sxs-lookup"><span data-stu-id="11253-101">Write code that uses Service Bus queues</span></span>
+title: <span data-ttu-id="1a363-101">Scrivere codice che usa le code del bus di servizio</span><span class="sxs-lookup"><span data-stu-id="1a363-101">Write code that uses Service Bus queues</span></span>
 metadata:
-  title: <span data-ttu-id="11253-102">Scrivere codice che usa le code del bus di servizio</span><span class="sxs-lookup"><span data-stu-id="11253-102">Write code that uses Service Bus queues</span></span>
-  description: <span data-ttu-id="11253-103">Scrivere codice che usa le code del bus di servizio</span><span class="sxs-lookup"><span data-stu-id="11253-103">Write code that uses Service Bus queues</span></span>
+  title: <span data-ttu-id="1a363-102">Scrivere codice che usa le code del bus di servizio</span><span class="sxs-lookup"><span data-stu-id="1a363-102">Write code that uses Service Bus queues</span></span>
+  description: <span data-ttu-id="1a363-103">Scrivere codice che usa le code del bus di servizio</span><span class="sxs-lookup"><span data-stu-id="1a363-103">Write code that uses Service Bus queues</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: d1a79a42e165dbf88ffaf1404788f2544034f15d
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46342339"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47134481"
 durationInMinutes: 5
 content: '[!include[](includes/4-write-code-that-uses-service-bus-queues.md)]'

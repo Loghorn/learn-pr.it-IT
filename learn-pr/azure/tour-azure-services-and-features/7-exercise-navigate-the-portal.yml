@@ -1,20 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.azure-services-features.7-exercise-navigate-the-portal
-title: <span data-ttu-id="b761b-101">Usare il portale di Azure</span><span class="sxs-lookup"><span data-stu-id="b761b-101">Use the Azure portal</span></span>
+title: <span data-ttu-id="102cb-101">Usare il portale di Azure</span><span class="sxs-lookup"><span data-stu-id="102cb-101">Use the Azure portal</span></span>
 metadata:
-  title: <span data-ttu-id="b761b-102">Usare il portale di Azure</span><span class="sxs-lookup"><span data-stu-id="b761b-102">Use the Azure portal</span></span>
-  description: <span data-ttu-id="b761b-103">Usare il portale di Azure</span><span class="sxs-lookup"><span data-stu-id="b761b-103">Use the Azure portal</span></span>
+  title: <span data-ttu-id="102cb-102">Usare il portale di Azure</span><span class="sxs-lookup"><span data-stu-id="102cb-102">Use the Azure portal</span></span>
+  description: <span data-ttu-id="102cb-103">Usare il portale di Azure</span><span class="sxs-lookup"><span data-stu-id="102cb-103">Use the Azure portal</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 5cbb6397df8ffc50124eea5912f781a721d983e5
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46341042"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47134097"
 azureSandbox: true
 durationInMinutes: 10
 content: '[!include[](includes/7-exercise-navigate-the-portal.md)]'

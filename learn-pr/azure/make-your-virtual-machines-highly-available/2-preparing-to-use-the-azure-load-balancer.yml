@@ -1,49 +1,49 @@
 ### YamlMime:ModuleUnit
 uid: learn.make-your-virtual-machines-highly-available.2-preparing-to-use-the-azure-load-balancer
-title: <span data-ttu-id="79365-101">Preparazione per l'uso di Azure Load Balancer</span><span class="sxs-lookup"><span data-stu-id="79365-101">Preparing to use Azure Load Balancer</span></span>
+title: <span data-ttu-id="74900-101">Preparazione per l'uso di Azure Load Balancer</span><span class="sxs-lookup"><span data-stu-id="74900-101">Preparing to use Azure Load Balancer</span></span>
 metadata:
-  title: <span data-ttu-id="79365-102">Preparazione per l'uso di Azure Load Balancer</span><span class="sxs-lookup"><span data-stu-id="79365-102">Preparing to use Azure Load Balancer</span></span>
-  description: <span data-ttu-id="79365-103">Preparazione per l'uso di Azure Load Balancer</span><span class="sxs-lookup"><span data-stu-id="79365-103">Preparing to use Azure Load Balancer</span></span>
+  title: <span data-ttu-id="74900-102">Preparazione per l'uso di Azure Load Balancer</span><span class="sxs-lookup"><span data-stu-id="74900-102">Preparing to use Azure Load Balancer</span></span>
+  description: <span data-ttu-id="74900-103">Preparazione per l'uso di Azure Load Balancer</span><span class="sxs-lookup"><span data-stu-id="74900-103">Preparing to use Azure Load Balancer</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: d7aca1982234b34ec8ab8f293d5c15fb15e9c8d0
-  ms.sourcegitcommit: 58e9d7fbb111af9b27ed819e4b79ba4a4e6e8a9c
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/21/2018
-  ms.locfileid: "46513240"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47136407"
 durationInMinutes: 5
 content: >
   [!include[](includes/2-preparing-to-use-the-azure-load-balancer.md)]
 quiz:
-  title: <span data-ttu-id="79365-104">Verifica delle conoscenze</span><span class="sxs-lookup"><span data-stu-id="79365-104">Check your knowledge</span></span>
+  title: <span data-ttu-id="74900-104">Verifica delle conoscenze</span><span class="sxs-lookup"><span data-stu-id="74900-104">Check your knowledge</span></span>
   questions:
-  - content: <span data-ttu-id="79365-105">Vero o Falso.</span><span class="sxs-lookup"><span data-stu-id="79365-105">True or False.</span></span> <span data-ttu-id="79365-106">Azure Load Balancer assicura che tutti i pacchetti di un client vengano inviati alla stessa istanza di macchina virtuale back-end.</span><span class="sxs-lookup"><span data-stu-id="79365-106">Azure Load Balancer ensures that all packets from a client are sent to the same backend VM instance.</span></span>
+  - content: <span data-ttu-id="74900-105">Vero o Falso.</span><span class="sxs-lookup"><span data-stu-id="74900-105">True or False.</span></span> <span data-ttu-id="74900-106">Azure Load Balancer assicura che tutti i pacchetti di un client vengano inviati alla stessa istanza di macchina virtuale back-end.</span><span class="sxs-lookup"><span data-stu-id="74900-106">Azure Load Balancer ensures that all packets from a client are sent to the same backend VM instance.</span></span>
     choices:
-    - content: <span data-ttu-id="79365-107">Vero</span><span class="sxs-lookup"><span data-stu-id="79365-107">True</span></span>
+    - content: <span data-ttu-id="74900-107">Vero</span><span class="sxs-lookup"><span data-stu-id="74900-107">True</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="79365-108">Azure Load Balancer usa un hash per identificare il client dall'indirizzo IP e dalla porta di origine e di destinazione.</span><span class="sxs-lookup"><span data-stu-id="79365-108">Azure Load Balancer uses a hash to identify the client from the source and destination IP address and port.</span></span>
-    - content: <span data-ttu-id="79365-109">Falso</span><span class="sxs-lookup"><span data-stu-id="79365-109">False</span></span>
+      correctExplanation: <span data-ttu-id="74900-108">Azure Load Balancer usa un hash per identificare il client dall'indirizzo IP e dalla porta di origine e di destinazione.</span><span class="sxs-lookup"><span data-stu-id="74900-108">Azure Load Balancer uses a hash to identify the client from the source and destination IP address and port.</span></span>
+    - content: <span data-ttu-id="74900-109">Falso</span><span class="sxs-lookup"><span data-stu-id="74900-109">False</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="79365-110">Azure Load Balancer usa un hash per identificare il client dall'indirizzo IP e dalla porta di origine e di destinazione.</span><span class="sxs-lookup"><span data-stu-id="79365-110">Azure Load Balancer uses a hash to identify the client from the source and destination IP address and port.</span></span>
-  - content: <span data-ttu-id="79365-111">Uno dei motivi per scegliere lo SKU Standard rispetto allo SKU Basic:</span><span class="sxs-lookup"><span data-stu-id="79365-111">One reason to choose the Standard SKU over the Basic SKU is:</span></span>
+      incorrectExplanation: <span data-ttu-id="74900-110">Azure Load Balancer usa un hash per identificare il client dall'indirizzo IP e dalla porta di origine e di destinazione.</span><span class="sxs-lookup"><span data-stu-id="74900-110">Azure Load Balancer uses a hash to identify the client from the source and destination IP address and port.</span></span>
+  - content: <span data-ttu-id="74900-111">Uno dei motivi per scegliere lo SKU Standard rispetto allo SKU Basic:</span><span class="sxs-lookup"><span data-stu-id="74900-111">One reason to choose the Standard SKU over the Basic SKU is:</span></span>
     choices:
-    - content: <span data-ttu-id="79365-112">A differenza dello SKU Basic, lo SKU standard può indirizzare il traffico a un set di disponibilità della macchina virtuale.</span><span class="sxs-lookup"><span data-stu-id="79365-112">Standard SKU can direct traffic to a VM availability set, while Basic cannot.</span></span>
+    - content: <span data-ttu-id="74900-112">A differenza dello SKU Basic, lo SKU standard può indirizzare il traffico a un set di disponibilità della macchina virtuale.</span><span class="sxs-lookup"><span data-stu-id="74900-112">Standard SKU can direct traffic to a VM availability set, while Basic cannot.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="79365-113">Sebbene entrambi gli SKU Basic e Standard supportino l'indirizzamento del traffico a un set di disponibilità, gli SKU Standard possono utilizzare più set di disponibilità.</span><span class="sxs-lookup"><span data-stu-id="79365-113">Both Basic and Standard SKUs support directing traffic to an availability set - however Standard SKUs can use more than one.</span></span>
-    - content: <span data-ttu-id="79365-114">Lo SKU Standard supporta il traffico protetto (HTTPS).</span><span class="sxs-lookup"><span data-stu-id="79365-114">Standard SKU support secure traffic (HTTPS).</span></span>
+      incorrectExplanation: <span data-ttu-id="74900-113">Sebbene entrambi gli SKU Basic e Standard supportino l'indirizzamento del traffico a un set di disponibilità, gli SKU Standard possono utilizzare più set di disponibilità.</span><span class="sxs-lookup"><span data-stu-id="74900-113">Both Basic and Standard SKUs support directing traffic to an availability set - however Standard SKUs can use more than one.</span></span>
+    - content: <span data-ttu-id="74900-114">Lo SKU Standard supporta il traffico protetto (HTTPS).</span><span class="sxs-lookup"><span data-stu-id="74900-114">Standard SKU support secure traffic (HTTPS).</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="79365-115">Lo SKU Basic consente di proteggere solo il traffico TCP e HTTP, mentre lo SKU Standard aggiunge il supporto HTTPS.</span><span class="sxs-lookup"><span data-stu-id="79365-115">Basic SKU can only protect TCP and HTTP traffic; Standard SKU adds HTTPS support.</span></span>
-    - content: <span data-ttu-id="79365-116">A differenza dello SKU Basic, lo SKU Standard supporta il monitoraggio dei probe di integrità dei server delle macchine virtuali back-end.</span><span class="sxs-lookup"><span data-stu-id="79365-116">Standard SKU supports health probe monitoring of the backend VM servers, Basic does not.</span></span>
+      correctExplanation: <span data-ttu-id="74900-115">Lo SKU Basic consente di proteggere solo il traffico TCP e HTTP, mentre lo SKU Standard aggiunge il supporto HTTPS.</span><span class="sxs-lookup"><span data-stu-id="74900-115">Basic SKU can only protect TCP and HTTP traffic; Standard SKU adds HTTPS support.</span></span>
+    - content: <span data-ttu-id="74900-116">A differenza dello SKU Basic, lo SKU Standard supporta il monitoraggio dei probe di integrità dei server delle macchine virtuali back-end.</span><span class="sxs-lookup"><span data-stu-id="74900-116">Standard SKU supports health probe monitoring of the backend VM servers, Basic does not.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="79365-117">I probe di integrità vengono usati in entrambi gli SKU e sono un requisito per la configurazione di Azure Load Balancer.</span><span class="sxs-lookup"><span data-stu-id="79365-117">Health probes are used in both SKUs and are a requirement to setup Azure Load Balancer.</span></span>
-  - content: <span data-ttu-id="79365-118">Vero o Falso.</span><span class="sxs-lookup"><span data-stu-id="79365-118">True or False.</span></span> <span data-ttu-id="79365-119">Azure Load Balancer può essere usato per i servizi pubblici o per i servizi interni di Azure usati su una rete VPN.</span><span class="sxs-lookup"><span data-stu-id="79365-119">Azure Load Balancer can be used for public-facing services, or for internal Azure services you use over a VPN.</span></span>
+      incorrectExplanation: <span data-ttu-id="74900-117">I probe di integrità vengono usati in entrambi gli SKU e sono un requisito per la configurazione di Azure Load Balancer.</span><span class="sxs-lookup"><span data-stu-id="74900-117">Health probes are used in both SKUs and are a requirement to setup Azure Load Balancer.</span></span>
+  - content: <span data-ttu-id="74900-118">Vero o Falso.</span><span class="sxs-lookup"><span data-stu-id="74900-118">True or False.</span></span> <span data-ttu-id="74900-119">Azure Load Balancer può essere usato per i servizi pubblici o per i servizi interni di Azure usati su una rete VPN.</span><span class="sxs-lookup"><span data-stu-id="74900-119">Azure Load Balancer can be used for public-facing services, or for internal Azure services you use over a VPN.</span></span>
     choices:
-    - content: <span data-ttu-id="79365-120">Vero</span><span class="sxs-lookup"><span data-stu-id="79365-120">True</span></span>
+    - content: <span data-ttu-id="74900-120">Vero</span><span class="sxs-lookup"><span data-stu-id="74900-120">True</span></span>
       isCorrect: true
-      incorrectExplanation: <span data-ttu-id="79365-121">Azure Load Balancer supporta le configurazioni pubbliche e interne.</span><span class="sxs-lookup"><span data-stu-id="79365-121">Azure Load Balancer supports both public and internal configurations.</span></span>
-    - content: <span data-ttu-id="79365-122">Falso</span><span class="sxs-lookup"><span data-stu-id="79365-122">False</span></span>
+      incorrectExplanation: <span data-ttu-id="74900-121">Azure Load Balancer supporta le configurazioni pubbliche e interne.</span><span class="sxs-lookup"><span data-stu-id="74900-121">Azure Load Balancer supports both public and internal configurations.</span></span>
+    - content: <span data-ttu-id="74900-122">Falso</span><span class="sxs-lookup"><span data-stu-id="74900-122">False</span></span>
       isCorrect: false

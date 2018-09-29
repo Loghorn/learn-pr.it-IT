@@ -9,11 +9,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 4adcea550809e51006a4eee0bd570afc8a7b1e91
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46353245"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47131800"
 title: Progettare per la sicurezza in Azure
 summary: Informazioni su come incorporare la sicurezza nella progettazione dell'architettura e sugli strumenti che mette a disposizione Azure per la creazione di un ambiente sicuro a tutti i livelli dell'architettura.
 abstract: >

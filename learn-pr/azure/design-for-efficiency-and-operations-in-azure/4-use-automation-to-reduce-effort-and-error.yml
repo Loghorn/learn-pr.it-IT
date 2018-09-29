@@ -1,45 +1,45 @@
 ### YamlMime:ModuleUnit
 uid: learn.design-for-efficiency-and-operations.4-use-automation-to-reduce-effort-and-error
-title: <span data-ttu-id="e072a-101">Usare l'automazione per ridurre il lavoro richiesto e gli errori</span><span class="sxs-lookup"><span data-stu-id="e072a-101">Use automation to reduce effort and error</span></span>
+title: <span data-ttu-id="7d534-101">Usare l'automazione per ridurre il lavoro richiesto e gli errori</span><span class="sxs-lookup"><span data-stu-id="7d534-101">Use automation to reduce effort and error</span></span>
 metadata:
-  title: <span data-ttu-id="e072a-102">Usare l'automazione per ridurre il lavoro richiesto e gli errori</span><span class="sxs-lookup"><span data-stu-id="e072a-102">Use automation to reduce effort and error</span></span>
-  description: <span data-ttu-id="e072a-103">In questa unità verrà illustrato come usare l'automazione per ridurre il lavoro richiesto e gli errori</span><span class="sxs-lookup"><span data-stu-id="e072a-103">In this unit, we'll discuss how to use automation to reduce effort and error</span></span>
+  title: <span data-ttu-id="7d534-102">Usare l'automazione per ridurre il lavoro richiesto e gli errori</span><span class="sxs-lookup"><span data-stu-id="7d534-102">Use automation to reduce effort and error</span></span>
+  description: <span data-ttu-id="7d534-103">In questa unità verrà illustrato come usare l'automazione per ridurre il lavoro richiesto e gli errori</span><span class="sxs-lookup"><span data-stu-id="7d534-103">In this unit, we'll discuss how to use automation to reduce effort and error</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 7332287c8f44c7779341680a81b8dec39dcfa603
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46340947"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47133947"
 durationInMinutes: 12
 content: >
   [!include[](includes/4-use-automation-to-reduce-effort-and-error.md)]
 quiz:
-  title: <span data-ttu-id="e072a-104">Verificare le proprie conoscenze</span><span class="sxs-lookup"><span data-stu-id="e072a-104">Check your knowledge</span></span>
+  title: <span data-ttu-id="7d534-104">Verificare le proprie conoscenze</span><span class="sxs-lookup"><span data-stu-id="7d534-104">Check your knowledge</span></span>
   questions:
-  - content: <span data-ttu-id="e072a-105">Quale delle seguenti funzionalità non può essere usata per automatizzare la distribuzione dell'infrastruttura?</span><span class="sxs-lookup"><span data-stu-id="e072a-105">Which of the following cannot be used to automate infrastructure deployment?</span></span>
+  - content: <span data-ttu-id="7d534-105">Quale delle seguenti funzionalità non può essere usata per automatizzare la distribuzione dell'infrastruttura?</span><span class="sxs-lookup"><span data-stu-id="7d534-105">Which of the following cannot be used to automate infrastructure deployment?</span></span>
     choices:
-    - content: <span data-ttu-id="e072a-106">Azure PowerShell</span><span class="sxs-lookup"><span data-stu-id="e072a-106">Azure PowerShell</span></span>
+    - content: <span data-ttu-id="7d534-106">Azure PowerShell</span><span class="sxs-lookup"><span data-stu-id="7d534-106">Azure PowerShell</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="e072a-107">Con Azure PowerShell è possibile creare script per automatizzare la distribuzione dell'infrastruttura.</span><span class="sxs-lookup"><span data-stu-id="e072a-107">With Azure PowerShell you can create scripts to automate the deployment of infrastructure.</span></span>
-    - content: <span data-ttu-id="e072a-108">Interfaccia della riga di comando di Azure</span><span class="sxs-lookup"><span data-stu-id="e072a-108">The Azure CLI</span></span>
+      incorrectExplanation: <span data-ttu-id="7d534-107">Con Azure PowerShell è possibile creare script per automatizzare la distribuzione dell'infrastruttura.</span><span class="sxs-lookup"><span data-stu-id="7d534-107">With Azure PowerShell you can create scripts to automate the deployment of infrastructure.</span></span>
+    - content: <span data-ttu-id="7d534-108">Interfaccia della riga di comando di Azure</span><span class="sxs-lookup"><span data-stu-id="7d534-108">The Azure CLI</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="e072a-109">Con l'interfaccia della riga di comando di Azure è possibile creare script per automatizzare la distribuzione dell'infrastruttura.</span><span class="sxs-lookup"><span data-stu-id="e072a-109">With the Azure CLI you can create scripts to automate the deployment of infrastructure.</span></span>
-    - content: <span data-ttu-id="e072a-110">Modelli di Gestione risorse</span><span class="sxs-lookup"><span data-stu-id="e072a-110">Resource Manager templates</span></span>
+      incorrectExplanation: <span data-ttu-id="7d534-109">Con l'interfaccia della riga di comando di Azure è possibile creare script per automatizzare la distribuzione dell'infrastruttura.</span><span class="sxs-lookup"><span data-stu-id="7d534-109">With the Azure CLI you can create scripts to automate the deployment of infrastructure.</span></span>
+    - content: <span data-ttu-id="7d534-110">Modelli di Gestione risorse</span><span class="sxs-lookup"><span data-stu-id="7d534-110">Resource Manager templates</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="e072a-111">Con i modelli di Resource Manager è possibile automatizzare completamente la distribuzione dell'infrastruttura.</span><span class="sxs-lookup"><span data-stu-id="e072a-111">With Resource manager templates you can fully automate the deployment of infrastructure.</span></span>
-    - content: <span data-ttu-id="e072a-112">Application Insights</span><span class="sxs-lookup"><span data-stu-id="e072a-112">Application Insights</span></span>
+      incorrectExplanation: <span data-ttu-id="7d534-111">Con i modelli di Resource Manager è possibile automatizzare completamente la distribuzione dell'infrastruttura.</span><span class="sxs-lookup"><span data-stu-id="7d534-111">With Resource manager templates you can fully automate the deployment of infrastructure.</span></span>
+    - content: <span data-ttu-id="7d534-112">Application Insights</span><span class="sxs-lookup"><span data-stu-id="7d534-112">Application Insights</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="e072a-113">Application Insights semplifica il monitoraggio e l'analisi dell'applicazione, ma non offre automazione.</span><span class="sxs-lookup"><span data-stu-id="e072a-113">Application Insights helps you monitor and analyze your application, it does not offer automation.</span></span>
-  - content: "<span data-ttu-id=\"e072a-114\">Vero o falso: È possibile usare Automazione di Azure per automatizzare l'avvio/arresto delle macchine virtuali negli orari di minore attività.</span><span class=\"sxs-lookup\"><span data-stu-id=\"e072a-114\">True of false: Azure Automation could be used to automate the start/stop of virtual machines in off-hours.</span></span>"
+      correctExplanation: <span data-ttu-id="7d534-113">Application Insights semplifica il monitoraggio e l'analisi dell'applicazione, ma non offre automazione.</span><span class="sxs-lookup"><span data-stu-id="7d534-113">Application Insights helps you monitor and analyze your application, it does not offer automation.</span></span>
+  - content: "<span data-ttu-id=\"7d534-114\">Vero o falso: È possibile usare Automazione di Azure per automatizzare l'avvio/arresto delle macchine virtuali negli orari di minore attività.</span><span class=\"sxs-lookup\"><span data-stu-id=\"7d534-114\">True of false: Azure Automation could be used to automate the start/stop of virtual machines in off-hours.</span></span>"
     choices:
-    - content: <span data-ttu-id="e072a-115">Vero</span><span class="sxs-lookup"><span data-stu-id="e072a-115">True</span></span>
+    - content: <span data-ttu-id="7d534-115">Vero</span><span class="sxs-lookup"><span data-stu-id="7d534-115">True</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="e072a-116">Automazione di Azure è una soluzione ideale per automatizzare l'avvio/arresto delle macchine virtuali negli orari di minore attività.</span><span class="sxs-lookup"><span data-stu-id="e072a-116">Azure Automation is a great way to automate the start/stop of virtual machines in off-hours.</span></span>
-    - content: <span data-ttu-id="e072a-117">Falso</span><span class="sxs-lookup"><span data-stu-id="e072a-117">False</span></span>
+      correctExplanation: <span data-ttu-id="7d534-116">Automazione di Azure è una soluzione ideale per automatizzare l'avvio/arresto delle macchine virtuali negli orari di minore attività.</span><span class="sxs-lookup"><span data-stu-id="7d534-116">Azure Automation is a great way to automate the start/stop of virtual machines in off-hours.</span></span>
+    - content: <span data-ttu-id="7d534-117">Falso</span><span class="sxs-lookup"><span data-stu-id="7d534-117">False</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="e072a-118">Automazione di Azure può automatizzare l'avvio/arresto delle macchine virtuali in base a una pianificazione.</span><span class="sxs-lookup"><span data-stu-id="e072a-118">Azure Automation can automate the start/stop of virtual machines on a schedule.</span></span>
+      incorrectExplanation: <span data-ttu-id="7d534-118">Automazione di Azure può automatizzare l'avvio/arresto delle macchine virtuali in base a una pianificazione.</span><span class="sxs-lookup"><span data-stu-id="7d534-118">Azure Automation can automate the start/stop of virtual machines on a schedule.</span></span>

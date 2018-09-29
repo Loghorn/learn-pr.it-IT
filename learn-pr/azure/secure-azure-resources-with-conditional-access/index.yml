@@ -9,11 +9,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 7cd15f35aa3d15b525edd915b368f454520aa6f6
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46339035"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47132461"
 title: Proteggere le risorse di Azure con l'accesso condizionale
 summary: È necessario trovare il giusto compromesso tra sicurezza e accessibilità. La funzionalità di accesso condizionale di Azure Active Directory offre un buon compromesso tra le due. Informazioni su come implementare i criteri di accesso condizionale usando Azure Active Directory.
 abstract: >

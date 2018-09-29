@@ -1,45 +1,45 @@
 ### YamlMime:ModuleUnit
 uid: learn.design-for-security.4-infrastructure-protection
-title: <span data-ttu-id="761a6-101">Protezione dell'infrastruttura</span><span class="sxs-lookup"><span data-stu-id="761a6-101">Infrastructure protection</span></span>
+title: <span data-ttu-id="19bac-101">Protezione dell'infrastruttura</span><span class="sxs-lookup"><span data-stu-id="19bac-101">Infrastructure protection</span></span>
 metadata:
-  title: <span data-ttu-id="761a6-102">Protezione dell'infrastruttura</span><span class="sxs-lookup"><span data-stu-id="761a6-102">Infrastructure protection</span></span>
-  description: <span data-ttu-id="761a6-103">In questa unità viene spiegato come proteggere l'accesso all'infrastruttura</span><span class="sxs-lookup"><span data-stu-id="761a6-103">In this unit we'll discuss how to protect access to your infrastructure</span></span>
+  title: <span data-ttu-id="19bac-102">Protezione dell'infrastruttura</span><span class="sxs-lookup"><span data-stu-id="19bac-102">Infrastructure protection</span></span>
+  description: <span data-ttu-id="19bac-103">In questa unità viene spiegato come proteggere l'accesso all'infrastruttura</span><span class="sxs-lookup"><span data-stu-id="19bac-103">In this unit we'll discuss how to protect access to your infrastructure</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 0a765eaf5c91cc055266d283760bf94f6ba1efa7
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46340995"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47135129"
 durationInMinutes: 10
 content: >
   [!include[](includes/4-infrastructure-protection.md)]
 quiz:
-  title: <span data-ttu-id="761a6-104">Verificare le proprie conoscenze</span><span class="sxs-lookup"><span data-stu-id="761a6-104">Check your knowledge</span></span>
+  title: <span data-ttu-id="19bac-104">Verificare le proprie conoscenze</span><span class="sxs-lookup"><span data-stu-id="19bac-104">Check your knowledge</span></span>
   questions:
-  - content: <span data-ttu-id="761a6-105">Tra tutti gli ambiti seguenti a quale non può essere applicato il controllo degli accessi in base al ruolo?</span><span class="sxs-lookup"><span data-stu-id="761a6-105">Azure role-based access control can be applied to all but which of the following scopes?</span></span>
+  - content: <span data-ttu-id="19bac-105">Tra tutti gli ambiti seguenti a quale non può essere applicato il controllo degli accessi in base al ruolo?</span><span class="sxs-lookup"><span data-stu-id="19bac-105">Azure role-based access control can be applied to all but which of the following scopes?</span></span>
     choices:
-    - content: <span data-ttu-id="761a6-106">Sottoscrizione</span><span class="sxs-lookup"><span data-stu-id="761a6-106">Subscription</span></span>
+    - content: <span data-ttu-id="19bac-106">Sottoscrizione</span><span class="sxs-lookup"><span data-stu-id="19bac-106">Subscription</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="761a6-107">Il controllo degli accessi in base al ruolo può essere applicato solo a risorse di Azure.</span><span class="sxs-lookup"><span data-stu-id="761a6-107">Role-based access control can only be applied to Azure resources.</span></span>
-    - content: <span data-ttu-id="761a6-108">Gruppo di risorse</span><span class="sxs-lookup"><span data-stu-id="761a6-108">Resource group</span></span>
+      incorrectExplanation: <span data-ttu-id="19bac-107">Il controllo degli accessi in base al ruolo può essere applicato solo a risorse di Azure.</span><span class="sxs-lookup"><span data-stu-id="19bac-107">Role-based access control can only be applied to Azure resources.</span></span>
+    - content: <span data-ttu-id="19bac-108">Gruppo di risorse</span><span class="sxs-lookup"><span data-stu-id="19bac-108">Resource group</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="761a6-109">Il controllo degli accessi in base al ruolo può essere applicato solo a risorse di Azure.</span><span class="sxs-lookup"><span data-stu-id="761a6-109">Role-based access control can only be applied to Azure resources.</span></span>
-    - content: <span data-ttu-id="761a6-110">File system Linux</span><span class="sxs-lookup"><span data-stu-id="761a6-110">Linux filesystem</span></span>
+      incorrectExplanation: <span data-ttu-id="19bac-109">Il controllo degli accessi in base al ruolo può essere applicato solo a risorse di Azure.</span><span class="sxs-lookup"><span data-stu-id="19bac-109">Role-based access control can only be applied to Azure resources.</span></span>
+    - content: <span data-ttu-id="19bac-110">File system Linux</span><span class="sxs-lookup"><span data-stu-id="19bac-110">Linux filesystem</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="761a6-111">Il controllo degli accessi in base al ruolo può essere applicato solo a risorse di Azure.</span><span class="sxs-lookup"><span data-stu-id="761a6-111">Role-based access control can only be applied to Azure resources.</span></span>
-    - content: <span data-ttu-id="761a6-112">Risorsa</span><span class="sxs-lookup"><span data-stu-id="761a6-112">Resource</span></span>
+      correctExplanation: <span data-ttu-id="19bac-111">Il controllo degli accessi in base al ruolo può essere applicato solo a risorse di Azure.</span><span class="sxs-lookup"><span data-stu-id="19bac-111">Role-based access control can only be applied to Azure resources.</span></span>
+    - content: <span data-ttu-id="19bac-112">Risorsa</span><span class="sxs-lookup"><span data-stu-id="19bac-112">Resource</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="761a6-113">Il controllo degli accessi in base al ruolo può essere applicato solo a risorse di Azure.</span><span class="sxs-lookup"><span data-stu-id="761a6-113">Role-based access control can only be applied to Azure resources.</span></span>
-  - content: "<span data-ttu-id=\"761a6-114\">Vero o falso: È possibile assegnare a una macchina virtuale un'identità gestita per risorse di Azure cui concedere il diritto di avviare e arrestare altre macchine virtuali.</span><span class=\"sxs-lookup\"><span data-stu-id=\"761a6-114\">True or false: a managed identity for Azure resources could be assigned to a virtual machine to give it rights to start and stop other virtual machines.</span></span>"
+      incorrectExplanation: <span data-ttu-id="19bac-113">Il controllo degli accessi in base al ruolo può essere applicato solo a risorse di Azure.</span><span class="sxs-lookup"><span data-stu-id="19bac-113">Role-based access control can only be applied to Azure resources.</span></span>
+  - content: "<span data-ttu-id=\"19bac-114\">Vero o falso: È possibile assegnare a una macchina virtuale un'identità gestita per risorse di Azure cui concedere il diritto di avviare e arrestare altre macchine virtuali.</span><span class=\"sxs-lookup\"><span data-stu-id=\"19bac-114\">True or false: a managed identity for Azure resources could be assigned to a virtual machine to give it rights to start and stop other virtual machines.</span></span>"
     choices:
-    - content: <span data-ttu-id="761a6-115">Vero</span><span class="sxs-lookup"><span data-stu-id="761a6-115">True</span></span>
+    - content: <span data-ttu-id="19bac-115">Vero</span><span class="sxs-lookup"><span data-stu-id="19bac-115">True</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="761a6-116">Le identità gestite per risorse di Azure sono un metodo per assegnare un'identità ai servizi.</span><span class="sxs-lookup"><span data-stu-id="761a6-116">Managed identities for Azure resources is a method of assigning an identity to services.</span></span> <span data-ttu-id="761a6-117">Tramite questa assegnazione, è possibile concedere il controllo degli accessi in base al ruolo per la gestione dei servizi di Azure, come l'avvio e l'arresto di macchine virtuali.</span><span class="sxs-lookup"><span data-stu-id="761a6-117">Through this assignment, role-based access control can be granted to manage Azure services, such as starting and stopping virtual machines?</span></span>
-    - content: <span data-ttu-id="761a6-118">Falso</span><span class="sxs-lookup"><span data-stu-id="761a6-118">False</span></span>
+      correctExplanation: <span data-ttu-id="19bac-116">Le identità gestite per risorse di Azure sono un metodo per assegnare un'identità ai servizi.</span><span class="sxs-lookup"><span data-stu-id="19bac-116">Managed identities for Azure resources is a method of assigning an identity to services.</span></span> <span data-ttu-id="19bac-117">Tramite questa assegnazione, è possibile concedere il controllo degli accessi in base al ruolo per la gestione dei servizi di Azure, come l'avvio e l'arresto di macchine virtuali.</span><span class="sxs-lookup"><span data-stu-id="19bac-117">Through this assignment, role-based access control can be granted to manage Azure services, such as starting and stopping virtual machines?</span></span>
+    - content: <span data-ttu-id="19bac-118">Falso</span><span class="sxs-lookup"><span data-stu-id="19bac-118">False</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="761a6-119">Le identità gestite per risorse di Azure sono un metodo per assegnare un'identità ai servizi.</span><span class="sxs-lookup"><span data-stu-id="761a6-119">Managed identities for Azure resources is a method of assigning an identity to services.</span></span> <span data-ttu-id="761a6-120">Tramite questa assegnazione, è possibile concedere il controllo degli accessi in base al ruolo per la gestione dei servizi di Azure, come l'avvio e l'arresto di macchine virtuali.</span><span class="sxs-lookup"><span data-stu-id="761a6-120">Through this assignment, role-based access control can be granted to manage Azure services, such as starting and stopping virtual machines?</span></span>
+      incorrectExplanation: <span data-ttu-id="19bac-119">Le identità gestite per risorse di Azure sono un metodo per assegnare un'identità ai servizi.</span><span class="sxs-lookup"><span data-stu-id="19bac-119">Managed identities for Azure resources is a method of assigning an identity to services.</span></span> <span data-ttu-id="19bac-120">Tramite questa assegnazione, è possibile concedere il controllo degli accessi in base al ruolo per la gestione dei servizi di Azure, come l'avvio e l'arresto di macchine virtuali.</span><span class="sxs-lookup"><span data-stu-id="19bac-120">Through this assignment, role-based access control can be granted to manage Azure services, such as starting and stopping virtual machines?</span></span>

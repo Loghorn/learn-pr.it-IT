@@ -9,11 +9,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 1d96276e4adc74cbbbabb32733e24bc500c24376
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46343620"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47132296"
 title: Stimare i costi e ottimizzare la spesa per Azure
 summary: Il costo è uno degli aspetti più importanti del cloud e può avere conseguenze significative sull'azienda. Azure mette a disposizione diversi strumenti che aiutano a comprendere meglio la spesa per il cloud e alcune procedure consigliate che consentono di risparmiare denaro.
 abstract: >

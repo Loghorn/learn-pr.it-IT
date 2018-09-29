@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.classify-user-feedback-with-the-text-analytics-api.4-design-a-feedback-sorter
 metadata:
-  title: <span data-ttu-id="6370f-101">Progettare una soluzione di ordinamento feedback</span><span class="sxs-lookup"><span data-stu-id="6370f-101">Design a feedback sorter</span></span>
-  description: <span data-ttu-id="6370f-102">Si consideri uno scenario reale per i casi in cui l'analisi del sentiment potrebbe essere utile.</span><span class="sxs-lookup"><span data-stu-id="6370f-102">Let's consider a real-world scenario for times when sentiment analysis might come in handy.</span></span> <span data-ttu-id="6370f-103">Verrà descritto lo scenario e il modo in cui implementarlo usando Funzioni di Azure e l'API Analisi del testo.</span><span class="sxs-lookup"><span data-stu-id="6370f-103">Here we talk about the scenario and how to implement it using Azure Functions and the Text Analytics API.</span></span>
+  title: <span data-ttu-id="6d88b-101">Progettare una soluzione di ordinamento feedback</span><span class="sxs-lookup"><span data-stu-id="6d88b-101">Design a feedback sorter</span></span>
+  description: <span data-ttu-id="6d88b-102">Si consideri uno scenario reale per i casi in cui l'analisi del sentiment potrebbe essere utile.</span><span class="sxs-lookup"><span data-stu-id="6d88b-102">Let's consider a real-world scenario for times when sentiment analysis might come in handy.</span></span> <span data-ttu-id="6d88b-103">Verrà descritto lo scenario e il modo in cui implementarlo usando Funzioni di Azure e l'API Analisi del testo.</span><span class="sxs-lookup"><span data-stu-id="6d88b-103">Here we talk about the scenario and how to implement it using Azure Functions and the Text Analytics API.</span></span>
   ms.date: 09/24/2018
   author: AndrewJByrne
   ms.author: anbyrne
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 22644a1f878df9ee12563c6032b8382357071188
-  ms.sourcegitcommit: 58e9d7fbb111af9b27ed819e4b79ba4a4e6e8a9c
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/21/2018
-  ms.locfileid: "46512380"
-title: <span data-ttu-id="6370f-104">Progettare una soluzione di ordinamento feedback</span><span class="sxs-lookup"><span data-stu-id="6370f-104">Design a feedback sorter</span></span>
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47136035"
+title: <span data-ttu-id="6d88b-104">Progettare una soluzione di ordinamento feedback</span><span class="sxs-lookup"><span data-stu-id="6d88b-104">Design a feedback sorter</span></span>
 durationInMinutes: 6
 content: '[!include[](includes/4-design-a-feedback-sorter.md)]'

@@ -1,20 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.build-and-run-a-web-application-with-the-mean-stack-on-an-azure-linux-vm.7-exercise-install-nodejs
-title: <span data-ttu-id="61dfe-101">Esercizio - Installare Node.js</span><span class="sxs-lookup"><span data-stu-id="61dfe-101">Exercise - Install Node.js</span></span>
+title: <span data-ttu-id="d2b94-101">Esercizio - Installare Node.js</span><span class="sxs-lookup"><span data-stu-id="d2b94-101">Exercise - Install Node.js</span></span>
 metadata:
-  title: <span data-ttu-id="61dfe-102">Esercizio - Installare Node.js</span><span class="sxs-lookup"><span data-stu-id="61dfe-102">Exercise - Install Node.js</span></span>
-  description: <span data-ttu-id="61dfe-103">Esercizio - Installare Node.js</span><span class="sxs-lookup"><span data-stu-id="61dfe-103">Exercise - Install Node.js</span></span>
+  title: <span data-ttu-id="d2b94-102">Esercizio - Installare Node.js</span><span class="sxs-lookup"><span data-stu-id="d2b94-102">Exercise - Install Node.js</span></span>
+  description: <span data-ttu-id="d2b94-103">Esercizio - Installare Node.js</span><span class="sxs-lookup"><span data-stu-id="d2b94-103">Exercise - Install Node.js</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: db21bdc10a89856f29105a3e6b8edf6b806ec347
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46343560"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47136350"
 interactive: bash
 azureSandbox: true
 durationInMinutes: 10

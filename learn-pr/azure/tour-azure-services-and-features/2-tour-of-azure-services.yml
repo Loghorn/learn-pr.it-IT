@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.azure-services-features.2-tour-of-azure-services
-title: <span data-ttu-id="a2daa-101">Presentazione dei servizi di Azure</span><span class="sxs-lookup"><span data-stu-id="a2daa-101">Tour of Azure services</span></span>
+title: <span data-ttu-id="3078e-101">Presentazione dei servizi di Azure</span><span class="sxs-lookup"><span data-stu-id="3078e-101">Tour of Azure services</span></span>
 metadata:
-  title: <span data-ttu-id="a2daa-102">Presentazione dei servizi di Azure</span><span class="sxs-lookup"><span data-stu-id="a2daa-102">Tour of Azure services</span></span>
-  description: <span data-ttu-id="a2daa-103">Presentazione dei servizi di Azure</span><span class="sxs-lookup"><span data-stu-id="a2daa-103">Tour of Azure services</span></span>
+  title: <span data-ttu-id="3078e-102">Presentazione dei servizi di Azure</span><span class="sxs-lookup"><span data-stu-id="3078e-102">Tour of Azure services</span></span>
+  description: <span data-ttu-id="3078e-103">Presentazione dei servizi di Azure</span><span class="sxs-lookup"><span data-stu-id="3078e-103">Tour of Azure services</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 1026283c3d399142bc2b78e03d2193d77ae3304e
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46353555"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47134049"
 durationInMinutes: 5
 content: '[!include[](includes/2-tour-of-azure-services.md)]'

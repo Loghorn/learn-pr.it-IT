@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.predict-costs-and-optimize-spending.6-summary
-title: <span data-ttu-id="8abd6-101">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="8abd6-101">Summary</span></span>
+title: <span data-ttu-id="c17d8-101">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="c17d8-101">Summary</span></span>
 metadata:
-  title: <span data-ttu-id="8abd6-102">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="8abd6-102">Summary</span></span>
-  description: <span data-ttu-id="8abd6-103">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="8abd6-103">Summary</span></span>
+  title: <span data-ttu-id="c17d8-102">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="c17d8-102">Summary</span></span>
+  description: <span data-ttu-id="c17d8-103">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="c17d8-103">Summary</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: e5fa7ceddfca14c0b8efb380db7f44cba7b378db
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46343609"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47135861"
 durationInMinutes: 2
 content: '[!include[](includes/6-summary.md)]'

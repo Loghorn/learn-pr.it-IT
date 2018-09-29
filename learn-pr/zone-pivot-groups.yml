@@ -1,53 +1,53 @@
 ### YamlMime:ZonePivotGroups
 groups:
 - id: platform
-  title: <span data-ttu-id="3b41b-101">Piattaforma</span><span class="sxs-lookup"><span data-stu-id="3b41b-101">Platform</span></span>
-  prompt: <span data-ttu-id="3b41b-102">Scegliere la piattaforma</span><span class="sxs-lookup"><span data-stu-id="3b41b-102">Choose your platform</span></span>
+  title: <span data-ttu-id="90c57-101">Piattaforma</span><span class="sxs-lookup"><span data-stu-id="90c57-101">Platform</span></span>
+  prompt: <span data-ttu-id="90c57-102">Scegliere la piattaforma</span><span class="sxs-lookup"><span data-stu-id="90c57-102">Choose your platform</span></span>
   pivots:
   - id: linux
-    title: <span data-ttu-id="3b41b-103">Linux</span><span class="sxs-lookup"><span data-stu-id="3b41b-103">Linux</span></span>
+    title: <span data-ttu-id="90c57-103">Linux</span><span class="sxs-lookup"><span data-stu-id="90c57-103">Linux</span></span>
   - id: macos
-    title: <span data-ttu-id="3b41b-104">Mac</span><span class="sxs-lookup"><span data-stu-id="3b41b-104">Mac</span></span>
+    title: <span data-ttu-id="90c57-104">Mac</span><span class="sxs-lookup"><span data-stu-id="90c57-104">Mac</span></span>
   - id: windows
-    title: <span data-ttu-id="3b41b-105">Windows</span><span class="sxs-lookup"><span data-stu-id="3b41b-105">Windows</span></span>
+    title: <span data-ttu-id="90c57-105">Windows</span><span class="sxs-lookup"><span data-stu-id="90c57-105">Windows</span></span>
 - id: platform-windows-mac
-  title: <span data-ttu-id="3b41b-106">Piattaforma</span><span class="sxs-lookup"><span data-stu-id="3b41b-106">Platform</span></span>
-  prompt: <span data-ttu-id="3b41b-107">Scegliere la piattaforma</span><span class="sxs-lookup"><span data-stu-id="3b41b-107">Choose your platform</span></span>
+  title: <span data-ttu-id="90c57-106">Piattaforma</span><span class="sxs-lookup"><span data-stu-id="90c57-106">Platform</span></span>
+  prompt: <span data-ttu-id="90c57-107">Scegliere la piattaforma</span><span class="sxs-lookup"><span data-stu-id="90c57-107">Choose your platform</span></span>
   pivots:
   - id: macos
-    title: <span data-ttu-id="3b41b-108">Mac</span><span class="sxs-lookup"><span data-stu-id="3b41b-108">Mac</span></span>
+    title: <span data-ttu-id="90c57-108">Mac</span><span class="sxs-lookup"><span data-stu-id="90c57-108">Mac</span></span>
   - id: windows
-    title: <span data-ttu-id="3b41b-109">Windows</span><span class="sxs-lookup"><span data-stu-id="3b41b-109">Windows</span></span>
+    title: <span data-ttu-id="90c57-109">Windows</span><span class="sxs-lookup"><span data-stu-id="90c57-109">Windows</span></span>
 - id: azure-interface
-  title: <span data-ttu-id="3b41b-110">Shell</span><span class="sxs-lookup"><span data-stu-id="3b41b-110">Shell</span></span>
-  prompt: <span data-ttu-id="3b41b-111">Scegliere la shell</span><span class="sxs-lookup"><span data-stu-id="3b41b-111">Choose your shell</span></span>
+  title: <span data-ttu-id="90c57-110">Shell</span><span class="sxs-lookup"><span data-stu-id="90c57-110">Shell</span></span>
+  prompt: <span data-ttu-id="90c57-111">Scegliere la shell</span><span class="sxs-lookup"><span data-stu-id="90c57-111">Choose your shell</span></span>
   pivots:
   - id: bash
-    title: <span data-ttu-id="3b41b-112">Bash</span><span class="sxs-lookup"><span data-stu-id="3b41b-112">Bash</span></span>
+    title: <span data-ttu-id="90c57-112">Bash</span><span class="sxs-lookup"><span data-stu-id="90c57-112">Bash</span></span>
   - id: powershell
-    title: <span data-ttu-id="3b41b-113">PowerShell</span><span class="sxs-lookup"><span data-stu-id="3b41b-113">PowerShell</span></span>
+    title: <span data-ttu-id="90c57-113">PowerShell</span><span class="sxs-lookup"><span data-stu-id="90c57-113">PowerShell</span></span>
   - id: portal
-    title: <span data-ttu-id="3b41b-114">Portale di Azure</span><span class="sxs-lookup"><span data-stu-id="3b41b-114">Azure Portal</span></span>
+    title: <span data-ttu-id="90c57-114">Portale di Azure</span><span class="sxs-lookup"><span data-stu-id="90c57-114">Azure Portal</span></span>
 - id: dev-lang-csharp-javascript
-  title: <span data-ttu-id="3b41b-115">Linguaggio di sviluppo</span><span class="sxs-lookup"><span data-stu-id="3b41b-115">Development language</span></span>
-  prompt: <span data-ttu-id="3b41b-116">Scegliere il linguaggio di sviluppo</span><span class="sxs-lookup"><span data-stu-id="3b41b-116">Choose your development language</span></span>
+  title: <span data-ttu-id="90c57-115">Linguaggio di sviluppo</span><span class="sxs-lookup"><span data-stu-id="90c57-115">Development language</span></span>
+  prompt: <span data-ttu-id="90c57-116">Scegliere il linguaggio di sviluppo</span><span class="sxs-lookup"><span data-stu-id="90c57-116">Choose your development language</span></span>
   pivots:
   - id: csharp
-    title: <span data-ttu-id="3b41b-117">C#</span><span class="sxs-lookup"><span data-stu-id="3b41b-117">C#</span></span>
+    title: <span data-ttu-id="90c57-117">C#</span><span class="sxs-lookup"><span data-stu-id="90c57-117">C#</span></span>
   - id: javascript
-    title: <span data-ttu-id="3b41b-118">JavaScript</span><span class="sxs-lookup"><span data-stu-id="3b41b-118">JavaScript</span></span>
+    title: <span data-ttu-id="90c57-118">JavaScript</span><span class="sxs-lookup"><span data-stu-id="90c57-118">JavaScript</span></span>
 - id: platform-cloud
-  title: <span data-ttu-id="3b41b-119">Piattaforma</span><span class="sxs-lookup"><span data-stu-id="3b41b-119">Platform</span></span>
-  prompt: <span data-ttu-id="3b41b-120">Scegliere la piattaforma da eseguire nel cloud</span><span class="sxs-lookup"><span data-stu-id="3b41b-120">Choose which platform you want to run in the cloud</span></span>
+  title: <span data-ttu-id="90c57-119">Piattaforma</span><span class="sxs-lookup"><span data-stu-id="90c57-119">Platform</span></span>
+  prompt: <span data-ttu-id="90c57-120">Scegliere la piattaforma da eseguire nel cloud</span><span class="sxs-lookup"><span data-stu-id="90c57-120">Choose which platform you want to run in the cloud</span></span>
   pivots:
   - id: windows-cloud
-    title: <span data-ttu-id="3b41b-121">Windows</span><span class="sxs-lookup"><span data-stu-id="3b41b-121">Windows</span></span>
+    title: <span data-ttu-id="90c57-121">Windows</span><span class="sxs-lookup"><span data-stu-id="90c57-121">Windows</span></span>
   - id: linux-cloud
-    title: <span data-ttu-id="3b41b-122">Linux</span><span class="sxs-lookup"><span data-stu-id="3b41b-122">Linux</span></span>
+    title: <span data-ttu-id="90c57-122">Linux</span><span class="sxs-lookup"><span data-stu-id="90c57-122">Linux</span></span>
 metadata:
   ms.openlocfilehash: b7417f5c96bb8628028ac0ff399223c0d996c3c8
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46343719"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47133245"

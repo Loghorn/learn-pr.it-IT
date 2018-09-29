@@ -1,20 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.access-data-with-cosmos-db-and-sql-api.6-javascript-programming
 metadata:
-  title: <span data-ttu-id="bcf98-101">Eseguire operazioni complesse sui dati</span><span class="sxs-lookup"><span data-stu-id="bcf98-101">Run complex operations on your data</span></span>
-  description: <span data-ttu-id="bcf98-102">Informazioni su come eseguire operazioni complesse mediante stored procedure e funzioni definite dall'utente nel portale di Azure.</span><span class="sxs-lookup"><span data-stu-id="bcf98-102">Learn how to perform complex operations by using stored procedures and user defined functions (UDFs) in the Azure portal.</span></span>
+  title: <span data-ttu-id="a839a-101">Eseguire operazioni complesse sui dati</span><span class="sxs-lookup"><span data-stu-id="a839a-101">Run complex operations on your data</span></span>
+  description: <span data-ttu-id="a839a-102">Informazioni su come eseguire operazioni complesse mediante stored procedure e funzioni definite dall'utente nel portale di Azure.</span><span class="sxs-lookup"><span data-stu-id="a839a-102">Learn how to perform complex operations by using stored procedures and user defined functions (UDFs) in the Azure portal.</span></span>
   ms.date: 09/24/2018
   author: mimig1
   ms.author: mimig
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 3ed02e4c60b93ce3aeed5afe9aee620f82de2254
-  ms.sourcegitcommit: 13f3e790ebb0807e6f2c670bbfffd87ab6dbabdb
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/20/2018
-  ms.locfileid: "46483809"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47134250"
 azureSandbox: true
-title: <span data-ttu-id="bcf98-103">Eseguire operazioni complesse sui dati</span><span class="sxs-lookup"><span data-stu-id="bcf98-103">Run complex operations on your data</span></span>
+title: <span data-ttu-id="a839a-103">Eseguire operazioni complesse sui dati</span><span class="sxs-lookup"><span data-stu-id="a839a-103">Run complex operations on your data</span></span>
 durationInMinutes: 10
 content: '[!include[](includes/6-javascript-programming.md)]'

@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.pillars-of-a-great-azure-architecture.1-introduction
-title: <span data-ttu-id="df441-101">Introduzione</span><span class="sxs-lookup"><span data-stu-id="df441-101">Introduction</span></span>
+title: <span data-ttu-id="76b59-101">Introduzione</span><span class="sxs-lookup"><span data-stu-id="76b59-101">Introduction</span></span>
 metadata:
-  title: <span data-ttu-id="df441-102">Introduzione</span><span class="sxs-lookup"><span data-stu-id="df441-102">Introduction</span></span>
-  description: <span data-ttu-id="df441-103">Introduzione</span><span class="sxs-lookup"><span data-stu-id="df441-103">Introduction</span></span>
+  title: <span data-ttu-id="76b59-102">Introduzione</span><span class="sxs-lookup"><span data-stu-id="76b59-102">Introduction</span></span>
+  description: <span data-ttu-id="76b59-103">Introduzione</span><span class="sxs-lookup"><span data-stu-id="76b59-103">Introduction</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 7cd52fd582ba72123c32ad3de2c464882817658f
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46353995"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47136233"
 durationInMinutes: 2
 content: '[!include[](includes/1-introduction.md)]'

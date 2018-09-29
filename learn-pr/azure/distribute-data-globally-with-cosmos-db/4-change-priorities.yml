@@ -1,16 +1,16 @@
 ### YamlMime:ModuleUnit
 uid: learn.distribute-data-globally-with-cosmos-db.4-change-priorities
 metadata:
-  title: <span data-ttu-id="19cdc-101">Modificare le priorità di lettura e scrittura a livello globale</span><span class="sxs-lookup"><span data-stu-id="19cdc-101">Change global read and write priorities</span></span>
-  description: <span data-ttu-id="19cdc-102">Informazioni su come modificare le priorità di lettura e scrittura per le aree globali.</span><span class="sxs-lookup"><span data-stu-id="19cdc-102">Learn how change the read and write prioritites for your global regions.</span></span>
+  title: <span data-ttu-id="d7c53-101">Modificare le priorità di lettura e scrittura a livello globale</span><span class="sxs-lookup"><span data-stu-id="d7c53-101">Change global read and write priorities</span></span>
+  description: <span data-ttu-id="d7c53-102">Informazioni su come modificare le priorità di lettura e scrittura per le aree globali.</span><span class="sxs-lookup"><span data-stu-id="d7c53-102">Learn how change the read and write prioritites for your global regions.</span></span>
   displayType: one-column
   ms.openlocfilehash: 945fb5504cabd37641bc8f0a51a919dcf5471b73
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46352085"
-title: <span data-ttu-id="19cdc-103">Modificare le priorità di lettura e scrittura a livello globale</span><span class="sxs-lookup"><span data-stu-id="19cdc-103">Change global read and write priorities</span></span>
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47135387"
+title: <span data-ttu-id="d7c53-103">Modificare le priorità di lettura e scrittura a livello globale</span><span class="sxs-lookup"><span data-stu-id="d7c53-103">Change global read and write priorities</span></span>
 azureSandbox: true
 durationInMinutes: 5
 content: '[!include[](includes/4-change-priorities.md)]'

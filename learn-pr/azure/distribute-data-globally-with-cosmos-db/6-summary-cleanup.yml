@@ -1,16 +1,16 @@
 ### YamlMime:ModuleUnit
 uid: learn.distribute-data-globally-with-cosmos-db.6-summary-cleanup
 metadata:
-  title: <span data-ttu-id="85e47-101">Riepilogo e pulizia</span><span class="sxs-lookup"><span data-stu-id="85e47-101">Summary and cleanup</span></span>
-  description: <span data-ttu-id="85e47-102">Riepilogo e pulizia</span><span class="sxs-lookup"><span data-stu-id="85e47-102">Summary and cleanup</span></span>
+  title: <span data-ttu-id="1f9c7-101">Riepilogo e pulizia</span><span class="sxs-lookup"><span data-stu-id="1f9c7-101">Summary and cleanup</span></span>
+  description: <span data-ttu-id="1f9c7-102">Riepilogo e pulizia</span><span class="sxs-lookup"><span data-stu-id="1f9c7-102">Summary and cleanup</span></span>
   displayType: one-column
   ms.openlocfilehash: ffa86e120e31bb0fd00efe96550542d7c2f25539
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46341919"
-title: <span data-ttu-id="85e47-103">Riepilogo e pulizia</span><span class="sxs-lookup"><span data-stu-id="85e47-103">Summary and cleanup</span></span>
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47135360"
+title: <span data-ttu-id="1f9c7-103">Riepilogo e pulizia</span><span class="sxs-lookup"><span data-stu-id="1f9c7-103">Summary and cleanup</span></span>
 azureSandbox: true
 durationInMinutes: 1
 content: '[!include[](includes/6-summary-cleanup.md)]'

@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.prepare-azure-dev-environment.4-set-up-visual-studio
-title: <span data-ttu-id="41043-101">Con Visual Studio</span><span class="sxs-lookup"><span data-stu-id="41043-101">Using Visual Studio</span></span>
+title: <span data-ttu-id="7fc31-101">Con Visual Studio</span><span class="sxs-lookup"><span data-stu-id="7fc31-101">Using Visual Studio</span></span>
 metadata:
-  title: <span data-ttu-id="41043-102">Con Visual Studio</span><span class="sxs-lookup"><span data-stu-id="41043-102">Using Visual Studio</span></span>
-  description: <span data-ttu-id="41043-103">Con Visual Studio</span><span class="sxs-lookup"><span data-stu-id="41043-103">Using Visual Studio</span></span>
+  title: <span data-ttu-id="7fc31-102">Con Visual Studio</span><span class="sxs-lookup"><span data-stu-id="7fc31-102">Using Visual Studio</span></span>
+  description: <span data-ttu-id="7fc31-103">Con Visual Studio</span><span class="sxs-lookup"><span data-stu-id="7fc31-103">Using Visual Studio</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 4285e407fbb3f7609865129d808c6ebac4762f88
-  ms.sourcegitcommit: 8a009788ee73c5d7caa6cd4f1105260c5cc9b846
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/22/2018
-  ms.locfileid: "46570452"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47136473"
 durationInMinutes: 5
 content: '[!include[](includes/4-set-up-visual-studio.md)]'

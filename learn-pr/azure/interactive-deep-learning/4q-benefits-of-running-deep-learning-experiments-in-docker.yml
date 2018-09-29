@@ -1,54 +1,54 @@
 ### YamlMime:ModuleUnit
 uid: learn.interactive-deep-learning.4q-benefits-of-running-deep-learning-experiments-in-docker
-title: <span data-ttu-id="39e15-101">Verificare le proprie conoscenze</span><span class="sxs-lookup"><span data-stu-id="39e15-101">Check your knowledge</span></span>
+title: <span data-ttu-id="9ae4a-101">Verificare le proprie conoscenze</span><span class="sxs-lookup"><span data-stu-id="9ae4a-101">Check your knowledge</span></span>
 metadata:
-  title: <span data-ttu-id="39e15-102">Verificare le proprie conoscenze</span><span class="sxs-lookup"><span data-stu-id="39e15-102">Check your knowledge</span></span>
-  description: <span data-ttu-id="39e15-103">Verificare le proprie conoscenze</span><span class="sxs-lookup"><span data-stu-id="39e15-103">Check your knowledge</span></span>
+  title: <span data-ttu-id="9ae4a-102">Verificare le proprie conoscenze</span><span class="sxs-lookup"><span data-stu-id="9ae4a-102">Check your knowledge</span></span>
+  description: <span data-ttu-id="9ae4a-103">Verificare le proprie conoscenze</span><span class="sxs-lookup"><span data-stu-id="9ae4a-103">Check your knowledge</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: fab76bfb0f9de183a37f1d8aba022b434294ce85
-  ms.sourcegitcommit: 13f3e790ebb0807e6f2c670bbfffd87ab6dbabdb
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/20/2018
-  ms.locfileid: "46483862"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47134547"
 durationInMinutes: 2
 quiz:
-  title: <span data-ttu-id="39e15-104">Verificare le proprie conoscenze</span><span class="sxs-lookup"><span data-stu-id="39e15-104">Check your knowledge</span></span>
+  title: <span data-ttu-id="9ae4a-104">Verificare le proprie conoscenze</span><span class="sxs-lookup"><span data-stu-id="9ae4a-104">Check your knowledge</span></span>
   questions:
-  - content: <span data-ttu-id="39e15-105">Quale delle definizioni seguenti descrive CUDA?</span><span class="sxs-lookup"><span data-stu-id="39e15-105">Which of the following describes CUDA?</span></span>
+  - content: <span data-ttu-id="9ae4a-105">Quale delle definizioni seguenti descrive CUDA?</span><span class="sxs-lookup"><span data-stu-id="9ae4a-105">Which of the following describes CUDA?</span></span>
     choices:
-    - content: <span data-ttu-id="39e15-106">CUDA è un'API e una piattaforma di calcolo parallela.</span><span class="sxs-lookup"><span data-stu-id="39e15-106">It's a parallel computing platform and API.</span></span>
+    - content: <span data-ttu-id="9ae4a-106">CUDA è un'API e una piattaforma di calcolo parallela.</span><span class="sxs-lookup"><span data-stu-id="9ae4a-106">It's a parallel computing platform and API.</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="39e15-107">CUDA è un modello di API (Application Programming Interface) e di piattaforma di calcolo parallela creato da NVIDIA.</span><span class="sxs-lookup"><span data-stu-id="39e15-107">CUDA is a parallel computing platform and application programming interface (API) model created by NVIDIA.</span></span> <span data-ttu-id="39e15-108">La piattaforma CUDA è un livello di software che fornisce accesso diretto al set di istruzioni virtuali e agli elementi di calcolo paralleli della GPU per l'esecuzione di kernel di calcolo.</span><span class="sxs-lookup"><span data-stu-id="39e15-108">The CUDA platform is a software layer that gives direct access to the GPU's virtual instruction set and parallel computational elements, for the execution of compute kernels.</span></span>
-    - content: <span data-ttu-id="39e15-109">Si tratta di una CPU estremamente potente.</span><span class="sxs-lookup"><span data-stu-id="39e15-109">It's a super powerful CPU.</span></span>
+      correctExplanation: <span data-ttu-id="9ae4a-107">CUDA è un modello di API (Application Programming Interface) e di piattaforma di calcolo parallela creato da NVIDIA.</span><span class="sxs-lookup"><span data-stu-id="9ae4a-107">CUDA is a parallel computing platform and application programming interface (API) model created by NVIDIA.</span></span> <span data-ttu-id="9ae4a-108">La piattaforma CUDA è un livello di software che fornisce accesso diretto al set di istruzioni virtuali e agli elementi di calcolo paralleli della GPU per l'esecuzione di kernel di calcolo.</span><span class="sxs-lookup"><span data-stu-id="9ae4a-108">The CUDA platform is a software layer that gives direct access to the GPU's virtual instruction set and parallel computational elements, for the execution of compute kernels.</span></span>
+    - content: <span data-ttu-id="9ae4a-109">Si tratta di una CPU estremamente potente.</span><span class="sxs-lookup"><span data-stu-id="9ae4a-109">It's a super powerful CPU.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="39e15-110">CUDA è un livello di software progettato per le GPU.</span><span class="sxs-lookup"><span data-stu-id="39e15-110">CUDA is a software layer and is designed for GPUs.</span></span>
-    - content: <span data-ttu-id="39e15-111">Si tratta di un modello di apprendimento avanzato usato per la classificazione delle immagini.</span><span class="sxs-lookup"><span data-stu-id="39e15-111">It's a deep learning model used for image classification.</span></span>
+      incorrectExplanation: <span data-ttu-id="9ae4a-110">CUDA è un livello di software progettato per le GPU.</span><span class="sxs-lookup"><span data-stu-id="9ae4a-110">CUDA is a software layer and is designed for GPUs.</span></span>
+    - content: <span data-ttu-id="9ae4a-111">Si tratta di un modello di apprendimento avanzato usato per la classificazione delle immagini.</span><span class="sxs-lookup"><span data-stu-id="9ae4a-111">It's a deep learning model used for image classification.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="39e15-112">Le GPU abilitate per CUDA sono in grado di migliorare notevolmente le prestazioni di calcolo nel training delle reti neurali, ma questo è solo uno dei possibili usi.</span><span class="sxs-lookup"><span data-stu-id="39e15-112">CUDA-enabled GPUs can greatly improve compute performacne when training neural networks, but that is only one of its uses.</span></span>
-  - content: <span data-ttu-id="39e15-113">Quale delle definizioni seguenti descrive Docker?</span><span class="sxs-lookup"><span data-stu-id="39e15-113">Which of the following describes Docker?</span></span>
+      incorrectExplanation: <span data-ttu-id="9ae4a-112">Le GPU abilitate per CUDA sono in grado di migliorare notevolmente le prestazioni di calcolo nel training delle reti neurali, ma questo è solo uno dei possibili usi.</span><span class="sxs-lookup"><span data-stu-id="9ae4a-112">CUDA-enabled GPUs can greatly improve compute performacne when training neural networks, but that is only one of its uses.</span></span>
+  - content: <span data-ttu-id="9ae4a-113">Quale delle definizioni seguenti descrive Docker?</span><span class="sxs-lookup"><span data-stu-id="9ae4a-113">Which of the following describes Docker?</span></span>
     choices:
-    - content: <span data-ttu-id="39e15-114">Docker è un componente hardware specializzato per il training delle reti neurali.</span><span class="sxs-lookup"><span data-stu-id="39e15-114">Docker is a specialized piece of hardware for training neural networks.</span></span>
+    - content: <span data-ttu-id="9ae4a-114">Docker è un componente hardware specializzato per il training delle reti neurali.</span><span class="sxs-lookup"><span data-stu-id="9ae4a-114">Docker is a specialized piece of hardware for training neural networks.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="39e15-115">Docker è un software che esegue una virtualizzazione a livello di sistema operativo, nota anche come "containerizzazione".</span><span class="sxs-lookup"><span data-stu-id="39e15-115">Docker is actually software that performs operating-system-level virtualization, also known as "containerization".</span></span>
-    - content: <span data-ttu-id="39e15-116">Docker è una piattaforma aperta per applicazioni distribuite.</span><span class="sxs-lookup"><span data-stu-id="39e15-116">Docker is an open platform for distributed applications.</span></span>
+      incorrectExplanation: <span data-ttu-id="9ae4a-115">Docker è un software che esegue una virtualizzazione a livello di sistema operativo, nota anche come "containerizzazione".</span><span class="sxs-lookup"><span data-stu-id="9ae4a-115">Docker is actually software that performs operating-system-level virtualization, also known as "containerization".</span></span>
+    - content: <span data-ttu-id="9ae4a-116">Docker è una piattaforma aperta per applicazioni distribuite.</span><span class="sxs-lookup"><span data-stu-id="9ae4a-116">Docker is an open platform for distributed applications.</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="39e15-117">Docker è una piattaforma aperta concepita per sviluppatori e amministratori di sistema che intendono compilare, distribuire ed eseguire applicazioni distribuite su computer portatili, macchine virtuali data center o cloud.</span><span class="sxs-lookup"><span data-stu-id="39e15-117">Docker is an open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud.</span></span> <span data-ttu-id="39e15-118">È un programma per computer che esegue la virtualizzazione a livello di sistema operativo, nota anche come "containerizzazione".</span><span class="sxs-lookup"><span data-stu-id="39e15-118">It's a computer program that performs operating-system-level virtualization, also known as "containerization".</span></span>
-    - content: <span data-ttu-id="39e15-119">Docker è una libreria per le app Web.</span><span class="sxs-lookup"><span data-stu-id="39e15-119">Docker is a library for web apps.</span></span>
+      correctExplanation: <span data-ttu-id="9ae4a-117">Docker è una piattaforma aperta concepita per sviluppatori e amministratori di sistema che intendono compilare, distribuire ed eseguire applicazioni distribuite su computer portatili, macchine virtuali data center o cloud.</span><span class="sxs-lookup"><span data-stu-id="9ae4a-117">Docker is an open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud.</span></span> <span data-ttu-id="9ae4a-118">È un programma per computer che esegue la virtualizzazione a livello di sistema operativo, nota anche come "containerizzazione".</span><span class="sxs-lookup"><span data-stu-id="9ae4a-118">It's a computer program that performs operating-system-level virtualization, also known as "containerization".</span></span>
+    - content: <span data-ttu-id="9ae4a-119">Docker è una libreria per le app Web.</span><span class="sxs-lookup"><span data-stu-id="9ae4a-119">Docker is a library for web apps.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="39e15-120">Docker è una piattaforma software, ma non è una libreria per creare app Web.</span><span class="sxs-lookup"><span data-stu-id="39e15-120">Docker is a software platform, but it's not a library for helping you to create web apps.</span></span>
-  - content: <span data-ttu-id="39e15-121">Qual è il vantaggio principale di usare NVIDIA Docker?</span><span class="sxs-lookup"><span data-stu-id="39e15-121">What's the main benefit of using NVIDIA Docker?</span></span>
+      incorrectExplanation: <span data-ttu-id="9ae4a-120">Docker è una piattaforma software, ma non è una libreria per creare app Web.</span><span class="sxs-lookup"><span data-stu-id="9ae4a-120">Docker is a software platform, but it's not a library for helping you to create web apps.</span></span>
+  - content: <span data-ttu-id="9ae4a-121">Qual è il vantaggio principale di usare NVIDIA Docker?</span><span class="sxs-lookup"><span data-stu-id="9ae4a-121">What's the main benefit of using NVIDIA Docker?</span></span>
     choices:
-    - content: <span data-ttu-id="39e15-122">Consente di compilare ed eseguire contenitori Docker in Windows.</span><span class="sxs-lookup"><span data-stu-id="39e15-122">It allows you to build and run Docker containers on Windows.</span></span>
+    - content: <span data-ttu-id="9ae4a-122">Consente di compilare ed eseguire contenitori Docker in Windows.</span><span class="sxs-lookup"><span data-stu-id="9ae4a-122">It allows you to build and run Docker containers on Windows.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="39e15-123">NVIDIA Docker viene eseguito solo in Linux.</span><span class="sxs-lookup"><span data-stu-id="39e15-123">NVIDIA Docker only runs on Linux.</span></span>
-    - content: <span data-ttu-id="39e15-124">Consente di compilare ed eseguire i contenitori Docker che sfruttano le GPU NVIDIA.</span><span class="sxs-lookup"><span data-stu-id="39e15-124">It allows you to build and run Docker containers that leverage NVIDIA GPUs.</span></span>
+      incorrectExplanation: <span data-ttu-id="9ae4a-123">NVIDIA Docker viene eseguito solo in Linux.</span><span class="sxs-lookup"><span data-stu-id="9ae4a-123">NVIDIA Docker only runs on Linux.</span></span>
+    - content: <span data-ttu-id="9ae4a-124">Consente di compilare ed eseguire i contenitori Docker che sfruttano le GPU NVIDIA.</span><span class="sxs-lookup"><span data-stu-id="9ae4a-124">It allows you to build and run Docker containers that leverage NVIDIA GPUs.</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="39e15-125">Il progetto nvidia-docker per sviluppatori NVIDIA è un progetto open source che supporta un'immagine CUDA indipendente dai driver e si comporta come wrapper da riga di comando Docker in grado di montare i componenti GPU corretti nel contenitore al momento dell'avvio.</span><span class="sxs-lookup"><span data-stu-id="39e15-125">NVIDIA developer nvidia-docker as an open-source project to support driver-agnostice CUDA image and as a wrapper around the Docker command-line wrapper that knows how to mount the right GPU components into the container at launch.</span></span>
-    - content: <span data-ttu-id="39e15-126">Consente di inserire in un contenitore applicazioni con accelerazione della CPU.</span><span class="sxs-lookup"><span data-stu-id="39e15-126">It allows you to containerize CPU-accelerated applications.</span></span>
+      correctExplanation: <span data-ttu-id="9ae4a-125">Il progetto nvidia-docker per sviluppatori NVIDIA è un progetto open source che supporta un'immagine CUDA indipendente dai driver e si comporta come wrapper da riga di comando Docker in grado di montare i componenti GPU corretti nel contenitore al momento dell'avvio.</span><span class="sxs-lookup"><span data-stu-id="9ae4a-125">NVIDIA developer nvidia-docker as an open-source project to support driver-agnostice CUDA image and as a wrapper around the Docker command-line wrapper that knows how to mount the right GPU components into the container at launch.</span></span>
+    - content: <span data-ttu-id="9ae4a-126">Consente di inserire in un contenitore applicazioni con accelerazione della CPU.</span><span class="sxs-lookup"><span data-stu-id="9ae4a-126">It allows you to containerize CPU-accelerated applications.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="39e15-127">NVIDIA Docker consente di inserire in un contenitore app con accelerazione della GPU.</span><span class="sxs-lookup"><span data-stu-id="39e15-127">NVIDIA Docker allows you to containerize your GPU-accelerated apps.</span></span>
+      incorrectExplanation: <span data-ttu-id="9ae4a-127">NVIDIA Docker consente di inserire in un contenitore app con accelerazione della GPU.</span><span class="sxs-lookup"><span data-stu-id="9ae4a-127">NVIDIA Docker allows you to containerize your GPU-accelerated apps.</span></span>
