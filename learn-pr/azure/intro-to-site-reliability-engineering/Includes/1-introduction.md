@@ -1,0 +1,5 @@
+Le organizzazioni, grandi o piccole che siano, hanno iniziato a rendersi conto di quanto sia importante l'affidabilità di sistemi e applicazioni per il loro business. Hanno anche compreso quanto sia difficile mantenere questa affidabilità restando al passo con l'evoluzione del mercato. 
+
+Site Reliability Engineering (SRE) è un approccio collaudato a questa problematica. Questo modulo introduce i principi e le procedure per SRE. Per l'utente che ha esperienza in questo ambito, ad esempio come amministratore di sistema, professionista IT o operatore DevOps, o che è semplicemente interessato, SRE sarà un argomento affascinante.
+
+Al termine di questo modulo l'utente avrà una buona conoscenza di SRE e saprà perché è così importante. Sarà in grado di spiegare ad altri utenti com'è nato lo strumento e in che modo interagisce con altri tipi di approccio, ad esempio DevOps. Lungo il percorso, si apprenderanno i principi fondamentali e alcune delle procedure che consentono di implementare tali principi. Nella parte conclusiva verranno offerti alcuni suggerimenti su come iniziare a usare questo prezioso strumento.

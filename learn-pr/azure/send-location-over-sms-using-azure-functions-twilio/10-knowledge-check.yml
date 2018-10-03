@@ -9,29 +9,18 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: fb8021f1b3e30929c1ed44ed71123eb31d660d90
-  ms.sourcegitcommit: a8799fdd6ae2096cef12e66b142b138db8aba56d
+  ms.openlocfilehash: 94a82dfeded304354660591f8c48745b8cbfb308
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/23/2018
-  ms.locfileid: "46704475"
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47437704"
 durationInMinutes: 2
 content: >
   [!include[](includes/10-knowledge-check.md)]
 quiz:
   title: Verifica delle conoscenze
   questions:
-  - content: Quale tipo di trigger di Funzioni di Azure consente a una richiesta HTTP di richiamare la funzione?
-    choices:
-    - content: Trigger HTTP
-      isCorrect: true
-      correctExplanation: I trigger HTTP vengono usati per richiamare le funzioni dalle richieste HTTP.
-    - content: Trigger di hub eventi
-      isCorrect: false
-      incorrectExplanation: I trigger HTTP vengono usati per richiamare le funzioni dalle richieste HTTP.
-    - content: Trigger di coda
-      isCorrect: false
-      incorrectExplanation: I trigger HTTP vengono usati per richiamare le funzioni dalle richieste HTTP.
   - content: Come si associa la funzione a Twilio per inviare messaggi SMS?
     choices:
     - content: Tramite la restituzione di messaggi SMS come valore restituito della funzione

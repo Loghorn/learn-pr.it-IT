@@ -49,11 +49,18 @@ Accertarsi di essere ancora connessi alla macchina virtuale tramite SSH. In caso
 
 Quando Jupyter Notebook è in esecuzione nel contenitore, verrà mostrato un messaggio simile al seguente. 
 
-> *Copiare/incollare l'URL nel browser quando si esegue la connessione per la prima volta per accedere con un token: http://(5b8783e7911d or 127.0.0.1):8888/?token={sometoken}*
+> *Copy/paste this URL into your browser when you connect for the first time, to login with a token: http://(5b8783e7911d or 127.0.0.1):8888/?token={sometoken}* (Copiare e incollare l'URL nel browser quando si esegue la connessione per la prima volta per accedere con un token: http://(5b8783e7911d o 127.0.0.1):8888/?token={token})
 
-1. Sostituire la parte **http://(5b8783e7911d or 127.0.0.1)** dell'URL con `<HOSTNAME>.<REGION>.cloudapp.azure.com` o con l'indirizzo IP della VM e navigare all'indirizzo in una nuova scheda del browser.
+1. Sostituire la parte **http://(5b8783e7911d or 127.0.0.1)** dell'URL con il nome di dominio completo (FQDN, Fully Qualified Domain Name) o con l'indirizzo IP della VM e passare all'indirizzo in una nuova scheda del browser.
 
-    ![Screenshot che mostra il dashboard dei Jupyter Notebook. ](../media/notebook-in-docker.png)
+    ![Screenshot che illustra il dashboard di un Jupyter Notebook. ](../media/notebook-in-docker.png)
+
+    > [!TIP]
+    > È possibile ottenere l'FQDN e l'indirizzo IP della VM con il comando seguente:
+    > 
+    > `az vm show -d --name <HOSTNAME> --resource-group <rgn>[sandbox resource group name]</rgn> --output table`
+    >
+    > Ricordarsi di sostituire `<HOSTNAME>` con il nome assegnato alla VM. 
     
     Questa volta viene visualizzato un unico notebook. Questo perché ci si trova in un contenitore ed è stato copiato solo questo notebook. Nel prossimo esercizio sarà possibile esercitarsi con questo notebook. 
     

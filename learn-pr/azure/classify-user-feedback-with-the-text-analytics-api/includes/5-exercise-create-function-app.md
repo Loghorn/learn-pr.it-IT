@@ -14,9 +14,10 @@
     | **Sottoscrizione** | **Sottoscrizione Concierge** | Sottoscrizione in cui viene creata questa nuova app per le funzioni. |
     | **Gruppo di risorse**|  **<rgn>[Nome gruppo di risorse sandbox]</rgn>** | Nome del gruppo di risorse in cui creare l'app per le funzioni.<br/><br/>Assicurarsi di selezionare **Usa esistente** e usare il gruppo di risorse dell'esercizio precedente. In questo modo, tutte le risorse create in questo modulo vengono tenute insieme. |
     | **Sistema operativo** | Windows | Il sistema operativo che ospita l'app per le funzioni.  |
-    | **Hosting** |   Piano a consumo | Piano di hosting che definisce come vengono allocate le risorse all'app per le funzioni. Nel **piano a consumo** predefinito le risorse vengono aggiunte dinamicamente in base alle esigenze delle funzioni. In questo hosting [serverless](https://azure.microsoft.com/overview/serverless-computing/) si paga solo per il periodo in cui le funzioni sono in esecuzione.   |
+    | **Piano di hosting** |   Piano a consumo | Piano di hosting che definisce come vengono allocate le risorse all'app per le funzioni. Nel **piano a consumo** predefinito le risorse vengono aggiunte dinamicamente in base alle esigenze delle funzioni. In questo hosting [serverless](https://azure.microsoft.com/overview/serverless-computing/) si paga solo per il periodo in cui le funzioni sono in esecuzione.   |
     | **Località** | Selezionare la stessa località usata in precedenza. | Scegliere un'area nelle vicinanze o vicino ad altri servizi a cui accedono le funzioni.<br/><br/>Selezionare la stessa area usata durante la creazione dell'account dell'API Analisi del testo nell'esercizio precedente. |
-    | **Account di archiviazione** |  Nome globalmente univoco |  Nome del nuovo account di archiviazione usato dall'app per le funzioni. I nomi degli account di archiviazione devono avere una lunghezza compresa tra 3 e 24 caratteri e possono contenere solo numeri e lettere minuscole. In questa finestra di dialogo il campo è popolato con un nome univoco derivato dal nome assegnato all'app. Tuttavia, è possibile usare un nome diverso o anche un account esistente. |
+    | **Stack di runtime** | JavaScript | Il codice di esempio in questo modulo è scritto in JavaScript.  |
+    | **Archiviazione** |  Nome globalmente univoco |  Nome del nuovo account di archiviazione usato dall'app per le funzioni. I nomi degli account di archiviazione devono avere una lunghezza compresa tra 3 e 24 caratteri e possono contenere solo numeri e lettere minuscole. In questa finestra di dialogo il campo è popolato con un nome univoco derivato dal nome assegnato all'app. Tuttavia, è possibile usare un nome diverso o anche un account esistente. |
 
 1. Per effettuare il provisioning dell'app per le funzioni e distribuirla, selezionare **Crea**.
 
@@ -35,19 +36,28 @@
 
 Ora che è disponibile un'app per le funzioni, è il momento di creare una funzione. Una funzione viene attivata tramite un trigger. In questo modulo si userà un trigger Coda. Il runtime eseguirà il polling di una coda e avvierà questa funzione per l'elaborazione di un nuovo messaggio.
 
-1. Espandere la nuova app per le funzioni e quindi passare il mouse sulla raccolta **Funzioni**. Selezionare il pulsante Aggiungi (__+__) quando viene visualizzato per avviare il processo di creazione della funzione.
+<!-- Start temporary fix for issue #2498. -->
+> [!IMPORTANT]
+> Gli esercizi in questo modulo attualmente funzionano con Funzioni di Azure V1. Seguire questa procedura con attenzione per assicurarsi che l'app per le funzioni usi la versione del runtime V1. 
 
-1. Nella pagina **Iniziare rapidamente** che viene ora visualizzata selezionare **Funzione personalizzata** nella parte inferiore della pagina per caricare l'elenco dei modelli di funzione disponibili.
+1. Selezionare l'app per le funzioni nell'elenco **App per le funzioni**.
+1. Selezionare **Funzionalità della piattaforma**.
+1. Nella schermata **Funzionalità della piattaforma** selezionare **Impostazioni dell'app per le funzioni** in **Impostazioni generali**.
+1. Selezionare *~1* in **Versione runtime**.
+1. Chiudere **Impostazioni dell'app per le funzioni**.
 
-1. Selezionare **JavaScript** nella voce dell'elenco del modello **Trigger Coda**.
+L'app per le funzioni è ora configurata per usare il runtime V1 di Funzioni di Azure. È ora possibile continuare a creare la prima funzione.
+<!-- End temporary fix for issue #2498. -->  
 
-    ![Screenshot dei modelli di Funzioni di Azure con JavaScript selezionato nella voce Trigger Coda.](../media/quickstart-select-queue-trigger.png)
+1. Selezionare il pulsante Aggiungi (__+__) a destra di **Funzioni**.
+ 1. Nella pagina **Iniziare rapidamente** che viene ora visualizzata selezionare **Funzione personalizzata** nella parte inferiore per caricare l'elenco dei modelli di funzione disponibili.
+
+1. Selezionare **Trigger Coda** dall'elenco dei modelli.
 
 4. Nella finestra di dialogo **Nuova funzione** che viene visualizzata immettere i valori seguenti.
 
     |Proprietà  |Valore  |
     |---------|---------|
-    |Linguaggio     |   **JavaScript**      |
     |Nome     |   **discover-sentiment-function**      |
     |Nome della coda     |   **new-feedback-q**      |
     |Connessione dell'account di archiviazione        |  **AzureWebJobsDashboard**       |

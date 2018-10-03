@@ -9,11 +9,42 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 9b4e753dd959b77757eee376fa367513e9b62327
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.openlocfilehash: 355fab15880ecc7d0d16f91e51f00a79531bb65d
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46342769"
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47437562"
 durationInMinutes: 3
-content: '[!include[](includes/9-summary.md)]'
+content: >
+  [!include[](includes/9-summary.md)]
+quiz:
+  title: Verifica delle conoscenze
+  questions:
+  - content: "Si supponga di lavorare per un'agenzia governativa che sta progettando di espandere il sistema autostradale a lungo termine. I dati sul traffico ricevuti da migliaia di sensori vengono analizzati per creare consigli. La quantità di dati in ingresso varia nel corso della giornata. Ad esempio, si registrano picchi durante le ore di punta della mattina e della sera. Vero o falso: un'architettura lato server costituita da una coda di Azure connessa a una sola macchina virtuale è una scelta adeguata per questo carico di lavoro?"
+    choices:
+    - content: Vero
+      isCorrect: true
+      correctExplanation: La coda gestirà i picchi di traffico e garantirà che nessun dato vada perso. Se la macchina virtuale non può gestire il flusso dei messaggi in ingresso, elaborerà il backlog dei messaggi durante le ore di traffico meno intenso.
+    - content: Falso
+      isCorrect: false
+      incorrectExplanation: Questi dati vengono usati per una pianificazione a lungo termine. Non è quindi necessario che siano elaborati in tempo reale. Una coda connessa a una sola macchina virtuale potrebbe gestire il carico di lavoro ed essere una soluzione conveniente.
+  - content: Quali informazioni identificano in modo univoco una coda?
+    choices:
+    - content: Nome della coda
+      isCorrect: false
+      incorrectExplanation: I nomi delle code deve essere univoci solo all'interno dell'account di archiviazione che li contiene. Non devono essere nomi univoci globali.
+    - content: Chiave dell'account
+      isCorrect: false
+      incorrectExplanation: Le chiavi dell'account sono associate a un account di archiviazione e non a una coda.
+    - content: Nome dell'account di archiviazione e nome della coda
+      isCorrect: true
+      correctExplanation: I nomi degli account di archiviazione devono essere nomi univoci globali. I nomi delle code deve essere univoci all'interno dell'account di archiviazione che li contiene. La combinazione di nome dell'account di archiviazione e nome della coda identifica quindi in modo univoco una coda.
+  - content: 'Vero o falso: quando un client recupera a livello di codice un messaggio da una coda, il messaggio viene automaticamente eliminato dalla coda?'
+    choices:
+    - content: Vero
+      isCorrect: false
+      incorrectExplanation: La ricezione e l'eliminazione del messaggio sono operazioni distinte.
+    - content: Falso
+      isCorrect: true
+      correctExplanation: Per impostazione predefinita, i messaggi non vengono automaticamente eliminati da una coda dopo essere stati recuperati per l'elaborazione. Si garantisce così che ogni messaggio sia elaborato fino al completamento. Se un'applicazione consumer si arresta in modo anomalo durante l'elaborazione, il messaggio resta comunque disponibile per poter essere elaborato da un'istanza diversa dall'app consumer.

@@ -9,37 +9,48 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 8a56219bb221c4a1969598fb0a8e8836ae37d168
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.openlocfilehash: 95702ee9d30aead8db2074f0d12528edc3ae59fe
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46341539"
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47437885"
 durationInMinutes: 2
 content: >
   [!include[](includes/4-knowledge-check.md)]
 quiz:
-  title: Verificare le proprie conoscenze
+  title: Verifica delle conoscenze
   questions:
-  - content: Il team di astronomia usa svariate applicazioni di elaborazione di immagini che richiedono una grande quantità di potenza di calcolo e memoria per l'esecuzione. Si vuole eseguire rapidamente la migrazione di queste applicazioni in Azure. Quale delle opzioni seguenti scegliere?
+  - content: Si supponga che un'applicazione esistente sia in esecuzione nel server locale. È necessaria capacità aggiuntiva ma si preferisce passare ad Azure anziché acquistare hardware locale aggiornato. Quale opzione di calcolo rappresenta probabilmente la soluzione più rapida per l'esecuzione dell'applicazione in Azure?
     choices:
-    - content: Servizio Kubernetes di Azure (AKS)
+    - content: Elaborazione serverless
       isCorrect: false
-      incorrectExplanation: Il servizio app è completamente gestito e viene automaticamente ridimensionato. Ciò consente al team di concentrarsi sulla scrittura del codice.
-    - content: Service Fabric
+      incorrectExplanation: La conversione a un modello di elaborazione serverless richiede probabilmente la riorganizzazione dell'applicazione in base a un'architettura basata su eventi.
+    - content: Contenitori
       isCorrect: false
-      incorrectExplanation: Il servizio app è completamente gestito e viene automaticamente ridimensionato. Ciò consente al team di concentrarsi sulla scrittura del codice.
-    - content: Servizio app
+      incorrectExplanation: La conversione ai contenitori richiederebbe di ricreare il pacchetto dell'applicazione. Questa operazione potrebbe non essere troppo difficile, a seconda dell'architettura esistente, ma potrebbe richiedere tempo e richiedere una certa esperienza con i contenitori.
+    - content: Macchine virtuali
       isCorrect: true
-      correctExplanation: Il servizio app è completamente gestito e viene automaticamente ridimensionato. Ciò consente al team di concentrarsi sulla scrittura del codice.
-  - content: Si supponga che il team di astronomia abbia eseguito calcoli astronomici che richiedono molte ore o giorni per essere completati. L'esecuzione in parallelo non sembrerebbe essere molto d'aiuto. Quale delle opzioni seguenti scegliere?
+      correctExplanation: La configurazione di una macchina virtuale è completamente sotto il controllo dell'utente. È quindi possibile configurare una macchina virtuale in modo analogo al server locale. In questo modo l'applicazione esistente può essere eseguita nella macchina virtuale di Azure con modifiche minime o senza alcuna modifica.
+  - content: "Si supponga di lavorare a un'applicazione di condivisione di foto eseguita in milioni di dispositivi mobili. La domanda è imprevedibile: si verifica un picco nell'utilizzo ogni volta che si verifica un evento significativo a livello locale o nazionale. Quale risorsa di calcolo di Azure è più adatta per questo carico di lavoro?"
     choices:
-    - content: Servizi cloud
-      isCorrect: false
-      incorrectExplanation: Azure Batch consente la gestione del calcolo e della pianificazione dei processi a livello di cloud, con la possibilità di scalare fino a decine, centinaia o migliaia di macchine virtuali.
-    - content: Azure Batch
+    - content: Elaborazione serverless
       isCorrect: true
-      correctExplanation: Azure Batch consente la gestione del calcolo e della pianificazione dei processi a livello di cloud, con la possibilità di scalare fino a decine, centinaia o migliaia di macchine virtuali.
-    - content: Istanze di contenitore
+      correctExplanation: L'app di condivisione di foto è basata su eventi e deve gestire una domanda non prevedibile. L'elaborazione serverless è adatta a questo scopo, perché è basata su eventi e consente un ridimensionamento immediato per l'elaborazione dei picchi di traffico. Si tratta anche essere di una scelta conveniente, perché si paga il tempo di elaborazione solo quando vengono elaborati dati utente.
+    - content: Contenitori
       isCorrect: false
-      incorrectExplanation: Azure Batch consente la gestione del calcolo e della pianificazione dei processi a livello di cloud, con la possibilità di scalare fino a decine, centinaia o migliaia di macchine virtuali.
+      incorrectExplanation: Il tempo di avvio per un'istanza di contenitore è in genere di pochi secondi. Ciò potrebbe non garantire un ridimensionamento sufficientemente rapido per reagire ai picchi improvvisi della domanda.
+    - content: Macchine virtuali
+      isCorrect: false
+      incorrectExplanation: L'avvio di una macchina virtuale può richiedere qualche minuto. Ciò potrebbe non garantire un ridimensionamento sufficientemente rapido per reagire ai picchi improvvisi della domanda.
+  - content: Le opzioni di calcolo consentono livelli diversi di controllo della configurazione dell'ambiente in cui viene eseguita l'applicazione. Quale degli elenchi seguenti contiene opzioni di calcolo ordinate da "controllo massimo" a "controllo minimo"?
+    choices:
+    - content: Elaborazione serverless, contenitori, macchine virtuali
+      isCorrect: false
+      incorrectExplanation: L'elaborazione serverless consente il controllo minimo, astraendo completamente l'ambiente di hosting sottostante.
+    - content: Contenitori, elaborazione serverless, macchine virtuali
+      isCorrect: false
+      incorrectExplanation: I contenitori consentono un controllo limitato dell'ambiente. Consentono, ad esempio, di scegliere il sistema operativo sottostante.
+    - content: Macchine virtuali, contenitori, elaborazione serverless
+      isCorrect: true
+      correctExplanation: Le macchine virtuali consentono il controllo completo dell'ambiente. I contenitori consentono un controllo limitato. L'elaborazione serverless non consente di eseguire alcuna attività di configurazione dell'infrastruttura.

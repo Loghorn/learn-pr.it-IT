@@ -1,0 +1,2 @@
+> [!IMPORTANT]
+> Questa unità richiede l'accesso a una macchina virtuale. Se si è già connessi a una macchina virtuale da un'unità precedente di questo modulo, si può iniziare. Se non si è connessi, selezionare **Accedi per avviare la modalità VM** sopra.

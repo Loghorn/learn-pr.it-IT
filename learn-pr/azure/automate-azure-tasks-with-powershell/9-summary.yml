@@ -9,11 +9,45 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 4d91629775838b773937b42f3eb560a386276bb0
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.openlocfilehash: ba3042f85d59e09955c715f241f1620ceb22cfa5
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46340683"
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47437443"
 durationInMinutes: 3
-content: '[!include[](includes/9-summary.md)]'
+content: >
+  [!include[](includes/9-summary.md)]
+quiz:
+  title: Verifica delle conoscenze
+  questions:
+  - content: "Vero o falso: il portale di Azure, l'interfaccia della riga di comando di Azure e Azure PowerShell offrono servizi decisamente diversi tra loro pertanto è improbabile che tutti e tre supporteranno l'operazione richiesta."
+    choices:
+    - content: Vero
+      isCorrect: false
+      incorrectExplanation: I tre strumenti offrono quasi esattamente lo stesso set di servizi.
+    - content: Falso
+      isCorrect: true
+      correctExplanation: I tre strumenti offrono quasi lo stesso set di servizi. In genere, questa considerazione non è un fattore importante per decidere quale strumento è migliore per svolgere le proprie attività.
+  - content: Si supponga che si voglia creare un'applicazione per la modifica di video che offra spazio di archiviazione online per i contenuti video generati dagli utenti. I video verranno archiviati nei BLOB di Azure, pertanto è necessario creare un account di archiviazione di Azure che contenga i BLOB. Una volta predisposto l'account di archiviazione, è improbabile che si decida di rimuoverlo e ricrearlo perché ciò comporterebbe l'eliminazione di tutti i video degli utenti. Quale strumento offre verosimilmente il modo più rapido e semplice per creare l'account di archiviazione?
+    choices:
+    - content: Portale di Azure
+      isCorrect: true
+      correctExplanation: Il portale rappresenta una buona scelta per svolgere operazioni singole come la creazione di un account di archiviazione di lunga durata. Il portale offre un'interfaccia utente grafica che contiene tutte le proprietà per l'account di archiviazione e le descrizioni comando che aiutano a selezionare le opzioni corrette per le proprie esigenze.
+    - content: Interfaccia della riga di comando di Azure
+      isCorrect: false
+      incorrectExplanation: Per usare l'interfaccia della riga di comando, è necessario cercare il comando da utilizzare per creare un account di archiviazione. È inoltre necessario installare l'interfaccia della riga di comando in locale oppure accedere a Cloud Shell. Per un'operazione occasionale quale la creazione di un account di archiviazione, questa opzione potrebbe richiedere più tempo rispetto al portale di Azure.
+    - content: Azure PowerShell
+      isCorrect: false
+      incorrectExplanation: Per usare Azure PowerShell, è necessario cercare il comando da utilizzare per creare un account di archiviazione. È inoltre necessario installare PowerShell e Azure PowerShell in locale o oppure accedere a Cloud Shell. Per un'operazione occasionale quale la creazione di un account di archiviazione, questa opzione potrebbe richiedere più tempo rispetto al portale di Azure.
+  - content: Che cosa è necessario installare nel computer per consentire l'esecuzione in locale dei cmdlet di Azure PowerShell?
+    choices:
+    - content: Azure Cloud Shell
+      isCorrect: false
+      incorrectExplanation: Cloud Shell consente di eseguire i cmdlet di Azure in un browser, pertanto i comandi non sono eseguiti nel computer locale.
+    - content: Il prodotto PowerShell di base e il modulo AzureRM
+      isCorrect: true
+      correctExplanation: Occorrono il prodotto PowerShell di base e il modulo AzureRM. Il prodotto base offre la shell stessa, alcuni comandi di base e i costrutti di programmazione, ad esempio i cicli, le variabili e così via. I moduli AzureRM mettono a disposizione i cmdlet necessari per lavorare con le risorse di Azure.
+    - content: L'interfaccia della riga di comando di Azure e Azure PowerShell
+      isCorrect: false
+      incorrectExplanation: L'interfaccia della riga di comando di Azure è uno strumento da riga di comando e di scripting alternativo. Non è necessaria se si intende usare Azure PowerShell.

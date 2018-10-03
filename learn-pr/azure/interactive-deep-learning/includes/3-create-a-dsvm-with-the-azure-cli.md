@@ -26,12 +26,12 @@ Si creerà una VM con un modello di Azure Resource Manager. Il modello definisce
 
 1. Eseguire il comando seguente in Azure Cloud Shell a destra di questa unità:
 
-    ```bash
-    code parameter_file.json
+    ```azurecli
+    code .
     ```
-    <!-- TODO add a link to official doc that explains the built-in editor when it becomes available --> Questo comando apre un file vuoto denominato `parameter_file.json` nell'editor integrato. 
+    <!-- TODO add a link to official doc that explains the built-in editor when it becomes available --> Questo comando apre un file vuoto nell'editor integrato. 
 
-1. Incollare il frammento JSON seguente nel file vuoto nell'editor di codice.
+1. Incollare il frammento di codice JSON seguente nel file vuoto nell'editor di codice.
 
     ```json
     { 
@@ -53,9 +53,9 @@ Si creerà una VM con un modello di Azure Resource Manager. Il modello definisce
     |adminUsername     |  `<USERNAME>`       |    Scegliere un nome per l'utente amministratore di questo nuovo computer, ad esempio *azuser*.     |
     |adminPassword     |  `<PASSWORD>`       |   Scegliere una password per questo account utente amministratore. Per altre informazioni sui requisiti delle password, vedere [Domande frequenti sulle macchine virtuali Linux](https://docs.microsoft.com/azure/virtual-machines/linux/faq?azure-portal=true)     |
     |vmName     |   `<HOSTNAME>`      |  Scegliere un nome per la nuova macchina virtuale. Il nome deve iniziare con una lettera e contenere solo lettere minuscole e numeri. Provare a scegliere un nome univoco, ad esempio uno che includa le iniziali del nome e l'anno di nascita. |
-    |vmSize     |  Standard_DS2_v2       |  Queste dimensioni di macchina virtuale sono idonee per questo esercizio, ma è possibile modificarle. Un elenco delle dimensioni di VM disponibili è reperibile in [Dimensioni delle macchine virtuali Linux in Azure](https://docs.microsoft.com/azure/virtual-machines/linux/sizes?azure-portal=true)       |
+    |vmSize     |  Standard_DS2_v2       |  Queste dimensioni di macchina virtuale sono idonee per questo esercizio, ma è possibile modificarle. Un elenco delle dimensioni delle VM disponibili è reperibile in [Dimensioni delle macchine virtuali Linux in Azure](https://docs.microsoft.com/azure/virtual-machines/linux/sizes?azure-portal=true)       |
 
-1. Salvare le modifiche in `parameter_file.json` e chiudere l'editor di testo.
+1. Selezionare i tre puntini di sospensione (**...** ) nella parte superiore destra dell'editor e quindi selezionare **Salva** dal menu per salvare il file come `parameter_file.json` e chiudere l'editor di testo.
 
     > [!IMPORTANT]
     > Ricordare i valori scelti per adminUsername, adminPassword e vmName. Verranno usati di nuovo in questo esercizio.
@@ -78,6 +78,8 @@ Si è scelto un gruppo di risorse e sono stati definiti parametri per il modello
     --parameters parameter_file.json
     ```
 
+    [!include[](../../../includes/azure-cloudshell-copy-paste-tip.md)]
+
     Il comando usa il modello di Resource Manager e i parametri per creare la macchina virtuale nel gruppo di risorse. 
 
 2. La distribuzione di una macchina virtuale richiede alcuni minuti. La console visualizza ` - Running ..` e poco altro fino al completamento dell'operazione. Al termine dell'operazione verrà visualizzata una risposta JSON. Scorrere fino alla fine del file JSON e verificare che il campo **"provisioningState"** abbia il valore *Succeeded*.
@@ -88,22 +90,21 @@ Si è scelto un gruppo di risorse e sono stati definiti parametri per il modello
 3. Eseguire il comando seguente per ottenere informazioni sulla VM, sostituendo `<HOSTNAME>` con il nome host definito per la VM.
 
     ```azurecli
-    az vm get-instance-view \
+    az vm show -d \
     --name <HOSTNAME> \
     --resource-group <rgn>[sandbox resource group name]</rgn> \
-    --query instanceView.statuses[1] \
     --output table
     ```
 
-    Questo comando visualizza lo stato della VM. Dovrebbe indicare *Esecuzione della macchina virtuale in corso*.
+    Questo comando visualizza lo stato della VM. Il campo **PowerState** indica *VM running*. Più avanti in questo esercizio, verrà effettuata la connessione alla macchina virtuale usando l'indirizzo IP riportato nel campo **PublicIps**. Sarebbe anche possibile connettersi utilizzando il nome di dominio completo visualizzato nel campo **FQDN**.
 
-Congratulazioni. È stata creata e distribuita una macchina virtuale Linux basata sull'immagine della DSVM.
+La procedura è stata completata. È stata creata e distribuita una macchina virtuale Linux basata sull'immagine della DSVM.
 
 ## <a name="open-the-vm-to-ssh-traffic-on-port-22"></a>Aprire la VM indirizzare tramite SSH il traffico sulla porta 22
 
 Per impostazione predefinita, la macchina virtuale non ha alcuna porta aperta. L'obiettivo è di connettersi in remoto, avviare un server Jupyter Notebook ed eseguire altri comandi locali nel computer. Per accedere in remoto alla macchina virtuale usando il protocollo Secure Shell (SSH), è necessario aprire una porta. La porta predefinita per SSH è la porta 22.  
 
-1. Eseguire il comando seguente in Azure Cloud Shell, sostituendo `<HOSTNAME>` con il nome assegnato alla DSVM durante l'installazione. 
+1. Eseguire il comando seguente in Azure Cloud Shell, sostituendo `<HOSTNAME>` con il nome assegnato alla macchina virtuale durante l'installazione. 
 
     ```azurecli
     az vm open-port \
@@ -113,7 +114,7 @@ Per impostazione predefinita, la macchina virtuale non ha alcuna porta aperta. L
     --priority 900
     ```
 
-Il comando può richiedere fino a un minuto. Al termine, il comando restituisce una risposta JSON per la riga di comando. Verificare che il campo **"provisioningState"** abbia il valore *Succeeded*. A breve verrà testato il funzionamento di SSH. Per il momento, verrà aperta un'altra porta.
+L'esecuzione del comando può richiedere fino a un minuto. Al termine, il comando restituisce una risposta JSON per la riga di comando. Verificare che il campo **"provisioningState"** abbia il valore *Succeeded*. A breve verrà testato il funzionamento di SSH. Per il momento, verrà aperta un'altra porta.
 
 ## <a name="open-the-vm-to-access-the-jupyter-notebook-server-remotely"></a>Aprire la VM per accedere al server Jupyter Notebook in remoto
 
@@ -207,6 +208,6 @@ Quando il comando riportato sopra viene eseguito nella macchina virtuale, il ser
 
 1. Passare a **notebooks/IntroToJupyterPython.ipynb** e selezionarlo. Testare questo notebook per verificare che tutto funzioni come previsto.
 
-    Congratulazioni. La macchina virtuale basata su DSVM è ora in esecuzione e può lavorare in remoto con Jupyter. In questo esercizio è stato eseguito il software installato nella macchina virtuale. Nel prossimo esercizio il software verrà isolato in un contenitore nella macchina virtuale in modo da potersi esercitare in tutta sicurezza.
+    La procedura è stata completata. La macchina virtuale basata su DSVM è ora in esecuzione e può lavorare in remoto con Jupyter. In questo esercizio è stato eseguito il software installato nella macchina virtuale. Nel prossimo esercizio il software verrà isolato in un contenitore nella macchina virtuale in modo da potersi esercitare in tutta sicurezza.
 
 4. Una volta terminato l'uso del notebook, sarà possibile arrestare il server Jupyter con `Control-C` in Cloud Shell.

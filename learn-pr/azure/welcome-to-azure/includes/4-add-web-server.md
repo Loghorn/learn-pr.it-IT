@@ -76,11 +76,7 @@ Ora che IIS è configurato, verificare che sia in esecuzione.
     > [!NOTE]
     > L'argomento `--query` rende leggermente complesso questo comando. Man mano che si esplora e si approfondisce Azure, diventerà più chiaro.
 
-    Viene visualizzato l'indirizzo IP pubblico della macchina virtuale. Ecco un esempio.
-
-    ```output
-    104.211.9.245
-    ```
+    Viene visualizzato l'indirizzo IP pubblico della macchina virtuale, ad esempio 104.211.9.245.
 
 1. In una nuova scheda del browser, passare all'indirizzo IP della macchina virtuale. Viene visualizzato il messaggio di benvenuto e il nome della macchina virtuale.
 
@@ -148,11 +144,7 @@ Ora che Nginx è configurato, verificare che sia in esecuzione.
     > [!NOTE]
     > L'argomento `--query` rende leggermente complesso questo comando. Man mano che si esplora e si approfondisce Azure, diventerà più chiaro.
 
-    Viene visualizzato l'indirizzo IP pubblico della macchina virtuale. Ecco un esempio.
-
-    ```output
-    137.135.110.210
-    ```
+    Viene visualizzato l'indirizzo IP pubblico della macchina virtuale, ad esempio 104.211.9.245.
 
 1. In una nuova scheda del browser, passare all'indirizzo IP della macchina virtuale. Viene visualizzato il messaggio di benvenuto e il nome della macchina virtuale.
 

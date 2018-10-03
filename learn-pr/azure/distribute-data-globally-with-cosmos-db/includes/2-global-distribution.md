@@ -39,14 +39,13 @@ Quando un database viene replicato, vengono replicate in modo uniforme anche la 
 
     Impostazione|Valore|Descrizione
     ---|---|---
-    ID|*Immettere un nome univoco*|Immettere un nome univoco per identificare l'account Azure Cosmos DB. Dato che all'ID specificato viene aggiunto *documents.azure.com* per creare l'URI, usare un ID univoco ma identificabile.<br><br>L'ID può contenere solo lettere minuscole, numeri e il segno meno (-) e deve avere una lunghezza compresa tra 3 e 50 caratteri.
-    API|SQL|L'API determina il tipo di account da creare. Azure Cosmos DB offre cinque API per soddisfare le esigenze dell'applicazione: SQL (database di documenti), Gremlin (database a grafo), MongoDB (database di documenti), Tabella di Azure e Cassandra. Per ogni API è attualmente necessario un account separato. <br><br>Selezionare **SQL** perché in questo modulo si crea un database di documenti disponibile per query con sintassi SQL e accessibile con l'API SQL.|
     Sottoscrizione|*Concierge Subscription* (Sottoscrizione Concierge)|Selezionare la sottoscrizione Concierge. Se la sottoscrizione Concierge non è elencata, nella sottoscrizione sono abilitati più tenant ed è necessario cambiare tenant. A tale scopo, accedere nuovamente usando il collegamento del portale seguente: [portale di Azure per sandbox](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true).
     Gruppo di risorse|Usa esistente<br><br><rgn>[Nome gruppo di risorse sandbox]</rgn>|Selezionare **Usa esistente**, quindi immettere il <rgn>[Nome gruppo di risorse sandbox]</rgn>.
-    Località|*Selezionare l'area più vicina*|Selezionare l'area più vicina all'utente nell'elenco delle aree precedente.
-    Ridondanza geografica| Disabilita | Questa impostazione crea una versione replicata del database in una seconda area associata. Per il momento lasciare impostato su disabilitato, in quanto il database verrà replicato in un secondo momento.
-    Multimaster | Abilita | Questa impostazione consente di scrivere in più aree nello stesso momento. Questa impostazione può essere configurata solo durante la creazione dell'account.
-    Rete virtuale|Lasciare vuoto|Per il momento, lasciare vuoto il campo delle reti virtuali. Il servizio può essere configurato in un secondo momento.
+    Nome account|*Immettere un nome univoco*|Immettere un nome univoco per identificare l'account Azure Cosmos DB. Dato che, per creare l'URI, all'ID specificato viene aggiunto *documents.azure.com*, usare un ID univoco ma identificabile.<br><br>L'ID può contenere solo lettere minuscole, numeri e il segno meno (-) e deve avere una lunghezza compresa tra 3 e 31 caratteri.
+    API|SQL|L'API determina il tipo di account da creare. Azure Cosmos DB offre cinque API per soddisfare le esigenze dell'applicazione: SQL (database di documenti), Gremlin (database a grafo), MongoDB (database di documenti), Tabella di Azure e Cassandra. Per ogni API è attualmente necessario un account separato. <br><br>Selezionare **SQL** perché in questo modulo si crea un database di documenti disponibile per query con sintassi SQL e accessibile con l'API SQL.|
+    Posizione|*Selezionare l'area più vicina*|Selezionare l'area più vicina all'utente nell'elenco delle aree precedente.
+    Ridondanza geografica| Disabilita | Questa impostazione crea una versione replicata del database in una seconda area associata. Per il momento lasciarla disabilitata, in quanto il database verrà replicato in un secondo momento.
+    Multi-region Writes | Abilita | Questa impostazione consente di scrivere in più aree nello stesso momento. Questa impostazione può essere configurata solo durante la creazione dell'account.
 
 1. Fare clic su **Rivedi e crea**.
 

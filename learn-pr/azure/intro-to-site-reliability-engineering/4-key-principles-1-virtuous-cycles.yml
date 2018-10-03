@@ -1,0 +1,82 @@
+### YamlMime:ModuleUnit
+uid: learn.intro-to-site-reliability-engineering.4-key-principles-1-virtuous-cycles
+title: 'Principi e procedure SRE: i cicli virtuosi'
+metadata:
+  title: 'Principi e procedure SRE: i cicli virtuosi'
+  description: 'Principi e procedure SRE: i cicli virtuosi'
+  ms.date: 09/26/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 632ab6aeec2ad4c2cff90470b13008470de7ca99
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47439421"
+durationInMinutes: 10
+content: >
+  [!include[](includes/4-key-principles-1-virtuous-cycles.md)]
+quiz:
+  title: Verifica delle conoscenze
+  questions:
+  - content: Che cosa significa SLI (nel contesto SRE)?
+    choices:
+    - content: 'Standard Level Indicator '
+      isCorrect: false
+      incorrectExplanation: SLI è l'acronimo di Service Level Indicator.
+    - content: Service Level Indicator
+      isCorrect: true
+    - content: Safe Load Indicator
+      isCorrect: false
+      incorrectExplanation: SLO è l'acronimo di Service Level Indicator.
+    - content: System Level Interface
+      isCorrect: false
+      incorrectExplanation: SLO è l'acronimo di Service Level Indicator.
+  - content: Che cosa significa SLO (nel contesto SRE)?
+    choices:
+    - content: Service Level Outcome
+      isCorrect: false
+      incorrectExplanation: SLO è l'acronimo di Service Level Objective.
+    - content: Standard Line Operations
+      isCorrect: false
+      incorrectExplanation: SLO è l'acronimo di Service Level Objective.
+    - content: Service Load Objective
+      isCorrect: false
+      incorrectExplanation: SLO è l'acronimo di Service Level Objective.
+    - content: Service Level Objective
+      isCorrect: true
+  - content: Cosa fare se viene esaurito il budget degli errori per un servizio?
+    choices:
+    - content: Riavviare immediatamente il servizio coinvolto per ripristinarne la conformità
+      isCorrect: false
+      incorrectExplanation: Il budget degli errori è un metodo per registrare l'affidabilità aggregata di un servizio nel tempo in quanto correlato ai propri obiettivi. Il budget degli errori deve essere associato alla condivisione delle informazioni sulla reazione dell'organizzazione in caso di superamento del limite accettabile di inaffidabilità. Le risposte possibili sono numerose. È necessario scegliere e attenersi a quelle più adatte al contesto specifico. Non esiste un'unica reazione corretta valida per tutti e per tutte le situazioni.
+    - content: Sospendere gli aggiornamenti a ulteriori versioni del software fino a quando non viene ripristinato il livello di affidabilità concordato
+      isCorrect: false
+      incorrectExplanation: Il budget degli errori è un metodo per registrare l'affidabilità aggregata di un servizio nel tempo in quanto correlato ai propri obiettivi. Il budget degli errori deve essere associato alla condivisione delle informazioni sulla reazione dell'organizzazione in caso di superamento del limite accettabile di inaffidabilità. Le risposte possibili sono numerose. È necessario scegliere e attenersi a quelle più adatte al contesto specifico. Non esiste un'unica reazione corretta valida per tutti e per tutte le situazioni.
+    - content: Reindirizzare immediatamente le risorse di ingegneria associate al servizio spostandole dallo sviluppo delle funzionalità alla soluzione del problema di affidabilità
+      isCorrect: false
+      incorrectExplanation: Il budget degli errori è un metodo per registrare l'affidabilità aggregata di un servizio nel tempo in quanto correlato ai propri obiettivi. Il budget degli errori deve essere associato alla condivisione delle informazioni sulla reazione dell'organizzazione in caso di superamento del limite accettabile di inaffidabilità. Le risposte possibili sono numerose. È necessario scegliere e attenersi a quelle più adatte al contesto specifico. Non esiste un'unica reazione corretta valida per tutti e per tutte le situazioni.
+    - content: La reazione deve essere specifica del servizio o dell'organizzazione e concordata in precedenza durante la creazione del budget degli errori
+      isCorrect: true
+      correctExplanation: Quando si configura il budget degli errori per un servizio è importante definire (e documentare) la risposta dell'organizzazione in caso di esaurimento del budget. Le risposte possibili sono numerose. È necessario scegliere e attenersi a quelle più adatte al contesto specifico. Il budget degli errori è un metodo per registrare l'affidabilità aggregata di un servizio nel tempo. Il budget degli errori deve essere associato alla condivisione delle informazioni sulla reazione dell'organizzazione in caso di superamento del limite accettabile di inaffidabilità. Le risposte possibili sono numerose. È necessario scegliere e attenersi a quelle più adatte al contesto specifico. Non esiste un'unica reazione corretta valida per tutti e per tutte le situazioni.
+  - content: Cosa fare se viene esaurito il budget degli errori per un servizio?
+    choices:
+    - content: Aumentare la frequenza dei rilasci per il servizio
+      isCorrect: false
+      incorrectExplanation: Questa è una possibile risposta quasi corretta, ma esclude un componente essenziale. Se l'affidabilità del servizio sarà ancora al livello desiderato anche nel caso dovessero essere eseguite operazioni che potrebbero ridurla, può essere ragionevole usare tale margine aumentando la frequenza dei rilasci. Ma questa è solo una delle risposte possibili. L'azione corretta varia a seconda delle circostanze specifiche.
+    - content: Dedicare maggiore attenzione allo sviluppo delle funzionalità per il servizio e distribuire le funzionalità più rapidamente
+      isCorrect: false
+      incorrectExplanation: Questa è una possibile risposta quasi corretta, ma esclude un componente essenziale. Se l'affidabilità del servizio sarà ancora al livello desiderato anche nel caso dovessero essere eseguite operazioni che potrebbero ridurla, può essere ragionevole usare tale margine aumentando la velocità delle funzioni. Ma questa è solo una delle risposte possibili. L'azione corretta varia a seconda delle circostanze specifiche.
+    - content: Dipende
+      isCorrect: true
+      correctExplanation: Esistono molti modi di "spendere" un budget degli errori in eccesso. È possibile aumentare la frequenza dei rilasci o la velocità delle funzioni, distribuire un maggior numero di funzioni beta, eseguire più test con interruzione del servizio e così via. È anche possibile (sebbene ciò comporti alcuni problemi) non eseguire alcuna operazione e limitarsi a far funzionare il servizio a un livello di affidabilità maggiore. Tutte queste risposte sono specifiche per la singola situazione e devono essere decise nel contesto d'uso.
+  - content: Quando si verifica un tempo di inattività o un altro tipo di errore, è necessario disconnettere immediatamente gli utenti coinvolti?
+    choices:
+    - content: Sì, è necessario che l'utente o gli utenti che hanno commesso l'errore si assumano la responsabilità delle proprie azioni e ne subiscano le conseguenze
+      isCorrect: false
+      incorrectExplanation: Non si può licenziare la via per l'affidabilità. Se in queste situazioni l'approccio si focalizza sulla colpevolezza, l'organizzazione perde la possibilità di imparare dall'errore e di migliorare i processi e la tecnologia che hanno consentito per primi che si verificasse il problema. Senza questo ciclo di feedback, l'organizzazione sarà sempre obbligata a reagire agli errori anziché eliminarli.
+    - content: No, solo in alcune circostanze rare e limitate
+      isCorrect: true
+      correctExplanation: Analogamente ai postmortem senza colpevoli, i cicli di feedback sono fondamentali per il miglioramento continuo. Se un'organizzazione impara dall'errore anziché licenziare le persone coinvolte (le persone che possono meglio comprendere cosa è successo), potrà lavorare direttamente sull'affidabilità dei propri servizi, sistemi e prodotti.

@@ -22,10 +22,12 @@ Verrà ora creata un'app per le funzioni da usare in tutto questo modulo. Un'app
     | **Sottoscrizione** | Sottoscrizione in uso | Sottoscrizione in cui viene creata questa nuova app per le funzioni. |
     | **Gruppo di risorse**|  Selezionare **Usa esistente** e scegliere _<rgn>[Nome gruppo di risorse sandbox]</rgn>_ | Nome del gruppo di risorse in cui creare l'app per le funzioni. |
     | **Sistema operativo** | Windows | Il sistema operativo che ospita l'app per le funzioni.  |
-    | **Hosting** |   Piano a consumo | Piano di hosting che definisce come vengono allocate le risorse all'app per le funzioni. Nel **piano a consumo** predefinito le risorse vengono aggiunte in modo dinamico come richiesto dalle funzioni. In questo modello di hosting serverless si paga solo per il periodo in cui le funzioni sono in esecuzione.   |
-    | **Account di archiviazione** |  Nome globalmente univoco |  Nome del nuovo account di archiviazione usato dall'app per le funzioni. I nomi degli account di archiviazione devono avere una lunghezza compresa tra 3 e 24 caratteri e possono contenere solo numeri e lettere minuscole. In questa finestra di dialogo il campo è popolato con un nome univoco derivato dal nome assegnato all'app. Tuttavia, è possibile usare un nome diverso o perfino un account esistente. |
-    | **Località** | Selezionarla dall'elenco | Selezionare la località più vicina tra quelle disponibili elencate di seguito. |
+    | **Piano di hosting** |   Piano a consumo | Piano di hosting che definisce come vengono allocate le risorse all'app per le funzioni. Nel **piano a consumo** predefinito le risorse vengono aggiunte in modo dinamico come richiesto dalle funzioni. In questo modello di hosting serverless si paga solo per il periodo in cui le funzioni sono in esecuzione.   |
+    | **Località** | Selezionarla dall'elenco | Scegliere quella più vicina all'utente che sia anche tra quelle consentite nelle *Aree Sandbox* elencate di seguito. |
+    | **Stack di runtime** | JavaScript | Il codice di esempio in questo modulo è scritto in JavaScript.  |
+    | **Archiviazione** |  Nome globalmente univoco |  Nome del nuovo account di archiviazione usato dall'app per le funzioni. I nomi degli account di archiviazione devono avere una lunghezza compresa tra 3 e 24 caratteri e possono contenere solo numeri e lettere minuscole. In questa finestra di dialogo il campo è popolato con un nome univoco derivato dal nome assegnato all'app. Tuttavia, è possibile usare un nome diverso o perfino un account esistente. |
 
+    ### <a name="sandbox-regions"></a>Aree sandbox
     [!include[](../../../includes/azure-sandbox-regions-first-mention-note-friendly.md)]
 
 1. Per effettuare il provisioning dell'app per le funzioni e distribuirla, selezionare **Crea**.
@@ -47,15 +49,23 @@ Verrà ora creata un'app per le funzioni da usare in tutto questo modulo. Un'app
 
 Ora che si dispone di un'app per le funzioni, è il momento di creare una funzione. Una funzione viene attivata tramite un trigger. In questo modulo si userà un trigger HTTP.
 
-1. Espandere la nuova app per le funzioni, quindi passare il puntatore sulla raccolta di funzioni e selezionare il pulsante Aggiungi (**+**) accanto a **Funzioni**. Questa azione avvia il processo di creazione della funzione. L'animazione seguente illustra questa azione.
+<!-- Start temporary fix for issue #2498. -->
+> [!IMPORTANT]
+> Gli esercizi in questo modulo attualmente funzionano con Funzioni di Azure V1. Seguire questa procedura con attenzione per assicurarsi che l'app per le funzioni usi la versione del runtime V1. 
 
-    ![Animazione del segno più che viene visualizzata quando l'utente passa il puntatore sulla voce di menu delle funzioni.](../media/3-func-app-plus-hover-small.gif)
+1. Selezionare l'app per le funzioni nell'elenco **App per le funzioni**.
+1. Selezionare **Funzionalità della piattaforma**.
+1. Nella schermata **Funzionalità della piattaforma** selezionare **Impostazioni dell'app per le funzioni** in **Impostazioni generali**.
+1. Selezionare *~1* in **Versione runtime**.
+1. Chiudere **Impostazioni dell'app per le funzioni**.
+
+L'app per le funzioni è ora configurata per usare il runtime V1 di Funzioni di Azure. È ora possibile continuare a creare la prima funzione.
+<!-- End temporary fix for issue #2498. --> 
+1. Selezionare il pulsante Aggiungi (**+**) accanto a **Funzioni**. Questa azione avvia il processo di creazione della funzione. 
 
 1. Dalla pagina **Operatività immediata**, accedere alla sezione **Iniziare autonomamente** e selezionare **Funzione personalizzata**.
 
-1. Questa operazione consente di visualizzare tutti i modelli inclusi nell'elenco, di trovare il modello del **trigger HTTP** e di selezionare JavaScript come linguaggio di programmazione.
-
-    ![Screenshot della casella di creazione della funzione HTTP con il collegamento JavaScript evidenziato](../media/3-http-function.png)
+1. Verranno elencati tutti i modelli. Selezionare il modello **Trigger HTTP** dall'elenco.
 
 1. Nel pannello **Nuova funzione** modificare il nome (se lo si desidera), lasciare il **Livello di autorizzazione** impostato su _Funzione_ e fare clic su **Crea**.
 

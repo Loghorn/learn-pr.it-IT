@@ -9,11 +9,48 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: e5bd4a690b6c92d6d8c0ef54553db4c523e0f1ab
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.openlocfilehash: 082f2ea2623a2ae161f0cc4ceee965a722a5fae1
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46341620"
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47437273"
 durationInMinutes: 5
-content: '[!include[](includes/5-summary.md)]'
+content: >
+  [!include[](includes/5-summary.md)]
+quiz:
+  title: Verifica delle conoscenze
+  questions:
+  - content: Chi è responsabile dell'esecuzione degli aggiornamenti software per i database SQL di Azure e per il sistema operativo sottostante?
+    choices:
+    - content: L'utente. È compito dell'utente accedere periodicamente e installare le patch di sicurezza e gli aggiornamenti più recenti.
+      isCorrect: false
+      incorrectExplanation: I database SQL di Azure sono di tipo piattaforma distribuita come servizio (PaaS, Platform-as-a-Service), il che significa che la manutenzione da gestire si riduce notevolmente.
+    - content: Microsoft Azure. Con Azure, l'hardware, gli aggiornamenti software e le patch del sistema operativo vengono gestiti automaticamente.
+      isCorrect: true
+      correctExplanation: I database SQL di Azure sono di tipo piattaforma distribuita come servizio (PaaS, Platform-as-a-Service). Con Azure, l'hardware, gli aggiornamenti software e le patch del sistema operativo vengono gestiti automaticamente.
+    - content: Nessuno. Il database rimane con la configurazione di sistema operativo e software originaria.
+      isCorrect: false
+      incorrectExplanation: I database SQL di Azure sono di tipo piattaforma distribuita come servizio (PaaS, Platform-as-a-Service). Il provider di servizi cloud in genere gestisce e aggiorna i servizi PaaS.
+  - content: Che cos'è un _server logico SQL di Azure_?
+    choices:
+    - content: Un contenitore amministrativo per i database.
+      isCorrect: true
+      correctExplanation: Tramite il server logico è possibile controllare gli account di accesso, le regole del firewall e i criteri di sicurezza.
+    - content: Un altro nome di un'istanza di database SQL di Azure.
+      isCorrect: false
+      incorrectExplanation: Tenere presente che è possibile avere più istanze di un database. È possibile amministrarle collettivamente?
+    - content: Un server che definisce le regole logiche per l'ordinamento e il confronto dei dati.
+      isCorrect: false
+      incorrectExplanation: Le _regole di confronto_ fanno riferimento alle regole per l'ordinamento e il confronto dei dati.
+  - content: Il database SQL di Azure offre risorse di archiviazione e potenza di calcolo adeguate. Ma ci si rende conto che è necessaria una maggiore velocità effettiva di I/O. Quale modello di prestazioni è possibile usare?
+    choices:
+    - content: DTU
+      isCorrect: false
+      incorrectExplanation: DTU, o unità di transazione di database, rappresenta un'opzione di acquisto semplice e preconfigurata. Per aumentare la velocità effettiva di I/O, è necessario passare a un livello superiore, in cui sono disponibili anche risorse di archiviazione e potenza di calcolo maggiori, che tuttavia non sono necessarie.
+    - content: vCore
+      isCorrect: true
+      correctExplanation: I vCore offrono maggiore controllo sulle risorse di calcolo e di archiviazione che vengono create e pagate. È possibile aumentare la velocità di I/O effettiva mantenendo la potenza di calcolo e le risorse di archiviazione esistenti.
+    - content: Pool elastico SQL
+      isCorrect: false
+      incorrectExplanation: I pool elastici SQL consentono di acquistare un set di risorse di calcolo e archiviazione che vengono condivise tra tutti i database nel pool. Questa opzione non consente di migliorare le prestazioni di I/O, perché si usa con un unico database.

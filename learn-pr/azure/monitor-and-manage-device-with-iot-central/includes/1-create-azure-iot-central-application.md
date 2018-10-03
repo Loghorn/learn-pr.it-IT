@@ -1,6 +1,6 @@
-Azure IoT Central è una soluzione IoT completamente gestita che semplifica la connessione, il monitoraggio e la gestione degli asset IoT globali.
+Azure IoT Central è una soluzione Internet delle cose (IoT) completamente gestita che semplifica la connessione, il monitoraggio e la gestione degli asset IoT globali.
 
-Si seguirà qui uno scenario in cui una macchina per il caffè remota è connessa ad Azure IoT Central per il monitoraggio e la gestione dei problemi. È possibile monitorare i dati di telemetria, ad esempio la temperatura dell'acqua e l'umidità, osservare lo stato della macchina, impostare la temperatura ottimale, ricevere lo stato della garanzia e inviare i comandi. Se la temperatura dell'acqua non rientra nell'intervallo previsto e la garanzia è scaduta, viene inviato un messaggio di posta elettronica da IoT Central al reparto di manutenzione del client per un intervento.
+Si seguirà qui uno scenario in cui una macchina per il caffè remota viene connessa ad Azure IoT Central per consentire il monitoraggio e la gestione dei problemi. È possibile monitorare i dati di telemetria, ad esempio la temperatura dell'acqua e l'umidità, osservare lo stato della macchina, impostare la temperatura ottimale, ricevere lo stato della garanzia e inviare i comandi. Se la temperatura dell'acqua non rientra nell'intervallo previsto e la garanzia è scaduta, viene inviato un messaggio di posta elettronica da IoT Central al reparto di manutenzione del client per un intervento.
 
 Si creerà prima di tutto un dispositivo in Azure IoT Central che definisca i dati e i comandi che possono essere scambiati con il dispositivo IoT.
 

@@ -1,0 +1,58 @@
+### YamlMime:ModuleUnit
+uid: learn.intro-to-site-reliability-engineering.5-key-principles-2-human-side-of-sre
+title: 'Principi e procedure SRE: il lato umano di SRE'
+metadata:
+  title: 'Principi e procedure SRE: il lato umano di SRE'
+  description: 'Principi e procedure SRE: il lato umano di SRE'
+  ms.date: 09/26/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 18fe4f197d8a58ad6e6f2fc27e9e5a5a8b86db96
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47439252"
+durationInMinutes: 10
+content: >
+  [!include[](includes/5-key-principles-2-human-side-of-sre.md)]
+quiz:
+  title: Verifica delle conoscenze
+  questions:
+  - content: 'Quali delle caratteristiche seguenti *non* è una caratteristica della fatica (nel contesto SRE)? '
+    choices:
+    - content: Il lavoro è ripetitivo
+      isCorrect: false
+      incorrectExplanation: La fatica è ripetitiva per definizione.
+    - content: Il lavoro viene registrato in un sistema di ticket
+      isCorrect: true
+      correctExplanation: Il modo in cui il lavoro viene registrato non è una caratteristica della fatica. Sebbene rappresentino spesso un metodo per registrare la fatica, i sistemi di ticket posso essere usati per registrare altri tipi di lavoro più produttivi.
+    - content: Il lavoro non offre alcun valore duraturo
+      isCorrect: false
+      incorrectExplanation: Il lavoro quando è fatica non ha valore duraturo.
+    - content: Per sua natura il lavoro è principalmente manuale non automatizzato
+      isCorrect: false
+      incorrectExplanation: La fatica è quasi sempre lavoro manuale che può essere automatizzato.
+  - content: Qual è la relazione tra SRE e fatica?
+    choices:
+    - content: L'eliminazione della fatica è il primo obiettivo del lavoro degli SRE.
+      isCorrect: false
+      incorrectExplanation: Sebbene gli SRE lavorino per eliminare la fatica ove possibile, a volte altri tipi di lavoro hanno maggiore priorità.
+    - content: Gli SRE tentano di gestire la fatica nel modo migliore possibile.
+      isCorrect: false
+      incorrectExplanation: Gli SRE preferiscono eliminare la fatica, se possibile. La fatica ben gestita rimane comunque fatica.
+    - content: Gli SRE lavorano per eliminare la fatica dove e quando possibile
+      isCorrect: true
+  - content: Qual è la ripartizione del lavoro consigliata per gli SRE?
+    choices:
+    - content: 80% lavoro su operations reattivo/20% lavoro su progetto
+      isCorrect: false
+      incorrectExplanation: Lo SRE necessita di un periodo di tempo ininterrotto per lavorare sul miglioramento dell'affidabilità del sistema, senza limitarsi alle esigenze del momento.
+    - content: 10% lavoro su operations reattivo/90% lavoro su progetto
+      isCorrect: false
+      incorrectExplanation: A volte non è possibile scegliere la quantità di carico operativo richiesto da un sistema. Sebbene alcuni sistemi abbiano un carico operativo molto basso, un livello di carico basso non è in genere auspicabile.
+    - content: 50% lavoro su operations reattivo/50% lavoro su progetto
+      isCorrect: true
+      correctExplanation: Questo è il normale equilibrio che gli SRE si pongono come obiettivo (il 50% è considerato il limite superiore del carico operativo, sebbene sia consigliabile un carico inferiore).

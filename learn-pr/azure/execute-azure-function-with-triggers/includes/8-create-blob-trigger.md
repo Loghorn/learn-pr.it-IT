@@ -2,17 +2,15 @@ In questa unità si creerà una funzione di Azure per visualizzare il nome e le 
 
 ## <a name="create-a-blob-trigger"></a>Creare un trigger BLOB
 
-Anche in questo caso, continuiamo a usare l'applicazione Funzioni di Azure esistente e aggiungiamo un trigger BLOB.
+Anche in questo caso, continuare a usare l'applicazione Funzioni di Azure esistente e aggiungere un trigger BLOB.
 
-1. Accedere al [portale di Azure](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) usando lo stesso account con cui è stato attivato l'ambiente sandbox.
+1. Assicurarsi di aver eseguito l'accesso al [portale di Azure](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) usando lo stesso account con cui è stato attivato il sandbox.
 
 1. Passare alla schermata **Tutte le risorse** e selezionare l'app per le funzioni.
 
 1. Selezionare **Funzioni** e quindi l'icona del segno più (+).
 
 1. Selezionare **Trigger BLOB**.
-
-1. Selezionare il linguaggio di programmazione **C#**.
 
 1. Lasciare **Nome** impostato sul valore predefinito.
 

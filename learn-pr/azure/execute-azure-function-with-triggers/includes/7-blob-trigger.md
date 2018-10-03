@@ -38,7 +38,7 @@ Un'impostazione che è opportuno esaminare è il **Percorso**. Il **Percorso** i
 
 > samples-workitems/{name}
 
-Se si scompone questo concetto in due parti, si ottiene *samples-workitems* e *{name}*. La prima parte, *samples-workitems*, rappresenta il contenitore BLOB monitorato dal trigger. La seconda parte, *{name, significa che tutti i tipi di file determinano il richiamo della funzione da parte del trigger. La funzione viene richiamata perché non è presente alcun filtro. Ad esempio, il trigger può richiamare la funzione solo se viene aggiunto un file PNG utilizzando una sintassi del tipo:
+Se si scompone questo concetto in due parti, si ottiene *samples-workitems* e *{name}*. La prima parte, *samples-workitems*, rappresenta il contenitore BLOB monitorato dal trigger. La seconda parte, *{name}*, significa che tutti i tipi di file determinano il richiamo della funzione da parte del trigger. La funzione viene richiamata perché non è presente alcun filtro. Ad esempio, il trigger può richiamare la funzione solo se viene aggiunto un file PNG utilizzando una sintassi del tipo:
 
 > samples-workitems/{name}.png
 

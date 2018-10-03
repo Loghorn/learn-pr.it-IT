@@ -40,23 +40,22 @@ Ora verrà creata un'app per le funzioni nel portale di Azure.
 
     [!include[](../../../includes/azure-sandbox-regions-first-mention-note-friendly.md)]
 
+1. Per **Stack di runtime**, selezionare JavaScript dal menu a discesa, che identifica il linguaggio in cui si implementano gli esempi di funzione in questo esercizio.
+
 1. Creare un nuovo account di archiviazione. Azure assegna un nome all'account in base al nome dell'app. È possibile modificarlo, se necessario, ma deve anche essere univoco.
 
 1. Verificare che Azure Application Insights sia **attivato** e selezionare l'area più vicina all'utente (o ai clienti).
-  Al termine, la configurazione sarà simile a quella rappresentata nello screenshot seguente.
 
-  ![Screenshot del portale di Azure che illustra il pannello Crea dell'app per le funzioni con tutti i campi configurati in base alle istruzioni precedenti.](../media/3-create-function-app-settings.png)
-
-1. Selezionare **Crea**; il processo di distribuzione richiederà alcuni minuti. L'utente riceverà una notifica al completamento dell'operazione.
+1. Selezionare **Crea**. Il processo di distribuzione richiederà alcuni minuti. L'utente riceverà una notifica al completamento dell'operazione.
 
 ## <a name="verify-your-azure-function-app"></a>Verificare l'app per le funzioni di Azure
 
 1. Nel menu a sinistra del portale di Azure selezionare **Gruppi di risorse**. Nell'elenco dei gruppi disponibili viene quindi visualizzato il gruppo di risorse **<rgn>[nome gruppo di risorse sandbox]</rgn>**.
 
-  ![Screenshot del portale di Azure che illustra il pannello Gruppi di risorse con la voce di menu Gruppi di risorse e l'elemento elenco <rgn>[nome gruppo di risorse sandbox]</rgn> evidenziati.](../media/3-resource-group.png)
+    ![Screenshot del portale di Azure che illustra il pannello Gruppi di risorse con la voce di menu Gruppi di risorse e l'elemento elenco <rgn>[nome gruppo di risorse sandbox]</rgn> evidenziati.](../media/3-resource-group.png)
 
 1. Selezionare il gruppo di risorse **<rgn>[nome gruppo di risorse sandbox]</rgn>**. Viene visualizzato un elenco di risorse simile al seguente.
 
-  ![Screenshot del portale di Azure che illustra tutte le risorse contenute nel gruppo <rgn>[nome gruppo di risorse sandbox]</rgn>, tra cui le voci per un piano di servizio app, un account di archiviazione, una risorsa di Application Insights e un servizio app.](../media/3-resource-list.png)
+    ![Screenshot del portale di Azure che illustra tutte le risorse contenute nel gruppo <rgn>[nome gruppo di risorse sandbox]</rgn>, tra cui le voci per un piano di servizio app, un account di archiviazione, una risorsa di Application Insights e un servizio app.](../media/3-resource-list.png)
 
 L'elemento con l'icona di funzione a forma di fulmine, elencato come servizio app, è la nuova app per le funzioni. Fare clic sull'elemento per aprire i dettagli sulla nuova funzione, a cui è stato assegnato un URL pubblico. Aprendo l'URL in un browser, viene visualizzata una pagina Web predefinita che indica che l'app per le funzioni è in esecuzione.
