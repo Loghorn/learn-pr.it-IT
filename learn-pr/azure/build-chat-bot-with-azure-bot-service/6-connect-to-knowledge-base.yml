@@ -1,0 +1,20 @@
+### YamlMime:ModuleUnit
+uid: learn.build-azure-bot-services-bot.6-connect-to-knowledge-base
+title: <span data-ttu-id="34f38-101">Connettere il bot alla knowledge base</span><span class="sxs-lookup"><span data-stu-id="34f38-101">Connect the bot to the knowledge base</span></span>
+metadata:
+  title: <span data-ttu-id="34f38-102">Connettere il bot alla knowledge base</span><span class="sxs-lookup"><span data-stu-id="34f38-102">Connect the bot to the knowledge base</span></span>
+  description: <span data-ttu-id="34f38-103">Connettere il bot alla knowledge base</span><span class="sxs-lookup"><span data-stu-id="34f38-103">Connect the bot to the knowledge base</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 3715696f413501c42532640b2a2852ade601f9ab
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47439324"
+labId: 46466
+durationInMinutes: 20
+content: '[!include[](includes/6-connect-to-knowledge-base.md)]'

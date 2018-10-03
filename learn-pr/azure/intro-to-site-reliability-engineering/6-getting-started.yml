@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.intro-to-site-reliability-engineering.6-getting-started
+title: <span data-ttu-id="ffd56-101">Introduzione a SRE</span><span class="sxs-lookup"><span data-stu-id="ffd56-101">Getting started with SRE</span></span>
+metadata:
+  title: <span data-ttu-id="ffd56-102">Introduzione a SRE</span><span class="sxs-lookup"><span data-stu-id="ffd56-102">Getting started with SRE</span></span>
+  description: <span data-ttu-id="ffd56-103">Introduzione a SRE</span><span class="sxs-lookup"><span data-stu-id="ffd56-103">Getting started with SRE</span></span>
+  ms.date: 09/26/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 8d2ec13a4bbc78882ccf9506caa18581436a30d3
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47439180"
+durationInMinutes: 10
+content: '[!include[](includes/6-getting-started.md)]'

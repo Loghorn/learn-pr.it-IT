@@ -1,0 +1,58 @@
+### YamlMime:ModuleUnit
+uid: learn.intro-to-site-reliability-engineering.5-key-principles-2-human-side-of-sre
+title: '<span data-ttu-id="79e40-101">Principi e procedure SRE: il lato umano di SRE</span><span class="sxs-lookup"><span data-stu-id="79e40-101">Key SRE principles and practices: The human side of SRE</span></span>'
+metadata:
+  title: '<span data-ttu-id="79e40-102">Principi e procedure SRE: il lato umano di SRE</span><span class="sxs-lookup"><span data-stu-id="79e40-102">Key SRE principles and practices: The human side of SRE</span></span>'
+  description: '<span data-ttu-id="79e40-103">Principi e procedure SRE: il lato umano di SRE</span><span class="sxs-lookup"><span data-stu-id="79e40-103">Key SRE principles and practices: The human side of SRE</span></span>'
+  ms.date: 09/26/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 18fe4f197d8a58ad6e6f2fc27e9e5a5a8b86db96
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47439252"
+durationInMinutes: 10
+content: >
+  [!include[](includes/5-key-principles-2-human-side-of-sre.md)]
+quiz:
+  title: <span data-ttu-id="79e40-104">Verifica delle conoscenze</span><span class="sxs-lookup"><span data-stu-id="79e40-104">Check your knowledge</span></span>
+  questions:
+  - content: '<span data-ttu-id="79e40-105">Quali delle caratteristiche seguenti *non* è una caratteristica della fatica (nel contesto SRE)?</span><span class="sxs-lookup"><span data-stu-id="79e40-105">Which of these things is *not* a characteristic of toil (in the SRE context)?</span></span> '
+    choices:
+    - content: <span data-ttu-id="79e40-106">Il lavoro è ripetitivo</span><span class="sxs-lookup"><span data-stu-id="79e40-106">The work is repetitive</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="79e40-107">La fatica è ripetitiva per definizione.</span><span class="sxs-lookup"><span data-stu-id="79e40-107">Toil is repetitive in nature.</span></span>
+    - content: <span data-ttu-id="79e40-108">Il lavoro viene registrato in un sistema di ticket</span><span class="sxs-lookup"><span data-stu-id="79e40-108">The work is tracked in a ticket system</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="79e40-109">Il modo in cui il lavoro viene registrato non è una caratteristica della fatica.</span><span class="sxs-lookup"><span data-stu-id="79e40-109">How the work is tracked is not a characteristic of toil.</span></span> <span data-ttu-id="79e40-110">Sebbene rappresentino spesso un metodo per registrare la fatica, i sistemi di ticket posso essere usati per registrare altri tipi di lavoro più produttivi.</span><span class="sxs-lookup"><span data-stu-id="79e40-110">While toil is often tracked this way, ticket systems could be used to track other, more productive kinds of work.</span></span>
+    - content: <span data-ttu-id="79e40-111">Il lavoro non offre alcun valore duraturo</span><span class="sxs-lookup"><span data-stu-id="79e40-111">The work provides no lasting value</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="79e40-112">Il lavoro quando è fatica non ha valore duraturo.</span><span class="sxs-lookup"><span data-stu-id="79e40-112">Work that is toil has no enduring value.</span></span>
+    - content: <span data-ttu-id="79e40-113">Per sua natura il lavoro è principalmente manuale non automatizzato</span><span class="sxs-lookup"><span data-stu-id="79e40-113">The work is largely manual in nature and not automated</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="79e40-114">La fatica è quasi sempre lavoro manuale che può essere automatizzato.</span><span class="sxs-lookup"><span data-stu-id="79e40-114">Toil is almost always manual work that could be automated.</span></span>
+  - content: <span data-ttu-id="79e40-115">Qual è la relazione tra SRE e fatica?</span><span class="sxs-lookup"><span data-stu-id="79e40-115">What's an SRE's relationship to toil?</span></span>
+    choices:
+    - content: <span data-ttu-id="79e40-116">L'eliminazione della fatica è il primo obiettivo del lavoro degli SRE.</span><span class="sxs-lookup"><span data-stu-id="79e40-116">SREs work to eliminate toil as their first priority.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="79e40-117">Sebbene gli SRE lavorino per eliminare la fatica ove possibile, a volte altri tipi di lavoro hanno maggiore priorità.</span><span class="sxs-lookup"><span data-stu-id="79e40-117">Whenever possible, SREs work to eliminate toil, but sometimes other work has greater priority.</span></span>
+    - content: <span data-ttu-id="79e40-118">Gli SRE tentano di gestire la fatica nel modo migliore possibile.</span><span class="sxs-lookup"><span data-stu-id="79e40-118">SREs attempt to manage toil the best they can.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="79e40-119">Gli SRE preferiscono eliminare la fatica, se possibile.</span><span class="sxs-lookup"><span data-stu-id="79e40-119">SREs prefer to eliminate toil if possible.</span></span> <span data-ttu-id="79e40-120">La fatica ben gestita rimane comunque fatica.</span><span class="sxs-lookup"><span data-stu-id="79e40-120">Well-managed toil is still toil.</span></span>
+    - content: <span data-ttu-id="79e40-121">Gli SRE lavorano per eliminare la fatica dove e quando possibile</span><span class="sxs-lookup"><span data-stu-id="79e40-121">SREs work to eliminate toil wherever and whenever it is appropriate</span></span>
+      isCorrect: true
+  - content: <span data-ttu-id="79e40-122">Qual è la ripartizione del lavoro consigliata per gli SRE?</span><span class="sxs-lookup"><span data-stu-id="79e40-122">What is a suggested breakdown of work for an SRE?</span></span>
+    choices:
+    - content: <span data-ttu-id="79e40-123">80% lavoro su operations reattivo/20% lavoro su progetto</span><span class="sxs-lookup"><span data-stu-id="79e40-123">80% reactive ops work/20% project work</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="79e40-124">Lo SRE necessita di un periodo di tempo ininterrotto per lavorare sul miglioramento dell'affidabilità del sistema, senza limitarsi alle esigenze del momento.</span><span class="sxs-lookup"><span data-stu-id="79e40-124">An SRE needs uninterrupted time to work on improving the reliability of a system, not just tending to its current needs.</span></span>
+    - content: <span data-ttu-id="79e40-125">10% lavoro su operations reattivo/90% lavoro su progetto</span><span class="sxs-lookup"><span data-stu-id="79e40-125">10% reactive ops work/90% project work</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="79e40-126">A volte non è possibile scegliere la quantità di carico operativo richiesto da un sistema.</span><span class="sxs-lookup"><span data-stu-id="79e40-126">Sometimes we do not get a choice how much operational load a systems requires.</span></span> <span data-ttu-id="79e40-127">Sebbene alcuni sistemi abbiano un carico operativo molto basso, un livello di carico basso non è in genere auspicabile.</span><span class="sxs-lookup"><span data-stu-id="79e40-127">While it may be the case that some systems have this low of an operational load, it is probably not a good expectation to have.</span></span>
+    - content: <span data-ttu-id="79e40-128">50% lavoro su operations reattivo/50% lavoro su progetto</span><span class="sxs-lookup"><span data-stu-id="79e40-128">50% reactive ops work/50% project work</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="79e40-129">Questo è il normale equilibrio che gli SRE si pongono come obiettivo (il 50% è considerato il limite superiore del carico operativo, sebbene sia consigliabile un carico inferiore).</span><span class="sxs-lookup"><span data-stu-id="79e40-129">This is the usual balance SREs strive for (50% is seen as an upper bound on operational load--smaller would be better).</span></span>

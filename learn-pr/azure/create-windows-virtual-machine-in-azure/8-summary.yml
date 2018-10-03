@@ -1,20 +1,57 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-a-windows-vm-in-azure.8-summary
-title: <span data-ttu-id="93ab1-101">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="93ab1-101">Summary</span></span>
+title: <span data-ttu-id="a29ac-101">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="a29ac-101">Summary</span></span>
 metadata:
-  title: <span data-ttu-id="93ab1-102">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="93ab1-102">Summary</span></span>
-  description: <span data-ttu-id="93ab1-103">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="93ab1-103">Summary</span></span>
+  title: <span data-ttu-id="a29ac-102">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="a29ac-102">Summary</span></span>
+  description: <span data-ttu-id="a29ac-103">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="a29ac-103">Summary</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 76203955ef10f22d7150561d906e30b12c064321
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.openlocfilehash: 452dcc7255f6522b8ad790700323e9ac5b11bf1a
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46342770"
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47437817"
 durationInMinutes: 3
 azureSandbox: true
-content: '[!include[](includes/8-summary.md)]'
+content: >
+  [!include[](includes/8-summary.md)]
+quiz:
+  title: <span data-ttu-id="a29ac-104">Verifica delle conoscenze</span><span class="sxs-lookup"><span data-stu-id="a29ac-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="a29ac-105">Quando si crea una macchina virtuale Windows in Azure, quale porta è necessario aprire usando le regole di porta in ingresso per consentire l'accesso al desktop remoto?</span><span class="sxs-lookup"><span data-stu-id="a29ac-105">When creating a Windows virtual machine in Azure, which port would you open using the INBOUND PORT RULES in order to allow remote-desktop access?</span></span>
+    choices:
+    - content: <span data-ttu-id="a29ac-106">HTTPS</span><span class="sxs-lookup"><span data-stu-id="a29ac-106">HTTPS</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="a29ac-107">La connessione al desktop remoto non usa il protocollo HTTPS.</span><span class="sxs-lookup"><span data-stu-id="a29ac-107">The remote-desktop connection does not use the HTTPS protocol.</span></span>
+    - content: <span data-ttu-id="a29ac-108">SSH (22)</span><span class="sxs-lookup"><span data-stu-id="a29ac-108">SSH (22)</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="a29ac-109">La connessione al desktop remoto non usa SSH.</span><span class="sxs-lookup"><span data-stu-id="a29ac-109">The remote-desktop connection does not use SSH.</span></span>
+    - content: <span data-ttu-id="a29ac-110">RDP (3389)</span><span class="sxs-lookup"><span data-stu-id="a29ac-110">RDP (3389)</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="a29ac-111">Remote Desktop Protocol (RDP) usa per impostazione predefinita la porta 3389 quindi questa è la porta standard da aprire se si vuole usare un client RDP per gestire le macchine virtuali di Windows.</span><span class="sxs-lookup"><span data-stu-id="a29ac-111">The Remote Desktop Protocol (RDP) uses port 3389 by default so this is the standard port you would open if you wanted to use an RDP client to administer your Windows virtual machines.</span></span>
+  - content: <span data-ttu-id="a29ac-112">Si supponga di avere un'applicazione in esecuzione in una macchina virtuale Windows in Azure.</span><span class="sxs-lookup"><span data-stu-id="a29ac-112">Suppose you have an application running on a Windows virtual machine in Azure.</span></span> <span data-ttu-id="a29ac-113">In base alle procedure consigliate, qual è la posizione in cui l'app deve archiviare i file di dati?</span><span class="sxs-lookup"><span data-stu-id="a29ac-113">What is the best-practice guidance on where the app should store data files?</span></span>
+    choices:
+    - content: <span data-ttu-id="a29ac-114">Il disco del sistema operativo (C:)</span><span class="sxs-lookup"><span data-stu-id="a29ac-114">The OS disk (C:)</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="a29ac-115">È possibile archiviare file di dati sul disco del sistema operativo; tuttavia, è consigliabile ottimizzare tale disco per le prestazioni del sistema operativo, selezionando un tipo di unità SSD Premium che potrebbe rappresentare una soluzione costosa per archiviare i dati.</span><span class="sxs-lookup"><span data-stu-id="a29ac-115">You can store data files on the OS disk; however, you may want to optimize that disk for OS performance by selecting a Premium SSD type which could be an expensive way to store your data.</span></span>
+    - content: <span data-ttu-id="a29ac-116">Il disco temporaneo (D:)</span><span class="sxs-lookup"><span data-stu-id="a29ac-116">The Temporary disk (D:)</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="a29ac-117">Il disco temporaneo non è persistente.</span><span class="sxs-lookup"><span data-stu-id="a29ac-117">The temporary disk is not persistent.</span></span> <span data-ttu-id="a29ac-118">I dati importanti non vanno scritti in questo disco.</span><span class="sxs-lookup"><span data-stu-id="a29ac-118">You should not write important data to this disk.</span></span>
+    - content: <span data-ttu-id="a29ac-119">Un disco dati collegato</span><span class="sxs-lookup"><span data-stu-id="a29ac-119">An attached data disk</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="a29ac-120">I dischi dati dedicati sono in genere considerati il modo migliore per archiviare i file di dati delle applicazioni.</span><span class="sxs-lookup"><span data-stu-id="a29ac-120">Dedicated data disks are generally considered the best place to store application data files.</span></span> <span data-ttu-id="a29ac-121">Possono essere di dimensioni maggiori dei dischi del sistema operativo e possono essere ottimizzati per le caratteristiche di prestazioni e costo appropriate per i dati.</span><span class="sxs-lookup"><span data-stu-id="a29ac-121">They can be larger than OS disks and you can optimize them for the cost and performance characteristics appropriate for your data.</span></span>
+  - content: <span data-ttu-id="a29ac-122">Qual è la regola finale che viene applicata in ogni gruppo di sicurezza di rete?</span><span class="sxs-lookup"><span data-stu-id="a29ac-122">What is the final rule that is applied in every Network Security Group?</span></span>
+    choices:
+    - content: <span data-ttu-id="a29ac-123">Allow All (Consenti tutto)</span><span class="sxs-lookup"><span data-stu-id="a29ac-123">Allow All</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="a29ac-124">Ciò potrebbe consentire al traffico indesiderato di ottenere l'accesso se le regole non sono configurate correttamente.</span><span class="sxs-lookup"><span data-stu-id="a29ac-124">This could allow unwanted traffic to gain access if your rules are not configured correctly.</span></span>
+    - content: <span data-ttu-id="a29ac-125">Deny All (Rifiuta tutto)</span><span class="sxs-lookup"><span data-stu-id="a29ac-125">Deny All</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="a29ac-126">Si tratta di una scelta prudente.</span><span class="sxs-lookup"><span data-stu-id="a29ac-126">This is a safe choice.</span></span> <span data-ttu-id="a29ac-127">In questo modo tutto il traffico non consentito specificamente viene bloccato.</span><span class="sxs-lookup"><span data-stu-id="a29ac-127">It will block all traffic that you don't specifically allow.</span></span>
+    - content: <span data-ttu-id="a29ac-128">La regola finale viene configurata in base alle esigenze</span><span class="sxs-lookup"><span data-stu-id="a29ac-128">You configure the final rule to your needs</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="a29ac-129">La regola finale viene aggiunta automaticamente quando viene creato il gruppo di sicurezza e non è possibile modificarla.</span><span class="sxs-lookup"><span data-stu-id="a29ac-129">The final rule is added automatically when the security group is created, and you cannot change it.</span></span>

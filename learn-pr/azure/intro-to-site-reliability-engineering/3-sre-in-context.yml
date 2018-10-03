@@ -1,0 +1,65 @@
+### YamlMime:ModuleUnit
+uid: learn.intro-to-site-reliability-engineering.3-sre-in-context
+title: <span data-ttu-id="8414b-101">SRE in contesto</span><span class="sxs-lookup"><span data-stu-id="8414b-101">SRE in context</span></span>
+metadata:
+  title: <span data-ttu-id="8414b-102">SRE in contesto</span><span class="sxs-lookup"><span data-stu-id="8414b-102">SRE in context</span></span>
+  description: <span data-ttu-id="8414b-103">SRE in contesto</span><span class="sxs-lookup"><span data-stu-id="8414b-103">SRE in context</span></span>
+  ms.date: 09/26/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: a2f23a77d0cc6b9cd6028ec5fbbfb781319afa42
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47439437"
+durationInMinutes: 10
+content: >
+  [!include[](includes/3-sre-in-context.md)]
+quiz:
+  title: <span data-ttu-id="8414b-104">Verifica delle conoscenze</span><span class="sxs-lookup"><span data-stu-id="8414b-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="8414b-105">Date le origini della metodologia SRE, quale disciplina ha avuto il maggior impatto su di essa?</span><span class="sxs-lookup"><span data-stu-id="8414b-105">Given the origin of SRE, which discipline has had the most impact on it?</span></span>
+    choices:
+    - content: <span data-ttu-id="8414b-106">Servizio clienti</span><span class="sxs-lookup"><span data-stu-id="8414b-106">Customer service</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="8414b-107">L'approccio al lavoro con una visione incentrata sul cliente è essenziale per SRE, ma il servizio clienti non era all'origine della metodologia.</span><span class="sxs-lookup"><span data-stu-id="8414b-107">Approaching the work with a customer-centric mindset is crucial to SRE, but customer service was not part of its origin.</span></span>
+    - content: <span data-ttu-id="8414b-108">Operazioni mainframe</span><span class="sxs-lookup"><span data-stu-id="8414b-108">Mainframe operations</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="8414b-109">Anche se è possibile apprendere da altre specializzazioni operative, la metodologia SRE non è nata con questa.</span><span class="sxs-lookup"><span data-stu-id="8414b-109">Though we can learn from other operations specialties, SRE did not start with this one.</span></span>
+    - content: <span data-ttu-id="8414b-110">Ingegneria del software</span><span class="sxs-lookup"><span data-stu-id="8414b-110">Software engineering</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="8414b-111">La metodologia SRE è nata con una struttura basata sull'ingegneria del software.</span><span class="sxs-lookup"><span data-stu-id="8414b-111">SRE was started with software engineering mindset.</span></span>
+    - content: <span data-ttu-id="8414b-112">Architettura</span><span class="sxs-lookup"><span data-stu-id="8414b-112">Architecture</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="8414b-113">L'architettura (in particolare l'architettura software) è sicuramente un componente della metodologia SRE, ma non l'ha originata.</span><span class="sxs-lookup"><span data-stu-id="8414b-113">Architecture (especially software architecture) is definitely a component of SRE work, but it was not part of its origin.</span></span>
+  - content: <span data-ttu-id="8414b-114">Quale approccio è nato per primo, DevOps o SRE?</span><span class="sxs-lookup"><span data-stu-id="8414b-114">Which came first, DevOps or SRE?</span></span>
+    choices:
+    - content: <span data-ttu-id="8414b-115">DevOps</span><span class="sxs-lookup"><span data-stu-id="8414b-115">DevOps</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="8414b-116">Sono state sviluppate all'incirca contemporaneamente.</span><span class="sxs-lookup"><span data-stu-id="8414b-116">They developed roughly in parallel.</span></span>
+    - content: <span data-ttu-id="8414b-117">SRE</span><span class="sxs-lookup"><span data-stu-id="8414b-117">SRE</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="8414b-118">Sono state sviluppate all'incirca contemporaneamente.</span><span class="sxs-lookup"><span data-stu-id="8414b-118">They developed roughly in parallel.</span></span>
+    - content: <span data-ttu-id="8414b-119">Nessuna delle due, sono state sviluppate all'incirca contemporaneamente.</span><span class="sxs-lookup"><span data-stu-id="8414b-119">Neither, they developed roughly in parallel.</span></span>
+      isCorrect: true
+  - content: <span data-ttu-id="8414b-120">SRE è il passaggio evolutivo successivo a DevOps?</span><span class="sxs-lookup"><span data-stu-id="8414b-120">Is SRE the next evolutionary step from DevOps?</span></span>
+    choices:
+    - content: <span data-ttu-id="8414b-121">Sì, SRE è il futuro della metodologia DevOps.</span><span class="sxs-lookup"><span data-stu-id="8414b-121">Yes, SRE is the future of DevOps.</span></span> <span data-ttu-id="8414b-122">Il personale DevOps dovrà acquisire la qualifica Site Reliability Engineer (SRE)</span><span class="sxs-lookup"><span data-stu-id="8414b-122">DevOps personnel should strive to become SREs</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="8414b-123">Le metodologie SRE e DevOps sono approcci distinti dell'ambiente operativo che provano a risolvere problemi simili.</span><span class="sxs-lookup"><span data-stu-id="8414b-123">DevOps and SRE are separate operations practices that attempt to address similar challenges.</span></span>
+    - content: <span data-ttu-id="8414b-124">No, SRE e DevOps sono approcci distinti all'ambiente operativo</span><span class="sxs-lookup"><span data-stu-id="8414b-124">No, SRE and DevOps are separate operations practices</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="8414b-125">DevOps e SRE sono approcci distinti, anche se provano a risolvere sfide simili.</span><span class="sxs-lookup"><span data-stu-id="8414b-125">DevOps and SRE are indeed separate even though they attempt to address similar challenges.</span></span>
+  - content: <span data-ttu-id="8414b-126">Quali sono due procedure fondamentali sia in DevOps che in SRE?</span><span class="sxs-lookup"><span data-stu-id="8414b-126">What are two best practices that are central to both DevOps and SRE?</span></span>
+    choices:
+    - content: <span data-ttu-id="8414b-127">Automazione e monitoraggio/osservabilità</span><span class="sxs-lookup"><span data-stu-id="8414b-127">Automation and monitoring/observability</span></span>
+      isCorrect: true
+    - content: <span data-ttu-id="8414b-128">Creazione di codice e sistemi di ticket</span><span class="sxs-lookup"><span data-stu-id="8414b-128">Coding and ticket systems</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="8414b-129">La creazione di codice è fondamentale (specie in SRE), ma i sistemi di ticket non sono essenziali per SRE.</span><span class="sxs-lookup"><span data-stu-id="8414b-129">While coding is important (more so in SRE), ticket systems are not central to SRE.</span></span>
+    - content: <span data-ttu-id="8414b-130">Automazione dell'help desk e monitoraggio dei bug</span><span class="sxs-lookup"><span data-stu-id="8414b-130">Help desk automation and bug tracking</span></span>
+      isCorrect: false
+      correctExplanation: <span data-ttu-id="8414b-131">Anche se utile, l'automazione dell'help desk non è essenziale per nessuna delle due metodologie operative.</span><span class="sxs-lookup"><span data-stu-id="8414b-131">Though useful, help desk automation is not core to either operations practice.</span></span>

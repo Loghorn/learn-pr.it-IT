@@ -1,19 +1,56 @@
 ### YamlMime:ModuleUnit
 uid: learn.cosmos-db-app-with-vscode.7-summary
 metadata:
-  title: <span data-ttu-id="60b55-101">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="60b55-101">Summary</span></span>
-  description: <span data-ttu-id="60b55-102">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="60b55-102">Summary</span></span>
+  title: <span data-ttu-id="cae04-101">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="cae04-101">Summary</span></span>
+  description: <span data-ttu-id="cae04-102">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="cae04-102">Summary</span></span>
   ms.date: 09/24/2018
   author: mimig1
   ms.author: mimig
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 656c5dad59bcf4ae8b969b140d54fa08e0e4115a
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.openlocfilehash: c68a68b3429b73a6831781a74c150d226d5bd659
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46340618"
-title: <span data-ttu-id="60b55-103">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="60b55-103">Summary</span></span>
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47437800"
+title: <span data-ttu-id="cae04-103">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="cae04-103">Summary</span></span>
 durationInMinutes: 3
-content: '[!include[](includes/7-summary.md)]'
+content: >
+  [!include[](includes/7-summary.md)]
+quiz:
+  title: <span data-ttu-id="cae04-104">Verifica delle conoscenze</span><span class="sxs-lookup"><span data-stu-id="cae04-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="cae04-105">Si supponga di utilizzare Visual Studio Code per sviluppare un'applicazione .NET Core che accede ad Azure Cosmos DB.</span><span class="sxs-lookup"><span data-stu-id="cae04-105">Suppose you are using Visual Studio Code to develop a .NET Core application that accesses Azure Cosmos DB.</span></span> <span data-ttu-id="cae04-106">È necessario includere la stringa di connessione per il database nella configurazione dell'applicazione.</span><span class="sxs-lookup"><span data-stu-id="cae04-106">You need to include the connection string for your database in your application configuration.</span></span> <span data-ttu-id="cae04-107">Qual è il modo più semplice per inserire questa informazione nel progetto?</span><span class="sxs-lookup"><span data-stu-id="cae04-107">What is the most convenient way to get this information into your project?</span></span>
+    choices:
+    - content: <span data-ttu-id="cae04-108">Direttamente da Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="cae04-108">Directly from Visual Studio Code</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="cae04-109">L'estensione di Azure Cosmos DB consente di amministrare e creare gli account Azure Cosmos DB e i database direttamente da Visual Studio Code.</span><span class="sxs-lookup"><span data-stu-id="cae04-109">The Azure Cosmos DB extension lets you administer and create Azure Cosmos DB accounts and databases from within Visual Studio Code.</span></span>
+    - content: <span data-ttu-id="cae04-110">Dal portale di Azure</span><span class="sxs-lookup"><span data-stu-id="cae04-110">From the Azure portal</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="cae04-111">Il portale di Azure contiene questa informazione, ma se ci si trova già all'interno di Visual Studio Code, passare al portale non è probabilmente la scelta più comoda.</span><span class="sxs-lookup"><span data-stu-id="cae04-111">The Azure portal does provide this information, but if you're already in Visual Studio Code, going to the portal is unlikely to be the most convenient choice.</span></span>
+    - content: <span data-ttu-id="cae04-112">Con l'interfaccia della riga di comando di Azure</span><span class="sxs-lookup"><span data-stu-id="cae04-112">Using the Azure CLI</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="cae04-113">Nonostante questa rappresenti un'ottima scelta, soprattutto perché Visual Studio Code prevede un terminale incorporato, presuppone che si conoscano i comandi necessari.</span><span class="sxs-lookup"><span data-stu-id="cae04-113">While this is a good choice, especially since Visual Studio Code has a built-in terminal, it does require knowledge of the required commands.</span></span> <span data-ttu-id="cae04-114">Questa scelta potrebbe essere meno pratica rispetto all'estensione di Visual Studio Code.</span><span class="sxs-lookup"><span data-stu-id="cae04-114">This may not be as convenient as the Visual Studio Code extension.</span></span>
+  - content: <span data-ttu-id="cae04-115">Quando si lavora con l'API SQL di Azure Cosmos DB, quale di queste opzioni può essere utilizzata per eseguire operazioni CRUD?</span><span class="sxs-lookup"><span data-stu-id="cae04-115">When working with Azure Cosmos DB's SQL API, which of these can be used to perform CRUD operations?</span></span>
+    choices:
+    - content: <span data-ttu-id="cae04-116">LINQ</span><span class="sxs-lookup"><span data-stu-id="cae04-116">LINQ</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="cae04-117">LINQ e SQL sono due metodi validi per eseguire query sull'API SQL.</span><span class="sxs-lookup"><span data-stu-id="cae04-117">LINQ and SQL are two of the valid methods for querying the SQL API.</span></span>
+    - content: <span data-ttu-id="cae04-118">Librerie client di Apache Cassandra</span><span class="sxs-lookup"><span data-stu-id="cae04-118">Apache Cassandra client libraries</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="cae04-119">Le librerie di Apache Cassandra possono funzionare con l'API Cassandra di Azure Cosmos DB, ma non con l'API SQL.</span><span class="sxs-lookup"><span data-stu-id="cae04-119">Apache Cassandra libraries can work with Azure Cosmos DB’s Cassandra API but not with the SQL API.</span></span>
+    - content: <span data-ttu-id="cae04-120">Librerie di Archiviazione tabelle di Azure</span><span class="sxs-lookup"><span data-stu-id="cae04-120">Azure Table Storage libraries</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="cae04-121">Le librerie di Archiviazione tabelle di Azure possono funzionare con l'API Tabella di Azure Cosmos DB, ma non con l'API SQL.</span><span class="sxs-lookup"><span data-stu-id="cae04-121">Azure Table Storage libraries can work with Azure Cosmos DB's Table API but not with the SQL API.</span></span>
+  - content: <span data-ttu-id="cae04-122">Quando si lavora con la classe DocumentClient dell'SDK client di Azure Cosmos DB, viene utilizzato un modello di database NOSQL.</span><span class="sxs-lookup"><span data-stu-id="cae04-122">When working with the Azure Cosmos DB Client SDK's DocumentClient class, you use a NOSQL model.</span></span> <span data-ttu-id="cae04-123">Come si può usare questa classe per modificare il campo FirstName di un documento Person da 'Ann' a 'Fran'?</span><span class="sxs-lookup"><span data-stu-id="cae04-123">How would you use this class to change the FirstName field of a Person Document from 'Ann' to 'Fran'?</span></span>
+    choices:
+    - content: <span data-ttu-id="cae04-124">Chiamare UpdateDocumentAsync con FirstName = Fran</span><span class="sxs-lookup"><span data-stu-id="cae04-124">Call UpdateDocumentAsync with FirstName=Fran</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="cae04-125">La classe DocumentClient non ha un metodo UpdateDocumentAsync.</span><span class="sxs-lookup"><span data-stu-id="cae04-125">The DocumentClient class doesn't have an UpdateDocumentAsync method.</span></span> <span data-ttu-id="cae04-126">L'aggiornamento di un singolo campo non è compatibile con l'approccio in stile documento di NOSQL.</span><span class="sxs-lookup"><span data-stu-id="cae04-126">Updating a single field is not consistent with the document-style NOSQL approach.</span></span>
+    - content: <span data-ttu-id="cae04-127">Chiamare UpsertDocumentAsync con un oggetto Person aggiornato</span><span class="sxs-lookup"><span data-stu-id="cae04-127">Call UpsertDocumentAsync with an updated Person object</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="cae04-128">Benché questa operazione funzioni, non corrisponde all'accesso minimo necessario per soddisfare questa esigenza.</span><span class="sxs-lookup"><span data-stu-id="cae04-128">While this would work, it isn't the minimum necessary access to meet our requirements.</span></span> <span data-ttu-id="cae04-129">Le operazioni Upsert sostituiscono un documento se la relativa chiave esiste già; in caso contrario, aggiungono un nuovo documento.</span><span class="sxs-lookup"><span data-stu-id="cae04-129">Upsert operations will replace a document if its key already exists or add a new document if not.</span></span> <span data-ttu-id="cae04-130">Poiché in questo caso non si vuole aggiungere uno nuovo documento, l'uso di questo metodo rischia di introdurre bug insidiosi e difficili da rilevare.</span><span class="sxs-lookup"><span data-stu-id="cae04-130">We don't want to add a new one, so using this method risks introducing subtle, hard to track bugs.</span></span>
+    - content: <span data-ttu-id="cae04-131">Chiamare ReplaceDocumentAsync con un oggetto Person aggiornato</span><span class="sxs-lookup"><span data-stu-id="cae04-131">Call ReplaceDocumentAsync with an updated Person object</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="cae04-132">ReplaceDocumentAsync sostituirà il documento esistente con uno nuovo.</span><span class="sxs-lookup"><span data-stu-id="cae04-132">ReplaceDocumentAsync will replace the existing document with the new one.</span></span> <span data-ttu-id="cae04-133">In questo caso, si desidera che il vecchio e il nuovo documento siano uguali eccetto per FirstName.</span><span class="sxs-lookup"><span data-stu-id="cae04-133">In this case we'd intend the old and new to be the same other than FirstName.</span></span>

@@ -1,19 +1,56 @@
 ### YamlMime:ModuleUnit
 uid: learn.build-and-run-a-web-application-with-the-mean-stack-on-an-azure-linux-vm.11-summary
-title: <span data-ttu-id="a91d1-101">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="a91d1-101">Summary</span></span>
+title: <span data-ttu-id="94f32-101">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="94f32-101">Summary</span></span>
 metadata:
-  title: <span data-ttu-id="a91d1-102">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="a91d1-102">Summary</span></span>
-  description: <span data-ttu-id="a91d1-103">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="a91d1-103">Summary</span></span>
+  title: <span data-ttu-id="94f32-102">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="94f32-102">Summary</span></span>
+  description: <span data-ttu-id="94f32-103">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="94f32-103">Summary</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 284d0a687dc09aa1fc36a74e31b27738b90b8188
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.openlocfilehash: 49a23603aa990e203720d71cdb4b6be0ad2d0d9f
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46342089"
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47437222"
 durationInMinutes: 3
-content: '[!include[](includes/11-summary.md)]'
+content: >
+  [!include[](includes/11-summary.md)]
+quiz:
+  title: <span data-ttu-id="94f32-104">Verifica delle conoscenze</span><span class="sxs-lookup"><span data-stu-id="94f32-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="94f32-105">Qual è un buon motivo per scegliere MEAN per lo stack di sviluppo?</span><span class="sxs-lookup"><span data-stu-id="94f32-105">Which is a good reason to pick MEAN for your development stack?</span></span>
+    choices:
+    - content: <span data-ttu-id="94f32-106">Si lavora con dati relazionali altamente strutturati.</span><span class="sxs-lookup"><span data-stu-id="94f32-106">You're working with highly structured, relational data.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="94f32-107">MongoDB, la "M" nello stack MEAN, è un database NoSQL.</span><span class="sxs-lookup"><span data-stu-id="94f32-107">MongoDB, the "M" in the MEAN stack, is a NoSQL database.</span></span> <span data-ttu-id="94f32-108">Un database NoSQL è non relazionale, ovvero non richiede dati per essere strutturato come database di SQL Server o altri database relazionali.</span><span class="sxs-lookup"><span data-stu-id="94f32-108">A NoSQL database is non-relational, which means it doesn't require data to be structured like SQL Server or other relational databases.</span></span>
+    - content: <span data-ttu-id="94f32-109">Le app MEAN vengono eseguite più velocemente rispetto a quelle creati con altri stack di sviluppo.</span><span class="sxs-lookup"><span data-stu-id="94f32-109">MEAN apps run faster than ones created with other development stacks.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="94f32-110">Sono disponibili molti stack di sviluppo.</span><span class="sxs-lookup"><span data-stu-id="94f32-110">There are many development stacks out there.</span></span> <span data-ttu-id="94f32-111">Nessuno è necessariamente più veloce o migliore degli altri.</span><span class="sxs-lookup"><span data-stu-id="94f32-111">No one is necessarily faster or better than others.</span></span> <span data-ttu-id="94f32-112">Ognuno è stato creato pensando a un determinato tipo di app e a competenze di sviluppo specifiche.</span><span class="sxs-lookup"><span data-stu-id="94f32-112">Each was created with a certain kind of app and developer skill set in mind.</span></span>
+    - content: <span data-ttu-id="94f32-113">Tutti i membri del team di sviluppo sono esperti di JavaScript.</span><span class="sxs-lookup"><span data-stu-id="94f32-113">Everyone on your development team is an expert with JavaScript.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="94f32-114">Lo stack MEAN è essenzialmente basato su JavaScript.</span><span class="sxs-lookup"><span data-stu-id="94f32-114">The MEAN stack greatly relies on JavaScript.</span></span> <span data-ttu-id="94f32-115">JavaScript appare sia sul lato client, sia sul lato server dell'app Web.</span><span class="sxs-lookup"><span data-stu-id="94f32-115">JavaScript appears in both the client side and the server side of your web app.</span></span>
+  - content: <span data-ttu-id="94f32-116">Che cos'è un database NoSQL?</span><span class="sxs-lookup"><span data-stu-id="94f32-116">What's a NoSQL database?</span></span>
+    choices:
+    - content: <span data-ttu-id="94f32-117">È un termine usato per descrivere qualsiasi software di database gratuito e open source.</span><span class="sxs-lookup"><span data-stu-id="94f32-117">It's a term used to describe any free, open-source database software.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="94f32-118">Benché molti database siano gratuiti e open source, NoSQL descrive il modo in cui sono strutturati i dati.</span><span class="sxs-lookup"><span data-stu-id="94f32-118">While many databases are free and open source, NoSQL describes how data is structured.</span></span>
+    - content: <span data-ttu-id="94f32-119">Si tratta di un database che non richiede dati per essere strutturato in modo predefinito.</span><span class="sxs-lookup"><span data-stu-id="94f32-119">It's a database that doesn't require data to be structured in a pre-defined way.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="94f32-120">MongoDB, ad esempio, archivia i propri dati in documenti simili a file JSON che non richiedono le rigide strutture di dati richieste da MySQL o altri database relazionali.</span><span class="sxs-lookup"><span data-stu-id="94f32-120">MongoDB, for example, stores its data in JSON-like documents that don't require the rigid data structures required by MySQL or other relational databases.</span></span>
+    - content: <span data-ttu-id="94f32-121">È un tipo di database relazionale, ma non usa il linguaggio SQL per accedere ai dati e modificarli.</span><span class="sxs-lookup"><span data-stu-id="94f32-121">It's a kind of relational database, but doesn't use the SQL language to access and manipulate data.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="94f32-122">I database NoSQL sono non relazionali, ovvero non richiedono dati per essere strutturati in modo predefinito.</span><span class="sxs-lookup"><span data-stu-id="94f32-122">NoSQL databases are non-relational, which means that it doesn't require data to be structured in a pre-defined way.</span></span>
+  - content: <span data-ttu-id="94f32-123">Qual è il ruolo di AngularJS nello stack MEAN?</span><span class="sxs-lookup"><span data-stu-id="94f32-123">What's the role of AngularJS in the MEAN stack?</span></span>
+    choices:
+    - content: <span data-ttu-id="94f32-124">AngularJS implementa l'associazione di dati per HTML e JavaScript.</span><span class="sxs-lookup"><span data-stu-id="94f32-124">AngularJS implements data binding for HTML and JavaScript.</span></span> <span data-ttu-id="94f32-125">Ad esempio, è possibile usare AngularJS per recuperare elementi da un database e visualizzare tali elementi nell'interfaccia utente.</span><span class="sxs-lookup"><span data-stu-id="94f32-125">For example, you can use AngularJS to retrieve items from a database and display those items in the UI.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="94f32-126">L'associazione di dati consente di mantenere il codice HTML pulito e conciso.</span><span class="sxs-lookup"><span data-stu-id="94f32-126">Data binding helps keep your HTML clean and minimal.</span></span> <span data-ttu-id="94f32-127">AngularJS visualizza gli aggiornamenti all'utente non appena vengono modificati i dati sottostanti.</span><span class="sxs-lookup"><span data-stu-id="94f32-127">AngularJS displays updates immediately to the user when the underlying data changes.</span></span>
+    - content: <span data-ttu-id="94f32-128">È un plug-in del browser che viene installato nel computer dell'utente.</span><span class="sxs-lookup"><span data-stu-id="94f32-128">It's a browser plugin that gets installed on your user's computer.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="94f32-129">AngularJS tecnicamente non viene installato &mdash; è semplicemente codice JavaScript a cui si fa riferimento da un tag di script nella pagina HTML.</span><span class="sxs-lookup"><span data-stu-id="94f32-129">You don't technically install AngularJS &mdash; it's simply JavaScript code that you reference from a script tag in your HTML page.</span></span>
+    - content: <span data-ttu-id="94f32-130">Consente di eseguire l'applicazione Web dal lato server.</span><span class="sxs-lookup"><span data-stu-id="94f32-130">It helps run the web application from the server side.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="94f32-131">Node.js, non AngularJS, è l'elemento che ospita un'app Web MEAN dal lato server.</span><span class="sxs-lookup"><span data-stu-id="94f32-131">Node.js, not AngularJS, is what hosts a MEAN web app from the server side.</span></span>

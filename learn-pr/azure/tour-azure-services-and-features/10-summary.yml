@@ -1,19 +1,56 @@
 ### YamlMime:ModuleUnit
 uid: learn.azure-services-features.10-summary
-title: <span data-ttu-id="f2143-101">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="f2143-101">Summary</span></span>
+title: <span data-ttu-id="48ec8-101">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="48ec8-101">Summary</span></span>
 metadata:
-  title: <span data-ttu-id="f2143-102">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="f2143-102">Summary</span></span>
-  description: <span data-ttu-id="f2143-103">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="f2143-103">Summary</span></span>
+  title: <span data-ttu-id="48ec8-102">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="48ec8-102">Summary</span></span>
+  description: <span data-ttu-id="48ec8-103">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="48ec8-103">Summary</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: d996ad10fbba1b00bad0fe7551077528683672a5
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.openlocfilehash: 44ad01166d54f18352430f3be5994e2eaf1f7513
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46344200"
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47437018"
 durationInMinutes: 3
-content: '[!include[](includes/10-summary.md)]'
+content: >
+  [!include[](includes/10-summary.md)]
+quiz:
+  title: <span data-ttu-id="48ec8-104">Verifica delle conoscenze</span><span class="sxs-lookup"><span data-stu-id="48ec8-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="48ec8-105">Quale dei seguenti è un esempio di servizio di calcolo di Azure?</span><span class="sxs-lookup"><span data-stu-id="48ec8-105">Which of the following is an example of an Azure compute service?</span></span>
+    choices:
+    - content: <span data-ttu-id="48ec8-106">Macchina virtuale di Azure</span><span class="sxs-lookup"><span data-stu-id="48ec8-106">Azure Virtual Machine</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="48ec8-107">Le macchine virtuali di Azure offrono potenza di calcolo e supporto ai sistemi operativi sia Windows che Linux.</span><span class="sxs-lookup"><span data-stu-id="48ec8-107">Azure Virtual Machines provide compute power and support both Windows and Linux operating systems.</span></span>
+    - content: <span data-ttu-id="48ec8-108">Azure Load Balancer</span><span class="sxs-lookup"><span data-stu-id="48ec8-108">Azure Load Balancer</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="48ec8-109">Le macchine virtuali di Azure offrono potenza di calcolo e supporto ai sistemi operativi sia Windows che Linux.</span><span class="sxs-lookup"><span data-stu-id="48ec8-109">Azure Virtual Machines provide compute power and support both Windows and Linux operating systems.</span></span>
+    - content: <span data-ttu-id="48ec8-110">Archiviazione tabelle di Azure</span><span class="sxs-lookup"><span data-stu-id="48ec8-110">Azure Table Storage</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="48ec8-111">Le macchine virtuali di Azure offrono potenza di calcolo e supporto ai sistemi operativi sia Windows che Linux.</span><span class="sxs-lookup"><span data-stu-id="48ec8-111">Azure Virtual Machines provide compute power and support both Windows and Linux operating systems.</span></span>
+    - content: <span data-ttu-id="48ec8-112">Cache Redis di Azure</span><span class="sxs-lookup"><span data-stu-id="48ec8-112">Azure Redis Cache</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="48ec8-113">Le macchine virtuali di Azure offrono potenza di calcolo e supporto ai sistemi operativi sia Windows che Linux.</span><span class="sxs-lookup"><span data-stu-id="48ec8-113">Azure Virtual Machines provide compute power and support both Windows and Linux operating systems.</span></span>
+  - content: <span data-ttu-id="48ec8-114">In che formato di file viene archiviato un dashboard di Azure?</span><span class="sxs-lookup"><span data-stu-id="48ec8-114">An Azure dashboard is stored as which type of file?</span></span>
+    choices:
+    - content: <span data-ttu-id="48ec8-115">XML</span><span class="sxs-lookup"><span data-stu-id="48ec8-115">XML</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="48ec8-116">I dashboard di Azure vengono archiviati come file JSON e possono quindi essere caricati e scaricati per essere condivisi con altri membri della directory di Azure.</span><span class="sxs-lookup"><span data-stu-id="48ec8-116">Azure dashboards are stored as JSON files which allows them to be uploaded and downloaded to share with other members of the Azure directory.</span></span>
+    - content: <span data-ttu-id="48ec8-117">JSON</span><span class="sxs-lookup"><span data-stu-id="48ec8-117">JSON</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="48ec8-118">I dashboard di Azure vengono archiviati come file JSON e possono quindi essere caricati e scaricati per essere condivisi con altri membri della directory di Azure.</span><span class="sxs-lookup"><span data-stu-id="48ec8-118">Azure dashboards are stored as JSON files which allows them to be uploaded and downloaded to share with other members of the Azure directory.</span></span>
+    - content: <span data-ttu-id="48ec8-119">PNG</span><span class="sxs-lookup"><span data-stu-id="48ec8-119">PNG</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="48ec8-120">I dashboard di Azure vengono archiviati come file JSON e possono quindi essere caricati e scaricati per essere condivisi con altri membri della directory di Azure.</span><span class="sxs-lookup"><span data-stu-id="48ec8-120">Azure dashboards are stored as JSON files which allows them to be uploaded and downloaded to share with other members of the Azure directory.</span></span>
+  - content: '<span data-ttu-id="48ec8-121">Vero o falso: Azure Cloud Shell è una shell interattiva accessibile dal browser per la gestione delle risorse di Azure?</span><span class="sxs-lookup"><span data-stu-id="48ec8-121">True or false: Azure Cloud Shell is an interactive, browser-accessible shell for managing Azure resources?</span></span>'
+    choices:
+    - content: <span data-ttu-id="48ec8-122">Vero</span><span class="sxs-lookup"><span data-stu-id="48ec8-122">True</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="48ec8-123">Azure Cloud Shell è una shell interattiva per la gestione delle risorse di Azure.</span><span class="sxs-lookup"><span data-stu-id="48ec8-123">Azure Cloud Shell is an interactive shell for managing Azure resources.</span></span> <span data-ttu-id="48ec8-124">È possibile controllare e amministrare tutte le risorse di Azure nella sottoscrizione corrente usando un'interfaccia della riga di comando incorporata nel portale.</span><span class="sxs-lookup"><span data-stu-id="48ec8-124">You can control and administer all of your Azure resources in the current subscription through a command-line interface built right into the portal.</span></span>
+    - content: <span data-ttu-id="48ec8-125">Falso</span><span class="sxs-lookup"><span data-stu-id="48ec8-125">False</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="48ec8-126">Azure Cloud Shell è una shell interattiva per la gestione delle risorse di Azure.</span><span class="sxs-lookup"><span data-stu-id="48ec8-126">Azure Cloud Shell is an interactive shell for managing Azure resources.</span></span> <span data-ttu-id="48ec8-127">È possibile controllare e amministrare tutte le risorse di Azure nella sottoscrizione corrente usando un'interfaccia della riga di comando incorporata nel portale.</span><span class="sxs-lookup"><span data-stu-id="48ec8-127">You can control and administer all of your Azure resources in the current subscription through a command-line interface built right into the portal.</span></span>

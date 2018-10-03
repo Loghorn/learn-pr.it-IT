@@ -1,19 +1,53 @@
 ### YamlMime:ModuleUnit
 uid: learn.automate-azure-tasks-with-powershell.9-summary
-title: <span data-ttu-id="75f40-101">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="75f40-101">Summary</span></span>
+title: <span data-ttu-id="8aabe-101">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="8aabe-101">Summary</span></span>
 metadata:
-  title: <span data-ttu-id="75f40-102">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="75f40-102">Summary</span></span>
-  description: <span data-ttu-id="75f40-103">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="75f40-103">Summary</span></span>
+  title: <span data-ttu-id="8aabe-102">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="8aabe-102">Summary</span></span>
+  description: <span data-ttu-id="8aabe-103">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="8aabe-103">Summary</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 4d91629775838b773937b42f3eb560a386276bb0
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.openlocfilehash: ba3042f85d59e09955c715f241f1620ceb22cfa5
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46340683"
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47437443"
 durationInMinutes: 3
-content: '[!include[](includes/9-summary.md)]'
+content: >
+  [!include[](includes/9-summary.md)]
+quiz:
+  title: <span data-ttu-id="8aabe-104">Verifica delle conoscenze</span><span class="sxs-lookup"><span data-stu-id="8aabe-104">Check your knowledge</span></span>
+  questions:
+  - content: "<span data-ttu-id=\"8aabe-105\">Vero o falso: il portale di Azure, l'interfaccia della riga di comando di Azure e Azure PowerShell offrono servizi decisamente diversi tra loro pertanto è improbabile che tutti e tre supporteranno l'operazione richiesta.</span><span class=\"sxs-lookup\"><span data-stu-id=\"8aabe-105\">True or false: The Azure portal, the Azure CLI, and Azure PowerShell offer significantly different services, so it is unlikely that all three will support the operation you need.</span></span>"
+    choices:
+    - content: <span data-ttu-id="8aabe-106">Vero</span><span class="sxs-lookup"><span data-stu-id="8aabe-106">True</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="8aabe-107">I tre strumenti offrono quasi esattamente lo stesso set di servizi.</span><span class="sxs-lookup"><span data-stu-id="8aabe-107">The three tools offer almost exactly the same set of services.</span></span>
+    - content: <span data-ttu-id="8aabe-108">Falso</span><span class="sxs-lookup"><span data-stu-id="8aabe-108">False</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="8aabe-109">I tre strumenti offrono quasi lo stesso set di servizi.</span><span class="sxs-lookup"><span data-stu-id="8aabe-109">The three tools offer almost the same set of services.</span></span> <span data-ttu-id="8aabe-110">In genere, questa considerazione non è un fattore importante per decidere quale strumento è migliore per svolgere le proprie attività.</span><span class="sxs-lookup"><span data-stu-id="8aabe-110">Generally, this is not a factor in deciding which tool is best for your tasks.</span></span>
+  - content: <span data-ttu-id="8aabe-111">Si supponga che si voglia creare un'applicazione per la modifica di video che offra spazio di archiviazione online per i contenuti video generati dagli utenti.</span><span class="sxs-lookup"><span data-stu-id="8aabe-111">Suppose you are building a video-editing application that will offer online storage for user-generated video content.</span></span> <span data-ttu-id="8aabe-112">I video verranno archiviati nei BLOB di Azure, pertanto è necessario creare un account di archiviazione di Azure che contenga i BLOB.</span><span class="sxs-lookup"><span data-stu-id="8aabe-112">You will store the videos in Azure Blobs, so you need to create an Azure storage account to contain the blobs.</span></span> <span data-ttu-id="8aabe-113">Una volta predisposto l'account di archiviazione, è improbabile che si decida di rimuoverlo e ricrearlo perché ciò comporterebbe l'eliminazione di tutti i video degli utenti.</span><span class="sxs-lookup"><span data-stu-id="8aabe-113">Once the storage account is in place, it is unlikely you would remove and recreate it because this would delete all the user videos.</span></span> <span data-ttu-id="8aabe-114">Quale strumento offre verosimilmente il modo più rapido e semplice per creare l'account di archiviazione?</span><span class="sxs-lookup"><span data-stu-id="8aabe-114">Which tool is likely to offer the quickest and easiest way to create the storage account?</span></span>
+    choices:
+    - content: <span data-ttu-id="8aabe-115">Portale di Azure</span><span class="sxs-lookup"><span data-stu-id="8aabe-115">Azure portal</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="8aabe-116">Il portale rappresenta una buona scelta per svolgere operazioni singole come la creazione di un account di archiviazione di lunga durata.</span><span class="sxs-lookup"><span data-stu-id="8aabe-116">The portal is a good choice for one-off operations like creating a long-lived storage account.</span></span> <span data-ttu-id="8aabe-117">Il portale offre un'interfaccia utente grafica che contiene tutte le proprietà per l'account di archiviazione e le descrizioni comando che aiutano a selezionare le opzioni corrette per le proprie esigenze.</span><span class="sxs-lookup"><span data-stu-id="8aabe-117">The portal gives you a GUI containing all the storage-account properties and provides tool tips to help you select the right options for your needs.</span></span>
+    - content: <span data-ttu-id="8aabe-118">Interfaccia della riga di comando di Azure</span><span class="sxs-lookup"><span data-stu-id="8aabe-118">Azure CLI</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="8aabe-119">Per usare l'interfaccia della riga di comando, è necessario cercare il comando da utilizzare per creare un account di archiviazione.</span><span class="sxs-lookup"><span data-stu-id="8aabe-119">To use the CLI, you would need to research the command used to create a storage account.</span></span> <span data-ttu-id="8aabe-120">È inoltre necessario installare l'interfaccia della riga di comando in locale oppure accedere a Cloud Shell.</span><span class="sxs-lookup"><span data-stu-id="8aabe-120">You would also need to either install the CLI locally or login to the cloud shell.</span></span> <span data-ttu-id="8aabe-121">Per un'operazione occasionale quale la creazione di un account di archiviazione, questa opzione potrebbe richiedere più tempo rispetto al portale di Azure.</span><span class="sxs-lookup"><span data-stu-id="8aabe-121">For a one-off operation like creating a storage account, this is likely to take longer than using the Azure portal.</span></span>
+    - content: <span data-ttu-id="8aabe-122">Azure PowerShell</span><span class="sxs-lookup"><span data-stu-id="8aabe-122">Azure PowerShell</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="8aabe-123">Per usare Azure PowerShell, è necessario cercare il comando da utilizzare per creare un account di archiviazione.</span><span class="sxs-lookup"><span data-stu-id="8aabe-123">To use Azure PowerShell, you would need to research the command used to create a storage account.</span></span> <span data-ttu-id="8aabe-124">È inoltre necessario installare PowerShell e Azure PowerShell in locale o oppure accedere a Cloud Shell.</span><span class="sxs-lookup"><span data-stu-id="8aabe-124">You would also need to either install PowerShell and Azure PowerShell locally or login to the cloud shell.</span></span> <span data-ttu-id="8aabe-125">Per un'operazione occasionale quale la creazione di un account di archiviazione, questa opzione potrebbe richiedere più tempo rispetto al portale di Azure.</span><span class="sxs-lookup"><span data-stu-id="8aabe-125">For a one-off operation like creating a storage account, this is likely to take longer than using the Azure portal.</span></span>
+  - content: <span data-ttu-id="8aabe-126">Che cosa è necessario installare nel computer per consentire l'esecuzione in locale dei cmdlet di Azure PowerShell?</span><span class="sxs-lookup"><span data-stu-id="8aabe-126">What needs to be installed on your machine to let you execute Azure PowerShell cmdlets locally?</span></span>
+    choices:
+    - content: <span data-ttu-id="8aabe-127">Azure Cloud Shell</span><span class="sxs-lookup"><span data-stu-id="8aabe-127">The Azure cloud shell</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="8aabe-128">Cloud Shell consente di eseguire i cmdlet di Azure in un browser, pertanto i comandi non sono eseguiti nel computer locale.</span><span class="sxs-lookup"><span data-stu-id="8aabe-128">The cloud shell does let you execute Azure cmdlets; however, you use it in a browser, so you are not running the commands on your local machine.</span></span>
+    - content: <span data-ttu-id="8aabe-129">Il prodotto PowerShell di base e il modulo AzureRM</span><span class="sxs-lookup"><span data-stu-id="8aabe-129">The base PowerShell product and the AzureRM module</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="8aabe-130">Occorrono il prodotto PowerShell di base e il modulo AzureRM.</span><span class="sxs-lookup"><span data-stu-id="8aabe-130">You need both the base PowerShell product and the AzureRM module.</span></span> <span data-ttu-id="8aabe-131">Il prodotto base offre la shell stessa, alcuni comandi di base e i costrutti di programmazione, ad esempio i cicli, le variabili e così via. I moduli AzureRM mettono a disposizione i cmdlet necessari per lavorare con le risorse di Azure.</span><span class="sxs-lookup"><span data-stu-id="8aabe-131">The base product gives you the shell itself, a few core commands, and programming constructs like loops, variables, etc. The AzureRM modules adds the cmdlets you need to work with Azure resources.</span></span>
+    - content: <span data-ttu-id="8aabe-132">L'interfaccia della riga di comando di Azure e Azure PowerShell</span><span class="sxs-lookup"><span data-stu-id="8aabe-132">The Azure CLI and Azure PowerShell</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="8aabe-133">L'interfaccia della riga di comando di Azure è uno strumento da riga di comando e di scripting alternativo.</span><span class="sxs-lookup"><span data-stu-id="8aabe-133">The Azure CLI is an alternate command-line and scripting tool.</span></span> <span data-ttu-id="8aabe-134">Non è necessaria se si intende usare Azure PowerShell.</span><span class="sxs-lookup"><span data-stu-id="8aabe-134">It is not needed if you are going to use Azure PowerShell.</span></span>

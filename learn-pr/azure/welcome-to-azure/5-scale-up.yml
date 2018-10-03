@@ -1,48 +1,34 @@
 ### YamlMime:ModuleUnit
 uid: learn.welcome-to-azure.5-scale-up
-title: <span data-ttu-id="0077f-101">Aumentare le prestazioni</span><span class="sxs-lookup"><span data-stu-id="0077f-101">Scale up</span></span>
+title: <span data-ttu-id="3bdd3-101">Aumentare le prestazioni</span><span class="sxs-lookup"><span data-stu-id="3bdd3-101">Scale up</span></span>
 metadata:
-  title: <span data-ttu-id="0077f-102">Aumentare le prestazioni</span><span class="sxs-lookup"><span data-stu-id="0077f-102">Scale up</span></span>
-  description: <span data-ttu-id="0077f-103">Aumentare le prestazioni della macchina virtuale per fornire più potenza di calcolo e memoria.</span><span class="sxs-lookup"><span data-stu-id="0077f-103">Scale up your virtual machine to give it more compute power and memory.</span></span>
+  title: <span data-ttu-id="3bdd3-102">Aumentare le prestazioni</span><span class="sxs-lookup"><span data-stu-id="3bdd3-102">Scale up</span></span>
+  description: <span data-ttu-id="3bdd3-103">Aumentare le prestazioni della macchina virtuale per garantire più potenza di calcolo e memoria.</span><span class="sxs-lookup"><span data-stu-id="3bdd3-103">Scale up your virtual machine to give it more compute power and memory.</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   zone_pivot_groups: platform-cloud
-  ms.openlocfilehash: 9f6ec458cb233fe0d035d73d99d46a5de91ce569
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.openlocfilehash: 0eecdb25b1f7b3db879cf53658ef1ce5339d4e76
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46340691"
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47437307"
 interactive: bash
 azureSandbox: true
 durationInMinutes: 4
 content: >
   [!include[](includes/5-scale-up.md)]
-quiz:
-  title: <span data-ttu-id="0077f-104">Verificare le proprie conoscenze</span><span class="sxs-lookup"><span data-stu-id="0077f-104">Check your knowledge</span></span>
-  questions:
-  - content: <span data-ttu-id="0077f-105">Azure è:</span><span class="sxs-lookup"><span data-stu-id="0077f-105">Azure is:</span></span>
-    choices:
-    - content: <span data-ttu-id="0077f-106">La piattaforma di cloud computing Microsoft che fornisce potenza di calcolo, risorse di archiviazione e servizi tramite Internet usando un modello di prezzi con pagamento in base al consumo.</span><span class="sxs-lookup"><span data-stu-id="0077f-106">Microsoft's cloud computing platform, which provides compute power, storage, and services over the Internet using a pay-as-you-go pricing model.</span></span>
-      isCorrect: true
-      correctExplanation: <span data-ttu-id="0077f-107">Con Azure, è possibile accedere a potenza di calcolo e risorse di archiviazione, oltre che a servizi che aiutano a esplorare nuovi paradigmi software, ad esempio i bot intelligenti e la realtà mista.</span><span class="sxs-lookup"><span data-stu-id="0077f-107">With Azure, you get access to raw compute power and storage, as well as services to help you explore new software paradigms such as intelligent bots and mixed reality.</span></span>
-    - content: <span data-ttu-id="0077f-108">Un singolo data center che si trova a Redmond, Washington.</span><span class="sxs-lookup"><span data-stu-id="0077f-108">A single data center located in Redmond, Washington.</span></span>
-      isCorrect: false
-      incorrectExplanation: <span data-ttu-id="0077f-109">Azure è costituito da data center distribuiti in tutto il mondo.</span><span class="sxs-lookup"><span data-stu-id="0077f-109">Azure is made up of data centers distributed throughout the world.</span></span>
-    - content: <span data-ttu-id="0077f-110">Solo "una posizione diversa dove eseguire le macchine virtuali".</span><span class="sxs-lookup"><span data-stu-id="0077f-110">Just "a different place to run your virtual machines".</span></span>
-      isCorrect: false
-      incorrectExplanation: <span data-ttu-id="0077f-111">Sebbene Azure offra potenza di calcolo, ad esempio le macchine virtuali, fornisce anche molti servizi che aiutano a esplorare nuovi paradigmi software, ad esempio bot intelligenti e realtà mista.</span><span class="sxs-lookup"><span data-stu-id="0077f-111">While Azure provides raw compute power, such as virtual machines, it also provides many services to help you explore new software paradigms such as intelligent bots and mixed reality.</span></span>
-  - content: <span data-ttu-id="0077f-112">Quando è consigliabile applicare la _scalabilità orizzontale_ per la distribuzione?</span><span class="sxs-lookup"><span data-stu-id="0077f-112">When might you _scale out_ your deployment?</span></span>
-    choices:
-    - content: <span data-ttu-id="0077f-113">Quando l'applicazione o il servizio richiede una CPU più potente o più memoria per un'esecuzione più veloce.</span><span class="sxs-lookup"><span data-stu-id="0077f-113">When your application or service requires a more powerful CPU or more memory to run faster.</span></span>
-      isCorrect: false
-      incorrectExplanation: <span data-ttu-id="0077f-114">In questo caso, è possibile scegliere la _scalabilità verticale_, spostando l'applicazione o il servizio in hardware più potente.</span><span class="sxs-lookup"><span data-stu-id="0077f-114">In this case, you might _scale up_ by moving your application or service to more powerful hardware.</span></span>
-    - content: <span data-ttu-id="0077f-115">Quando è possibile aggiungere altre macchine virtuali per rendere più veloce l'applicazione.</span><span class="sxs-lookup"><span data-stu-id="0077f-115">When you can add additional virtual machines to speed up your application.</span></span>
-      isCorrect: true
-      correctExplanation: <span data-ttu-id="0077f-116">Scalabilità orizzontale indica l'aggiunta di ulteriori sistemi, ad esempio macchine virtuali.</span><span class="sxs-lookup"><span data-stu-id="0077f-116">Scaling out means adding additional systems, such as virtual machines.</span></span> <span data-ttu-id="0077f-117">Ad esempio, si potrebbero creare molte macchine virtuali configurate esattamente allo stesso modo e usare il bilanciamento del carico per distribuire il lavoro tra di esse.</span><span class="sxs-lookup"><span data-stu-id="0077f-117">For example, you might create many virtual machines configured in exactly the same way and use a load balancer to distribute work across them.</span></span>
-    - content: <span data-ttu-id="0077f-118">Quando si usa capacità in eccesso non necessaria.</span><span class="sxs-lookup"><span data-stu-id="0077f-118">When you're using excess capacity that you don't need.</span></span>
-      isCorrect: false
-      incorrectExplanation: <span data-ttu-id="0077f-119">In questo caso, è possibile scegliere di _ridurre il numero di istanze_ rimuovendo i sistemi non necessari.</span><span class="sxs-lookup"><span data-stu-id="0077f-119">In this case, you might _scale in_ by tearing down systems you don't currently need.</span></span>
+tasks:
+- action: exists
+  environment: azure
+  azure:
+    resource:
+      type: Microsoft.Compute/virtualMachines
+      name: myVM
+      properties:
+        hardwareProfile:
+          vmSize: Standard_DS3_v2
+  hint: <span data-ttu-id="3bdd3-104">Eseguire il comando `az vm resize` come illustrato di seguito per ridimensionare la macchina virtuale.</span><span class="sxs-lookup"><span data-stu-id="3bdd3-104">Run the `az vm resize` command as shown to resize your virtual machine.</span></span>

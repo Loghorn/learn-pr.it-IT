@@ -1,20 +1,54 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-linux-vm-in-azure.9-summary
-title: <span data-ttu-id="d6231-101">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="d6231-101">Summary</span></span>
+title: <span data-ttu-id="6176d-101">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="6176d-101">Summary</span></span>
 metadata:
-  title: <span data-ttu-id="d6231-102">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="d6231-102">Summary</span></span>
-  description: <span data-ttu-id="d6231-103">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="d6231-103">Summary</span></span>
+  title: <span data-ttu-id="6176d-102">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="6176d-102">Summary</span></span>
+  description: <span data-ttu-id="6176d-103">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="6176d-103">Summary</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: cf143961dad057732128d694543f4890f1bbefee
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.openlocfilehash: 7e8f4e11d5652bcb4cf4ea95df8141eedbe8abea
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46353115"
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47437103"
 azureSandbox: true
 durationInMinutes: 3
-content: '[!include[](includes/9-summary.md)]'
+content: >
+  [!include[](includes/9-summary.md)]
+quiz:
+  title: <span data-ttu-id="6176d-104">Verifica delle conoscenze</span><span class="sxs-lookup"><span data-stu-id="6176d-104">Check your knowledge</span></span>
+  questions:
+  - content: "<span data-ttu-id=\"6176d-105\">Vero o falso: per motivi di sicurezza, è necessario usare un'immagine del sito Azure Marketplace ufficiale quando si crea una nuova macchina virtuale.</span><span class=\"sxs-lookup\"><span data-stu-id=\"6176d-105\">True or false: for security reasons, you must use an image from the official Azure Marketplace when creating a new virtual machine.</span></span>"
+    choices:
+    - content: <span data-ttu-id="6176d-106">Vero</span><span class="sxs-lookup"><span data-stu-id="6176d-106">True</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="6176d-107">Azure consente di configurare le macchine virtuali in modo da soddisfare esigenze specifiche.</span><span class="sxs-lookup"><span data-stu-id="6176d-107">Azure lets you configure your virtual machines to meet your needs.</span></span> <span data-ttu-id="6176d-108">Questo include il supporto per l'uso di proprie immagini di macchina virtuale.</span><span class="sxs-lookup"><span data-stu-id="6176d-108">This includes support for using your own VM images.</span></span>
+    - content: <span data-ttu-id="6176d-109">Falso</span><span class="sxs-lookup"><span data-stu-id="6176d-109">False</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="6176d-110">Azure consente di configurare le macchine virtuali in modo da soddisfare esigenze specifiche.</span><span class="sxs-lookup"><span data-stu-id="6176d-110">Azure lets you configure your virtual machines to meet your needs.</span></span> <span data-ttu-id="6176d-111">Questo include il supporto per l'uso di proprie immagini di macchina virtuale.</span><span class="sxs-lookup"><span data-stu-id="6176d-111">This includes support for using your own VM images.</span></span>
+  - content: <span data-ttu-id="6176d-112">Qual è l'effetto delle impostazioni di sicurezza di rete predefinite per una nuova macchina virtuale?</span><span class="sxs-lookup"><span data-stu-id="6176d-112">What is the effect of the default network security settings for a new virtual machine?</span></span>
+    choices:
+    - content: <span data-ttu-id="6176d-113">Non sono consentite richieste né in ingresso né in uscita.</span><span class="sxs-lookup"><span data-stu-id="6176d-113">Neither outbound nor inbound requests are allowed.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="6176d-114">Le richieste in uscita sono considerate a basso rischio, quindi sono consentite per impostazione predefinita.</span><span class="sxs-lookup"><span data-stu-id="6176d-114">Outbound requests are considered low risk, so they are allowed by default.</span></span>
+    - content: <span data-ttu-id="6176d-115">Le richieste in uscita sono consentite.</span><span class="sxs-lookup"><span data-stu-id="6176d-115">Outbound request are allowed.</span></span> <span data-ttu-id="6176d-116">Il traffico in ingresso è consentito solo dall'interno della rete virtuale.</span><span class="sxs-lookup"><span data-stu-id="6176d-116">Inbound traffic is only allowed from within the virtual network.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="6176d-117">Le richieste in uscita sono considerate a basso rischio, quindi sono consentite per impostazione predefinita.</span><span class="sxs-lookup"><span data-stu-id="6176d-117">Outbound requests are considered low risk, so they are allowed by default.</span></span> <span data-ttu-id="6176d-118">È consentito il traffico in ingresso dall'interno della rete virtuale.</span><span class="sxs-lookup"><span data-stu-id="6176d-118">Inbound traffic from within the virtual network is allowed.</span></span> <span data-ttu-id="6176d-119">Se si aggiunge una macchina virtuale a una rete virtuale, il proprietario della macchina virtuale accetta in modo implicito le comunicazioni tra le risorse della rete virtuale.</span><span class="sxs-lookup"><span data-stu-id="6176d-119">By placing a VM in a virtual network, the VM owner is implicitly opting-in to communication among the resources in the virtual network.</span></span>
+    - content: '<span data-ttu-id="6176d-120">Non sono applicate restrizioni: sono consentite tutte le richieste in ingresso e in uscita.</span><span class="sxs-lookup"><span data-stu-id="6176d-120">There are no restrictions: all outbound and inbound requests are allowed.</span></span>'
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="6176d-121">Il traffico in ingresso senza restrizioni è troppo rischioso per il comportamento predefinito.</span><span class="sxs-lookup"><span data-stu-id="6176d-121">Unrestricted inbound traffic is too risky for the default behavior.</span></span>
+  - content: <span data-ttu-id="6176d-122">Si supponga di avere diverse macchine virtuali Linux ospitate in Azure.</span><span class="sxs-lookup"><span data-stu-id="6176d-122">Suppose you have several Linux virtual machines hosted in Azure.</span></span> <span data-ttu-id="6176d-123">Le macchine virtuali verranno gestite in modalità remota con SSH da tre computer dedicati nella sede centrale dell'azienda.</span><span class="sxs-lookup"><span data-stu-id="6176d-123">You will administer these VMs remotely over SSH from three dedicated machines in your corporate headquarters.</span></span> <span data-ttu-id="6176d-124">Quale dei seguenti metodi di autenticazione è in genere considerato ottimale per questa situazione?</span><span class="sxs-lookup"><span data-stu-id="6176d-124">Which of the following authentication methods would typically be considered best-practice for this situation?</span></span>
+    choices:
+    - content: <span data-ttu-id="6176d-125">Nome utente e password</span><span class="sxs-lookup"><span data-stu-id="6176d-125">Username and password</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="6176d-126">Le password sono vulnerabili agli attacchi di forza bruta.</span><span class="sxs-lookup"><span data-stu-id="6176d-126">Passwords are vulnerable to brute-force attacks.</span></span> <span data-ttu-id="6176d-127">Questo metodo è consigliato solo se è necessario l'accesso remoto da diverse posizioni.</span><span class="sxs-lookup"><span data-stu-id="6176d-127">This method is only recommended if you require remote access from a variety of locations.</span></span>
+    - content: <span data-ttu-id="6176d-128">Chiave privata</span><span class="sxs-lookup"><span data-stu-id="6176d-128">Private key</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="6176d-129">L'accesso con chiave privata è più sicuro di una password ed è una scelta ottimale quando è necessario l'accesso da un numero limitato di posizioni.</span><span class="sxs-lookup"><span data-stu-id="6176d-129">Private-key access is more secure than a password and is a good option when you require access from a limited number of locations.</span></span> <span data-ttu-id="6176d-130">Tuttavia, se un utente malintenzionato acquisisce la chiave privata, potrà usarla per accedere alle macchine virtuali.</span><span class="sxs-lookup"><span data-stu-id="6176d-130">However, if an attacker acquires your private key, they can use it to access your VMs.</span></span>
+    - content: <span data-ttu-id="6176d-131">Chiave privata con passphrase</span><span class="sxs-lookup"><span data-stu-id="6176d-131">Private key with passphrase</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="6176d-132">L'accesso con chiave privata con passphrase è l'opzione più sicura.</span><span class="sxs-lookup"><span data-stu-id="6176d-132">Private key access with a passphrase is the most secure option.</span></span> <span data-ttu-id="6176d-133">Anche se un utente malintenzionato entra in possesso della chiave privata, non potrà usarla senza la passphrase.</span><span class="sxs-lookup"><span data-stu-id="6176d-133">Even if an attacker acquires your private key, they will be unable to use it without the passphrase.</span></span>

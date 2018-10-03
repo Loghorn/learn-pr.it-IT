@@ -1,19 +1,53 @@
 ### YamlMime:ModuleUnit
 uid: learn.host-a-web-application-with-azure-web-apps.8-summary
-title: <span data-ttu-id="c4e42-101">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="c4e42-101">Summary</span></span>
+title: <span data-ttu-id="e7c38-101">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="e7c38-101">Summary</span></span>
 metadata:
-  title: <span data-ttu-id="c4e42-102">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="c4e42-102">Summary</span></span>
-  description: <span data-ttu-id="c4e42-103">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="c4e42-103">Summary</span></span>
+  title: <span data-ttu-id="e7c38-102">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="e7c38-102">Summary</span></span>
+  description: <span data-ttu-id="e7c38-103">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="e7c38-103">Summary</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: f4d66dbb3493499cf95217b79a2f60a33e83eb90
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.openlocfilehash: 3990a8784b49b701b130de6c7ea2bd4306858142
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46341910"
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47437256"
 durationInMinutes: 2
-content: '[!include[](includes/8-summary.md)]'
+content: >
+  [!include[](includes/8-summary.md)]
+quiz:
+  title: <span data-ttu-id="e7c38-104">Verifica delle conoscenze</span><span class="sxs-lookup"><span data-stu-id="e7c38-104">Check your knowledge</span></span>
+  questions:
+  - content: "<span data-ttu-id=\"e7c38-105\">Vero o falso: il Servizio app di Azure può ridimensionare automaticamente l'applicazione Web per soddisfare le esigenze del traffico.</span><span class=\"sxs-lookup\"><span data-stu-id=\"e7c38-105\">True or false: Azure App service can automatically scale your web application to meet traffic demand?</span></span>"
+    choices:
+    - content: <span data-ttu-id="e7c38-106">Vero</span><span class="sxs-lookup"><span data-stu-id="e7c38-106">True</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="e7c38-107">Il Servizio app di Azure è dotato di supporto predefinito per il ridimensionamento automatico e aumenta o diminuisce le risorse allocate per l'esecuzione dell'app in base alle esigenze, a seconda della domanda.</span><span class="sxs-lookup"><span data-stu-id="e7c38-107">Azure App service has built-in auto scale support and will increase or decrease the resources allocated to run your app as needed, depending on the demand.</span></span>
+    - content: <span data-ttu-id="e7c38-108">Falso</span><span class="sxs-lookup"><span data-stu-id="e7c38-108">False</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="e7c38-109">Il Servizio app di Azure è dotato di supporto predefinito per il ridimensionamento automatico e aumenta o diminuisce le risorse allocate per l'esecuzione dell'app in base alle esigenze, a seconda della domanda.</span><span class="sxs-lookup"><span data-stu-id="e7c38-109">Azure App service has built-in auto scale support and will increase or decrease the resources allocated to run your app as needed, depending on the demand.</span></span>
+  - content: <span data-ttu-id="e7c38-110">Quale dei servizi seguenti non è un'origine di distribuzione automatizzata valida?</span><span class="sxs-lookup"><span data-stu-id="e7c38-110">Which of the following is not a valid automated deployment source?</span></span>
+    choices:
+    - content: <span data-ttu-id="e7c38-111">GitHub</span><span class="sxs-lookup"><span data-stu-id="e7c38-111">GitHub</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="e7c38-112">Azure attualmente supporta Visual Studio Team Services, GitHub, Bitbucket, OneDrive, Dropbox e i repository Git esterni.</span><span class="sxs-lookup"><span data-stu-id="e7c38-112">Azure currently supports Visual Studio Team Services, GitHub, Bitbucket, OneDrive, Dropbox, and external Git repositories.</span></span>
+    - content: <span data-ttu-id="e7c38-113">Visual Studio Team Services</span><span class="sxs-lookup"><span data-stu-id="e7c38-113">Visual Studio Team Services</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="e7c38-114">Azure attualmente supporta Visual Studio Team Services, GitHub, Bitbucket, OneDrive, Dropbox e i repository Git esterni.</span><span class="sxs-lookup"><span data-stu-id="e7c38-114">Azure currently supports Visual Studio Team Services, GitHub, Bitbucket, OneDrive, Dropbox, and external Git repositories.</span></span>
+    - content: <span data-ttu-id="e7c38-115">SharePoint</span><span class="sxs-lookup"><span data-stu-id="e7c38-115">SharePoint</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="e7c38-116">Azure attualmente supporta Visual Studio Team Services, GitHub, Bitbucket, OneDrive, Dropbox e i repository Git esterni.</span><span class="sxs-lookup"><span data-stu-id="e7c38-116">Azure currently supports Visual Studio Team Services, GitHub, Bitbucket, OneDrive, Dropbox, and external Git repositories.</span></span>
+    - content: <span data-ttu-id="e7c38-117">Dropbox</span><span class="sxs-lookup"><span data-stu-id="e7c38-117">Dropbox</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="e7c38-118">Azure attualmente supporta Visual Studio Team Services, GitHub, Bitbucket, OneDrive, Dropbox e i repository Git esterni.</span><span class="sxs-lookup"><span data-stu-id="e7c38-118">Azure currently supports Visual Studio Team Services, GitHub, Bitbucket, OneDrive, Dropbox, and external Git repositories.</span></span>
+  - content: "<span data-ttu-id=\"e7c38-119\">Vero o falso: gli slot di distribuzione sono utili se si vuole ridurre al minimo il tempo di inattività durante l'aggiornamento dell'applicazione Web.</span><span class=\"sxs-lookup\"><span data-stu-id=\"e7c38-119\">True or false: deployment slots are useful if you want to minimize downtime when updating your web application?</span></span>"
+    choices:
+    - content: <span data-ttu-id="e7c38-120">Vero</span><span class="sxs-lookup"><span data-stu-id="e7c38-120">True</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="e7c38-121">Gli slot di distribuzione consentono di apportare modifiche alla versione dell'applicazione Web in uno slot di staging e quindi di sostituire con la versione modificata quella nello slot di produzione senza tempo di inattività.</span><span class="sxs-lookup"><span data-stu-id="e7c38-121">Deployment slots let you make changes to the version of your web application in a staging slot and then swap it into your production slot with no downtime.</span></span>
+    - content: <span data-ttu-id="e7c38-122">Falso</span><span class="sxs-lookup"><span data-stu-id="e7c38-122">False</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="e7c38-123">Gli slot di distribuzione consentono di apportare modifiche alla versione dell'applicazione Web in uno slot di staging e quindi di sostituire con la versione modificata quella nello slot di produzione senza tempo di inattività.</span><span class="sxs-lookup"><span data-stu-id="e7c38-123">Deployment slots let you make changes to the version of your web application in a staging slot and then swap it into your production slot with no downtime.</span></span>

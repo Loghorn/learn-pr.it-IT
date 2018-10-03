@@ -1,19 +1,50 @@
 ### YamlMime:ModuleUnit
 uid: learn.implement-message-workflows-with-service-bus.8-summary
-title: <span data-ttu-id="60584-101">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="60584-101">Summary</span></span>
+title: <span data-ttu-id="680a0-101">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="680a0-101">Summary</span></span>
 metadata:
-  title: <span data-ttu-id="60584-102">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="60584-102">Summary</span></span>
-  description: <span data-ttu-id="60584-103">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="60584-103">Summary</span></span>
+  title: <span data-ttu-id="680a0-102">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="680a0-102">Summary</span></span>
+  description: <span data-ttu-id="680a0-103">Riepilogo</span><span class="sxs-lookup"><span data-stu-id="680a0-103">Summary</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: f7df7347c4683d3aba486e4d8adacc636eb0e35f
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.openlocfilehash: e764042609fab1859baf263df0c42fe3d883778c
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46342329"
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47437137"
 durationInMinutes: 3
-content: '[!include[](includes/8-summary.md)]'
+content: >
+  [!include[](includes/8-summary.md)]
+quiz:
+  title: <span data-ttu-id="680a0-104">Verifica delle conoscenze</span><span class="sxs-lookup"><span data-stu-id="680a0-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="680a0-105">Quale delle seguenti code deve essere usata se sono necessari un ordinamento FIFO (First In First Out) e un supporto per le transazioni?</span><span class="sxs-lookup"><span data-stu-id="680a0-105">Which of the following queues should you use if you need first-in-first-out order and support for transactions?</span></span>
+    choices:
+    - content: <span data-ttu-id="680a0-106">Code del bus di servizio di Azure</span><span class="sxs-lookup"><span data-stu-id="680a0-106">Azure Service Bus queues</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="680a0-107">Le code del bus di servizio di Azure gestiscono i messaggi nello stesso ordine in cui vengono aggiunti e supportano anche le transazioni.</span><span class="sxs-lookup"><span data-stu-id="680a0-107">Azure Service Bus queues handle messages in the same order they're added and also support transactions.</span></span> <span data-ttu-id="680a0-108">Ciò significa che se in una transazione un messaggio non viene aggiunto alla coda, tutti i messaggi della transazione non verranno aggiunti.</span><span class="sxs-lookup"><span data-stu-id="680a0-108">This means that if one message in a transaction fails to be added to the queue, all messages in the transaction will not be added.</span></span>
+    - content: <span data-ttu-id="680a0-109">Code di Archiviazione di Azure</span><span class="sxs-lookup"><span data-stu-id="680a0-109">Azure Storage queues</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="680a0-110">Anche se una coda è una struttura di dati FIFO (First In First Out), le code di Archiviazione di Azure non la garantiscono.</span><span class="sxs-lookup"><span data-stu-id="680a0-110">Even though a queue is a first-in-first-out data structure, Azure Storage queues do not guarantee it.</span></span>
+  - content: <span data-ttu-id="680a0-111">Si supponga di inviare un messaggio con il bus di servizio di Azure e di voler fare in modo che lo ricevano più componenti.</span><span class="sxs-lookup"><span data-stu-id="680a0-111">Suppose you're sending a message with Azure Service Bus and you want multiple components to receive it.</span></span> <span data-ttu-id="680a0-112">Quale funzionalità di scambio del bus di servizio di Azure si deve usare?</span><span class="sxs-lookup"><span data-stu-id="680a0-112">Which Azure Service Bus exchange feature should you use?</span></span>
+    choices:
+    - content: <span data-ttu-id="680a0-113">Coda</span><span class="sxs-lookup"><span data-stu-id="680a0-113">Queue</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="680a0-114">Una coda può avere un solo componente di destinazione alla volta, quindi ogni messaggio nella coda viene recapitato a un solo destinatario.</span><span class="sxs-lookup"><span data-stu-id="680a0-114">A queue can only have one destination component at a time, which means that each message in the queue is delivered to only one receiver.</span></span>
+    - content: <span data-ttu-id="680a0-115">Argomento</span><span class="sxs-lookup"><span data-stu-id="680a0-115">Topic</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="680a0-116">Un argomento consente la sottoscrizione di più componenti di destinazione.</span><span class="sxs-lookup"><span data-stu-id="680a0-116">A topic allows multiple destination components to subscribe.</span></span> <span data-ttu-id="680a0-117">Ciò significa che ogni messaggio può essere recapitato a più destinatari.</span><span class="sxs-lookup"><span data-stu-id="680a0-117">This means that each message can be delivered to multiple receivers.</span></span>
+    - content: <span data-ttu-id="680a0-118">Inoltro</span><span class="sxs-lookup"><span data-stu-id="680a0-118">Relay</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="680a0-119">Un inoltro viene usato per la comunicazione bidirezionale e offre connessioni bidirezionali oltre i limiti di rete.</span><span class="sxs-lookup"><span data-stu-id="680a0-119">A relay is used for two-way communication and it provides bidirectional connections across network boundaries.</span></span>
+  - content: '<span data-ttu-id="680a0-120">Vero o falso: è possibile aggiungere un messaggio a una coda del bus di servizio di Azure di dimensioni pari a 2 MB.</span><span class="sxs-lookup"><span data-stu-id="680a0-120">True or false: you can add a message to an Azure Service Bus queue that is 2 MB in size.</span></span>'
+    choices:
+    - content: <span data-ttu-id="680a0-121">Vero</span><span class="sxs-lookup"><span data-stu-id="680a0-121">True</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="680a0-122">Un messaggio della coda del bus di servizio di Azure deve essere maggiore di 64 kB ma inferiore a 256 kB.</span><span class="sxs-lookup"><span data-stu-id="680a0-122">An Azure Service Bus queue message must be larger than 64 KB but smaller than 256 KB.</span></span>
+    - content: <span data-ttu-id="680a0-123">Falso</span><span class="sxs-lookup"><span data-stu-id="680a0-123">False</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="680a0-124">Un messaggio della coda del bus di servizio di Azure deve essere maggiore di 64 kB ma inferiore a 256 kB.</span><span class="sxs-lookup"><span data-stu-id="680a0-124">An Azure Service Bus queue message must be larger than 64 KB but smaller than 256 KB.</span></span>
