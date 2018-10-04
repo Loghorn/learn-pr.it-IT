@@ -9,11 +9,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 31c039ebaec8ca3b61fb9f8b71af794527645530
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46341519"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47139012"
 title: Introduzione alla rete di Azure
 summary: Per eseguire un'app o un servizio nel cloud, è necessaria una rete veloce e protetta. Informazioni su alcune delle nozioni di base di rete di Azure e su come la rete di Azure consente di migliorare la resilienza e di ridurre la latenza.
 abstract: >

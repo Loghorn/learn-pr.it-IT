@@ -10,11 +10,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 59a83a6a6f6373cb9872c1014ff644a849db87a9
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46353604"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47136266"
 durationInMinutes: 20
 content: >
   [!include[](includes/2-estimate-costs-with-the-azure-pricing-calculator.md)]
@@ -29,7 +29,7 @@ quiz:
     - content: Prodotti
       isCorrect: true
       correctExplanation: Questa scheda contiene l'elenco di tutti i servizi di Azure ed è qui che si aggiungono o si rimuovono i servizi per formulare la stima.
-  - content: 'Vero o falso: è possibile condividere la stima mediante un foglio di calcolo di Excel o mediante un URL.'
+  - content: 'Vero o falso: È possibile condividere la stima mediante un foglio di calcolo di Excel o mediante un URL.'
     choices:
     - content: Vero
       isCorrect: true

@@ -1,0 +1,65 @@
+### YamlMime:ModuleUnit
+uid: learn.intro-to-site-reliability-engineering.3-sre-in-context
+title: SRE in contesto
+metadata:
+  title: SRE in contesto
+  description: SRE in contesto
+  ms.date: 09/26/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: a2f23a77d0cc6b9cd6028ec5fbbfb781319afa42
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47439437"
+durationInMinutes: 10
+content: >
+  [!include[](includes/3-sre-in-context.md)]
+quiz:
+  title: Verifica delle conoscenze
+  questions:
+  - content: Date le origini della metodologia SRE, quale disciplina ha avuto il maggior impatto su di essa?
+    choices:
+    - content: Servizio clienti
+      isCorrect: false
+      incorrectExplanation: L'approccio al lavoro con una visione incentrata sul cliente è essenziale per SRE, ma il servizio clienti non era all'origine della metodologia.
+    - content: Operazioni mainframe
+      isCorrect: false
+      incorrectExplanation: Anche se è possibile apprendere da altre specializzazioni operative, la metodologia SRE non è nata con questa.
+    - content: Ingegneria del software
+      isCorrect: true
+      correctExplanation: La metodologia SRE è nata con una struttura basata sull'ingegneria del software.
+    - content: Architettura
+      isCorrect: false
+      incorrectExplanation: L'architettura (in particolare l'architettura software) è sicuramente un componente della metodologia SRE, ma non l'ha originata.
+  - content: Quale approccio è nato per primo, DevOps o SRE?
+    choices:
+    - content: DevOps
+      isCorrect: false
+      incorrectExplanation: Sono state sviluppate all'incirca contemporaneamente.
+    - content: SRE
+      isCorrect: false
+      incorrectExplanation: Sono state sviluppate all'incirca contemporaneamente.
+    - content: Nessuna delle due, sono state sviluppate all'incirca contemporaneamente.
+      isCorrect: true
+  - content: SRE è il passaggio evolutivo successivo a DevOps?
+    choices:
+    - content: Sì, SRE è il futuro della metodologia DevOps. Il personale DevOps dovrà acquisire la qualifica Site Reliability Engineer (SRE)
+      isCorrect: false
+      incorrectExplanation: Le metodologie SRE e DevOps sono approcci distinti dell'ambiente operativo che provano a risolvere problemi simili.
+    - content: No, SRE e DevOps sono approcci distinti all'ambiente operativo
+      isCorrect: true
+      correctExplanation: DevOps e SRE sono approcci distinti, anche se provano a risolvere sfide simili.
+  - content: Quali sono due procedure fondamentali sia in DevOps che in SRE?
+    choices:
+    - content: Automazione e monitoraggio/osservabilità
+      isCorrect: true
+    - content: Creazione di codice e sistemi di ticket
+      isCorrect: false
+      incorrectExplanation: La creazione di codice è fondamentale (specie in SRE), ma i sistemi di ticket non sono essenziali per SRE.
+    - content: Automazione dell'help desk e monitoraggio dei bug
+      isCorrect: false
+      correctExplanation: Anche se utile, l'automazione dell'help desk non è essenziale per nessuna delle due metodologie operative.

@@ -9,12 +9,49 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 76203955ef10f22d7150561d906e30b12c064321
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.openlocfilehash: 452dcc7255f6522b8ad790700323e9ac5b11bf1a
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46342770"
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47437817"
 durationInMinutes: 3
 azureSandbox: true
-content: '[!include[](includes/8-summary.md)]'
+content: >
+  [!include[](includes/8-summary.md)]
+quiz:
+  title: Verifica delle conoscenze
+  questions:
+  - content: Quando si crea una macchina virtuale Windows in Azure, quale porta è necessario aprire usando le regole di porta in ingresso per consentire l'accesso al desktop remoto?
+    choices:
+    - content: HTTPS
+      isCorrect: false
+      incorrectExplanation: La connessione al desktop remoto non usa il protocollo HTTPS.
+    - content: SSH (22)
+      isCorrect: false
+      incorrectExplanation: La connessione al desktop remoto non usa SSH.
+    - content: RDP (3389)
+      isCorrect: true
+      correctExplanation: Remote Desktop Protocol (RDP) usa per impostazione predefinita la porta 3389 quindi questa è la porta standard da aprire se si vuole usare un client RDP per gestire le macchine virtuali di Windows.
+  - content: Si supponga di avere un'applicazione in esecuzione in una macchina virtuale Windows in Azure. In base alle procedure consigliate, qual è la posizione in cui l'app deve archiviare i file di dati?
+    choices:
+    - content: Il disco del sistema operativo (C:)
+      isCorrect: false
+      incorrectExplanation: È possibile archiviare file di dati sul disco del sistema operativo; tuttavia, è consigliabile ottimizzare tale disco per le prestazioni del sistema operativo, selezionando un tipo di unità SSD Premium che potrebbe rappresentare una soluzione costosa per archiviare i dati.
+    - content: Il disco temporaneo (D:)
+      isCorrect: false
+      incorrectExplanation: Il disco temporaneo non è persistente. I dati importanti non vanno scritti in questo disco.
+    - content: Un disco dati collegato
+      isCorrect: true
+      correctExplanation: I dischi dati dedicati sono in genere considerati il modo migliore per archiviare i file di dati delle applicazioni. Possono essere di dimensioni maggiori dei dischi del sistema operativo e possono essere ottimizzati per le caratteristiche di prestazioni e costo appropriate per i dati.
+  - content: Qual è la regola finale che viene applicata in ogni gruppo di sicurezza di rete?
+    choices:
+    - content: Allow All (Consenti tutto)
+      isCorrect: false
+      incorrectExplanation: Ciò potrebbe consentire al traffico indesiderato di ottenere l'accesso se le regole non sono configurate correttamente.
+    - content: Deny All (Rifiuta tutto)
+      isCorrect: true
+      correctExplanation: Si tratta di una scelta prudente. In questo modo tutto il traffico non consentito specificamente viene bloccato.
+    - content: La regola finale viene configurata in base alle esigenze
+      isCorrect: false
+      incorrectExplanation: La regola finale viene aggiunta automaticamente quando viene creato il gruppo di sicurezza e non è possibile modificarla.

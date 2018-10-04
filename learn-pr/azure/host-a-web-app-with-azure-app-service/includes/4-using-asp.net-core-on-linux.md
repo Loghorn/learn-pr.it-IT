@@ -1,10 +1,10 @@
 Si è deciso di utilizzare una tecnologia open source per la compilazione dell'applicazione Web. Si sa che ASP.NET Core è un framework open source e multipiattaforma. Si decide di sviluppare l'app Web in ambiente Linux tramite ASP.NET Core.
 
-Servizio app di Azure consente di usare la tecnologia Web preferita, inclusi Node.js, PHP o .NET Core.
+Servizio app di Azure consente di usare la tecnologia Web preferita, inclusi Node.js, PHP e .NET Core.
 
 In questo caso, si apprenderà come creare un'applicazione ASP.NET Core usando l'interfaccia della riga di comando di .NET.
 
-## <a name="what-is-aspnet-core"></a>Che cos'è ASP.NET Core
+## <a name="what-is-aspnet-core"></a>Che cos'è ASP.NET Core?
 
 ASP.NET Core è l'evoluzione più recente del famoso framework Web ASP.NET di Microsoft, un framework multipiattaforma, open source per la compilazione di applicazioni moderne, basate su cloud e connesse a Internet.
 

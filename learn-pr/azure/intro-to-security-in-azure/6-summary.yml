@@ -9,11 +9,48 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 9c20d9ad1268e27f22c1715e1897b92e5e291ae2
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.openlocfilehash: d5fc2c22e727a2f272fa31b50b232f9865a23a6a
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46352715"
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47437341"
 durationInMinutes: 3
-content: '[!include[](includes/6-summary.md)]'
+content: >
+  [!include[](includes/6-summary.md)]
+quiz:
+  title: Verifica delle conoscenze
+  questions:
+  - content: La sicurezza del cloud è una responsabilità condivisa tra l'utente e il provider di servizi cloud. Quale categoria di servizi cloud richiede all'utente più impegno per la sicurezza?
+    choices:
+    - content: Infrastruttura distribuita come servizio (IaaS, Infrastructure as a Service)
+      isCorrect: true
+      correctExplanation: A questo livello, il provider di servizi cloud garantisce la sicurezza fisica delle risorse di calcolo. È tuttavia responsabilità dell'utente applicare patch e proteggere i sistemi operativi e il software, nonché configurare la rete in modo che sia sicura.
+    - content: Piattaforma distribuita come servizio (PaaS, Platform as a Service)
+      isCorrect: false
+      incorrectExplanation: A questo livello, il provider di servizi cloud gestisce molte questioni correlate alla sicurezza, più che in altre categorie, ad esempio garantisce la sicurezza fisica, installa le patch dei sistemi operativi e mantiene aggiornati questi ultimi.
+    - content: Software come un servizio (SaaS, Software as a Service)
+      isCorrect: false
+      incorrectExplanation: A questo livello, il provider di servizi cloud gestisce la maggior parte delle questioni correlate alla sicurezza. La responsabilità principale dell'utente consiste nel consentire agli utenti dell'organizzazione l'accesso appropriato al software.
+  - content: Quale delle funzionalità seguenti consente di disabilitare più facilmente l'account di un dipendente che ha lasciato la società?
+    choices:
+    - content: Autenticazione a più fattori (MFA)
+      isCorrect: false
+      incorrectExplanation: L'autenticazione a più fattori (MFA) offre sicurezza aggiuntiva, richiedendo due o più elementi per l'autenticazione completa, ma non consente di disabilitare gli account inattivi.
+    - content: Monitoraggio dei tentativi di accesso
+      isCorrect: false
+      incorrectExplanation: Il monitoraggio consente di individuare tentativi di accesso non autorizzati a uno dei servizi, ma da solo non consente di disabilitare gli account inattivi.
+    - content: Autenticazione Single Sign-On (SSO)
+      isCorrect: true
+      correctExplanation: L'autenticazione SSO consente di centralizzare l'identità dell'utente e quindi di disabilitare gli account inattivi in un unico passaggio.
+  - content: Quale di queste funzionalità rappresenta il metodo _più sicuro_ per proteggere i dati sensibili dei clienti?
+    choices:
+    - content: Crittografia dei dati all'interno del database
+      isCorrect: false
+      incorrectExplanation: La crittografia dei dati all'interno del database (crittografia dei dati inattivi) è importante, ma i dati possono essere letti da altri utenti durante la trasmissione tra sistemi diversi attraverso la rete.
+    - content: Crittografia dei dati durante la trasmissione in rete
+      isCorrect: false
+      incorrectExplanation: La crittografia dei dati durante la trasmissione in rete (crittografia in transito) è importante, ma i dati rimangono vulnerabili quando sono inattivi all'interno del database.
+    - content: Crittografia dei dati sia all'interno del database che durante la trasmissione in rete
+      isCorrect: true
+      correctExplanation: La crittografia dei dati in qualsiasi momento, sia quando sono inattivi all'interno del database che durante la trasmissione in rete, riduce al minimo la possibilità che un utente malintenzionato acceda ai dati in testo normale.

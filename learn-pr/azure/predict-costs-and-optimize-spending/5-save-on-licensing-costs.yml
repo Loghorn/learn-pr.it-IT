@@ -10,11 +10,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 84b17392aac8b66ed9245d50a4a8eccdadfd424e
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46340971"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47133425"
 durationInMinutes: 10
 content: >
   [!include[](includes/5-save-on-licensing-costs.md)]
@@ -33,7 +33,7 @@ quiz:
     choices:
     - content: Vero
       isCorrect: true
-      correctExplanation: I vantaggi Sviluppo/test Enterprise di Azure e Sviluppo/test con pagamento in base al consumo di Azure danno diritto a diversi sconti, in particolare per i carichi di lavoro Windows, eliminando gli addebiti per le licenze e fatturando solo la tariffa Linux per le macchine virtuali. Ciò si applica anche a SQL Server e a qualsiasi altro software Microsoft coperto da una sottoscrizione di Visual Studio.
+      correctExplanation: I vantaggi Sviluppo/test Enterprise di Azure e Sviluppo/test con pagamento in base al consumo di Azure danno diritto a diversi sconti, in particolare per i carichi di lavoro Windows, eliminando gli addebiti per le licenze e fatturando solo la tariffa Linux per le macchine virtuali. Ciò si applica anche a SQL Server e a qualsiasi altro software Microsoft incluso in una sottoscrizione di Visual Studio.
     - content: Falso
       isCorrect: false
-      incorrectExplanation: I vantaggi Sviluppo/test Enterprise di Azure e Sviluppo/test con pagamento in base al consumo di Azure danno diritto a diversi sconti, in particolare per i carichi di lavoro Windows, eliminando gli addebiti per le licenze e fatturando solo la tariffa Linux per le macchine virtuali. Ciò si applica anche a SQL Server e a qualsiasi altro software Microsoft coperto da una sottoscrizione di Visual Studio.
+      incorrectExplanation: I vantaggi Sviluppo/test Enterprise di Azure e Sviluppo/test con pagamento in base al consumo di Azure danno diritto a diversi sconti, in particolare per i carichi di lavoro Windows, eliminando gli addebiti per le licenze e fatturando solo la tariffa Linux per le macchine virtuali. Ciò si applica anche a SQL Server e a qualsiasi altro software Microsoft incluso in una sottoscrizione di Visual Studio.

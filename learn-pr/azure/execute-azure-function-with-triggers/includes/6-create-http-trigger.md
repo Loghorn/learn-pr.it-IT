@@ -4,15 +4,13 @@ In questa unità verrà creata una funzione di Azure che accetta una richiesta H
 
 Continuare a usare l'applicazione Funzioni di Azure esistente e aggiungere un trigger HTTP.
 
-1. Accedere al [portale di Azure](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) usando lo stesso account con cui è stato attivato l'ambiente sandbox.
+1. Assicurarsi di aver eseguito l'accesso al [portale di Azure](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) usando lo stesso account con cui è stato attivato il sandbox.
 
 1. Passare alla schermata **Tutte le risorse** e selezionare l'app per le funzioni.
 
 1. Selezionare **Funzioni** e quindi l'icona del segno più (+).
 
 1. Selezionare **HTTP trigger** (Trigger HTTP).
-
-1. Selezionare il linguaggio di programmazione **C#**.
 
 1. Lasciare **Nome** impostato sul valore predefinito.
 

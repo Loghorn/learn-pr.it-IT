@@ -130,22 +130,15 @@ Alcune voci sono ora disponibili nella raccolta di segnalibri. Questo scenario f
 
 1. Passare all'app per le funzioni creata nell'unità precedente.
 
-1. Espandere l'app per le funzioni, quindi passare il puntatore sulla raccolta di funzioni e selezionare il pulsante **Aggiungi** (**+**) accanto a **Funzioni**.
-   Questa azione avvia il processo di creazione della funzione. L'animazione di seguito illustra l'azione:
-
-   ![Animazione del segno più che viene visualizzata quando l'utente passa il puntatore sulla voce di menu delle funzioni](../media/3-func-app-plus-hover-small.gif)
-
+1. Selezionare il pulsante **Aggiungi** (**+**) accanto a **Funzioni** per avviare il processo di creazione della funzione. 
    La pagina mostra il set completo di trigger supportati.
 
-1. Selezionare **Trigger HTTP**, che è la prima voce nello screenshot di seguito:
-
-    ![Screenshot della parte dell'interfaccia utente di selezione del modello di trigger, con il trigger HTTP visualizzato per primo nell'angolo in alto a sinistra dell'immagine.](../media/5-trigger-templates-small.png)
+1. Selezionare **Trigger HTTP**
 
 1. Compilare con i valori seguenti la finestra di dialogo **Nuova funzione** che viene visualizzata a destra.
 
     | Campo | Valore |
     |----------|--------|
-    | Linguaggio | **JavaScript** |
     | Nome     | [!INCLUDE [func-name-find](./func-name-find.md)] |
     | Livello di autorizzazione | **Funzione** |
 

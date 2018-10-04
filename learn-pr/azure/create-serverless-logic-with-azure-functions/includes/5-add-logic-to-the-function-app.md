@@ -18,73 +18,86 @@ Come descritto nell'unità precedente, Azure offre modelli che consentono di cre
 
 1. Verranno quindi visualizzate le risorse del gruppo. Fare clic sul nome dell'app per le funzioni creata nell'esercizio precedente selezionando l'elemento **escalator-functions-xxxxxxx**, contrassegnato anche con l'icona Funzione a forma di fulmine.
 
-  ![Screenshot del portale di Azure che visualizza il pannello Tutte le risorse evidenziato e l'app per le funzioni escalator che è stata creata.](../media/5-access-function-app.png)
+    ![Screenshot del portale di Azure che visualizza il pannello Tutte le risorse evidenziato e l'app per le funzioni escalator che è stata creata.](../media/5-access-function-app.png)
 
-1. Nel menu a sinistra vengono visualizzati il nome dell'app per le funzioni e un sottomenu contenente tre elementi: *Funzioni*, *Proxy* e *Slot*.  Per iniziare a creare la prima funzione, selezionare **Funzioni** e fare clic su **Nuova funzione** nella parte superiore della pagina visualizzata.
+<!-- Start temporary fix for issue #2498. -->
+> [!IMPORTANT]
+> Gli esercizi in questo modulo attualmente funzionano con Funzioni di Azure V1. Seguire questa procedura con attenzione per assicurarsi che l'app per le funzioni usi la versione del runtime V1. 
 
-  ![Screenshot del portale di Azure che visualizza l'elenco Funzioni dell'app per le funzioni, con la voce di menu Funzioni e il pulsante Nuova funzione evidenziato.](../media/5-function-add-button.png)
+1. Selezionare l'app per le funzioni nell'elenco **App per le funzioni**.
+1. Selezionare **Funzionalità della piattaforma**.
+1. Nella schermata **Funzionalità della piattaforma** selezionare **Impostazioni dell'app per le funzioni** in **Impostazioni generali**.
+1. Selezionare *~1* in **Versione runtime**.
+1. Chiudere **Impostazioni dell'app per le funzioni**.
+
+L'app per le funzioni è ora configurata per usare il runtime V1 di Funzioni di Azure. È ora possibile continuare a creare la prima funzione.
+<!-- End temporary fix for issue #2498. --> 
+
+1. Nel menu a sinistra vengono visualizzati il nome dell'app per le funzioni e un sottomenu contenente tre elementi: *Funzioni*, *Proxy* e *Slot*.  
+
+1. Per iniziare a creare la prima funzione, selezionare **Funzioni** e fare clic su **Nuova funzione** nella parte superiore della pagina visualizzata.
+
+    ![Screenshot del portale di Azure che visualizza l'elenco Funzioni dell'app per le funzioni, con la voce di menu Funzioni e il pulsante Nuova funzione evidenziato.](../media/5-function-add-button.png)
 
 1. Nella schermata Avvio rapido selezionare il collegamento **Funzione personalizzata** nella sezione **Iniziare da zero**, come illustrato nello screenshot seguente. Se non viene visualizzata la schermata di avvio rapido, fare clic sul collegamento **passare all'Avvio rapido** nella parte superiore della pagina.
 
-  ![Screenshot del portale di Azure che visualizza il pannello Avvio rapido con il pulsante Funzione personalizzata evidenziato nella sezione Iniziare da zero.](../media/5-custom-function.png)
+    ![Screenshot del portale di Azure che visualizza il pannello Avvio rapido con il pulsante Funzione personalizzata evidenziato nella sezione Iniziare da zero.](../media/5-custom-function.png)
 
-1. Dall'elenco dei modelli visualizzati nella schermata, selezionare l'implementazione **JavaScript** del modello di **trigger HTTP**, come illustrato nello screenshot seguente.
+1. Dall'elenco dei modelli visualizzati nella schermata, selezionare il modello **Trigger HTTP**, come illustrato nello screenshot seguente.
 
 1. Immettere **DriveGearTemperatureService** nel campo relativo al nome all'interno della finestra di dialogo **Nuova funzione** visualizzata. Lasciare il livello Autorizzazione impostato su "Funzione" e premere il pulsante **Crea** per creare la funzione.
 
-  ![Screenshot del portale di Azure che visualizza le opzioni della nuova funzione trigger HTTP con il campo del linguaggio impostato su JavaScript e il nome impostato su DriveGearTemperatureService.](../media/5-create-httptrigger-form.png)
-
 1. Quando la creazione della funzione viene completata si apre l'editor di codice con il contenuto del file di codice *index.js*. Nel frammento di codice seguente viene elencato il codice predefinito che il modello ha generato automaticamente.
 
-```javascript
-module.exports = function (context, req) {
-    context.log('JavaScript HTTP trigger function processed a request.');
+    ```javascript
+    module.exports = function (context, req) {
+        context.log('JavaScript HTTP trigger function processed a request.');
+    
+        if (req.query.name || (req.body && req.body.name)) {
+            context.res = {
+                // status: 200, /* Defaults to 200 */
+                body: "Hello " + (req.query.name || req.body.name)
+            };
+        }
+        else {
+            context.res = {
+                status: 400,
+                body: "Please pass a name on the query string or in the request body"
+            };
+        }
+        context.done();
+    };
+    ```
 
-    if (req.query.name || (req.body && req.body.name)) {
-        context.res = {
-            // status: 200, /* Defaults to 200 */
-            body: "Hello " + (req.query.name || req.body.name)
-        };
-    }
-    else {
-        context.res = {
-            status: 400,
-            body: "Please pass a name on the query string or in the request body"
-        };
-    }
-    context.done();
-};
-```
+    La funzione prevede il passaggio di un nome tramite la stringa della query di richiesta HTTP o come parte del corpo della richiesta. La funzione risponde restituendo il messaggio **Salve, {nome}** e ripetendo il nome che è stato inviato nella richiesta.
 
-La funzione prevede il passaggio di un nome tramite la stringa della query di richiesta HTTP o come parte del corpo della richiesta. La funzione risponde restituendo il messaggio **Salve, {nome}** e ripetendo il nome che è stato inviato nella richiesta.
+    Sul lato destro della visualizzazione del codice sorgente sono presenti due schede. La scheda **Visualizza file** elenca il codice e il file di configurazione per la funzione.  Selezionare **function.json** per visualizzare la configurazione della funzione, che è simile alla seguente:
 
-Sul lato destro della visualizzazione del codice sorgente sono presenti due schede. La scheda **Visualizza file** elenca il codice e il file di configurazione per la funzione.  Selezionare **function.json** per visualizzare la configurazione della funzione, che è simile alla seguente:
-
-```javascript
-{
-    "disabled": false,
-    "bindings": [
+    ```javascript
     {
-        "authLevel": "function",
-        "type": "httpTrigger",
-        "direction": "in",
-        "name": "req"
-    },
-    {
-        "type": "http",
-        "direction": "out",
-        "name": "res"
+        "disabled": false,
+        "bindings": [
+        {
+            "authLevel": "function",
+            "type": "httpTrigger",
+            "direction": "in",
+            "name": "req"
+        },
+        {
+            "type": "http",
+            "direction": "out",
+            "name": "res"
+        }
+        ]
     }
-    ]
-}
-```
+    ```
 
-Con questa configurazione si dichiara che la funzione viene eseguita quando riceve una richiesta HTTP. L'associazione di output dichiara che la risposta verrà inviata come risposta HTTP.
+    Con questa configurazione si dichiara che la funzione viene eseguita quando riceve una richiesta HTTP. L'associazione di output dichiara che la risposta verrà inviata come risposta HTTP.    
 
 ## <a name="test-the-function"></a>Testare la funzione
 
 > [!TIP]
-> **cURL** è uno strumento da riga di comando che può essere usato per inviare o ricevere file. È incluso in Linux, macOS e Windows 10 e può essere scaricato per la maggior parte degli altri sistemi operativi. cURL supporta vari protocolli, come HTTP, HTTPS, FTP, FTPS, SFTP, LDAP, TELNET, SMTP, POP3 e così via. Per altre informazioni, consultare i collegamenti seguenti:
+> **cURL** è uno strumento da riga di comando che può essere usato per inviare o ricevere file. È incluso in Linux, macOS e Windows 10 e può essere scaricato per la maggior parte degli altri sistemi operativi. cURL supporta vari protocolli come HTTP, HTTPS, FTP, FTPS, SFTP, LDAP, TELNET, SMTP, POP3 e così via. Per altre informazioni, consultare i collegamenti seguenti:
 >
 >- <https://en.wikipedia.org/wiki/CURL>
 >- <https://curl.haxx.se/docs/>
@@ -103,7 +116,7 @@ Le chiavi di funzione e master sono disponibili nella sezione **Gestisci** quand
 
 1. Espandere la funzione e selezionare la sezione **Gestisci**, visualizzare la chiave di funzione predefinita e copiarla negli Appunti.
 
-  ![Screenshot del portale di Azure che visualizza il pannello Gestisci con la chiave di funzione evidenziata.](../media/5-get-function-key.png)
+    ![Screenshot del portale di Azure che visualizza il pannello Gestisci con la chiave di funzione evidenziata.](../media/5-get-function-key.png)
 
 1. Nella riga di comando in cui è stato installato lo strumento **cURL**, formattare un comando cURL con l'URL per la funzione e la chiave di funzione.
 
@@ -117,6 +130,9 @@ Le chiavi di funzione e master sono disponibili nella sezione **Gestisci** quand
     ```
 
 La funzione risponderà con il testo `"Hello Azure Function"`.
+
+> [!CAUTION]
+> Se si usa Windows, eseguire il comando `cURL` dal prompt dei comandi. In PowerShell è presente un comando *curl*, ma è in realtà un alias di Invoke-WebRequest e pertanto non è identico a `cURL`.
 
 > [!NOTE]
 > È anche possibile eseguire il test dalla sezione di una singola funzione con la scheda **Test** a lato di una funzione selezionata. In questo caso non sarà però possibile verificare il funzionamento del sistema della chiave di funzione poiché non è richiesto in questa sede. Aggiungere l'intestazione appropriata e i valori dei parametri nell'interfaccia Test e fare clic sul pulsante **Esegui** per visualizzare l'output del test.
@@ -222,10 +238,10 @@ In questo caso si userà il riquadro **Test** nel portale per testare la funzion
 
 1. Selezionare **Esegui** e visualizzare la risposta nel riquadro di output. Per visualizzare i messaggi di log, aprire la scheda **Log** nel riquadro a comparsa nella parte inferiore della pagina. Lo screenshot seguente illustra un esempio di risposta nel riquadro di output e i messaggi nel riquadro **Log**.
 
-![Screenshot del portale di Azure che visualizza il pannello dell'editor di funzioni con le schede Test e Log visualizzate. Nel riquadro di output è visualizzato un esempio di risposta inviata dalla funzione.](../media/5-portal-testing.png)
+    ![Screenshot del portale di Azure che visualizza il pannello dell'editor di funzioni con le schede Test e Log visualizzate. Nel riquadro di output è visualizzato un esempio di risposta inviata dalla funzione.](../media/5-portal-testing.png)
 
-Nel riquadro di output è possibile osservare che il campo relativo allo stato è stato aggiunto correttamente per ogni lettura.
+    Nel riquadro di output è possibile osservare che il campo relativo allo stato è stato aggiunto correttamente per ogni lettura.
 
-Passare al dashboard **Monitoraggio** per verificare se la richiesta è stata registrata in Application Insights.
+    Passare al dashboard **Monitoraggio** per verificare se la richiesta è stata registrata in Application Insights.
 
-![Screenshot del portale di Azure che visualizza l'esito positivo del test precedente nel dashboard Monitoraggio della funzione.](../media/5-app-insights.png)
+    ![Screenshot del portale di Azure che visualizza l'esito positivo del test precedente nel dashboard Monitoraggio della funzione.](../media/5-app-insights.png)

@@ -48,7 +48,7 @@ Esistono diverse altre impostazioni, disponibili solo per il livello **Premium**
 
 ### <a name="virtual-network-support"></a>Supporto della rete virtuale
 
-Se si crea una cache Redis di livello Premium, è possibile distribuirla in una rete virtuale nel cloud. La cache sarà disponibile solo per altre macchine virtuali e applicazioni nella stessa rete virtuale. Questo offre un livello di sicurezza superiore quando sia il servizio che la cache sono ospitati in Azure oppure sono connessi tramite una VPN di rete virtuale di Azure.
+Se si crea una Cache Redis di livello Premium, è possibile distribuirla in una rete virtuale nel cloud. La cache sarà disponibile solo per altre macchine virtuali e applicazioni nella stessa rete virtuale. Questo offre un livello di sicurezza superiore quando sia il servizio che la cache sono ospitati in Azure oppure sono connessi tramite una VPN di rete virtuale di Azure.
 
 ### <a name="clustering-support"></a>Supporto del clustering
 

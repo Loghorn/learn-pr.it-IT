@@ -18,7 +18,7 @@ Questa piattaforma distribuita come servizio (PaaS, Platform as a Service), offe
 
 Quando è il momento di ospitare l'app, visitare il portale di Azure e creare un'**app Web**. Creando un'**app Web** nel portale di Azure, in realtà si crea un set di risorse di hosting in Servizio app, utilizzabili per ospitare qualsiasi applicazione basata su Web supportata da Azure, ad esempio ASP.NET Core, Node.js, PHP e così via. La figura seguente dimostra quanto sia facile configurare il linguaggio o il framework usato dall'app.
 
-![Impostazioni dell'app Web](../media/2-web-app-settings.png)
+![Screenshot delle impostazioni dell'applicazione per configurare l'applicazione Web](../media/2-web-app-settings.png)
 
 Il portale di Azure offre un modello per creare un'app Web. Il modello richiede i campi seguenti:
 
@@ -35,13 +35,13 @@ Il portale di Azure offre un supporto ottimale in termini di gestione, monitorag
 
 Nel portale di Azure è possibile aggiungere facilmente **slot di distribuzione** a un'app Web di Servizio app. È ad esempio possibile creare uno slot di distribuzione di **staging** in cui eseguire il push del codice da testare in Azure. Quando si è soddisfatti del codice, è possibile **scambiare** facilmente lo slot di distribuzione di staging con quello di produzione. Tutte queste operazioni si eseguono con pochi clic del mouse nel portale di Azure.
 
-![Slot di distribuzione](../media/2-deployment-slots.png)
+![Screenshot dello slot di distribuzione di staging per verificare le distribuzioni](../media/2-deployment-slots.png)
 
 ### <a name="continuous-integrationdeployment-support"></a>Supporto di integrazione e distribuzione continue
 
 Il portale di Azure offre opzioni predefinite di integrazione e distribuzione continue con Visual Studio Team Services, GitHub, Bitbucket, Dropbox, OneDrive o un repository Git locale nel computer di sviluppo. Se si connette l'app Web a una qualsiasi delle origini precedenti, Servizio app eseguirà le altre operazioni per l'utente, sincronizzando automaticamente il codice ed eventuali modifiche apportate in futuro al codice nell'app Web. Inoltre, con Visual Studio Team Services, è possibile definire un processo personalizzato di compilazione e rilascio che consente di compilare il codice sorgente, eseguire i test, creare una versione e infine eseguire il push della versione in un'app Web ogni volta che si esegue il commit del codice. Tutto ciò avviene in modo implicito senza alcun intervento da parte dell'utente.
 
-![Configurare l'integrazione continua](../media/2-continuous-integration.PNG)
+![Screenshot per impostare l'opzione di distribuzione e scegliere l'origine per il codice sorgente della distribuzione](../media/2-continuous-integration.PNG)
 
 ### <a name="integrated-visual-studio-publishing-and-ftp-publishing"></a>Pubblicazione di Visual Studio e pubblicazione FTP integrate
 

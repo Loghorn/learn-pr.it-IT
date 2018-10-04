@@ -33,9 +33,9 @@ In questa unità l'applicazione ASP.NET Core verrà caricata in Servizio app di 
 
 1. Selezionare il nuovo slot di distribuzione.
 
-1. Il portale di Azure passerà alla pagina **Panoramica** relativa allo slot di distribuzione creato.
+1. Il portale di Azure passerà alla pagina **Panoramica** relativa allo slot di distribuzione appena creato.
 
-    ![Slot di distribuzione di staging](../media/7-deployment-slot-staging.png)
+    ![Screenshot dello slot di distribuzione di staging](../media/7-deployment-slot-staging.png)
 
     Si noti l'**URL** dello slot di distribuzione di staging. Si tratta di un URL diverso rispetto a quello mostrato in precedenza, con il nome dello slot aggiunto come suffisso.
 

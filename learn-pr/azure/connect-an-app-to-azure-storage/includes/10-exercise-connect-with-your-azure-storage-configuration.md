@@ -1,4 +1,5 @@
-::: zone pivot="csharp"
+::: zone pivot="csharp" 
+
 Si procederà all'aggiunta di codice per recuperare la stringa di connessione dalla configurazione, per poi usarla per connettersi all'account di archiviazione di Azure.
 
 ## <a name="retrieve-the-connection-string"></a>Recuperare la stringa di connessione
@@ -140,7 +141,8 @@ Il supporto per `async` e `await` nei metodi `Main` è stato aggiunto a C# 7.1. 
 
 ::: zone-end
 
-::: zone pivot="javascript"
+::: zone pivot="javascript" 
+
 Si procederà ora all'aggiunta di codice per la connessione all'account di archiviazione di Azure tramite la stringa di connessione archiviata. Per ottenere la stringa di connessione, la libreria client di Azure usa automaticamente la variabile di ambiente **AZURE_STORAGE_CONNECTION_STRING**.
 
 ## <a name="create-a-blob-client"></a>Creare un client BLOB

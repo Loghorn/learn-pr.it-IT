@@ -1,0 +1,48 @@
+### YamlMime:ModuleUnit
+uid: learn.intro-to-site-reliability-engineering.2-what-is-sre-and-why-does-it-matter
+title: Che cos'è SRE e perché è importante?
+metadata:
+  title: Che cos'è SRE e perché è importante?
+  description: Che cos'è SRE e perché è importante?
+  ms.date: 09/26/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 1e19e3256f43ac642814968c9b547e760aa09a64
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47438540"
+durationInMinutes: 10
+content: >
+  [!include[](includes/2-what-is-sre-and-why-does-it-matter.md)]
+quiz:
+  title: Verifica delle conoscenze
+  questions:
+  - content: Qual è la proprietà di un servizio, di un sistema o di un prodotto principalmente interessata da SRE?
+    choices:
+    - content: Sicurezza
+      isCorrect: false
+      incorrectExplanation: La sicurezza è sicuramente importante in SRE, ma l'obiettivo principale di questa disciplina di progettazione è l'affidabilità.
+    - content: Costi di esecuzione
+      isCorrect: false
+      incorrectExplanation: I costi e l'utilizzo delle risorse sono sicuramente importanti in SRE, ma l'obiettivo principale di questa disciplina di progettazione è l'affidabilità.
+    - content: Affidabilità
+      isCorrect: true
+      correctExplanation: L'obiettivo principale di SRE è sicuramente l'affidabilità.
+    - content: Facilità di gestione
+      isCorrect: false
+      incorrectExplanation: La creazione di servizi, sistemi e prodotti di facile gestione è sicuramente importante in SRE, ma l'obiettivo principale di questa disciplina di progettazione è l'affidabilità.
+  - content: Per quasi tutti i servizi, i sistemi e i prodotti, qual è il livello di affidabilità a cui mira SRE?
+    choices:
+    - content: L'obiettivo è il 100%
+      isCorrect: false
+      incorrectExplanation: Per la maggior parte dei contesti, non è possibile raggiungere il 100% di affidabilità. Anche se fosse possibile, i costi sarebbero proibitivi e le risorse sarebbero eccessive, con un grande spreco sotto entrambi i punti di vista.
+    - content: L'affidabilità deve essere la maggiore possibile
+      isCorrect: false
+      incorrectExplanation: È importante identificare il livello di affidabilità appropriato per un obiettivo. L'impegno e le risorse in eccesso costituiscono uno spreco. "Il più possibile" è un'espressione troppo generica per essere utile.
+    - content: Un livello specifico identificato come appropriato dagli stakeholder chiave
+      isCorrect: true
+      correctExplanation: La definizione dell'obiettivo di un servizio è il risultato della collaborazione di SRE, delle risorse per lo sviluppo e dei decision maker aziendali.

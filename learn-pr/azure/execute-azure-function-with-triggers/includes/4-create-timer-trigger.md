@@ -30,25 +30,38 @@ Per iniziare, creare un'app per le Funzioni di Azure nel portale.
 
     [!include[](../../../includes/azure-sandbox-regions-first-mention-note-friendly.md)]
 
+1. Per **Stack di runtime**, lasciare il valore predefinito *.NET*, che identifica il linguaggio in cui si implementano gli esempi di funzione in questo esercizio.
+
 1. Creare un nuovo account di **Archiviazione**. Per impostazione predefinita, il nome sarà una variante del nome dell'app, ma è possibile modificarlo.
 
 1. Selezionare **Crea**. Al completamento della distribuzione dell'app per le funzioni, accedere al portale e selezionare **Tutte le risorse**. L'app per le funzioni sarà inclusa nell'elenco con il tipo **Servizio app** e il nome che le è stato assegnato.
+ 
+<!-- Start temporary fix for issue #2498. -->
+> [!IMPORTANT]
+> Gli esercizi in questo modulo attualmente funzionano con Funzioni di Azure V1. Seguire questa procedura con attenzione per assicurarsi che l'app per le funzioni usi la versione del runtime V1. 
+
+1. Una volta creata l'app per le funzioni, selezionare **Tutte le risorse** nel riquadro di spostamento a sinistra.
+
+1. Selezionare l'app per le funzioni nell'elenco **App per le funzioni**.
+1. Selezionare **Funzionalità della piattaforma**.
+1. Nella schermata **Funzionalità della piattaforma** selezionare **Impostazioni dell'app per le funzioni** in **Impostazioni generali**.
+1. Selezionare *~1* in **Versione runtime**.
+1. Chiudere **Impostazioni dell'app per le funzioni**.
+
+L'app per le funzioni è ora configurata per usare il runtime V1 di Funzioni di Azure. È ora possibile continuare a creare la prima funzione.
+<!-- End temporary fix for issue #2498. --> 
 
 ## <a name="create-a-timer-trigger"></a>Creare un trigger timer
 
 Verrà ora creato un trigger timer all'interno della funzione.
 
-1. Una volta creata la funzione, selezionare **Tutte le risorse** nel riquadro di spostamento a sinistra.
 
-1. Trovare l'app per le funzioni nell'elenco e selezionarlo.
 
 1. Nel nuovo pannello scegliere **Funzioni** e selezionare l'icona con il segno più (+).
 
     ![Screenshot del portale di Azure che illustra un pannello App per le funzioni con il pulsante (+) del sottomenu Funzioni evidenziato.](../media/4-hover-function.png)
 
 1. Selezionare **Timer**.
-
-1. Selezionare **CSharp** come linguaggio.
 
 1. Selezionare **Creare questa funzione**.
 

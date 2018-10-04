@@ -9,12 +9,46 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: cf143961dad057732128d694543f4890f1bbefee
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.openlocfilehash: 7e8f4e11d5652bcb4cf4ea95df8141eedbe8abea
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46353115"
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47437103"
 azureSandbox: true
 durationInMinutes: 3
-content: '[!include[](includes/9-summary.md)]'
+content: >
+  [!include[](includes/9-summary.md)]
+quiz:
+  title: Verifica delle conoscenze
+  questions:
+  - content: "Vero o falso: per motivi di sicurezza, è necessario usare un'immagine del sito Azure Marketplace ufficiale quando si crea una nuova macchina virtuale."
+    choices:
+    - content: Vero
+      isCorrect: false
+      incorrectExplanation: Azure consente di configurare le macchine virtuali in modo da soddisfare esigenze specifiche. Questo include il supporto per l'uso di proprie immagini di macchina virtuale.
+    - content: Falso
+      isCorrect: true
+      correctExplanation: Azure consente di configurare le macchine virtuali in modo da soddisfare esigenze specifiche. Questo include il supporto per l'uso di proprie immagini di macchina virtuale.
+  - content: Qual è l'effetto delle impostazioni di sicurezza di rete predefinite per una nuova macchina virtuale?
+    choices:
+    - content: Non sono consentite richieste né in ingresso né in uscita.
+      isCorrect: false
+      incorrectExplanation: Le richieste in uscita sono considerate a basso rischio, quindi sono consentite per impostazione predefinita.
+    - content: Le richieste in uscita sono consentite. Il traffico in ingresso è consentito solo dall'interno della rete virtuale.
+      isCorrect: true
+      correctExplanation: Le richieste in uscita sono considerate a basso rischio, quindi sono consentite per impostazione predefinita. È consentito il traffico in ingresso dall'interno della rete virtuale. Se si aggiunge una macchina virtuale a una rete virtuale, il proprietario della macchina virtuale accetta in modo implicito le comunicazioni tra le risorse della rete virtuale.
+    - content: 'Non sono applicate restrizioni: sono consentite tutte le richieste in ingresso e in uscita.'
+      isCorrect: false
+      incorrectExplanation: Il traffico in ingresso senza restrizioni è troppo rischioso per il comportamento predefinito.
+  - content: Si supponga di avere diverse macchine virtuali Linux ospitate in Azure. Le macchine virtuali verranno gestite in modalità remota con SSH da tre computer dedicati nella sede centrale dell'azienda. Quale dei seguenti metodi di autenticazione è in genere considerato ottimale per questa situazione?
+    choices:
+    - content: Nome utente e password
+      isCorrect: false
+      incorrectExplanation: Le password sono vulnerabili agli attacchi di forza bruta. Questo metodo è consigliato solo se è necessario l'accesso remoto da diverse posizioni.
+    - content: Chiave privata
+      isCorrect: false
+      incorrectExplanation: L'accesso con chiave privata è più sicuro di una password ed è una scelta ottimale quando è necessario l'accesso da un numero limitato di posizioni. Tuttavia, se un utente malintenzionato acquisisce la chiave privata, potrà usarla per accedere alle macchine virtuali.
+    - content: Chiave privata con passphrase
+      isCorrect: true
+      correctExplanation: L'accesso con chiave privata con passphrase è l'opzione più sicura. Anche se un utente malintenzionato entra in possesso della chiave privata, non potrà usarla senza la passphrase.

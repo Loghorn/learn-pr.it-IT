@@ -17,24 +17,17 @@ Proprio come Funzioni di Azure supporta associazioni di input per varie origini 
 
 ## <a name="create-an-http-triggered-function"></a>Creare una funzione attivata da HTTP
 
-1. Accedere al [portale di Azure](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) usando lo stesso account con cui è stata attivata la sandbox.
+1. Assicurarsi di aver eseguito l'accesso al [portale di Azure](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) usando lo stesso account con cui è stata attivata la sandbox.
 
 2. Nel portale passare all'app per le funzioni creata in questo modulo.
 
-3. Espandere l'app per le funzioni, quindi passare il puntatore sulla raccolta di funzioni e selezionare il pulsante Aggiungi (**+**) accanto a **Funzioni**. Questa azione avvia il processo di creazione della funzione. L'animazione seguente illustra questa azione.
-
-    ![Animazione del segno più che viene visualizzata quando l'utente passa il mouse sulla voce di menu delle funzioni.](../media/3-func-app-plus-hover-small.gif)
-
-4. La pagina mostra il set corrente di trigger supportati. Selezionare **Trigger HTTP**, che è la prima voce nello screenshot seguente.
-
-    ![Screenshot della parte dell'interfaccia utente di selezione del modello di trigger, con il trigger TTP visualizzato per primo, in alto a sinistra nell'immagine.](../media/5-trigger-templates-small.PNG)
-
+3. Selezionare il pulsante Aggiungi (**+**) accanto a **Funzioni**. Questa azione avvia il processo di creazione della funzione. 
+4. La pagina mostra il set corrente di trigger supportati. Selezionare **Trigger HTTP**.
 
 5. Compilare il riquadro **Nuova funzione** visualizzato a destra usando i valori seguenti:
 
     |Campo  |Valore  |
     |---------|---------|
-    |Linguaggio     | **JavaScript**        |
     |Nome     |   [!INCLUDE [func-name-add](./func-name-add.md)]     |
     | Livello di autorizzazione | **Funzione** |
 

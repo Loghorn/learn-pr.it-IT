@@ -9,11 +9,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 8eb18cc5400b83049baa56b02ecfaf4f72441a0a
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46340730"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47136074"
 title: Concatenare funzioni di Azure usando associazioni di input e output
 summary: Funzioni di Azure rende più semplice l'integrazione del codice della funzione con i dati e i servizi. Grazie alle potenzialità delle associazioni, è sufficiente dichiarare le origini dati per la lettura e la scrittura e Funzioni di Azure si occupa del resto.
 abstract: >

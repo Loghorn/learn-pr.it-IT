@@ -9,11 +9,37 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: b0f04ff135762fc48358375b3b2d69b594bc675a
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.openlocfilehash: 11c2f56627006b6987a9a506ce2c6f1265ffc68d
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46338523"
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47437358"
 durationInMinutes: 1
-content: '[!include[](includes/6-summary.md)]'
+content: >
+  [!include[](includes/6-summary.md)]
+quiz:
+  title: Verifica delle conoscenze
+  questions:
+  - content: Che cos'è Azure?
+    choices:
+    - content: La piattaforma di cloud computing Microsoft che fornisce potenza di calcolo, risorse di archiviazione e servizi tramite Internet usando un modello di prezzi con pagamento in base al consumo.
+      isCorrect: true
+      correctExplanation: Azure offre potenza di calcolo e risorse di archiviazione, oltre che servizi che aiutano a esplorare nuovi paradigmi software, ad esempio i bot intelligenti e la realtà mista.
+    - content: Un singolo data center che si trova a Redmond, Washington.
+      isCorrect: false
+      incorrectExplanation: Azure è costituito da data center distribuiti in tutto il mondo.
+    - content: Un ambiente di hosting specifico per le macchine virtuali
+      isCorrect: false
+      incorrectExplanation: Sebbene Azure offra potenza di calcolo, come le macchine virtuali, fornisce anche molti servizi che aiutano a esplorare nuovi paradigmi software, ad esempio bot intelligenti e realtà mista.
+  - content: Quando è consigliabile applicare la _scalabilità orizzontale_ per la distribuzione?
+    choices:
+    - content: Quando l'applicazione o il servizio richiede una CPU più potente o più memoria per un'esecuzione più veloce.
+      isCorrect: false
+      incorrectExplanation: In questo caso, è possibile scegliere la _scalabilità verticale_, spostando l'applicazione o il servizio in hardware più potente.
+    - content: Quando è necessario aggiungere altre macchine virtuali per rendere più veloce l'applicazione.
+      isCorrect: true
+      correctExplanation: Scalabilità orizzontale significa aggiungere ulteriori sistemi, ad esempio macchine virtuali. Ad esempio, si potrebbero creare molte macchine virtuali configurate allo stesso modo e usare il bilanciamento del carico per distribuire il lavoro tra di esse.
+    - content: Quando si usa capacità in eccesso non necessaria.
+      isCorrect: false
+      incorrectExplanation: In questo caso, è possibile scegliere di _ridurre il numero di istanze_ rimuovendo i sistemi non necessari.

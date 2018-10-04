@@ -8,8 +8,8 @@ In questo modulo viene creata una macchina virtuale DSVM e viene eseguito il tra
 
 In questo modulo verrà descritto come:
 
-  - Descrivere l'apprendimento avanzato e la macchina virtuale DSVM (Data Science Virtual Machine) di Azure
-  - Creare una macchina virtuale DSVM con l'interfaccia della riga di comando di Azure
+  - Descrivere l'apprendimento avanzato e la Data Science Virtual Machine (DSVM) di Azure
+  - Creare una DSVM con l'interfaccia della riga di comando di Azure
   - Informazioni su come usare Docker per configurare un ambiente di apprendimento avanzato personalizzato
   - Connettersi ai notebook di Jupyter tramite Docker in DSVM
   - Informazioni su come eseguire il primo esperimento di apprendimento avanzato con Jupyter

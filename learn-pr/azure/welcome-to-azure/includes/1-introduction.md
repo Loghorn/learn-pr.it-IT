@@ -1,4 +1,4 @@
-Si sente molto parlare di _scalabilità_, _elasticità_ e _microservizi_ del cloud. Probabilmente si ha assistito al successo di altre aziende grazie al cloud, chiedendosi in che modo il cloud potrebbe aiutare a rispondere alle sfide aziendali o contribuire al successo della propria carriera. Non tutti sanno che il 90% delle società Fortune 500 opera in Azure.
+Si sente molto parlare di _scalabilità_, _elasticità_ e _microservizi_ del cloud. Probabilmente si ha assistito al successo di altre aziende grazie al cloud, chiedendosi in che modo il cloud potrebbe aiutare a rispondere alle sfide aziendali o contribuire al successo della propria carriera. Non tutti sanno che più del 90% delle società Fortune 500 opera in Microsoft Cloud.
 
 ![Logo di Azure, che rappresenta l'inizio del percorso formativo](../media/1-heading.png)
 

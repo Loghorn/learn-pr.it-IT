@@ -10,11 +10,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: b6d50140ba18e22cf8d522e2236fb1e4a5c9752d
-  ms.sourcegitcommit: 58e9d7fbb111af9b27ed819e4b79ba4a4e6e8a9c
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/21/2018
-  ms.locfileid: "46509540"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47134502"
 title: Archiviare i dati in Azure
 summary: 'Azure offre vari modi per archiviare i dati: non strutturati, archiviazione, relazionali e altro ancora. Informazioni sulle nozioni di base sulla gestione automatica in Azure, su come creare un account di archiviazione e su come scegliere il modello adatto per i dati da archiviare nel cloud.'
 prerequisites: Nessuno

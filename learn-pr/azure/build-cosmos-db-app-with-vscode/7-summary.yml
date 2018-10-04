@@ -8,12 +8,49 @@ metadata:
   ms.author: mimig
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 656c5dad59bcf4ae8b969b140d54fa08e0e4115a
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.openlocfilehash: c68a68b3429b73a6831781a74c150d226d5bd659
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46340618"
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47437800"
 title: Riepilogo
 durationInMinutes: 3
-content: '[!include[](includes/7-summary.md)]'
+content: >
+  [!include[](includes/7-summary.md)]
+quiz:
+  title: Verifica delle conoscenze
+  questions:
+  - content: Si supponga di utilizzare Visual Studio Code per sviluppare un'applicazione .NET Core che accede ad Azure Cosmos DB. È necessario includere la stringa di connessione per il database nella configurazione dell'applicazione. Qual è il modo più semplice per inserire questa informazione nel progetto?
+    choices:
+    - content: Direttamente da Visual Studio Code
+      isCorrect: true
+      correctExplanation: L'estensione di Azure Cosmos DB consente di amministrare e creare gli account Azure Cosmos DB e i database direttamente da Visual Studio Code.
+    - content: Dal portale di Azure
+      isCorrect: false
+      incorrectExplanation: Il portale di Azure contiene questa informazione, ma se ci si trova già all'interno di Visual Studio Code, passare al portale non è probabilmente la scelta più comoda.
+    - content: Con l'interfaccia della riga di comando di Azure
+      isCorrect: false
+      incorrectExplanation: Nonostante questa rappresenti un'ottima scelta, soprattutto perché Visual Studio Code prevede un terminale incorporato, presuppone che si conoscano i comandi necessari. Questa scelta potrebbe essere meno pratica rispetto all'estensione di Visual Studio Code.
+  - content: Quando si lavora con l'API SQL di Azure Cosmos DB, quale di queste opzioni può essere utilizzata per eseguire operazioni CRUD?
+    choices:
+    - content: LINQ
+      isCorrect: true
+      correctExplanation: LINQ e SQL sono due metodi validi per eseguire query sull'API SQL.
+    - content: Librerie client di Apache Cassandra
+      isCorrect: false
+      incorrectExplanation: Le librerie di Apache Cassandra possono funzionare con l'API Cassandra di Azure Cosmos DB, ma non con l'API SQL.
+    - content: Librerie di Archiviazione tabelle di Azure
+      isCorrect: false
+      incorrectExplanation: Le librerie di Archiviazione tabelle di Azure possono funzionare con l'API Tabella di Azure Cosmos DB, ma non con l'API SQL.
+  - content: Quando si lavora con la classe DocumentClient dell'SDK client di Azure Cosmos DB, viene utilizzato un modello di database NOSQL. Come si può usare questa classe per modificare il campo FirstName di un documento Person da 'Ann' a 'Fran'?
+    choices:
+    - content: Chiamare UpdateDocumentAsync con FirstName = Fran
+      isCorrect: false
+      incorrectExplanation: La classe DocumentClient non ha un metodo UpdateDocumentAsync. L'aggiornamento di un singolo campo non è compatibile con l'approccio in stile documento di NOSQL.
+    - content: Chiamare UpsertDocumentAsync con un oggetto Person aggiornato
+      isCorrect: false
+      incorrectExplanation: Benché questa operazione funzioni, non corrisponde all'accesso minimo necessario per soddisfare questa esigenza. Le operazioni Upsert sostituiscono un documento se la relativa chiave esiste già; in caso contrario, aggiungono un nuovo documento. Poiché in questo caso non si vuole aggiungere uno nuovo documento, l'uso di questo metodo rischia di introdurre bug insidiosi e difficili da rilevare.
+    - content: Chiamare ReplaceDocumentAsync con un oggetto Person aggiornato
+      isCorrect: true
+      correctExplanation: ReplaceDocumentAsync sostituirà il documento esistente con uno nuovo. In questo caso, si desidera che il vecchio e il nuovo documento siano uguali eccetto per FirstName.

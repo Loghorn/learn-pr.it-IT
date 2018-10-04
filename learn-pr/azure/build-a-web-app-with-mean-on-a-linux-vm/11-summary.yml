@@ -9,11 +9,48 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 284d0a687dc09aa1fc36a74e31b27738b90b8188
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.openlocfilehash: 49a23603aa990e203720d71cdb4b6be0ad2d0d9f
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46342089"
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47437222"
 durationInMinutes: 3
-content: '[!include[](includes/11-summary.md)]'
+content: >
+  [!include[](includes/11-summary.md)]
+quiz:
+  title: Verifica delle conoscenze
+  questions:
+  - content: Qual è un buon motivo per scegliere MEAN per lo stack di sviluppo?
+    choices:
+    - content: Si lavora con dati relazionali altamente strutturati.
+      isCorrect: false
+      incorrectExplanation: MongoDB, la "M" nello stack MEAN, è un database NoSQL. Un database NoSQL è non relazionale, ovvero non richiede dati per essere strutturato come database di SQL Server o altri database relazionali.
+    - content: Le app MEAN vengono eseguite più velocemente rispetto a quelle creati con altri stack di sviluppo.
+      isCorrect: false
+      incorrectExplanation: Sono disponibili molti stack di sviluppo. Nessuno è necessariamente più veloce o migliore degli altri. Ognuno è stato creato pensando a un determinato tipo di app e a competenze di sviluppo specifiche.
+    - content: Tutti i membri del team di sviluppo sono esperti di JavaScript.
+      isCorrect: true
+      correctExplanation: Lo stack MEAN è essenzialmente basato su JavaScript. JavaScript appare sia sul lato client, sia sul lato server dell'app Web.
+  - content: Che cos'è un database NoSQL?
+    choices:
+    - content: È un termine usato per descrivere qualsiasi software di database gratuito e open source.
+      isCorrect: false
+      incorrectExplanation: Benché molti database siano gratuiti e open source, NoSQL descrive il modo in cui sono strutturati i dati.
+    - content: Si tratta di un database che non richiede dati per essere strutturato in modo predefinito.
+      isCorrect: true
+      correctExplanation: MongoDB, ad esempio, archivia i propri dati in documenti simili a file JSON che non richiedono le rigide strutture di dati richieste da MySQL o altri database relazionali.
+    - content: È un tipo di database relazionale, ma non usa il linguaggio SQL per accedere ai dati e modificarli.
+      isCorrect: false
+      incorrectExplanation: I database NoSQL sono non relazionali, ovvero non richiedono dati per essere strutturati in modo predefinito.
+  - content: Qual è il ruolo di AngularJS nello stack MEAN?
+    choices:
+    - content: AngularJS implementa l'associazione di dati per HTML e JavaScript. Ad esempio, è possibile usare AngularJS per recuperare elementi da un database e visualizzare tali elementi nell'interfaccia utente.
+      isCorrect: true
+      correctExplanation: L'associazione di dati consente di mantenere il codice HTML pulito e conciso. AngularJS visualizza gli aggiornamenti all'utente non appena vengono modificati i dati sottostanti.
+    - content: È un plug-in del browser che viene installato nel computer dell'utente.
+      isCorrect: false
+      incorrectExplanation: AngularJS tecnicamente non viene installato &mdash; è semplicemente codice JavaScript a cui si fa riferimento da un tag di script nella pagina HTML.
+    - content: Consente di eseguire l'applicazione Web dal lato server.
+      isCorrect: false
+      incorrectExplanation: Node.js, non AngularJS, è l'elemento che ospita un'app Web MEAN dal lato server.

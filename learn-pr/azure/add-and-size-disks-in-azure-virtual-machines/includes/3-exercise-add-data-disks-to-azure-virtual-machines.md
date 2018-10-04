@@ -164,7 +164,7 @@ Cercare l'unità da 64 GB creata. Si può vedere che è **sdc** e non è montata
 
 1. A questo punto è necessario scrivere un file system nella partizione con il comando `mkfs`. Sarà necessario specificare il tipo di file system e il nome del dispositivo ottenuti dall'output di `fdisk`:
     - Passare `-t ext4` per creare un file system _ext4_.
-    - Il nome del dispositivo è `/dev/sdc`.
+    - Il nome del dispositivo è `/dev/sdc1`.
 
     ```bash
     sudo mkfs -t ext4 /dev/sdc1

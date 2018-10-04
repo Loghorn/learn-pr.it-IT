@@ -9,11 +9,51 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: dbbed9c336f6aa4063d3c4a3ab22447b8cc97293
-  ms.sourcegitcommit: 58e9d7fbb111af9b27ed819e4b79ba4a4e6e8a9c
+  ms.openlocfilehash: b5705b646b41e63ffe0d2bc45fb3d4417136b10b
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/21/2018
-  ms.locfileid: "46512790"
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47436763"
 durationInMinutes: 2
-content: '[!include[](includes/9-summary.md)]'
+content: >
+  [!include[](includes/9-summary.md)]
+quiz:
+  title: Verifica delle conoscenze
+  questions:
+  - content: "Un'espressione CRON è una stringa costituita da sei campi che rappresentano un insieme di tempi. L'ordine dei sei campi in Azure è: {second} {minute} {hour} {day} {month} {day of the week}. Si supponga che sia necessaria un'espressione CRON che significa \"ogni giorno\": quale carattere speciale si deve inserire nella posizione {day of the week}?"
+    choices:
+    - content: "\"/\""
+      isCorrect: false
+      incorrectExplanation: Una barra specifica un incremento. Ad esempio, il valore */5 nel campo dei secondi significa ogni cinque secondi.
+    - content: "\"*\""
+      isCorrect: true
+      correctExplanation: Un asterisco specifica che deve essere selezionato ogni valore possibile. Un asterisco nel campo {day of the week} indica che deve essere selezionato ogni giorno.
+    - content: "\",\""
+      isCorrect: false
+      incorrectExplanation: Una virgola separa le voci di un elenco. Ad esempio, 1,2,3 nel campo {month} significa selezionare gennaio, febbraio e marzo.
+    - content: "\"-\""
+      isCorrect: false
+      incorrectExplanation: Un trattino specifica un intervallo. Ad esempio, 1-3 nel campo {month} significa selezionare gennaio, febbraio e marzo.
+  - content: Si supponga che alla funzione di Azure sia associato un trigger di BLOB e di voler eseguire il trigger solo quando vengono caricate le immagini. Quale dei seguenti valori del *percorso* del trigger di BLOB si deve usare?
+    choices:
+    - content: samples-workitems/{name}
+      isCorrect: false
+      incorrectExplanation: Il percorso indica al trigger di BLOB dove è necessario verificare se sono presenti modifiche e se sono applicati dei filtri. L'aggiunta di un'estensione di file al percorso specifica che i file caricati devono avere quella estensione affinché il trigger possa richiamare la funzione.
+    - content: samples-workitems/{name}/png
+      isCorrect: false
+      incorrectExplanation: Il percorso indica al trigger di BLOB dove è necessario verificare se sono presenti modifiche e se sono applicati dei filtri. L'aggiunta di un'estensione di file al percorso specifica che i file caricati devono avere quella estensione affinché il trigger possa richiamare la funzione.
+    - content: samples-workitems/{name}?png
+      isCorrect: false
+      incorrectExplanation: Il percorso indica al trigger di BLOB dove è necessario verificare se sono presenti modifiche e se sono applicati dei filtri. L'aggiunta di un'estensione di file al percorso specifica che i file caricati devono avere quella estensione affinché il trigger possa richiamare la funzione.
+    - content: samples-workitems/{name}.png
+      isCorrect: true
+      correctExplanation: Il percorso indica al trigger di BLOB dove è necessario verificare se sono presenti modifiche e se sono applicati dei filtri. L'aggiunta di un'estensione di file al percorso specifica che i file caricati devono avere quella estensione affinché il trigger possa richiamare la funzione.
+  - content: 'Vero o falso: a una funzione di Azure si possono associare più trigger?'
+    choices:
+    - content: Vero
+      isCorrect: false
+      incorrectExplanation: Ogni funzione di Azure deve avere un solo trigger associato a essa. Per usare più trigger, è necessario creare più funzioni.
+    - content: Falso
+      isCorrect: true
+      correctExplanation: Ogni funzione di Azure deve avere un solo trigger associato a essa. Per usare più trigger, è necessario creare più funzioni.

@@ -6,7 +6,8 @@ Dopo aver presentato i servizi di calcolo di Azure disponibili, ognuno di questi
   :::column:::
     ![Immagine che rappresenta le macchine virtuali di Azure](../media/3-azure-vms.png)
   :::column-end:::
-  :::column span="3"::: Le macchine virtuali sono una scelta ideale quando è necessario il controllo totale sul sistema operativo e sull'ambiente. Consentono infatti di personalizzare tutto il software in esecuzione nella macchina virtuale, proprio come con un computer fisico. Questa soluzione è particolarmente indicata quando si eseguono configurazioni di hosting o software personalizzati,
+  :::column span="3":::
+Le macchine virtuali sono la scelta ideale quando è necessario esercitare un controllo totale sul sistema operativo e sull'ambiente. Consentono infatti di personalizzare tutto il software in esecuzione nella macchina virtuale, proprio come con un computer fisico. Questa soluzione è particolarmente indicata quando si eseguono configurazioni di hosting o software personalizzati,
   :::column-end:::
 :::row-end:::
 
@@ -30,19 +31,16 @@ Azure rende disponibili anche servizi avanzati per le macchine virtuali:
   :::column:::
     ![Immagine che rappresenta i contenitori di Azure](../media/3-azure-containers.png)
   :::column-end:::
-  :::column span="3"::: I contenitori sono la scelta ideale per eseguire più istanze di un'applicazione in una singola macchina virtuale. L'agente di orchestrazione del contenitore è in grado di avviare, arrestare e aumentare il numero di istanze dell'applicazione in base alle esigenze.
+  :::column span="3":::
+I contenitori sono la scelta ideale per eseguire più istanze di un'applicazione in una singola macchina virtuale. L'agente di orchestrazione del contenitore è in grado di avviare, arrestare e aumentare il numero di istanze dell'applicazione in base alle esigenze.
   :::column-end:::
 :::row-end:::
-
-#### <a name="what-are-containers"></a>Che cosa sono i contenitori?
-
-> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE2yMhY]
 
 #### <a name="vms-versus-containers"></a>Macchine virtuali o contenitori
 
 > [!VIDEO https://www.microsoft.com/videoplayer/embed/RE2yuaq]
 
-I contenitori sono in genere usati per creare soluzioni con un'architettura di microservizi. I contenitori vengono spesso usati per creare soluzioni usando un'architettura di microservizi, dato che sono impiegati di frequente per suddividere le soluzioni in parti più piccole. È possibile ad esempio suddividere un sito Web in tre contenitori: uno che ospita il front-end, un altro per il back-end e un terzo per l'archiviazione. Ciò consente di separare i componenti dell'app in sezioni logiche che possono quindi essere gestite, ridimensionate o aggiornate in modo indipendente.
+I contenitori vengono spesso usati per creare soluzioni usando un'architettura di microservizi, dato che sono impiegati di frequente per suddividere le soluzioni in parti più piccole. È possibile ad esempio suddividere un sito Web in tre contenitori: uno che ospita il front-end, un altro per il back-end e un terzo per l'archiviazione. Ciò consente di separare i componenti dell'app in sezioni logiche che possono quindi essere gestite, ridimensionate o aggiornate in modo indipendente.
 
 #### <a name="what-is-a-microservice"></a>Che cos'è un microservizio?
 
@@ -62,7 +60,8 @@ Se il team ha familiarità con l'orchestrazione dei contenitori Kubernetes, è o
   :::column:::
     ![Immagine che rappresenta Funzioni di Azure](../media/3-azure-functions.png)
   :::column-end:::
-  :::column span="3"::: Funzioni di Azure è ideale quando si è interessati solo al codice che esegue il servizio e non alla piattaforma o all'infrastruttura sottostante. Funzioni di Azure consente di eseguire operazioni in risposta a un evento, spesso tramite una richiesta REST, un timer o un messaggio proveniente da un altro servizio di Azure e quando l'operazione può essere completata in pochi secondi al massimo.
+  :::column span="3":::
+Funzioni di Azure è la scelta ideale se si è interessati solo al codice che esegue il servizio e non alla piattaforma o all'infrastruttura sottostante. Funzioni di Azure consente di eseguire operazioni in risposta a un evento, spesso tramite una richiesta REST, un timer o un messaggio proveniente da un altro servizio di Azure e quando l'operazione può essere completata in pochi secondi al massimo.
   :::column-end:::
 :::row-end:::
 

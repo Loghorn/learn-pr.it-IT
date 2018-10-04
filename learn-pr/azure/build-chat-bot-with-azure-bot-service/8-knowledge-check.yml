@@ -1,0 +1,54 @@
+### YamlMime:ModuleUnit
+uid: learn.build-azure-bot-services-bot.8-knowledge-check
+title: Verificare le proprie conoscenze
+metadata:
+  title: Verificare le proprie conoscenze
+  description: Verifica delle conoscenze per "Creare un chatbot con il servizio Azure Bot"
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 5b206ed0afc79f1f42efb0445f45bf7d8cbf9fa7
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47439360"
+durationInMinutes: 5
+quiz:
+  title: Verifica delle conoscenze per "Creare un chatbot con il servizio Azure Bot"
+  questions:
+  - content: "Vero o falso: il modello *Bot dell'app Web* creare un'*app Web* e un *bot*."
+    choices:
+    - content: Vero
+      isCorrect: true
+      correctExplanation: Il modello crea un bot e un'app Web di Azure per ospitare il bot. Il modello configura anche il bot per usare una Knowledge Base di QnA Maker. È necessario creare manualmente la Knowledge Base e connetterla al bot.
+    - content: Falso
+      isCorrect: false
+      incorrectExplanation: Il nome del modello è descrittivo e crea un'app Web e un bot.
+  - content: Per cosa viene usato QnA Maker?
+    choices:
+    - content: Per creare una Knowledge Base che può essere usata da un bot.
+      isCorrect: true
+      correctExplanation: QnA Maker accetta domande e risposte e le elabora in un formato che un bot può usare per rispondere alle domande.
+    - content: Per creare sondaggi che è possibile incorporare nel bot per ottenere feedback da parte degli utenti.
+      isCorrect: false
+      incorrectExplanation: QnA Maker non è un servizio per sondaggi. Il servizio consente di fornire informazioni agli utenti e non tenta di acquisire informazioni dagli utenti stessi.
+    - content: Per creare un bot
+      isCorrect: false
+      incorrectExplanation: QnA Maker può essere associato a un bot, ma non ne crea alcuno.
+  - content: Come è possibile inserire dati in QnA Maker?
+    choices:
+    - content: Manualmente.
+      isCorrect: false
+      incorrectExplanation: È possibile popolare manualmente la Knowledge Base, ma esistono anche altri modi.
+    - content: Caricare un file di testo.
+      isCorrect: false
+      incorrectExplanation: QnA Maker supporta i file di testo in molti formati diversi, ad esempio valori delimitati da tabulazione e fogli di calcolo di Excel. Questo, tuttavia, non è l'unico modo per popolare la Knowledge Base.
+    - content: Specificare l'URL di una pagina delle domande frequenti.
+      isCorrect: false
+      incorrectExplanation: QnA Maker può estrarre domande e risposte da diversi formati di pagine delle domande frequenti. L'URL di una pagina di domande frequenti non è l'unico modo per popolare la Knowledge Base.
+    - content: Tutte le risposte precedenti.
+      isCorrect: true
+      correctExplanation: QnA Maker è sufficientemente flessibile per gestire i dati di input in molti dei formati più comuni, ovvero file di testo, pagina delle domande frequenti e anche manuali di prodotti. L'obiettivo consiste nel rendere conveniente l'importazione dei dati senza riformattarli.
