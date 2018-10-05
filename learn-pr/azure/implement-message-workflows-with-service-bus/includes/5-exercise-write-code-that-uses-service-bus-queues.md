@@ -37,10 +37,10 @@ Per accedere a uno spazio dei nomi del bus di servizio e usare una coda, è nece
     ```azurecli
     az servicebus namespace authorization-rule keys list \
         --resource-group <rgn>[sandbox resource group name]</rgn> \
-        --namespace-name <namespace-name> \
         --name RootManageSharedAccessKey \
         --query primaryConnectionString \
-        --output tsv
+        --output tsv \
+        --namespace-name <namespace-name>
     ```
 
     Questa stringa di connessione dovrà essere usata più volte in questo modulo, pertanto è consigliabile incollarla in una posizione accessibile.
@@ -132,9 +132,9 @@ Al termine, eseguire il comando seguente per vedere quanti messaggi si trovano n
 ```azurecli
 az servicebus queue show \
     --resource-group <rgn>[sandbox resource group name]</rgn> \
-    --namespace-name <namespace-name> \
     --name salesmessages \
-    --query messageCount
+    --query messageCount \
+    --namespace-name <namespace-name>
 ```
 
 ## <a name="write-code-that-receives-a-message-from-the-queue"></a>Scrivere il codice che riceve un messaggio dalla coda
@@ -152,7 +152,7 @@ az servicebus queue show \
 1. Per creare un client di accodamento, sostituire la riga con il codice seguente:
 
     ```C#
-    queueClient = new QueueClient(ServiceBusConnectionString, QueueName);
+    var queueClient = new QueueClient(ServiceBusConnectionString, QueueName);
     ```
 
 1. Individuare il metodo `RegisterMessageHandler()`.
@@ -214,9 +214,9 @@ Quando si nota che il messaggio è stato ricevuto e viene visualizzato nella con
 ```azurecli
 az servicebus queue show \
     --resource-group <rgn>[sandbox resource group name]</rgn> \
-    --namespace-name <namespace-name> \
     --name salesmessages \
-    --query messageCount
+    --query messageCount \
+    --namespace-name <namespace-name>
 ```
 
 Verrà visualizzato `0` se tutti i messaggi sono stati rimossi.
