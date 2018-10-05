@@ -42,4 +42,4 @@ quiz:
       incorrectExplanation: Questa query restituirebbe solo gli ID in ordine decrescente.
     - content: SELECT p.productId, p.description FROM Products p ORDER BY p.productId DESC
       isCorrect: true
-      incorrectExplanation: Questa query restituirebbe sia l'ID prodotto che la descrizione, ma in ordine crescente.
+      correctExplanation: Questa query restituisce sia l'ID prodotto che la descrizione, in ordine decrescente.
